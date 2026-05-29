@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Byte-compile Python sources
+        run: python -m py_compile update_data.py app.py
+
+      - name: Validate JSON reports (if present)
+        run: |
+          python - <<'PY'
+          import glob, json, sys
+          ok = True
+          for f in glob.glob("latest_report.json") + glob.glob("latest_trends.json") \
+                   + glob.glob("data/reports/*.json") + glob.glob("data/trends/*.json"):
+              try:
+                  json.load(open(f, encoding="utf-8"))
+              except Exception as e:  # noqa: BLE001
+                  print(f"INVALID JSON: {f}: {e}")
+                  ok = False
+          sys.exit(0 if ok else 1)
+          PY

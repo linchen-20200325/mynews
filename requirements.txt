@@ -1,0 +1,4 @@
+anthropic>=0.69
+google-genai>=1.0
+streamlit>=1.40
+pandas>=2.0
