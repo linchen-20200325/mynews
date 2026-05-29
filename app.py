@@ -181,8 +181,13 @@ def render_news_cards(news: list[dict]) -> None:
         header = f"**{title}**" + (f" — _{source}_" if source else "")
         with st.container(border=True):
             st.markdown(header)
+            meta = []
+            if item.get("origin"):
+                meta.append(f"📡 來源管道:{item['origin']}")
             if item.get("published"):
-                st.caption(f"🕒 {item['published']}")
+                meta.append(f"🕒 {item['published']}")
+            if meta:
+                st.caption("　｜　".join(meta))
             st.write(item.get("summary", ""))
             if url:
                 st.markdown(f"[原文連結]({url})")
