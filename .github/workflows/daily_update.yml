@@ -32,6 +32,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           # 設定後白話文字典改由 Gemini 產生(未設定則沿用 Claude 字典)
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # LINE 推播(Messaging API);兩者皆設定才會推播
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_TO: ${{ secrets.LINE_TO }}
           # 可選:覆寫 Gemini 模型 / 分析主題
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           REPORT_TOPIC: ${{ vars.REPORT_TOPIC }}

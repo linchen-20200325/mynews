@@ -23,6 +23,8 @@ from __future__ import annotations
 import json
 import os
 import sys
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -37,6 +39,10 @@ MAX_TOKENS = 16000
 MAX_CONTINUATIONS = 5  # 防止 server-side 工具迴圈無限延伸
 
 DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
+
+# LINE Messaging API(LINE Notify 已於 2025 停用,改用 Messaging API push)
+LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
+LINE_TEXT_LIMIT = 4500  # 單則 text 上限 5000,留安全餘裕
 DEFAULT_TOPIC = "全球總體經濟與地緣政治最新動態(中東局勢、美中科技戰、OPEC+原油、美國通膨與 Fed)"
 
 OUTPUT_LATEST = Path("latest_report.json")
@@ -296,6 +302,66 @@ def generate_laymans_dictionary_gemini(analysis: dict) -> list:
 
 
 # ---------------------------------------------------------------------------
+# LINE 推播 (Messaging API push)
+# ---------------------------------------------------------------------------
+
+def build_line_message(report: dict) -> str:
+    """把報告整理成一則精簡的 LINE 文字訊息。"""
+    lines = [
+        f"🌐 全球政經戰略報告 {report.get('report_date', '')}",
+        f"主題:{report.get('topic', '')}",
+        "",
+        "📰 焦點新聞:",
+    ]
+    news = report.get("raw_news", [])
+    if news:
+        for i, item in enumerate(news[:3], 1):
+            title = item.get("title", "(無標題)")
+            source = item.get("source", "")
+            lines.append(f"{i}. {title}" + (f"({source})" if source else ""))
+    else:
+        lines.append("(本次未取得相關新聞)")
+
+    kpi = report.get("strategic_analysis", {}).get("blind_spots_and_kpi", "").strip()
+    if kpi:
+        lines += ["", "🎯 盲點與領先指標:", kpi[:500] + ("..." if len(kpi) > 500 else "")]
+
+    lines += ["", f"(白話文來源:{report.get('dictionary_source', '—')})"]
+
+    msg = "\n".join(lines)
+    if len(msg) > LINE_TEXT_LIMIT:
+        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
+    return msg
+
+
+def notify_line(report: dict) -> None:
+    """透過 LINE Messaging API push 推送報告摘要。"""
+    token = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
+    to = os.environ["LINE_TO"]
+
+    payload = json.dumps(
+        {"to": to, "messages": [{"type": "text", "text": build_line_message(report)}]}
+    ).encode("utf-8")
+
+    req = urllib.request.Request(
+        LINE_PUSH_ENDPOINT,
+        data=payload,
+        method="POST",
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {token}",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            if resp.status != 200:
+                raise RuntimeError(f"LINE 回應非 200: {resp.status}")
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", "replace")
+        raise RuntimeError(f"LINE 推播失敗 ({exc.code}): {body}") from exc
+
+
+# ---------------------------------------------------------------------------
 # 主流程
 # ---------------------------------------------------------------------------
 
@@ -338,6 +404,16 @@ def main() -> int:
             f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
             f"白話文來源:{report['dictionary_source']}。已儲存 latest_report.json"
         )
+
+        # LINE 推播 — 最佳努力,失敗不影響整份報告產出
+        if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
+            print("推送 LINE 通知...")
+            try:
+                notify_line(report)
+                print("  LINE 推播成功。")
+            except Exception as exc:  # noqa: BLE001
+                print(f"  警告: LINE 推播失敗:{exc}", file=sys.stderr)
+
         return 0
 
     except Exception as exc:  # noqa: BLE001 — CI 需要明確失敗碼

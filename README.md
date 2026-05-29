@@ -39,6 +39,12 @@ GitHub repo → Settings → Secrets and variables → Actions
 **Secrets(必/選):**
 - `ANTHROPIC_API_KEY`(必填)— Anthropic API 金鑰
 - `GEMINI_API_KEY`(選填)— 設定後白話文改由 Gemini 產生;未設定則沿用 Claude 字典
+- `LINE_CHANNEL_ACCESS_TOKEN` + `LINE_TO`(選填)— 兩者皆設定才會推播報告摘要到 LINE
+
+> **LINE 推播**:LINE Notify 已於 2025 停用,本專案改用 **LINE Messaging API**。
+> 需到 [LINE Developers](https://developers.line.biz/) 建立 Messaging API channel,
+> 取得 **Channel access token**(填 `LINE_CHANNEL_ACCESS_TOKEN`),並取得要推播的
+> 對象 ID(自己的 userId、或加入機器人的群組 groupId,填 `LINE_TO`)。
 
 **Variables(皆選填):**
 - `GEMINI_MODEL` — 覆寫 Gemini 模型(預設 `gemini-2.5-flash`)

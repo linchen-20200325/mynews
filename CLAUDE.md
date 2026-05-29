@@ -30,7 +30,9 @@
 2. **JSON 穩健**:任何模型輸出都要經過 `clean_json_text()` 清理 + `json.loads()` +
    結構驗證;解析失敗一律以非零碼結束讓 CI 標紅。
 3. **失敗隔離**:白話文(Gemini)失敗時回退 Claude 字典,不可讓整份報告失敗。
-4. **金鑰只走環境變數**:`ANTHROPIC_API_KEY` / `GEMINI_API_KEY`,嚴禁硬編碼或進版控。
+4. **金鑰只走環境變數**:`ANTHROPIC_API_KEY` / `GEMINI_API_KEY` /
+   `LINE_CHANNEL_ACCESS_TOKEN` / `LINE_TO`,嚴禁硬編碼或進版控。
+   (LINE 推播用 Messaging API push;LINE Notify 已停用,勿再採用。)
 5. **快取友善**:大型 system prompt 維持穩定;每次變動的內容(日期、主題)放 user 訊息。
 6. **改動需驗證**:Python 改動後至少 `python -m py_compile` 通過再提交。
 

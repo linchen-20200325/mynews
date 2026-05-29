@@ -17,6 +17,7 @@
 - [x] `app.py` — Streamlit 看板 + 歷史報告側邊欄選擇器
 - [x] 歷史存檔 `data/reports/<date>.json`
 - [x] GitHub Actions 每日排程 + 自動 commit/push
+- [x] LINE 推播報告摘要(Messaging API,最佳努力、失敗不影響報告)
 - [x] `CLAUDE.md` / `STATE.md` 專案文件
 
 ## 待辦 / 可優化 ⏳
