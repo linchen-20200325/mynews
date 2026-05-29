@@ -12,7 +12,7 @@ GitHub Actions (每日定時)
         ▼
 update_data.py
    ├─ news_fetcher.py (RSS 爬蟲):從可信來源抓真實外電(標題/來源/連結/摘要)
-   │      Google News RSS(聚合 BBC/AP/CNBC/Al Jazeera/Reuters…)+ 指定官方 feed
+   │      Google News RSS（繁中/台灣,聚合中央社/聯合報/自由/中時/BBC中文/DW…)+ 中文官方 feed
    │
    ├─ [A] 戰略報告
    │    └─ Gemini (gemini-2.5-flash):讀取抓到的新聞 → 四維度分析 + 白話文字典
@@ -55,7 +55,7 @@ GitHub repo → Settings → Secrets and variables → Actions
 - `GEMINI_MODEL` — 覆寫 Gemini 模型(預設 `gemini-2.5-flash`)
 - `REPORT_TOPIC` — 自訂戰略報告分析主題
 - `NEWS_QUERIES` / `TREND_QUERIES` — 自訂抓新聞的關鍵字(以 `;` 分隔)
-- `NEWS_LANG` / `NEWS_REGION` — Google News 語系/地區(預設 `en` / `US`)
+- `NEWS_LANG` / `NEWS_REGION` — Google News 語系/地區(預設 `zh` / `TW`,即繁中台灣;想抓英文外電可設 `en` / `US`)
 - `NEWS_MAX` / `NEWS_SINCE_HOURS` — 抓新聞則數上限 / 回溯時數(預設 `12` / `48`)
 - `ENABLE_TREND_RADAR` — 設為 `0` 可關閉趨勢雷達(預設開啟)
 
