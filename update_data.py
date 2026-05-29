@@ -1,21 +1,22 @@
-"""每日全球政經戰略情報自動產生器(雙模型版)。
+"""每日全球政經戰略情報自動產生器(雙模型 + 趨勢雷達)。
 
-流程:
-  1. Claude (claude-opus-4-8) + 伺服器端 web_search:
-     先抓取最近的真實外電,再進行四維度戰略分析,輸出 JSON 主體。
-  2. Gemini:接手 Claude 的分析內容,產出「最終版白話文字典」
-     (laymans_dictionary)。Gemini 失敗時自動回退使用 Claude 的字典。
-  3. 本地做防護式清理 + 解析 + 結構驗證後存檔。
+產出兩份報告:
+  A. 戰略報告 (latest_report.json)
+     1. Claude (claude-opus-4-8) + 伺服器端 web_search:抓真實外電 → 四維度戰略分析。
+     2. Gemini:依分析內容產生「最終版白話文字典」(失敗回退 Claude 字典)。
+  B. 趨勢雷達 (latest_trends.json)  [可用 ENABLE_TREND_RADAR=0 關閉]
+     Claude + web_search:找出當前最熱門的新興產業,依「資金/徵才/政策/技術」
+     四種訊號排名打分,回答「現在最紅的產業是什麼」。
 
-輸出:
-  - latest_report.json                 最新一份報告 (Streamlit 讀這份)
-  - data/reports/<YYYY-MM-DD>.json      當日歷史存檔
+可選:把摘要推播到 LINE (Messaging API)。
 
 環境變數:
-  - ANTHROPIC_API_KEY   (必填) Anthropic API 金鑰
-  - GEMINI_API_KEY      (選填) Google Gemini 金鑰;設定後白話文改由 Gemini 產生
-  - GEMINI_MODEL        (選填) Gemini 模型名稱,預設 gemini-2.5-flash
-  - REPORT_TOPIC        (選填) 當日分析主題
+  - ANTHROPIC_API_KEY              (必填) Anthropic 金鑰
+  - GEMINI_API_KEY                 (選填) 設定後白話文改由 Gemini 產生
+  - GEMINI_MODEL                   (選填) Gemini 模型,預設 gemini-2.5-flash
+  - REPORT_TOPIC                   (選填) 戰略報告的分析主題
+  - ENABLE_TREND_RADAR             (選填) 設為 0/false/no 可關閉趨勢雷達
+  - LINE_CHANNEL_ACCESS_TOKEN/LINE_TO (選填) 兩者皆設才推播
 """
 
 from __future__ import annotations
@@ -43,10 +44,15 @@ DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
 # LINE Messaging API(LINE Notify 已於 2025 停用,改用 Messaging API push)
 LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
 LINE_TEXT_LIMIT = 4500  # 單則 text 上限 5000,留安全餘裕
+
 DEFAULT_TOPIC = "全球總體經濟與地緣政治最新動態(中東局勢、美中科技戰、OPEC+原油、美國通膨與 Fed)"
 
 OUTPUT_LATEST = Path("latest_report.json")
 ARCHIVE_DIR = Path("data/reports")
+OUTPUT_TRENDS = Path("latest_trends.json")
+TRENDS_ARCHIVE_DIR = Path("data/trends")
+
+WEB_SEARCH_TOOL = {"type": "web_search_20260209", "name": "web_search"}
 
 # 報告所需的頂層欄位 — 解析後做最低限度的結構驗證
 REQUIRED_TOP_LEVEL_KEYS = (
@@ -71,7 +77,7 @@ ANALYSIS_LABELS = (
 )
 
 # ---------------------------------------------------------------------------
-# 系統提示語 (純資料生成器 / Zero-Tolerance JSON)
+# 系統提示語
 # ---------------------------------------------------------------------------
 
 SYSTEM_PROMPT = """\
@@ -111,6 +117,50 @@ SYSTEM_PROMPT = """\
 }
 """
 
+# 趨勢雷達系統提示語
+TREND_SYSTEM_PROMPT = """\
+你是一位兼具「產業趨勢分析師」與「後端資料工程師」的純資料生成器。
+你的唯一任務是:用 web_search 工具搜尋最近的真實資料,找出當前全球「最熱門、
+動能最強」的 3~5 個新興產業或主題(例如過去是『網路』、現在是『AI』這類等級的
+趨勢),並依四種訊號綜合評估、排名打分,【嚴格且唯一】地輸出一份合法 JSON。
+
+【四種訊號(用來判斷產業熱度,不只看新聞聲量)】
+- funding   :資金流向 — 創投/私募募資輪次、估值、企業資本支出 (capex)
+- hiring    :徵才動能 — 職缺數量趨勢、人才搶奪
+- policy    :政策/法規動向 — 補貼、管制、國家戰略
+- technology:技術動能 — 重大突破、專利、開源熱度
+
+【真實性】evidence_news 必須是 web_search 搜到的真實報導,嚴禁虛構標題/媒體/數據。
+
+【強制輸出規範:Zero-Tolerance】
+1. 最終回覆只能有一個合法 JSON 物件,前後不得有任何其他文字或 ```json 標記。
+2. 必須能被 Python json.loads() 解析。
+3. heat_score 為 0~100 整數,代表綜合熱度;trends 依 heat_score 由高到低排序。
+
+【JSON 結構定義 — 必須完全符合】
+{
+  "report_date": "YYYY-MM-DD",
+  "trends": [
+    {
+      "rank": 1,
+      "industry": "產業/主題名稱",
+      "heat_score": 92,
+      "signals": {
+        "funding": "資金流向觀察...",
+        "hiring": "徵才動能觀察...",
+        "policy": "政策動向觀察...",
+        "technology": "技術動能觀察..."
+      },
+      "leading_indicators": ["未來1-3個月該緊盯的具體領先指標", "..."],
+      "evidence_news": [
+        { "title": "新聞標題", "source": "媒體來源", "url": "連結(若有)" }
+      ],
+      "summary": "一句話總結為何上榜"
+    }
+  ]
+}
+"""
+
 # Gemini:最終版白話文字典提示語
 GEMINI_DICT_PROMPT = """\
 你是一位「白話文翻譯官」。以下是一份專業的全球政經戰略分析。
@@ -139,6 +189,15 @@ def build_user_prompt(topic: str, today: str) -> str:
     )
 
 
+def build_trend_user_prompt(today: str) -> str:
+    return (
+        f"今天的日期是 {today}。\n"
+        f"請用 web_search 搜尋最近的真實資料,找出當前全球最熱門、動能最強的 3~5 個"
+        f"新興產業或主題,依資金、徵才、政策、技術四種訊號綜合評估與排名打分,"
+        f"並嚴格輸出 JSON。report_date 請填 {today}。"
+    )
+
+
 # ---------------------------------------------------------------------------
 # JSON 防護式清理與解析
 # ---------------------------------------------------------------------------
@@ -147,7 +206,6 @@ def clean_json_text(text: str) -> str:
     """去除 markdown 圍欄,並擷取最外層的 JSON 值(物件或陣列)。"""
     text = text.strip()
 
-    # 移除可能殘留的 markdown 圍欄
     if text.startswith("```"):
         first_newline = text.find("\n")
         if first_newline != -1:
@@ -156,7 +214,6 @@ def clean_json_text(text: str) -> str:
             text = text.rstrip()[:-3]
         text = text.strip()
 
-    # 萬一前後仍夾雜文字,擷取第一個 { 或 [ 到對應的結尾
     if text and text[0] not in "{[":
         candidates = [i for i in (text.find("{"), text.find("[")) if i != -1]
         if candidates:
@@ -170,43 +227,44 @@ def clean_json_text(text: str) -> str:
 
 
 def extract_json_text(content_blocks) -> str:
-    """從 Claude 回應的 content blocks 中取出 JSON 文字。
-
-    web_search 會插入 server_tool_use / web_search_tool_result 區塊,
-    真正的 JSON 在 text 區塊裡。
-    """
+    """從 Claude 回應的 content blocks 中取出 JSON 文字(略過 web_search 區塊)。"""
     text = "".join(b.text for b in content_blocks if getattr(b, "type", None) == "text")
     return clean_json_text(text)
 
 
 def validate_report(data: dict) -> None:
-    """最低限度的結構驗證,確保 Streamlit 端不會因缺欄位而崩潰。"""
+    """戰略報告的最低限度結構驗證。"""
     missing = [k for k in REQUIRED_TOP_LEVEL_KEYS if k not in data]
     if missing:
         raise ValueError(f"JSON 缺少頂層欄位: {missing}")
-
     if not isinstance(data["raw_news"], list):
         raise ValueError("raw_news 必須是陣列")
-
     analysis = data["strategic_analysis"]
     if not isinstance(analysis, dict):
         raise ValueError("strategic_analysis 必須是物件")
     missing_analysis = [k for k in REQUIRED_ANALYSIS_KEYS if k not in analysis]
     if missing_analysis:
         raise ValueError(f"strategic_analysis 缺少欄位: {missing_analysis}")
-
     if not isinstance(data["laymans_dictionary"], list):
         raise ValueError("laymans_dictionary 必須是陣列")
 
 
+def validate_trends(data: dict) -> None:
+    """趨勢雷達的最低限度結構驗證。"""
+    if "report_date" not in data:
+        raise ValueError("缺少 report_date")
+    if not isinstance(data.get("trends"), list) or not data["trends"]:
+        raise ValueError("trends 必須是非空陣列")
+
+
 # ---------------------------------------------------------------------------
-# Claude:網路搜尋 + 四維度分析
+# Claude:共用的「網路搜尋 → JSON」呼叫
 # ---------------------------------------------------------------------------
 
-def get_ai_macro_analysis(client: anthropic.Anthropic, topic: str, today: str) -> dict:
-    user_prompt = build_user_prompt(topic, today)
-
-    # 對話歷史 — 用於 server-side 工具的 pause_turn 續跑
+def call_claude_for_json(
+    client: anthropic.Anthropic, system_prompt: str, user_prompt: str
+) -> dict:
+    """以 web_search + adaptive thinking 呼叫 Claude,回傳解析後的 JSON dict。"""
     messages = [{"role": "user", "content": user_prompt}]
     final = None
 
@@ -217,18 +275,13 @@ def get_ai_macro_analysis(client: anthropic.Anthropic, topic: str, today: str) -
             thinking={"type": "adaptive"},
             output_config={"effort": "high"},
             system=[
-                {
-                    "type": "text",
-                    "text": SYSTEM_PROMPT,
-                    "cache_control": {"type": "ephemeral"},
-                }
+                {"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}
             ],
             messages=messages,
-            tools=[{"type": "web_search_20260209", "name": "web_search"}],
+            tools=[WEB_SEARCH_TOOL],
         ) as stream:
             final = stream.get_final_message()
 
-        # server-side 工具達迭代上限 → 把 assistant 回應接回去再續跑
         if final.stop_reason == "pause_turn":
             messages.append({"role": "assistant", "content": final.content})
             continue
@@ -246,13 +299,24 @@ def get_ai_macro_analysis(client: anthropic.Anthropic, topic: str, today: str) -
         raise ValueError("回應中找不到 JSON 文字內容")
 
     try:
-        data = json.loads(json_text)
+        return json.loads(json_text)
     except json.JSONDecodeError as exc:
         raise ValueError(
             f"JSON 解析失敗: {exc}\n--- 原始內容前 500 字 ---\n{json_text[:500]}"
         ) from exc
 
+
+def get_ai_macro_analysis(client: anthropic.Anthropic, topic: str, today: str) -> dict:
+    data = call_claude_for_json(client, SYSTEM_PROMPT, build_user_prompt(topic, today))
     validate_report(data)
+    return data
+
+
+def get_trend_radar(client: anthropic.Anthropic, today: str) -> dict:
+    data = call_claude_for_json(client, TREND_SYSTEM_PROMPT, build_trend_user_prompt(today))
+    validate_trends(data)
+    # 依 heat_score 排序(若模型沒排好)
+    data["trends"].sort(key=lambda t: t.get("heat_score", 0), reverse=True)
     return data
 
 
@@ -284,8 +348,6 @@ def generate_laymans_dictionary_gemini(analysis: dict) -> list:
         raise RuntimeError("Gemini 回傳空內容(可能被安全機制阻擋)")
 
     data = json.loads(clean_json_text(text))
-
-    # 容許 {"laymans_dictionary": [...]} 或直接是陣列
     if isinstance(data, dict) and isinstance(data.get("laymans_dictionary"), list):
         data = data["laymans_dictionary"]
     if not isinstance(data, list):
@@ -305,7 +367,7 @@ def generate_laymans_dictionary_gemini(analysis: dict) -> list:
 # LINE 推播 (Messaging API push)
 # ---------------------------------------------------------------------------
 
-def build_line_message(report: dict) -> str:
+def build_line_message(report: dict, trends: dict | None = None) -> str:
     """把報告整理成一則精簡的 LINE 文字訊息。"""
     lines = [
         f"🌐 全球政經戰略報告 {report.get('report_date', '')}",
@@ -324,7 +386,14 @@ def build_line_message(report: dict) -> str:
 
     kpi = report.get("strategic_analysis", {}).get("blind_spots_and_kpi", "").strip()
     if kpi:
-        lines += ["", "🎯 盲點與領先指標:", kpi[:500] + ("..." if len(kpi) > 500 else "")]
+        lines += ["", "🎯 盲點與領先指標:", kpi[:400] + ("..." if len(kpi) > 400 else "")]
+
+    if trends and trends.get("trends"):
+        lines += ["", "🔥 熱門產業 Top3:"]
+        for t in trends["trends"][:3]:
+            lines.append(
+                f"・{t.get('industry', '')}(熱度 {t.get('heat_score', '—')})"
+            )
 
     lines += ["", f"(白話文來源:{report.get('dictionary_source', '—')})"]
 
@@ -334,23 +403,20 @@ def build_line_message(report: dict) -> str:
     return msg
 
 
-def notify_line(report: dict) -> None:
+def notify_line(report: dict, trends: dict | None = None) -> None:
     """透過 LINE Messaging API push 推送報告摘要。"""
     token = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
     to = os.environ["LINE_TO"]
 
     payload = json.dumps(
-        {"to": to, "messages": [{"type": "text", "text": build_line_message(report)}]}
+        {"to": to, "messages": [{"type": "text", "text": build_line_message(report, trends)}]}
     ).encode("utf-8")
 
     req = urllib.request.Request(
         LINE_PUSH_ENDPOINT,
         data=payload,
         method="POST",
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {token}",
-        },
+        headers={"Content-Type": "application/json", "Authorization": f"Bearer {token}"},
     )
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
@@ -359,6 +425,21 @@ def notify_line(report: dict) -> None:
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", "replace")
         raise RuntimeError(f"LINE 推播失敗 ({exc.code}): {body}") from exc
+
+
+# ---------------------------------------------------------------------------
+# 工具函式
+# ---------------------------------------------------------------------------
+
+def save_json(path: Path, data: dict) -> str:
+    payload = json.dumps(data, ensure_ascii=False, indent=2)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(payload, encoding="utf-8")
+    return payload
+
+
+def trend_radar_enabled() -> bool:
+    return os.environ.get("ENABLE_TREND_RADAR", "1").lower() not in ("0", "false", "no")
 
 
 # ---------------------------------------------------------------------------
@@ -372,44 +453,54 @@ def main() -> int:
 
     topic = os.environ.get("REPORT_TOPIC") or DEFAULT_TOPIC
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-
     client = anthropic.Anthropic()
 
     try:
-        print(f"[1/2] 向 Claude 請求 {today} 的戰略情報(主題:{topic})...")
+        # A. 戰略報告
+        print(f"[1/3] 向 Claude 請求 {today} 的戰略情報(主題:{topic})...")
         report = get_ai_macro_analysis(client, topic, today)
         report["dictionary_source"] = "claude"
 
-        # 最終版白話文 — 改用 Gemini(失敗則回退 Claude 的字典)
         if os.environ.get("GEMINI_API_KEY"):
-            print("[2/2] 向 Gemini 請求最終版白話文字典...")
+            print("[2/3] 向 Gemini 請求最終版白話文字典...")
             try:
                 report["laymans_dictionary"] = generate_laymans_dictionary_gemini(
                     report["strategic_analysis"]
                 )
                 report["dictionary_source"] = "gemini"
-            except Exception as exc:  # noqa: BLE001 — 字典失敗不應讓整份報告失敗
-                print(f"  警告: Gemini 白話文產生失敗,回退使用 Claude 字典:{exc}",
-                      file=sys.stderr)
+            except Exception as exc:  # noqa: BLE001
+                print(f"  警告: Gemini 白話文失敗,回退 Claude 字典:{exc}", file=sys.stderr)
         else:
-            print("[2/2] 未設定 GEMINI_API_KEY,沿用 Claude 產生的白話文字典。")
+            print("[2/3] 未設定 GEMINI_API_KEY,沿用 Claude 字典。")
 
-        # 寫入最新報告 + 歷史存檔
-        payload = json.dumps(report, ensure_ascii=False, indent=2)
-        OUTPUT_LATEST.write_text(payload, encoding="utf-8")
-        ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
-        (ARCHIVE_DIR / f"{today}.json").write_text(payload, encoding="utf-8")
+        save_json(OUTPUT_LATEST, report)
+        save_json(ARCHIVE_DIR / f"{today}.json", report)
+
+        # B. 趨勢雷達
+        trends = None
+        if trend_radar_enabled():
+            print("[3/3] 向 Claude 請求趨勢雷達(最熱門產業)...")
+            try:
+                trends = get_trend_radar(client, today)
+                save_json(OUTPUT_TRENDS, trends)
+                save_json(TRENDS_ARCHIVE_DIR / f"{today}.json", trends)
+                top = "、".join(t.get("industry", "") for t in trends["trends"][:3])
+                print(f"  趨勢雷達完成,Top3:{top}")
+            except Exception as exc:  # noqa: BLE001 — 趨勢雷達失敗不影響戰略報告
+                print(f"  警告: 趨勢雷達產生失敗:{exc}", file=sys.stderr)
+        else:
+            print("[3/3] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
 
         print(
             f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
-            f"白話文來源:{report['dictionary_source']}。已儲存 latest_report.json"
+            f"白話文來源:{report['dictionary_source']}。"
         )
 
-        # LINE 推播 — 最佳努力,失敗不影響整份報告產出
+        # 推播
         if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
             print("推送 LINE 通知...")
             try:
-                notify_line(report)
+                notify_line(report, trends)
                 print("  LINE 推播成功。")
             except Exception as exc:  # noqa: BLE001
                 print(f"  警告: LINE 推播失敗:{exc}", file=sys.stderr)

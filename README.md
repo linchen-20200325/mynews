@@ -11,14 +11,16 @@ GitHub Actions (每日定時)
         │
         ▼
 update_data.py
-   ├─ [1] Claude (claude-opus-4-8 + 伺服器端 web_search)
-   │        先搜尋真實新聞 → 四維度分析 → JSON 主體
-   └─ [2] Gemini (gemini-2.5-flash)
-            依分析內容產生「最終版白話文字典」(失敗則回退 Claude 字典)
+   ├─ [A] 戰略報告
+   │    ├─ Claude (claude-opus-4-8 + web_search):真實新聞 → 四維度分析
+   │    └─ Gemini (gemini-2.5-flash):最終版白話文字典(失敗回退 Claude)
+   └─ [B] 趨勢雷達 (可關)
+        Claude + web_search:最熱門產業,依資金/徵才/政策/技術排名打分
         │
         ▼
-latest_report.json          ──►  app.py (Streamlit) 呈現
-data/reports/<date>.json    歷史存檔(側邊欄可瀏覽)
+latest_report.json / latest_trends.json   ──►  app.py (Streamlit) 呈現
+data/reports/<date>.json / data/trends/<date>.json   歷史存檔(側邊欄可瀏覽)
+(可選) LINE 推播報告 + 熱門產業 Top3 摘要
 ```
 
 ## 檔案
@@ -48,7 +50,8 @@ GitHub repo → Settings → Secrets and variables → Actions
 
 **Variables(皆選填):**
 - `GEMINI_MODEL` — 覆寫 Gemini 模型(預設 `gemini-2.5-flash`)
-- `REPORT_TOPIC` — 自訂分析主題
+- `REPORT_TOPIC` — 自訂戰略報告分析主題
+- `ENABLE_TREND_RADAR` — 設為 `0` 可關閉趨勢雷達(預設開啟)
 
 設定完成後可在 Actions 分頁手動 **Run workflow** 測試。
 

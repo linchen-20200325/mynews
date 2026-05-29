@@ -24,6 +24,11 @@
 `strategic_analysis` 必含 `geo_military` / `supply_chain` / `macro_economy` /
 `blind_spots_and_kpi` 四欄。詳見 `update_data.py` 的 `validate_report()`。
 
+趨勢雷達 `latest_trends.json` 與 `data/trends/<date>.json` 含 `report_date` 與
+`trends` 陣列;每個 trend 含 `rank`、`industry`、`heat_score`(0~100)、
+`signals`(funding/hiring/policy/technology)、`leading_indicators`、
+`evidence_news`、`summary`。詳見 `validate_trends()`。
+
 ## 開發守則
 
 1. **真實優先**:`raw_news` 只能填真實搜尋到的報導,嚴禁虛構標題/媒體/數據。
