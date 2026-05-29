@@ -30,7 +30,10 @@ jobs:
       - name: Run AI Data Generator
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # 可選:在 repo variables 設定 REPORT_TOPIC 覆寫預設主題
+          # 設定後白話文字典改由 Gemini 產生(未設定則沿用 Claude 字典)
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # 可選:覆寫 Gemini 模型 / 分析主題
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           REPORT_TOPIC: ${{ vars.REPORT_TOPIC }}
         run: python update_data.py
 
