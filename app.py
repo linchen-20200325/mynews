@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pandas as pd
 import streamlit as st
 
 REPORT_PATH = Path("latest_report.json")
@@ -44,6 +45,26 @@ def list_archive(directory: Path) -> list[str]:
     if not directory.exists():
         return []
     return sorted((p.name for p in directory.glob("*.json")), reverse=True)
+
+
+def load_trend_history(archive_dir: Path) -> "pd.DataFrame | None":
+    """彙整所有歷史趨勢存檔成『日期 × 產業』的熱度表,供折線圖使用。"""
+    rows = []
+    for p in sorted(archive_dir.glob("*.json")):
+        data = load_json(p)
+        if not data:
+            continue
+        date = data.get("report_date") or p.stem
+        for t in data.get("trends", []):
+            industry = t.get("industry")
+            heat = t.get("heat_score")
+            if industry and isinstance(heat, (int, float)):
+                rows.append({"date": date, "industry": industry, "heat": heat})
+    if not rows:
+        return None
+    df = pd.DataFrame(rows)
+    pivot = df.pivot_table(index="date", columns="industry", values="heat", aggfunc="mean")
+    return pivot.sort_index()
 
 
 def pick_report(latest_path: Path, archive_dir: Path):
@@ -179,6 +200,17 @@ def main() -> None:
     else:
         data = pick_report(TRENDS_PATH, TRENDS_ARCHIVE_DIR)
         st.header("🔥 趨勢雷達 — 現在最紅的產業")
+
+        # 歷史熱度折線圖(需累積至少兩天資料)
+        history = load_trend_history(TRENDS_ARCHIVE_DIR)
+        if history is not None and len(history.index) >= 2:
+            st.subheader("📈 產業熱度趨勢(歷史)")
+            st.caption("看出『網路 → AI』式的長期轉移:哪條線持續往上,就是動能最強的產業。")
+            st.line_chart(history)
+            st.divider()
+        elif history is not None:
+            st.info("歷史折線圖需累積至少兩天的資料,明天就會開始出現。")
+
         if data is None:
             st.warning("尚無趨勢雷達資料。請先執行 update_data.py(需開啟 ENABLE_TREND_RADAR)。")
             return
