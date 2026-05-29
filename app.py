@@ -98,17 +98,80 @@ def get_topic() -> str:
     return os.environ.get("REPORT_TOPIC") or update_data.DEFAULT_TOPIC
 
 
-def ensure_gemini_key() -> bool:
-    """從環境變數或 Streamlit Secrets 取得 GEMINI_API_KEY。"""
-    if os.environ.get("GEMINI_API_KEY"):
-        return True
+def available_secret_names() -> list[str]:
+    """列出目前 Streamlit Secrets 內的頂層名稱(只回名稱,不回值),供除錯。"""
     try:
-        key = st.secrets["GEMINI_API_KEY"]
-    except Exception:  # noqa: BLE001 — 沒設定 secrets 時直接視為無金鑰
-        key = None
-    if key:
-        os.environ["GEMINI_API_KEY"] = str(key)
-    return bool(os.environ.get("GEMINI_API_KEY"))
+        return [str(k) for k in st.secrets.keys()]
+    except Exception:  # noqa: BLE001 — 沒設定 secrets 或解析失敗
+        return []
+
+
+def _collect_keys_from_secrets() -> list[str]:
+    """從 Streamlit Secrets 蒐集 Gemini 金鑰(支援多種命名/區段/陣列)。"""
+    keys: list[str] = []
+
+    def add(value) -> None:
+        if isinstance(value, str) and value.strip():
+            keys.append(value.strip())
+        elif isinstance(value, (list, tuple)):
+            for item in value:
+                if isinstance(item, str) and item.strip():
+                    keys.append(item.strip())
+
+    try:
+        secrets = st.secrets
+    except Exception:  # noqa: BLE001
+        return keys
+
+    # 頂層:名稱含 GEMINI 與 KEY 的都收(涵蓋 GEMINI_API_KEY / GEMINI_API_KEYS / _1.._n)
+    try:
+        for name in secrets.keys():
+            upper = str(name).upper()
+            if "GEMINI" in upper and "KEY" in upper:
+                add(secrets[name])
+    except Exception:  # noqa: BLE001
+        pass
+
+    # 區段 [gemini] 內的所有值
+    try:
+        section = secrets["gemini"]
+        for name in section.keys():
+            add(section[name])
+    except Exception:  # noqa: BLE001
+        pass
+
+    return keys
+
+
+def ensure_gemini_key() -> bool:
+    """確保環境中有 Gemini 金鑰:先看環境變數,再從 Streamlit Secrets 補上。"""
+    if update_data.get_gemini_keys():
+        return True
+    keys = _collect_keys_from_secrets()
+    if keys:
+        os.environ["GEMINI_API_KEY"] = ",".join(keys)
+    return bool(update_data.get_gemini_keys())
+
+
+def render_key_hint() -> None:
+    """金鑰讀不到時的診斷說明:列出目前 Secrets 名稱,幫使用者比對。"""
+    st.caption(
+        "ℹ️ 尚未偵測到金鑰。看新聞不需金鑰;要用 Gemini,請到 Streamlit Cloud → "
+        "App settings → Secrets 加上(名稱需完全是 `GEMINI_API_KEY`):"
+    )
+    st.code(
+        'GEMINI_API_KEY = "你的金鑰"\n\n# 多把金鑰二選一寫法:\n'
+        '# GEMINI_API_KEY = "key1,key2"\n# 或\n# GEMINI_API_KEY = ["key1", "key2"]',
+        language="toml",
+    )
+    names = available_secret_names()
+    if names:
+        st.caption("🔎 目前 Secrets 讀到的名稱:" + "、".join(f"`{n}`" for n in names))
+    else:
+        st.caption(
+            "🔎 目前讀不到任何 Secrets — 可能尚未按 Save、或 TOML 格式有誤"
+            "(常見:重複鍵、缺引號、貼到多餘符號)。"
+        )
 
 
 def render_news_cards(news: list[dict]) -> None:
@@ -327,11 +390,7 @@ def main() -> None:
                         except Exception as exc:  # noqa: BLE001
                             st.error(f"產生報告失敗:{exc}")
                 if not has_key:
-                    st.caption(
-                        "ℹ️ 尚未偵測到 GEMINI_API_KEY。看新聞不需金鑰;要做分析+白話文,"
-                        "請到 Streamlit Cloud → App settings → Secrets 加上 "
-                        "`GEMINI_API_KEY = \"...\"`。"
-                    )
+                    render_key_hint()
                 st.download_button(
                     "⬇️ 下載新聞 JSON",
                     data=json.dumps(news, ensure_ascii=False, indent=2),
@@ -388,11 +447,7 @@ def main() -> None:
                         except Exception as exc:  # noqa: BLE001
                             st.error(f"產生趨勢雷達失敗:{exc}")
                 if not has_key:
-                    st.caption(
-                        "ℹ️ 尚未偵測到 GEMINI_API_KEY。看新聞不需金鑰;要排名打分,"
-                        "請到 Streamlit Cloud → App settings → Secrets 加上 "
-                        "`GEMINI_API_KEY = \"...\"`。"
-                    )
+                    render_key_hint()
                 st.download_button(
                     "⬇️ 下載產業新聞 JSON",
                     data=json.dumps(news, ensure_ascii=False, indent=2),
