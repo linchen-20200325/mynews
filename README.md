@@ -54,7 +54,8 @@ GitHub repo → Settings → Secrets and variables → Actions
 **Variables(皆選填):**
 - `GEMINI_MODEL` — 覆寫 Gemini 模型(預設 `gemini-2.5-flash`)
 - `REPORT_TOPIC` — 自訂戰略報告分析主題
-- `NEWS_QUERIES` / `TREND_QUERIES` — 自訂抓新聞的關鍵字(以 `;` 分隔)
+- `NEWS_QUERIES` / `TREND_QUERIES` — 自訂聚焦關鍵字(以 `;` 分隔)
+- `NEWS_TOPICS` / `TREND_TOPICS` — Google News 動態分類頭條(以 `,` 分隔,預設 `WORLD,BUSINESS` / `BUSINESS,TECHNOLOGY`;可選 `WORLD`/`BUSINESS`/`TECHNOLOGY`/`NATION`/`SCIENCE`)
 - `NEWS_LANG` / `NEWS_REGION` — Google News 語系/地區(預設 `zh` / `TW`,即繁中台灣;想抓英文外電可設 `en` / `US`)
 - `NEWS_MAX` / `NEWS_SINCE_HOURS` — 抓新聞則數上限 / 回溯時數(預設 `12` / `48`)
 - `ENABLE_TREND_RADAR` — 設為 `0` 可關閉趨勢雷達(預設開啟)

@@ -15,6 +15,8 @@
   - REPORT_TOPIC                   (選填) 戰略報告的分析主題
   - NEWS_QUERIES                   (選填) 戰略報告抓新聞的關鍵字,以 ; 分隔
   - TREND_QUERIES                  (選填) 趨勢雷達抓新聞的關鍵字,以 ; 分隔
+  - NEWS_TOPICS / TREND_TOPICS     (選填) Google News 動態分類頭條,以 , 分隔
+                                          (WORLD/BUSINESS/TECHNOLOGY/NATION…)
   - NEWS_LANG / NEWS_REGION        (選填) Google News 語系/地區,預設 zh / TW
   - NEWS_MAX / NEWS_SINCE_HOURS    (選填) 抓新聞則數上限 / 回溯時數,預設 12 / 48
   - ENABLE_TREND_RADAR             (選填) 設為 0/false/no 可關閉趨勢雷達
@@ -44,23 +46,37 @@ DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
 LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
 LINE_TEXT_LIMIT = 4500  # 單則 text 上限 5000,留安全餘裕
 
-DEFAULT_TOPIC = "全球總體經濟與地緣政治最新動態(中東局勢、美中科技戰、OPEC+原油、美國通膨與 Fed)"
+DEFAULT_TOPIC = (
+    "全球政經與市場動態:聯準會利率與通膨、地緣政治與軍事衝突、美中科技戰、"
+    "原油與股匯債走勢,及其對股市與基金的影響"
+)
 
 # 抓新聞用的預設關鍵字(可用 NEWS_QUERIES / TREND_QUERIES 覆寫)。
+# 聚焦:國際政治、軍事、財經(尤其聯準會),以及會牽動股市/基金的訊息。
 DEFAULT_NEWS_QUERIES = [
-    "地緣政治",
-    "聯準會 通膨",
-    "OPEC 油價",
-    "美中 科技戰",
-    "中東 局勢",
+    "聯準會 利率 通膨",
+    "美股 台股 盤勢",
+    "地緣政治 軍事 衝突",
+    "央行 貨幣政策 債市",
 ]
 DEFAULT_TREND_QUERIES = [
-    "新興產業 募資",
-    "AI 產業 投資",
-    "科技業 徵才",
-    "產業政策 補貼",
-    "創投 新創",
+    "類股 題材 資金流向",
+    "AI 半導體 投資",
+    "產業 趨勢 基金",
 ]
+
+# Google News 分類頭條(不帶關鍵字的『動態』來源,確保不漏突發大事;
+# 只取與主題相關的分類,避免娛樂/體育等離題內容)。可用 NEWS_TOPICS / TREND_TOPICS 覆寫。
+DEFAULT_NEWS_TOPICS = ["WORLD", "BUSINESS"]
+DEFAULT_TREND_TOPICS = ["BUSINESS", "TECHNOLOGY"]
+
+_SECTION_LABELS = {
+    "WORLD": "Google 世界頭條",
+    "BUSINESS": "Google 財經頭條",
+    "TECHNOLOGY": "Google 科技頭條",
+    "NATION": "Google 國內頭條",
+    "SCIENCE": "Google 科學頭條",
+}
 
 OUTPUT_LATEST = Path("latest_report.json")
 ARCHIVE_DIR = Path("data/reports")
@@ -91,6 +107,10 @@ ANALYSIS_SYSTEM_PROMPT = """\
 你會收到一批【已由爬蟲抓取的真實新聞】(含標題、來源、連結、摘要)。
 你的任務是:【只根據這些真實新聞】與你的專業知識,進行四維度深度戰略分析,
 並產生白話文字典,最後【嚴格且唯一】地輸出一份合法 JSON。
+
+【分析聚焦】聚焦國際政治、軍事與財經(尤其聯準會/央行的利率與貨幣政策),
+並務必說明這些事件對【股市、債市、原物料、基金與資產配置】的可能影響;
+與此主題無關的新聞(娛樂、體育、地方社會等)可略過不分析。
 
 【資料真實性】
 1. 分析只能立基於使用者提供的新聞,嚴禁虛構任何未提供的事件、數據或來源。
@@ -383,24 +403,50 @@ def parse_queries(env_name: str, default: list[str]) -> list[str]:
     return queries or default
 
 
+def parse_topics(env_name: str, default: list[str]) -> list[str]:
+    raw = os.environ.get(env_name, "").replace(",", ";")
+    topics = [t.strip().upper() for t in raw.split(";") if t.strip()]
+    return topics or default
+
+
+def section_feeds(topics: list[str], lang: str, region: str) -> dict[str, str]:
+    """把 Google News 分類頭條組成 {名稱: RSS網址}。"""
+    return {
+        _SECTION_LABELS.get(t, f"Google {t}"): news_fetcher.google_news_topic_url(
+            t, lang, region
+        )
+        for t in topics
+    }
+
+
 def fetch_macro_news(topic: str) -> list[dict]:
+    lang = os.environ.get("NEWS_LANG", "zh")
+    region = os.environ.get("NEWS_REGION", "TW")
     queries = parse_queries("NEWS_QUERIES", DEFAULT_NEWS_QUERIES)
+    topics = parse_topics("NEWS_TOPICS", DEFAULT_NEWS_TOPICS)
+    # 動態(分類頭條)+ 財經官方 feed,確保不漏突發大事又不離題。
+    feeds = {**news_fetcher.CREDIBLE_FEEDS, **section_feeds(topics, lang, region)}
     return news_fetcher.fetch_news(
         queries,
-        lang=os.environ.get("NEWS_LANG", "zh"),
-        region=os.environ.get("NEWS_REGION", "TW"),
-        feeds=news_fetcher.CREDIBLE_FEEDS,
+        lang=lang,
+        region=region,
+        feeds=feeds,
         limit=int(os.environ.get("NEWS_MAX", "12")),
         since_hours=int(os.environ.get("NEWS_SINCE_HOURS", "48")),
     )
 
 
 def fetch_trend_news() -> list[dict]:
+    lang = os.environ.get("NEWS_LANG", "zh")
+    region = os.environ.get("NEWS_REGION", "TW")
     queries = parse_queries("TREND_QUERIES", DEFAULT_TREND_QUERIES)
+    topics = parse_topics("TREND_TOPICS", DEFAULT_TREND_TOPICS)
+    feeds = section_feeds(topics, lang, region)
     return news_fetcher.fetch_news(
         queries,
-        lang=os.environ.get("NEWS_LANG", "zh"),
-        region=os.environ.get("NEWS_REGION", "TW"),
+        lang=lang,
+        region=region,
+        feeds=feeds,
         limit=int(os.environ.get("NEWS_MAX", "12")),
         since_hours=int(os.environ.get("NEWS_SINCE_HOURS", "72")),
     )
