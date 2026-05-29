@@ -174,8 +174,14 @@ def _normalize_title(title: str) -> str:
     return re.sub(r"[^0-9a-z一-鿿]+", "", title.lower())
 
 
-def fetch_feed(url: str, source_hint: str, since: datetime | None) -> list[dict]:
-    """抓取並解析單一 RSS/Atom feed。失敗時回傳空清單(不讓單一來源拖垮全局)。"""
+def fetch_feed(
+    url: str, source_hint: str, since: datetime | None, origin: str = ""
+) -> list[dict]:
+    """抓取並解析單一 RSS/Atom feed。失敗時回傳空清單(不讓單一來源拖垮全局)。
+
+    ``origin`` 標記這則新聞「從哪個管道抓到」(分類頭條/官方 feed/關鍵字),
+    與媒體 ``source`` 不同,供前端顯示與判斷。
+    """
     items: list[dict] = []
     try:
         req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
@@ -206,6 +212,7 @@ def fetch_feed(url: str, source_hint: str, since: datetime | None) -> list[dict]
                     _child_text(entry, "description", "summary", "content")
                 ),
                 "published": published_iso,
+                "origin": origin or source_hint,
             }
         )
     return items
@@ -235,11 +242,14 @@ def fetch_news(
         if not query.strip():
             continue
         collected += fetch_feed(
-            google_news_rss_url(query, lang, region), "Google News", since
+            google_news_rss_url(query, lang, region),
+            "Google News",
+            since,
+            origin=f"關鍵字「{query.strip()}」",
         )
 
     for name, url in (feeds or {}).items():
-        collected += fetch_feed(url, name, since)
+        collected += fetch_feed(url, name, since, origin=name)
 
     # 去重:同連結或同(正規化)標題只留一則。
     seen_urls: set[str] = set()
