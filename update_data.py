@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -260,35 +261,71 @@ def validate_trends(data: dict) -> None:
 # Gemini:共用的「讀新聞 → JSON」呼叫
 # ---------------------------------------------------------------------------
 
+def get_gemini_keys() -> list[str]:
+    """蒐集一把或多把 Gemini 金鑰(支援複數 key,呼叫失敗時可自動切換)。
+
+    支援的環境變數:
+      - GEMINI_API_KEY    單一,或以逗號/分號/換行分隔多把
+      - GEMINI_API_KEYS   複數(同上分隔)
+      - GEMINI_API_KEY_1 / GEMINI_API_KEY_2 ...  多把分開命名
+    """
+    keys: list[str] = []
+
+    def add_many(raw: str) -> None:
+        for part in re.split(r"[,;\n]+", raw or ""):
+            p = part.strip()
+            if p and p not in keys:
+                keys.append(p)
+
+    add_many(os.environ.get("GEMINI_API_KEY", ""))
+    add_many(os.environ.get("GEMINI_API_KEYS", ""))
+    for name, val in os.environ.items():
+        if re.fullmatch(r"GEMINI_API_KEY_?\d+", name):
+            add_many(val)
+    return keys
+
+
 def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
-    """以 Gemini 讀取內容並回傳解析後的 JSON dict。"""
+    """以 Gemini 讀取內容並回傳解析後的 JSON dict;多把金鑰會逐一嘗試。"""
     from google import genai
     from google.genai import types
 
     model = os.environ.get("GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
-    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    keys = get_gemini_keys()
+    if not keys:
+        raise RuntimeError("未設定 GEMINI_API_KEY")
 
-    resp = client.models.generate_content(
-        model=model,
-        contents=user_content,
-        config=types.GenerateContentConfig(
-            system_instruction=system_instruction,
-            response_mime_type="application/json",
-            temperature=0.7,
-        ),
-    )
+    last_exc: Exception | None = None
+    for key in keys:
+        try:
+            client = genai.Client(api_key=key)
+            resp = client.models.generate_content(
+                model=model,
+                contents=user_content,
+                config=types.GenerateContentConfig(
+                    system_instruction=system_instruction,
+                    response_mime_type="application/json",
+                    temperature=0.7,
+                ),
+            )
+        except Exception as exc:  # noqa: BLE001 — 金鑰/額度/網路錯誤 → 換下一把
+            last_exc = exc
+            continue
 
-    text = (resp.text or "").strip()
-    if not text:
-        raise RuntimeError("Gemini 回傳空內容(可能被安全機制阻擋)")
+        text = (resp.text or "").strip()
+        if not text:
+            last_exc = RuntimeError("Gemini 回傳空內容(可能被安全機制阻擋)")
+            continue
 
-    json_text = clean_json_text(text)
-    try:
-        return json.loads(json_text)
-    except json.JSONDecodeError as exc:
-        raise ValueError(
-            f"JSON 解析失敗: {exc}\n--- 原始內容前 500 字 ---\n{json_text[:500]}"
-        ) from exc
+        json_text = clean_json_text(text)
+        try:
+            return json.loads(json_text)
+        except json.JSONDecodeError as exc:  # 解析失敗非金鑰問題,直接報錯
+            raise ValueError(
+                f"JSON 解析失敗: {exc}\n--- 原始內容前 500 字 ---\n{json_text[:500]}"
+            ) from exc
+
+    raise RuntimeError(f"所有 Gemini 金鑰皆呼叫失敗,最後錯誤:{last_exc}")
 
 
 def normalize_dictionary(raw) -> list:
@@ -453,7 +490,7 @@ def trend_radar_enabled() -> bool:
 # ---------------------------------------------------------------------------
 
 def main() -> int:
-    if not os.environ.get("GEMINI_API_KEY"):
+    if not get_gemini_keys():
         print("錯誤: 未設定 GEMINI_API_KEY 環境變數", file=sys.stderr)
         return 1
 
