@@ -29,15 +29,16 @@ jobs:
 
       - name: Run AI Data Generator
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # 設定後白話文字典改由 Gemini 產生(未設定則沿用 Claude 字典)
+          # Gemini 全包:讀取爬蟲抓到的真實外電 → 分析 + 白話文 + 趨勢雷達
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           # LINE 推播(Messaging API);兩者皆設定才會推播
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
           LINE_TO: ${{ secrets.LINE_TO }}
-          # 可選:覆寫 Gemini 模型 / 分析主題 / 關閉趨勢雷達(設 0)
+          # 可選:覆寫 Gemini 模型 / 分析主題 / 抓新聞關鍵字 / 關閉趨勢雷達(設 0)
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           REPORT_TOPIC: ${{ vars.REPORT_TOPIC }}
+          NEWS_QUERIES: ${{ vars.NEWS_QUERIES }}
+          TREND_QUERIES: ${{ vars.TREND_QUERIES }}
           ENABLE_TREND_RADAR: ${{ vars.ENABLE_TREND_RADAR }}
         run: python update_data.py
 
@@ -45,7 +46,7 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add latest_report.json data/reports/
+          git add latest_report.json data/reports/ latest_trends.json data/trends/
           # 若無變化就不 commit,避免 workflow 報錯
           if git diff --staged --quiet; then
             echo "No changes to commit."

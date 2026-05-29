@@ -7,10 +7,14 @@
 from __future__ import annotations
 
 import json
+import os
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
+
+import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
 REPORT_PATH = Path("latest_report.json")
 ARCHIVE_DIR = Path("data/reports")
@@ -79,6 +83,84 @@ def pick_report(latest_path: Path, archive_dir: Path):
 
 
 # ---------------------------------------------------------------------------
+# 新聞來源說明 + 即時抓取(免等每日排程)
+# ---------------------------------------------------------------------------
+
+NEWS_SOURCE_CAPTION = (
+    "新聞來源:**Google News RSS**(依關鍵字聚合 BBC、AP、Reuters、CNBC、"
+    "Al Jazeera、The Guardian、Nikkei 等可信外電)＋ BBC / NPR / Al Jazeera / "
+    "The Guardian / CNBC 的官方 RSS feed。只取開放 feed 的標題/來源/連結/摘要,"
+    "不爬付費牆全文。"
+)
+
+
+def get_topic() -> str:
+    return os.environ.get("REPORT_TOPIC") or update_data.DEFAULT_TOPIC
+
+
+def ensure_gemini_key() -> bool:
+    """從環境變數或 Streamlit Secrets 取得 GEMINI_API_KEY。"""
+    if os.environ.get("GEMINI_API_KEY"):
+        return True
+    try:
+        key = st.secrets["GEMINI_API_KEY"]
+    except Exception:  # noqa: BLE001 — 沒設定 secrets 時直接視為無金鑰
+        key = None
+    if key:
+        os.environ["GEMINI_API_KEY"] = str(key)
+    return bool(os.environ.get("GEMINI_API_KEY"))
+
+
+def render_news_cards(news: list[dict]) -> None:
+    for item in news:
+        title = item.get("title", "(無標題)")
+        source = item.get("source", "")
+        url = item.get("url", "")
+        header = f"**{title}**" + (f" — _{source}_" if source else "")
+        with st.container(border=True):
+            st.markdown(header)
+            if item.get("published"):
+                st.caption(f"🕒 {item['published']}")
+            st.write(item.get("summary", ""))
+            if url:
+                st.markdown(f"[原文連結]({url})")
+
+
+def render_live_panel() -> None:
+    """第一步:只負責『抓新聞』,結果存進 session_state(Gemini 分析另由按鈕觸發)。"""
+    with st.container(border=True):
+        st.markdown("#### ⚡ 即時抓取(免等每日排程)")
+        st.caption(NEWS_SOURCE_CAPTION)
+        st.caption("流程:① 先抓新聞 → ② 看過後,再按 Gemini 按鈕做分析+白話文。")
+
+        if st.button("🔄 ① 立即抓取最新新聞", use_container_width=True):
+            with st.spinner("抓取真實外電中…"):
+                try:
+                    st.session_state["live_news"] = update_data.fetch_macro_news(get_topic())
+                    st.session_state.pop("live_report", None)
+                except Exception as exc:  # noqa: BLE001
+                    st.session_state["live_news"] = []
+                    st.error(f"抓取失敗:{exc}")
+
+
+def generate_live_report() -> None:
+    """第二步:對『已抓到的新聞』請 Gemini 做四維度分析 + 白話文。"""
+    news = st.session_state.get("live_news", [])
+    topic = get_topic()
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    analysis = update_data.get_macro_analysis(news, topic, today)
+    st.session_state["live_report"] = {
+        "report_date": today,
+        "topic": topic,
+        "raw_news": news,
+        "strategic_analysis": analysis["strategic_analysis"],
+        "laymans_dictionary": analysis["laymans_dictionary"],
+        "dictionary_source": "gemini",
+    }
+    st.session_state.pop("live_news", None)
+
+
+# ---------------------------------------------------------------------------
 # 戰略報告
 # ---------------------------------------------------------------------------
 
@@ -93,16 +175,7 @@ def render_report(report: dict) -> None:
     news = report.get("raw_news", [])
     if not news:
         st.info("本次未取得相關新聞。")
-    for item in news:
-        title = item.get("title", "(無標題)")
-        source = item.get("source", "")
-        url = item.get("url", "")
-        header = f"**{title}**" + (f" — _{source}_" if source else "")
-        with st.container(border=True):
-            st.markdown(header)
-            st.write(item.get("summary", ""))
-            if url:
-                st.markdown(f"[原文連結]({url})")
+    render_news_cards(news)
 
     st.header("🧭 第二階段:四維度專業戰略分析")
     analysis = report.get("strategic_analysis", {})
@@ -192,9 +265,63 @@ def main() -> None:
     st.sidebar.header("📅 報告選擇")
 
     if report_type == "戰略報告":
+        render_live_panel()
+
+        # 1) 本次即時產生的完整報告(含 Gemini 分析)優先顯示
+        if st.session_state.get("live_report"):
+            live = st.session_state["live_report"]
+            st.success("⚡ 以下為剛剛即時產生的報告(尚未存檔)。")
+            st.download_button(
+                "⬇️ 下載這份報告 JSON",
+                data=json.dumps(live, ensure_ascii=False, indent=2),
+                file_name=f"report_{live.get('report_date', 'latest')}.json",
+                mime="application/json",
+            )
+            st.divider()
+            render_report(live)
+            return
+
+        # 2) 已抓到新聞、尚未分析:顯示新聞,並提供第二步的 Gemini 按鈕
+        if "live_news" in st.session_state:
+            news = st.session_state["live_news"]
+            st.divider()
+            st.header("📰 即時抓取的新聞")
+            if news:
+                st.success(f"已抓到 {len(news)} 則真實外電,確認後再請 Gemini 分析:")
+                has_key = ensure_gemini_key()
+                if st.button(
+                    "🧠 ② 用 Gemini 產生戰略分析 + 白話文",
+                    use_container_width=True,
+                    disabled=not has_key,
+                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+                ):
+                    with st.spinner("Gemini 分析中(約 10–30 秒)…"):
+                        try:
+                            generate_live_report()
+                            st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"產生報告失敗:{exc}")
+                if not has_key:
+                    st.caption(
+                        "ℹ️ 尚未偵測到 GEMINI_API_KEY。看新聞不需金鑰;要做分析+白話文,"
+                        "請到 Streamlit Cloud → App settings → Secrets 加上 "
+                        "`GEMINI_API_KEY = \"...\"`。"
+                    )
+                st.download_button(
+                    "⬇️ 下載新聞 JSON",
+                    data=json.dumps(news, ensure_ascii=False, indent=2),
+                    file_name="news.json",
+                    mime="application/json",
+                )
+                render_news_cards(news)
+            else:
+                st.info("這次沒抓到新聞,稍後再試或調整關鍵字。")
+            return
+
+        # 3) 否則顯示每日排程存檔的報告
         report = pick_report(REPORT_PATH, ARCHIVE_DIR)
         if report is None:
-            st.warning("尚無戰略報告資料。請先執行 update_data.py。")
+            st.warning("尚無每日排程報告。可用上方「⚡ 即時抓取」按鈕馬上取得新聞或產生報告。")
             return
         render_report(report)
     else:
