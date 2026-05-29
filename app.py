@@ -87,9 +87,9 @@ def pick_report(latest_path: Path, archive_dir: Path):
 # ---------------------------------------------------------------------------
 
 NEWS_SOURCE_CAPTION = (
-    "新聞來源:**Google News RSS**(依關鍵字聚合 BBC、AP、Reuters、CNBC、"
-    "Al Jazeera、The Guardian、Nikkei 等可信外電)＋ BBC / NPR / Al Jazeera / "
-    "The Guardian / CNBC 的官方 RSS feed。只取開放 feed 的標題/來源/連結/摘要,"
+    "新聞來源(繁中):**Google News RSS（台灣)**（依關鍵字聚合中央社、聯合報、"
+    "自由時報、中時、BBC 中文、DW 中文等可信媒體)＋ 中央社（國際/兩岸/財經)、"
+    "BBC 中文、德國之聲 DW 的官方 RSS feed。只取開放 feed 的標題/來源/連結/摘要,"
     "不爬付費牆全文。"
 )
 

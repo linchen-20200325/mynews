@@ -27,14 +27,14 @@ from email.utils import parsedate_to_datetime
 from html import unescape
 from html.parser import HTMLParser
 
-# 指定的可信媒體官方 RSS feed(Google News 之外的補充來源)。
+# 指定的可信中文媒體官方 RSS feed(Google News 之外的補充來源)。
+# 注意:個別 feed 若失效,fetch_feed 會自動略過(不影響其他來源)。
 CREDIBLE_FEEDS: dict[str, str] = {
-    "BBC News": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "BBC Business": "https://feeds.bbci.co.uk/news/business/rss.xml",
-    "NPR World": "https://feeds.npr.org/1004/rss.xml",
-    "Al Jazeera": "https://www.aljazeera.com/xml/rss/all.xml",
-    "The Guardian World": "https://www.theguardian.com/world/rss",
-    "CNBC Economy": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258",
+    "中央社 國際": "https://feeds.feedburner.com/rsscna/intworld",
+    "中央社 兩岸": "https://feeds.feedburner.com/rsscna/mainland",
+    "中央社 財經": "https://feeds.feedburner.com/rsscna/finance",
+    "BBC 中文": "https://feeds.bbci.co.uk/zhongwen/trad/rss.xml",
+    "德國之聲 DW 中文": "https://rss.dw.com/rdf/rss-chi-all",
 }
 
 HTTP_TIMEOUT = 30
@@ -71,7 +71,7 @@ def strip_html(raw: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def google_news_rss_url(query: str, lang: str = "en", region: str = "US") -> str:
+def google_news_rss_url(query: str, lang: str = "zh", region: str = "TW") -> str:
     """組出 Google News RSS 搜尋網址。"""
     ceid = f"{region}:{lang}"
     params = urllib.parse.urlencode(
@@ -202,8 +202,8 @@ def fetch_feed(url: str, source_hint: str, since: datetime | None) -> list[dict]
 def fetch_news(
     queries: list[str],
     *,
-    lang: str = "en",
-    region: str = "US",
+    lang: str = "zh",
+    region: str = "TW",
     feeds: dict[str, str] | None = None,
     limit: int = 12,
     since_hours: int = 48,
