@@ -80,6 +80,18 @@ def google_news_rss_url(query: str, lang: str = "zh", region: str = "TW") -> str
     return f"https://news.google.com/rss/search?{params}"
 
 
+def google_news_topic_url(topic: str, lang: str = "zh", region: str = "TW") -> str:
+    """Google News 分類頭條(不帶關鍵字,抓該分類『當下』的動態頭條)。
+
+    topic 例:WORLD(世界)、BUSINESS(財經)、TECHNOLOGY(科技)、NATION(國內)。
+    只取與主題相關的分類,可避免娛樂/體育等離題內容。
+    """
+    params = urllib.parse.urlencode(
+        {"hl": f"{lang}-{region}", "gl": region, "ceid": f"{region}:{lang}"}
+    )
+    return f"https://news.google.com/rss/headlines/section/topic/{topic}?{params}"
+
+
 def _local(tag: str) -> str:
     """去掉 XML 名稱空間,只留 local name(如 '{ns}title' -> 'title')。"""
     return tag.rsplit("}", 1)[-1] if "}" in tag else tag
