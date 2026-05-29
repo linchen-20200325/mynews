@@ -160,6 +160,31 @@ def generate_live_report() -> None:
     st.session_state.pop("live_news", None)
 
 
+def render_trend_live_panel() -> None:
+    """趨勢雷達第一步:只抓產業新聞(排名打分另由 Gemini 按鈕觸發)。"""
+    with st.container(border=True):
+        st.markdown("#### ⚡ 即時產生(免等每日排程)")
+        st.caption(NEWS_SOURCE_CAPTION)
+        st.caption("流程:① 先抓產業新聞 → ② 看過後,再按 Gemini 按鈕排名打分。")
+
+        if st.button("🔄 ① 立即抓取產業新聞", use_container_width=True):
+            with st.spinner("抓取產業新聞中…"):
+                try:
+                    st.session_state["live_trend_news"] = update_data.fetch_trend_news()
+                    st.session_state.pop("live_trends", None)
+                except Exception as exc:  # noqa: BLE001
+                    st.session_state["live_trend_news"] = []
+                    st.error(f"抓取失敗:{exc}")
+
+
+def generate_live_trends() -> None:
+    """趨勢雷達第二步:對『已抓到的產業新聞』請 Gemini 排名打分。"""
+    news = st.session_state.get("live_trend_news", [])
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    st.session_state["live_trends"] = update_data.get_trend_radar(news, today)
+    st.session_state.pop("live_trend_news", None)
+
+
 # ---------------------------------------------------------------------------
 # 戰略報告
 # ---------------------------------------------------------------------------
@@ -325,10 +350,61 @@ def main() -> None:
             return
         render_report(report)
     else:
-        data = pick_report(TRENDS_PATH, TRENDS_ARCHIVE_DIR)
         st.header("🔥 趨勢雷達 — 現在最紅的產業")
+        render_trend_live_panel()
 
-        # 歷史熱度折線圖(需累積至少兩天資料)
+        # 1) 本次即時產生的趨勢雷達優先顯示
+        if st.session_state.get("live_trends"):
+            live = st.session_state["live_trends"]
+            st.success("⚡ 以下為剛剛即時產生的趨勢雷達(尚未存檔)。")
+            st.download_button(
+                "⬇️ 下載趨勢 JSON",
+                data=json.dumps(live, ensure_ascii=False, indent=2),
+                file_name=f"trends_{live.get('report_date', 'latest')}.json",
+                mime="application/json",
+            )
+            st.divider()
+            render_trends(live)
+            return
+
+        # 2) 已抓到產業新聞、尚未排名:顯示新聞,並提供第二步的 Gemini 按鈕
+        if "live_trend_news" in st.session_state:
+            news = st.session_state["live_trend_news"]
+            st.divider()
+            st.subheader("📰 即時抓取的產業新聞")
+            if news:
+                st.success(f"已抓到 {len(news)} 則產業新聞,確認後再請 Gemini 排名打分:")
+                has_key = ensure_gemini_key()
+                if st.button(
+                    "🧠 ② 用 Gemini 產生趨勢雷達",
+                    use_container_width=True,
+                    disabled=not has_key,
+                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+                ):
+                    with st.spinner("Gemini 排名打分中(約 10–30 秒)…"):
+                        try:
+                            generate_live_trends()
+                            st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"產生趨勢雷達失敗:{exc}")
+                if not has_key:
+                    st.caption(
+                        "ℹ️ 尚未偵測到 GEMINI_API_KEY。看新聞不需金鑰;要排名打分,"
+                        "請到 Streamlit Cloud → App settings → Secrets 加上 "
+                        "`GEMINI_API_KEY = \"...\"`。"
+                    )
+                st.download_button(
+                    "⬇️ 下載產業新聞 JSON",
+                    data=json.dumps(news, ensure_ascii=False, indent=2),
+                    file_name="trend_news.json",
+                    mime="application/json",
+                )
+                render_news_cards(news)
+            else:
+                st.info("這次沒抓到產業新聞,稍後再試或調整 TREND_QUERIES 關鍵字。")
+            return
+
+        # 3) 否則顯示每日排程存檔 + 歷史折線圖
         history = load_trend_history(TRENDS_ARCHIVE_DIR)
         if history is not None and len(history.index) >= 2:
             st.subheader("📈 產業熱度趨勢(歷史)")
@@ -338,8 +414,9 @@ def main() -> None:
         elif history is not None:
             st.info("歷史折線圖需累積至少兩天的資料,明天就會開始出現。")
 
+        data = pick_report(TRENDS_PATH, TRENDS_ARCHIVE_DIR)
         if data is None:
-            st.warning("尚無趨勢雷達資料。請先執行 update_data.py(需開啟 ENABLE_TREND_RADAR)。")
+            st.warning("尚無每日趨勢雷達存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_trends(data)
 
