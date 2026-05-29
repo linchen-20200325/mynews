@@ -127,22 +127,13 @@ def render_news_cards(news: list[dict]) -> None:
 
 
 def render_live_panel() -> None:
-    """提供『立即抓取新聞 / 一鍵產生完整報告』按鈕,結果存進 session_state。"""
+    """第一步:只負責『抓新聞』,結果存進 session_state(Gemini 分析另由按鈕觸發)。"""
     with st.container(border=True):
         st.markdown("#### ⚡ 即時抓取(免等每日排程)")
         st.caption(NEWS_SOURCE_CAPTION)
+        st.caption("流程:① 先抓新聞 → ② 看過後,再按 Gemini 按鈕做分析+白話文。")
 
-        has_key = ensure_gemini_key()
-        c1, c2 = st.columns(2)
-        fetch_clicked = c1.button("🔄 立即抓取最新新聞", use_container_width=True)
-        gen_clicked = c2.button(
-            "🧠 產生完整戰略報告",
-            use_container_width=True,
-            disabled=not has_key,
-            help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
-        )
-
-        if fetch_clicked:
+        if st.button("🔄 ① 立即抓取最新新聞", use_container_width=True):
             with st.spinner("抓取真實外電中…"):
                 try:
                     st.session_state["live_news"] = update_data.fetch_macro_news(get_topic())
@@ -151,31 +142,22 @@ def render_live_panel() -> None:
                     st.session_state["live_news"] = []
                     st.error(f"抓取失敗:{exc}")
 
-        if gen_clicked:
-            with st.spinner("抓新聞並請 Gemini 分析中(約 10–30 秒)…"):
-                try:
-                    topic = get_topic()
-                    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-                    news = update_data.fetch_macro_news(topic)
-                    analysis = update_data.get_macro_analysis(news, topic, today)
-                    st.session_state["live_report"] = {
-                        "report_date": today,
-                        "topic": topic,
-                        "raw_news": news,
-                        "strategic_analysis": analysis["strategic_analysis"],
-                        "laymans_dictionary": analysis["laymans_dictionary"],
-                        "dictionary_source": "gemini",
-                    }
-                    st.session_state.pop("live_news", None)
-                except Exception as exc:  # noqa: BLE001
-                    st.error(f"產生報告失敗:{exc}")
 
-        if not has_key:
-            st.caption(
-                "ℹ️ 尚未偵測到 GEMINI_API_KEY。「立即抓取新聞」只需網路即可用;"
-                "若要一鍵產生完整分析,請到 Streamlit Cloud → App settings → Secrets "
-                "加上 `GEMINI_API_KEY = \"...\"`。"
-            )
+def generate_live_report() -> None:
+    """第二步:對『已抓到的新聞』請 Gemini 做四維度分析 + 白話文。"""
+    news = st.session_state.get("live_news", [])
+    topic = get_topic()
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    analysis = update_data.get_macro_analysis(news, topic, today)
+    st.session_state["live_report"] = {
+        "report_date": today,
+        "topic": topic,
+        "raw_news": news,
+        "strategic_analysis": analysis["strategic_analysis"],
+        "laymans_dictionary": analysis["laymans_dictionary"],
+        "dictionary_source": "gemini",
+    }
+    st.session_state.pop("live_news", None)
 
 
 # ---------------------------------------------------------------------------
@@ -299,13 +281,32 @@ def main() -> None:
             render_report(live)
             return
 
-        # 2) 只抓了新聞、還沒做分析
+        # 2) 已抓到新聞、尚未分析:顯示新聞,並提供第二步的 Gemini 按鈕
         if "live_news" in st.session_state:
             news = st.session_state["live_news"]
             st.divider()
             st.header("📰 即時抓取的新聞")
             if news:
-                st.success(f"已抓到 {len(news)} 則真實外電:")
+                st.success(f"已抓到 {len(news)} 則真實外電,確認後再請 Gemini 分析:")
+                has_key = ensure_gemini_key()
+                if st.button(
+                    "🧠 ② 用 Gemini 產生戰略分析 + 白話文",
+                    use_container_width=True,
+                    disabled=not has_key,
+                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+                ):
+                    with st.spinner("Gemini 分析中(約 10–30 秒)…"):
+                        try:
+                            generate_live_report()
+                            st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"產生報告失敗:{exc}")
+                if not has_key:
+                    st.caption(
+                        "ℹ️ 尚未偵測到 GEMINI_API_KEY。看新聞不需金鑰;要做分析+白話文,"
+                        "請到 Streamlit Cloud → App settings → Secrets 加上 "
+                        "`GEMINI_API_KEY = \"...\"`。"
+                    )
                 st.download_button(
                     "⬇️ 下載新聞 JSON",
                     data=json.dumps(news, ensure_ascii=False, indent=2),
