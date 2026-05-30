@@ -344,9 +344,6 @@ def parse_dividend_months(html_text: str) -> list[int]:
     逐列解析,每列只取『第一個日期』(除息日),避免把發放日月份也算進去
     (除息 1/4/7/10、發放 2/5/8/11 會混在一起)。近兩年記錄足以涵蓋完整週期。
     """
-    import io
-    from html.parser import HTMLParser
-
     class _Rows(HTMLParser):
         def __init__(self):
             super().__init__()
