@@ -71,11 +71,23 @@ def _decode(content: bytes) -> str:
 def http_get(url: str, proxies: dict | None) -> str:
     import requests  # 延遲匯入
 
+    # 走 NAS 代理時跳過 SSL 驗證 — Squid CONNECT 隧道與 MoneyDJ 憑證不相容,
+    # verify=True 會在 SSL 階段拋例外(「能連線卻每檔都抓不到」的真因);
+    # 直連模式(無 proxy)則正常驗證。比照 proxy_helper / 基金 infra.proxy 行為。
+    verify = not bool(proxies)
+    if not verify:
+        try:
+            import urllib3
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        except Exception:  # noqa: BLE001
+            pass
+
     resp = requests.get(
         url,
         headers={"User-Agent": USER_AGENT},
         proxies=proxies,
         timeout=HTTP_TIMEOUT,
+        verify=verify,
     )
     resp.raise_for_status()
     return _decode(resp.content)
