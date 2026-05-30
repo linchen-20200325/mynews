@@ -397,10 +397,11 @@ def render_etf_profiles() -> None:
 
     c6, c7 = st.columns(2)
     f_strategy = c6.multiselect("投資策略", ["被動(追蹤指數)", "主動式"])
-    max_fee = c7.slider("內扣費用上限(經理費+保管費,%)", 0.0, 3.0, 3.0, step=0.05)
+    max_fee = c7.slider("總管理費用上限(%)", 0.0, 3.0, 3.0, step=0.05)
 
-    def _fee(p: dict) -> float:
-        return (p.get("mgmt_fee") or 0) + (p.get("custody_fee") or 0)
+    def _fee(p: dict):
+        # 優先用總管理費用;沒有就退回經理費(+保管費)
+        return p.get("total_fee") or p.get("mgmt_fee")
 
     def keep(p: dict) -> bool:
         if f_cat and p.get("category") not in f_cat:
@@ -415,7 +416,8 @@ def render_etf_profiles() -> None:
             return False
         if f_strategy and p.get("strategy") not in f_strategy:
             return False
-        if _fee(p) > max_fee:
+        fee = _fee(p)
+        if fee is not None and fee > max_fee:
             return False
         return True
 
@@ -430,11 +432,14 @@ def render_etf_profiles() -> None:
                 "型態": p.get("category", ""),
                 "區域": p.get("region", ""),
                 "配息": p.get("dividend_freq", ""),
-                "配息月": "、".join(str(m) for m in (p.get("dividend_months") or [])),
+                "殖利率%": p.get("yield_pct"),
                 "經理費%": p.get("mgmt_fee"),
-                "保管費%": p.get("custody_fee"),
+                "總費用%": p.get("total_fee"),
+                "規模(百萬)": p.get("scale_million"),
                 "策略": p.get("strategy", ""),
                 "主題": "、".join(p.get("themes") or []),
+                "經理人": p.get("manager", ""),
+                "發行商": p.get("issuer", ""),
                 "追蹤指數": p.get("index_tracked", ""),
             }
             for p in filtered
