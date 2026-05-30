@@ -158,6 +158,33 @@ def fetch_moneydj(etfid: str, template: str, proxies: dict | None) -> list[dict]
     return parse_moneydj(http_get(template.format(etfid=etfid), proxies))
 
 
+MONEYDJ_INFO_TEMPLATE = "https://www.moneydj.com/etf/x/Basic/Basic0001.xdjhtm?etfid={etfid}"
+_TITLE_RE = re.compile(r"<title[^>]*>(.*?)</title>", re.IGNORECASE | re.DOTALL)
+
+
+def extract_etf_name(html_text: str) -> str:
+    """從 MoneyDJ 頁面 <title> 解析 ETF 名稱(去掉代號、站名等雜訊)。"""
+    m = _TITLE_RE.search(html_text)
+    if not m:
+        return ""
+    title = re.sub(r"\s+", " ", m.group(1)).strip()
+    # 站名/分隔:取第一段(常見「名稱(代號)-ETF基本資料-MoneyDJ理財網」)
+    title = re.split(r"[-_|｜–—]", title)[0].strip()
+    # 去掉括號內代號與「ETF」字樣
+    title = re.sub(r"[(（]\s*[0-9]{4,6}[A-Z]?(?:\.TW)?\s*[)）]", "", title)
+    title = re.sub(r"\b[0-9]{4,6}[A-Z]?(?:\.TW)?\b", "", title)
+    title = title.replace("ETF基本資料", "").replace("基本資料", "").strip(" -－()（）")
+    return title
+
+
+def fetch_etf_name(etfid: str, proxies: dict | None) -> str:
+    """透過代理抓某 ETF 的中文名稱;失敗回空字串。"""
+    try:
+        return extract_etf_name(http_get(MONEYDJ_INFO_TEMPLATE.format(etfid=etfid), proxies))
+    except Exception:  # noqa: BLE001
+        return ""
+
+
 # ---------------------------------------------------------------------------
 # 建庫
 # ---------------------------------------------------------------------------
@@ -252,8 +279,10 @@ def normalize_code(code: str) -> str:
     return str(code).strip().upper()
 
 
-def add_etf(code: str, name: str, sources: dict | None = None) -> tuple[bool, str, dict]:
-    """在來源清單新增一檔 ETF(含重複檢查)。
+def add_etf(
+    code: str, name: str = "", sources: dict | None = None, proxies: dict | None = None
+) -> tuple[bool, str, dict]:
+    """在來源清單新增一檔 ETF(含重複檢查;name 留空時透過代理自動抓)。
 
     回傳 (是否新增成功, 訊息, 更新後的 sources dict)。
     不直接寫檔,由呼叫端決定要存檔或下載(雲端唯讀環境用下載)。
@@ -271,8 +300,39 @@ def add_etf(code: str, name: str, sources: dict | None = None) -> tuple[bool, st
         exist = etfs[code].get("name", "")
         return False, f"清單已經有 {code}（{exist}),未重複加入。", sources
 
-    etfs[code] = {"name": name or code, "etfid": f"{code}.TW"}
-    return True, f"已加入 {code} {name}(etfid={code}.TW)。記得抓取更新成分股。", sources
+    etfid = f"{code}.TW"
+    if not name and proxies is not None:
+        name = fetch_etf_name(etfid, proxies)
+
+    etfs[code] = {"name": name or code, "etfid": etfid}
+    label = name or "(名稱待抓取)"
+    return True, f"已加入 {code} {label}。", sources
+
+
+def parse_codes(text: str) -> list[str]:
+    """從一段文字解析出多個 ETF 代號(以逗號/空白/換行/頓號分隔)。"""
+    raw = re.split(r"[,\s、;]+", str(text or ""))
+    out: list[str] = []
+    for tok in raw:
+        c = normalize_code(tok)
+        if c and c not in out:
+            out.append(c)
+    return out
+
+
+def add_etfs_bulk(
+    text: str, sources: dict | None = None, proxies: dict | None = None
+) -> tuple[dict, list[str]]:
+    """批次新增多檔 ETF(只輸入代號,名稱自動抓)。回傳 (更新後 sources, 每檔訊息清單)。"""
+    if sources is None:
+        sources = load_sources()
+    msgs: list[str] = []
+    for code in parse_codes(text):
+        ok, msg, sources = add_etf(code, "", sources, proxies)
+        msgs.append(("✅ " if ok else "⚠️ ") + msg)
+    if not msgs:
+        msgs.append("沒有解析到任何代號。")
+    return sources, msgs
 
 
 def save_sources(sources: dict) -> None:

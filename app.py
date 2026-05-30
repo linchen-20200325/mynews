@@ -262,28 +262,33 @@ def render_etf_add_panel() -> None:
     etfs = sources.get("moneydj", {}).get("etfs", {})
 
     with st.expander(f"➕ 新增 ETF 到清單（目前 {len(etfs)} 檔)", expanded=False):
-        st.caption("輸入 ETF 代號與名稱即可加入清單;會自動檢查是否重複。新增後請按上方「🔄 立即抓取」更新成分股。")
+        st.caption("只要輸入代號(可一次貼多檔,以逗號/空白/換行分隔);名稱會透過代理自動抓 MoneyDJ。"
+                   "會自動檢查是否重複。新增後請按上方「🔄 立即抓取」更新成分股。")
         with st.form("add_etf_form", clear_on_submit=True):
-            c1, c2 = st.columns([1, 2])
-            new_code = c1.text_input("ETF 代號", placeholder="例:00940 或 00982A")
-            new_name = c2.text_input("ETF 名稱", placeholder="例:元大台灣價值高息")
+            codes_text = st.text_area(
+                "ETF 代號(可多筆)", placeholder="例:00940, 00982A 00713\n00878",
+                height=80,
+            )
             submitted = st.form_submit_button("加入清單", use_container_width=True)
         if submitted:
-            if not new_code.strip():
-                st.warning("請先輸入 ETF 代號。")
+            if not codes_text.strip():
+                st.warning("請先輸入至少一個 ETF 代號。")
             else:
-                ok, msg, sources = etf_fetcher.add_etf(new_code, new_name, sources)
-                if ok:
-                    st.session_state["etf_sources_live"] = sources
-                    # 可寫環境(本機)就直接存檔;雲端唯讀則靠下方下載
-                    try:
-                        etf_fetcher.save_sources(sources)
-                        st.success(msg + "(已寫入 etf_sources.json)")
-                    except Exception:  # noqa: BLE001 — 雲端唯讀
-                        st.success(msg + "(雲端唯讀,請用下方按鈕下載清單並 commit 回 repo)")
-                    etfs = sources["moneydj"]["etfs"]
-                else:
-                    st.warning(msg)
+                proxy = ensure_proxy()
+                proxies = proxy_helper.get_proxy_config() if proxy else None
+                with st.spinner("加入清單並抓取名稱中…"):
+                    sources, msgs = etf_fetcher.add_etfs_bulk(codes_text, sources, proxies)
+                st.session_state["etf_sources_live"] = sources
+                try:
+                    etf_fetcher.save_sources(sources)
+                    saved = "(已寫入 etf_sources.json)"
+                except Exception:  # noqa: BLE001 — 雲端唯讀
+                    saved = "(雲端唯讀,請用下方按鈕下載清單並 commit 回 repo)"
+                if not proxy:
+                    st.info("未設定 PROXY_URL,名稱暫時留空;設定代理後重抓即可補上名稱。")
+                st.success("處理完成 " + saved)
+                st.write("\n".join(f"- {m}" for m in msgs))
+                etfs = sources["moneydj"]["etfs"]
 
         # 目前清單一覽 + 下載
         st.caption("目前清單:" + "、".join(f"{c} {i.get('name','')}".strip() for c, i in etfs.items()))
