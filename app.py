@@ -362,7 +362,7 @@ def render_etf_profiles() -> None:
                        "Basic0001 是即時報價頁(沒有種類/配息/費用)。可截圖貼給開發者校正。")
             dc1, dc2 = st.columns([2, 1])
             diag_code = dc1.text_input("代號", value="0056", key="etf_diag_code").strip()
-            diag_page = dc2.selectbox("頁面", ["0004", "0003", "0001"], key="etf_diag_page")
+            diag_page = dc2.selectbox("頁面", ["0004", "0005", "0003", "0001"], key="etf_diag_page")
             if st.button("🔬 診斷此檔", disabled=not proxy, key="btn_etf_diag"):
                 with st.spinner("抓取中…"):
                     try:

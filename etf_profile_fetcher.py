@@ -33,8 +33,11 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 # 注意:Basic0001 是「即時報價頁」,沒有基金種類/配息/費用。
 # ETF 簡介/特色(投資地區、計價、成立日、經理費、保管費、配息、追蹤指數)在 Basic0004。
 BASIC_TEMPLATE = "https://www.moneydj.com/etf/x/Basic/Basic0004.xdjhtm?etfid={etfid}"
+# Basic0005 = 配息記錄頁(含除息日,近兩年),可反推『真實配息月份』
+DIVIDEND_TEMPLATE = "https://www.moneydj.com/etf/x/Basic/Basic0005.xdjhtm?etfid={etfid}"
 PAGE_TEMPLATES = {
     "0004": "https://www.moneydj.com/etf/x/Basic/Basic0004.xdjhtm?etfid={etfid}",
+    "0005": "https://www.moneydj.com/etf/x/Basic/Basic0005.xdjhtm?etfid={etfid}",
     "0003": "https://www.moneydj.com/etf/x/Basic/Basic0003.xdjhtm?etfid={etfid}",
     "0001": "https://www.moneydj.com/etf/x/Basic/Basic0001.xdjhtm?etfid={etfid}",
 }
@@ -328,6 +331,65 @@ def diagnose(etfid: str, proxy: str | None = None, page: str = "0004") -> dict:
     return _kv_pairs(_http_get(tmpl.format(etfid=etfid), proxies))
 
 
+_DATE_RE = re.compile(r"(20[0-9]{2})[/\-年.](1[0-2]|0?[1-9])[/\-月.](3[01]|[12][0-9]|0?[1-9])")
+
+
+def parse_dividend_months(html_text: str) -> list[int]:
+    """從 Basic0005 配息記錄頁的『除息日』反推真實配息月份。
+
+    逐列解析,每列只取『第一個日期』(除息日),避免把發放日月份也算進去
+    (除息 1/4/7/10、發放 2/5/8/11 會混在一起)。近兩年記錄足以涵蓋完整週期。
+    """
+    import io
+    from html.parser import HTMLParser
+
+    class _Rows(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.rows: list[list[str]] = []
+            self._row = None
+            self._cell = None
+
+        def handle_starttag(self, tag, attrs):
+            if tag == "tr":
+                self._row = []
+            elif tag in ("td", "th") and self._row is not None:
+                self._cell = []
+
+        def handle_data(self, data):
+            if self._cell is not None:
+                self._cell.append(data)
+
+        def handle_endtag(self, tag):
+            if tag in ("td", "th") and self._cell is not None and self._row is not None:
+                self._row.append("".join(self._cell).strip())
+                self._cell = None
+            elif tag == "tr" and self._row is not None:
+                self.rows.append(self._row)
+                self._row = None
+
+    parser = _Rows()
+    parser.feed(html_text)
+    months: set[int] = set()
+    for row in parser.rows:
+        for cell in row:  # 每列取第一個出現的日期(=除息日)就停
+            m = _DATE_RE.search(cell)
+            if m:
+                mo = int(m.group(2))
+                if 1 <= mo <= 12:
+                    months.add(mo)
+                break
+    return sorted(months)
+
+
+def fetch_dividend_months(etfid: str, proxies: dict | None) -> list[int]:
+    """抓 Basic0005,回傳真實配息月份;失敗回空清單。"""
+    try:
+        return parse_dividend_months(_http_get(DIVIDEND_TEMPLATE.format(etfid=etfid), proxies))
+    except Exception:  # noqa: BLE001
+        return []
+
+
 def get_proxies(proxy: str | None = None) -> dict | None:
     try:
         import proxy_helper
@@ -366,10 +428,17 @@ def crawl(proxy: str | None = None, log=print) -> dict:
         name = info.get("name", code)
         try:
             html = _http_get(BASIC_TEMPLATE.format(etfid=etfid), proxies)
-            profiles[code] = parse_profile(html, code, name)
+            prof = parse_profile(html, code, name)
+            # 進一步抓配息記錄頁(Basic0005),用真實除息月份覆蓋頻率推測值
+            real_months = fetch_dividend_months(etfid, proxies)
+            if real_months:
+                prof["dividend_months"] = real_months
+                prof["months_estimated"] = False
+            profiles[code] = prof
             ok += 1
-            p = profiles[code]
-            log(f"  [{code}] {name}:{p['category']}/{p['region']}/{p['dividend_freq']}")
+            mon = "、".join(str(m) for m in prof["dividend_months"]) or "—"
+            tag = "" if not prof["months_estimated"] else "(推測)"
+            log(f"  [{code}] {name}:{prof['category']}/{prof['region']}/{prof['dividend_freq']} 配息月 {mon}{tag}")
         except Exception as exc:  # noqa: BLE001
             log(f"  [{code}] {name}:抓取失敗,保留既有({exc})")
         time.sleep(REQUEST_GAP_SEC)
