@@ -633,6 +633,9 @@ def main() -> None:
         "選擇", ["戰略報告", "趨勢雷達", "台股觀察", "ETF持股反查"]
     )
     st.sidebar.divider()
+    with st.sidebar:
+        render_proxy_status()
+    st.sidebar.divider()
     st.sidebar.header("📅 報告選擇")
 
     if report_type == "戰略報告":
