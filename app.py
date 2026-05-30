@@ -16,6 +16,7 @@ import streamlit as st
 
 import etf_fetcher  # 透過代理抓 MoneyDJ 成分股建庫
 import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
+import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
@@ -542,6 +543,33 @@ def render_trends(data: dict) -> None:
 # ETF 持股反查
 # ---------------------------------------------------------------------------
 
+def render_price_update_panel(current_prices: dict) -> None:
+    """透過 NAS 代理抓台股收盤價(供價位篩選);結果存 session,可下載。"""
+    with st.expander(f"💰 股價資料（目前 {len(current_prices)} 檔)— 點此更新", expanded=not current_prices):
+        st.caption("透過代理抓臺灣證交所(上市)＋櫃買中心(上櫃)當日收盤價,供『股價範圍』篩選使用。")
+        proxy = ensure_proxy()
+        if st.button("🔄 更新台股收盤價", use_container_width=True, disabled=not proxy):
+            with st.spinner("透過代理抓台股收盤價中…"):
+                logs: list[str] = []
+                try:
+                    data = price_fetcher.fetch_prices(proxy=proxy, log=logs.append)
+                    st.session_state["price_data_live"] = data
+                    st.success(f"完成!取得 {len(data.get('prices', {}))} 檔收盤價。請重整或重跑篩選。")
+                except Exception as exc:  # noqa: BLE001
+                    st.error(f"抓取失敗:{exc}")
+                if logs:
+                    st.code("\n".join(logs))
+        if not proxy:
+            st.warning("未偵測到 PROXY_URL,無法抓股價。請先在 Streamlit Secrets 設定。")
+        if st.session_state.get("price_data_live"):
+            st.download_button(
+                "⬇️ 下載 stock_prices.json(可 commit 回 repo 保存)",
+                data=json.dumps(st.session_state["price_data_live"], ensure_ascii=False, indent=2),
+                file_name="stock_prices.json",
+                mime="application/json",
+            )
+
+
 def render_etf_lookup(data: dict | None = None) -> None:
     if data is None:
         data = etf_holdings.load_holdings(ETF_HOLDINGS_PATH)
@@ -551,12 +579,25 @@ def render_etf_lookup(data: dict | None = None) -> None:
 
     etfs = data.get("etfs", {})
     rows = etf_holdings.reverse_index(data)
-    c1, c2 = st.columns(2)
+
+    # 股價(供「價位範圍」篩選):本次即時抓到的優先,否則讀 repo 內 stock_prices.json
+    price_data = st.session_state.get("price_data_live") or price_fetcher.load_prices()
+    prices = price_data.get("prices", {}) if isinstance(price_data, dict) else {}
+    for r in rows:
+        r["price"] = prices.get(r["ticker"])
+
+    c1, c2, c3 = st.columns(3)
     c1.metric("收錄 ETF 檔數", len(etfs))
     c2.metric("涵蓋個股數", len(rows))
-    st.caption(f"資料版本:{data.get('as_of', '—')}")
+    c3.metric("有股價個股數", sum(1 for r in rows if r.get("price")))
+    st.caption(
+        f"資料版本:{data.get('as_of', '—')}"
+        + (f"　|　股價:{price_data.get('as_of', '—')}" if prices else "")
+    )
     if data.get("note"):
         st.info("⚠️ " + data["note"])
+
+    render_price_update_panel(prices)
 
     # 🔎 輸入代號/名稱直接查「這檔股票被哪些 ETF 持有」
     st.subheader("🔎 個股查詢 — 它被哪些 ETF 持有?")
@@ -584,24 +625,57 @@ def render_etf_lookup(data: dict | None = None) -> None:
             )
     st.divider()
 
-    st.subheader("📋 個股被 ETF 持有反查表(依持有檔數)")
-    st.caption("『被幾檔 ETF 持有』越多,代表越多 ETF 同時納入該股——例如台積電被多檔持有,得到的被動買盤就越廣。")
+    st.subheader("📋 個股被 ETF 持有反查表")
+    st.caption("『被幾檔 ETF 持有』越多,代表越多 ETF 同時納入該股——被動買盤越廣。可用下方條件篩選。")
+
+    # 篩選條件
+    f1, f2 = st.columns(2)
+    max_count = max((r["etf_count"] for r in rows), default=1)
+    min_etf = f1.slider(
+        "① 至少被幾檔 ETF 持有", min_value=1, max_value=max_count, value=1, key="flt_min_etf"
+    )
+
+    priced = [r["price"] for r in rows if r.get("price")]
+    use_price = bool(priced)
+    if use_price:
+        lo_all, hi_all = int(min(priced)), int(max(priced)) + 1
+        price_lo, price_hi = f2.slider(
+            "② 股價範圍(元)", min_value=lo_all, max_value=hi_all,
+            value=(lo_all, hi_all), key="flt_price",
+        )
+        only_priced = f2.checkbox("只看有股價的個股", value=False, key="flt_only_priced")
+    else:
+        f2.caption("② 股價範圍:尚無股價資料,請先按上方「🔄 更新台股收盤價」。")
+        price_lo, price_hi, only_priced = None, None, False
+
+    # 套用篩選
+    filtered = [r for r in rows if r["etf_count"] >= min_etf]
+    if use_price:
+        def _keep(r):
+            p = r.get("price")
+            if p is None:
+                return not only_priced  # 沒股價的:勾「只看有股價」時排除
+            return price_lo <= p <= price_hi
+        filtered = [r for r in filtered if _keep(r)]
+
+    st.caption(f"符合條件:**{len(filtered)}** 檔(共 {len(rows)} 檔)")
     st.dataframe(
         [
             {
                 "個股": r["name"],
                 "代號": r["ticker"],
+                "股價": r.get("price") if r.get("price") is not None else "—",
                 "被幾檔ETF持有": r["etf_count"],
                 "ETF清單": "、".join(f"{e['code']} {e['name']}" for e in r["etfs"]),
             }
-            for r in rows
+            for r in filtered
         ],
         use_container_width=True,
         hide_index=True,
     )
     st.download_button(
-        "⬇️ 下載反查結果 JSON",
-        data=json.dumps(rows, ensure_ascii=False, indent=2),
+        "⬇️ 下載篩選結果 JSON",
+        data=json.dumps(filtered, ensure_ascii=False, indent=2),
         file_name="etf_reverse.json",
         mime="application/json",
     )
