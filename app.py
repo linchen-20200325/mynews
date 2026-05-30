@@ -638,10 +638,9 @@ def render_etf_lookup(data: dict | None = None) -> None:
     priced = [r["price"] for r in rows if r.get("price")]
     use_price = bool(priced)
     if use_price:
-        lo_all, hi_all = int(min(priced)), int(max(priced)) + 1
         price_lo, price_hi = f2.slider(
-            "② 股價範圍(元)", min_value=lo_all, max_value=hi_all,
-            value=(lo_all, hi_all), key="flt_price",
+            "② 股價範圍(元)", min_value=1, max_value=3000,
+            value=(1, 3000), step=1, key="flt_price",
         )
         only_priced = f2.checkbox("只看有股價的個股", value=False, key="flt_only_priced")
     else:
