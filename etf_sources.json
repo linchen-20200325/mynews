@@ -3,6 +3,7 @@
     "etf_fetcher.py 會透過 PROXY_URL 代理,逐檔抓 MoneyDJ 成分股,更新 etf_holdings.json。",
     "moneydj.etfs:要收錄的台股 ETF;key 是 ETF 代號,etfid 是 MoneyDJ 代碼(通常為『代號.TW』)。",
     "代碼過時/抓不到的會自動略過、保留既有資料;要增刪 ETF 只要改這份清單一行。",
+    "【主動式 ETF】代號 A 結尾者集中在清單末段(目前 00980A~00984A);要新增主動式就加在那一區。",
     "PROXY_URL 只放在環境變數 / Streamlit Secrets,不要寫進這裡或進版控。"
   ],
   "moneydj": {
