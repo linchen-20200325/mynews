@@ -342,5 +342,18 @@ def save_sources(sources: dict) -> None:
     )
 
 
+def remove_etf(code: str, sources: dict | None = None) -> tuple[bool, str, dict]:
+    """從來源清單移除一檔 ETF。回傳 (是否移除, 訊息, 更新後 sources)。"""
+    if sources is None:
+        sources = load_sources()
+    code = normalize_code(code)
+    etfs = sources["moneydj"]["etfs"]
+    if code in etfs:
+        name = etfs[code].get("name", "")
+        del etfs[code]
+        return True, f"已移除 {code} {name}。", sources
+    return False, f"清單中沒有 {code},無法移除。", sources
+
+
 if __name__ == "__main__":
     sys.exit(update_holdings())
