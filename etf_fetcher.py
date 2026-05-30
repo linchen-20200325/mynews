@@ -203,6 +203,51 @@ def fetch_etf_name(etfid: str, proxies: dict | None) -> str:
         return ""
 
 
+# MoneyDJ 台股 ETF 列表頁(全市場);用代號連結反推出所有上市/上櫃 ETF
+MONEYDJ_LIST_URL = "https://www.moneydj.com/etf/eb/et081001.djhtm"
+# 連結中的 etfid 形如 ?etfid=0050.TW / 00982a.tw,擷取代號
+_LIST_ETFID_RE = re.compile(r"etfid=([0-9]{4,6}[A-Za-z]?)\.[Tt][Ww]", re.IGNORECASE)
+
+
+def parse_etf_list(html_text: str) -> list[str]:
+    """從 MoneyDJ ETF 列表頁解析出所有台股 ETF 代號(去重、保序、大寫)。"""
+    out: list[str] = []
+    seen: set[str] = set()
+    for m in _LIST_ETFID_RE.finditer(html_text):
+        code = m.group(1).upper()
+        if code not in seen:
+            seen.add(code)
+            out.append(code)
+    return out
+
+
+def fetch_all_etf_codes(proxy: str | None = None, url: str = MONEYDJ_LIST_URL) -> list[str]:
+    """透過代理抓 MoneyDJ ETF 列表頁,回傳全台股 ETF 代號清單。"""
+    proxies = get_proxies(proxy)
+    if proxies is None:
+        raise RuntimeError("未提供 PROXY_URL,無法透過代理抓取")
+    return parse_etf_list(http_get(url, proxies))
+
+
+def import_all_etfs(proxy: str | None = None, sources: dict | None = None,
+                    log=print) -> tuple[dict, int, int]:
+    """抓全市場 ETF 代號並併入清單(只補沒有的;名稱留待後續自動抓)。
+
+    回傳 (更新後 sources, 新增數, 全市場總數)。
+    """
+    if sources is None:
+        sources = load_sources()
+    codes = fetch_all_etf_codes(proxy)
+    etfs = sources["moneydj"]["etfs"]
+    added = 0
+    for code in codes:
+        if code not in etfs:
+            etfs[code] = {"name": code, "etfid": f"{code}.TW"}
+            added += 1
+    log(f"全市場 ETF {len(codes)} 檔;新增 {added} 檔(原 {len(etfs) - added} 檔)。")
+    return sources, added, len(codes)
+
+
 # ---------------------------------------------------------------------------
 # 建庫
 # ---------------------------------------------------------------------------

@@ -77,14 +77,19 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - [x] **代碼淨化與收尾完成**:全專案 pyflakes 零警告;清理 `etf_profile_fetcher.py`
       未使用的 `import io` 與函式內重複 `HTMLParser` 局部 import(只減不改,邏輯無損、通過驗證)
 
+## 已驗證上線(實測通過)✅
+
+- [x] 成分股實測:已透過代理抓 MoneyDJ 並一鍵自動存檔,`etf_holdings.json` = 78 檔真實成分股
+- [x] 股價實測:TWSE/TPEx 已抓並自動存檔,`stock_prices.json` ≈ 7176 檔收盤價
+- [x] 主動式 ETF(A 結尾)成分股改抓 Basic0007B;抓取摘要顯示成功/失敗清單
+
 ## 待辦 / 可優化 ⏳
 
-- [ ] 在 Streamlit 上按「🛰️ 透過代理更新成分股」實測 MoneyDJ;若解析對不上,依抓取明細修
-- [ ] 在 Streamlit 上按「🔄 更新台股收盤價」實測 TWSE/TPEx;若欄位對不上,依 log 修 price_fetcher 解析
-- [ ] 在 Streamlit 上按「🔄 抓取 ETF 圖鑑」全 66 檔重抓 Basic0004,確認型態/配息/費用正確,下載 etf_profiles.json commit 保存
-- [ ] 設定 `GEMINI_API_KEY`(看板即時分析 + 每日排程)
+- [ ] 在 Streamlit 按「🌐 匯入全台股 ETF 清單」一鍵帶入全市場 ETF,再抓成分股/圖鑑(全市場化)
+- [ ] 在 Streamlit 按「🔄 抓取 ETF 圖鑑」全清單重抓 Basic0004/0005,確認型態/配息/費用/月份正確並自動存檔
+- [ ] 設定 `GEMINI_API_KEY`(三頁 AI 分析:戰略報告/趨勢雷達/台股觀察 + 每日排程)
 - [ ] (選)在 repo Secrets 設 `PROXY_URL` 讓每月排程自動抓 ETF + 股價(NAS 防火牆需放行 Actions IP)
-- [ ] 抓到完整 ETF 庫/股價後 commit `etf_holdings.json` / `stock_prices.json` 永久保存
+- [ ] 仍抓不到的個別 ETF:依抓取摘要失敗清單,查正確 etfid/頁面後修正
 - [ ] 可考慮多主題報告
 - [ ] 手動刪除已合併的 `claude/brave-ramanujan-fTxA0` 分支(雲端 git 代理擋刪分支 403,
       請於 PR #16 頁面或 GitHub 分支列表手動刪)
