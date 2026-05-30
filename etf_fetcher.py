@@ -44,11 +44,19 @@ _CJK = re.compile(r"[一-鿿]")
 # ---------------------------------------------------------------------------
 
 def get_proxies(explicit: str | None = None) -> dict | None:
-    """從參數或環境變數取得代理設定。回傳 requests 用的 proxies dict 或 None。"""
-    url = (explicit or os.environ.get("PROXY_URL")
-           or os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy"))
-    url = (url or "").strip()
-    return {"http": url, "https": url} if url else None
+    """取得 NAS 中繼站代理設定。回傳 requests 用的 proxies dict 或 None。
+
+    統一走 proxy_helper(支援 explicit > 環境變數 PROXY_URL > Streamlit secrets);
+    proxy_helper 不可用時退回純環境變數,確保 GitHub Actions 也能運作。
+    """
+    try:
+        import proxy_helper
+        return proxy_helper.get_proxy_config(explicit)
+    except Exception:  # noqa: BLE001 — 無 proxy_helper 時退回環境變數
+        url = (explicit or os.environ.get("PROXY_URL")
+               or os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy"))
+        url = (url or "").strip()
+        return {"http": url, "https": url} if url else None
 
 
 def _decode(content: bytes) -> str:
