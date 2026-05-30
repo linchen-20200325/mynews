@@ -3,9 +3,9 @@ name: Update ETF Holdings
 on:
   # 手動觸發(先用這個驗證來源連結是否正確)
   workflow_dispatch:
-  # 每週日 UTC 20:00（台灣週一 04:00）自動更新一次
+  # 每月 1 號 UTC 20:00（台灣 2 號 04:00）自動更新一次
   schedule:
-    - cron: '0 20 * * 0'
+    - cron: '0 20 1 * *'
 
 permissions:
   contents: write
