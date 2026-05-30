@@ -1,6 +1,6 @@
 # STATE.md — 專案戰情室
 
-> 最後更新:2026-05-30(ETF 圖鑑配息月份:真實除息日 + 頻率推測)
+> 最後更新:2026-05-30(一鍵存到 GitHub + ETF 市價欄位)
 
 ## 當前環境
 
@@ -12,6 +12,7 @@
 - 金鑰/設定(GitHub Secrets 或 Streamlit Secrets):
   - `GEMINI_API_KEY`(必,支援複數 key 容錯)
   - `PROXY_URL`(NAS 代理,供 ETF 爬蟲走 MoneyDJ;格式 http://帳:密@host:3128)
+  - `GITHUB_TOKEN`(選,看板「💾 直接存到 GitHub」用;fine-grained PAT 限本 repo、Contents 讀寫)
   - `LINE_CHANNEL_ACCESS_TOKEN` / `LINE_TO`(選)
 - 看板:Streamlit Community Cloud(`*.streamlit.app`),共 5 頁
   (戰略報告 / 趨勢雷達 / 台股觀察 / ETF持股反查 / ETF圖鑑)
@@ -61,11 +62,15 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
       依真實欄位精準解析:型態←投資標的、區域←投資區域、配息頻率←配息頻率、經理費←經理費(%)、
       總費用←總管理費用(%)、殖利率←殖利率(%)、規模←ETF規模、追蹤指數、經理人、發行商、策略敘述、主題標籤;
       沿用同一份 ETF 清單;含「🔬 診斷單檔欄位」(可選 0004/0003/0001 頁)校正工具
-- [x] ETF 圖鑑頁篩選器:型態、投資區域、配息頻率、配息月份、主題理念、策略、總管理費用上限;
-      表格含配息月/殖利率/總費用/規模/經理人/發行商/追蹤指數
+- [x] ETF 圖鑑頁篩選器:型態、投資區域、配息頻率、配息月份、主題理念、策略、總管理費用上限、
+      ETF 市價範圍;表格含市價/配息月/殖利率/總費用/規模/經理人/發行商/追蹤指數
 - [x] 配息月份:抓 MoneyDJ **Basic0005 配息記錄頁**取真實除息月份(每列只取除息日,
       避免混入發放日);抓不到才退回頻率推測(月配=1~12 確定,季配等標 *)。
       頁面位置由 WebSearch 查得(WebFetch 抓 MoneyDJ 會 403,故由 NAS 代理抓)
+- [x] ETF 市價:從 Basic0004 解析 ETF市價/ETF淨值(price/nav)入圖鑑
+- [x] `github_store.py` + 看板「💾 直接存到 GitHub」按鈕(常駐顯示):用 GITHUB_TOKEN 經
+      Contents API 把 etf_holdings/etf_sources/etf_profiles/stock_prices.json 一鍵 commit 回 repo,
+      免手動下載上傳;未設 token 時停用並提示,保留下載備援
 
 ## 待辦 / 可優化 ⏳
 
