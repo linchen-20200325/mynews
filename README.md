@@ -36,7 +36,8 @@ data/reports|trends|stocks/<date>.json   歷史存檔(側邊欄可瀏覽)
 |------|------|
 | `news_fetcher.py` | RSS 新聞爬蟲(純標準函式庫),從可信來源抓真實外電 |
 | `update_data.py` | 核心:餵新聞給 Gemini 做分析 + 白話文 + 趨勢雷達 + 台股觀察,輸出 JSON |
-| `etf_holdings.py` / `etf_holdings.json` | ETF 持股反查:由設定檔反算個股被幾檔 ETF 持有(純資料、不用 AI;成分股需自行核實更新) |
+| `etf_holdings.py` / `etf_holdings.json` | ETF 持股反查:由設定檔反算個股被幾檔 ETF 持有(純資料、不用 AI) |
+| `etf_fetcher.py` / `etf_sources.json` | 自官方/發行商來源抓真實 ETF 成分股,更新 `etf_holdings.json`(由 `update_etf.yml` 在 Actions 上跑;來源連結填在 `etf_sources.json`) |
 | `app.py` | Streamlit 前端,含歷史報告選擇器 |
 | `.github/workflows/daily_update.yml` | 每日定時執行 + 自動 commit/push |
 | `requirements.txt` | 相依套件 |
