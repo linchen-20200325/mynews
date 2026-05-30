@@ -121,11 +121,25 @@ def available_secret_names() -> list[str]:
 
 
 def _secret(name: str):
-    """讀單一 Streamlit secret(供 github_store 取 GITHUB_TOKEN 等)。"""
+    """讀單一 Streamlit secret(供 github_store 取 GITHUB_TOKEN 等)。
+
+    先看頂層;找不到再看 [github] 區段內的對應鍵(去掉 GITHUB_ 前綴)。
+    """
     try:
-        return st.secrets[name]
+        if name in st.secrets:
+            return st.secrets[name]
     except Exception:  # noqa: BLE001
-        return None
+        pass
+    # 區段寫法:[github] token = "..."
+    try:
+        sect = st.secrets["github"]
+        short = name.lower().replace("github_", "").replace("gh_", "")
+        for k in sect.keys():
+            if str(k).lower() == short or str(k).lower() == name.lower():
+                return sect[k]
+    except Exception:  # noqa: BLE001
+        pass
+    return None
 
 
 def render_github_save(filename: str, content: str, key: str, label: str | None = None) -> None:
@@ -146,10 +160,16 @@ def render_github_save(filename: str, content: str, key: str, label: str | None 
             st.error(f"存檔失敗:{msg}")
     if not configured:
         st.caption(
-            "ℹ️ 一鍵存檔需 `GITHUB_TOKEN`:Streamlit Cloud → App settings → Secrets 加上"
-            " `GITHUB_TOKEN = \"github_pat_...\"`(fine-grained PAT,限定本 repo、Contents 讀寫)。"
-            "未設定時可改用下方下載再手動上傳。"
+            "ℹ️ 一鍵存檔需 `GITHUB_TOKEN`(放 Streamlit Cloud → App settings → Secrets):"
         )
+        st.code('GITHUB_TOKEN = "github_pat_..."', language="toml")
+        names = available_secret_names()
+        if names:
+            st.caption("🔎 目前 Secrets 讀到的名稱:" + "、".join(f"`{n}`" for n in names)
+                       + "(名稱需完全是 `GITHUB_TOKEN`,大小寫一致;勿放在 [區段] 下,或改用區段 `[github]` token=...)")
+        else:
+            st.caption("🔎 目前讀不到任何 Secrets — 可能尚未按 Save,或 TOML 格式有誤(缺引號/重複鍵)。")
+        st.caption("未設定時可改用下方下載再手動上傳。")
 
 
 def _collect_keys_from_secrets() -> list[str]:

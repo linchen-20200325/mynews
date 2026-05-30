@@ -24,20 +24,28 @@ DEFAULT_BRANCH = "main"
 
 
 def _cfg(get_secret=None) -> dict:
-    """彙整設定:優先環境變數,其次 get_secret(name) 回呼(Streamlit secrets)。"""
-    def val(name: str, default: str = "") -> str:
-        v = os.environ.get(name)
-        if not v and get_secret:
-            try:
-                v = get_secret(name)
-            except Exception:  # noqa: BLE001
-                v = None
-        return (str(v).strip() if v else default)
+    """彙整設定:優先環境變數,其次 get_secret(name) 回呼(Streamlit secrets)。
+
+    token 容錯:除了 GITHUB_TOKEN,也接受 GH_TOKEN;repo/branch 同理。
+    """
+    def val(names, default: str = "") -> str:
+        if isinstance(names, str):
+            names = [names]
+        for name in names:
+            v = os.environ.get(name)
+            if not v and get_secret:
+                try:
+                    v = get_secret(name)
+                except Exception:  # noqa: BLE001
+                    v = None
+            if v:
+                return str(v).strip()
+        return default
 
     return {
-        "token": val("GITHUB_TOKEN"),
-        "repo": val("GITHUB_REPO", DEFAULT_REPO),
-        "branch": val("GITHUB_BRANCH", DEFAULT_BRANCH),
+        "token": val(["GITHUB_TOKEN", "GH_TOKEN", "GITHUB_PAT"]),
+        "repo": val(["GITHUB_REPO", "GH_REPO"], DEFAULT_REPO),
+        "branch": val(["GITHUB_BRANCH", "GH_BRANCH"], DEFAULT_BRANCH),
     }
 
 
