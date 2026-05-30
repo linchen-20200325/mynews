@@ -14,6 +14,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+import etf_fetcher  # 透過代理抓 MoneyDJ 成分股建庫
 import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
@@ -181,6 +182,52 @@ def render_key_hint() -> None:
             "🔎 目前讀不到任何 Secrets — 可能尚未按 Save、或 TOML 格式有誤"
             "(常見:重複鍵、缺引號、貼到多餘符號)。"
         )
+
+
+def ensure_proxy() -> str | None:
+    """從環境變數或 Streamlit Secrets 取得 PROXY_URL(NAS 代理)。"""
+    if os.environ.get("PROXY_URL"):
+        return os.environ["PROXY_URL"]
+    try:
+        url = st.secrets["PROXY_URL"]
+    except Exception:  # noqa: BLE001
+        url = None
+    if url:
+        os.environ["PROXY_URL"] = str(url)
+    return os.environ.get("PROXY_URL")
+
+
+def render_etf_crawl_panel() -> None:
+    """透過 NAS 代理抓 MoneyDJ 成分股,建立/更新反查資料庫。"""
+    with st.container(border=True):
+        st.markdown("#### 🛰️ 透過 NAS 代理更新成分股(MoneyDJ)")
+        st.caption("經由你設定的 PROXY_URL 代理抓 MoneyDJ 真實成分股,建立『個股→ETF』反查庫。")
+        proxy = ensure_proxy()
+        if not proxy:
+            st.warning("未偵測到 PROXY_URL。請在 Streamlit Secrets 設定後再試。")
+        if st.button(
+            "🔄 立即抓取 / 更新 ETF 成分股資料庫",
+            use_container_width=True,
+            disabled=not proxy,
+        ):
+            with st.spinner("透過代理抓 MoneyDJ 成分股中…(視 ETF 檔數約數十秒)"):
+                logs: list[str] = []
+                try:
+                    data = etf_fetcher.crawl(proxy=proxy, log=logs.append)
+                    st.session_state["etf_data_live"] = data
+                    st.success(f"完成!目前資料庫共 {len(data.get('etfs', {}))} 檔 ETF。")
+                except Exception as exc:  # noqa: BLE001
+                    st.error(f"抓取失敗:{exc}")
+                if logs:
+                    with st.expander("📋 抓取明細"):
+                        st.code("\n".join(logs))
+        if st.session_state.get("etf_data_live"):
+            st.download_button(
+                "⬇️ 下載 etf_holdings.json(可 commit 回 repo 永久保存)",
+                data=json.dumps(st.session_state["etf_data_live"], ensure_ascii=False, indent=2),
+                file_name="etf_holdings.json",
+                mime="application/json",
+            )
 
 
 def render_news_cards(news: list[dict]) -> None:
@@ -471,8 +518,9 @@ def render_trends(data: dict) -> None:
 # ETF 持股反查
 # ---------------------------------------------------------------------------
 
-def render_etf_lookup() -> None:
-    data = etf_holdings.load_holdings(ETF_HOLDINGS_PATH)
+def render_etf_lookup(data: dict | None = None) -> None:
+    if data is None:
+        data = etf_holdings.load_holdings(ETF_HOLDINGS_PATH)
     if not data:
         st.warning("找不到 `etf_holdings.json` 或格式有誤。請確認檔案存在且為合法 JSON。")
         return
@@ -744,7 +792,9 @@ def main() -> None:
         render_stocks(data)
     else:
         st.header("🧩 ETF 持股反查 — 個股被幾檔 ETF 持有")
-        render_etf_lookup()
+        render_etf_crawl_panel()
+        # 本次即時抓到的資料庫優先;否則用 repo 內的 etf_holdings.json
+        render_etf_lookup(st.session_state.get("etf_data_live"))
 
 
 if __name__ == "__main__":

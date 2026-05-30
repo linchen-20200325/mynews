@@ -22,7 +22,13 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install Dependencies
+        run: pip install requests
+
       - name: Fetch ETF holdings
+        env:
+          # 透過代理抓 MoneyDJ;在 repo Secrets 設定 PROXY_URL 才會啟用
+          PROXY_URL: ${{ secrets.PROXY_URL }}
         run: python etf_fetcher.py
 
       - name: Commit and Push Changes

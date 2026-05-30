@@ -1,37 +1,34 @@
 {
   "_readme": [
-    "本檔定義『自動抓取 ETF 成分股』的來源。etf_fetcher.py 會逐檔下載並更新 etf_holdings.json。",
-    "每檔 ETF 需填:url(成分股清單下載網址)、format(csv 或 json)、ticker_field(代號欄)、",
-    "name_field(名稱欄,選填)、json_path(JSON 時成分股陣列的路徑,選填)。",
-    "url 留空者會被略過(保留 etf_holdings.json 既有資料)。",
-    "請填入各發行商『官方成分股/PCF』的下載連結,並在 GitHub Actions 上實跑驗證。",
-    "範例(請改成真實連結與正確欄名):",
-    "  \"0050\": {\"name\":\"元大台灣50\",\"url\":\"https://.../0050.csv\",\"format\":\"csv\",\"ticker_field\":\"證券代號\",\"name_field\":\"證券名稱\"}"
+    "etf_fetcher.py 會透過 PROXY_URL 代理,逐檔抓 MoneyDJ 成分股,更新 etf_holdings.json。",
+    "moneydj.etfs:要收錄的 ETF;key 是台股 ETF 代號,etfid 是 MoneyDJ 用的代碼(通常為『代號.TW』)。",
+    "要新增 ETF 就在 moneydj.etfs 加一行;抓不到的會保留 etf_holdings.json 既有資料。",
+    "PROXY_URL 只放在環境變數 / Streamlit Secrets,不要寫進這裡或進版控。"
   ],
-  "etfs": {
-    "0050": {
-      "name": "元大台灣50",
-      "url": "",
-      "format": "csv",
-      "encoding": "utf-8",
-      "ticker_field": "證券代號",
-      "name_field": "證券名稱"
-    },
-    "0056": {
-      "name": "元大高股息",
-      "url": "",
-      "format": "csv",
-      "encoding": "utf-8",
-      "ticker_field": "證券代號",
-      "name_field": "證券名稱"
-    },
-    "00878": {
-      "name": "國泰永續高股息",
-      "url": "",
-      "format": "json",
-      "ticker_field": "stockId",
-      "name_field": "stockName",
-      "json_path": ["data"]
+  "moneydj": {
+    "url_template": "https://www.moneydj.com/etf/x/Basic/Basic0007.xdjhtm?etfid={etfid}",
+    "etfs": {
+      "0050":   { "name": "元大台灣50",        "etfid": "0050.TW" },
+      "006208": { "name": "富邦台50",          "etfid": "006208.TW" },
+      "0051":   { "name": "元大中型100",        "etfid": "0051.TW" },
+      "00692":  { "name": "富邦公司治理",       "etfid": "00692.TW" },
+      "00850":  { "name": "元大臺灣ESG永續",    "etfid": "00850.TW" },
+      "0056":   { "name": "元大高股息",         "etfid": "0056.TW" },
+      "00878":  { "name": "國泰永續高股息",     "etfid": "00878.TW" },
+      "00701":  { "name": "國泰股利精選30",     "etfid": "00701.TW" },
+      "00713":  { "name": "元大台灣高息低波",   "etfid": "00713.TW" },
+      "00919":  { "name": "群益台灣精選高息",   "etfid": "00919.TW" },
+      "00929":  { "name": "復華台灣科技優息",   "etfid": "00929.TW" },
+      "00939":  { "name": "統一台灣高息動能",   "etfid": "00939.TW" },
+      "00940":  { "name": "元大台灣價值高息",   "etfid": "00940.TW" },
+      "00915":  { "name": "凱基優選高股息30",   "etfid": "00915.TW" },
+      "00918":  { "name": "大華優利高填息30",   "etfid": "00918.TW" },
+      "00936":  { "name": "台新永續高息中小",   "etfid": "00936.TW" },
+      "00891":  { "name": "中信關鍵半導體",     "etfid": "00891.TW" },
+      "00892":  { "name": "富邦台灣半導體",     "etfid": "00892.TW" },
+      "00881":  { "name": "國泰台灣5G+",        "etfid": "00881.TW" },
+      "0052":   { "name": "富邦科技",           "etfid": "0052.TW" }
     }
-  }
+  },
+  "etfs": {}
 }
