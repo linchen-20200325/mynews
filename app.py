@@ -392,6 +392,7 @@ def render_etf_profiles() -> None:
 
     c4, c5 = st.columns(2)
     f_months = c4.multiselect("配息月份(任一符合)", list(range(1, 13)))
+    c4.caption("配息月份:月配=確定;季配/雙月/半年/年配為依頻率推測的常見版本(月份後標 *)。")
     all_themes = sorted({t for p in profiles for t in (p.get("themes") or [])})
     f_themes = c5.multiselect("主題 / 理念(任一符合)", all_themes)
 
@@ -432,6 +433,8 @@ def render_etf_profiles() -> None:
                 "型態": p.get("category", ""),
                 "區域": p.get("region", ""),
                 "配息": p.get("dividend_freq", ""),
+                "配息月": ("、".join(str(m) for m in (p.get("dividend_months") or []))
+                          + (" *" if p.get("months_estimated") else "")),
                 "殖利率%": p.get("yield_pct"),
                 "經理費%": p.get("mgmt_fee"),
                 "總費用%": p.get("total_fee"),

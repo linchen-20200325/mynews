@@ -213,6 +213,24 @@ def _months(text: str) -> list[int]:
     return sorted(months)
 
 
+# 依配息頻率推測月份(台灣 ETF 慣例;季配/雙月配/半年配各有版本,僅供參考)
+_FREQ_DEFAULT_MONTHS = {
+    "月配": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],   # 確定:每月都配
+    "季配": [1, 4, 7, 10],                              # 推測:最常見版本(另有 2/5/8/11、3/6/9/12)
+    "雙月配": [1, 3, 5, 7, 9, 11],                      # 推測
+    "半年配": [6, 12],                                  # 推測
+    "年配": [10],                                       # 推測
+}
+
+
+def _infer_months(freq: str) -> tuple[list[int], bool]:
+    """依頻率推測配息月份。回傳 (月份清單, 是否為推測值)。
+    月配為確定(1~12);其餘為推測,前端會標註(推測)。"""
+    months = _FREQ_DEFAULT_MONTHS.get(freq, [])
+    is_estimate = freq != "月配"  # 只有月配是確定的
+    return months, (is_estimate and bool(months))
+
+
 def _strategy(text_all: str) -> str:
     return "主動式" if ("主動" in text_all and "被動" not in text_all) else "被動(追蹤指數)"
 
@@ -272,6 +290,13 @@ def parse_profile(html_text: str, code: str, name: str) -> dict:
     strategy_text = find("投資策略", "投資風格")
     size_m = _scale_million(scale_raw)
 
+    freq = _dividend_freq(div_raw or name)
+    actual_months = _months(div_raw)  # 頁面若直接寫月份就用實際的
+    if actual_months:
+        months, est = actual_months, False
+    else:
+        months, est = _infer_months(freq)
+
     return {
         "code": code,
         "name": name,
@@ -280,8 +305,9 @@ def parse_profile(html_text: str, code: str, name: str) -> dict:
         "category": _classify_category(cat_raw or name),
         "category_raw": cat_raw,
         "region": _classify_region(region_raw or index_raw or name),
-        "dividend_freq": _dividend_freq(div_raw or name),
-        "dividend_months": _months(div_raw),
+        "dividend_freq": freq,
+        "dividend_months": months,
+        "months_estimated": est,
         "mgmt_fee": _pct(mgmt_raw),
         "total_fee": _pct(total_fee_raw),
         "yield_pct": _pct(yield_raw),
