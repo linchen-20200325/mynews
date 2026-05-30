@@ -1,6 +1,6 @@
 # STATE.md — 專案戰情室
 
-> 最後更新:2026-05-30(一鍵存到 GitHub + ETF 市價欄位)
+> 最後更新:2026-05-30(全域自動存到 GitHub;成分股已建真實庫 61 檔)
 
 ## 當前環境
 
@@ -70,7 +70,10 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - [x] ETF 市價:從 Basic0004 解析 ETF市價/ETF淨值(price/nav)入圖鑑
 - [x] `github_store.py` + 看板「💾 直接存到 GitHub」按鈕(常駐顯示):用 GITHUB_TOKEN 經
       Contents API 把 etf_holdings/etf_sources/etf_profiles/stock_prices.json 一鍵 commit 回 repo,
-      免手動下載上傳;未設 token 時停用並提示,保留下載備援
+      免手動下載上傳;token 偵測容錯(GITHUB_TOKEN/GH_TOKEN/[github]),未設時提示並列 Secrets 名稱
+- [x] **側邊欄全域設定「💾 抓取後自動存到 GitHub」**(預設開):勾一次,成分股/圖鑑/股價
+      三個抓取完成都自動 commit 回 repo,解決 session 被清掉而誤存回 seed 的問題
+- [x] 成分股真實庫已建立:`etf_holdings.json` = 61 檔(MoneyDJ via proxy),涵蓋全市場個股
 
 ## 待辦 / 可優化 ⏳
 
