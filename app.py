@@ -142,6 +142,22 @@ def _secret(name: str):
     return None
 
 
+def save_to_github(filename: str, data, label: str = "") -> None:
+    """把 data(dict)直接 commit 回 repo,並在畫面顯示結果。供『抓取後自動存』使用。"""
+    if not github_store.is_configured(_secret):
+        st.info(f"（未設定 GITHUB_TOKEN,{filename} 未自動存檔;可手動按下方存檔或下載。)")
+        return
+    content = json.dumps(data, ensure_ascii=False, indent=2)
+    with st.spinner(f"自動存 {filename} 到 GitHub 中…"):
+        ok, msg = github_store.commit_file(
+            filename, content, f"🛰️ 自動更新 {filename}{label}", _secret
+        )
+    if ok:
+        st.success(f"✅ 已自動存到 GitHub:{filename}　{msg}")
+    else:
+        st.error(f"自動存檔失敗({filename}):{msg}")
+
+
 def render_github_save(filename: str, content: str, key: str, label: str | None = None) -> None:
     """通用『💾 直接存到 GitHub』按鈕:把 content commit 成 repo 內 filename。
 
@@ -284,6 +300,8 @@ def render_etf_crawl_panel() -> None:
             with st.spinner("正在測試中繼站連線…"):
                 res = proxy_helper.check_proxy()
             (st.success if res["ok"] else st.error)(res["detail"])
+        auto = st.checkbox("☑️ 抓取後自動存到 GitHub", value=True, key="auto_save_holdings",
+                           help="抓完立即 commit etf_holdings.json,免得 session 被清掉。需設 GITHUB_TOKEN。")
         if st.button(
             "🔄 立即抓取 / 更新 ETF 成分股資料庫",
             use_container_width=True,
@@ -295,6 +313,8 @@ def render_etf_crawl_panel() -> None:
                     data = etf_fetcher.crawl(proxy=proxy, log=logs.append)
                     st.session_state["etf_data_live"] = data
                     st.success(f"完成!目前資料庫共 {len(data.get('etfs', {}))} 檔 ETF。")
+                    if auto:
+                        save_to_github("etf_holdings.json", data, f"({len(data.get('etfs', {}))} 檔)")
                 except Exception as exc:  # noqa: BLE001
                     st.error(f"抓取失敗:{exc}")
                 if logs:
@@ -402,6 +422,8 @@ def render_etf_profiles() -> None:
         proxy = ensure_proxy()
         if not proxy:
             st.warning("未偵測到 PROXY_URL,無法抓取。請先在 Streamlit Secrets 設定。")
+        auto_p = st.checkbox("☑️ 抓取後自動存到 GitHub", value=True, key="auto_save_profiles",
+                             help="抓完立即 commit etf_profiles.json。需設 GITHUB_TOKEN。")
         if st.button("🔄 抓取 / 更新 ETF 圖鑑資料", use_container_width=True, disabled=not proxy):
             with st.spinner("透過代理抓 ETF 基本資料中…(視檔數約 1 分鐘)"):
                 logs: list[str] = []
@@ -409,6 +431,8 @@ def render_etf_profiles() -> None:
                     data = etf_profile_fetcher.crawl(proxy=proxy, log=logs.append)
                     st.session_state["etf_profiles_live"] = data
                     st.success(f"完成!共 {len(data.get('profiles', {}))} 檔。")
+                    if auto_p:
+                        save_to_github("etf_profiles.json", data, f"({len(data.get('profiles', {}))} 檔)")
                 except Exception as exc:  # noqa: BLE001
                     st.error(f"抓取失敗:{exc}")
                 if logs:
@@ -836,13 +860,17 @@ def render_price_update_panel(current_prices: dict) -> None:
     with st.expander(f"💰 股價資料（目前 {len(current_prices)} 檔)— 點此更新", expanded=not current_prices):
         st.caption("透過代理抓臺灣證交所(上市)＋櫃買中心(上櫃)當日收盤價,供『股價範圍』篩選使用。")
         proxy = ensure_proxy()
+        auto_pr = st.checkbox("☑️ 抓取後自動存到 GitHub", value=True, key="auto_save_prices",
+                              help="抓完立即 commit stock_prices.json。需設 GITHUB_TOKEN。")
         if st.button("🔄 更新台股收盤價", use_container_width=True, disabled=not proxy):
             with st.spinner("透過代理抓台股收盤價中…"):
                 logs: list[str] = []
                 try:
                     data = price_fetcher.fetch_prices(proxy=proxy, log=logs.append)
                     st.session_state["price_data_live"] = data
-                    st.success(f"完成!取得 {len(data.get('prices', {}))} 檔收盤價。請重整或重跑篩選。")
+                    st.success(f"完成!取得 {len(data.get('prices', {}))} 檔收盤價。")
+                    if auto_pr:
+                        save_to_github("stock_prices.json", data, f"({len(data.get('prices', {}))} 檔)")
                 except Exception as exc:  # noqa: BLE001
                     st.error(f"抓取失敗:{exc}")
                 if logs:
