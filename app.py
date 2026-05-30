@@ -16,6 +16,7 @@ import streamlit as st
 
 import etf_fetcher  # 透過代理抓 MoneyDJ 成分股建庫
 import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
+import etf_profile_fetcher  # ETF 圖鑑:抓基本資料(型態/配息/費用/策略)
 import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
@@ -324,6 +325,112 @@ def render_etf_add_panel() -> None:
             file_name="etf_sources.json",
             mime="application/json",
         )
+
+
+def render_etf_profiles() -> None:
+    """ETF 圖鑑:抓基本資料建庫 + 篩選器(型態/區域/配息/費用/主題/策略)。"""
+    # 建庫面板
+    with st.container(border=True):
+        st.markdown("#### 🛰️ 透過 NAS 代理建立 ETF 圖鑑(MoneyDJ 基本資料)")
+        st.caption("抓清單內每檔 ETF 的型態、投資區域、配息、經理費/保管費、追蹤指數與主題標籤。")
+        proxy = ensure_proxy()
+        if not proxy:
+            st.warning("未偵測到 PROXY_URL,無法抓取。請先在 Streamlit Secrets 設定。")
+        if st.button("🔄 抓取 / 更新 ETF 圖鑑資料", use_container_width=True, disabled=not proxy):
+            with st.spinner("透過代理抓 ETF 基本資料中…(視檔數約 1 分鐘)"):
+                logs: list[str] = []
+                try:
+                    data = etf_profile_fetcher.crawl(proxy=proxy, log=logs.append)
+                    st.session_state["etf_profiles_live"] = data
+                    st.success(f"完成!共 {len(data.get('profiles', {}))} 檔。")
+                except Exception as exc:  # noqa: BLE001
+                    st.error(f"抓取失敗:{exc}")
+                if logs:
+                    with st.expander("📋 抓取明細"):
+                        st.code("\n".join(logs))
+        if st.session_state.get("etf_profiles_live"):
+            st.download_button(
+                "⬇️ 下載 etf_profiles.json(可 commit 回 repo 保存)",
+                data=json.dumps(st.session_state["etf_profiles_live"], ensure_ascii=False, indent=2),
+                file_name="etf_profiles.json",
+                mime="application/json",
+            )
+
+    data = st.session_state.get("etf_profiles_live") or etf_profile_fetcher.load_profiles()
+    profiles = list((data.get("profiles") or {}).values()) if isinstance(data, dict) else []
+    if not profiles:
+        st.info("尚無 ETF 圖鑑資料。請先按上方「🔄 抓取 / 更新」建立(需設定 PROXY_URL)。")
+        return
+
+    st.caption(f"資料版本:{data.get('as_of', '—')}　|　共 {len(profiles)} 檔")
+
+    # ---- 篩選器 ----
+    st.subheader("🔎 篩選器")
+    present = lambda key, opts: [o for o in opts if any(p.get(key) == o for p in profiles)]
+    c1, c2, c3 = st.columns(3)
+    f_cat = c1.multiselect("型態", present("category", etf_profile_fetcher.CATEGORIES))
+    f_region = c2.multiselect("投資區域", present("region", etf_profile_fetcher.REGIONS))
+    f_freq = c3.multiselect("配息頻率", present("dividend_freq", etf_profile_fetcher.DIVIDEND_FREQS))
+
+    c4, c5 = st.columns(2)
+    f_months = c4.multiselect("配息月份(任一符合)", list(range(1, 13)))
+    all_themes = sorted({t for p in profiles for t in (p.get("themes") or [])})
+    f_themes = c5.multiselect("主題 / 理念(任一符合)", all_themes)
+
+    c6, c7 = st.columns(2)
+    f_strategy = c6.multiselect("投資策略", ["被動(追蹤指數)", "主動式"])
+    max_fee = c7.slider("內扣費用上限(經理費+保管費,%)", 0.0, 3.0, 3.0, step=0.05)
+
+    def _fee(p: dict) -> float:
+        return (p.get("mgmt_fee") or 0) + (p.get("custody_fee") or 0)
+
+    def keep(p: dict) -> bool:
+        if f_cat and p.get("category") not in f_cat:
+            return False
+        if f_region and p.get("region") not in f_region:
+            return False
+        if f_freq and p.get("dividend_freq") not in f_freq:
+            return False
+        if f_months and not (set(f_months) & set(p.get("dividend_months") or [])):
+            return False
+        if f_themes and not (set(f_themes) & set(p.get("themes") or [])):
+            return False
+        if f_strategy and p.get("strategy") not in f_strategy:
+            return False
+        if _fee(p) > max_fee:
+            return False
+        return True
+
+    filtered = [p for p in profiles if keep(p)]
+    st.caption(f"符合條件:**{len(filtered)}** 檔(共 {len(profiles)} 檔)")
+
+    st.dataframe(
+        [
+            {
+                "代號": p.get("code", ""),
+                "名稱": p.get("name", ""),
+                "型態": p.get("category", ""),
+                "區域": p.get("region", ""),
+                "配息": p.get("dividend_freq", ""),
+                "配息月": "、".join(str(m) for m in (p.get("dividend_months") or [])),
+                "經理費%": p.get("mgmt_fee"),
+                "保管費%": p.get("custody_fee"),
+                "策略": p.get("strategy", ""),
+                "主題": "、".join(p.get("themes") or []),
+                "追蹤指數": p.get("index_tracked", ""),
+            }
+            for p in filtered
+        ],
+        use_container_width=True,
+        hide_index=True,
+    )
+    st.download_button(
+        "⬇️ 下載篩選結果 JSON",
+        data=json.dumps(filtered, ensure_ascii=False, indent=2),
+        file_name="etf_profiles_filtered.json",
+        mime="application/json",
+    )
+    st.caption("⚠️ 資料抓自 MoneyDJ、自動分類可能有誤;費用/配息以各發行商公開說明書為準。非投資建議。")
 
 
 def render_news_cards(news: list[dict]) -> None:
@@ -774,7 +881,7 @@ def main() -> None:
 
     st.sidebar.header("📂 報告類型")
     report_type = st.sidebar.radio(
-        "選擇", ["戰略報告", "趨勢雷達", "台股觀察", "ETF持股反查"]
+        "選擇", ["戰略報告", "趨勢雷達", "台股觀察", "ETF持股反查", "ETF圖鑑"]
     )
     st.sidebar.divider()
     with st.sidebar:
@@ -961,12 +1068,15 @@ def main() -> None:
             st.warning("尚無每日台股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_stocks(data)
-    else:
+    elif report_type == "ETF持股反查":
         st.header("🧩 ETF 持股反查 — 個股被幾檔 ETF 持有")
         render_etf_crawl_panel()
         render_etf_add_panel()
         # 本次即時抓到的資料庫優先;否則用 repo 內的 etf_holdings.json
         render_etf_lookup(st.session_state.get("etf_data_live"))
+    else:
+        st.header("📚 ETF 圖鑑 — 投資概念 / 配息 / 費用 / 分類")
+        render_etf_profiles()
 
 
 if __name__ == "__main__":
