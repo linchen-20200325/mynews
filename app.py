@@ -14,6 +14,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
 REPORT_PATH = Path("latest_report.json")
@@ -22,6 +23,7 @@ TRENDS_PATH = Path("latest_trends.json")
 TRENDS_ARCHIVE_DIR = Path("data/trends")
 STOCKS_PATH = Path("latest_stocks.json")
 STOCKS_ARCHIVE_DIR = Path("data/stocks")
+ETF_HOLDINGS_PATH = Path("etf_holdings.json")
 
 SENTIMENT_STYLE = {
     "利多": ("🟢", "success"),
@@ -297,15 +299,21 @@ def render_stocks(data: dict) -> None:
         st.info("本次未整理出台股標的。")
         return
 
-    # 總表
-    st.subheader("📋 台股標的總表(依被提及次數)")
+    # 交叉參照:每檔個股被幾檔 ETF 持有(來自 etf_holdings.json)
+    holdings = etf_holdings.load_holdings(ETF_HOLDINGS_PATH)
+    etf_counts = etf_holdings.etf_count_map(holdings) if holdings else {}
+
+    # 總表(新聞提及次數 + ETF 持有檔數,兩個訊號一起看)
+    st.subheader("📋 台股標的總表(新聞提及 × ETF 持有)")
+    st.caption("被很多 ETF 持有 ＋ 新聞偏利多 = 相對更受關注。ETF 檔數來自 etf_holdings.json。")
     st.dataframe(
         [
             {
                 "標的": s.get("name", ""),
                 "代號": s.get("ticker", ""),
                 "產業": s.get("sector", ""),
-                "被提及": s.get("mention_count", 0),
+                "新聞提及": s.get("mention_count", 0),
+                "ETF持有": etf_counts.get(str(s.get("ticker", "")), 0),
                 "傾向": s.get("sentiment", ""),
                 "原因": s.get("reason", ""),
             }
@@ -460,6 +468,61 @@ def render_trends(data: dict) -> None:
 
 
 # ---------------------------------------------------------------------------
+# ETF 持股反查
+# ---------------------------------------------------------------------------
+
+def render_etf_lookup() -> None:
+    data = etf_holdings.load_holdings(ETF_HOLDINGS_PATH)
+    if not data:
+        st.warning("找不到 `etf_holdings.json` 或格式有誤。請確認檔案存在且為合法 JSON。")
+        return
+
+    etfs = data.get("etfs", {})
+    rows = etf_holdings.reverse_index(data)
+    c1, c2 = st.columns(2)
+    c1.metric("收錄 ETF 檔數", len(etfs))
+    c2.metric("涵蓋個股數", len(rows))
+    st.caption(f"資料版本:{data.get('as_of', '—')}")
+    if data.get("note"):
+        st.info("⚠️ " + data["note"])
+
+    st.subheader("📋 個股被 ETF 持有反查表(依持有檔數)")
+    st.caption("『被幾檔 ETF 持有』越多,代表越多 ETF 同時納入該股——例如台積電被多檔持有,得到的被動買盤就越廣。")
+    st.dataframe(
+        [
+            {
+                "個股": r["name"],
+                "代號": r["ticker"],
+                "被幾檔ETF持有": r["etf_count"],
+                "ETF清單": "、".join(f"{e['code']} {e['name']}" for e in r["etfs"]),
+            }
+            for r in rows
+        ],
+        use_container_width=True,
+        hide_index=True,
+    )
+    st.download_button(
+        "⬇️ 下載反查結果 JSON",
+        data=json.dumps(rows, ensure_ascii=False, indent=2),
+        file_name="etf_reverse.json",
+        mime="application/json",
+    )
+
+    with st.expander("📦 目前收錄的 ETF 與成分股"):
+        names = data.get("stock_names", {})
+        for code, info in etfs.items():
+            name = info.get("name", code) if isinstance(info, dict) else code
+            holdings = info.get("holdings", []) if isinstance(info, dict) else info
+            shown = "、".join(f"{t} {names.get(t, '')}".strip() for t in holdings)
+            st.markdown(f"**{code} {name}**（{len(holdings)} 檔）:{shown}")
+
+    st.caption(
+        "⚠️ 成分股為設定檔(`etf_holdings.json`)維護的範例/概況,可能非最新;"
+        "請以各發行商最新公告為準。本頁非投資建議。"
+    )
+
+
+# ---------------------------------------------------------------------------
 # 主程式
 # ---------------------------------------------------------------------------
 
@@ -468,7 +531,9 @@ def main() -> None:
     st.title("🌐 全球政經戰略每日看板")
 
     st.sidebar.header("📂 報告類型")
-    report_type = st.sidebar.radio("選擇", ["戰略報告", "趨勢雷達", "台股觀察"])
+    report_type = st.sidebar.radio(
+        "選擇", ["戰略報告", "趨勢雷達", "台股觀察", "ETF持股反查"]
+    )
     st.sidebar.divider()
     st.sidebar.header("📅 報告選擇")
 
@@ -594,7 +659,7 @@ def main() -> None:
             st.warning("尚無每日趨勢雷達存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_trends(data)
-    else:
+    elif report_type == "台股觀察":
         st.header("📈 台股觀察 — 值得關注的台股標的")
         render_stock_live_panel()
 
@@ -651,6 +716,9 @@ def main() -> None:
             st.warning("尚無每日台股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_stocks(data)
+    else:
+        st.header("🧩 ETF 持股反查 — 個股被幾檔 ETF 持有")
+        render_etf_lookup()
 
 
 if __name__ == "__main__":

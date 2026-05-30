@@ -19,8 +19,10 @@ update_data.py
    │       (raw_news 直接採用爬蟲抓到的真實新聞,絕不虛構)
    ├─ [B] 趨勢雷達 (可關)
    │    Gemini:讀取產業新聞 → 最熱門產業,依資金/徵才/政策/技術排名打分
-   └─ [C] 台股觀察 (可關)
-        Gemini:讀取台灣財經新聞 → 被提最多次的台股標的(利多/利空/觀望)+ 趨勢/夕陽產業
+   ├─ [C] 台股觀察 (可關)
+   │    Gemini:讀取台灣財經新聞 → 被提最多次的台股標的(利多/利空/觀望)+ 趨勢/夕陽產業
+   └─ [D] ETF 持股反查 (靜態,不需 AI)
+        讀 etf_holdings.json → 反算每檔個股「被幾檔 ETF 持有」
         │
         ▼
 latest_report.json / latest_trends.json / latest_stocks.json   ──►  app.py (Streamlit) 呈現
@@ -33,7 +35,8 @@ data/reports|trends|stocks/<date>.json   歷史存檔(側邊欄可瀏覽)
 | 檔案 | 用途 |
 |------|------|
 | `news_fetcher.py` | RSS 新聞爬蟲(純標準函式庫),從可信來源抓真實外電 |
-| `update_data.py` | 核心:餵新聞給 Gemini 做分析 + 白話文 + 趨勢雷達,輸出 JSON |
+| `update_data.py` | 核心:餵新聞給 Gemini 做分析 + 白話文 + 趨勢雷達 + 台股觀察,輸出 JSON |
+| `etf_holdings.py` / `etf_holdings.json` | ETF 持股反查:由設定檔反算個股被幾檔 ETF 持有(純資料、不用 AI;成分股需自行核實更新) |
 | `app.py` | Streamlit 前端,含歷史報告選擇器 |
 | `.github/workflows/daily_update.yml` | 每日定時執行 + 自動 commit/push |
 | `requirements.txt` | 相依套件 |
