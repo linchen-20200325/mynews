@@ -1,6 +1,6 @@
 # STATE.md — 專案戰情室
 
-> 最後更新:2026-05-30
+> 最後更新:2026-05-30(NAS 中繼站移植 + 連線健檢)
 
 ## 當前環境
 
@@ -38,6 +38,12 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - [x] 金鑰診斷:Streamlit 讀不到金鑰時列出 Secrets 名稱與正確 TOML 寫法
 - [x] 每日/每月 GitHub Actions 排程 + 自動 commit;LINE 推播(最佳努力)
 - [x] 文件:`CLAUDE.md` / `STATE.md` / `README.md`
+- [x] NAS 中繼站(參照基金 `infra/proxy.py` 移植):`proxy_helper.py` 統一讀設定
+      (explicit > 環境變數 > st.secrets,新格式 `PROXY_URL` + 舊格式 `[proxy]`)、
+      `fetch_url` 中繼+自動降級直連;`etf_fetcher.get_proxies()` 改委派 proxy_helper
+- [x] **檢驗中繼站是否可用**:`proxy_helper.check_proxy()`(實際探測 MoneyDJ + 計時),
+      三入口 — 看板側邊欄/ETF 頁「🧪 檢驗中繼站連線」按鈕、`python proxy_helper.py` CLI、
+      `.github/workflows/proxy_check.yml`(雲端手動健檢)
 
 ## 待辦 / 可優化 ⏳
 
