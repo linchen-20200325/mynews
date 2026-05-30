@@ -410,13 +410,18 @@ def load_json(path: Path) -> dict:
         return {}
 
 
-def crawl(proxy: str | None = None, log=print) -> dict:
-    """依 etf_sources.json 抓每檔 ETF 基本資料,回傳 {"as_of","profiles":{code:profile}}。"""
+def crawl(proxy: str | None = None, log=print, sources: dict | None = None) -> dict:
+    """依清單抓每檔 ETF 基本資料,回傳 {"as_of","profiles":{code:profile}}。
+
+    sources 可由呼叫端傳入(Streamlit session 最新清單);未傳入才讀磁碟。
+    """
     proxies = get_proxies(proxy)
     if proxies is None:
         raise RuntimeError("未提供 PROXY_URL,無法透過代理抓取")
 
-    etfs = load_json(SOURCES_PATH).get("moneydj", {}).get("etfs", {})
+    if sources is None:
+        sources = load_json(SOURCES_PATH)
+    etfs = sources.get("moneydj", {}).get("etfs", {})
     if not etfs:
         raise RuntimeError("etf_sources.json 沒有任何 ETF")
 

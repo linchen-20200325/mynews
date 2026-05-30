@@ -309,7 +309,9 @@ def render_etf_crawl_panel() -> None:
             with st.spinner("透過代理抓 MoneyDJ 成分股中…(視 ETF 檔數約數十秒)"):
                 logs: list[str] = []
                 try:
-                    data = etf_fetcher.crawl(proxy=proxy, log=logs.append)
+                    # 優先用 session 內的最新清單(雲端磁碟唯讀,新增的 ETF 只在 session)
+                    live_sources = st.session_state.get("etf_sources_live")
+                    data = etf_fetcher.crawl(proxy=proxy, log=logs.append, sources=live_sources)
                     st.session_state["etf_data_live"] = data
                     st.success(f"完成!目前資料庫共 {len(data.get('etfs', {}))} 檔 ETF。")
                     if auto:
@@ -367,12 +369,15 @@ def render_etf_add_panel() -> None:
                     etf_fetcher.save_sources(sources)
                     saved = "(已寫入 etf_sources.json)"
                 except Exception:  # noqa: BLE001 — 雲端唯讀
-                    saved = "(雲端唯讀,請用下方按鈕下載清單並 commit 回 repo)"
+                    saved = ""
                 if not proxy:
                     st.info("未設定 PROXY_URL,名稱暫時留空;設定代理後重抓即可補上名稱。")
                 st.success("處理完成 " + saved)
                 st.write("\n".join(f"- {m}" for m in msgs))
                 etfs = sources["moneydj"]["etfs"]
+                if st.session_state.get("auto_save_github", True):
+                    save_to_github("etf_sources.json", sources,
+                                   f"({len(etfs)} 檔)")
 
         # 移除 ETF
         st.markdown("**🗑️ 移除 ETF**")
@@ -393,10 +398,13 @@ def render_etf_add_panel() -> None:
                     etf_fetcher.save_sources(sources)
                     rsaved = "(已寫入 etf_sources.json)"
                 except Exception:  # noqa: BLE001 — 雲端唯讀
-                    rsaved = "(雲端唯讀,請用下方按鈕下載清單並 commit 回 repo)"
+                    rsaved = ""
                 st.success("處理完成 " + rsaved)
                 st.write("\n".join(f"- {m}" for m in rmsgs))
                 etfs = sources["moneydj"]["etfs"]
+                if st.session_state.get("auto_save_github", True):
+                    save_to_github("etf_sources.json", sources,
+                                   f"({len(etfs)} 檔)")
         else:
             st.caption("清單目前是空的。")
 
@@ -426,7 +434,8 @@ def render_etf_profiles() -> None:
             with st.spinner("透過代理抓 ETF 基本資料中…(視檔數約 1 分鐘)"):
                 logs: list[str] = []
                 try:
-                    data = etf_profile_fetcher.crawl(proxy=proxy, log=logs.append)
+                    live_sources = st.session_state.get("etf_sources_live")
+                    data = etf_profile_fetcher.crawl(proxy=proxy, log=logs.append, sources=live_sources)
                     st.session_state["etf_profiles_live"] = data
                     st.success(f"完成!共 {len(data.get('profiles', {}))} 檔。")
                     if auto_p:
