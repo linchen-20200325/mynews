@@ -486,6 +486,32 @@ def render_etf_lookup() -> None:
     if data.get("note"):
         st.info("⚠️ " + data["note"])
 
+    # 🔎 輸入代號/名稱直接查「這檔股票被哪些 ETF 持有」
+    st.subheader("🔎 個股查詢 — 它被哪些 ETF 持有?")
+    query = st.text_input(
+        "輸入台股代號或名稱(例:2330 或 台積電)", value="", key="etf_query"
+    ).strip()
+    if query:
+        matches = [
+            r for r in rows if query in r["ticker"] or (r["name"] and query in r["name"])
+        ]
+        if matches:
+            for r in matches:
+                with st.container(border=True):
+                    st.markdown(
+                        f"### {r['name']}（{r['ticker']}）　🧩 被 **{r['etf_count']}** 檔 ETF 持有"
+                    )
+                    if r["etfs"]:
+                        st.markdown(
+                            "、".join(f"`{e['code']}` {e['name']}" for e in r["etfs"])
+                        )
+        else:
+            st.warning(
+                f"在目前收錄的 {len(etfs)} 檔 ETF 成分股裡找不到「{query}」。"
+                "可能是該股尚未被收錄的 ETF 納入,或 `etf_holdings.json` 還沒收錄足夠 ETF。"
+            )
+    st.divider()
+
     st.subheader("📋 個股被 ETF 持有反查表(依持有檔數)")
     st.caption("『被幾檔 ETF 持有』越多,代表越多 ETF 同時納入該股——例如台積電被多檔持有,得到的被動買盤就越廣。")
     st.dataframe(
