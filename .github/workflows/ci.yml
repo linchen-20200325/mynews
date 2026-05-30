@@ -26,7 +26,7 @@ jobs:
           import glob, json, sys
           ok = True
           for f in glob.glob("latest_report.json") + glob.glob("latest_trends.json") \
-                   + glob.glob("latest_stocks.json") \
+                   + glob.glob("latest_stocks.json") + glob.glob("etf_holdings.json") \
                    + glob.glob("data/reports/*.json") + glob.glob("data/trends/*.json") \
                    + glob.glob("data/stocks/*.json"):
               try:
