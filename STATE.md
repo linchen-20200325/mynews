@@ -1,6 +1,6 @@
 # STATE.md — 專案戰情室
 
-> 最後更新:2026-05-30(ETF 圖鑑 + ETF 清單管理)
+> 最後更新:2026-05-30(ETF 圖鑑解析校正 Basic0004)
 
 ## 當前環境
 
@@ -57,15 +57,18 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - [x] `update_etf.yml` 每月一併抓股價(失敗不影響成分股),commit etf_holdings.json + stock_prices.json
 - [x] ETF 清單管理(`etf_fetcher`):網頁新增(只輸代號、批次貼、自動抓名稱、重複/格式檢查)、
       移除(多選);本機直接寫檔、雲端唯讀則下載 etf_sources.json commit 回 repo
-- [x] `etf_profile_fetcher.py` / `etf_profiles.json` — 透過代理抓 MoneyDJ 基本資料(Basic0001),
-      解析型態/區域/配息頻率/配息月份/經理費/保管費/追蹤指數/主動被動/主題標籤;沿用同一份 ETF 清單
-- [x] ETF 圖鑑頁篩選器:型態、投資區域、配息頻率、配息月份、主題理念、策略、內扣費用上限
+- [x] `etf_profile_fetcher.py` / `etf_profiles.json` — 透過代理抓 MoneyDJ **Basic0004(簡介頁)**,
+      依真實欄位精準解析:型態←投資標的、區域←投資區域、配息頻率←配息頻率、經理費←經理費(%)、
+      總費用←總管理費用(%)、殖利率←殖利率(%)、規模←ETF規模、追蹤指數、經理人、發行商、策略敘述、主題標籤;
+      沿用同一份 ETF 清單;含「🔬 診斷單檔欄位」(可選 0004/0003/0001 頁)校正工具
+- [x] ETF 圖鑑頁篩選器:型態、投資區域、配息頻率、配息月份、主題理念、策略、總管理費用上限;
+      表格含殖利率/總費用/規模/經理人/發行商/追蹤指數
 
 ## 待辦 / 可優化 ⏳
 
 - [ ] 在 Streamlit 上按「🛰️ 透過代理更新成分股」實測 MoneyDJ;若解析對不上,依抓取明細修
 - [ ] 在 Streamlit 上按「🔄 更新台股收盤價」實測 TWSE/TPEx;若欄位對不上,依 log 修 price_fetcher 解析
-- [ ] 在 Streamlit 上按「🔄 抓取 ETF 圖鑑」實測 MoneyDJ Basic0001;若分類/欄位判錯,依抓取明細修 etf_profile_fetcher
+- [ ] 在 Streamlit 上按「🔄 抓取 ETF 圖鑑」全 66 檔重抓 Basic0004,確認型態/配息/費用正確,下載 etf_profiles.json commit 保存
 - [ ] 設定 `GEMINI_API_KEY`(看板即時分析 + 每日排程)
 - [ ] (選)在 repo Secrets 設 `PROXY_URL` 讓每月排程自動抓 ETF + 股價(NAS 防火牆需放行 Actions IP)
 - [ ] 抓到完整 ETF 庫/股價後 commit `etf_holdings.json` / `stock_prices.json` 永久保存
@@ -81,4 +84,6 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - `PROXY_URL` 含帳密,只走環境變數/Secrets;`.streamlit/secrets.toml` 已 gitignore,不可進版控。
 - 「金鑰讀不到」多為命名/格式問題:名稱需為 `GEMINI_API_KEY`,複數 key 用逗號或陣列。
 - Gemini 模型(`gemini-2.5-flash`)若不可用,以 `GEMINI_MODEL` 覆寫。
+- ETF 圖鑑「配息月份」篩選對 MoneyDJ Basic0004 無效:該頁只給頻率(季配/月配),無月份明細;
+  配息頻率篩選正常。若需月份需另接發行商來源。
 - 所有產出為 AI/工具自動生成,僅供參考,非投資建議。
