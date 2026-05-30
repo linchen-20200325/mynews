@@ -180,7 +180,8 @@ def _strategy(text_all: str) -> str:
 
 
 def _themes(name: str, text_all: str) -> list[str]:
-    blob = f"{name} {text_all}"
+    # 只用『ETF 名稱 + 追蹤指數』判斷主題,避免被整頁其他區塊(相關 ETF 清單等)汙染
+    blob = f"{name} {text_all}"[:200]
     rules = {
         "高息低波": ("高息低波", "低波"),
         "高股息": ("高股息", "高息", "股利"),
@@ -223,7 +224,9 @@ def parse_profile(html_text: str, code: str, name: str) -> dict:
     custody_raw = find("保管費")
     index_raw = find("標的指數", "追蹤指數", "指數")
     issuer_raw = find("發行", "投信", "經理公司", "基金公司")
-    blob = " ".join(kv.values()) + " " + name
+    # 主題只用名稱 + 追蹤指數判斷,避免被整頁其他區塊(相關 ETF 清單)汙染
+    theme_blob = f"{name} {index_raw} {cat_raw}"
+    strat_blob = f"{name} {cat_raw} {index_raw} {div_raw}"
 
     return {
         "code": code,
@@ -236,10 +239,19 @@ def parse_profile(html_text: str, code: str, name: str) -> dict:
         "mgmt_fee": _pct(mgmt_raw),
         "custody_fee": _pct(custody_raw),
         "index_tracked": index_raw,
-        "strategy": _strategy(blob),
-        "themes": _themes(name, blob),
+        "strategy": _strategy(strat_blob),
+        "themes": _themes(name, theme_blob),
         "category_raw": cat_raw,
     }
+
+
+def diagnose(etfid: str, proxy: str | None = None) -> dict:
+    """診斷:抓一檔基本資料頁,回傳解析出的所有『欄位名→值』,供校正解析器。"""
+    proxies = get_proxies(proxy)
+    if proxies is None:
+        raise RuntimeError("未提供 PROXY_URL")
+    html = _http_get(BASIC_TEMPLATE.format(etfid=etfid), proxies)
+    return _kv_pairs(html)
 
 
 def get_proxies(proxy: str | None = None) -> dict | None:

@@ -356,6 +356,21 @@ def render_etf_profiles() -> None:
                 mime="application/json",
             )
 
+        # 診斷:抓一檔看 MoneyDJ 真實欄位名(若分類大量判錯,用這個校正解析器)
+        with st.expander("🔬 診斷單檔欄位(分類抓不到時用)"):
+            st.caption("輸入一檔代號,列出 MoneyDJ 基本資料頁解析到的『欄位名 → 值』,可截圖貼給開發者校正。")
+            diag_code = st.text_input("代號", value="0050", key="etf_diag_code").strip()
+            if st.button("🔬 診斷此檔", disabled=not proxy, key="btn_etf_diag"):
+                with st.spinner("抓取中…"):
+                    try:
+                        kv = etf_profile_fetcher.diagnose(f"{diag_code}.TW", proxy=proxy)
+                        if kv:
+                            st.json(kv)
+                        else:
+                            st.warning("沒解析到任何欄位(頁面結構可能不同)。")
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"診斷失敗:{exc}")
+
     data = st.session_state.get("etf_profiles_live") or etf_profile_fetcher.load_profiles()
     profiles = list((data.get("profiles") or {}).values()) if isinstance(data, dict) else []
     if not profiles:
