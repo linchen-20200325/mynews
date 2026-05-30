@@ -358,16 +358,19 @@ def render_etf_profiles() -> None:
 
         # 診斷:抓一檔看 MoneyDJ 真實欄位名(若分類大量判錯,用這個校正解析器)
         with st.expander("🔬 診斷單檔欄位(分類抓不到時用)"):
-            st.caption("輸入一檔代號,列出 MoneyDJ 基本資料頁解析到的『欄位名 → 值』,可截圖貼給開發者校正。")
-            diag_code = st.text_input("代號", value="0050", key="etf_diag_code").strip()
+            st.caption("輸入代號,列出該頁解析到的『欄位名 → 值』。基本資料在 Basic0004(簡介頁);"
+                       "Basic0001 是即時報價頁(沒有種類/配息/費用)。可截圖貼給開發者校正。")
+            dc1, dc2 = st.columns([2, 1])
+            diag_code = dc1.text_input("代號", value="0056", key="etf_diag_code").strip()
+            diag_page = dc2.selectbox("頁面", ["0004", "0003", "0001"], key="etf_diag_page")
             if st.button("🔬 診斷此檔", disabled=not proxy, key="btn_etf_diag"):
                 with st.spinner("抓取中…"):
                     try:
-                        kv = etf_profile_fetcher.diagnose(f"{diag_code}.TW", proxy=proxy)
+                        kv = etf_profile_fetcher.diagnose(f"{diag_code}.TW", proxy=proxy, page=diag_page)
                         if kv:
                             st.json(kv)
                         else:
-                            st.warning("沒解析到任何欄位(頁面結構可能不同)。")
+                            st.warning("沒解析到任何欄位(頁面結構可能不同,換個頁面試試)。")
                     except Exception as exc:  # noqa: BLE001
                         st.error(f"診斷失敗:{exc}")
 
