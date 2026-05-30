@@ -142,6 +142,27 @@ def _secret(name: str):
     return None
 
 
+def render_crawl_summary(stats: dict) -> None:
+    """顯示抓取摘要:✅成功 X / ❌失敗 Y + 失敗清單(代號/名稱/etfid/原因)。"""
+    if not stats:
+        return
+    total = stats.get("total", 0)
+    ok = stats.get("ok", 0)
+    failed = stats.get("failed", []) or []
+    cols = st.columns(3)
+    cols[0].metric("清單檔數", total)
+    cols[1].metric("✅ 成功", ok)
+    cols[2].metric("❌ 失敗/略過", len(failed))
+    if failed:
+        with st.expander(f"❌ 沒抓到的 {len(failed)} 檔(代號 / 名稱 / 原因)", expanded=True):
+            st.dataframe(
+                [{"代號": f.get("code", ""), "名稱": f.get("name", ""),
+                  "etfid": f.get("etfid", ""), "原因": f.get("reason", "")} for f in failed],
+                use_container_width=True, hide_index=True,
+            )
+            st.caption("失敗多因 MoneyDJ 該頁無成分股表、或 etfid 格式不同。可把此清單貼給開發者校正。")
+
+
 def save_to_github(filename: str, data, label: str = "") -> None:
     """把 data(dict)直接 commit 回 repo,並在畫面顯示結果。供『抓取後自動存』使用。"""
     if not github_store.is_configured(_secret):
@@ -312,14 +333,16 @@ def render_etf_crawl_panel() -> None:
                     # 優先用 session 內的最新清單(雲端磁碟唯讀,新增的 ETF 只在 session)
                     live_sources = st.session_state.get("etf_sources_live")
                     data = etf_fetcher.crawl(proxy=proxy, log=logs.append, sources=live_sources)
+                    stats = data.pop("_crawl_stats", {})  # 取出統計,不存進檔案
                     st.session_state["etf_data_live"] = data
                     st.success(f"完成!目前資料庫共 {len(data.get('etfs', {}))} 檔 ETF。")
+                    render_crawl_summary(stats)
                     if auto:
                         save_to_github("etf_holdings.json", data, f"({len(data.get('etfs', {}))} 檔)")
                 except Exception as exc:  # noqa: BLE001
                     st.error(f"抓取失敗:{exc}")
                 if logs:
-                    with st.expander("📋 抓取明細"):
+                    with st.expander("📋 抓取明細(完整 log)"):
                         st.code("\n".join(logs))
         # 存檔區:常駐顯示(不必先抓取)。優先存本回合抓到的,否則存 repo 現有的。
         st.divider()

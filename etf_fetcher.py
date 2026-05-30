@@ -222,6 +222,7 @@ def crawl(proxy: str | None = None, log=print, sources: dict | None = None) -> d
     holdings.setdefault("stock_names", {})
 
     ok = 0
+    failed: list[dict] = []
     for code, info in etfs.items():
         etfid = info.get("etfid", "")
         name = info.get("name", code)
@@ -229,7 +230,10 @@ def crawl(proxy: str | None = None, log=print, sources: dict | None = None) -> d
             rows = fetch_moneydj(etfid, template, proxies)
         except Exception as exc:  # noqa: BLE001 — 單檔失敗不影響其他
             log(f"  [{code}] 抓取失敗:{exc}")
+            failed.append({"code": code, "name": name, "etfid": etfid, "reason": str(exc)})
             rows = []
+            time.sleep(REQUEST_GAP_SEC)
+            continue
         if rows:
             holdings["etfs"][code] = {"name": name, "holdings": [r["ticker"] for r in rows]}
             for r in rows:
@@ -238,6 +242,7 @@ def crawl(proxy: str | None = None, log=print, sources: dict | None = None) -> d
             ok += 1
             log(f"  [{code}] {name}:{len(rows)} 檔成分股")
         else:
+            failed.append({"code": code, "name": name, "etfid": etfid, "reason": "無成分股資料"})
             log(f"  [{code}] {name}:無資料,保留既有")
         time.sleep(REQUEST_GAP_SEC)
 
@@ -248,6 +253,7 @@ def crawl(proxy: str | None = None, log=print, sources: dict | None = None) -> d
     holdings["note"] = (
         "成分股由 etf_fetcher.py 透過代理自 MoneyDJ 抓取;僅供參考、非投資建議。"
     )
+    holdings["_crawl_stats"] = {"total": len(etfs), "ok": ok, "failed": failed}
     log(f"完成:成功更新 {ok}/{len(etfs)} 檔 ETF,共 {len(holdings['etfs'])} 檔在庫。")
     return holdings
 
@@ -259,6 +265,7 @@ def update_holdings() -> int:
     except Exception as exc:  # noqa: BLE001
         print(f"ETF 建庫失敗:{exc}", file=sys.stderr)
         return 1
+    holdings.pop("_crawl_stats", None)  # 統計資訊不寫入持久化檔案
     HOLDINGS_PATH.write_text(
         json.dumps(holdings, ensure_ascii=False, indent=2), encoding="utf-8"
     )
