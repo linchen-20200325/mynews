@@ -371,6 +371,22 @@ def render_etf_add_panel() -> None:
     etfs = sources.get("moneydj", {}).get("etfs", {})
 
     with st.expander(f"➕ 新增 ETF 到清單（目前 {len(etfs)} 檔)", expanded=False):
+        # 一鍵匯入全市場 ETF(從 MoneyDJ ETF 列表頁抓所有代號)
+        st.markdown("**🌐 一鍵匯入全市場 ETF**")
+        st.caption("透過代理抓 MoneyDJ ETF 列表,把所有台股 ETF 代號併入清單(只補沒有的,名稱稍後抓取時自動補)。")
+        proxy_imp = ensure_proxy()
+        if st.button("🌐 匯入全台股 ETF 清單", use_container_width=True, disabled=not proxy_imp):
+            with st.spinner("抓取 MoneyDJ ETF 列表中…"):
+                try:
+                    sources, added, total = etf_fetcher.import_all_etfs(proxy=proxy_imp, sources=sources)
+                    st.session_state["etf_sources_live"] = sources
+                    etfs = sources["moneydj"]["etfs"]
+                    st.success(f"全市場共 {total} 檔,新增 {added} 檔,清單現有 {len(etfs)} 檔。")
+                    if st.session_state.get("auto_save_github", True):
+                        save_to_github("etf_sources.json", sources, f"({len(etfs)} 檔, 全市場匯入)")
+                except Exception as exc:  # noqa: BLE001
+                    st.error(f"匯入失敗:{exc}")
+        st.divider()
         st.caption("只要輸入代號(可一次貼多檔,以逗號/空白/換行分隔);名稱會透過代理自動抓 MoneyDJ。"
                    "會自動檢查是否重複。新增後請按上方「🔄 立即抓取」更新成分股。")
         with st.form("add_etf_form", clear_on_submit=True):
