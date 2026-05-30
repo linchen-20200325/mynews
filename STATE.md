@@ -52,6 +52,8 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - [ ] (選)在 repo Secrets 設 `PROXY_URL` 讓每月排程自動抓 ETF(NAS 防火牆需放行 Actions IP)
 - [ ] 抓到完整 ETF 庫後 commit `etf_holdings.json` 永久保存
 - [ ] 可考慮多主題報告
+- [ ] 手動刪除已合併的 `claude/brave-ramanujan-fTxA0` 分支(雲端 git 代理擋刪分支 403,
+      請於 PR #16 頁面或 GitHub 分支列表手動刪)
 
 ## 已知問題 / 注意事項 ⚠️
 
