@@ -33,6 +33,8 @@ HTTP_TIMEOUT = 30
 REQUEST_GAP_SEC = 0.6  # 每檔之間的禮貌性間隔
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 MONEYDJ_TEMPLATE = "https://www.moneydj.com/etf/x/Basic/Basic0007.xdjhtm?etfid={etfid}"
+# 主動式 ETF(代號 A 結尾)的持股頁是 Basic0007B,與被動式 Basic0007 不同
+MONEYDJ_ACTIVE_TEMPLATE = "https://www.moneydj.com/etf/x/Basic/Basic0007B.xdjhtm?etfid={etfid}"
 
 TICKER_RE = re.compile(r"^[0-9]{4,6}[A-Z]?$")          # 台股代號:4~6 碼數字,可帶一個字母(如 00982A)
 _TICKER_IN_TEXT = re.compile(r"(?<!\d)(\d{4,6}[A-Z]?)(?!\d)")
@@ -153,9 +155,25 @@ def parse_moneydj(html_text: str) -> list[dict]:
     return out
 
 
-def fetch_moneydj(etfid: str, template: str, proxies: dict | None) -> list[dict]:
-    """抓單一 ETF 的 MoneyDJ 成分股。"""
-    return parse_moneydj(http_get(template.format(etfid=etfid), proxies))
+def _is_active_etf(code: str, etfid: str) -> bool:
+    """主動式 ETF:代號 A 結尾(如 00982A)。"""
+    base = str(etfid or code).split(".")[0].upper()
+    return base.endswith("A")
+
+
+def fetch_moneydj(etfid: str, template: str, proxies: dict | None, code: str = "") -> list[dict]:
+    """抓單一 ETF 的 MoneyDJ 成分股。
+
+    主動式 ETF(A 結尾)用 Basic0007B;一般 ETF 用傳入的 template(Basic0007)。
+    若主要頁無資料,再退而試另一個頁面,提高命中率。
+    """
+    primary = MONEYDJ_ACTIVE_TEMPLATE if _is_active_etf(code, etfid) else template
+    rows = parse_moneydj(http_get(primary.format(etfid=etfid), proxies))
+    if rows:
+        return rows
+    # 退路:換另一個頁面再試一次
+    alt = template if primary == MONEYDJ_ACTIVE_TEMPLATE else MONEYDJ_ACTIVE_TEMPLATE
+    return parse_moneydj(http_get(alt.format(etfid=etfid), proxies))
 
 
 MONEYDJ_INFO_TEMPLATE = "https://www.moneydj.com/etf/x/Basic/Basic0001.xdjhtm?etfid={etfid}"
@@ -227,7 +245,7 @@ def crawl(proxy: str | None = None, log=print, sources: dict | None = None) -> d
         etfid = info.get("etfid", "")
         name = info.get("name", code)
         try:
-            rows = fetch_moneydj(etfid, template, proxies)
+            rows = fetch_moneydj(etfid, template, proxies, code=code)
         except Exception as exc:  # noqa: BLE001 — 單檔失敗不影響其他
             log(f"  [{code}] 抓取失敗:{exc}")
             failed.append({"code": code, "name": name, "etfid": etfid, "reason": str(exc)})
