@@ -234,5 +234,53 @@ def update_holdings() -> int:
     return 0
 
 
+# ---------------------------------------------------------------------------
+# 來源清單管理(供網頁新增 ETF)
+# ---------------------------------------------------------------------------
+
+def load_sources() -> dict:
+    """讀取 etf_sources.json;確保有 moneydj.etfs 結構。"""
+    data = load_json(SOURCES_PATH)
+    data.setdefault("moneydj", {})
+    data["moneydj"].setdefault("url_template", MONEYDJ_TEMPLATE)
+    data["moneydj"].setdefault("etfs", {})
+    return data
+
+
+def normalize_code(code: str) -> str:
+    """正規化 ETF 代號:去空白、轉大寫(A 結尾主動式)。"""
+    return str(code).strip().upper()
+
+
+def add_etf(code: str, name: str, sources: dict | None = None) -> tuple[bool, str, dict]:
+    """在來源清單新增一檔 ETF(含重複檢查)。
+
+    回傳 (是否新增成功, 訊息, 更新後的 sources dict)。
+    不直接寫檔,由呼叫端決定要存檔或下載(雲端唯讀環境用下載)。
+    """
+    if sources is None:
+        sources = load_sources()
+    code = normalize_code(code)
+    name = str(name).strip()
+
+    if not re.match(r"^[0-9]{4,6}[A-Z]?$", code):
+        return False, f"代號格式怪怪的:「{code}」(應為 4~6 碼數字,可帶一個字母,如 00982A)", sources
+
+    etfs = sources["moneydj"]["etfs"]
+    if code in etfs:
+        exist = etfs[code].get("name", "")
+        return False, f"清單已經有 {code}（{exist}),未重複加入。", sources
+
+    etfs[code] = {"name": name or code, "etfid": f"{code}.TW"}
+    return True, f"已加入 {code} {name}(etfid={code}.TW)。記得抓取更新成分股。", sources
+
+
+def save_sources(sources: dict) -> None:
+    """寫回 etf_sources.json(本機/可寫環境用)。"""
+    SOURCES_PATH.write_text(
+        json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
 if __name__ == "__main__":
     sys.exit(update_holdings())

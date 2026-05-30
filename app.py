@@ -255,6 +255,46 @@ def render_etf_crawl_panel() -> None:
             )
 
 
+def render_etf_add_panel() -> None:
+    """網頁新增 ETF 到來源清單(含重複檢查)+ 下載清單。"""
+    # 本回合若已新增,沿用 session 內的清單,否則從檔案載入
+    sources = st.session_state.get("etf_sources_live") or etf_fetcher.load_sources()
+    etfs = sources.get("moneydj", {}).get("etfs", {})
+
+    with st.expander(f"➕ 新增 ETF 到清單（目前 {len(etfs)} 檔)", expanded=False):
+        st.caption("輸入 ETF 代號與名稱即可加入清單;會自動檢查是否重複。新增後請按上方「🔄 立即抓取」更新成分股。")
+        with st.form("add_etf_form", clear_on_submit=True):
+            c1, c2 = st.columns([1, 2])
+            new_code = c1.text_input("ETF 代號", placeholder="例:00940 或 00982A")
+            new_name = c2.text_input("ETF 名稱", placeholder="例:元大台灣價值高息")
+            submitted = st.form_submit_button("加入清單", use_container_width=True)
+        if submitted:
+            if not new_code.strip():
+                st.warning("請先輸入 ETF 代號。")
+            else:
+                ok, msg, sources = etf_fetcher.add_etf(new_code, new_name, sources)
+                if ok:
+                    st.session_state["etf_sources_live"] = sources
+                    # 可寫環境(本機)就直接存檔;雲端唯讀則靠下方下載
+                    try:
+                        etf_fetcher.save_sources(sources)
+                        st.success(msg + "(已寫入 etf_sources.json)")
+                    except Exception:  # noqa: BLE001 — 雲端唯讀
+                        st.success(msg + "(雲端唯讀,請用下方按鈕下載清單並 commit 回 repo)")
+                    etfs = sources["moneydj"]["etfs"]
+                else:
+                    st.warning(msg)
+
+        # 目前清單一覽 + 下載
+        st.caption("目前清單:" + "、".join(f"{c} {i.get('name','')}".strip() for c, i in etfs.items()))
+        st.download_button(
+            "⬇️ 下載 etf_sources.json(清單)",
+            data=json.dumps(sources, ensure_ascii=False, indent=2),
+            file_name="etf_sources.json",
+            mime="application/json",
+        )
+
+
 def render_news_cards(news: list[dict]) -> None:
     for item in news:
         title = item.get("title", "(無標題)")
@@ -893,6 +933,7 @@ def main() -> None:
     else:
         st.header("🧩 ETF 持股反查 — 個股被幾檔 ETF 持有")
         render_etf_crawl_panel()
+        render_etf_add_panel()
         # 本次即時抓到的資料庫優先;否則用 repo 內的 etf_holdings.json
         render_etf_lookup(st.session_state.get("etf_data_live"))
 
