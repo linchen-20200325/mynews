@@ -300,8 +300,7 @@ def render_etf_crawl_panel() -> None:
             with st.spinner("正在測試中繼站連線…"):
                 res = proxy_helper.check_proxy()
             (st.success if res["ok"] else st.error)(res["detail"])
-        auto = st.checkbox("☑️ 抓取後自動存到 GitHub", value=True, key="auto_save_holdings",
-                           help="抓完立即 commit etf_holdings.json,免得 session 被清掉。需設 GITHUB_TOKEN。")
+        auto = st.session_state.get("auto_save_github", True)
         if st.button(
             "🔄 立即抓取 / 更新 ETF 成分股資料庫",
             use_container_width=True,
@@ -422,8 +421,7 @@ def render_etf_profiles() -> None:
         proxy = ensure_proxy()
         if not proxy:
             st.warning("未偵測到 PROXY_URL,無法抓取。請先在 Streamlit Secrets 設定。")
-        auto_p = st.checkbox("☑️ 抓取後自動存到 GitHub", value=True, key="auto_save_profiles",
-                             help="抓完立即 commit etf_profiles.json。需設 GITHUB_TOKEN。")
+        auto_p = st.session_state.get("auto_save_github", True)
         if st.button("🔄 抓取 / 更新 ETF 圖鑑資料", use_container_width=True, disabled=not proxy):
             with st.spinner("透過代理抓 ETF 基本資料中…(視檔數約 1 分鐘)"):
                 logs: list[str] = []
@@ -860,8 +858,7 @@ def render_price_update_panel(current_prices: dict) -> None:
     with st.expander(f"💰 股價資料（目前 {len(current_prices)} 檔)— 點此更新", expanded=not current_prices):
         st.caption("透過代理抓臺灣證交所(上市)＋櫃買中心(上櫃)當日收盤價,供『股價範圍』篩選使用。")
         proxy = ensure_proxy()
-        auto_pr = st.checkbox("☑️ 抓取後自動存到 GitHub", value=True, key="auto_save_prices",
-                              help="抓完立即 commit stock_prices.json。需設 GITHUB_TOKEN。")
+        auto_pr = st.session_state.get("auto_save_github", True)
         if st.button("🔄 更新台股收盤價", use_container_width=True, disabled=not proxy):
             with st.spinner("透過代理抓台股收盤價中…"):
                 logs: list[str] = []
@@ -1034,6 +1031,11 @@ def main() -> None:
     st.sidebar.divider()
     with st.sidebar:
         render_proxy_status()
+        # 全域設定:勾一次,三個抓取(成分股/圖鑑/股價)抓完都自動存到 GitHub
+        st.checkbox(
+            "💾 抓取後自動存到 GitHub", value=True, key="auto_save_github",
+            help="勾選後,各頁『立即抓取』完成即自動 commit 對應 JSON 回 repo。需設 GITHUB_TOKEN。",
+        )
     st.sidebar.divider()
     st.sidebar.header("📅 報告選擇")
 
