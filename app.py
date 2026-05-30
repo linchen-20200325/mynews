@@ -280,15 +280,24 @@ def render_etf_crawl_panel() -> None:
                 if logs:
                     with st.expander("📋 抓取明細"):
                         st.code("\n".join(logs))
-        if st.session_state.get("etf_data_live"):
-            _holdings_str = json.dumps(st.session_state["etf_data_live"], ensure_ascii=False, indent=2)
-            render_github_save("etf_holdings.json", _holdings_str, key="holdings")
-            st.download_button(
-                "⬇️ 下載 etf_holdings.json(備援:手動上傳)",
-                data=_holdings_str,
-                file_name="etf_holdings.json",
-                mime="application/json",
-            )
+        # 存檔區:常駐顯示(不必先抓取)。優先存本回合抓到的,否則存 repo 現有的。
+        st.divider()
+        st.markdown("**💾 存檔成分股資料庫**")
+        live = st.session_state.get("etf_data_live")
+        holdings_data = live or etf_holdings.load_holdings(ETF_HOLDINGS_PATH) or {}
+        n_etf = len(holdings_data.get("etfs", {}))
+        if live:
+            st.caption(f"將存入本回合抓到的最新資料({n_etf} 檔 ETF)。")
+        else:
+            st.caption(f"尚未在本回合抓取;可先按上方「🔄 立即抓取」更新,或直接存目前 repo 既有的 {n_etf} 檔。")
+        _holdings_str = json.dumps(holdings_data, ensure_ascii=False, indent=2)
+        render_github_save("etf_holdings.json", _holdings_str, key="holdings")
+        st.download_button(
+            "⬇️ 下載 etf_holdings.json(備援:手動上傳)",
+            data=_holdings_str,
+            file_name="etf_holdings.json",
+            mime="application/json",
+        )
 
 
 def render_etf_add_panel() -> None:
@@ -385,15 +394,24 @@ def render_etf_profiles() -> None:
                 if logs:
                     with st.expander("📋 抓取明細"):
                         st.code("\n".join(logs))
-        if st.session_state.get("etf_profiles_live"):
-            _profiles_str = json.dumps(st.session_state["etf_profiles_live"], ensure_ascii=False, indent=2)
-            render_github_save("etf_profiles.json", _profiles_str, key="profiles")
-            st.download_button(
-                "⬇️ 下載 etf_profiles.json(備援:手動上傳)",
-                data=_profiles_str,
-                file_name="etf_profiles.json",
-                mime="application/json",
-            )
+        # 存檔區:常駐顯示
+        st.divider()
+        st.markdown("**💾 存檔 ETF 圖鑑資料庫**")
+        live_p = st.session_state.get("etf_profiles_live")
+        profiles_data = live_p or etf_profile_fetcher.load_profiles() or {}
+        n_p = len(profiles_data.get("profiles", {}))
+        st.caption(
+            f"將存入本回合抓到的最新資料({n_p} 檔)。" if live_p
+            else f"尚未在本回合抓取;可先按上方「🔄 抓取」,或直接存 repo 既有的 {n_p} 檔。"
+        )
+        _profiles_str = json.dumps(profiles_data, ensure_ascii=False, indent=2)
+        render_github_save("etf_profiles.json", _profiles_str, key="profiles")
+        st.download_button(
+            "⬇️ 下載 etf_profiles.json(備援:手動上傳)",
+            data=_profiles_str,
+            file_name="etf_profiles.json",
+            mime="application/json",
+        )
 
         # 診斷:抓一檔看 MoneyDJ 真實欄位名(若分類大量判錯,用這個校正解析器)
         with st.expander("🔬 診斷單檔欄位(分類抓不到時用)"):
@@ -811,15 +829,23 @@ def render_price_update_panel(current_prices: dict) -> None:
                     st.code("\n".join(logs))
         if not proxy:
             st.warning("未偵測到 PROXY_URL,無法抓股價。請先在 Streamlit Secrets 設定。")
-        if st.session_state.get("price_data_live"):
-            _prices_str = json.dumps(st.session_state["price_data_live"], ensure_ascii=False, indent=2)
-            render_github_save("stock_prices.json", _prices_str, key="prices")
-            st.download_button(
-                "⬇️ 下載 stock_prices.json(備援:手動上傳)",
-                data=_prices_str,
-                file_name="stock_prices.json",
-                mime="application/json",
-            )
+        # 存檔區:常駐顯示
+        live_pr = st.session_state.get("price_data_live")
+        price_data = live_pr or price_fetcher.load_prices() or {}
+        n_pr = len(price_data.get("prices", {}))
+        st.markdown("**💾 存檔股價資料庫**")
+        st.caption(
+            f"將存入本回合抓到的 {n_pr} 檔收盤價。" if live_pr
+            else f"尚未在本回合抓取;可先按上方「🔄 更新台股收盤價」,或直接存 repo 既有的 {n_pr} 檔。"
+        )
+        _prices_str = json.dumps(price_data, ensure_ascii=False, indent=2)
+        render_github_save("stock_prices.json", _prices_str, key="prices")
+        st.download_button(
+            "⬇️ 下載 stock_prices.json(備援:手動上傳)",
+            data=_prices_str,
+            file_name="stock_prices.json",
+            mime="application/json",
+        )
 
 
 def render_etf_lookup(data: dict | None = None) -> None:
