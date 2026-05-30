@@ -1,0 +1,5 @@
+{
+  "as_of": "(尚未抓取)",
+  "note": "ETF 圖鑑 database。請到看板『ETF圖鑑 → 🔄 抓取 / 更新 ETF 圖鑑資料』抓取後,下載 etf_profiles.json 覆蓋本檔並 commit。",
+  "profiles": {}
+}

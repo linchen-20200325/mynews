@@ -1,0 +1,5 @@
+{
+  "as_of": "(尚未抓取)",
+  "note": "股價 database。請到看板『ETF持股反查 → 💰 股價資料 → 🔄 更新台股收盤價』抓取後,下載 stock_prices.json 覆蓋本檔並 commit。",
+  "prices": {}
+}
