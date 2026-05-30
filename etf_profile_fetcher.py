@@ -290,6 +290,8 @@ def parse_profile(html_text: str, code: str, name: str) -> dict:
     manager_raw = find("經理人")
     scale_raw = find("ETF規模", "基金規模", "規模")
     yield_raw = find("殖利率(%)", "殖利率")
+    price_raw = find("ETF市價", "市價", "成交價")           # 例:50.2000（05/29）
+    nav_raw = find("ETF淨值", "淨值")                       # 例:50.1500（05/29）
     strategy_text = find("投資策略", "投資風格")
     size_m = _scale_million(scale_raw)
 
@@ -314,6 +316,8 @@ def parse_profile(html_text: str, code: str, name: str) -> dict:
         "mgmt_fee": _pct(mgmt_raw),
         "total_fee": _pct(total_fee_raw),
         "yield_pct": _pct(yield_raw),
+        "price": _pct(price_raw),
+        "nav": _pct(nav_raw),
         "scale_million": size_m,
         "index_tracked": index_raw,
         "strategy": _strategy(f"{strategy_text} {cat_raw} {name}"),
