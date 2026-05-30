@@ -1,6 +1,6 @@
 # STATE.md — 專案戰情室
 
-> 最後更新:2026-05-30(ETF 反查資料庫 + 股價篩選)
+> 最後更新:2026-05-30(ETF 圖鑑 + ETF 清單管理)
 
 ## 當前環境
 
@@ -8,12 +8,13 @@
 - 相依:`google-genai`、`streamlit`、`pandas`、`requests`(見 `requirements.txt`);RSS 爬蟲用標準函式庫
 - 自動化:
   - `daily_update.yml`:每日 UTC 00:00(台灣 08:00)產戰略報告/趨勢雷達/台股觀察
-  - `update_etf.yml`:每月 1 號透過代理抓 MoneyDJ 更新 ETF 成分股
+  - `update_etf.yml`:每月 1 號透過代理抓 MoneyDJ,更新 ETF 成分股 + 台股收盤價 + ETF 圖鑑
 - 金鑰/設定(GitHub Secrets 或 Streamlit Secrets):
   - `GEMINI_API_KEY`(必,支援複數 key 容錯)
   - `PROXY_URL`(NAS 代理,供 ETF 爬蟲走 MoneyDJ;格式 http://帳:密@host:3128)
   - `LINE_CHANNEL_ACCESS_TOKEN` / `LINE_TO`(選)
-- 看板:Streamlit Community Cloud(`*.streamlit.app`),共 4 頁
+- 看板:Streamlit Community Cloud(`*.streamlit.app`),共 5 頁
+  (戰略報告 / 趨勢雷達 / 台股觀察 / ETF持股反查 / ETF圖鑑)
 
 ## 架構摘要
 
@@ -26,12 +27,15 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
       去 HTML/去重/時間排序;每則標 `origin`(來源管道)
 - [x] `update_data.py` — Gemini 全包:四維度戰略分析 + 白話文、趨勢雷達、台股觀察;
       多把金鑰容錯 `get_gemini_keys()`;穩健 JSON 清理 + 驗證;失敗隔離
-- [x] 看板 4 頁(`app.py`):
+- [x] 看板 5 頁(`app.py`):
       - 戰略報告:① 抓新聞 → ② Gemini 分析+白話文(兩步手動)
       - 趨勢雷達:① 抓產業新聞 → ② Gemini 排名打分
       - 台股觀察:① 抓財經新聞 → ② Gemini 整理(總表/利多/利空/觀望 + 趨勢/夕陽),
         並併入「ETF 持有檔數」交叉參照
-      - ETF 持股反查:輸入個股代號/名稱 → 反查被哪些 ETF 持有;🛰️ 代理按鈕即時建庫
+      - ETF 持股反查:輸入個股代號/名稱 → 反查被哪些 ETF 持有;🛰️ 代理按鈕即時建庫;
+        篩選(被幾檔 ETF 持有 + 股價範圍);網頁新增(只輸代號、批次、自動抓名稱)/移除 ETF
+      - ETF 圖鑑:抓 MoneyDJ 基本資料建庫,篩選器(型態/區域/配息頻率/配息月份/
+        主題理念/策略/內扣費用)
 - [x] `etf_holdings.py` / `etf_holdings.json` — 個股→ETF 反查(純資料)
 - [x] `etf_fetcher.py` / `etf_sources.json` — 透過 `PROXY_URL` 代理抓 MoneyDJ 成分股建庫
       (requests + proxies、HTML 表格解析、單檔失敗不影響其他、抓不到保留既有)
@@ -51,11 +55,17 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
       可勾「只看有股價」);表格加「股價」欄、即時顯示符合檔數、下載篩選結果;
       「💰 股價資料」面板可按鈕更新收盤價並下載
 - [x] `update_etf.yml` 每月一併抓股價(失敗不影響成分股),commit etf_holdings.json + stock_prices.json
+- [x] ETF 清單管理(`etf_fetcher`):網頁新增(只輸代號、批次貼、自動抓名稱、重複/格式檢查)、
+      移除(多選);本機直接寫檔、雲端唯讀則下載 etf_sources.json commit 回 repo
+- [x] `etf_profile_fetcher.py` / `etf_profiles.json` — 透過代理抓 MoneyDJ 基本資料(Basic0001),
+      解析型態/區域/配息頻率/配息月份/經理費/保管費/追蹤指數/主動被動/主題標籤;沿用同一份 ETF 清單
+- [x] ETF 圖鑑頁篩選器:型態、投資區域、配息頻率、配息月份、主題理念、策略、內扣費用上限
 
 ## 待辦 / 可優化 ⏳
 
 - [ ] 在 Streamlit 上按「🛰️ 透過代理更新成分股」實測 MoneyDJ;若解析對不上,依抓取明細修
 - [ ] 在 Streamlit 上按「🔄 更新台股收盤價」實測 TWSE/TPEx;若欄位對不上,依 log 修 price_fetcher 解析
+- [ ] 在 Streamlit 上按「🔄 抓取 ETF 圖鑑」實測 MoneyDJ Basic0001;若分類/欄位判錯,依抓取明細修 etf_profile_fetcher
 - [ ] 設定 `GEMINI_API_KEY`(看板即時分析 + 每日排程)
 - [ ] (選)在 repo Secrets 設 `PROXY_URL` 讓每月排程自動抓 ETF + 股價(NAS 防火牆需放行 Actions IP)
 - [ ] 抓到完整 ETF 庫/股價後 commit `etf_holdings.json` / `stock_prices.json` 永久保存
