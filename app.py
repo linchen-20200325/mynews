@@ -400,6 +400,8 @@ def render_etf_profiles() -> None:
     f_strategy = c6.multiselect("投資策略", ["被動(追蹤指數)", "主動式"])
     max_fee = c7.slider("總管理費用上限(%)", 0.0, 3.0, 3.0, step=0.05)
 
+    price_lo, price_hi = st.slider("ETF 市價範圍(元)", 0, 3000, (0, 3000), step=1)
+
     def _fee(p: dict):
         # 優先用總管理費用;沒有就退回經理費(+保管費)
         return p.get("total_fee") or p.get("mgmt_fee")
@@ -420,6 +422,10 @@ def render_etf_profiles() -> None:
         fee = _fee(p)
         if fee is not None and fee > max_fee:
             return False
+        pr = p.get("price")
+        # 非預設範圍時才用市價過濾;有市價才比對(沒抓到市價的不因此被濾掉)
+        if (price_lo, price_hi) != (0, 3000) and pr is not None and not (price_lo <= pr <= price_hi):
+            return False
         return True
 
     filtered = [p for p in profiles if keep(p)]
@@ -435,6 +441,7 @@ def render_etf_profiles() -> None:
                 "配息": p.get("dividend_freq", ""),
                 "配息月": ("、".join(str(m) for m in (p.get("dividend_months") or []))
                           + (" *" if p.get("months_estimated") else "")),
+                "市價": p.get("price"),
                 "殖利率%": p.get("yield_pct"),
                 "經理費%": p.get("mgmt_fee"),
                 "總費用%": p.get("total_fee"),
