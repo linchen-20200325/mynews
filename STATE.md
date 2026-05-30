@@ -1,6 +1,6 @@
 # STATE.md — 專案戰情室
 
-> 最後更新:2026-05-30(NAS 中繼站移植 + 連線健檢)
+> 最後更新:2026-05-30(ETF 反查資料庫 + 股價篩選)
 
 ## 當前環境
 
@@ -44,13 +44,21 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - [x] **檢驗中繼站是否可用**:`proxy_helper.check_proxy()`(實際探測 MoneyDJ + 計時),
       三入口 — 看板側邊欄/ETF 頁「🧪 檢驗中繼站連線」按鈕、`python proxy_helper.py` CLI、
       `.github/workflows/proxy_check.yml`(雲端手動健檢)
+- [x] ETF 收錄清單擴充至 66 檔台股 ETF(含 5 檔主動式 00980A~00984A,集中於末段)
+- [x] `price_fetcher.py` — 透過代理抓臺灣證交所(上市 STOCK_DAY_ALL)+ 櫃買(上櫃 opendata)
+      收盤價,存 `stock_prices.json`;單一來源失敗不影響另一個
+- [x] ETF 反查頁兩個篩選:① 至少被幾檔 ETF 持有(滑桿)② 股價範圍(滑桿,有股價才啟用,
+      可勾「只看有股價」);表格加「股價」欄、即時顯示符合檔數、下載篩選結果;
+      「💰 股價資料」面板可按鈕更新收盤價並下載
+- [x] `update_etf.yml` 每月一併抓股價(失敗不影響成分股),commit etf_holdings.json + stock_prices.json
 
 ## 待辦 / 可優化 ⏳
 
 - [ ] 在 Streamlit 上按「🛰️ 透過代理更新成分股」實測 MoneyDJ;若解析對不上,依抓取明細修
+- [ ] 在 Streamlit 上按「🔄 更新台股收盤價」實測 TWSE/TPEx;若欄位對不上,依 log 修 price_fetcher 解析
 - [ ] 設定 `GEMINI_API_KEY`(看板即時分析 + 每日排程)
-- [ ] (選)在 repo Secrets 設 `PROXY_URL` 讓每月排程自動抓 ETF(NAS 防火牆需放行 Actions IP)
-- [ ] 抓到完整 ETF 庫後 commit `etf_holdings.json` 永久保存
+- [ ] (選)在 repo Secrets 設 `PROXY_URL` 讓每月排程自動抓 ETF + 股價(NAS 防火牆需放行 Actions IP)
+- [ ] 抓到完整 ETF 庫/股價後 commit `etf_holdings.json` / `stock_prices.json` 永久保存
 - [ ] 可考慮多主題報告
 - [ ] 手動刪除已合併的 `claude/brave-ramanujan-fTxA0` 分支(雲端 git 代理擋刪分支 403,
       請於 PR #16 頁面或 GitHub 分支列表手動刪)
