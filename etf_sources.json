@@ -1,0 +1,37 @@
+{
+  "_readme": [
+    "本檔定義『自動抓取 ETF 成分股』的來源。etf_fetcher.py 會逐檔下載並更新 etf_holdings.json。",
+    "每檔 ETF 需填:url(成分股清單下載網址)、format(csv 或 json)、ticker_field(代號欄)、",
+    "name_field(名稱欄,選填)、json_path(JSON 時成分股陣列的路徑,選填)。",
+    "url 留空者會被略過(保留 etf_holdings.json 既有資料)。",
+    "請填入各發行商『官方成分股/PCF』的下載連結,並在 GitHub Actions 上實跑驗證。",
+    "範例(請改成真實連結與正確欄名):",
+    "  \"0050\": {\"name\":\"元大台灣50\",\"url\":\"https://.../0050.csv\",\"format\":\"csv\",\"ticker_field\":\"證券代號\",\"name_field\":\"證券名稱\"}"
+  ],
+  "etfs": {
+    "0050": {
+      "name": "元大台灣50",
+      "url": "",
+      "format": "csv",
+      "encoding": "utf-8",
+      "ticker_field": "證券代號",
+      "name_field": "證券名稱"
+    },
+    "0056": {
+      "name": "元大高股息",
+      "url": "",
+      "format": "csv",
+      "encoding": "utf-8",
+      "ticker_field": "證券代號",
+      "name_field": "證券名稱"
+    },
+    "00878": {
+      "name": "國泰永續高股息",
+      "url": "",
+      "format": "json",
+      "ticker_field": "stockId",
+      "name_field": "stockName",
+      "json_path": ["data"]
+    }
+  }
+}
