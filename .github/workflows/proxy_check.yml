@@ -1,0 +1,27 @@
+name: Check NAS Proxy
+
+# 手動檢驗 NAS 中繼站在雲端(Actions 美國 IP)是否可以使用。
+# Actions 分頁 → Check NAS Proxy → Run workflow。
+on:
+  workflow_dispatch:
+
+jobs:
+  check-proxy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install requests urllib3
+
+      - name: Probe NAS relay (check_proxy)
+        env:
+          # 在 repo Secrets 設定 PROXY_URL 才會走 NAS 中繼;未設則以直連模式測試。
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python proxy_helper.py

@@ -16,6 +16,7 @@ import streamlit as st
 
 import etf_fetcher  # 透過代理抓 MoneyDJ 成分股建庫
 import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
+import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
 REPORT_PATH = Path("latest_report.json")
@@ -185,16 +186,35 @@ def render_key_hint() -> None:
 
 
 def ensure_proxy() -> str | None:
-    """從環境變數或 Streamlit Secrets 取得 PROXY_URL(NAS 代理)。"""
-    if os.environ.get("PROXY_URL"):
-        return os.environ["PROXY_URL"]
-    try:
-        url = st.secrets["PROXY_URL"]
-    except Exception:  # noqa: BLE001
-        url = None
+    """取得 NAS 中繼站 PROXY_URL(環境變數或 Streamlit Secrets),並同步到環境變數。
+
+    統一走 proxy_helper.get_proxy_config(支援新格式 PROXY_URL 與舊格式 [proxy]),
+    再把結果寫回環境變數,供 etf_fetcher 等子流程使用。
+    """
+    cfg = proxy_helper.get_proxy_config()
+    url = cfg["http"] if cfg else None
     if url:
-        os.environ["PROXY_URL"] = str(url)
-    return os.environ.get("PROXY_URL")
+        os.environ["PROXY_URL"] = url
+    return url
+
+
+def render_proxy_status() -> None:
+    """側邊欄:顯示 NAS 中繼站狀態 + 提供『檢驗中繼站是否可以使用』按鈕。"""
+    cfg = proxy_helper.get_proxy_config()
+    if cfg:
+        st.caption(f"🛰️ NAS 中繼站:✅ 已設定（{proxy_helper.mask_endpoint(cfg['http'])}）")
+    else:
+        st.caption("🛰️ NAS 中繼站:⚠️ 未設定（ETF 成分股將直連 MoneyDJ,境外 IP 可能被擋）")
+
+    if st.button("🧪 檢驗中繼站連線", use_container_width=True, key="btn_proxy_check"):
+        with st.spinner("正在測試中繼站連線…"):
+            res = proxy_helper.check_proxy()
+        (st.success if res["ok"] else st.error)(res["detail"])
+        if not cfg:
+            st.caption(
+                "設定方式:Streamlit Cloud → App settings → Secrets 加上\n"
+            )
+            st.code('PROXY_URL = "http://帳號:密碼@yourname.synology.me:3128"', language="toml")
 
 
 def render_etf_crawl_panel() -> None:
@@ -205,6 +225,10 @@ def render_etf_crawl_panel() -> None:
         proxy = ensure_proxy()
         if not proxy:
             st.warning("未偵測到 PROXY_URL。請在 Streamlit Secrets 設定後再試。")
+        if st.button("🧪 先檢驗中繼站是否可以使用", use_container_width=True, key="btn_etf_proxy_check"):
+            with st.spinner("正在測試中繼站連線…"):
+                res = proxy_helper.check_proxy()
+            (st.success if res["ok"] else st.error)(res["detail"])
         if st.button(
             "🔄 立即抓取 / 更新 ETF 成分股資料庫",
             use_container_width=True,
