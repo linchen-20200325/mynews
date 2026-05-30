@@ -7,6 +7,8 @@
           raw_news 直接採用爬蟲抓到的真實新聞,絕不虛構。
        B. 趨勢雷達 (latest_trends.json):依「資金/徵才/政策/技術」四訊號排名打分,
           回答「現在最紅的產業是什麼」。 [可用 ENABLE_TREND_RADAR=0 關閉]
+       C. 台股觀察 (latest_stocks.json):從台灣財經新聞統計被提到最多次的台股標的,
+          分利多/利空/觀望,並歸納未來趨勢與夕陽產業。 [可用 ENABLE_STOCK_PICKER=0 關閉]
   3. 可選:把摘要推播到 LINE (Messaging API)。
 
 環境變數:
@@ -19,7 +21,9 @@
                                           (WORLD/BUSINESS/TECHNOLOGY/NATION…)
   - NEWS_LANG / NEWS_REGION        (選填) Google News 語系/地區,預設 zh / TW
   - NEWS_MAX / NEWS_SINCE_HOURS    (選填) 抓新聞則數上限 / 回溯時數,預設 12 / 48
+  - STOCK_QUERIES                  (選填) 台股觀察抓新聞的關鍵字,以 ; 分隔
   - ENABLE_TREND_RADAR             (選填) 設為 0/false/no 可關閉趨勢雷達
+  - ENABLE_STOCK_PICKER            (選填) 設為 0/false/no 可關閉台股觀察
   - LINE_CHANNEL_ACCESS_TOKEN/LINE_TO (選填) 兩者皆設才推播
 """
 
@@ -64,6 +68,13 @@ DEFAULT_TREND_QUERIES = [
     "AI 半導體 投資",
     "產業 趨勢 基金",
 ]
+DEFAULT_STOCK_QUERIES = [
+    "台股 個股 焦點",
+    "台積電 聯發科 鴻海 台股",
+    "台股 外資 法人 買超",
+    "台股 類股 漲跌",
+    "上市 上櫃 營收 財報",
+]
 
 # Google News 分類頭條(不帶關鍵字的『動態』來源,確保不漏突發大事;
 # 只取與主題相關的分類,避免娛樂/體育等離題內容)。可用 NEWS_TOPICS / TREND_TOPICS 覆寫。
@@ -82,6 +93,8 @@ OUTPUT_LATEST = Path("latest_report.json")
 ARCHIVE_DIR = Path("data/reports")
 OUTPUT_TRENDS = Path("latest_trends.json")
 TRENDS_ARCHIVE_DIR = Path("data/trends")
+OUTPUT_STOCKS = Path("latest_stocks.json")
+STOCKS_ARCHIVE_DIR = Path("data/stocks")
 
 # 報告所需的頂層欄位 — 解析後做最低限度的結構驗證
 REQUIRED_TOP_LEVEL_KEYS = (
@@ -182,6 +195,55 @@ TREND_SYSTEM_PROMPT = """\
 """
 
 
+STOCK_SYSTEM_PROMPT = """\
+你是一位兼具「台股研究員」與「後端資料工程師」的純資料生成器。
+你會收到一批【已由爬蟲抓取的真實台灣財經新聞】(含標題、來源、連結、摘要)。
+你的任務是:【只根據這些真實新聞】,整理出新聞中被提到的台股標的(個股或類股),
+判斷各自目前偏多/偏空,並歸納未來趨勢與夕陽產業,最後【嚴格且唯一】輸出合法 JSON。
+
+【做法】
+1. 找出新聞中出現的台股個股/類股,估算每個標的「被幾則新聞提到」(mention_count,
+   以提供的新聞為準),依此由高到低排序,優先列出最常被提到的。
+2. 依新聞內容判斷每個標的目前的傾向 sentiment,只能填三種之一:
+   - "利多":新聞偏正面(營收成長、訂單、題材發酵、外資買超等)
+   - "利空":新聞偏負面(衰退、砍單、利空消息、法人賣超等)
+   - "觀望":多空不明、消息中性或雜訊,建議再觀察
+3. reason 用一句白話說明為何歸到該類(務必對應新聞內容,不可臆測)。
+4. future_trends:從新聞歸納「未來看好、動能向上」的趨勢產業/題材。
+5. sunset_industries:歸納「轉弱、結構性走下坡、夕陽」的產業(若新聞沒提到可給空陣列)。
+
+【真實性】
+- 只能根據提供的新聞;個股名稱要正確,ticker(股票代號)若新聞未明確提及就留空字串,
+  嚴禁亂編代號或虛構新聞、數據。
+- 你是中立的資訊整理,不是投資建議;不要喊買賣、不要給目標價。
+
+【強制輸出規範:Zero-Tolerance】
+1. 最終回覆只能有一個合法 JSON 物件,前後不得有任何其他文字或 ```json 標記。
+2. 必須能被 Python json.loads() 解析。
+
+【JSON 結構定義 — 必須完全符合】
+{
+  "report_date": "YYYY-MM-DD",
+  "summary": "一句話總結今日台股新聞焦點",
+  "stocks": [
+    {
+      "name": "個股或類股名稱",
+      "ticker": "股票代號(沒有就空字串)",
+      "sector": "所屬產業",
+      "mention_count": 3,
+      "sentiment": "利多",
+      "reason": "依新聞說明偏多/偏空/觀望的原因",
+      "evidence_news": [
+        { "title": "新聞標題", "source": "媒體來源", "url": "連結(若有)" }
+      ]
+    }
+  ],
+  "future_trends": ["未來看好的趨勢產業/題材", "..."],
+  "sunset_industries": ["轉弱或夕陽產業", "..."]
+}
+"""
+
+
 def format_news_block(news: list[dict]) -> str:
     """把抓到的新聞排版成餵給模型的文字區塊。"""
     if not news:
@@ -219,6 +281,16 @@ def build_trend_user_prompt(news: list[dict], today: str) -> str:
         f"今天的日期是 {today}。\n"
         f"請參考以下真實新聞,找出當前全球最熱門、動能最強的 3~5 個新興產業或主題,"
         f"依資金、徵才、政策、技術四種訊號綜合評估與排名打分,並嚴格輸出 JSON。"
+        f"report_date 請填 {today}。\n\n"
+        f"{format_news_block(news)}"
+    )
+
+
+def build_stock_user_prompt(news: list[dict], today: str) -> str:
+    return (
+        f"今天的日期是 {today}。\n"
+        f"請根據以下真實台灣財經新聞,整理出被提到的台股標的,統計提及次數並由高到低排序,"
+        f"判斷各自偏利多/利空/觀望並說明原因,另歸納未來趨勢產業與夕陽產業,嚴格輸出 JSON。"
         f"report_date 請填 {today}。\n\n"
         f"{format_news_block(news)}"
     )
@@ -275,6 +347,14 @@ def validate_trends(data: dict) -> None:
         raise ValueError("缺少 report_date")
     if not isinstance(data.get("trends"), list) or not data["trends"]:
         raise ValueError("trends 必須是非空陣列")
+
+
+def validate_stocks(data: dict) -> None:
+    """台股觀察的最低限度結構驗證。"""
+    if "report_date" not in data:
+        raise ValueError("缺少 report_date")
+    if not isinstance(data.get("stocks"), list) or not data["stocks"]:
+        raise ValueError("stocks 必須是非空陣列")
 
 
 # ---------------------------------------------------------------------------
@@ -393,6 +473,20 @@ def get_trend_radar(news: list[dict], today: str) -> dict:
     return data
 
 
+def get_stock_picks(news: list[dict], today: str) -> dict:
+    """Gemini 讀台灣財經新聞 → 台股標的(利多/利空/觀望)+ 趨勢/夕陽產業。"""
+    data = call_gemini_for_json(
+        STOCK_SYSTEM_PROMPT, build_stock_user_prompt(news, today)
+    )
+    data.setdefault("report_date", today)
+    data.setdefault("future_trends", [])
+    data.setdefault("sunset_industries", [])
+    validate_stocks(data)
+    # 依被提及次數由高到低排序(模型沒排好時補救)
+    data["stocks"].sort(key=lambda s: s.get("mention_count", 0), reverse=True)
+    return data
+
+
 # ---------------------------------------------------------------------------
 # 新聞抓取設定
 # ---------------------------------------------------------------------------
@@ -449,6 +543,25 @@ def fetch_trend_news() -> list[dict]:
         feeds=feeds,
         limit=int(os.environ.get("NEWS_MAX", "12")),
         since_hours=int(os.environ.get("NEWS_SINCE_HOURS", "72")),
+    )
+
+
+def fetch_stock_news() -> list[dict]:
+    """抓台灣財經/台股新聞(較大量,以利統計被提及次數)。"""
+    lang = os.environ.get("NEWS_LANG", "zh")
+    region = os.environ.get("NEWS_REGION", "TW")
+    queries = parse_queries("STOCK_QUERIES", DEFAULT_STOCK_QUERIES)
+    # 台股聚焦財經分類頭條 + 中央社財經 feed
+    feeds = {"中央社 財經": news_fetcher.CREDIBLE_FEEDS.get("中央社 財經", "")}
+    feeds = {k: v for k, v in feeds.items() if v}
+    feeds.update(section_feeds(["BUSINESS"], lang, region))
+    return news_fetcher.fetch_news(
+        queries,
+        lang=lang,
+        region=region,
+        feeds=feeds,
+        limit=int(os.environ.get("STOCK_MAX", "25")),
+        since_hours=int(os.environ.get("STOCK_SINCE_HOURS", "48")),
     )
 
 
@@ -531,6 +644,10 @@ def trend_radar_enabled() -> bool:
     return os.environ.get("ENABLE_TREND_RADAR", "1").lower() not in ("0", "false", "no")
 
 
+def stock_picker_enabled() -> bool:
+    return os.environ.get("ENABLE_STOCK_PICKER", "1").lower() not in ("0", "false", "no")
+
+
 # ---------------------------------------------------------------------------
 # 主流程
 # ---------------------------------------------------------------------------
@@ -583,8 +700,24 @@ def main() -> int:
         else:
             print("[3/4] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
 
+        # C. 台股觀察
+        if stock_picker_enabled():
+            print("[4/4] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
+            try:
+                stock_news = fetch_stock_news()
+                print(f"  抓到 {len(stock_news)} 則台灣財經新聞。")
+                stocks = get_stock_picks(stock_news, today)
+                save_json(OUTPUT_STOCKS, stocks)
+                save_json(STOCKS_ARCHIVE_DIR / f"{today}.json", stocks)
+                top = "、".join(s.get("name", "") for s in stocks["stocks"][:5])
+                print(f"  台股觀察完成,最常被提到:{top}")
+            except Exception as exc:  # noqa: BLE001 — 台股觀察失敗不影響戰略報告
+                print(f"  警告: 台股觀察產生失敗:{exc}", file=sys.stderr)
+        else:
+            print("[4/4] ENABLE_STOCK_PICKER=0,略過台股觀察。")
+
         print(
-            f"[4/4] 資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
+            f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
             f"白話文來源:{report['dictionary_source']}。"
         )
 

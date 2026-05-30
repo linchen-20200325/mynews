@@ -17,12 +17,14 @@ update_data.py
    ├─ [A] 戰略報告
    │    └─ Gemini (gemini-2.5-flash):讀取抓到的新聞 → 四維度分析 + 白話文字典
    │       (raw_news 直接採用爬蟲抓到的真實新聞,絕不虛構)
-   └─ [B] 趨勢雷達 (可關)
-        Gemini:讀取產業新聞 → 最熱門產業,依資金/徵才/政策/技術排名打分
+   ├─ [B] 趨勢雷達 (可關)
+   │    Gemini:讀取產業新聞 → 最熱門產業,依資金/徵才/政策/技術排名打分
+   └─ [C] 台股觀察 (可關)
+        Gemini:讀取台灣財經新聞 → 被提最多次的台股標的(利多/利空/觀望)+ 趨勢/夕陽產業
         │
         ▼
-latest_report.json / latest_trends.json   ──►  app.py (Streamlit) 呈現
-data/reports/<date>.json / data/trends/<date>.json   歷史存檔(側邊欄可瀏覽)
+latest_report.json / latest_trends.json / latest_stocks.json   ──►  app.py (Streamlit) 呈現
+data/reports|trends|stocks/<date>.json   歷史存檔(側邊欄可瀏覽)
 (可選) LINE 推播報告 + 熱門產業 Top3 摘要
 ```
 
@@ -54,11 +56,11 @@ GitHub repo → Settings → Secrets and variables → Actions
 **Variables(皆選填):**
 - `GEMINI_MODEL` — 覆寫 Gemini 模型(預設 `gemini-2.5-flash`)
 - `REPORT_TOPIC` — 自訂戰略報告分析主題
-- `NEWS_QUERIES` / `TREND_QUERIES` — 自訂聚焦關鍵字(以 `;` 分隔)
+- `NEWS_QUERIES` / `TREND_QUERIES` / `STOCK_QUERIES` — 自訂聚焦關鍵字(以 `;` 分隔)
+- `ENABLE_TREND_RADAR` / `ENABLE_STOCK_PICKER` — 設為 `0` 可分別關閉趨勢雷達 / 台股觀察
 - `NEWS_TOPICS` / `TREND_TOPICS` — Google News 動態分類頭條(以 `,` 分隔,預設 `WORLD,BUSINESS` / `BUSINESS,TECHNOLOGY`;可選 `WORLD`/`BUSINESS`/`TECHNOLOGY`/`NATION`/`SCIENCE`)
 - `NEWS_LANG` / `NEWS_REGION` — Google News 語系/地區(預設 `zh` / `TW`,即繁中台灣;想抓英文外電可設 `en` / `US`)
 - `NEWS_MAX` / `NEWS_SINCE_HOURS` — 抓新聞則數上限 / 回溯時數(預設 `12` / `48`)
-- `ENABLE_TREND_RADAR` — 設為 `0` 可關閉趨勢雷達(預設開啟)
 
 設定完成後可在 Actions 分頁手動 **Run workflow** 測試。
 
