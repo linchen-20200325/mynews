@@ -17,6 +17,7 @@ import streamlit as st
 import etf_fetcher  # 透過代理抓 MoneyDJ 成分股建庫
 import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
 import etf_profile_fetcher  # ETF 圖鑑:抓基本資料(型態/配息/費用/策略)
+import github_store  # 一鍵把資料檔 commit 回 GitHub repo
 import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
@@ -117,6 +118,38 @@ def available_secret_names() -> list[str]:
         return [str(k) for k in st.secrets.keys()]
     except Exception:  # noqa: BLE001 — 沒設定 secrets 或解析失敗
         return []
+
+
+def _secret(name: str):
+    """讀單一 Streamlit secret(供 github_store 取 GITHUB_TOKEN 等)。"""
+    try:
+        return st.secrets[name]
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def render_github_save(filename: str, content: str, key: str, label: str | None = None) -> None:
+    """通用『💾 直接存到 GitHub』按鈕:把 content commit 成 repo 內 filename。
+
+    未設定 GITHUB_TOKEN 時停用按鈕並提示;同時保留旁邊的下載按鈕當備援。
+    """
+    configured = github_store.is_configured(_secret)
+    if st.button(label or f"💾 直接存到 GitHub({filename})",
+                 key=f"gh_{key}", use_container_width=True, disabled=not configured):
+        with st.spinner("commit 到 GitHub 中…"):
+            ok, msg = github_store.commit_file(
+                filename, content, f"🛰️ 更新 {filename}(看板一鍵存檔)", _secret
+            )
+        if ok:
+            st.success(f"已存到 GitHub!{msg}")
+        else:
+            st.error(f"存檔失敗:{msg}")
+    if not configured:
+        st.caption(
+            "ℹ️ 一鍵存檔需 `GITHUB_TOKEN`:Streamlit Cloud → App settings → Secrets 加上"
+            " `GITHUB_TOKEN = \"github_pat_...\"`(fine-grained PAT,限定本 repo、Contents 讀寫)。"
+            "未設定時可改用下方下載再手動上傳。"
+        )
 
 
 def _collect_keys_from_secrets() -> list[str]:
@@ -248,9 +281,11 @@ def render_etf_crawl_panel() -> None:
                     with st.expander("📋 抓取明細"):
                         st.code("\n".join(logs))
         if st.session_state.get("etf_data_live"):
+            _holdings_str = json.dumps(st.session_state["etf_data_live"], ensure_ascii=False, indent=2)
+            render_github_save("etf_holdings.json", _holdings_str, key="holdings")
             st.download_button(
-                "⬇️ 下載 etf_holdings.json(可 commit 回 repo 永久保存)",
-                data=json.dumps(st.session_state["etf_data_live"], ensure_ascii=False, indent=2),
+                "⬇️ 下載 etf_holdings.json(備援:手動上傳)",
+                data=_holdings_str,
                 file_name="etf_holdings.json",
                 mime="application/json",
             )
@@ -317,11 +352,13 @@ def render_etf_add_panel() -> None:
         else:
             st.caption("清單目前是空的。")
 
-        # 目前清單一覽 + 下載
+        # 目前清單一覽 + 存檔
         st.caption(f"目前清單({len(etfs)} 檔):" + "、".join(f"{c} {i.get('name','')}".strip() for c, i in etfs.items()))
+        _sources_str = json.dumps(sources, ensure_ascii=False, indent=2)
+        render_github_save("etf_sources.json", _sources_str, key="sources")
         st.download_button(
-            "⬇️ 下載 etf_sources.json(清單)",
-            data=json.dumps(sources, ensure_ascii=False, indent=2),
+            "⬇️ 下載 etf_sources.json(備援:手動上傳)",
+            data=_sources_str,
             file_name="etf_sources.json",
             mime="application/json",
         )
@@ -349,9 +386,11 @@ def render_etf_profiles() -> None:
                     with st.expander("📋 抓取明細"):
                         st.code("\n".join(logs))
         if st.session_state.get("etf_profiles_live"):
+            _profiles_str = json.dumps(st.session_state["etf_profiles_live"], ensure_ascii=False, indent=2)
+            render_github_save("etf_profiles.json", _profiles_str, key="profiles")
             st.download_button(
-                "⬇️ 下載 etf_profiles.json(可 commit 回 repo 保存)",
-                data=json.dumps(st.session_state["etf_profiles_live"], ensure_ascii=False, indent=2),
+                "⬇️ 下載 etf_profiles.json(備援:手動上傳)",
+                data=_profiles_str,
                 file_name="etf_profiles.json",
                 mime="application/json",
             )
@@ -773,9 +812,11 @@ def render_price_update_panel(current_prices: dict) -> None:
         if not proxy:
             st.warning("未偵測到 PROXY_URL,無法抓股價。請先在 Streamlit Secrets 設定。")
         if st.session_state.get("price_data_live"):
+            _prices_str = json.dumps(st.session_state["price_data_live"], ensure_ascii=False, indent=2)
+            render_github_save("stock_prices.json", _prices_str, key="prices")
             st.download_button(
-                "⬇️ 下載 stock_prices.json(可 commit 回 repo 保存)",
-                data=json.dumps(st.session_state["price_data_live"], ensure_ascii=False, indent=2),
+                "⬇️ 下載 stock_prices.json(備援:手動上傳)",
+                data=_prices_str,
                 file_name="stock_prices.json",
                 mime="application/json",
             )
