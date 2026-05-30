@@ -290,8 +290,34 @@ def render_etf_add_panel() -> None:
                 st.write("\n".join(f"- {m}" for m in msgs))
                 etfs = sources["moneydj"]["etfs"]
 
+        # 移除 ETF
+        st.markdown("**🗑️ 移除 ETF**")
+        if etfs:
+            to_remove = st.multiselect(
+                "選擇要從清單移除的 ETF(可多選)",
+                options=list(etfs.keys()),
+                format_func=lambda c: f"{c} {etfs[c].get('name', '')}".strip(),
+                key="etf_remove_select",
+            )
+            if st.button("移除選取的 ETF", use_container_width=True, disabled=not to_remove):
+                rmsgs: list[str] = []
+                for code in to_remove:
+                    ok, msg, sources = etf_fetcher.remove_etf(code, sources)
+                    rmsgs.append(("✅ " if ok else "⚠️ ") + msg)
+                st.session_state["etf_sources_live"] = sources
+                try:
+                    etf_fetcher.save_sources(sources)
+                    rsaved = "(已寫入 etf_sources.json)"
+                except Exception:  # noqa: BLE001 — 雲端唯讀
+                    rsaved = "(雲端唯讀,請用下方按鈕下載清單並 commit 回 repo)"
+                st.success("處理完成 " + rsaved)
+                st.write("\n".join(f"- {m}" for m in rmsgs))
+                etfs = sources["moneydj"]["etfs"]
+        else:
+            st.caption("清單目前是空的。")
+
         # 目前清單一覽 + 下載
-        st.caption("目前清單:" + "、".join(f"{c} {i.get('name','')}".strip() for c, i in etfs.items()))
+        st.caption(f"目前清單({len(etfs)} 檔):" + "、".join(f"{c} {i.get('name','')}".strip() for c, i in etfs.items()))
         st.download_button(
             "⬇️ 下載 etf_sources.json(清單)",
             data=json.dumps(sources, ensure_ascii=False, indent=2),
