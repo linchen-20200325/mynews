@@ -131,8 +131,20 @@ def _kv_pairs(html_text: str) -> dict[str, str]:
 
 
 def _pct(text: str) -> float | None:
-    m = re.search(r"([0-9]+(?:\.[0-9]+)?)\s*%", text or "")
+    """取第一個數字當百分比值(欄位本身已是 % 欄,如『經理費(%)→0.4』,不一定帶 % 符號)。"""
+    m = re.search(r"([0-9]+(?:\.[0-9]+)?)", text or "")
     return float(m.group(1)) if m else None
+
+
+def _scale_million(text: str) -> float | None:
+    """ETF 規模 → 百萬台幣數字。例『575,078.00(百萬台幣)…』→ 575078.0。"""
+    m = re.search(r"([0-9][0-9,]*(?:\.[0-9]+)?)", text or "")
+    if not m:
+        return None
+    try:
+        return float(m.group(1).replace(",", ""))
+    except ValueError:
+        return None
 
 
 def _classify_category(text: str) -> str:
@@ -234,40 +246,50 @@ def _themes(name: str, text_all: str) -> list[str]:
 
 
 def parse_profile(html_text: str, code: str, name: str) -> dict:
-    """把基本資料頁解析成一筆 profile。抓不到的欄位留空/預設。"""
+    """把 MoneyDJ Basic0004(ETF 簡介頁)解析成一筆 profile。"""
     kv = _kv_pairs(html_text)
 
     def find(*keys: str) -> str:
+        # 完全比對優先,再退而求其次做包含比對
+        for key in keys:
+            if key in kv:
+                return kv[key]
         for k in kv:
             if any(key in k for key in keys):
                 return kv[k]
         return ""
 
-    cat_raw = find("基金種類", "類型", "種類", "標的指數類")
-    region_raw = find("投資地區", "投資區域", "計價", "標的指數")
-    div_raw = find("配息", "收益分配", "分配頻率")
-    mgmt_raw = find("經理費", "管理費")
-    custody_raw = find("保管費")
-    index_raw = find("標的指數", "追蹤指數", "指數")
-    issuer_raw = find("發行", "投信", "經理公司", "基金公司")
-    # 主題只用名稱 + 追蹤指數判斷,避免被整頁其他區塊(相關 ETF 清單)汙染
-    theme_blob = f"{name} {index_raw} {cat_raw}"
-    strat_blob = f"{name} {cat_raw} {index_raw} {div_raw}"
+    cat_raw = find("投資標的", "基金種類", "ETF種類", "類型")        # 例:股票型 / 債券型
+    region_raw = find("投資區域", "投資地區")                       # 例:台灣 / 美國
+    div_raw = find("配息頻率", "收益分配", "配息")                  # 例:季配 / 月配 / 不配息
+    mgmt_raw = find("經理費(%)", "經理費", "管理費")               # 例:0.4
+    total_fee_raw = find("總管理費用(%)", "總管理費用", "總費用")   # 例:0.57 (含...)
+    index_raw = find("追蹤指數", "標的指數", "基準指數")
+    issuer_raw = find("發行公司", "發行", "投信")
+    manager_raw = find("經理人")
+    scale_raw = find("ETF規模", "基金規模", "規模")
+    yield_raw = find("殖利率(%)", "殖利率")
+    strategy_text = find("投資策略", "投資風格")
+    size_m = _scale_million(scale_raw)
 
     return {
         "code": code,
         "name": name,
         "issuer": issuer_raw,
+        "manager": manager_raw,
         "category": _classify_category(cat_raw or name),
+        "category_raw": cat_raw,
         "region": _classify_region(region_raw or index_raw or name),
         "dividend_freq": _dividend_freq(div_raw or name),
         "dividend_months": _months(div_raw),
         "mgmt_fee": _pct(mgmt_raw),
-        "custody_fee": _pct(custody_raw),
+        "total_fee": _pct(total_fee_raw),
+        "yield_pct": _pct(yield_raw),
+        "scale_million": size_m,
         "index_tracked": index_raw,
-        "strategy": _strategy(strat_blob),
-        "themes": _themes(name, theme_blob),
-        "category_raw": cat_raw,
+        "strategy": _strategy(f"{strategy_text} {cat_raw} {name}"),
+        "strategy_text": strategy_text,
+        "themes": _themes(name, f"{name} {index_raw} {cat_raw}"),
     }
 
 
