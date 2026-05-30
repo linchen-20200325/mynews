@@ -30,7 +30,14 @@ PROFILES_PATH = Path("etf_profiles.json")
 HTTP_TIMEOUT = 30
 REQUEST_GAP_SEC = 0.6
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
-BASIC_TEMPLATE = "https://www.moneydj.com/etf/x/Basic/Basic0001.xdjhtm?etfid={etfid}"
+# 注意:Basic0001 是「即時報價頁」,沒有基金種類/配息/費用。
+# ETF 簡介/特色(投資地區、計價、成立日、經理費、保管費、配息、追蹤指數)在 Basic0004。
+BASIC_TEMPLATE = "https://www.moneydj.com/etf/x/Basic/Basic0004.xdjhtm?etfid={etfid}"
+PAGE_TEMPLATES = {
+    "0004": "https://www.moneydj.com/etf/x/Basic/Basic0004.xdjhtm?etfid={etfid}",
+    "0003": "https://www.moneydj.com/etf/x/Basic/Basic0003.xdjhtm?etfid={etfid}",
+    "0001": "https://www.moneydj.com/etf/x/Basic/Basic0001.xdjhtm?etfid={etfid}",
+}
 
 # ---- 標準化選項(供篩選器固定選單)---------------------------------------
 
@@ -91,16 +98,35 @@ class _KVParser(HTMLParser):
             self._buf = None
 
 
+_LABEL_RE = re.compile(r"[一-鿿]")  # 欄位名應含中文
+_PRICEY_RE = re.compile(r"^[0-9.,%+\-X\s]+$")  # 純數字/價格/符號 → 不是欄位名
+
+
+def _looks_like_label(text: str) -> bool:
+    """判斷某儲存格是否像『欄位名』(短、含中文、非純數字/價格)。"""
+    t = text.rstrip(":： ").strip()
+    if not t or len(t) > 10:
+        return False
+    if _PRICEY_RE.match(t):
+        return False
+    return bool(_LABEL_RE.search(t))
+
+
 def _kv_pairs(html_text: str) -> dict[str, str]:
-    """把連續儲存格配對成 {欄位名: 值}(MoneyDJ 基本資料多為兩欄表格)。"""
+    """把連續儲存格配對成 {欄位名: 值}。
+
+    只在『前一格像欄位名、後一格不像欄位名』時才配對,避免報價頁那種
+    每格互相串成 key 的雜訊(98776→買價與股數→...)。
+    """
     p = _KVParser()
     p.feed(html_text)
     cells = [c for c in p.cells if c]
     kv: dict[str, str] = {}
     for i in range(len(cells) - 1):
-        key = cells[i].rstrip(":: ")
-        if key and key not in kv and len(key) <= 12:
-            kv[key] = cells[i + 1]
+        key, val = cells[i].rstrip(":： ").strip(), cells[i + 1].strip()
+        # 只要『前一格像欄位名』就配對;擋掉報價頁那種 key 是數字/價格的雜訊
+        if _looks_like_label(key) and val and key not in kv:
+            kv[key] = val
     return kv
 
 
@@ -245,13 +271,13 @@ def parse_profile(html_text: str, code: str, name: str) -> dict:
     }
 
 
-def diagnose(etfid: str, proxy: str | None = None) -> dict:
-    """診斷:抓一檔基本資料頁,回傳解析出的所有『欄位名→值』,供校正解析器。"""
+def diagnose(etfid: str, proxy: str | None = None, page: str = "0004") -> dict:
+    """診斷:抓指定基本資料頁(預設 Basic0004 簡介頁),回傳解析出的『欄位名→值』。"""
     proxies = get_proxies(proxy)
     if proxies is None:
         raise RuntimeError("未提供 PROXY_URL")
-    html = _http_get(BASIC_TEMPLATE.format(etfid=etfid), proxies)
-    return _kv_pairs(html)
+    tmpl = PAGE_TEMPLATES.get(page, BASIC_TEMPLATE)
+    return _kv_pairs(_http_get(tmpl.format(etfid=etfid), proxies))
 
 
 def get_proxies(proxy: str | None = None) -> dict | None:
