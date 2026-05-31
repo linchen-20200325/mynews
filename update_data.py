@@ -287,6 +287,7 @@ HOUSING_SYSTEM_PROMPT = """\
   "report_date": "YYYY-MM-DD",
   "overall_sentiment": "熱絡|持平|冷清",
   "overall_summary": "一句話總結目前台灣房市氛圍",
+  "ai_summary": "綜合總結:約 3~5 句,點出整體冷熱與主因、預售與成屋差異、打房/信用管制政策的影響,以及給購屋/觀望族的重點觀察(只依新聞,不預測漲跌幅、不喊買賣)",
   "presale_market": { "sentiment": "熱絡|持平|冷清", "note": "依據新聞的白話說明" },
   "resale_market":  { "sentiment": "熱絡|持平|冷清", "note": "依據新聞的白話說明" },
   "policy": [ { "title": "政策/措施名稱", "impact": "白話說明對市場/買賣方的影響" } ],
@@ -586,6 +587,9 @@ def get_housing_analysis(news: list[dict], prices: dict | None, today: str) -> d
     data.setdefault("report_date", today)
     data.setdefault("regions", [])
     data.setdefault("policy", [])
+    # AI 綜合總結:模型沒給時退回單句 overall_summary
+    if not data.get("ai_summary"):
+        data["ai_summary"] = data.get("overall_summary", "")
     validate_housing(data)
     # 只保留合法縣市名稱的分區標記,避免模型亂填
     data["regions"] = [
