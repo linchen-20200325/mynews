@@ -260,24 +260,33 @@ STOCK_SYSTEM_PROMPT = """\
 
 HOUSING_SYSTEM_PROMPT = """\
 你是一位兼具「房地產市場研究員」與「後端資料工程師」的純資料生成器。
-你會收到一批【已由爬蟲抓取的真實台灣房市新聞】(含標題、來源、連結、摘要),
-可能再附上【實價登錄各縣市每坪均價(萬元/坪,政府真實統計)】當參考。
-你的任務是:【只根據這些真實新聞】判讀房市冷熱與打房政策,並把新聞講到的縣市標出來,
-最後【嚴格且唯一】輸出合法 JSON。
+你會收到【實價登錄各縣市每坪均價與歷年趨勢(政府真實統計)】+【真實台灣房市新聞】。
+你的任務是:【只根據這些真實資料】判讀房市冷熱與打房政策,把新聞講到的縣市標出來,
+並從【購屋者(買方)】角度做一份綜合總結,最後【嚴格且唯一】輸出合法 JSON。
 
 【判讀重點】
 1. 預售屋市場(presale_market)與成屋/中古屋市場(resale_market)目前各自偏
    「熱絡 / 持平 / 冷清」,並用一句白話說明依據(務必對應新聞,不可臆測)。
 2. 打房政策(policy):整理新聞提到的政府打房/信用管制措施(如央行選擇性信用管制、
    平均地權條例、囤房稅 2.0、限貸令等),每項用白話說明對買賣方的影響。
+   注意區分:純物價/油電氣價格不是房市政策,除非新聞明確連結到房貸/購屋負擔,否則不要列入。
 3. 分區(regions):把新聞中明確提到的『縣市』各標一個冷熱傾向與 0~100 熱度分,
    county 欄位只能填以下名稱之一(沒提到的縣市不要硬填):
    臺北市、新北市、桃園市、臺中市、臺南市、高雄市、基隆市、新竹市、新竹縣、苗栗縣、
    彰化縣、南投縣、雲林縣、嘉義市、嘉義縣、屏東縣、宜蘭縣、花蓮縣、臺東縣、澎湖縣、金門縣、連江縣。
+4. 買方綜合總結(ai_summary,物件):綜合『房價水準+歷年走勢+冷熱+政策+新聞』,
+   專為想買房的人寫,各欄都用白話、可被資料佐證,不喊買賣、不預測具體漲跌幅:
+   - future_trend:未來房市趨勢研判(依歷年每坪走勢與新聞動能,說明偏漲/偏穩/偏跌與理由)。
+   - policy_shift:房市政策的轉變方向(趨嚴打炒房?或鬆綁?對房貸成數/利率/稅負的影響)。
+   - buyer_impact:政策與趨勢對『買方』整體是「偏好 | 中性 | 偏壞」三選一。
+   - buyer_advice:給買方的 2~3 句具體觀察(何時/哪類產品/哪些區相對有利,務必對應資料)。
+   - regulations:列出與購屋相關、現行或修法中的法規/措施名稱(字串陣列,如
+     平均地權條例、囤房稅2.0、央行選擇性信用管制、新青安房貸等;沒有就空陣列)。
+   - overview:2~3 句整體收尾。
 
 【真實性】
-- 房價數字若有附參考統計就照用,沒有就不要自己編造價格。冷熱/政策判讀要對應新聞。
-- 你是中立的資訊整理,不是投資建議;不要喊買賣、不要預測漲跌幅。
+- 房價數字一律以附上的實價登錄統計為準,嚴禁自行編造價格或漲跌幅。判讀要對應資料。
+- 你是中立的資訊整理,不是投資建議;不要喊買賣、不要保證漲跌。
 
 【強制輸出規範:Zero-Tolerance】
 1. 最終回覆只能有一個合法 JSON 物件,前後不得有任何其他文字或 ```json 標記。
@@ -288,13 +297,20 @@ HOUSING_SYSTEM_PROMPT = """\
   "report_date": "YYYY-MM-DD",
   "overall_sentiment": "熱絡|持平|冷清",
   "overall_summary": "一句話總結目前台灣房市氛圍",
-  "ai_summary": "綜合總結:約 3~5 句,點出整體冷熱與主因、預售與成屋差異、打房/信用管制政策的影響,以及給購屋/觀望族的重點觀察(只依新聞,不預測漲跌幅、不喊買賣)",
   "presale_market": { "sentiment": "熱絡|持平|冷清", "note": "依據新聞的白話說明" },
   "resale_market":  { "sentiment": "熱絡|持平|冷清", "note": "依據新聞的白話說明" },
   "policy": [ { "title": "政策/措施名稱", "impact": "白話說明對市場/買賣方的影響" } ],
   "regions": [
     { "county": "縣市名稱", "sentiment": "熱絡|持平|冷清", "heat_score": 70, "note": "該區新聞重點" }
   ],
+  "ai_summary": {
+    "future_trend": "未來房市趨勢研判...",
+    "policy_shift": "房市政策的轉變方向...",
+    "buyer_impact": "偏好|中性|偏壞",
+    "buyer_advice": "給買方的具體觀察...",
+    "regulations": ["相關法規/措施名稱", "..."],
+    "overview": "整體收尾..."
+  },
   "evidence_news": [ { "title": "新聞標題", "source": "媒體來源", "url": "連結(若有)" } ]
 }
 """
@@ -371,12 +387,35 @@ def build_stock_user_prompt(news: list[dict], today: str) -> str:
     )
 
 
-def build_housing_user_prompt(news: list[dict], prices: dict | None, today: str) -> str:
+def format_house_history_block(history: dict | None, top_n: int = 8) -> str:
+    """把歷年每坪均價整理成精簡趨勢區塊(取成屋成交量較大的代表縣市,控制 token)。"""
+    counties = (history or {}).get("counties") or {}
+    years = (history or {}).get("years") or []
+    if not counties or len(years) < 2:
+        return "(本次未附歷年房價,請依當期房價與新聞研判趨勢)"
+    # 以最新年成屋均價挑代表縣市(六都通常在內),避免塞滿 22 縣市 × 多年
+    def latest(c):
+        r = (counties[c].get("resale") or {})
+        return r.get(years[-1]) or 0
+    picked = sorted(counties, key=latest, reverse=True)[:top_n]
+    lines = [f"歷年每坪均價(萬元/坪,年份 {years[0]}→{years[-1]};成屋):"]
+    for c in picked:
+        r = counties[c].get("resale") or {}
+        seq = "、".join(f"{y}:{r[y]}" for y in years if y in r)
+        if seq:
+            lines.append(f"  {c}:{seq}")
+    return "\n".join(lines)
+
+
+def build_housing_user_prompt(news: list[dict], prices: dict | None, today: str,
+                             history: dict | None = None) -> str:
     return (
         f"今天的日期是 {today}。\n"
-        f"請根據以下真實台灣房市新聞,判讀預售屋與成屋市場的冷熱、整理打房政策,"
-        f"並把新聞提到的縣市標出冷熱與熱度分,嚴格輸出 JSON。report_date 請填 {today}。\n\n"
-        f"【實價登錄參考房價】\n{format_house_price_block(prices)}\n\n"
+        f"請綜合以下真實資料:判讀預售/成屋冷熱、整理打房政策、標出新聞提到的縣市,"
+        f"並從『買方』角度做綜合總結(未來趨勢/政策轉變/對買方好壞/相關法規)。"
+        f"嚴格輸出 JSON。report_date 請填 {today}。\n\n"
+        f"【實價登錄當期房價】\n{format_house_price_block(prices)}\n\n"
+        f"【實價登錄歷年趨勢】\n{format_house_history_block(history)}\n\n"
         f"【房市新聞】\n{format_news_block(news)}"
     )
 
@@ -623,17 +662,18 @@ def get_stock_picks(news: list[dict], today: str) -> dict:
     return data
 
 
-def get_housing_analysis(news: list[dict], prices: dict | None, today: str) -> dict:
-    """Gemini 讀房市新聞(+實價登錄參考)→ 冷熱判讀 + 打房政策 + 縣市標記。"""
+def get_housing_analysis(news: list[dict], prices: dict | None, today: str,
+                        history: dict | None = None) -> dict:
+    """Gemini 讀房市新聞 + 實價登錄當期/歷年 → 冷熱 + 打房政策 + 縣市標記 + 買方總結。"""
     data = call_gemini_for_json(
-        HOUSING_SYSTEM_PROMPT, build_housing_user_prompt(news, prices, today)
+        HOUSING_SYSTEM_PROMPT, build_housing_user_prompt(news, prices, today, history)
     )
     data.setdefault("report_date", today)
     data.setdefault("regions", [])
     data.setdefault("policy", [])
-    # AI 綜合總結:模型沒給時退回單句 overall_summary
+    # AI 買方總結:模型沒給時退回單句 overall_summary(包成 overview 維持結構一致)
     if not data.get("ai_summary"):
-        data["ai_summary"] = data.get("overall_summary", "")
+        data["ai_summary"] = {"overview": data.get("overall_summary", "")}
     validate_housing(data)
     # 只保留合法縣市名稱的分區標記,避免模型亂填
     data["regions"] = [
@@ -943,7 +983,8 @@ def main() -> int:
                 housing_news = fetch_housing_news()
                 print(f"  抓到 {len(housing_news)} 則房市新聞。")
                 prices = housing_fetcher.load_house_prices()
-                housing = get_housing_analysis(housing_news, prices, today)
+                history = housing_fetcher.load_house_price_history()
+                housing = get_housing_analysis(housing_news, prices, today, history)
                 housing["raw_news"] = housing_news
                 save_json(OUTPUT_HOUSING, housing)
                 save_json(HOUSING_ARCHIVE_DIR / f"{today}.json", housing)
