@@ -1595,6 +1595,14 @@ def render_housing_ai_summary(ai_summary) -> None:
                 st.markdown(f"**{title}**")
                 st.write(body)
 
+    # 長期結構性因子(人口/少子化、餘屋供給、購屋負擔)— 與短期動能並陳
+    structural = ai_summary.get("structural_factors") or []
+    if structural:
+        with st.container(border=True):
+            st.markdown("**🧩 長期結構性因子(人口 / 供給 / 負擔)**")
+            for f in structural:
+                st.markdown(f"- {f}")
+
     regs = ai_summary.get("regulations") or []
     if regs:
         st.markdown("**📜 相關法規 / 措施**")
