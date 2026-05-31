@@ -1,0 +1,2927 @@
+{
+  "as_of": "2026-05-31 (實價登錄 via proxy)",
+  "season": "115S1",
+  "unit": "萬元/坪",
+  "counties": {
+    "臺北市": {
+      "resale": {
+        "count": 2714,
+        "avg_ping_wan": 79.58,
+        "median_ping_wan": 74.44,
+        "samples": [
+          {
+            "district": "南港區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 45.08,
+            "total_wan": 1050.0,
+            "date": "1151024",
+            "address": "臺北市南港區合順街８巷５弄３２號"
+          },
+          {
+            "district": "大安區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 164.92,
+            "total_wan": 1770.0,
+            "date": "1150224",
+            "address": "臺北市大安區永康街４巷１８號六樓之５"
+          },
+          {
+            "district": "大安區",
+            "type": "透天厝",
+            "ping_wan": 212.52,
+            "total_wan": 992.0,
+            "date": "1150212",
+            "address": "臺北市大安區通化街２０號"
+          },
+          {
+            "district": "松山區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 17.78,
+            "total_wan": 300.0,
+            "date": "1150211",
+            "address": "臺北市松山區八德路四段７６５號十二樓之４"
+          },
+          {
+            "district": "松山區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 75.56,
+            "total_wan": 4180.0,
+            "date": "1150211",
+            "address": "臺北市松山區復興北路３１３巷３４號三樓"
+          },
+          {
+            "district": "松山區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 80.1,
+            "total_wan": 260.0,
+            "date": "1150211",
+            "address": "臺北市松山區八德路四段１９７號二樓"
+          },
+          {
+            "district": "北投區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 22.19,
+            "total_wan": 715.0,
+            "date": "1150210",
+            "address": "臺北市北投區中央北路三段１２４號二樓"
+          },
+          {
+            "district": "大同區",
+            "type": "透天厝",
+            "ping_wan": 56.2,
+            "total_wan": 330.0,
+            "date": "1150210",
+            "address": "臺北市大同區華陰街９２號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 285,
+        "avg_ping_wan": 121.45,
+        "median_ping_wan": 116.78,
+        "samples": [
+          {
+            "district": "大安區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 211.46,
+            "total_wan": 4518.0,
+            "date": "1150210",
+            "address": "臺北市大安區誠安里忠孝東路三段279號"
+          },
+          {
+            "district": "中山區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 151.36,
+            "total_wan": 6800.0,
+            "date": "1150209",
+            "address": "臺北市中山區龍江路223巷25號旁"
+          },
+          {
+            "district": "松山區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 124.7,
+            "total_wan": 2478.0,
+            "date": "1150208",
+            "address": "臺北市松山區八德路四段"
+          },
+          {
+            "district": "南港區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 120.97,
+            "total_wan": 2282.0,
+            "date": "1150207",
+            "address": "臺北市南港區西新里松河街"
+          },
+          {
+            "district": "南港區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 99.11,
+            "total_wan": 2050.0,
+            "date": "1150207",
+            "address": "臺北市南港區舊莊里舊莊街一段"
+          },
+          {
+            "district": "士林區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 90.02,
+            "total_wan": 2140.0,
+            "date": "1150207",
+            "address": "臺北市士林區延平北路五段２５７巷１２號"
+          },
+          {
+            "district": "士林區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 86.06,
+            "total_wan": 2300.0,
+            "date": "1150207",
+            "address": "臺北市士林區延平北路五段２５７巷１２號"
+          },
+          {
+            "district": "士林區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 86.06,
+            "total_wan": 2300.0,
+            "date": "1150207",
+            "address": "臺北市士林區延平北路五段２５７巷１２號"
+          }
+        ]
+      }
+    },
+    "臺中市": {
+      "resale": {
+        "count": 2655,
+        "avg_ping_wan": 31.06,
+        "median_ping_wan": 27.69,
+        "samples": [
+          {
+            "district": "西屯區",
+            "type": "透天厝",
+            "ping_wan": 35.89,
+            "total_wan": 300.0,
+            "date": "1151218",
+            "address": "臺中市西屯區華夏巷東二弄１５號"
+          },
+          {
+            "district": "豐原區",
+            "type": "透天厝",
+            "ping_wan": 34.27,
+            "total_wan": 700.0,
+            "date": "1150302",
+            "address": "臺中市豐原區府前街１６２巷５２號"
+          },
+          {
+            "district": "南屯區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 27.1,
+            "total_wan": 270.0,
+            "date": "1150226",
+            "address": "臺中市南屯區向上南路一段１６３號九樓之１９"
+          },
+          {
+            "district": "大里區",
+            "type": "透天厝",
+            "ping_wan": 34.08,
+            "total_wan": 2050.0,
+            "date": "1150223",
+            "address": "臺中市大里區至善路８巷１９弄２號"
+          },
+          {
+            "district": "東勢區",
+            "type": "透天厝",
+            "ping_wan": 20.17,
+            "total_wan": 610.0,
+            "date": "1150223",
+            "address": "臺中市東勢區新盛街５２６號"
+          },
+          {
+            "district": "梧棲區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 32.18,
+            "total_wan": 213.0,
+            "date": "1150214",
+            "address": "臺中市梧棲區自強一街９０巷３５號二樓之１１"
+          },
+          {
+            "district": "潭子區",
+            "type": "透天厝",
+            "ping_wan": 25.14,
+            "total_wan": 570.0,
+            "date": "1150212",
+            "address": "臺中市潭子區大新路２０巷２３號"
+          },
+          {
+            "district": "后里區",
+            "type": "透天厝",
+            "ping_wan": 103.45,
+            "total_wan": 650.0,
+            "date": "1150211",
+            "address": "臺中市后里區民生路１３９號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 138,
+        "avg_ping_wan": 47.53,
+        "median_ping_wan": 45.92,
+        "samples": [
+          {
+            "district": "西屯區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 70.31,
+            "total_wan": 2278.0,
+            "date": "1150207",
+            "address": "臺中市西屯區烈美街"
+          },
+          {
+            "district": "外埔區",
+            "type": "透天厝",
+            "ping_wan": 27.91,
+            "total_wan": 1200.0,
+            "date": "1150206",
+            "address": "臺中市外埔區二崁路"
+          },
+          {
+            "district": "南屯區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 48.8,
+            "total_wan": 1055.0,
+            "date": "1150206",
+            "address": "臺中市南屯區文山三街保安九街口"
+          },
+          {
+            "district": "南區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 88.17,
+            "total_wan": 1528.0,
+            "date": "1150205",
+            "address": "臺中市南區和昌街福南街路口"
+          },
+          {
+            "district": "大甲區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 37.09,
+            "total_wan": 883.0,
+            "date": "1150204",
+            "address": "臺中市大甲區水源路452巷17弄80號旁"
+          },
+          {
+            "district": "后里區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 35.52,
+            "total_wan": 860.0,
+            "date": "1150203",
+            "address": "臺中市后里區九甲五路"
+          },
+          {
+            "district": "外埔區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 25.73,
+            "total_wan": 871.0,
+            "date": "1150202",
+            "address": "臺中市外埔區三崁路27-1號旁"
+          },
+          {
+            "district": "大甲區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 36.28,
+            "total_wan": 450.0,
+            "date": "1150131",
+            "address": "臺中市大甲區中山路二段950巷"
+          }
+        ]
+      }
+    },
+    "基隆市": {
+      "resale": {
+        "count": 435,
+        "avg_ping_wan": 20.75,
+        "median_ping_wan": 18.95,
+        "samples": [
+          {
+            "district": "七堵區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 5.78,
+            "total_wan": 193.5,
+            "date": "950724",
+            "address": "基隆市七堵區百三街８５之３號"
+          },
+          {
+            "district": "仁愛區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 21.96,
+            "total_wan": 350.0,
+            "date": "1150224",
+            "address": "基隆市仁愛區劉銘傳路４３巷３０號"
+          },
+          {
+            "district": "中正區",
+            "type": "透天厝",
+            "ping_wan": 10.65,
+            "total_wan": 147.0,
+            "date": "1150212",
+            "address": "基隆市中正區北寧路２４９巷１４號"
+          },
+          {
+            "district": "中正區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 14.02,
+            "total_wan": 320.0,
+            "date": "1150211",
+            "address": "基隆市中正區中正路１８７巷２０之２號"
+          },
+          {
+            "district": "中正區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 24.2,
+            "total_wan": 830.0,
+            "date": "1150209",
+            "address": "基隆市中正區中船路１８號二樓"
+          },
+          {
+            "district": "七堵區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 22.38,
+            "total_wan": 738.0,
+            "date": "1150207",
+            "address": "基隆市七堵區自強路１４之１號"
+          },
+          {
+            "district": "中正區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 2.04,
+            "total_wan": 30.0,
+            "date": "1150206",
+            "address": "基隆市中正區正義路１００巷１０５號"
+          },
+          {
+            "district": "安樂區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 12.72,
+            "total_wan": 355.0,
+            "date": "1150204",
+            "address": "基隆市安樂區中和路１６８巷３弄３號４樓"
+          }
+        ]
+      },
+      "presale": {
+        "count": 5,
+        "avg_ping_wan": 48.3,
+        "median_ping_wan": 50.08,
+        "samples": [
+          {
+            "district": "七堵區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 59.49,
+            "total_wan": 1628.0,
+            "date": "1150118",
+            "address": "基隆市七堵區福一街143號之旁"
+          },
+          {
+            "district": "暖暖區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 50.08,
+            "total_wan": 1472.0,
+            "date": "1150113",
+            "address": "基隆市暖暖區國安路"
+          },
+          {
+            "district": "中正區",
+            "type": "透天厝",
+            "ping_wan": 29.97,
+            "total_wan": 1295.0,
+            "date": "1141215",
+            "address": "基隆市中正區調和街266巷101弄57號"
+          },
+          {
+            "district": "仁愛區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 51.96,
+            "total_wan": 1850.0,
+            "date": "1141124",
+            "address": "基隆市仁愛區精一路6號等"
+          },
+          {
+            "district": "中正區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 50.0,
+            "total_wan": 2083.0,
+            "date": "1141116",
+            "address": "基隆市中正區義二路"
+          }
+        ]
+      }
+    },
+    "臺南市": {
+      "resale": {
+        "count": 1943,
+        "avg_ping_wan": 25.06,
+        "median_ping_wan": 23.97,
+        "samples": [
+          {
+            "district": "中西區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 37.49,
+            "total_wan": 295.0,
+            "date": "1150304",
+            "address": "臺南市中西區民生路一段２０５巷７號二樓之４"
+          },
+          {
+            "district": "中西區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 10.01,
+            "total_wan": 394.0,
+            "date": "1150302",
+            "address": "臺南市中西區建業街３７巷２號四樓之５"
+          },
+          {
+            "district": "中西區",
+            "type": "透天厝",
+            "ping_wan": 10.08,
+            "total_wan": 304.3,
+            "date": "1150224",
+            "address": "臺南市中西區大福街１３號"
+          },
+          {
+            "district": "麻豆區",
+            "type": "透天厝",
+            "ping_wan": 45.72,
+            "total_wan": 500.0,
+            "date": "1150220",
+            "address": "臺南市麻豆區保安里興中路５號"
+          },
+          {
+            "district": "新化區",
+            "type": "透天厝",
+            "ping_wan": 6.53,
+            "total_wan": 232.1,
+            "date": "1150219",
+            "address": "臺南市新化區正新路２１７巷４６號"
+          },
+          {
+            "district": "新營區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 13.89,
+            "total_wan": 390.0,
+            "date": "1150214",
+            "address": "臺南市新營區南興里建業路９８之１號"
+          },
+          {
+            "district": "中西區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 21.44,
+            "total_wan": 725.0,
+            "date": "1150213",
+            "address": "臺南市中西區民族路二段１０７號九樓之６"
+          },
+          {
+            "district": "東區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 26.06,
+            "total_wan": 250.0,
+            "date": "1150212",
+            "address": "臺南市東區東榮街７號五樓之４"
+          }
+        ]
+      },
+      "presale": {
+        "count": 60,
+        "avg_ping_wan": 32.31,
+        "median_ping_wan": 30.16,
+        "samples": [
+          {
+            "district": "安定區",
+            "type": "透天厝",
+            "ping_wan": 33.76,
+            "total_wan": 1580.0,
+            "date": "1150210",
+            "address": "臺南市安定區海寮路"
+          },
+          {
+            "district": "永康區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 37.27,
+            "total_wan": 1089.0,
+            "date": "1150207",
+            "address": "臺南市永康區永大二路永吉路"
+          },
+          {
+            "district": "後壁區",
+            "type": "透天厝",
+            "ping_wan": 25.92,
+            "total_wan": 1150.0,
+            "date": "1150207",
+            "address": "臺南市後壁區後壁147-59號對面"
+          },
+          {
+            "district": "仁德區",
+            "type": "透天厝",
+            "ping_wan": 22.98,
+            "total_wan": 1500.0,
+            "date": "1150204",
+            "address": "臺南市仁德區二行"
+          },
+          {
+            "district": "新化區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 33.12,
+            "total_wan": 888.0,
+            "date": "1150204",
+            "address": "臺南市新化區民生路234巷"
+          },
+          {
+            "district": "新化區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 32.75,
+            "total_wan": 878.0,
+            "date": "1150204",
+            "address": "臺南市新化區民生路234巷"
+          },
+          {
+            "district": "下營區",
+            "type": "透天厝",
+            "ping_wan": 26.28,
+            "total_wan": 1288.0,
+            "date": "1150202",
+            "address": "臺南市下營區中華街"
+          },
+          {
+            "district": "永康區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 31.49,
+            "total_wan": 768.0,
+            "date": "1150131",
+            "address": "臺南市永康區王行路898巷"
+          }
+        ]
+      }
+    },
+    "高雄市": {
+      "resale": {
+        "count": 3123,
+        "avg_ping_wan": 26.85,
+        "median_ping_wan": 25.52,
+        "samples": [
+          {
+            "district": "林園區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 9.47,
+            "total_wan": 250.0,
+            "date": "1150302",
+            "address": "高雄市林園區一心街３號三樓"
+          },
+          {
+            "district": "大寮區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 7.89,
+            "total_wan": 280.0,
+            "date": "1150226",
+            "address": "高雄市大寮區仁德路１６巷３０弄１２號八樓"
+          },
+          {
+            "district": "鹽埕區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 9.61,
+            "total_wan": 100.0,
+            "date": "1150225",
+            "address": "高雄市鹽埕區府北路２５號６樓之２６"
+          },
+          {
+            "district": "苓雅區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 8.33,
+            "total_wan": 300.0,
+            "date": "1150225",
+            "address": "高雄市苓雅區三多一路９５巷７號四樓"
+          },
+          {
+            "district": "鼓山區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 7.22,
+            "total_wan": 210.0,
+            "date": "1150225",
+            "address": "高雄市鼓山區西藏街３１７巷９號二樓"
+          },
+          {
+            "district": "新興區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 16.59,
+            "total_wan": 188.0,
+            "date": "1150224",
+            "address": "高雄市新興區復橫一路２０２號４樓之１"
+          },
+          {
+            "district": "三民區",
+            "type": "透天厝",
+            "ping_wan": 15.46,
+            "total_wan": 550.0,
+            "date": "1150223",
+            "address": "高雄市三民區鼎泰街２巷２弄１３號"
+          },
+          {
+            "district": "三民區",
+            "type": "透天厝",
+            "ping_wan": 25.17,
+            "total_wan": 400.0,
+            "date": "1150223",
+            "address": "高雄市三民區三民街３２９號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 147,
+        "avg_ping_wan": 41.19,
+        "median_ping_wan": 38.45,
+        "samples": [
+          {
+            "district": "路竹區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 28.8,
+            "total_wan": 648.0,
+            "date": "1150210",
+            "address": "高雄市路竹區民有路32-3號後面"
+          },
+          {
+            "district": "苓雅區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 52.91,
+            "total_wan": 1309.0,
+            "date": "1150209",
+            "address": "高雄市苓雅區成功一路"
+          },
+          {
+            "district": "旗山區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 25.1,
+            "total_wan": 730.0,
+            "date": "1150209",
+            "address": "高雄市旗山區樹人路2-5號對面"
+          },
+          {
+            "district": "鳳山區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 36.47,
+            "total_wan": 616.0,
+            "date": "1150208",
+            "address": "高雄市鳳山區鳳頂段44號"
+          },
+          {
+            "district": "新興區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 52.09,
+            "total_wan": 1327.0,
+            "date": "1150207",
+            "address": "高雄市新興區中山一路"
+          },
+          {
+            "district": "仁武區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 33.33,
+            "total_wan": 700.0,
+            "date": "1150207",
+            "address": "高雄市仁武區永昌三街"
+          },
+          {
+            "district": "路竹區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 30.03,
+            "total_wan": 675.0,
+            "date": "1150207",
+            "address": "高雄市路竹區民有路32-3號後面"
+          },
+          {
+            "district": "仁武區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 38.45,
+            "total_wan": 840.0,
+            "date": "1150206",
+            "address": "高雄市仁武區永新一街"
+          }
+        ]
+      }
+    },
+    "新北市": {
+      "resale": {
+        "count": 4267,
+        "avg_ping_wan": 45.7,
+        "median_ping_wan": 44.3,
+        "samples": [
+          {
+            "district": "汐止區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 31.97,
+            "total_wan": 450.0,
+            "date": "1150223",
+            "address": "新北市汐止區樟樹二路３３９巷８號２樓之１"
+          },
+          {
+            "district": "深坑區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 30.98,
+            "total_wan": 800.0,
+            "date": "1150213",
+            "address": "新北市深坑區北深路三段３０７號四樓"
+          },
+          {
+            "district": "深坑區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 30.98,
+            "total_wan": 800.0,
+            "date": "1150213",
+            "address": "新北市深坑區北深路三段３０７號七樓"
+          },
+          {
+            "district": "永和區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 25.01,
+            "total_wan": 510.0,
+            "date": "1150212",
+            "address": "新北市永和區民治街９２號三樓"
+          },
+          {
+            "district": "新莊區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 63.62,
+            "total_wan": 1250.0,
+            "date": "1150212",
+            "address": "新北市新莊區富貴路１２３號十八樓之一"
+          },
+          {
+            "district": "新店區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 19.53,
+            "total_wan": 228.0,
+            "date": "1150211",
+            "address": "新北市新店區二十張路６４號地下層之１"
+          },
+          {
+            "district": "板橋區",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 55.86,
+            "total_wan": 1200.0,
+            "date": "1150211",
+            "address": "新北市板橋區漢生東路６３巷３９號二樓"
+          },
+          {
+            "district": "三峽區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 52.64,
+            "total_wan": 415.0,
+            "date": "1150211",
+            "address": "新北市三峽區民生街２７巷８號十四樓之３"
+          }
+        ]
+      },
+      "presale": {
+        "count": 580,
+        "avg_ping_wan": 76.1,
+        "median_ping_wan": 75.34,
+        "samples": [
+          {
+            "district": "中和區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 72.25,
+            "total_wan": 1780.0,
+            "date": "1150210",
+            "address": "新北市中和區連城路601號旁"
+          },
+          {
+            "district": "中和區",
+            "type": "套房(1房1廳1衛)",
+            "ping_wan": 93.05,
+            "total_wan": 1098.0,
+            "date": "1150210",
+            "address": "新北市中和區景新街6號"
+          },
+          {
+            "district": "永和區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 95.42,
+            "total_wan": 1860.0,
+            "date": "1150210",
+            "address": "新北市永和區保安路134號旁"
+          },
+          {
+            "district": "泰山區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 65.58,
+            "total_wan": 1930.0,
+            "date": "1150210",
+            "address": "新北市泰山區莊泰路"
+          },
+          {
+            "district": "林口區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 78.77,
+            "total_wan": 1698.0,
+            "date": "1150209",
+            "address": "新北市林口區八德路500巷"
+          },
+          {
+            "district": "中和區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 73.19,
+            "total_wan": 1637.0,
+            "date": "1150209",
+            "address": "新北市中和區復興路49巷6號旁"
+          },
+          {
+            "district": "汐止區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 62.22,
+            "total_wan": 888.0,
+            "date": "1150208",
+            "address": "新北市汐止區水源路二段190號旁"
+          },
+          {
+            "district": "淡水區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 50.69,
+            "total_wan": 796.0,
+            "date": "1150208",
+            "address": "新北市淡水區坪頂路72巷旁"
+          }
+        ]
+      }
+    },
+    "宜蘭縣": {
+      "resale": {
+        "count": 968,
+        "avg_ping_wan": 23.81,
+        "median_ping_wan": 21.82,
+        "samples": [
+          {
+            "district": "礁溪鄉",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 15.35,
+            "total_wan": 400.0,
+            "date": "1150223",
+            "address": "宜蘭縣礁溪鄉德陽路２４６號三樓"
+          },
+          {
+            "district": "礁溪鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 16.98,
+            "total_wan": 190.0,
+            "date": "1150219",
+            "address": "宜蘭縣礁溪鄉忠孝路８號八樓之十六"
+          },
+          {
+            "district": "礁溪鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 17.57,
+            "total_wan": 240.0,
+            "date": "1150214",
+            "address": "宜蘭縣礁溪鄉和平路９３之１２號五樓"
+          },
+          {
+            "district": "宜蘭市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 17.76,
+            "total_wan": 650.0,
+            "date": "1150212",
+            "address": "宜蘭縣宜蘭市大坡路一段３９號十二樓之七"
+          },
+          {
+            "district": "三星鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 21.56,
+            "total_wan": 340.0,
+            "date": "1150211",
+            "address": "宜蘭縣三星鄉義德二路１９９號四樓之６"
+          },
+          {
+            "district": "礁溪鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 20.89,
+            "total_wan": 330.0,
+            "date": "1150209",
+            "address": "宜蘭縣礁溪鄉公園路８６巷５號三樓之六"
+          },
+          {
+            "district": "礁溪鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 23.63,
+            "total_wan": 440.0,
+            "date": "1150209",
+            "address": "宜蘭縣礁溪鄉德陽路１７６之２號五樓"
+          },
+          {
+            "district": "礁溪鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 21.2,
+            "total_wan": 302.0,
+            "date": "1150208",
+            "address": "宜蘭縣礁溪鄉德陽路９０巷１２號二樓之二"
+          }
+        ]
+      },
+      "presale": {
+        "count": 156,
+        "avg_ping_wan": 27.55,
+        "median_ping_wan": 26.44,
+        "samples": [
+          {
+            "district": "三星鄉",
+            "type": "透天厝",
+            "ping_wan": 24.32,
+            "total_wan": 1245.0,
+            "date": "1150208",
+            "address": "宜蘭縣三星鄉大洲二路"
+          },
+          {
+            "district": "員山鄉",
+            "type": "透天厝",
+            "ping_wan": 25.76,
+            "total_wan": 1328.0,
+            "date": "1150208",
+            "address": "宜蘭縣員山鄉惠深二路一段66巷"
+          },
+          {
+            "district": "員山鄉",
+            "type": "透天厝",
+            "ping_wan": 23.46,
+            "total_wan": 1009.0,
+            "date": "1150207",
+            "address": "宜蘭縣員山鄉枕山路"
+          },
+          {
+            "district": "礁溪鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 26.69,
+            "total_wan": 678.0,
+            "date": "1150206",
+            "address": "宜蘭縣礁溪鄉踏踏三路"
+          },
+          {
+            "district": "頭城鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 36.11,
+            "total_wan": 845.0,
+            "date": "1150203",
+            "address": "宜蘭縣頭城鎮沙成路2巷69號旁"
+          },
+          {
+            "district": "頭城鎮",
+            "type": "透天厝",
+            "ping_wan": 27.47,
+            "total_wan": 1500.0,
+            "date": "1150203",
+            "address": "宜蘭縣頭城鎮二城路16巷"
+          },
+          {
+            "district": "五結鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 25.69,
+            "total_wan": 478.0,
+            "date": "1150202",
+            "address": "宜蘭縣五結鄉孝威路348巷"
+          },
+          {
+            "district": "員山鄉",
+            "type": "透天厝",
+            "ping_wan": 31.89,
+            "total_wan": 1640.0,
+            "date": "1150202",
+            "address": "宜蘭縣員山鄉惠深二路一段66巷"
+          }
+        ]
+      }
+    },
+    "桃園市": {
+      "resale": {
+        "count": 2493,
+        "avg_ping_wan": 28.24,
+        "median_ping_wan": 26.01,
+        "samples": [
+          {
+            "district": "龍潭區",
+            "type": "透天厝",
+            "ping_wan": 21.77,
+            "total_wan": 345.0,
+            "date": "1150224",
+            "address": "桃園市龍潭區聖亭路八德段３５巷３２號"
+          },
+          {
+            "district": "桃園區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 19.11,
+            "total_wan": 160.0,
+            "date": "1150213",
+            "address": "桃園市桃園區和興街２５號二樓之１３"
+          },
+          {
+            "district": "楊梅區",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 22.52,
+            "total_wan": 205.0,
+            "date": "1150211",
+            "address": "桃園市楊梅區裕成南路３８０號４樓之１"
+          },
+          {
+            "district": "平鎮區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 19.25,
+            "total_wan": 430.0,
+            "date": "1150211",
+            "address": "桃園市平鎮區金龍路１９０巷３９弄３５號六樓"
+          },
+          {
+            "district": "龜山區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 32.71,
+            "total_wan": 286.0,
+            "date": "1150210",
+            "address": "桃園市龜山區大同路２３６巷４８號三樓之６"
+          },
+          {
+            "district": "中壢區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 49.99,
+            "total_wan": 776.0,
+            "date": "1150210",
+            "address": "桃園市中壢區健行路４５巷２０號三樓之３"
+          },
+          {
+            "district": "大溪區",
+            "type": "透天厝",
+            "ping_wan": 25.88,
+            "total_wan": 1457.0,
+            "date": "1150210",
+            "address": "桃園市大溪區康莊路２０５號"
+          },
+          {
+            "district": "龍潭區",
+            "type": "透天厝",
+            "ping_wan": 10.84,
+            "total_wan": 300.0,
+            "date": "1150210",
+            "address": "桃園市龍潭區中興路２４０巷２６號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 273,
+        "avg_ping_wan": 40.58,
+        "median_ping_wan": 40.28,
+        "samples": [
+          {
+            "district": "楊梅區",
+            "type": "透天厝",
+            "ping_wan": 26.53,
+            "total_wan": 2330.0,
+            "date": "1150210",
+            "address": "桃園市楊梅區下陰影窩段351地號等9筆"
+          },
+          {
+            "district": "蘆竹區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 44.11,
+            "total_wan": 1208.0,
+            "date": "1150210",
+            "address": "桃園市蘆竹區山鼻二路171號對面"
+          },
+          {
+            "district": "桃園區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 44.17,
+            "total_wan": 1120.0,
+            "date": "1150209",
+            "address": "桃園市桃園區雙峰路22號等"
+          },
+          {
+            "district": "龜山區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 36.98,
+            "total_wan": 1046.0,
+            "date": "1150208",
+            "address": "桃園市龜山區明成街98號隔壁"
+          },
+          {
+            "district": "大溪區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 28.3,
+            "total_wan": 434.0,
+            "date": "1150207",
+            "address": "桃園市大溪區齋明街18號之對面"
+          },
+          {
+            "district": "觀音區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 28.59,
+            "total_wan": 468.0,
+            "date": "1150207",
+            "address": "桃園市觀音區永吉街和樂群街口等"
+          },
+          {
+            "district": "觀音區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 26.91,
+            "total_wan": 438.0,
+            "date": "1150207",
+            "address": "桃園市觀音區永吉街和樂群街口等"
+          },
+          {
+            "district": "觀音區",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 26.91,
+            "total_wan": 438.0,
+            "date": "1150207",
+            "address": "桃園市觀音區永吉街和樂群街口等"
+          }
+        ]
+      }
+    },
+    "嘉義市": {
+      "resale": {
+        "count": 345,
+        "avg_ping_wan": 22.92,
+        "median_ping_wan": 22.06,
+        "samples": [
+          {
+            "district": "嘉義市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 22.7,
+            "total_wan": 285.0,
+            "date": "1150301",
+            "address": "嘉義市嘉義市武昌街２７巷８號５樓５"
+          },
+          {
+            "district": "嘉義市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 30.18,
+            "total_wan": 360.0,
+            "date": "1150223",
+            "address": "嘉義市嘉義市康樂街１２１之１號４樓１０"
+          },
+          {
+            "district": "嘉義市",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 10.35,
+            "total_wan": 300.0,
+            "date": "1150215",
+            "address": "嘉義市嘉義市忠孝路１８１巷１５之１號５樓２"
+          },
+          {
+            "district": "嘉義市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 10.07,
+            "total_wan": 420.0,
+            "date": "1150212",
+            "address": "嘉義市嘉義市小雅路３５１號四樓２"
+          },
+          {
+            "district": "嘉義市",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 24.87,
+            "total_wan": 325.0,
+            "date": "1150212",
+            "address": "嘉義市嘉義市福州五街４號７樓７"
+          },
+          {
+            "district": "嘉義市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 34.77,
+            "total_wan": 136.0,
+            "date": "1150208",
+            "address": "嘉義市嘉義市民生南路１０００之６號"
+          },
+          {
+            "district": "嘉義市",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 11.51,
+            "total_wan": 430.0,
+            "date": "1150203",
+            "address": "嘉義市嘉義市民生南路５９０巷６６號"
+          },
+          {
+            "district": "嘉義市",
+            "type": "透天厝",
+            "ping_wan": 16.51,
+            "total_wan": 460.0,
+            "date": "1150203",
+            "address": "嘉義市嘉義市美源街１１５號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 29,
+        "avg_ping_wan": 34.12,
+        "median_ping_wan": 32.2,
+        "samples": [
+          {
+            "district": "嘉義市",
+            "type": "透天厝",
+            "ping_wan": 28.9,
+            "total_wan": 1620.0,
+            "date": "1150207",
+            "address": "嘉義市嘉義市健康一街"
+          },
+          {
+            "district": "嘉義市",
+            "type": "透天厝",
+            "ping_wan": 31.02,
+            "total_wan": 2500.0,
+            "date": "1150201",
+            "address": "嘉義市嘉義市竹子腳"
+          },
+          {
+            "district": "嘉義市",
+            "type": "透天厝",
+            "ping_wan": 37.36,
+            "total_wan": 2438.0,
+            "date": "1150131",
+            "address": "嘉義市嘉義市湖子內段興安小段98-3地號"
+          },
+          {
+            "district": "嘉義市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 34.48,
+            "total_wan": 788.0,
+            "date": "1150129",
+            "address": "嘉義市嘉義市西區北社尾路"
+          },
+          {
+            "district": "嘉義市",
+            "type": "透天厝",
+            "ping_wan": 36.96,
+            "total_wan": 2720.0,
+            "date": "1150127",
+            "address": "嘉義市嘉義市湖子內段湖美小段52-15地號"
+          },
+          {
+            "district": "嘉義市",
+            "type": "透天厝",
+            "ping_wan": 37.34,
+            "total_wan": 2438.0,
+            "date": "1150126",
+            "address": "嘉義市嘉義市吳鳳南路365巷"
+          },
+          {
+            "district": "嘉義市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 45.79,
+            "total_wan": 850.0,
+            "date": "1150114",
+            "address": "嘉義市嘉義市竹圍路"
+          },
+          {
+            "district": "嘉義市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 29.58,
+            "total_wan": 765.0,
+            "date": "1150114",
+            "address": "嘉義市嘉義市健康十街"
+          }
+        ]
+      }
+    },
+    "新竹縣": {
+      "resale": {
+        "count": 497,
+        "avg_ping_wan": 29.16,
+        "median_ping_wan": 26.1,
+        "samples": [
+          {
+            "district": "關西鎮",
+            "type": "透天厝",
+            "ping_wan": 10.99,
+            "total_wan": 700.0,
+            "date": "1150221",
+            "address": "新竹縣關西鎮石光里４鄰石岡子１２８號"
+          },
+          {
+            "district": "關西鎮",
+            "type": "透天厝",
+            "ping_wan": 10.6,
+            "total_wan": 680.0,
+            "date": "1150209",
+            "address": "新竹縣關西鎮長安街１５０巷９號"
+          },
+          {
+            "district": "竹北市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 64.16,
+            "total_wan": 825.0,
+            "date": "1150207",
+            "address": "新竹縣竹北市莊敬六街１３號十三樓之六"
+          },
+          {
+            "district": "湖口鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 13.69,
+            "total_wan": 400.0,
+            "date": "1150205",
+            "address": "新竹縣湖口鄉大智路２９號二樓"
+          },
+          {
+            "district": "竹東鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 17.14,
+            "total_wan": 500.0,
+            "date": "1150202",
+            "address": "新竹縣竹東鎮幸福路１２１巷７號八樓"
+          },
+          {
+            "district": "新豐鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 19.98,
+            "total_wan": 175.0,
+            "date": "1150201",
+            "address": "新竹縣新豐鄉明新街２００巷１８弄１之２號"
+          },
+          {
+            "district": "竹東鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 20.87,
+            "total_wan": 700.0,
+            "date": "1150130",
+            "address": "新竹縣竹東鎮北興路一段５５５號五樓"
+          },
+          {
+            "district": "新豐鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 20.59,
+            "total_wan": 750.0,
+            "date": "1150129",
+            "address": "新竹縣新豐鄉康樂路一段３６１巷３４弄３５號五樓"
+          }
+        ]
+      },
+      "presale": {
+        "count": 35,
+        "avg_ping_wan": 48.55,
+        "median_ping_wan": 45.07,
+        "samples": [
+          {
+            "district": "湖口鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 28.52,
+            "total_wan": 492.0,
+            "date": "1150210",
+            "address": "新竹縣湖口鄉中平路一段89巷1弄8號旁"
+          },
+          {
+            "district": "北埔鄉",
+            "type": "透天厝",
+            "ping_wan": 28.53,
+            "total_wan": 2318.0,
+            "date": "1150129",
+            "address": "新竹縣北埔鄉中山路"
+          },
+          {
+            "district": "寶山鄉",
+            "type": "透天厝",
+            "ping_wan": 50.01,
+            "total_wan": 3943.0,
+            "date": "1150125",
+            "address": "新竹縣寶山鄉水仙路"
+          },
+          {
+            "district": "湖口鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 44.05,
+            "total_wan": 680.0,
+            "date": "1150124",
+            "address": "新竹縣湖口鄉仁興路76巷28號旁"
+          },
+          {
+            "district": "芎林鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 46.23,
+            "total_wan": 1380.0,
+            "date": "1150118",
+            "address": "新竹縣芎林鄉大華段236地號"
+          },
+          {
+            "district": "湖口鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 45.02,
+            "total_wan": 695.0,
+            "date": "1150114",
+            "address": "新竹縣湖口鄉仁興路76巷28號旁"
+          },
+          {
+            "district": "湖口鄉",
+            "type": "透天厝",
+            "ping_wan": 38.96,
+            "total_wan": 1455.0,
+            "date": "1141228",
+            "address": "新竹縣湖口鄉嘉興路一段"
+          },
+          {
+            "district": "寶山鄉",
+            "type": "透天厝",
+            "ping_wan": 50.48,
+            "total_wan": 3980.0,
+            "date": "1141228",
+            "address": "新竹縣寶山鄉水仙路"
+          }
+        ]
+      }
+    },
+    "苗栗縣": {
+      "resale": {
+        "count": 461,
+        "avg_ping_wan": 22.22,
+        "median_ping_wan": 20.01,
+        "samples": [
+          {
+            "district": "頭份市",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 3.1,
+            "total_wan": 100.0,
+            "date": "1150202",
+            "address": "苗栗縣頭份市學府路５６巷３之１號三樓"
+          },
+          {
+            "district": "三義鄉",
+            "type": "透天厝",
+            "ping_wan": 11.16,
+            "total_wan": 373.0,
+            "date": "1150201",
+            "address": "苗栗縣三義鄉西湖村１７鄰伯公坑２５８號"
+          },
+          {
+            "district": "頭份市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 11.3,
+            "total_wan": 155.0,
+            "date": "1150131",
+            "address": "苗栗縣頭份市成功里６鄰信東路３０６之１號六樓"
+          },
+          {
+            "district": "大湖鄉",
+            "type": "透天厝",
+            "ping_wan": 16.73,
+            "total_wan": 245.0,
+            "date": "1150130",
+            "address": "苗栗縣大湖鄉南湖村４鄰南昌路９７號"
+          },
+          {
+            "district": "竹南鎮",
+            "type": "透天厝",
+            "ping_wan": 31.88,
+            "total_wan": 2430.0,
+            "date": "1150128",
+            "address": "苗栗縣竹南鎮大埔里２鄰科專六路３６２巷１０號"
+          },
+          {
+            "district": "竹南鎮",
+            "type": "透天厝",
+            "ping_wan": 27.12,
+            "total_wan": 820.0,
+            "date": "1150128",
+            "address": "苗栗縣竹南鎮竹興里１３鄰竹圍街３１２巷１號"
+          },
+          {
+            "district": "頭份市",
+            "type": "透天厝",
+            "ping_wan": 33.29,
+            "total_wan": 79.4,
+            "date": "1150126",
+            "address": "苗栗縣頭份市尖下里８鄰尖豐路６３０巷１６號"
+          },
+          {
+            "district": "苗栗市",
+            "type": "透天厝",
+            "ping_wan": 11.6,
+            "total_wan": 370.0,
+            "date": "1150126",
+            "address": "苗栗縣苗栗市玉華里２２鄰莒光街２０巷５號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 55,
+        "avg_ping_wan": 30.06,
+        "median_ping_wan": 28.72,
+        "samples": [
+          {
+            "district": "頭份市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 37.86,
+            "total_wan": 568.0,
+            "date": "1150209",
+            "address": "苗栗縣頭份市華美街51巷41號對面"
+          },
+          {
+            "district": "後龍鎮",
+            "type": "透天厝",
+            "ping_wan": 30.41,
+            "total_wan": 1726.0,
+            "date": "1150208",
+            "address": "苗栗縣後龍鎮?榔二街"
+          },
+          {
+            "district": "銅鑼鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 20.3,
+            "total_wan": 542.0,
+            "date": "1150207",
+            "address": "苗栗縣銅鑼鄉中興工業區南區內"
+          },
+          {
+            "district": "後龍鎮",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 25.34,
+            "total_wan": 843.0,
+            "date": "1150207",
+            "address": "苗栗縣後龍鎮後龍國小東邊"
+          },
+          {
+            "district": "銅鑼鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 21.57,
+            "total_wan": 576.0,
+            "date": "1150206",
+            "address": "苗栗縣銅鑼鄉中興工業區南區內"
+          },
+          {
+            "district": "銅鑼鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 21.98,
+            "total_wan": 510.0,
+            "date": "1150206",
+            "address": "苗栗縣銅鑼鄉中興工業區南區內"
+          },
+          {
+            "district": "竹南鎮",
+            "type": "透天厝",
+            "ping_wan": 25.55,
+            "total_wan": 1560.0,
+            "date": "1150202",
+            "address": "苗栗縣竹南鎮仁德路87巷"
+          },
+          {
+            "district": "竹南鎮",
+            "type": "透天厝",
+            "ping_wan": 39.14,
+            "total_wan": 3988.0,
+            "date": "1150202",
+            "address": "苗栗縣竹南鎮科專五路上"
+          }
+        ]
+      }
+    },
+    "南投縣": {
+      "resale": {
+        "count": 353,
+        "avg_ping_wan": 21.97,
+        "median_ping_wan": 19.77,
+        "samples": [
+          {
+            "district": "名間鄉",
+            "type": "透天厝",
+            "ping_wan": 5.0,
+            "total_wan": 240.0,
+            "date": "1150225",
+            "address": "南投縣名間鄉虎坑巷４５之６號"
+          },
+          {
+            "district": "草屯鎮",
+            "type": "透天厝",
+            "ping_wan": 10.03,
+            "total_wan": 250.0,
+            "date": "1150224",
+            "address": "南投縣草屯鎮玉屏路１８０之３９號"
+          },
+          {
+            "district": "竹山鎮",
+            "type": "透天厝",
+            "ping_wan": 4.13,
+            "total_wan": 90.0,
+            "date": "1150219",
+            "address": "南投縣竹山鎮鯉南路１９之２１號"
+          },
+          {
+            "district": "埔里鎮",
+            "type": "透天厝",
+            "ping_wan": 22.38,
+            "total_wan": 560.0,
+            "date": "1150215",
+            "address": "南投縣埔里鎮開南路２３號"
+          },
+          {
+            "district": "竹山鎮",
+            "type": "透天厝",
+            "ping_wan": 15.2,
+            "total_wan": 920.0,
+            "date": "1150213",
+            "address": "南投縣竹山鎮集山路三段３００號"
+          },
+          {
+            "district": "草屯鎮",
+            "type": "透天厝",
+            "ping_wan": 14.96,
+            "total_wan": 120.0,
+            "date": "1150206",
+            "address": "南投縣草屯鎮自由街１２巷７號"
+          },
+          {
+            "district": "南投市",
+            "type": "透天厝",
+            "ping_wan": 15.75,
+            "total_wan": 750.0,
+            "date": "1150202",
+            "address": "南投縣南投市自強路５６巷１５弄１號"
+          },
+          {
+            "district": "草屯鎮",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 12.15,
+            "total_wan": 550.0,
+            "date": "1150131",
+            "address": "南投縣草屯鎮富中路６７號二樓"
+          }
+        ]
+      },
+      "presale": {
+        "count": 13,
+        "avg_ping_wan": 26.23,
+        "median_ping_wan": 24.51,
+        "samples": [
+          {
+            "district": "埔里鎮",
+            "type": "透天厝",
+            "ping_wan": 24.51,
+            "total_wan": 1088.0,
+            "date": "1150209",
+            "address": "南投縣埔里鎮玉生路"
+          },
+          {
+            "district": "埔里鎮",
+            "type": "透天厝",
+            "ping_wan": 24.51,
+            "total_wan": 1088.0,
+            "date": "1150130",
+            "address": "南投縣埔里鎮玉生路"
+          },
+          {
+            "district": "鹿谷鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 34.77,
+            "total_wan": 739.0,
+            "date": "1150125",
+            "address": "南投縣鹿谷鄉愛鄉路"
+          },
+          {
+            "district": "南投市",
+            "type": "透天厝",
+            "ping_wan": 30.73,
+            "total_wan": 1275.0,
+            "date": "1150111",
+            "address": "南投縣南投市成功東路"
+          },
+          {
+            "district": "草屯鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 33.09,
+            "total_wan": 1088.0,
+            "date": "1150102",
+            "address": "南投縣草屯鎮富春路"
+          },
+          {
+            "district": "集集鎮",
+            "type": "透天厝",
+            "ping_wan": 24.27,
+            "total_wan": 1500.0,
+            "date": "1141225",
+            "address": "南投縣集集鎮大園巷"
+          },
+          {
+            "district": "南投市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 21.37,
+            "total_wan": 760.0,
+            "date": "1141223",
+            "address": "南投縣南投市吉利路131巷29號"
+          },
+          {
+            "district": "南投市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 18.67,
+            "total_wan": 650.0,
+            "date": "1141216",
+            "address": "南投縣南投市吉利路131巷29號"
+          }
+        ]
+      }
+    },
+    "彰化縣": {
+      "resale": {
+        "count": 1114,
+        "avg_ping_wan": 24.3,
+        "median_ping_wan": 23.95,
+        "samples": [
+          {
+            "district": "伸港鄉",
+            "type": "透天厝",
+            "ping_wan": 22.55,
+            "total_wan": 1100.0,
+            "date": "1150227",
+            "address": "彰化縣伸港鄉建國三街１之１號"
+          },
+          {
+            "district": "社頭鄉",
+            "type": "透天厝",
+            "ping_wan": 27.05,
+            "total_wan": 440.0,
+            "date": "1150213",
+            "address": "彰化縣社頭鄉社斗路一段８１號"
+          },
+          {
+            "district": "永靖鄉",
+            "type": "透天厝",
+            "ping_wan": 123.97,
+            "total_wan": 750.0,
+            "date": "1150213",
+            "address": "彰化縣永靖鄉圳腳巷建７２之５０號"
+          },
+          {
+            "district": "和美鎮",
+            "type": "透天厝",
+            "ping_wan": 29.43,
+            "total_wan": 1468.0,
+            "date": "1150211",
+            "address": "彰化縣和美鎮糖友二街４１巷２２號"
+          },
+          {
+            "district": "員林市",
+            "type": "透天厝",
+            "ping_wan": 20.5,
+            "total_wan": 425.0,
+            "date": "1150210",
+            "address": "彰化縣員林市南潭路２６巷３０弄１０號"
+          },
+          {
+            "district": "芬園鄉",
+            "type": "透天厝",
+            "ping_wan": 34.35,
+            "total_wan": 400.0,
+            "date": "1150209",
+            "address": "彰化縣芬園鄉彰南路三段３１２號"
+          },
+          {
+            "district": "埔心鄉",
+            "type": "透天厝",
+            "ping_wan": 23.84,
+            "total_wan": 1350.0,
+            "date": "1150207",
+            "address": "彰化縣埔心鄉大翔街２７號"
+          },
+          {
+            "district": "田中鎮",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 13.72,
+            "total_wan": 100.0,
+            "date": "1150207",
+            "address": "彰化縣田中鎮建國路７９巷３４弄１３號五樓之８"
+          }
+        ]
+      },
+      "presale": {
+        "count": 96,
+        "avg_ping_wan": 27.41,
+        "median_ping_wan": 26.12,
+        "samples": [
+          {
+            "district": "永靖鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 41.48,
+            "total_wan": 835.0,
+            "date": "1150210",
+            "address": "彰化縣永靖鄉永安段"
+          },
+          {
+            "district": "花壇鄉",
+            "type": "透天厝",
+            "ping_wan": 34.3,
+            "total_wan": 1648.0,
+            "date": "1150209",
+            "address": "彰化縣花壇鄉中橋街與車路街交叉口"
+          },
+          {
+            "district": "花壇鄉",
+            "type": "透天厝",
+            "ping_wan": 34.43,
+            "total_wan": 2180.0,
+            "date": "1150206",
+            "address": "彰化縣花壇鄉中橋街與車路街交叉口"
+          },
+          {
+            "district": "花壇鄉",
+            "type": "透天厝",
+            "ping_wan": 31.7,
+            "total_wan": 1672.0,
+            "date": "1150206",
+            "address": "彰化縣花壇鄉中橋街與車路街交叉口"
+          },
+          {
+            "district": "大村鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 28.74,
+            "total_wan": 728.0,
+            "date": "1150206",
+            "address": "彰化縣大村鄉過溝三巷"
+          },
+          {
+            "district": "花壇鄉",
+            "type": "透天厝",
+            "ping_wan": 32.44,
+            "total_wan": 1680.0,
+            "date": "1150204",
+            "address": "彰化縣花壇鄉中橋街與車路街交叉口"
+          },
+          {
+            "district": "北斗鎮",
+            "type": "透天厝",
+            "ping_wan": 35.4,
+            "total_wan": 2398.0,
+            "date": "1150203",
+            "address": "彰化縣北斗鎮復興路"
+          },
+          {
+            "district": "溪湖鎮",
+            "type": "透天厝",
+            "ping_wan": 32.73,
+            "total_wan": 1450.0,
+            "date": "1150203",
+            "address": "彰化縣溪湖鎮崙子腳路大庭巷"
+          }
+        ]
+      }
+    },
+    "新竹市": {
+      "resale": {
+        "count": 316,
+        "avg_ping_wan": 34.29,
+        "median_ping_wan": 32.51,
+        "samples": [
+          {
+            "district": "新竹市",
+            "type": "透天厝",
+            "ping_wan": 21.87,
+            "total_wan": 781.0,
+            "date": "1150303",
+            "address": "新竹市新竹市海濱路３３號"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 17.22,
+            "total_wan": 197.0,
+            "date": "1150211",
+            "address": "新竹市新竹市境福街８５號二樓之９"
+          },
+          {
+            "district": "新竹市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 33.56,
+            "total_wan": 1200.0,
+            "date": "1150204",
+            "address": "新竹市新竹市建中一路２３巷２０號４樓"
+          },
+          {
+            "district": "新竹市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 18.99,
+            "total_wan": 377.9,
+            "date": "1150203",
+            "address": "新竹市新竹市四維路１３０號９樓之４"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 56.9,
+            "total_wan": 590.0,
+            "date": "1150202",
+            "address": "新竹市新竹市建功一路４號５樓之４"
+          },
+          {
+            "district": "新竹市",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 17.45,
+            "total_wan": 398.0,
+            "date": "1150202",
+            "address": "新竹市新竹市延平路一段２６１巷４弄９號４樓"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 24.59,
+            "total_wan": 215.0,
+            "date": "1150127",
+            "address": "新竹市新竹市中華路四段７０５之３９號四樓"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 80.28,
+            "total_wan": 960.0,
+            "date": "1150127",
+            "address": "新竹市新竹市建功二路２號三樓之１０"
+          }
+        ]
+      },
+      "presale": {
+        "count": 17,
+        "avg_ping_wan": 61.73,
+        "median_ping_wan": 64.29,
+        "samples": [
+          {
+            "district": "新竹市",
+            "type": "透天厝",
+            "ping_wan": 57.4,
+            "total_wan": 3950.0,
+            "date": "1150210",
+            "address": "新竹市新竹市北區武陵路218巷"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 69.38,
+            "total_wan": 830.0,
+            "date": "1150129",
+            "address": "新竹市新竹市民權路86巷"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 64.29,
+            "total_wan": 1225.0,
+            "date": "1150126",
+            "address": "新竹市新竹市高翠路"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 67.29,
+            "total_wan": 805.0,
+            "date": "1150125",
+            "address": "新竹市新竹市民權路86巷"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 72.97,
+            "total_wan": 2430.0,
+            "date": "1150122",
+            "address": "新竹市新竹市新竹市新竹市埔頂一路161巷"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 53.01,
+            "total_wan": 1200.0,
+            "date": "1150121",
+            "address": "新竹市新竹市東勝路"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 55.98,
+            "total_wan": 1200.0,
+            "date": "1150119",
+            "address": "新竹市新竹市東勝路"
+          },
+          {
+            "district": "新竹市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 54.88,
+            "total_wan": 1860.0,
+            "date": "1150117",
+            "address": "新竹市新竹市明湖路648巷107號旁"
+          }
+        ]
+      }
+    },
+    "雲林縣": {
+      "resale": {
+        "count": 630,
+        "avg_ping_wan": 19.7,
+        "median_ping_wan": 19.18,
+        "samples": [
+          {
+            "district": "斗六市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 25.69,
+            "total_wan": 120.0,
+            "date": "1150224",
+            "address": "雲林縣斗六市樂利街５３號二樓之９"
+          },
+          {
+            "district": "斗六市",
+            "type": "透天厝",
+            "ping_wan": 21.04,
+            "total_wan": 1200.0,
+            "date": "1150222",
+            "address": "雲林縣斗六市深圳路５之７號"
+          },
+          {
+            "district": "斗六市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 28.07,
+            "total_wan": 735.0,
+            "date": "1150222",
+            "address": "雲林縣斗六市南京路３２９號二樓之３"
+          },
+          {
+            "district": "斗六市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 12.02,
+            "total_wan": 185.0,
+            "date": "1150212",
+            "address": "雲林縣斗六市公正街３９號六樓之１１"
+          },
+          {
+            "district": "斗六市",
+            "type": "透天厝",
+            "ping_wan": 30.99,
+            "total_wan": 1149.6,
+            "date": "1150209",
+            "address": "雲林縣斗六市西平路９０１巷７弄２０號"
+          },
+          {
+            "district": "北港鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 13.96,
+            "total_wan": 540.0,
+            "date": "1150209",
+            "address": "雲林縣北港鎮文化路３７之１０號九樓"
+          },
+          {
+            "district": "斗六市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 31.98,
+            "total_wan": 796.0,
+            "date": "1150208",
+            "address": "雲林縣斗六市西安街１１之６號"
+          },
+          {
+            "district": "北港鎮",
+            "type": "透天厝",
+            "ping_wan": 15.08,
+            "total_wan": 288.0,
+            "date": "1150206",
+            "address": "雲林縣北港鎮文仁路３８９號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 52,
+        "avg_ping_wan": 26.44,
+        "median_ping_wan": 26.79,
+        "samples": [
+          {
+            "district": "元長鄉",
+            "type": "透天厝",
+            "ping_wan": 16.99,
+            "total_wan": 855.0,
+            "date": "1150210",
+            "address": "雲林縣元長鄉南山路"
+          },
+          {
+            "district": "虎尾鎮",
+            "type": "透天厝",
+            "ping_wan": 41.63,
+            "total_wan": 3282.0,
+            "date": "1150205",
+            "address": "雲林縣虎尾鎮虎興東二路與永興南五街交叉路口"
+          },
+          {
+            "district": "虎尾鎮",
+            "type": "透天厝",
+            "ping_wan": 42.4,
+            "total_wan": 3282.0,
+            "date": "1150205",
+            "address": "雲林縣虎尾鎮虎興東二路與永興南五街交叉路口"
+          },
+          {
+            "district": "虎尾鎮",
+            "type": "透天厝",
+            "ping_wan": 27.32,
+            "total_wan": 1500.0,
+            "date": "1150204",
+            "address": "雲林縣虎尾鎮虎興東6路"
+          },
+          {
+            "district": "虎尾鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 27.11,
+            "total_wan": 424.0,
+            "date": "1150131",
+            "address": "雲林縣虎尾鎮永興北二街與虎興北路交叉路口"
+          },
+          {
+            "district": "虎尾鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 27.49,
+            "total_wan": 430.0,
+            "date": "1150131",
+            "address": "雲林縣虎尾鎮永興北二街與虎興北路交叉路口"
+          },
+          {
+            "district": "虎尾鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 26.92,
+            "total_wan": 421.0,
+            "date": "1150131",
+            "address": "雲林縣虎尾鎮永興北二街與虎興北路交叉路口"
+          },
+          {
+            "district": "虎尾鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 26.66,
+            "total_wan": 417.0,
+            "date": "1150131",
+            "address": "雲林縣虎尾鎮永興北二街與虎興北路交叉路口"
+          }
+        ]
+      }
+    },
+    "嘉義縣": {
+      "resale": {
+        "count": 493,
+        "avg_ping_wan": 21.24,
+        "median_ping_wan": 21.3,
+        "samples": [
+          {
+            "district": "大林鎮",
+            "type": "透天厝",
+            "ping_wan": 31.11,
+            "total_wan": 1480.0,
+            "date": "1150213",
+            "address": "嘉義縣大林鎮中坑里大智五街４２號"
+          },
+          {
+            "district": "水上鄉",
+            "type": "透天厝",
+            "ping_wan": 11.24,
+            "total_wan": 330.0,
+            "date": "1150206",
+            "address": "嘉義縣水上鄉內溪村內溪洲１４０號"
+          },
+          {
+            "district": "布袋鎮",
+            "type": "透天厝",
+            "ping_wan": 1.43,
+            "total_wan": 55.0,
+            "date": "1150205",
+            "address": "嘉義縣布袋鎮過溝東勢頭１１５之１９號"
+          },
+          {
+            "district": "竹崎鄉",
+            "type": "透天厝",
+            "ping_wan": 8.96,
+            "total_wan": 350.0,
+            "date": "1150205",
+            "address": "嘉義縣竹崎鄉龍山村１７鄰崁仔腳１５之９號"
+          },
+          {
+            "district": "民雄鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 11.7,
+            "total_wan": 102.0,
+            "date": "1150205",
+            "address": "嘉義縣民雄鄉松山村松子腳１之２２號五樓之二"
+          },
+          {
+            "district": "民雄鄉",
+            "type": "透天厝",
+            "ping_wan": 16.71,
+            "total_wan": 845.0,
+            "date": "1150202",
+            "address": "嘉義縣民雄鄉寮頂村頂寮２０號之１３"
+          },
+          {
+            "district": "太保市",
+            "type": "透天厝",
+            "ping_wan": 23.91,
+            "total_wan": 1800.0,
+            "date": "1150201",
+            "address": "嘉義縣太保市太保里太保８４號之１"
+          },
+          {
+            "district": "東石鄉",
+            "type": "透天厝",
+            "ping_wan": 8.24,
+            "total_wan": 450.0,
+            "date": "1150131",
+            "address": "嘉義縣東石鄉西崙村栗子崙２９３號之５"
+          }
+        ]
+      },
+      "presale": {
+        "count": 52,
+        "avg_ping_wan": 29.45,
+        "median_ping_wan": 28.23,
+        "samples": [
+          {
+            "district": "朴子市",
+            "type": "透天厝",
+            "ping_wan": 26.44,
+            "total_wan": 1280.0,
+            "date": "1150210",
+            "address": "嘉義縣朴子市鴨母寮"
+          },
+          {
+            "district": "民雄鄉",
+            "type": "透天厝",
+            "ping_wan": 27.1,
+            "total_wan": 1500.0,
+            "date": "1150209",
+            "address": "嘉義縣民雄鄉?墘廣祥傢俱旁"
+          },
+          {
+            "district": "民雄鄉",
+            "type": "透天厝",
+            "ping_wan": 25.89,
+            "total_wan": 1680.0,
+            "date": "1150207",
+            "address": "嘉義縣民雄鄉頭橋段450-6地號"
+          },
+          {
+            "district": "民雄鄉",
+            "type": "透天厝",
+            "ping_wan": 27.39,
+            "total_wan": 1300.0,
+            "date": "1150204",
+            "address": "嘉義縣民雄鄉?墘廣祥傢俱旁"
+          },
+          {
+            "district": "民雄鄉",
+            "type": "透天厝",
+            "ping_wan": 32.05,
+            "total_wan": 1560.0,
+            "date": "1150201",
+            "address": "嘉義縣民雄鄉正義一街"
+          },
+          {
+            "district": "民雄鄉",
+            "type": "透天厝",
+            "ping_wan": 26.65,
+            "total_wan": 1300.0,
+            "date": "1150201",
+            "address": "嘉義縣民雄鄉?墘廣祥傢俱旁"
+          },
+          {
+            "district": "大林鎮",
+            "type": "透天厝",
+            "ping_wan": 28.01,
+            "total_wan": 1385.0,
+            "date": "1150127",
+            "address": "嘉義縣大林鎮大工一段0136-0001地號 等38筆"
+          },
+          {
+            "district": "大林鎮",
+            "type": "透天厝",
+            "ping_wan": 28.06,
+            "total_wan": 1385.0,
+            "date": "1150127",
+            "address": "嘉義縣大林鎮大工一段0136-0001地號 等38筆"
+          }
+        ]
+      }
+    },
+    "屏東縣": {
+      "resale": {
+        "count": 681,
+        "avg_ping_wan": 18.55,
+        "median_ping_wan": 16.49,
+        "samples": [
+          {
+            "district": "內埔鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 10.24,
+            "total_wan": 67.0,
+            "date": "1150227",
+            "address": "屏東縣內埔鄉壽比路２６９號五樓之６"
+          },
+          {
+            "district": "長治鄉",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 12.32,
+            "total_wan": 180.0,
+            "date": "1150225",
+            "address": "屏東縣長治鄉香楊路３３號六樓之八"
+          },
+          {
+            "district": "東港鎮",
+            "type": "透天厝",
+            "ping_wan": 25.62,
+            "total_wan": 1600.0,
+            "date": "1150223",
+            "address": "屏東縣東港鎮沿海路７號"
+          },
+          {
+            "district": "東港鎮",
+            "type": "透天厝",
+            "ping_wan": 25.62,
+            "total_wan": 1600.0,
+            "date": "1150223",
+            "address": "屏東縣東港鎮沿海路９號"
+          },
+          {
+            "district": "屏東市",
+            "type": "透天厝",
+            "ping_wan": 23.03,
+            "total_wan": 1500.0,
+            "date": "1150222",
+            "address": "屏東縣屏東巿建南路６２號"
+          },
+          {
+            "district": "萬丹鄉",
+            "type": "透天厝",
+            "ping_wan": 14.97,
+            "total_wan": 680.0,
+            "date": "1150216",
+            "address": "屏東縣萬丹鄉惠崙路８３１巷３１號"
+          },
+          {
+            "district": "屏東市",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 13.83,
+            "total_wan": 380.0,
+            "date": "1150213",
+            "address": "屏東縣屏東巿博愛路２４９號二樓之一"
+          },
+          {
+            "district": "九如鄉",
+            "type": "透天厝",
+            "ping_wan": 9.43,
+            "total_wan": 280.0,
+            "date": "1150210",
+            "address": "屏東縣九如鄉三多路５１巷１８號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 20,
+        "avg_ping_wan": 30.37,
+        "median_ping_wan": 30.09,
+        "samples": [
+          {
+            "district": "屏東市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 33.7,
+            "total_wan": 626.0,
+            "date": "1150209",
+            "address": "屏東縣屏東市洛陽段937地號"
+          },
+          {
+            "district": "萬丹鄉",
+            "type": "透天厝",
+            "ping_wan": 27.4,
+            "total_wan": 1398.0,
+            "date": "1150204",
+            "address": "屏東縣萬丹鄉新社皮段277-12地號"
+          },
+          {
+            "district": "長治鄉",
+            "type": "透天厝",
+            "ping_wan": 25.14,
+            "total_wan": 1100.0,
+            "date": "1150131",
+            "address": "屏東縣長治鄉單座二巷"
+          },
+          {
+            "district": "屏東市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 34.77,
+            "total_wan": 923.0,
+            "date": "1150129",
+            "address": "屏東縣屏東市洛陽段937地號"
+          },
+          {
+            "district": "屏東市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 33.92,
+            "total_wan": 630.0,
+            "date": "1150124",
+            "address": "屏東縣屏東市洛陽段937地號"
+          },
+          {
+            "district": "屏東市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 34.23,
+            "total_wan": 636.0,
+            "date": "1150124",
+            "address": "屏東縣屏東市洛陽段937地號"
+          },
+          {
+            "district": "潮州鎮",
+            "type": "透天厝",
+            "ping_wan": 27.1,
+            "total_wan": 1225.0,
+            "date": "1150122",
+            "address": "屏東縣潮州鎮江山路"
+          },
+          {
+            "district": "屏東市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 28.47,
+            "total_wan": 995.0,
+            "date": "1150102",
+            "address": "屏東縣屏東市民生路7巷"
+          }
+        ]
+      }
+    },
+    "花蓮縣": {
+      "resale": {
+        "count": 425,
+        "avg_ping_wan": 21.74,
+        "median_ping_wan": 21.41,
+        "samples": [
+          {
+            "district": "吉安鄉",
+            "type": "透天厝",
+            "ping_wan": 24.53,
+            "total_wan": 555.0,
+            "date": "1150213",
+            "address": "花蓮縣吉安鄉明仁一街１２９巷８號"
+          },
+          {
+            "district": "秀林鄉",
+            "type": "透天厝",
+            "ping_wan": 4.86,
+            "total_wan": 225.0,
+            "date": "1150209",
+            "address": "花蓮縣秀林鄉三棧３９－１號"
+          },
+          {
+            "district": "壽豐鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 8.01,
+            "total_wan": 160.0,
+            "date": "1150206",
+            "address": "花蓮縣壽豐鄉吳全１２９之１號二樓之三"
+          },
+          {
+            "district": "吉安鄉",
+            "type": "透天厝",
+            "ping_wan": 14.88,
+            "total_wan": 680.0,
+            "date": "1150204",
+            "address": "花蓮縣吉安鄉民治路３２９巷２３號"
+          },
+          {
+            "district": "花蓮市",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 14.94,
+            "total_wan": 425.0,
+            "date": "1150204",
+            "address": "花蓮縣花蓮市中華路５３４巷１號四樓"
+          },
+          {
+            "district": "吉安鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 16.21,
+            "total_wan": 250.0,
+            "date": "1150201",
+            "address": "花蓮縣吉安鄉南昌路１１５號三樓之二"
+          },
+          {
+            "district": "花蓮市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 17.89,
+            "total_wan": 238.0,
+            "date": "1150131",
+            "address": "花蓮縣花蓮市國民七街５１號八樓之十九"
+          },
+          {
+            "district": "花蓮市",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 12.13,
+            "total_wan": 850.0,
+            "date": "1150131",
+            "address": "花蓮縣花蓮市商校街５０號四樓"
+          }
+        ]
+      },
+      "presale": {
+        "count": 14,
+        "avg_ping_wan": 32.4,
+        "median_ping_wan": 32.78,
+        "samples": [
+          {
+            "district": "花蓮市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 30.77,
+            "total_wan": 375.0,
+            "date": "1150127",
+            "address": "花蓮縣吉安鄉北昌三街18巷11弄3號"
+          },
+          {
+            "district": "花蓮市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 33.13,
+            "total_wan": 708.0,
+            "date": "1150124",
+            "address": "花蓮縣吉安鄉北昌三街18巷11弄3號"
+          },
+          {
+            "district": "花蓮市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 31.45,
+            "total_wan": 730.0,
+            "date": "1150117",
+            "address": "花蓮縣花蓮市國富十街39號旁"
+          },
+          {
+            "district": "花蓮市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 28.68,
+            "total_wan": 908.0,
+            "date": "1150108",
+            "address": "花蓮縣花蓮市國聯五路與國民九街交叉路口"
+          },
+          {
+            "district": "吉安鄉",
+            "type": "透天厝",
+            "ping_wan": 38.27,
+            "total_wan": 2600.0,
+            "date": "1150105",
+            "address": "花蓮縣吉安鄉民治路"
+          },
+          {
+            "district": "花蓮市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 32.54,
+            "total_wan": 664.0,
+            "date": "1150105",
+            "address": "花蓮縣花蓮市復興街5號"
+          },
+          {
+            "district": "花蓮市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 33.3,
+            "total_wan": 1050.0,
+            "date": "1141231",
+            "address": "花蓮縣花蓮市明義街53巷旁"
+          },
+          {
+            "district": "吉安鄉",
+            "type": "透天厝",
+            "ping_wan": 26.34,
+            "total_wan": 1180.0,
+            "date": "1141227",
+            "address": "花蓮縣吉安鄉稻興一街"
+          }
+        ]
+      }
+    },
+    "臺東縣": {
+      "resale": {
+        "count": 169,
+        "avg_ping_wan": 18.88,
+        "median_ping_wan": 17.84,
+        "samples": [
+          {
+            "district": "台東市",
+            "type": "透天厝",
+            "ping_wan": 5.88,
+            "total_wan": 76.0,
+            "date": "1150205",
+            "address": "臺東縣台東市精誠路３４３巷３號"
+          },
+          {
+            "district": "台東市",
+            "type": "透天厝",
+            "ping_wan": 12.0,
+            "total_wan": 1250.0,
+            "date": "1150204",
+            "address": "臺東縣台東市四維路一段３２２號"
+          },
+          {
+            "district": "台東市",
+            "type": "透天厝",
+            "ping_wan": 21.61,
+            "total_wan": 680.0,
+            "date": "1150128",
+            "address": "臺東縣台東市武昌街５８巷２弄８號"
+          },
+          {
+            "district": "台東市",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 16.66,
+            "total_wan": 580.0,
+            "date": "1150128",
+            "address": "臺東縣台東市仁昌街１１３號八樓之４"
+          },
+          {
+            "district": "卑南鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 5.83,
+            "total_wan": 70.0,
+            "date": "1150127",
+            "address": "臺東縣卑南鄉鎮樂路１號四樓之７"
+          },
+          {
+            "district": "台東市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 13.19,
+            "total_wan": 128.0,
+            "date": "1150126",
+            "address": "臺東縣台東市中華路一段１３６號七樓之５"
+          },
+          {
+            "district": "台東市",
+            "type": "透天厝",
+            "ping_wan": 10.58,
+            "total_wan": 293.0,
+            "date": "1150123",
+            "address": "臺東縣台東市豐榮路２８巷２１號"
+          },
+          {
+            "district": "台東市",
+            "type": "透天厝",
+            "ping_wan": 38.64,
+            "total_wan": 500.0,
+            "date": "1150122",
+            "address": "臺東縣台東市中興路四段８７號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 4,
+        "avg_ping_wan": 31.98,
+        "median_ping_wan": 32.53,
+        "samples": [
+          {
+            "district": "台東市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 34.62,
+            "total_wan": 860.0,
+            "date": "1150202",
+            "address": "臺東縣臺東市梧州段473，472-11地號"
+          },
+          {
+            "district": "台東市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 28.22,
+            "total_wan": 798.0,
+            "date": "1150201",
+            "address": "臺東縣臺東市志航一街32號對面附近"
+          },
+          {
+            "district": "台東市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 32.53,
+            "total_wan": 850.0,
+            "date": "1150117",
+            "address": "臺東縣臺東市仁七街386號對面"
+          },
+          {
+            "district": "台東市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 32.53,
+            "total_wan": 850.0,
+            "date": "1150116",
+            "address": "臺東縣臺東市仁七街386號對面"
+          }
+        ]
+      }
+    },
+    "金門縣": {
+      "resale": {
+        "count": 109,
+        "avg_ping_wan": 22.86,
+        "median_ping_wan": 21.73,
+        "samples": [
+          {
+            "district": "金城鎮",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 22.1,
+            "total_wan": 233.0,
+            "date": "1150209",
+            "address": "金門縣金城鎮金門城２５之２號二樓"
+          },
+          {
+            "district": "金寧鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 26.32,
+            "total_wan": 692.0,
+            "date": "1150208",
+            "address": "金門縣金寧鄉湖下２８８號三樓"
+          },
+          {
+            "district": "金寧鄉",
+            "type": "透天厝",
+            "ping_wan": 15.79,
+            "total_wan": 350.0,
+            "date": "1150207",
+            "address": "金門縣金寧鄉環島北路二段６００之６號"
+          },
+          {
+            "district": "金寧鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 36.01,
+            "total_wan": 1250.0,
+            "date": "1150204",
+            "address": "金門縣金寧鄉埔後９２－５號５樓"
+          },
+          {
+            "district": "金城鎮",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 23.56,
+            "total_wan": 650.0,
+            "date": "1150127",
+            "address": "金門縣金城鎮前水頭６之８號二樓"
+          },
+          {
+            "district": "烈嶼鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 21.41,
+            "total_wan": 560.0,
+            "date": "1150126",
+            "address": "金門縣烈嶼鄉八青三路６０號２樓之１"
+          },
+          {
+            "district": "金湖鎮",
+            "type": "透天厝",
+            "ping_wan": 15.42,
+            "total_wan": 1120.0,
+            "date": "1150124",
+            "address": "金門縣金湖鎮塔后２０８之３號"
+          },
+          {
+            "district": "金城鎮",
+            "type": "透天厝",
+            "ping_wan": 21.32,
+            "total_wan": 920.0,
+            "date": "1150122",
+            "address": "金門縣金城鎮前水頭６５之１號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 17,
+        "avg_ping_wan": 29.92,
+        "median_ping_wan": 28.94,
+        "samples": [
+          {
+            "district": "金寧鄉",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 35.66,
+            "total_wan": 396.0,
+            "date": "1150108",
+            "address": "金門縣金寧鄉大橋湖峰段83地號"
+          },
+          {
+            "district": "金城鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 34.02,
+            "total_wan": 1468.0,
+            "date": "1150101",
+            "address": "金門縣金城鎮祥豐段0022-0000地號"
+          },
+          {
+            "district": "金城鎮",
+            "type": "住宅大樓(11層含以上有電梯)",
+            "ping_wan": 33.56,
+            "total_wan": 1448.0,
+            "date": "1150101",
+            "address": "金門縣金城鎮祥豐段0022-0000地號"
+          },
+          {
+            "district": "金寧鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 28.33,
+            "total_wan": 777.0,
+            "date": "1141228",
+            "address": "金門縣金寧鄉盤山村測段190-1、190-4、188-7地號"
+          },
+          {
+            "district": "金寧鄉",
+            "type": "透天厝",
+            "ping_wan": 36.58,
+            "total_wan": 1576.0,
+            "date": "1141228",
+            "address": "金門縣金寧鄉長寮段514、514-3、514-4、514-5等15筆地號"
+          },
+          {
+            "district": "金寧鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 27.71,
+            "total_wan": 760.0,
+            "date": "1141222",
+            "address": "金門縣金寧鄉盤山村測段190-1、190-4、188-7地號"
+          },
+          {
+            "district": "金寧鄉",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 28.03,
+            "total_wan": 769.0,
+            "date": "1141222",
+            "address": "金門縣金寧鄉盤山村測段190-1、190-4、188-7地號"
+          },
+          {
+            "district": "金寧鄉",
+            "type": "透天厝",
+            "ping_wan": 33.78,
+            "total_wan": 1488.0,
+            "date": "1141216",
+            "address": "金門縣金寧鄉長寮段514、514-3、514-4、514-5等15筆地號"
+          }
+        ]
+      }
+    },
+    "澎湖縣": {
+      "resale": {
+        "count": 56,
+        "avg_ping_wan": 15.93,
+        "median_ping_wan": 14.71,
+        "samples": [
+          {
+            "district": "馬公市",
+            "type": "公寓(5樓含以下無電梯)",
+            "ping_wan": 12.76,
+            "total_wan": 535.0,
+            "date": "1150202",
+            "address": "澎湖縣馬公市文山路３５８巷３８號"
+          },
+          {
+            "district": "馬公市",
+            "type": "透天厝",
+            "ping_wan": 10.69,
+            "total_wan": 400.0,
+            "date": "1150130",
+            "address": "澎湖縣馬公市大仁街３１號"
+          },
+          {
+            "district": "馬公市",
+            "type": "透天厝",
+            "ping_wan": 22.3,
+            "total_wan": 560.0,
+            "date": "1150122",
+            "address": "澎湖縣馬公市朝陽路１０６巷７號"
+          },
+          {
+            "district": "馬公市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 15.21,
+            "total_wan": 610.0,
+            "date": "1150119",
+            "address": "澎湖縣馬公市林森路３６號四樓之二"
+          },
+          {
+            "district": "馬公市",
+            "type": "透天厝",
+            "ping_wan": 28.49,
+            "total_wan": 638.0,
+            "date": "1150116",
+            "address": "澎湖縣馬公市林森路１００巷８號"
+          },
+          {
+            "district": "湖西鄉",
+            "type": "透天厝",
+            "ping_wan": 27.64,
+            "total_wan": 100.0,
+            "date": "1150112",
+            "address": "澎湖縣湖西鄉鼎灣６１號"
+          },
+          {
+            "district": "馬公市",
+            "type": "透天厝",
+            "ping_wan": 14.31,
+            "total_wan": 980.0,
+            "date": "1150108",
+            "address": "澎湖縣馬公市文昌街３６號"
+          },
+          {
+            "district": "西嶼鄉",
+            "type": "透天厝",
+            "ping_wan": 6.96,
+            "total_wan": 350.0,
+            "date": "1150107",
+            "address": "澎湖縣西嶼鄉小門１７之１號"
+          }
+        ]
+      },
+      "presale": {
+        "count": 1,
+        "avg_ping_wan": 32.61,
+        "median_ping_wan": 32.61,
+        "samples": [
+          {
+            "district": "馬公市",
+            "type": "華廈(10層含以下有電梯)",
+            "ping_wan": 32.61,
+            "total_wan": 768.0,
+            "date": "1141225",
+            "address": "澎湖縣馬公市馬公段293，297地號等2筆"
+          }
+        ]
+      }
+    },
+    "連江縣": {
+      "resale": {
+        "count": 0,
+        "avg_ping_wan": null,
+        "median_ping_wan": null,
+        "samples": []
+      }
+    }
+  }
+}
