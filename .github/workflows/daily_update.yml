@@ -37,6 +37,7 @@ jobs:
           # 可選:覆寫 Gemini 模型 / 分析主題 / 抓新聞關鍵字 / 關閉趨勢雷達(設 0)
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           REPORT_TOPIC: ${{ vars.REPORT_TOPIC }}
+          REPORT_TOPICS: ${{ vars.REPORT_TOPICS }}
           NEWS_QUERIES: ${{ vars.NEWS_QUERIES }}
           TREND_QUERIES: ${{ vars.TREND_QUERIES }}
           STOCK_QUERIES: ${{ vars.STOCK_QUERIES }}
@@ -49,7 +50,7 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add latest_report.json data/reports/ latest_trends.json data/trends/ latest_stocks.json data/stocks/ latest_housing.json data/housing/
+          git add latest_report.json data/reports/ latest_reports.json data/reports_multi/ latest_trends.json data/trends/ latest_stocks.json data/stocks/ latest_housing.json data/housing/
           # 若無變化就不 commit,避免 workflow 報錯
           if git diff --staged --quiet; then
             echo "No changes to commit."

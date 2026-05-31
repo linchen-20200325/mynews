@@ -16,7 +16,8 @@
 環境變數:
   - GEMINI_API_KEY                 (必填) Gemini 金鑰
   - GEMINI_MODEL                   (選填) Gemini 模型,預設 gemini-2.5-flash
-  - REPORT_TOPIC                   (選填) 戰略報告的分析主題
+  - REPORT_TOPIC                   (選填) 戰略報告的分析主題(單一)
+  - REPORT_TOPICS                  (選填) 多主題戰略報告,以 ; 分隔(第一個為主報告)
   - NEWS_QUERIES                   (選填) 戰略報告抓新聞的關鍵字,以 ; 分隔
   - TREND_QUERIES                  (選填) 趨勢雷達抓新聞的關鍵字,以 ; 分隔
   - NEWS_TOPICS / TREND_TOPICS     (選填) Google News 動態分類頭條,以 , 分隔
@@ -96,6 +97,8 @@ _SECTION_LABELS = {
 
 OUTPUT_LATEST = Path("latest_report.json")
 ARCHIVE_DIR = Path("data/reports")
+OUTPUT_REPORTS_MULTI = Path("latest_reports.json")
+REPORTS_MULTI_ARCHIVE_DIR = Path("data/reports_multi")
 OUTPUT_TRENDS = Path("latest_trends.json")
 TRENDS_ARCHIVE_DIR = Path("data/trends")
 OUTPUT_STOCKS = Path("latest_stocks.json")
@@ -618,10 +621,13 @@ def section_feeds(topics: list[str], lang: str, region: str) -> dict[str, str]:
     }
 
 
-def fetch_macro_news(topic: str) -> list[dict]:
+def fetch_macro_news(topic: str, extra_query: str | None = None) -> list[dict]:
     lang = os.environ.get("NEWS_LANG", "zh")
     region = os.environ.get("NEWS_REGION", "TW")
     queries = parse_queries("NEWS_QUERIES", DEFAULT_NEWS_QUERIES)
+    # 多主題時把該主題當額外關鍵字,讓不同主題抓到偏向該主題的新聞(短主題才適合當查詢)。
+    if extra_query and 0 < len(extra_query) <= 30 and extra_query not in queries:
+        queries = [extra_query] + queries
     topics = parse_topics("NEWS_TOPICS", DEFAULT_NEWS_TOPICS)
     # 動態(分類頭條)+ 財經官方 feed,確保不漏突發大事又不離題。
     feeds = {**news_fetcher.CREDIBLE_FEEDS, **section_feeds(topics, lang, region)}
@@ -779,6 +785,38 @@ def housing_enabled() -> bool:
     return os.environ.get("ENABLE_HOUSING", "1").lower() not in ("0", "false", "no")
 
 
+def parse_report_topics() -> list[str]:
+    """戰略報告主題清單。
+
+    優先讀 REPORT_TOPICS(以 ; 分隔多主題);否則退回單一 REPORT_TOPIC / 預設。
+    回傳至少一個主題;第一個為主報告(寫入 latest_report.json,維持向後相容)。
+    """
+    raw = os.environ.get("REPORT_TOPICS", "")
+    topics = [t.strip() for t in raw.split(";") if t.strip()]
+    if topics:
+        return topics
+    return [os.environ.get("REPORT_TOPIC") or DEFAULT_TOPIC]
+
+
+def build_macro_report(topic: str, today: str, *, extra_query: str | None = None) -> dict:
+    """抓該主題新聞 → Gemini 四維度分析 + 白話文,組出一份戰略報告 dict 並驗證。"""
+    news = fetch_macro_news(topic, extra_query=extra_query)
+    print(f"  抓到 {len(news)} 則新聞。")
+    if not news:
+        print("  警告: 未抓到任何新聞,分析將缺乏真實素材。", file=sys.stderr)
+    analysis = get_macro_analysis(news, topic, today)
+    report = {
+        "report_date": today,
+        "topic": topic,
+        "raw_news": news,
+        "strategic_analysis": analysis["strategic_analysis"],
+        "laymans_dictionary": analysis["laymans_dictionary"],
+        "dictionary_source": "gemini",
+    }
+    validate_report(report)
+    return report
+
+
 # ---------------------------------------------------------------------------
 # 主流程
 # ---------------------------------------------------------------------------
@@ -788,31 +826,33 @@ def main() -> int:
         print("錯誤: 未設定 GEMINI_API_KEY 環境變數", file=sys.stderr)
         return 1
 
-    topic = os.environ.get("REPORT_TOPIC") or DEFAULT_TOPIC
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     try:
-        # A. 戰略報告
-        print(f"[1/5] 爬取真實外電(主題:{topic})...")
-        news = fetch_macro_news(topic)
-        print(f"  抓到 {len(news)} 則新聞。")
-        if not news:
-            print("  警告: 未抓到任何新聞,分析將缺乏真實素材。", file=sys.stderr)
+        # A. 戰略報告(支援多主題:第一個為主報告,維持 latest_report.json 向後相容)
+        topics = parse_report_topics()
+        multi = len(topics) > 1
+        print(f"[1/5] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
 
-        print("[2/5] 向 Gemini 請求四維度戰略分析 + 白話文...")
-        analysis = get_macro_analysis(news, topic, today)
-        report = {
-            "report_date": today,
-            "topic": topic,
-            "raw_news": news,
-            "strategic_analysis": analysis["strategic_analysis"],
-            "laymans_dictionary": analysis["laymans_dictionary"],
-            "dictionary_source": "gemini",
-        }
-        validate_report(report)
+        # 主報告必成功(失敗→整體非零碼);其餘主題失敗只警告不中斷。
+        print(f"  ▸ 主主題:{topics[0]}")
+        report = build_macro_report(topics[0], today, extra_query=topics[0] if multi else None)
+        reports = [report]
+        for extra_topic in topics[1:]:
+            print(f"  ▸ 次主題:{extra_topic}")
+            try:
+                reports.append(build_macro_report(extra_topic, today, extra_query=extra_topic))
+            except Exception as exc:  # noqa: BLE001 — 次主題失敗不影響主報告
+                print(f"  警告: 主題「{extra_topic}」產生失敗:{exc}", file=sys.stderr)
 
+        print("[2/5] 戰略分析完成,寫入報告檔...")
         save_json(OUTPUT_LATEST, report)
         save_json(ARCHIVE_DIR / f"{today}.json", report)
+        if multi:
+            multi_doc = {"report_date": today, "reports": reports}
+            save_json(OUTPUT_REPORTS_MULTI, multi_doc)
+            save_json(REPORTS_MULTI_ARCHIVE_DIR / f"{today}.json", multi_doc)
+            print(f"  多主題報告:{len(reports)}/{len(topics)} 份成功。")
 
         # B. 趨勢雷達
         trends = None

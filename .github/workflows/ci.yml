@@ -30,7 +30,9 @@ jobs:
                    + glob.glob("latest_housing.json") + glob.glob("house_prices.json") \
                    + glob.glob("house_price_history.json") \
                    + glob.glob("taiwan_counties.geo.json") \
-                   + glob.glob("data/reports/*.json") + glob.glob("data/trends/*.json") \
+                   + glob.glob("latest_reports.json") \
+                   + glob.glob("data/reports/*.json") + glob.glob("data/reports_multi/*.json") \
+                   + glob.glob("data/trends/*.json") \
                    + glob.glob("data/stocks/*.json") + glob.glob("data/housing/*.json"):
               try:
                   json.load(open(f, encoding="utf-8"))
