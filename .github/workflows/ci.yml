@@ -18,7 +18,7 @@ jobs:
           python-version: '3.11'
 
       - name: Byte-compile Python sources
-        run: python -m py_compile update_data.py app.py
+        run: python -m py_compile update_data.py app.py housing_fetcher.py
 
       - name: Validate JSON reports (if present)
         run: |
@@ -27,8 +27,10 @@ jobs:
           ok = True
           for f in glob.glob("latest_report.json") + glob.glob("latest_trends.json") \
                    + glob.glob("latest_stocks.json") + glob.glob("etf_holdings.json") \
+                   + glob.glob("latest_housing.json") + glob.glob("house_prices.json") \
+                   + glob.glob("taiwan_counties.geo.json") \
                    + glob.glob("data/reports/*.json") + glob.glob("data/trends/*.json") \
-                   + glob.glob("data/stocks/*.json"):
+                   + glob.glob("data/stocks/*.json") + glob.glob("data/housing/*.json"):
               try:
                   json.load(open(f, encoding="utf-8"))
               except Exception as e:  # noqa: BLE001
