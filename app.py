@@ -1502,8 +1502,11 @@ def render_housing(analysis: dict | None) -> None:
     overall = analysis.get("overall_sentiment", "—")
     emoji, _ = HOUSING_SENTIMENT_STYLE.get(overall, ("", "info"))
     st.metric("整體氛圍", f"{emoji} {overall}")
-    if analysis.get("overall_summary"):
-        st.info(analysis["overall_summary"])
+    # 🧠 Gemini AI 綜合總結(較完整的判讀;退回單句 overall_summary)
+    ai_summary = analysis.get("ai_summary") or analysis.get("overall_summary")
+    if ai_summary:
+        st.markdown("##### 🧠 Gemini AI 房市總結")
+        st.info(ai_summary)
     c1, c2 = st.columns(2)
     for col, key, title in ((c1, "presale_market", "🏗️ 預售屋市場"),
                             (c2, "resale_market", "🏠 成屋 / 中古屋市場")):
