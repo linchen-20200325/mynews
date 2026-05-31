@@ -41,7 +41,9 @@
 房價 `house_prices.json` 含 `as_of`、`season`、`unit`(萬元/坪)、`counties`,
 每縣市含 `resale` / `presale`(各 `avg_ping_wan`/`median_ping_wan`/`count`/`samples`)。
 歷年房價 `house_price_history.json` 含 `as_of`、`unit`、`years` 陣列、`counties`,
-每縣市含 `resale` / `presale`(各為 `{西元年: 每坪均價}`),供單一縣市歷年折線圖。
+每縣市含 `resale` / `presale`(各為 `{西元年: 每坪均價}`),供單一縣市歷年折線圖;
+另含 `seasons_included`(已納入季別)與內部 `_acc`(各年總和/筆數,供增量累加,
+每月排程 `housing_fetcher.py history` 只補最新季)。
 縣市地圖底圖為 `taiwan_counties.geo.json`(內建、已正名臺/桃園市,`properties.name` 對應縣市)。
 交通分類由 `housing_fetcher.transport_tag()` 判定(高鐵站 `HSR_COUNTIES`、自強號
 `TRA_TZECHIANG_COUNTIES`),供地圖★標記與長條圖額外標出交通便利縣市。房價只取實價登錄,**嚴禁 AI 猜**。

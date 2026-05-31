@@ -52,8 +52,8 @@ jobs:
       - name: Fetch house price history
         env:
           PROXY_URL: ${{ secrets.PROXY_URL }}
-        # 歷年房價(逐季抓取,較久)失敗不影響其他
-        run: python housing_fetcher.py history 5 || echo "歷年房價抓取失敗,略過"
+        # 歷年房價增量更新(只補最新尚未納入的季別);失敗不影響其他
+        run: python housing_fetcher.py history || echo "歷年房價抓取失敗,略過"
 
       - name: Commit and Push Changes
         run: |
