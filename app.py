@@ -1260,8 +1260,9 @@ def generate_live_housing() -> None:
     """房市觀察第二步:對『已抓到的房市新聞』+ 房價參考請 Gemini 判讀。"""
     news = st.session_state.get("live_housing_news", [])
     prices = st.session_state.get("house_prices_live") or housing_fetcher.load_house_prices()
+    history = st.session_state.get("house_history_live") or housing_fetcher.load_house_price_history()
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    data = update_data.get_housing_analysis(news, prices, today)
+    data = update_data.get_housing_analysis(news, prices, today, history)
     data["raw_news"] = news
     st.session_state["live_housing"] = data
     st.session_state.pop("live_housing_news", None)
@@ -1502,11 +1503,8 @@ def render_housing(analysis: dict | None) -> None:
     overall = analysis.get("overall_sentiment", "—")
     emoji, _ = HOUSING_SENTIMENT_STYLE.get(overall, ("", "info"))
     st.metric("整體氛圍", f"{emoji} {overall}")
-    # 🧠 Gemini AI 綜合總結(較完整的判讀;退回單句 overall_summary)
-    ai_summary = analysis.get("ai_summary") or analysis.get("overall_summary")
-    if ai_summary:
-        st.markdown("##### 🧠 Gemini AI 房市總結")
-        st.info(ai_summary)
+    if analysis.get("overall_summary"):
+        st.caption(analysis["overall_summary"])
     c1, c2 = st.columns(2)
     for col, key, title in ((c1, "presale_market", "🏗️ 預售屋市場"),
                             (c2, "resale_market", "🏠 成屋 / 中古屋市場")):
@@ -1553,7 +1551,57 @@ def render_housing(analysis: dict | None) -> None:
                     line += f" [連結]({url})"
                 st.markdown(line)
 
+    # 6) 🧠 Gemini AI 買方總結(放最下方:綜合整頁房價/趨勢/冷熱/政策/新聞)
+    render_housing_ai_summary(analysis.get("ai_summary"))
+
     st.caption("⚠️ 冷熱與政策判讀由 AI 自動整理新聞而成,房價為實價登錄事實資料;僅供參考,非投資建議。")
+
+
+# 買方影響配色
+BUYER_IMPACT_STYLE = {
+    "偏好": ("🟢 對買方偏有利", "success"),
+    "中性": ("🟡 對買方中性", "info"),
+    "偏壞": ("🔴 對買方偏不利", "error"),
+}
+
+
+def render_housing_ai_summary(ai_summary) -> None:
+    """頁面最下方的 Gemini AI 買方總結(支援新版結構化 dict 與舊版單句字串)。"""
+    if not ai_summary:
+        return
+    st.divider()
+    st.subheader("🧠 Gemini AI 房市總結(買方視角)")
+    st.caption("綜合本頁所有資料(各縣市房價、歷年趨勢、新聞冷熱、打房政策、最新新聞)由 Gemini 判讀。")
+
+    # 向後相容:舊資料 ai_summary 是單句字串
+    if isinstance(ai_summary, str):
+        st.info(ai_summary)
+        return
+
+    impact = ai_summary.get("buyer_impact", "")
+    for key, (label, _) in BUYER_IMPACT_STYLE.items():
+        if key in str(impact):
+            st.markdown(f"#### {label}")
+            break
+
+    blocks = [
+        ("📈 未來房市趨勢", ai_summary.get("future_trend")),
+        ("🏛️ 房市政策的轉變", ai_summary.get("policy_shift")),
+        ("🛒 對買方的影響", ai_summary.get("buyer_advice")),
+    ]
+    for title, body in blocks:
+        if body:
+            with st.container(border=True):
+                st.markdown(f"**{title}**")
+                st.write(body)
+
+    regs = ai_summary.get("regulations") or []
+    if regs:
+        st.markdown("**📜 相關法規 / 措施**")
+        st.markdown("　".join(f"`{r}`" for r in regs))
+
+    if ai_summary.get("overview"):
+        st.info(ai_summary["overview"])
 
 
 # ---------------------------------------------------------------------------

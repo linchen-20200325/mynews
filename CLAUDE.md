@@ -37,7 +37,10 @@
 `overall_sentiment`(熱絡/持平/冷清)、`presale_market` / `resale_market`
 (各含 `sentiment`、`note`)、`policy` 陣列(`title`/`impact`)、`regions` 陣列
 (`county`/`sentiment`/`heat_score`/`note`,county 限 22 縣市官方名)、`evidence_news`、
-`raw_news`。詳見 `validate_housing()`。
+`raw_news`,另含 `ai_summary`(買方視角綜合總結物件:`future_trend`/`policy_shift`/
+`buyer_impact`(偏好|中性|偏壞)/`buyer_advice`/`regulations`(法規陣列)/`overview`;
+舊資料可能為單句字串,看板需向後相容)。詳見 `validate_housing()`。
+房市 AI 總結會一併讀入當期房價 + 歷年趨勢(`house_price_history.json`)綜合判讀。
 房價 `house_prices.json` 含 `as_of`、`season`、`unit`(萬元/坪)、`counties`,
 每縣市含 `resale` / `presale`(各 `avg_ping_wan`/`median_ping_wan`/`count`/`samples`)。
 歷年房價 `house_price_history.json` 含 `as_of`、`unit`、`years` 陣列、`counties`,
