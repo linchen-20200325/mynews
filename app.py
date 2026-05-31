@@ -1464,11 +1464,8 @@ def render_housing_price_map() -> None:
     render_county_price_bar(values, kind_label)
     # 交通便利 vs 無軌道 均價對比
     render_transport_compare(values)
-    # 圖表 2:單一縣市歷年每坪均價
-    st.divider()
-    render_house_price_history_panel()
 
-    # 逐筆佐證(實價登錄原始成交)
+    # 當期逐筆佐證(實價登錄原始成交)— 與當期房價同區,放在進入歷年趨勢之前
     with st.expander("🔍 逐筆成交佐證(實價登錄原始資料)"):
         sel = st.selectbox("選擇縣市", list(counties.keys()), key="house_sample_county")
         block = counties.get(sel, {})
@@ -1486,6 +1483,10 @@ def render_housing_price_map() -> None:
                     use_container_width=True, hide_index=True,
                 )
     st.caption("⚠️ 每坪均價由實價登錄住宅成交(房地,排除純車位)即時彙整,可能與其他統計口徑略有差異;僅供參考,非投資建議。")
+
+    # 圖表 2:單一縣市歷年每坪均價 + 年增率(YoY)— 進入多年趨勢
+    st.divider()
+    render_house_price_history_panel()
 
 
 def render_housing(analysis: dict | None) -> None:

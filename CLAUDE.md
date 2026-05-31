@@ -74,6 +74,33 @@ python update_data.py                         # 產生報告(需金鑰)
 streamlit run app.py                          # 啟動看板
 ```
 
+## 環境變數 / 設定對照表
+
+> 機密(金鑰、含帳密的 URL)放 **Secrets**;一般開關/參數放 **Variables**(GitHub repo
+> → Settings → Secrets and variables → Actions)。Streamlit Cloud 一律放 App → Settings →
+> Secrets(TOML)。`PROXY_URL` 含帳密,**只走 Secrets,嚴禁進版控**。
+
+| 變數 | 必填 | 類別 | 預設 | 用途 |
+|------|------|------|------|------|
+| `GEMINI_API_KEY` | ✅ | Secret | — | Gemini 金鑰;支援逗號/分號/換行分隔多把容錯 |
+| `GEMINI_API_KEYS` | — | Secret | — | 多把金鑰的另一寫法(同上分隔) |
+| `GEMINI_MODEL` | — | Variable | `gemini-2.5-flash` | 覆寫 Gemini 模型 |
+| `GEMINI_MAX_TOKENS` | — | Variable | `8192` | 單次輸出 token 上限(已關 thinking) |
+| `PROXY_URL` | — | Secret | — | NAS 代理(ETF/股價/房價走 MoneyDJ、實價登錄);格式 `http://帳:密@host:3128` |
+| `GITHUB_TOKEN` | — | Secret | — | 看板「💾 直接存到 GitHub」;fine-grained PAT 限本 repo、Contents 讀寫 |
+| `LINE_CHANNEL_ACCESS_TOKEN` / `LINE_TO` | — | Secret | — | 兩者皆設才推播(Messaging API push) |
+| `REPORT_TOPIC` | — | Variable | 內建預設主題 | 戰略報告單一主題 |
+| `REPORT_TOPICS` | — | Variable | — | 多主題戰略報告,以 `;` 分隔(第一個為主報告) |
+| `ENABLE_TREND_RADAR` | — | Variable | `1` | 設 `0/false/no` 關閉趨勢雷達 |
+| `ENABLE_STOCK_PICKER` | — | Variable | `1` | 設 `0/false/no` 關閉台股觀察 |
+| `ENABLE_HOUSING` | — | Variable | `1` | 設 `0/false/no` 關閉房市觀察 |
+| `NEWS_QUERIES` / `TREND_QUERIES` / `STOCK_QUERIES` | — | Variable | 內建 | 各頁抓新聞關鍵字,以 `;` 分隔 |
+| `NEWS_TOPICS` / `TREND_TOPICS` | — | Variable | `WORLD,BUSINESS` 等 | Google News 動態分類頭條,以 `,` 分隔 |
+| `NEWS_LANG` / `NEWS_REGION` | — | Variable | `zh` / `TW` | Google News 語系/地區 |
+| `NEWS_MAX` / `NEWS_SINCE_HOURS` | — | Variable | `12` / `48` | 戰略報告抓新聞則數上限 / 回溯時數 |
+| `STOCK_MAX` / `STOCK_SINCE_HOURS` | — | Variable | `25` / `48` | 台股觀察抓新聞則數 / 回溯時數 |
+| `HOUSING_MAX` / `HOUSING_SINCE_HOURS` | — | Variable | `18` / `72` | 房市抓新聞則數 / 回溯時數 |
+
 ## 分支與提交
 
 - 功能開發在指定的 feature 分支,提交訊息清楚描述變更。
