@@ -682,7 +682,8 @@ def fetch_housing_news() -> list[dict]:
 # LINE 推播 (Messaging API push)
 # ---------------------------------------------------------------------------
 
-def build_line_message(report: dict, trends: dict | None = None) -> str:
+def build_line_message(report: dict, trends: dict | None = None,
+                       housing: dict | None = None) -> str:
     """把報告整理成一則精簡的 LINE 文字訊息。"""
     lines = [
         f"🌐 全球政經戰略報告 {report.get('report_date', '')}",
@@ -710,6 +711,17 @@ def build_line_message(report: dict, trends: dict | None = None) -> str:
                 f"・{t.get('industry', '')}(熱度 {t.get('heat_score', '—')})"
             )
 
+    if housing:
+        lines += ["", f"🏠 房市:整體{housing.get('overall_sentiment', '—')}"]
+        presale = (housing.get("presale_market") or {}).get("sentiment")
+        resale = (housing.get("resale_market") or {}).get("sentiment")
+        if presale or resale:
+            lines.append(f"・預售{presale or '—'} / 成屋{resale or '—'}")
+        policy = housing.get("policy") or []
+        if policy:
+            lines.append("・打房政策:"
+                         + "、".join(p.get("title", "") for p in policy[:2]))
+
     lines += ["", f"(白話文來源:{report.get('dictionary_source', '—')})"]
 
     msg = "\n".join(lines)
@@ -718,13 +730,15 @@ def build_line_message(report: dict, trends: dict | None = None) -> str:
     return msg
 
 
-def notify_line(report: dict, trends: dict | None = None) -> None:
+def notify_line(report: dict, trends: dict | None = None,
+                housing: dict | None = None) -> None:
     """透過 LINE Messaging API push 推送報告摘要。"""
     token = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
     to = os.environ["LINE_TO"]
 
     payload = json.dumps(
-        {"to": to, "messages": [{"type": "text", "text": build_line_message(report, trends)}]}
+        {"to": to, "messages": [{"type": "text",
+                                 "text": build_line_message(report, trends, housing)}]}
     ).encode("utf-8")
 
     req = urllib.request.Request(
@@ -834,6 +848,7 @@ def main() -> int:
             print("[4/5] ENABLE_STOCK_PICKER=0,略過台股觀察。")
 
         # D. 房市觀察(房價走代理,排程無代理時就只用新聞 + repo 既有房價當參考)
+        housing = None
         if housing_enabled():
             print("[5/5] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
             try:
@@ -859,7 +874,7 @@ def main() -> int:
         if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
             print("推送 LINE 通知...")
             try:
-                notify_line(report, trends)
+                notify_line(report, trends, housing)
                 print("  LINE 推播成功。")
             except Exception as exc:  # noqa: BLE001
                 print(f"  警告: LINE 推播失敗:{exc}", file=sys.stderr)

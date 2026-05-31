@@ -326,41 +326,46 @@ def _seasons_for_years(years_back: int, today: datetime | None = None) -> list[s
     return seasons
 
 
-def fetch_house_price_history(
-    proxy: str | None = None, log=print, years_back: int = 5
-) -> dict:
-    """逐季抓近 years_back 年實價登錄,彙整各縣市『各西元年』成屋/預售每坪均價。
-
-    回傳 {"as_of","unit","years":[...],"counties":{縣市:{resale:{年:均價},presale:{...}}}}。
-    記憶體只保留各(縣市,類別,年)的累計總和/筆數,逐季處理完即釋放 ZIP。
-    """
+def _new_acc():
+    """建立 acc[county][kind][year] = [總和, 筆數] 的巢狀累計結構。"""
     from collections import defaultdict
+    return defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: [0.0, 0])))
 
-    proxies = _resolve_proxies(proxy)
-    # acc[county][kind][year] = [總和, 筆數]
-    acc: dict = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: [0.0, 0])))
-    years_seen: set[int] = set()
 
-    for season in _seasons_for_years(years_back):
-        year = int(season[:3]) + 1911
-        log(f"  抓取季別 {season}(西元 {year})…")
-        zf = _download_season_zip(season, proxies, log)
-        if zf is None:
-            continue
-        parsed = _parse_zip_counties(zf, log)
-        for county, kinds in parsed.items():
-            for kind, rows in kinds.items():
-                for r in rows:
-                    bucket = acc[county][kind][year]
-                    bucket[0] += r["ping_wan"]
-                    bucket[1] += 1
-        if parsed:
-            years_seen.add(year)
+def _load_acc(raw: dict | None):
+    """把序列化的 _acc 還原成可累加的巢狀結構。"""
+    acc = _new_acc()
+    for county, kinds in (raw or {}).items():
+        for kind, years in kinds.items():
+            for y, pair in years.items():
+                acc[county][kind][int(y)] = [float(pair[0]), int(pair[1])]
+    return acc
 
-    if not years_seen:
-        raise RuntimeError("歷年房價抓取失敗(檢查 PROXY_URL / 來源)。")
 
+def _accumulate(acc, parsed: dict, year: int) -> None:
+    """把某季別解析結果累加進 acc 的對應西元年。"""
+    for county, kinds in parsed.items():
+        for kind, rows in kinds.items():
+            bucket = acc[county][kind][year]
+            for r in rows:
+                bucket[0] += r["ping_wan"]
+                bucket[1] += 1
+
+
+def _prune_acc(acc, keep_years: int, today: datetime | None = None) -> None:
+    """只保留近 keep_years 個西元年,避免歷年累計無限成長。"""
+    today = today or datetime.now(timezone.utc)
+    min_year = today.year - (keep_years - 1)
+    for kinds in acc.values():
+        for year_map in kinds.values():
+            for y in [yr for yr in year_map if yr < min_year]:
+                del year_map[y]
+
+
+def _acc_to_public(acc):
+    """由 acc 算出公開用 counties({年:均價} 純數字)與涵蓋年份集合。"""
     counties: dict[str, dict] = {}
+    years: set[int] = set()
     for county, kinds in acc.items():
         entry: dict[str, dict] = {}
         for kind, year_map in kinds.items():
@@ -370,15 +375,98 @@ def fetch_house_price_history(
             }
             if yearly:
                 entry[kind] = yearly
+                years |= {int(y) for y in yearly}
         if entry:
             counties[county] = entry
+    return counties, years
 
+
+def _acc_to_serializable(acc) -> dict:
+    """把 acc 轉成可寫入 JSON 的內部累計欄位(_acc)。"""
+    return {
+        county: {
+            kind: {str(yr): [round(s, 4), n] for yr, (s, n) in year_map.items()}
+            for kind, year_map in kinds.items()
+        }
+        for county, kinds in acc.items()
+    }
+
+
+def _build_history(acc, seasons_included: list[str]) -> dict:
+    """由 acc + 已納入季別組出 house_price_history.json 結構。"""
+    counties, years = _acc_to_public(acc)
     return {
         "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%d (實價登錄 via proxy)"),
         "unit": "萬元/坪",
-        "years": [str(y) for y in sorted(years_seen)],
+        "years": [str(y) for y in sorted(years)],
+        "seasons_included": sorted(seasons_included),
         "counties": counties,
+        "_acc": _acc_to_serializable(acc),
     }
+
+
+def fetch_house_price_history(
+    proxy: str | None = None, log=print, years_back: int = 5
+) -> dict:
+    """整段重抓:逐季抓近 years_back 年實價登錄,彙整各縣市『各西元年』每坪均價。
+
+    回傳含公開 counties({年:均價})與內部 _acc(供日後增量累加)/ seasons_included。
+    記憶體只保留各(縣市,類別,年)的累計總和/筆數,逐季處理完即釋放 ZIP。
+    """
+    proxies = _resolve_proxies(proxy)
+    acc = _new_acc()
+    included: list[str] = []
+
+    for season in _seasons_for_years(years_back):
+        year = int(season[:3]) + 1911
+        log(f"  抓取季別 {season}(西元 {year})…")
+        zf = _download_season_zip(season, proxies, log)
+        if zf is None:
+            continue
+        parsed = _parse_zip_counties(zf, log)
+        if parsed:
+            _accumulate(acc, parsed, year)
+            included.append(season)
+
+    if not included:
+        raise RuntimeError("歷年房價抓取失敗(檢查 PROXY_URL / 來源)。")
+    return _build_history(acc, included)
+
+
+def merge_house_price_history(
+    existing: dict, proxy: str | None = None, log=print,
+    window_years: int = 2, keep_years: int = 6,
+) -> dict:
+    """增量更新:只補近 window_years 內、尚未納入的季別,累加進既有 _acc 後重算。
+
+    既有資料缺 _acc(舊格式)時,退回整段重抓 keep_years 年。
+    """
+    if not existing or not existing.get("_acc"):
+        return fetch_house_price_history(proxy=proxy, log=log, years_back=keep_years)
+
+    proxies = _resolve_proxies(proxy)
+    acc = _load_acc(existing.get("_acc"))
+    included = set(existing.get("seasons_included") or [])
+
+    added = 0
+    for season in _seasons_for_years(window_years):
+        if season in included:
+            continue
+        year = int(season[:3]) + 1911
+        log(f"  增量抓取季別 {season}(西元 {year})…")
+        zf = _download_season_zip(season, proxies, log)
+        if zf is None:
+            continue
+        parsed = _parse_zip_counties(zf, log)
+        if parsed:
+            _accumulate(acc, parsed, year)
+            included.add(season)
+            added += 1
+
+    if added == 0:
+        log("  無新季別可補,維持既有歷年房價。")
+    _prune_acc(acc, keep_years)
+    return _build_history(acc, list(included))
 
 
 def load_house_price_history(path: Path = HOUSE_PRICE_HISTORY_PATH) -> dict:
@@ -404,10 +492,18 @@ def update_house_prices() -> int:
     return 0
 
 
-def update_house_price_history(years_back: int = 5) -> int:
-    """CLI / 每月排程入口:抓歷年房價寫入 house_price_history.json。"""
+def update_house_price_history(years_back: int = 5, incremental: bool = True) -> int:
+    """CLI / 每月排程入口:更新歷年房價寫入 house_price_history.json。
+
+    incremental=True(預設):只補最新尚未納入的季別,累加進既有資料(省時省流量);
+    既有檔缺內部累計時自動退回整段重抓。incremental=False:整段重抓 years_back 年。
+    """
     try:
-        data = fetch_house_price_history(years_back=years_back)
+        if incremental:
+            data = merge_house_price_history(
+                load_house_price_history(), keep_years=years_back)
+        else:
+            data = fetch_house_price_history(years_back=years_back)
     except Exception as exc:  # noqa: BLE001
         print(f"歷年房價更新失敗:{exc}", file=sys.stderr)
         return 1
@@ -419,9 +515,12 @@ def update_house_price_history(years_back: int = 5) -> int:
 
 
 if __name__ == "__main__":
-    # 用法:python housing_fetcher.py            → 抓最新一季
-    #       python housing_fetcher.py history [年數] → 抓歷年(預設 5 年)
+    # 用法:python housing_fetcher.py                 → 抓最新一季房價
+    #       python housing_fetcher.py history          → 歷年增量更新(只補新季)
+    #       python housing_fetcher.py history full [年數] → 整段重抓(預設 5 年)
     if len(sys.argv) > 1 and sys.argv[1] == "history":
-        n = int(sys.argv[2]) if len(sys.argv) > 2 else 5
-        sys.exit(update_house_price_history(n))
+        if len(sys.argv) > 2 and sys.argv[2] == "full":
+            n = int(sys.argv[3]) if len(sys.argv) > 3 else 5
+            sys.exit(update_house_price_history(n, incremental=False))
+        sys.exit(update_house_price_history(incremental=True))
     sys.exit(update_house_prices())
