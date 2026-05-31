@@ -29,6 +29,7 @@ from pathlib import Path
 import news_fetcher
 
 HOUSE_PRICES_PATH = Path("house_prices.json")
+HOUSE_PRICE_HISTORY_PATH = Path("house_price_history.json")
 
 # 1 坪 = 3.305785 平方公尺;每坪單價(元) = 單價元平方公尺 × PING_PER_SQM。
 PING_PER_SQM = 3.305785
@@ -49,6 +50,37 @@ CITY_CODES: dict[str, str] = {
 
 # 視為「住宅」的建物型態(排除店面/辦公/廠辦/車位等非自住標的)。
 RESIDENTIAL_TYPES = ("住宅大樓", "公寓", "透天厝", "華廈", "套房")
+
+# 交通可達性:有高鐵站、或台鐵自強號會停靠的縣市(供「交通便利縣市」額外比較)。
+# 高鐵設站縣市(11 站所在地)。
+HSR_COUNTIES = {
+    "臺北市", "新北市", "桃園市", "新竹縣", "苗栗縣", "臺中市",
+    "彰化縣", "雲林縣", "嘉義縣", "臺南市", "高雄市",
+}
+# 台鐵自強號(含普悠瑪/太魯閣)主要停靠的縣市;南投與離島無台鐵。
+TRA_TZECHIANG_COUNTIES = {
+    "基隆市", "臺北市", "新北市", "桃園市", "新竹市", "新竹縣", "苗栗縣",
+    "臺中市", "彰化縣", "雲林縣", "嘉義市", "臺南市", "高雄市",
+    "屏東縣", "宜蘭縣", "花蓮縣", "臺東縣",
+}
+
+
+def transport_tag(county: str) -> str:
+    """回傳縣市的軌道交通標籤:高鐵+自強號 / 高鐵 / 自強號 / 無軌道。"""
+    h = county in HSR_COUNTIES
+    t = county in TRA_TZECHIANG_COUNTIES
+    if h and t:
+        return "高鐵+自強號"
+    if h:
+        return "高鐵"
+    if t:
+        return "自強號"
+    return "無軌道"
+
+
+def has_rail_transport(county: str) -> bool:
+    """是否有高鐵站或自強號停靠(交通便利縣市)。"""
+    return county in HSR_COUNTIES or county in TRA_TZECHIANG_COUNTIES
 
 # 每坪(萬元)合理區間,過濾離群值(打錯、含大量車位、特殊交易)。
 MIN_PING_WAN = 1.0
@@ -193,50 +225,68 @@ def _summarize(rows: list[dict], sample_n: int = 8) -> dict:
     }
 
 
+def _resolve_proxies(proxy: str | None):
+    try:
+        import proxy_helper
+        return proxy_helper.get_proxy_config(proxy)
+    except Exception:  # noqa: BLE001
+        import os
+        url = (proxy or os.environ.get("PROXY_URL") or "").strip()
+        return {"http": url, "https": url} if url else None
+
+
+def _download_season_zip(season: str, proxies, log) -> "zipfile.ZipFile | None":
+    """下載單一季別實價登錄 ZIP;失敗(未發布/被擋)回 None。"""
+    try:
+        content = _http_get_bytes(
+            DOWNLOAD_URL,
+            {"season": season, "type": "zip", "fileName": "lvr_landcsv.zip"},
+            proxies,
+        )
+        return zipfile.ZipFile(io.BytesIO(content))
+    except Exception as exc:  # noqa: BLE001
+        log(f"    {season} 取得失敗:{exc}")
+        return None
+
+
+def _parse_zip_counties(zf: "zipfile.ZipFile", log) -> dict[str, dict[str, list]]:
+    """把一個季別 ZIP 解析成 {縣市: {'resale': rows, 'presale': rows}}(逐筆住宅交易)。"""
+    names = set(zf.namelist())
+    out: dict[str, dict[str, list]] = {}
+    for letter, county in CITY_CODES.items():
+        entry: dict[str, list] = {}
+        for kind, suffix in (("resale", "a"), ("presale", "b")):
+            fname = f"{letter}_lvr_land_{suffix}.csv"
+            if fname not in names:
+                continue
+            try:
+                entry[kind] = parse_price_csv(zf.read(fname), county)
+            except Exception as exc:  # noqa: BLE001 — 單檔解析失敗不影響其他
+                log(f"    {county} {fname} 解析失敗:{exc}")
+        if entry:
+            out[county] = entry
+    return out
+
+
 def fetch_house_prices(proxy: str | None = None, log=print) -> dict:
     """下載最新可得季別實價登錄,彙整各縣市『成屋/預售屋』每坪均價 + 逐筆佐證。
 
     回傳 {"as_of","season","unit","counties":{縣市:{resale,presale}}}。
     逐季往前試到下載成功為止;單一縣市/檔案失敗不影響其他。
     """
-    try:
-        import proxy_helper
-        proxies = proxy_helper.get_proxy_config(proxy)
-    except Exception:  # noqa: BLE001
-        import os
-        url = (proxy or os.environ.get("PROXY_URL") or "").strip()
-        proxies = {"http": url, "https": url} if url else None
-
+    proxies = _resolve_proxies(proxy)
     last_exc: Exception | None = None
     for season in recent_seasons():
-        try:
-            log(f"  嘗試下載實價登錄季別 {season} …")
-            content = _http_get_bytes(
-                DOWNLOAD_URL,
-                {"season": season, "type": "zip", "fileName": "lvr_landcsv.zip"},
-                proxies,
-            )
-            zf = zipfile.ZipFile(io.BytesIO(content))
-        except Exception as exc:  # noqa: BLE001 — 該季尚未發布/被擋 → 試前一季
-            last_exc = exc
-            log(f"    {season} 取得失敗:{exc}")
+        log(f"  嘗試下載實價登錄季別 {season} …")
+        zf = _download_season_zip(season, proxies, log)
+        if zf is None:
+            last_exc = RuntimeError(f"{season} 下載失敗")
             continue
-
-        names = set(zf.namelist())
-        counties: dict[str, dict] = {}
-        for letter, county in CITY_CODES.items():
-            entry = {}
-            for kind, suffix in (("resale", "a"), ("presale", "b")):
-                fname = f"{letter}_lvr_land_{suffix}.csv"
-                if fname not in names:
-                    continue
-                try:
-                    rows = parse_price_csv(zf.read(fname), county)
-                    entry[kind] = _summarize(rows)
-                except Exception as exc:  # noqa: BLE001 — 單檔解析失敗不影響其他
-                    log(f"    {county} {fname} 解析失敗:{exc}")
-            if entry:
-                counties[county] = entry
+        parsed = _parse_zip_counties(zf, log)
+        counties = {
+            county: {kind: _summarize(rows) for kind, rows in kinds.items()}
+            for county, kinds in parsed.items()
+        }
         if counties:
             n_resale = sum(1 for c in counties.values() if c.get("resale", {}).get("count"))
             log(f"  季別 {season} 完成:{len(counties)} 縣市(成屋有量 {n_resale})")
@@ -260,8 +310,88 @@ def load_house_prices(path: Path = HOUSE_PRICES_PATH) -> dict:
         return {}
 
 
+def _seasons_for_years(years_back: int, today: datetime | None = None) -> list[str]:
+    """產生涵蓋近 years_back 個西元年的所有季別(由新到舊)。"""
+    today = today or datetime.now(timezone.utc)
+    roc_year = today.year - 1911
+    quarter = (today.month - 1) // 3 + 1
+    min_roc = roc_year - (years_back - 1)
+    seasons: list[str] = []
+    y, q = roc_year, quarter
+    while y >= min_roc:
+        seasons.append(f"{y}S{q}")
+        q -= 1
+        if q == 0:
+            q, y = 4, y - 1
+    return seasons
+
+
+def fetch_house_price_history(
+    proxy: str | None = None, log=print, years_back: int = 5
+) -> dict:
+    """逐季抓近 years_back 年實價登錄,彙整各縣市『各西元年』成屋/預售每坪均價。
+
+    回傳 {"as_of","unit","years":[...],"counties":{縣市:{resale:{年:均價},presale:{...}}}}。
+    記憶體只保留各(縣市,類別,年)的累計總和/筆數,逐季處理完即釋放 ZIP。
+    """
+    from collections import defaultdict
+
+    proxies = _resolve_proxies(proxy)
+    # acc[county][kind][year] = [總和, 筆數]
+    acc: dict = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: [0.0, 0])))
+    years_seen: set[int] = set()
+
+    for season in _seasons_for_years(years_back):
+        year = int(season[:3]) + 1911
+        log(f"  抓取季別 {season}(西元 {year})…")
+        zf = _download_season_zip(season, proxies, log)
+        if zf is None:
+            continue
+        parsed = _parse_zip_counties(zf, log)
+        for county, kinds in parsed.items():
+            for kind, rows in kinds.items():
+                for r in rows:
+                    bucket = acc[county][kind][year]
+                    bucket[0] += r["ping_wan"]
+                    bucket[1] += 1
+        if parsed:
+            years_seen.add(year)
+
+    if not years_seen:
+        raise RuntimeError("歷年房價抓取失敗(檢查 PROXY_URL / 來源)。")
+
+    counties: dict[str, dict] = {}
+    for county, kinds in acc.items():
+        entry: dict[str, dict] = {}
+        for kind, year_map in kinds.items():
+            yearly = {
+                str(yr): round(s / n, 2)
+                for yr, (s, n) in sorted(year_map.items()) if n
+            }
+            if yearly:
+                entry[kind] = yearly
+        if entry:
+            counties[county] = entry
+
+    return {
+        "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%d (實價登錄 via proxy)"),
+        "unit": "萬元/坪",
+        "years": [str(y) for y in sorted(years_seen)],
+        "counties": counties,
+    }
+
+
+def load_house_price_history(path: Path = HOUSE_PRICE_HISTORY_PATH) -> dict:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+
+
 def update_house_prices() -> int:
-    """CLI / 每月排程入口:抓房價寫入 house_prices.json。"""
+    """CLI / 每月排程入口:抓最新一季房價寫入 house_prices.json。"""
     try:
         data = fetch_house_prices()
     except Exception as exc:  # noqa: BLE001
@@ -274,5 +404,24 @@ def update_house_prices() -> int:
     return 0
 
 
+def update_house_price_history(years_back: int = 5) -> int:
+    """CLI / 每月排程入口:抓歷年房價寫入 house_price_history.json。"""
+    try:
+        data = fetch_house_price_history(years_back=years_back)
+    except Exception as exc:  # noqa: BLE001
+        print(f"歷年房價更新失敗:{exc}", file=sys.stderr)
+        return 1
+    HOUSE_PRICE_HISTORY_PATH.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"已寫入 {HOUSE_PRICE_HISTORY_PATH}(年份 {data['years']},{len(data['counties'])} 縣市)")
+    return 0
+
+
 if __name__ == "__main__":
+    # 用法:python housing_fetcher.py            → 抓最新一季
+    #       python housing_fetcher.py history [年數] → 抓歷年(預設 5 年)
+    if len(sys.argv) > 1 and sys.argv[1] == "history":
+        n = int(sys.argv[2]) if len(sys.argv) > 2 else 5
+        sys.exit(update_house_price_history(n))
     sys.exit(update_house_prices())
