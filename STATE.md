@@ -76,6 +76,8 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - [x] 成分股真實庫已建立:`etf_holdings.json` = 61 檔(MoneyDJ via proxy),涵蓋全市場個股
 - [x] **代碼淨化與收尾完成**:全專案 pyflakes 零警告;清理 `etf_profile_fetcher.py`
       未使用的 `import io` 與函式內重複 `HTMLParser` 局部 import(只減不改,邏輯無損、通過驗證)
+- [x] **Gemini AI 分析上線**:已設 `GEMINI_API_KEY`,戰略報告頁實測產出四維度分析 + 白話文
+      (白話文來源=gemini),確認 RSS 爬蟲 → Gemini 全流程通暢
 
 ## 已驗證上線(實測通過)✅
 
@@ -87,7 +89,7 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 
 - [ ] 在 Streamlit 按「🌐 匯入全台股 ETF 清單」一鍵帶入全市場 ETF,再抓成分股/圖鑑(全市場化)
 - [ ] 在 Streamlit 按「🔄 抓取 ETF 圖鑑」全清單重抓 Basic0004/0005,確認型態/配息/費用/月份正確並自動存檔
-- [ ] 設定 `GEMINI_API_KEY`(三頁 AI 分析:戰略報告/趨勢雷達/台股觀察 + 每日排程)
+- [x] 設定 `GEMINI_API_KEY`(三頁 AI 分析:戰略報告/趨勢雷達/台股觀察 + 每日排程)— 已完成,戰略報告實測通過
 - [ ] (選)在 repo Secrets 設 `PROXY_URL` 讓每月排程自動抓 ETF + 股價(NAS 防火牆需放行 Actions IP)
 - [ ] 仍抓不到的個別 ETF:依抓取摘要失敗清單,查正確 etfid/頁面後修正
 - [ ] 可考慮多主題報告
