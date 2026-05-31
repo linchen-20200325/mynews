@@ -161,19 +161,40 @@ def _is_active_etf(code: str, etfid: str) -> bool:
     return base.endswith("A")
 
 
+def _etfid_variants(etfid: str) -> list[str]:
+    """MoneyDJ etfid 大小寫變體(站方網址多為小寫,主動式字母後綴尤其常需小寫 a)。
+
+    依序:原值 → 字母後綴轉小寫(保留 .TW)→ 全小寫。去重後回傳。
+    """
+    variants = [etfid]
+    suf_low = re.sub(
+        r"([0-9]+)([A-Za-z])(\.[A-Za-z]{2})$",
+        lambda m: m.group(1) + m.group(2).lower() + m.group(3), etfid,
+    )
+    for v in (suf_low, etfid.lower()):
+        if v not in variants:
+            variants.append(v)
+    return variants
+
+
 def fetch_moneydj(etfid: str, template: str, proxies: dict | None, code: str = "") -> list[dict]:
     """抓單一 ETF 的 MoneyDJ 成分股。
 
-    主動式 ETF(A 結尾)用 Basic0007B;一般 ETF 用傳入的 template(Basic0007)。
-    若主要頁無資料,再退而試另一個頁面,提高命中率。
+    主動式 ETF(A 結尾)優先用 Basic0007B、一般 ETF 用傳入的 template(Basic0007),
+    兩個頁面都試;另對 etfid 嘗試大小寫變體(站方多為小寫,主動式後綴常需小寫 a),
+    回傳第一個有成分股的結果。所有組合只在前一個無資料時才續試,成功的 ETF 不增延遲。
     """
     primary = MONEYDJ_ACTIVE_TEMPLATE if _is_active_etf(code, etfid) else template
-    rows = parse_moneydj(http_get(primary.format(etfid=etfid), proxies))
-    if rows:
-        return rows
-    # 退路:換另一個頁面再試一次
     alt = template if primary == MONEYDJ_ACTIVE_TEMPLATE else MONEYDJ_ACTIVE_TEMPLATE
-    return parse_moneydj(http_get(alt.format(etfid=etfid), proxies))
+    for eid in _etfid_variants(etfid):
+        for tmpl in (primary, alt):
+            try:
+                rows = parse_moneydj(http_get(tmpl.format(etfid=eid), proxies))
+            except Exception:  # noqa: BLE001 — 單一頁面/變體失敗就試下一個
+                continue
+            if rows:
+                return rows
+    return []
 
 
 MONEYDJ_INFO_TEMPLATE = "https://www.moneydj.com/etf/x/Basic/Basic0001.xdjhtm?etfid={etfid}"
