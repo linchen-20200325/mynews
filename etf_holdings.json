@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-30 (MoneyDJ via proxy)",
+  "as_of": "2026-05-31 (MoneyDJ via proxy)",
   "note": "成分股由 etf_fetcher.py 透過代理自 MoneyDJ 抓取;僅供參考、非投資建議。",
   "stock_names": {
     "2330": "台積電",
