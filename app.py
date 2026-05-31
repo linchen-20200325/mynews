@@ -1090,6 +1090,38 @@ def load_taiwan_geojson() -> dict | None:
         return None
 
 
+# 交通標籤配色(供長條圖額外標出高鐵/自強號縣市)
+TRANSPORT_COLORS = {
+    "高鐵+自強號": "#d62728",  # 紅:最便利
+    "高鐵": "#ff7f0e",        # 橘
+    "自強號": "#1f77b4",      # 藍
+    "無軌道": "#9e9e9e",      # 灰
+}
+
+
+@st.cache_data(show_spinner=False)
+def county_centroids() -> dict:
+    """從 GeoJSON 估各縣市代表點(取點數最多的主多邊形外環平均),供地圖標記。"""
+    geo = load_taiwan_geojson()
+    out: dict[str, tuple] = {}
+    if not geo:
+        return out
+    for f in geo["features"]:
+        name = f["properties"]["name"]
+        geom = f["geometry"]
+        polys = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
+        best, best_len = None, -1
+        for poly in polys:
+            ring = poly[0]
+            if len(ring) > best_len:
+                best, best_len = ring, len(ring)
+        if best:
+            xs = [p[0] for p in best]
+            ys = [p[1] for p in best]
+            out[name] = (sum(xs) / len(xs), sum(ys) / len(ys))
+    return out
+
+
 def _price_values(prices: dict, kind: str) -> dict:
     """從房價資料取 {縣市: 每坪均價}(kind: 'resale' 成屋 / 'presale' 預售)。"""
     out: dict[str, float] = {}
@@ -1110,8 +1142,10 @@ def _heat_values(analysis: dict) -> dict:
     return out
 
 
-def render_taiwan_choropleth(values: dict, legend: str, scale: str) -> None:
-    """用 plotly 畫台灣縣市互動 choropleth;沒裝 plotly 時退回表格。"""
+def render_taiwan_choropleth(values: dict, legend: str, scale: str,
+                             marker_counties: set | None = None,
+                             marker_label: str = "高鐵站") -> None:
+    """用 plotly 畫台灣縣市互動 choropleth;可在指定縣市疊★標記;沒裝 plotly 時退回表格。"""
     df = pd.DataFrame(
         [{"縣市": c, legend: v} for c, v in values.items()]
     ).sort_values(legend, ascending=False)
@@ -1121,6 +1155,7 @@ def render_taiwan_choropleth(values: dict, legend: str, scale: str) -> None:
     geo = load_taiwan_geojson()
     try:
         import plotly.express as px
+        import plotly.graph_objects as go
     except Exception:  # noqa: BLE001 — 未安裝 plotly:退回表格 + 長條圖
         st.caption("（未安裝 plotly,以表格替代地圖)")
         st.bar_chart(df.set_index("縣市"))
@@ -1135,9 +1170,22 @@ def render_taiwan_choropleth(values: dict, legend: str, scale: str) -> None:
         color=legend, color_continuous_scale=scale,
         hover_data={legend: ":.1f"},
     )
+    # ★ 在指定縣市(高鐵/自強號)疊上標記,於地圖上額外標出
+    if marker_counties:
+        cents = county_centroids()
+        pts = [(c, cents[c]) for c in marker_counties if c in cents]
+        if pts:
+            fig.add_trace(go.Scattergeo(
+                lon=[p[1][0] for p in pts], lat=[p[1][1] for p in pts],
+                text=[p[0] for p in pts], mode="markers", name=marker_label,
+                marker={"size": 11, "color": "#111", "symbol": "star",
+                        "line": {"width": 1, "color": "white"}},
+                hovertemplate="%{text}<br>" + marker_label + "<extra></extra>",
+            ))
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0}, height=560,
-                      dragmode=False)
+                      dragmode=False,
+                      legend={"yanchor": "top", "y": 0.98, "xanchor": "left", "x": 0.02})
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -1212,6 +1260,114 @@ def generate_live_housing() -> None:
     st.session_state.pop("live_housing_news", None)
 
 
+def render_county_price_bar(values: dict, kind_label: str) -> None:
+    """圖表①:各縣市每坪均價長條圖,依交通標籤(高鐵/自強號)上色額外標出。"""
+    st.markdown(f"**📊 各縣市每坪均價長條圖（{kind_label}）**")
+    rows = [
+        {"縣市": c, "每坪(萬元)": v, "交通": housing_fetcher.transport_tag(c)}
+        for c, v in values.items()
+    ]
+    df = pd.DataFrame(rows).sort_values("每坪(萬元)", ascending=False)
+    try:
+        import plotly.express as px
+    except Exception:  # noqa: BLE001 — 退回 streamlit 內建長條圖(無法上色)
+        st.bar_chart(df.set_index("縣市")["每坪(萬元)"])
+        st.caption("（未安裝 plotly,無法依交通上色)")
+        return
+    fig = px.bar(
+        df, x="縣市", y="每坪(萬元)", color="交通",
+        color_discrete_map=TRANSPORT_COLORS,
+        category_orders={"交通": list(TRANSPORT_COLORS.keys())},
+    )
+    fig.update_layout(height=420, margin={"r": 0, "t": 10, "l": 0, "b": 0},
+                      xaxis_title="", legend_title="軌道交通")
+    st.plotly_chart(fig, use_container_width=True)
+    st.caption("顏色標示交通便利度:🔴高鐵+自強號　🟠高鐵　🔵自強號　⚪無軌道。")
+
+
+def render_transport_compare(values: dict) -> None:
+    """交通便利(有高鐵/自強號)vs 無軌道縣市的平均每坪對比。"""
+    rail = [v for c, v in values.items() if housing_fetcher.has_rail_transport(c)]
+    norail = [v for c, v in values.items() if not housing_fetcher.has_rail_transport(c)]
+    hsr = [v for c, v in values.items() if c in housing_fetcher.HSR_COUNTIES]
+    cols = st.columns(3)
+    cols[0].metric("🚄 有高鐵縣市 均價",
+                   f"{sum(hsr) / len(hsr):.1f}" if hsr else "—",
+                   help="設有高鐵站的縣市,每坪均價平均(萬元)")
+    cols[1].metric("🚆 有軌道(高鐵/自強號)均價",
+                   f"{sum(rail) / len(rail):.1f}" if rail else "—",
+                   help="有高鐵站或自強號停靠的縣市")
+    cols[2].metric("🚫 無軌道縣市 均價",
+                   f"{sum(norail) / len(norail):.1f}" if norail else "—",
+                   help="南投與離島等無台鐵/高鐵的縣市")
+
+
+def render_house_price_history_panel() -> None:
+    """圖表②:單一縣市不同年份的每坪均價折線圖(需歷年房價資料)。"""
+    st.subheader("📈 單一縣市歷年每坪均價")
+    # 抓取 / 更新歷年房價(較久,獨立按鈕)
+    with st.expander("🛰️ 抓取 / 更新歷年房價(透過代理,較久)", expanded=False):
+        st.caption("逐季抓近數年實價登錄,彙整各縣市『各西元年』每坪均價。下載量較大,請耐心等候。")
+        proxy = ensure_proxy()
+        years = st.slider("回溯年數", 2, 8, 5, key="house_hist_years")
+        if not proxy:
+            st.warning("未偵測到 PROXY_URL,無法抓取。")
+        if st.button("🔄 抓取歷年房價", use_container_width=True, disabled=not proxy):
+            with st.spinner(f"透過代理抓近 {years} 年實價登錄中…(可能數分鐘)"):
+                logs: list[str] = []
+                try:
+                    data = housing_fetcher.fetch_house_price_history(
+                        proxy=proxy, log=logs.append, years_back=years)
+                    st.session_state["house_history_live"] = data
+                    st.success(f"完成!涵蓋年份 {data.get('years', [])},{len(data.get('counties', {}))} 縣市。")
+                    if st.session_state.get("auto_save_github", True):
+                        save_to_github("house_price_history.json", data,
+                                       f"(近 {years} 年)")
+                except Exception as exc:  # noqa: BLE001
+                    st.error(f"抓取失敗:{exc}")
+                if logs:
+                    with st.expander("📋 抓取明細"):
+                        st.code("\n".join(logs))
+        # 存檔區
+        hist_now = st.session_state.get("house_history_live") or housing_fetcher.load_house_price_history() or {}
+        _hs = json.dumps(hist_now, ensure_ascii=False, indent=2)
+        render_github_save("house_price_history.json", _hs, key="house_history")
+        st.download_button("⬇️ 下載 house_price_history.json", data=_hs,
+                           file_name="house_price_history.json", mime="application/json")
+
+    history = st.session_state.get("house_history_live") or housing_fetcher.load_house_price_history()
+    counties = (history or {}).get("counties") or {}
+    if not counties:
+        st.info("尚無歷年房價資料。請先在上方「🛰️ 抓取 / 更新歷年房價」抓取(需 PROXY_URL)。")
+        return
+
+    sel = st.selectbox("選擇縣市", sorted(counties.keys()), key="house_hist_county")
+    tag = housing_fetcher.transport_tag(sel)
+    block = counties.get(sel, {})
+    # 組成 {年: {成屋, 預售}}
+    years = history.get("years") or sorted(
+        {y for k in ("resale", "presale") for y in (block.get(k) or {})}
+    )
+    rows = []
+    for y in years:
+        rows.append({
+            "年份": y,
+            "成屋": (block.get("resale") or {}).get(y),
+            "預售": (block.get("presale") or {}).get(y),
+        })
+    df = pd.DataFrame(rows).set_index("年份")
+    st.caption(f"{sel}（{tag}）　單位:萬元/坪　資料:內政部實價登錄")
+    try:
+        import plotly.express as px
+        long = df.reset_index().melt("年份", var_name="市場", value_name="每坪(萬元)").dropna()
+        fig = px.line(long, x="年份", y="每坪(萬元)", color="市場", markers=True,
+                      color_discrete_map={"成屋": "#1f77b4", "預售": "#d62728"})
+        fig.update_layout(height=380, margin={"r": 0, "t": 10, "l": 0, "b": 0})
+        st.plotly_chart(fig, use_container_width=True)
+    except Exception:  # noqa: BLE001
+        st.line_chart(df)
+
+
 def render_housing_price_map() -> None:
     """各縣市每坪房價地圖(成屋/預售切換)+ 排行表 + 逐筆佐證。"""
     prices = st.session_state.get("house_prices_live") or housing_fetcher.load_house_prices()
@@ -1228,15 +1384,19 @@ def render_housing_price_map() -> None:
     if not values:
         st.info(f"本季{kind_label}無足夠住宅成交資料可上色。")
         return
-    render_taiwan_choropleth(values, legend="每坪(萬元)", scale="OrRd")
+    st.caption("地圖上★ = 設有高鐵站的縣市(交通便利,額外標出)。")
+    render_taiwan_choropleth(values, legend="每坪(萬元)", scale="OrRd",
+                             marker_counties=housing_fetcher.HSR_COUNTIES,
+                             marker_label="高鐵站")
 
-    # 排行表
+    # 排行表(含交通標籤)
     counties = prices.get("counties", {})
     st.markdown("**📋 各縣市每坪房價排行(萬元/坪)**")
     st.dataframe(
         [
             {
                 "縣市": c,
+                "交通": housing_fetcher.transport_tag(c),
                 "成屋每坪": (counties[c].get("resale") or {}).get("avg_ping_wan"),
                 "成屋中位數": (counties[c].get("resale") or {}).get("median_ping_wan"),
                 "成屋筆數": (counties[c].get("resale") or {}).get("count"),
@@ -1251,6 +1411,14 @@ def render_housing_price_map() -> None:
         ],
         use_container_width=True, hide_index=True,
     )
+
+    # 圖表 1:各縣市每坪均價長條圖(依交通標籤上色)
+    render_county_price_bar(values, kind_label)
+    # 交通便利 vs 無軌道 均價對比
+    render_transport_compare(values)
+    # 圖表 2:單一縣市歷年每坪均價
+    st.divider()
+    render_house_price_history_panel()
 
     # 逐筆佐證(實價登錄原始成交)
     with st.expander("🔍 逐筆成交佐證(實價登錄原始資料)"):
