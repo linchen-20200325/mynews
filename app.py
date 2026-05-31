@@ -24,6 +24,7 @@ import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
 REPORT_PATH = Path("latest_report.json")
+REPORTS_MULTI_PATH = Path("latest_reports.json")
 ARCHIVE_DIR = Path("data/reports")
 TRENDS_PATH = Path("latest_trends.json")
 TRENDS_ARCHIVE_DIR = Path("data/trends")
@@ -1144,8 +1145,12 @@ def _heat_values(analysis: dict) -> dict:
 
 def render_taiwan_choropleth(values: dict, legend: str, scale: str,
                              marker_counties: set | None = None,
-                             marker_label: str = "高鐵站") -> None:
-    """用 plotly 畫台灣縣市互動 choropleth;可在指定縣市疊★標記;沒裝 plotly 時退回表格。"""
+                             marker_label: str = "高鐵站",
+                             midpoint: float | None = None) -> None:
+    """用 plotly 畫台灣縣市互動 choropleth;可在指定縣市疊★標記;沒裝 plotly 時退回表格。
+
+    midpoint 不為 None 時(如年增率)以該值為發散色階中點(紅正/藍負)。
+    """
     df = pd.DataFrame(
         [{"縣市": c, legend: v} for c, v in values.items()]
     ).sort_values(legend, ascending=False)
@@ -1165,10 +1170,12 @@ def render_taiwan_choropleth(values: dict, legend: str, scale: str,
         st.warning("找不到 taiwan_counties.geo.json,改用長條圖顯示。")
         st.bar_chart(df.set_index("縣市"))
         return
+    px_kwargs = {"color_continuous_scale": scale, "hover_data": {legend: ":.1f"}}
+    if midpoint is not None:
+        px_kwargs["color_continuous_midpoint"] = midpoint
     fig = px.choropleth(
         df, geojson=geo, locations="縣市", featureidkey="properties.name",
-        color=legend, color_continuous_scale=scale,
-        hover_data={legend: ":.1f"},
+        color=legend, **px_kwargs,
     )
     # ★ 在指定縣市(高鐵/自強號)疊上標記,於地圖上額外標出
     if marker_counties:
@@ -1366,6 +1373,46 @@ def render_house_price_history_panel() -> None:
         st.plotly_chart(fig, use_container_width=True)
     except Exception:  # noqa: BLE001
         st.line_chart(df)
+
+    # 圖表③延伸:各縣市房價年增率(YoY)地圖 + 排行
+    render_house_price_yoy(history)
+
+
+def render_house_price_yoy(history: dict) -> None:
+    """各縣市房價年增率(YoY):最新年 vs 前一年每坪均價變化(發散色階地圖 + 排行)。"""
+    counties = history.get("counties") or {}
+    all_years = sorted(
+        {y for c in counties.values() for k in c.values() for y in k}, key=int
+    )
+    if len(all_years) < 2:
+        return  # 不足兩年不畫年增率
+    st.divider()
+    st.subheader("📉 各縣市房價年增率(YoY)")
+    kind_label = st.radio("市場", ["成屋", "預售屋"], horizontal=True, key="yoy_kind")
+    kind = "resale" if kind_label == "成屋" else "presale"
+    y_cur, y_prev = all_years[-1], all_years[-2]
+    rows = []
+    for county, block in counties.items():
+        m = block.get(kind) or {}
+        pv, cv = m.get(y_prev), m.get(y_cur)
+        if isinstance(pv, (int, float)) and pv and isinstance(cv, (int, float)):
+            rows.append({
+                "縣市": county, "交通": housing_fetcher.transport_tag(county),
+                f"{y_prev}每坪": pv, f"{y_cur}每坪": cv,
+                "YoY%": round((cv - pv) / pv * 100, 1),
+            })
+    if not rows:
+        st.info(f"{kind_label} {y_prev}→{y_cur} 資料不足,無法計算年增率。")
+        return
+    st.caption(f"{kind_label}:{y_prev} → {y_cur} 每坪均價變化(🔴上漲 / 🔵下跌;★=高鐵縣市)。")
+    values = {r["縣市"]: r["YoY%"] for r in rows}
+    render_taiwan_choropleth(values, legend="YoY%", scale="RdBu_r", midpoint=0,
+                             marker_counties=housing_fetcher.HSR_COUNTIES,
+                             marker_label="高鐵站")
+    st.dataframe(
+        sorted(rows, key=lambda r: r["YoY%"], reverse=True),
+        use_container_width=True, hide_index=True,
+    )
 
 
 def render_housing_price_map() -> None:
@@ -1579,7 +1626,18 @@ def main() -> None:
                 st.info("這次沒抓到新聞,稍後再試或調整關鍵字。")
             return
 
-        # 3) 否則顯示每日排程存檔的報告
+        # 3) 否則顯示每日排程存檔的報告(支援多主題:有 latest_reports.json 且 >1 份時可切換)
+        multi = load_json(REPORTS_MULTI_PATH)
+        multi_reports = (multi or {}).get("reports") or []
+        if len(multi_reports) > 1:
+            st.caption(f"📚 本日含 {len(multi_reports)} 個主題報告,可切換:")
+            idx = st.selectbox(
+                "選擇主題", range(len(multi_reports)),
+                format_func=lambda i: multi_reports[i].get("topic", f"主題 {i + 1}"),
+                key="macro_topic_pick",
+            )
+            render_report(multi_reports[idx])
+            return
         report = pick_report(REPORT_PATH, ARCHIVE_DIR)
         if report is None:
             st.warning("尚無每日排程報告。可用上方「⚡ 即時抓取」按鈕馬上取得新聞或產生報告。")

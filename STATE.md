@@ -1,6 +1,6 @@
 # STATE.md — 專案戰情室
 
-> 最後更新:2026-05-31(B5 房市排程實測、B6 房市併入 LINE 推播、B7 歷年房價改增量更新)
+> 最後更新:2026-05-31(C8 多主題戰略報告、C10 房市年增率 YoY 地圖;C9 待線上 etfid)
 
 ## 當前環境
 
@@ -43,6 +43,10 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
       - 房市觀察強化:房市冷熱/打房政策併入每日 LINE 推播;歷年房價改「增量更新」
         (內部 `_acc` 累計 + `seasons_included`,每月只補最新季,省時省流量);
         每日排程房市步驟已模擬實測(產合法 latest_housing.json、濾非法縣市、帶入真實房價參考)
+      - [C10] 房市年增率(YoY)地圖:歷年資料最新年 vs 前一年每坪變化,發散色階
+        (紅漲藍跌)+ 高鐵★標記 + 成屋/預售切換 + 排行表
+      - [C8] 多主題戰略報告:`REPORT_TOPICS`(; 分隔)→ 每主題各抓新聞+Gemini 分析,
+        主報告維持 latest_report.json 向後相容,另存 latest_reports.json;看板可切換主題
       - ETF 圖鑑:抓 MoneyDJ 基本資料建庫,篩選器(型態/區域/配息頻率/配息月份/
         主題理念/策略/內扣費用)
 - [x] `etf_holdings.py` / `etf_holdings.json` — 個股→ETF 反查(純資料)
@@ -106,7 +110,9 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - [x] 設定 `GEMINI_API_KEY`(三頁 AI 分析:戰略報告/趨勢雷達/台股觀察 + 每日排程)— 已完成,戰略報告實測通過
 - [ ] (選)在 repo Secrets 設 `PROXY_URL` 讓每月排程自動抓 ETF + 股價(NAS 防火牆需放行 Actions IP)
 - [ ] 仍抓不到的個別 ETF:依抓取摘要失敗清單,查正確 etfid/頁面後修正
-- [ ] 可考慮多主題報告
+- [x] 多主題報告(C8 完成:設 `REPORT_TOPICS` 即啟用,預設仍單一主題)
+- [ ] (C9)仍抓不到的個別 ETF:需在線上看抓取摘要、提供正確 etfid/頁面才能修
+      (沙箱連不到 MoneyDJ;多為新股/主動式,MoneyDJ 該檔本身無成分股表,非程式 bug)
 - [ ] 手動刪除已合併的 `claude/brave-ramanujan-fTxA0` 分支(雲端 git 代理擋刪分支 403,
       請於 PR #16 頁面或 GitHub 分支列表手動刪)
 
