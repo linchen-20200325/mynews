@@ -16,6 +16,7 @@
 環境變數:
   - GEMINI_API_KEY                 (必填) Gemini 金鑰
   - GEMINI_MODEL                   (選填) Gemini 模型,預設 gemini-2.5-flash
+  - GEMINI_MAX_TOKENS              (選填) 單次輸出 token 上限,預設 8192
   - REPORT_TOPIC                   (選填) 戰略報告的分析主題(單一)
   - REPORT_TOPICS                  (選填) 多主題戰略報告,以 ; 分隔(第一個為主報告)
   - NEWS_QUERIES                   (選填) 戰略報告抓新聞的關鍵字,以 ; 分隔
@@ -477,6 +478,53 @@ def get_gemini_keys() -> list[str]:
     return keys
 
 
+def _build_gemini_config(types, system_instruction: str):
+    """組 Gemini 生成設定:關閉 thinking、放大輸出上限,避免長 prompt 思考吃光額度。
+
+    舊版 SDK 沒有 ThinkingConfig / max_output_tokens 也能用(逐項 try,失敗就略過該設定)。
+    """
+    kwargs = {
+        "system_instruction": system_instruction,
+        "response_mime_type": "application/json",
+        "temperature": 0.7,
+    }
+    try:
+        kwargs["max_output_tokens"] = int(os.environ.get("GEMINI_MAX_TOKENS", "8192"))
+    except (TypeError, ValueError):
+        pass
+    # 關閉 2.5 系列的 thinking(thinking 會占用輸出 token,長 prompt 易導致空回應)
+    try:
+        kwargs["thinking_config"] = types.ThinkingConfig(thinking_budget=0)
+    except Exception:  # noqa: BLE001 — 舊 SDK 無 ThinkingConfig
+        pass
+    try:
+        return types.GenerateContentConfig(**kwargs)
+    except TypeError:
+        # 某些舊版本不支援部分欄位,退回最小可用設定
+        for k in ("thinking_config", "max_output_tokens"):
+            kwargs.pop(k, None)
+        return types.GenerateContentConfig(**kwargs)
+
+
+def _resp_finish_info(resp) -> str:
+    """從回應取出 finish_reason / 安全阻擋等診斷字串,供空回應時報錯。"""
+    bits: list[str] = []
+    try:
+        for cand in (resp.candidates or []):
+            fr = getattr(cand, "finish_reason", None)
+            if fr is not None:
+                bits.append(f"finish_reason={fr}")
+    except Exception:  # noqa: BLE001
+        pass
+    try:
+        fb = getattr(resp, "prompt_feedback", None)
+        if fb:
+            bits.append(f"prompt_feedback={fb}")
+    except Exception:  # noqa: BLE001
+        pass
+    return "; ".join(bits) or "無候選內容"
+
+
 def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
     """以 Gemini 讀取內容並回傳解析後的 JSON dict;多把金鑰會逐一嘗試。"""
     from google import genai
@@ -487,18 +535,13 @@ def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
     if not keys:
         raise RuntimeError("未設定 GEMINI_API_KEY")
 
+    config = _build_gemini_config(types, system_instruction)
     last_exc: Exception | None = None
     for key in keys:
         try:
             client = genai.Client(api_key=key)
             resp = client.models.generate_content(
-                model=model,
-                contents=user_content,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    response_mime_type="application/json",
-                    temperature=0.7,
-                ),
+                model=model, contents=user_content, config=config,
             )
         except Exception as exc:  # noqa: BLE001 — 金鑰/額度/網路錯誤 → 換下一把
             last_exc = exc
@@ -506,7 +549,8 @@ def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
 
         text = (resp.text or "").strip()
         if not text:
-            last_exc = RuntimeError("Gemini 回傳空內容(可能被安全機制阻擋)")
+            # 空回應多為 thinking 吃光 token(MAX_TOKENS)或安全阻擋;附診斷再換下一把
+            last_exc = RuntimeError(f"Gemini 回傳空內容({_resp_finish_info(resp)})")
             continue
 
         json_text = clean_json_text(text)
