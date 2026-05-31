@@ -1,6 +1,6 @@
 # STATE.md — 專案戰情室
 
-> 最後更新:2026-05-31(房市觀察補 Gemini AI 綜合總結 ai_summary)
+> 最後更新:2026-05-31(修 Gemini 長 prompt 空回應:關閉 thinking + max_output_tokens)
 
 ## 當前環境
 
@@ -127,6 +127,9 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - `PROXY_URL` 含帳密,只走環境變數/Secrets;`.streamlit/secrets.toml` 已 gitignore,不可進版控。
 - 「金鑰讀不到」多為命名/格式問題:名稱需為 `GEMINI_API_KEY`,複數 key 用逗號或陣列。
 - Gemini 模型(`gemini-2.5-flash`)若不可用,以 `GEMINI_MODEL` 覆寫。
+- Gemini 結構化 JSON 已關閉 thinking(`thinking_budget=0`)並設 `max_output_tokens`(預設 8192,
+  可用 `GEMINI_MAX_TOKENS` 覆寫):解決長 prompt(尤其房市:22 縣市房價+18 則新聞)下
+  thinking 吃光輸出 token → 空回應 → 看板一直轉/「無法產生」的問題。空回應會附 finish_reason 診斷。
 - ETF 圖鑑配息月份:Basic0004 只有頻率,真實月份改抓 Basic0005 配息記錄頁;若該頁無近期
   配息記錄(新成立 ETF)則退回頻率推測值(表格標 *)。
 - 成分股抓取約有 ~11 檔抓不到(0058/0059 規模小、00948/00950 及多檔 00xxxA 主動式為
