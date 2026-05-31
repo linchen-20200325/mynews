@@ -1,21 +1,21 @@
 # STATE.md — 專案戰情室
 
-> 最後更新:2026-05-30(代碼淨化與收尾完成)
+> 最後更新:2026-05-31(新增第 6 頁「房市觀察」:預售/成屋冷熱 + 打房政策 + 各縣市每坪房價互動地圖)
 
 ## 當前環境
 
 - 語言/執行:Python 3.11
 - 相依:`google-genai`、`streamlit`、`pandas`、`requests`(見 `requirements.txt`);RSS 爬蟲用標準函式庫
 - 自動化:
-  - `daily_update.yml`:每日 UTC 00:00(台灣 08:00)產戰略報告/趨勢雷達/台股觀察
-  - `update_etf.yml`:每月 1 號透過代理抓 MoneyDJ,更新 ETF 成分股 + 台股收盤價 + ETF 圖鑑
+  - `daily_update.yml`:每日 UTC 00:00(台灣 08:00)產戰略報告/趨勢雷達/台股觀察/房市觀察
+  - `update_etf.yml`:每月 1 號透過代理抓 MoneyDJ + 實價登錄,更新 ETF 成分股 + 台股收盤價 + ETF 圖鑑 + 各縣市房價
 - 金鑰/設定(GitHub Secrets 或 Streamlit Secrets):
   - `GEMINI_API_KEY`(必,支援複數 key 容錯)
   - `PROXY_URL`(NAS 代理,供 ETF 爬蟲走 MoneyDJ;格式 http://帳:密@host:3128)
   - `GITHUB_TOKEN`(選,看板「💾 直接存到 GitHub」用;fine-grained PAT 限本 repo、Contents 讀寫)
   - `LINE_CHANNEL_ACCESS_TOKEN` / `LINE_TO`(選)
-- 看板:Streamlit Community Cloud(`*.streamlit.app`),共 5 頁
-  (戰略報告 / 趨勢雷達 / 台股觀察 / ETF持股反查 / ETF圖鑑)
+- 看板:Streamlit Community Cloud(`*.streamlit.app`),共 6 頁
+  (戰略報告 / 趨勢雷達 / 台股觀察 / 房市觀察 / ETF持股反查 / ETF圖鑑)
 
 ## 架構摘要
 
@@ -28,13 +28,16 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
       去 HTML/去重/時間排序;每則標 `origin`(來源管道)
 - [x] `update_data.py` — Gemini 全包:四維度戰略分析 + 白話文、趨勢雷達、台股觀察;
       多把金鑰容錯 `get_gemini_keys()`;穩健 JSON 清理 + 驗證;失敗隔離
-- [x] 看板 5 頁(`app.py`):
+- [x] 看板 6 頁(`app.py`):
       - 戰略報告:① 抓新聞 → ② Gemini 分析+白話文(兩步手動)
       - 趨勢雷達:① 抓產業新聞 → ② Gemini 排名打分
       - 台股觀察:① 抓財經新聞 → ② Gemini 整理(總表/利多/利空/觀望 + 趨勢/夕陽),
         並併入「ETF 持有檔數」交叉參照
       - ETF 持股反查:輸入個股代號/名稱 → 反查被哪些 ETF 持有;🛰️ 代理按鈕即時建庫;
         篩選(被幾檔 ETF 持有 + 股價範圍);網頁新增(只輸代號、批次、自動抓名稱)/移除 ETF
+      - 房市觀察:① 抓房市新聞 → ② Gemini 判讀預售/成屋冷熱 + 打房政策 + 縣市標記;
+        🛰️ 代理抓內政部實價登錄各縣市每坪房價(成屋/預售),plotly 互動 choropleth 台灣地圖
+        (房價/新聞冷熱可切換)+ 排行表 + 逐筆成交佐證
       - ETF 圖鑑:抓 MoneyDJ 基本資料建庫,篩選器(型態/區域/配息頻率/配息月份/
         主題理念/策略/內扣費用)
 - [x] `etf_holdings.py` / `etf_holdings.json` — 個股→ETF 反查(純資料)
@@ -74,6 +77,12 @@ RSS 爬蟲抓真實新聞 → Gemini 全包分析;另有 ETF 成分股反查(透
 - [x] **側邊欄全域設定「💾 抓取後自動存到 GitHub」**(預設開):勾一次,成分股/圖鑑/股價
       三個抓取完成都自動 commit 回 repo,解決 session 被清掉而誤存回 seed 的問題
 - [x] 成分股真實庫已建立:`etf_holdings.json` = 61 檔(MoneyDJ via proxy),涵蓋全市場個股
+- [x] **房市觀察(第 6 頁)**:`housing_fetcher.py`(房市新聞 + 內政部實價登錄各縣市每坪房價,
+      成屋 `_a`/預售 `_b`,每坪=單價元平方公尺×3.305785,排除車位/店辦/土地、過濾離群值,
+      逐季往前試到抓得到、走 NAS 代理);`update_data.get_housing_analysis()`(Gemini 判讀
+      預售/成屋冷熱 + 打房政策 + 22 縣市標記);`taiwan_counties.geo.json`(g0v 圖資簡化正名、
+      120KB);plotly 互動 choropleth(房價/冷熱切換)+ 排行 + 逐筆佐證;一鍵存 GitHub;
+      每日排程產 `latest_housing.json`、每月排程抓 `house_prices.json`
 - [x] **代碼淨化與收尾完成**:全專案 pyflakes 零警告;清理 `etf_profile_fetcher.py`
       未使用的 `import io` 與函式內重複 `HTMLParser` 局部 import(只減不改,邏輯無損、通過驗證)
 - [x] **Gemini AI 分析上線**:已設 `GEMINI_API_KEY`,戰略報告頁實測產出四維度分析 + 白話文

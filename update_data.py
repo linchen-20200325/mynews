@@ -9,6 +9,8 @@
           回答「現在最紅的產業是什麼」。 [可用 ENABLE_TREND_RADAR=0 關閉]
        C. 台股觀察 (latest_stocks.json):從台灣財經新聞統計被提到最多次的台股標的,
           分利多/利空/觀望,並歸納未來趨勢與夕陽產業。 [可用 ENABLE_STOCK_PICKER=0 關閉]
+       D. 房市觀察 (latest_housing.json):從房市新聞判讀預售/成屋冷熱 + 打房政策 +
+          縣市標記(房價另由 housing_fetcher 走代理抓實價登錄)。 [可用 ENABLE_HOUSING=0 關閉]
   3. 可選:把摘要推播到 LINE (Messaging API)。
 
 環境變數:
@@ -24,6 +26,8 @@
   - STOCK_QUERIES                  (選填) 台股觀察抓新聞的關鍵字,以 ; 分隔
   - ENABLE_TREND_RADAR             (選填) 設為 0/false/no 可關閉趨勢雷達
   - ENABLE_STOCK_PICKER            (選填) 設為 0/false/no 可關閉台股觀察
+  - ENABLE_HOUSING                 (選填) 設為 0/false/no 可關閉房市觀察
+  - HOUSING_MAX / HOUSING_SINCE_HOURS (選填) 房市抓新聞則數上限 / 回溯時數,預設 18 / 72
   - LINE_CHANNEL_ACCESS_TOKEN/LINE_TO (選填) 兩者皆設才推播
 """
 
@@ -38,6 +42,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import housing_fetcher
 import news_fetcher
 
 # ---------------------------------------------------------------------------
@@ -95,6 +100,11 @@ OUTPUT_TRENDS = Path("latest_trends.json")
 TRENDS_ARCHIVE_DIR = Path("data/trends")
 OUTPUT_STOCKS = Path("latest_stocks.json")
 STOCKS_ARCHIVE_DIR = Path("data/stocks")
+OUTPUT_HOUSING = Path("latest_housing.json")
+HOUSING_ARCHIVE_DIR = Path("data/housing")
+
+# 全台 22 縣市(官方「臺」),房市分區標記只能用這些名稱
+TAIWAN_COUNTIES = list(housing_fetcher.CITY_CODES.values())
 
 # 報告所需的頂層欄位 — 解析後做最低限度的結構驗證
 REQUIRED_TOP_LEVEL_KEYS = (
@@ -244,6 +254,66 @@ STOCK_SYSTEM_PROMPT = """\
 """
 
 
+HOUSING_SYSTEM_PROMPT = """\
+你是一位兼具「房地產市場研究員」與「後端資料工程師」的純資料生成器。
+你會收到一批【已由爬蟲抓取的真實台灣房市新聞】(含標題、來源、連結、摘要),
+可能再附上【實價登錄各縣市每坪均價(萬元/坪,政府真實統計)】當參考。
+你的任務是:【只根據這些真實新聞】判讀房市冷熱與打房政策,並把新聞講到的縣市標出來,
+最後【嚴格且唯一】輸出合法 JSON。
+
+【判讀重點】
+1. 預售屋市場(presale_market)與成屋/中古屋市場(resale_market)目前各自偏
+   「熱絡 / 持平 / 冷清」,並用一句白話說明依據(務必對應新聞,不可臆測)。
+2. 打房政策(policy):整理新聞提到的政府打房/信用管制措施(如央行選擇性信用管制、
+   平均地權條例、囤房稅 2.0、限貸令等),每項用白話說明對買賣方的影響。
+3. 分區(regions):把新聞中明確提到的『縣市』各標一個冷熱傾向與 0~100 熱度分,
+   county 欄位只能填以下名稱之一(沒提到的縣市不要硬填):
+   臺北市、新北市、桃園市、臺中市、臺南市、高雄市、基隆市、新竹市、新竹縣、苗栗縣、
+   彰化縣、南投縣、雲林縣、嘉義市、嘉義縣、屏東縣、宜蘭縣、花蓮縣、臺東縣、澎湖縣、金門縣、連江縣。
+
+【真實性】
+- 房價數字若有附參考統計就照用,沒有就不要自己編造價格。冷熱/政策判讀要對應新聞。
+- 你是中立的資訊整理,不是投資建議;不要喊買賣、不要預測漲跌幅。
+
+【強制輸出規範:Zero-Tolerance】
+1. 最終回覆只能有一個合法 JSON 物件,前後不得有任何其他文字或 ```json 標記。
+2. 必須能被 Python json.loads() 解析。heat_score 為 0~100 整數。
+
+【JSON 結構定義 — 必須完全符合】
+{
+  "report_date": "YYYY-MM-DD",
+  "overall_sentiment": "熱絡|持平|冷清",
+  "overall_summary": "一句話總結目前台灣房市氛圍",
+  "presale_market": { "sentiment": "熱絡|持平|冷清", "note": "依據新聞的白話說明" },
+  "resale_market":  { "sentiment": "熱絡|持平|冷清", "note": "依據新聞的白話說明" },
+  "policy": [ { "title": "政策/措施名稱", "impact": "白話說明對市場/買賣方的影響" } ],
+  "regions": [
+    { "county": "縣市名稱", "sentiment": "熱絡|持平|冷清", "heat_score": 70, "note": "該區新聞重點" }
+  ],
+  "evidence_news": [ { "title": "新聞標題", "source": "媒體來源", "url": "連結(若有)" } ]
+}
+"""
+
+
+def format_house_price_block(prices: dict | None) -> str:
+    """把實價登錄各縣市每坪均價整理成給模型的參考區塊(供判讀,不可被竄改成預測)。"""
+    counties = (prices or {}).get("counties") or {}
+    if not counties:
+        return "(本次未附實價登錄房價,請僅依新聞判讀冷熱與政策)"
+    lines = [f"實價登錄季別:{prices.get('season', '—')}(單位:萬元/坪)"]
+    for county, info in counties.items():
+        resale = (info.get("resale") or {}).get("avg_ping_wan")
+        presale = (info.get("presale") or {}).get("avg_ping_wan")
+        parts = []
+        if resale is not None:
+            parts.append(f"成屋約 {resale}")
+        if presale is not None:
+            parts.append(f"預售約 {presale}")
+        if parts:
+            lines.append(f"  {county}:" + "、".join(parts))
+    return "\n".join(lines)
+
+
 def format_news_block(news: list[dict]) -> str:
     """把抓到的新聞排版成餵給模型的文字區塊。"""
     if not news:
@@ -293,6 +363,16 @@ def build_stock_user_prompt(news: list[dict], today: str) -> str:
         f"判斷各自偏利多/利空/觀望並說明原因,另歸納未來趨勢產業與夕陽產業,嚴格輸出 JSON。"
         f"report_date 請填 {today}。\n\n"
         f"{format_news_block(news)}"
+    )
+
+
+def build_housing_user_prompt(news: list[dict], prices: dict | None, today: str) -> str:
+    return (
+        f"今天的日期是 {today}。\n"
+        f"請根據以下真實台灣房市新聞,判讀預售屋與成屋市場的冷熱、整理打房政策,"
+        f"並把新聞提到的縣市標出冷熱與熱度分,嚴格輸出 JSON。report_date 請填 {today}。\n\n"
+        f"【實價登錄參考房價】\n{format_house_price_block(prices)}\n\n"
+        f"【房市新聞】\n{format_news_block(news)}"
     )
 
 
@@ -355,6 +435,14 @@ def validate_stocks(data: dict) -> None:
         raise ValueError("缺少 report_date")
     if not isinstance(data.get("stocks"), list) or not data["stocks"]:
         raise ValueError("stocks 必須是非空陣列")
+
+
+def validate_housing(data: dict) -> None:
+    """房市觀察的最低限度結構驗證。"""
+    if "report_date" not in data:
+        raise ValueError("缺少 report_date")
+    if not isinstance(data.get("regions"), list):
+        raise ValueError("regions 必須是陣列")
 
 
 # ---------------------------------------------------------------------------
@@ -487,6 +575,23 @@ def get_stock_picks(news: list[dict], today: str) -> dict:
     return data
 
 
+def get_housing_analysis(news: list[dict], prices: dict | None, today: str) -> dict:
+    """Gemini 讀房市新聞(+實價登錄參考)→ 冷熱判讀 + 打房政策 + 縣市標記。"""
+    data = call_gemini_for_json(
+        HOUSING_SYSTEM_PROMPT, build_housing_user_prompt(news, prices, today)
+    )
+    data.setdefault("report_date", today)
+    data.setdefault("regions", [])
+    data.setdefault("policy", [])
+    validate_housing(data)
+    # 只保留合法縣市名稱的分區標記,避免模型亂填
+    data["regions"] = [
+        r for r in data["regions"]
+        if isinstance(r, dict) and r.get("county") in TAIWAN_COUNTIES
+    ]
+    return data
+
+
 # ---------------------------------------------------------------------------
 # 新聞抓取設定
 # ---------------------------------------------------------------------------
@@ -562,6 +667,14 @@ def fetch_stock_news() -> list[dict]:
         feeds=feeds,
         limit=int(os.environ.get("STOCK_MAX", "25")),
         since_hours=int(os.environ.get("STOCK_SINCE_HOURS", "48")),
+    )
+
+
+def fetch_housing_news() -> list[dict]:
+    """抓房市新聞(預售/成屋冷熱、打房政策);委派 housing_fetcher。"""
+    return housing_fetcher.fetch_housing_news(
+        limit=int(os.environ.get("HOUSING_MAX", "18")),
+        since_hours=int(os.environ.get("HOUSING_SINCE_HOURS", "72")),
     )
 
 
@@ -648,6 +761,10 @@ def stock_picker_enabled() -> bool:
     return os.environ.get("ENABLE_STOCK_PICKER", "1").lower() not in ("0", "false", "no")
 
 
+def housing_enabled() -> bool:
+    return os.environ.get("ENABLE_HOUSING", "1").lower() not in ("0", "false", "no")
+
+
 # ---------------------------------------------------------------------------
 # 主流程
 # ---------------------------------------------------------------------------
@@ -662,13 +779,13 @@ def main() -> int:
 
     try:
         # A. 戰略報告
-        print(f"[1/4] 爬取真實外電(主題:{topic})...")
+        print(f"[1/5] 爬取真實外電(主題:{topic})...")
         news = fetch_macro_news(topic)
         print(f"  抓到 {len(news)} 則新聞。")
         if not news:
             print("  警告: 未抓到任何新聞,分析將缺乏真實素材。", file=sys.stderr)
 
-        print("[2/4] 向 Gemini 請求四維度戰略分析 + 白話文...")
+        print("[2/5] 向 Gemini 請求四維度戰略分析 + 白話文...")
         analysis = get_macro_analysis(news, topic, today)
         report = {
             "report_date": today,
@@ -686,7 +803,7 @@ def main() -> int:
         # B. 趨勢雷達
         trends = None
         if trend_radar_enabled():
-            print("[3/4] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
+            print("[3/5] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
             try:
                 trend_news = fetch_trend_news()
                 print(f"  抓到 {len(trend_news)} 則產業新聞。")
@@ -698,11 +815,11 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 趨勢雷達失敗不影響戰略報告
                 print(f"  警告: 趨勢雷達產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[3/4] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
+            print("[3/5] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
 
         # C. 台股觀察
         if stock_picker_enabled():
-            print("[4/4] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
+            print("[4/5] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
             try:
                 stock_news = fetch_stock_news()
                 print(f"  抓到 {len(stock_news)} 則台灣財經新聞。")
@@ -714,7 +831,24 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 台股觀察失敗不影響戰略報告
                 print(f"  警告: 台股觀察產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[4/4] ENABLE_STOCK_PICKER=0,略過台股觀察。")
+            print("[4/5] ENABLE_STOCK_PICKER=0,略過台股觀察。")
+
+        # D. 房市觀察(房價走代理,排程無代理時就只用新聞 + repo 既有房價當參考)
+        if housing_enabled():
+            print("[5/5] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
+            try:
+                housing_news = fetch_housing_news()
+                print(f"  抓到 {len(housing_news)} 則房市新聞。")
+                prices = housing_fetcher.load_house_prices()
+                housing = get_housing_analysis(housing_news, prices, today)
+                housing["raw_news"] = housing_news
+                save_json(OUTPUT_HOUSING, housing)
+                save_json(HOUSING_ARCHIVE_DIR / f"{today}.json", housing)
+                print(f"  房市觀察完成,整體氛圍:{housing.get('overall_sentiment', '—')}")
+            except Exception as exc:  # noqa: BLE001 — 房市觀察失敗不影響戰略報告
+                print(f"  警告: 房市觀察產生失敗:{exc}", file=sys.stderr)
+        else:
+            print("[5/5] ENABLE_HOUSING=0,略過房市觀察。")
 
         print(
             f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"

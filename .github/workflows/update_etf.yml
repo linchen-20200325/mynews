@@ -43,14 +43,20 @@ jobs:
         # 圖鑑失敗不影響其他
         run: python etf_profile_fetcher.py || echo "ETF 圖鑑抓取失敗,略過"
 
+      - name: Fetch house prices
+        env:
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        # 房價(實價登錄)失敗不影響其他
+        run: python housing_fetcher.py || echo "實價登錄房價抓取失敗,略過"
+
       - name: Commit and Push Changes
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add etf_holdings.json stock_prices.json etf_profiles.json
+          git add etf_holdings.json stock_prices.json etf_profiles.json house_prices.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "🤖 自動更新:ETF 成分股 + 台股收盤價 + ETF 圖鑑"
+            git commit -m "🤖 自動更新:ETF 成分股 + 台股收盤價 + ETF 圖鑑 + 各縣市房價"
             git push
           fi

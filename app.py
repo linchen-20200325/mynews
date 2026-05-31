@@ -18,6 +18,7 @@ import etf_fetcher  # 透過代理抓 MoneyDJ 成分股建庫
 import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
 import etf_profile_fetcher  # ETF 圖鑑:抓基本資料(型態/配息/費用/策略)
 import github_store  # 一鍵把資料檔 commit 回 GitHub repo
+import housing_fetcher  # 房市觀察:抓房市新聞 + 實價登錄各縣市每坪房價
 import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
@@ -28,12 +29,22 @@ TRENDS_PATH = Path("latest_trends.json")
 TRENDS_ARCHIVE_DIR = Path("data/trends")
 STOCKS_PATH = Path("latest_stocks.json")
 STOCKS_ARCHIVE_DIR = Path("data/stocks")
+HOUSING_PATH = Path("latest_housing.json")
+HOUSING_ARCHIVE_DIR = Path("data/housing")
 ETF_HOLDINGS_PATH = Path("etf_holdings.json")
+GEOJSON_PATH = Path("taiwan_counties.geo.json")
 
 SENTIMENT_STYLE = {
     "利多": ("🟢", "success"),
     "利空": ("🔴", "error"),
     "觀望": ("🟡", "info"),
+}
+
+# 房市冷熱配色(熱絡/持平/冷清)
+HOUSING_SENTIMENT_STYLE = {
+    "熱絡": ("🔥", "error"),
+    "持平": ("⚖️", "info"),
+    "冷清": ("❄️", "success"),
 }
 
 ANALYSIS_SECTIONS = [
@@ -1065,6 +1076,269 @@ def render_etf_lookup(data: dict | None = None) -> None:
 
 
 # ---------------------------------------------------------------------------
+# 房市觀察
+# ---------------------------------------------------------------------------
+
+@st.cache_data(show_spinner=False)
+def load_taiwan_geojson() -> dict | None:
+    """讀取內建的台灣縣市 GeoJSON(離線、已正名為官方『臺』與桃園市)。"""
+    if not GEOJSON_PATH.exists():
+        return None
+    try:
+        return json.loads(GEOJSON_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+
+
+def _price_values(prices: dict, kind: str) -> dict:
+    """從房價資料取 {縣市: 每坪均價}(kind: 'resale' 成屋 / 'presale' 預售)。"""
+    out: dict[str, float] = {}
+    for county, info in (prices.get("counties") or {}).items():
+        v = (info.get(kind) or {}).get("avg_ping_wan")
+        if isinstance(v, (int, float)):
+            out[county] = v
+    return out
+
+
+def _heat_values(analysis: dict) -> dict:
+    """從 Gemini 分區標記取 {縣市: 熱度分}。"""
+    out: dict[str, float] = {}
+    for r in analysis.get("regions") or []:
+        c, h = r.get("county"), r.get("heat_score")
+        if c and isinstance(h, (int, float)):
+            out[c] = h
+    return out
+
+
+def render_taiwan_choropleth(values: dict, legend: str, scale: str) -> None:
+    """用 plotly 畫台灣縣市互動 choropleth;沒裝 plotly 時退回表格。"""
+    df = pd.DataFrame(
+        [{"縣市": c, legend: v} for c, v in values.items()]
+    ).sort_values(legend, ascending=False)
+    if df.empty:
+        st.info("尚無可上色的資料。")
+        return
+    geo = load_taiwan_geojson()
+    try:
+        import plotly.express as px
+    except Exception:  # noqa: BLE001 — 未安裝 plotly:退回表格 + 長條圖
+        st.caption("（未安裝 plotly,以表格替代地圖)")
+        st.bar_chart(df.set_index("縣市"))
+        st.dataframe(df, use_container_width=True, hide_index=True)
+        return
+    if not geo:
+        st.warning("找不到 taiwan_counties.geo.json,改用長條圖顯示。")
+        st.bar_chart(df.set_index("縣市"))
+        return
+    fig = px.choropleth(
+        df, geojson=geo, locations="縣市", featureidkey="properties.name",
+        color=legend, color_continuous_scale=scale,
+        hover_data={legend: ":.1f"},
+    )
+    fig.update_geos(fitbounds="locations", visible=False)
+    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0}, height=560,
+                      dragmode=False)
+    st.plotly_chart(fig, use_container_width=True)
+
+
+def render_house_price_panel() -> None:
+    """透過 NAS 代理抓內政部實價登錄,建立各縣市每坪房價庫 + 存檔。"""
+    with st.container(border=True):
+        st.markdown("#### 🛰️ 透過 NAS 代理更新各縣市房價(內政部實價登錄)")
+        st.caption("經 PROXY_URL 代理抓內政部最新季別實價登錄,彙整各縣市『成屋/預售屋』"
+                   "每坪均價(萬元/坪),並保留逐筆成交當佐證。房價為政府事實資料,非 AI 推測。")
+        proxy = ensure_proxy()
+        if not proxy:
+            st.warning("未偵測到 PROXY_URL。實價登錄站會擋境外 IP,請先在 Streamlit Secrets 設定代理。")
+        auto = st.session_state.get("auto_save_github", True)
+        if st.button("🔄 立即抓取 / 更新各縣市房價", use_container_width=True, disabled=not proxy):
+            with st.spinner("透過代理抓實價登錄季度資料中…(下載+解析約數十秒)"):
+                logs: list[str] = []
+                try:
+                    data = housing_fetcher.fetch_house_prices(proxy=proxy, log=logs.append)
+                    st.session_state["house_prices_live"] = data
+                    st.success(f"完成!季別 {data.get('season', '—')},共 "
+                               f"{len(data.get('counties', {}))} 縣市。")
+                    if auto:
+                        save_to_github("house_prices.json", data, f"(季別 {data.get('season', '')})")
+                except Exception as exc:  # noqa: BLE001
+                    st.error(f"抓取失敗:{exc}")
+                if logs:
+                    with st.expander("📋 抓取明細"):
+                        st.code("\n".join(logs))
+        # 存檔區:常駐
+        st.divider()
+        st.markdown("**💾 存檔房價資料庫**")
+        live = st.session_state.get("house_prices_live")
+        price_data = live or housing_fetcher.load_house_prices() or {}
+        n_c = len(price_data.get("counties", {}))
+        st.caption(
+            f"將存入本回合抓到的最新房價(季別 {price_data.get('season', '—')},{n_c} 縣市)。"
+            if live else
+            f"尚未在本回合抓取;可先按上方「🔄 立即抓取」,或直接存 repo 既有的 {n_c} 縣市。"
+        )
+        _str = json.dumps(price_data, ensure_ascii=False, indent=2)
+        render_github_save("house_prices.json", _str, key="house_prices")
+        st.download_button(
+            "⬇️ 下載 house_prices.json(備援:手動上傳)",
+            data=_str, file_name="house_prices.json", mime="application/json",
+        )
+
+
+def render_housing_live_panel() -> None:
+    """房市觀察第一步:只抓房市新聞(冷熱/政策判讀另由 Gemini 按鈕觸發)。"""
+    with st.container(border=True):
+        st.markdown("#### ⚡ 即時產生(免等每日排程)")
+        st.caption("從房市新聞判讀預售/成屋冷熱、整理打房政策,並標出各縣市。"
+                   "流程:① 先抓房市新聞 → ② 看過後再按 Gemini 判讀。")
+        if st.button("🔄 ① 立即抓取房市新聞", use_container_width=True):
+            with st.spinner("抓取房市新聞中…"):
+                try:
+                    st.session_state["live_housing_news"] = update_data.fetch_housing_news()
+                    st.session_state.pop("live_housing", None)
+                except Exception as exc:  # noqa: BLE001
+                    st.session_state["live_housing_news"] = []
+                    st.error(f"抓取失敗:{exc}")
+
+
+def generate_live_housing() -> None:
+    """房市觀察第二步:對『已抓到的房市新聞』+ 房價參考請 Gemini 判讀。"""
+    news = st.session_state.get("live_housing_news", [])
+    prices = st.session_state.get("house_prices_live") or housing_fetcher.load_house_prices()
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    data = update_data.get_housing_analysis(news, prices, today)
+    data["raw_news"] = news
+    st.session_state["live_housing"] = data
+    st.session_state.pop("live_housing_news", None)
+
+
+def render_housing_price_map() -> None:
+    """各縣市每坪房價地圖(成屋/預售切換)+ 排行表 + 逐筆佐證。"""
+    prices = st.session_state.get("house_prices_live") or housing_fetcher.load_house_prices()
+    if not prices or not prices.get("counties"):
+        st.info("尚無房價資料。請先在上方「🛰️ 透過 NAS 代理更新各縣市房價」抓取(需 PROXY_URL)。")
+        return
+
+    st.subheader("🗺️ 各縣市每坪房價地圖")
+    st.caption(f"資料來源:內政部實價登錄　季別:{prices.get('season', '—')}　"
+               f"單位:{prices.get('unit', '萬元/坪')}　|　{prices.get('as_of', '')}")
+    kind_label = st.radio("選擇市場", ["成屋(中古/新成屋)", "預售屋"], horizontal=True, key="house_map_kind")
+    kind = "resale" if kind_label.startswith("成屋") else "presale"
+    values = _price_values(prices, kind)
+    if not values:
+        st.info(f"本季{kind_label}無足夠住宅成交資料可上色。")
+        return
+    render_taiwan_choropleth(values, legend="每坪(萬元)", scale="OrRd")
+
+    # 排行表
+    counties = prices.get("counties", {})
+    st.markdown("**📋 各縣市每坪房價排行(萬元/坪)**")
+    st.dataframe(
+        [
+            {
+                "縣市": c,
+                "成屋每坪": (counties[c].get("resale") or {}).get("avg_ping_wan"),
+                "成屋中位數": (counties[c].get("resale") or {}).get("median_ping_wan"),
+                "成屋筆數": (counties[c].get("resale") or {}).get("count"),
+                "預售每坪": (counties[c].get("presale") or {}).get("avg_ping_wan"),
+                "預售筆數": (counties[c].get("presale") or {}).get("count"),
+            }
+            for c in sorted(
+                counties,
+                key=lambda c: (counties[c].get(kind) or {}).get("avg_ping_wan") or 0,
+                reverse=True,
+            )
+        ],
+        use_container_width=True, hide_index=True,
+    )
+
+    # 逐筆佐證(實價登錄原始成交)
+    with st.expander("🔍 逐筆成交佐證(實價登錄原始資料)"):
+        sel = st.selectbox("選擇縣市", list(counties.keys()), key="house_sample_county")
+        block = counties.get(sel, {})
+        for kkind, klabel in (("resale", "成屋"), ("presale", "預售屋")):
+            samples = (block.get(kkind) or {}).get("samples") or []
+            if samples:
+                st.markdown(f"**{klabel}近期成交（{len(samples)} 筆樣本）**")
+                st.dataframe(
+                    [
+                        {"行政區": s.get("district", ""), "型態": s.get("type", ""),
+                         "每坪(萬)": s.get("ping_wan"), "總價(萬)": s.get("total_wan"),
+                         "交易日": s.get("date", ""), "門牌": s.get("address", "")}
+                        for s in samples
+                    ],
+                    use_container_width=True, hide_index=True,
+                )
+    st.caption("⚠️ 每坪均價由實價登錄住宅成交(房地,排除純車位)即時彙整,可能與其他統計口徑略有差異;僅供參考,非投資建議。")
+
+
+def render_housing(analysis: dict | None) -> None:
+    """房市觀察主畫面:房價地圖 +(若有)Gemini 冷熱/政策/分區判讀。"""
+    # 1) 房價地圖(真實資料,獨立於 AI 判讀)
+    render_housing_price_map()
+    st.divider()
+
+    if not analysis:
+        st.info("尚無房市冷熱/政策判讀。可用上方「⚡ 即時產生」抓房市新聞後請 Gemini 判讀。")
+        return
+
+    # 2) 整體氛圍 + 預售/成屋冷熱
+    st.subheader("🌡️ 房市冷熱判讀")
+    overall = analysis.get("overall_sentiment", "—")
+    emoji, _ = HOUSING_SENTIMENT_STYLE.get(overall, ("", "info"))
+    st.metric("整體氛圍", f"{emoji} {overall}")
+    if analysis.get("overall_summary"):
+        st.info(analysis["overall_summary"])
+    c1, c2 = st.columns(2)
+    for col, key, title in ((c1, "presale_market", "🏗️ 預售屋市場"),
+                            (c2, "resale_market", "🏠 成屋 / 中古屋市場")):
+        m = analysis.get(key) or {}
+        s = m.get("sentiment", "—")
+        e, _ = HOUSING_SENTIMENT_STYLE.get(s, ("", "info"))
+        with col:
+            with st.container(border=True):
+                st.markdown(f"**{title}**　{e} {s}")
+                st.caption(m.get("note", ""))
+
+    # 3) 分區冷熱地圖(Gemini 熱度分)
+    heat = _heat_values(analysis)
+    if heat:
+        st.subheader("🗺️ 各縣市新聞冷熱地圖")
+        st.caption("依房市新聞判讀的相對熱度(0–100,越紅越熱);只標出新聞有提到的縣市。")
+        render_taiwan_choropleth(heat, legend="新聞熱度", scale="RdYlBu_r")
+        regions = sorted(analysis["regions"], key=lambda r: r.get("heat_score", 0), reverse=True)
+        st.dataframe(
+            [{"縣市": r.get("county", ""), "傾向": r.get("sentiment", ""),
+              "熱度": r.get("heat_score", ""), "重點": r.get("note", "")} for r in regions],
+            use_container_width=True, hide_index=True,
+        )
+
+    # 4) 打房政策
+    policy = analysis.get("policy") or []
+    if policy:
+        st.subheader("🏛️ 打房政策與信用管制")
+        for p in policy:
+            with st.container(border=True):
+                st.markdown(f"**{p.get('title', '')}**")
+                st.write(p.get("impact", ""))
+
+    # 5) 佐證新聞
+    evidence = analysis.get("evidence_news") or analysis.get("raw_news") or []
+    if evidence:
+        with st.expander("📰 佐證新聞"):
+            for n in evidence:
+                title = n.get("title", "")
+                src = n.get("source", "")
+                url = n.get("url", "")
+                line = f"- {title}" + (f" — _{src}_" if src else "")
+                if url:
+                    line += f" [連結]({url})"
+                st.markdown(line)
+
+    st.caption("⚠️ 冷熱與政策判讀由 AI 自動整理新聞而成,房價為實價登錄事實資料;僅供參考,非投資建議。")
+
+
+# ---------------------------------------------------------------------------
 # 主程式
 # ---------------------------------------------------------------------------
 
@@ -1074,7 +1348,7 @@ def main() -> None:
 
     st.sidebar.header("📂 報告類型")
     report_type = st.sidebar.radio(
-        "選擇", ["戰略報告", "趨勢雷達", "台股觀察", "ETF持股反查", "ETF圖鑑"]
+        "選擇", ["戰略報告", "趨勢雷達", "台股觀察", "房市觀察", "ETF持股反查", "ETF圖鑑"]
     )
     st.sidebar.divider()
     with st.sidebar:
@@ -1266,6 +1540,60 @@ def main() -> None:
             st.warning("尚無每日台股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_stocks(data)
+    elif report_type == "房市觀察":
+        st.header("🏠 房市觀察 — 預售/成屋冷熱、打房政策與各縣市房價")
+        render_house_price_panel()
+        render_housing_live_panel()
+
+        # 1) 本次即時產生的房市判讀優先顯示
+        if st.session_state.get("live_housing"):
+            live = st.session_state["live_housing"]
+            st.success("⚡ 以下為剛剛即時產生的房市觀察(尚未存檔)。")
+            st.download_button(
+                "⬇️ 下載房市觀察 JSON",
+                data=json.dumps(live, ensure_ascii=False, indent=2),
+                file_name=f"housing_{live.get('report_date', 'latest')}.json",
+                mime="application/json",
+            )
+            st.divider()
+            render_housing(live)
+            return
+
+        # 2) 已抓到房市新聞、尚未判讀:顯示新聞,並提供第二步的 Gemini 按鈕
+        if "live_housing_news" in st.session_state:
+            news = st.session_state["live_housing_news"]
+            st.divider()
+            st.subheader("📰 即時抓取的房市新聞")
+            if news:
+                st.success(f"已抓到 {len(news)} 則房市新聞,確認後再請 Gemini 判讀冷熱與政策:")
+                has_key = ensure_gemini_key()
+                if st.button(
+                    "🧠 ② 用 Gemini 判讀房市冷熱 + 打房政策 + 分區",
+                    use_container_width=True,
+                    disabled=not has_key,
+                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+                ):
+                    with st.spinner("Gemini 判讀中(約 10–30 秒)…"):
+                        try:
+                            generate_live_housing()
+                            st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"產生房市觀察失敗:{exc}")
+                if not has_key:
+                    render_key_hint()
+                st.download_button(
+                    "⬇️ 下載房市新聞 JSON",
+                    data=json.dumps(news, ensure_ascii=False, indent=2),
+                    file_name="housing_news.json",
+                    mime="application/json",
+                )
+                render_news_cards(news)
+            else:
+                st.info("這次沒抓到房市新聞,稍後再試或調整關鍵字。")
+            return
+
+        # 3) 否則顯示每日排程存檔(地圖在沒有 AI 判讀時也會顯示房價)
+        render_housing(pick_report(HOUSING_PATH, HOUSING_ARCHIVE_DIR))
     elif report_type == "ETF持股反查":
         st.header("🧩 ETF 持股反查 — 個股被幾檔 ETF 持有")
         render_etf_crawl_panel()

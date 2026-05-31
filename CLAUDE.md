@@ -14,9 +14,11 @@
 | 抓新聞 | `news_fetcher.py` | 標準函式庫(urllib + xml.etree) | 從可信來源(Google News RSS + 官方 feed)抓真實外電,只取標題/來源/連結/摘要 |
 | 分析 | Gemini `gemini-2.5-flash` | `google-genai` | 讀取抓到的新聞 → 四維度戰略分析 + `laymans_dictionary` → JSON |
 | 趨勢雷達 | Gemini `gemini-2.5-flash` | `google-genai` | 讀取產業新聞 → 最熱門產業排名打分 |
+| 房市觀察 | `housing_fetcher.py` + Gemini | stdlib + `requests` + `google-genai` | 抓房市新聞 → Gemini 判讀預售/成屋冷熱 + 打房政策 + 縣市標記;另透過 NAS 代理抓內政部實價登錄各縣市每坪房價(真實) |
 
 > Gemini 用官方 `google-genai` SDK,**不要**用 OpenAI 相容層代換。
 > 爬蟲只用新聞網站主動開放的 RSS/feed,**嚴禁**硬爬付費牆網站全文(違反服務條款/著作權)。
+> 房價一律取內政部實價登錄官方批次資料,**嚴禁**用 AI 猜測房價;Gemini 只負責判讀冷熱/政策。
 
 ## 資料契約 (JSON Schema)
 
@@ -30,6 +32,15 @@
 `trends` 陣列;每個 trend 含 `rank`、`industry`、`heat_score`(0~100)、
 `signals`(funding/hiring/policy/technology)、`leading_indicators`、
 `evidence_news`、`summary`。詳見 `validate_trends()`。
+
+房市觀察 `latest_housing.json` 與 `data/housing/<date>.json` 含 `report_date`、
+`overall_sentiment`(熱絡/持平/冷清)、`presale_market` / `resale_market`
+(各含 `sentiment`、`note`)、`policy` 陣列(`title`/`impact`)、`regions` 陣列
+(`county`/`sentiment`/`heat_score`/`note`,county 限 22 縣市官方名)、`evidence_news`、
+`raw_news`。詳見 `validate_housing()`。
+房價 `house_prices.json` 含 `as_of`、`season`、`unit`(萬元/坪)、`counties`,
+每縣市含 `resale` / `presale`(各 `avg_ping_wan`/`median_ping_wan`/`count`/`samples`)。
+縣市地圖底圖為 `taiwan_counties.geo.json`(內建、已正名臺/桃園市,`properties.name` 對應縣市)。
 
 ## 開發守則
 
@@ -49,7 +60,7 @@
 
 ```bash
 pip install -r requirements.txt
-python -m py_compile update_data.py app.py news_fetcher.py   # 語法檢查
+python -m py_compile update_data.py app.py news_fetcher.py housing_fetcher.py   # 語法檢查
 python update_data.py                         # 產生報告(需金鑰)
 streamlit run app.py                          # 啟動看板
 ```
