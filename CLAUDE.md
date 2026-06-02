@@ -105,3 +105,15 @@ streamlit run app.py                          # 啟動看板
 
 - 功能開發在指定的 feature 分支,提交訊息清楚描述變更。
 - 自動化(GitHub Actions)以 `github-actions[bot]` 身分 commit 更新後的 JSON。
+
+### §4 PR 規範與「跳 PR 直推」例外
+
+原則:**所有變更一律走 PR**(保留 CI gate 與變更紀錄)。唯下列「不影響功能行為」
+的純維護性改動,可直接推 `main`(可用 `scripts/quick_merge.sh`):
+
+1. `STATE.md` / `CLAUDE.md` / 程式註解 / typo 修正。
+2. 版本字串 bump(僅版本號字串,**不含**任何程式邏輯變動)。
+3. 不影響功能行為的純文件改動(README、文件、設定說明等)。
+
+> 其他任何牽涉程式邏輯、資料契約、爬蟲/分析行為的變更,一律走 PR,不得直推。
+> 判斷準則:**若改動可能改變執行結果或行為,就走 PR**;有疑慮一律走 PR。
