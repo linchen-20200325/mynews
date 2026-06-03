@@ -82,6 +82,13 @@ DEFAULT_STOCK_QUERIES = [
     "台股 類股 漲跌",
     "上市 上櫃 營收 財報",
 ]
+DEFAULT_US_STOCK_QUERIES = [
+    "美股 個股 焦點",
+    "輝達 蘋果 微軟 特斯拉 美股",
+    "那斯達克 標普 道瓊",
+    "美股 財報 營收",
+    "聯準會 升息 美股 科技股",
+]
 
 # Google News 分類頭條(不帶關鍵字的『動態』來源,確保不漏突發大事;
 # 只取與主題相關的分類,避免娛樂/體育等離題內容)。可用 NEWS_TOPICS / TREND_TOPICS 覆寫。
@@ -104,6 +111,8 @@ OUTPUT_TRENDS = Path("latest_trends.json")
 TRENDS_ARCHIVE_DIR = Path("data/trends")
 OUTPUT_STOCKS = Path("latest_stocks.json")
 STOCKS_ARCHIVE_DIR = Path("data/stocks")
+OUTPUT_US_STOCKS = Path("latest_us_stocks.json")
+US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
 OUTPUT_HOUSING = Path("latest_housing.json")
 HOUSING_ARCHIVE_DIR = Path("data/housing")
 
@@ -258,6 +267,55 @@ STOCK_SYSTEM_PROMPT = """\
 """
 
 
+US_STOCK_SYSTEM_PROMPT = """\
+你是一位兼具「美股研究員」與「後端資料工程師」的純資料生成器。
+你會收到一批【已由爬蟲抓取的真實美股相關財經新聞】(含標題、來源、連結、摘要)。
+你的任務是:【只根據這些真實新聞】,整理出新聞中被提到的美股標的(個股或類股),
+判斷各自目前偏多/偏空,並歸納未來趨勢與夕陽產業,最後【嚴格且唯一】輸出合法 JSON。
+
+【做法】
+1. 找出新聞中出現的美股個股/類股,估算每個標的「被幾則新聞提到」(mention_count,
+   以提供的新聞為準),依此由高到低排序,優先列出最常被提到的。
+2. 依新聞內容判斷每個標的目前的傾向 sentiment,只能填三種之一:
+   - "利多":新聞偏正面(營收成長、訂單、題材發酵、機構買超等)
+   - "利空":新聞偏負面(衰退、砍單、利空消息、機構賣超等)
+   - "觀望":多空不明、消息中性或雜訊,建議再觀察
+3. reason 用一句白話說明為何歸到該類(務必對應新聞內容,不可臆測)。
+4. future_trends:從新聞歸納「未來看好、動能向上」的趨勢產業/題材。
+5. sunset_industries:歸納「轉弱、結構性走下坡、夕陽」的產業(若新聞沒提到可給空陣列)。
+
+【真實性】
+- 只能根據提供的新聞;個股名稱要正確,ticker(美股代號,如 NVDA、AAPL)若新聞未明確
+  提及就留空字串,嚴禁亂編代號或虛構新聞、數據。
+- 你是中立的資訊整理,不是投資建議;不要喊買賣、不要給目標價。
+
+【強制輸出規範:Zero-Tolerance】
+1. 最終回覆只能有一個合法 JSON 物件,前後不得有任何其他文字或 ```json 標記。
+2. 必須能被 Python json.loads() 解析。
+
+【JSON 結構定義 — 必須完全符合】
+{
+  "report_date": "YYYY-MM-DD",
+  "summary": "一句話總結今日美股新聞焦點",
+  "stocks": [
+    {
+      "name": "個股或類股名稱",
+      "ticker": "美股代號(沒有就空字串)",
+      "sector": "所屬產業",
+      "mention_count": 3,
+      "sentiment": "利多",
+      "reason": "依新聞說明偏多/偏空/觀望的原因",
+      "evidence_news": [
+        { "title": "新聞標題", "source": "媒體來源", "url": "連結(若有)" }
+      ]
+    }
+  ],
+  "future_trends": ["未來看好的趨勢產業/題材", "..."],
+  "sunset_industries": ["轉弱或夕陽產業", "..."]
+}
+"""
+
+
 HOUSING_SYSTEM_PROMPT = """\
 你是一位兼具「房地產市場研究員」與「後端資料工程師」的純資料生成器。
 你會收到【實價登錄各縣市每坪均價與歷年趨勢(政府真實統計)】+【真實台灣房市新聞】。
@@ -396,6 +454,16 @@ def build_stock_user_prompt(news: list[dict], today: str) -> str:
     )
 
 
+def build_us_stock_user_prompt(news: list[dict], today: str) -> str:
+    return (
+        f"今天的日期是 {today}。\n"
+        f"請根據以下真實美股相關財經新聞,整理出被提到的美股標的,統計提及次數並由高到低排序,"
+        f"判斷各自偏利多/利空/觀望並說明原因,另歸納未來趨勢產業與夕陽產業,嚴格輸出 JSON。"
+        f"report_date 請填 {today}。\n\n"
+        f"{format_news_block(news)}"
+    )
+
+
 def format_house_history_block(history: dict | None, top_n: int = 8) -> str:
     """把歷年每坪均價整理成精簡趨勢區塊(取成屋成交量較大的代表縣市,控制 token)。"""
     counties = (history or {}).get("counties") or {}
@@ -484,6 +552,14 @@ def validate_trends(data: dict) -> None:
 
 def validate_stocks(data: dict) -> None:
     """台股觀察的最低限度結構驗證。"""
+    if "report_date" not in data:
+        raise ValueError("缺少 report_date")
+    if not isinstance(data.get("stocks"), list) or not data["stocks"]:
+        raise ValueError("stocks 必須是非空陣列")
+
+
+def validate_us_stocks(data: dict) -> None:
+    """美股觀察的最低限度結構驗證(與台股同契約)。"""
     if "report_date" not in data:
         raise ValueError("缺少 report_date")
     if not isinstance(data.get("stocks"), list) or not data["stocks"]:
@@ -671,6 +747,20 @@ def get_stock_picks(news: list[dict], today: str) -> dict:
     return data
 
 
+def get_us_stock_picks(news: list[dict], today: str) -> dict:
+    """Gemini 讀美股財經新聞 → 美股標的(利多/利空/觀望)+ 趨勢/夕陽產業。"""
+    data = call_gemini_for_json(
+        US_STOCK_SYSTEM_PROMPT, build_us_stock_user_prompt(news, today)
+    )
+    data.setdefault("report_date", today)
+    data.setdefault("future_trends", [])
+    data.setdefault("sunset_industries", [])
+    validate_us_stocks(data)
+    # 依被提及次數由高到低排序(模型沒排好時補救)
+    data["stocks"].sort(key=lambda s: s.get("mention_count", 0), reverse=True)
+    return data
+
+
 def get_housing_analysis(news: list[dict], prices: dict | None, today: str,
                         history: dict | None = None) -> dict:
     """Gemini 讀房市新聞 + 實價登錄當期/歷年 → 冷熱 + 打房政策 + 縣市標記 + 買方總結。"""
@@ -770,6 +860,25 @@ def fetch_stock_news() -> list[dict]:
         feeds=feeds,
         limit=int(os.environ.get("STOCK_MAX", "25")),
         since_hours=int(os.environ.get("STOCK_SINCE_HOURS", "48")),
+    )
+
+
+def fetch_us_stock_news() -> list[dict]:
+    """抓美股相關財經新聞(較大量,以利統計被提及次數)。"""
+    lang = os.environ.get("NEWS_LANG", "zh")
+    region = os.environ.get("NEWS_REGION", "TW")
+    queries = parse_queries("US_STOCK_QUERIES", DEFAULT_US_STOCK_QUERIES)
+    # 美股聚焦財經分類頭條 + 中央社財經 feed
+    feeds = {"中央社 財經": news_fetcher.CREDIBLE_FEEDS.get("中央社 財經", "")}
+    feeds = {k: v for k, v in feeds.items() if v}
+    feeds.update(section_feeds(["BUSINESS"], lang, region))
+    return news_fetcher.fetch_news(
+        queries,
+        lang=lang,
+        region=region,
+        feeds=feeds,
+        limit=int(os.environ.get("US_STOCK_MAX", "25")),
+        since_hours=int(os.environ.get("US_STOCK_SINCE_HOURS", "48")),
     )
 
 
@@ -878,6 +987,10 @@ def stock_picker_enabled() -> bool:
     return os.environ.get("ENABLE_STOCK_PICKER", "1").lower() not in ("0", "false", "no")
 
 
+def us_stock_picker_enabled() -> bool:
+    return os.environ.get("ENABLE_US_STOCK_PICKER", "1").lower() not in ("0", "false", "no")
+
+
 def housing_enabled() -> bool:
     return os.environ.get("ENABLE_HOUSING", "1").lower() not in ("0", "false", "no")
 
@@ -929,7 +1042,7 @@ def main() -> int:
         # A. 戰略報告(支援多主題:第一個為主報告,維持 latest_report.json 向後相容)
         topics = parse_report_topics()
         multi = len(topics) > 1
-        print(f"[1/5] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
+        print(f"[1/6] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
 
         # 主報告必成功(失敗→整體非零碼);其餘主題失敗只警告不中斷。
         print(f"  ▸ 主主題:{topics[0]}")
@@ -942,7 +1055,7 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 次主題失敗不影響主報告
                 print(f"  警告: 主題「{extra_topic}」產生失敗:{exc}", file=sys.stderr)
 
-        print("[2/5] 戰略分析完成,寫入報告檔...")
+        print("[2/6] 戰略分析完成,寫入報告檔...")
         save_json(OUTPUT_LATEST, report)
         save_json(ARCHIVE_DIR / f"{today}.json", report)
         if multi:
@@ -954,7 +1067,7 @@ def main() -> int:
         # B. 趨勢雷達
         trends = None
         if trend_radar_enabled():
-            print("[3/5] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
+            print("[3/6] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
             try:
                 trend_news = fetch_trend_news()
                 print(f"  抓到 {len(trend_news)} 則產業新聞。")
@@ -966,11 +1079,11 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 趨勢雷達失敗不影響戰略報告
                 print(f"  警告: 趨勢雷達產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[3/5] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
+            print("[3/6] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
 
         # C. 台股觀察
         if stock_picker_enabled():
-            print("[4/5] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
+            print("[4/6] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
             try:
                 stock_news = fetch_stock_news()
                 print(f"  抓到 {len(stock_news)} 則台灣財經新聞。")
@@ -982,12 +1095,28 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 台股觀察失敗不影響戰略報告
                 print(f"  警告: 台股觀察產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[4/5] ENABLE_STOCK_PICKER=0,略過台股觀察。")
+            print("[4/6] ENABLE_STOCK_PICKER=0,略過台股觀察。")
 
-        # D. 房市觀察(房價走代理,排程無代理時就只用新聞 + repo 既有房價當參考)
+        # D. 美股觀察
+        if us_stock_picker_enabled():
+            print("[5/6] 爬取美股財經新聞並向 Gemini 整理美股標的...")
+            try:
+                us_stock_news = fetch_us_stock_news()
+                print(f"  抓到 {len(us_stock_news)} 則美股財經新聞。")
+                us_stocks = get_us_stock_picks(us_stock_news, today)
+                save_json(OUTPUT_US_STOCKS, us_stocks)
+                save_json(US_STOCKS_ARCHIVE_DIR / f"{today}.json", us_stocks)
+                top = "、".join(s.get("name", "") for s in us_stocks["stocks"][:5])
+                print(f"  美股觀察完成,最常被提到:{top}")
+            except Exception as exc:  # noqa: BLE001 — 美股觀察失敗不影響戰略報告
+                print(f"  警告: 美股觀察產生失敗:{exc}", file=sys.stderr)
+        else:
+            print("[5/6] ENABLE_US_STOCK_PICKER=0,略過美股觀察。")
+
+        # E. 房市觀察(房價走代理,排程無代理時就只用新聞 + repo 既有房價當參考)
         housing = None
         if housing_enabled():
-            print("[5/5] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
+            print("[6/6] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
             try:
                 housing_news = fetch_housing_news()
                 print(f"  抓到 {len(housing_news)} 則房市新聞。")
@@ -1001,7 +1130,7 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 房市觀察失敗不影響戰略報告
                 print(f"  警告: 房市觀察產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[5/5] ENABLE_HOUSING=0,略過房市觀察。")
+            print("[6/6] ENABLE_HOUSING=0,略過房市觀察。")
 
         print(
             f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"

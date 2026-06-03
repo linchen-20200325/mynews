@@ -93,12 +93,14 @@ streamlit run app.py                          # 啟動看板
 | `REPORT_TOPICS` | — | Variable | — | 多主題戰略報告,以 `;` 分隔(第一個為主報告) |
 | `ENABLE_TREND_RADAR` | — | Variable | `1` | 設 `0/false/no` 關閉趨勢雷達 |
 | `ENABLE_STOCK_PICKER` | — | Variable | `1` | 設 `0/false/no` 關閉台股觀察 |
+| `ENABLE_US_STOCK_PICKER` | — | Variable | `1` | 設 `0/false/no` 關閉美股觀察 |
 | `ENABLE_HOUSING` | — | Variable | `1` | 設 `0/false/no` 關閉房市觀察 |
-| `NEWS_QUERIES` / `TREND_QUERIES` / `STOCK_QUERIES` | — | Variable | 內建 | 各頁抓新聞關鍵字,以 `;` 分隔 |
+| `NEWS_QUERIES` / `TREND_QUERIES` / `STOCK_QUERIES` / `US_STOCK_QUERIES` | — | Variable | 內建 | 各頁抓新聞關鍵字,以 `;` 分隔 |
 | `NEWS_TOPICS` / `TREND_TOPICS` | — | Variable | `WORLD,BUSINESS` 等 | Google News 動態分類頭條,以 `,` 分隔 |
 | `NEWS_LANG` / `NEWS_REGION` | — | Variable | `zh` / `TW` | Google News 語系/地區 |
 | `NEWS_MAX` / `NEWS_SINCE_HOURS` | — | Variable | `12` / `48` | 戰略報告抓新聞則數上限 / 回溯時數 |
 | `STOCK_MAX` / `STOCK_SINCE_HOURS` | — | Variable | `25` / `48` | 台股觀察抓新聞則數 / 回溯時數 |
+| `US_STOCK_MAX` / `US_STOCK_SINCE_HOURS` | — | Variable | `25` / `48` | 美股觀察抓新聞則數 / 回溯時數 |
 | `HOUSING_MAX` / `HOUSING_SINCE_HOURS` | — | Variable | `18` / `72` | 房市抓新聞則數 / 回溯時數 |
 
 ## 分支與提交

@@ -30,6 +30,8 @@ TRENDS_PATH = Path("latest_trends.json")
 TRENDS_ARCHIVE_DIR = Path("data/trends")
 STOCKS_PATH = Path("latest_stocks.json")
 STOCKS_ARCHIVE_DIR = Path("data/stocks")
+US_STOCKS_PATH = Path("latest_us_stocks.json")
+US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
 HOUSING_PATH = Path("latest_housing.json")
 HOUSING_ARCHIVE_DIR = Path("data/housing")
 ETF_HOLDINGS_PATH = Path("etf_holdings.json")
@@ -756,6 +758,119 @@ def render_stocks(data: dict) -> None:
                 "產業": s.get("sector", ""),
                 "新聞提及": s.get("mention_count", 0),
                 "ETF持有": etf_counts.get(str(s.get("ticker", "")), 0),
+                "傾向": s.get("sentiment", ""),
+                "原因": s.get("reason", ""),
+            }
+            for s in stocks
+        ],
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    # 依傾向分組卡片
+    for label in ("利多", "利空", "觀望"):
+        group = [s for s in stocks if s.get("sentiment") == label]
+        if not group:
+            continue
+        emoji, _ = SENTIMENT_STYLE.get(label, ("", "info"))
+        st.subheader(f"{emoji} {label}（{len(group)} 檔）")
+        for s in group:
+            name = s.get("name", "")
+            ticker = s.get("ticker", "")
+            head = f"**{name}**" + (f"（{ticker}）" if ticker else "")
+            sector = s.get("sector", "")
+            with st.container(border=True):
+                st.markdown(
+                    head
+                    + (f"　·　{sector}" if sector else "")
+                    + f"　·　📰 被提及 {s.get('mention_count', 0)} 次"
+                )
+                if s.get("reason"):
+                    st.write(s["reason"])
+                evidence = s.get("evidence_news", [])
+                if evidence:
+                    with st.expander("📰 佐證新聞"):
+                        for n in evidence:
+                            title = n.get("title", "")
+                            src = n.get("source", "")
+                            url = n.get("url", "")
+                            line = f"- {title}" + (f" — _{src}_" if src else "")
+                            if url:
+                                line += f" [連結]({url})"
+                            st.markdown(line)
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader("🚀 未來趨勢產業")
+        trends = data.get("future_trends", [])
+        if trends:
+            for t in trends:
+                st.markdown(f"- {t}")
+        else:
+            st.caption("(本次新聞未明顯提及)")
+    with col2:
+        st.subheader("🌇 夕陽 / 轉弱產業")
+        sunset = data.get("sunset_industries", [])
+        if sunset:
+            for t in sunset:
+                st.markdown(f"- {t}")
+        else:
+            st.caption("(本次新聞未明顯提及)")
+
+    st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
+
+
+# ---------------------------------------------------------------------------
+# 美股觀察(邏輯同台股觀察,資料來源換成美股財經新聞)
+# ---------------------------------------------------------------------------
+
+def render_us_stock_live_panel() -> None:
+    """美股觀察第一步:只抓美股財經新聞(整理另由 Gemini 按鈕觸發)。"""
+    with st.container(border=True):
+        st.markdown("#### ⚡ 即時產生(免等每日排程)")
+        st.caption(
+            "從美股財經新聞統計被提到最多次的美股標的,分利多/利空/觀望,"
+            "並歸納未來趨勢與夕陽產業。流程:① 先抓財經新聞 → ② 看過後再按 Gemini 整理。"
+        )
+        if st.button("🔄 ① 立即抓取美股財經新聞", use_container_width=True):
+            with st.spinner("抓取美股財經新聞中…"):
+                try:
+                    st.session_state["live_us_stock_news"] = update_data.fetch_us_stock_news()
+                    st.session_state.pop("live_us_stocks", None)
+                except Exception as exc:  # noqa: BLE001
+                    st.session_state["live_us_stock_news"] = []
+                    st.error(f"抓取失敗:{exc}")
+
+
+def generate_live_us_stocks() -> None:
+    """美股觀察第二步:對『已抓到的財經新聞』請 Gemini 整理美股標的。"""
+    news = st.session_state.get("live_us_stock_news", [])
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    st.session_state["live_us_stocks"] = update_data.get_us_stock_picks(news, today)
+    st.session_state.pop("live_us_stock_news", None)
+
+
+def render_us_stocks(data: dict) -> None:
+    st.metric("資料日期", data.get("report_date", "—"))
+    if data.get("summary"):
+        st.info(data["summary"])
+    st.caption("依新聞『被提及次數』排序;標的分利多/利空/觀望。⚠️ 僅為新聞整理,非投資建議。")
+
+    stocks = data.get("stocks", [])
+    if not stocks:
+        st.info("本次未整理出美股標的。")
+        return
+
+    # 總表(依新聞提及次數)
+    st.subheader("📋 美股標的總表(新聞提及次數)")
+    st.caption("被很多新聞提及 ＋ 偏利多 = 相對更受關注。")
+    st.dataframe(
+        [
+            {
+                "標的": s.get("name", ""),
+                "代號": s.get("ticker", ""),
+                "產業": s.get("sector", ""),
+                "新聞提及": s.get("mention_count", 0),
                 "傾向": s.get("sentiment", ""),
                 "原因": s.get("reason", ""),
             }
@@ -1623,7 +1738,7 @@ def main() -> None:
 
     st.sidebar.header("📂 報告類型")
     report_type = st.sidebar.radio(
-        "選擇", ["戰略報告", "趨勢雷達", "台股觀察", "房市觀察", "ETF持股反查", "ETF圖鑑"]
+        "選擇", ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "房市觀察", "ETF持股反查", "ETF圖鑑"]
     )
     st.sidebar.divider()
     with st.sidebar:
@@ -1826,6 +1941,63 @@ def main() -> None:
             st.warning("尚無每日台股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_stocks(data)
+    elif report_type == "美股觀察":
+        st.header("📈 美股觀察 — 值得關注的美股標的")
+        render_us_stock_live_panel()
+
+        # 1) 本次即時產生的美股觀察優先顯示
+        if st.session_state.get("live_us_stocks"):
+            live = st.session_state["live_us_stocks"]
+            st.success("⚡ 以下為剛剛即時產生的美股觀察(尚未存檔)。")
+            st.download_button(
+                "⬇️ 下載美股觀察 JSON",
+                data=json.dumps(live, ensure_ascii=False, indent=2),
+                file_name=f"us_stocks_{live.get('report_date', 'latest')}.json",
+                mime="application/json",
+            )
+            st.divider()
+            render_us_stocks(live)
+            return
+
+        # 2) 已抓到財經新聞、尚未整理:顯示新聞,並提供第二步的 Gemini 按鈕
+        if "live_us_stock_news" in st.session_state:
+            news = st.session_state["live_us_stock_news"]
+            st.divider()
+            st.subheader("📰 即時抓取的美股財經新聞")
+            if news:
+                st.success(f"已抓到 {len(news)} 則財經新聞,確認後再請 Gemini 整理美股標的:")
+                has_key = ensure_gemini_key()
+                if st.button(
+                    "🧠 ② 用 Gemini 整理美股標的(總表 + 利多/利空/觀望)",
+                    use_container_width=True,
+                    disabled=not has_key,
+                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+                ):
+                    with st.spinner("Gemini 整理美股標的中(約 10–30 秒)…"):
+                        try:
+                            generate_live_us_stocks()
+                            st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"整理美股標的失敗:{exc}")
+                if not has_key:
+                    render_key_hint()
+                st.download_button(
+                    "⬇️ 下載財經新聞 JSON",
+                    data=json.dumps(news, ensure_ascii=False, indent=2),
+                    file_name="us_stock_news.json",
+                    mime="application/json",
+                )
+                render_news_cards(news)
+            else:
+                st.info("這次沒抓到美股財經新聞,稍後再試或調整 US_STOCK_QUERIES 關鍵字。")
+            return
+
+        # 3) 否則顯示每日排程存檔
+        data = pick_report(US_STOCKS_PATH, US_STOCKS_ARCHIVE_DIR)
+        if data is None:
+            st.warning("尚無每日美股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
+            return
+        render_us_stocks(data)
     elif report_type == "房市觀察":
         st.header("🏠 房市觀察 — 預售/成屋冷熱、打房政策與各縣市房價")
         render_house_price_panel()

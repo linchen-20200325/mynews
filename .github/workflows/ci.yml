@@ -26,14 +26,16 @@ jobs:
           import glob, json, sys
           ok = True
           for f in glob.glob("latest_report.json") + glob.glob("latest_trends.json") \
-                   + glob.glob("latest_stocks.json") + glob.glob("etf_holdings.json") \
+                   + glob.glob("latest_stocks.json") + glob.glob("latest_us_stocks.json") \
+                   + glob.glob("etf_holdings.json") \
                    + glob.glob("latest_housing.json") + glob.glob("house_prices.json") \
                    + glob.glob("house_price_history.json") \
                    + glob.glob("taiwan_counties.geo.json") \
                    + glob.glob("latest_reports.json") \
                    + glob.glob("data/reports/*.json") + glob.glob("data/reports_multi/*.json") \
                    + glob.glob("data/trends/*.json") \
-                   + glob.glob("data/stocks/*.json") + glob.glob("data/housing/*.json"):
+                   + glob.glob("data/stocks/*.json") + glob.glob("data/us_stocks/*.json") \
+                   + glob.glob("data/housing/*.json"):
               try:
                   json.load(open(f, encoding="utf-8"))
               except Exception as e:  # noqa: BLE001

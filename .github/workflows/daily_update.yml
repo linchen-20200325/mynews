@@ -41,8 +41,10 @@ jobs:
           NEWS_QUERIES: ${{ vars.NEWS_QUERIES }}
           TREND_QUERIES: ${{ vars.TREND_QUERIES }}
           STOCK_QUERIES: ${{ vars.STOCK_QUERIES }}
+          US_STOCK_QUERIES: ${{ vars.US_STOCK_QUERIES }}
           ENABLE_TREND_RADAR: ${{ vars.ENABLE_TREND_RADAR }}
           ENABLE_STOCK_PICKER: ${{ vars.ENABLE_STOCK_PICKER }}
+          ENABLE_US_STOCK_PICKER: ${{ vars.ENABLE_US_STOCK_PICKER }}
           ENABLE_HOUSING: ${{ vars.ENABLE_HOUSING }}
         run: python update_data.py
 
@@ -50,7 +52,7 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add latest_report.json data/reports/ latest_reports.json data/reports_multi/ latest_trends.json data/trends/ latest_stocks.json data/stocks/ latest_housing.json data/housing/
+          git add latest_report.json data/reports/ latest_reports.json data/reports_multi/ latest_trends.json data/trends/ latest_stocks.json data/stocks/ latest_us_stocks.json data/us_stocks/ latest_housing.json data/housing/
           # 若無變化就不 commit,避免 workflow 報錯
           if git diff --staged --quiet; then
             echo "No changes to commit."
