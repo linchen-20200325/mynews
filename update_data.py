@@ -1217,7 +1217,7 @@ def fetch_stock_news() -> list[dict]:
         en_queries=en_queries,
         zh_feeds=zh_feeds,
         en_feeds=en_feeds,
-        limit=int(os.environ.get("STOCK_MAX", "40")),
+        limit=int(os.environ.get("STOCK_MAX", "60")),
         since_hours=int(os.environ.get("STOCK_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
 
@@ -1279,13 +1279,13 @@ def fetch_focus_news(
         en_queries=en_queries,
         zh_feeds=None,
         en_feeds=None,
-        limit=int(os.environ.get("FOCUS_MAX", "30")),
+        limit=int(os.environ.get("FOCUS_MAX", "50")),
         since_hours=since_hours,
     )
     # 3) 台媒整站 RSS → 過濾出有提到該對象者(用中文名稱/別名比對)
     site_news = news_fetcher.fetch_news(
         [], lang="zh", region="TW", feeds=TW_MEDIA_FEEDS,
-        limit=int(os.environ.get("FOCUS_SITE_MAX", "120")), since_hours=since_hours,
+        limit=int(os.environ.get("FOCUS_SITE_MAX", "200")), since_hours=since_hours,
     )
     site_hits = [n for n in site_news if zh_terms and news_matches(zh_terms, n)]
     return _dedupe_news(keyword_news + site_hits)
