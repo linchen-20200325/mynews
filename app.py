@@ -996,7 +996,7 @@ def render_focus_panel() -> None:
                         tr = update_data.translate_focus_query(term.strip())
                         news = update_data.fetch_focus_news(
                             tr.get("query_en", ""), tr.get("aliases"),
-                            tr.get("query_zh", term.strip()),
+                            tr.get("query_zh", term.strip()), tr.get("zh_aliases"),
                         )
                         st.session_state["live_focus_translation"] = tr
                         st.session_state["live_focus_news"] = news
@@ -2241,13 +2241,15 @@ def main() -> None:
             st.divider()
             en = tr.get("query_en", "")
             aliases = "、".join(a for a in tr.get("aliases", []) if a)
+            zh_aliases = "、".join(a for a in tr.get("zh_aliases", []) if a)
             note = tr.get("note", "")
             st.info(
                 f"🔤 中文「{tr.get('query_zh', '')}」→ 英文檢索:**{en}**"
-                + (f"　(別名:{aliases})" if aliases else "")
+                + (f"　(英文別名:{aliases})" if aliases else "")
+                + (f"\n\n🀄 中文別名:{zh_aliases}" if zh_aliases else "")
                 + (f"\n\n{note}" if note else "")
             )
-            st.subheader("📰 抓到的全球新聞(英文原文,分析會翻成中文)")
+            st.subheader("📰 抓到的全球新聞(英文原文 + 台媒中文,分析會翻成中文)")
             if news:
                 st.success(f"已抓到 {len(news)} 則全球新聞,確認後再請 Gemini 整理:")
                 has_key = ensure_gemini_key()

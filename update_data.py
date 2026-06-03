@@ -125,6 +125,13 @@ DEFAULT_FOCUS_TOPICS = [
     "川普",
     "黃仁勳",
 ]
+# 台媒自家 RSS(直接來源,補 Google News 排名外的台灣報導);人物追蹤會「先過濾出有提到
+# 該對象者」才納入,避免灌入無關新聞。抓不到的 feed 會自動略過(fetch_news 容錯)。
+TW_MEDIA_FEEDS = {
+    "自由時報 即時": "https://news.ltn.com.tw/rss/all.xml",
+    "自由時報 財經": "https://ec.ltn.com.tw/rss/all.xml",
+    "經濟日報": "https://money.udn.com/rssfeed/news/1001/5590?ch=money",
+}
 
 # Google News 分類頭條(不帶關鍵字的『動態』來源,確保不漏突發大事;
 # 只取與主題相關的分類,避免娛樂/體育等離題內容)。可用 NEWS_TOPICS / TREND_TOPICS 覆寫。
@@ -378,8 +385,11 @@ FOCUS_TRANSLATE_SYSTEM_PROMPT = """\
 1. query_en 填最通用、最常被國際媒體使用的英文主名(人名用全名,如 Donald Trump、
    Jensen Huang;公司用常用英文名,如 Nvidia)。
 2. aliases 補 2~4 個常見的英文別名/頭銜/常見寫法(如 "President Trump"、"Jensen Huang Nvidia")。
-3. 若輸入本身已是英文,query_en 原樣保留並補別名。
-4. note 用一句繁體中文說明這是誰/什麼。
+3. zh_aliases 補 2~4 個常見的【中文別名/關聯詞】,供台灣中文新聞檢索用
+   (例如 黃仁勳 → ["輝達","NVIDIA","輝達執行長"];川普 → ["特朗普","美國總統川普"]);
+   若該對象就是公司,放公司中文名與相關代表人。
+4. 若輸入本身已是英文,query_en 原樣保留並補別名;zh_aliases 補對應中文譯名。
+5. note 用一句繁體中文說明這是誰/什麼。
 
 【強制輸出規範:Zero-Tolerance】
 只輸出一個合法 JSON,前後不得有任何其他文字或 ```json 標記,且能被 json.loads() 解析。
@@ -389,6 +399,7 @@ FOCUS_TRANSLATE_SYSTEM_PROMPT = """\
   "query_zh": "使用者輸入的中文原詞",
   "query_en": "最通用的英文檢索主名",
   "aliases": ["常見英文別名/頭銜", "..."],
+  "zh_aliases": ["常見中文別名/關聯詞", "..."],
   "kind": "person|company|topic",
   "note": "一句話說明(繁體中文)"
 }
@@ -586,6 +597,13 @@ def _expand_match_keys(keys: list[str]) -> list[str]:
             if len(part) >= 2:
                 out.add(part)
     return [k.lower() for k in out]
+
+
+def news_matches(keys: list[str], item: dict) -> bool:
+    """單則新聞的標題+摘要是否提到任一關鍵字(供台媒整站 feed 過濾出相關報導)。"""
+    norm = _expand_match_keys(keys)
+    hay = (str(item.get("title", "")) + " " + str(item.get("summary", ""))).lower()
+    return any(k in hay for k in norm)
 
 
 def mention_window(keys: list[str], news: list[dict]) -> dict:
@@ -1042,6 +1060,7 @@ def translate_focus_query(term_zh: str) -> dict:
     )
     data.setdefault("query_zh", term_zh)
     data.setdefault("aliases", [])
+    data.setdefault("zh_aliases", [])
     if not data.get("query_en"):
         data["query_en"] = term_zh
     return data
@@ -1237,25 +1256,39 @@ def _uniq_queries(items: list[str]) -> list[str]:
 
 
 def fetch_focus_news(
-    query_en: str, aliases: list[str] | None = None, query_zh: str | None = None
+    query_en: str,
+    aliases: list[str] | None = None,
+    query_zh: str | None = None,
+    zh_aliases: list[str] | None = None,
 ) -> list[dict]:
-    """抓關注對象的全球新聞:英文名/別名(en/US)+ 中文原名(zh/TW)雙語都抓並去重。
-
-    只用『該對象的名稱』當關鍵字,不混入一般頭條 feed,確保新聞貼近該對象;這樣
-    中文台媒(如自由時報)與英文國際原文都能進來。
+    """抓關注對象的全球新聞,三路合併去重:
+    1) 英文名/別名 在 en/US 關鍵字檢索;
+    2) 中文原名 + 中文別名(如黃仁勳→輝達)在 zh/TW 關鍵字檢索;
+    3) 台媒整站 RSS(TW_MEDIA_FEEDS)直接來源,但「只保留有提到該對象者」,
+       補足 Google News 排名外、卻確實報導該人物的台灣文章(如自由時報)。
     """
     en_queries = _uniq_queries([query_en] + list(aliases or []))
-    zh_queries = _uniq_queries([query_zh] if query_zh else [])
-    if not en_queries and not zh_queries:
+    zh_terms = _uniq_queries(([query_zh] if query_zh else []) + list(zh_aliases or []))
+    if not en_queries and not zh_terms:
         return []
-    return fetch_bilingual_news(
-        zh_queries=zh_queries,
+
+    since_hours = int(os.environ.get("FOCUS_SINCE_HOURS", str(SIX_MONTHS_HOURS)))
+    # 1) + 2) 關鍵字雙語檢索
+    keyword_news = fetch_bilingual_news(
+        zh_queries=zh_terms,
         en_queries=en_queries,
         zh_feeds=None,
         en_feeds=None,
         limit=int(os.environ.get("FOCUS_MAX", "30")),
-        since_hours=int(os.environ.get("FOCUS_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
+        since_hours=since_hours,
     )
+    # 3) 台媒整站 RSS → 過濾出有提到該對象者(用中文名稱/別名比對)
+    site_news = news_fetcher.fetch_news(
+        [], lang="zh", region="TW", feeds=TW_MEDIA_FEEDS,
+        limit=int(os.environ.get("FOCUS_SITE_MAX", "120")), since_hours=since_hours,
+    )
+    site_hits = [n for n in site_news if zh_terms and news_matches(zh_terms, n)]
+    return _dedupe_news(keyword_news + site_hits)
 
 
 def fetch_housing_news() -> list[dict]:
@@ -1382,7 +1415,8 @@ def build_focus_report(today: str) -> dict:
         try:
             tr = translate_focus_query(term)
             news = fetch_focus_news(
-                tr.get("query_en", ""), tr.get("aliases"), tr.get("query_zh", term)
+                tr.get("query_en", ""), tr.get("aliases"),
+                tr.get("query_zh", term), tr.get("zh_aliases"),
             )
             analysis = get_focus_analysis(term, tr.get("query_en", ""), news, today)
             analysis["raw_news"] = news
