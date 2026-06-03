@@ -52,6 +52,25 @@ HOUSING_SENTIMENT_STYLE = {
     "冷清": ("❄️", "success"),
 }
 
+# 前五個章節資料來源回溯約 6 個月的說明(Google News RSS 實際回傳範圍仍有上限)
+SIX_MONTH_SOURCE_CAPTION = (
+    "🗓️ 資料來源回溯約 6 個月(實際可回溯範圍受 Google News RSS 限制);"
+    "標的標示「首見 / 最近見報 / 共幾則」皆由本次抓到的真實新聞統計。"
+)
+
+
+def mention_caption(item: dict) -> str:
+    """把一個標的的真實新聞統計組成『📅 首見 X · 最近 Y · 共 N 則』;無資料則回空字串。"""
+    first = item.get("first_seen")
+    last = item.get("last_seen")
+    count = item.get("news_count")
+    bits = []
+    if first and last:
+        bits.append(f"首見 {first}" + (f" · 最近 {last}" if last != first else ""))
+    if count:
+        bits.append(f"共 {count} 則")
+    return "📅 " + " · ".join(bits) if bits else ""
+
 ANALYSIS_SECTIONS = [
     ("geo_military", "🛰️ 一、地緣政治與軍事戰略"),
     ("supply_chain", "🛢️ 二、原物料與供應鏈傳導"),
@@ -739,6 +758,7 @@ def render_stocks(data: dict) -> None:
     if data.get("summary"):
         st.info(data["summary"])
     st.caption("依新聞『被提及次數』排序;標的分利多/利空/觀望。⚠️ 僅為新聞整理,非投資建議。")
+    st.caption(SIX_MONTH_SOURCE_CAPTION)
 
     stocks = data.get("stocks", [])
     if not stocks:
@@ -749,16 +769,18 @@ def render_stocks(data: dict) -> None:
     holdings = etf_holdings.load_holdings(ETF_HOLDINGS_PATH)
     etf_counts = etf_holdings.etf_count_map(holdings) if holdings else {}
 
-    # 總表(新聞提及次數 + ETF 持有檔數,兩個訊號一起看)
-    st.subheader("📋 台股標的總表(新聞提及 × ETF 持有)")
-    st.caption("被很多 ETF 持有 ＋ 新聞偏利多 = 相對更受關注。ETF 檔數來自 etf_holdings.json。")
+    # 總表(新聞提及次數 + ETF 持有檔數 + 首見/最近見報,多個訊號一起看)
+    st.subheader("📋 台股標的總表(新聞提及 × ETF 持有 × 見報區間)")
+    st.caption("被很多 ETF 持有 ＋ 新聞偏利多 = 相對更受關注。ETF 檔數來自 etf_holdings.json;首見/最近/則數由真實新聞統計。")
     st.dataframe(
         [
             {
                 "標的": s.get("name", ""),
                 "代號": s.get("ticker", ""),
                 "產業": s.get("sector", ""),
-                "新聞提及": s.get("mention_count", 0),
+                "則數": s.get("news_count", s.get("mention_count", 0)),
+                "首見": s.get("first_seen", ""),
+                "最近": s.get("last_seen", ""),
                 "ETF持有": etf_counts.get(str(s.get("ticker", "")), 0),
                 "傾向": s.get("sentiment", ""),
                 "原因": s.get("reason", ""),
@@ -787,6 +809,9 @@ def render_stocks(data: dict) -> None:
                     + (f"　·　{sector}" if sector else "")
                     + f"　·　📰 被提及 {s.get('mention_count', 0)} 次"
                 )
+                cap = mention_caption(s)
+                if cap:
+                    st.caption(cap)
                 if s.get("reason"):
                     st.write(s["reason"])
                 evidence = s.get("evidence_news", [])
@@ -857,22 +882,25 @@ def render_us_stocks(data: dict) -> None:
     if data.get("summary"):
         st.info(data["summary"])
     st.caption("依新聞『被提及次數』排序;標的分利多/利空/觀望。⚠️ 僅為新聞整理,非投資建議。")
+    st.caption(SIX_MONTH_SOURCE_CAPTION)
 
     stocks = data.get("stocks", [])
     if not stocks:
         st.info("本次未整理出美股標的。")
         return
 
-    # 總表(依新聞提及次數)
-    st.subheader("📋 美股標的總表(新聞提及次數)")
-    st.caption("被很多新聞提及 ＋ 偏利多 = 相對更受關注。")
+    # 總表(依新聞提及次數 + 首見/最近見報)
+    st.subheader("📋 美股標的總表(新聞提及 × 見報區間)")
+    st.caption("被很多新聞提及 ＋ 偏利多 = 相對更受關注;首見/最近/則數由真實新聞統計。")
     st.dataframe(
         [
             {
                 "標的": s.get("name", ""),
                 "代號": s.get("ticker", ""),
                 "產業": s.get("sector", ""),
-                "新聞提及": s.get("mention_count", 0),
+                "則數": s.get("news_count", s.get("mention_count", 0)),
+                "首見": s.get("first_seen", ""),
+                "最近": s.get("last_seen", ""),
                 "傾向": s.get("sentiment", ""),
                 "原因": s.get("reason", ""),
             }
@@ -900,6 +928,9 @@ def render_us_stocks(data: dict) -> None:
                     + (f"　·　{sector}" if sector else "")
                     + f"　·　📰 被提及 {s.get('mention_count', 0)} 次"
                 )
+                cap = mention_caption(s)
+                if cap:
+                    st.caption(cap)
                 if s.get("reason"):
                     st.write(s["reason"])
                 evidence = s.get("evidence_news", [])
@@ -995,6 +1026,11 @@ def render_focus(data: dict) -> None:
     if data.get("summary"):
         st.info(data["summary"])
     st.caption("由 AI 依全球新聞整理,可能有誤,僅供參考,非投資建議。")
+    if data.get("first_seen"):
+        st.caption(
+            f"🗓️ 相關新聞 {data['first_seen']} ～ {data.get('last_seen', '')}"
+            f"，共 {data.get('news_count', 0)} 則(回溯約 6 個月,實際範圍受 RSS 限制)。"
+        )
 
     statements = data.get("key_statements", [])
     if statements:
@@ -1017,6 +1053,9 @@ def render_focus(data: dict) -> None:
                     "標的": s.get("name", ""),
                     "代號": s.get("ticker", ""),
                     "產業": s.get("sector", ""),
+                    "則數": s.get("news_count", 0),
+                    "首見": s.get("first_seen", ""),
+                    "最近": s.get("last_seen", ""),
                     "傾向": s.get("sentiment", ""),
                     "原因": s.get("reason", ""),
                 }
@@ -1043,6 +1082,9 @@ def render_focus(data: dict) -> None:
                         + (f"　·　{sector}" if sector else "")
                         + (f"　·　{emoji} {senti}" if senti else "")
                     )
+                    cap = mention_caption(s)
+                    if cap:
+                        st.caption(cap)
                     if s.get("reason"):
                         st.write(s["reason"])
                     evidence = s.get("evidence_news", [])
@@ -1086,6 +1128,12 @@ def render_report(report: dict) -> None:
     st.divider()
 
     st.header("📰 第一階段:原始情報彙整")
+    span = report.get("news_span", {})
+    if span.get("first_seen"):
+        st.caption(
+            f"🗓️ 取材新聞 {span['first_seen']} ～ {span.get('last_seen', '')}"
+            f"，共 {span.get('news_count', 0)} 則(回溯約 6 個月,實際範圍受 RSS 限制)。"
+        )
     news = report.get("raw_news", [])
     if not news:
         st.info("本次未取得相關新聞。")
@@ -1116,7 +1164,8 @@ def render_report(report: dict) -> None:
 
 def render_trends(data: dict) -> None:
     st.metric("資料日期", data.get("report_date", "—"))
-    st.caption("依「資金 / 徵才 / 政策 / 技術」四種訊號綜合評估,熱度 0–100。")
+    st.caption("依「資金 / 徵才 / 政策 / 技術」四種訊號綜合評估,熱度 0–100。新聞來源同時含台灣與美股。")
+    st.caption(SIX_MONTH_SOURCE_CAPTION)
     st.divider()
 
     trends = data.get("trends", [])
@@ -1136,6 +1185,32 @@ def render_trends(data: dict) -> None:
                 pass
             if t.get("summary"):
                 st.write(t["summary"])
+            cap = mention_caption(t)
+            if cap:
+                st.caption(cap)
+
+            us_stocks = t.get("us_stocks", [])
+            tw_stocks = t.get("tw_stocks", [])
+            if us_stocks or tw_stocks:
+                scol1, scol2 = st.columns(2)
+                with scol1:
+                    st.markdown("**🇺🇸 美股代表**")
+                    if us_stocks:
+                        for s in us_stocks:
+                            nm = s.get("name", "") if isinstance(s, dict) else str(s)
+                            tk = s.get("ticker", "") if isinstance(s, dict) else ""
+                            st.markdown(f"- {nm}" + (f"（{tk}）" if tk else ""))
+                    else:
+                        st.caption("(本次未列出)")
+                with scol2:
+                    st.markdown("**🇹🇼 台股代表**")
+                    if tw_stocks:
+                        for s in tw_stocks:
+                            nm = s.get("name", "") if isinstance(s, dict) else str(s)
+                            tk = s.get("ticker", "") if isinstance(s, dict) else ""
+                            st.markdown(f"- {nm}" + (f"（{tk}）" if tk else ""))
+                    else:
+                        st.caption("(本次未列出)")
 
             signals = t.get("signals", {})
             cols = st.columns(2)

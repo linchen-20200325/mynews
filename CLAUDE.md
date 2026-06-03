@@ -31,7 +31,15 @@
 趨勢雷達 `latest_trends.json` 與 `data/trends/<date>.json` 含 `report_date` 與
 `trends` 陣列;每個 trend 含 `rank`、`industry`、`heat_score`(0~100)、
 `signals`(funding/hiring/policy/technology)、`leading_indicators`、
-`evidence_news`、`summary`。詳見 `validate_trends()`。
+`us_stocks` / `tw_stocks`(各 `{name,ticker}`,趨勢雷達同時含美股與台股代表股)、
+`evidence_news`、`summary`,另含真實新聞統計 `news_count`/`first_seen`/`last_seen`。
+詳見 `validate_trends()`。趨勢雷達新聞同時抓台灣(中文)+ 美國(英文)兩邊。
+
+前五個章節(戰略報告/趨勢雷達/台股/美股/全球人物追蹤)新聞回溯約 6 個月
+(`SIX_MONTHS_HOURS`,實際可回溯範圍受 Google News RSS 限制),並由真實新聞統計每個
+標的的 `news_count`(說過幾次)/`first_seen`/`last_seen`(首見/最近見報);戰略報告與
+人物追蹤另在頂層帶 `news_span`(或同名欄位)標示整批新聞跨度。時間/次數一律由
+`mention_window()` / `news_span()` 從真實新聞算出,**不交給 Gemini 臆測**。
 
 房市觀察 `latest_housing.json` 與 `data/housing/<date>.json` 含 `report_date`、
 `overall_sentiment`(熱絡/持平/冷清)、`presale_market` / `resale_market`
@@ -97,14 +105,15 @@ streamlit run app.py                          # 啟動看板
 | `ENABLE_FOCUS` | — | Variable | `1` | 設 `0/false/no` 關閉全球人物追蹤每日排程 |
 | `ENABLE_HOUSING` | — | Variable | `1` | 設 `0/false/no` 關閉房市觀察 |
 | `NEWS_QUERIES` / `TREND_QUERIES` / `STOCK_QUERIES` / `US_STOCK_QUERIES` | — | Variable | 內建 | 各頁抓新聞關鍵字,以 `;` 分隔 |
+| `US_TREND_QUERIES` | — | Variable | 內建(英文) | 趨勢雷達美股面向的英文關鍵字,以 `;` 分隔 |
 | `NEWS_TOPICS` / `TREND_TOPICS` | — | Variable | `WORLD,BUSINESS` 等 | Google News 動態分類頭條,以 `,` 分隔 |
 | `NEWS_LANG` / `NEWS_REGION` | — | Variable | `zh` / `TW` | Google News 語系/地區 |
 | `US_NEWS_LANG` / `US_NEWS_REGION` | — | Variable | `en` / `US` | 美股觀察抓英文原文新聞的語系/地區(輸出仍由 Gemini 翻成中文) |
 | `FOCUS_TOPICS` | — | Variable | `川普;黃仁勳` | 全球人物追蹤每日排程追蹤對象(中文),以 `;` 分隔 |
-| `FOCUS_MAX` / `FOCUS_SINCE_HOURS` | — | Variable | `20` / `72` | 全球人物追蹤抓新聞則數 / 回溯時數 |
-| `NEWS_MAX` / `NEWS_SINCE_HOURS` | — | Variable | `12` / `48` | 戰略報告抓新聞則數上限 / 回溯時數 |
-| `STOCK_MAX` / `STOCK_SINCE_HOURS` | — | Variable | `25` / `48` | 台股觀察抓新聞則數 / 回溯時數 |
-| `US_STOCK_MAX` / `US_STOCK_SINCE_HOURS` | — | Variable | `25` / `48` | 美股觀察抓新聞則數 / 回溯時數 |
+| `FOCUS_MAX` / `FOCUS_SINCE_HOURS` | — | Variable | `30` / `4392` | 全球人物追蹤抓新聞則數 / 回溯時數(~6 個月) |
+| `NEWS_MAX` / `NEWS_SINCE_HOURS` | — | Variable | `25` / `4392` | 戰略報告+趨勢抓新聞則數上限 / 回溯時數(~6 個月) |
+| `STOCK_MAX` / `STOCK_SINCE_HOURS` | — | Variable | `40` / `4392` | 台股觀察抓新聞則數 / 回溯時數(~6 個月) |
+| `US_STOCK_MAX` / `US_STOCK_SINCE_HOURS` | — | Variable | `40` / `4392` | 美股觀察抓新聞則數 / 回溯時數(~6 個月) |
 | `HOUSING_MAX` / `HOUSING_SINCE_HOURS` | — | Variable | `18` / `72` | 房市抓新聞則數 / 回溯時數 |
 
 ## 分支與提交

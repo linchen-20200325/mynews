@@ -40,6 +40,7 @@ jobs:
           REPORT_TOPICS: ${{ vars.REPORT_TOPICS }}
           NEWS_QUERIES: ${{ vars.NEWS_QUERIES }}
           TREND_QUERIES: ${{ vars.TREND_QUERIES }}
+          US_TREND_QUERIES: ${{ vars.US_TREND_QUERIES }}
           STOCK_QUERIES: ${{ vars.STOCK_QUERIES }}
           US_STOCK_QUERIES: ${{ vars.US_STOCK_QUERIES }}
           FOCUS_TOPICS: ${{ vars.FOCUS_TOPICS }}

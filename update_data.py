@@ -75,6 +75,16 @@ DEFAULT_TREND_QUERIES = [
     "AI 半導體 投資",
     "產業 趨勢 基金",
 ]
+# 趨勢雷達的美股/全球面向(英文,讓熱門產業排名也反映美國市場)
+DEFAULT_US_TREND_QUERIES = [
+    "US stock market sector trends",
+    "AI semiconductor investment",
+    "venture capital funding hot sectors",
+]
+# 前五個章節(報告/趨勢/台股/美股/人物)新聞回溯視窗 ~6 個月。
+# 註:Google News RSS 實際只回傳近期新聞,拉長視窗只代表「不過濾較舊的」,
+# 真正能回溯多久仍受 RSS 來源限制。
+SIX_MONTHS_HOURS = 24 * 183
 DEFAULT_STOCK_QUERIES = [
     "台股 個股 焦點",
     "台積電 聯發科 鴻海 台股",
@@ -193,12 +203,17 @@ TREND_SYSTEM_PROMPT = """\
 - policy    :政策/法規動向 — 補貼、管制、國家戰略
 - technology:技術動能 — 重大突破、專利、開源熱度
 
+【含美股】提供的新聞同時包含台灣與美國(英文)市場;每個產業都要【務必】列出
+代表性的美股個股 us_stocks(如 AI→NVDA、雲端→MSFT),以及台股代表個股 tw_stocks
+(如 AI→2330 台積電)。個股要與該產業真正相關,沒有把握就少列、不要硬湊或虛構代號。
+
 【真實性】evidence_news 請優先引用使用者提供的真實新聞,嚴禁虛構標題/媒體/數據。
 
 【強制輸出規範:Zero-Tolerance】
 1. 最終回覆只能有一個合法 JSON 物件,前後不得有任何其他文字或 ```json 標記。
 2. 必須能被 Python json.loads() 解析。
 3. heat_score 為 0~100 整數,代表綜合熱度;trends 依 heat_score 由高到低排序。
+4. us_stocks / tw_stocks 各最多 3 檔;evidence_news 最多 3 則。
 
 【JSON 結構定義 — 必須完全符合】
 {
@@ -215,6 +230,8 @@ TREND_SYSTEM_PROMPT = """\
         "technology": "技術動能觀察..."
       },
       "leading_indicators": ["未來1-3個月該緊盯的具體領先指標", "..."],
+      "us_stocks": [ { "name": "輝達(Nvidia)", "ticker": "NVDA" } ],
+      "tw_stocks": [ { "name": "台積電", "ticker": "2330" } ],
       "evidence_news": [
         { "title": "新聞標題", "source": "媒體來源", "url": "連結(若有)" }
       ],
@@ -499,6 +516,81 @@ def format_house_price_block(prices: dict | None) -> str:
     return "\n".join(lines)
 
 
+def _news_date(item: dict) -> str:
+    """取新聞日期 YYYY-MM-DD(published 為 ISO8601,取前 10 碼);無則空字串。"""
+    p = str(item.get("published") or "").strip()
+    return p[:10] if len(p) >= 10 and p[4:5] == "-" else ""
+
+
+def _dedupe_news(news: list[dict]) -> list[dict]:
+    """合併多來源新聞後去重(同連結或同標題只留第一筆,保留原順序)。"""
+    seen_url: set[str] = set()
+    seen_title: set[str] = set()
+    out: list[dict] = []
+    for n in news:
+        url = (str(n.get("url") or "").split("?")[0]).strip()
+        title = " ".join(str(n.get("title") or "").lower().split())
+        if url and url in seen_url:
+            continue
+        if title and title in seen_title:
+            continue
+        if url:
+            seen_url.add(url)
+        if title:
+            seen_title.add(title)
+        out.append(n)
+    return out
+
+
+def news_span(news: list[dict]) -> dict:
+    """整批新聞的時間跨度與則數:{news_count, first_seen, last_seen}。"""
+    dates = sorted(d for d in (_news_date(n) for n in news) if d)
+    out: dict = {"news_count": len(news)}
+    if dates:
+        out["first_seen"] = dates[0]
+        out["last_seen"] = dates[-1]
+    return out
+
+
+def _expand_match_keys(keys: list[str]) -> list[str]:
+    """把『輝達(Nvidia)』這類中英對照名拆成可比對的子鍵(輝達、Nvidia),提高命中率。"""
+    out: set[str] = set()
+    for k in keys:
+        k = str(k or "").strip()
+        if len(k) >= 2:
+            out.add(k)
+        # 依括號/斜線/頓號等切出中英文各別名稱(不切空白,保留多字英文名完整)
+        for part in re.split(r"[()()\[\]/、,，]+", k):
+            part = part.strip()
+            if len(part) >= 2:
+                out.add(part)
+    return [k.lower() for k in out]
+
+
+def mention_window(keys: list[str], news: list[dict]) -> dict:
+    """從真實新聞統計關鍵字命中的則數與最初/最近見報日期(供『說過幾次 + 首見/最近』)。
+
+    以標的名稱/代號等關鍵字在標題+摘要做不分大小寫子字串比對;全部由真實新聞算出,
+    不交給模型臆測。回傳 {news_count, first_seen?, last_seen?}。
+    """
+    norm = _expand_match_keys(keys)
+    dates: list[str] = []
+    count = 0
+    for n in news:
+        hay = (str(n.get("title", "")) + " " + str(n.get("summary", ""))).lower()
+        if any(k in hay for k in norm):
+            count += 1
+            d = _news_date(n)
+            if d:
+                dates.append(d)
+    out: dict = {"news_count": count}
+    if dates:
+        dates.sort()
+        out["first_seen"] = dates[0]
+        out["last_seen"] = dates[-1]
+    return out
+
+
 def format_news_block(news: list[dict]) -> str:
     """把抓到的新聞排版成餵給模型的文字區塊。"""
     if not news:
@@ -534,8 +626,9 @@ def build_analysis_user_prompt(news: list[dict], topic: str, today: str) -> str:
 def build_trend_user_prompt(news: list[dict], today: str) -> str:
     return (
         f"今天的日期是 {today}。\n"
-        f"請參考以下真實新聞,找出當前全球最熱門、動能最強的 3~5 個新興產業或主題,"
-        f"依資金、徵才、政策、技術四種訊號綜合評估與排名打分,並嚴格輸出 JSON。"
+        f"請參考以下真實新聞(同時含台灣與美國市場),找出當前全球最熱門、動能最強的 "
+        f"3~5 個新興產業或主題,依資金、徵才、政策、技術四種訊號綜合評估與排名打分,"
+        f"並【每個產業都列出代表性的美股(us_stocks)與台股(tw_stocks)個股】,嚴格輸出 JSON。"
         f"report_date 請填 {today}。\n\n"
         f"{format_news_block(news)}"
     )
@@ -880,6 +973,11 @@ def get_trend_radar(news: list[dict], today: str) -> dict:
     validate_trends(data)
     # 依 heat_score 排序(若模型沒排好)
     data["trends"].sort(key=lambda t: t.get("heat_score", 0), reverse=True)
+    # 每個產業補上真實新聞統計(說過幾次 + 首見/最近)與美股/台股代表股欄位
+    for t in data["trends"]:
+        t.setdefault("us_stocks", [])
+        t.setdefault("tw_stocks", [])
+        t.update(mention_window([t.get("industry", "")], news))
     return data
 
 
@@ -894,6 +992,8 @@ def get_stock_picks(news: list[dict], today: str) -> dict:
     validate_stocks(data)
     # 依被提及次數由高到低排序(模型沒排好時補救)
     data["stocks"].sort(key=lambda s: s.get("mention_count", 0), reverse=True)
+    for s in data["stocks"]:
+        s.update(mention_window([s.get("name", ""), s.get("ticker", "")], news))
     return data
 
 
@@ -908,6 +1008,8 @@ def get_us_stock_picks(news: list[dict], today: str) -> dict:
     validate_us_stocks(data)
     # 依被提及次數由高到低排序(模型沒排好時補救)
     data["stocks"].sort(key=lambda s: s.get("mention_count", 0), reverse=True)
+    for s in data["stocks"]:
+        s.update(mention_window([s.get("name", ""), s.get("ticker", "")], news))
     return data
 
 
@@ -936,6 +1038,10 @@ def get_focus_analysis(term_zh: str, query_en: str, news: list[dict], today: str
     data.setdefault("affected_industries", [])
     data.setdefault("stocks", [])
     validate_focus(data)
+    # 整體新聞跨度(這批新聞都與該對象相關)+ 每檔個股的真實命中統計
+    data.update(news_span(news))
+    for s in data["stocks"]:
+        s.update(mention_window([s.get("name", ""), s.get("ticker", "")], news))
     return data
 
 
@@ -1001,25 +1107,31 @@ def fetch_macro_news(topic: str, extra_query: str | None = None) -> list[dict]:
         lang=lang,
         region=region,
         feeds=feeds,
-        limit=int(os.environ.get("NEWS_MAX", "12")),
-        since_hours=int(os.environ.get("NEWS_SINCE_HOURS", "48")),
+        limit=int(os.environ.get("NEWS_MAX", "25")),
+        since_hours=int(os.environ.get("NEWS_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
 
 
 def fetch_trend_news() -> list[dict]:
+    """抓產業趨勢新聞:台灣(中文)+ 美國(英文)兩邊都抓,讓趨勢雷達含到美股。"""
     lang = os.environ.get("NEWS_LANG", "zh")
     region = os.environ.get("NEWS_REGION", "TW")
     queries = parse_queries("TREND_QUERIES", DEFAULT_TREND_QUERIES)
     topics = parse_topics("TREND_TOPICS", DEFAULT_TREND_TOPICS)
     feeds = section_feeds(topics, lang, region)
-    return news_fetcher.fetch_news(
-        queries,
-        lang=lang,
-        region=region,
-        feeds=feeds,
-        limit=int(os.environ.get("NEWS_MAX", "12")),
-        since_hours=int(os.environ.get("NEWS_SINCE_HOURS", "72")),
+    limit = int(os.environ.get("NEWS_MAX", "25"))
+    since = int(os.environ.get("NEWS_SINCE_HOURS", str(SIX_MONTHS_HOURS)))
+    tw_news = news_fetcher.fetch_news(
+        queries, lang=lang, region=region, feeds=feeds, limit=limit, since_hours=since,
     )
+    # 美股/全球面向:英文趨勢關鍵字 + 美國財經/科技頭條
+    us_queries = parse_queries("US_TREND_QUERIES", DEFAULT_US_TREND_QUERIES)
+    us_feeds = section_feeds(["BUSINESS", "TECHNOLOGY"], "en", "US")
+    us_news = news_fetcher.fetch_news(
+        us_queries, lang="en", region="US", feeds=us_feeds, limit=limit, since_hours=since,
+    )
+    # 合併並依連結/標題去重(保留台灣在前、美國補上)
+    return _dedupe_news(tw_news + us_news)
 
 
 def fetch_stock_news() -> list[dict]:
@@ -1036,8 +1148,8 @@ def fetch_stock_news() -> list[dict]:
         lang=lang,
         region=region,
         feeds=feeds,
-        limit=int(os.environ.get("STOCK_MAX", "25")),
-        since_hours=int(os.environ.get("STOCK_SINCE_HOURS", "48")),
+        limit=int(os.environ.get("STOCK_MAX", "40")),
+        since_hours=int(os.environ.get("STOCK_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
 
 
@@ -1058,8 +1170,8 @@ def fetch_us_stock_news() -> list[dict]:
         lang=lang,
         region=region,
         feeds=feeds,
-        limit=int(os.environ.get("US_STOCK_MAX", "25")),
-        since_hours=int(os.environ.get("US_STOCK_SINCE_HOURS", "48")),
+        limit=int(os.environ.get("US_STOCK_MAX", "40")),
+        since_hours=int(os.environ.get("US_STOCK_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
 
 
@@ -1084,8 +1196,8 @@ def fetch_focus_news(query_en: str, aliases: list[str] | None = None) -> list[di
         lang="en",
         region="US",
         feeds=None,
-        limit=int(os.environ.get("FOCUS_MAX", "20")),
-        since_hours=int(os.environ.get("FOCUS_SINCE_HOURS", "72")),
+        limit=int(os.environ.get("FOCUS_MAX", "30")),
+        since_hours=int(os.environ.get("FOCUS_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
 
 
@@ -1252,6 +1364,7 @@ def build_macro_report(topic: str, today: str, *, extra_query: str | None = None
         "report_date": today,
         "topic": topic,
         "raw_news": news,
+        "news_span": news_span(news),
         "strategic_analysis": analysis["strategic_analysis"],
         "laymans_dictionary": analysis["laymans_dictionary"],
         "dictionary_source": "gemini",
