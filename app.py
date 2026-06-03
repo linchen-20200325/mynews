@@ -32,6 +32,8 @@ STOCKS_PATH = Path("latest_stocks.json")
 STOCKS_ARCHIVE_DIR = Path("data/stocks")
 US_STOCKS_PATH = Path("latest_us_stocks.json")
 US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
+FOCUS_PATH = Path("latest_focus.json")
+FOCUS_ARCHIVE_DIR = Path("data/focus")
 HOUSING_PATH = Path("latest_housing.json")
 HOUSING_ARCHIVE_DIR = Path("data/housing")
 ETF_HOLDINGS_PATH = Path("etf_holdings.json")
@@ -2197,6 +2199,26 @@ def main() -> None:
             else:
                 st.info("這次沒抓到相關新聞,換個關鍵字或稍後再試。")
             return
+
+        # 3) 否則顯示每日排程存檔(可含多個追蹤對象,以下拉切換)
+        doc = pick_report(FOCUS_PATH, FOCUS_ARCHIVE_DIR)
+        focuses = (doc or {}).get("focuses") or []
+        if not focuses:
+            st.info(
+                "尚無每日排程的全球人物追蹤存檔。可在上方輸入中文關鍵字「⚡ 即時產生」,"
+                "或設定 FOCUS_TOPICS 讓每日排程自動追蹤。"
+            )
+            return
+        if len(focuses) > 1:
+            st.caption(f"📚 本日含 {len(focuses)} 個追蹤對象,可切換:")
+            idx = st.selectbox(
+                "選擇追蹤對象", range(len(focuses)),
+                format_func=lambda i: focuses[i].get("query_zh", f"對象 {i + 1}"),
+                key="focus_topic_pick",
+            )
+            render_focus(focuses[idx])
+        else:
+            render_focus(focuses[0])
     elif report_type == "房市觀察":
         st.header("🏠 房市觀察 — 預售/成屋冷熱、打房政策與各縣市房價")
         render_house_price_panel()

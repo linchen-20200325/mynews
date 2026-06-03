@@ -89,6 +89,11 @@ DEFAULT_US_STOCK_QUERIES = [
     "US earnings revenue guidance",
     "Federal Reserve rate cut tech stocks",
 ]
+# 全球人物追蹤每日排程預設追蹤對象(中文;可用 FOCUS_TOPICS 以 ; 覆寫)
+DEFAULT_FOCUS_TOPICS = [
+    "川普",
+    "黃仁勳",
+]
 
 # Google News 分類頭條(不帶關鍵字的『動態』來源,確保不漏突發大事;
 # 只取與主題相關的分類,避免娛樂/體育等離題內容)。可用 NEWS_TOPICS / TREND_TOPICS 覆寫。
@@ -113,6 +118,8 @@ OUTPUT_STOCKS = Path("latest_stocks.json")
 STOCKS_ARCHIVE_DIR = Path("data/stocks")
 OUTPUT_US_STOCKS = Path("latest_us_stocks.json")
 US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
+OUTPUT_FOCUS = Path("latest_focus.json")
+FOCUS_ARCHIVE_DIR = Path("data/focus")
 OUTPUT_HOUSING = Path("latest_housing.json")
 HOUSING_ARCHIVE_DIR = Path("data/housing")
 
@@ -1149,6 +1156,32 @@ def us_stock_picker_enabled() -> bool:
     return os.environ.get("ENABLE_US_STOCK_PICKER", "1").lower() not in ("0", "false", "no")
 
 
+def focus_enabled() -> bool:
+    return os.environ.get("ENABLE_FOCUS", "1").lower() not in ("0", "false", "no")
+
+
+def build_focus_report(today: str) -> dict:
+    """每日排程版全球人物追蹤:對 FOCUS_TOPICS 每個對象翻英→抓全球新聞→分析。
+
+    回傳 {report_date, focuses:[<分析>, ...]};單一對象失敗只略過,不影響其他對象。
+    """
+    topics = parse_queries("FOCUS_TOPICS", DEFAULT_FOCUS_TOPICS)
+    focuses: list[dict] = []
+    for term in topics:
+        try:
+            tr = translate_focus_query(term)
+            news = fetch_focus_news(tr.get("query_en", ""), tr.get("aliases"))
+            analysis = get_focus_analysis(term, tr.get("query_en", ""), news, today)
+            analysis["raw_news"] = news
+            focuses.append(analysis)
+            print(f"  ▸ 追蹤對象「{term}」({tr.get('query_en', '')}):{len(news)} 則新聞。")
+        except Exception as exc:  # noqa: BLE001 — 單一對象失敗不影響其他對象
+            print(f"  警告: 追蹤對象「{term}」產生失敗:{exc}", file=sys.stderr)
+    if not focuses:
+        raise RuntimeError("所有追蹤對象都失敗")
+    return {"report_date": today, "focuses": focuses}
+
+
 def housing_enabled() -> bool:
     return os.environ.get("ENABLE_HOUSING", "1").lower() not in ("0", "false", "no")
 
@@ -1200,7 +1233,7 @@ def main() -> int:
         # A. 戰略報告(支援多主題:第一個為主報告,維持 latest_report.json 向後相容)
         topics = parse_report_topics()
         multi = len(topics) > 1
-        print(f"[1/6] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
+        print(f"[1/7] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
 
         # 主報告必成功(失敗→整體非零碼);其餘主題失敗只警告不中斷。
         print(f"  ▸ 主主題:{topics[0]}")
@@ -1213,7 +1246,7 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 次主題失敗不影響主報告
                 print(f"  警告: 主題「{extra_topic}」產生失敗:{exc}", file=sys.stderr)
 
-        print("[2/6] 戰略分析完成,寫入報告檔...")
+        print("[2/7] 戰略分析完成,寫入報告檔...")
         save_json(OUTPUT_LATEST, report)
         save_json(ARCHIVE_DIR / f"{today}.json", report)
         if multi:
@@ -1225,7 +1258,7 @@ def main() -> int:
         # B. 趨勢雷達
         trends = None
         if trend_radar_enabled():
-            print("[3/6] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
+            print("[3/7] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
             try:
                 trend_news = fetch_trend_news()
                 print(f"  抓到 {len(trend_news)} 則產業新聞。")
@@ -1237,11 +1270,11 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 趨勢雷達失敗不影響戰略報告
                 print(f"  警告: 趨勢雷達產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[3/6] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
+            print("[3/7] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
 
         # C. 台股觀察
         if stock_picker_enabled():
-            print("[4/6] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
+            print("[4/7] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
             try:
                 stock_news = fetch_stock_news()
                 print(f"  抓到 {len(stock_news)} 則台灣財經新聞。")
@@ -1253,11 +1286,11 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 台股觀察失敗不影響戰略報告
                 print(f"  警告: 台股觀察產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[4/6] ENABLE_STOCK_PICKER=0,略過台股觀察。")
+            print("[4/7] ENABLE_STOCK_PICKER=0,略過台股觀察。")
 
         # D. 美股觀察
         if us_stock_picker_enabled():
-            print("[5/6] 爬取美股財經新聞並向 Gemini 整理美股標的...")
+            print("[5/7] 爬取美股財經新聞並向 Gemini 整理美股標的...")
             try:
                 us_stock_news = fetch_us_stock_news()
                 print(f"  抓到 {len(us_stock_news)} 則美股財經新聞。")
@@ -1269,12 +1302,26 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 美股觀察失敗不影響戰略報告
                 print(f"  警告: 美股觀察產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[5/6] ENABLE_US_STOCK_PICKER=0,略過美股觀察。")
+            print("[5/7] ENABLE_US_STOCK_PICKER=0,略過美股觀察。")
 
-        # E. 房市觀察(房價走代理,排程無代理時就只用新聞 + repo 既有房價當參考)
+        # E. 全球人物追蹤(對 FOCUS_TOPICS 每個對象翻英→抓全球新聞→台美股關聯)
+        if focus_enabled():
+            print("[6/7] 翻譯追蹤對象並抓全球新聞,向 Gemini 整理台美股關聯...")
+            try:
+                focus_doc = build_focus_report(today)
+                save_json(OUTPUT_FOCUS, focus_doc)
+                save_json(FOCUS_ARCHIVE_DIR / f"{today}.json", focus_doc)
+                names = "、".join(f.get("query_zh", "") for f in focus_doc["focuses"])
+                print(f"  全球人物追蹤完成,對象:{names}")
+            except Exception as exc:  # noqa: BLE001 — 人物追蹤失敗不影響戰略報告
+                print(f"  警告: 全球人物追蹤產生失敗:{exc}", file=sys.stderr)
+        else:
+            print("[6/7] ENABLE_FOCUS=0,略過全球人物追蹤。")
+
+        # F. 房市觀察(房價走代理,排程無代理時就只用新聞 + repo 既有房價當參考)
         housing = None
         if housing_enabled():
-            print("[6/6] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
+            print("[7/7] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
             try:
                 housing_news = fetch_housing_news()
                 print(f"  抓到 {len(housing_news)} 則房市新聞。")
@@ -1288,7 +1335,7 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 房市觀察失敗不影響戰略報告
                 print(f"  警告: 房市觀察產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[6/6] ENABLE_HOUSING=0,略過房市觀察。")
+            print("[7/7] ENABLE_HOUSING=0,略過房市觀察。")
 
         print(
             f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
