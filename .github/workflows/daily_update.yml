@@ -39,10 +39,13 @@ jobs:
           REPORT_TOPIC: ${{ vars.REPORT_TOPIC }}
           REPORT_TOPICS: ${{ vars.REPORT_TOPICS }}
           NEWS_QUERIES: ${{ vars.NEWS_QUERIES }}
+          NEWS_QUERIES_EN: ${{ vars.NEWS_QUERIES_EN }}
           TREND_QUERIES: ${{ vars.TREND_QUERIES }}
           US_TREND_QUERIES: ${{ vars.US_TREND_QUERIES }}
           STOCK_QUERIES: ${{ vars.STOCK_QUERIES }}
+          STOCK_QUERIES_EN: ${{ vars.STOCK_QUERIES_EN }}
           US_STOCK_QUERIES: ${{ vars.US_STOCK_QUERIES }}
+          US_STOCK_QUERIES_ZH: ${{ vars.US_STOCK_QUERIES_ZH }}
           FOCUS_TOPICS: ${{ vars.FOCUS_TOPICS }}
           ENABLE_TREND_RADAR: ${{ vars.ENABLE_TREND_RADAR }}
           ENABLE_STOCK_PICKER: ${{ vars.ENABLE_STOCK_PICKER }}

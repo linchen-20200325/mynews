@@ -70,6 +70,13 @@ DEFAULT_NEWS_QUERIES = [
     "地緣政治 軍事 衝突",
     "央行 貨幣政策 債市",
 ]
+# 戰略報告的英文側(全球外電,避免只看到中文報導而漏掉國際原文)
+DEFAULT_NEWS_QUERIES_EN = [
+    "Federal Reserve interest rate inflation",
+    "geopolitics military conflict war",
+    "central bank monetary policy bond market",
+    "global stock market outlook",
+]
 DEFAULT_TREND_QUERIES = [
     "類股 題材 資金流向",
     "AI 半導體 投資",
@@ -92,12 +99,26 @@ DEFAULT_STOCK_QUERIES = [
     "台股 類股 漲跌",
     "上市 上櫃 營收 財報",
 ]
+# 台股觀察的英文側(國際媒體對台股/台積電等的報導)
+DEFAULT_STOCK_QUERIES_EN = [
+    "Taiwan stock market TWSE",
+    "TSMC MediaTek Hon Hai Taiwan stocks",
+    "Taiwan shares foreign investors",
+]
 DEFAULT_US_STOCK_QUERIES = [
     "US stock market today",
     "Nvidia Apple Microsoft Tesla stock",
     "Nasdaq S&P 500 Dow Jones",
     "US earnings revenue guidance",
     "Federal Reserve rate cut tech stocks",
+]
+# 美股觀察的中文側(台灣媒體對美股的報導,避免漏掉中文角度)
+DEFAULT_US_STOCK_QUERIES_ZH = [
+    "美股 個股 焦點",
+    "輝達 蘋果 微軟 特斯拉 美股",
+    "那斯達克 標普 道瓊",
+    "美股 財報 營收",
+    "聯準會 美股 科技股",
 ]
 # 全球人物追蹤每日排程預設追蹤對象(中文;可用 FOCUS_TOPICS 以 ; 覆寫)
 DEFAULT_FOCUS_TOPICS = [
@@ -1092,21 +1113,50 @@ def section_feeds(topics: list[str], lang: str, region: str) -> dict[str, str]:
     }
 
 
+def fetch_bilingual_news(
+    *,
+    zh_queries: list[str],
+    en_queries: list[str],
+    zh_feeds: dict[str, str] | None = None,
+    en_feeds: dict[str, str] | None = None,
+    limit: int,
+    since_hours: int,
+) -> list[dict]:
+    """同時抓中文(zh/TW)與英文(en/US)新聞並合併去重。
+
+    讓每個章節不論報導是中文或英文都不漏(中文台媒 + 國際英文原文一起進來);
+    呈現語言仍由各章節的 Gemini prompt 決定(多半輸出繁體中文)。
+    """
+    zh_news = news_fetcher.fetch_news(
+        zh_queries, lang="zh", region="TW", feeds=zh_feeds,
+        limit=limit, since_hours=since_hours,
+    ) if zh_queries else []
+    en_news = news_fetcher.fetch_news(
+        en_queries, lang="en", region="US", feeds=en_feeds,
+        limit=limit, since_hours=since_hours,
+    ) if en_queries else []
+    return _dedupe_news(zh_news + en_news)
+
+
 def fetch_macro_news(topic: str, extra_query: str | None = None) -> list[dict]:
-    lang = os.environ.get("NEWS_LANG", "zh")
-    region = os.environ.get("NEWS_REGION", "TW")
-    queries = parse_queries("NEWS_QUERIES", DEFAULT_NEWS_QUERIES)
-    # 多主題時把該主題當額外關鍵字,讓不同主題抓到偏向該主題的新聞(短主題才適合當查詢)。
-    if extra_query and 0 < len(extra_query) <= 30 and extra_query not in queries:
-        queries = [extra_query] + queries
+    """戰略報告新聞:中文(台媒)+ 英文(國際原文)雙語都抓並合併去重。"""
+    zh_queries = parse_queries("NEWS_QUERIES", DEFAULT_NEWS_QUERIES)
+    en_queries = parse_queries("NEWS_QUERIES_EN", DEFAULT_NEWS_QUERIES_EN)
+    # 多主題時把該主題當額外關鍵字(短主題才適合當查詢);中英文兩邊都加。
+    if extra_query and 0 < len(extra_query) <= 30:
+        if extra_query not in zh_queries:
+            zh_queries = [extra_query] + zh_queries
+        if extra_query not in en_queries:
+            en_queries = [extra_query] + en_queries
     topics = parse_topics("NEWS_TOPICS", DEFAULT_NEWS_TOPICS)
-    # 動態(分類頭條)+ 財經官方 feed,確保不漏突發大事又不離題。
-    feeds = {**news_fetcher.CREDIBLE_FEEDS, **section_feeds(topics, lang, region)}
-    return news_fetcher.fetch_news(
-        queries,
-        lang=lang,
-        region=region,
-        feeds=feeds,
+    # 中文側:動態分類頭條 + 財經官方 feed;英文側:美國同分類頭條。
+    zh_feeds = {**news_fetcher.CREDIBLE_FEEDS, **section_feeds(topics, "zh", "TW")}
+    en_feeds = section_feeds(topics, "en", "US")
+    return fetch_bilingual_news(
+        zh_queries=zh_queries,
+        en_queries=en_queries,
+        zh_feeds=zh_feeds,
+        en_feeds=en_feeds,
         limit=int(os.environ.get("NEWS_MAX", "25")),
         since_hours=int(os.environ.get("NEWS_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
@@ -1135,67 +1185,74 @@ def fetch_trend_news() -> list[dict]:
 
 
 def fetch_stock_news() -> list[dict]:
-    """抓台灣財經/台股新聞(較大量,以利統計被提及次數)。"""
-    lang = os.environ.get("NEWS_LANG", "zh")
-    region = os.environ.get("NEWS_REGION", "TW")
-    queries = parse_queries("STOCK_QUERIES", DEFAULT_STOCK_QUERIES)
-    # 台股聚焦財經分類頭條 + 中央社財經 feed
-    feeds = {"中央社 財經": news_fetcher.CREDIBLE_FEEDS.get("中央社 財經", "")}
-    feeds = {k: v for k, v in feeds.items() if v}
-    feeds.update(section_feeds(["BUSINESS"], lang, region))
-    return news_fetcher.fetch_news(
-        queries,
-        lang=lang,
-        region=region,
-        feeds=feeds,
+    """抓台股新聞:中文(台媒)+ 英文(國際對台股/台積電的報導)雙語都抓並去重。"""
+    zh_queries = parse_queries("STOCK_QUERIES", DEFAULT_STOCK_QUERIES)
+    en_queries = parse_queries("STOCK_QUERIES_EN", DEFAULT_STOCK_QUERIES_EN)
+    # 中文側:財經分類頭條 + 中央社財經 feed;英文側:美國財經頭條。
+    zh_feeds = {"中央社 財經": news_fetcher.CREDIBLE_FEEDS.get("中央社 財經", "")}
+    zh_feeds = {k: v for k, v in zh_feeds.items() if v}
+    zh_feeds.update(section_feeds(["BUSINESS"], "zh", "TW"))
+    en_feeds = section_feeds(["BUSINESS"], "en", "US")
+    return fetch_bilingual_news(
+        zh_queries=zh_queries,
+        en_queries=en_queries,
+        zh_feeds=zh_feeds,
+        en_feeds=en_feeds,
         limit=int(os.environ.get("STOCK_MAX", "40")),
         since_hours=int(os.environ.get("STOCK_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
 
 
 def fetch_us_stock_news() -> list[dict]:
-    """抓美股相關財經新聞(英文原文,較大量以利統計被提及次數)。
+    """抓美股新聞:英文原文(覆蓋廣、即時)+ 中文(台媒對美股的報導)雙語都抓並去重。
 
-    美股以英文原文新聞為來源(覆蓋更廣、更即時);呈現給使用者的分析一律由
-    Gemini 翻成繁體中文(見 US_STOCK_SYSTEM_PROMPT)。可用 NEWS_LANG/NEWS_REGION
-    以外的 US_NEWS_LANG/US_NEWS_REGION 覆寫語系/地區。
+    呈現給使用者的分析一律由 Gemini 翻成繁體中文(見 US_STOCK_SYSTEM_PROMPT)。
     """
-    lang = os.environ.get("US_NEWS_LANG", "en")
-    region = os.environ.get("US_NEWS_REGION", "US")
-    queries = parse_queries("US_STOCK_QUERIES", DEFAULT_US_STOCK_QUERIES)
-    # 美股聚焦美國財經分類頭條(英文)
-    feeds = section_feeds(["BUSINESS"], lang, region)
-    return news_fetcher.fetch_news(
-        queries,
-        lang=lang,
-        region=region,
-        feeds=feeds,
+    en_queries = parse_queries("US_STOCK_QUERIES", DEFAULT_US_STOCK_QUERIES)
+    zh_queries = parse_queries("US_STOCK_QUERIES_ZH", DEFAULT_US_STOCK_QUERIES_ZH)
+    en_feeds = section_feeds(["BUSINESS"], "en", "US")
+    zh_feeds = {"中央社 財經": news_fetcher.CREDIBLE_FEEDS.get("中央社 財經", "")}
+    zh_feeds = {k: v for k, v in zh_feeds.items() if v}
+    return fetch_bilingual_news(
+        zh_queries=zh_queries,
+        en_queries=en_queries,
+        zh_feeds=zh_feeds,
+        en_feeds=en_feeds,
         limit=int(os.environ.get("US_STOCK_MAX", "40")),
         since_hours=int(os.environ.get("US_STOCK_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
 
 
-def fetch_focus_news(query_en: str, aliases: list[str] | None = None) -> list[dict]:
-    """用英文檢索詞抓全球新聞(英文原文)。
-
-    只用『關注對象的英文名 + 別名』當關鍵字,不混入一般頭條 feed,確保新聞貼近該對象。
-    """
-    raw = [query_en] + list(aliases or [])
+def _uniq_queries(items: list[str]) -> list[str]:
+    """關鍵字去重(保序、不分大小寫)。"""
     seen: set[str] = set()
-    queries: list[str] = []
-    for q in raw:
+    out: list[str] = []
+    for q in items:
         q = (q or "").strip()
         key = q.lower()
         if q and key not in seen:
             seen.add(key)
-            queries.append(q)
-    if not queries:
+            out.append(q)
+    return out
+
+
+def fetch_focus_news(
+    query_en: str, aliases: list[str] | None = None, query_zh: str | None = None
+) -> list[dict]:
+    """抓關注對象的全球新聞:英文名/別名(en/US)+ 中文原名(zh/TW)雙語都抓並去重。
+
+    只用『該對象的名稱』當關鍵字,不混入一般頭條 feed,確保新聞貼近該對象;這樣
+    中文台媒(如自由時報)與英文國際原文都能進來。
+    """
+    en_queries = _uniq_queries([query_en] + list(aliases or []))
+    zh_queries = _uniq_queries([query_zh] if query_zh else [])
+    if not en_queries and not zh_queries:
         return []
-    return news_fetcher.fetch_news(
-        queries,
-        lang="en",
-        region="US",
-        feeds=None,
+    return fetch_bilingual_news(
+        zh_queries=zh_queries,
+        en_queries=en_queries,
+        zh_feeds=None,
+        en_feeds=None,
         limit=int(os.environ.get("FOCUS_MAX", "30")),
         since_hours=int(os.environ.get("FOCUS_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
@@ -1324,7 +1381,9 @@ def build_focus_report(today: str) -> dict:
     for term in topics:
         try:
             tr = translate_focus_query(term)
-            news = fetch_focus_news(tr.get("query_en", ""), tr.get("aliases"))
+            news = fetch_focus_news(
+                tr.get("query_en", ""), tr.get("aliases"), tr.get("query_zh", term)
+            )
             analysis = get_focus_analysis(term, tr.get("query_en", ""), news, today)
             analysis["raw_news"] = news
             focuses.append(analysis)

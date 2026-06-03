@@ -995,7 +995,8 @@ def render_focus_panel() -> None:
                     try:
                         tr = update_data.translate_focus_query(term.strip())
                         news = update_data.fetch_focus_news(
-                            tr.get("query_en", ""), tr.get("aliases")
+                            tr.get("query_en", ""), tr.get("aliases"),
+                            tr.get("query_zh", term.strip()),
                         )
                         st.session_state["live_focus_translation"] = tr
                         st.session_state["live_focus_news"] = news

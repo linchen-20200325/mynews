@@ -33,7 +33,12 @@
 `signals`(funding/hiring/policy/technology)、`leading_indicators`、
 `us_stocks` / `tw_stocks`(各 `{name,ticker}`,趨勢雷達同時含美股與台股代表股)、
 `evidence_news`、`summary`,另含真實新聞統計 `news_count`/`first_seen`/`last_seen`。
-詳見 `validate_trends()`。趨勢雷達新聞同時抓台灣(中文)+ 美國(英文)兩邊。
+詳見 `validate_trends()`。
+
+> **雙語抓取**:前五個章節(戰略報告/趨勢雷達/台股/美股/全球人物追蹤)一律
+> **同時抓中文(zh/TW)+ 英文(en/US)新聞並合併去重**(`fetch_bilingual_news()`),
+> 確保不論報導是中文台媒或英文國際原文都不漏;呈現語言由各章節 prompt 決定(多為繁中)。
+> 房市觀察為台灣在地題材(實價登錄 + 國內房市),維持中文抓取。
 
 前五個章節(戰略報告/趨勢雷達/台股/美股/全球人物追蹤)新聞回溯約 6 個月
 (`SIX_MONTHS_HOURS`,實際可回溯範圍受 Google News RSS 限制),並由真實新聞統計每個
@@ -106,6 +111,8 @@ streamlit run app.py                          # 啟動看板
 | `ENABLE_HOUSING` | — | Variable | `1` | 設 `0/false/no` 關閉房市觀察 |
 | `NEWS_QUERIES` / `TREND_QUERIES` / `STOCK_QUERIES` / `US_STOCK_QUERIES` | — | Variable | 內建 | 各頁抓新聞關鍵字,以 `;` 分隔 |
 | `US_TREND_QUERIES` | — | Variable | 內建(英文) | 趨勢雷達美股面向的英文關鍵字,以 `;` 分隔 |
+| `NEWS_QUERIES_EN` / `STOCK_QUERIES_EN` | — | Variable | 內建(英文) | 戰略報告/台股的英文側關鍵字(雙語抓取),以 `;` 分隔 |
+| `US_STOCK_QUERIES_ZH` | — | Variable | 內建(中文) | 美股的中文側關鍵字(雙語抓取),以 `;` 分隔 |
 | `NEWS_TOPICS` / `TREND_TOPICS` | — | Variable | `WORLD,BUSINESS` 等 | Google News 動態分類頭條,以 `,` 分隔 |
 | `NEWS_LANG` / `NEWS_REGION` | — | Variable | `zh` / `TW` | Google News 語系/地區 |
 | `US_NEWS_LANG` / `US_NEWS_REGION` | — | Variable | `en` / `US` | 美股觀察抓英文原文新聞的語系/地區(輸出仍由 Gemini 翻成中文) |
