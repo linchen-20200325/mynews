@@ -98,6 +98,8 @@ streamlit run app.py                          # 啟動看板
 | `NEWS_QUERIES` / `TREND_QUERIES` / `STOCK_QUERIES` / `US_STOCK_QUERIES` | — | Variable | 內建 | 各頁抓新聞關鍵字,以 `;` 分隔 |
 | `NEWS_TOPICS` / `TREND_TOPICS` | — | Variable | `WORLD,BUSINESS` 等 | Google News 動態分類頭條,以 `,` 分隔 |
 | `NEWS_LANG` / `NEWS_REGION` | — | Variable | `zh` / `TW` | Google News 語系/地區 |
+| `US_NEWS_LANG` / `US_NEWS_REGION` | — | Variable | `en` / `US` | 美股觀察抓英文原文新聞的語系/地區(輸出仍由 Gemini 翻成中文) |
+| `FOCUS_MAX` / `FOCUS_SINCE_HOURS` | — | Variable | `20` / `72` | 全球人物追蹤抓新聞則數 / 回溯時數 |
 | `NEWS_MAX` / `NEWS_SINCE_HOURS` | — | Variable | `12` / `48` | 戰略報告抓新聞則數上限 / 回溯時數 |
 | `STOCK_MAX` / `STOCK_SINCE_HOURS` | — | Variable | `25` / `48` | 台股觀察抓新聞則數 / 回溯時數 |
 | `US_STOCK_MAX` / `US_STOCK_SINCE_HOURS` | — | Variable | `25` / `48` | 美股觀察抓新聞則數 / 回溯時數 |

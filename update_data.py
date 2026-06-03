@@ -83,11 +83,11 @@ DEFAULT_STOCK_QUERIES = [
     "上市 上櫃 營收 財報",
 ]
 DEFAULT_US_STOCK_QUERIES = [
-    "美股 個股 焦點",
-    "輝達 蘋果 微軟 特斯拉 美股",
-    "那斯達克 標普 道瓊",
-    "美股 財報 營收",
-    "聯準會 升息 美股 科技股",
+    "US stock market today",
+    "Nvidia Apple Microsoft Tesla stock",
+    "Nasdaq S&P 500 Dow Jones",
+    "US earnings revenue guidance",
+    "Federal Reserve rate cut tech stocks",
 ]
 
 # Google News 分類頭條(不帶關鍵字的『動態』來源,確保不漏突發大事;
@@ -269,9 +269,13 @@ STOCK_SYSTEM_PROMPT = """\
 
 US_STOCK_SYSTEM_PROMPT = """\
 你是一位兼具「美股研究員」與「後端資料工程師」的純資料生成器。
-你會收到一批【已由爬蟲抓取的真實美股相關財經新聞】(含標題、來源、連結、摘要)。
+你會收到一批【已由爬蟲抓取的真實美股相關財經新聞,內容多為英文原文】(含標題、來源、連結、摘要)。
 你的任務是:【只根據這些真實新聞】,整理出新聞中被提到的美股標的(個股或類股),
 判斷各自目前偏多/偏空,並歸納未來趨勢與夕陽產業,最後【嚴格且唯一】輸出合法 JSON。
+
+【語言】輸入新聞是英文,但你的所有輸出一律使用【繁體中文】:summary、sector、reason、
+future_trends、sunset_industries 都要中文;個股 name 用中文慣用名(可在後面用括號補英文,
+例如「輝達(Nvidia)」);evidence_news 的 title 也請翻成繁體中文。ticker 保留原始英文代號。
 
 【做法】
 1. 找出新聞中出現的美股個股/類股,估算每個標的「被幾則新聞提到」(mention_count,
@@ -312,6 +316,84 @@ US_STOCK_SYSTEM_PROMPT = """\
   ],
   "future_trends": ["未來看好的趨勢產業/題材", "..."],
   "sunset_industries": ["轉弱或夕陽產業", "..."]
+}
+"""
+
+
+FOCUS_TRANSLATE_SYSTEM_PROMPT = """\
+你是一個精準的「中文 → 英文新聞檢索詞」轉換器。
+使用者會給你一個中文的人物名、公司名或主題關鍵字(例如:川普、黃仁勳、輝達、AI 晶片)。
+請輸出該對象在國際新聞中最常用的英文名稱與別名,供 Google News 英文檢索使用。
+
+【規則】
+1. query_en 填最通用、最常被國際媒體使用的英文主名(人名用全名,如 Donald Trump、
+   Jensen Huang;公司用常用英文名,如 Nvidia)。
+2. aliases 補 2~4 個常見的英文別名/頭銜/常見寫法(如 "President Trump"、"Jensen Huang Nvidia")。
+3. 若輸入本身已是英文,query_en 原樣保留並補別名。
+4. note 用一句繁體中文說明這是誰/什麼。
+
+【強制輸出規範:Zero-Tolerance】
+只輸出一個合法 JSON,前後不得有任何其他文字或 ```json 標記,且能被 json.loads() 解析。
+
+【JSON 結構 — 必須完全符合】
+{
+  "query_zh": "使用者輸入的中文原詞",
+  "query_en": "最通用的英文檢索主名",
+  "aliases": ["常見英文別名/頭銜", "..."],
+  "kind": "person|company|topic",
+  "note": "一句話說明(繁體中文)"
+}
+"""
+
+
+FOCUS_SYSTEM_PROMPT = """\
+你是一位「全球財經情報分析師」兼純資料生成器。
+你會收到一個【關注對象】(人物/公司/主題)與一批【已由爬蟲抓取的真實英文新聞】
+(含標題、來源、連結、摘要)。請【只根據這些真實新聞】整理情報,最後【嚴格且唯一】輸出合法 JSON。
+
+【任務】
+1. summary:一句話總結這個對象近期的新聞焦點。
+2. key_statements:這個對象「說了什麼、做了什麼」的重點(條列;新聞沒提到就給空陣列)。
+3. affected_industries:由其言行/事件衍伸、可能受影響的產業。
+4. stocks:可能受影響的具體個股,【台股與美股都要找】(務必對應新聞,不可臆測):
+   - market 只能填 "台股" 或 "美股"
+   - sentiment 只能填 "利多" / "利空" / "觀望"
+   - ticker:美股代號(如 NVDA)或台股代號(如 2330);新聞沒明確就留空字串
+   - reason:一句話說明「為何此事件會牽動這檔股票」+ 偏多/偏空/觀望的理由
+
+【語言】輸入新聞多為英文,但你的所有輸出一律使用【繁體中文】(個股 name 用中文慣用名,
+可用括號補英文,如「輝達(Nvidia)」);evidence_news 的 title 也請翻成繁體中文。ticker 保留英文/數字代號。
+
+【真實性】只能根據提供的新聞,嚴禁虛構新聞、數據或代號;你是中立的資訊整理,
+不是投資建議,不要喊買賣、不要給目標價。
+
+【強制輸出規範:Zero-Tolerance】
+只輸出一個合法 JSON,前後不得有任何其他文字或 ```json 標記,且能被 json.loads() 解析。
+
+【JSON 結構 — 必須完全符合】
+{
+  "report_date": "YYYY-MM-DD",
+  "query_zh": "關注對象(中文)",
+  "query_en": "英文檢索主名",
+  "summary": "一句話總結",
+  "key_statements": ["他說了/做了什麼的重點", "..."],
+  "affected_industries": ["受影響產業", "..."],
+  "stocks": [
+    {
+      "name": "個股名稱(中文,可附英文)",
+      "ticker": "代號(沒有就空字串)",
+      "market": "台股",
+      "sector": "所屬產業",
+      "sentiment": "利多",
+      "reason": "依新聞說明此事件如何牽動本檔 + 偏多/偏空原因",
+      "evidence_news": [
+        { "title": "新聞標題(翻成繁體中文)", "source": "媒體來源", "url": "連結(若有)" }
+      ]
+    }
+  ],
+  "evidence_news": [
+    { "title": "新聞標題(翻成繁體中文)", "source": "媒體來源", "url": "連結(若有)" }
+  ]
 }
 """
 
@@ -464,6 +546,17 @@ def build_us_stock_user_prompt(news: list[dict], today: str) -> str:
     )
 
 
+def build_focus_user_prompt(term_zh: str, query_en: str, news: list[dict], today: str) -> str:
+    return (
+        f"今天的日期是 {today}。\n"
+        f"關注對象(中文):{term_zh};英文檢索主名:{query_en}。\n"
+        f"請根據以下真實英文新聞,整理這個對象近期說了什麼/做了什麼、衍伸哪些產業,"
+        f"以及可能牽動哪些【台股與美股】個股(務必兩個市場都找),全部用繁體中文輸出,"
+        f"嚴格輸出 JSON。report_date 請填 {today}。\n\n"
+        f"{format_news_block(news)}"
+    )
+
+
 def format_house_history_block(history: dict | None, top_n: int = 8) -> str:
     """把歷年每坪均價整理成精簡趨勢區塊(取成屋成交量較大的代表縣市,控制 token)。"""
     counties = (history or {}).get("counties") or {}
@@ -564,6 +657,14 @@ def validate_us_stocks(data: dict) -> None:
         raise ValueError("缺少 report_date")
     if not isinstance(data.get("stocks"), list) or not data["stocks"]:
         raise ValueError("stocks 必須是非空陣列")
+
+
+def validate_focus(data: dict) -> None:
+    """全球人物追蹤的最低限度結構驗證(允許 stocks 為空:該對象未必對應到個股)。"""
+    if "report_date" not in data:
+        raise ValueError("缺少 report_date")
+    if not isinstance(data.get("stocks"), list):
+        raise ValueError("stocks 必須是陣列")
 
 
 def validate_housing(data: dict) -> None:
@@ -761,6 +862,34 @@ def get_us_stock_picks(news: list[dict], today: str) -> dict:
     return data
 
 
+def translate_focus_query(term_zh: str) -> dict:
+    """把中文關注對象轉成英文新聞檢索詞(Gemini)。"""
+    data = call_gemini_for_json(
+        FOCUS_TRANSLATE_SYSTEM_PROMPT,
+        f"請把這個中文關鍵字轉成英文新聞檢索詞:「{term_zh}」",
+    )
+    data.setdefault("query_zh", term_zh)
+    data.setdefault("aliases", [])
+    if not data.get("query_en"):
+        data["query_en"] = term_zh
+    return data
+
+
+def get_focus_analysis(term_zh: str, query_en: str, news: list[dict], today: str) -> dict:
+    """Gemini 讀全球新聞 → 該對象說了什麼 + 衍伸產業 + 牽動的台股/美股個股。"""
+    data = call_gemini_for_json(
+        FOCUS_SYSTEM_PROMPT, build_focus_user_prompt(term_zh, query_en, news, today)
+    )
+    data.setdefault("report_date", today)
+    data.setdefault("query_zh", term_zh)
+    data.setdefault("query_en", query_en)
+    data.setdefault("key_statements", [])
+    data.setdefault("affected_industries", [])
+    data.setdefault("stocks", [])
+    validate_focus(data)
+    return data
+
+
 def get_housing_analysis(news: list[dict], prices: dict | None, today: str,
                         history: dict | None = None) -> dict:
     """Gemini 讀房市新聞 + 實價登錄當期/歷年 → 冷熱 + 打房政策 + 縣市標記 + 買方總結。"""
@@ -864,14 +993,17 @@ def fetch_stock_news() -> list[dict]:
 
 
 def fetch_us_stock_news() -> list[dict]:
-    """抓美股相關財經新聞(較大量,以利統計被提及次數)。"""
-    lang = os.environ.get("NEWS_LANG", "zh")
-    region = os.environ.get("NEWS_REGION", "TW")
+    """抓美股相關財經新聞(英文原文,較大量以利統計被提及次數)。
+
+    美股以英文原文新聞為來源(覆蓋更廣、更即時);呈現給使用者的分析一律由
+    Gemini 翻成繁體中文(見 US_STOCK_SYSTEM_PROMPT)。可用 NEWS_LANG/NEWS_REGION
+    以外的 US_NEWS_LANG/US_NEWS_REGION 覆寫語系/地區。
+    """
+    lang = os.environ.get("US_NEWS_LANG", "en")
+    region = os.environ.get("US_NEWS_REGION", "US")
     queries = parse_queries("US_STOCK_QUERIES", DEFAULT_US_STOCK_QUERIES)
-    # 美股聚焦財經分類頭條 + 中央社財經 feed
-    feeds = {"中央社 財經": news_fetcher.CREDIBLE_FEEDS.get("中央社 財經", "")}
-    feeds = {k: v for k, v in feeds.items() if v}
-    feeds.update(section_feeds(["BUSINESS"], lang, region))
+    # 美股聚焦美國財經分類頭條(英文)
+    feeds = section_feeds(["BUSINESS"], lang, region)
     return news_fetcher.fetch_news(
         queries,
         lang=lang,
@@ -879,6 +1011,32 @@ def fetch_us_stock_news() -> list[dict]:
         feeds=feeds,
         limit=int(os.environ.get("US_STOCK_MAX", "25")),
         since_hours=int(os.environ.get("US_STOCK_SINCE_HOURS", "48")),
+    )
+
+
+def fetch_focus_news(query_en: str, aliases: list[str] | None = None) -> list[dict]:
+    """用英文檢索詞抓全球新聞(英文原文)。
+
+    只用『關注對象的英文名 + 別名』當關鍵字,不混入一般頭條 feed,確保新聞貼近該對象。
+    """
+    raw = [query_en] + list(aliases or [])
+    seen: set[str] = set()
+    queries: list[str] = []
+    for q in raw:
+        q = (q or "").strip()
+        key = q.lower()
+        if q and key not in seen:
+            seen.add(key)
+            queries.append(q)
+    if not queries:
+        return []
+    return news_fetcher.fetch_news(
+        queries,
+        lang="en",
+        region="US",
+        feeds=None,
+        limit=int(os.environ.get("FOCUS_MAX", "20")),
+        since_hours=int(os.environ.get("FOCUS_SINCE_HOURS", "72")),
     )
 
 

@@ -934,6 +934,145 @@ def render_us_stocks(data: dict) -> None:
 
 
 # ---------------------------------------------------------------------------
+# 全球人物追蹤(中文輸入 → 自動翻英 → 抓全球新聞 → 台美股關聯分析)
+# ---------------------------------------------------------------------------
+
+def render_focus_panel() -> None:
+    """第一步:中文輸入 → Gemini 翻英 → 抓全球英文新聞。"""
+    with st.container(border=True):
+        st.markdown("#### 🔎 輸入關注對象(中文)")
+        st.caption(
+            "例如:川普、黃仁勳、輝達、AI 晶片。系統會自動翻成英文抓全球新聞,"
+            "再請 Gemini 整理他說了什麼、衍伸哪些產業,以及可能牽動哪些台股/美股。"
+        )
+        term = st.text_input(
+            "關注對象", key="focus_term_input", placeholder="川普 / 黃仁勳 / 輝達 / AI 晶片 …"
+        )
+        has_key = ensure_gemini_key()
+        if st.button(
+            "🌍 ① 翻譯並抓全球新聞",
+            use_container_width=True,
+            disabled=not has_key,
+            help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+        ):
+            if not term.strip():
+                st.warning("請先輸入要追蹤的中文關鍵字。")
+            else:
+                with st.spinner("翻譯關鍵字並抓取全球新聞中…"):
+                    try:
+                        tr = update_data.translate_focus_query(term.strip())
+                        news = update_data.fetch_focus_news(
+                            tr.get("query_en", ""), tr.get("aliases")
+                        )
+                        st.session_state["live_focus_translation"] = tr
+                        st.session_state["live_focus_news"] = news
+                        st.session_state["live_focus_term"] = term.strip()
+                        st.session_state.pop("live_focus", None)
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"抓取失敗:{exc}")
+        if not has_key:
+            render_key_hint()
+
+
+def generate_live_focus() -> None:
+    """第二步:對『已抓到的全球新聞』請 Gemini 做關聯分析。"""
+    tr = st.session_state.get("live_focus_translation", {})
+    news = st.session_state.get("live_focus_news", [])
+    term = st.session_state.get("live_focus_term", tr.get("query_zh", ""))
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    st.session_state["live_focus"] = update_data.get_focus_analysis(
+        term, tr.get("query_en", ""), news, today
+    )
+    st.session_state.pop("live_focus_news", None)
+
+
+def render_focus(data: dict) -> None:
+    col1, col2 = st.columns(2)
+    col1.metric("關注對象", data.get("query_zh", "—"))
+    col2.metric("英文檢索", data.get("query_en", "—"))
+    if data.get("summary"):
+        st.info(data["summary"])
+    st.caption("由 AI 依全球新聞整理,可能有誤,僅供參考,非投資建議。")
+
+    statements = data.get("key_statements", [])
+    if statements:
+        st.subheader("🗣️ 他說了什麼 / 關鍵動向")
+        for s in statements:
+            st.markdown(f"- {s}")
+
+    industries = data.get("affected_industries", [])
+    if industries:
+        st.subheader("🏭 衍伸 / 受影響產業")
+        st.markdown("　".join(f"`{i}`" for i in industries))
+
+    stocks = data.get("stocks", [])
+    if stocks:
+        st.subheader("📈 可能牽動的個股(台股 / 美股)")
+        st.dataframe(
+            [
+                {
+                    "市場": s.get("market", ""),
+                    "標的": s.get("name", ""),
+                    "代號": s.get("ticker", ""),
+                    "產業": s.get("sector", ""),
+                    "傾向": s.get("sentiment", ""),
+                    "原因": s.get("reason", ""),
+                }
+                for s in stocks
+            ],
+            use_container_width=True,
+            hide_index=True,
+        )
+        for market in ("台股", "美股"):
+            group = [s for s in stocks if s.get("market") == market]
+            if not group:
+                continue
+            st.markdown(f"##### 🏷️ {market}（{len(group)} 檔）")
+            for s in group:
+                name = s.get("name", "")
+                ticker = s.get("ticker", "")
+                head = f"**{name}**" + (f"（{ticker}）" if ticker else "")
+                sector = s.get("sector", "")
+                senti = s.get("sentiment", "")
+                emoji, _ = SENTIMENT_STYLE.get(senti, ("", "info"))
+                with st.container(border=True):
+                    st.markdown(
+                        head
+                        + (f"　·　{sector}" if sector else "")
+                        + (f"　·　{emoji} {senti}" if senti else "")
+                    )
+                    if s.get("reason"):
+                        st.write(s["reason"])
+                    evidence = s.get("evidence_news", [])
+                    if evidence:
+                        with st.expander("📰 佐證新聞"):
+                            for n in evidence:
+                                title = n.get("title", "")
+                                src = n.get("source", "")
+                                url = n.get("url", "")
+                                line = f"- {title}" + (f" — _{src}_" if src else "")
+                                if url:
+                                    line += f" [連結]({url})"
+                                st.markdown(line)
+    else:
+        st.info("本次新聞未對應到明確的台股/美股個股。")
+
+    evidence = data.get("evidence_news", [])
+    if evidence:
+        with st.expander("📰 全部佐證新聞"):
+            for n in evidence:
+                title = n.get("title", "")
+                src = n.get("source", "")
+                url = n.get("url", "")
+                line = f"- {title}" + (f" — _{src}_" if src else "")
+                if url:
+                    line += f" [連結]({url})"
+                st.markdown(line)
+
+    st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
+
+
+# ---------------------------------------------------------------------------
 # 戰略報告
 # ---------------------------------------------------------------------------
 
@@ -1738,7 +1877,8 @@ def main() -> None:
 
     st.sidebar.header("📂 報告類型")
     report_type = st.sidebar.radio(
-        "選擇", ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "房市觀察", "ETF持股反查", "ETF圖鑑"]
+        "選擇",
+        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "全球人物追蹤", "房市觀察", "ETF持股反查", "ETF圖鑑"],
     )
     st.sidebar.divider()
     with st.sidebar:
@@ -1998,6 +2138,65 @@ def main() -> None:
             st.warning("尚無每日美股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_us_stocks(data)
+    elif report_type == "全球人物追蹤":
+        st.header("🌍 全球人物追蹤 — 中文輸入,自動翻英抓全球新聞,看牽動哪些台美股")
+        render_focus_panel()
+
+        # 1) 本次即時產生的分析優先顯示
+        if st.session_state.get("live_focus"):
+            live = st.session_state["live_focus"]
+            st.success("⚡ 以下為剛剛即時產生的全球人物追蹤分析。")
+            st.download_button(
+                "⬇️ 下載分析 JSON",
+                data=json.dumps(live, ensure_ascii=False, indent=2),
+                file_name=f"focus_{live.get('query_en', 'result')}.json",
+                mime="application/json",
+            )
+            st.divider()
+            render_focus(live)
+            return
+
+        # 2) 已抓到全球新聞、尚未分析:顯示翻譯結果 + 新聞 + 第二步按鈕
+        if "live_focus_news" in st.session_state:
+            tr = st.session_state.get("live_focus_translation", {})
+            news = st.session_state["live_focus_news"]
+            st.divider()
+            en = tr.get("query_en", "")
+            aliases = "、".join(a for a in tr.get("aliases", []) if a)
+            note = tr.get("note", "")
+            st.info(
+                f"🔤 中文「{tr.get('query_zh', '')}」→ 英文檢索:**{en}**"
+                + (f"　(別名:{aliases})" if aliases else "")
+                + (f"\n\n{note}" if note else "")
+            )
+            st.subheader("📰 抓到的全球新聞(英文原文,分析會翻成中文)")
+            if news:
+                st.success(f"已抓到 {len(news)} 則全球新聞,確認後再請 Gemini 整理:")
+                has_key = ensure_gemini_key()
+                if st.button(
+                    "🧠 ② 用 Gemini 整理(他說了什麼 + 衍伸產業 + 台美股)",
+                    use_container_width=True,
+                    disabled=not has_key,
+                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+                ):
+                    with st.spinner("Gemini 分析中(約 10–30 秒)…"):
+                        try:
+                            generate_live_focus()
+                            st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"分析失敗:{exc}")
+                if not has_key:
+                    render_key_hint()
+                st.download_button(
+                    "⬇️ 下載全球新聞 JSON",
+                    data=json.dumps(news, ensure_ascii=False, indent=2),
+                    file_name="focus_news.json",
+                    mime="application/json",
+                )
+                render_news_cards(news)
+            else:
+                st.info("這次沒抓到相關新聞,換個關鍵字或稍後再試。")
+            return
     elif report_type == "房市觀察":
         st.header("🏠 房市觀察 — 預售/成屋冷熱、打房政策與各縣市房價")
         render_house_price_panel()
