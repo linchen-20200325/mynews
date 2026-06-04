@@ -125,6 +125,13 @@ DEFAULT_FOCUS_TOPICS = [
     "川普",
     "黃仁勳",
 ]
+# 台媒自家 RSS(直接來源,補 Google News 排名外的台灣報導);人物追蹤會「先過濾出有提到
+# 該對象者」才納入,避免灌入無關新聞。抓不到的 feed 會自動略過(fetch_news 容錯)。
+TW_MEDIA_FEEDS = {
+    "自由時報 即時": "https://news.ltn.com.tw/rss/all.xml",
+    "自由時報 財經": "https://ec.ltn.com.tw/rss/all.xml",
+    "經濟日報": "https://money.udn.com/rssfeed/news/1001/5590?ch=money",
+}
 
 # Google News 分類頭條(不帶關鍵字的『動態』來源,確保不漏突發大事;
 # 只取與主題相關的分類,避免娛樂/體育等離題內容)。可用 NEWS_TOPICS / TREND_TOPICS 覆寫。
@@ -378,8 +385,11 @@ FOCUS_TRANSLATE_SYSTEM_PROMPT = """\
 1. query_en 填最通用、最常被國際媒體使用的英文主名(人名用全名,如 Donald Trump、
    Jensen Huang;公司用常用英文名,如 Nvidia)。
 2. aliases 補 2~4 個常見的英文別名/頭銜/常見寫法(如 "President Trump"、"Jensen Huang Nvidia")。
-3. 若輸入本身已是英文,query_en 原樣保留並補別名。
-4. note 用一句繁體中文說明這是誰/什麼。
+3. zh_aliases 補 2~4 個常見的【中文別名/關聯詞】,供台灣中文新聞檢索用
+   (例如 黃仁勳 → ["輝達","NVIDIA","輝達執行長"];川普 → ["特朗普","美國總統川普"]);
+   若該對象就是公司,放公司中文名與相關代表人。
+4. 若輸入本身已是英文,query_en 原樣保留並補別名;zh_aliases 補對應中文譯名。
+5. note 用一句繁體中文說明這是誰/什麼。
 
 【強制輸出規範:Zero-Tolerance】
 只輸出一個合法 JSON,前後不得有任何其他文字或 ```json 標記,且能被 json.loads() 解析。
@@ -389,7 +399,38 @@ FOCUS_TRANSLATE_SYSTEM_PROMPT = """\
   "query_zh": "使用者輸入的中文原詞",
   "query_en": "最通用的英文檢索主名",
   "aliases": ["常見英文別名/頭銜", "..."],
+  "zh_aliases": ["常見中文別名/關聯詞", "..."],
   "kind": "person|company|topic",
+  "note": "一句話說明(繁體中文)"
+}
+"""
+
+
+STOCK_QUERY_TRANSLATE_SYSTEM_PROMPT = """\
+你是一個精準的「個股代號/名稱 正規化器」。
+使用者會給你一檔股票,可能是中文名(台積電)、英文名(Nvidia)或代號(2330、NVDA)。
+請判斷它是台股還是美股,並輸出供新聞檢索用的中英文名稱與別名。
+
+【規則】
+1. query_zh:該股最通用的中文名(台股用正式公司名如「台積電」;美股用慣用中文譯名如「輝達」)。
+2. query_en:該股最常被國際/英文媒體使用的英文名(如 TSMC、Nvidia)。
+3. ticker:股票代號(台股 4 碼數字如 2330;美股英文代號如 NVDA);無法確定就留空字串。
+4. market:只能填 "台股" 或 "美股"(無法判斷時依代號/名稱合理推測,真的不行才填 "美股")。
+5. aliases:2~4 個常見英文別名/簡稱(如 "Taiwan Semiconductor"、"NVDA")。
+6. zh_aliases:2~4 個常見中文別名/關聯詞(如 台積電 → ["台積","TSMC","護國神山"];輝達 → ["NVIDIA","黃仁勳"])。
+7. note:一句繁體中文說明這是哪家公司、做什麼的。
+
+【強制輸出規範:Zero-Tolerance】
+只輸出一個合法 JSON,前後不得有任何其他文字或 ```json 標記,且能被 json.loads() 解析。
+
+【JSON 結構 — 必須完全符合】
+{
+  "query_zh": "中文公司名",
+  "query_en": "英文公司名",
+  "ticker": "代號(沒有就空字串)",
+  "market": "台股",
+  "aliases": ["英文別名", "..."],
+  "zh_aliases": ["中文別名", "..."],
   "note": "一句話說明(繁體中文)"
 }
 """
@@ -444,6 +485,56 @@ FOCUS_SYSTEM_PROMPT = """\
       ]
     }
   ],
+  "evidence_news": [
+    { "title": "新聞標題(翻成繁體中文)", "source": "媒體來源", "url": "連結(若有)" }
+  ]
+}
+"""
+
+
+STOCK_QUERY_SYSTEM_PROMPT = """\
+你是一位「個股研究員」兼純資料生成器。
+你會收到一檔【目標個股】(中英文名+代號+市場)與一批【已由爬蟲抓取的真實新聞】
+(含標題、來源、連結、摘要;可能中英文混雜)。請【只根據這些真實新聞】回答兩個問題,
+最後【嚴格且唯一】輸出合法 JSON。
+
+【任務:回答兩個核心問題】
+1. 這檔股與目前新聞的「直接相關性」:
+   - relevance_level 只能填 "高" / "中" / "低":新聞是否直接點名/重度討論這檔股(高);
+     只是同產業/間接波及(中);幾乎沒提到本檔(低)。
+   - relevance_points:條列 2~5 點,具體說明「哪一則/哪類新聞如何直接關係到本檔」。
+2. 公司營運績效 + 股價上揚的性質:
+   - operating_performance:依新聞白話判讀公司近期營運/接單/財報/展望表現
+     (好/持平/轉弱及依據);【嚴禁虛構具體財報數字】,新聞沒提到就說「新聞未充分揭露」。
+   - rally_nature 只能填 "短期消息面" / "基本面可持續" / "資料不足判斷":
+     研判近期股價上揚比較像一次性題材/消息帶動,還是有營運基本面支撐可延續。
+   - rally_reason:一句話說明上述研判的理由(對應新聞,不喊買賣、不給目標價)。
+
+【語言】輸入新聞可能含英文,你的所有輸出一律用【繁體中文】;evidence_news 的 title 也翻成繁體中文。
+ticker 保留原始代號。
+
+【真實性】只能根據提供的新聞,嚴禁虛構新聞、數據、財報或代號;你是中立資訊整理,非投資建議。
+若新聞太少或幾乎沒提到本檔,請誠實在 summary 與各欄說明「相關新聞不足」,不要硬湊。
+
+【輸出精簡(避免過長被截斷)】
+relevance_points 最多 5 點;evidence_news 最多 8 則;各 reason/敘述控制在 80 字內。
+
+【強制輸出規範:Zero-Tolerance】
+只輸出一個合法 JSON,前後不得有任何其他文字或 ```json 標記,且能被 json.loads() 解析。
+
+【JSON 結構 — 必須完全符合】
+{
+  "report_date": "YYYY-MM-DD",
+  "query_zh": "中文公司名",
+  "query_en": "英文公司名",
+  "ticker": "代號",
+  "market": "台股",
+  "summary": "一句話總結這檔股近期新聞焦點",
+  "relevance_level": "高",
+  "relevance_points": ["新聞如何直接關係到本檔", "..."],
+  "operating_performance": "依新聞判讀的營運績效白話",
+  "rally_nature": "短期消息面",
+  "rally_reason": "上漲性質的研判理由",
   "evidence_news": [
     { "title": "新聞標題(翻成繁體中文)", "source": "媒體來源", "url": "連結(若有)" }
   ]
@@ -588,6 +679,13 @@ def _expand_match_keys(keys: list[str]) -> list[str]:
     return [k.lower() for k in out]
 
 
+def news_matches(keys: list[str], item: dict) -> bool:
+    """單則新聞的標題+摘要是否提到任一關鍵字(供台媒整站 feed 過濾出相關報導)。"""
+    norm = _expand_match_keys(keys)
+    hay = (str(item.get("title", "")) + " " + str(item.get("summary", ""))).lower()
+    return any(k in hay for k in norm)
+
+
 def mention_window(keys: list[str], news: list[dict]) -> dict:
     """從真實新聞統計關鍵字命中的則數與最初/最近見報日期(供『說過幾次 + 首見/最近』)。
 
@@ -682,6 +780,22 @@ def build_focus_user_prompt(term_zh: str, query_en: str, news: list[dict], today
         f"請根據以下真實英文新聞,整理這個對象近期說了什麼/做了什麼、衍伸哪些產業,"
         f"以及可能牽動哪些【台股與美股】個股(務必兩個市場都找),全部用繁體中文輸出,"
         f"嚴格輸出 JSON。report_date 請填 {today}。\n\n"
+        f"{format_news_block(news)}"
+    )
+
+
+def build_stock_query_user_prompt(
+    term_zh: str, query_en: str, ticker: str, market: str,
+    news: list[dict], today: str,
+) -> str:
+    tag = f"{term_zh}" + (f"({ticker})" if ticker else "") + (f"／{market}" if market else "")
+    return (
+        f"今天的日期是 {today}。\n"
+        f"目標個股:{tag};英文名:{query_en}。\n"
+        f"請根據以下真實新聞回答兩件事,全部用繁體中文輸出,嚴格輸出 JSON:\n"
+        f"① 這檔股與目前新聞的『直接相關性』(高/中/低 + 條列依據);\n"
+        f"② 公司營運績效如何、近期股價上揚屬『短期消息面』還是『基本面可持續』。\n"
+        f"report_date 請填 {today}。\n\n"
         f"{format_news_block(news)}"
     )
 
@@ -794,6 +908,14 @@ def validate_focus(data: dict) -> None:
         raise ValueError("缺少 report_date")
     if not isinstance(data.get("stocks"), list):
         raise ValueError("stocks 必須是陣列")
+
+
+def validate_stock_query(data: dict) -> None:
+    """個股健診的最低限度結構驗證。"""
+    if "report_date" not in data:
+        raise ValueError("缺少 report_date")
+    if not isinstance(data.get("relevance_points"), list):
+        raise ValueError("relevance_points 必須是陣列")
 
 
 def validate_housing(data: dict) -> None:
@@ -1042,8 +1164,48 @@ def translate_focus_query(term_zh: str) -> dict:
     )
     data.setdefault("query_zh", term_zh)
     data.setdefault("aliases", [])
+    data.setdefault("zh_aliases", [])
     if not data.get("query_en"):
         data["query_en"] = term_zh
+    return data
+
+
+def translate_stock_query(term: str) -> dict:
+    """把使用者輸入的個股(中文/英文/代號)正規化成中英名+代號+市場(Gemini)。"""
+    data = call_gemini_for_json(
+        STOCK_QUERY_TRANSLATE_SYSTEM_PROMPT,
+        f"請把這檔股票正規化成中英文名稱、代號與市場:「{term}」",
+    )
+    data.setdefault("query_zh", term)
+    data.setdefault("ticker", "")
+    data.setdefault("aliases", [])
+    data.setdefault("zh_aliases", [])
+    if data.get("market") not in ("台股", "美股"):
+        data["market"] = "美股"
+    if not data.get("query_en"):
+        data["query_en"] = term
+    return data
+
+
+def get_stock_query_analysis(
+    term_zh: str, query_en: str, ticker: str, market: str,
+    news: list[dict], today: str,
+) -> dict:
+    """Gemini 讀該股新聞 → ①與新聞的直接相關性 ②營運績效 + 上漲是消息面還是基本面。"""
+    data = call_gemini_for_json(
+        STOCK_QUERY_SYSTEM_PROMPT,
+        build_stock_query_user_prompt(term_zh, query_en, ticker, market, news, today),
+    )
+    data.setdefault("report_date", today)
+    data.setdefault("query_zh", term_zh)
+    data.setdefault("query_en", query_en)
+    data.setdefault("ticker", ticker)
+    data.setdefault("market", market)
+    data.setdefault("relevance_points", [])
+    validate_stock_query(data)
+    # 整體新聞跨度 + 本檔在這批新聞的真實命中統計(首見/最近/則數)
+    data.update(news_span(news))
+    data.update(mention_window(_uniq_queries([term_zh, query_en, ticker]), news))
     return data
 
 
@@ -1198,7 +1360,7 @@ def fetch_stock_news() -> list[dict]:
         en_queries=en_queries,
         zh_feeds=zh_feeds,
         en_feeds=en_feeds,
-        limit=int(os.environ.get("STOCK_MAX", "40")),
+        limit=int(os.environ.get("STOCK_MAX", "60")),
         since_hours=int(os.environ.get("STOCK_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
 
@@ -1237,25 +1399,52 @@ def _uniq_queries(items: list[str]) -> list[str]:
 
 
 def fetch_focus_news(
-    query_en: str, aliases: list[str] | None = None, query_zh: str | None = None
+    query_en: str,
+    aliases: list[str] | None = None,
+    query_zh: str | None = None,
+    zh_aliases: list[str] | None = None,
 ) -> list[dict]:
-    """抓關注對象的全球新聞:英文名/別名(en/US)+ 中文原名(zh/TW)雙語都抓並去重。
-
-    只用『該對象的名稱』當關鍵字,不混入一般頭條 feed,確保新聞貼近該對象;這樣
-    中文台媒(如自由時報)與英文國際原文都能進來。
+    """抓關注對象的全球新聞,三路合併去重:
+    1) 英文名/別名 在 en/US 關鍵字檢索;
+    2) 中文原名 + 中文別名(如黃仁勳→輝達)在 zh/TW 關鍵字檢索;
+    3) 台媒整站 RSS(TW_MEDIA_FEEDS)直接來源,但「只保留有提到該對象者」,
+       補足 Google News 排名外、卻確實報導該人物的台灣文章(如自由時報)。
     """
     en_queries = _uniq_queries([query_en] + list(aliases or []))
-    zh_queries = _uniq_queries([query_zh] if query_zh else [])
-    if not en_queries and not zh_queries:
+    zh_terms = _uniq_queries(([query_zh] if query_zh else []) + list(zh_aliases or []))
+    if not en_queries and not zh_terms:
         return []
-    return fetch_bilingual_news(
-        zh_queries=zh_queries,
+
+    since_hours = int(os.environ.get("FOCUS_SINCE_HOURS", str(SIX_MONTHS_HOURS)))
+    # 1) + 2) 關鍵字雙語檢索
+    keyword_news = fetch_bilingual_news(
+        zh_queries=zh_terms,
         en_queries=en_queries,
         zh_feeds=None,
         en_feeds=None,
-        limit=int(os.environ.get("FOCUS_MAX", "30")),
-        since_hours=int(os.environ.get("FOCUS_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
+        limit=int(os.environ.get("FOCUS_MAX", "50")),
+        since_hours=since_hours,
     )
+    # 3) 台媒整站 RSS → 過濾出有提到該對象者(用中文名稱/別名比對)
+    site_news = news_fetcher.fetch_news(
+        [], lang="zh", region="TW", feeds=TW_MEDIA_FEEDS,
+        limit=int(os.environ.get("FOCUS_SITE_MAX", "200")), since_hours=since_hours,
+    )
+    site_hits = [n for n in site_news if zh_terms and news_matches(zh_terms, n)]
+    return _dedupe_news(keyword_news + site_hits)
+
+
+def fetch_stock_query_news(
+    query_en: str,
+    ticker: str = "",
+    aliases: list[str] | None = None,
+    query_zh: str | None = None,
+    zh_aliases: list[str] | None = None,
+) -> list[dict]:
+    """個股健診抓該股新聞:沿用 fetch_focus_news 三路雙語邏輯,並把股票代號也納入檢索。"""
+    en = ([ticker] if ticker else []) + list(aliases or [])
+    zh = ([ticker] if ticker else []) + list(zh_aliases or [])
+    return fetch_focus_news(query_en, en, query_zh, zh)
 
 
 def fetch_housing_news() -> list[dict]:
@@ -1382,7 +1571,8 @@ def build_focus_report(today: str) -> dict:
         try:
             tr = translate_focus_query(term)
             news = fetch_focus_news(
-                tr.get("query_en", ""), tr.get("aliases"), tr.get("query_zh", term)
+                tr.get("query_en", ""), tr.get("aliases"),
+                tr.get("query_zh", term), tr.get("zh_aliases"),
             )
             analysis = get_focus_analysis(term, tr.get("query_en", ""), news, today)
             analysis["raw_news"] = news
