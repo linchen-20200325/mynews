@@ -1118,6 +1118,125 @@ def render_focus(data: dict) -> None:
 
 
 # ---------------------------------------------------------------------------
+# 個股健診(輸入單一個股 → 抓該股新聞 → 問:與新聞相關性 + 上漲是消息面還是基本面)
+# ---------------------------------------------------------------------------
+
+def render_stock_query_panel() -> None:
+    """第一步:輸入個股 → Gemini 正規化中英名/代號/市場 → 抓該股新聞。"""
+    with st.container(border=True):
+        st.markdown("#### 🔎 輸入要健診的個股")
+        st.caption(
+            "可輸入中文名、英文名或代號(例:台積電 / 2330 / Nvidia / NVDA)。"
+            "系統會自動判斷台股/美股、抓該股最近約 6 個月的中英文新聞,"
+            "再請 Gemini 回答:① 與目前新聞的直接相關性;② 營運績效 + 股價上揚屬短期消息面或基本面可持續。"
+        )
+        term = st.text_input(
+            "個股", key="stockq_term_input", placeholder="台積電 / 2330 / Nvidia / NVDA …"
+        )
+        has_key = ensure_gemini_key()
+        if st.button(
+            "🔍 ① 辨識個股並抓新聞",
+            use_container_width=True,
+            disabled=not has_key,
+            help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+        ):
+            if not term.strip():
+                st.warning("請先輸入個股名稱或代號。")
+            else:
+                with st.spinner("辨識個股並抓取相關新聞中…"):
+                    try:
+                        tr = update_data.translate_stock_query(term.strip())
+                        news = update_data.fetch_stock_query_news(
+                            tr.get("query_en", ""), tr.get("ticker", ""),
+                            tr.get("aliases"), tr.get("query_zh", term.strip()),
+                            tr.get("zh_aliases"),
+                        )
+                        st.session_state["live_stockq_translation"] = tr
+                        st.session_state["live_stockq_news"] = news
+                        st.session_state["live_stockq_term"] = term.strip()
+                        st.session_state.pop("live_stockq", None)
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"抓取失敗:{exc}")
+        if not has_key:
+            render_key_hint()
+
+
+def generate_live_stock_query() -> None:
+    """第二步:對『已抓到的該股新聞』請 Gemini 做健診分析。"""
+    tr = st.session_state.get("live_stockq_translation", {})
+    news = st.session_state.get("live_stockq_news", [])
+    term = st.session_state.get("live_stockq_term", tr.get("query_zh", ""))
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    st.session_state["live_stockq"] = update_data.get_stock_query_analysis(
+        tr.get("query_zh", term), tr.get("query_en", ""),
+        tr.get("ticker", ""), tr.get("market", ""), news, today,
+    )
+    st.session_state.pop("live_stockq_news", None)
+
+
+def render_stock_query(data: dict) -> None:
+    head = data.get("query_zh", "—")
+    ticker = data.get("ticker", "")
+    col1, col2, col3 = st.columns(3)
+    col1.metric("個股", head + (f"（{ticker}）" if ticker else ""))
+    col2.metric("市場", data.get("market", "—"))
+    col3.metric("英文名", data.get("query_en", "—"))
+    if data.get("summary"):
+        st.info(data["summary"])
+    cap = mention_caption(data)
+    if cap:
+        st.caption(cap)
+    if data.get("first_seen"):
+        st.caption(
+            f"🗓️ 相關新聞 {data['first_seen']} ～ {data.get('last_seen', '')}"
+            f"，共 {data.get('news_count', 0)} 則(回溯約 6 個月,實際範圍受 RSS 限制)。"
+        )
+    st.caption("由 AI 依真實新聞整理,可能有誤,僅供參考,非投資建議。")
+
+    # ① 與目前新聞的直接相關性
+    st.subheader("① 與目前新聞的直接相關性")
+    level = data.get("relevance_level", "")
+    level_emoji = {"高": "🟢 高", "中": "🟡 中", "低": "⚪ 低"}.get(level, level)
+    if level_emoji:
+        st.markdown(f"**相關度:{level_emoji}**")
+    points = data.get("relevance_points", [])
+    if points:
+        for p in points:
+            st.markdown(f"- {p}")
+    else:
+        st.caption("新聞中未見對本檔的直接著墨。")
+
+    # ② 營運績效 + 上漲性質
+    st.subheader("② 營運績效 & 股價上揚的性質")
+    if data.get("operating_performance"):
+        st.markdown(f"**營運績效:** {data['operating_performance']}")
+    nature = data.get("rally_nature", "")
+    nature_emoji = {
+        "短期消息面": "⚡ 短期消息面",
+        "基本面可持續": "🏗️ 基本面可持續",
+        "資料不足判斷": "❓ 資料不足判斷",
+    }.get(nature, nature)
+    if nature_emoji:
+        st.markdown(f"**上漲性質:** {nature_emoji}")
+    if data.get("rally_reason"):
+        st.write(data["rally_reason"])
+
+    evidence = data.get("evidence_news", [])
+    if evidence:
+        with st.expander("📰 佐證新聞"):
+            for n in evidence:
+                title = n.get("title", "")
+                src = n.get("source", "")
+                url = n.get("url", "")
+                line = f"- {title}" + (f" — _{src}_" if src else "")
+                if url:
+                    line += f" [連結]({url})"
+                st.markdown(line)
+
+    st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
+
+
+# ---------------------------------------------------------------------------
 # 戰略報告
 # ---------------------------------------------------------------------------
 
@@ -1956,7 +2075,7 @@ def main() -> None:
     st.sidebar.header("📂 報告類型")
     report_type = st.sidebar.radio(
         "選擇",
-        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "全球人物追蹤", "房市觀察", "ETF持股反查", "ETF圖鑑"],
+        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "個股健診", "全球人物追蹤", "房市觀察", "ETF持股反查", "ETF圖鑑"],
     )
     st.sidebar.divider()
     with st.sidebar:
@@ -2216,6 +2335,69 @@ def main() -> None:
             st.warning("尚無每日美股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_us_stocks(data)
+    elif report_type == "個股健診":
+        st.header("🩺 個股健診 — 輸入單一個股,看它跟新聞的相關性與上漲性質")
+        render_stock_query_panel()
+
+        # 1) 本次即時產生的健診分析優先顯示
+        if st.session_state.get("live_stockq"):
+            live = st.session_state["live_stockq"]
+            st.success("⚡ 以下為剛剛即時產生的個股健診分析。")
+            st.download_button(
+                "⬇️ 下載分析 JSON",
+                data=json.dumps(live, ensure_ascii=False, indent=2),
+                file_name=f"stock_{live.get('ticker') or live.get('query_en', 'result')}.json",
+                mime="application/json",
+            )
+            st.divider()
+            render_stock_query(live)
+            return
+
+        # 2) 已抓到該股新聞、尚未分析:顯示辨識結果 + 新聞 + 第二步按鈕
+        if "live_stockq_news" in st.session_state:
+            tr = st.session_state.get("live_stockq_translation", {})
+            news = st.session_state["live_stockq_news"]
+            st.divider()
+            ticker = tr.get("ticker", "")
+            note = tr.get("note", "")
+            st.info(
+                f"🔤 辨識為:**{tr.get('query_zh', '')}**"
+                + (f"（{ticker}）" if ticker else "")
+                + f"　·　{tr.get('market', '')}"
+                + f"　·　英文:{tr.get('query_en', '')}"
+                + (f"\n\n{note}" if note else "")
+            )
+            st.subheader("📰 抓到的相關新聞(英文原文 + 台媒中文,分析會翻成中文)")
+            if news:
+                st.success(f"已抓到 {len(news)} 則相關新聞,確認後再請 Gemini 健診:")
+                has_key = ensure_gemini_key()
+                if st.button(
+                    "🧠 ② 用 Gemini 健診(相關性 + 營運績效 + 上漲性質)",
+                    use_container_width=True,
+                    disabled=not has_key,
+                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+                ):
+                    with st.spinner("Gemini 分析中(約 10–30 秒)…"):
+                        try:
+                            generate_live_stock_query()
+                            st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"分析失敗:{exc}")
+                if not has_key:
+                    render_key_hint()
+                st.download_button(
+                    "⬇️ 下載相關新聞 JSON",
+                    data=json.dumps(news, ensure_ascii=False, indent=2),
+                    file_name="stock_news.json",
+                    mime="application/json",
+                )
+                render_news_cards(news)
+            else:
+                st.info("這次沒抓到相關新聞,換個名稱/代號或稍後再試。")
+            return
+
+        st.info("在上方輸入個股名稱或代號,先「① 辨識個股並抓新聞」,再用 Gemini 健診。")
+
     elif report_type == "全球人物追蹤":
         st.header("🌍 全球人物追蹤 — 中文輸入,自動翻英抓全球新聞,看牽動哪些台美股")
         render_focus_panel()
