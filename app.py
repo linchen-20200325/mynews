@@ -1275,7 +1275,7 @@ def render_stock_query(data: dict) -> None:
     sc = data.get("supply_chain") or {}
     seg_labels = [("upstream", "上游"), ("midstream", "中游"), ("downstream", "下游")]
     if any(sc.get(k) for k, _ in seg_labels):
-        st.markdown("**相關台股供應鏈:**")
+        st.markdown("**產業上中下游供應鏈:**")
         for key, label in seg_labels:
             rows = sc.get(key) or []
             if not rows:
