@@ -1128,7 +1128,8 @@ def render_stock_query_panel() -> None:
         st.caption(
             "可輸入中文名、英文名或代號(例:台積電 / 2330 / Nvidia / NVDA)。"
             "系統會自動判斷台股/美股、抓該股最近約 6 個月的中英文新聞,"
-            "再請 Gemini 回答:① 與目前新聞的直接相關性;② 營運績效 + 股價上揚屬短期消息面或基本面可持續。"
+            "再請 Gemini 回答:① 與目前新聞的直接相關性;② 營運績效 + 股價上揚屬短期消息面或基本面可持續;"
+            "③ 是否龍頭、競爭對手、技術門檻,美股再附相關台股上中下游供應鏈,並給長期持有研判。"
         )
         term = st.text_input(
             "個股", key="stockq_term_input", placeholder="台積電 / 2330 / Nvidia / NVDA …"
@@ -1232,6 +1233,63 @@ def render_stock_query(data: dict) -> None:
                 if url:
                     line += f" [連結]({url})"
                 st.markdown(line)
+
+    # ③ 護城河與長期持有觀察
+    st.subheader("③ 護城河與長期持有觀察")
+    st.caption("本段含產業結構常識(非僅來自新聞),數字未必即時,僅供參考。")
+    lead = data.get("is_leader", "")
+    lead_emoji = {
+        "龍頭": "👑 龍頭",
+        "前段班": "🥈 前段班",
+        "中後段": "📉 中後段",
+        "資料不足": "❓ 資料不足",
+    }.get(lead, lead)
+    moat = data.get("moat_level", "")
+    moat_emoji = {
+        "高": "🟢 高", "中": "🟡 中", "低": "🔴 低", "資料不足": "❓ 資料不足",
+    }.get(moat, moat)
+    c1, c2 = st.columns(2)
+    if lead_emoji:
+        c1.metric("市場地位", lead_emoji)
+    if moat_emoji:
+        c2.metric("技術門檻(護城河)", moat_emoji)
+    if data.get("leader_reason"):
+        st.markdown(f"**地位依據:** {data['leader_reason']}")
+    if data.get("moat_reason"):
+        st.markdown(f"**護城河來源:** {data['moat_reason']}")
+
+    competitors = data.get("competitors", [])
+    if competitors:
+        st.markdown("**主要競爭對手:**")
+        for c in competitors:
+            if not isinstance(c, dict):
+                continue
+            name = c.get("name", "")
+            tk = c.get("ticker", "")
+            note = c.get("note", "")
+            line = f"- {name}" + (f"（{tk}）" if tk else "")
+            if note:
+                line += f" — {note}"
+            st.markdown(line)
+
+    sc = data.get("supply_chain") or {}
+    seg_labels = [("upstream", "上游"), ("midstream", "中游"), ("downstream", "下游")]
+    if any(sc.get(k) for k, _ in seg_labels):
+        st.markdown("**相關台股供應鏈:**")
+        for key, label in seg_labels:
+            rows = sc.get(key) or []
+            if not rows:
+                continue
+            names = "、".join(
+                (r.get("name", "") + (f"（{r.get('ticker','')}）" if r.get("ticker") else ""))
+                + (f":{r.get('role','')}" if r.get("role") else "")
+                for r in rows if isinstance(r, dict) and r.get("name")
+            )
+            if names:
+                st.markdown(f"- **{label}**:{names}")
+
+    if data.get("long_term_view"):
+        st.success(f"**長期持有研判:** {data['long_term_view']}")
 
     st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
 
