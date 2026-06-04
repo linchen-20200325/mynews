@@ -509,15 +509,32 @@ STOCK_QUERY_SYSTEM_PROMPT = """\
    - rally_nature 只能填 "短期消息面" / "基本面可持續" / "資料不足判斷":
      研判近期股價上揚比較像一次性題材/消息帶動,還是有營運基本面支撐可延續。
    - rally_reason:一句話說明上述研判的理由(對應新聞,不喊買賣、不給目標價)。
+3. 護城河與長期持有觀察(此題可動用你的【產業結構常識】補充,不限於新聞):
+   - is_leader 只能填 "龍頭" / "前段班" / "中後段" / "資料不足":本檔在其主業市場的地位。
+   - leader_reason:一句話說明判斷依據(市占/技術/規模/品牌/客戶)。
+   - competitors:條列 2~4 個主要競爭對手(陣列,元素為物件 {name 公司名, ticker 代號, note 一句競爭點});
+     ticker 不確定就填空字串,【嚴禁亂編代號】。
+   - moat_level 只能填 "高" / "中" / "低" / "資料不足":技術門檻/進入障礙(護城河)高低。
+   - moat_reason:一句話說明護城河來源(製程/專利/規模經濟/生態系/客戶綁定/特許)。
+   - supply_chain:【僅當 market 為美股或國際大廠時填寫】與本檔高度相關的『台股』上中下游供應鏈;
+     物件,含 upstream/midstream/downstream 三個陣列,元素為 {name, ticker, role};
+     台股代號通常為 4 碼數字,不確定就留空,【嚴禁亂編】。若為台股或無明確台廠對應,填 {}。
+   - long_term_view:綜合上述(地位+護城河+營運+新聞)對『是否適合長期持有』的中立研判,
+     2~3 句,點出觀察重點與主要風險;不喊買賣、不給目標價、不保證漲跌。
 
 【語言】輸入新聞可能含英文,你的所有輸出一律用【繁體中文】;evidence_news 的 title 也翻成繁體中文。
 ticker 保留原始代號。
 
-【真實性】只能根據提供的新聞,嚴禁虛構新聞、數據、財報或代號;你是中立資訊整理,非投資建議。
-若新聞太少或幾乎沒提到本檔,請誠實在 summary 與各欄說明「相關新聞不足」,不要硬湊。
+【真實性】
+- 問題 1、2(相關性、營運/上漲性質)只能根據提供的新聞,嚴禁虛構新聞、數據、財報或代號;
+  若新聞太少或幾乎沒提到本檔,請誠實在 summary 與各欄說明「相關新聞不足」,不要硬湊。
+- 問題 3(地位/競爭/護城河/供應鏈)可動用既有產業結構常識,但【嚴禁虛構任何財報數字、股價、
+  精確市占率或目標價】,也【嚴禁亂編股票代號】(不確定一律留空)。
+- 你是中立資訊整理,非投資建議。
 
 【輸出精簡(避免過長被截斷)】
-relevance_points 最多 5 點;evidence_news 最多 8 則;各 reason/敘述控制在 80 字內。
+relevance_points 最多 5 點;evidence_news 最多 8 則;competitors 最多 4 個;
+供應鏈每段最多 5 檔;各 reason/敘述控制在 80 字內。
 
 【強制輸出規範:Zero-Tolerance】
 只輸出一個合法 JSON,前後不得有任何其他文字或 ```json 標記,且能被 json.loads() 解析。
@@ -535,6 +552,19 @@ relevance_points 最多 5 點;evidence_news 最多 8 則;各 reason/敘述控制
   "operating_performance": "依新聞判讀的營運績效白話",
   "rally_nature": "短期消息面",
   "rally_reason": "上漲性質的研判理由",
+  "is_leader": "龍頭",
+  "leader_reason": "市場地位的判斷依據",
+  "competitors": [
+    { "name": "競爭對手公司名", "ticker": "代號(不確定留空)", "note": "一句競爭點" }
+  ],
+  "moat_level": "高",
+  "moat_reason": "護城河來源",
+  "supply_chain": {
+    "upstream": [ { "name": "台廠名", "ticker": "4碼代號", "role": "供應角色" } ],
+    "midstream": [],
+    "downstream": []
+  },
+  "long_term_view": "是否適合長期持有的中立研判(含風險)",
   "evidence_news": [
     { "title": "新聞標題(翻成繁體中文)", "source": "媒體來源", "url": "連結(若有)" }
   ]
@@ -792,9 +822,12 @@ def build_stock_query_user_prompt(
     return (
         f"今天的日期是 {today}。\n"
         f"目標個股:{tag};英文名:{query_en}。\n"
-        f"請根據以下真實新聞回答兩件事,全部用繁體中文輸出,嚴格輸出 JSON:\n"
-        f"① 這檔股與目前新聞的『直接相關性』(高/中/低 + 條列依據);\n"
-        f"② 公司營運績效如何、近期股價上揚屬『短期消息面』還是『基本面可持續』。\n"
+        f"請回答三件事,全部用繁體中文輸出,嚴格輸出 JSON:\n"
+        f"① 這檔股與目前新聞的『直接相關性』(高/中/低 + 條列依據,只依新聞);\n"
+        f"② 公司營運績效如何、近期股價上揚屬『短期消息面』還是『基本面可持續』(只依新聞);\n"
+        f"③ 護城河與長期持有觀察:是否龍頭、主要競爭對手、技術門檻高低,"
+        f"若為美股再列出相關『台股』上中下游供應鏈,最後給是否適合長期持有的中立研判"
+        f"(此題可用產業常識,但嚴禁虛構財報數字/股價/代號)。\n"
         f"report_date 請填 {today}。\n\n"
         f"{format_news_block(news)}"
     )
@@ -1202,6 +1235,8 @@ def get_stock_query_analysis(
     data.setdefault("ticker", ticker)
     data.setdefault("market", market)
     data.setdefault("relevance_points", [])
+    data.setdefault("competitors", [])
+    data.setdefault("supply_chain", {})
     validate_stock_query(data)
     # 整體新聞跨度 + 本檔在這批新聞的真實命中統計(首見/最近/則數)
     data.update(news_span(news))
