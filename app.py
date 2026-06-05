@@ -1128,8 +1128,9 @@ def render_stock_query_panel() -> None:
         st.caption(
             "可輸入中文名、英文名或代號(例:台積電 / 2330 / Nvidia / NVDA)。"
             "系統會自動判斷台股/美股、抓該股最近約 6 個月的中英文新聞,"
-            "再請 Gemini 回答:① 與目前新聞的直接相關性;② 營運績效 + 股價上揚屬短期消息面或基本面可持續;"
-            "③ 是否龍頭、競爭對手、技術門檻,美股再附相關台股上中下游供應鏈,並給長期持有研判。"
+            "再請 Gemini 產出研究員報告風格健診:① 新聞相關性;② 股價與籌碼動向;③ 基本面與推升動能(題材);"
+            "④ 護城河與競爭(龍頭/對手/技術門檻/產業上中下游供應鏈);⑤ 估值與風險 + 觀察指標 + 長期持有研判。"
+            "(部分數字為 AI 估算、非即時,僅供參考)"
         )
         term = st.text_input(
             "個股", key="stockq_term_input", placeholder="台積電 / 2330 / Nvidia / NVDA …"
@@ -1207,10 +1208,31 @@ def render_stock_query(data: dict) -> None:
     else:
         st.caption("新聞中未見對本檔的直接著墨。")
 
-    # ② 營運績效 + 上漲性質
-    st.subheader("② 營運績效 & 股價上揚的性質")
+    # ② 股價與籌碼動向
+    pc = data.get("price_chip") or {}
+    if any(pc.get(k) for k in ("price_action", "chip_flow", "technical")):
+        st.subheader("② 股價與籌碼動向")
+        if pc.get("price_action"):
+            st.markdown(f"**盤面/量能:** {pc['price_action']}")
+        if pc.get("chip_flow"):
+            st.markdown(f"**法人/籌碼:** {pc['chip_flow']}")
+        if pc.get("technical"):
+            st.markdown(f"**技術面:** {pc['technical']}")
+
+    # ③ 基本面與推升動能
+    st.subheader("③ 基本面與推升動能")
     if data.get("operating_performance"):
         st.markdown(f"**營運績效:** {data['operating_performance']}")
+    catalysts = data.get("catalysts", [])
+    if catalysts:
+        st.markdown("**推升動能/題材:**")
+        for cat in catalysts:
+            if not isinstance(cat, dict):
+                continue
+            title = cat.get("title", "")
+            detail = cat.get("detail", "")
+            line = f"- **{title}**" + (f":{detail}" if detail else "")
+            st.markdown(line)
     nature = data.get("rally_nature", "")
     nature_emoji = {
         "短期消息面": "⚡ 短期消息面",
@@ -1234,8 +1256,8 @@ def render_stock_query(data: dict) -> None:
                     line += f" [連結]({url})"
                 st.markdown(line)
 
-    # ③ 護城河與長期持有觀察
-    st.subheader("③ 護城河與長期持有觀察")
+    # ④ 護城河與競爭
+    st.subheader("④ 護城河與競爭")
     st.caption("本段含產業結構常識(非僅來自新聞),數字未必即時,僅供參考。")
     lead = data.get("is_leader", "")
     lead_emoji = {
@@ -1288,10 +1310,36 @@ def render_stock_query(data: dict) -> None:
             if names:
                 st.markdown(f"- **{label}**:{names}")
 
+    # ⑤ 估值與風險
+    val = data.get("valuation") or {}
+    risks = data.get("risks", [])
+    watch = data.get("watch_points", [])
+    if any(val.get(k) for k in ("level", "logic", "peer_note")) or risks or watch:
+        st.subheader("⑤ 估值與風險")
+        vlevel = val.get("level", "")
+        vlevel_emoji = {
+            "偏高": "🔴 偏高", "合理": "🟢 合理", "偏低": "🟡 偏低", "資料不足": "❓ 資料不足",
+        }.get(vlevel, vlevel)
+        if vlevel_emoji:
+            st.markdown(f"**估值水位:** {vlevel_emoji}")
+        if val.get("logic"):
+            st.markdown(f"**估值邏輯:** {val['logic']}")
+        if val.get("peer_note"):
+            st.markdown(f"**同業估值區間:** {val['peer_note']}")
+        if risks:
+            st.markdown("**主要風險:**")
+            for r in risks:
+                st.markdown(f"- ⚠️ {r}")
+        if watch:
+            st.markdown("**後續觀察指標:**")
+            st.markdown("　".join(f"`{w}`" for w in watch))
+
     if data.get("long_term_view"):
         st.success(f"**長期持有研判:** {data['long_term_view']}")
 
-    st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
+    if data.get("data_notes"):
+        st.caption(f"📌 數字來源:{data['data_notes']}")
+    st.caption("⚠️ 本頁由 AI 自動整理新聞而成,部分數字為 AI 估算、非即時,可能有誤,僅供參考,非投資建議。")
 
 
 # ---------------------------------------------------------------------------
