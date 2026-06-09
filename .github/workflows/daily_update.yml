@@ -58,7 +58,14 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add latest_report.json data/reports/ latest_reports.json data/reports_multi/ latest_trends.json data/trends/ latest_stocks.json data/stocks/ latest_us_stocks.json data/us_stocks/ latest_intl_alert.json data/intl_alert/ latest_focus.json data/focus/ latest_housing.json data/housing/
+          # 只 add 真的存在的產物:某些子功能未啟用時不會產檔,
+          # 逐一檢查可避免 git add 遇到不存在路徑就整列報錯(exit 128)。
+          for p in latest_report.json data/reports/ latest_reports.json data/reports_multi/ \
+                   latest_trends.json data/trends/ latest_stocks.json data/stocks/ \
+                   latest_us_stocks.json data/us_stocks/ latest_intl_alert.json data/intl_alert/ \
+                   latest_focus.json data/focus/ latest_housing.json data/housing/; do
+            [ -e "$p" ] && git add "$p"
+          done
           # 若無變化就不 commit,避免 workflow 報錯
           if git diff --staged --quiet; then
             echo "No changes to commit."
