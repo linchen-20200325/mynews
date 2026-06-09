@@ -1672,45 +1672,16 @@ def fetch_housing_news() -> list[dict]:
 # LINE 推播 (Messaging API push)
 # ---------------------------------------------------------------------------
 
-def build_line_message(report: dict, trends: dict | None = None,
-                       housing: dict | None = None) -> str:
-    """把報告整理成一則精簡的 LINE 文字訊息。"""
+def build_line_message(report: dict) -> str:
+    """把報告整理成一則精簡的 LINE 文字訊息(僅保留標題與盲點/領先指標)。"""
     lines = [
         f"🌐 全球政經戰略報告 {report.get('report_date', '')}",
         f"主題:{report.get('topic', '')}",
-        "",
-        "📰 焦點新聞:",
     ]
-    news = report.get("raw_news", [])
-    if news:
-        for i, item in enumerate(news[:3], 1):
-            title = item.get("title", "(無標題)")
-            source = item.get("source", "")
-            lines.append(f"{i}. {title}" + (f"({source})" if source else ""))
-    else:
-        lines.append("(本次未取得相關新聞)")
 
     kpi = report.get("strategic_analysis", {}).get("blind_spots_and_kpi", "").strip()
     if kpi:
         lines += ["", "🎯 盲點與領先指標:", kpi[:400] + ("..." if len(kpi) > 400 else "")]
-
-    if trends and trends.get("trends"):
-        lines += ["", "🔥 熱門產業 Top3:"]
-        for t in trends["trends"][:3]:
-            lines.append(
-                f"・{t.get('industry', '')}(熱度 {t.get('heat_score', '—')})"
-            )
-
-    if housing:
-        lines += ["", f"🏠 房市:整體{housing.get('overall_sentiment', '—')}"]
-        presale = (housing.get("presale_market") or {}).get("sentiment")
-        resale = (housing.get("resale_market") or {}).get("sentiment")
-        if presale or resale:
-            lines.append(f"・預售{presale or '—'} / 成屋{resale or '—'}")
-        policy = housing.get("policy") or []
-        if policy:
-            lines.append("・打房政策:"
-                         + "、".join(p.get("title", "") for p in policy[:2]))
 
     lines += ["", f"(白話文來源:{report.get('dictionary_source', '—')})"]
 
@@ -1720,10 +1691,9 @@ def build_line_message(report: dict, trends: dict | None = None,
     return msg
 
 
-def notify_line(report: dict, trends: dict | None = None,
-                housing: dict | None = None) -> None:
+def notify_line(report: dict) -> None:
     """透過 LINE Messaging API push 推送報告摘要。"""
-    _push_line_text(build_line_message(report, trends, housing))
+    _push_line_text(build_line_message(report))
 
 
 def _push_line_text(text: str) -> None:
@@ -2062,7 +2032,7 @@ def main() -> int:
         if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
             print("推送 LINE 通知...")
             try:
-                notify_line(report, trends, housing)
+                notify_line(report)
                 print("  LINE 推播成功。")
             except Exception as exc:  # noqa: BLE001
                 print(f"  警告: LINE 推播失敗:{exc}", file=sys.stderr)
