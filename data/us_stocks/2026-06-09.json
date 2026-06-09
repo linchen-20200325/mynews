@@ -1,0 +1,280 @@
+{
+  "report_date": "2026-06-09",
+  "summary": "今日美股市場呈現多空交織，科技股與晶片股普遍反彈，受中東局勢降溫及油價回落激勵，但投資銀行警告市場風險仍高，通膨數據與SpaceX上市進度成為焦點。",
+  "stocks": [
+    {
+      "name": "科技股",
+      "ticker": "",
+      "sector": "科技",
+      "mention_count": 13,
+      "sentiment": "利多",
+      "reason": "多則新聞指出科技股反彈回溫，受中東局勢降溫、晶片股續漲、AI相關題材及強勁基本面撐腰。",
+      "evidence_news": [
+        {
+          "title": "美股三大指數齊揚！科技股反彈回溫中東局勢降溫助攻漲勢",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4xcmVGMWVKY0dlTEZDMnpGSG15ajMzbW1yUjdYQWxZRFMySVN4QXpkMGV0SmstYURQZDN3SjFScDQtdTFYd2g5d2llRUFfOEZ0NVotbHVn?oc=5"
+        },
+        {
+          "title": "科技強勁基本面撐腰 美股基金淨流入續居冠",
+          "source": "蕃新聞",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE42Y1BFS2tTQ20xNS1mODMwWWhqcko3djZydUN1aWpyRDRtTWxtR3ZiZ1puVmxYVjM3eWtfSVZ4SDFCSmNDbl9Ta0dGbHkxWWxoRnc?oc=5"
+        }
+      ],
+      "news_count": 6,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "晶片股",
+      "ticker": "",
+      "sector": "半導體",
+      "mention_count": 10,
+      "sentiment": "利多",
+      "reason": "多則新聞顯示晶片股強力反彈，帶動美股主要指數走高，並提及AI晶片題材。",
+      "evidence_news": [
+        {
+          "title": "美光帶科技股續漲!美股4 大指數開盤勁揚",
+          "source": "MSN",
+          "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxMaFdEczM1ZDloRUtVMEYwME5JYkJBcmRzQ0RwTlBjUDZvV2tZVHVvZnQ1Qk03V0ZwcnVna3ZNQWU0UzJ4SXJHUU9ubnJveWhwZnQ4RW05WGVrRjJqdjhNODBVcW5lWHduTkVScmJyZi1nN2xXMDlzOVpvOHlqTXYtd0plaGtQbnc2d0Qyc3NJZkZ1Qkh5bWc5dDEwbkVzdWJRUFk3U01STUs1bl9QTEdTQ1ktQlJMWl9kZTNhMUo1d0VzQkJrcHh6VDdVM2dvckVBcVNMWW1UZktIS3ZBLUhMcnVoekpkTHZ1ZWVvMFhIdjJIckVhMmFQb0JfN3BCSnloY0pveWljV0N1VG5PdUVEblVVRE9RSVdmNFNHczJsZENTZzZUTkhpUFJWdVlzbnVMNGZNb2N4cTI1R2dRTFBoWmlwTFI1a2E0QVRaQjRDUQ?oc=5"
+        },
+        {
+          "title": "〈美股早盤〉晶片股續彈、油價回落助攻 主要指數走高",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE84Z2NROWxHX0xpbzZPYU92Y2Z5UC1maDJSTjl0TVhJT3c4czhROVRhNEYyZGktN2tCQWNFeXpVUHdSZVVyQk1yalF5emN3WVk?oc=5"
+        }
+      ],
+      "news_count": 5,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "SpaceX",
+      "ticker": "",
+      "sector": "太空探索/AI",
+      "mention_count": 9,
+      "sentiment": "觀望",
+      "reason": "市場關注其即將首次公開募股(IPO)，富邦人壽擬申購，但也有專家警告IPO可能帶來市場風險，且其AI衛星計畫被分析師認為成功機率不高。",
+      "evidence_news": [
+        {
+          "title": "SpaceX將上市 富邦人壽擬申購上限6億美元",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606090368.aspx"
+        },
+        {
+          "title": "Commentary: Here's how Musk's SpaceX IPO could crash your 401(k)",
+          "source": "Los Angeles Times",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNT0tzRXlxZGRaWEd2YVRjbTFXdWsxRDNuemZnZDdoZUVha2FqNDFnUi1sZGZwdXh2aGgya0hrVVdIdjBYU0dnOU93SWhZQ3Q5cDJLVnI2YXphZ3dPWEp0dnJZNEFfdk92QUIwMWtGRnZWdFltQWlUYlNvVDNkTkhoNEFkdDR0VW95cjRBVndqdndDdGRTRXpKalNaTURya2M?oc=5"
+        }
+      ],
+      "news_count": 8,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "美光(Micron)",
+      "ticker": "",
+      "sector": "半導體",
+      "mention_count": 3,
+      "sentiment": "利多",
+      "reason": "新聞提及美光帶動科技股續漲，且盤前有重返千元的期待。",
+      "evidence_news": [
+        {
+          "title": "美光帶科技股續漲!美股4 大指數開盤勁揚",
+          "source": "MSN",
+          "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxMaFdEczM1ZDloRUtVMEYwME5JYkJBcmRzQ0RwTlBjUDZvV2tZVHVvZnQ1Qk03V0ZwcnVna3ZNQWU0UzJ4SXJHUU9ubnJveWhwZnQ4RW05WGVrRjJqdjhNODBVcW5lWHduTkVScmJyZi1nN2xXMDlzOVpvOHlqTXYtd0plaGtQbnc2d0Qyc3NJZkZ1Qkh5bWc5dDEwbkVzdWJRUFk3U01STUs1bl9QTEdTQ1ktQlJMWl9kZTNhMUo1d0VzQkJrcHh6VDdVM2dvckVBcVNMWW1UZktIS3ZBLUhMcnVoekpkTHZ1ZWVvMFhIdjJIckVhMmFQb0JfN3BCSnloY0pveWljV0N1VG5PdUVEblVVRE9RSVdmNFNHczJsZENTZzZUTkhpUFJWdVlzbnVMNGZNb2N4cTI1R2dRTFBoWmlwTFI1a2E0QVRaQjRDUQ?oc=5"
+        },
+        {
+          "title": "美股盤前上揚！美光今晚重返千元？",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5ZM0VNR0V0SjAydk4yNXFxREtrTlZrakJ1MEZEUVlvOENLMGM5ZkRyc2hCNEFyeUd6WHQ5dHRLdDdIeXFXR2k1MUV0QVctZm9LRkw0UHR3?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "摩根大通(JPMorgan Chase)",
+      "ticker": "JPM",
+      "sector": "金融",
+      "mention_count": 2,
+      "sentiment": "觀望",
+      "reason": "摩根大通認為美股回檔恐短而急，但長期多頭格局未變；同時計畫部署更強大AI代理，可能影響銀行業就業。",
+      "evidence_news": [
+        {
+          "title": "市場恐慌過頭了？摩根大通：美股回檔恐短而急 長期多頭格局未變",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBudG9BbTByYXRNSm9Bd0haQnZudlpaUlRKZkZtUkJVNmU5eHUwbnBqQUt0akU3Y2ZMSjF5VnZIbzdBTzM0bGxHZWs4Zw?oc=5"
+        },
+        {
+          "title": "JPMorgan Chase plans to deploy more powerful AI agents this year",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9TUTQya3Jqek1scXBZVVVnZFhDOGpBTE00VFFUX1VKTEtrRXZyTXhCdTV5MjBtZHYtZnRmNzNmRVFneE1uQXhlY1Q4TG9xSlhRdjY4TkNYcDdRTWhtaWhmcFhQdGZaMjF6bjJLQVFn0gFzQVVfeXFMTkZjaHlxUjB3STJiSWRCaEdzRmNPenN4UTdJMVZPSDZEczItWHQtMkxJMFY5enpMWTdEeDZpVWgxQXZEdk1DN1dEbjY4RDM4QnJLTnVtRkZkMldOc3pFanllSG92RU0waEJFS0x4YmVxa2tDZw?oc=5"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "美國銀行(Bank of America)",
+      "ticker": "BAC",
+      "sector": "金融",
+      "mention_count": 2,
+      "sentiment": "利空",
+      "reason": "美國銀行警告投資者獲利了結，因其70%的熊市信號閃紅，預示股市風險較大。",
+      "evidence_news": [
+        {
+          "title": "BofA warns investors to take profits as 70% of the bank’s bear market signals flash red",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQTjhvNnpEN2IxTTRMR0thcmhialctSGUtMVZ3Slowb3Fzc3NjaVNydWZCMWt0YmJaeExzVWp3cnE0X0dKTGhQbnQtYjdYVEhQeFEzMDRvMTM0TGVEY2JtYXpjSlcxNUs1blluT3hrTDhjN3E1VzlicU12U29TLVl3aFhvbjFzem5Eay1KNnhjWHZ0dVoxbHNta0FXZlJRclhKOHMzendkejVqSE5GR0g3Y1lrdXl5X0duYUZoUEtFWXFzN0p2LThENTRaVVNDZFJnX0tXZWpma2ZvQQ?oc=5"
+        },
+        {
+          "title": "Bank of America warns of \"too many red flags\" in stocks",
+          "source": "Axios",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1GSlRzVVlWV1NtdmRQa3poOXBFd3dEbXlMX043REJfR21uVGJRMjE0RFAwUzNWdGZXU01ZN3JMaWpEeEhnNEotTW1SR0w3MUt6TlZZbnFrS1EyYVRMVlNYX1Z2M20xQUlwcnc?oc=5"
+        }
+      ],
+      "news_count": 6,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "OpenAI",
+      "ticker": "",
+      "sector": "人工智慧",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "OpenAI申請IPO的消息帶動那斯達克和道瓊指數反彈。",
+      "evidence_news": [
+        {
+          "title": "Dow Jones and Nasdaq continue rebound after OpenAI files for IPO",
+          "source": "Proactive financial news",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOdV9TNTdqTXYtLUxvN1l6YnMyb0FXWHdLb3JCWVRKVjRJeXB1MEE3WE1OM0I4NjRIMU1BNXJfaEl6MGZRYlk0QXNKa3RsRDJqSDdfOGV1ZUFMTDBDTkJEcXpac1llRDdSc3A1WFc2ZWJWaFQycDl5QWRoWEc4T1czYkhiaDNQYVhzc01GcXVyRDdkRWcybkk4aXdQUnl3OWhlUmhOMDAwWTBuQ1ZSVE9mVHBIRERxbFJESXVhUXdSWlkweW1NalFHTktTUzRwNmhF?oc=5"
+        },
+        {
+          "title": "Stock Market Today: Dow Moves Higher; SpaceX, OpenAI IPOs in Focus — Live Updates",
+          "source": "WSJ",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNdHZpVFFsZldxc1ZXSE1NYXlzbzdUWWs1SEZpamNVVVcyN1JJRms5MlBIMWR5S3RxdWdLQVNWdXE2d3VwZ1c1b19DYVhvbmQ0MkRmcUFPanVOUlAtalI1RmlDeTZEelh0YWkwZC1salBmeURJOEMyeHVJbm5ZTzZ6ZU9oeVRQTHM?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "Alphabet (Google)",
+      "ticker": "GOOGL",
+      "sector": "科技",
+      "mention_count": 1,
+      "sentiment": "利空",
+      "reason": "Alphabet籌資800億引發排擠效應，且聯準會降息受挫，導致其股價領跌。",
+      "evidence_news": [
+        {
+          "title": "【即時新聞】Alphabet(GOOGL)籌資800億引發排擠效應！聯準會降息受挫，蘋果(AAPL)領跌美股牛市面臨考驗",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOaE1pYVprcDZxSUlkVnNKRnd4aUhLeDJTZWhmUGdJNU83QVNTSHpUMHNxbVRWYmRlQXRGOEpkZ0YwSFhuSG96Q1ZpMzQwSU83UHRLWkhQa2xvR1JnZVlPc0JzdmJ5eGxVcEhVUEhkd2hVUFZ3cTlTZXlIWldwNjg5b0NtVElfQjVCNGRzWnRoSFM?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "蘋果(Apple)",
+      "ticker": "AAPL",
+      "sector": "科技",
+      "mention_count": 1,
+      "sentiment": "利空",
+      "reason": "蘋果股價領跌美股，且有研究指出iPhone導致出生率下降。",
+      "evidence_news": [
+        {
+          "title": "【即時新聞】Alphabet(GOOGL)籌資800億引發排擠效應！聯準會降息受挫，蘋果(AAPL)領跌美股牛市面臨考驗",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOaE1pYVprcDZxSUlkVnNKRnd4aUhLeDJTZWhmUGdJNU83QVNTSHpUMHNxbVRWYmRlQXRGOEpkZ0YwSFhuSG96Q1ZpMzQwSU83UHRLWkhQa2xvR1JnZVlPc0JzdmJ5eGxVcEhVUEhkd2hVUFZ3cTlTZXlIWldwNjg5b0NtVElfQjVCNGRzWnRoSFM?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "Rivian",
+      "ticker": "",
+      "sector": "電動車",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "Rivian推出R2車型，被視為可能成為特斯拉Model Y的有力競爭者，有助於公司成為家喻戶曉的品牌。",
+      "evidence_news": [
+        {
+          "title": "Rivian R2 First Drive: The Rivian for the Masses",
+          "source": "WIRED",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1LanNkYXVORnByRHdnaUt2d3l4ampnNXBDZmNTS25LSVBzOEc1SWFzXzliemd1RnU0T21aRzBfRzgtR3lLNjNQU1BXQXA1SlhPcFZmNEx6RzJlOEZOYjZN?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "Paramount (派拉蒙)",
+      "ticker": "",
+      "sector": "媒體娛樂",
+      "mention_count": 1,
+      "sentiment": "觀望",
+      "reason": "與華納兄弟的合併案正受到英國競爭監管機構的正式調查。",
+      "evidence_news": [
+        {
+          "title": "Paramount-Warner Bros. Merger Formally Investigated By UK Competition Watchdog",
+          "source": "Deadline",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZTdnWWRyV2R1bFZ0eW54bDZ0dGRHVmlkTEw5RDFVZTRCQVZyNnI4cVlUZG5KNlRYTDVYTng5dzJkaG5WbEhubGpFamF6bnUySnQzTERjSE5JSGtBT1dnYlN6b09nelRXYUljMkpXUXlBUm50UlhPWmhRY2k2NldjTkthSWYwOUU1QVpZQ3J4d0tBbzFsZWlQRnVhUDd6bncxckE?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    },
+    {
+      "name": "華納兄弟探索(Warner Bros. Discovery)",
+      "ticker": "",
+      "sector": "媒體娛樂",
+      "mention_count": 1,
+      "sentiment": "觀望",
+      "reason": "與派拉蒙的合併案正受到英國競爭監管機構的正式調查。",
+      "evidence_news": [
+        {
+          "title": "Paramount-Warner Bros. Merger Formally Investigated By UK Competition Watchdog",
+          "source": "Deadline",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZTdnWWRyV2R1bFZ0eW54bDZ0dGRHVmlkTEw5RDFVZTRCQVZyNnI4cVlUZG5KNlRYTDVYTng5dzJkaG5WbEhubGpFamF6bnUySnQzTERjSE5JSGtBT1dnYlN6b09nelRXYUljMkpXUXlBUm50UlhPWmhRY2k2NldjTkthSWYwOUU1QVpZQ3J4d0tBbzFsZWlQRnVhUDd6bncxckE?oc=5"
+        }
+      ],
+      "news_count": 0
+    },
+    {
+      "name": "DraftKings",
+      "ticker": "",
+      "sector": "博弈/線上體育博彩",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "新聞指出DraftKings股價週二飆升。",
+      "evidence_news": [
+        {
+          "title": "Why DraftKings Stock Is Surging On Tuesday?",
+          "source": "Benzinga",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQSk5jdU9vTEN6TWx4RzQycHhlLXozdXZyRGxKTDl4dTVCalNpWVpxa3JfSUU0MHVWQmtKblRodTJ4U3pnYm1KU04tQVZOb2lQdGpzM3VmLWxuc3ZFVnNRdDl5VE1yTnBLbVpucnVMeVFsbGRwTkR3T3ltYm1PLTY1MVhqdmo4OEpSa0hiTnRIM25uSXllOE1CV2dFWGdmRC1XaFVrQ0RB?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-09"
+    }
+  ],
+  "future_trends": [
+    "人工智慧(AI)應用擴展",
+    "半導體產業成長",
+    "電動車市場競爭",
+    "太空探索商業化"
+  ],
+  "sunset_industries": []
+}
