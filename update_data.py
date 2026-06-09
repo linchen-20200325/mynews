@@ -1109,14 +1109,16 @@ def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
 
         json_text = clean_json_text(text)
         try:
-            return json.loads(json_text)
+            # strict=False:容許字串值內含原始換行/tab 等控制字元
+            # (Gemini 偶爾會在長敘述裡塞真換行,strict 模式會誤判為 Invalid control character)
+            return json.loads(json_text, strict=False)
         except json.JSONDecodeError as exc:
             last_exc = exc
             # 還有更大的預算就重試(多半是輸出過長被截斷);否則才報錯
             if i + 1 < len(budgets):
                 continue
             raise ValueError(
-                f"JSON 解析失敗(可能輸出過長被截斷,可調高 GEMINI_MAX_TOKENS):{exc}\n"
+                f"JSON 解析失敗(輸出可能被截斷,可調高 GEMINI_MAX_TOKENS):{exc}\n"
                 f"--- 原始內容前 500 字 ---\n{json_text[:500]}"
             ) from exc
 
