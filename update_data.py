@@ -1723,12 +1723,16 @@ def build_line_message(report: dict, trends: dict | None = None,
 def notify_line(report: dict, trends: dict | None = None,
                 housing: dict | None = None) -> None:
     """透過 LINE Messaging API push 推送報告摘要。"""
+    _push_line_text(build_line_message(report, trends, housing))
+
+
+def _push_line_text(text: str) -> None:
+    """以 LINE Messaging API push 推送一則文字(共用:戰略報告 / 國際盤預警)。"""
     token = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
     to = os.environ["LINE_TO"]
 
     payload = json.dumps(
-        {"to": to, "messages": [{"type": "text",
-                                 "text": build_line_message(report, trends, housing)}]}
+        {"to": to, "messages": [{"type": "text", "text": text}]}
     ).encode("utf-8")
 
     req = urllib.request.Request(
@@ -1744,6 +1748,68 @@ def notify_line(report: dict, trends: dict | None = None,
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", "replace")
         raise RuntimeError(f"LINE 推播失敗 ({exc.code}): {body}") from exc
+
+
+# 對台股有「時間差領先」意義的市場(美股指數=隔夜、美股期貨=盤前);KOSPI 同步盤不算。
+LEAD_DROP_TYPES = ("隔夜領先", "盤前即時")
+
+
+def lead_market_drops(intl: dict) -> list[dict]:
+    """取『時間差領先』市場(美股指數/期貨)的大跌清單,KOSPI 同步盤不構成盤前預警。"""
+    return [d for d in intl.get("drops", []) if d.get("lead_type") in LEAD_DROP_TYPES]
+
+
+def build_intl_alert_line_message(intl: dict) -> str:
+    """把國際盤大跌預警整理成一則精簡 LINE 文字(真實報價數字 + Gemini 利空研判)。"""
+    lines = [
+        f"🚨 國際盤大跌預警 {intl.get('report_date', '')}",
+        f"警示級別:{intl.get('alert_level', '—')}",
+    ]
+    if intl.get("summary"):
+        lines.append(intl["summary"])
+
+    lead = lead_market_drops(intl)
+    if lead:
+        lines += ["", "📉 大跌(時間差領先台股):"]
+        for d in lead:
+            lines.append(
+                f"・{d.get('name', '')} {d.get('change_pct', 0):+.2f}%({d.get('lead_type', '')})"
+            )
+    others = [d for d in intl.get("drops", []) if d.get("lead_type") not in LEAD_DROP_TYPES]
+    if others:
+        lines.append(
+            "・(同步盤)"
+            + "、".join(f"{d.get('name', '')} {d.get('change_pct', 0):+.2f}%" for d in others)
+        )
+
+    interp = intl.get("interpretation", [])
+    if interp:
+        lines += ["", "🧭 利空原因(依新聞):"]
+        for it in interp[:3]:
+            mk = it.get("market", "")
+            cause = (it.get("cause", "") or "").strip()
+            lines.append(f"・{mk}:{cause}" if mk else f"・{cause}")
+
+    imp = intl.get("tw_impact", {})
+    if imp:
+        lines += ["", f"🇹🇼 對台股:{imp.get('direction', '—')}"]
+        reason = (imp.get("reason", "") or "").strip()
+        if reason:
+            lines.append(reason[:200] + ("..." if len(reason) > 200 else ""))
+        sectors = imp.get("sectors", [])
+        if sectors:
+            lines.append("重點族群:" + "、".join(str(s) for s in sectors))
+
+    lines += ["", "⚠️ 真實報價 + AI 研判,僅供參考,非投資建議"]
+    msg = "\n".join(lines)
+    if len(msg) > LINE_TEXT_LIMIT:
+        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
+    return msg
+
+
+def notify_line_intl_alert(intl: dict) -> None:
+    """國際盤大跌 + 利空 → 推一則 LINE 預警(沿用 Messaging API push)。"""
+    _push_line_text(build_intl_alert_line_message(intl))
 
 
 # ---------------------------------------------------------------------------
@@ -1771,6 +1837,10 @@ def us_stock_picker_enabled() -> bool:
 
 def intl_alert_enabled() -> bool:
     return os.environ.get("ENABLE_INTL_ALERT", "1").lower() not in ("0", "false", "no")
+
+
+def intl_alert_line_enabled() -> bool:
+    return os.environ.get("ENABLE_INTL_ALERT_LINE", "1").lower() not in ("0", "false", "no")
 
 
 def focus_enabled() -> bool:
@@ -1935,6 +2005,16 @@ def main() -> int:
                 drops = intl.get("drops", [])
                 tag = "、".join(f"{d['name']}{d['change_pct']:+.1f}%" for d in drops[:3]) or "無"
                 print(f"  國際盤預警完成,警示級別:{intl.get('alert_level', '—')}(大跌:{tag})")
+                # 時間差領先市場(美股/期貨)出現大跌 → 主動 LINE 推播盤前預警
+                lead = lead_market_drops(intl)
+                if (lead and intl_alert_line_enabled()
+                        and os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
+                        and os.environ.get("LINE_TO")):
+                    try:
+                        notify_line_intl_alert(intl)
+                        print(f"  ⚠️ 美股/期貨大跌,已推播 LINE 預警({len(lead)} 項)。")
+                    except Exception as exc:  # noqa: BLE001 — 推播失敗不影響存檔
+                        print(f"  警告: 國際盤 LINE 預警推播失敗:{exc}", file=sys.stderr)
             except Exception as exc:  # noqa: BLE001 — 國際盤預警失敗不影響戰略報告
                 print(f"  警告: 國際盤預警產生失敗:{exc}", file=sys.stderr)
         else:

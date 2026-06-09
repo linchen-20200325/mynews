@@ -293,6 +293,19 @@ def ensure_gemini_key() -> bool:
     return bool(update_data.get_gemini_keys())
 
 
+def ensure_line_config() -> bool:
+    """確保環境中有 LINE 推播設定(token + 對象):先看環境變數,再從 Streamlit Secrets 補上。"""
+    if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
+        return True
+    try:
+        for k in ("LINE_CHANNEL_ACCESS_TOKEN", "LINE_TO"):
+            if not os.environ.get(k) and k in st.secrets:
+                os.environ[k] = str(st.secrets[k])
+    except Exception:  # noqa: BLE001 — 無 secrets → 視為未設定
+        pass
+    return bool(os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"))
+
+
 def render_key_hint() -> None:
     """金鑰讀不到時的診斷說明:列出目前 Secrets 名稱,幫使用者比對。"""
     st.caption(
@@ -2581,6 +2594,25 @@ def main() -> None:
             )
             st.divider()
             render_intl_alert(live)
+            # 手動推 LINE(每日排程會在『美股/期貨』大跌時自動推播)
+            has_line = ensure_line_config()
+            lead = update_data.lead_market_drops(live)
+            if st.button(
+                "📲 推送這則預警到 LINE",
+                use_container_width=True,
+                disabled=not has_line,
+                help=None if has_line else "需在 Secrets 設 LINE_CHANNEL_ACCESS_TOKEN 與 LINE_TO",
+            ):
+                with st.spinner("推播中…"):
+                    try:
+                        update_data.notify_line_intl_alert(live)
+                        st.success("✅ 已推送 LINE 預警。")
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"推播失敗:{exc}")
+            if lead:
+                st.caption(f"📉 時間差領先市場(美股/期貨)大跌 {len(lead)} 項 — 每日排程在此情況會自動推播 LINE。")
+            elif live.get("drops"):
+                st.caption("ℹ️ 目前僅同步盤(如 KOSPI)下跌;每日排程僅在『美股/期貨』大跌時自動推播。")
             return
 
         # 2) 已抓到真實報價、尚未解讀:先顯示報價表,再提供第二步 Gemini 按鈕
