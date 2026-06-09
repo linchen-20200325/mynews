@@ -32,6 +32,8 @@ STOCKS_PATH = Path("latest_stocks.json")
 STOCKS_ARCHIVE_DIR = Path("data/stocks")
 US_STOCKS_PATH = Path("latest_us_stocks.json")
 US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
+INTL_ALERT_PATH = Path("latest_intl_alert.json")
+INTL_ALERT_ARCHIVE_DIR = Path("data/intl_alert")
 FOCUS_PATH = Path("latest_focus.json")
 FOCUS_ARCHIVE_DIR = Path("data/focus")
 HOUSING_PATH = Path("latest_housing.json")
@@ -289,6 +291,19 @@ def ensure_gemini_key() -> bool:
     if keys:
         os.environ["GEMINI_API_KEY"] = ",".join(keys)
     return bool(update_data.get_gemini_keys())
+
+
+def ensure_line_config() -> bool:
+    """確保環境中有 LINE 推播設定(token + 對象):先看環境變數,再從 Streamlit Secrets 補上。"""
+    if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
+        return True
+    try:
+        for k in ("LINE_CHANNEL_ACCESS_TOKEN", "LINE_TO"):
+            if not os.environ.get(k) and k in st.secrets:
+                os.environ[k] = str(st.secrets[k])
+    except Exception:  # noqa: BLE001 — 無 secrets → 視為未設定
+        pass
+    return bool(os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"))
 
 
 def render_key_hint() -> None:
@@ -964,6 +979,128 @@ def render_us_stocks(data: dict) -> None:
             st.caption("(本次新聞未明顯提及)")
 
     st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
+
+
+# ---------------------------------------------------------------------------
+# 國際盤預警(美股指數/KOSPI/期貨真實漲跌幅 → 偵測大跌 → Gemini 解讀台股影響)
+# ---------------------------------------------------------------------------
+
+ALERT_BADGE = {"警戒": ("🔴", "error"), "觀察": ("🟠", "warning"), "平靜": ("🟢", "success")}
+
+
+def render_intl_alert_live_panel() -> None:
+    """國際盤預警第一步:抓真實指數/期貨報價(免金鑰)。"""
+    with st.container(border=True):
+        st.markdown("#### ⚡ 即時產生(免等每日排程)")
+        st.caption(
+            "抓美股指數(隔夜領先)、韓股 KOSPI(同步連動)、美股期貨(盤前即時)的真實漲跌幅,"
+            "偵測突然大跌;再由 Gemini 依新聞解讀利空原因與對台股影響。"
+            "流程:① 先抓報價(免金鑰)→(看過後)② 按 Gemini 解讀。"
+        )
+        if st.button("🔄 ① 立即抓國際盤報價(免金鑰)", use_container_width=True):
+            with st.spinner("抓國際盤報價中…"):
+                try:
+                    st.session_state["live_intl_quotes"] = (
+                        update_data.index_fetcher.fetch_index_quotes()
+                    )
+                    st.session_state.pop("live_intl_alert", None)
+                except Exception as exc:  # noqa: BLE001
+                    st.session_state.pop("live_intl_quotes", None)
+                    st.error(f"抓取失敗:{exc}")
+
+
+def generate_live_intl_alert() -> None:
+    """國際盤預警第二步:用『已抓報價』+ 新聞,請 Gemini 解讀利空與台股影響。"""
+    quotes = st.session_state.get("live_intl_quotes")
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    st.session_state["live_intl_alert"] = update_data.build_intl_alert(today, quotes=quotes)
+    st.session_state.pop("live_intl_quotes", None)
+
+
+def render_index_quotes(qmap: dict) -> None:
+    """以 st.metric(自動紅綠)分組呈現指數/期貨漲跌幅。"""
+    if not qmap:
+        st.info("本次未取得任何指數報價。")
+        return
+    groups: dict[str, list] = {}
+    for sym, q in qmap.items():
+        groups.setdefault(q.get("group", "其他"), []).append((sym, q))
+    for group, items in groups.items():
+        st.markdown(f"**{group}**")
+        cols = st.columns(len(items))
+        for col, (sym, q) in zip(cols, items):
+            col.metric(
+                label=q.get("name", sym),
+                value=q.get("last", "—"),
+                delta=f"{q.get('change_pct', 0):+.2f}%",
+            )
+            cap = q.get("lead_type", "")
+            if q.get("is_drop"):
+                cap += " · ⚠️大跌"
+            if cap:
+                col.caption(cap)
+
+
+def render_intl_alert(data: dict) -> None:
+    level = data.get("alert_level", "—")
+    emoji, kind = ALERT_BADGE.get(level, ("", "info"))
+    banner = getattr(st, kind, st.info)
+    summary = data.get("summary", "")
+    banner(f"{emoji} 警示級別:{level}" + (f" — {summary}" if summary else ""))
+    st.caption(
+        f"報價時間:{data.get('as_of', '—')} · 大跌門檻 {data.get('threshold', '')}% · "
+        "數字為真實市場報價(Yahoo Finance),非 AI 估算"
+    )
+
+    st.subheader("📊 國際盤即時報價(時間差定位)")
+    st.caption("漲跌幅=最新 vs 前收;美股指數→隔夜領先台股,KOSPI→同步連動,期貨→盤前即時。")
+    render_index_quotes(data.get("quotes", {}))
+
+    drops = data.get("drops", [])
+    if drops:
+        st.subheader(f"⚠️ 大跌預警({len(drops)} 項)")
+        for d in drops:
+            st.error(
+                f"**{d.get('name', '')}** {d.get('change_pct', 0):+.2f}%"
+                f"　·　{d.get('lead_type', '')}"
+            )
+    else:
+        st.success("✅ 目前追蹤標的均未觸及大跌門檻。")
+
+    interp = data.get("interpretation", [])
+    if interp:
+        st.subheader("🧭 利空原因解讀(依新聞)")
+        for it in interp:
+            with st.container(border=True):
+                if it.get("market"):
+                    st.markdown(f"**{it['market']}**")
+                if it.get("cause"):
+                    st.write(it["cause"])
+                ev = it.get("evidence_news", [])
+                if ev:
+                    with st.expander("📰 佐證新聞"):
+                        for n in ev:
+                            title, src, url = n.get("title", ""), n.get("source", ""), n.get("url", "")
+                            line = f"- {title}" + (f" — _{src}_" if src else "")
+                            if url:
+                                line += f" [連結]({url})"
+                            st.markdown(line)
+
+    imp = data.get("tw_impact", {})
+    if imp:
+        st.subheader("🇹🇼 對台股可能影響")
+        direction = imp.get("direction", "中性")
+        badge = {"偏多": "🟢", "偏空": "🔴", "中性": "⚪"}.get(direction, "")
+        st.markdown(f"**研判方向:{badge} {direction}**")
+        if imp.get("reason"):
+            st.write(imp["reason"])
+        sectors = imp.get("sectors", [])
+        if sectors:
+            st.markdown("**重點族群:** " + "、".join(str(s) for s in sectors))
+
+    st.caption(
+        "⚠️ 時間差僅為參考性連動,非必然因果;本頁由真實報價 + AI 新聞研判組成,僅供參考,非投資建議。"
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -2181,7 +2318,7 @@ def main() -> None:
     st.sidebar.header("📂 報告類型")
     report_type = st.sidebar.radio(
         "選擇",
-        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "個股健診", "全球人物追蹤", "房市觀察", "ETF持股反查", "ETF圖鑑"],
+        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "國際盤預警", "個股健診", "全球人物追蹤", "房市觀察", "ETF持股反查", "ETF圖鑑"],
     )
     st.sidebar.divider()
     with st.sidebar:
@@ -2441,6 +2578,75 @@ def main() -> None:
             st.warning("尚無每日美股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_us_stocks(data)
+    elif report_type == "國際盤預警":
+        st.header("🌏 國際盤預警(盤前) — 美股/韓股大跌的時間差訊號")
+        render_intl_alert_live_panel()
+
+        # 1) 本次即時產生的完整預警(報價 + Gemini 解讀)優先顯示
+        if st.session_state.get("live_intl_alert"):
+            live = st.session_state["live_intl_alert"]
+            st.success("⚡ 以下為剛剛即時產生的國際盤預警(尚未存檔)。")
+            st.download_button(
+                "⬇️ 下載國際盤預警 JSON",
+                data=json.dumps(live, ensure_ascii=False, indent=2),
+                file_name=f"intl_alert_{live.get('report_date', 'latest')}.json",
+                mime="application/json",
+            )
+            st.divider()
+            render_intl_alert(live)
+            # 手動推 LINE(每日排程會在『美股/期貨』大跌時自動推播)
+            has_line = ensure_line_config()
+            lead = update_data.lead_market_drops(live)
+            if st.button(
+                "📲 推送這則預警到 LINE",
+                use_container_width=True,
+                disabled=not has_line,
+                help=None if has_line else "需在 Secrets 設 LINE_CHANNEL_ACCESS_TOKEN 與 LINE_TO",
+            ):
+                with st.spinner("推播中…"):
+                    try:
+                        update_data.notify_line_intl_alert(live)
+                        st.success("✅ 已推送 LINE 預警。")
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"推播失敗:{exc}")
+            if lead:
+                st.caption(f"📉 時間差領先市場(美股/期貨)大跌 {len(lead)} 項 — 每日排程在此情況會自動推播 LINE。")
+            elif live.get("drops"):
+                st.caption("ℹ️ 目前僅同步盤(如 KOSPI)下跌;每日排程僅在『美股/期貨』大跌時自動推播。")
+            return
+
+        # 2) 已抓到真實報價、尚未解讀:先顯示報價表,再提供第二步 Gemini 按鈕
+        if "live_intl_quotes" in st.session_state:
+            quotes_doc = st.session_state["live_intl_quotes"]
+            st.divider()
+            st.caption(
+                f"報價時間:{quotes_doc.get('as_of', '—')} · 大跌門檻 "
+                f"{quotes_doc.get('threshold', '')}% · 數字為真實市場報價(Yahoo Finance)"
+            )
+            render_index_quotes(quotes_doc.get("quotes", {}))
+            has_key = ensure_gemini_key()
+            if st.button(
+                "🧠 ② 用 Gemini 解讀利空原因 + 對台股影響",
+                use_container_width=True,
+                disabled=not has_key,
+                help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+            ):
+                with st.spinner("Gemini 解讀國際盤利空與台股影響中(約 10–30 秒)…"):
+                    try:
+                        generate_live_intl_alert()
+                        st.rerun()
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"解讀失敗:{exc}")
+            if not has_key:
+                render_key_hint()
+            return
+
+        # 3) 否則顯示每日排程存檔
+        data = pick_report(INTL_ALERT_PATH, INTL_ALERT_ARCHIVE_DIR)
+        if data is None:
+            st.warning("尚無每日國際盤預警存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
+            return
+        render_intl_alert(data)
     elif report_type == "個股健診":
         st.header("🩺 個股健診 — 輸入單一個股,看它跟新聞的相關性與上漲性質")
         render_stock_query_panel()

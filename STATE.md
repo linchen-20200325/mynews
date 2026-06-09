@@ -8,8 +8,9 @@
 - 部署:Streamlit Cloud(看板)+ GitHub Actions(排程)。
 
 ## 看板章節(`app.py`)
-戰略報告 / 趨勢雷達 / 台股觀察 / 美股觀察 / 全球人物追蹤 / 房市觀察 / 個股健診 / ETF持股反查 / ETF圖鑑。
+戰略報告 / 趨勢雷達 / 台股觀察 / 美股觀察 / 國際盤預警 / 全球人物追蹤 / 房市觀察 / 個股健診 / ETF持股反查 / ETF圖鑑。
 前五章節:雙語抓新聞(zh/TW + en/US)、回溯約 6 個月、標的標示 首見/最近/提及次數。
+國際盤預警:抓美股指數/KOSPI/美股期貨【真實漲跌幅】(Yahoo Finance,非 AI 估算),跌幅≤門檻(INTL_DROP_THRESHOLD 預設 -1.5%)標大跌;Gemini 只依新聞解讀利空原因+台股影響。時間差:美股=隔夜領先、KOSPI=同步連動、期貨=盤前即時。**美股/期貨大跌時自動 LINE 推播盤前預警**(ENABLE_INTL_ALERT_LINE,KOSPI 同步盤不觸發);前端亦有手動推送鈕。
 個股健診:互動式即時查詢(不存檔),研究員報告風格(相關性/籌碼/題材/護城河含產業上中下游/估值/風險);依使用者授權放寬硬規則1,AI 補的數字標〔AI估算〕並附非即時免責。
 
 ## 關鍵檔案
@@ -17,8 +18,9 @@
 - `news_fetcher.py`:RSS/Atom 爬蟲(去重/時間排序)。
 - `housing_fetcher.py`:房市新聞 + 內政部實價登錄各縣市每坪房價(走 NAS 代理)。
 - `etf_fetcher.py` / `etf_profile_fetcher.py` / `etf_holdings.py` / `price_fetcher.py`:ETF 成分股/圖鑑/反查/台股收盤價(走 NAS 代理 MoneyDJ + 證交所)。
+- `index_fetcher.py`:國際盤預警 — 美股指數/KOSPI/美股期貨真實漲跌幅(Yahoo Finance,代理優先直連降級)。
 - `proxy_helper.py` / `github_store.py`:NAS 代理設定 + 看板一鍵存 GitHub。
-- JSON 產物:`latest_{report,reports,trends,stocks,us_stocks,focus,housing}.json` + `data/<類>/<date>.json`;`house_prices*.json`、`etf_*.json`、`stock_prices.json`、`taiwan_counties.geo.json`。
+- JSON 產物:`latest_{report,reports,trends,stocks,us_stocks,intl_alert,focus,housing}.json` + `data/<類>/<date>.json`;`house_prices*.json`、`etf_*.json`、`stock_prices.json`、`taiwan_counties.geo.json`。
 - 排程:`.github/workflows/`(daily_update / update_etf / ci / proxy_check)。
 
 ## 環境變數(Secrets / Variables)

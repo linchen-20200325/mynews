@@ -45,6 +45,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import housing_fetcher
+import index_fetcher  # 國際盤預警:抓美股指數/KOSPI/美股期貨真實漲跌幅
 import news_fetcher
 
 # ---------------------------------------------------------------------------
@@ -156,6 +157,8 @@ OUTPUT_STOCKS = Path("latest_stocks.json")
 STOCKS_ARCHIVE_DIR = Path("data/stocks")
 OUTPUT_US_STOCKS = Path("latest_us_stocks.json")
 US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
+OUTPUT_INTL_ALERT = Path("latest_intl_alert.json")
+INTL_ALERT_ARCHIVE_DIR = Path("data/intl_alert")
 OUTPUT_FOCUS = Path("latest_focus.json")
 FOCUS_ARCHIVE_DIR = Path("data/focus")
 OUTPUT_HOUSING = Path("latest_housing.json")
@@ -372,6 +375,54 @@ future_trends、sunset_industries 都要中文;個股 name 用中文慣用名(�
   ],
   "future_trends": ["未來看好的趨勢產業/題材", "..."],
   "sunset_industries": ["轉弱或夕陽產業", "..."]
+}
+"""
+
+
+INTL_ALERT_SYSTEM_PROMPT = """\
+你是一位「全球股市策略分析師」兼純資料生成器,專長【利用時區時間差預判台股】。
+你會收到兩份真實資料:
+  (A)【真實指數/期貨報價漲跌幅】(已由程式抓自 Yahoo Finance,含當日漲跌%);
+  (B)【真實財經新聞】(美股 + 韓股,多為英文原文,含標題/來源/連結/摘要)。
+
+時區常識(供你判斷時間差):
+  - 美股指數收盤約台灣時間清晨,對台股開盤是【隔夜領先】訊號;美股期貨是【盤前即時】風向。
+  - 韓股 KOSPI 與台股近乎同步,屬【同步連動】半導體 peer 對照,非時間差領先。
+
+你的任務:【只根據 (A) 的真實數字與 (B) 的真實新聞】,研判「美股/韓股是否出現突然大跌或重大利空」,
+並推論「對今日/隔日台股的可能影響」,最後【嚴格且唯一】輸出合法 JSON。
+
+【鐵則 — 數字真實性】
+- 嚴禁竄改或自行編造任何漲跌幅數字;報價數字以程式提供的 (A) 為唯一依據,你的輸出【不要再列數字欄位】,
+  只做文字研判。若要引用幅度,請照抄 (A) 給的值。
+- 利空原因只能來自 (B) 的新聞;新聞沒提到就說「新聞未明確說明」,嚴禁臆測或虛構事件。
+- 你是中立資訊整理,不是投資建議;不喊買賣、不給目標價/點位預測。
+
+【輸出語言】一律繁體中文(evidence_news 的 title 也翻成繁中)。
+
+【輸出精簡】interpretation 最多 5 條,每條 evidence_news 最多 2 則;文字精煉不重貼整段新聞。
+
+【強制輸出規範:Zero-Tolerance】
+1. 最終回覆只能有一個合法 JSON 物件,前後不得有任何其他文字或 ```json 標記。
+2. 必須能被 Python json.loads() 解析。
+
+【JSON 結構定義 — 必須完全符合】
+{
+  "report_date": "YYYY-MM-DD",
+  "alert_level": "警戒|觀察|平靜",
+  "summary": "一句話總結:美股/韓股是否大跌、台股要不要當心",
+  "interpretation": [
+    {
+      "market": "美股|韓股|半導體類股…",
+      "cause": "依新聞說明這波下跌/利空的原因(新聞沒提就寫『新聞未明確說明』)",
+      "evidence_news": [ { "title": "新聞標題", "source": "媒體來源", "url": "連結(若有)" } ]
+    }
+  ],
+  "tw_impact": {
+    "direction": "偏空|偏多|中性",
+    "reason": "依時間差與連動性,說明對台股(尤其半導體/電子)的可能影響",
+    "sectors": ["可能受衝擊或受惠的台股族群", "..."]
+  }
 }
 """
 
@@ -818,6 +869,33 @@ def build_us_stock_user_prompt(news: list[dict], today: str) -> str:
     )
 
 
+def format_quotes_block(quotes_doc: dict) -> str:
+    """把真實指數/期貨報價整理成餵給 Gemini 的文字(數字為唯一依據,Gemini 不得竄改)。"""
+    quotes = quotes_doc.get("quotes", {})
+    if not quotes:
+        return "(本次未取得任何指數報價)"
+    lines = []
+    for sym, q in quotes.items():
+        flag = " ⚠️大跌" if q.get("is_drop") else ""
+        lines.append(
+            f"- {q.get('name', sym)}({sym}/{q.get('lead_type', '')}):"
+            f"{q.get('change_pct', 0):+.2f}%（最新 {q.get('last')}，前收 {q.get('prev')}）{flag}"
+        )
+    thr = quotes_doc.get("threshold", index_fetcher.DEFAULT_DROP_THRESHOLD)
+    return f"【真實指數/期貨報價,大跌門檻 {thr}%】\n" + "\n".join(lines)
+
+
+def build_intl_alert_user_prompt(quotes_doc: dict, news: list[dict], today: str) -> str:
+    return (
+        f"今天的日期是 {today}。\n"
+        f"請依下列『真實報價』與『真實新聞』,研判美股/韓股是否突然大跌或有重大利空,"
+        f"並推論對台股(尤其半導體/電子)的可能影響,嚴格輸出 JSON。"
+        f"數字一律以報價為準、不可竄改;利空原因只能引用新聞。report_date 請填 {today}。\n\n"
+        f"{format_quotes_block(quotes_doc)}\n\n"
+        f"{format_news_block(news)}"
+    )
+
+
 def build_focus_user_prompt(term_zh: str, query_en: str, news: list[dict], today: str) -> str:
     return (
         f"今天的日期是 {today}。\n"
@@ -949,6 +1027,16 @@ def validate_us_stocks(data: dict) -> None:
         raise ValueError("缺少 report_date")
     if not isinstance(data.get("stocks"), list) or not data["stocks"]:
         raise ValueError("stocks 必須是非空陣列")
+
+
+def validate_intl_alert(data: dict) -> None:
+    """國際盤預警的最低限度結構驗證(報價必須是非空字典:無真實數字就不該成立)。"""
+    if "report_date" not in data:
+        raise ValueError("缺少 report_date")
+    if not isinstance(data.get("quotes"), dict) or not data["quotes"]:
+        raise ValueError("quotes 必須是非空字典(真實報價)")
+    if not isinstance(data.get("tw_impact"), dict):
+        raise ValueError("tw_impact 必須是物件")
 
 
 def validate_focus(data: dict) -> None:
@@ -1207,6 +1295,48 @@ def get_us_stock_picks(news: list[dict], today: str) -> dict:
     return data
 
 
+def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
+    """國際盤預警:真實指數/期貨報價(算大跌)+ 美韓新聞 → Gemini 解讀利空與台股影響。
+
+    數字一律取自 index_fetcher 的真實報價(quotes/drops),Gemini 只負責文字研判(利空原因、
+    對台股影響),不得竄改數字。可傳入既抓好的 quotes(供前端兩步流程重用,免重抓)。
+    """
+    quotes_doc = quotes or index_fetcher.fetch_index_quotes(log=print)
+    qmap = quotes_doc.get("quotes", {})
+    # 真實大跌清單(由報價計算,非 AI):跌幅由深到淺排序。
+    drops = sorted(
+        (
+            {"symbol": sym, "name": q.get("name", sym),
+             "change_pct": q.get("change_pct", 0), "lead_type": q.get("lead_type", "")}
+            for sym, q in qmap.items() if q.get("is_drop")
+        ),
+        key=lambda d: d["change_pct"],
+    )
+
+    news = fetch_intl_alert_news()
+    gemini = call_gemini_for_json(
+        INTL_ALERT_SYSTEM_PROMPT, build_intl_alert_user_prompt(quotes_doc, news, today)
+    )
+
+    tw_impact = gemini.get("tw_impact")
+    if not isinstance(tw_impact, dict):
+        tw_impact = {"direction": "中性", "reason": "", "sectors": []}
+    result = {
+        "report_date": today,
+        "as_of": quotes_doc.get("as_of", ""),
+        "threshold": quotes_doc.get("threshold", index_fetcher.DEFAULT_DROP_THRESHOLD),
+        "quotes": qmap,                       # 真實報價(唯一數字來源)
+        "drops": drops,                       # 真實大跌清單(程式算)
+        "alert_level": gemini.get("alert_level") or ("警戒" if drops else "平靜"),
+        "summary": gemini.get("summary", ""),
+        "interpretation": gemini.get("interpretation", []),
+        "tw_impact": tw_impact,
+        "raw_news": news,
+    }
+    validate_intl_alert(result)
+    return result
+
+
 def translate_focus_query(term_zh: str) -> dict:
     """把中文關注對象轉成英文新聞檢索詞(Gemini)。"""
     data = call_gemini_for_json(
@@ -1444,6 +1574,30 @@ def fetch_us_stock_news() -> list[dict]:
     )
 
 
+DEFAULT_INTL_ALERT_QUERIES = [
+    "US stock market selloff plunge today",
+    "Nasdaq S&P 500 drop futures",
+    "KOSPI Korea stocks Samsung SK Hynix",
+    "semiconductor chip stocks selloff",
+]
+
+
+def fetch_intl_alert_news() -> list[dict]:
+    """抓國際盤預警用新聞:美股財經頭條 + 美/韓大跌相關英文關鍵字,輔以台媒中文角度。"""
+    en_queries = parse_queries("INTL_ALERT_QUERIES", DEFAULT_INTL_ALERT_QUERIES)
+    en_feeds = section_feeds(["BUSINESS"], "en", "US")
+    zh_feeds = {"中央社 財經": news_fetcher.CREDIBLE_FEEDS.get("中央社 財經", "")}
+    zh_feeds = {k: v for k, v in zh_feeds.items() if v}
+    return fetch_bilingual_news(
+        zh_queries=parse_queries("INTL_ALERT_QUERIES_ZH", ["美股 大跌 重挫", "韓股 KOSPI 三星"]),
+        en_queries=en_queries,
+        zh_feeds=zh_feeds,
+        en_feeds=en_feeds,
+        limit=int(os.environ.get("INTL_ALERT_MAX", "40")),
+        since_hours=int(os.environ.get("INTL_ALERT_SINCE_HOURS", "72")),
+    )
+
+
 def _uniq_queries(items: list[str]) -> list[str]:
     """關鍵字去重(保序、不分大小寫)。"""
     seen: set[str] = set()
@@ -1569,12 +1723,16 @@ def build_line_message(report: dict, trends: dict | None = None,
 def notify_line(report: dict, trends: dict | None = None,
                 housing: dict | None = None) -> None:
     """透過 LINE Messaging API push 推送報告摘要。"""
+    _push_line_text(build_line_message(report, trends, housing))
+
+
+def _push_line_text(text: str) -> None:
+    """以 LINE Messaging API push 推送一則文字(共用:戰略報告 / 國際盤預警)。"""
     token = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
     to = os.environ["LINE_TO"]
 
     payload = json.dumps(
-        {"to": to, "messages": [{"type": "text",
-                                 "text": build_line_message(report, trends, housing)}]}
+        {"to": to, "messages": [{"type": "text", "text": text}]}
     ).encode("utf-8")
 
     req = urllib.request.Request(
@@ -1590,6 +1748,68 @@ def notify_line(report: dict, trends: dict | None = None,
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", "replace")
         raise RuntimeError(f"LINE 推播失敗 ({exc.code}): {body}") from exc
+
+
+# 對台股有「時間差領先」意義的市場(美股指數=隔夜、美股期貨=盤前);KOSPI 同步盤不算。
+LEAD_DROP_TYPES = ("隔夜領先", "盤前即時")
+
+
+def lead_market_drops(intl: dict) -> list[dict]:
+    """取『時間差領先』市場(美股指數/期貨)的大跌清單,KOSPI 同步盤不構成盤前預警。"""
+    return [d for d in intl.get("drops", []) if d.get("lead_type") in LEAD_DROP_TYPES]
+
+
+def build_intl_alert_line_message(intl: dict) -> str:
+    """把國際盤大跌預警整理成一則精簡 LINE 文字(真實報價數字 + Gemini 利空研判)。"""
+    lines = [
+        f"🚨 國際盤大跌預警 {intl.get('report_date', '')}",
+        f"警示級別:{intl.get('alert_level', '—')}",
+    ]
+    if intl.get("summary"):
+        lines.append(intl["summary"])
+
+    lead = lead_market_drops(intl)
+    if lead:
+        lines += ["", "📉 大跌(時間差領先台股):"]
+        for d in lead:
+            lines.append(
+                f"・{d.get('name', '')} {d.get('change_pct', 0):+.2f}%({d.get('lead_type', '')})"
+            )
+    others = [d for d in intl.get("drops", []) if d.get("lead_type") not in LEAD_DROP_TYPES]
+    if others:
+        lines.append(
+            "・(同步盤)"
+            + "、".join(f"{d.get('name', '')} {d.get('change_pct', 0):+.2f}%" for d in others)
+        )
+
+    interp = intl.get("interpretation", [])
+    if interp:
+        lines += ["", "🧭 利空原因(依新聞):"]
+        for it in interp[:3]:
+            mk = it.get("market", "")
+            cause = (it.get("cause", "") or "").strip()
+            lines.append(f"・{mk}:{cause}" if mk else f"・{cause}")
+
+    imp = intl.get("tw_impact", {})
+    if imp:
+        lines += ["", f"🇹🇼 對台股:{imp.get('direction', '—')}"]
+        reason = (imp.get("reason", "") or "").strip()
+        if reason:
+            lines.append(reason[:200] + ("..." if len(reason) > 200 else ""))
+        sectors = imp.get("sectors", [])
+        if sectors:
+            lines.append("重點族群:" + "、".join(str(s) for s in sectors))
+
+    lines += ["", "⚠️ 真實報價 + AI 研判,僅供參考,非投資建議"]
+    msg = "\n".join(lines)
+    if len(msg) > LINE_TEXT_LIMIT:
+        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
+    return msg
+
+
+def notify_line_intl_alert(intl: dict) -> None:
+    """國際盤大跌 + 利空 → 推一則 LINE 預警(沿用 Messaging API push)。"""
+    _push_line_text(build_intl_alert_line_message(intl))
 
 
 # ---------------------------------------------------------------------------
@@ -1613,6 +1833,14 @@ def stock_picker_enabled() -> bool:
 
 def us_stock_picker_enabled() -> bool:
     return os.environ.get("ENABLE_US_STOCK_PICKER", "1").lower() not in ("0", "false", "no")
+
+
+def intl_alert_enabled() -> bool:
+    return os.environ.get("ENABLE_INTL_ALERT", "1").lower() not in ("0", "false", "no")
+
+
+def intl_alert_line_enabled() -> bool:
+    return os.environ.get("ENABLE_INTL_ALERT_LINE", "1").lower() not in ("0", "false", "no")
 
 
 def focus_enabled() -> bool:
@@ -1696,7 +1924,7 @@ def main() -> int:
         # A. 戰略報告(支援多主題:第一個為主報告,維持 latest_report.json 向後相容)
         topics = parse_report_topics()
         multi = len(topics) > 1
-        print(f"[1/7] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
+        print(f"[1/8] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
 
         # 主報告必成功(失敗→整體非零碼);其餘主題失敗只警告不中斷。
         print(f"  ▸ 主主題:{topics[0]}")
@@ -1709,7 +1937,7 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 次主題失敗不影響主報告
                 print(f"  警告: 主題「{extra_topic}」產生失敗:{exc}", file=sys.stderr)
 
-        print("[2/7] 戰略分析完成,寫入報告檔...")
+        print("[2/8] 戰略分析完成,寫入報告檔...")
         save_json(OUTPUT_LATEST, report)
         save_json(ARCHIVE_DIR / f"{today}.json", report)
         if multi:
@@ -1721,7 +1949,7 @@ def main() -> int:
         # B. 趨勢雷達
         trends = None
         if trend_radar_enabled():
-            print("[3/7] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
+            print("[3/8] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
             try:
                 trend_news = fetch_trend_news()
                 print(f"  抓到 {len(trend_news)} 則產業新聞。")
@@ -1733,11 +1961,11 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 趨勢雷達失敗不影響戰略報告
                 print(f"  警告: 趨勢雷達產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[3/7] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
+            print("[3/8] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
 
         # C. 台股觀察
         if stock_picker_enabled():
-            print("[4/7] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
+            print("[4/8] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
             try:
                 stock_news = fetch_stock_news()
                 print(f"  抓到 {len(stock_news)} 則台灣財經新聞。")
@@ -1749,11 +1977,11 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 台股觀察失敗不影響戰略報告
                 print(f"  警告: 台股觀察產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[4/7] ENABLE_STOCK_PICKER=0,略過台股觀察。")
+            print("[4/8] ENABLE_STOCK_PICKER=0,略過台股觀察。")
 
         # D. 美股觀察
         if us_stock_picker_enabled():
-            print("[5/7] 爬取美股財經新聞並向 Gemini 整理美股標的...")
+            print("[5/8] 爬取美股財經新聞並向 Gemini 整理美股標的...")
             try:
                 us_stock_news = fetch_us_stock_news()
                 print(f"  抓到 {len(us_stock_news)} 則美股財經新聞。")
@@ -1765,11 +1993,36 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 美股觀察失敗不影響戰略報告
                 print(f"  警告: 美股觀察產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[5/7] ENABLE_US_STOCK_PICKER=0,略過美股觀察。")
+            print("[5/8] ENABLE_US_STOCK_PICKER=0,略過美股觀察。")
+
+        # D2. 國際盤預警(美股指數/KOSPI/期貨真實漲跌幅 → 偵測大跌 → Gemini 解讀台股影響)
+        if intl_alert_enabled():
+            print("[6/8] 抓國際盤報價(美股/KOSPI/期貨)偵測大跌,向 Gemini 解讀台股影響...")
+            try:
+                intl = build_intl_alert(today)
+                save_json(OUTPUT_INTL_ALERT, intl)
+                save_json(INTL_ALERT_ARCHIVE_DIR / f"{today}.json", intl)
+                drops = intl.get("drops", [])
+                tag = "、".join(f"{d['name']}{d['change_pct']:+.1f}%" for d in drops[:3]) or "無"
+                print(f"  國際盤預警完成,警示級別:{intl.get('alert_level', '—')}(大跌:{tag})")
+                # 時間差領先市場(美股/期貨)出現大跌 → 主動 LINE 推播盤前預警
+                lead = lead_market_drops(intl)
+                if (lead and intl_alert_line_enabled()
+                        and os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
+                        and os.environ.get("LINE_TO")):
+                    try:
+                        notify_line_intl_alert(intl)
+                        print(f"  ⚠️ 美股/期貨大跌,已推播 LINE 預警({len(lead)} 項)。")
+                    except Exception as exc:  # noqa: BLE001 — 推播失敗不影響存檔
+                        print(f"  警告: 國際盤 LINE 預警推播失敗:{exc}", file=sys.stderr)
+            except Exception as exc:  # noqa: BLE001 — 國際盤預警失敗不影響戰略報告
+                print(f"  警告: 國際盤預警產生失敗:{exc}", file=sys.stderr)
+        else:
+            print("[6/8] ENABLE_INTL_ALERT=0,略過國際盤預警。")
 
         # E. 全球人物追蹤(對 FOCUS_TOPICS 每個對象翻英→抓全球新聞→台美股關聯)
         if focus_enabled():
-            print("[6/7] 翻譯追蹤對象並抓全球新聞,向 Gemini 整理台美股關聯...")
+            print("[7/8] 翻譯追蹤對象並抓全球新聞,向 Gemini 整理台美股關聯...")
             try:
                 focus_doc = build_focus_report(today)
                 save_json(OUTPUT_FOCUS, focus_doc)
@@ -1779,12 +2032,12 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 人物追蹤失敗不影響戰略報告
                 print(f"  警告: 全球人物追蹤產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[6/7] ENABLE_FOCUS=0,略過全球人物追蹤。")
+            print("[7/8] ENABLE_FOCUS=0,略過全球人物追蹤。")
 
         # F. 房市觀察(房價走代理,排程無代理時就只用新聞 + repo 既有房價當參考)
         housing = None
         if housing_enabled():
-            print("[7/7] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
+            print("[8/8] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
             try:
                 housing_news = fetch_housing_news()
                 print(f"  抓到 {len(housing_news)} 則房市新聞。")
@@ -1798,7 +2051,7 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 房市觀察失敗不影響戰略報告
                 print(f"  警告: 房市觀察產生失敗:{exc}", file=sys.stderr)
         else:
-            print("[7/7] ENABLE_HOUSING=0,略過房市觀察。")
+            print("[8/8] ENABLE_HOUSING=0,略過房市觀察。")
 
         print(
             f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
