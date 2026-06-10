@@ -44,6 +44,8 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
+import chip_fetcher  # 法人籌碼:抓證交所三大法人買賣超(事後驗證,真實數字)
 import housing_fetcher
 import index_fetcher  # 國際盤預警:抓美股指數/KOSPI/美股期貨真實漲跌幅
 import news_fetcher
@@ -159,6 +161,9 @@ OUTPUT_US_STOCKS = Path("latest_us_stocks.json")
 US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
 OUTPUT_INTL_ALERT = Path("latest_intl_alert.json")
 INTL_ALERT_ARCHIVE_DIR = Path("data/intl_alert")
+OUTPUT_CHIP = Path("latest_chip.json")
+CHIP_ARCHIVE_DIR = Path("data/chip")
+CHIP_PUSHED_STATE = Path("data/chip_pushed.json")  # 法人事件 LINE 已推清單(防洗版)
 OUTPUT_FOCUS = Path("latest_focus.json")
 FOCUS_ARCHIVE_DIR = Path("data/focus")
 OUTPUT_HOUSING = Path("latest_housing.json")
@@ -1321,6 +1326,12 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
     tw_impact = gemini.get("tw_impact")
     if not isinstance(tw_impact, dict):
         tw_impact = {"direction": "中性", "reason": "", "sectors": []}
+    # 可預測法人賣壓事件(純規則行事曆;失敗不影響國際盤主體)
+    try:
+        upcoming_events = chip_calendar.upcoming_chip_events()
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 法人事件行事曆計算失敗:{exc}", file=sys.stderr)
+        upcoming_events = []
     result = {
         "report_date": today,
         "as_of": quotes_doc.get("as_of", ""),
@@ -1331,6 +1342,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         "summary": gemini.get("summary", ""),
         "interpretation": gemini.get("interpretation", []),
         "tw_impact": tw_impact,
+        "upcoming_events": upcoming_events,    # 可預測法人賣壓事件(行事曆)
         "raw_news": news,
     }
     validate_intl_alert(result)
@@ -1782,6 +1794,40 @@ def notify_line_intl_alert(intl: dict) -> None:
     _push_line_text(build_intl_alert_line_message(intl))
 
 
+def build_chip_events_line_message(events: list[dict], today: str) -> str:
+    """把『進入窗口的可預測法人賣壓事件』整理成一則精簡 LINE 文字。"""
+    lines = [f"📅 法人事件預告 {today}", "未來數日已知的籌碼/賣壓窗口:"]
+    for e in events:
+        td = e.get("trading_days_until", 0)
+        when = "今日" if td == 0 else f"約 {td} 個交易日後"
+        lines.append(f"・{e.get('title', '')}({e.get('date', '')},{when})")
+        if e.get("detail"):
+            lines.append(f"　{e['detail']}")
+    lines += ["", "⚠️ 日期為慣例/曆法推算,實際以官方公告為準;僅供參考,非投資建議"]
+    msg = "\n".join(lines)
+    if len(msg) > LINE_TEXT_LIMIT:
+        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
+    return msg
+
+
+def notify_line_chip_events(events: list[dict], today: str) -> None:
+    """可預測法人事件進入窗口 → 推一則 LINE 預告(沿用 Messaging API push)。"""
+    _push_line_text(build_chip_events_line_message(events, today))
+
+
+def load_pushed_events() -> list[str]:
+    """讀已推播過的法人事件 id 清單(防 LINE 洗版);無檔回空。"""
+    try:
+        return list(json.loads(CHIP_PUSHED_STATE.read_text(encoding="utf-8")).get("ids", []))
+    except Exception:  # noqa: BLE001 — 無檔/壞檔 → 視為尚未推過
+        return []
+
+
+def save_pushed_events(ids: list[str]) -> None:
+    """寫回已推播事件 id 清單(只保留最近 60 筆,避免無限增長)。"""
+    save_json(CHIP_PUSHED_STATE, {"ids": ids[-60:]})
+
+
 # ---------------------------------------------------------------------------
 # 工具函式
 # ---------------------------------------------------------------------------
@@ -1811,6 +1857,14 @@ def intl_alert_enabled() -> bool:
 
 def intl_alert_line_enabled() -> bool:
     return os.environ.get("ENABLE_INTL_ALERT_LINE", "1").lower() not in ("0", "false", "no")
+
+
+def chip_enabled() -> bool:
+    return os.environ.get("ENABLE_CHIP", "1").lower() not in ("0", "false", "no")
+
+
+def chip_line_enabled() -> bool:
+    return os.environ.get("ENABLE_CHIP_LINE", "1").lower() not in ("0", "false", "no")
 
 
 def focus_enabled() -> bool:
@@ -1985,10 +2039,41 @@ def main() -> int:
                         print(f"  ⚠️ 美股/期貨大跌,已推播 LINE 預警({len(lead)} 項)。")
                     except Exception as exc:  # noqa: BLE001 — 推播失敗不影響存檔
                         print(f"  警告: 國際盤 LINE 預警推播失敗:{exc}", file=sys.stderr)
+                # 可預測法人事件首次進入 3 個交易日窗口 → 推一次 LINE 預告(防洗版)
+                if (chip_line_enabled()
+                        and os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
+                        and os.environ.get("LINE_TO")):
+                    try:
+                        pushed = load_pushed_events()
+                        due = chip_calendar.pick_new_pushable(
+                            intl.get("upcoming_events", []), pushed)
+                        if due:
+                            notify_line_chip_events(due, today)
+                            save_pushed_events(pushed + [e["id"] for e in due])
+                            print(f"  📅 已推播 LINE 法人事件預告({len(due)} 項)。")
+                    except Exception as exc:  # noqa: BLE001 — 推播失敗不影響存檔
+                        print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
             except Exception as exc:  # noqa: BLE001 — 國際盤預警失敗不影響戰略報告
                 print(f"  警告: 國際盤預警產生失敗:{exc}", file=sys.stderr)
         else:
             print("[6/8] ENABLE_INTL_ALERT=0,略過國際盤預警。")
+
+        # D3. 法人籌碼事後驗證(抓證交所近 N 日三大法人買賣超,真實數字)
+        if chip_enabled():
+            print("[6/8] 抓證交所三大法人買賣超(近 N 日,事後驗證真實籌碼)...")
+            try:
+                chip = chip_fetcher.fetch_chip_flow(
+                    days=int(os.environ.get("CHIP_DAYS", "10")), log=print)
+                save_json(OUTPUT_CHIP, chip)
+                if chip.get("days"):
+                    save_json(CHIP_ARCHIVE_DIR / f"{chip['days'][0]['date']}.json", chip)
+                    latest = chip["days"][0]
+                    print(f"  法人籌碼完成,最新 {latest['date']}:"
+                          f"外資 {latest['foreign']/1e8:+.0f}億、投信 {latest['trust']/1e8:+.0f}億。")
+            except Exception as exc:  # noqa: BLE001 — 法人籌碼失敗不影響戰略報告
+                print(f"  警告: 法人籌碼抓取失敗:{exc}", file=sys.stderr)
+        else:
+            print("[6/8] ENABLE_CHIP=0,略過法人籌碼。")
 
         # E. 全球人物追蹤(對 FOCUS_TOPICS 每個對象翻英→抓全球新聞→台美股關聯)
         if focus_enabled():

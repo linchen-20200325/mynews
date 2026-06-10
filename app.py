@@ -34,6 +34,8 @@ US_STOCKS_PATH = Path("latest_us_stocks.json")
 US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
 INTL_ALERT_PATH = Path("latest_intl_alert.json")
 INTL_ALERT_ARCHIVE_DIR = Path("data/intl_alert")
+CHIP_PATH = Path("latest_chip.json")
+CHIP_ARCHIVE_DIR = Path("data/chip")
 FOCUS_PATH = Path("latest_focus.json")
 FOCUS_ARCHIVE_DIR = Path("data/focus")
 HOUSING_PATH = Path("latest_housing.json")
@@ -1098,8 +1100,71 @@ def render_intl_alert(data: dict) -> None:
         if sectors:
             st.markdown("**重點族群:** " + "、".join(str(s) for s in sectors))
 
+    render_chip_events(data.get("upcoming_events", []))
+
     st.caption(
         "⚠️ 時間差僅為參考性連動,非必然因果;本頁由真實報價 + AI 新聞研判組成,僅供參考,非投資建議。"
+    )
+
+
+def render_chip_events(events: list) -> None:
+    """📅 可預測法人賣壓行事曆(純規則推算;ETF 除息檔數為真實資料)。"""
+    if not events:
+        return
+    st.subheader("📅 可預測法人賣壓行事曆(預先知道的)")
+    st.caption("以下為曆法/慣例可事先推算的籌碼事件;每日排程會在事件進入 3 個交易日窗口時推播 LINE 預告。")
+    type_emoji = {"季底作帳": "🧾", "年底作帳": "🧾", "MSCI調整": "🌐",
+                  "除權息旺季": "💰", "ETF除息潮": "📦"}
+    for e in events:
+        td = e.get("trading_days_until", 0)
+        when = "今日" if td == 0 else (f"約 {td} 個交易日後" if td > 0 else "已發生")
+        with st.container(border=True):
+            st.markdown(
+                f"{type_emoji.get(e.get('type', ''), '📌')} **{e.get('title', '')}**　"
+                f"`{e.get('date', '')}`　·　{when}"
+            )
+            if e.get("detail"):
+                st.caption(e["detail"])
+            st.caption(f"來源:{e.get('source', '—')}")
+
+
+def render_chip(data: dict) -> None:
+    """📊 法人籌碼事後驗證:近 N 日三大法人買賣超(真實數字,單位:億元)。"""
+    days = data.get("days", [])
+    if not days:
+        st.warning("尚無三大法人資料。")
+        return
+    st.caption(
+        f"資料時間:{data.get('as_of', '—')} · 數字為證交所 BFI82U 真實買賣超(非 AI 估算),"
+        "以下換算為億元(原始單位:元)。"
+    )
+    rows = []
+    for d in days:  # days 由新到舊
+        rows.append({
+            "日期": d.get("date", ""),
+            "外資": round(d.get("foreign", 0) / 1e8, 1),
+            "投信": round(d.get("trust", 0) / 1e8, 1),
+            "自營商": round(d.get("dealer", 0) / 1e8, 1),
+            "三大法人合計": round(d.get("total", 0) / 1e8, 1),
+        })
+    df = pd.DataFrame(rows)
+
+    latest = rows[0]
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("外資(最新)", f"{latest['外資']:+.0f} 億")
+    c2.metric("投信(最新)", f"{latest['投信']:+.0f} 億")
+    c3.metric("自營商(最新)", f"{latest['自營商']:+.0f} 億")
+    c4.metric("三大法人合計", f"{latest['三大法人合計']:+.0f} 億")
+
+    st.subheader("📈 近期買賣超趨勢(億元)")
+    chart_df = df.set_index("日期")[["外資", "投信", "自營商"]].iloc[::-1]  # 還原成由舊到新
+    st.line_chart(chart_df)
+
+    st.subheader("📋 每日明細(億元)")
+    st.dataframe(df, use_container_width=True, hide_index=True)
+    st.caption(
+        "🟢 正=買超、🔴 負=賣超。外資=外資及陸資+外資自營商;自營商=自行買賣+避險。"
+        "單日大幅賣超即你問的『機構賣壓』可在此事後驗證。非投資建議。"
     )
 
 
@@ -2318,7 +2383,7 @@ def main() -> None:
     st.sidebar.header("📂 報告類型")
     report_type = st.sidebar.radio(
         "選擇",
-        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "國際盤預警", "個股健診", "全球人物追蹤", "房市觀察", "ETF持股反查", "ETF圖鑑"],
+        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "國際盤預警", "法人籌碼", "個股健診", "全球人物追蹤", "房市觀察", "ETF持股反查", "ETF圖鑑"],
     )
     st.sidebar.divider()
     with st.sidebar:
@@ -2647,6 +2712,14 @@ def main() -> None:
             st.warning("尚無每日國際盤預警存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
             return
         render_intl_alert(data)
+    elif report_type == "法人籌碼":
+        st.header("📊 法人籌碼 — 三大法人買賣超(事後驗證真實賣壓)")
+        st.caption("每日排程自動抓證交所 BFI82U 近 N 日三大法人買賣超;這裡看『實際是誰在買、誰在賣』。")
+        data = pick_report(CHIP_PATH, CHIP_ARCHIVE_DIR)
+        if data is None:
+            st.warning("尚無三大法人籌碼存檔。每日排程(台灣 08:00)會自動更新。")
+            return
+        render_chip(data)
     elif report_type == "個股健診":
         st.header("🩺 個股健診 — 輸入單一個股,看它跟新聞的相關性與上漲性質")
         render_stock_query_panel()

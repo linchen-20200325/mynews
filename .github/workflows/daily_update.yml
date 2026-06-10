@@ -2,8 +2,9 @@ name: Daily Macro Intelligence Update
 
 on:
   schedule:
-    # UTC 00:30 = 台灣時間 08:30。注意 GitHub Actions 排程常有數分鐘~數十分鐘延遲。
-    - cron: '30 0 * * *'
+    # UTC 00:00 = 台灣時間 08:00(美股現貨 04:00 前已收盤,期貨亦完成結算,確保撈到完整收盤資料)。
+    # 注意 GitHub Actions 排程常有數分鐘~數十分鐘延遲,實際觸發時間以當下為準。
+    - cron: '0 0 * * *'
   # 允許在 GitHub 網頁手動點 "Run workflow" 測試
   workflow_dispatch:
 
@@ -52,6 +53,10 @@ jobs:
           ENABLE_US_STOCK_PICKER: ${{ vars.ENABLE_US_STOCK_PICKER }}
           ENABLE_FOCUS: ${{ vars.ENABLE_FOCUS }}
           ENABLE_HOUSING: ${{ vars.ENABLE_HOUSING }}
+          # 法人籌碼(三大法人買賣超事後驗證 + 可預測賣壓事件 LINE 預告)
+          ENABLE_CHIP: ${{ vars.ENABLE_CHIP }}
+          ENABLE_CHIP_LINE: ${{ vars.ENABLE_CHIP_LINE }}
+          CHIP_DAYS: ${{ vars.CHIP_DAYS }}
         run: python update_data.py
 
       - name: Commit and Push Changes
@@ -63,6 +68,7 @@ jobs:
           for p in latest_report.json data/reports/ latest_reports.json data/reports_multi/ \
                    latest_trends.json data/trends/ latest_stocks.json data/stocks/ \
                    latest_us_stocks.json data/us_stocks/ latest_intl_alert.json data/intl_alert/ \
+                   latest_chip.json data/chip/ data/chip_pushed.json \
                    latest_focus.json data/focus/ latest_housing.json data/housing/; do
             [ -e "$p" ] && git add "$p"
           done

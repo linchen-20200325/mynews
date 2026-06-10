@@ -1,0 +1,139 @@
+"""chip_fetcher.py — 抓證交所「三大法人買賣超」近 N 個交易日(事後驗證用)。
+
+來源:台灣證券交易所 BFI82U(三大法人買賣金額總額,日)。已實測:GitHub Actions
+     美國 IP 直連即可(TWSE 不擋境外),故沿用 proxy_helper.fetch_url(有 proxy 走
+     proxy、無則直連)。沙箱無網路時抓不到屬正常。
+
+【真實性】數字一律取自證交所原始 JSON(單位:元),不經 AI 估算。
+
+輸出:fetch_chip_flow(days=N) -> {
+  "as_of": "YYYY-MM-DD HH:MM UTC (TWSE BFI82U)",
+  "unit": "元",
+  "days": [  # 由新到舊
+    {"date","foreign","trust","dealer","dealer_self","dealer_hedge",
+     "foreign_main","foreign_dealer","total"}, ...
+  ]
+}
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from datetime import date, datetime, timedelta, timezone
+
+BFI82U_URL = (
+    "https://www.twse.com.tw/rwd/zh/fund/BFI82U"
+    "?dayDate={d}&type=day&response=json"
+)
+HTTP_TIMEOUT = 20
+DEFAULT_DAYS = 10
+MAX_LOOKBACK = 30  # 最多往回找的日曆天數,避免連假/長停盤無限迴圈
+
+
+def _to_int(s: str) -> int:
+    """把『-91,733,415,946』這類字串轉 int;失敗回 0。"""
+    try:
+        return int(str(s).replace(",", "").replace(" ", "").strip())
+    except (TypeError, ValueError):
+        return 0
+
+
+def _fetch_day_json(date_str: str) -> dict | None:
+    """走 proxy_helper 抓單日 BFI82U JSON;非 200 / 非 JSON / None 回 None。"""
+    try:
+        import proxy_helper
+        resp = proxy_helper.fetch_url(
+            BFI82U_URL.format(d=date_str),
+            headers={"Accept": "application/json"}, timeout=HTTP_TIMEOUT,
+        )
+        if resp is not None and resp.status_code == 200:
+            return resp.json()
+    except Exception:  # noqa: BLE001 — proxy_helper 不可用 → 直連保底
+        pass
+    try:
+        import requests
+        resp = requests.get(
+            BFI82U_URL.format(d=date_str),
+            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
+            timeout=HTTP_TIMEOUT,
+        )
+        if resp.status_code == 200:
+            return resp.json()
+    except Exception:  # noqa: BLE001
+        pass
+    return None
+
+
+def _parse_day(payload: dict, date_str: str) -> dict | None:
+    """把 BFI82U 一日 JSON 解析成正規化結構;無資料(假日)回 None。
+
+    data 各列:['單位名稱','買進金額','賣出金額','買賣差額'],依單位名稱歸位。
+    外資合計 = 外資及陸資(不含外資自營商) + 外資自營商;自營 = 自行 + 避險。
+    """
+    if not payload or payload.get("stat") != "OK" or not payload.get("data"):
+        return None
+    bucket = {"foreign_main": 0, "foreign_dealer": 0, "trust": 0,
+              "dealer_self": 0, "dealer_hedge": 0, "total": 0}
+    for row in payload["data"]:
+        if len(row) < 4:
+            continue
+        name, diff = row[0], _to_int(row[3])
+        if "外資自營商" in name:
+            bucket["foreign_dealer"] = diff
+        elif "外資及陸資" in name or ("外資" in name and "自營" not in name):
+            bucket["foreign_main"] = diff
+        elif "投信" in name:
+            bucket["trust"] = diff
+        elif "自營商" in name and "避險" in name:
+            bucket["dealer_hedge"] = diff
+        elif "自營商" in name:  # 自行買賣
+            bucket["dealer_self"] = diff
+        elif "合計" in name:
+            bucket["total"] = diff
+    return {
+        "date": f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}",
+        "foreign": bucket["foreign_main"] + bucket["foreign_dealer"],
+        "foreign_main": bucket["foreign_main"],
+        "foreign_dealer": bucket["foreign_dealer"],
+        "trust": bucket["trust"],
+        "dealer": bucket["dealer_self"] + bucket["dealer_hedge"],
+        "dealer_self": bucket["dealer_self"],
+        "dealer_hedge": bucket["dealer_hedge"],
+        "total": bucket["total"],
+    }
+
+
+def fetch_chip_flow(days: int = DEFAULT_DAYS, log=print) -> dict:
+    """抓近 days 個交易日的三大法人買賣超(由新到舊),自動跳過週末/假日。"""
+    collected: list[dict] = []
+    d = date.today()
+    looked = 0
+    while len(collected) < days and looked < MAX_LOOKBACK:
+        looked += 1
+        if d.weekday() < 5:  # 只試工作日,省請求
+            parsed = _parse_day(_fetch_day_json(d.strftime("%Y%m%d")),
+                                 d.strftime("%Y%m%d"))
+            if parsed:
+                collected.append(parsed)
+                log(f"  [{parsed['date']}] 外資 {parsed['foreign']/1e8:+.0f}億 "
+                    f"投信 {parsed['trust']/1e8:+.0f}億 合計 {parsed['total']/1e8:+.0f}億")
+        d -= timedelta(days=1)
+    if not collected:
+        raise RuntimeError("三大法人資料全數抓取失敗(檢查網路/PROXY_URL 或來源是否可達)")
+    return {
+        "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC (TWSE BFI82U)"),
+        "unit": "元",
+        "days": collected,
+    }
+
+
+if __name__ == "__main__":
+    n = int(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_DAYS
+    try:
+        data = fetch_chip_flow(n)
+    except Exception as exc:  # noqa: BLE001
+        print(f"三大法人抓取失敗:{exc}", file=sys.stderr)
+        sys.exit(1)
+    print(json.dumps(data, ensure_ascii=False, indent=2))
+    sys.exit(0)
