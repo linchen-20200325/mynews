@@ -1697,12 +1697,42 @@ def fetch_housing_news() -> list[dict]:
 # LINE 推播 (Messaging API push)
 # ---------------------------------------------------------------------------
 
-def build_line_message(report: dict) -> str:
-    """把報告整理成一則精簡的 LINE 文字訊息(僅保留標題與盲點/領先指標)。"""
+def chip_flow_hint(chip: dict | None) -> str:
+    """用真實三大法人買賣超,給一行白話籌碼提示(轉賣/連賣→提醒獲利了結)。無資料回空字串。"""
+    days = (chip or {}).get("days") or []
+    if not days:
+        return ""
+    latest = days[0]
+    f, t, tot = (latest.get("foreign", 0) / 1e8,
+                 latest.get("trust", 0) / 1e8,
+                 latest.get("total", 0) / 1e8)
+    # 合計連續同向天數(由新到舊)
+    streak = 0
+    for d in days:
+        x = d.get("total", 0)
+        if x == 0 or (x < 0) != (tot < 0):
+            break
+        streak += 1
+    side = "賣超" if tot < 0 else ("買超" if tot > 0 else "持平")
+    head = f"💰 法人籌碼:外資{f:+.0f}億、投信{t:+.0f}億,三大法人{side}{abs(tot):.0f}億"
+    if tot < 0 and streak >= 2:
+        return head + f";已連{streak}日站賣方,留意獲利了結賣壓。"
+    if tot < 0:
+        return head + ";由買轉賣,留意獲利了結。"
+    if tot > 0 and streak >= 2:
+        return head + f";連{streak}日買超,暫無獲利了結跡象。"
+    return head + "。"
+
+
+def build_line_message(report: dict, chip_hint: str = "") -> str:
+    """把報告整理成一則精簡的 LINE 文字訊息(標題、法人籌碼提示、盲點/領先指標)。"""
     lines = [
         f"🌐 全球政經戰略報告 {report.get('report_date', '')}",
         f"主題:{report.get('topic', '')}",
     ]
+
+    if chip_hint:
+        lines += ["", chip_hint]
 
     kpi = report.get("strategic_analysis", {}).get("blind_spots_and_kpi", "").strip()
     if kpi:
@@ -1716,9 +1746,9 @@ def build_line_message(report: dict) -> str:
     return msg
 
 
-def notify_line(report: dict) -> None:
-    """透過 LINE Messaging API push 推送報告摘要。"""
-    _push_line_text(build_line_message(report))
+def notify_line(report: dict, chip_hint: str = "") -> None:
+    """透過 LINE Messaging API push 推送報告摘要(可附帶法人籌碼提示)。"""
+    _push_line_text(build_line_message(report, chip_hint))
 
 
 def _push_line_text(text: str) -> None:
@@ -2072,6 +2102,7 @@ def main() -> int:
             print("[6/8] ENABLE_INTL_ALERT=0,略過國際盤預警。")
 
         # D3. 法人籌碼事後驗證(抓證交所近 N 日三大法人買賣超,真實數字)
+        chip = None
         if chip_enabled():
             print("[6/8] 抓證交所三大法人買賣超(近 N 日,事後驗證真實籌碼)...")
             try:
@@ -2130,7 +2161,7 @@ def main() -> int:
         if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
             print("推送 LINE 通知...")
             try:
-                notify_line(report)
+                notify_line(report, chip_flow_hint(chip))
                 print("  LINE 推播成功。")
             except Exception as exc:  # noqa: BLE001
                 print(f"  警告: LINE 推播失敗:{exc}", file=sys.stderr)
