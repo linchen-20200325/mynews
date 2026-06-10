@@ -3,18 +3,19 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "人工智慧 (AI)",
+      "industry": "人工智慧 (AI) 基礎設施與應用",
       "heat_score": 98,
       "signals": {
-        "funding": "Supermicro 宣布將透過股權融資籌集 70 億美元以滿足 AI 訂單需求，顯示龐大資本投入 (新聞[48])。SpaceX/xAI 也因資料中心『滋擾』面臨集體訴訟，但其軌道 AI 運算測試計劃仍在進行，資金仍在持續湧入 (新聞[37],[49])。AMD 宣布將在英國投資高達 20 億英鎊擴展 AI 業務 (新聞[38])。日本首相敦促加大對 AI 和數位領域的投資 (新聞[31])。",
-        "hiring": "科技業雖有裁員潮 (新聞[46])，但 AI 相關職位仍是搶手，例如 Yahoo 股市提到『年薪破百萬』且『連AI都搶不走』的職位 (新聞[12])。Coinbase CEO 預言八成工作將轉向『便宜99%』模型，暗示 AI 將深刻改變勞動市場結構，對 AI 專業人才需求不減 (新聞[13])。",
-        "policy": "中國宣布將投入 2 兆人民幣打造 AI 算力網，並指定 8 成採用國產晶片，顯示國家層級的戰略支持與扶植本土產業的決心 (新聞[19])。",
-        "technology": "Apple 在 WWDC 2026 推出 iOS 27 並深度整合 AI 功能，Siri AI 獲得顯著提升 (新聞[1],[21],[33])。Anthropic 推出了最強 AI 模型 Claude Fable 5 並開放大眾使用，同時發布『安全』版本 Claude Mythos AI 模型 (新聞[18],[39])。Google 推出更具價格競爭力的 AI 訂閱服務 (新聞[30])。SpaceX 計劃在明年底前啟動軌道 AI 運算測試，顯示 AI 技術應用拓展至太空領域 (新聞[37])。工研院在英國科技日也強調半導體、AI 與無人系統的合作 (新聞[5])。"
+        "funding": "全球AI領域的資金投入持續強勁，AMD宣布向英國AI擴張投資高達20億英鎊。OpenAI和SpaceX等巨頭的IPO消息預示著大量資金湧入。儘管有市場修正，但大型科技公司如Apple、Google仍不斷投入AI開發，並透過價格戰（Google AI Plus降價）擴大用戶基礎。台積電5月營收創新高，主要受惠於AI需求強勁。",
+        "hiring": "AI相關職缺需求旺盛，儘管科技業整體出現人力汰換潮，但AI領域的專業人才仍是企業搶奪的焦點，年薪百萬職位連AI都搶不走。工研院也看好AI與無人系統的合作，間接帶動相關人才需求。",
+        "policy": "各國政府積極推動AI發展，日本首相敦促加大對AI和數位領域的投資。台灣雖擬對銷中國AI晶片加強管制，但整體政策仍支持半導體與AI供應鏈發展。工研院在英國推動半導體、AI與無人系統合作，顯示跨國政策合作趨勢。",
+        "technology": "AI技術持續突破，Apple推出Siri AI，功能顯著提升，並與Google、Nvidia合作開發更先進AI模型。Anthropic發布「安全版」Claude Mythos AI模型。SpaceX計劃在明年底前啟動軌道AI運算測試，顯示AI技術正向太空領域擴展。CPO技術雖有爭議，但輝達仍喊話全面採用，顯示對未來技術的投入。"
       },
       "leading_indicators": [
-        "主要AI晶片製造商(如Nvidia、AMD)的財報及訂單展望",
-        "大型科技公司(如Apple、Google、Microsoft)的AI產品發布與用戶採納率",
-        "各國政府對AI基礎設施建設和AI倫理法規的投入與進展"
+        "主要AI晶片製造商（Nvidia, AMD, TSMC）的季度財報與指引",
+        "OpenAI、SpaceX等AI巨頭的IPO進展與估值變化",
+        "各國政府對AI技術研發的補貼政策與法規動向",
+        "大型科技公司（Apple, Google, Microsoft）AI產品的用戶增長與商業化進度"
       ],
       "us_stocks": [
         {
@@ -26,8 +27,8 @@
           "ticker": "AMD"
         },
         {
-          "name": "美超微(Supermicro)",
-          "ticker": "SMCI"
+          "name": "博通(Broadcom)",
+          "ticker": "AVGO"
         }
       ],
       "tw_stocks": [
@@ -36,202 +37,213 @@
           "ticker": "2330"
         },
         {
-          "name": "廣達",
-          "ticker": "2382"
+          "name": "聯發科",
+          "ticker": "2454"
         },
         {
-          "name": "緯創",
-          "ticker": "3231"
+          "name": "國巨",
+          "ticker": "2327"
         }
       ],
       "evidence_news": [
         {
-          "title": "Supermicro Announces Proposed $7.0 Billion of Equity and Equity-linked Financing Transactions To Fund AI Orders",
-          "source": "Supermicro",
-          "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQNkdibFdBME56Q1J1WlRqX2xzQ1g1Mk9TbUVvTGtsSTdFc3NtRDF0OUpicEtnYjBDTEV0OGpKQmpPaVZIZnJFLUJkRURRSUFJcklmM0hxNVNuLUxpWV9yRnRLVEtUTWJBWHc4QWNoUV9sekp2bXcxWWNhX1Z2VmtXejJnRnRsYXRHc3Y2dWNRQ1docFJWb1ZYdzFwc2tVZ2pUNzNjQlR5Yjl4LUNwNGN1eHIzRFNWOWx6S0lUNDlJTTF0UVl2WVludlc0RUpldnJjUjdGYXV6ZGRvZVp2dlJFY3BoMllIWk90TUl0aUUxYjJkWm9YX3RSUndzQ3MteWlXTXc?oc=5"
+          "title": "台積電營收／5月逾4,169億元創新高 月增1.5%",
+          "source": "經濟日報",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1SYmtSUFdJa1dSTWxYZ09oamxFZGZpN3Q5SDNnM1hRWml4RnhLRkhxMzhHRF9BcVlidll2ZU9GMWdEelZLbGtZTTZQem45MmE4QVpIMEtmazFhd9IBX0FVX3lxTFByc0tvcG44QXFFSEhRSWU1RTUzZk5pT3A0d21uRGk3MS1LZThuNHdmbHFrSmJtY2prSzFiLUszVlBuY3pFeDlnRkdSZ3gxWGlDdDl4aXhtM294ZV9MSlJV?oc=5"
         },
         {
-          "title": "中國砸2兆人民幣打造AI算力網 指定8成採國產晶片 華為最受惠",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9Pa2h0OFhEZXNSR1ZGSGUxWTh5QjdRVmlpWG5KdTBDUVlhVm1VQzRYUUxvaE9FRm45MXlvRTBMM182WFo5cS1iTllBTUFTTGs?oc=5"
+          "title": "蘋果終於採用輝達GPU！輝達股價為何沒反應？原因曝光",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAwSnF4RUZyeHBJY0FEeTVwUEtnUzRxXzA4WnB1QmkzRjctbldLdTEwWlVRaUREOUl1djVnbXF6R2NSTGxvenZKZm5WNlVVck1w?oc=5"
         },
         {
-          "title": "iOS 27 支援機型公布：舊 iPhone 仍可升級 AI 功能門檻高",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTW9QRGxYV0VmTWh0VVItQW00RWFCcTNGRUJmUjJ5UEZXalpFSUFVS0EweHkwLW1QMXBJdXo2SmJKaVRPVkVKeUtCb2E1ci1zSFBoRHBTaDE4aHZVbE1BUVVOVDgyd1BmV1Z5MW9SWllUVEZUMTctN2pIQUk3N29heExmZ3JmUmwwaTUtYVpDZ093WXM2bm1UeUFqS1oxRndGYlhvbnRGMXdZOXF5RG9NRGpnX0ZGNjJlbHdkbjVSU3FPSE0?oc=5"
+          "title": "AMD to Invest Up to £2 Billion in UK AI Expansion",
+          "source": "thelec.net",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAwRnpLaUdJTjkyU2tlblJLd3BZREw1NXZHbGxLcWswbHh2YVo0TXpIaXhzM0VSV1hTWWNKRllYb05FY2NHNnJxelRkQjhHeDRQbUhvNXhIei1fTlBJbS11a3dPdEFNM00?oc=5"
         }
       ],
-      "summary": "AI 依然是全球科技和經濟發展的核心驅動力，在資金、政策、技術和市場應用方面均展現出強勁的動能和深遠影響。",
-      "news_count": 27,
+      "summary": "AI作為核心驅動力，持續推動半導體產業成長，並擴散至軟體服務、太空科技等領域，資金、技術、政策與人才需求全面爆發。",
+      "news_count": 32,
       "first_seen": "2026-06-09",
       "last_seen": "2026-06-10"
     },
     {
       "rank": 2,
-      "industry": "太空經濟與衛星通訊",
-      "heat_score": 85,
+      "industry": "先進半導體製造與記憶體",
+      "heat_score": 92,
       "signals": {
-        "funding": "SpaceX 傳出募資超額認購近 4 倍，吸金超過 2500 億美元，顯示市場對太空產業的巨大熱情與資金投入 (新聞[15])。富邦也豪擲 189 億搶上馬斯克太空火箭，證明台灣資本市場對此領域的積極參與 (新聞[17])。",
-        "hiring": "SpaceX 作為領先企業，其持續擴展的業務和技術創新必然伴隨著大量高科技人才的需求，儘管新聞未直接提及具體徵才數據，但其成長動能可間接推斷人才吸納能力強勁。",
-        "policy": "各國政府對太空探索和衛星通訊的戰略重視日益提升，例如美國國防部與 SpaceX 的合作，以及對新一代衛星網路的政策支持，但此次新聞未直接提供具體政策細節。",
-        "technology": "SpaceX 不僅在火箭發射和衛星網路 (Starlink) 方面持續領先，還計劃在明年底前啟動軌道 AI 運算測試，將 AI 技術與太空基礎設施結合，開創新的應用領域 (新聞[37])。這代表太空技術已從發射服務擴展到太空運算與資料應用。"
+        "funding": "儘管近期晶片股出現回調，但長期資金看好半導體產業前景。SK集團主席Chey Tae-won正評估國內外半導體廠址，顯示資本支出意願。韓國投資管理公司推出的半導體ETF表現突出，證明市場對此領域的信心。國巨等被動元件廠商股價強勁，反映AI對周邊元件的需求。",
+        "hiring": "半導體產業對高階研發和製造人才的需求持續旺盛，尤其在AI晶片、先進製程和記憶體技術方面。儘管新聞未直接提及大規模徵才，但產業擴張和技術升級必然需要大量人才。",
+        "policy": "台灣擬對銷中國AI晶片加強管制，顯示半導體產業已成為國家戰略競爭的核心。工研院在英國推動半導體合作，顯示國際間對半導體技術的重視和合作。美國、韓國等主要國家也持續推動半導體產業在地化和供應鏈韌性。",
+        "technology": "台積電5月營收創新高，凸顯其在先進製程技術的領先地位。英特爾雖然傳出吃下Google大單，但華爾街對其代工實力仍有疑慮，顯示台積電在技術上的優勢。HBM等高頻寬記憶體成為AI時代的關鍵元件，帶動記憶體技術發展。ASML作為設備供應商，在先進製程中扮演關鍵角色，儘管股價表現受市場情緒影響，其技術重要性不減。"
       },
       "leading_indicators": [
-        "SpaceX IPO 進展及估值變化",
-        "全球衛星寬頻服務用戶數增長",
-        "各國政府太空預算投入及相關政策發布"
+        "台積電、三星、英特爾等晶圓代工廠的資本支出與新廠進度",
+        "HBM等高頻寬記憶體的需求與供應鏈變化",
+        "EUV設備製造商ASML的訂單與出貨狀況",
+        "主要國家對半導體技術進出口的管制政策變化"
       ],
       "us_stocks": [
         {
-          "name": "SpaceX (未上市)",
-          "ticker": "PRIVATE"
+          "name": "美光(Micron Technology)",
+          "ticker": "MU"
         },
         {
-          "name": "洛克希德馬丁",
-          "ticker": "LMT"
+          "name": "應用材料(Applied Materials)",
+          "ticker": "AMAT"
         },
         {
-          "name": "波音",
-          "ticker": "BA"
+          "name": "艾司摩爾(ASML Holding)",
+          "ticker": "ASML)"
         }
       ],
       "tw_stocks": [
         {
-          "name": "華航",
-          "ticker": "2610"
+          "name": "台積電",
+          "ticker": "2330"
         },
         {
-          "name": "漢翔",
-          "ticker": "2634"
+          "name": "聯電",
+          "ticker": "2303"
+        },
+        {
+          "name": "南亞科",
+          "ticker": "2408"
         }
       ],
       "evidence_news": [
         {
-          "title": "吸金超過2500億美元！傳SpaceX超額認購近4倍",
+          "title": "台積電營收／5月逾4,169億元創新高 月增1.5%",
+          "source": "經濟日報",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1SYmtSUFdJa1dSTWxYZ09oamxFZGZpN3Q5SDNnM1hRWml4RnhLRkhxMzhHRF9BcVlidll2ZU9GMWdEelZLbGtZTTZQem45MmE4QVpIMEtmazFhd9IBX0FVX3lxTFByc0tvcG44QXFFSEhRSWU1RTUzZk5pT3A0d21uRGk3MS1LZThuNHdmbHFrSmJtY2prSzFiLUszVlBuY3pFeDlnRkdSZ3gxWGlDdDl4aXhtM294ZV9MSlJV?oc=5"
+        },
+        {
+          "title": "還是要靠台積電！英特爾傳吃下大單 華爾街「4個字」潑冷水",
           "source": "自由財經",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5BYlpEOGlvcENSTkYwdndZaDJ5VXJCTkRycTROZS03Yjg4TXIzeEswYmsyTjFhSzczYVBxV3lxQXRiYVdyT0h4STdxMW9aRzA0Q3JrU003UXpIc3Z2cmZv0gFkQVVfeXFMUFVodEJhc29sN2pudjdPcnB6Y0xWd3Bib0ZjWHRqaHhjT3Bfck1VVXdQY2lJZzFMdEtDVHk2LXlGdXNfVkdqWXlJdGM2Uk1SdFByamptY3ozaGoxYWdrbEhQZWZ6Vg?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9SVzh1RjVrNHZYQVYwUEgxQzBUZmM2Vkg3Qm8wNUZnaXVmTi03UTg3VGRhTU9lVWFVem82TGJvU0dYdEJKSnN4dUtVTUdwa3VyYnQ0N0dSQ1JhY1dJSHE40gFkQVVfeXFMUFVodEJhc29sN2pudjdPcnB6Y0xWd3Bib0ZjWHRqaHhjT3Bfck1VVXdQY2lJZzFMdEtDVHk2LXlGdXNfVkdqWXlJdGM2Uk1SdFByamptY3ozaGoxYWdrbEhQZWZ6Vg?oc=5"
         },
         {
-          "title": "富邦豪擲189億 搶上馬斯克太空火箭",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNTTRXc2FjMU5rQkpYZS02MW1RUGVqeGdaeUFza0oxVWE0OXhTeWJRZktsbTEzb1pSZURPT3VpYUF1ZUdxaVJZdGxzejFVSGhPekFOcGlueWZaVzk0Q0hzdGJkbktvNzYwS25fSFJnSmZnc2twVVkwTGwxelN2M2MyLU1CUHlOdFJlMWRCQk9hRHVLWmItRU9TQXdPRmYwR3JaM0dVTF9mZUVxUGVUSWYzRVpLcHp0Mlh6aV9TMjZyNmVSVjJpTjNPaWRZSGVLVkJiOUJ0UDNwdU5uX2JwWKotc3VRYlZuMS1rMXp1a25yUmo4bGRXOUtrQTdZdlNFd19P?oc=5"
-        },
-        {
-          "title": "SpaceX aims to launch orbital AI computing tests by end of next year, sources say",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSEJ0VnJacU5WYTU0emFkOGlLVi0xQ0E2ckhETkM1SjdFSlgzQzkwSGsxdVNsOFhQN2hCbE5WVy1OOFBDVE9yUHJTU3BwalZsdVdPOWJQRjFGTDFGQmxobXJhX2VkLVFzdWVpZ04td29HeXcxQzdxYVhwNlhhV2JCTVRDYm4zWTdOVjFHTnNjZDl2Mjcycm1LZ3ZTM0hnOVFUbnJnTFNxUkxFLWhGR2VYZDBlQ0czTUd3eHRMM0dNV184QlNFN2pmcHl3OWoxeVNn?oc=5"
+          "title": "SK Chairman Chey Tae-won Weighs Domestic, Overseas Semiconductor Plant Sites",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQamsxOGFvYU54RnNQVWh1VFJlUzdraHlGRmR4bERXZW05a2xtMlhxZWJMYW5heEZlMldnZ1o5Ymp3M0VDV0hCdTFkVWFUVnplNWtyc0dDbGhZMFFzb2VVeERkT3FMTjRlZXdOaHFPMHdyWE5QaTVWcnZRWGpEX211bUxfaXpQVVc2?oc=5"
         }
       ],
-      "summary": "太空經濟以 SpaceX 為首，展現強勁的資金吸納能力和技術創新，特別是與 AI 的結合，預示著巨大的成長潛力。",
+      "summary": "AI需求持續推動半導體產業的技術創新和資本投入，尤其在先進製程和高頻寬記憶體領域，儘管市場波動，但長期成長動能不變。",
       "news_count": 0
     },
     {
       "rank": 3,
-      "industry": "能源儲存與電動車電池技術",
-      "heat_score": 75,
+      "industry": "生技醫療與製藥",
+      "heat_score": 85,
       "signals": {
-        "funding": "GM 計劃開發能源儲存電池，並尋求擴大其 AI 資料中心和能源儲存業務，顯示大型企業資本投入正在轉向電池技術的多元應用 (新聞[34])。儘管 EV 銷售放緩，但對能源儲存的投資仍在持續。",
-        "hiring": "隨著 GM 等大廠投入能源儲存電池的研發與製造，預計將帶動相關領域的工程師、研究人員及生產人才需求。",
-        "policy": "全球各國推動能源轉型和碳中和目標，對能源儲存系統的補貼和政策支持預計將持續增加。雖然新聞未直接提及新政策，但此趨勢是產業發展的基石。",
-        "technology": "GM 正在探索開發鈉離子電池技術，不僅用於電動車，更著眼於電網能源儲存。這代表電池技術的創新不僅限於鋰離子，且應用場景正從移動載具擴展到固定式儲能，解決 EV 銷售放緩可能帶來的瓶頸，並開拓新的市場 (新聞[34])。"
+        "funding": "GSK宣布以106億美元收購癌症藥物開發商Nuvalent，顯示大型製藥公司透過併購加速新藥研發和市場擴張。這筆交易是今年第二大併購案，反映生技製藥領域的資金活躍度。創投和私募股權基金也持續關注創新藥物、基因療法和數位醫療等領域。",
+        "hiring": "新藥研發、臨床試驗和生物製造等領域對專業人才需求持續增加。尤其在腫瘤學、罕見疾病和細胞基因治療等前沿領域，人才競爭激烈。併購案也會帶動相關研發、法規和商業化人才的流動與需求。",
+        "policy": "各國政府持續支持新藥研發和醫療創新，並簡化法規審批流程，以加速藥物上市。例如美國FDA對突破性療法的快速通道審批，以及對罕見疾病藥物的激勵政策，都為生技製藥產業創造了有利環境。全球人口老化和慢性病負擔增加，也促使政府加大對醫療健康的投入。",
+        "technology": "Nuvalent在癌症藥物開發方面的創新技術吸引了GSK的巨額收購，顯示精準醫療和靶向治療的巨大潛力。基因編輯、細胞療法、AI輔助藥物發現等技術持續取得突破，縮短研發週期，提高成功率。數位醫療和遠距醫療的發展也為生技製藥產業帶來新的應用場景和商業模式。"
       },
       "leading_indicators": [
-        "大型車廠及能源公司在電池技術研發上的投資公告",
-        "新型電池技術 (如鈉離子、固態電池) 的商業化進展",
-        "各國電網儲能容量的增長數據"
+        "大型藥廠的併購活動與研發投入",
+        "新藥臨床試驗的成功率與上市進度",
+        "基因編輯、細胞療法等前沿技術的商業化應用",
+        "政府對醫療健康產業的法規支持與資金補貼"
       ],
       "us_stocks": [
         {
-          "name": "通用汽車",
-          "ticker": "GM"
+          "name": "葛蘭素史克(GSK)",
+          "ticker": "GSK"
         },
         {
-          "name": "特斯拉",
-          "ticker": "TSLA"
+          "name": "禮來(Eli Lilly and Company)",
+          "ticker": "LLY"
         },
         {
-          "name": "量子點",
-          "ticker": "QS"
+          "name": "輝瑞(Pfizer)",
+          "ticker": "PFE"
         }
       ],
       "tw_stocks": [
         {
-          "name": "台達電",
-          "ticker": "2308"
+          "name": "合一",
+          "ticker": "4743"
         },
         {
-          "name": "聯華",
-          "ticker": "1720"
+          "name": "中裕",
+          "ticker": "4147"
         }
       ],
       "evidence_news": [
         {
-          "title": "G.M. Plans to Develop Energy Storage Batteries as E.V. Sales Flag",
-          "source": "The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPY25SUUNtX1dvWE5pMGpLb091TWFCUlU1OEhjQ1F0dEVpa24wdWFoZjg3ekFHWUhwSG9Edng2YzVETGRoMkhmRVBXbWZ6WjhSSDZWak9xZHlvWG9iaDg2VTNMcU1LaldOQ2x3QThOMnktY2xsTjVzNnBtOTJnSUlKaTRhQ3R0eldadjlfVHltWFZsZE43TGxrMm1ZVE5KNHNLUnFBRHZiZDdibHBtOTlnX0t4b19FWlJZZXN3?oc=5"
+          "title": "GSK enters agreement to acquire Nuvalent, Inc.",
+          "source": "GSK",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNb2l3V2tURVZWc3M3RDlXdXVVYi1WRHZ3THhKaXdjQmt3OGpodU1ZZKotZnhoNmJYV1d0SVYyUy0tUlN6cUZOeU8wQkVBQlFHQnpuTy1CTGFGVnBwUW5GOFlHWmktQkEtSGRmcmdHTXdyR3FPVWNaUUVYZjhqbTY1MURvcDJobVJvRWRZSzJuR3pLTmRjX19Z?oc=5"
         },
         {
-          "title": "又是自帶線行動電源爆炸！沒充電也起火還燒到筆電 行充品牌曝光「曾2度召回」",
-          "source": "udn科技玩家",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBsUHV1X3N5OUN4ZUFfUlJtX2k2SHBGRGNyR1VmZUJlbGdZVzZ0cnVteGFfVW5IOGpteXZfTG5jb3VuSDlia1hhYW01eE9tdzBBNWQzS3g1dHFOd9IBX0FVX3lxTE9TMmNta0s2V1N1WTY2ang1VnhQRGgzZ2RmUndfY3NZTjJfMC1MV1VMUllqUWxEMU1HRGpGRVV4WktRTGo2TWp1ZDczSldPNGNaN2xpTjFocExRX0lyUlBR?oc=5"
+          "title": "GSK pays $10.6B for cancer biotech Nuvalent in industry’s second-biggest buy of the year",
+          "source": "BioSpace",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZ2tRN2dIcGt6a0x1R0Z5b3Y0c3lqQ19lS3FwU2h5c1FvU3Z5bE11U252a1R1d3FkM250ZWw4RjFpU21sQ2t0RzN3b19vQzJpQjV5Tk94b0d0cTR1cmU5MDR5WnZ5U015aG52c1l5S21PNEV3ZEZ0NlQ4ekQ1c1J0RjB2V0dMOHl1QWlPczV4VnZ5V3A4V1c5M01fWk5xRThvQ0xYd0x5ZlVR?oc=5"
         }
       ],
-      "summary": "儘管電動車市場面臨挑戰，能源儲存技術的創新和多元應用，特別是鈉離子電池和電網儲能，為產業帶來新的成長動能。",
+      "summary": "大型併購案凸顯生技醫療產業的資金熱度與創新活力，尤其在癌症治療與精準醫療領域，技術突破與政策支持共同驅動產業成長。",
       "news_count": 0
     },
     {
       "rank": 4,
-      "industry": "無人系統與國防科技",
-      "heat_score": 70,
+      "industry": "太空經濟與衛星通訊",
+      "heat_score": 80,
       "signals": {
-        "funding": "全球地緣政治緊張局勢升級，對國防科技和無人系統的投資預計將持續增加。雖然新聞未直接提供具體募資數據，但軍事衝突會直接刺激國防預算投入。例如，伊朗宣稱打下美軍無人機 (新聞[4])，這類事件往往會促使各國加大對無人機技術的反制與研發投入。",
-        "hiring": "無人機、無人載具和相關國防技術的發展，將帶動軟體工程師、AI 專家、機械工程師等高科技人才的需求。工研院在英國科技日也將『無人系統』列為合作看好項目 (新聞[5])。",
-        "policy": "各國政府將無人系統視為國家安全和戰略競爭的關鍵領域，政策支持和軍事採購訂單將持續增長。例如，美軍對伊朗的『自衛反擊』行動 (新聞[26],[29])，以及伊朗聲稱發動攻擊打下美軍無人機 (新聞[4])，都顯示無人系統在軍事戰略中的重要性，促使政策制定者加大投入。",
-        "technology": "無人機技術持續發展，從偵察、監視到攻擊應用日益成熟。AI 與無人系統的結合，使其具備更高的自主性和作戰效率。工研院與英國在半導體、AI 與無人系統的合作，也顯示技術交流與突破的潛力 (新聞[5])。"
+        "funding": "SpaceX的IPO消息持續引發市場關注，儘管尚未上市，但其高估值和業務擴張潛力吸引大量資金。華爾街對SpaceX的狂熱反映出市場對太空經濟的樂觀預期。SpaceX計劃將AI運算引入軌道，這將需要大量的資金投入。",
+        "hiring": "SpaceX等太空科技公司對工程師、科學家和技術人員的需求持續增長，尤其是在火箭製造、衛星部署、AI運算和地面控制等領域。隨著太空任務的複雜性增加，對高素質人才的需求也隨之提升。",
+        "policy": "美國政府對太空探索和商業太空活動提供政策支持，鼓勵私人企業參與。儘管新聞未直接提及具體政策，但SpaceX等公司的快速發展離不開有利的政策環境。軍事應用（如無人機）也間接推動相關技術發展。",
+        "technology": "SpaceX計劃在明年底前進行軌道AI運算測試，並揭示了1100萬平方英尺的Gigasat工廠，目標在2027年底前實現每年1GW的太空AI運算能力，顯示其在太空AI技術上的巨大野心。星鏈(Starlink)等衛星通訊技術的發展，也為全球通訊帶來變革。"
       },
       "leading_indicators": [
-        "各國國防預算中無人系統採購比例",
-        "軍事衝突中無人機的實際應用效果",
-        "無人機反制技術的研發進展"
+        "SpaceX等太空公司的IPO進度與市場估值",
+        "衛星發射頻率與成功率",
+        "軌道AI運算和衛星通訊技術的商業化應用進度",
+        "政府對太空探索和商業太空產業的投資與法規支持"
       ],
       "us_stocks": [
         {
-          "name": "洛克希德馬丁",
+          "name": "洛克希德馬丁(Lockheed Martin)",
           "ticker": "LMT"
         },
         {
-          "name": "諾斯洛普格魯曼",
-          "ticker": "NOC"
+          "name": "波音(Boeing)",
+          "ticker": "BA"
         },
         {
-          "name": "雷神技術",
-          "ticker": "RTX"
+          "name": "維珍銀河(Virgin Galactic)",
+          "ticker": "SPCE"
         }
       ],
       "tw_stocks": [
         {
-          "name": "漢翔",
-          "ticker": "2634"
+          "name": "事欣科",
+          "ticker": "4916"
+        },
+        {
+          "name": "公準",
+          "ticker": "3178"
         }
       ],
       "evidence_news": [
         {
-          "title": "伊朗報復！稱發動21起攻擊打下美軍MQ-9無人機 美方回應了",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5uUEdNX2ZIY2lJaFBub3RLckJWdnI1N0VYQnRaV1VPa19vWnBIQ0doOTVobnUtOEFCQ0ZZRW4xcTRBR0pza29rakZuWk5ETTg3ZUdr0gFYQVVfeXFMTzc5eS1WbHIwZEIzWXl5eTZSelhXRDQtVGlmS1F3dkNnOWF1S1E1V1hQQmFkWVMtTzJ2VlJxU1M5bVN5UmdrSTd3dGZJb21BbUh2aEs5YkFKNg?oc=5"
+          "title": "Prediction: SpaceX Stock Will Hit This Price in July",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV_5cUxNbklJeEtJRG5tXy1BRi1BdVJuYTBFdC1TQ25CcTlDZUF1cFRreW1wTk9tNkw1ajBfVmZ3WlNyOGMxa0V4dXMwSWZEN1BzR3M5MHZwS0lIRzNfZ3NQanRzendYRGszV1p1T3owQnU3ZHVXanRlMi1TQUxBeElEMkJjUVprbXNKZWx1WTJhdmplU0lUQzlEVHgxdm1KM2xFWjg?oc=5"
         },
         {
-          "title": "工研院英國科技日半導體、AI與無人系統合作看好| 全球財經| 全球",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE43dXFhS1lDNGNEU1Vqc2RObWo0V011SS01Q3ZtdmFsQnhlSUVDWTBXOHZJcHM0aTJQeXl4RUlPUXdzZkhGSTh3Sm5lbjZxRHc1?oc=5"
+          "title": "SpaceX aims to launch orbital AI computing tests by end of next year, sources say",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV_5cUxOSEJ0VnJacU5WYTU0emFkOGlLVi0xQ0E2ckhETkM1SjdFSlgzQzkwSGsxdVNsOFhQN2hCbE5WVy1OOFBDVE9yUHJTU3BwalZsdVdPOWJQRjFGTDFGQmxobXJhX2VkLVFzdWVpZ04td29HeXcxQzdxYVhwNlhhV2JCTVRDYm4zWTdOVjFHTnNjZDl2MjdybUtndlMzSGc5UVRucmdSU3FSbEUtaEZHZVhkMEVDRzZNd3h0TDNHTVdfOEJTRTdqZnB5dzlqMXlTZw?oc=5"
         },
         {
-          "title": "Futures Fall As U.S. Strikes Iran After Whipsaw Session",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNOE1hZWZSRXpOWWZLRnBmbEZFMTdKV040X25JbUxvVVU4X2JWQ2ZPbUpJaERPTnJZRlVsMF9Rb1o1NnUweHVxc1NYVVBoU1ZPakhKMDZ6WmlOSXVoWE1Vd3lhMWxkUW5fZ0E5TjVsRW93cU9aMXRtcWpQT2ptVU5yQ3NwRU1TTXZDMGhCbUdxdnNwRF8yMy1LWTBJdG9xeFR5NS1rQWxhcTJydmNvWFh2MFdMNmd4aFgwN0VQZjJFaDkyMjd6clln?oc=5"
+          "title": "IPO Giants SpaceX, OpenAI, CXMT, Unitree to Impact Markets",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV_5cUxQcHJ4Q1N3LVZqeUw0TndoWXlVOXc4dnRpRTRnZnlxU04tUW5jOVZkZEMwcHplTXk1MVh5YnZTWmRPOGZZT05YYWJEb2pSRnJKU28yWG5ISzdFLVd1dm9lVE1TZVNYa0FhY2NNRmllUTM4RTU2akFmelFBLTd2VE8zaG91TjNwZGF5bjVVWWRB?oc=5"
         }
       ],
-      "summary": "地緣政治緊張刺激無人系統和國防科技的需求，技術與 AI 結合提升自主性，成為各國戰略重點。",
+      "summary": "SpaceX的IPO和軌道AI運算計劃，顯示太空經濟正從基礎設施建設邁向高附加價值的數據服務，資金和技術動能強勁。",
       "news_count": 0
     }
   ]
