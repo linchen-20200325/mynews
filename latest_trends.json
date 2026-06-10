@@ -4,18 +4,17 @@
     {
       "rank": 1,
       "industry": "人工智慧 (AI) 基礎設施與應用",
-      "heat_score": 98,
+      "heat_score": 95,
       "signals": {
-        "funding": "全球AI領域的資金投入持續強勁，AMD宣布向英國AI擴張投資高達20億英鎊。OpenAI和SpaceX等巨頭的IPO消息預示著大量資金湧入。儘管有市場修正，但大型科技公司如Apple、Google仍不斷投入AI開發，並透過價格戰（Google AI Plus降價）擴大用戶基礎。台積電5月營收創新高，主要受惠於AI需求強勁。",
-        "hiring": "AI相關職缺需求旺盛，儘管科技業整體出現人力汰換潮，但AI領域的專業人才仍是企業搶奪的焦點，年薪百萬職位連AI都搶不走。工研院也看好AI與無人系統的合作，間接帶動相關人才需求。",
-        "policy": "各國政府積極推動AI發展，日本首相敦促加大對AI和數位領域的投資。台灣雖擬對銷中國AI晶片加強管制，但整體政策仍支持半導體與AI供應鏈發展。工研院在英國推動半導體、AI與無人系統合作，顯示跨國政策合作趨勢。",
-        "technology": "AI技術持續突破，Apple推出Siri AI，功能顯著提升，並與Google、Nvidia合作開發更先進AI模型。Anthropic發布「安全版」Claude Mythos AI模型。SpaceX計劃在明年底前啟動軌道AI運算測試，顯示AI技術正向太空領域擴展。CPO技術雖有爭議，但輝達仍喊話全面採用，顯示對未來技術的投入。"
+        "funding": "AI相關投資持續強勁，AMD承諾在英國AI擴張投入20億英鎊，貿聯-KY以8.5億美元收購Interplex Datacom強化AI資料中心布局。儘管高盛示警AI資本狂潮進入下半場，企業延後支出可能導致槓桿風險，但整體資金仍持續湧入AI領域，尤其是在半導體、資料中心及AI軟體應用方面。SpaceX也計劃在軌道上進行AI運算測試，顯示資金正流向更前瞻的AI應用。",
+        "hiring": "AI領域人才需求持續旺盛，儘管新聞中未直接提及具體徵才數據，但AI熱潮不減，相關職位如AI工程師、數據科學家、機器學習專家等仍是市場搶手的人才。例如，新聞提及「全台最缺人的『百萬鐵飯碗』！這職業連AI都搶不走」，側面反映AI雖然帶來變革，但也創造了新的高價值職位。",
+        "policy": "各國政府積極推動AI發展，日本首相呼籲加大對AI和數位領域的投資，顯示國家層面將AI視為重要戰略。蘋果iOS 27整合Siri AI，也代表大型科技公司正將AI深度整合至其核心產品和生態系，這將促使更多政策支持AI技術的普及與應用。",
+        "technology": "AI技術持續突破，蘋果iOS 27 CarPlay導入Siri AI，Google翻譯大升級實現即時翻譯，都顯示AI在終端應用和人機互動方面有顯著進展。輝達持續喊話全面採用CPO（共同封裝光學），儘管SemiAnalysis對CPO時程看衰，但這項技術被視為AI資料中心發展的關鍵，預示著更高效能的AI硬體技術正在成熟。台積電5月營收創單月新高，也直接反映AI晶片製造的強勁需求。"
       },
       "leading_indicators": [
-        "主要AI晶片製造商（Nvidia, AMD, TSMC）的季度財報與指引",
-        "OpenAI、SpaceX等AI巨頭的IPO進展與估值變化",
-        "各國政府對AI技術研發的補貼政策與法規動向",
-        "大型科技公司（Apple, Google, Microsoft）AI產品的用戶增長與商業化進度"
+        "主要AI晶片製造商（如Nvidia, AMD, TSMC）的季度財報與未來展望",
+        "AI相關新創公司的融資輪次與估值變化",
+        "AI資料中心基礎設施（如CPO、HBM）的訂單與出貨量"
       ],
       "us_stocks": [
         {
@@ -37,8 +36,8 @@
           "ticker": "2330"
         },
         {
-          "name": "聯發科",
-          "ticker": "2454"
+          "name": "貿聯-KY",
+          "ticker": "3665"
         },
         {
           "name": "國巨",
@@ -47,14 +46,14 @@
       ],
       "evidence_news": [
         {
-          "title": "台積電營收／5月逾4,169億元創新高 月增1.5%",
-          "source": "經濟日報",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1SYmtSUFdJa1dSTWxYZ09oamxFZGZpN3Q5SDNnM1hRWml4RnhLRkhxMzhHRF9BcVlidll2ZU9GMWdEelZLbGtZTTZQem45MmE4QVpIMEtmazFhd9IBX0FVX3lxTFByc0tvcG44QXFFSEhRSWU1RTUzZk5pT3A0d21uRGk3MS1LZThuNHdmbHFrSmJtY2prSzFiLUszVlBuY3pFeDlnRkdSZ3gxWGlDdDl4aXhtM294ZV9MSlJV?oc=5"
+          "title": "AI熱潮不間斷 台積電5月營收4,169億元 創單月新高",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9lemZzRFR4TktIVmR1cHA0SWN1WTJINTZvdDNUSWxXb09fUGtOT0kyUG1QN1YzSmRsSXd3dzdqV01FWnA1NWlkNnhfNzExaDg?oc=5"
         },
         {
-          "title": "蘋果終於採用輝達GPU！輝達股價為何沒反應？原因曝光",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAwSnF4RUZyeHBJY0FEeTVwUEtnUzRxXzA4WnB1QmkzRjctbldLdTEwWlVRaUREOUl1djVnbXF6R2NSTGxvenZKZm5WNlVVck1w?oc=5"
+          "title": "貿聯-KY宣布8.5億美元收購Interplex Datacom 強化AI資料中心布局",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE84SUhyOTlGeDUyWG0xR2s1d2xsMGxMM0xLRVcxNlAwODdLZGYzYzMtUWpJVFRyXzkzV1A4QU1EY0RBWHE1SFNMVjh0c0p6Y00?oc=5"
         },
         {
           "title": "AMD to Invest Up to £2 Billion in UK AI Expansion",
@@ -62,39 +61,38 @@
           "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAwRnpLaUdJTjkyU2tlblJLd3BZREw1NXZHbGxLcWswbHh2YVo0TXpIaXhzM0VSV1hTWWNKRllYb05FY2NHNnJxelRkQjhHeDRQbUhvNXhIei1fTlBJbS11a3dPdEFNM00?oc=5"
         }
       ],
-      "summary": "AI作為核心驅動力，持續推動半導體產業成長，並擴散至軟體服務、太空科技等領域，資金、技術、政策與人才需求全面爆發。",
-      "news_count": 32,
+      "summary": "AI熱潮持續引領科技產業發展，從晶片製造、資料中心到軟體應用，資金與技術動能強勁，儘管市場存在高估值風險，但長期趨勢不變。",
+      "news_count": 28,
       "first_seen": "2026-06-09",
       "last_seen": "2026-06-10"
     },
     {
       "rank": 2,
-      "industry": "先進半導體製造與記憶體",
-      "heat_score": 92,
+      "industry": "半導體產業",
+      "heat_score": 88,
       "signals": {
-        "funding": "儘管近期晶片股出現回調，但長期資金看好半導體產業前景。SK集團主席Chey Tae-won正評估國內外半導體廠址，顯示資本支出意願。韓國投資管理公司推出的半導體ETF表現突出，證明市場對此領域的信心。國巨等被動元件廠商股價強勁，反映AI對周邊元件的需求。",
-        "hiring": "半導體產業對高階研發和製造人才的需求持續旺盛，尤其在AI晶片、先進製程和記憶體技術方面。儘管新聞未直接提及大規模徵才，但產業擴張和技術升級必然需要大量人才。",
-        "policy": "台灣擬對銷中國AI晶片加強管制，顯示半導體產業已成為國家戰略競爭的核心。工研院在英國推動半導體合作，顯示國際間對半導體技術的重視和合作。美國、韓國等主要國家也持續推動半導體產業在地化和供應鏈韌性。",
-        "technology": "台積電5月營收創新高，凸顯其在先進製程技術的領先地位。英特爾雖然傳出吃下Google大單，但華爾街對其代工實力仍有疑慮，顯示台積電在技術上的優勢。HBM等高頻寬記憶體成為AI時代的關鍵元件，帶動記憶體技術發展。ASML作為設備供應商，在先進製程中扮演關鍵角色，儘管股價表現受市場情緒影響，其技術重要性不減。"
+        "funding": "UBS預計半導體設備市場到2028年將達到2500億美元，顯示產業資本支出龐大。韓國三星和SK海力士考慮推動光州封裝廠以強化AI晶片供應，SK集團也計劃建設新的半導體工廠，這些都指向巨額的資本投資。儘管iShares半導體ETF(SOXX)收黑，AI估值過高引發賣壓，但整體產業的資金流向仍是擴張性的。",
+        "hiring": "半導體產業對人才的需求持續強勁，特別是在AI晶片設計、製造和封裝領域。新聞提及「全台最缺人的『百萬鐵飯碗』！這職業連AI都搶不走」，雖然未直接指向半導體，但半導體作為高技術密集產業，其人才需求必然不減。",
+        "policy": "韓國政府支持半導體產業發展，三星和SK海力士在光州設廠的計劃，可能獲得政府政策支持，以鞏固韓國在AI晶片領域的地位。全球主要國家也將半導體視為戰略物資，預計將有更多政策支持本地製造與研發。",
+        "technology": "記憶體缺貨影響輝達CPU搭載容量，顯示供應鏈緊繃，但同時也驅動技術升級與擴產。AI、5G和記憶體晶片需求加速創新，推動韓國半導體設備市場強勁成長。台積電5月營收創單月新高，是半導體技術領先和產能擴張的直接證明，特別是在先進製程方面。"
       },
       "leading_indicators": [
-        "台積電、三星、英特爾等晶圓代工廠的資本支出與新廠進度",
-        "HBM等高頻寬記憶體的需求與供應鏈變化",
-        "EUV設備製造商ASML的訂單與出貨狀況",
-        "主要國家對半導體技術進出口的管制政策變化"
+        "半導體設備製造商（如ASML、Applied Materials）的訂單量",
+        "記憶體（HBM、DDR5）價格與出貨量",
+        "主要晶圓代工廠（如TSMC、Samsung Foundry）的產能利用率與新廠進度"
       ],
       "us_stocks": [
         {
-          "name": "美光(Micron Technology)",
-          "ticker": "MU"
-        },
-        {
-          "name": "應用材料(Applied Materials)",
+          "name": "應用材料",
           "ticker": "AMAT"
         },
         {
-          "name": "艾司摩爾(ASML Holding)",
-          "ticker": "ASML)"
+          "name": "艾司摩爾(ADR)",
+          "ticker": "ASML"
+        },
+        {
+          "name": "美光科技",
+          "ticker": "MU"
         }
       ],
       "tw_stocks": [
@@ -103,148 +101,121 @@
           "ticker": "2330"
         },
         {
-          "name": "聯電",
-          "ticker": "2303"
+          "name": "聯發科",
+          "ticker": "2454"
         },
         {
-          "name": "南亞科",
-          "ticker": "2408"
+          "name": "日月光投控",
+          "ticker": "3711"
         }
       ],
       "evidence_news": [
         {
-          "title": "台積電營收／5月逾4,169億元創新高 月增1.5%",
-          "source": "經濟日報",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1SYmtSUFdJa1dSTWxYZ09oamxFZGZpN3Q5SDNnM1hRWml4RnhLRkhxMzhHRF9BcVlidll2ZU9GMWdEelZLbGtZTTZQem45MmE4QVpIMEtmazFhd9IBX0FVX3lxTFByc0tvcG44QXFFSEhRSWU1RTUzZk5pT3A0d21uRGk3MS1LZThuNHdmbHFrSmJtY2prSzFiLUszVlBuY3pFeDlnRkdSZ3gxWGlDdDl4aXhtM294ZV9MSlJV?oc=5"
+          "title": "Semiconductor Equipment Seen as Top Winner of AI Boom as UBS Sees $250 Billion Market by 2028",
+          "source": "bloomingbit",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE50S3M4SE1RWktCcnc5SDUyS3NuNFpkQVg2bWFXdXpXSFVGd0lPVkxEWDdDM2Nmb1JJbmhUTkM4TFdPdlFlSWJLbVdvWjdZRG1zMnpZMA?oc=5"
         },
         {
-          "title": "還是要靠台積電！英特爾傳吃下大單 華爾街「4個字」潑冷水",
-          "source": "自由財經",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9SVzh1RjVrNHZYQVYwUEgxQzBUZmM2Vkg3Qm8wNUZnaXVmTi03UTg3VGRhTU9lVWFVem82TGJvU0dYdEJKSnN4dUtVTUdwa3VyYnQ0N0dSQ1JhY1dJSHE40gFkQVVfeXFMUFVodEJhc29sN2pudjdPcnB6Y0xWd3Bib0ZjWHRqaHhjT3Bfck1VVXdQY2lJZzFMdEtDVHk2LXlGdXNfVkdqWXlJdGM2Uk1SdFByamptY3ozaGoxYWdrbEhQZWZ6Vg?oc=5"
+          "title": "Korea Semiconductor Device Market Set for Strong Growth as AI, 5G, and Memory Chip Demand Accelerate Innovation",
+          "source": "vocal.media",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSDNRQlVFUkFraVZ1STJidmFoeFotekdxTTdFSGo3RDVpRkY1ekJJNzlHcGFFNnhGNWxINUNmay1LWUhOUEtyVlh1LVBQQncxLTNxMWhtQ29PM29rY2o3M216Y0FWcldyekVKOUNDY1h4cVZVVFktUmNJbmtpbG4ycUx2TVMySXZqbWdNYmtWeDZMS0lWUl9Id0dWb2kzMEgyQm53UEFVb3VEOExhOVcycW9CYmxIMHJhZHhtUGcwVGhsUTF0Z3JXekxFaXFQUQ?oc=5"
         },
         {
-          "title": "SK Chairman Chey Tae-won Weighs Domestic, Overseas Semiconductor Plant Sites",
-          "source": "조선일보",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQamsxOGFvYU54RnNQVWh1VFJlUzdraHlGRmR4bERXZW05a2xtMlhxZWJMYW5heEZlMldnZ1o5Ymp3M0VDV0hCdTFkVWFUVnplNWtyc0dDbGhZMFFzb2VVeERkT3FMTjRlZXdOaHFPMHdyWE5QaTVWcnZRWGpEX211bUxfaXpQVVc2?oc=5"
+          "title": "台積公司2026年5月營收報告|台灣積體電路製造股份有限公司",
+          "source": "pr.tsmc.com",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9xc1RfN1B0ZVhWMWxDZU9zak5FckZEZjBJem1MQ1g1Y19WRVFHNHJkVVo2V1Y4MGZDRnQ0OTdzX3o4Z3d6bHFWNXhzakRvUQ?oc=5"
         }
       ],
-      "summary": "AI需求持續推動半導體產業的技術創新和資本投入，尤其在先進製程和高頻寬記憶體領域，儘管市場波動，但長期成長動能不變。",
+      "summary": "半導體產業受AI與5G需求驅動，資本支出與技術創新持續，儘管短期市場波動，但長期增長動能穩固。",
       "news_count": 0
     },
     {
       "rank": 3,
-      "industry": "生技醫療與製藥",
-      "heat_score": 85,
+      "industry": "太空科技與衛星通訊",
+      "heat_score": 75,
       "signals": {
-        "funding": "GSK宣布以106億美元收購癌症藥物開發商Nuvalent，顯示大型製藥公司透過併購加速新藥研發和市場擴張。這筆交易是今年第二大併購案，反映生技製藥領域的資金活躍度。創投和私募股權基金也持續關注創新藥物、基因療法和數位醫療等領域。",
-        "hiring": "新藥研發、臨床試驗和生物製造等領域對專業人才需求持續增加。尤其在腫瘤學、罕見疾病和細胞基因治療等前沿領域，人才競爭激烈。併購案也會帶動相關研發、法規和商業化人才的流動與需求。",
-        "policy": "各國政府持續支持新藥研發和醫療創新，並簡化法規審批流程，以加速藥物上市。例如美國FDA對突破性療法的快速通道審批，以及對罕見疾病藥物的激勵政策，都為生技製藥產業創造了有利環境。全球人口老化和慢性病負擔增加，也促使政府加大對醫療健康的投入。",
-        "technology": "Nuvalent在癌症藥物開發方面的創新技術吸引了GSK的巨額收購，顯示精準醫療和靶向治療的巨大潛力。基因編輯、細胞療法、AI輔助藥物發現等技術持續取得突破，縮短研發週期，提高成功率。數位醫療和遠距醫療的發展也為生技製藥產業帶來新的應用場景和商業模式。"
+        "funding": "SpaceX的IPO野心與Starship進度密切相關，路透社報導SpaceX計劃將IPO價格設定在每股135美元，目標估值750億美元，顯示市場對太空科技的巨大資金投入與期待。SpaceX還計劃在軌道上進行AI運算測試，這也可能吸引更多投資。",
+        "hiring": "SpaceX作為太空科技領域的領導者，其Starship和衛星AI運算測試項目，預計將需要大量工程師、科學家和技術人員，推動相關人才的需求。儘管新聞未直接提及具體徵才數據，但此類高科技項目通常伴隨大量人才招聘。",
+        "policy": "太空探索與衛星通訊通常涉及國家安全與戰略，各國政府可能透過政策支持、資金補貼或法規鬆綁來鼓勵發展。SpaceX的活動，特別是與美國政府的合作，將受益於相關政策支持。",
+        "technology": "Starship的火星任務是技術發展的關鍵指標，其進度將直接影響SpaceX的市場地位。SpaceX計劃在軌道上進行AI運算測試，這代表太空科技與AI技術的深度融合，將開拓新的應用場景和技術邊界。衛星通訊技術的進步也將繼續推動全球連接性。"
       },
       "leading_indicators": [
-        "大型藥廠的併購活動與研發投入",
-        "新藥臨床試驗的成功率與上市進度",
-        "基因編輯、細胞療法等前沿技術的商業化應用",
-        "政府對醫療健康產業的法規支持與資金補貼"
+        "SpaceX Starship的發射頻率與成功率",
+        "SpaceX IPO的進度與市場反應",
+        "全球衛星發射數量與衛星通訊服務的用戶增長"
       ],
       "us_stocks": [
         {
-          "name": "葛蘭素史克(GSK)",
-          "ticker": "GSK"
+          "name": "美國衛星公司",
+          "ticker": "VSAT"
         },
         {
-          "name": "禮來(Eli Lilly and Company)",
-          "ticker": "LLY"
-        },
-        {
-          "name": "輝瑞(Pfizer)",
-          "ticker": "PFE"
+          "name": "銥星通訊",
+          "ticker": "IRDM"
         }
       ],
-      "tw_stocks": [
-        {
-          "name": "合一",
-          "ticker": "4743"
-        },
-        {
-          "name": "中裕",
-          "ticker": "4147"
-        }
-      ],
+      "tw_stocks": [],
       "evidence_news": [
         {
-          "title": "GSK enters agreement to acquire Nuvalent, Inc.",
-          "source": "GSK",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNb2l3V2tURVZWc3M3RDlXdXVVYi1WRHZ3THhKaXdjQmt3OGpodU1ZZKotZnhoNmJYV1d0SVYyUy0tUlN6cUZOeU8wQkVBQlFHQnpuTy1CTGFGVnBwUW5GOFlHWmktQkEtSGRmcmdHTXdyR3FPVWNaUUVYZjhqbTY1MURvcDJobVJvRWRZSzJuR3pLTmRjX19Z?oc=5"
-        },
-        {
-          "title": "GSK pays $10.6B for cancer biotech Nuvalent in industry’s second-biggest buy of the year",
-          "source": "BioSpace",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZ2tRN2dIcGt6a0x1R0Z5b3Y0c3lqQ19lS3FwU2h5c1FvU3Z5bE11U252a1R1d3FkM250ZWw4RjFpU21sQ2t0RzN3b19vQzJpQjV5Tk94b0d0cTR1cmU5MDR5WnZ5U015aG52c1l5S21PNEV3ZEZ0NlQ4ekQ1c1J0RjB2V0dMOHl1QWlPczV4VnZ5V3A4V1c5M01fWk5xRThvQ0xYd0x5ZlVR?oc=5"
-        }
-      ],
-      "summary": "大型併購案凸顯生技醫療產業的資金熱度與創新活力，尤其在癌症治療與精準醫療領域，技術突破與政策支持共同驅動產業成長。",
-      "news_count": 0
-    },
-    {
-      "rank": 4,
-      "industry": "太空經濟與衛星通訊",
-      "heat_score": 80,
-      "signals": {
-        "funding": "SpaceX的IPO消息持續引發市場關注，儘管尚未上市，但其高估值和業務擴張潛力吸引大量資金。華爾街對SpaceX的狂熱反映出市場對太空經濟的樂觀預期。SpaceX計劃將AI運算引入軌道，這將需要大量的資金投入。",
-        "hiring": "SpaceX等太空科技公司對工程師、科學家和技術人員的需求持續增長，尤其是在火箭製造、衛星部署、AI運算和地面控制等領域。隨著太空任務的複雜性增加，對高素質人才的需求也隨之提升。",
-        "policy": "美國政府對太空探索和商業太空活動提供政策支持，鼓勵私人企業參與。儘管新聞未直接提及具體政策，但SpaceX等公司的快速發展離不開有利的政策環境。軍事應用（如無人機）也間接推動相關技術發展。",
-        "technology": "SpaceX計劃在明年底前進行軌道AI運算測試，並揭示了1100萬平方英尺的Gigasat工廠，目標在2027年底前實現每年1GW的太空AI運算能力，顯示其在太空AI技術上的巨大野心。星鏈(Starlink)等衛星通訊技術的發展，也為全球通訊帶來變革。"
-      },
-      "leading_indicators": [
-        "SpaceX等太空公司的IPO進度與市場估值",
-        "衛星發射頻率與成功率",
-        "軌道AI運算和衛星通訊技術的商業化應用進度",
-        "政府對太空探索和商業太空產業的投資與法規支持"
-      ],
-      "us_stocks": [
-        {
-          "name": "洛克希德馬丁(Lockheed Martin)",
-          "ticker": "LMT"
-        },
-        {
-          "name": "波音(Boeing)",
-          "ticker": "BA"
-        },
-        {
-          "name": "維珍銀河(Virgin Galactic)",
-          "ticker": "SPCE"
-        }
-      ],
-      "tw_stocks": [
-        {
-          "name": "事欣科",
-          "ticker": "4916"
-        },
-        {
-          "name": "公準",
-          "ticker": "3178"
-        }
-      ],
-      "evidence_news": [
-        {
-          "title": "Prediction: SpaceX Stock Will Hit This Price in July",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV_5cUxNbklJeEtJRG5tXy1BRi1BdVJuYTBFdC1TQ25CcTlDZUF1cFRreW1wTk9tNkw1ajBfVmZ3WlNyOGMxa0V4dXMwSWZEN1BzR3M5MHZwS0lIRzNfZ3NQanRzendYRGszV1p1T3owQnU3ZHVXanRlMi1TQUxBeElEMkJjUVprbXNKZWx1WTJhdmplU0lUQzlEVHgxdm1KM2xFWjg?oc=5"
-        },
-        {
-          "title": "SpaceX aims to launch orbital AI computing tests by end of next year, sources say",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV_5cUxOSEJ0VnJacU5WYTU0emFkOGlLVi0xQ0E2ckhETkM1SjdFSlgzQzkwSGsxdVNsOFhQN2hCbE5WVy1OOFBDVE9yUHJTU3BwalZsdVdPOWJQRjFGTDFGQmxobXJhX2VkLVFzdWVpZ04td29HeXcxQzdxYVhwNlhhV2JCTVRDYm4zWTdOVjFHTnNjZDl2MjdybUtndlMzSGc5UVRucmdSU3FSbEUtaEZHZVhkMEVDRzZNd3h0TDNHTVdfOEJTRTdqZnB5dzlqMXlTZw?oc=5"
+          "title": "How SpaceX’s IPO ambitions ride on Starship’s path to Mars",
+          "source": "Financial Times",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNMXAxNER1cjJFb2h1Skp0SjJyMnF6ZGo3UjhwTlJrZXh5bWx2eVFTd0tOeXphU2Z6WVZGQWRKdzhYSThxaXFJbHpEeXRVU3YxYlZoZFZpSnhwdG1XRVc2MV80YjdEM1NLRzBKNEpHcjhuSjV6Z25SMXlfaFZuNTY0NkxoRjc?oc=5"
         },
         {
           "title": "IPO Giants SpaceX, OpenAI, CXMT, Unitree to Impact Markets",
           "source": "조선일보",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV_5cUxQcHJ4Q1N3LVZqeUw0TndoWXlVOXc4dnRpRTRnZnlxU04tUW5jOVZkZEMwcHplTXk1MVh5YnZTWmRPOGZZT05YYWJEb2pSRnJKU28yWG5ISzdFLVd1dm9lVE1TZVNYa0FhY2NNRmllUTM4RTU2akFmelFBLTd2VE8zaG91TjNwZGF5bjVVWWRB?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcHJ4Q1N3LVZqeUw0TndoWXlVOXc4dnRpRTRnZnlxU04tUW5jOVZkZEMwcHplTXk1MVh5YnZTWmRPOGZZT05YYWJEb2pSRnJKU28yWG5ISzdFLVd1dm9lVE1TZVNYa0FhY2NNRmllUTM4RTU2akFmelFBLTd2VE8zaG91TjNwZGF5bjVVWWRB?oc=5"
+        },
+        {
+          "title": "SpaceX aims to launch orbital AI computing tests by end of next year, sources say",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSEJ0VnJacU5WYTU0emFkOGlLVi0xQ0E2ckhETkM1SjdFSlgzQzkwSGsxdVNsOFhQN2hCbE5WVy1OOFBDVE9yUHJTU3BwalZsdVdPOWJQRjFGTDFGQmxobXJhX2VkLVFzdWVpZ04td29HeXcxQzdxYVhwNlhhV2JCTVRDYm4zWTdOVjFHTnNjZDl2MjdybUtndlMzSGc5UVRucmdSU3FSbEUtaEZHZVhkMEVDRzZNd3h0TDNHTVdfOEJTRTdqZnB5dzlqMXlTZw?oc=5"
         }
       ],
-      "summary": "SpaceX的IPO和軌道AI運算計劃，顯示太空經濟正從基礎設施建設邁向高附加價值的數據服務，資金和技術動能強勁。",
+      "summary": "太空科技與衛星通訊在SpaceX的引領下，正吸引大量資金並推動前沿技術發展，特別是與AI的結合，預示著巨大的潛力。",
       "news_count": 0
+    },
+    {
+      "rank": 4,
+      "industry": "生物科技與製藥 (Oncology)",
+      "heat_score": 70,
+      "signals": {
+        "funding": "GSK以106億美元收購Nuvalent，這是在腫瘤學領域的重大投資，顯示大型製藥公司積極透過併購來擴展其在癌症藥物研發的佈局。這筆交易是今年第二大併購案，反映了生物科技領域的資金活躍度，尤其是在有潛力的新藥開發公司。",
+        "hiring": "大型藥廠的併購行為通常會帶來人才整合與擴張，特別是Nuvalent在癌症藥物研發方面的專業人才，將成為GSK的重要資產。生物科技新創公司也持續需要高階研發人才，以推動新藥進入臨床試驗。",
+        "policy": "癌症治療是全球醫療政策的重點之一，政府通常會提供研發補貼、加速審批流程等政策支持。GSK的併購行動可能也會受到相關政策的影響，例如監管機構對新藥上市的態度。",
+        "technology": "Nuvalent在癌症藥物研發方面可能擁有獨特的技術或藥物管線，吸引了GSK的巨額收購。這類併購案通常是基於對潛在突破性技術的信心。腫瘤學領域的技術創新，如精準醫療、免疫療法等，仍是生物科技發展的核心驅動力。"
+      },
+      "leading_indicators": [
+        "大型製藥公司在腫瘤學領域的併購活動與研發支出",
+        "新癌症藥物的臨床試驗進度與監管審批結果",
+        "生物科技新創公司的A輪、B輪融資活動"
+      ],
+      "us_stocks": [
+        {
+          "name": "禮來",
+          "ticker": "LLY"
+        },
+        {
+          "name": "默沙東",
+          "ticker": "MRK"
+        },
+        {
+          "name": "輝瑞",
+          "ticker": "PFE"
+        }
+      ],
+      "tw_stocks": [],
+      "evidence_news": [
+        {
+          "title": "GSK enters agreement to acquire Nuvalent, Inc.",
+          "source": "GSK",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNb2l3V2tURVZWc3M3RDlXdXVVYi1WRHZ3THhKaXdjQmt3OGpodU1ZZkotZnhoNmJYV1d0SVYyUy0tUlN6cUZOeU8wQkVBQlFHQnpuTy1CTGFGVnBwUW5GOFlHWmktQkEtSGRmcmdHTXdyR3FPVWNaUUVYZjhqbTY1MURvcDJobVJvRWRZSzJuR3pLTmRjX19Z?oc=5"
+        }
+      ],
+      "summary": "生物科技特別是腫瘤學領域，透過大型藥廠的併購展現強勁資金動能，專注於新藥研發的技術創新持續吸引投資。",
+      "news_count": 1,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-10"
     }
   ]
 }

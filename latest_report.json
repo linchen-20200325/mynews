@@ -3,204 +3,308 @@
   "topic": "全球政經與市場動態:聯準會利率與通膨、地緣政治與軍事衝突、美中科技戰、原油與股匯債走勢,及其對股市與基金的影響",
   "raw_news": [
     {
-      "title": "神鬼交鋒現實版？加航機師無照冒充機長執飛900架航班 退休前才被抓",
-      "source": "UDN",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0zemxjS042cUJ3WGRDNXhjbEMxZl94eFpUbC1BcWJMRXRqbndybUx6TlZ3WnZ1UUU0REVHNlJwVHM2NmNMU000ZmtxLUlacXJ30gFWQVVfeXFMUHNSY2NTMmR0bmc3Vkp6dlc0aDllVUhwZklTSUNCQTRYazB2bS1RZUVwTXBfaWRZajZIT05YNWg3QWdtb2hVcnNuR1pMaFJITkRCVXZkb0E?oc=5",
-      "summary": "神鬼交鋒現實版？加航機師無照冒充機長執飛900架航班 退休前才被抓 UDN前往 Google 新聞瀏覽更多頭條新聞和觀點",
-      "published": "2026-06-10T06:06:15+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "通膨壓力不減 美聯準會預計將利率維持至2026年底",
-      "source": "商傳媒",
-      "url": "https://news.google.com/rss/articles/CBMizgJBVV95cUxPVm02V21qbERoTkwxSVpkaEZDelJTQzFOaEt6S1FVSHhldUt1XzNJLWdzUkpvT0xfMXJRM1lUWUFnTDl1QXUyY2JHdFdPUXNYVXZtSGs1NUlwclE0bkw4LUtCQ1JHQWlRQjVIbjV5aTRYR2JVZC1hUUFJQjRFX1phcG56NU8tQ1V6OFhreDBzS1o4V2VGaU9XWXVWQkxJTi1vM3Q3VHJ4N2d3alIxZXFuUnEwQ3lXQjhZc1dwMWNBT0lrNGV0LThxVkROOVZGUE1RbjBkT0I1Z1dBaEhzY1VvdXR6Q1lVaVNrZmllXzZjcFpmd053RU4zR2wzdkduMVpfRER4c3pqclM1RF95N3d1NTJWREhFX0RTWmwxbUVhZXo3OUlvelI2TUVJbW01RXI1MDU3SmNHdGJlOUZyOU85cXZDUXQ0NWY0UkNjRVBR?oc=5",
-      "summary": "通膨壓力不減 美聯準會預計將利率維持至2026年底 商傳媒",
-      "published": "2026-06-10T05:58:00+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "誰說不會升息？ 聯準會最快10月「預防性升息」機率曝光- 上市櫃",
-      "source": "旺得富理財網",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBBQ2xyVXJyZzc0RkRFeW04T0laY3NzSGtZakN0RFdDTzRNMEllSWVYS1lNWFhQTXJhN01PR2dhcXp5aHQwSjJ0MmdsSmVHU1ZSQllKWklROS0zU0Q1d2VaSHRtNjh0Vms5TGc?oc=5",
-      "summary": "誰說不會升息？ 聯準會最快10月「預防性升息」機率曝光- 上市櫃 旺得富理財網",
-      "published": "2026-06-10T05:57:21+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "為什麼說印度如今的熱，全是歷史欠下的債？",
-      "source": "《超越新聞網》",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1QclVVdG5kd2hEbHo1a210c3hsb3hnYmJoWTFHVDNXVDFVR21NLTlaM2RJUmpzeVhxVUxUSmV2T3VXdks3TEt0dWZkVGQtZmM4VTJhWQ?oc=5",
-      "summary": "為什麼說印度如今的熱，全是歷史欠下的債？ 《超越新聞網》地球高燒不退 無牆教室修環保學分 Yahoo新聞47°C高溫下「早晨和夜晚已不復存在」：印度最炎熱地區的一天 BBC國外避暑 鉅亨號【錯誤】網傳印度近期氣溫50度、60度的圖片？誤解描述！挪用2022年的地表溫度圖 客新聞 HakkaNews",
-      "published": "2026-06-10T05:45:59+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "台股終場重跌1478點創史上第6大跌點 台積電跌50元",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOaHRvV2hBYklQRVJwcUlwd2NES3VfUkNpbzJvWFYzdzdBdHFncTdEeDVoa3Q2UnAxMkRHbWdtQUtxUEVrSVJ0N0R0RUVNdTlpcDZsaHJlN3FRZ2had0lONzBxWjc4X1RNeVZmR2k5bFB4ZEp6X3JmblpUd0d5MEJEWEU0cnNESkhrcEFFZk1UY0FyRW56aGI5UXFiUm1DWlZRQkFobHNHSWpsMFhwUFZFaWZYcW5GcEE2NHpId0JKNkh2VnRZNUU1amt5LXV4MGRzSGtuRmxrLUFMS004M0FRaXd5QVZ4S0c1REVJcmtFM2xzZ09FbDlCN1JCdHk1RW9ITDJEX3hpSnVZWUJtZHg2WDRDUm9IaDVxYWJkeTJFVUNKR1RmUlAxRWNYc0lzV3laQlFfR1hJamtlck1LYW85c2tB?oc=5",
-      "summary": "台股終場重跌1478點創史上第6大跌點 台積電跌50元 Yahoo新聞44,000大關還是守不住！今晚美國將宣布這件事「內行驚曝還沒跌完」散熱、矽光子集體崩潰了- 上市櫃 旺得富理財網專家看盤》獲利了結賣壓大盤上演月線保衛戰抗跌族群來了| 財經 Newtalk新聞AI遇逆風，台股大跌怎麼辦？艾蜜莉：市場修正是正常機制，4點管控投資風險 Smart自學網台股大怒神又來了！逾1200家同步翻車 指數跌逾千點 自由財經",
-      "published": "2026-06-10T05:42:43+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "國足無緣世界盃，裁判馬寧成為中國球迷追捧對象",
-      "source": "BBC 中文",
-      "url": "https://www.bbc.com/zhongwen/articles/cvg57924klno/trad?at_medium=RSS&at_campaign=rss",
-      "summary": "以執法風格嚴厲著稱的馬寧作為世界盃裁判，由此引發網絡迷因和品牌贊助。",
-      "published": "2026-06-10T05:39:18+00:00",
-      "origin": "BBC 中文"
-    },
-    {
-      "title": "中東局勢再升溫！美軍阿帕契遭擊落報復伊朗 革命衛隊迅速反擊巴林、約旦、科威特基地",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMiqARBVV95cUxPNDFUektJMUtXS09zUXNVaUQ5RGNDSldIeG5RSkFwaDJuakhJVXEtWlVRX3RXekw4XzBlRVVuSEloZi1ILXBtTFhHRE1RWTJwQVl0azlFTllDMXlxbzEzalJfVF9zN3VMY2gzQnN6YlJmUnJwbkpnZlVOT0VIYlBacFV5MWJPTlBPMXZlSllFT1VZVnVhazdJWnF4aklCRS1yUDc3eU15SUhHcmZ1dU9VV0x5WEtIVk0yS2tGRWJ6U0VqMzAyY1QtY3F5YXBmb2tfYWg2NVU4cm5McmoxR1dhc00wVFY2Q0tqWVdyTzM1clZpT29QYkVXNHVGUmZaRWtOcFRpT2hpS3pmV0ZWc21idGN3alBqWDVJR2E5dzdIYkhwMXpXdVUtaUd4MkxqODQzQm1tOHVLVDg5bWpvaExXb0tyUW5YZnFVNWxZQi1ZN1RicTZMZXRudm5kc1hsYTRPUEFuMjBVM0lpcUJUUVpoNEduODg0S0JIUno4QUdZUGFKRjJQRFllZjVsTnBmNzRDbG1mZ2dVSXdUSU5hZHcwSTBpOVN5b0MzVTZzREpCOWtQV0FsT1U4WWRnMzk2X3NVLXNaQVpDWjdwcU9TeTJxamtlZmZwNVRtNDNpbE1meUtNbXgyVFFMeHQxS2JJQVVLendLeWlDZldzZ1k0a1U0cW1IT2lsR3lDTTJINjVHUTUyUUwydVhJalZ3djdQRVE4RWJyMXFabG8?oc=5",
-      "summary": "中東局勢再升溫！美軍阿帕契遭擊落報復伊朗 革命衛隊迅速反擊巴林、約旦、科威特基地 Yahoo新聞伊朗報復！稱發動21起攻擊打下美軍MQ-9無人機 美方回應了 Yahoo新聞天下晨間新聞：美國發動自衛空襲｜美國銀行警告：熊市亮紅燈 天下雜誌美軍阿帕契遇襲機組員獲救 無人艇建功重點一次看 rti.org.tw川普下令美軍空襲伊朗 那指期跌逾1% 油價回升 news.cnyes.com",
-      "published": "2026-06-10T05:38:06+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "台積電營收／5月逾4,169億元創新高 月增1.5%",
-      "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1SYmtSUFdJa1dSTWxYZ09oamxFZGZpN3Q5SDNnM1hRWml4RnhLRkhxMzhHRF9BcVlidll2ZU9GMWdEelZLbGtZTTZQem45MmE4QVpIMEtmazFhd9IBX0FVX3lxTFByc0tvcG44QXFFSEhRSWU1RTUzZk5pT3A0d21uRGk3MS1LZThuNHdmbHFrSmJtY2prSzFiLUszVlBuY3pFeDlnRkdSZ3gxWGlDdDl4aXhtM294ZV9MSlJV?oc=5",
-      "summary": "台積電營收／5月逾4,169億元創新高 月增1.5% 經濟日報台積電5月營收史上最高！ 超過4169億元 年增破三成 Yahoo股市台積公司2026年5月營收報告|台灣積體電路製造股份有限公司 pr.tsmc.com台積電5月營收4169.75億元 年增3成「再創歷史單月新高」 ETtoday財經雲創新高！台積電5月營收4169.75億元 年增30.1％ 自由財經",
-      "published": "2026-06-10T05:34:19+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "分析：特朗普與內塔尼亞胡想重塑中東，但可能導致長久危機",
-      "source": "BBC 中文",
-      "url": "https://www.bbc.com/zhongwen/articles/c70y4zgwlneo/trad?at_medium=RSS&at_campaign=rss",
-      "summary": "他們低估了伊斯蘭伊斯蘭政權的韌性、殘酷與狡詐，相信只要消滅最高領袖及其核心親信，政權就會從內部崩潰。",
-      "published": "2026-06-10T05:28:12+00:00",
-      "origin": "BBC 中文"
-    },
-    {
-      "title": "美伊衝突升溫！通膨數據公布前夕美元持穩 日圓徘徊160關卡",
-      "source": "民視財經網",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBzOHAyWm9iVzBOYS00cWxfa2xJa3RUU3ZMZ2ZRLV9fREFmQk1sSHZIamFVbmJWbG1Ca0phd1VHcmk2UkNtWmdETnI3bXE0ZVpBLVBxY21VeG0tMldnRHFkbkhnMG5zQQ?oc=5",
-      "summary": "美伊衝突升溫！通膨數據公布前夕美元持穩 日圓徘徊160關卡 民視財經網",
-      "published": "2026-06-10T05:24:09+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "3國主辦世足賽將登場 製鞋股6月勁揚",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100155.aspx",
-      "summary": "（中央社記者潘智義台北10日電）史上首次由美國、加拿大與墨西哥3國聯合舉辦的世界盃足球賽即將登場，參賽隊伍由32隊增至48隊，利多題材帶動製鞋股漲勢，豐泰今天盤中高點93.5元，勁揚逾8%，6月以來大漲33%；來億-KY最高達285.5元，漲逾4%，6月以來漲幅高達70%。",
-      "published": "2026-06-10T05:23:55+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "瞄準AI走向實體世界商機 凱鈺推出首款人形機器人",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100152.aspx",
-      "summary": "（中央社記者張建中新竹10日電）凱鈺今天宣布，推出首款人形機器人，跨足具身智能領域，瞄準人工智慧（AI）正加速走向實體世界的商機，期能為未來營運注入成長新動能。",
-      "published": "2026-06-10T05:18:48+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "快訊／日股跳水1400點！ 韓股大血洗觸發熔斷",
-      "source": "東森新聞",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5EZUEzZXoxbjNxWHBIY21sOEwzZlZzNnQwdXBTWGQwN1V1emZRWF94XzFmZzZpOElsQjlzcmZSTlBycERyY3ZJQjZXN1Vpa0U0SWxYRGVGcw?oc=5",
-      "summary": "快訊／日股跳水1400點！ 韓股大血洗觸發熔斷 東森新聞韓股暴力反彈！市值一度蒸發近10% 今重返8000點 Yahoo股市AI 牛市自我反噬：韓股劇烈震盪揭示結構脆弱與槓桿風險 TechNews 科技新報韓國股市收盤大漲8% 晶片股反彈引領大盤走高 | 國際焦點 | 國際 經濟日報亞股跳水！日股下殺千點 韓股跌逾6% ETtoday財經雲",
-      "published": "2026-06-10T05:07:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "報復美空襲 伊朗打擊巴林、約旦與科威特美軍設施",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606100145.aspx",
-      "summary": "（中央社杜拜/華盛頓10日綜合外電報導）美國與伊朗今天爆發4月停火以來最大規模交火。美方針對直升機遇襲一事，在荷莫茲海峽發動空襲；伊朗革命衛隊隨後宣稱攻擊約旦一處美軍基地，以及波灣地區另外21個目標。",
-      "published": "2026-06-10T05:06:31+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "重慶男子虐狗犯眾怒 罕見引發民眾聚集抗議",
-      "source": "中央社 兩岸",
-      "url": "https://www.cna.com.tw/news/acn/202606100143.aspx",
-      "summary": "（中央社台北10日電）中國近年頻傳虐待動物事件，重慶李姓男子日前被發現領養貓狗後施虐，所領養的小狗牙齒被鋸平、尾巴被剪斷、全身多處骨折，殘忍行為引發動物保護義工及民眾連續多日到其住所外抗議。",
-      "published": "2026-06-10T04:59:27+00:00",
-      "origin": "中央社 兩岸"
-    },
-    {
-      "title": "陸委會對海峽論壇下禁令 國台辦稱活動陸續展開",
-      "source": "中央社 兩岸",
-      "url": "https://www.cna.com.tw/news/acn/202606100140.aspx",
-      "summary": "（中央社記者張淑伶北京10日電）中國大陸國台辦發言人張晗今天宣稱，海峽論壇系列活動已經陸續展開。陸委會先前已發布，禁止中央機關及地方政府人員參與海峽論壇相關活動，地方政府人員更是首度被禁止參加。",
-      "published": "2026-06-10T04:51:21+00:00",
-      "origin": "中央社 兩岸"
-    },
-    {
-      "title": "All in慘到「睡公園」？她隔天翻身繳清電費 網笑：雨後天晴",
-      "source": "Yahoo股市",
-      "url": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxObmpKYndLNWJhLXVTTzl0ZGhMZXJ3dzZsU3c1Zm1UZHJIVWo5MVUwZFE1MndGUlRJMVhES0FlcFN4TEgtRjh0Z1AzWnZXeTNxVVpWUG16NzlpZGNaZWM1ZXBkak8zaHh6ZTR6elZtQmFtdFcxRElFUVVOXzFkM3JuTEpKRzl2ZUw2aFZsclROSU91YzZhU0tnTU9LelFGYkhTU1R5UHJYbV9YelRacktUcVNFUmt2ZnBqU1hhUXNaWmlnV0JDZ2NreU9ncXFXc0pyb1BRRG1EOUxmNzRmOERYX2cxb1p0UnBBaWhibWhoSVV1OUVyUzFsR0FTTVppRmJzckhsWjFnMVhXMm5VWEY3RVR4ZDF6RzI5SENxMXEwMTdzTmlVOElpdHViUGdHZDRYYjRHelFGbGRieE0xcnQxOXJPc1JPb2wtbXZ3aDFWSkpiQXM?oc=5",
-      "summary": "All in慘到「睡公園」？她隔天翻身繳清電費 網笑：雨後天晴 Yahoo股市",
-      "published": "2026-06-10T04:50:20+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "半導體廢水再生新契機 台大提出電驅動分離濃縮技術",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100139.aspx",
-      "summary": "（中央社記者趙敏雅台北10日電）台灣半導體產業高度依賴水資源，製程產生的含氟廢水因處理與再利用困難，長期被視為高成本、高負荷的棘手問題。台灣大學團隊提出電驅動分離濃縮技術，使難以利用的低濃度含氟廢水轉為可再利用的循環資源，也有助降低半導體廢水再生處理成本。",
-      "published": "2026-06-10T04:50:18+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "逾100億美元關稅待退 美法官敦促川普政府加速處理",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606100137.aspx",
-      "summary": "（中央社紐約9日綜合外電報導）美國國際貿易法庭（Court of International Trade）法官今天敦促川普政府，加快退還逾100億美元已徵收但後來遭最高法院裁定違法的關稅款項，但未進一步發布強制執行的新命令。",
-      "published": "2026-06-10T04:45:14+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "美軍阿帕契直升機墜海後 美伊互襲擴及多國",
+      "title": "比亚迪在匈牙利的工厂计划今年第四季度投产",
       "source": "德國之聲 DW 中文",
-      "url": "https://www.dw.com/zh/美軍阿帕契直升機墜海後-美伊互襲擴及多國/a-77482637?maca=chi-rss-chi-all-1127-rdf",
-      "summary": "美軍週二對伊朗發動空襲，以報復伊朗在霍爾木茲海峽附近擊落美國阿帕契直升機；伊朗翌日則以飛彈和無人機攻擊美軍駐巴林、約旦及科威特一帶的設施作為回應。雙方最新一輪軍事衝突不僅使停火面臨考驗，也為霍爾木茲海峽航運與美伊和平談判再添變數。",
-      "published": "2026-06-10T04:44:00+00:00",
+      "url": "https://www.dw.com/zh/比亚迪在匈牙利的工厂计划今年第四季度投产/a-77486715?maca=chi-rss-chi-all-1127-rdf",
+      "summary": "位于匈牙利南部的工厂是比亚迪在欧洲的首个生产基地。该工厂的投产时间比原计划推迟约一年。与此同时，总裁王传福近日表示，比亚迪有望5年后规模全球第一。",
+      "published": "2026-06-10T10:23:00+00:00",
       "origin": "德國之聲 DW 中文"
     },
     {
-      "title": "航運業者：5月貨櫃市況增溫 燃油附加費擬逐月調",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100135.aspx",
-      "summary": "（中央社記者江明晏台北10日電）貨攬業者台驊表示，5月貨櫃航運市場較第1季明顯改善，遠洋航線需求回溫、旺季前備貨需求增加，6月歐美線運價上揚。中菲行指出，部分企業持續提前安排出貨，帶動海運運價，主要船公司已將燃油附加費調整頻率，由每季1次提高至每月1次。",
-      "published": "2026-06-10T04:41:10+00:00",
-      "origin": "中央社 財經"
+      "title": "台湾批中国公务船骚扰商船 北京：必要管控",
+      "source": "德國之聲 DW 中文",
+      "url": "https://www.dw.com/zh/台湾批中国公务船骚扰商船-北京：必要管控/a-77486609?maca=chi-rss-chi-all-1127-rdf",
+      "summary": "自上周末以来，中国派遣船只到台湾以东海域，巡查过往商船，意在对日本和菲律宾的海上边界谈判施压。对此台湾表达不满，称北京“借执法之名，行扩张之实”。",
+      "published": "2026-06-10T10:11:00+00:00",
+      "origin": "德國之聲 DW 中文"
     },
     {
-      "title": "當黃岩島冒出神秘建築時，美菲才發現，中方還藏了一手更絕的",
-      "source": "《超越新聞網》",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB0SERpX0UwZzhUU2VvcnJROGFNSXVzcjZoUFFQVG1sai1xLTBTR2FRS3FmWWg0M3BVWEdJOGRVOENkcnJNYXdnWmY0ZGFJeWRaN0V6Mg?oc=5",
-      "summary": "當黃岩島冒出神秘建築時，美菲才發現，中方還藏了一手更絕的 《超越新聞網》民主礁出現漂浮平台 菲律賓向中國提外交交涉 經濟日報王赫：菲律賓如何讓中共如鯁在喉？ 大紀元時報 香港菲武裝部隊總參謀長證實黃岩島發現載人漂浮結構 菲外交部向北京採取外交行動 RFI外交部：敦促菲方停止海上侵權挑釁和煽宣炒作- 國際 - 香港文匯網 香港文匯網",
-      "published": "2026-06-10T04:37:47+00:00",
+      "title": "美國 5 月 CPI 或創三年多來新高，通膨回溫訊號還沒來",
+      "source": "動區動趨",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSy03N2tmbVg4ZU5rNmhNZEZsdG5wQWEtSzJhNFNMUUFvaE15ajhBWXVVRUhzc2RaZTNzbGgwc0QzcE9UaDVsVTNidk4waXB2Wnc3TTdkNEJVOHZ3YVQ2a1l6dXVMbnFmUHNETWxEVGdEUFZKSnE3SlE4NFJtZWgyUDg5NWtyQlVwOUlVNUJrRURkeC14VXR5TkpTdUtBdw?oc=5",
+      "summary": "美國 5 月 CPI 或創三年多來新高，通膨回溫訊號還沒來 動區動趨",
+      "published": "2026-06-10T10:00:14+00:00",
+      "origin": "關鍵字「聯準會 利率 通膨」"
+    },
+    {
+      "title": "中國海警船駛入釣魚台海域 近期台日周邊動作頻頻",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606100273.aspx",
+      "summary": "（中央社記者廖文綺上海10日電）中國海警局艦艇今天駛入釣魚台主權爭議海域，並稱這是「維權巡航」。中國海警近期在台日周邊海域動作頻頻，本月初先是侵擾台灣本島以東海域，又進入日本與那國島南方海域的專屬經濟區（EEZ），主張管轄權。",
+      "published": "2026-06-10T09:12:07+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "台股反彈一日遊吐回1478點！營建股聽央行「金句」集體起飛｜Yahoo財經掃描",
+      "source": "Yahoo股市",
+      "url": "https://news.google.com/rss/articles/CBMizwNBVV95cUxObExzZ2M3Tzc4VmNwNUZqYnZ3ZUdabEFoSUxBOFV3UDUyWG53dU1Pb3FTcTFwX2JTcEdEZDdMV3Z3MjFyR1NuSEZEV1R4YWRpNFBraTdDZ0lLMTdnRzJEcUE2LUg0d0Z2NVZZamk4YUZROVlUV0RyTHBncGFBMnlSRXhLX3lwNWMxRzhkcHo0dFZrWHMzc2p4RTJEZ1d5WXliTmJvYms3ZldXZ3RhdGJ2ZVFYbVZkbi1qV29kSmNyZ000LTlkS1RoTExuTERMcHRuTldUMmRKSFpRVFNxYlQ1SWZYMEJFZHJYOHJOVTI5UGtJdEtMRlBnNTJ3bzRCSGpHTmg3aE5pN25KQ3c2VzlsNEZxQTNVVVFSNVdyODRQVWplRHVRamFnblNCNU1LS2xGRGRtcS1sRG1uQVVfSWR2MThGSkF1Q3A0QzhobmVOWnlBOGl2YnhkMzdsbTRQR2F2VEtNbHMzUk1hTUsySVQxOTE3Sm40RTJINXpCbHl4V0Z6UVIxeDR2c0taUWlGRDJLLWY4aXl3SXdtUmNzbUpwZm5DZDI0NnRGXzFDRzYxYktiZTlrOTNaRkRZU0I3aW4xbUxBQ1FDclBzbTc0U3Bn?oc=5",
+      "summary": "台股反彈一日遊吐回1478點！營建股聽央行「金句」集體起飛｜Yahoo財經掃描 Yahoo股市外資連5賣！台股跌1479點失守月線 台積電、CPO族群雙弱 Yahoo新聞史上第6慘！1383家大跳水 指數跌1478點 自由財經44,000大關還是守不住！今晚美國將宣布這件事「內行驚曝還沒跌完」散熱、矽光子集體崩潰了- 上市櫃 旺得富理財網快訊／外資落跑！今砍台股935億史上第8大 3天提款2791億 ETtoday財經雲",
+      "published": "2026-06-10T09:08:05+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "阿里巴巴前高層反對員工油盡燈枯換增長 引發共鳴",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606100269.aspx",
+      "summary": "（中央社台北10日電）阿里巴巴集團旗下行動辦公平台「釘釘」的2名前高階主管，近期先後發表公開信批判公司企業文化。其中，釘釘前副總裁馬銳拉直言反對「用全員油盡燈枯換增長」的企業模式，並懷疑自己只是「消耗身體追趕不斷前移的節奏」，引起眾多中國上班族熱議及共鳴。",
+      "published": "2026-06-10T09:05:58+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "和妻子吵架後迎娶岳母！女婿曬結婚證書求祝福 警出手了 | 國際 | CTWANT",
+      "source": "CTWANT",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE10NldHdVY5V0p2Um1xVl9aMWdfSjBWTlR0R3M1Njl6eGcwQUFpdTNEOWU2UlJ0Njl4YzhfZW10cFM3eUVwV1FfdEdNY2QtSzDSAVRBVV95cUxQaTVQN0FBbWxXRjVkaldfQlpSUTJFWUJEZXpwY0ZJaGxsVlYydUp1ZHV1Qk5LTVJtQ0k4Y2l0V19FeWtwc0g3b2F0NkU1X01sU1plMk0?oc=5",
+      "summary": "和妻子吵架後迎娶岳母！女婿曬結婚證書求祝福 警出手了 | 國際 | CTWANT CTWANT前往 Google 新聞瀏覽更多頭條新聞和觀點",
+      "published": "2026-06-10T09:05:24+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "美國5月通膨恐創3年新高！油價飆升壓力大聯準會降息恐再延後| 民視新聞網",
-      "source": "LINE TODAY",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE51bjNBT21sUVEwWDM5SVFWVkh6WlFuRFZncXloUXRPcmNzSnJRb29ldGZpX1RzRTlOQmJWMkoxNzZ6RUxLeDFYRmNsUkc2RGJqaE81dmtB?oc=5",
-      "summary": "美國5月通膨恐創3年新高！油價飆升壓力大聯準會降息恐再延後| 民視新聞網 LINE TODAY",
-      "published": "2026-06-10T04:36:22+00:00",
+      "title": "AI 股狂飆、非 AI 股原地踏步：聯準會政局與中東戰火，如何把美股推向新一輪「失衡牛市」？",
+      "source": "CMoney投資網誌",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMTlfVUJySWZIdUJ1ZWdvVkZTaXJEY2J3VEw5TkZmcS1FZlV2eVhPTFRYZ2tXTkZqd0dWVmxfTGhXaWlQM3JuWUQ2OExLOGtyaWk3MENmdEpyc1p2c2xQenZ1aFF3c3hZMG1vVHdpd2dLdmg5NGJySHBsZ2pSX0ZkMUR2RFVtVTl3N2RhbXBn?oc=5",
+      "summary": "AI 股狂飆、非 AI 股原地踏步：聯準會政局與中東戰火，如何把美股推向新一輪「失衡牛市」？ CMoney投資網誌",
+      "published": "2026-06-10T09:01:14+00:00",
       "origin": "關鍵字「聯準會 利率 通膨」"
     },
     {
-      "title": "台股急跌還會再震嗎？未來兩週關鍵事件一次看：台積電除息、美國 CPI、Fed 決策成觀察重點｜股市話題",
-      "source": "sinotrade.com.tw",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9OVEVXS1hEcGFUUy1wdkhSMGZGZmMyZm5jZzhQdnZFa2VMOXZSekFHak9oRXJ2clBWYmpuM2t5SHFZY3o5ZC1ubjVHVVkteUh5ZUc5d2NMUXZZQ2w4WXRVYy1YaDQ2LWgwWWNXNDBkSUZfQjg1UW9kV0FTU2k?oc=5",
-      "summary": "台股急跌還會再震嗎？未來兩週關鍵事件一次看：台積電除息、美國 CPI、Fed 決策成觀察重點｜股市話題 sinotrade.com.tw",
-      "published": "2026-06-10T04:34:53+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "傳銀行向台積電調頭寸 楊金龍：有聽聞、覺得很納悶",
+      "title": "能源署：屋頂光電新制8月上路 須抗17級陣風",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100130.aspx",
-      "summary": "（中央社記者潘姿羽台北10日電）台股強勢上漲，不只促成全民投資熱潮，還接連衍生「四貸同堂」、央行定存單不足額發行等現象。立委質詢時指出，市場傳聞有銀行跟台積電借錢，央行總裁楊金龍表示，他確實有聽聞此事，「我也覺得很納悶」。",
-      "published": "2026-06-10T04:29:59+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606100265.aspx",
+      "summary": "（中央社記者謝怡璇台北10日電）大型新建物強制設置屋頂光電政策8月1日起上路。能源署表示，已提升屋頂型光電設置標準可抗17級陣風，在建照規劃時也須將光電設置納入其中，並規範每2年須檢驗，強化用電韌性及安全。",
+      "published": "2026-06-10T09:00:50+00:00",
       "origin": "中央社 財經"
+    },
+    {
+      "title": "外資減碼熱門主動式ETF 5天大賣台股逾4300億元",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100262.aspx",
+      "summary": "（中央社記者曾仁凱台北10日電）科技股賣壓湧現，台股集中市場指數今天以全日最低點作收，終場下跌1478.90點，收43225.54點，失守月線約43349點，創史上第6大收盤跌點，成交值約新台幣1兆3240.93億元；三大法人合計賣超1173.64億元。",
+      "published": "2026-06-10T08:51:43+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "傳說中的「亞洲蹲」，竟對我們的健康至關重要？",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/ckg07yrjg98o/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "遊客嘗試做出亞洲式深蹲的影片不斷在網路上出現——但專家指出，這種姿勢引發的關注，其實反映出一個更大的問題：隨著年齡增長，維持良好身體活動能力的重要性。",
+      "published": "2026-06-10T08:49:31+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "和泰車5月和前5月營收創同期高 日系車銷售助攻",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100259.aspx",
+      "summary": "（中央社記者鍾榮峰台北10日電）和泰車今天下午公布5月自結合併營收新台幣278.15億元，較2025年同期成長13.34%，創同期新高；累計前5月自結營收1285.96億元，年增7.31%，也創同期新高。",
+      "published": "2026-06-10T08:48:37+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "台積電明除息 指數估約蒸發49點",
+      "source": "Yahoo股市",
+      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNcG1VQzd0d25nMFV1OUNSdVpfWGc1LWhBRVllODJWY0tVUFdYVExEcHU4TDBDbmFUZXZrbTlBMFNWdlJIRG5ELUloMkdyeXRKTW1hX2hiajQtME9GSEREMl9lVkFUaXZvM0VUX3g4YzYyN0ZLbWxyV25fdHZKX1Nyc1AzYVc2MXluRE9wbjlJeTFYUzRDNUV5TTlfTTI0QkpTYnJQV1pZTW9qRGRsaWF5MjY5bGxoME9adHVST3cxcjllS05FYkRaYnZVT3Qtbm1mYXhYeHhMblZuQXo3WE41eDg2ekZfSGRyczZJZ09sY0RVWk93aVZEZGVpYw?oc=5",
+      "summary": "台積電明除息 指數估約蒸發49點 Yahoo股市棄息？台積電除息前收2,255元下跌50元 短短5天下跌7% UDN台積電等10個股將除息！台股明開盤蒸發52點 Yahoo新聞台積電回檔甜甜價在即！續戰單日秒填息今年現金股利外資這樣估- 日報 工商時報快訊／台積電帶頭！明未開盤先砍掉52點 背後原因曝光 三立新聞網SETN.com",
+      "published": "2026-06-10T08:42:04+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "新青安2.0利息補貼2碼 擬規劃分年減碼、第7年退場",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100255.aspx",
+      "summary": "（中央社記者呂晏慈台北10日電）新青安2.0將於6月底出爐，外界關心公股行庫是否繼續利息補貼、以及5年寬限期等面向。行庫主管今天透露，利率補貼可能採逐年退場，前3年維持政府及公股銀共2碼補貼，之後分4年逐年減少半碼，也就是說，利息補貼會在第7年退場，不過仍待拍板。",
+      "published": "2026-06-10T08:36:28+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "金價較高點回落23%至每盎司4,330美元 聯準會政策左右黃金走向",
+      "source": "蕃新聞",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE44N0kwS2hhQ1Zqa1Z2Z3Y1Sk5mcFh4MUNsd0JwekNBenZOSEhKai0zV3gxWndJenkxSkNuc2x4UWxObEY1X3JHSVRNQ3VxU0J3c3c?oc=5",
+      "summary": "金價較高點回落23%至每盎司4,330美元 聯準會政策左右黃金走向 蕃新聞",
+      "published": "2026-06-10T08:36:00+00:00",
+      "origin": "關鍵字「聯準會 利率 通膨」"
+    },
+    {
+      "title": "習近平訪北韓 分析：進一步推動雙邊黨政軍交流",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606100253.aspx",
+      "summary": "（中央社記者張謙香港10日電）中國國家主席習近平時隔7年再度訪問北韓，分析稱，他有意進一步推動中國與北韓的黨政軍交流，加強兩國人員與經貿往來。",
+      "published": "2026-06-10T08:30:24+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "法德戰鬥機計劃告吹，盟友在防務前景上出現分歧",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cr5jmvg54zvo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "這項旗艦合作計劃，最終卻成為兩國分歧的顯著象徵。",
+      "published": "2026-06-10T08:27:41+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "Uber One會員方案漲價 月訂閱120元調升至199元",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100244.aspx",
+      "summary": "（中央社記者江明晏台北10日電）Uber今天宣布，UberOne會員方案更新，出國也能享會員福利，並同步調整方案價格，既有會員則自7月13日後，月訂閱費用將由新台幣120元調整為199元，年訂閱則由新台幣1200元調整為1990元，漲價幅度約65%；Uber強調，漲價是因應新增福利，與外送專法無關。",
+      "published": "2026-06-10T08:16:05+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "NCC：廣電媒體新聞涉AI生成內容 應清楚揭露全程標示",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100242.aspx",
+      "summary": "（中央社記者趙敏雅台北10日電）國家通訊傳播委員會（NCC）今天通過「廣電媒體製播新聞應用AI指引」，提供廣電媒體製播新聞導入AI時，作為建立自律規範的參考基準。NCC強調，新聞內容若涉及AI生成內容，揭露標示應明顯可辨識，並全程清楚標示。",
+      "published": "2026-06-10T08:12:00+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "專家：中國挾持需求鏈實力 牽制澳洲礦物產業",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606100241.aspx",
+      "summary": "（中央社記者丘德真雪梨10日專電）澳洲戰略政策研究所（ASPI）國安研究計畫主任柯尼（John Coyne）表示，正當澳洲致力建構供應鏈安全以維護國家韌性的同時，中國正挾持其「需求鏈實力」（power of the demand chain）塑造對其有利的市場環境，進而牽制攸關澳洲經濟命脈的礦物產業。",
+      "published": "2026-06-10T08:10:58+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "新台幣貶5分 收31.668元",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100238.aspx",
+      "summary": "（中央社台北10日電）台北外匯市場新台幣兌美元今天收盤收31.668元，貶5分，成交金額25.56億美元。",
+      "published": "2026-06-10T08:07:52+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "金管會研議調高注意股門檻 縮短處置股「關禁閉」時間",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100237.aspx",
+      "summary": "（中央社記者蘇思云台北10日電）高價股聯發科日前交易情形觸及證交所異常定義遭到「關禁閉」處置，引發討論，根據金管會檢討報告指出，考量近年台灣資本市場規模持續成長，有關公告股票注意與處置標準，應配合市場結構變化做適度檢討，金管會將督導證交所及櫃買中心配合股價調升幅度，評估規劃合理的公布注意股票警示標準，同時，評估縮短處置期的可行性。",
+      "published": "2026-06-10T08:05:50+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "「老師，我是中華民國的！」中國大學課堂影片瘋傳 網傳學生下場慘了",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5ZNjlzVzBpYklQZE9CVnI4MmxZWXhZSFBPTlJIMk5HOWZUZXhHOExLbVZLUXc0T1U5Tk1yS3FnOGoyLXlBSGQ1Z1g0UTZYUTdvcmNpazVUQy1EanRpLUZsNjBZQzhyQdIBa0FVX3lxTE5iVTlGaVQwZ3BsRXdHYnNteTM4a3VMUTVUY2NaTG5jSDExdjB0V1dWTUFtY29VRjdITDktVWFEdjg3dDBRWFNCWUhxblFNWlh6TXVPbkFvdkRIRkhKN2xTNzdwTlNTaEtibDR3?oc=5",
+      "summary": "「老師，我是中華民國的！」中國大學課堂影片瘋傳 網傳學生下場慘了 自由時報",
+      "published": "2026-06-10T08:04:37+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "韓國選票不足事件 執政黨成立選舉制度改革小組",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606100236.aspx",
+      "summary": "（中央社記者楊啟芳首爾10日專電）韓國地方選舉發生選票不足事件引起軒然大波，執政黨共同民主黨「選舉制度改革任務小組（TF）」於今天正式展開活動，將全面檢討公職選舉法等，盼建立人民能信賴的管理體系。",
+      "published": "2026-06-10T07:55:47+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "約翰尼斯堡深夜無差別濫殺 致12死至少9傷",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606100235.aspx",
+      "summary": "（中央社約翰尼斯堡10日綜合外電報導）南非警方今天表示，多名歹徒於深夜在約翰尼斯堡展開大規模槍擊，造成12人死亡、至少9人受傷。",
+      "published": "2026-06-10T07:54:45+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "The Market’s AI Frenzy Faces a Big Test. SpaceX, Trump, and Iran Will Be Key and 5 Other Things to Know Today.",
+      "source": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNUDViTk5FUkdnOWJfUEdZLThXOTF6dEw0a3JESG9uTmJUTWhJNkNpaEQ3bDA5LXB6V2pUZXBOcklLWXVYS1cxTWpjMVJUVk1iSEQtaDJvMXktR21HeWlOdWNCX2tES05SMFNKd1dZV0RfMWpjQXkxckFXeGdPY2MtNDlvaHFuTEI1dVNCUFhnYw?oc=5",
+      "summary": "The Market’s AI Frenzy Faces a Big Test. SpaceX, Trump, and Iran Will Be Key and 5 Other Things to Know Today. Barron's",
+      "published": "2026-06-10T10:39:00+00:00",
+      "origin": "關鍵字「global stock market outlook」"
+    },
+    {
+      "title": "Stock futures slip after U.S. launches ‘self-defense strikes’ against Iran: Live updates",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9LRDZ2dHY0cGF3dUlHVC12RU04NVBYWTZhUGxjUkhZTHF2T0xLUU96NVVCMG5GZHpZZ0h4R0tKdUtxZWFMMWpEWjlqWkdCVjFrNWhMRDBHbUNVTWJzYVZQRE10cUZsSWlxdVQySFdRNXJzRmZFSlBF0gF8QVVfeXFMT3YycTlFVk85SHZtSlVheXlsWUVRLU1hWXFJSWI2dkxseGN3UVVqVkM2WW9vZ1A0X2RsNmo3QTY2OHdWVHNUeUNRYXlLb2kwS3ZuUjFySnNNc0RHamhUNHotak5YYUtTWE5oQzNDSjQzR0FRLWlWYzRhOEdWWg?oc=5",
+      "summary": "Stock futures slip after U.S. launches ‘self-defense strikes’ against Iran: Live updates CNBCStock Market Today: Dow Futures Slip as Investors Await CPI Report — Live Updates WSJTrading Day: When the chips are down ReutersWall St futures slip as tech losses mount ahead of key inflation data By Reuters Investing.comU.S. Futures Fall as Market Focus Turns to Inflation Data WSJ",
+      "published": "2026-06-10T10:11:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Stock Market Today: Dow Futures Slip as Investors Await CPI Report — Live Updates",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE00Z21CZnE1bGtKWUlFUE52c181a1JxZE1qRGt6ZFFGX0tuSDdBM1VzcmpfenlpXzNpNFVuTUp0NVF1ZjR1OVVpQ2lxWlVIZ201c3VrT21EYnQ5LVg0OUtCZ1NnLVJGcnhsQkNpZTZRZTl1NE5WWTduQmhn?oc=5",
+      "summary": "Stock Market Today: Dow Futures Slip as Investors Await CPI Report — Live Updates WSJ",
+      "published": "2026-06-10T10:01:00+00:00",
+      "origin": "關鍵字「global stock market outlook」"
+    },
+    {
+      "title": "Multiple shooters kill 12 people and wound 9 in a late-night attack in South Africa",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOV3lCZ2VoU3g0ZlhjQmVtM2Y5V2x3WXA0TGpucWROc3JhZDUtUlduclpDQXkwZmFIdTFKN3AzOWRpUlA3YUNnNk9ZMVowRDRJM2NCZzRsTGNLbDZSRXI0SDJZYmZxWmczMmRvLUYybzRnME45ZVJYaGx3UWptN25zV2ZURGtGTlFjTEZEci1WUDVlNmVmNU1EU25yMXJ0eU4ydjRjT2Q5Zw?oc=5",
+      "summary": "Multiple shooters kill 12 people and wound 9 in a late-night attack in South Africa AP NewsBodies removed in Johannesburg after a dozen people killed by attackers in late-night mass shooting YahooManhunt under way in South Africa after 12 killed in mass shooting in Johannesburg BBCAt Least 12 Dead and 9 Injured in Mass Shooting After 'More Than 10 Suspects' Open Fire in Residential Area People.comAt Least 12 Dead After Shooting by Multiple Attackers in Johannesburg The New York Times",
+      "published": "2026-06-10T09:56:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Treasury yields unmoved ahead of key inflation data releases",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBqTUliVFFhdW9HMXZXMDR5N2I3TkpRT21KTW1lb2RZTng2RTh3dEdlOHUzRWNWd3FDNFZ1WUMzb1p1WmFSZ0R6YjRoSU1Kay1NVVhDNXJwZmFqUHBqcGJhTWJTTXBvN0NnemNOODdTaGcyR0xBVGg2REhn0gF_QVVfeXFMTmt5MC16bEdRS2Y2VTlTdmpTMmwzdk1ram12RWRBWHY1NFV5NUJ6Q3FaX2hfM0xhWVE2Ti1jcTB0c3k2R202NlJlZHpnbTc2VnRWeFcwbG5KNjRhTGhWOTJMdjhSbkwxSjFBdjFSNWZHQWxBbWFhTEJTd3ZGZUN4cw?oc=5",
+      "summary": "Treasury yields unmoved ahead of key inflation data releases CNBC",
+      "published": "2026-06-10T09:35:29+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "US Consumer Price Index data could convince the Fed to hike interest rates",
+      "source": "FXStreet",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQZW1aRHRod05qaWRDbDhFYUlsYmd6My1xLUt0NG5fdmtPUmJzQWRONjVINk92MTJUdkJpQUlBN0VjU2Y0c01PVUFmSV8xQ05Mb1ByYWhYUFVPYzRULWdGOW1qRVZQWWNMOTlqNWQwY3BpbUdiaDFna3dPbTJJZzFvVUtHNjVRMGx0VEZmcGM5UmhmbzVuMndKeS1rSXdncTlocXhHekYzQUNfV2kyZi1fSHByTWJZc0VKWjZ0UGNBWEZESXdZNHc?oc=5",
+      "summary": "US Consumer Price Index data could convince the Fed to hike interest rates FXStreet",
+      "published": "2026-06-10T09:30:00+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "A Twist in Ukraine’s Drone Campaign Is ‘Really Hurting the Russians’",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPMVN6cDJKdmJBMFh0bUVfaWZNRDJOQ3ZzeVA4REQxTjROTGRCMHBFcXN6dTZGcVYzYnhySmVSMzRKckxpdzUyb3VxQWtJSUdrakl0UkU3N2VESWZ3M0t4LTFPWjlGVW9aUzZwT2NOLUZHMkM4Mi1NUkF1OFpUOXVjUHpOWTUyM09DSXcwVml1ZzA?oc=5",
+      "summary": "A Twist in Ukraine’s Drone Campaign Is ‘Really Hurting the Russians’ The New York TimesUkraine's mid-range drones are its new ace against Russia, but many don't arrive war-ready, pilot says Business InsiderUkraine Is Not Losing. Russia Is Not Winning. The AtlanticTechnology for autonomous interception of Shahed drones created in Ukraine, defence minister says – video Українська правдаUkraine is Not Losing Open Letters, from Anne Applebaum",
+      "published": "2026-06-10T09:02:09+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Oil slips amid fresh Middle East tensions as markets await US inflation data",
+      "source": "Türkiye Today",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYmJzMGVyRXN2VVRHZXRZTjRJZlJtU2x2V1RJUlZfYmlFZU5XOW90Y2xiYzRJbFVpTG5xN3gtQU5aRjVEQ19UZExYalV6Ym9SZU0ya2FaWVhsRkZCbkw4S0paUFViTmg0NG5Nakh3aEtkR0J6ZFBOMWlfc3d0WDFPOTJITjdOT2JQVTFSOUl3TFlla0NMS1cyZUNseVhJTUtEaklIYTZiZ3JHWi1KLTlMZFRvck42ZWcwcTBPX3ptdw?oc=5",
+      "summary": "Oil slips amid fresh Middle East tensions as markets await US inflation data Türkiye Today",
+      "published": "2026-06-10T08:22:22+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "US inflation could lift the US dollar today",
+      "source": "TorFX News",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZkg5bDdtbzdPM1BMRE9JQjZXM0cyNi14dW1SUWxpQ2lhM0lyRjJLY2lYeVRZUFhnZTlFSUc0ZnNYbVFhNlZ1SFZiRVgtc1dBS1F3bW1lV2hWZ045bldkWldpaDB4SjVXTl90dUF0VWdXVFhTUTdQQ1ZVYktEWkppZmg2LUNVOWJRQ0Zj?oc=5",
+      "summary": "US inflation could lift the US dollar today TorFX News",
+      "published": "2026-06-10T08:07:28+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "Asian stocks fall as US and Iran exchange fire – business live",
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQNTVfTnpuNWNxOEJUS1U5Qk45RkJ0MDBIMUFlclpsZjRIVDRDeTNZRkhMTGkwMWdRaW9GM2MxSEduNGNMMGt6cFBuZjNwLTZJQ2UxSmNnblhSN3lNYWU5VHN4VGwyVmh4dWNYTkdOU25yZ1U0LWpvNURnRGZQMVhQZmdJaWVYd2hzWG50QUM1MDhMNEpLNDV2TnNUeWVGMG5IV1NhTHZySm1CdXRmaDk1WVM2S0tiY3RjSW1KaFpMTmQ0TTdDRTBySmdQVDBYbkhHSG9hWUE0bWlYSXRuNW84WjZvdmFWYlY5?oc=5",
+      "summary": "Asian stocks fall as US and Iran exchange fire – business live The Guardian",
+      "published": "2026-06-10T06:33:00+00:00",
+      "origin": "關鍵字「global stock market outlook」"
+    },
+    {
+      "title": "Pakistani airstrikes in Afghanistan kill at least 13 people, Taliban official says",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORmsxVzlkQzRlZG5tMkV3dDgwOVhpNmhXYUpJYlFrOG5vLWxCcV9CXy1vTlJ2Y0N4R21WUHVnc0NPVXZNSkF3Um95eDJfN3l1YTJZVmg1SWhIUllJRlFGOF84VlhEMUJEc21JeWhoSGVfejljMTN0Z0Z3M2VfcTlCRWpvV01DU25PUTRwa28yNEotbkphZEZZZmZGdlRsSGhMbjJ4VWJscUNicEk?oc=5",
+      "summary": "Pakistani airstrikes in Afghanistan kill at least 13 people, Taliban official says AP NewsAfghanistan says Pakistan air raids killed 13 people, including children Al JazeeraPakistani air strikes kill at least 13 in Afghanistan, Taliban says ReutersAfghanistan Says 13 Killed in New Pakistan Cross-Border Strikes Bloomberg.com11 Children Killed In Sleep In Pak Strikes On Afghanistan, Claim Taliban NDTV",
+      "published": "2026-06-10T06:33:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Ukrainian Drones Hit Russian Oil Refinery, Military Electronics Plant in Overnight Wave of Attacks",
+      "source": "Kyiv Post",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1vbllyYlNzT1Q0NFU2V1VMV1YyZ1lGaEx4Z3FnTnFDWlc1V2xNNWYtUGlzWjF3Nzh3bmd2eEtKZC1PeDV0V0pMQWZ5UQ?oc=5",
+      "summary": "Ukrainian Drones Hit Russian Oil Refinery, Military Electronics Plant in Overnight Wave of Attacks Kyiv PostUkrainian strikes set off fires at oil facilities in Russia and Crimea NBC NewsUkraine war briefing: Russia’s Peskov admits ‘certain problems’ with fuel supplies after energy sites targeted The GuardianRussia Moves to Shift Cost of Drone Defenses Onto Companies Bloomberg.comFlamingo Missile Strikes Kometa Antenna Manufacturer VNIIR-Progress in Cheboksary Мілітарний",
+      "published": "2026-06-10T06:03:16+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "U.K. leaders call for calm as protests break out after Belfast street stabbing",
+      "source": "NPR",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcVBWcTRpWjFVWnl3RFVLUFhUQXRZMkJMRWpINGZRYXNBRzFTR2FYNzNpX1NpUnRmS1VoNGZlcWVjYmNFYjRQNnR6ZENkZzM5R2tTbkh0U1dyekxzSHNqdXhDVV93NEp6MjJMSDBTTmJ4Q3J5VzFEMFhTNFAtNU55dWs2X2E1OXdS?oc=5",
+      "summary": "U.K. leaders call for calm as protests break out after Belfast street stabbing NPRStabbing suspect due in court after night of anti-immigrant protests in Northern Ireland NBC News‘It was like a warzone’: Residents speak of fear during night of violence as Sudanese man appears in court Belfast TelegraphKeir Starmer says those behind ‘unacceptable’ Belfast disorder ‘will feel full force of the law’ – UK politics live The GuardianNight of Violence Grips Belfast After Stabbing Attack The New York Times",
+      "published": "2026-06-10T06:00:14+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "Why the Aussie Dollar Could Rise in 2026-2027",
@@ -219,67 +323,59 @@
       "origin": "關鍵字「Federal Reserve interest rate inflation」"
     },
     {
-      "title": "Higher gasoline prices likely pushed up US consumer inflation again in May",
-      "source": "The Economic Times",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOX3lSZjRJUVpYT1k2N2hyajZMdGlleXVBek5fd3g0ZWFkOEktVWdJLXg3NHM5Zmd2NXQ2c1FsTTBkaTdUUllnY0hTUHBPWVpKM2lmU1VwUENleGhvOFFJRG5GYXRaTHFRZVE1Q3lMbi1lNF9IMFVxb0QwY1NVU1BJeXk3cURkM3JIX1Y5b21oZzBGQ0hiWVdweWlCdnY0Q0lLdFVxLUlUNXFWeUNPMV9WZGIxdzVJcU5nQzloVHAxb3ZodW13eXAtTHM0aDlwYmVobUw1ZmJSVjlScFRzcm5qb0lfcVowWDhBUUJlOWJPd9IB9AFBVV95cUxOc3VlRGJPWW8yWnlGajRXNjN3eFpYcWN2b21yQ24tbmp3MjN5UkZmV0ltdTFCWHNIV1g2VVZxUjA5MjZMS01qbDNvVWxxUGlaWXVCUEFOMFUxb0o0TXFaaUlyVEVsUWU4Y19QckViWlNDZ2JTUEotUEI4MXZKUTl1enpBN1FHU2NHbDVad0xQSWtTYnV3eEVtd0NUWDc0ZWk2M25aenVidllyRENmWUV1QVBxR0l6ZHdid2NDYnExWE00azVRZTV3TkpDSHlFcUZqbjZUR0M5RDJlMXFMYUVyQnpkRV91NWhNOVdYSkJzRzdjTFpW?oc=5",
-      "summary": "Higher gasoline prices likely pushed up US consumer inflation again in May The Economic Times",
-      "published": "2026-06-10T04:31:56+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
       "title": "GSK enters agreement to acquire Nuvalent, Inc.",
       "source": "GSK",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNb2l3V2tURVZWc3M3RDlXdXVVYi1WRHZ3THhKaXdjQmt3OGpodU1ZZkotZnhoNmJYV1d0SVYyUy0tUlN6cUZOeU8wQkVBQlFHQnpuTy1CTGFGVnBwUW5GOFlHWmktQkEtSGRmcmdHTXdyR3FPVWNaUUVYZjhqbTY1MURvcDJobVJvRWRZSzJuR3pLTmRjX19Z?oc=5",
       "summary": "GSK enters agreement to acquire Nuvalent, Inc. GSKNuvalent shares surge 39% after UK's GSK agrees to buy the cancer drugmaker for $10.6 billion CNBCGSK to Buy Nuvalent for $10.6 Billion in Oncology Push WSJGSK pays $10.6B for cancer biotech Nuvalent in industry’s second-biggest buy of the year BioSpaceGSK’s $10.6bn cancer deal will lead to more Financial Times",
-      "published": "2026-06-10T04:30:00+00:00",
+      "published": "2026-06-10T04:30:14+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Prediction: SpaceX Stock Will Hit This Price in July",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbklJeEtJRG5tXy1BRi1BdVJuYTBFdC1TQ25CcTlDZUF1cFRreW1wTk9tNkw1ajBfVmZ3WlNyOGMxa0V4dXMwSWZEN1BzR3M5MHZwS0lIRzNfZ3NQanRzendYRGszV1p1T3owQnU3ZHVXanRlMi1TQUxBeElEMkJjUVprbXNKZWx1WTJhdmplU0lUQzlEVHgxdm1KM2xFWjg?oc=5",
-      "summary": "Prediction: SpaceX Stock Will Hit This Price in July Yahoo FinanceSpaceX IPO explained: The price is set, but retail allocation still up in the air CNBCWall Street’s undignified SpaceX mania The EconomistNYC Pensions Boss Says SpaceX’s Disregard for Shareholders Has ‘No Precedent’ Bloomberg.comHow SpaceX’s IPO ambitions ride on Starship’s path to Mars Financial Times",
-      "published": "2026-06-10T04:20:00+00:00",
-      "origin": "Google 財經頭條"
+      "title": "The Fed's Independence Problem: What It Means For Rates, Inflation, And Market Confidence",
+      "source": "Forbes",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQRFhzY3hnNG1oRVZQSlE1enc2cDctcU9wYm1Ld2l2eEp0VXZ1c2V5ZWNZOWpJaHhobERMUG1ZVl9GYlRJQmViQktjT1ZpcFU5bk4zUW5IMnhZZzZTYmpqYzVZRGNzSVpNdmNLYVZ2NEtpdUpoRHhYOVdweENkS0JVU1dvcUxaNVhIR2htUkhsLWNuWDR2TVJ0TDZUYXpCMG13UEJWMkhtVVJmR1RMVHA3MWhYVlo0aVFxck0yYUkyS3BDckJ4ZjczQnl4WE42dGdONjVIcA?oc=5",
+      "summary": "The Fed's Independence Problem: What It Means For Rates, Inflation, And Market Confidence Forbes",
+      "published": "2026-06-10T04:27:00+00:00",
+      "origin": "關鍵字「central bank monetary policy bond market」"
     },
     {
-      "title": "Pakistani airstrikes in Afghanistan kill at least 13 people, official says",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORmsxVzlkQzRlZG5tMkV3dDgwOVhpNmhXYUpJYlFrOG5vLWxCcV9CXy1vTlJ2Y0N4R21WUHVnc0NPVXZNSkF3Um95eDJfN3l1YTJZVmg1SWhIUllJRlFGOF84VlhEMUJEc21JeWhoSGVfejljMTN0Z0Z3M2VfcTlCRWpvV01DU25PUTRwa28yNEotbkphZEZZZmZGdlRsSGhMbjJ4VWJscUNicEk?oc=5",
-      "summary": "Pakistani airstrikes in Afghanistan kill at least 13 people, official says AP NewsAfghanistan says Pakistan air raids killed 13 people, including children Al JazeeraAfghanistan says Pakistani airstrikes targeting the country killed at least 13 people and wounded 14 kare11.comPakistan bombs Afghanistan again: Taliban claims 11 children among 13 killed The Times of IndiaThe Afghanistan-Pakistan Border Is Still Unstable Foreign Policy",
-      "published": "2026-06-10T04:06:00+00:00",
+      "title": "Air Canada pilot flew passengers for years with a fake pilot’s license, police say",
+      "source": "CNN",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9oaEUtMmR0WFk0cUE2SFRLLTNRbHJNOXlRbGJodkt5Nkk4OU1vb1diRHg1SjFJcG1LamVTbVBlanVsNjNzVUVzM3p5VHJJX0dRYkcyRzNraWZZQlBlNWFGUElqb3RSaWdRUFNKVUVnd1RqOGc?oc=5",
+      "summary": "Air Canada pilot flew passengers for years with a fake pilot’s license, police say CNNAir Canada pilot accused of flying for 17 years without correct licence BBCFormer Air Canada pilot flew hundreds of flights without proper license, police say NBC NewsMajor Airline Pilot Caught Flying Without a License The Daily BeastFormer Air Canada pilot charged after allegedly flying without proper license for 16 years The Guardian",
+      "published": "2026-06-10T04:21:13+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "US CPI data set to show inflation at three-year high in May, backing Fed hawkish tilt",
-      "source": "FXStreet",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQZW1aRHRod05qaWRDbDhFYUlsYmd6My1xLUt0NG5fdmtPUmJzQWRONjVINk92MTJUdkJpQUlBN0VjU2Y0c01PVUFmSV8xQ05Mb1ByYWhYUFVPYzRULWdGOW1qRVZQWWNMOTlqNWQwY3BpbUdiaDFna3dPbTJJZzFvVUtHNjVRMGx0VEZmcGM5UmhmbzVuMndKeS1rSXdncTlocXhHekYzQUNfV2kyZi1fSHByTWJZc0VKWjZ0UGNBWEZESXdZNHc?oc=5",
-      "summary": "US CPI data set to show inflation at three-year high in May, backing Fed hawkish tilt FXStreet",
-      "published": "2026-06-10T04:00:00+00:00",
+      "title": "Russian-held Crimea grapples with fuel shortages amid Ukrainian drone attacks",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPSGllalBfeVQzMUlnOU5VZUZkeTNLUUc2ajJHV1pFU1JhTU9HdmpVeTdLSEpXd0lMVUdscFJMNldHZlZQa0ZvbmdpZzY1V25SeEF4UzRrQllqOXV2M3lwZ21iNlY4TXdDaHYwNFVqLXMtM0syS0RfSFNlTEUtRGgyazVHcXZuS282YlRXVElCTnVkZmt3d2hJbkZrVkxMU3ZNVlBJOG0xTXEtLXktY1h0QzlheW42ZjdYTDI3QkZR?oc=5",
+      "summary": "Russian-held Crimea grapples with fuel shortages amid Ukrainian drone attacks ReutersRussia's fuel crisis intensifies as Ukraine steps up strikes on occupied territories BBCRussia’s Energy Ministry Admits Drone Attacks Behind Gasoline Shortages The Moscow TimesUkraine says Crimea faces food shortages TVP WorldReport: Residents report fuel shortages at gas stations in Russia. Regional governor blames ‘artificial panic buying.’ Meduza",
+      "published": "2026-06-10T04:03:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Higher gasoline prices likely pushed up US consumer inflation again in May",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxON0xPY1FVc0ZVQm42RFZIOFlScjlMdWljWVRWRHdDWXVNUldzX1BUbnozelpnYVlhRXlYT0M2VXFXUGdLdS1Zb2tZekY3VWhVTDlqaFVkVGFhWjgxdUdDQUxMUEp6ajJlREpMOXFrNXVTYmwwU1BPdkJCRF84UXJITnl6QTlRajNNQ3VZSDBnazBCazRCNUdIX0tPNHJnTElBY0dKNDFwbEVfajBBZjA4RkNGbVhMczludjZWSWJwUnBvSVczVlE?oc=5",
+      "summary": "Higher gasoline prices likely pushed up US consumer inflation again in May Reuters",
+      "published": "2026-06-10T04:02:00+00:00",
       "origin": "關鍵字「Federal Reserve interest rate inflation」"
     },
     {
-      "title": "Ukraine war briefing: Moscow car bomb kills Russian ammunition chief – reports",
-      "source": "The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNdHhIcFNmcHR1NjBuSGctSi0tdkttcTcxdmk2ZGFoOUEyT3MycTVpRVpBQ2NFY1c4c0M2MXEyUzdEV1VSUkp6dEdPeXQ4UThmRG1DQ2l1N2VYQ1NsbGV3LTAxV1VkdXBlMk4zVlE2UTlOWmZ5Y2hOMURQM0FNek9ESm9Cc2RnaWZ0alE4dFFZaHJLTTdOdmQ2bjV2aHJYaXVOZHVCSmc3ZHNQSExtdFBkZ00yY25DVnhFMWxKUFFB?oc=5",
-      "summary": "Ukraine war briefing: Moscow car bomb kills Russian ammunition chief – reports The GuardianA year after a Russian general was assassinated in a car bombing outside Moscow, another general is reportedly dead in the same city — in another car bombing MeduzaDriver Killed in Moscow Region Car Explosion Near Site of General’s Assassination The Moscow TimesUkraine-Russia war latest: Moscow car bomb kills Putin’s general overseeing ammunition supplies The IndependentMoscow car bomb kills 1 person, investigators say, with victim yet to be identified ABC News - Breaking News, Latest News and Videos",
-      "published": "2026-06-10T03:36:00+00:00",
-      "origin": "Google 世界頭條"
+      "title": "How SpaceX’s IPO ambitions ride on Starship’s path to Mars",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNMXAxNER1cjJFb2h1Skp0SjJyMnF6ZGo3UjhwTlJrZXh5bWx2eVFTd0tOeXphU2Z6WVZGQWRKdzhYSThxaXFJbHpEeXRVU3YxYlZoZFZpSnhwdG1XRVc2MV80YjdEM1NLRzBKNEpHcjhuSjV6Z25SMXlfaFZuNTY0NkxoRjc?oc=5",
+      "summary": "How SpaceX’s IPO ambitions ride on Starship’s path to Mars Financial TimesWall Street’s undignified SpaceX mania The EconomistIs SpaceX stock worth $135 a share? Pros weigh in on IPO NBC NewsRocket Fuel or Space Junk? Why Mega-IPOs Like SpaceX Often Crash Back to Earth. Barron'sSpaceX: What Investors Need to Know About Its Enormous Upcoming IPO Morningstar",
+      "published": "2026-06-10T04:00:06+00:00",
+      "origin": "Google 財經頭條"
     },
     {
-      "title": "Iranian fires missiles at air base hosting US forces in Jordan",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPU25kWmtrYVNpdHBud0dxUDhZdUx0OFMyQUxOWER5cXowaW8zWk9pdWNBeWdycUNTTXp4VjlmSWF1UDRzOEpBdl9RRTlYeno2cXBHUEJuVDJaTk05dldzaEwza29fR2I1NmpsZU5JZUlUWjNoWlZUTXFiaFFLYm9oSHR5Ukk4X2s5X193eU5fVm5KWjZmSHBsTnJ2U29JU1lVb3ZtLUZuTUpDNHM?oc=5",
-      "summary": "Iranian fires missiles at air base hosting US forces in Jordan AP NewsSee more headlines & perspectives on Google News",
-      "published": "2026-06-10T03:29:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Air Canada pilot accused of flying for 17 years without proper licence",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUkFiTEdFcFMtNVplRW1KWFU3VG93YW4tY1hEckU5cXBxUi1Xd09mZC12QTR2YV9jbTdHX0Q2bm8tX0w3SExpVE83NmxUYXFjSDFoSWEzMUhBV1NvZGhXWVJSam5YcFl4RWoxRlJfU3FubXgzaHJiaWVSdmlDMTl4MVd6VHFldERCRzJSWDYycVV2Zl9JbVhkLTZiMk9JXzQza0kwdHNNU3FEeFZ1ZzkzRjBUU0LSAboBQVVfeXFMTmVqUGY1TGVfSlZrc3ZRTXlkOVNJNDQ2MkJuOEg5cHRTaTZuUDVyQ2c5X2V2eHRmNEluQjZNY2dSSEdobUdLc3VhRmRHWHVUcnFyRTBYX084aU1oMzZtaWxERlhZVnVITXhscXNwZ0NkdTB0N2tQTDE4Q1FDOTV4cDlVZThFWGpwNXFDTEw3NXZ4UWpXNzg5eEFNWm9CcEt1ZEtZVnpPN0pfTzRDM1FZOFZsVW9INEV0a053?oc=5",
-      "summary": "Air Canada pilot accused of flying for 17 years without proper licence Al JazeeraAir Canada pilot flew passengers for years with a fake pilot’s license, police say CNNFormer Air Canada pilot charged after allegedly flying without proper license for 16 years The GuardianPolice allege ex-Air Canada captain flew flights for decades with fraudulent licensing Global NewsMajor Airline Pilot Caught Flying Without a License The Daily Beast",
-      "published": "2026-06-10T03:17:02+00:00",
+      "title": "Taiwan Test-Fires U.S.-Supplied Missile Launcher Toward China",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNV0doRWl1QS1ta3d0dXhHeGMzejBSZ0lwcFd0ZU5LbFVsUGRRNG12TnpRanFoOGlUZzJQOE5McWxrSWFLdDZRSTJPVThUa1FONERIR2tYSmhlcXQ1NERSelpZLUF4YnUxRkVHaDBHUVIxQm4xcFpJVV93YnJvdC16aXR6cUZZbFlQVU1qUFdCRHFSdjM1OUlRWWFhRVY4Rk5rVE1R?oc=5",
+      "summary": "Taiwan Test-Fires U.S.-Supplied Missile Launcher Toward China WSJTaiwan fires battle-tested rockets in 'shoot-and-scoot' anti-invasion drill ReutersTaiwan simulates destroying an invading Chinese force in coastal drill The Japan TimesArmy simulates defending against amphibious invasion in Taichung Focus TaiwanTaiwan fires rockets in China's direction from a U.S.-supplied mobile launching system in drill Yahoo",
+      "published": "2026-06-10T03:26:00+00:00",
       "origin": "Google 世界頭條"
     },
     {
@@ -294,150 +390,66 @@
       "title": "Futures Fall As U.S. Strikes Iran After Whipsaw Session",
       "source": "Investor's Business Daily",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNOE1hZWZSRXpOWWZLRnBmbEZFMTdKV040X25JbUxvVVU4X2JWQ2ZPbUpJaERPTnJZRlVsMF9Rb1o1NnUweHVxc1NYVVBoU1ZPakhKMDZ6WmlOSXVoWE1Vd3lhMWxkUW5fZ0E5TjVsRW93cU9aMXRtcWpQT2ptVU5yQ3NwRU1TTXZDMGhCbUdxdnNwRF8yMy1LWTBJdG9xeFR5NS1rQWxhcTJydmNvWFh2MFdMNmd4aFgwN0VQZjJFaDkyMjd6clln?oc=5",
-      "summary": "Futures Fall As U.S. Strikes Iran After Whipsaw Session Investor's Business DailyStock market today: Dow rises, S&P 500, Nasdaq fall as tech rotation trade resumes, US-Iran tensions flare Yahoo FinanceTrading Day: When the chips are down ReutersMarkets News, June 9, 2026: Chip Stocks Pull Back as Nasdaq, S&P 500 End Lower; Trump Says US Must 'Respond' After Iran Shot Down Helicopter InvestopediaS&P 500 and Nasdaq close lower as chip stock rebound fails CNBC",
+      "summary": "Futures Fall As U.S. Strikes Iran After Whipsaw Session Investor's Business Daily",
       "published": "2026-06-10T03:15:00+00:00",
-      "origin": "Google 財經頭條"
+      "origin": "關鍵字「global stock market outlook」"
     },
     {
       "title": "Trump Family Reportedly Made About $2.3 Billion on Crypto While Investors Lost About $2.3 Billion on Trump-Related Crypto",
       "source": "Gizmodo",
       "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOVlhtVGtCNXpHTExrUWxWNlFJd2ZyUWxUamNYc1dQdWI5TEt3dkUtdm9QTGd3OG9ZYTNNZUwzU2ZmdWxMLUhmMWdVcHdwNDZrSkc4Ym8yNWstNGFpVFpHbXZoN25RdlFsN1BGLVpwSmxMVVg3ZUdsMElRUlVuWU95QUJrRGtxR1FON1A1aFNnZTBHMTk5a3ZRYmJ5SjY0YkdaV3llZFhGeVIwU0duM1MzcGJJVXN5SFFvMk10VmY2N0s4NHUzZmlMdWNHczNuUWF6UHlMWFNsbkJ6cHFyUkx3ZTEyMEI?oc=5",
-      "summary": "Trump Family Reportedly Made About $2.3 Billion on Crypto While Investors Lost About $2.3 Billion on Trump-Related Crypto GizmodoTrump family got about $500M from crypto venture — but investors saw steep losses CNBCTrump Family’s Stablecoin Wealth Fueled by Binance Relationship Bloomberg.comUnder the Trump crypto playbook, the family always wins. Investors don’t ReutersTrump family ‘made $500 million from crypto coin deal’ — before the bottom fell out on individual investors The Independent",
+      "summary": "Trump Family Reportedly Made About $2.3 Billion on Crypto While Investors Lost About $2.3 Billion on Trump-Related Crypto GizmodoUnder the Trump crypto playbook, the family always wins. Investors don’t ReutersTrump family got about $500M from crypto venture — but investors saw steep losses CNBCTrump Family’s Stablecoin Wealth Fueled by Binance Relationship Bloomberg.comThe Anatomy of Presidential Tokenomics: A Brutal Breakdown o Lavender Hotel",
       "published": "2026-06-10T02:28:38+00:00",
       "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Ukrainian missiles, drones reportedly hit oil refinery, manufacturing site in long-range strikes on Russia",
-      "source": "The Kyiv Independent",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVjhrV3RPWVBGazlSeTRBNmxqRW1INmtxY0JibVNtbm5NZzNBX1VGVXhoekY2cVlVNlh6VFktQ3RIWmhleFNGMW4waG9ObnJtZ3RKaExQd0w0X3BQdmR4d3F4TFREWFBHUEZlQ2tvcENZcU9IZ0VldlhnZ3NuOFN6T1lYanFXQmdLWVN0RkxTcEg0V2MtNjdyZzhoLWZ3bl9BaUJYMG5KVlhLRUdaZlpqRlVOZWZ2S1JsYXZ4bUxn?oc=5",
-      "summary": "Ukrainian missiles, drones reportedly hit oil refinery, manufacturing site in long-range strikes on Russia The Kyiv IndependentUkraine targets St. Petersburg in what Russia calls an ‘unprecedented’ attack CNNUkrainian strikes set off fires at oil facilities in Russia and Crimea NBC NewsUkraine Strikes St. Petersburg in Long-Range Drone Attack The New York TimesUkraine hits St. Petersburg again after Putin rejects talks DW.com",
-      "published": "2026-06-10T02:26:36+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Amid Broad Inflation, Hopes for US and Japan Rate Cuts Fade",
-      "source": "아시아경제",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1hVVFKZEFmcVNOMzVlZGFFWGstcWcxandSRHk3S3M5dGNPN2FzbzNEZmxIbVlObUJHM1NTckkxN2MwY2lRS1ZEUnNKU2pJeWJERnFId296SmNIbTY4TnlMdnMtTzgzX0RoUEZERGNNT0FkLXJNaWxiZVdGdUo?oc=5",
-      "summary": "Amid Broad Inflation, Hopes for US and Japan Rate Cuts Fade 아시아경제",
-      "published": "2026-06-10T02:26:03+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Inflation Time Bomb on the Verge of Exploding, Fed Turns Hawkish",
-      "source": "NAI500",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaGkxZ29SeUd0VHFFdktuTnJONVNpYUliSDZJYk5JSHBEZ2lZYm41SjMzd0oxanF6Nnk1ajJBR3NvNlVRYzNRaFJiYVJOSUIyZlhhaUJWRW5kVVcwRUJDQTFWVnp5X0NyeklBSXdLbmpWZkxfeHc2RWpwS25aVk1uS3o5b1hkSEFHMWJHNldPbm9iZTF4dFBBb2NYZ2c?oc=5",
-      "summary": "Inflation Time Bomb on the Verge of Exploding, Fed Turns Hawkish NAI500",
-      "published": "2026-06-10T02:12:56+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Will the AI boom lead to lower interest rates?",
-      "source": "SMH.com.au",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQQS1GZW5HZHVqNWdZeUJxamhkb25TY0hjX2ZHSTQ2ZjBRRzZTdmtjNzFCRk9ZWE9WclZQa25iMnJ4YVBZQXRTeE4xTUNwTlZISFBsTDNwUnMyaGF4MndKYTlVVDkwM2F6WkZYZ0ZWT2pva0VTWmJ6RExmRXlMS2pYMld1ck5RYmFhWFR2TS1JSzItV0VNczQ1TWxVa1lKeXM2NS1jNmM2X0x4SDRLN2pz?oc=5",
-      "summary": "Will the AI boom lead to lower interest rates? SMH.com.au",
-      "published": "2026-06-10T02:11:24+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Russian Offensive Campaign Assessment, June 9, 2026",
-      "source": "Institute for the Study of War",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUERtNjBCeTB2MkFuaG1FQXQxZHlrcS1tSFZJanZKUFNiOXpac2V6cGt4SkVpeUt3d0p2YUVmZF83RkZtQnlsVnVEdUw5VmxvLUJPcmtKNVpTOERYSng4M0ZuTWhBV3hQN3FheXE0WlNyUENmc21jMHdlLV9oMnlIOEt5R1R2SFVFeHU4WWhacGdZUURPYnE2RVZxa2R1bVFvT050WWZR?oc=5",
-      "summary": "Russian Offensive Campaign Assessment, June 9, 2026 Institute for the Study of WarArmenia’s election is a setback for Vladimir Putin The EconomistPoised to accelerate a pivot away from Russia, Armenian prime minister claims election win CNNAfter Nagorno-Karabakh, Armenians vote for peace over nationalism Al JazeeraNikol Pashinyan Wins Re-election in Armenia The New York Times",
-      "published": "2026-06-10T01:52:15+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Dollar weakens as markets watch Middle East and US inflation",
-      "source": "IDNFinancials.com",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeFBQWWdQdkIyemlBcDRIZHlLNWJyME1nMkxnRWFOcm96UFZyNEdQQm96MFY4b01TQ3VnRFV1SGt6TXp6VzdzMFphVUVXLWNWSVVyTGEzZlc4WFpmeW82ZGtaREQ0Y1hEUDRoU1lJaUM2NlVQZEZZVTFSaTZQMnZvb1d4SDhOS0JfTDFpaGlPb211RTRMU0pCdTdmUTUwSEdoRDdz?oc=5",
-      "summary": "Dollar weakens as markets watch Middle East and US inflation IDNFinancials.com",
-      "published": "2026-06-10T01:40:00+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Lebanon Is Teetering at the Abyss of a New Civil War",
-      "source": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE56VVhqUGxmWDNxdkY0QVVPd0Z4alk3UWVaTkxqcGVPX3RyNnpkcU1IZlFUT0F5endhZ1Zkd2w0SmdMc1pSZXJHbUhxQU8wUXdKYWUtTTdtMHdxZUFQM1FYNUpZVGk2U0hCdHMwLXlGQ3RSQQ?oc=5",
-      "summary": "Lebanon Is Teetering at the Abyss of a New Civil War WSJHow Lebanon became the breaking point for the Iran war ceasefire Al JazeeraLebanon between war and statehood: Shrinking the space for Hezbollah BrookingsIsraeli offensive in Lebanon gives Hezbollah new purpose CNNHow Israel’s Battle With Hezbollah Fits Into the Iran War Bloomberg.com",
-      "published": "2026-06-10T01:31:12+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Asian stocks slide, oil gains as Middle East tensions escalate",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMzdFYTBQUjA3YzBlRWNHdUp6OXBpbVlabUYwVWJXYzlJa0pHWTVuZ2M4YXlSeEtXZHJDMUotQUdUaXotdklnOXM5R0VEX3QwWVAybFdMSE1hQktPcU9Lc1czUjR0dlRwY1pvZFZDTndsUWRHWHhWOVhiVWs4SFdsVHdUcw?oc=5",
-      "summary": "Asian stocks slide, oil gains as Middle East tensions escalate ReutersStock futures slip after U.S. launches ‘self-defense strikes’ against Iran: Live updates CNBCAsian Stocks Decline, Oil Gains as US Hits Iran: Markets Wrap Bloomberg.comAsian tech stocks rebound after Wall Street embraces AI once more Financial TimesStock market jitters remain amid tech fears and renewed Middle East attacks BBC",
-      "published": "2026-06-10T01:28:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Where Is the Stock Market Headed in the Second Half?…Daishin Securities to Hold Market Insight Live Seminar",
-      "source": "아시아경제",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1LR3QwQVdNRW0zVjZ3Z0Zia0NCNkxHWmgtSnkwQ2VIb096X00ySlliQUhkME5CbjRJNFVjcFVVVVBLSzZlOTE3Rm12VXd5Q2c1cmpWV3hNdVRzVXktVFQ4LW9tODVaVGJnNlBoaTdob3dpQQ?oc=5",
-      "summary": "Where Is the Stock Market Headed in the Second Half?…Daishin Securities to Hold Market Insight Live Seminar 아시아경제",
-      "published": "2026-06-10T01:26:47+00:00",
-      "origin": "關鍵字「global stock market outlook」"
-    },
-    {
-      "title": "Broadcom CEO unnerves biggest AI backers in rattling pivot",
-      "source": "thestreet.com",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdUVGcVAzaTBsZU1TNlZUV0ZqRFVxQjNuekVzdlpvR091b3kxak42SnpseHFndVhmdnlpUFdPWWhKTm5Cc0V3Y20tdFFaNXJVT0wzLVFUTElwdUFobDBBQ2oxRmJtZndCV204b1VhZ2ZhZXlURnBrYUd3X195QWthWnI1UzluRU5GeHVKeTE0RDctWGVPRTV2RWI5NVdWR1BnQ1E?oc=5",
-      "summary": "Broadcom CEO unnerves biggest AI backers in rattling pivot thestreet.comForget Marvell: 1 Unstoppable Semiconductor Stock to Buy Hand Over Fist After the Market Pullback Yahoo FinanceBroadcom Slides by Most in More Than a Year on AI Outlook Miss Bloomberg.comBroadcom stock plunges on weak software sales, unchanged AI chip forecast for the year CNBCBroadcom: The Bear Case Just Got Weaker (NASDAQ:AVGO) Seeking Alpha",
-      "published": "2026-06-10T01:03:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Man Arrested in ‘Brutal’ Stabbing in Belfast, Police Say",
-      "source": "The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPOTdYT291ekFGdzlyanMxSHh3UE1ndjd4alJPaUt1cUNab2R0UkxacHVGcHA3X2hacmxYN295cnV5Ymo5Y2k2bXVVZlkzcEVVVnE1dG11U05kdG4xdXJBMzRKZWF0VlZrSTctYTRMeHRaR3lHdmVuM0x5cHc0a2Y1VWVRRmNqcjVzOTBFLWNqNHJYLTNqZVI5Rw?oc=5",
-      "summary": "Man Arrested in ‘Brutal’ Stabbing in Belfast, Police Say The New York TimesU.K. leaders call for calm as protests break out after Belfast street stabbing NPRScotland's papers: Protests after Belfast attack and US travel issues BBCFrom Belfast: As I watch my city burn, I think of the far right spreading poison The IndependentHow Belfast knife attack became the latest far-right ‘trigger event’ The Guardian",
-      "published": "2026-06-09T23:25:10+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Iron Age woman likely had her brains scooped out before burial, study suggests",
-      "source": "CNN",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMkRuSUFqc2ZmN1hSYm5ScUZUSjJ1M1Bvaml6R0RnLWV2eEJlbzFJaGFqZjBjSjY0clRJamRNN1pJX0tYZjRyM19KN2pENzNoVDR2QUNVclhNaFZseE82aHNlaVk4RDBqWF9wdkdFU2xJdkZlWnFUa2h1eUxOYjNMTmpGVTRXeHNSb1lmdTB3?oc=5",
-      "summary": "Iron Age woman likely had her brains scooped out before burial, study suggests CNNSee more headlines & perspectives on Google News",
-      "published": "2026-06-09T23:01:08+00:00",
-      "origin": "Google 世界頭條"
     }
   ],
   "news_span": {
     "news_count": 50,
-    "first_seen": "2026-06-09",
+    "first_seen": "2026-06-10",
     "last_seen": "2026-06-10"
   },
   "strategic_analysis": {
-    "geo_military": "中東地區的地緣政治緊張局勢顯著升溫。美軍阿帕契直升機在荷莫茲海峽附近遭擊落，美方隨後發動空襲報復，伊朗革命衛隊則迅速反擊，攻擊美軍在巴林、約旦與科威特的基地。這輪美伊之間自四月停火以來最大規模的交火，不僅讓停火協議面臨嚴峻考驗，也為霍爾木茲海峽的航運安全和美伊和平談判增添變數。此外，黎巴嫩局勢動盪，可能瀕臨新一輪內戰邊緣，這將進一步加劇中東地區的不穩定性，並可能演變成更廣泛的區域衝突。烏克蘭戰爭方面，俄羅斯軍方高層據報在莫斯科遭遇汽車炸彈襲擊身亡，烏克蘭也對俄羅斯境內的煉油廠和製造設施進行了遠程導彈和無人機襲擊，顯示戰事持續膠著且攻擊範圍擴大。南亞方面，巴基斯坦對阿富汗發動空襲，造成至少13人死亡，邊境局勢依然不穩。在南海，黃岩島出現神秘建築，菲律賓已向中國提出外交交涉，顯示南海主權爭議持續，可能引發區域性的外交摩擦與軍事對峙。整體而言，全球多點地緣政治衝突同時升溫，增加了市場的不確定性和避險情緒。",
-    "supply_chain": "中東地緣軍事衝突升級對全球原物料供應鏈構成直接威脅。美伊衝突導致油價上漲，主要原因在於荷莫茲海峽作為全球重要的石油運輸要道，其航運安全受到威脅。油價飆升將直接推高全球運輸成本，進而傳導至各類商品價格，加劇通膨壓力。航運業者已表示5月貨櫃市況增溫，且燃油附加費將從每季調整改為每月調整，這反映了燃料成本上漲對航運業的影響，並將轉嫁給終端消費者。半導體產業方面，台積電5月營收再創新高，顯示晶片需求依然強勁，但在全球股市因AI概念股震盪而下跌之際，台積電的穩健表現對供應鏈的穩定性至關重要。台灣大學提出的電驅動分離濃縮技術，有助於降低半導體廢水再生處理成本，長期來看有助於提升台灣半導體產業的永續性和供應鏈韌性。然而，全球通膨壓力不減，加上地緣衝突導致原物料成本上升，整體供應鏈將面臨更高的營運壓力和成本傳導風險。",
-    "macro_economy": "全球總體經濟面臨多重挑戰。最核心的議題是美國通膨壓力不減，5月通膨數據預計將創三年新高，主要受汽油價格上漲推動。這使得美聯準會維持鷹派立場，預計將利率維持至2026年底，甚至有「預防性升息」的可能性。這對全球貨幣政策產生重大影響，市場對美國和日本降息的希望逐漸消退。高利率環境將持續對債市造成壓力，並可能抑制經濟增長。美元在中東緊張局勢和通膨數據公布前夕保持穩定，但日圓兌美元徘徊在160關卡，顯示不同貨幣對風險事件的反應差異。台股受美股AI概念股震盪影響，終場重跌1478點，創史上第六大跌點，台積電雖營收創新高，股價仍受大盤拖累。日韓股市也出現大幅跳水甚至熔斷，顯示全球股市在利率和通膨不確定性以及地緣政治風險下，波動性顯著增加。此外，美國國際貿易法庭敦促川普政府加速退還逾100億美元違法關稅，這可能對部分企業的現金流產生影響。印度經濟的「熱」被描述為「歷史欠下的債」，暗示其經濟發展可能存在結構性問題和潛在風險。",
-    "blind_spots_and_kpi": "全球大局觀下，台灣的盲點在於過度依賴單一產業（半導體）的繁榮，以及對外部地緣政治風險的敏感性。儘管台積電營收屢創新高，但在全球股市因總體經濟和地緣政治因素劇烈震盪時，台股仍難以獨善其身，今日大跌即為明證。台灣應警惕其經濟結構的脆弱性，並思考如何分散風險，尤其是在全球供應鏈重組和地緣政治緊張加劇的背景下。此外，市場傳聞銀行向台積電「調頭寸」的現象，雖然央行總裁表示納悶，但也反映出市場資金流動可能存在某些不尋常的壓力點，值得後續觀察。\n\n應緊盯的領先指標包括：\n1. **美國核心CPI數據及聯準會官員發言**：這將直接影響市場對利率路徑的預期，進而牽動全球股、債、匯市的走勢。若通膨持續高企，聯準會維持高利率甚至預防性升息，將對風險資產造成壓力。\n2. **原油價格與荷莫茲海峽航運動態**：中東衝突直接影響原油供應，油價是影響全球通膨的關鍵因素，同時航運安全也會影響全球供應鏈成本。油價的劇烈波動將直接衝擊全球經濟增長前景和企業獲利。\n3. **全球主要股市（尤其美股科技股）的波動性指標**：如VIX指數或那斯達克綜合指數的日線波動幅度，可反映市場的風險情緒和資金流向。AI概念股的修正對全球科技股影響巨大，需密切關注其後續走勢對台灣科技權值股的傳導效應。"
+    "geo_military": "今日地緣政治與軍事緊張局勢顯著升級。首先，美國對伊朗發動「自衛性打擊」，導致油價上漲與黃金回落，並促使亞洲股市下跌，市場避險情緒升溫。這表明中東地區衝突具有高度不確定性，可能進一步影響全球能源供應及金融市場穩定。其次，台海及東海局勢持續緊張，中國公務船頻繁進入台灣以東海域及釣魚台爭議海域，並對日本和菲律賓的海上邊界談判施壓。台灣則進行了美國供應的飛彈發射器試射，模擬摧毀入侵部隊，顯示區域軍事對峙加劇。此外，烏克蘭對俄羅斯境內的煉油廠和軍事電子設施發動無人機襲擊，導致俄羅斯佔領的克里米亞地區面臨燃料短缺，這反映了烏俄戰爭的長期化與新型態作戰的影響。中國國家主席習近平訪問北韓，意在加強雙邊黨政軍交流，可能進一步鞏固中俄朝軸心，對區域安全格局產生深遠影響。歐洲方面，法德戰鬥機計劃告吹，凸顯歐盟內部在國防合作上的分歧。這些事件共同指向全球主要戰略熱點衝突風險升高，投資者應密切關注地緣政治發展，適時調整資產配置，增加防禦性資產比重。",
+    "supply_chain": "全球供應鏈正經歷多重壓力傳導。首先，烏克蘭無人機襲擊俄羅斯煉油廠，導致克里米亞地區燃料短缺，這直接衝擊區域能源供應，並可能通過原油期貨市場，將供應鏈壓力傳導至全球能源價格。若中東衝突進一步升級，將對全球原油供應造成更大不確定性，進一步推高能源成本，影響製造業及運輸業的營運。其次，中國在澳洲礦物產業中挾持「需求鏈實力」，試圖塑造有利於自身的市場環境，這對澳洲乃至全球關鍵礦物供應鏈的安全構成挑戰。在全球轉向綠色能源的背景下，關鍵礦物的供應穩定性至關重要，中國的策略可能導致供應鏈韌性下降。再者，比亞迪匈牙利工廠的投產時間延遲一年，反映出全球電動車供應鏈在歐洲擴張面臨的挑戰，儘管比亞迪目標五年內成為全球第一，但其海外生產基地的建設進度仍受多方因素影響。台灣強制新建物設置屋頂光電，並提高抗風標準，這將刺激相關光電材料與設備的需求，但同時也對供應商的技術與品質提出更高要求。整體而言，供應鏈的韌性與多元化面臨地緣政治、能源價格和關鍵資源控制的嚴峻考驗，企業需重新評估供應鏈風險，並尋求多元化布局以降低衝擊。",
+    "macro_economy": "全球總體經濟面臨通膨回溫與貨幣政策緊縮的雙重挑戰。美國5月消費者物價指數（CPI）可能創三年多來新高，通膨回溫訊號未見緩和，尤其汽油價格上漲是主要推手。這使得聯準會（Fed）可能被迫升息以抑制通膨，而非市場預期的降息。市場目前預期通膨數據將影響Fed的利率決策，進而左右黃金、美元走勢。金價已較高點回落23%，至每盎司4,330美元，若Fed升息預期增強，金價可能進一步承壓，美元則可能走強。台股今日重挫1478點，創史上第六大收盤跌點，外資連續五賣，累計三天提款2791億元，顯示外資對全球市場風險的擔憂及對美國升息預期的反應。台灣新台幣兌美元貶值5分，收31.668元，反映美元走強及資金外流壓力。台灣央行針對營建股的「金句」可能引發市場對房市政策的解讀，同時「新青安2.0」房貸利息補貼分年減碼並逐步退場的規劃，顯示政府正逐步收緊房市刺激政策，可能對房地產市場產生降溫作用。AI股與非AI股表現失衡，美股呈現「失衡牛市」，反映資金高度集中於特定科技板塊。投資者應警惕通膨持續高漲帶來的利率風險，並重新評估資產配置，考慮增加現金比重或配置於抗通膨資產，同時留意高估值科技股的修正風險。",
+    "blind_spots_and_kpi": "全球大局觀下，台灣的盲點可能在於對地緣政治風險與全球供應鏈重組的應變速度。中國在台灣周邊的軍事施壓以及對日本、菲律賓海上談判的干預，不僅是軍事行動，更是經濟與戰略空間的擠壓。台灣在積極提升國防能力的同時，也需思考如何在全球供應鏈重組中，強化自身關鍵地位，避免過度依賴單一市場或技術。例如，半導體產業雖具優勢，但若全球半導體供應鏈因地緣政治緊張而加速分散，台灣如何維持其領先地位並拓展新興市場，將是重要課題。此外，國內房市政策的調整，如「新青安2.0」的退場機制，雖然有助於市場健康發展，但也可能在短期內對內需消費和資產價值產生影響，需密切觀察其對實體經濟的傳導效應。我們應緊盯以下2-3個領先指標：\n1. **美國CPI數據及核心PCE物價指數:** 密切關注每月公布的美國CPI數據，特別是核心CPI，以及聯準會偏好的核心PCE物價指數。若這些通膨指標持續高於預期，將加劇聯準會升息壓力，對全球股債匯市產生連鎖反應，尤其影響黃金與原物料價格。\n2. **地緣政治風險指數（如VIX恐慌指數、地緣政治風險指數GEP）及原油期貨價格:** 中東與台海的緊張局勢升級，直接影響全球能源供應和貿易路線。原油價格若因衝突而劇烈波動，將直接衝擊全球生產成本，進而影響企業盈利和消費者支出。同時，VIX指數的劇烈變動可作為市場恐慌情緒的指標，預示潛在的市場修正風險。\n3. **全球半導體產業景氣指標（如費城半導體指數、各國半導體設備出貨數據）:** 台灣經濟高度依賴半導體產業，AI股的「失衡牛市」也與其緊密相關。持續監測全球半導體產業的供需狀況、資本支出計畫以及相關指數表現，能有效判斷全球科技景氣的健康程度，對台灣股市及基金的配置具有指導意義。"
   },
   "laymans_dictionary": [
     {
+      "term": "消費者物價指數 (CPI)",
+      "explanation": "想像一下你每個月去大賣場買菜、買衣服、搭車的總花費。CPI就是政府統計全國人民平均每個月這些生活必需品和服務的價格變化。如果CPI上升，就表示物價變貴了，你的錢變得比較不值錢，這就是「通膨」。"
+    },
+    {
       "term": "聯準會 (Fed)",
-      "explanation": "想像聯準會就像是管理國家經濟的總司令，它手上最主要的武器就是「利率」。當它覺得經濟太熱、物價一直漲（通膨），就會把利率調高，讓大家借錢變貴，少花一點錢，這樣物價就不會一直漲；反之，如果經濟太冷，它就會把利率調低，鼓勵大家多借錢、多花錢，讓經濟活絡起來。所以聯準會的決定，會影響你買房、買車、存錢的成本，還有整個股市的表現。"
+      "explanation": "Fed就像美國的中央銀行，是美國經濟的「總舵手」。它最重要的工作就是決定要不要升息或降息，就像在控制整個經濟體的水龍頭，水流太快（經濟過熱、通膨高）就關小一點（升息），水流太慢（經濟不好）就開大一點（降息）。"
     },
     {
-      "term": "通膨 (Inflation)",
-      "explanation": "通膨就是「錢變薄了」。以前100元可以買到的東西，現在可能要花110元或更多才買得到，也就是物價普遍上漲。這就像你口袋裡的錢，購買力越來越低。如果通膨太嚴重，大家會覺得手上的錢不值錢，可能會影響消費和投資的意願。"
+      "term": "升息/降息",
+      "explanation": "升息就是銀行把借錢給你的利率調高，這會讓大家覺得借錢變貴了，所以就不太想花錢投資或消費，希望能讓過熱的經濟降溫、物價不要漲太快。降息就是反過來，讓借錢變便宜，鼓勵大家多花錢，刺激經濟成長。"
     },
     {
-      "term": "鷹派 (Hawkish)",
-      "explanation": "當說聯準會是「鷹派」時，就像是說這隻老鷹很警惕、很強硬。它認為通膨是當前最大的威脅，所以會傾向於採取比較強硬的手段，比如升息或維持高利率，來打擊通膨，即使這可能會讓經濟成長慢一點也沒關係。"
+      "term": "通膨回溫",
+      "explanation": "「通膨回溫」就像本來有點發燒（物價上漲）的身體，經過治療後一度退燒了，但現在又開始有點燒起來（物價又開始上漲）的感覺，表示物價上漲的壓力又回來了。"
     },
     {
-      "term": "避險情緒 (Risk-off sentiment)",
-      "explanation": "這就像當天氣預報說要下大雨時，大家會趕快回家，把貴重的東西收好，而不會想出門去玩。在金融市場上，當有壞消息（像是戰爭、經濟衰退）出現時，投資人會變得害怕，把錢從風險比較高的股票、基金裡面抽出來，轉而投入風險比較低、比較穩定的資產，例如黃金、美元或公債，這就是避險情緒。"
+      "term": "資產配置",
+      "explanation": "想像你是一個廚師，資產配置就是你在準備一道大餐時，把各種食材（股票、債券、黃金、房地產等）按照不同的比例混合，而不是只用一種食材。這樣做的好處是，如果其中一種食材出了問題，其他食材還可以撐住，讓你的大餐不會完全失敗，也就是降低投資風險。"
     },
     {
-      "term": "原物料 (Commodities)",
-      "explanation": "原物料就是製造各種產品的基本材料，像是石油、天然氣、黃金、鐵礦砂、玉米、小麥等等。它們的價格會影響所有下游產品的成本。如果原物料價格漲了，你買到的東西可能也會變貴。"
+      "term": "失衡牛市",
+      "explanation": "「牛市」是指股市一路往上漲，大家都很開心。但「失衡牛市」就像一頭牛，牠的四條腿只有其中一條特別粗壯、跑得飛快，其他三條腿卻原地踏步或跑得很慢。這表示股市的上漲主要是由少數幾種股票（例如AI股）帶動，大部分的股票卻沒有跟上，造成市場發展不均衡。"
     },
     {
-      "term": "資產配置 (Asset Allocation)",
-      "explanation": "這就像你把雞蛋放在不同的籃子裡。不要把所有的錢都投入一種投資（例如全部買股票），而是分散投資在不同種類的資產上，像是股票、債券、房地產、黃金等等。這樣當某一種資產表現不好時，其他資產可能還能幫你賺錢，降低整體投資風險，讓你的財富更穩健。"
+      "term": "除息",
+      "explanation": "除息就像公司把賺到的錢，分一部分給股東們當作「紅包」。在發紅包的這一天，公司的股價會因為把錢分出去了，所以自動扣掉一部分，這就是「除息」造成的股價「蒸發」。但這並不是真的虧錢，只是錢從公司的資產變成股東的口袋而已。"
+    },
+    {
+      "term": "避險情緒",
+      "explanation": "當國際情勢不穩定、經濟前景不明朗時，投資人會感到緊張，就像要躲避風險一樣，會把錢從高風險的投資（例如股票）轉移到相對安全的資產（例如黃金、美元），這種心態就叫做「避險情緒」。"
+    },
+    {
+      "term": "領先指標",
+      "explanation": "領先指標就像天氣預報，它不是告訴你現在的天氣，而是預測未來可能會發生什麼事。例如，股市的變化、新訂單的數量等，常常會比實際的經濟狀況更早反應出來，可以幫助我們提早判斷未來的經濟走勢。"
     }
   ],
   "dictionary_source": "gemini"

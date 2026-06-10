@@ -1,6 +1,6 @@
 {
   "report_date": "2026-06-10",
-  "summary": "今日美股焦點為科技股與晶片股的拋售潮，引發那斯達克指數下跌，市場對AI泡沫化及中東地緣政治情勢升溫感到擔憂。SpaceX的IPO超額認購顯示市場資金對新興科技仍有高度興趣，但可能引發資金板塊挪移。",
+  "summary": "今日美股焦點為科技股普遍回調，AI概念股面臨賣壓，費半指數走弱，市場關注今晚將公布的CPI數據以及中東地緣政治緊張局勢對油價及整體經濟的影響。",
   "stocks": [
     {
       "name": "科技股",
@@ -8,7 +8,7 @@
       "sector": "科技",
       "mention_count": 22,
       "sentiment": "利空",
-      "reason": "多則新聞指出科技股再現拋售潮，那斯達克指數下跌，費城半導體指數重挫，市場對AI泡沫化感到疑慮。",
+      "reason": "多則新聞指出科技股面臨拋售潮、回調、賣壓沉重，那斯達克指數和費半指數下跌，市場擔憂AI概念股過熱。",
       "evidence_news": [
         {
           "title": "美股今天漲還是跌？科技股回調，多頭市場還能走多遠？",
@@ -16,186 +16,27 @@
           "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5FS0tIclVqZENmazA0M3lIMWxyc3RMS2FRMGltcGJzSnNLZFh1TFBVZUx3YXp3aGtFbi1rWWZRVllCMmNWZjJocUVGeG5PeHdVeGRpVA?oc=5"
         },
         {
-          "title": "美國科技股再現拋售潮 台股開盤下跌逾500點",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606100037.aspx"
-        }
-      ],
-      "news_count": 13,
-      "first_seen": "2026-06-09",
-      "last_seen": "2026-06-10"
-    },
-    {
-      "name": "晶片股",
-      "ticker": "",
-      "sector": "半導體",
-      "mention_count": 13,
-      "sentiment": "利空",
-      "reason": "晶片股反彈乏力，費城半導體指數走軟並一度暴跌，顯示賣壓沉重。",
-      "evidence_news": [
-        {
-          "title": "美股收低晶片股反彈乏力 油價回落支撐週期股",
+          "title": "美股科技股再陷拋售潮油價回落 市場聚焦通膨與央行決策",
           "source": "商傳媒",
-          "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxOOUwyUFdmb1NYMTFFdFJ0bS1xRk00S0VBaE8zeG1zZk92czRzNmExajE0UkdDYnI0UFU0bUJ0T0lpcHBIQTNBVFpmczRrWTRaWm5QdWZBM1ZRMVpuVUlhU0w3amVSSU50TVFEa0FyQjJOZ2RGT1hpTF9xbU9YYlZZNFp5cVd3OVkyV1NNSnZac3Y3Ml9QSEE2UldTVlEzMTlZV0ZDQUpoMTg5SS0taXYwUjN4X2JHcmFIWHBXQm9fUGJMX0FWeVRRcW1sc056TkxLWVRWUVBRbFo2d25oMXB1UXQyTE5pNGZ3VDRhTXZfZ0NqeGJXNXM4bW9Nc0xUbmNBS1NUd25haFFqZ3NlcmlzcURCTncxZkNvREN1S0ZRNVVsN0FpOXlDelhMTGhlTEloR2xYUEhTdHlrZVlYZ1B4VnB6TDYzMlVTbE4w?oc=5"
-        },
-        {
-          "title": "晶片股賣壓再現 費半一度暴跌8.6% 終場跌幅縮至1.9%",
-          "source": "優分析UAnalyze",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE80ektnR2w2am5jaF9LUlUxeFp0TU9IbWNJZ1JQWS1rdlFTc1dFczBDcG1TV3lmUEJia0ZrdktteHlUTzZwSDcyR2pGbHVuRldQX1RIQWRR?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMigwNBVV95cUxNS1JQaWY2Slhma1kzenpQWmdsLVlwQlhPVlJhOXVYaVJPRDJlWDZqTmZ1LW5MUjNfRElGM2x3SXg0SW5xaVZWUzRCUmVpTG5SS21UOVZqOHpyamFLNkM3MjBjckxFVjVlQ1pYVnpmalZPc1RDNHZCRW91NzlRc295b3NXcXdOUkFVRkFYaVNnNE5LcXByYnBzaENDZ1A0QmI3MFZGRUhreXhvaFZBdWZxaEFVSWxER3BmUUxnQmk3b3hoeHZveE8zWXExcFpXazFEYzdVWGNwQzZSYThHQ0ZQR0FNU2lTMllGRldVdkNCR2twSlpyV0twRUVQSTR1aHR0TE05VzNJcDdiOTFvSnNtV24tWDJfVVdkMDJXb21nMktUVGJzVklRWGIxRDlOSzdiNkE2c29iblRwb1gwZHBQbGlndWdvN2F3d3RWNUJGaFFVUWswR2R4TGlDN0NtTTE1SmY4UTJ1djJMT2hEYTlkbnZ6bEUxR3pIM092aHRYdzRYRjg?oc=5"
         }
       ],
-      "news_count": 6,
+      "news_count": 12,
       "first_seen": "2026-06-09",
       "last_seen": "2026-06-10"
-    },
-    {
-      "name": "SpaceX",
-      "ticker": "",
-      "sector": "太空探索, AI",
-      "mention_count": 8,
-      "sentiment": "利多",
-      "reason": "SpaceX IPO獲得近4倍超額認購，顯示市場對其高度看好，儘管可能引發資金板塊挪移。",
-      "evidence_news": [
-        {
-          "title": "股市震盪無礙吸金熱度 SpaceX IPO獲近4倍超額認購",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/ait/202606100028.aspx"
-        },
-        {
-          "title": "SpaceX準備上市 美股恐現資金位移潮",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606100017.aspx"
-        }
-      ],
-      "news_count": 7,
-      "first_seen": "2026-06-09",
-      "last_seen": "2026-06-10"
-    },
-    {
-      "name": "那斯達克指數",
-      "ticker": "NDAQ",
-      "sector": "指數",
-      "mention_count": 8,
-      "sentiment": "利空",
-      "reason": "受科技股賣壓影響，那斯達克指數收跌，且一度跌逾1%。",
-      "evidence_news": [
-        {
-          "title": "美股：道瓊千點震盪驚險收漲，科技股再遭拋售，那指、費半挫近1%和1.9%",
-          "source": "富聯網",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeUVQUFVZXy1nRlVScDY2WVliUHZ4UEdIVzNvdTUwdTdsNkpqSWE0YzFMRjhMWDhIVlhnM3l3LVRkRERaNGZwdnpQbXJ5UGpURWhHUUtSbWJxaGVmOUNKRDVxWjFTUE5Ea1lFQ1RxOERlUEx2UnNqLXlCYnpuUk0zM1luSUd0VlNheEVONVFNTQ?oc=5"
-        },
-        {
-          "title": "美股科技股賣壓沉重那斯達克跌逾2% AI泡沫疑慮與中東局勢交織",
-          "source": "蕃新聞",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBiamMxTjdvZmc5RE1DbkJlUjhtc0poZU5CMjJlczVXWXd4LS1IQVVYblRCcmJLUE9vM0VaT0JmU05xV3JFaHkxTWFUbXRZUkI3MkE?oc=5"
-        }
-      ],
-      "news_count": 0
-    },
-    {
-      "name": "費城半導體指數",
-      "ticker": "SOX",
-      "sector": "指數",
-      "mention_count": 8,
-      "sentiment": "利空",
-      "reason": "費城半導體指數盤中震盪劇烈，終場下跌近2%，甚至一度重挫逾8%，顯示市場對半導體前景保守。",
-      "evidence_news": [
-        {
-          "title": "權值股疲弱 台股盤中跌逾700點回測44000點大關",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606100066.aspx"
-        },
-        {
-          "title": "美股｜科技股再現拋售潮 道瓊盤中震盪千點 費半收挫2％ 蘋果再跌3.6％",
-          "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9YcUdJbmFsWWRXWklCZmxhaDl2R2d1bzNQNGdPMHp5eXhwNTM5U0lfQ3BadlpNWm1yem1mX2draTdsOGJMbVdsRlhiQ05SeVVrWEtSX1g4RDM3ZXFuRDF3?oc=5"
-        }
-      ],
-      "news_count": 3,
-      "first_seen": "2026-06-10",
-      "last_seen": "2026-06-10"
-    },
-    {
-      "name": "美超微電腦(Super Micro Computer)",
-      "ticker": "SMCI",
-      "sector": "伺服器",
-      "mention_count": 3,
-      "sentiment": "利多",
-      "reason": "美超微將透過融資籌集70億美元，以滿足其AI伺服器日益增長的需求。",
-      "evidence_news": [
-        {
-          "title": "美超微將啟動70億美元融資計畫 滿足AI伺服器需求",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/ait/202606100048.aspx"
-        },
-        {
-          "title": "Supermicro Announces Proposed $7.0 Billion of Equity and Equity-linked Financing Transactions To Fund AI Orders",
-          "source": "Supermicro",
-          "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQNkdibFdBME56Q1J1WlRqX2xzQ1g1Mk9TbUVvTGtsSTdFc3NtRDF0OUpicEtnYjBDTEV0OGpKQmpPaVZIZnJFLUJkRURRSUFJcklmM0hxNVNuLUxpWV9yRnRLVEtUTWJBWHc4QWNoUV9sekp2bXcxWWNhX1Z2VmtXejJnRnRsYXRHc3Y2dWNRQ1docFJWb1ZYdzFwc2tVZ2pUNzNjQlR5Yjl4LUNwNGN1eHIzRFNWOWx6S0lUNDlJTTF0UVl2WVludlc0RUpldnJjUjdGYXV6ZGRvZVp2dlJFY3BoMllIWk90TUl0aUUxYjJkWm9YX3RSUndzQ3MteWlXTXc?oc=5"
-        }
-      ],
-      "news_count": 3,
-      "first_seen": "2026-06-09",
-      "last_seen": "2026-06-10"
-    },
-    {
-      "name": "台積電(TSM)",
-      "ticker": "TSM",
-      "sector": "半導體",
-      "mention_count": 3,
-      "sentiment": "利多",
-      "reason": "日本材料大廠JSR擴大在台投資，受台積電資本支出磁吸效應影響，且台積電ADR收紅。",
-      "evidence_news": [
-        {
-          "title": "台積電磁吸效應 解密日本全球光阻劑大廠JSR來台戰略",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606100047.aspx"
-        },
-        {
-          "title": "快新聞／科技股反彈熄火！美股漲跌互見 台積電ADR上揚",
-          "source": "民視財經網",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE0wN2g1ZHo0aWNCWVhxNXBKdHA5a3lrTjFReGMwRnZfM0w1VEdUeUdaVUtaOHZiNHA0bVlNU1BJS3E1aFVZcXBMTGJ5UDk3Y2l1V2s3Sm9lNzNRUmY2QWI3cUtmbnlnZw?oc=5"
-        }
-      ],
-      "news_count": 5,
-      "first_seen": "2026-06-09",
-      "last_seen": "2026-06-10"
-    },
-    {
-      "name": "道瓊工業指數",
-      "ticker": "DJI",
-      "sector": "指數",
-      "mention_count": 3,
-      "sentiment": "觀望",
-      "reason": "道瓊指數盤中千點震盪後驚險收漲，顯示市場多空拉鋸。",
-      "evidence_news": [
-        {
-          "title": "美股：道瓊千點震盪驚險收漲，科技股再遭拋售，那指、費半挫近1%和1.9%",
-          "source": "富聯網",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeUVQUFVZXy1nRlVScDY2WVliUHZ4UEdIVzNvdTUwdTdsNkpqSWE0YzFMRjhMWDhIVlhnM3l3LVRkRERaNGZwdnpQbXJ5UGpURWhHUUtSbWJxaGVmOUNKRDVxWjFTUE5Ea1lFQ1RxOERlUEx2UnNqLXlCYnpuUk0zM1luSUd0VlNheEVONVFNTQ?oc=5"
-        },
-        {
-          "title": "美股三大指數週二分歧 那斯達克V型反彈收黑 科技股挫邁威爾領跌",
-          "source": "商傳媒",
-          "url": "https://news.google.com/rss/articles/CBMisANBVV95cUxQdzZYMWpIcHA1SDJ1Yk5wX2FoQXZGS0xVLUZ3MFpyUGFpOWxoSnZQeUpuWVYzNFA0dEdheVQ3WWVFSnF0enBFa0xpT0p2WUF2Y2N2VVVkQTI2Y3dfWDZNQjZNMl8wb2JuekI5TWVabHFGdEJnNVVLTXBhUnZmV3owUmFXSmJOaEJ6a0pqV05MX2ZoY1AtODJ1N2dBTW9sY2UtZXZSNTM4a01zZlpYODhPNVVlOENKZXVSQUhQNzMwdWh5UUFqVDNzWFh2U0VkSjcxcmh2UXVrU0hoN0xCSXNMZnlqMThmOGxsaTU5WDJhb0lJUjMwUUZrNVlOX1FqbGp1N0RsMHpIb0l4TUdoUW85b25TSU0yR0dNN3RfaW9pc01TQUZFTGVFM0otRmVPeWtQSnFJcTBHRGFjbi1xQXI4N3ZVZnV1V3ExZExUNFVMVnkzUlJJcFoycV9yN1Q2bFFkdjJvcEducU1pOHhxSnhnS3RMNHQ2dnVDbGM5REl1NE0xMVBieXNoVC0xXzZMZDhDcnV3Z2lybjRjb3ZVd2ZOVFhyNUxHaDRSTVpEQnlqN20?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-09",
-      "last_seen": "2026-06-09"
     },
     {
       "name": "石油",
       "ticker": "",
       "sector": "能源",
-      "mention_count": 3,
+      "mention_count": 13,
       "sentiment": "利多",
-      "reason": "中東局勢升溫導致油價回升或上漲，顯示能源市場受地緣政治影響。",
+      "reason": "中東局勢緊張及美伊衝突升溫，導致油價上漲，富裕國家石油庫存降至23年低點，推升油價。",
       "evidence_news": [
         {
-          "title": "美股收低晶片股反彈乏力 油價回落支撐週期股",
-          "source": "商傳媒",
-          "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxOOUwyUFdmb1NYMTFFdFJ0bS1xRk00S0VBaE8zeG1zZk92czRzNmExajE0UkdDYnI0UFU0bUJ0T0lpcHBIQTNBVFpmczRrWTRaWm5QdWZBM1ZRMVpuVUlhU0w3amVSSU50TVFEa0FyQjJOZ2RGT1hpTF9xbU9YYlZZNFp5cVd3OVkyV1NNSnZac3Y3Ml9QSEE2UldTVlEzMTlZV0ZDQUpoMTg5SS0taXYwUjN4X2JHcmFIWHBXQm9fUGJMX0FWeVRRcW1sc056TkxLWVRWUVBRWjZ3bmgxcHVRdDJMTmk0ZndUNEFNaXpnQ2p4YlduNXM4bW9Nc0xUbmNBS1NUd25haFFqZ3NlcmlzcURCTncxZkNvREN1S0ZRNVVsN0FpOXlDelhMTGhlTEloR2xYUEhTdHlrZVlYZ1B4VnB6TDYzMlVTbE4w?oc=5"
+          "title": "美伊戰事未歇 富裕國家石油庫存降至23年低點",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/aopl/202606100187.aspx"
         },
         {
           "title": "川普下令美軍空襲伊朗 那指期跌逾1% 油價回升",
@@ -203,87 +44,223 @@
           "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1tLXVVRkdkLXJVNTZqSDhHWVV1T0J1QlhDSlVFR3BocWo2RG80YW5lZkd3d2FUdl9qTDhlUzR4LWhhXzVXMEJTczVBQUN0Tmc?oc=5"
         }
       ],
+      "news_count": 1,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-10"
+    },
+    {
+      "name": "那斯達克指數",
+      "ticker": "",
+      "sector": "指數",
+      "mention_count": 10,
+      "sentiment": "利空",
+      "reason": "那斯達克指數因科技股拋售潮而下跌，多則新聞報導其收黑或走低。",
+      "evidence_news": [
+        {
+          "title": "美股三大指數週二分歧 那斯達克V 型反彈收黑科技股挫邁威爾領跌",
+          "source": "理財周刊",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB4R3UwVnlmTW9XZmRCSWxmNk8wcnZOTGwwV0x6ZHZOdDFVTGJRQ1pXd0RRSnR5LWhDQ1BEX29HRGhZRGJBMmhWRjBUQVNoMjJQeGRNbzJmUGQyX0ZyUi1kcjNVblFpYlNJQ0FrN01Eaw?oc=5"
+        },
+        {
+          "title": "美股科技股賣壓沉重那斯達克跌逾2% AI泡沫疑慮與中東局勢交織",
+          "source": "PChome Online 新聞",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQjZRMVdxLWtPYzFUa0RhS3pFU2FBWFk5S25WS2pxMXRyZzJUUEVWS0ZPZ1pOV21hWUZzSS1VTUdhZHl6RFdEQV9IMzN6RllFWjNQakxSYWd4b3FlU3IyU2tQaVE1ZV9HaFNBN2NVbzJPOVBwM1RqQ0RiSEhldm9tcktBdEh0Q2U0c3Qycw?oc=5"
+        }
+      ],
       "news_count": 0
     },
     {
-      "name": "通用汽車(General Motors)",
-      "ticker": "GM",
-      "sector": "汽車",
-      "mention_count": 1,
+      "name": "AI概念股",
+      "ticker": "",
+      "sector": "人工智慧",
+      "mention_count": 9,
+      "sentiment": "利空",
+      "reason": "AI股被提及狂飆後，多則新聞指出其面臨賣壓、過熱疑慮，高盛和巴克萊示警修正可能比預期劇烈。",
+      "evidence_news": [
+        {
+          "title": "AI 股狂飆、非 AI 股原地踏步：聯準會政局與中東戰火，如何把美股推向新一輪「失衡牛市」？",
+          "source": "forecastock.tw",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQcEtsSlhsTWVrYUtwV0hUMmg0TVA5b2dMR3U5N3Ezc1dYbzc0aHhTemRiRUZzVHVJbUFFVXlNclRPOEtxakNWYUJUNjRKcW95RFVSWGdmM2RTOW5QRFNJN01yTTY3b3l6ZV9taTFqRGR6TXBiNzVic2VuYXlFeTRMdlJnSzhvM2dFWTRLMmRZdC0wWnJ0?oc=5"
+        },
+        {
+          "title": "AI擁擠度創新高 高盛、巴克萊示警：修正恐比市場預期更劇烈",
+          "source": "AASTOCKS.com",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5uM18tOHJYWURUU1J2WTItRmdDaHRYRDhUQWI4THl6TG53VVRCUFhYalN0Qm5vUUpXdjFaaVdXUjhERDFpNXBkTmxHb1hKU2JPTW5pNXVzUVJIODNraUgtSG9CVXFOUm40LWJXUm9R?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-10"
+    },
+    {
+      "name": "標普500指數",
+      "ticker": "",
+      "sector": "指數",
+      "mention_count": 8,
+      "sentiment": "利空",
+      "reason": "受科技股賣壓及美伊衝突影響，標普500指數期貨下跌。",
+      "evidence_news": [
+        {
+          "title": "美股科技股賣壓沉重 美股標普那指雙雙走跌",
+          "source": "蕃新聞",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE80N1N4eFIyZFNHa3FGOElIdjdYcHlnUl9sanJqWW81Wlh0WURlalpHQ0JVbE9DeTdGb1RzMUM2cWtnZGV0OGlxeFZyOFZxOEtrNFE?oc=5"
+        },
+        {
+          "title": "Stock Market Today (June 10, 2026): S&P 500 Futures Fall, Oil Rises as U.S.-Iran Conflict Escalate",
+          "source": "thestreet.com",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbDVqZGVRTE5yZlFPdlphNXlUT2FVNnNaT201Z1pNTVdnb25TLXNKSWwwXzBmYW5RcjJvcVkxU1g0Q3R6Z0lEQUx0d2I5QUg5MWlEMVo0UkxvOGgwVFRNVk9xNjhqYXZrMVB6WnhnWjM4VGxTM0VkUWkxTzlubVU5Vm11WTB1RXNKQU5ESVBGdEpFWWJ4SnpFVEMycHFHTXdQYk0zYUV2Y2JuNkha?oc=5"
+        }
+      ],
+      "news_count": 0
+    },
+    {
+      "name": "費城半導體指數",
+      "ticker": "",
+      "sector": "半導體",
+      "mention_count": 6,
+      "sentiment": "利空",
+      "reason": "多則新聞報導費半指數走軟、下跌甚至一度暴跌，晶片股反彈乏力，顯示半導體產業面臨壓力。",
+      "evidence_news": [
+        {
+          "title": "費半走軟台指期夜盤跌千點- 上市櫃",
+          "source": "旺得富理財網",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1aNVJKV3oxNWNrcDJSU2Zkb2R5cFVPTWlzcUcxZk04NGhKeF9GX3hlQi1OY2lEUmZyV3d1akpfUGZZNllXcEFtVjlGSFNwQVV1a2tWOWRkQUx6d0diSzktVXNvU1JKUVp1VkE?oc=5"
+        },
+        {
+          "title": "晶片股賣壓再現 費半一度暴跌8.6% 終場跌幅縮至1.9%",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE4tUUJCaW12LWdTLVQxTTZ0RjdPVnZmRldHODVWbThJLWh2dlpDZ2pHckhYdGxaelRMd0puRkQ0VHBUTFFHS1BKZ1VsVmpkTm8?oc=5"
+        }
+      ],
+      "news_count": 0
+    },
+    {
+      "name": "通膨",
+      "ticker": "",
+      "sector": "經濟指標",
+      "mention_count": 6,
+      "sentiment": "利空",
+      "reason": "多則新聞指出通膨可能達到三年新高，主要受美伊戰爭導致的油價上漲影響，聯準會可能面臨升息壓力。",
+      "evidence_news": [
+        {
+          "title": "【美股盤前】CPI今晚登場，科技股估值撐得住嗎？（2026.06.10）",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZkd3Mi1ueDRtUWNaZnVqWXdybV9Lc0t0S1VBUWNESTJMYWRVencxUzJVN2FnNklWd1NEU0xCSTY4ODJzdVZfYzF2U2QwSkZEQUVJWVZuTm5xVFlRVDRuTlp5WTBEYVJUdFYtdDNRYmRBMTNDblA1cWhsenNlbVUxenpldW01WlVrOHBmY2t3?oc=5"
+        },
+        {
+          "title": "聯準會換將通膨高漲 美股面臨升息修正壓力 - 財經新聞 - PChome Online 新聞",
+          "source": "PChome Online 新聞",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQYnRhcVpaakxNNjhZM29ianRuN21zQlJOMkZOSy1CdGJPUFViNVlPSG9MWl8zM0YwR3E4YS1CYXdJUkVJVUpybGlZUWNOQVBFV0hTZ014aFZ0d1ROYUF1aXpnbFNlT1c2ck9zbWlDSDFnSDRpZHRtNDRrdHJpTzFKWDN3RXd2Z3lPRnJDaA?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-10"
+    },
+    {
+      "name": "道瓊指數",
+      "ticker": "",
+      "sector": "指數",
+      "mention_count": 5,
       "sentiment": "觀望",
-      "reason": "通用汽車計劃開發儲能電池，以應對電動車銷售放緩，轉向新業務方向。",
+      "reason": "道瓊指數在千點震盪後驚險收漲，但期貨因美伊衝突而下跌，多空消息交雜。",
       "evidence_news": [
         {
-          "title": "G.M. Plans to Develop Energy Storage Batteries as E.V. Sales Flag",
-          "source": "The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPY25SUUNtX1dvWE5pMGpLb091TWFCUlU1OEhjQ1F0dEVpa24wdWFoZjg3ekFHWUhwSG9Edng2YzVETGRoMkhmRVBXbWZ6WjhSSDZWak9xZHlvWG9iaDg2VTNMcU1LaldOQ2x3QThOMnktY2xsTjVzNnBtOTJnSUlKaTRhQ3R0eldadjlfVHltWFZsZE43TGxrMm1ZVE5KNHNLUnFBRHZiZDdscG05eWdfS3hvX0VaUlllc3c?oc=5"
+          "title": "美股：道瓊千點震盪驚險收漲，科技股再遭拋售，那指、費半挫近1%和1.9%",
+          "source": "富聯網",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeUVQUFVZXy1nRlVScDY2WVliUHZ4UEdIVzNvdTUwdTdsNkpqSWE0YzFMRjhMWDhIVlhnM3l3LVRkRERaNGZwdnpQbXJ5UGpURWhHUUtSbWJxaGVmOUNKRDVxWjFTUE5Ea1lFQ1RxOERlUEx2UnNqLXlCYnpuUk0zM1luSUd0VlNheEVONVFNTQ?oc=5"
+        },
+        {
+          "title": "Stock Market Today: Dow Futures Slip as Investors Await CPI Report — Live Updates",
+          "source": "WSJ",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE00Z21CZnE1bGtKWUlFUE52c181a1JxZE1qRGt6ZFFGX0tuSDdBM1VzcmpfenlpXzNpNFVuTUp0NVF1ZjR1OVVpQ2lxWlVIZ201c3VrT21EYnQ5LVg0OUtCZ1NnLVJGcnhsQkNpZTZRZTl1NE5WWTduQmhn?oc=5"
         }
       ],
-      "news_count": 1,
-      "first_seen": "2026-06-09",
-      "last_seen": "2026-06-09"
+      "news_count": 0
     },
     {
-      "name": "威士卡(Visa)",
-      "ticker": "V",
-      "sector": "金融服務",
-      "mention_count": 1,
+      "name": "SpaceX",
+      "ticker": "",
+      "sector": "航太/AI",
+      "mention_count": 5,
       "sentiment": "利多",
-      "reason": "美國法官初步批准了Visa和Mastercard的380億美元刷卡費和解案，對公司有利。",
+      "reason": "SpaceX的IPO認購額飆升，並計畫在明年底前進行軌道AI運算測試，顯示其發展前景受看好。",
       "evidence_news": [
         {
-          "title": "US judge OKs Visa, Mastercard $38 billion swipe fee settlement",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQRnpZNVJidmdaMGhJWTRVMl96MXlMa1FzOE1qQWxKMnpwOFZqSVM2NGlKVEEwZ3ZLdTlBU19pWkFrSXBkWWg5WWRvUXpkUGJCV2ZXMWh2YWRrQ0FIdVo2eVNkdlN5bWhOaGtwajRFTVdneXhmTnJJN0lOelRTbmRlUi1LWVRIR0FuZV9Jb2NIZVRUNjZROHJJbGVjX3lLOW80MURhLQ?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-09",
-      "last_seen": "2026-06-09"
-    },
-    {
-      "name": "萬事達卡(Mastercard)",
-      "ticker": "MA",
-      "sector": "金融服務",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "美國法官初步批准了Visa和Mastercard的380億美元刷卡費和解案，對公司有利。",
-      "evidence_news": [
+          "title": "How SpaceX’s IPO ambitions ride on Starship’s path to Mars",
+          "source": "Financial Times",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNMXAxNER1cjJFb2h1Skp0SjJyMnF6ZGo3UjhwTlJrZXh5bWx2eVFTd0tOeXphU2Z6WVZGQWRKdzhYSThxaXFJbHpEeXRVU3YxYlZoZFZpSnhwdG1XRVc2MV80YjdEM1NLRzBKNEpHcjhuSjV6Z25SMXlfaFZuNTY0NkxoRjc?oc=5"
+        },
         {
-          "title": "US judge OKs Visa, Mastercard $38 billion swipe fee settlement",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQRnpZNVJidmdaMGhJWTRVMl96MXlMa1FzOE1qQWxKMnpwOFZqSVM2NGlKVEEwZ3ZLdTlBU19pWkFrSXBkWWg5WWRvUXpkUGJCV2ZXMWh2YWRrQ0FIdVo2eVNkdlN5bWhOaGtwajRFTVdneXhmTnJJN0lOelRTbmRlUi1LWVRIR0FuZV9Jb2NIZVRUNjZROHJJbGVjX3lLOW80MURhLQ?oc=5"
+          "title": "Today’s Market Recap:SpaceX IPO Subscriptions Surge to $250 Billion, with Anthropic and OpenAI Releasing a Series of Significant Signals",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQRTRlQTZmYjFkZW9DMEcxc19oaG1kY29naUNSakdMeV8tYlpsM1MyaTNONi1WWmdJRWlnOHdDZW5wVEMwa3FCOVFFWkFwTDdxSWczNGZrdTFSeUFSZ255VGZXeGJCWC1EczQ5QTFqWWI1RW1BY1R5bFJrMlhXaVFiejRSZlo5NW5xT2xMcnUzYWlHemlPTjhrMVFOVzhYUUJMbXpF?oc=5"
         }
       ],
-      "news_count": 27,
+      "news_count": 3,
       "first_seen": "2026-06-09",
       "last_seen": "2026-06-10"
     },
     {
-      "name": "博通(Broadcom)",
-      "ticker": "AVGO",
-      "sector": "半導體",
+      "name": "Uber (優步)",
+      "ticker": "",
+      "sector": "交通/科技",
       "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "財報漏氣，市場質疑其AI信仰或估值過高，導致股價下跌。",
+      "sentiment": "利多",
+      "reason": "Uber One會員方案漲價，顯示公司對其服務價值有信心，並擴增會員福利。",
       "evidence_news": [
         {
-          "title": "【美股巨頭】博通財報漏氣1%，跌掉的是AI信仰還是本來就太貴？",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPY0Zjc1FZWW1WN2o1TWo1a3Z1X3RBNndBdk9xaUZYYm5KRWlmd0FQbk5nTDROZm9zbGY0b2MzdlhDbnJMNTNsSkRwRXZGejJ4QzV3azh4ODFRa3M3UmxJY2Y5QzItSmFCMWJlaVZEaFBfdl9ZTkNyN1dUcmEzOHlDTkxCczdha3l5VVJ0QmJYdDRHdndUTnpOX0NubWlzV2lWZEphMDM3WEVVMmNndk5qX1VSMjNad0VQdE9wVG5wV2lUSmpaaGJxaWthSFVxRkE?oc=5"
+          "title": "Uber One會員方案漲價 月訂閱120元調升至199元",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606100244.aspx"
         }
       ],
       "news_count": 1,
-      "first_seen": "2026-06-09",
-      "last_seen": "2026-06-09"
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-10"
+    },
+    {
+      "name": "GSK (葛蘭素史克)",
+      "ticker": "GSK",
+      "sector": "製藥",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "GSK簽署協議收購癌症藥廠Nuvalent，強化其腫瘤學佈局。",
+      "evidence_news": [
+        {
+          "title": "GSK enters agreement to acquire Nuvalent, Inc.",
+          "source": "GSK",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNb2l3V2tURVZWc3M3RDlXdXVVYi1WRHZ3THhKaXdjQmt3OGpodU1ZZkotZnhoNmJYV1d0SVYyUy0tUlN6cUZOeU8wQkVBQlFHQnpuTy1CTGFGVnBwUW5GOFlHWmktQkEtSGRmcmdHTXdyR3FPVWNaUUVYZjhqbTY1MURvcDJobVJvRWRZSzJuR3pLTmRjX19Z?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-10"
+    },
+    {
+      "name": "Nuvalent",
+      "ticker": "",
+      "sector": "生技製藥",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "Nuvalent被GSK以106億美元收購，其股價飆升，顯示市場對此交易的正面反應。",
+      "evidence_news": [
+        {
+          "title": "GSK enters agreement to acquire Nuvalent, Inc.",
+          "source": "GSK",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNb2l3V2tURVZWc3M3RDlXdXVVYi1WRHZ3THhKaXdjQmt3OGpodU1ZZKotZnhoNmJYV1d0SVYyUy0tUlN6cUZOeU8wQkVBQlFHQnpuTy1CTGFGVnBwUW5GOFlHWmktQkEtSGRmcmdHTXdyR3FPVWNaUUVYZjhqbTY1MURvcDJobVJvRWRZSzJuR3pLTmRjX19Z?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-10"
     }
   ],
   "future_trends": [
-    "AI伺服器需求增長",
-    "太空探索與軌道AI運算",
-    "能源儲存技術"
+    "屋頂光電",
+    "檔案管理數位治理與智慧服務",
+    "資料通訊業務",
+    "AI衛星運算"
   ],
-  "sunset_industries": [
-    "電動車銷售放緩"
-  ]
+  "sunset_industries": []
 }

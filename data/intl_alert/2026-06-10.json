@@ -1,6 +1,6 @@
 {
   "report_date": "2026-06-10",
-  "as_of": "2026-06-10 06:25 UTC (Yahoo Finance)",
+  "as_of": "2026-06-10 10:50 UTC (Yahoo Finance)",
   "threshold": -1.5,
   "quotes": {
     "^GSPC": {
@@ -43,27 +43,27 @@
       "name": "韓股 KOSPI",
       "group": "亞股",
       "lead_type": "同步連動",
-      "last": 7649.66,
+      "last": 7730.82,
       "prev": 8801.49,
-      "change_pct": -13.09,
+      "change_pct": -12.16,
       "is_drop": true
     },
     "ES=F": {
       "name": "標普 500 期貨",
       "group": "美股期貨",
       "lead_type": "盤前即時",
-      "last": 7372.0,
+      "last": 7340.0,
       "prev": 7400.5,
-      "change_pct": -0.39,
+      "change_pct": -0.82,
       "is_drop": false
     },
     "NQ=F": {
       "name": "那斯達克 100 期貨",
       "group": "美股期貨",
       "lead_type": "盤前即時",
-      "last": 28973.5,
+      "last": 28798.75,
       "prev": 29026.5,
-      "change_pct": -0.18,
+      "change_pct": -0.78,
       "is_drop": false
     },
     "^TNX": {
@@ -79,9 +79,9 @@
       "name": "美元指數",
       "group": "債匯",
       "lead_type": "",
-      "last": 99.86,
+      "last": 99.9,
       "prev": 100.07,
-      "change_pct": -0.21,
+      "change_pct": -0.17,
       "is_drop": false
     }
   },
@@ -89,7 +89,7 @@
     {
       "symbol": "^KS11",
       "name": "韓股 KOSPI",
-      "change_pct": -13.09,
+      "change_pct": -12.16,
       "lead_type": "同步連動"
     },
     {
@@ -112,14 +112,67 @@
     }
   ],
   "alert_level": "警戒",
-  "summary": "⚠️ AI 解讀暫時無法取得(配額/網路),以下為真實報價偵測到的大跌 4 項。",
-  "interpretation": [],
+  "summary": "美股主要指數及費城半導體指數隔夜大幅下跌，韓股KOSPI同步重挫，主因中東局勢升溫引發通膨擔憂，加上AI概念股賣壓湧現，預期今日台股將面臨顯著下行壓力。",
+  "interpretation": [
+    {
+      "market": "美股",
+      "cause": "中東局勢升溫，美國對伊朗發動打擊，導致油價上漲，加劇通膨擔憂，市場對聯準會升息預期增強。此外，科技股和AI概念股出現獲利了結賣壓。",
+      "evidence_news": [
+        {
+          "title": "今日股市 (2026年6月10日)：標普500期貨下跌，美國與伊朗衝突升級，油價上漲",
+          "source": "thestreet.com",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbDVqZGVRTE5yZlFPdlphNXlUT2FVNnNaT201Z1pNTVdnb25TLXNKSWwwXzBmYW5RcjJvcVkxU1g0Q3R6Z0lEQUx0d2I5QUg5MWlEMVo0UkxvOGgwVFRNVk9xNjhqYXZrMVB6WnhnWjM4VGxTM0VkUWkxTzlubVU5Vm11WTB1RXNKQU5ESVBGdEpFWWJ4SnpFVEMycHFHTXdQYk0zYUV2Y2JuNkha?oc=5"
+        },
+        {
+          "title": "中東局勢又變天、晶片股重挫！美股盤中齊跳水 那指一度挫逾4%",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBOUC0xNmNPWkR0dzlhRDFVUGo4MXJXdlNITzd5Sk9HZEVYNFdCekU4RVhtaHBFSTJmUmNZSFNSRnlBTUptYmg0MFJwd pakketRk0?oc=5"
+        }
+      ]
+    },
+    {
+      "market": "半導體類股",
+      "cause": "AI概念股過熱擔憂引發賣壓，導致費城半導體指數大幅下跌。光通訊和晶片股也受到衝擊。",
+      "evidence_news": [
+        {
+          "title": "AI概念股領跌 日股收黑",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606100219.aspx"
+        },
+        {
+          "title": "AI晶片股拋售，科技股漲勢逆轉",
+          "source": "Gotrade",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPNmllYnNJaFpHX0xQQ3ozYkxvb3I0NzZvQjZVa1lNVDg2bXVGMV9OWUhXNUtrZnhySEU4TVpNRjFrQkJsQklESHphS3pvTVV1ZUJvVC0yX0RXSi1YamxEdkZvdDRURjhaRW5UZE5EX2JBOG1QMmlDVkRMeWlrNVBoVTBPREQ?oc=5"
+        }
+      ]
+    },
+    {
+      "market": "韓股 KOSPI",
+      "cause": "受美股科技股賣壓及獲利了結影響，KOSPI指數劇烈震盪並大幅下跌，其中三星和SK海力士等晶片巨頭成為重災區，外資持續賣超。",
+      "evidence_news": [
+        {
+          "title": "韓股：KOSPI再現劇烈震盪，週三急跌4.52%，三星、SK海力士成重災區",
+          "source": "富聯網",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZGgyS3pUTFVHNVA5czRnVG1qaUMtQXFJaGxmaWxDT2ttd2d6bkhERDV4WGtMSjZiREktNWw3YkxlZ2ZCRUo1bE1vcW1malNNM21rZy1jZlFWU0xRNEEwRU5DeEJIU2FyX1JaSDFUNXgxa082dU5UclFSLVlHMlFhQXpFMy1EWjlv?oc=5"
+        },
+        {
+          "title": "外資賣盤推動韓國股市走低，晶片巨頭暴跌 - CHOSUNBIZ",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNTEZ4aUtheHlCSTN2dVRLaVBhTThvWVpkNGcwUlVPeV9RdURsWElNZnJHTTR3SnpDN1J2UERjZVhpTjNZTUZJcTI5TjhYUHM4T2M2MC1pVE16WENHcXduVDQ3clVaMXJlS0FjV1YteDhvMndLU2NWU3huYS0taGJtZtIBlAFBVV95cUxOQ1V1RHdBeXZQbnFQLWNxWW5SZ0t5SjNENzZFUXpCaWI5UWQ3QW5YbWxXMlRZNFRVNEZXUkx0UjhtSDJ5S2pnUFFWTWw1N3J6X19JMkIwZ04wSlR5WjNvdlNTMF9Xd184VTNnZ19ueURSZDdkdVNaTTc3ai1xMW1qRzJ6dUtGMDBTaDlLeHNYSU9LZXlT?oc=5"
+        }
+      ]
+    }
+  ],
   "tw_impact": {
-    "direction": "中性",
-    "reason": "",
-    "sectors": []
+    "direction": "偏空",
+    "reason": "隔夜美股（特別是那斯達克和費城半導體指數）及韓股KOSPI均出現大幅下跌，顯示全球科技股及半導體產業遭遇強勁賣壓。美股作為台股隔夜領先指標，其重挫將直接影響台股開盤情緒。韓股與台股在半導體產業的連動性高，KOSPI的暴跌預示台股半導體類股可能同步承壓。中東地緣政治風險升溫引發的通膨擔憂，也可能影響全球資金流向，對風險性資產造成壓力。",
+    "sectors": [
+      "半導體",
+      "電子",
+      "AI概念股"
+    ]
   },
-  "ai_ok": false,
+  "ai_ok": true,
   "upcoming_events": [
     {
       "id": "window-2026-06",
@@ -154,76 +207,196 @@
   ],
   "raw_news": [
     {
+      "title": "台股重挫1400點！外資續砍935億元 買賣超前10個股一次看",
+      "source": "ETtoday財經雲",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4yOU1qZmI4ZWxSbzZQeWt1UTRnalBfT2NCWEp5QnhkWFYzeTJ0NDhFanVvLXZmb2xnZS1Hd0o2emlzcERoWXNKa0M5Ymc1a1BEb0HSAW5BVV95cUxPS1hoN3BVRGdxNXpNVHNsT3J2b2lVcVNsU2xfZGdObWo4TENuVjA3cTNaQzhkRlpnRzlYLXFRSXdKUkM3WjA4cmRZbWdUM3N3bE1GbkczLW9OWi1nM3BDck5LbGlRNjJfUVE3TEJmUQ?oc=5",
+      "summary": "台股重挫1400點！外資續砍935億元 買賣超前10個股一次看 ETtoday財經雲",
+      "published": "2026-06-10T09:41:00+00:00",
+      "origin": "關鍵字「美股 大跌 重挫」"
+    },
+    {
+      "title": "能源署：屋頂光電新制8月上路 須抗17級陣風",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100265.aspx",
+      "summary": "（中央社記者謝怡璇台北10日電）大型新建物強制設置屋頂光電政策8月1日起上路。能源署表示，已提升屋頂型光電設置標準可抗17級陣風，在建照規劃時也須將光電設置納入其中，並規範每2年須檢驗，強化用電韌性及安全。",
+      "published": "2026-06-10T09:00:50+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "外資減碼熱門主動式ETF 5天大賣台股逾4300億元",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100262.aspx",
+      "summary": "（中央社記者曾仁凱台北10日電）科技股賣壓湧現，台股集中市場指數今天以全日最低點作收，終場下跌1478.90點，收43225.54點，失守月線約43349點，創史上第6大收盤跌點，成交值約新台幣1兆3240.93億元；三大法人合計賣超1173.64億元。",
+      "published": "2026-06-10T08:51:43+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "和泰車5月和前5月營收創同期高 日系車銷售助攻",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100259.aspx",
+      "summary": "（中央社記者鍾榮峰台北10日電）和泰車今天下午公布5月自結合併營收新台幣278.15億元，較2025年同期成長13.34%，創同期新高；累計前5月自結營收1285.96億元，年增7.31%，也創同期新高。",
+      "published": "2026-06-10T08:48:37+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "新青安2.0利息補貼2碼 擬規劃分年減碼、第7年退場",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100255.aspx",
+      "summary": "（中央社記者呂晏慈台北10日電）新青安2.0將於6月底出爐，外界關心公股行庫是否繼續利息補貼、以及5年寬限期等面向。行庫主管今天透露，利率補貼可能採逐年退場，前3年維持政府及公股銀共2碼補貼，之後分4年逐年減少半碼，也就是說，利息補貼會在第7年退場，不過仍待拍板。",
+      "published": "2026-06-10T08:36:28+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "Uber One會員方案漲價 月訂閱120元調升至199元",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100244.aspx",
+      "summary": "（中央社記者江明晏台北10日電）Uber今天宣布，UberOne會員方案更新，出國也能享會員福利，並同步調整方案價格，既有會員則自7月13日後，月訂閱費用將由新台幣120元調整為199元，年訂閱則由新台幣1200元調整為1990元，漲價幅度約65%；Uber強調，漲價是因應新增福利，與外送專法無關。",
+      "published": "2026-06-10T08:16:05+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "NCC：廣電媒體新聞涉AI生成內容 應清楚揭露全程標示",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100242.aspx",
+      "summary": "（中央社記者趙敏雅台北10日電）國家通訊傳播委員會（NCC）今天通過「廣電媒體製播新聞應用AI指引」，提供廣電媒體製播新聞導入AI時，作為建立自律規範的參考基準。NCC強調，新聞內容若涉及AI生成內容，揭露標示應明顯可辨識，並全程清楚標示。",
+      "published": "2026-06-10T08:12:00+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "專家：中國挾持需求鏈實力 牽制澳洲礦物產業",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/aopl/202606100241.aspx",
+      "summary": "（中央社記者丘德真雪梨10日專電）澳洲戰略政策研究所（ASPI）國安研究計畫主任柯尼（John Coyne）表示，正當澳洲致力建構供應鏈安全以維護國家韌性的同時，中國正挾持其「需求鏈實力」（power of the demand chain）塑造對其有利的市場環境，進而牽制攸關澳洲經濟命脈的礦物產業。",
+      "published": "2026-06-10T08:10:58+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "新台幣貶5分 收31.668元",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100238.aspx",
+      "summary": "（中央社台北10日電）台北外匯市場新台幣兌美元今天收盤收31.668元，貶5分，成交金額25.56億美元。",
+      "published": "2026-06-10T08:07:52+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "金管會研議調高注意股門檻 縮短處置股「關禁閉」時間",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100237.aspx",
+      "summary": "（中央社記者蘇思云台北10日電）高價股聯發科日前交易情形觸及證交所異常定義遭到「關禁閉」處置，引發討論，根據金管會檢討報告指出，考量近年台灣資本市場規模持續成長，有關公告股票注意與處置標準，應配合市場結構變化做適度檢討，金管會將督導證交所及櫃買中心配合股價調升幅度，評估規劃合理的公布注意股票警示標準，同時，評估縮短處置期的可行性。",
+      "published": "2026-06-10T08:05:50+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "AI時代檔案價值升級 葉俊顯：讓檔案成全民知識資產",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100229.aspx",
+      "summary": "（中央社記者潘姿羽台北10日電）國家檔案館今天起舉辦為期2日的「檔案管理數位治理與智慧服務國際研討會」，邀請美加專家發表專題演講，探討AI時代下的檔案應用。國發會主委葉俊顯表示，希望透過新興科技擘畫未來發展藍圖，讓檔案成為人人觸手可及的知識資產。",
+      "published": "2026-06-10T07:41:32+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "AI概念股領跌 日股收黑",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100219.aspx",
+      "summary": "（中央社東京10日綜合外電報導）市場擔憂人工智慧（AI）概念股過熱，包括軟銀集團（SoftBank）等個股走弱，東京股市今天下跌。在重要通膨數據公布前，投資人對於美國經濟前景日趨謹慎，也影響市場氣氛。",
+      "published": "2026-06-10T07:18:11+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "三大法人賣超1173億 外資砍935億史上第8大",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100218.aspx",
+      "summary": "（中央社台北10日電）台股今天跌1478.9點，收在43225.54點，成交值新台幣1兆3240.93億元。三大法人外資及陸資賣超、投信買超、自營商賣超，合計賣超1173.64億元。",
+      "published": "2026-06-10T07:17:09+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "韓股：KOSPI再現劇烈震盪，週三急跌4.52%，三星、SK海力士成重災區",
+      "source": "富聯網",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZGgyS3pUTFVHNVA5czRnVG1qaUMtQXFJaGxmaWxDT2ttd2d6bkhERDV4WGtMSjZiREktNWw3YkxlZ2ZCRUo1bE1vcW1malNNM21rZy1jZlFWU0xRNEEwRU5DeEJIU2FyX1JaSDFUNXgxa082dU5UclFSLVlHMlFhQXpFMy1EWjlv?oc=5",
+      "summary": "韓股：KOSPI再現劇烈震盪，週三急跌4.52%，三星、SK海力士成重災區 富聯網",
+      "published": "2026-06-10T07:09:00+00:00",
+      "origin": "關鍵字「韓股 KOSPI 三星」"
+    },
+    {
+      "title": "公會：5月機械出口值創新高 電子設備寫新猷助攻",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100199.aspx",
+      "summary": "（中央社記者鍾榮峰台北10日電）台灣機械工業同業公會今天下午公布5月機械出口值35.01億美元，創歷史單月新高，連續16個月正成長，其中電子設備5月單月出口7.19億美元，也創單月新高；工具機出口1.94億美元，出口金額與主要出口市場逐漸轉正，機械公會預期工具機下半年市況優於上半年。",
+      "published": "2026-06-10T06:50:29+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "台銀人壽虧損引關注 凌忠嫄：商品優化提高投資績效",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100195.aspx",
+      "summary": "（中央社記者呂晏慈台北10日電）台灣金控獲利穩定，但旗下台銀人壽經常虧損，引發立委關注。台灣金控董事長凌忠嫄今天說，台銀人壽承受歷史包袱及近年市場劇烈波動，盼推動商品優化、提高財務投資績效、內部系統改進，以及風險控管。",
+      "published": "2026-06-10T06:46:20+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "台股重挫1478點 收最低43225點失守月線",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100194.aspx",
+      "summary": "（中央社記者曾仁凱、何秀玲台北10日電）科技股賣壓湧現，台股今天承壓，午盤過後急殺，集中市場指數以全日最低點作收，下跌1478.90點，收在43225.54點，失守月線約43349點，創史上第6大收盤跌點，昨天強彈1201點，今天全數沒收。成交值約新台幣1兆3240億元。",
+      "published": "2026-06-10T06:43:18+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "美伊戰事未歇 富裕國家石油庫存降至23年低點",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/aopl/202606100187.aspx",
+      "summary": "（中央社華盛頓9日綜合外電報導）美國能源部預測部門今天表示，全球最富裕國家石油庫存已降至美國前總統小布希（George W. Bush）執政期間以來最低水準。",
+      "published": "2026-06-10T06:31:03+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "北市鄭州路人行道塌陷變電箱倒 台電：未造成停電",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100186.aspx",
+      "summary": "（中央社記者謝怡璇台北10日電）台北市鄭州路一處人行道今天上午塌陷，上頭變電箱連帶倒塌。台電表示，變電箱傾斜並未造成用戶停電，由於道路下方土壤流失嚴重，形成坑洞，導致變壓器地基支撐不足而陷落，已動員人力搶修。",
+      "published": "2026-06-10T06:29:01+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "福八齊柏林衛星新取像 桃園航空城、淡江大橋入鏡",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/ait/202606100181.aspx",
+      "summary": "（中央社記者趙敏雅台北10日電）台灣第一個自製衛星星系「福衛八號」首顆齊柏林衛星去年11月升空入軌，今年1月展開正式取像任務。國家太空中心今天公開15張拍攝台灣的影像，台北港與淡江大橋、桃園航空城、清水斷崖及九棚國家發射場域基地等入鏡，讓民眾一起看見台灣。",
+      "published": "2026-06-10T06:15:50+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "6月電子期金融期齊跌",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100178.aspx",
+      "summary": "（中央社台北10日電）台北股市今天下跌1478.9點，收43225.54點。6月電子期收2799.9點，下跌91.05點，正價差20.31點；6月金融期收2978.6點，下跌41.2點，正價差13.55點。",
+      "published": "2026-06-10T06:12:44+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "貿聯-KY擬投資284億 收購Interplex資料通訊業務",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606100177.aspx",
+      "summary": "（中央社記者曾仁凱台北10日電）連接線大廠貿聯-KY今天暫停交易，下午台股收盤後隨即召開重大訊息記者會，宣布董事會決議與Blackstone（黑石）及其附屬公司所管理的基金投資公司簽署股份買賣協議，以現金收購Interplex集團的資料通訊業務Interplex Datacom。",
+      "published": "2026-06-10T06:12:42+00:00",
+      "origin": "中央社 財經"
+    },
+    {
       "title": "收盤／美股反彈迅速熄火！台股重挫1478點 AI指標股全面倒地",
       "source": "三立新聞網SETN.com",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE10UWpJbXROemU1Zmh4bF93LVVBYjYybUIzN0JwUXNiTFhkc1lCZHZDYVJjVkxqaW92UFN0Mi1iQ0ROeDZ6Y3N1ZkhzUEVrck9UX1FiQUZDeU3SAV9BVV95cUxQR1Fkc2EzdXRFMHRRdjVCSXBRRVVJd19wc01wZjVJczdRUG8yLTBpeFV3ekF4ZHVkOW9MYmY5N0lybXJFa0sybGxDRG8zUkhIY1RGamJGQldjNENHUkpUbw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE13WkpRZkhtQ2pNbjQtNFhVQ0t3NjF5Q2VlSUxjMUxvbk5oNC1JWkp5QTdmSDJzSkZMUmZtZFhVQ3NaTS1aeVduS3g2SQ?oc=5",
       "summary": "收盤／美股反彈迅速熄火！台股重挫1478點 AI指標股全面倒地 三立新聞網SETN.com",
-      "published": "2026-06-10T05:50:00+00:00",
+      "published": "2026-06-10T05:51:20+00:00",
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
-      "title": "美股暴跌台股開盤重挫！雖過熱但非泡沫，法人：落底看4大指標－中央社",
-      "source": "商周",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBndklmNFU4V2doZm5xd0xOeUcxVGVYanl1cTJMZUNpTXA0WVZLaXBwSXdNLUtLb2hSZ1d5c3dKMURnenRzWkRtalN4NGc4cnUtTWdmT2pqZFVvOXRNVkhKaUxlYkxzZw?oc=5",
-      "summary": "美股暴跌台股開盤重挫！雖過熱但非泡沫，法人：落底看4大指標－中央社 商周",
-      "published": "2026-06-10T05:46:15+00:00",
+      "title": "台指期昨晚一度暴跌逾2千點！台股受驚重挫1478點 史上第六慘",
+      "source": "PChome Online 新聞",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVXAzUFFIQWhoN3JpVzNQY29WNDlsS2JSSmlnQk5IMksxYks1RVJHMUVWMTk2bFJ0ZnpoTDJPNzBxa093TnFzbnRtWG12WGFUODJBSlVDUFdCX0VOTG80YWxwR2w5b0JDeldyWHlwTjhYaW8yNmwxc0RQaFBSMF9QMWxqNzdKZlA3eDZZ?oc=5",
+      "summary": "台指期昨晚一度暴跌逾2千點！台股受驚重挫1478點 史上第六慘 PChome Online 新聞",
+      "published": "2026-06-10T05:46:27+00:00",
       "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "3國主辦世足賽將登場 製鞋股6月勁揚",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100155.aspx",
-      "summary": "（中央社記者潘智義台北10日電）史上首次由美國、加拿大與墨西哥3國聯合舉辦的世界盃足球賽即將登場，參賽隊伍由32隊增至48隊，利多題材帶動製鞋股漲勢，豐泰今天盤中高點93.5元，勁揚逾8%，6月以來大漲33%；來億-KY最高達285.5元，漲逾4%，6月以來漲幅高達70%。",
-      "published": "2026-06-10T05:23:55+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "瞄準AI走向實體世界商機 凱鈺推出首款人形機器人",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100152.aspx",
-      "summary": "（中央社記者張建中新竹10日電）凱鈺今天宣布，推出首款人形機器人，跨足具身智能領域，瞄準人工智慧（AI）正加速走向實體世界的商機，期能為未來營運注入成長新動能。",
-      "published": "2026-06-10T05:18:48+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "半導體廢水再生新契機 台大提出電驅動分離濃縮技術",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100139.aspx",
-      "summary": "（中央社記者趙敏雅台北10日電）台灣半導體產業高度依賴水資源，製程產生的含氟廢水因處理與再利用困難，長期被視為高成本、高負荷的棘手問題。台灣大學團隊提出電驅動分離濃縮技術，使難以利用的低濃度含氟廢水轉為可再利用的循環資源，也有助降低半導體廢水再生處理成本。",
-      "published": "2026-06-10T04:50:18+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "逾100億美元關稅待退 美法官敦促川普政府加速處理",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606100137.aspx",
-      "summary": "（中央社紐約9日綜合外電報導）美國國際貿易法庭（Court of International Trade）法官今天敦促川普政府，加快退還逾100億美元已徵收但後來遭最高法院裁定違法的關稅款項，但未進一步發布強制執行的新命令。",
-      "published": "2026-06-10T04:45:14+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "航運業者：5月貨櫃市況增溫 燃油附加費擬逐月調",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100135.aspx",
-      "summary": "（中央社記者江明晏台北10日電）貨攬業者台驊表示，5月貨櫃航運市場較第1季明顯改善，遠洋航線需求回溫、旺季前備貨需求增加，6月歐美線運價上揚。中菲行指出，部分企業持續提前安排出貨，帶動海運運價，主要船公司已將燃油附加費調整頻率，由每季1次提高至每月1次。",
-      "published": "2026-06-10T04:41:10+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "傳銀行向台積電調頭寸 楊金龍：有聽聞、覺得很納悶",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100130.aspx",
-      "summary": "（中央社記者潘姿羽台北10日電）台股強勢上漲，不只促成全民投資熱潮，還接連衍生「四貸同堂」、央行定存單不足額發行等現象。立委質詢時指出，市場傳聞有銀行跟台積電借錢，央行總裁楊金龍表示，他確實有聽聞此事，「我也覺得很納悶」。",
-      "published": "2026-06-10T04:29:59+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "日媒：Rapidus布局歐洲 擬與英義研發晶片",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606100128.aspx",
-      "summary": "（中央社東京10日綜合外電報導）「讀賣新聞」今天引述數名消息人士披露，配合日本首相高市早苗本月13日起訪問英國與義大利，日本晶片製造商Rapidus將分別與英、義的公部門機關簽署研發合作的備忘錄。",
-      "published": "2026-06-10T04:26:55+00:00",
-      "origin": "中央社 財經"
     },
     {
       "title": "光通訊股暴跌真相曝！SemiAnalysis看衰CPO時程、輝達卻喊話全面採用",
@@ -234,84 +407,12 @@
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
-      "title": "新台幣午盤貶4.7分 暫收31.665元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100119.aspx",
-      "summary": "（中央社台北10日電）台北外匯市場新台幣兌美元今天中午暫收31.665元，貶4.7分，成交金額9.52億美元。",
-      "published": "2026-06-10T04:12:36+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "談預防性升息 楊金龍：通膨預期不嚴重但會上修CPI預測",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100100.aspx",
-      "summary": "（中央社記者潘姿羽台北10日電）主計總處公布5月消費者物價指數（CPI）漲幅突破2%，引發外界對於通膨的擔憂，並關注有無預防性升息的必要性。央行總裁楊金龍表示，中東戰事時間比預期久，央行可能因此上修CPI預測值，不過目前為止，台灣沒有輸入性通膨。",
-      "published": "2026-06-10T03:43:55+00:00",
-      "origin": "中央社 財經"
-    },
-    {
       "title": "美股週二大跌誰表現最好？光通訊、晶片股重挫：解析背後關鍵個股",
       "source": "news.cnyes.com",
       "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE50Y3RUWGJJVE05b1dNUjYxb3o5TzJMNW5ibElnV3Z3b0NILWpOcnJQZHZVMXp5V1IyWE1GNWFscWVHTUlNMEkwdmMxZXllWkk?oc=5",
       "summary": "美股週二大跌誰表現最好？光通訊、晶片股重挫：解析背後關鍵個股 news.cnyes.com",
       "published": "2026-06-10T03:40:06+00:00",
       "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "新青安2.0婚育家庭貸款額度加碼？莊翠雲：方向可考慮",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100098.aspx",
-      "summary": "（中央社記者呂晏慈台北10日電）財政部預計6月底前公布新青安2.0政策，立委盼提高婚育家庭貸款額度至新台幣1200萬元或1500萬元。財政部長莊翠雲今天說，婚育家庭需要的房屋面積比較大，是可以考慮的方向，會納入參考。",
-      "published": "2026-06-10T03:39:51+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "錢進台股「四貸同堂」恐系統性風險？楊金龍：還很遠",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100075.aspx",
-      "summary": "（中央社記者潘姿羽台北10日電）台股投資熱潮，近期市場探討「四貸同堂」現象，立委質疑恐有系統性風險疑慮。對此中央銀行總裁楊金龍今天表示，金流流向股市的速度，確實比以往來得快，金管會也持續密切關注中，但他個人認為當前「離系統性風險還很遠」。",
-      "published": "2026-06-10T03:10:02+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "權值股疲弱 台股盤中跌逾700點回測44000點大關",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100066.aspx",
-      "summary": "（中央社記者曾仁凱台北10日電）美國科技股反彈曇花一現，費城半導體指數週二盤中震盪劇烈，終場下跌近2%，台股今天承壓，盤中最多下跌逾700點，失守44000點大關。至10時30分，集中市場指數下跌554.56點，報44149.88點，成交值約新台幣6107億元。",
-      "published": "2026-06-10T02:55:43+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "財部預告投資總額逾3億元勞工育樂機構 納重大公建",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100056.aspx",
-      "summary": "（中央社記者呂晏慈台北10日電）為鼓勵民間參與興建營運勞工育樂機構，以增進勞工福祉，財政部預告增列投資總額不含土地逾新台幣3億元的勞工育樂機構及其設施，為促進民間參與公共建設法的重大公共建設範圍，可享相關租稅優惠。",
-      "published": "2026-06-10T02:37:22+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "美超微將啟動70億美元融資計畫 滿足AI伺服器需求",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ait/202606100048.aspx",
-      "summary": "（中央社加州矽谷9日綜合外電報導）美超微電腦公司（Super Micro Computer）今天指出，將透過一系列股票及股權相關融資交易籌集70億美元以採購零組件，滿足市場對其先進人工智慧（AI）伺服器日益增長的需求。",
-      "published": "2026-06-10T02:18:05+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "台積電磁吸效應 解密日本全球光阻劑大廠JSR來台戰略",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100047.aspx",
-      "summary": "（中央社記者張建中台北10日電）當AI巨浪加速半導體先進製程迭代，國際材料巨頭若不與台積電即時「共同研發」，將面臨落隊風險已是不爭事實。向來保守的日本材料大廠JSR大舉擴大在台投資，背後不僅是台積電1年560億美元資本支出的磁吸效應，更是美日台鐵三角生態系不可逆的本土化戰略。",
-      "published": "2026-06-10T02:14:02+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "央行無意加強房市管控 楊金龍：選擇性信用管制就到這裡",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100045.aspx",
-      "summary": "（中央社記者潘姿羽台北10日電）中央銀行將於6月18日召開理監事會議，外界關注利率決策與房市管制動向，不過央行總裁楊金龍今天提前給出態度，「選擇性信用管制就到這裡」，意即央行現階段沒有加碼信用管制的規劃。",
-      "published": "2026-06-10T02:07:58+00:00",
-      "origin": "中央社 財經"
     },
     {
       "title": "台股盤前／費半重挫近2%！台指夜盤殺799點 台股反彈行情恐受阻",
@@ -322,30 +423,6 @@
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
-      "title": "美國科技股再現拋售潮 台股開盤下跌逾500點",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100037.aspx",
-      "summary": "（中央社記者曾仁凱台北10日電）美國科技股再現拋售潮，週二費城半導體指數盤中重挫逾8%，台指期夜盤跟著下殺，收盤跌幅收斂。台股今天開盤面臨承壓，早盤最多下跌逾500點。至9時5分，台股加權指數下跌280.46點，至44423.98點。代表中小型股票的上櫃指數也開低。",
-      "published": "2026-06-10T01:13:40+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "新台幣開盤貶1.2分 為31.63元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100036.aspx",
-      "summary": "（中央社台北10日電）台北外匯市場新台幣兌美元匯率今天以31.63元開盤，貶1.2分。",
-      "published": "2026-06-10T01:06:38+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "台股開盤跌122.99點",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100035.aspx",
-      "summary": "（中央社台北10日電）台北股市今天開盤跌122.99點，加權股價指數為44581.45點，成交金額新台幣86.09億元。1150610",
-      "published": "2026-06-10T01:03:36+00:00",
-      "origin": "中央社 財經"
-    },
-    {
       "title": "【美股盤前】5月非農強勁引發加息預期！費半重挫10%、市場寬度指標面臨50%保衛戰｜豐雲學堂2026 年 06 月",
       "source": "sinotrade.com.tw",
       "url": "https://news.google.com/rss/articles/CBMi8wNBVV95cUxOY1I5bEY5dDN1NE9hWUZyVHpMb1JqeWhvNlptd1J4RlhxZHcxRzR6aXNxRldaT3EwTHZqOU5kbURrV2NEV0YzRFZOY2ZkT05Tb0lXSXJMRXFHUS1ZMmFTZy1ZTDZJMnE0U2RVNUJmekkzMUJJVzZsajlTaTZsZEZLVkhOYlh6b3J5b21acUhFWVVIc3hWY2ZtZGRzR1pMWmVVT0dPM244bDNFR1Y4cWREcURRU1VHV0hELVRNam8zaWpaNEw4SkQ3WTUwa2tQbElJRjF1RFBNQm1wbHk4c1I5YmFzQmJKcHk5SHdxOUc5WGNnUmZhQTdLdFFoNm5kTzgxd1BHTHpsU19mbm1ieEJRUlNtbGNubF9KUzNONlBVa2NJZWtCVDNZckVBMEVBT1F3bHdwNk1xQVhZNUJpek1zVW9EVmxldWFtRy04TmxtaE4zRFoxUENyVWdwbFNCVDFjVHNvRUtwTkFXUXdBQVdaZVc0YUpXVXJ6RW5iNXUyU2t1U1BsUWM1RHhPdnMwWWtfZE5QRUFEN3FOSHQ1ZVp0MWZMNGZFWkJzMDNzLV9JT2JRUGoxZXowZEx2eGZ0dlBXb1ptVGhISUF6dzB5dkZSMWlCUUM2WVphRXR2VEhzcWNKMWlzWEUtMEo5TF95bWR4SWVZ?oc=5",
@@ -354,27 +431,11 @@
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
-      "title": "力積電發行GDS籌資8.86億美元 買設備和導入新技術",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606100029.aspx",
-      "summary": "（中央社記者張建中新竹10日電）晶圓代工廠力積電完成海外存託憑證（GDS）訂價，每單位31.65美元，籌得8.86億美元，將用以購置機器設備、導入新技術，以強化國際競爭力。",
-      "published": "2026-06-10T00:42:23+00:00",
-      "origin": "中央社 財經"
-    },
-    {
       "title": "美股科技股盤中重挫 那斯達克曾跌2% 美元兌日圓飆上160大關",
       "source": "Yahoo股市",
       "url": "https://news.google.com/rss/articles/CBMigwNBVV95cUxOQUlJTEFpRmN5c202Wm13NU1ObmU5QUlpcWZMajNWeHRmRGVBNlFZWkhPaHpmTWp2TERQT2w4UDNLUmVvekQtRC11QWNINGMtSDBobTVKbXNIQWM1MDZvaHRvemVYcERjNU5zMG5EVWVHUWpxQUVqcGR0SmFhOEJvcnhLT2lYbzBpWk5JX1BMOE9iUHU4LTlXN2ZuMnhNN3FBWnFoU3dhWndHc19pVzhZa2NkRHU2TjNfcEFsLWRCTVlPZEFSVmdPUFRvQTFxai0xazBobVJZd2k4bHh2dE9wMkxVbUR2RmlRcUhzY2ZXUXN4T1llSWFMVDkzLUttUVUxempraDJYSnR1MUhPektxYm9FdnAydm9QbkRlRERMcUZzNkt6UVdTTjc1MlM4d1hoNi1sSFR2YkV1RXoxVlFfQXljdzcwZHpMNEtPM1M5M3ppTVE1cGtTanFQTUVmQ2lXOFJZcE9EYWROMXV3WFMwYVFKSWJGU3RJZmdxcU9kdkgxTkE?oc=5",
       "summary": "美股科技股盤中重挫 那斯達克曾跌2% 美元兌日圓飆上160大關 Yahoo股市",
       "published": "2026-06-10T00:28:01+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "晶片股反彈熄火，台指期夜盤重挫，今日恐面臨修正壓力",
-      "source": "鏈新聞 ABMedia",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5OZEROQ3JZSTg3MnROdmIyU1ZYV1JnOHBWZFFxQ3poS05NeUpoLUliNzhwZG1BTzAtYno1WDBmLWVZcWd2ZkpTdFpGZDViaXBxRW1jaTZBc09jZ0U1VzNGTHh1Yw?oc=5",
-      "summary": "晶片股反彈熄火，台指期夜盤重挫，今日恐面臨修正壓力 鏈新聞 ABMedia",
-      "published": "2026-06-10T00:07:06+00:00",
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
@@ -394,19 +455,11 @@
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
-      "title": "SpaceX IPO吸走資金？不安情緒瀰漫 科技股跌勢加劇",
-      "source": "news.cnyes.com",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1NeWtYUkNCU00wSi0wbFVqaUxxWXhoRmZGMUVfdlJzVWVxVVJiakljRnNWRjM1RzJ5YmJWVnA0M2Qzd2gyVFlFcmo1aktsZ3M?oc=5",
-      "summary": "SpaceX IPO吸走資金？不安情緒瀰漫 科技股跌勢加劇 news.cnyes.com",
-      "published": "2026-06-09T22:20:17+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "美超微突啟動「混合增資」計畫 股價重挫逾7% 盤後再跌",
-      "source": "news.cnyes.com",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA3V1FqWld3V0ZqSFFDRDlrRVYyS29MVVVoY0NPS0liRVBfWFZTLWN0Mm1iOTRZeHE1S0Q4alkyNGFJcEFTSWJvY2ZuMXpZaFE?oc=5",
-      "summary": "美超微突啟動「混合增資」計畫 股價重挫逾7% 盤後再跌 news.cnyes.com",
-      "published": "2026-06-09T22:12:13+00:00",
+      "title": "法人大砍1173億！電子權值股重挫 指數狂殺1479點失守月線",
+      "source": "知新聞",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBHSXUyNXhvRW1RQ1Z5UzJGdEp5U1NTM1ZieVptMy1aRjBwNXdzem02SmJzc2lVNHFrSnNVejBTVklhQ01WcjNVdmtKR3pLbTlYZFRlN2NXRGI0RnpaODQ4b05RSi1qNWl1dFgxNVNFZw?oc=5",
+      "summary": "法人大砍1173億！電子權值股重挫 指數狂殺1479點失守月線 知新聞",
+      "published": "2026-06-09T22:36:00+00:00",
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
@@ -450,20 +503,12 @@
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
-      "title": "AI股賣壓湧現 台股重挫近2700點 台幣貶破31.6元關卡",
-      "source": "zmedia.com.tw",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1fazVkc3lYeHk3ekZXaFI5X25OY1pjRGlkVzZSSGRWRl9oZ3ZDY1A3TmZWVHB0T2VvYld2eWJyRmd2NGIydDF4YkVxQTVVTDJIaHFWN1pnRWE5TDBrMVl3Rw?oc=5",
-      "summary": "AI股賣壓湧現 台股重挫近2700點 台幣貶破31.6元關卡 zmedia.com.tw",
-      "published": "2026-06-09T10:12:42+00:00",
+      "title": "台股大漲1200點 分析師：昨日重挫「一日行情」",
+      "source": "經濟日報",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE16bDE4Sjc2d25PNWZza2s0RExsLWpqT1Y4enpaZW9hWGlVRDFuRjM2N0thUWFucUUybm1pdHIxaVdTaGs1S0xfUlJUX0tCaUs5UW4zVUpScFJUd9IBX0FVX3lxTFBVZnlELUpHdnFqMWhpLTJUX3o0bUFKOTFJXzhOUmdaMm1pQ3loeHhiR1VFQVVZS0dDNnpoXzdNanhEU1pVdXZLWEZaeTd2MUZVLWhQcUJnVlBwdXY4Y0hN?oc=5",
+      "summary": "台股大漲1200點 分析師：昨日重挫「一日行情」 經濟日報",
+      "published": "2026-06-09T06:44:01+00:00",
       "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "美股屠殺外溢亞股，KOSPI早盤狂瀉8.37%，三星、SK 海力士遭血洗",
-      "source": "MSN",
-      "url": "https://news.google.com/rss/articles/CBMi_gNBVV95cUxQbk5BTjNZaUgzZnBzMjBfRUQ2UWZYODlpZUV6VkdZeGNKUnBzcUtvX3h4a2xMMUhrc2VQVkFXSUJ6R0JQQzlaeXB4MmpOSjZEYkxTaWo1VHctNjBDMllBYnNJMTRBOUpCZ0R6Ujh4NU1MN0pWS1ZKWWNBNEdETk1qZTZ6YlFCa3huQjVzV0F4WjdUOEhxa3F3U2F2bER4eEhOUHpvWUNadUlJa0tkZ2hiVnBXYnhkejhnd1NUVEF3NXp5eGZVTGlOVVV4eDhLNEwtVEx3WS1fZGRZMEdpZXV6MGtRemdZajU5N3g1R3lfcHBmcmV2UGxJNEJEZkE0Qm9uSndrZ1o2U1RIblVUUXN5bGhuemVtelZPZk9jeUdtZ2hyYVQxZlpOejA2THVYQkhSUmQxZklqNTlySkpwV0pYWE54Y3VZTldMQi03bkdaa01ReGZzWUo0dVoxX0pOVlZtSDNfYy1lUTRfck9hTFYtX1VoNFZuYllZZ0VpRlF4UklmU2g2Q05WRVlZVk1xV0hNSTJtMDNST1RXTXVZb1ZIek45ZUg4eHhTXzBpcnMtdk1Uem9ZN3M2aE9vUnFFb0hmdkxDeDhfSW53dk1TTjYzdEdDZjZYd1V5d0JOdE1VczNBV1V3am1FNDdTYzRLQlA0eG56T0dwWi1uS0pkd3c?oc=5",
-      "summary": "美股屠殺外溢亞股，KOSPI早盤狂瀉8.37%，三星、SK 海力士遭血洗 MSN",
-      "published": "2026-06-09T09:58:06+00:00",
-      "origin": "關鍵字「韓股 KOSPI 三星」"
     },
     {
       "title": "兩大記憶體龍頭帶動韓股強彈 KOSPI指數盤中飆漲逾8%",
@@ -472,6 +517,94 @@
       "summary": "兩大記憶體龍頭帶動韓股強彈 KOSPI指數盤中飆漲逾8% news.cnyes.com",
       "published": "2026-06-09T06:40:05+00:00",
       "origin": "關鍵字「韓股 KOSPI 三星」"
+    },
+    {
+      "title": "【韓國股市】韓股連跌三日後暴力式反彈、KOSPI指數升8% 資金撈底SK海力士、三星電子7709升逾18%",
+      "source": "香港經濟日報HKET",
+      "url": "https://news.google.com/rss/articles/CBMirgRBVV95cUxOTGp3T00yQVBxVUdscUFSczVGcHlLV0ZOVER5U2wyN1VsMzFrS0o3SXVvbHZ6emZ5MHotSDM1VDhZMGgtc1BLbU5WVHl0bzJORFgycG1DQzZ6VTktR1cwWThYMjJ3S3pRSTYwNjAzMldnRGRlUWlfVFZZbEtKR1lubFdJM3Y0MGRxMFNuNjJRQTVNeDg4ZTVjOHEyWF9WcE42TDJ0UXRpc0taWmNvWG1TSFlRTzBnajBFdnIyWlVnWHpUMlM4bnFpa1ROX1dQRHFSbHNxUDVRR1J4RWZfMXNpTG1jemtEeVhvb3UxWmxpTmNONkVNVUdDRHp5NFdacmdtQ3pRSS1ELU1HaFZ4N001MEFUSWdQUmJrTjN0WE94YUJMamlzRE1PNHZQMWl2X3hNcURSSUV1dkpBcm1ScW0takx1SkF6XzlBemd0NU42RHl4MUV6cUxXSnl6MWV2a3R4c0F6OE9Ea2twSXU1djBvYjJHU3Nibks4b1F5bHQ5bG1BbUtoVGRSN1dUbmtBbWJPUTdVLUtQZ2ZZV3h2bVNLUUpQd2ZVbW1EWlRDWFpVZHNkNU4xc3NkVl82R0lKSnFmdm5BYTZfTEVXTHc1ZnB4c2JYLUZPb3dPVWQ4ZEQ3VUF3S0Zzbkpzd2RESEZTWm5NMnlEVDdDcUtJTThwczNPZkh4UU0yTHB0cXFkVDdtZHNnMmdjOGdQbS1LeGtWMzRFaEhzSGI5N251U0dKMHc?oc=5",
+      "summary": "【韓國股市】韓股連跌三日後暴力式反彈、KOSPI指數升8% 資金撈底SK海力士、三星電子7709升逾18% 香港經濟日報HKET",
+      "published": "2026-06-09T06:38:57+00:00",
+      "origin": "關鍵字「韓股 KOSPI 三星」"
+    },
+    {
+      "title": "Stock Market Today (June 10, 2026): S&P 500 Futures Fall, Oil Rises as U.S.-Iran Conflict Escalate",
+      "source": "thestreet.com",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbDVqZGVRTE5yZlFPdlphNXlUT2FVNnNaT201Z1pNTVdnb25TLXNKSWwwXzBmYW5RcjJvcVkxU1g0Q3R6Z0lEQUx0d2I5QUg5MWlEMVo0UkxvOGgwVFRNVk9xNjhqYXZrMVB6WnhnWjM4VGxTM0VkUWkxTzlubVU5Vm11WTB1RXNKQU5ESVBGdEpFWWJ4SnpFVEMycHFHTXdQYk0zYUV2Y2JuNkha?oc=5",
+      "summary": "Stock Market Today (June 10, 2026): S&P 500 Futures Fall, Oil Rises as U.S.-Iran Conflict Escalate thestreet.com",
+      "published": "2026-06-10T10:21:38+00:00",
+      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
+    },
+    {
+      "title": "Stock Market Today: Dow Futures Slip as Investors Await CPI Report — Live Updates",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE00Z21CZnE1bGtKWUlFUE52c181a1JxZE1qRGt6ZFFGX0tuSDdBM1VzcmpfenlpXzNpNFVuTUp0NVF1ZjR1OVVpQ2lxWlVIZ201c3VrT21EYnQ5LVg0OUtCZ1NnLVJGcnhsQkNpZTZRZTl1NE5WWTduQmhn?oc=5",
+      "summary": "Stock Market Today: Dow Futures Slip as Investors Await CPI Report — Live Updates WSJStock market today: Dow rises, S&P 500, Nasdaq fall as tech rotation trade resumes, US-Iran tensions flare Yahoo FinanceWall St futures slip as tech losses mount ahead of key inflation data By Reuters Investing.comWall Street ended mostly lower after a volatile trading session Seeking AlphaStock futures slip after U.S. launches ‘self-defense strikes’ against Iran: Live updates CNBC",
+      "published": "2026-06-10T10:01:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "S&P500 and Nasdaq 100: US Stocks Forecast Hinges on CPI and Iran Risks",
+      "source": "FXEmpire",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQODRfVGtMX0ZtWkc1SnVsd2h4VWpWaGFBamh1aFVvcGpKV1dpeHFUOEliN0JoNGNIMDVzU29sOTB4bHI0em14QlFjbGZCeDRXU3hURlFvTk4yZUttNlM3RkFlVEVicmZuenNnZXBfSmJHTVVxY3B4Q1pldS1WMFAzOUlzSlJZMUZVRzlicTZuRmpzU0REaV95THI3S0x5Z2JnTzlxQmhUeU01ellSejhFNFJMWllDbkdIN0lz?oc=5",
+      "summary": "S&P500 and Nasdaq 100: US Stocks Forecast Hinges on CPI and Iran Risks FXEmpire",
+      "published": "2026-06-10T09:51:00+00:00",
+      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
+    },
+    {
+      "title": "Stock Market Today: S&P 500, Dow Futures Fall As Trump Orders Strikes Against Iran—Autozi Internet, Crack",
+      "source": "Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQT0FqUjZSY1dSbXZEZGp4NlZiRmdNaklDWDB0QXZxb1BwaUZBbWVWb0tnWWV1TlVyTjk4Qm5acENYRHVTeC1OenVmdHpHYnlMLTBWZEZyNFpBb1ZKUWtVTUNWU2dhV1pKOF85eG5Kc0N3SU5YSFRjOUxKck1Qc0dTOTVIYk1GT2lITEQteElraU0tRDBMeUtnWFpURkNIaElBYWRINzZ6LWtmUUt4ZmlZaXRGc2Ztc0IxVm15T2NMM2VXRk0yUldISGJOQ01sbmxPeTZIQmxGbWw0OV9OdmxfQ1FnRU5oRWNyRTRUTWt2TTRJejlTaHliTkp0b2VENlh4N19tMHdYNA?oc=5",
+      "summary": "Stock Market Today: S&P 500, Dow Futures Fall As Trump Orders Strikes Against Iran—Autozi Internet, Crack Benzinga",
+      "published": "2026-06-10T08:59:57+00:00",
+      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
+    },
+    {
+      "title": "Nasdaq, S&P 500 Futures Fall Ahead Of CPI Data, Oracle Earnings: Why SMCI, TSM, CRWV, YYGH Are Keeping Traders Engaged Today",
+      "source": "Stocktwits",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNQ1JtdDk3b0E2NE5CcUgxRnJsUlBydllyZmZkVUNvdkJmbDR5UU9kMVljb040dXdzZ1FuRnpvZnZ5ZHQ4Qmw2T0xXY1VwekRVeHlqaFJ0VDAxVGhRb0ZlN0pmVTg5YmF2QU54cTc0OHpReTZZSDJ2TnZlWk52ZGhJV2ZoYjM4OHRLVmhlRm94Y0dONnFhNTRiS1BrV1N3UVN4d2JPQkZYX1RsS0VTbi12QXdHOWQ3Rkt5OTFLRV9HSlFvQUY5bnF3dlZzODJjS3R0VEFvUXIwS2tya2VMYmJaamtQOUZwdTk3aF9iaHdBT0c?oc=5",
+      "summary": "Nasdaq, S&P 500 Futures Fall Ahead Of CPI Data, Oracle Earnings: Why SMCI, TSM, CRWV, YYGH Are Keeping Traders Engaged Today Stocktwits",
+      "published": "2026-06-10T08:43:09+00:00",
+      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
+    },
+    {
+      "title": "Stock market today: Dow, S&P 500, Nasdaq futures fall after US strikes on Iran, with CPI inflation on deck",
+      "source": "Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPQ2hNV1VWS3lZajVFUmx1bGJ4Mm12VFp0Qkw3UGlCZnBXcmlhVE5YZ3E4TDNfQmI2ZzdSVnVFTng5X0g1RWxRX0ZwVGw3UVpHSGNINGtMWUliaE05NUR5dnFCam5QXzZZM3RGR1ZkLW9ya3ZfNk1WUWRLTE9LdWk2NVF4Qk1HcjNGTjdBaDdSQVdTTVdDT1R4T2FRTllxYVhiSmRiQlNBSno4TU5lWjRPMzhEZ29oWFJuX0JjMXhhTXRYLVlxandnUW10QTEydVlwOU5kV2ZB?oc=5",
+      "summary": "Stock market today: Dow, S&P 500, Nasdaq futures fall after US strikes on Iran, with CPI inflation on deck Yahoo Finance",
+      "published": "2026-06-10T08:18:39+00:00",
+      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
+    },
+    {
+      "title": "Chip Stocks Rebound: Semiconductor Investment Strategy for June 2026",
+      "source": "Intellectia AI",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxObnhKOWNONk5PZ19ycUQyRWxPUnlVYXJYMHVaYUstZkhCTWVYeENDZ3lNSkdDMzlyTHhtU1ZiUzFNV1RVN1Fmejc3cFhiSDc4YnNhMDZRVHQ2M3pKOVNOLVdyU0h4YmhlLW1DdWpwa01adFowNDYtV1VCMkhkWDVOVjVVQQ?oc=5",
+      "summary": "Chip Stocks Rebound: Semiconductor Investment Strategy for June 2026 Intellectia AI",
+      "published": "2026-06-10T08:06:13+00:00",
+      "origin": "關鍵字「semiconductor chip stocks selloff」"
+    },
+    {
+      "title": "SPX: S&P 500 Futures Drop 0.5% After US and Iran Exchange Heated Attacks",
+      "source": "TradingView",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUTlKNVBwWVJDalRRXzdyUUlsbmN4MnJBamdWNUVaZ1h2aTZOdVdiQ3lKemJJcGtxTG1NRURhSDFVdW5LQWdCeTV4MlZYdXI5bEdSWlBFNlU5MlVtUnhGaXJYdHhVUHMwNHZkQlBLbkxxMWxWVlpmeU5wZHByWHo4Ym8teFpDTDN4ZHp1a25yMFdsM3hoOWUySjllOVBLbTFPZmRKd296WnFHbGJ5SUptamY4aGJPc2VTX05WSXFubGhDUWJia1dZVDRmcTg?oc=5",
+      "summary": "SPX: S&P 500 Futures Drop 0.5% After US and Iran Exchange Heated Attacks TradingView",
+      "published": "2026-06-10T07:52:42+00:00",
+      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
+    },
+    {
+      "title": "AI Chip Stocks Sell Off as Tech Rally Reverses",
+      "source": "Gotrade",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPNmllYnNJaFpHX0xQQ3ozYkxvb3I0NzZvQjZVa1lNVDg2bXVGMV9OWUhXNUtrZnhySEU4TVpNRjFrQkJsQklESHphS3pvTVV1ZUJvVC0yX0RXSi1YamxEdkZvdDRURjhaRW5UZE5EX2JBOG1QMmlDVkRMeWlrNVBoVTBPREQ?oc=5",
+      "summary": "AI Chip Stocks Sell Off as Tech Rally Reverses Gotrade",
+      "published": "2026-06-10T07:13:00+00:00",
+      "origin": "關鍵字「semiconductor chip stocks selloff」"
+    },
+    {
+      "title": "Japanese and South Korean Stocks Both Close Lower, SoftBank, SK Hynix Plunge Over 7%. VKOSPI Fear Index Hits Record High",
+      "source": "TradingKey",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQUU1rQWpmSmtLT2tkZTJERThWR1RGbktxcWpxWk9lQ09HallyS0IwdlFxQ2pKOVRBRE1zTkgtUUcxV3dkS0hPcS1fZy1rZ2JVd1prQ1FpMVRla1pOdFZOeUZOSnVKQVRDdVpKRGdLQ0c0TjkwaEF3QlFONzkxZ1B6XzdyeHEwd3VBamthajd6dWw1SG9NS0RvUDY1U1BWYk9wcEE?oc=5",
+      "summary": "Japanese and South Korean Stocks Both Close Lower, SoftBank, SK Hynix Plunge Over 7%. VKOSPI Fear Index Hits Record High TradingKey",
+      "published": "2026-06-10T07:11:55+00:00",
+      "origin": "關鍵字「KOSPI Korea stocks Samsung SK Hynix」"
     },
     {
       "title": "South Korea’s Top Stock Index Crashes, Then Surges on AI Chip Rally",
@@ -486,23 +619,47 @@
       "source": "GSK",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNb2l3V2tURVZWc3M3RDlXdXVVYi1WRHZ3THhKaXdjQmt3OGpodU1ZZkotZnhoNmJYV1d0SVYyUy0tUlN6cUZOeU8wQkVBQlFHQnpuTy1CTGFGVnBwUW5GOFlHWmktQkEtSGRmcmdHTXdyR3FPVWNaUUVYZjhqbTY1MURvcDJobVJvRWRZSzJuR3pLTmRjX19Z?oc=5",
       "summary": "GSK enters agreement to acquire Nuvalent, Inc. GSKNuvalent shares surge 39% after UK's GSK agrees to buy the cancer drugmaker for $10.6 billion CNBCGSK to Buy Nuvalent for $10.6 Billion in Oncology Push WSJGSK pays $10.6B for cancer biotech Nuvalent in industry’s second-biggest buy of the year BioSpaceGSK’s $10.6bn cancer deal will lead to more Financial Times",
-      "published": "2026-06-10T04:30:00+00:00",
+      "published": "2026-06-10T04:30:14+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Prediction: SpaceX Stock Will Hit This Price in July",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbklJeEtJRG5tXy1BRi1BdVJuYTBFdC1TQ25CcTlDZUF1cFRreW1wTk9tNkw1ajBfVmZ3WlNyOGMxa0V4dXMwSWZEN1BzR3M5MHZwS0lIRzNfZ3NQanRzendYRGszV1p1T3owQnU3ZHVXanRlMi1TQUxBeElEMkJjUVprbXNKZWx1WTJhdmplU0lUQzlEVHgxdm1KM2xFWjg?oc=5",
-      "summary": "Prediction: SpaceX Stock Will Hit This Price in July Yahoo FinanceSpaceX IPO explained: The price is set, but retail allocation still up in the air CNBCWall Street’s undignified SpaceX mania The EconomistNYC Pensions Boss Says SpaceX’s Disregard for Shareholders Has ‘No Precedent’ Bloomberg.comHow SpaceX’s IPO ambitions ride on Starship’s path to Mars Financial Times",
-      "published": "2026-06-10T04:20:00+00:00",
+      "title": "SoftBank’s Attempt to Get $6 Billion OpenAI Margin Loan Stalls",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQX0xpWTBCclk1RGlYR05Gb003bjBnUHVCYU1Ka0dMN3BIYXVHdG9PeV9QR2NSY2JWSVh3Yy1kdDdGblQ1eE5pR1RfckduZUkwX1Z6bEhjb05qXy11cnczOFdvQ2ZWZHBaX2RLbTQ2TnNzR2wybktoZlNvV3JiS2RCcDVZWE9BTWNud1hPekFVaW1hVExKaElxYkZKcHBXVmRfMWVQa2Q2U0o5ZThxZnV5ejZB?oc=5",
+      "summary": "SoftBank’s Attempt to Get $6 Billion OpenAI Margin Loan Stalls Bloomberg.comSoftBank sinks over 8% as Asia tech stocks tumble, tracking Wall Street losses CNBCSoftBank's attempt to get $6 billion OpenAI margin loan stalls, Bloomberg News reports ReutersHere’s why shares in SoftBank, no longer Japan’s most valuable, have fallen by a fifth in the last week MarketWatchSoftBank Attempt to Get $6 Billion OpenAI Margin Loan Stalls Yahoo Finance",
+      "published": "2026-06-10T04:25:00+00:00",
       "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Inflation likely reached 3-year high last month as Iran war spikes gas prices",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNSjJNT1lmMTVTOF9icWgydUFvd3RFZnMyRHI5N3R4YURWQzNkczZwYlpsRmJyUWtuVTRXaS1HVmFaUFRWcmpDZEdtN0xLNWc3ZWR0OHdIdUhsdEVzSHJBb0JHWC13RlBsX0Ixc1MwSC1NVWtVMW5KOU9XbGgxQWg4NTBQZ253N09IQkh6S1BqNkoyWDlOZGpaSA?oc=5",
+      "summary": "Inflation likely reached 3-year high last month as Iran war spikes gas prices AP NewsThe May inflation numbers are due out Wednesday morning. Here's what to expect CNBCMay inflation is expected to have jumped as the Iran war sent prices higher NBC NewsHigher gasoline prices likely pushed up US consumer inflation again in May ReutersInflation set to top 4% for first time in three years on Iran war price shock CNN",
+      "published": "2026-06-10T04:09:33+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "How SpaceX’s IPO ambitions ride on Starship’s path to Mars",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNMXAxNER1cjJFb2h1Skp0SjJyMnF6ZGo3UjhwTlJrZXh5bWx2eVFTd0tOeXphU2Z6WVZGQWRKdzhYSThxaXFJbHpEeXRVU3YxYlZoZFZpSnhwdG1XRVc2MV80YjdEM1NLRzBKNEpHcjhuSjV6Z25SMXlfaFZuNTY0NkxoRjc?oc=5",
+      "summary": "How SpaceX’s IPO ambitions ride on Starship’s path to Mars Financial TimesSpaceX IPO demand is approaching four times oversubscribed, source says ReutersIs SpaceX stock worth $135 a share? Pros weigh in on IPO NBC NewsWall Street’s undignified SpaceX mania The EconomistRocket Fuel or Space Junk? Why Mega-IPOs Like SpaceX Often Crash Back to Earth. Barron's",
+      "published": "2026-06-10T04:00:06+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Nasdaq falls 3% as chip stocks sell off, Iran deal hopes fade",
+      "source": "qz.com",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE10WFZULUk1NEJyOTUtRlRyYVhkRkZ6M1k4blg1UDlsWE05TDRYZ194X1otWnBjWHlpT2stdEZwMnFza0h2WlRSMV9pTjlPREJaWmVKcXZJdFZ2Z0g5anZTSWltM3dQZzB2TEE?oc=5",
+      "summary": "Nasdaq falls 3% as chip stocks sell off, Iran deal hopes fade qz.com",
+      "published": "2026-06-10T03:52:55+00:00",
+      "origin": "關鍵字「semiconductor chip stocks selloff」"
     },
     {
       "title": "Korea’s KOSPI Index Falls Over 3% as Chip Stocks Resume Declines: Samsung Electronics and SK Hynix Both Drop Over 5%",
       "source": "TradingKey",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZEVlVEFKaS1aUjRWWVVsRTNqOFdNYlR2TWNCcTFqdl9naVFGNk81VGZIQU1hRHFzZUFldTNlVko3clRDNEV6NHhVVklpS1o0ZGIyc2VGTWxxSDhtWms1SXVhaFdma2tXZ1VrZ0hQallfM0pDdVVmX0ZOVTlFU1ZRNGl4VndLQUIzYkh1RlZNSGhWMGJoM1VleDhic2w2dXc?oc=5",
       "summary": "Korea’s KOSPI Index Falls Over 3% as Chip Stocks Resume Declines: Samsung Electronics and SK Hynix Both Drop Over 5% TradingKey",
-      "published": "2026-06-10T03:26:27+00:00",
+      "published": "2026-06-10T03:28:08+00:00",
       "origin": "關鍵字「KOSPI Korea stocks Samsung SK Hynix」"
     },
     {
@@ -525,7 +682,7 @@
       "title": "Trump Family Reportedly Made About $2.3 Billion on Crypto While Investors Lost About $2.3 Billion on Trump-Related Crypto",
       "source": "Gizmodo",
       "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOVlhtVGtCNXpHTExrUWxWNlFJd2ZyUWxUamNYc1dQdWI5TEt3dkUtdm9QTGd3OG9ZYTNNZUwzU2ZmdWxMLUhmMWdVcHdwNDZrSkc4Ym8yNWstNGFpVFpHbXZoN25RdlFsN1BGLVpwSmxMVVg3ZUdsMElRUlVuWU95QUJrRGtxR1FON1A1aFNnZTBHMTk5a3ZRYmJ5SjY0YkdaV3llZFhGeVIwU0duM1MzcGJJVXN5SFFvMk10VmY2N0s4NHUzZmlMdWNHczNuUWF6UHlMWFNsbkJ6cHFyUkx3ZTEyMEI?oc=5",
-      "summary": "Trump Family Reportedly Made About $2.3 Billion on Crypto While Investors Lost About $2.3 Billion on Trump-Related Crypto GizmodoTrump family got about $500M from crypto venture — but investors saw steep losses CNBCTrump Family’s Stablecoin Wealth Fueled by Binance Relationship Bloomberg.comUnder the Trump crypto playbook, the family always wins. Investors don’t ReutersTrump family ‘made $500 million from crypto coin deal’ — before the bottom fell out on individual investors The Independent",
+      "summary": "Trump Family Reportedly Made About $2.3 Billion on Crypto While Investors Lost About $2.3 Billion on Trump-Related Crypto GizmodoTrump family got about $500M from crypto venture — but investors saw steep losses CNBCOpinion | The sad truth about Trump’s crypto windfall MS NOWTrump Family’s Stablecoin Wealth Fueled by Binance Relationship Bloomberg.comUnder the Trump crypto playbook, the family always wins. Investors don’t Reuters",
       "published": "2026-06-10T02:28:38+00:00",
       "origin": "Google 財經頭條"
     },
@@ -534,7 +691,7 @@
       "source": "Stocktwits",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQaGpOY29CeVRrQjB1dm1wdXhjME45dTdrWlhIQkY4YzBPLXBEQXRRU0hJNVczek9LRGpmaTdBLVltTGFxSEl2Z0duZW8zRVVOaUd1Z1lHT2lucjNIMHREZE1KbzJGMWJqcktBQlBYdThfbV9lVlI0U0ZWVEhGZE5fZll1bGhjd1lnRWVJSkNETlhxQlR5eWNKM0FyVVhNelFsNG1pYm1FRmlFeTRhMTRYUXdkUVFkUkpJclJyalp3bnNRMFhNMDc4dHU2M0FCMi1UcnVrbUxwZ0pEa0R3RDhF?oc=5",
       "summary": "S&P 500, Dow, Nasdaq Futures Decline As US Launches Fresh ‘Self-Defense Strikes’ On Iran: SMCI, TLRY, DKNG, CBRL In Focus Stocktwits",
-      "published": "2026-06-10T02:18:33+00:00",
+      "published": "2026-06-10T02:14:00+00:00",
       "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
     },
     {
@@ -546,10 +703,18 @@
       "origin": "關鍵字「KOSPI Korea stocks Samsung SK Hynix」"
     },
     {
-      "title": "Asian stocks slide, oil gains as Middle East tensions escalate",
+      "title": "China May wholesale inflation hits near 4-year high on Iran war-led higher input costs, AI boom",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTlFzVVkwTDNOVFEyS1Q1bDV3WEl6RlF4d0g1QURRb1o0aHVIeXdYNllDSnNKSEZpRHZPemRNQk5PSDIxVENIOXEtSVhNaE0wRnR3RFNsb1IwYXprSUtXSjF1QmFsWFFUbkhLTm03alFJVnJ6Ny1OR2xSbFNfbmlPWTM1MUVrQ1otQ0h3WENWVlhZTVNhT1AwOWE1TjEyNzU5YXJnYzFWZ1Z1a2JiejVnetIBtgFBVV95cUxNb3JxQmlYMGsxQ092VF9jbk9TMndDRldFdkFQeGxVY1NzcnJHNGVvcmJrcy1LaVlTTXR2aUxxTEZkRE5lOThocHhjS0dBdXJsdGctcEFMd2RnWlhSX3o1MlZja3Y0clRJR0czREY1azFERXd2dmk4TUl3QXhsZ1I0bkl6VUx5T0tnQmtnZlJON2p3b1ZrajVVWFZCUEFvdmkyWnJCMm1hLWdIT0ZsY1VKWWN6WWxLQQ?oc=5",
+      "summary": "China May wholesale inflation hits near 4-year high on Iran war-led higher input costs, AI boom CNBCChina’s Producer Inflation Gains Pace as Mideast War Fuels Higher Prices WSJChinese Consumer Inflation Unexpectedly Stalls Despite Oil Shock Bloomberg.comChina's factory-gate inflation at nearly 4-year high in May ReutersChina factory gate prices rise at fastest rate in 4 years Financial Times",
+      "published": "2026-06-10T01:43:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Asian stocks slide, oil rises as Iran and US launch strikes",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMzdFYTBQUjA3YzBlRWNHdUp6OXBpbVlabUYwVWJXYzlJa0pHWTVuZ2M4YXlSeEtXZHJDMUotQUdUaXotdklnOXM5R0VEX3QwWVAybFdMSE1hQktPcU9Lc1czUjR0dlRwY1pvZFZDTndsUWRHWHhWOVhiVWs4SFdsVHdUcw?oc=5",
-      "summary": "Asian stocks slide, oil gains as Middle East tensions escalate ReutersStock futures slip after U.S. launches ‘self-defense strikes’ against Iran: Live updates CNBCAsian Stocks Decline, Oil Gains as US Hits Iran: Markets Wrap Bloomberg.comAsian tech stocks rebound after Wall Street embraces AI once more Financial TimesStock market jitters remain amid tech fears and renewed Middle East attacks BBC",
+      "summary": "Asian stocks slide, oil rises as Iran and US launch strikes ReutersAsian stocks fall as US and Iran exchange fire – business live The GuardianStock market jitters remain amid tech fears and renewed Middle East attacks BBCAsian shares fall after a tech sell-off on Wall Street, while oil prices stabilize AP NewsEmerging-Market Stocks Rise Most in Two Months on AI Dip-Buying Bloomberg.com",
       "published": "2026-06-10T01:28:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -557,7 +722,7 @@
       "title": "Broadcom CEO unnerves biggest AI backers in rattling pivot",
       "source": "thestreet.com",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdUVGcVAzaTBsZU1TNlZUV0ZqRFVxQjNuekVzdlpvR091b3kxak42SnpseHFndVhmdnlpUFdPWWhKTm5Cc0V3Y20tdFFaNXJVT0wzLVFUTElwdUFobDBBQ2oxRmJtZndCV204b1VhZ2ZhZXlURnBrYUd3X195QWthWnI1UzluRU5GeHVKeTE0RDctWGVPRTV2RWI5NVdWR1BnQ1E?oc=5",
-      "summary": "Broadcom CEO unnerves biggest AI backers in rattling pivot thestreet.comForget Marvell: 1 Unstoppable Semiconductor Stock to Buy Hand Over Fist After the Market Pullback Yahoo FinanceBroadcom Slides by Most in More Than a Year on AI Outlook Miss Bloomberg.comBroadcom stock plunges on weak software sales, unchanged AI chip forecast for the year CNBCBroadcom: The Bear Case Just Got Weaker (NASDAQ:AVGO) Seeking Alpha",
+      "summary": "Broadcom CEO unnerves biggest AI backers in rattling pivot thestreet.com5 Revealing Analyst Questions From Broadcom’s Q1 Earnings Call Yahoo FinanceBroadcom Slides by Most in More Than a Year on AI Outlook Miss Bloomberg.comBroadcom stock plunges on weak software sales, unchanged AI chip forecast for the year CNBCWhat Could Go Wrong For Broadcom Stock? Trefis",
       "published": "2026-06-10T01:03:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -570,6 +735,14 @@
       "origin": "關鍵字「semiconductor chip stocks selloff」"
     },
     {
+      "title": "'Synthetic performers' in ads must be identified as AI as new New York law takes effect",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMGMtdDdSZE9QWnk2Mkt1TGwxQ0hGRWRfMUlXLXRNZTlyQVRBYk5jRjlhaG1acWpjaGZuNHVBc05EVkgtUWxWSWI1SWZxNXVIbnJSSWJ0THRfb09fVDdzMUNsRWxCaEZDVklodWNIMngxYnZha3d2dGM0TTdoQkNaeURnM1BmX3A5cXdnNjM0S29GR0VNYjJFR3FNN01GVmJvZWZ4RkJ3?oc=5",
+      "summary": "'Synthetic performers' in ads must be identified as AI as new New York law takes effect AP NewsSee more headlines & perspectives on Google News",
+      "published": "2026-06-10T00:12:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
       "title": "KOSPI slides on profit-taking as volatility spikes in South Korea - CHOSUNBIZ",
       "source": "Chosunbiz",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOandsRXZoZ2ZGVVJOaUxkYzhvdWltREJQT0JnQ3o2bmRZX3d6OWU4aWljcHJEOXlJdlBlc01uOWkxbW9JWjhlcHBBZ2NNMHF3aTFMaUp0OTdwRXFYdDRMcnAyWDhueDlhVmJCeXhYeDBVUUxaa0JHbWpXQV9aZVA0NdIBlAFBVV95cUxNZXdjTlBpb3VYWE5NU181MndYRG8xVEdDbFNqVmo3T1J1RnBJeWtRY1JoT05sTkV6MVNJbm5EZkN0aG94dHpzMTRPRFhCYkljZ2hROEg3Y2pkTHZqTWg4ay0wZVFyS0ZyZDhsZTZfQXNaWllnejJjdGhoUF95cC1QM25zc0JTQVE3OXBUUnJZLUZvTVI2?oc=5",
@@ -578,34 +751,10 @@
       "origin": "關鍵字「KOSPI Korea stocks Samsung SK Hynix」"
     },
     {
-      "title": "Apollo and Blackstone raise $35bn in chip financing deal for Anthropic",
-      "source": "Financial Times",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQOTBGSExqSGEzcFlST05vbW5wcXZGVHJ0dTlEa1VwbXAxSXVvY2lkUjJpY3ZvZURURWFVWHB5VG5Ic0xpbDQtMlp1YWpuYWdfd092UExCYnc0c3RhNWVLazFrMTZrTGI2SU5BYm1YTklRYVhOc3ZhV0pSRWJXanFOYnpBdGc?oc=5",
-      "summary": "Apollo and Blackstone raise $35bn in chip financing deal for Anthropic Financial TimesGoogle’s Backstops Underpin $35 Billion Chip Deal for Anthropic Bloomberg.comBroadcom, Apollo, Blackstone Launch $35 Billion AI Infrastructure Platform WSJBroadcom to Help Finance Anthropic, OpenAI Chip Deals With Apollo, Blackstone The InformationApollo, Blackstone back Anthropic's $35 billion capacity expansion in new Broadcom tie-up Reuters",
-      "published": "2026-06-09T23:53:16+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Stock market today: Dow, S&P 500, Nasdaq futures fall as US launches strikes against Iran",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPQ2hNV1VWS3lZajVFUmx1bGJ4Mm12VFp0Qkw3UGlCZnBXcmlhVE5YZ3E4TDNfQmI2ZzdSVnVFTng5X0g1RWxRX0ZwVGw3UVpHSGNINGtMWUliaE05NUR5dnFCam5QXzZZM3RGR1ZkLW9ya3ZfNk1WUWRLTE9LdWk2NVF4Qk1HcjNGTjdBaDdSQVdTTVdDT1R4T2FRTllxYVhiSmRiQlNBSno4TU5lWjRPMzhEZ29oWFJuX0JjMXhhTXRYLVlxandnUW10QTEydVlwOU5kV2ZB?oc=5",
-      "summary": "Stock market today: Dow, S&P 500, Nasdaq futures fall as US launches strikes against Iran Yahoo Finance",
-      "published": "2026-06-09T23:09:13+00:00",
-      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
-    },
-    {
-      "title": "S&P 500, Nasdaq fall as tech selling resumes, Trump vows to respond to downed US helicopter",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWGJ1bl83a1ZCa082M2NZNkdvamdjX2pNODlzalRUN0NiaEMtbXl4QTdlNkhGZTE0T3QzVmxHcjJ4OE9YZnFPbm0xWDdIckNobWVFN0oyZUoxTXNUeUhrdUtWQnFNQ1NCcjJ0MGprRm80eG9lM2NzMUpPcWdKNlJDNmNqLU5jZlBrVjdsUEtSeWhqVEdzdTRnSmtFWFBhb3RTemVV?oc=5",
-      "summary": "S&P 500, Nasdaq fall as tech selling resumes, Trump vows to respond to downed US helicopter Reuters",
-      "published": "2026-06-09T23:02:56+00:00",
-      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
-    },
-    {
       "title": "Disconnected Oil Futures Market Could See Price Spike within Weeks",
       "source": "Crude Oil Prices Today | OilPrice.com",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQRzBoUnMwaDQ4OVduVHFPWC1XZlREZTVpcVpMOGpsNUVwZlFvanB2T2ZDd3dENUpRSFpmSFM3U3dyWDN0Y2UwTWU1cDRZbVVsNzYtZ2twWDdpS3ZJUVUzUlR0U3dwRjl4ZjBZTzNmZWl5bmV0ZjE5QWVlX2xjODlKQW96T2czNWJkOXE4YVJKNGlpVGdVVk1lTkZXNXNHZWhkU0lyS0JyaEJ2ZEw4d3fSAbMBQVVfeXFMTXFlU1pMMmFkUWhWanlkVTZsQzlrd1dUOGl3NlBOWnhlcklrUG80Y0t5NXowMjZrbTF3Wm1abkdBUnNhSUphQ3RtMTY2VXNjMVJZblhVd3pqa2ItMUR5OUVvcnZtUXFqYTNRaHAxRHdsblpsYmF5dDVkckJmcW8tdUlKU05CWkRvdW9XNGR6eXd5SXA3ZnQtTElLUV9td0ZnU0pLUEZfTkRidGZObUlTckxsLVk?oc=5",
-      "summary": "Disconnected Oil Futures Market Could See Price Spike within Weeks Crude Oil Prices Today | OilPrice.comWhy Oil’s Not at $200 After the Biggest Supply Shock in History Yahoo FinanceOil inventories headed toward multi-decade lows, US EIA warns ReutersAs Oil Prices Spike, Talk of ‘Demand Destruction’ Sets In The New York TimesA Rush to Stockpile Oil Will Keep Prices Higher for Longer WSJ",
+      "summary": "Disconnected Oil Futures Market Could See Price Spike within Weeks Crude Oil Prices Today | OilPrice.comOil Prices Set to Keep Rising Even After Iran Conflict Ends, Shell Boss Says WSJIran war reverberations: A nadir for Asia’s economic security BrookingsWhy Oil’s Not at $200 After the Biggest Supply Shock in History Bloomberg.comOil inventories headed toward multi-decade lows, US EIA warns Reuters",
       "published": "2026-06-09T23:00:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -613,7 +762,7 @@
       "title": "New York's Penn Station to get $8 billion remodel with columns, sunlight and Trump's name",
       "source": "PBS",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPejhyYWtqWGxfcFpHOVRVbjQxNGxaWlA5T1dBcEU0UTMtc0oyWmhER3RDdEtRWWVuNXFPUFpyV0Y1RGN3aUROa25GOUVQNjhzMjNkTEN4UEhHdHFrS3hBZmV6b1VmeHdiQVc0MWtMSWloblFKZjJ6dTFtdzNCZHdpS2s0NlFWSTgzb0ZRbEJKOWk4YjFYWmVIRHNEMUdjd1IxdmR5TmQzeTdhQWYxZ2J2U05CVk9hd043OXJMX2x3?oc=5",
-      "summary": "New York's Penn Station to get $8 billion remodel with columns, sunlight and Trump's name PBSPAU, Amtrak, and Halmar share Penn Station vision The Architect’s NewspaperPenn Station team unveils project details, but cost and funding still up in the air Crain's New YorkAmtrak’s Penn Station Dog And Pony Show Avoided the Only Question That Matters Streetsblog New York CitySomehow Trump Just Might Deliver the Rail Hub We’ve Been Waiting For Curbed",
+      "summary": "New York's Penn Station to get $8 billion remodel with columns, sunlight and Trump's name PBSPAU, Amtrak, and Halmar share Penn Station vision The Architect’s NewspaperPenn Station redevelopment: renderings unveil 'world-class' overhaul ABC7 New YorkAmtrak’s Penn Station Dog And Pony Show Avoided the Only Question That Matters Streetsblog New York CityPenn Station team unveils project details, but cost and funding still up in the air Crain's New York",
       "published": "2026-06-09T22:48:32+00:00",
       "origin": "Google 財經頭條"
     },
@@ -621,7 +770,7 @@
       "title": "Minneapolis Cafe Cuts Prices to Zero in Protest—and Profits Rise",
       "source": "Newser",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdUlGYTJNaFAtc05lMjN4MndxNUhuX0tkTVBCT0NLTEo4djltS0dsRDZ5NTFKVFRMVzVNN0o5blRmaFd6TG11OWZHWmRTSXR4XzNLNzRwekx1Y1hjRXhfREU5blZZeEhESHBEZlhCYUhqMmtLWnQ2cHA5aVRDNm56TVczMlNkeXgtTTdWTVRPbTYyS1FiN2llbDFoLXBrOWtYLUo0dVg2c0g?oc=5",
-      "summary": "Minneapolis Cafe Cuts Prices to Zero in Protest—and Profits Rise NewserA Minneapolis Restaurant Stopped Charging for Food. And Profits Are Up. The New York TimesMinnesota Restaurant Stops Charging Customers for Food — and Says Business Is Thriving People.comThe restaurant turning a profit by making food free The TimesPost Modern Times thrives under donation-only model after Operation Metro Surge The Business Journals",
+      "summary": "Minneapolis Cafe Cuts Prices to Zero in Protest—and Profits Rise NewserA Minneapolis Restaurant Stopped Charging for Food. And Profits Are Up. The New York TimesMinnesota Restaurant Stops Charging Customers for Food — and Says Business Is Thriving People.comRestaurant stopped charging customers for meals, says profits are up WKRCThe restaurant turning a profit by making food free The Times",
       "published": "2026-06-09T22:44:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -629,24 +778,24 @@
       "title": "SpaceX aims to launch orbital AI computing tests by end of next year, sources say",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSEJ0VnJacU5WYTU0emFkOGlLVi0xQ0E2ckhETkM1SjdFSlgzQzkwSGsxdVNsOFhQN2hCbE5WVy1OOFBDVE9yUHJTU3BwalZsdVdPOWJQRjFGTDFGQmxobXJhX2VkLVFzdWVpZ04td29HeXcxQzdxYVhwNlhhV2JCTVRDYm4zWTdOVjFHTnNjZDl2MjdybUtndlMzSGc5UVRucmdSU3FSbEUtaEZHZVhkMEVDRzZNd3h0TDNHTVdfOEJTRTdqZnB5dzlqMXlTZw?oc=5",
-      "summary": "SpaceX aims to launch orbital AI computing tests by end of next year, sources say ReutersAhead of SpaceX IPO, Musk says AI satellites will use mostly existing technology Yahoo FinanceElon Musk Reveals Details For SpaceX-Tesla Orbiting Data Center Investor's Business DailyElon Musk Shows Detailed Design of AI Data Center Satellite Bloomberg.comSpaceX unveils 11-million-square-foot Gigasat factory, a new manufacturing facility for space-based data centers — aims for 1 GW/year of space AI compute by late 2027 from its satellites Tom's Hardware",
+      "summary": "SpaceX aims to launch orbital AI computing tests by end of next year, sources say ReutersAhead of SpaceX IPO, Musk says AI satellites will use mostly existing technology Yahoo FinanceElon Musk Shows Detailed Design of AI Data Center Satellite Bloomberg.comReport Says SpaceX Plans to Launch Space Data Center Test by Late 2027 GizmodoElon Musk Reveals Details For SpaceX-Tesla Orbiting Data Center Investor's Business Daily",
       "published": "2026-06-09T22:32:54+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Kalshi to make some users reveal job details to tackle insider trading",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBIcjhPWWUzVF9qdWpqUkt4ZndNS0xBeTF3UENEeXkzR19PVVV1bXZfV2xQLVFSRGdoSXVrVjJ5bC1hd1M0YXd3Wm1pOHRyTmJOdE1rUGhOU0djZw?oc=5",
+      "summary": "Kalshi to make some users reveal job details to tackle insider trading BBCKalshi Will Ask Users to Share Employer Information for Some Trades The New York TimesPrediction market Kalshi bets on compliance to address insider trading concerns ReutersKalshi to Implement Market Integrity Updates KalshiKalshi rolls out whistleblower services, employment verification to curb insider trading CNBC",
+      "published": "2026-06-09T22:32:31+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "US judge OKs Visa, Mastercard $38 billion swipe fee settlement",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQRnpZNVJidmdaMGhJWTRVMl96MXlMa1FzOE1qQWxKMnpwOFZqSVM2NGlKVEEwZ3ZLdTlBU19pWkFrSXBkWWg5WWRvUXpkUGJCV2ZXMWh2YWRrQ0FIdVo2eVNkdlN5bWhOaGtwajRFTVdneXhmTnJJN0lOelRTbmRlUi1LWVRIR0FuZV9Jb2NIZVRUNjZROHJJbGVjX3lLOW80MURhLQ?oc=5",
-      "summary": "US judge OKs Visa, Mastercard $38 billion swipe fee settlement ReutersJudges Gives Preliminary OK to Visa, Mastercard Swipe-Fee Deal Bloomberg.comCourt approves Visa-Mastercard settlement Payments DiveVisa-Mastercard Settlement With Merchants Gets Judge's Preliminary Approval WSJVisa (V) Receives Preliminary Settlement Approval in Swipe Fee L GuruFocus",
+      "summary": "US judge OKs Visa, Mastercard $38 billion swipe fee settlement ReutersJudges Gives Preliminary OK to Visa, Mastercard Swipe-Fee Deal Bloomberg.comCourt approves Visa-Mastercard settlement Payments DiveMastercard (MA) Stock; Gains After Court Supports Major $38B Fee Dispute Resolution Step CoinCentralVisa and Mastercard (MA) Reach $38 Billion Settlement to Lower C GuruFocus",
       "published": "2026-06-09T22:18:36+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "After long waits at the Social Security Administration, its chief says things are getting better",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPWlZiQkh4UjBkS2pkZ011RWJyNWxKcWFDd1pWUmg5VDRhYXlCYjY2VFVqV3FaRURCODFjVTZZTlVGd1M4WU8tdTBuOW4yYk5WenF1b0JpWHZWWGp2bE9LcUU0U3IxeGp3Y2ttWWxTQ1Rna2hWSDRBR0lOX05MWEVmYm5lTi1WM3RSTk02dmVfelN0aWQtLTBOZG5hd1l2YXpMUml0VDRBNThtZw?oc=5",
-      "summary": "After long waits at the Social Security Administration, its chief says things are getting better AP NewsSee more headlines & perspectives on Google News",
-      "published": "2026-06-09T21:57:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -661,7 +810,7 @@
       "title": "Wall Street dumped nearly $1 trillion in tech stocks by midday—then clawed it back and bought peanut butter and paint",
       "source": "Fortune",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORDRtQ2dnSm9qeFhYZ3U1ekRYNzRYb3ZQLW0zbk1zSll5djBxN3UtcWo5ZlRDUE1JN3VxN1VEOUFEb1FRUjRNNUtWaWl4WjVCbnNsMnR1OTRBMHg4b2JKWFlnUlVIQXl3Xzk4RThTbmY5ZG9ORERLWU5HWVBvdzZLdnNzbnNqWTA?oc=5",
-      "summary": "Wall Street dumped nearly $1 trillion in tech stocks by midday—then clawed it back and bought peanut butter and paint FortuneWhy history is sounding a siren on the tech stock rout Yahoo FinanceFive Reasons Investors Are Selling Tech WSJAngst over SpaceX IPO adds to dive in tech stocks MarketWatchEarnings, not valuations, are fuelling the US stock market Financial Times",
+      "summary": "Wall Street dumped nearly $1 trillion in tech stocks by midday—then clawed it back and bought peanut butter and paint FortuneWhy history is sounding a siren on the tech stock rout Yahoo FinanceFive Reasons Investors Are Selling Tech WSJTech Rally Fades, Killing Market’s Winning Streak. There Are More Risks Ahead and 5 Other Things to Know Today. Barron'sEarnings, not valuations, are fuelling the US stock market Financial Times",
       "published": "2026-06-09T21:43:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -685,112 +834,16 @@
       "title": "Remote Work Comes With a Little-Known Downside",
       "source": "Newser",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQaFRVMUxQREYtaGJIVnJoUHdfMlI2VzVFbkxvS1VnX2ZRRmtZOElfWm1zZlM3LWFHalpiUGItbkRBQldHM2ZVOU1od3M0WUlXS2w1aGt1MlBOcmxyRFVNdldyWHVDSTJEbWJhaFR6NzJMdmJxdWxyVDEyYzU3Sk1FMGpKa3FiX2Z1cUVkT1hxcUk?oc=5",
-      "summary": "Remote Work Comes With a Little-Known Downside NewserPeople love working from home. But does it love them back? A new study says no NPRWorking remotely can hurt people's mental health, research finds YahooRemote workers feel isolated. Back-to-office mandates are not a fix Science NewsAnother pandemic repercussion: Remote work tied to isolation, mental distress CIDRAP",
+      "summary": "Remote Work Comes With a Little-Known Downside NewserWorking remotely can hurt people's mental health, research finds YahooPeople love working from home. But does it love them back? A new study says no NPRRemote workers feel isolated. Back-to-office mandates are not a fix Science NewsAnother pandemic repercussion: Remote work tied to isolation, mental distress CIDRAP",
       "published": "2026-06-09T21:42:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Kalshi rolls out whistleblower services, employment verification to curb insider trading",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNmFZckgtTE94UkpmbFpnWXRfT2hEOTVlQlY1cVQ2R1lKeUVqX0FtNmZMQVJnX3pYd01iU2hBbXdRNjNWR0hCWlVfZDhJdHJiaHkzVlh5RlJVaGVPcmhPcFBSNVlRTWlGV2l3VF9GRVBJc2NVZTE3XzUtMGhJX1AwRllfUFFETzh0YkNvcGo3ZnVPOHNYdnpUX1RsczJJQWgzOG94bDAxSdIBrAFBVV95cUxQcEw1NmhDQ3lfRXJydmFHUHNXcWF6TzV6OTJhYlVGOTBDSFpka3JSRDFMMklaSHZRRFFBX09ReW9KcWJrRWNCaFpWM0xNenIxclBnWnlsY1ZfSE9wMUlSMk5JODc1aXRSWDZYUklYSmE1bFJYZ3JSTG8tOTRiUTRPdEVJb0x2d2M4YnR0dFhDd2JBUGUxb3ltcVRmZGxTWFZDZU5NaWsxaHlXRDVV?oc=5",
-      "summary": "Kalshi rolls out whistleblower services, employment verification to curb insider trading CNBCKalshi to make some users reveal job details to tackle insider trading BBCKalshi Will Ask Users to Share Employer Information for Some Trades The New York TimesPrediction market Kalshi bets on compliance to address insider trading concerns ReutersKalshi Will Require Employment Info For Some Bets As An Insider Trading Precaution Engadget",
-      "published": "2026-06-09T21:34:24+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Supermicro Announces Proposed $7.0 Billion of Equity and Equity-linked Financing Transactions To Fund AI Orders",
-      "source": "Supermicro",
-      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQNkdibFdBME56Q1J1WlRqX2xzQ1g1Mk9TbUVvTGtsSTdFc3NtRDF0OUpicEtnYjBDTEV0OGpKQmpPaVZIZnJFLUJkRURRSUFJcklmM0hxNVNuLUxpWV9yRnRLVEtUTWJBWHc4QWNoUV9sekp2bXcxWWNhX1Z2VmtXejJnRnRsYXRHc3Y2dWNRQ1docFJWb1ZYdzFwc2tVZ2pUNzNjQlR5Yjl4LUNwNGN1eHIzRFNWOWx6S0lUNDlJTTF0UVl2WVludlc0RUpldnJjUjdGYXV6ZGRvZVp2dlJFY3BoMllIWk90TUl0aUUxYjJkWm9YX3RSUndzQ3MteWlXTXc?oc=5",
-      "summary": "Supermicro Announces Proposed $7.0 Billion of Equity and Equity-linked Financing Transactions To Fund AI Orders SupermicroSuper Micro stock tumbles on $7 billion financing plans as company touts AI server orders CNBCSuper Micro Plans to Raise $7 Billion in Equity for AI Equipment Bloomberg.comSMCI Stock Tumbles After-Hours Following $7B Stock Offering To Fund $39B AI Order Backlog Yahoo FinanceSuper Micro Computer to raise $7 billion in equity offerings to meet AI server demand Reuters",
-      "published": "2026-06-09T21:14:53+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Dow gains as Nasdaq slides on chip selloff, SpaceX IPO concerns",
-      "source": "Invezz",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZnJ0NTlRdWZBZ3lFczd3ajNINWVfWUE5NjhaWVdfaDRqY3M1Q3owLV9Xbmh1VEd0a2REVW9vVlI1ZDdFdWFDSUw0UEhWX3FRZjZ0UG81bHc4NU43bmgwZUNqRGc0TU5RR2VSdEVsZmlqbVczZUhodU5BX05TQzl6ZTdkOEFXRnZiQXBKQUUzUnhaZ1dnaEZKbVVkcS1rS01GUUZn?oc=5",
-      "summary": "Dow gains as Nasdaq slides on chip selloff, SpaceX IPO concerns Invezz",
-      "published": "2026-06-09T21:09:30+00:00",
-      "origin": "關鍵字「semiconductor chip stocks selloff」"
-    },
-    {
-      "title": "More swings for AI stocks drag Wall Street back on the roller coaster",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMjdJZlFKcG00NS15VGVKTFQwUzBCX2VjYmpwUmpDdjJMejZiUTBlRlVQcHdqUUd2M0p0aHhfUHlvbW1tTGduWGtPUFB4dGc5QzJwZWppVWVMV2NZa1pOQUJValNTeTl6aV9hQ29KcDJLc0JLUHlaQlpLS1F2ekc2S2hlaWw0TUwwTFBUc3RXR08?oc=5",
-      "summary": "More swings for AI stocks drag Wall Street back on the roller coaster AP NewsMarkets whipsaw as AI sell-off resumes CNNTech stocks tumble again AxiosMystery NASDAQ selloff adds tension into a make-or-break week for the AI trade FortuneAI Stocks Lead Tech Sector Slide. 'Summer Swoon Has Arrived.' Investor's Business Daily",
-      "published": "2026-06-09T21:05:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "GM Wants Your Electric Car to Power Your House—and Your Neighborhood",
-      "source": "WIRED",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQTljeDRuZ3VrazJQSm9IT3J4QXBvb0JFdm5zY1ZoVGJrMG1JVE92N05iSDM4Z3B0VHAtUTN2enNQRm9pV2VaZVAyUXBXRF9rXzFXX2czVVRTTE15LU1rdGJnZjVkc0ZxNmphNzFPdi12Ylg2Vk5MaDY1bzhnejhhZ2pNSFM1MHR0WTJ0VnJ2bTc4UEJNV2NJbGZNb25CdG9jcjF4dlVkYjgyRmZkeFBGdzQ5UTNGTHlv?oc=5",
-      "summary": "GM Wants Your Electric Car to Power Your House—and Your Neighborhood WIREDGM to Develop Sodium-Ion Battery Cells—for Energy Storage, Not EVs Car and DriverG.M. Plans to Develop Energy Storage Batteries as E.V. Sales Flag The New York TimesGM to offer EV owners ability to sell power to US electricity grid ReutersGM eyes new battery chemistry to grow AI data center, energy storage business CNBC",
-      "published": "2026-06-09T21:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Musk’s xAI, SpaceX hit with class action over data center ‘nuisance’",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQb3hBWG8wY0xQa3RkcGh0VW4tdnN0b2JWR3ZUUFgwSERYVlhxU0dGSnBIUkFMMC1NWnVJd1p5WnU4ek9SUzN2Rl9uNERSZTdUQmZ0VmJteHZJakxNQUdYRjh1V01uVWY4bl9ndEVfeElnWTBnekwyS3hGTEU3OTZvV21mU1BQTFFMY2ttb0tSM3kzeXRENndUSmln?oc=5",
-      "summary": "Musk’s xAI, SpaceX hit with class action over data center ‘nuisance’ Yahoo FinanceMississippi residents sue Musk’s xAI and SpaceX over data centre ‘nuisance’ Al JazeeraMusk's xAI hit with class action over power plant's 'inescapable' noise Australian Broadcasting CorporationSouthaven residents file lawsuit against xAI, SpaceX YahooDeSoto County residents sue SpaceX over noise Daily Memphian",
-      "published": "2026-06-09T20:49:54+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "The Model 3 Era at Rivian Begins. Its Lower-Price EV Is Here.",
-      "source": "Barron's",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPaFQ4VXpSU0VWSzdiLWtIS0VrN0U4MjJrcDdXaGhydGZjNktXdFhZS2lBTll1UHh4ak1wMXcza2s1UGIyZlllNnpPUGRqQllSWWJabVdlRl9UVDhrOXJBaHBGRFB6TTJfeXBIampiV2g5Q3ZoSTlCN3ZOUFNrNXFDZG9QZ2k?oc=5",
-      "summary": "The Model 3 Era at Rivian Begins. Its Lower-Price EV Is Here. Barron's2027 Rivian R2 First Drive: From Normal, Is Normal Car and DriverRivian is betting on its R2 EV to turn the automaker into a household name like Tesla CNBCI Drove The Rivian R2, The Model Y's First Real Threat Motor1.comFirst Drive: The 2027 Rivian R2 entirely changes the EV game Ars Technica",
-      "published": "2026-06-09T20:33:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "S&P 500 and Nasdaq close lower as chip stock rebound fails",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1DYWhpY084Zkc0LS1aVXdWaDdidWFrVHpoUHNmdHdoYUZpVUpQLUdBOVcxMEV0akJ6c3lmek5kQ1NUdjg4TExxSXNIVU1Fc2hJYnpFZmNpRFRhVDhmMTZRandjdmR2TU55Um02NnFWRWk5X29oSldz0gF8QVVfeXFMTl9pa0lRbnZ6N2M3NF83QTFNTUsyQWdhdmJzM1Q2VDRQbnREeDJndGZUbG1Yd2o2NHAwZlNMRHlJN0FybUkzckVmZzUtSUFjNm01WG1hMlVVQ29uMHhvTkVub3Mzd0NKdlBGRnhaaGZQLWFDbnpjeGs4VkRONQ?oc=5",
-      "summary": "S&P 500 and Nasdaq close lower as chip stock rebound fails CNBC",
-      "published": "2026-06-09T20:28:00+00:00",
-      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
-    },
-    {
-      "title": "Markets News, June 9, 2026: Chip Stocks Pull Back as Nasdaq, S&P 500 End Lower; Trump Says US Must 'Respond' After Iran Shot Down Helicopter",
-      "source": "Investopedia",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQS3lTR205QnhaOWpyOV8xVk95dm15ZTh4cXZrcC1ZczI4cEphWDVtRklLNVNVRnhHajg4RXlxV3JFNG91UXQxbmxndWtEckY3MlRVTHlHcDI2UmRrc3ZsdDNja1FfQmRBNkhtT0l3SnlLSVE4ZTVhWDFLejdQcmRNQzcwbkZsWkFMa2p4MkxlOGc?oc=5",
-      "summary": "Markets News, June 9, 2026: Chip Stocks Pull Back as Nasdaq, S&P 500 End Lower; Trump Says US Must 'Respond' After Iran Shot Down Helicopter Investopedia",
-      "published": "2026-06-09T20:15:16+00:00",
-      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
-    },
-    {
-      "title": "Tech stocks are getting crushed again after chipmaker comeback sputters",
+      "title": "As Salesforce begins layoffs, here's the standard severance package the company offers employees",
       "source": "Business Insider",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOY0xkZTVsb1RHQjFVNFI4a3V0S3lsWXNHZjJ1QjNPeV9YcGtWc2NDbkNsMVd3QnFoN1BaeVRaNEY5Mkw0RUlhbk1WZDhpbjFNREZFUGVkSl9iUjVKbmI3M2oyc2FvVEJwam5zbUJid3hSN0J3eG1SQ0RQVzVPb0FBZC1qYk9aaFJwSjkwbUpKS20xcTdY?oc=5",
-      "summary": "Tech stocks are getting crushed again after chipmaker comeback sputters Business InsiderAI Selloff Was a ‘Wake-Up Call’ for Investors, Wells Fargo Says Bloomberg.comNasdaq falls 4% and suffers worst day since April 2025 as traders flee chip stocks: Live updates CNBCU.S. Stocks Move Sharply | Nasdaq Plunges Late at Night, Extending Losses to 2%; Micron Technology (MU.US) Drops Over 4.8% MoomooYou are right to be worried about a summer stock market swoon, but don't lose perspective on the big picture Yahoo Finance",
-      "published": "2026-06-09T20:11:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Woman Asked Neighbor Why People ‘Hate’ Her–She Wasn’t Ready For the Answer",
-      "source": "Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNTnJSY01OS0duSTQ3bVRhajlZdmVDTXVwaUpKZzQ0OWdscDd0YmYybXJ5VEpwRHUwZnV1U3pxZ2Jpam5YY0Fsd1RVYnlhLTROTzVlcGl5ZDVWV3ZDX1lQUGlMamNZMGlWb3hsX3Y3dk44SXE0WEc0U29uRFhDUzVwZmVLVkpkT01qMldIbTVaamQ?oc=5",
-      "summary": "Woman Asked Neighbor Why People ‘Hate’ Her–She Wasn’t Ready For the Answer Yahoo",
-      "published": "2026-06-09T19:55:38+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Oil prices fall to seven-week low as Iran and Israel halt attacks",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcTBPNE4tLWk0bE4zdDNmUEs0Z2hXeTV4WkgyRnNjSjlkZl9vRUxpTlU1eXUwNlBTNjhOM3BaWm1wd3pIMWZNSWtUQkJLQV82Szkyd3QxN09nZTlhNXV2Q2c4dHRnTFp1ZElELU83c2N3TFBGUjJnbkVwVi10eFA5TDVtU3J2cjFxZV9ERF9nRjZwaHZnVURzYzRYWThGYlVjWkY5MjFEYw?oc=5",
-      "summary": "Oil prices fall to seven-week low as Iran and Israel halt attacks Yahoo FinanceOil climbs as US-Iran tensions flare again while stockpiles tighten ReutersOil Steady as Israel and Iran Halt Hostilities That Risked Talks Bloomberg.comOil prices ease after Iran says military operations against Israel are over CNBCRisks to Red Sea Oil Exports Could Roil Oil Market Further Crude Oil Prices Today | OilPrice.com",
-      "published": "2026-06-09T19:37:47+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "California In Talks for Superstar Tech Lawyer to Challenge Paramount’s Warner Bros. Deal (Exclusive)",
-      "source": "The Hollywood Reporter",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdmFCMjBCZVh2a1duYnN4YjE1S1FTbnJ4ZVptdDJhc2FVLXVMT3lwZGNJa2h4bkRpUmlqSXc5cnplcGVyT1o2Q3pHZFQwc0ZydGNWZHg0WnNhWE5CTktWbFBUREVScVVKaHRRM1JJSjdfYllQeFU2c2FaLUNaMlZaMk5hR0lsNi1NTFQzN2xTYnYySmJMdEp1VVcxUlhXU1JfQ2dPUWNKZWR3cnRnMmlvd1VMcE05SEpuWDZtcDJxN3Zlcl80?oc=5",
-      "summary": "California In Talks for Superstar Tech Lawyer to Challenge Paramount’s Warner Bros. Deal (Exclusive) The Hollywood ReporterParamount accuses Netflix of ‘scorched-earth’ campaign against Warner Bros. deal NBC NewsParamount blasts Netflix, pushes back on Teamsters’ warnings about Warner Bros. deal PoliticoParamount-Warner Bros. Merger Formally Investigated By UK Competition Watchdog DeadlineBritain begins formal review of Paramount' s $110 billion Warner Bros deal Reuters",
-      "published": "2026-06-09T19:08:17+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOU1RLLU0xSUFqekFmQU1GTzNHanRHRlZCeHoySVVXRlROQVFXX19wYVZCT0Rxd0U3ZEVfR1BpaEFuSVdhNFEzSlE5VWlIZHB1Z1NiUDkwLVREZzZSam9tTWQyZk56MElZdEZ5T3ZwZ2dpa2FsNHloc0pXNVh1WVdIdlpGOHZuZGhmVTB1TjNfVmhheS1UMkpQMTQzenMyMV83enZBTlZKdS0tQQ?oc=5",
+      "summary": "As Salesforce begins layoffs, here's the standard severance package the company offers employees Business InsiderSalesforce lays off employees in a new round of cuts Business InsiderSalesforce cuts dozens of jobs in San Francisco KRON4Salesforce cuts staff amid acquisition spree and $50 billion share buyback The RegisterLast Month, Salesforce Announced It Hit $1.2 Billion in AI Revenue—Now It's Laying Off Staff Tied to the Product inc.com",
+      "published": "2026-06-09T21:31:00+00:00",
       "origin": "Google 財經頭條"
     }
   ]
