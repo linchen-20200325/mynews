@@ -1,0 +1,2194 @@
+{
+  "report_date": "2026-06-10",
+  "focuses": [
+    {
+      "report_date": "2026-06-10",
+      "query_zh": "川普",
+      "query_en": "Donald Trump",
+      "summary": "川普近期因美伊衝突、對台政策、移民議題、美國大選初選、以及他對NBA總冠軍賽和世足賽的評論而受到關注。",
+      "key_statements": [
+        "針對伊朗擊落美軍阿帕契直升機事件，川普表示美國必須做出回應，並下令對伊朗發動「自衛性攻擊」。",
+        "川普多次宣稱美伊協議「快達成了」，並讚賞封鎖荷姆茲海峽的有效性。",
+        "在對台議題上，有專家分析川普可能將對台軍售作為美中博弈的籌碼，甚至有「拋棄台灣」的疑慮。",
+        "美國眾議院通過了700億美元的移民執法預算，將延續至川普任期，顯示他持續將移民議題作為選舉戰場。",
+        "川普在共和黨內初選中，其背書的候選人表現強勢，顯示他對共和黨的控制力依舊存在。",
+        "川普公開批評世足賽門票價格「貴到太荒謬」，且被媒體報導在NBA總冠軍賽中打瞌睡。"
+      ],
+      "affected_industries": [
+        "國防軍工產業",
+        "石油天然氣產業",
+        "半導體產業",
+        "科技產業",
+        "移民服務與相關產業",
+        "運動娛樂產業",
+        "營建工程產業",
+        "醫療服務產業"
+      ],
+      "stocks": [
+        {
+          "name": "洛克希德·馬丁 (Lockheed Martin)",
+          "ticker": "LMT",
+          "market": "美股",
+          "sector": "國防軍工",
+          "sentiment": "利多",
+          "reason": "川普下令對伊朗發動空襲，並表示美國必須回應，可能增加軍事採購和國防開支，對軍工企業形成利多。",
+          "evidence_news": [
+            {
+              "title": "阿帕契遭伊朗擊落！川普稱「必須做出回應」 美軍發動新一波空襲",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMihANBVV95cUxQaWN3WktQRWctM1ZZRVBkcDRWQndlZzRiRnNyZ2JyYWpjYnhWODIyZVRyd3pnT0FhOUdxeE5hTFJ2N3ZsTHRZaEJ4d3JtWTVlNWt0Z0ctNm1Xa1NJSGt3N0d0czF6MFdtRmt4VUFwcXgxSkFNUVAybmxod0hDdTlVc1VsclBaTHI4MTJtbzBQc0NHOGdsektPOXozU0RkR2d2T3JLNGp1OWMtU1U0emlsb2p1YlVPVV80b0tMWkNlYjNXNFBhRFNEbXljbWZPNjBhaW9reFVoa0tqZlZqMEJJVEU1NE9NWWFFTDFoUU8ySWdJbllaZDZhaS1SZFEyakJpbng1NXBBUEdwQWZJTkV5czdLdW5QdXdwX0t2b1dqazN1WWFfemRFNVVSMWNjc1BUa0ZLejZveXlVN2xQUVJISmVRUE5QdmR1WkgxUnJGNWdzZlZIb0ppMEJPa1ExODhCU0Nmc1BjY2JaMjJ0N1BHbjFSQzdCLUVva1BjN3dnbDBkTnRw?oc=5"
+            },
+            {
+              "title": "美軍阿帕契遭伊朗擊落？ 川普發聲警告「必須回應」 網酸：打到股市了",
+              "source": "Yahoo股市",
+              "url": "https://news.google.com/rss/articles/CBMipANBVV95cUxPVUFhLVZWQTNCNGl4X01zVm9FM2lJeklmNTFOZVhFd2pTNEdXWEFBaTUwamY2WXg0bmlkSlZfRlVOaVU4by1SWWdJUFZDOFA1dEtfdEdZSWNZNlZxVWVQaE82VGRYci1JY1hFRGdQY1lnSFZWMVg5R19VQXJRSnF3QzVtbWFJWTY2SldxLXR1bklsTlJtRHkxQmpkb2FVT0xGVm5RS2t1d2pUUmJyMjdiSmxxUnhCU1ktNE9Hd09kYTVsOEdLOE56RWxwaFdod2JPVU51bExhZ1BqbU1oTFZ0bTRSeVM4QUY3Q1U2SE5VOHJSTEFodVA5RVlKZnBuOUhHTnY2VTlFbGxEMXVUNjU2b0pZMjdDSThiY1RDWEZab2h5YWh0OFdpYmhWelVONG55MlktcWl2VHc5TGdaLXByaWhCTmRLYVpvQXVzLVZDWjZGTWkyX2otT2xzNUJjZW53V3NudjNxSXpPUFFEUGMtRDVNd20yUUZSbkxyVGhGU2s4MVRzelVFbFp4ejVGeXZDbXBURlNXNXVKamk4MnFMR0E4MUo?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "台灣積體電路製造 (TSMC)",
+          "ticker": "2330",
+          "market": "台股",
+          "sector": "半導體",
+          "sentiment": "觀望",
+          "reason": "川普的貿易保護主義可能再次實施301條款，影響台灣出口導向的科技產業，帶來不確定性。",
+          "evidence_news": [
+            {
+              "title": "301條款逆襲2／川普用勞動人權綁關稅貿易台灣隱形冠軍剉咧等？3大威脅迫在眼前| 深度報導| 專題",
+              "source": "經濟日報",
+              "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9XcVVWeThQdW5LNzJXQnVSVFVVdVNFRk5RRmFCR3BZU2ZfdjNPdzA1b19OZlNrU3hBd3pTanNMR3YyZTR6dTJIUWNqNWx6bXdiX3ZadDN5RlVpMjVE?oc=5"
+            },
+            {
+              "title": "川普強硬表態！台股一度跌逾500點後收斂 分析師陳韋廷：仍在震盪築底期",
+              "source": "Yahoo股市",
+              "url": "https://news.google.com/rss/articles/CBMiiwRBVV95cUxPbFg5cmJzdTZYYU5CRzZrU1NZNmJRT2pHREsyTVF6Y2pUQi1wcEt5cVhGUjZhZzNmQ0ROdE9lQUN1YkhwdDF3cEc1ZnZTVDBsT2ROVmhYNHNKM3J5T3h4aGFrc0JMcmF0VTV6S3hvaHQwWkNDX3dKN01jb2NmaG5sSVZGdllHTkJ5VUF6dTR6MVZiS1hfU2J1akNxZURfV1RRZzFEODZjakw4bS1GdFQ1Q2pYeWVYQkRzbVZyMXd3Rm16OFNoNGJQUWZneWYzck82TFhwQ1JCLXJvZE8tRnkzeEZ5Z3RpUjV6YUZRME1CRnBmdVlralRTT3dfOVJ4SDZGN245aG12Zkc5WDl1ODlIdXl5Tl96alBacnBaQ18xSVlCclFnbHVFRWtnZFR2Tk1BV2tnakx5RlUyeU4yNGVSZWFEUk9WZHE1cWVsRkFnaWhlMjdiWlB4a1BWS3ZpMk9hNnVNby1TZ002QzdSVTM1VVpLLS1aT1FCSHJ5Vl8tZFJXbmVWTGtvR2NEbm1tTFE4em5rVUM1RkZoc0p2YVd0OE40TGJHaFFDZTJtNEMxYUpwX3FKa2M5TDc5VDEwRUFXTEZZUmJYTng5R2dMN3g0N2VEeGpoeUI5MzZjNUlLQm9NeVZmdlR4dHVfaFAxX0RXckxzVm5RdXphYTVkem9rQU5iYkZCdzRLenYw?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "中油 (CPC Corporation, Taiwan)",
+          "ticker": "",
+          "market": "台股",
+          "sector": "石油天然氣",
+          "sentiment": "觀望",
+          "reason": "川普對伊朗的強硬態度可能導致中東地緣政治緊張，影響國際油價波動，進而影響台灣中油的營運成本。",
+          "evidence_news": [
+            {
+              "title": "川普喊美2週內宣布全面勝利！預告油價下跌 網酸「喊盤」：到底要幾次？",
+              "source": "UDN",
+              "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE02SGNUeF93S05tbnFzeU9YWnBPT1dUNFhwTzBLb2g1Tm5LX3hOQ0twSVR4WDZDWjZBUXJEWnpVMTRscFlTRS1BRlVCOVNDcXptWEHSAVdBVV95cUxOeEVRRzB5b0VkM1k5OVphUWY1UkRfcjdIb25WMXFFYnQ1ZTBfa2xfWWNVVlN0NkFoLWduMzJZdG12bS0ycnpOTVlyQlZRSUNVVnVVRGwzSkE?oc=5"
+            },
+            {
+              "title": "伊朗、以色列不打了！市場風向大轉變 國際油價跳水",
+              "source": "自由財經",
+              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBMQ3BCOUY5TF91OUxSRk5wS3pJUmgxM1MyVUhHd1BtRGxoYzJ5LWlwVUJGbk53dWhrTzU4cE5fYkM3eGNpaXN3Wkk5X2lKdzctVG83TzFPYTVJMFdEWjNJ0gFkQVVfeXFMTlpPZ1ZNRzI3OHFfSnFsTXBUSG52Yk5ZeFZSQmJoNS1ORkRUUjVRcHZIR1QyQ2pkV3FuclFZUEs3UXJKMk5VQ01nVVVvOUNTZXdBRkktTmdrck5JUm9iZlB5NmZ4dg?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "美國聯合航空 (United Airlines Holdings)",
+          "ticker": "UAL",
+          "market": "美股",
+          "sector": "航空運輸",
+          "sentiment": "觀望",
+          "reason": "中東地緣政治緊張可能影響國際航班的燃油成本和航線安全，對航空業產生負面影響。",
+          "evidence_news": [
+            {
+              "title": "美軍空襲伊朗報復！川普獲700億美金銀彈強化邊境執法",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxPUER1R25iYk9WRFlSUlh2TzhvZWlEbk5MZHNCMk5yUlRpZWxpY2xKd1ViQzYzRXJHdHFiYmhuRTItd1FCMmt3N3VqNm56aGpKZlNvLXpnWWREUHozUEdrSmNLUlVoeVIzNzZrUUdsZzlPYV80cWRRYUxNc0ZfVEdKcWRrNi12OHlWcDJpYjVLd01BZ0ZSMnFFcF9GQllHUzAtRjc2OF9oRFpTNVE4Z2dZNVJ0cnc1NnJpQ2gzN0VUMkRsT1ZqNGNXR252bEk1X0YwYXBXYW56ejZwWTA0MjNEREp4a0gtS0hiZ01ELS1vQlBuSXhDUWh6RTFtYURLLXhJNEdWenNjVUlFdGRIb0d3MjFBR3JpNzBiXzFQQjJnTVFYVmhkVEUyUEFYeDNCaF8xbDB3am1fUUJEZEYxY1VlTjRUVnZuZmEyNmZTZEd6eVdOVzlabUg2VjFXLW1qZE8t?oc=5"
+            },
+            {
+              "title": "伊朗目標鎖定約旦和海灣地區的美軍基地，川普下令襲擊荷姆茲海峽附近區域後",
+              "source": "Reuters",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPS0dXSGJPLVM3VVFmRmYwcWloclNleWtLV0NrYVZfblNtdU5kY0RnOXNQSjBUQVZQS2RhR1RwQVhhT1oxVGdtVjJkdExKWG5uM3VFSTlPY0JhWms0S3RMdml0X0dVTEhuOTlEWUc3ZHlJVXl4dWFUeVFOT2xKWUhCbTh3aUVFeS1qaTNySWRBdWNMY1BhVWZUekZaUVNIZEVDVklnV1VISHpid0JObjVCU3V5bXFHaTgxaEN3M0UwOW1ac1Nz?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "美國超微公司 (AMD)",
+          "ticker": "AMD",
+          "market": "美股",
+          "sector": "半導體",
+          "sentiment": "觀望",
+          "reason": "川普的貿易政策可能對全球供應鏈產生影響，增加科技產品的製造成本和關稅風險。",
+          "evidence_news": [
+            {
+              "title": "301條款逆襲2／川普用勞動人權綁關稅貿易台灣隱形冠軍剉咧等？3大威脅迫在眼前| 深度報導| 專題",
+              "source": "經濟日報",
+              "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9XcVVWeThQdW5LNzJXQnVSVFVVdVNFRk5RRmFCR3BZU2ZfdjNPdzA1b19OZlNrU3hBd3pTanNMR3YyZTR6dTJIUWNqNWx6bXdiX3ZadDN5RlVpMjVE?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "台達電 (Delta Electronics)",
+          "ticker": "2308",
+          "market": "台股",
+          "sector": "電子零組件",
+          "sentiment": "觀望",
+          "reason": "川普可能採取的貿易保護措施，如關稅，將影響依賴出口的台灣電子製造商。",
+          "evidence_news": [
+            {
+              "title": "301條款逆襲2／川普用勞動人權綁關稅貿易台灣隱形冠軍剉咧等？3大威脅迫在眼前| 深度報導| 專題",
+              "source": "經濟日報",
+              "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9XcVVWeThQdW5LNzJXQnVSVFVVdVNFRk5RRmFCR3BZU2ZfdjNPdzA1b19OZlNrU3hBd3pTanNMR3YyZTR6dTJIUWNqNWx6bXdiX3ZadDN5RlVpMjVE?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "波音 (Boeing)",
+          "ticker": "BA",
+          "market": "美股",
+          "sector": "航空航太與國防",
+          "sentiment": "利多",
+          "reason": "美軍空襲伊朗可能導致國防預算增加，對主要軍事承包商如波音有利。",
+          "evidence_news": [
+            {
+              "title": "美軍直升機被擊落後，美國再次對伊朗發動打擊- 紐約時報中文網",
+              "source": "纽约时报中文网",
+              "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZ0tIWHZGWmhXSlVBbW94dEZpd3E4LVQ4MmpaRllHLVBVSlB2Tzg3c1NLdFVrNlBsNFNKNUhaV2E3Y2JjSU4wMWFxWHFRZWhtZ1JvREt6a2FWNjFsWG5Lc010cDRvM0xYWEpCdjdmZDZEME1FdmNZS2d3aGhDb1RncnZqaTVwR28?oc=5"
+            }
+          ],
+          "news_count": 16,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-10"
+        },
+        {
+          "name": "艾克森美孚 (ExxonMobil)",
+          "ticker": "XOM",
+          "market": "美股",
+          "sector": "能源",
+          "sentiment": "觀望",
+          "reason": "川普對伊朗的政策可能造成中東地區不穩定，影響原油供應和價格，對大型石油公司產生不確定性。",
+          "evidence_news": [
+            {
+              "title": "美軍空襲伊朗報復！川普獲700億美金銀彈強化邊境執法",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxPUER1R25iYk9WRFlSUlh2TzhvZWlEbk5MZHNCMk5yUlRpZWxpY2xKd1ViQzYzRXJHdHFiYmhuRTItd1FCMmt3N3VqNm56aGpKZlNvLXpnWWREUHozUEdrSmNLUlVoeVIzNzZrUUdsZzlPYV80cWRRYUxNc0ZfVEdKcWRrNi12OHlWcDJpYjVLd01BZ0ZSMnFFcF9GQllHUzAtRjc2OF9oRFpTNVE4Z2dZNVJ0cnc1NnJpQ2gzN0VUMkRsT1ZqNGNXR252bEk1X0YwYXBXYW56ejZwWTA0MjNEREp4a0gtS0hiZ01ELS1vQlBuSXhDUWh6RTFtYURLLXhJNEdWenNjVUlFdGRIb0d3MjFBR3JpNzBiXzFQQjJnTVFYVmhkVEUyUEFYeDNCaF8xbDB3am1fUUJEZEYxY1VlTjRUVnZuZmEyNmZTZEd6eVdOVzlabUg2VjFXLW1qZE8t?oc=5"
+            },
+            {
+              "title": "伊朗、以色列不打了！市場風向大轉變 國際油價跳水",
+              "source": "自由財經",
+              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBMQ3BCOUY5TF91OUxSRk5wS3pJUmgxM1MyVUhHd1BtRGxoYzJ5LWlwVUJGbk53dWhrTzU4cE5fYkM3eGNpaXN3Wkk5X2lKdzctVG83TzFPYTVJMFdEWjNJ0gFkQVVfeXFMTlpPZ1ZNRzI3OHFfSnFsTXBUSG52Yk5ZeFZSQmJoNS1ORkRUUjVRcHZIR1QyQ2pkV3FuclFZUEs3UXJKMk5VQ01nVVVvOUNTZXdBRkktTmdrck5JUm9iZlB5NmZ4dg?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "中鼎工程 (CTCI Corporation)",
+          "ticker": "9933",
+          "market": "台股",
+          "sector": "營建工程",
+          "sentiment": "觀望",
+          "reason": "川普提出協助伊朗重建但要求一半石油的條件，若未來有大型基礎建設或能源項目，可能對工程公司產生機會，但地緣政治風險仍高。",
+          "evidence_news": [
+            {
+              "title": "委內瑞拉模式再啟? 美伊再戰前談伊朗重建 川普 : 可協助 但要一半石油",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMihANBVV95cUxQNVlkWHp3QnFiQ1hTZVU1UFVoOUFfX0Y3RTM4cnZtLWMya1ktZHhKMVlBWFowU2lMbnU2X2xieE9fWjFZOTVHUjgyVDI4bXE5MHpBRzB1QzBvbEQxYWk3RzhCb2djWi1TYVRocDdKbzVlTjhfa0JEdXRFdmwyVkQyQlZQX1Roek50X2dXRFhfMHJyczNNSWI0OHYtNFZDZE56cWhkT3pXUkdOcl9FT1h1T25RVkVZVzJmS1NDQlZnRjVUZ2dlTk9iRm03UXpQaWFwSXQ5ZGlBRmEyMFdaWlJqd0EzalRtaFlwb2NEX3VZZVFSRHdNem5mMnk3TmpHMzJYUnpuOEVvVTJvUDRFLUl5aUJtblhfUkktR0FHZDVua1Vjd3k4dWwtd0lBOGk1R1JZcDVZUzlpOTBnTkRkNll2OFFtYm5zc3lZWmNfSVNCWS1qQlE1cFlPczI5ZmJsN2pTd09ucHAta3IyUHg0bVVZZjQzVVRidlA4dVVfRThLMDJJWmdk?oc=5"
+            }
+          ],
+          "news_count": 0
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "川普會放棄台灣嗎？專家：北京最想得到的3件事全拿到- 政治圈",
+          "source": "中時新聞網",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQem1OSFpLQThqUlZ6dDRLRzdoYXoxUkVJUmtoZTdWWEFBNVR1UE9ETnVyMVF2SVhiUDRWMUpoejN6a1lteDVjNmlWNjNTc29Wai1HU1g2N19JMmpsTjlOcHYyMld6WEwxRG1BUzlISWtaaXRmWHZTdGxuS2ZOOUxlRUM5eVVEQ1FwaDQzRkRwM1U?oc=5"
+        },
+        {
+          "title": "【伊朗危機】預告「美伊協議快達成了」 CNN統計：川普兩個半月說了37次",
+          "source": "梅花新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFByUExPU3M0WlE1SWJHRkpnVmkwY1RsWUZ0dWl0UmhMNGgxbHVPdUpZMmw0OXdhSzJZZ1dIOWlIeTcyakxxdXpvdDc0UDlIR3Yya2YzcE1zdFoz?oc=5"
+        },
+        {
+          "title": "《放. 新聞／世界新聞／美國》川普又把移民拉回戰場 美國選舉季提前開打",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxQeE5RNGp3cGhwejVxYTFjVUVFdjgzLV9LdldOUlFDUjJKM1FwMWpCdFFhMVRLWmpyMWdYMWVBckNpaU1DNXJkNkVWbXE2M0hfWTZPRXAtaHBsSFp0SlNPSWpRYWxieGh1NWhqYXFRRFRySjRIXzFsdUloMW5xWWJ4X0JKZFVlSDE1X0ZDZ0EyNUtlYWRxdXBfTzVHUHJ3YnBha2N2RUQzbU5KZWJTRlVQalBKckY3UkxJdzFKZ0pvZC1SWEFfSFJxT0FtVVZIdElwaGw3NGN5SGJQQlVNM0szWTRzY29FSmpFMGxxRnlJbnVmeHZwNE4yWXVJTEtOS2NFYVNCVG5sY0NpLS04b19paUZrUWx0N1RYUDRaN3Yzdi0xMHZmeTZsdEQ3UjNIT254clJORmlBeW1EZjZZ?oc=5"
+        },
+        {
+          "title": "委內瑞拉模式再啟? 美伊再戰前談伊朗重建 川普 : 可協助 但要一半石油",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMihANBVV95cUxQNVlkWHp3QnFiQ1hTZVU1UFVoOUFfX0Y3RTM4cnZtLWMya1ktZHhKMVlBWFowU2lMbnU2X2xieE9fWjFZOTVHUjgyVDI4bXE5MHpBRzB1QzBvbEQxYWk3RzhCb2djWi1TYVRocDdKbzVlTjhfa0JEdXRFdmwyVkQyQlZQX1Roek50X2dXRFhfMHJyczNNSWI0OHYtNFZDZE56cWhkT3pXUkdOcl9FT1h1T25RVkVZVzJmS1NDQlZnRjVUZ2dlTk9iRm03UXpQaWFwSXQ5ZGlBRmEyMFdaWlJqd0EzalRtaFlwb2NEX3VZZVFSRHdNem5mMnk3TmpHMzJYUnpuOEVvVTJvUDRFLUl5aUJtblhfUkktR0FHZDVua1Vjd3k4dWwtd0lBOGk1R1JZcDVZUzlpOTBnTkRkNll2OFFtYm5zc3lZWmNfSVNCWS1qQlE1cFlPczI5ZmJsN2pTd09ucHAta3IyUHg0bVVZZjQzVVRidlA4dVVfRThLMDJJWmdk?oc=5"
+        },
+        {
+          "title": "黨內初選連勝 MAGA背書威力不減 川普牢控共和黨 11月大選仍有變數",
+          "source": "今周刊",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZU9adUc5M0wxN0NFVHdSZzdIbXAxSHRVY2wxanpPQ0FkXzVoX0xOdGNpb29KaFQ1VE54bFN1cVlsZ0ViQ1RKNThNNkdjY2ZKNDFjVnpWRDBmbWJsUGItZFBIWDlXZTVwZk9jdFRLQTRjQzJhWEYxWndhTFRIdXRTbQ?oc=5"
+        },
+        {
+          "title": "連富豪總統川普都說「貴到太荒謬」！世足賽門票滯銷小組賽比上屆決賽還貴",
+          "source": "Yahoo運動",
+          "url": "https://news.google.com/rss/articles/CBMi0wNBVV95cUxOQVR3bjZXVFhYQjlRVWlLNk55OHV0SlhGTHpUaUtxVzh6OUdUOVFDLTdoSVJCMkhSSHc0ODFlU3B6YndZYkplLVlpNFZKSGZ5NTJuSDZ5MHlDMmZCalRhQTRSb0NrT3BPc2UxR2ZhREZUOFNPZkstaEpkRjVMS19sTUJYamlzTHBuSTFDVU01RUdiMmFNaWVLSy1JNzVvZjJTZkd1VmF6UFRFaUdibVVLS2tpRzYyZjFWamE0WWFoSHpmYU5rS0QzdTk1S0NUeWFjSjdpMTQ0Ukdfd0ItNmt5RlJxOHBnT2FsUk85RjVlUFVGVENxd1U2WXpvQlBIUk9xaVYyTHpLVUNZOWtNZlJDeFplRE1BTVEzeXltREtDMl9IX3lIaURkbUwxcWtxQXpGQU5ZZHhHVWJCWVFZMW5URkJuUDJoQVlBSldiZVhFTS1KZFhJeWlIdTBVQWdiQW1IYUY4aElyX3JYU3lJbmc5amFsWFQ3QXAzNm9RYkJaanhaMEUxc1ctdmFiZ2dOaEhnYTdPUHB2M1VTYjIzazdPdGVfX29QVEd4ODFySi16V2VaR282MGdQSlpfUnk0eGV2bGRZWko4WVNHa2pJUUpod21UQQ?oc=5"
+        },
+        {
+          "title": "NBA》川普觀戰卻在包廂打盹 賽後遭尼克球迷遷怒「他毀了一切」",
+          "source": "Yahoo運動",
+          "url": "https://news.google.com/rss/articles/CBMi-gJBVV95cUxNVGxjT0xQLXZ2dWZXT1F0ZnJBUmNyY3B6MXZZUG1FTUlucEZYQXlQaUNMbGJ6MGZLeENoQkRDamtpMFhDNzcyV1I4d29majZDb0FGUkRjQzZQUUc4SGFXeFJsemlWUjVMMnJVdHJMeDFXZ0FCbGNVNkY4VjFSTDBjUklSSHpjSjY3c3A4NHYtak14X2NaUzhmSGpLQ0R6eGFqTDl4Q1hhZVI3VVdtbHJjaTZEUWY1V2c4ejBOUFhSNEs4eVMtZjFLMHlXZFF1QUc4b3dIMjVxMWVWR1VBTjNNNTRERGthSURDblZ0TXcxcUxwQmJNSHpzVWp2Y3hES09yTEJVVk5lYmVhaktuVFluMlMyTXdQSnUyX2Z5dGF1bkVjVmhGNDFhS2tBS0pSQUVwZDNPSEtEWV9adkRtZGpGc05TQi0xUWxGalY5MjlQMXU0emlCNGpZMzltZDJmdGJzenpsNGNFQzRldnUySmtoa0pfc0VtTzR3UkE?oc=5"
+        },
+        {
+          "title": "美加強對古巴施壓 赫格塞斯將訪關達那摩灣基地 | 中央廣播電臺",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBIemt6YXdxNlNMVW5xd1RkalA0YlM4OGNUd3ZsY3VNM1BxQVk2T3ZuQ1AzM1Y4Ul9uekZXVHlUNmVWdEZXcC1IZzNEcld2TWk1WTlLWXJR?oc=5"
+        }
+      ],
+      "news_count": 100,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-10",
+      "raw_news": [
+        {
+          "title": "川普會放棄台灣嗎？專家：北京最想得到的3件事全拿到- 政治圈",
+          "source": "中時新聞網",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQem1OSFpLQThqUlZ6dDRLRzdoYXoxUkVJUmtoZTdWWEFBNVR1UE9ETnVyMVF2SVhiUDRWMUpoejN6a1lteDVjNmlWNjNTc29Wai1HU1g2N19JMmpsTjlOcHYyMld6WEwxRG1BUzlISWtaaXRmWHZTdGxuS2ZOOUxlRUM5eVVEQ1FwaDQzRkRwM1U?oc=5",
+          "summary": "川普會放棄台灣嗎？專家：北京最想得到的3件事全拿到- 政治圈 中時新聞網",
+          "published": "2026-06-10T04:21:31+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "川普會拋棄台灣？川習會後外媒報導「習近平認知作戰贏了」 學者揪一疑點",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMitANBVV95cUxQbVdhX1BMREY5RjVUOW9zTUxlcjd5MTBMT3BkMjJ4dVVhS0lKTU5Pd3RQMEp3ZzdPLWZINjZqNFYwc3Etc2ZoZzNzYUFMU1owcnNIUy1odjU1M3U5aUR0MGlTdTBuQ29TNk9QMXVJc2VoUGk1UUE5bk5Oc3NIeVVXdWRUUTB0OWlCVTZKZXE2RS1SY2NvWWtmd0RLUE9OYlIyWmsyNS1KQ3B4dDhINldjMnVWb2laSXRzbGZJa2lnemlqX1VKQ0h4THZxMldPR1gyUHN5RXJGX19MMXBZeVFqU0RvWHFvNndvQ0JyQkNjM2tJaUVBQzI4bnhNMWhRVnFhNEtQeVhxaXZ6dnNDN1FnUGE2UkpKU3dvQk9ZcjNHQVJHbFBrT1BJNUFTVzJvRHFhVlFybmc5YVdUYzBLXzBaTGxKZ0pfMl9WYVhsWUVnSG9KanYtdE5wYXF3cjh6Tkx6UUFqZjNxRXlNWDhYVFpXNUs3ZG4tTUxGZEdpbWpzMUZOeURPQlVGZFQxQno5QXBhY2d3al9ZRWs0ZnR5TlZPMXhrWWx3eXlUOHpfdTF6TjRQNXRI?oc=5",
+          "summary": "川普會拋棄台灣？川習會後外媒報導「習近平認知作戰贏了」 學者揪一疑點 Yahoo新聞",
+          "published": "2026-06-10T04:20:45+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "【伊朗危機】預告「美伊協議快達成了」 CNN統計：川普兩個半月說了37次",
+          "source": "梅花新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFByUExPU3M0WlE1SWJHRkpnVmkwY1RsWUZ0dWl0UmhMNGgxbHVPdUpZMmw0OXdhSzJZZ1dIOWlIeTcyakxxdXpvdDc0UDlIR3Yya2YzcE1zdFo?oc=5",
+          "summary": "【伊朗危機】預告「美伊協議快達成了」 CNN統計：川普兩個半月說了37次 梅花新聞網",
+          "published": "2026-06-10T04:00:00+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "《放. 新聞／世界新聞／美國》川普又把移民拉回戰場 美國選舉季提前開打",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxQeE5RNGp3cGhwejVxYTFjVUVFdjgzLV9LdldOUlFDUjJKM1FwMWpCdFFhMVRLWmpyMWdYMWVBckNpaU1DNXJkNkVWbXE2M0hfWTZPRXAtaHBsSFp0SlNPSWpRYWxieGh1NWhqYXFRRFRySjRIXzFsdUloMW5xWWJ4X0JKZFVlSDE1X0ZDZ0EyNUtlYWRxdXBfTzVHUHJ3YnBha2N2RUQzbU5KZWJTRlVQalBKckY3UkxJdzFKZ0pvZC1SWEFfSFJxT0FtVVZIdElwaGw3NGN5SGJQQlVNM0szWTRzY29FSmpFMGxxRnlJbnVmeHZwNE4yWXVJTEtOS2NFYVNCVG5sY0NpLS04b19paUZrUWx0N1RYUDRaN3Yzdi0xMHZmeTZsdEQ3UjNIT254clJORmlBeW1EZjZZ?oc=5",
+          "summary": "《放. 新聞／世界新聞／美國》川普又把移民拉回戰場 美國選舉季提前開打 Yahoo新聞",
+          "published": "2026-06-10T03:42:21+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普才喊兩週內宣布勝利！伊朗不給面子轟美軍基地",
+          "source": "NOWnews今日新聞",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE84eTRoWFplYVd1MWdKb1FCYkdyb1NCQUk2WjItN25hYmlTSTZ0SU1nNFJObVk0Y05mSlFyLVpoX0tMMHlqSjlWYVlsVTPSAVJBVV95cUxPaEd3dkQzSHJkZVVXVXZmTkJNZnZTazhuU3g2dVdUWFNVaVJNa2QtdXlLdVB6cmp1c1RfWktPLXNac0hJN1FjbDVZdTV3eWdpS2FB?oc=5",
+          "summary": "川普才喊兩週內宣布勝利！伊朗不給面子轟美軍基地 NOWnews今日新聞",
+          "published": "2026-06-10T03:40:04+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "特朗普摔麥：這不是總統，是個輸不起的「政治巨嬰」",
+          "source": "《超越新聞網》",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9mRENzMjM5WFF1aWRUaGkyc3V6SERxcDBVNkxPOEVnWDNPeDR5LTY2aFQ0Q2FoU2hyeHNjNXJlb1VTYmd4OGZfSnJKRk1jcmwwQk1oaA?oc=5",
+          "summary": "特朗普摔麥：這不是總統，是個輸不起的「政治巨嬰」 《超越新聞網》",
+          "published": "2026-06-10T03:37:34+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "委內瑞拉模式再啟? 美伊再戰前談伊朗重建 川普 : 可協助 但要一半石油",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMihANBVV95cUxQNVlkWHp3QnFiQ1hTZVU1UFVoOUFfX0Y3RTM4cnZtLWMya1ktZHhKMVlBWFowU2lMbnU2X2xieE9fWjFZOTVHUjgyVDI4bXE5MHpBRzB1QzBvbEQxYWk3RzhCb2djWi1TYVRocDdKbzVlTjhfa0JEdXRFdmwyVkQyQlZQX1Roek50X2dXRFhfMHJyczNNSWI0OHYtNFZDZE56cWhkT3pXUkdOcl9FT1h1T25RVkVZVzJmS1NDQlZnSjVUZGdlTk9iRm03UXpQaWFwSXQ5ZGlBRmEyMFdaWlJqd0EzalRtaFlwb2NEX3VZZVFSRHdNem5mMnk3TmpHMzJYUnpuOEVvVTJvUDRFLUl5aUJtblhfUkktR0FHZDVua1Vjd3k4dWwtd0lBOGk1R1JZcDVZUzlpOTBnTkRkNll2OFFtYm5zc3lZWmNfSVNCWS1qQlE1cFlPczI5ZmJsN2pTd09ucHAta3IyUHg0bVVZZjQzVVRidlA4dVVfRThLMDJJWmdk?oc=5",
+          "summary": "委內瑞拉模式再啟? 美伊再戰前談伊朗重建 川普 : 可協助 但要一半石油 Yahoo新聞",
+          "published": "2026-06-10T03:33:36+00:00",
+          "origin": "關鍵字「川普總統」"
+        },
+        {
+          "title": "黨內初選連勝 MAGA背書威力不減 川普牢控共和黨 11月大選仍有變數",
+          "source": "今周刊",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZU9adUc5M0wxN0NFVHdSZzdIbXAxSHRVY2wxanpPQ0FkXzVoX0xOdGNpb29KaFQ1VE54bFN1cVlsZ0ViQ1RKNThNNkdjY2ZKNDFjVnpWRDBmbWJsUGItZFBIWDlXZTVwZk9jdFRLQTRjQzJhWEYxWndhTFRIdXRTbQ?oc=5",
+          "summary": "黨內初選連勝 MAGA背書威力不減 川普牢控共和黨 11月大選仍有變數 今周刊",
+          "published": "2026-06-10T03:33:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "301條款逆襲2／川普用勞動人權綁關稅貿易台灣隱形冠軍剉咧等？3大威脅迫在眼前| 深度報導| 專題",
+          "source": "經濟日報",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9XcVVWeThQdW5LNzJXQnVSVFVVdVNFRk5RRmFCR3BZU2ZfdjNPdzA1b19OZlNrU3hBd3pTanNMR3YyZTR6dTJIUWNqNWx6bXdiX3ZadDN5RlVpMjVE?oc=5",
+          "summary": "301條款逆襲2／川普用勞動人權綁關稅貿易台灣隱形冠軍剉咧等？3大威脅迫在眼前| 深度報導| 專題 經濟日報",
+          "published": "2026-06-10T03:28:08+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "連富豪總統川普都說「貴到太荒謬」！世足賽門票滯銷小組賽比上屆決賽還貴",
+          "source": "Yahoo運動",
+          "url": "https://news.google.com/rss/articles/CBMi0wNBVV95cUxOQVR3bjZXVFhYQjlRVWlLblk4ZXRvSlhGTHpUaUtxVzh6OUdUOVFDLTdoSVJCMkhSSHc0ODFlU3B6YndZYkplLVlpNFZKSGZ5NTJuSDZ5MHlDMmZCalRhQTRSb0NrT3BPc2UxR2ZhREZUOFNPZkstaEpkRjVMS19sTUJYamlzTHBuSTFDVU01RUdiMmFNaWVLSy1JNzVvZjJTZkd1VmF6UFRFaUdibVVLS2tpRzYyZjFWamE0WWFoSHpmYU5rS0QzdTk1S0NUeWFjSjdpMTQ0Ukdfd0ItNmt5RlJxOHBnT2FsUk85RjVlUFVGVENxd1U2WXpvQlBIUk9xaVYyTHpLVUNZOWtNZlJDeFplRE1BTVEzeXltREtDMl9IX3lIaURkbUwxcWtxQXpGQU5ZZHhHVWJCWVFZMW5URkJuUDJoQVlBSldiZVhFTS1KZFhJeWlIdTBVQWdiQW1IYUY4aElyX3JYU3lJbmc5amFsWFQ3QXAzNm9RYkJaanhaMEUxc1ctdmFiZ2dOaEhnYTdPUHB2M1VTYjIzazdPdGVfX29QVEd4ODFySi16V2VaR282MGdQSlpfUnk0eGV2bGRZWko4WVNHa2pJUUpod21UQQ?oc=5",
+          "summary": "連富豪總統川普都說「貴到太荒謬」！世足賽門票滯銷小組賽比上屆決賽還貴 Yahoo運動",
+          "published": "2026-06-10T03:21:18+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普「對台軍售當籌碼」 鄭麗文：台灣拒降格當美中博弈棋子",
+          "source": "TVBS新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1tdy1NSkpjb043QndBRU5IOEx6aTFXRkhnYWJlQ3VJdGZjbkV6UmJqZHhVUE95U1oteV9Wb0tHYm9PVl9maDFGRFc5cmpNUk1tSFV3?oc=5",
+          "summary": "川普「對台軍售當籌碼」 鄭麗文：台灣拒降格當美中博弈棋子 TVBS新聞網",
+          "published": "2026-06-10T03:21:00+00:00",
+          "origin": "關鍵字「川普總統」"
+        },
+        {
+          "title": "NBA》川普觀戰卻在包廂打盹 賽後遭尼克球迷遷怒「他毀了一切」",
+          "source": "Yahoo運動",
+          "url": "https://news.google.com/rss/articles/CBMi-gJBVV95cUxNVGxjT0xQLXZ2dWZXT1F0ZnJBUmNyY3B6MXZZUG1FTUlocEZYQXlQaUNMbGJ6MGZLeENoQkRDamtpMFhDNzcyV1I4d29majZDb0FGUkRjQzZQUUc4SGFXeFJsemlWUjVMMnJVdHJMeDFXZ0FCbGNVNkY4VjFSTDBjUklSSHpjSjY3c3A4NHYtak14X2NaUzhmSGpLQ0R6eGFqTDl4Q1hhZVI3VVdtbHJjaTZEUWY1V2c4ejBOUFhSNEs4eVMtZjFLMHlXZFF1QUc4b3dIMjVxMWVWR1VBTjNNNTRERGthSURDblZ0TXcxcUxwQmJNSHpzVWp2Y3hES09yTEJVVk5lYmVhaktuVFluMlMyTXdQSnUyX2Z5dGF1bkVjVmhGNDFhS2tBS0pSQUVwZDNPSEtEWV9adkRtZGpGc05TQi0xUWxGalY5MjlQMXU0emlCNGpZMzltZDJmdGJzenpsNGNFQzRldnUySmtoa0pfc0VtTzR3UkE?oc=5",
+          "summary": "NBA》川普觀戰卻在包廂打盹 賽後遭尼克球迷遷怒「他毀了一切」 Yahoo運動",
+          "published": "2026-06-10T03:18:03+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "卡尼宣布美加跨境大橋即將通車 白宮：特朗普反對立場不變",
+          "source": "香港01",
+          "url": "https://news.google.com/rss/articles/CBMipANBVV95cUxQd0dnOFNDQWptRVFEVWJULWM5S3dRemhOMm1KQVNKOHJobHI4SjBMdmZIOXNRMEwzVkt0Wkd6U19WeWdLbUlrcF9VQnZocVFuTUNCdE9STUNRdzNzbVh6TGx2UC1tc2M0WW9GeTZhNzV6cVNpN0VDcko4OUJOS3F0RzlhSDBscExHbU5pbXlqc2FGd3R3cjVHQW1NTktXV0FmYzBhcDVJTDRjWFJZcUVmWThEUHBrb2pjY011YU1xUGg4MHR2SnMzV2RLSS1iRW1Gb2tUaFJhdmdhaFlzNEk4ZUlFWlVtUnBmaGhUd3BBeld6bE93RlFESXl4OVl5UGg4aUhvTzBRT3JQdVk5SWo3dmN5RmJ4SEVkVTBhWGNSQ0hqS1NiZ1J5RkZUbzU4VDVka1dIZTdwV0o3TWUtckpjQUlHV0lwNlpQeXE4NDdBUE5helhkd1V2RElLZFdPejFodU1SZ0EwQU5vWWlpMXlVUU5YNmdpTDNEMjdpRWRkaEN2NWxVSHZjTGo3ZU1WNW1vb1VwbW5LeGc5clRSMnZEc2NaMmk?oc=5",
+          "summary": "卡尼宣布美加跨境大橋即將通車 白宮：特朗普反對立場不變 香港01",
+          "published": "2026-06-10T03:14:12+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "川普19歲孫女遭抓包「偷換音效」！陪爺爺看NBA「噓聲變歡呼」 被酸：活在虛假世界",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi8wJBVV95cUxNVmR4VG51eWZDaGxrTzhPenQ5cW1QWi15cWxUaGVwbUlSb1A1ZGVWR3FpNHZqaEpZanJ0Yk9waWtOOGdrRmV2R3lGYUNwYlI2VG4tUXIxSjA0dUYwcDhTdTlIT3hFZ01CWWV0Vmc5NTF5TmJTZ203SFVWb3FscGhkTWpXZUN1M1NRY1ZlVGhJYzl2TmdrcEtsUTNRTEFvMkRHWG1LWF9Fel9TZG9VcERfMVgzRkV0TW1iTzdZQzZENFRWcFFvUU1lYXZWR2dlU2xYWVhLblZkN2JUYXF6bmVFdG50OEhMbEpxNEliOGtxUWtZdUJMMHZfWXRJNVRwWlkwRlFEYm5rcWZYUjZ6SHFVM1g1WlQzYm50aHhHdDN0aklwaGszOFFKVkd1amZFbkxEVWU5My1JbzFYSW03d0VSbFdYb0RyZlk5S09Xc1NjWGNYM3BkTDJnUHZiYlJUTXFjUDd2UXdHajVzTVV5Q3c4NTBVTQ?oc=5",
+          "summary": "川普19歲孫女遭抓包「偷換音效」！陪爺爺看NBA「噓聲變歡呼」 被酸：活在虛假世界 Yahoo新聞",
+          "published": "2026-06-10T03:13:04+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "阿帕契遭伊朗擊落！川普稱「必須做出回應」 美軍發動新一波空襲",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMihANBVV95cUxQaWN3WktQRWctM1ZZRVBkcDRWQndlZzRiRnNyZ2JyYWpjYnhWODIyZVRyd3pnT0FhOUdxeE5hTFJ2N3ZsTHRZaEJ4d3JtWTVlNWt0Z0ctNm1Xa1NJSGt3N0d0czF6MFdtRmt4VUFwcXgxSkFNUVAybmxod0hDdTlVc1VsclBaTHI4MTJtbzBQc0NHOGdsektPOXozU0RkR2d2T3JLNGp1OWMtU1U0emlsb2p1YlVPVV80b0tMWkNlYjNXNFBhRFNEbXljbWZPNjBhaW9reFVoa0tqZlZqMEJJVEU1NE9NWWFFTDFoUU8ySWdJbllaZDZhaS1SZFEyakJpbng1NXBBUEdwQWZJTkV5czdLdW5QdXdwX0t2b1dqazN1WWFfemRFNVVSMWNjc1BUa0ZLejZveXlVN2xQUVJISmVRUE5QdmR1WkgxUnJGNWdzZlZIb0ppMEJPa1ExODhCU0Nmc1BjY2JaMjJ0N1BHbjFSQzdCLUVva1BjN3dnbDBkTnRw?oc=5",
+          "summary": "阿帕契遭伊朗擊落！川普稱「必須做出回應」 美軍發動新一波空襲 Yahoo新聞",
+          "published": "2026-06-10T03:11:15+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美軍阿帕契遭伊朗擊落？ 川普發聲警告「必須回應」 網酸：打到股市了",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMipANBVV95cUxPVUFhLVZWQTNCNGl4X01zVm9FM2lJeklmNTFOZVhFd2pTNEdXWEFBaTUwamY2WXg0bmlkSlZfRlVOaVU4by1SWWdJUFZDOFA1dEtfdEdZSWNZNlZxVWVQaE82VGRYci1JY1hFRGdQY1lnSFZWMVg5R19VQXJRSnF3QzVtbWFJWTY2SldxLXR1bklsTlJtRHkxQmpkb2FVT0xGVm5RS2t1d2pUUmJyMjdiSmxxUnhCU1ktNE9Hd09kYTVsOEdLOE56RWxwaFdod2JPVU51bExhZ1BqbU1oTFZ0bTRSeVM4QUY3Q1U2SE5VOHJSTEFodVA5RVlKZnBuOUhHTnY2VTlFbGxEMXVUNjU2b0pZMjdDSThiY1RDWEZab2h5YWh0OFdpYmhWelVONG55MlktcWl2VHc5TGdaLXByaWhCTmRLYVpvQXVzLVZDWjZGTWkyX2otT2xzNUJjZW53V3NudjNxSXpPUFFEUGMtRDVNd202UUZSbkxyVGhGU2s4MVRzelVFbFp4ejVGeXZDbXBURlNXNXVKamk4MnFMR0E4MUo?oc=5",
+          "summary": "美軍阿帕契遭伊朗擊落？ 川普發聲警告「必須回應」 網酸：打到股市了 Yahoo股市",
+          "published": "2026-06-10T03:09:35+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "外媒撰文談川普是否棄台 學者：但你文章又說美對台政策未變...",
+          "source": "Newtalk新聞",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9UZXVvMjFUVngyNUUtVVNpemJrMEtCam5LSWdtZHktRXpTRF9uckw5N2lxQUdpdUVkaVBPX3N0Y0ZfdGhIdVc0b2YyTHQtMU1kWEhhQnZ2bkNZaTQ?oc=5",
+          "summary": "外媒撰文談川普是否棄台 學者：但你文章又說美對台政策未變... Newtalk新聞",
+          "published": "2026-06-10T03:05:07+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "擊落阿帕契激怒美軍 葉耀元分析川普反擊3重點",
+          "source": "自由時報",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9lbFFfZU9YM3Uwb3lPejdpbzlxd3dzZGtsU3hfVGFqYkpPejh1VXh1S0l1bHB0TzZCYVdfa2plNkJvekU1eWpXczdmZDFWVjVpZzBuT3Z2dU5KVVBGdjFhbVBiSzBud9IBa0FVX3lxTE0wLVBwdy10VnZXNEpXdzRIRlZIMnAxNjdWVV9uYU8zZVg5NGhraE10ckhpdk9mbmtIaWRoRnh2eTNheGpjMndhS0hsZ3RNd1RiMnRMUUFrZ3podlhGZDBRYXBWU212UUkyVG1R?oc=5",
+          "summary": "擊落阿帕契激怒美軍 葉耀元分析川普反擊3重點 自由時報",
+          "published": "2026-06-10T02:46:52+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美軍直升機被擊落後，美國再次對伊朗發動打擊- 紐約時報中文網",
+          "source": "纽约时报中文网",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZ0tIWHZGWmhXSlVBbW94dEZpd3E4LVQ4MmpaRllHLVBVSlB2Tzg3c1NLdFVrNlBsNFNKNUhaV2E3Y2JjSU4wMWFxWHFRZWhtZ1JvREt6a2FWNjFsWG5Lc010cDRvM0xYWEpCdjdmZDZEME1FdmNZS2d3aGhDb1RncnZqaTVwR28?oc=5",
+          "summary": "美軍直升機被擊落後，美國再次對伊朗發動打擊- 紐約時報中文網 纽约时报中文网",
+          "published": "2026-06-10T02:45:34+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美加強對古巴施壓 赫格塞斯將訪關達那摩灣基地 | 中央廣播電臺",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBIemt6YXdxNlNMVW5xd1RkalA0YlM4OGNUd3ZsY3VNM1BxQVk2T3ZuQ1AzM1Y4Ul9uekZXVHlUNmVWdEZXcC1IZzNEcld2TWk1WTlLWXJR?oc=5",
+          "summary": "美加強對古巴施壓 赫格塞斯將訪關達那摩灣基地 | 中央廣播電臺 LINE TODAY",
+          "published": "2026-06-10T02:38:58+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "伊朗局勢｜特朗普多次出口術稱美伊快達成和平協議 CNN統計：高達37次預告",
+          "source": "橙新聞",
+          "url": "https://news.google.com/rss/articles/CBMiywNBVV95cUxPaU5tOV9oaTZsTnFZOEJzb3RwZkR3XzllaGFGV3dmNmZyUnM5VEo3Y3ZWMTRWc1dEZ0RQS1Q4UUtlbllNcU5mQmhPTDNjVmVud3ZtbDV1OUxESTNySE05cC1xUUFTUjlKUDlKNWNPZGloVVdvYUNTTjJCNGp0Q0VCLUVUOHJlNEVQQ2pFRktqVHFuQzlCcExJV1EzUldtaUlkbEZ6YW4tZmYtZnlQdFhXc1ExRjVtSW1mbjJDZDJmT3pnZWNUbk1Kbnp3RTFrdHpaZFpEUFNvUHpXaFF6WGVjUnh1MmdEbWtYbnRLa0JWM2ZEbzROTnNPcnQyQ1N3cUYzeEkzTUNLY3I4alJfRnRGX29JRlFiSDdkSUdFbm1GT2V5YmVNN05YdU5TNmV5b0FuSnJCNnFpWDVpLXhNNk5JZlVaWVM4cFpORWNqNE5QejlaUk1iSVRzUGM4dWVDc3NTWGUyZGNZSFViRE53QzZPWVc0TTd2WWRZWVNYRVJxYnZJMHZnb2RZNmN4S3Z6VDYwSVRWNEx4cV9pYzdDcE4zOWp4b3ZneUtMbzYzSGFtSUxacHhnQWRONUs0MlI0alR6OEp2aVpRek5vdWc?oc=5",
+          "summary": "伊朗局勢｜特朗普多次出口術稱美伊快達成和平協議 CNN統計：高達37次預告 橙新聞",
+          "published": "2026-06-10T02:36:47+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "特朗普觀賽主隊屢敗 紐約人隊球迷歸咎總統帶來厄運",
+          "source": "bastillepost.com",
+          "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxOcFVOOGRCVXU3aGFSR19MbjhlNl9VTE83MWNDU2pEX3pjX3lpQmV5ejlYdnJrWjY4eWliaW1wbWRDMUs2VThLOURJZGJnc0piNkRJSFdhdzFIeUFsWUNBRU13ZlQ4Z0VvQ1lTNHB2cEl1UDJuZ0JsRUtvQnNXTkpMVUxKcGZjaEJtUWdaQVVEQjRDdXlBYUxvM0FsU2hhcFNMaHdvNENmejFraU5mWlNLUlhTT1AzbDRUSUFuMmdqRWFCc2NqT2tZbmpPMVFzN3c0ak8tUDJaVlZWNnJ0eUlNa0NzUHBCM0drVTlaVzAybGlVV3I5VjZXVW9UTU1JRTVrOHRGR0Q4TnZLSUFreDNzTnV2ZlRoTGE0TkU1NUNmZUJSdjgxUl9Tc1M3RVFGNHI5Vk9Zd2FEcGNIXy03Y0dyR0tCSUZ5WXJKMFhkeFB0cUNJLUVTT0NsNGdHQmw2SW1GbUo0QkFFVkJuMWg5TDF3?oc=5",
+          "summary": "特朗普觀賽主隊屢敗 紐約人隊球迷歸咎總統帶來厄運 bastillepost.com",
+          "published": "2026-06-10T02:35:27+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "川普仍認為協議指日可待 范斯稱可能下周或數月以後才有",
+          "source": "中時新聞網",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE40aE53X1Y5ZGsyczlBODdvSjZSSHpHN1RKZ3B3NWR2aWV1bDdTYUR5N29ZcnR4eVpuQWFXa1BjOUk0d0FSOG1rWkZDOEtOd1V2VEdxSENIeF9IQTlxVWR5amV2X1ZiTk1YT2IxcEFn?oc=5",
+          "summary": "川普仍認為協議指日可待 范斯稱可能下周或數月以後才有 中時新聞網",
+          "published": "2026-06-10T02:29:31+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "川普仍認為協議指日可待范斯稱可能下周或數月以後才有- 國際",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1aNC1vNUZpNGtvY0tFTTBOSy1WRjMzRl94blZyZGdNVzg2MGxualQ5bkdlSEF0RFVKMEU4RmxGQjlTc0JmRUxfQUN4LTUyRGxtTUVBT3ZDQVlUUVV1NFFj?oc=5",
+          "summary": "川普仍認為協議指日可待范斯稱可能下周或數月以後才有- 國際 工商時報",
+          "published": "2026-06-10T02:29:00+00:00",
+          "origin": "關鍵字「川普總統」"
+        },
+        {
+          "title": "美國總統川普確定缺席總冠軍賽G4！紐約球迷嗨翻群起慶祝",
+          "source": "Yahoo運動",
+          "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxQWWVpcXVMS1VZSl9iSWJXcXVvU2xjZ1FSa0RhRFlhb3oyZ0tTVWRCTFJzN0NvUUtUcXRQVFFBcXNqZWpUYm5vZGh6RlV1UDdSUnc3QkhwUEVLRHhVWlROaUlsWGxSbWdfTnhNMHRLcUUyTldVMURWRnBtTTZpUzZRSC16QmVnUFY2cE5zNy13Q3hIZURmWElSNmVyMXRHeDZNcjdjMUwzZUpHTk1Zb3lPMHpUUGpuNk5hM2JmNFJ1aDNQWUtYVktiaUZxcTd2SkhyQkZQY2dsMThRRUJiYmFHbkF0eUpuVVJDcHY5cVF4Rl9vdFNhLXZrcVhucXRHdmVDUW9HRUtTUURLNHRSU1BJaG4wa1E0cFpOczBDX0FUMUhGTDV0ZGZMS2UtXzZIeXNiZUNudnczcmpKeWFTOUVETE45Y2paWWJiTXpwRWhMQmRZcXdPWWxNb0FET1JlanhnUDlDdmE4dE1RRHNuT21rcWJHaGQzX05wQ0dxV3g0a1A?oc=5",
+          "summary": "美國總統川普確定缺席總冠軍賽G4！紐約球迷嗨翻群起慶祝 Yahoo運動",
+          "published": "2026-06-10T02:16:19+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美伊協議與戰火並存？川普下令空襲伊朗、白宮卻稱核談判有進展、伊朗強硬回應",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB0UmVYZ2RMTzRFMURueVpjTUdqSFZXbmNqVEsyUmo5bjlKUzdCeDFRVTFsOUpXTVFFUVhEbjE2dlJSNzBzNk1uR0NUSEdmdFE?oc=5",
+          "summary": "美伊協議與戰火並存？川普下令空襲伊朗、白宮卻稱核談判有進展、伊朗強硬回應 news.cnyes.com",
+          "published": "2026-06-10T02:15:07+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "【全球大頭條】川普下令對伊朗發動「自衛性攻擊」 報復阿帕契遭擊落｜#鏡新聞",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiwANBVV95cUxNTlRNMEJQSlFXd2VwemYxMVd4UXlWdk9oT0lMVWRYNl96bmIwX05fb3F2OVhzOVBSdTNhWEhERUtSUWl4bGRXUFFQTUhJdTFPSGlJXzQxRFB1UFJhWEo1S003QWVwZGZ6MUNrWjNSaGlJei16Ynd0TUZvYW5ZZUVwS3d6eFJkd1ZZck4tUmstdnhDamFFS2NCdWFWbTF5WUJ5bXpVdHFyWUtyVnRvSlNESVhhRjVNU1JVd0Jpc2plVXpNcFhFYnVLdHAtQ19mTjBHeDktWnVaNFRkWUR3VEdvcHc3c28yWUFNcWR3OVk2aWh3OWJEcEtyWEJzUkNIeWUtSkNKRHhnNmdqSTB0VlZxVE05bldnWDlxZElYc0Vsa0VaZFlNdDdfcWlfVkpUTXEtcm5icXVtZVdzSElGVE5SdGJYcDl3OHNNZjFSb1hxdWFYWDZnWDR1aFU4Tk42am5fajVkeURQbzBoeG8tQTFTTEg0ZGtlZTg1THBzSUhFQzhOUFoza2xuWVBmRDA5T25GV2pvNTBSbmhKZUc2RTZ1RjV5U3I1OVNfWUZJTXZQUnYtcnRRZDdCZG1Za005TXRI?oc=5",
+          "summary": "【全球大頭條】川普下令對伊朗發動「自衛性攻擊」 報復阿帕契遭擊落｜#鏡新聞 Yahoo新聞",
+          "published": "2026-06-10T02:13:26+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普會拋棄台灣？川習會後外媒報導「習近平認知作戰贏了」 學者揪一疑點 | 李瑋萱 | 新聞",
+          "source": "風傳媒",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFAzMjloemNibWtFaEpsNEJDemxyclcyaklxVlZ6S0IxVGxsQ3BscVdnSlAxbFVra2lLTFJ6NFFRbm1KdDVweUFDYzNtazdIdw?oc=5",
+          "summary": "川普會拋棄台灣？川習會後外媒報導「習近平認知作戰贏了」 學者揪一疑點 | 李瑋萱 | 新聞 風傳媒",
+          "published": "2026-06-10T02:12:08+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美軍空襲伊朗報復！川普獲700億美金銀彈強化邊境執法",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxPUER1R25iYk9WRFlSUlh2TzhvZWlEbk5MZHNCMk5yUlRpZWxpY2xKd1ViQzYzRXJHdHFiYmhuRTItd1FCMmt3N3VqNm56aGpKZlNvLXpnWWREUHozUEdrSmNLUlVoeVIzNzZrUUdsZzlPYV80cWRRYUxNc0ZfVEdKcWRrNi12OHlWcDJpYjVLd01BZ0ZSMnFFcF9GQllHUzAtRjc2OF9oRFpTNVE4Z2dZNVJ0cnc1NnJpQ2gzN0VUMkRsT1ZqNGNXR252bEk1X0YwYXBXYW56ejZwWTA0MjNEREp4a0gtS0hiZ01ELS1vQlBuSXhDUWh6RTFtYURLLXhJNEdWenNjVUlFdGRIb0d3MjFBR3JpNzBiXzFQQjJnTVFYVmhkVEUyUEFYeDNCaF8xbDB3am1fUUJEZEYxY1VlTjRUVnZuZmEyNmZTZEd6eVdOVzlabUg2VjFXLW1qZE8t?oc=5",
+          "summary": "美軍空襲伊朗報復！川普獲700億美金銀彈強化邊境執法 Yahoo新聞",
+          "published": "2026-06-10T02:04:51+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "「阿帕契遭伊朗擊落」 川普下令自衛性攻擊 美伊變數再起",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxOSkoxaTJhOVg4aWFkTXRES1pwZEF3bGhsRUN5RkVXN2xZcXRwcHducGJyRXVLdHZzR0NaUDV4NDdSRERkYVJ3ZlFjRDl0VHRDNmEtMVozT1pmQVowNHBEOUFVMy00d0lYNjVLVDBpdlpDUWlES2JVeTJBaW01LWR2V3hzS0tJM1lVa3A5bnZucjNaYi1saFZHd1oxdXA2NHJsMElvaVRzNTYzNjVmUHFnWC00VmZpNXhFdEVLQnNFV182bGtlc2p6WUVmT2paNGtFeGxTaGdSWXAxSmc2Q2N0NmxHRW93alo1Mm9YOXZCOHpVbUUwS1YzX01HWVpnVkdFQmJudkFkNDZ3S0R1SVp1UVJEUHhLc1FlWFJVRXRfOF9IM3ZkblFDZWNOalVEU3NzS2lnNTlKLTRxbGpsT1VZYXhvMnNJWS15QXY2S0JlVDVvQ01UTWlOblgwY0FPM3hJWGRzN2x4MS13dw?oc=5",
+          "summary": "「阿帕契遭伊朗擊落」 川普下令自衛性攻擊 美伊變數再起 Yahoo新聞",
+          "published": "2026-06-10T02:03:45+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普喊美2週內宣布全面勝利！預告油價下跌 網酸「喊盤」：到底要幾次？",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE02SGNUeF93S05tbnFzeU9YWnBPT1dUNFhwTzBLb2g1Tm5LX3hOQ0twSVR4WDZDWjZBUXJEWnpVMTRscFlTRS1BRlVCOVNDcXptWEHSAVdBVV95cUxOeEVRRzB5b0VkM1k5OVphUWY1UkRfcjdIb25WMXFFYnQ1ZTBfa2xfWWNVVlN0NkFoLWduMzJZdG12bS0ycnpOTVlyQlZRSUNVVnVVRGwzSkE?oc=5",
+          "summary": "川普喊美2週內宣布全面勝利！預告油價下跌 網酸「喊盤」：到底要幾次？ UDN",
+          "published": "2026-06-10T01:57:03+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "【Yahoo早盤】川普強硬表態！台股一度跌逾500點後收斂 分析師陳韋廷：仍在震盪築底期",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiiwRBVV95cUxPbFg5cmJzdTZYYU5CRzZrU1NZNmJRT2pHREsyTVF6Y2pUQi1wcEt5cVhGUjZhZzNmQ0ROdE9lQUN1YkhwdDF3cEc1ZnZTVDBsT2ROVmhYNHNKM3J5T3h4aGFrc0JMcmF0VTV6S3hvaHQwWkNDX3dKN01jb2NmaG5sSVZGdllHTkJ5VUF6dTR6MVZiS1hfU2J1akNxZURfV1RRZzFEODZjakw4bS1GdFQ1Q2pYeWVYQkRzbVZyMXd3Rm16OFNoNGJQUWZneWYzck82TFhwQ1JCLXJvZE8tRnkzeEZ5Z3RpUjV6YUZRME1CRnBmdVlralRTT3dfOVJ4SDZGN245aG12Zkc5WDl1ODlIdXl5Tl96alBacnBaQ18xSVlCclFnbHVFRWtnZFR2Tk1BV2tnakx5RlUyeU4yNGVSZWFEUk9WZHE1cWVsRkFnaWhlMjdiWlB4a1BWS3ZpMk9hNnVNby1TZ002QzdSVTM1VVpLLS1aT1FCSHJ5Vl8tZFJXbmVWTGtvR2NEbm1tTFE4em5rVUM1RkZoc0p2YVd0OE40TGJHaFFDZTJtNEMxYUpwX3FKa2M5TDc5VDEwRUFXTEZZUmJYTng5R2dMN3g0N2VEeGpoeUI5MzZjNUlLQm9NeVZmdlR4dHVfaFAxX0RXckxzVm5RdXphYTVkem9rQU5iYkZCdzRLenYw?oc=5",
+          "summary": "【Yahoo早盤】川普強硬表態！台股一度跌逾500點後收斂 分析師陳韋廷：仍在震盪築底期 Yahoo股市",
+          "published": "2026-06-10T01:56:14+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普讚封鎖荷姆茲有效 稱美伊協議就快有結果｜#鏡新聞",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxOcjRuTWJrbGdlNG01d3U4SVduOEdmSFMyU1NBZWNIeFFrVWpUdy1PVFNRUDAwSXo1bWxId1dLUWhuS2xUOE9RNnNDQmtXZy02b1c2WHQycHdFNElBWkl5LWx3VEd5NWlpaF9XSkpWSE5RRmhYVXFjQlJJcjRjektrREJlSmFia2hFTHU3S2VxZWdkWUozUEZmcndGWmt6OWZybFAyRG9GT2N0a0pmYnlqQWRPR3pmOWsySTVMMnlKN082ZVFsaXFIQmltWkVDbTd5RUhhLWlnb1BYMFZab25YWVJkNzNDeGdoMGJGbkF4R1VGZlNqNXhDSmJIQTFqZmtWaEwtN0lRY2xhSGhxYUNOa2RYLXhUMnFpbmNzUXdqYVpYSkxxZVAwQ3lEVXhlMXVKdjhxWkIzTnJQZDd0NVQ2SWVydDFqVV9zVnI5a0ozX2wwU2tMdzVURUZaWXVWNlBXMmk4VDB1UWdrZw?oc=5",
+          "summary": "川普讚封鎖荷姆茲有效 稱美伊協議就快有結果｜#鏡新聞 Yahoo新聞",
+          "published": "2026-06-10T01:55:41+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普看比賽竟看到「睡著」？白宮發言人超嗆：不是說謊就是腦子有問題！",
+          "source": "Yahoo運動",
+          "url": "https://news.google.com/rss/articles/CBMisANBVV95cUxQeE41ckNWVFlZemk5UnUyblFuclAyRzlIeEo2M2tPbEtoV3VKY29vQzBkYjhIY19lVmZrYmtkcVU3T0x6M0xPbExVeVhQdU9CUXJWSHFpMGZiTUZsSm9WdHNZMWxaZWI4cGkxZXg3Y3BuMDY5ajZ0bjJSNk1hVnZlaXRVOWxOMlBoOEhsWXVNYzVZZVhwd0llVllZRV9nSGxVaXZNRF9uNUZ3bldEaUFXNllaOXBEVU02aUg1aTV1a0l3LW1xRmZfRzRqWGVqUHVydDlOZ1JmZmpkTFBQbmFuZWtQUHlwNV84NFlsWDNKUGdvQXI2NHN5Ul9aSEcxMjduMkxDR1hETk8walpHelZQQmNDVDlUczRPRXVJWTE5dkVJNFg4Z2xTNmNLemJ1R2lvTHdZRFZIbGNjWThDSHJ2cUNnTHZOUU5oWnEwcEtjcnRQbFVpTWkyWFJPRGJyQzVySW9kamFKODByV0ZtWVhGZG83VjBqeW1KWnZIZjZuTS1zbXpaaFgwcWRpZjJrZzRuZ1c5eHE3azQyYW90XzdxM1JUVGpSQkJfZGFxbXJwemo?oc=5",
+          "summary": "川普看比賽竟看到「睡著」？白宮發言人超嗆：不是說謊就是腦子有問題！ Yahoo運動",
+          "published": "2026-06-10T01:51:28+00:00",
+          "origin": "關鍵字「川普總統」"
+        },
+        {
+          "title": "美智庫學者籲川普加速軍售：中國「灰色脅迫」意圖削弱台灣韌性，鎖定2028大選",
+          "source": "TNL The News Lens 關鍵評論網",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBPSXFfcENDbk1ualdzcW1mU2JlRXQ1ZVB6ZHdYWlk5WlVSNFBuZWtLVURDWnh1U3k3VDZDcGNaQld4VHdack5mbVdGcndrNWNuakZYUw?oc=5",
+          "summary": "美智庫學者籲川普加速軍售：中國「灰色脅迫」意圖削弱台灣韌性，鎖定2028大選 TNL The News Lens 關鍵評論網",
+          "published": "2026-06-10T01:46:00+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "川普紐約觀戰遭猛噓！美媒曝「將缺席NBA總冠軍賽G4」原因",
+          "source": "TVBS新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1PSWpySDV0ai1EanFXSmJHaTU4bUJPZm9YY3VMSDB4WlFOYUdUSGkxUDZKMDVmSGZ0WFhaQWR4c1ZWM0ZqQm5LQy0tYm1BM0U?oc=5",
+          "summary": "川普紐約觀戰遭猛噓！美媒曝「將缺席NBA總冠軍賽G4」原因 TVBS新聞網",
+          "published": "2026-06-10T01:40:00+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "川普支持度35%持續徘徊歷史低點 多數美國人預期汽油價格上漲",
+          "source": "梅花新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1HWnhJUmFIU2xfZE1FWTQ5NG9oRXVLN2NXNER3NzBaZzRZMEx3M0U4VmlKNE1xVjBvU1ZNWE05UzV1VEJtOHh3T2h5VTZqb2FIT0EyYXlPNks?oc=5",
+          "summary": "川普支持度35%持續徘徊歷史低點 多數美國人預期汽油價格上漲 梅花新聞網",
+          "published": "2026-06-10T01:30:00+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "川普擬提高外國專家赴美工作H-1B簽證費 聯邦法官裁定違法打臉",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMikgNBVV95cUxOaXIyZmhaemVDVGJLV2d1cWJLTjU5NnJRNHdNTG9IbllTMnZFcWQySUVMYTh4TnJKaEFJWU03WEFza0otNWdFU0NMR2RSZlk5dFlZZUdIUm9PbHFLYTRMdFJnQUhJRVpIQ0VVMUphLWpZN0ZlMkFtd05kYnZmLXVXUlJpdTVTSjhOeGhwNzBjOFdPRUFQV09TZXhRbERjeTRscGQ4WVhxck5iOUdCMzRuMjFzRURaMWxWb2E2N3ExRnZOTDAzUXliY3FiUFozUzBSNWdTNG5KQVRCdkhiNmZESlVkaHFPUGVWVE14dF9FTU92OTRZTjc4ak8zcmxqTlNjbmhKRGx1dGZURzRhUWc2elZFNzNtVTc2cmplT2dVUy1CR3l6UG1NN2dBMUtZaDJHdl9UQ1pwRDFka0xYVC13dHlzVzVQT2hiRHlMWGgtcHFfem9jQ25Yb1l6RWk0eW0yWTh6M3hfNURsRkpHUEwtbk9rdGEyRXdNVXFuWTh6OUtqMFh3cG5uNEdoVzc3eWFWU2c?oc=5",
+          "summary": "川普擬提高外國專家赴美工作H-1B簽證費 聯邦法官裁定違法打臉 Yahoo新聞",
+          "published": "2026-06-10T01:25:41+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "尼克終止13連勝怪他？川普觀戰遭狂噓 球迷主場外燒鼠尾草「淨化魔咒」",
+          "source": "Yahoo運動",
+          "url": "https://news.google.com/rss/articles/CBMiswNBVV95cUxPeVlKbUJYMmhDN2o1YzJUNDR3blZ1WjV4ZWJHMkR5eE11dEoxRXp0M0I2ZG1VOUk3MmwxelZvdm1SOWlTWEg4MFljaWFrRUIycEZLOGctRjdHNHFxZzlHWnpqS2l1YlFMMDQyaWkwTV96dTJrekk2UWJkRlRPR3ZjaE9rRlVLdVZOVnRiLWFVamVpMndVNW1MNkoyZTJQLXpBeXlQa0xnVm1uTko1NmFDT2h6QVVrcDEtOEdlLXlldUZrbTZrZUlRU0hhUy1QQ2sxS0xZMkNoLVI3MHB1VWIzQXNqRUFkbk83UzBsMEdKUEhELWs1akpYcGlKU3AyMWI2bGZudTJZZWcxU0tKQ1hIUV9teDVpSjlyMFVqRGk0Q3Zsd0pQTnNMcDRkTXREcHk4bzcyRi1QNTBTbmM1ZVM0UEM2VTRxRmY0bjBZQUdfeDZXWFVaazdoQUxmWWpGNUNMdzYtUG5LWF9zbXl4MUJpbGZZb19DNlFmZENWNHVHZEZtM1hIREZlX2dScVBFa0xTLXpscWJ2a0pJX2x5LWVMNFVJSTNudXB3Tl9DdnRLT21OOHM?oc=5",
+          "summary": "尼克終止13連勝怪他？川普觀戰遭狂噓 球迷主場外燒鼠尾草「淨化魔咒」 Yahoo運動",
+          "published": "2026-06-10T01:22:17+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美軍阿帕契遭伊朗擊落川普：美國必須做出回應- 國際",
+          "source": "華視新聞網",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE05eExPNGtPSWdldW1ESHJCSWtzb0pMSEdqMFpiMHp5Z2MtRlY3TU9vSkRtazBWQk1aZTZISW9IOHZ4MzgxaEZqZ2NtZzNHcC00MG9mZ2phbDFlMEtSYUdIODNSX081UzVPb0xnSFUwc1NUUkZYYlhELQ?oc=5",
+          "summary": "美軍阿帕契遭伊朗擊落川普：美國必須做出回應- 國際 華視新聞網",
+          "published": "2026-06-10T01:20:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "NBA總冠軍賽》現身G3寫歷史！美總統川普因行程衝突 爆將缺席G4尼克主場",
+          "source": "Yahoo運動",
+          "url": "https://news.google.com/rss/articles/CBMirgNBVV95cUxNdmM1c1oxVHg0bGhZQmxpbTVSSGtsTXJtZlVQZGd3dG5nQ203bi1FREZodDRVamxFNXNDbWYtUDJLYjRGLVhOSnAwbWs0ZU9qbExFbTAzLVVRYmVTbHpZSWwyRm1NYnFUMWNUaXFUU3VrOEw5ODQ2UjA0bUtzaklwcTI1bXFkcWFRS2FPUUVYMm1kRVllV1hMMWZhUFdzT2pILW9HdzJXN1E0M0VwMzNpbjN0WU1ZN0xNeTNuLWVJOEFZbjYxVlFHbTFqeUxReFZuTzhKcHRqYlMwMzdMdHE1VEEtSmszNHdDQzdPMkhpbFB4VGE2WnJfM0tvdUFMR3dmc1Zxb2k1Y3pKWEh0elRrTUpNS0UxNmFJME1hZll0OHI5djZQTjEybDB6and1c3lMcGVjUl9xaFdVQ3MzQnF1bTY3bjVCeGh4QzZNcHpEbzJjeDkzQk0tRWhYaXQ5aFNqNnNCUWYxMG9EaVdaQm9KM0lpc2FNV1JCMlQzVnlwX280cndaUzk3ZzNXTkdyXzZTZk4xck9yakRrZFpMQTZ4V3pHM3E0QmpzZ251eWxR?oc=5",
+          "summary": "NBA總冠軍賽》現身G3寫歷史！美總統川普因行程衝突 爆將缺席G4尼克主場 Yahoo運動",
+          "published": "2026-06-10T01:19:03+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "快訊／川普不來了！ 美媒爆料將缺席NBA總冠軍賽G4",
+          "source": "ETtoday運動雲",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1hMUFOQWVPazBISW9pQ3IwTS13TUNiSHZGcXlXdXMxXzNZOHdYcEpPeXZ5cTlpeV9yamh5ZzVTc0hFMUhUZjRvcnhnQ1BHaUpI0gFsQVVfeXFMT2FNbjd2LUV5MDRCT0l6MXZnYzNOU3d4bkJmbHVELTZ0OXVPNkdFOGVYVkFZOUo4dzZsd194c05WZHBPZy1WY05hR2xNWUZWMnJUdFhQYnhjcThDb2VCdVZNeXZ5NXRxazU4eGR0?oc=5",
+          "summary": "快訊／川普不來了！ 美媒爆料將缺席NBA總冠軍賽G4 ETtoday運動雲",
+          "published": "2026-06-10T01:19:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普速報／鄭麗文：台灣不能淪為美中交易的棋子",
+          "source": "聯合報數位版",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1jUE1oSmZRdHhDOFpidEJvRTlFVHBQYmxpcV9FT2tlTnF5MGJqdTFna0ItdE5ZQnJtVVhWYW1qZEVsdV9vQ2JtLVpUbVRmTDRpUFByOGZHVTBfVDgtbnJfcEZNRTVzbFlzOW9BbnVNb0RUc19QTTBHNA?oc=5",
+          "summary": "川普速報／鄭麗文：台灣不能淪為美中交易的棋子 聯合報數位版",
+          "published": "2026-06-10T01:14:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "2026世足天價門票引反彈滯銷 總統川普都說「太貴，不買！」",
+          "source": "ETtoday運動雲",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5DOThvVFdacklIOElFc2YwMFA0TVU1WjVhUmFrdmZPNGJfVEtNc2JqQmhPdUVhc3B5QkJva0lpMFlWTlVoUzlGZnFFc2dwWUtv0gFsQVVfeXFMUEg4V1lwN3FzTjZmVmpMUmpTUW9CUnIzdExJc1RGdkhWeEw2SU1YN2ZUdC00cjBXcE85eldSYVZDWFlZWk5SR0ktSmppTXU0UVNLT1Npbl93X0NCc0ZndWFGcjZ5QmVLNktNMVd3?oc=5",
+          "summary": "2026世足天價門票引反彈滯銷 總統川普都說「太貴，不買！」 ETtoday運動雲",
+          "published": "2026-06-10T01:09:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美伊和談又受擾？美軍再對伊朗發動打擊 特朗普稱「行動非常強硬」",
+          "source": "hstong.com",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE8yTzk5MW94Y3JkQXlyM1l6ZVNrblo1cXZ1TGtHV1ZINUtjWm9Oa2FFZ2cycUdJV2k0ZXZTd1hDcHBTT2FqLUdOVTlDaTd4ZjdfMHdUY2N1N0w5ZW9EZTdDWUxTQXI4Zw?oc=5",
+          "summary": "美伊和談又受擾？美軍再對伊朗發動打擊 特朗普稱「行動非常強硬」 hstong.com",
+          "published": "2026-06-10T01:07:36+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "川普要空襲伊朗 台股一度跌逾500點",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNVklCTWFTUjJ3bzNITk9zRDRPemx4Rm4yTEtXU1BKaFBwV0d0NTJvXzNVRlhWY2RtMWxybDdpNXU5OG5uOVRXajF4cDB1dU04ZmJOLVU1YVM2V2ZEM1BXYWV5WDJjNWRON1JrTTR4LUJ4Y3NNSWpMN3Z5cW4zZ1JrSUsybTVXLW9tb1VLNXBVOWpZMkR1c21abk1xMEF3WTBfWTVvOVNBMzR3MUJLYVhnZkRzcHhCVHFRalZWdFRXcGM5SFJ3cDY0clRkMXZ3S0d0b1NJTVNQWXFqVTZPTDktQjlRNmhzOEhFWUY5cmN0Y2loWERLaldPZ0JMT2N0cUZCazRtcXliVnE?oc=5",
+          "summary": "川普要空襲伊朗 台股一度跌逾500點 Yahoo股市",
+          "published": "2026-06-10T01:07:30+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普在NBA總冠軍賽打瞌睡？白宮駁斥：不是在說謊就是腦子有問題 | 國際 | CTWANT",
+          "source": "CTWANT",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9kWEFmaE9vS0lmUzAzTkwwMWRCSE9kM0liVFNiUXN5Qm5Xellja2VPdkhxN2NWUWtZcDhHcGFOeDRodExOOVE2LWVOMURUT1nSAVRBVV95cUxNVXVrS0k3TGZXX2ZmTlRyYWlkeURMVXhieC0yVHFPLWcyRjRsT0pEc0g3ald0Y1lyYTRacVB0ZWhoLXF6VWNrRWZlSEtUSGJUX2NqLTY?oc=5",
+          "summary": "川普在NBA總冠軍賽打瞌睡？白宮駁斥：不是在說謊就是腦子有問題 | 國際 | CTWANT CTWANT",
+          "published": "2026-06-10T01:01:47+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "卡尼確認加美大橋周末開通 白宮重申特朗普反對立場",
+          "source": "AASTOCKS.com",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPaUNINUgtb05EbDBoSVNGcDJnRUl2NFdGcWg3MzdMRnpIZUZzUnJRZlhPa0w0N1dMUmplY3JoSjZsV1BGV09BTFNPVndobFdaYmMxRGlYaVExQ3R4XzExSHFQQXNTQ0JKR1NnSmNUUF9WU3k5Z0h1MUxrbmtpSTdXUVZOdjQ?oc=5",
+          "summary": "卡尼確認加美大橋周末開通 白宮重申特朗普反對立場 AASTOCKS.com",
+          "published": "2026-06-10T01:00:00+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "尼克輸球就砸街襲警！21人遭逮、5警受傷 網酸：紐約素質不意外",
+          "source": "NOWnews今日新聞",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5ZeGdEM25VX1doS1FybHZvaEJaQVg4Snd4U19qb1JvMUtBSlB3YkF3cU1IWU9zUnRZRk5Rc3RUTUt3cTY2QUEyLUJNbVrSAVJBVV95cUxQYmMwZnVfdE9qY0VoeGJReHgzY1JuV0pnRzJxVkhEeDFqRmMzbVprMGtIOHZqSi0tMTY3cmhHVnVEdkZrSWQwb25qekR0VW40MXF3?oc=5",
+          "summary": "尼克輸球就砸街襲警！21人遭逮、5警受傷 網酸：紐約素質不意外 NOWnews今日新聞",
+          "published": "2026-06-10T00:57:53+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "伊朗、以色列不打了！市場風向大轉變 國際油價跳水",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBMQ3BCOUY5TF91OUxSRk5wS3pJUmgxM1MyVUhHd1BtRGxoYzJ5LWlwVUJGbk53dWhrTzU4cE5fYkM3eGNpaXN3Wkk5X2lKdzctVG83TzFPYTVJMFdEWjNJ0gFkQVVfeXFMTlpPZ1ZNRzI3OHFfSnFsTXBUSG52Yk5ZeFZSQmJoNS1ORkRUUjVRcHZIR1QyQ2pkV3FuclFZUEs3UXJKMk5VQ01nVVVvOUNTZXdBRkktTmdrck5JUm9iZlB5NmZ4dg?oc=5",
+          "summary": "伊朗、以色列不打了！市場風向大轉變 國際油價跳水 自由財經",
+          "published": "2026-06-10T00:44:16+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "U.S. launches new attacks on Iran in response to downing of helicopter, CENTCOM says",
+          "source": "NBC News",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNS0lCdGM4alVyQVVLYXZyaWZVX3Fha3NZc1lVdHRwN2lxeV9XVnlDWGV4cURyWDRTeU9rUHE2ajZBUlJQd0dYQW4yR1NBM0poblhmQXhLTkhPMTBUTVRCazJXMllnVGJ5Z3V0dGxYbWRJcDRFUFZrVDBCOWJoMllEeE01YUxOQXFkM2FVVXM0d3BWVGpGMGdwZG5ZYkRabG1KQ05WRWVQdmpMUQ?oc=5",
+          "summary": "U.S. launches new attacks on Iran in response to downing of helicopter, CENTCOM says NBC News",
+          "published": "2026-06-10T04:27:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump invokes ‘The West Wing’ in apparent justification of latest Iran strikes",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONHpDS3VsU2Q4WXpyNkdCLTJ6R0k1S0JndG1wMWVTcEpiZTgxa2FCTDhLclBDSUdVY05xc2xiazNYNXJBMDVUcHdidWd0UktGWDdrNGMxQV9qZy1ldkxaT3JHbUx4WXAtWG9hMl9mMHdvZzQzYnJKZzNqam8zZTVuUUIzcHNMQUVXMnQyN3V5ZmhUdS1qbTFGbEtQWGVaY1FjM0ZqRDk0cmtkV3ROcG1OQXdXcVdqdw?oc=5",
+          "summary": "Trump invokes ‘The West Wing’ in apparent justification of latest Iran strikes The Washington Post",
+          "published": "2026-06-10T04:22:15+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Solar power hits new milestones in the US even as Trump boosts coal over clean energy",
+          "source": "WRAL",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMllkSmJGX2psTEVmWTQ4ZXJuTHU4ZTdfVHM3VklaWEpiTy00am83RFAwU1plQjZaNG1kWk9PM0d5d0lEM1ZKbWFrZ0xFcmFpdklIU3htNHhzQ0JNZGJPbW5kdGFzWmlQWGtLQmdDTnZsY3dRTDB5YkZfT1dIeF9nUUhBUi1sRHV6M3RuT2Y1THJxbHk4ZEZFaGU5LXk2SURqZzF6NHJHanhxSTYtaFpyczQ1c0xuanpSNmZnNUtB?oc=5",
+          "summary": "Solar power hits new milestones in the US even as Trump boosts coal over clean energy WRAL",
+          "published": "2026-06-10T04:11:55+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "House passes $70 billion immigration enforcement funding through Trump’s term",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQa2h1cjBBS3RoQlVPUV9IOWNsY1lHNjloUmxCLUluMUZnczNDQzFDY3lyZVF4SXYyRWVYd1FySi15UFNrckhLdkNZb2JVWnJVVl9SWGVGUGlNZHA5WEdkN0ZRdXgzbzVvTWlrRHRtdlFlZGJvVjVaUVR2T215VDNCZzRFbmtsLUxhYXRPWVhxQ094QkJoT0NlWXNEZHRqbG1HWktrUlJ3ZUl5WTltcVRSU3V3UzQ1UQ?oc=5",
+          "summary": "House passes $70 billion immigration enforcement funding through Trump’s term The Washington Post",
+          "published": "2026-06-10T04:10:11+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "In Nevada, Trump’s policies are making things tough for Republican Gov. Joe Lombardo",
+          "source": "NPR",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNlVfTmh5STNuZHFnYXJUWmM5LWFVczh4STFxaWs5aHZzWjhWTVR5Wkl3MTFtODU2OEFDVVlDYWVKVnpvMldiZDBhUW1EVjhleDRrdXV3TmVIVjJiSnJYdEJBakJsdlRuNndPOUpkLXBtaGs4eFBFckxyLTM5am5MS3NVQ0NERU5MV0NSVWMwY0F2UQ?oc=5",
+          "summary": "In Nevada, Trump’s policies are making things tough for Republican Gov. Joe Lombardo NPR",
+          "published": "2026-06-10T04:08:07+00:00",
+          "origin": "關鍵字「Trump」"
+        },
+        {
+          "title": "Platner to frame overtly negative campaign against Collins",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOb19HV0hKMW43M1FqMEtkQlJ6WFQxaEFsdzhYeHZZeURrZzYzaE01MkRfd0Y5dVZaNDFfZlRuOENMbVFSb2ZEYTBfRWtuWmgxalQ2cmZUY2k4amR4N0Z1UW1OOTFJUm9lS243YzJCTVlNUHFWMXFiWGxNd0Qwd2k2NE50WTFYM2pRNnZIOVhldVVxQV9IZVlVY1ZvSlk4eVVXVkVlRXItYnAyTHhuaWdWeldiVW9ROU44NVlWUg?oc=5",
+          "summary": "Platner to frame overtly negative campaign against Collins The Washington Post",
+          "published": "2026-06-10T04:06:49+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "A Trump order asked national park visitors to flag 'negative' historical info. They had other ideas",
+          "source": "WSLS",
+          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQc3V4NVpqTThUZlBPOGo5cE91Snl1ZUowMjV4VG5uQXRVOV9EbVhfSFg2VVdxZ1MtY3dfT1V3WTYwOUl5ZGxJRUV5b2hxaEZ3aXdjREFrcW1RanVPMkJtcUREREVvcWw0Rk5Ta3BmUFFQT3FyOWk4R1c2ZXpVWUhSdi1Bb211WG01eDBCWVNqSDdwa1VEc1VYdlN5Q0pfWFJ0UW5mcnY1d2poQ0xNUDFfdDNiVUlpZ1lDMTRxcG9oQkJvRjNzLS02TUczLW1Id0JqczUyVWNzc1pFcEk?oc=5",
+          "summary": "A Trump order asked national park visitors to flag 'negative' historical info. They had other ideas WSLS",
+          "published": "2026-06-10T04:06:12+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Live updates: Iran launches retaliatory strikes on US targets in the Middle East",
+          "source": "CNN",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1SZDdKa1gxeUJSNTBHc1hsN2preWRiM1RqbjRlVDlYUzRjc0twS01jX25uWG83dk1ScmlnSUZpLUE3ckVOSGJRZmxjSXo1dXRYdmMtLWZ1OEY3SFRWU1Y2SERvZmpHeFZUanRqdTc1c2pDMjFzdUVz?oc=5",
+          "summary": "Live updates: Iran launches retaliatory strikes on US targets in the Middle East CNN",
+          "published": "2026-06-10T04:05:00+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "President Donald Trump blamed Iran on Tuesday for shooting down a U.S. Army helicopter close to the Strait of Hormuz and said the United States must respond. Iran’s top diplomat said foreign military forces near the country’s territory “are at constant risk.”",
+          "source": "facebook.com",
+          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxObnZRRm5QVTdVUTJQVEY1VGdrcllvMGRjS0Y2VTl1TllmbEREc0wxZ241N1pETVo2UXdPWV9ldlR1YTZ2dVFYR3ZwRVV4T3laSTFwajQ2N1dSb2FTZTkyWlFpekx3Rm85cnBHUk5FbUJvZy0wT3F6LTNoekxqU0tzX2dHNVUxMFFRdUFXaC1ZcEZHcFAzWjJzY1FuRXVGTXU1bGViLXV0cHdqVFZ6NnI5UGVKTDZmZE5VbjlTaEVsUl9veF84WDhycGlIVF9ENVFscDJyU2VDWkcwb1E?oc=5",
+          "summary": "President Donald Trump blamed Iran on Tuesday for shooting down a U.S. Army helicopter close to the Strait of Hormuz and said the United States must respond. Iran’s top diplomat said foreign military forces near the country’s territory “are at constant risk.” facebook.com",
+          "published": "2026-06-10T04:02:58+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Trump wanted to star at the World Cup, but politics may spoil the party",
+          "source": "CNN",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPaks4bUhhdVpSb0xpR0VYZFpkbXNwb2tGYkZZVFhNQnZWNkVuMkV6RmVQS2QwYm9SM1hDVldWcl9OZWxjVjEtTm5rdEg0SlkzTHhqbS1abmVOQm1WUG9KaUdOVkJqU1lySU1pLTFLMVg4d21Cdm40elFlMnVkX2dpWHB3cG5XbXR1bjQtX3BPOA?oc=5",
+          "summary": "Trump wanted to star at the World Cup, but politics may spoil the party CNN",
+          "published": "2026-06-10T04:00:07+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Iran targets US bases in Jordan and the Gulf after Trump orders strikes near Hormuz",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPS0dXSGJPLVM3VVFmRmYwcWloclNleWtLV0NrYVZfblNtdU5kY0RnOXNQSjBUQVZQS2RhR1RwQVhhT1oxVGdtVjJkdExKWG5uM3VFSTlPY0JhWms0S3RMdml0X0dVTEhuOTlEWUc3ZHlJVXl4dWFUeVFOT2xKWUhCbTh3aUVFeS1qaTNySWRBdWNMY1BhVWZUekZaUVNIZEVDVklnV1VISHpid0JObjVCU3V5bXFHaTgxaEN3M0UwOW1ac1Nz?oc=5",
+          "summary": "Iran targets US bases in Jordan and the Gulf after Trump orders strikes near Hormuz Reuters",
+          "published": "2026-06-10T03:54:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "U.S. strikes Iran in response to downed helicopter",
+          "source": "NPR",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQb3FhX1g1WkdqTUdsc29JUlhyQmZXU0JJY1AtN2dhbmNXdWNxVW1TOWdnUC1jMnVWZnFKY0FyR296R21FeHVwR3JucGhKTXRXRE4yUDg1SUpPbVJNRldwaXRDR0czc3pmOVdRc0VOVHRwU1oyT1h2ZGZ6eWdjQkc5c0ZxaVJGRjF1NGlGY3BBR1h0VWV1RU9vMjBsSjRfOU52T25FZ1FmcE02aDA?oc=5",
+          "summary": "U.S. strikes Iran in response to downed helicopter NPR",
+          "published": "2026-06-10T03:50:08+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "U.S. and Iran exchange strikes after helicopter downing",
+          "source": "Axios",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0tUFZid1BmVmEzS3RhSWptLXFZNXNpUHV5V3ViUllRU1huM3RaMHFJUmFPQnlfX1ktMmJaNVQ2UGhkbXBPa3E5YTV3QUZvTTRGSFcyRTMxdldVOGFfdWhFLURYVzNERmxqMDE1eFpFNnA2Y3lmTWMwaVBYV2lCQQ?oc=5",
+          "summary": "U.S. and Iran exchange strikes after helicopter downing Axios",
+          "published": "2026-06-10T03:44:35+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Election highlights: Midterm matchups take shape with primaries in Maine, Nevada, North Dakota and South Carolina",
+          "source": "NBC News",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNbU5XQTNOMW9KNjVGcEZVMDFRWWlvMDRyYUl5RkNscFRrX0RjcmU4Qk1ZMEJvMXJOMGtsaXdfYWNsU0Q3eGtRUjFNWmhWN09KbmpGOEdnb0RmdDBSMlBXMk9zcVZTMDBjMWRNcC10WG14V2VLY3NwR3JISFg1SUNTOEU4dzVLbXlsOWI4NHlWVHY4dXlfejg1TlhfeTNaaTR1dnY4eC1PT3Q5U2dZaE5MX2ZEWWk5dFJhMWcyWVF3UGdEUXZOUXczdWZCZ1NNckR6bFZZMlJnU09wRnRN?oc=5",
+          "summary": "Election highlights: Midterm matchups take shape with primaries in Maine, Nevada, North Dakota and South Carolina NBC News",
+          "published": "2026-06-10T03:44:00+00:00",
+          "origin": "關鍵字「Trump」"
+        },
+        {
+          "title": "U.S. launches new strikes on Iran after downing of U.S. helicopter",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMWdvRUJXeEttQUppc3Z2YnF1ZEdwLXNBN085ekR4SUhDaXZocVNJQ3BnRlZPUWNOMHBxNHJzSmxGZExnU1VleDJNQm1uYlpNNkJsT3VXeHZGWTAtYjQ1NFAzM1VuNGwwWEsyRHBydzl6ZkFvTl9WQU1CN19rQ0xuWkZZcmFhNkM3SEtybU9FNUtYTDdzemVweW5FZkR1aDRBc0xaaUFBZTBSUnd2SkxNam8zZ01xemE3Rmx6YVpULV83b3ByZXZMVw?oc=5",
+          "summary": "U.S. launches new strikes on Iran after downing of U.S. helicopter The Washington Post",
+          "published": "2026-06-10T03:37:02+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump Endorsement Does Not Prove Decisive in South Carolina Primary",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPY0lJd1A3XzBGbUl1UzI3WUNyLVFLVEJ5eVF1aWJLaTIxVHczTEQ3aFIyM1JTSTFtaEhtSmlIVk52d181QnZLSXY3VmluOWVsQktERjdxcWU0SGVacUpmeUZRbUp2WUJaVzZBWGdqZHMwVjQtVEFDOUpEWU9HNkgxZGhVbndVWkhtcFBWMngtNUJpd0s2Y1YwR0NmZW9pZlZhVXc?oc=5",
+          "summary": "Trump Endorsement Does Not Prove Decisive in South Carolina Primary The New York Times",
+          "published": "2026-06-10T03:31:53+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "US and Iran launch airstrikes after Trump blames Tehran for downing Army helicopter",
+          "source": "AP News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTFFLOUhHaFBaY2l1YWthbGVtYVByYlZkU3VhRXJxWEJiTmdwNVFWVU5FN0ZSRml0bVU5S3F1Wi1QdFp1bTQ0SE4zeXJadzZ5LVBtdFNHTHh5WWxnTHh5bHVCejk2Zl9HenVXQUNDSGNYWFgtdWVad0NFVWdwZjl0cnRuQ3ZLNUt6NW80Q2Q5cm1iRUpjMk9OVjFRZ3NIa1JNR2JkUHROZzZId2ZDUHJuQWNHcm5icGd1?oc=5",
+          "summary": "US and Iran launch airstrikes after Trump blames Tehran for downing Army helicopter AP News",
+          "published": "2026-06-10T03:19:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Iran War Live Updates: U.S. Launches Strikes on Iran; Tehran Claims Attacks on U.S. Fleet",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNSmVTQlBBU2hybzN1RVMzZUZuU19hbTYtRm5GdW9kUU9Kd19KOThfbUE2aHRyNFU3NnZSS2RjREJUbW14NTZXMEVxNDJNdnlLd1I0SXh4U1JmTlVQRU9GNEhlUkRxRWc4Sm14LUdkWm0yU3dYaU8taVVGYkV0TEFGZw?oc=5",
+          "summary": "Iran War Live Updates: U.S. Launches Strikes on Iran; Tehran Claims Attacks on U.S. Fleet The New York Times",
+          "published": "2026-06-10T03:19:00+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Knicks Fans Are the Least of the President’s Problems",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUWo0ZU9Ea0dSYnBJUzNUUEJXZ3Bsd3NvSTdUaFlQcmxxeFRJUTNxYjBSZVFDTDBBcFE0NkdxN2lJcVBaNDV3YjFtQ3g2dVhjcFRVVzBmdW5wQTZKYU9mUV9oeTRYNnpvYXA4VGtUaENQTXF1dkdWTldwUGJfVzI5UDVUckVGbjVWWVo4ZDFYV2M2MDFSZGdxX3VKendyN2dqR3dqYXpGbjR4SXY2enlaZml3?oc=5",
+          "summary": "Knicks Fans Are the Least of the President’s Problems Bloomberg.com",
+          "published": "2026-06-10T03:18:14+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "White House will be closed to reporters during UFC fight — unless UFC lets them in",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOY21mMmZldEgyRE9wM2pCU1RsRGJUVVg0ZFNQSzkwUXFOaVBBTzlIRm5hbzRKbU1Qa3ZkcnJRVXNqbk1HeEFidUg5enZ6dU9vNlV2SF93QjhpekdULURYLVVkREc1di15clFxY2hkQ1NQVUlORnpvSzhxNURiN2FCWU5tb1dSNktTWVFJSC1qQ3A1Y1RsU0hsSnB6Wk5LN0d1WVpTYk9nZ2tUR25YcmplTjdJMnJCT1FSQXdrRDZOaWhJSmRa?oc=5",
+          "summary": "White House will be closed to reporters during UFC fight — unless UFC lets them in The Washington Post",
+          "published": "2026-06-10T03:04:08+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Nancy Mace SC Governor Bid Fails As Trump-Endorsed Evette Advances",
+          "source": "Forbes",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPcDcyMTUtUUdJaU5YU3VQWDE1UWpUay1lUWpOX2N4dERYSmQ3NjFVZFFkeXhMYk5vOWdocE43bUpQaTVabk9pX3ZKal9ORWMzYjdHa3pSaENrUWdpZzBybXJPR25RTWNTOW15dVhYcld4d3JmRmVkUW41eGhaVTltWVM5eFA0dzFNeW83TERIaEEtbF9od1FReW0wWjRCRl9na2lUeHViVFRMS1c2dkNfamN6c0NSNzYzb1NKeExBeEFLZEM5UEhoMm02TQ?oc=5",
+          "summary": "Nancy Mace SC Governor Bid Fails As Trump-Endorsed Evette Advances Forbes",
+          "published": "2026-06-10T02:55:31+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump argues lawsuit seeking to halt White House UFC fight was brought too ‘late’",
+          "source": "CNN",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQN2Q2djZlYzNEM1ZjRXotMWpVWEw4aVlnbGRXUjZzZzNjdV9PcXQ1UVBrdWg1Rk5jM0ZMMTRMOExoRHZtMjN2SUFXUVg2STJZazF5b0JTVXowWlM5c25vZkNKSEEzSUZFWW5kS2lGcDlsSm1MM3NiU1VlLVl2eU11ZzA5amlhY2daeEE?oc=5",
+          "summary": "Trump argues lawsuit seeking to halt White House UFC fight was brought too ‘late’ CNN",
+          "published": "2026-06-10T02:53:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "President Trump downplays boos from MSG crowd: 'Mostly cheers'",
+          "source": "USA Today",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOaG53Q1ZsZHFzSTFyLTJ6eENqMVh6a3hKQ1F2UDlNYmpGbEkzaTlZNkpCYTNEdVBXSGZjZ3hsSjZDZHlxOXVOVGJLNEdMaU9uRlZ2aGxEM3NMWTJnYzBsYWkzdHBnMTVkaEc1bk90MnlXTjhUMy1CUnRlLThxWWYxNGxhYkl6SmpLa09pTDlycDdHazdaUExCZV9Eb0FGMkFERnJzdVZqSmZhUHRZYzMtUDQzQlFOeFFQUllxTDZNcEZaQQ?oc=5",
+          "summary": "President Trump downplays boos from MSG crowd: 'Mostly cheers' USA Today",
+          "published": "2026-06-10T02:52:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Steve Hilton edges out Tom Steyer in California governor race",
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83dDVjY3Zwa0xnTXN5VnpwSXVTY1hRdTdseWR6eTJRRkstMGFNclVzeXdueFBVLWN0Vzl3LTh0S3JwNzVHQW9yTmhHSGJnUG1PNjVGVWdBRjYyUQ?oc=5",
+          "summary": "Steve Hilton edges out Tom Steyer in California governor race BBC",
+          "published": "2026-06-10T02:35:28+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump administration urges judge to reject bid to block White House UFC event",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSHRDYVpPN0l2MVNXTktBUmVoQllnam5faEMxSTNrQUNRWFFTUUc4ZWg4a21DRmlSbDBxSTZ3WGJxNTBGd0pmNjFnRUtOOGVUVDJqUzE0UWlpOFZMbDU1R2tDNmNnZHZzZ0xabkdzRzZPdEZibDlfc0ZnOTA4OVZGWi1kaHBLeVZtUmVzNEZ0SnFMUVZNUW9EbHFEbm5zX1JLYjdwZjQ4amZJSFo3LW9TRjFObTFyci1CTkRVOU40X21KZw?oc=5",
+          "summary": "Trump administration urges judge to reject bid to block White House UFC event Reuters",
+          "published": "2026-06-10T02:20:00+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Pamela Evette celebrates early lead, thanks supporters and President Trump",
+          "source": "WSOC TV",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQcDRwUGUzZ0xFMWRSVFRJanptNW1Td0I3bGlBWG1OdFZwZWxIQ1U3U0VlSk1veXhRZklWeTViaC1rWExYbTlONWx3aEZrYWctbDJ4aXdPcFJnSVVfZll5OHhmSzN3X09GN3k0anltSUVENzJoc3hwRXpja3QtWHVUWjNYUk1MODAyZHpxaXFYcUpaSVpzTkVlaURhOG9QNjY5NURjRnhFWWZQcDlaQnZsWVdQTjIxcldwajYxVXJ3RHc0NGdMZWx4OTdqQdIB3wFBVV95cUxNTlhrM0xrMDJuNmpEQzdoUnNWZjg0eElYaGxwajRuTUpreUNhT0NhWWd1Tm91SzdEcnVVTVpRUHB1SGZPUHY4bzE4LXdBWnRxNFdwSkZrNTJOUTh5dXNueGVkWlNKNEl1NC1wbHFYem9CTjJaNE13eHhqYnR3ZWo0UjR0QTZ6Vkp2YTJIQnNUY1M1Uk1VcEVPcXlQRmlHdFVxVnNpVlE5cGtVLWNUcVpQN1lGbDdyVlQ3a21BWGxhSUNFdUdjMXZkcVpET3oyTmFpcGJoTjRQTmRqSGlEY2J3?oc=5",
+          "summary": "Pamela Evette celebrates early lead, thanks supporters and President Trump WSOC TV",
+          "published": "2026-06-10T02:18:00+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Trump rails at Gov. Moore over pace of Jack Nicklaus golf course project",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRGlmT1M5eUVyS1dzb0tYVlNUUTVaUHBXVzljcmVVY2lmQ1FERzNiaDJSeFpTNnFzaTE5MFlPLXVWM2Q1TzVrYTFFMjBaYUxXc0RNSVFfbDk4eTJsTWliYkFUX2tSVi1kWGdobFhIQWVUNmlFVGg2TTVGZzl0SmFraDFJUjFwekU0S0pUYkFWTnlxOF9fRy16T0NsUl9EbjVHb0kxTzEzQ0REZFB6X09CRXR2S2MyTmJI?oc=5",
+          "summary": "Trump rails at Gov. Moore over pace of Jack Nicklaus golf course project The Washington Post",
+          "published": "2026-06-10T02:15:39+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Evette, backed by Trump, and Wilson, a Trump supporter, head to S.C. governor runoff",
+          "source": "Houston Public Media",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNVV96VkdDdEpYb3lqVUkxX29KUGROOEdUVWRxa0VjSzBzMzlieDVydkZZQU9IWE9nWFU3eHY0cVItVWhrQlNqM1Z0djJzVmtGWDZnc0htQUU5Y29Ea0htX1c5X2ZPT3pwWVlERXJxczM3WG9VR2ZkREtzbGFtMTNKSTk1N3pqSER1Z0pKazlDQlFXZmZJVGNWOTJZN21haDRsNUkzLUtHRVQ4RFRuM3VVOFFrb05KMzRhdUZ3bUo3WTM2VzhsRXBadlh1NTZBRXl5R1hNQ041T0l2WnNO?oc=5",
+          "summary": "Evette, backed by Trump, and Wilson, a Trump supporter, head to S.C. governor runoff Houston Public Media",
+          "published": "2026-06-10T01:57:26+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "'Does he want to continue?' Trump questions Netanyahu's candidacy in upcoming Knesset elections",
+          "source": "The Jerusalem Post",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9ZaVpPejROSUlLMm0xbDM4T2NwdzJLd1ZQQzhXYkNpS0I1LW53OUt3dU5xR09RZ2pPMVR1QXVMbEpjblIwdjFDUE5UZnpnQkFocG5VcmFGek1GbGg5alVqWFpTeTM?oc=5",
+          "summary": "'Does he want to continue?' Trump questions Netanyahu's candidacy in upcoming Knesset elections The Jerusalem Post",
+          "published": "2026-06-10T01:53:17+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Live Updates: U.S. conducts retaliatory strikes after Trump says Iran shot down Apache helicopter",
+          "source": "CBS News",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9CcXlXY1RUWm9uR0lyQlVvb2pIYWM5WFdNZHNYVnlYeTZiaTdvSVlKUDBKV1hvRkxmUG5VbHhWaHpXenIwYTQ4QlBJMjdvNVBhUFZLMTE4cWhpeU9XRmRWVjBDNlRhUUtfcGFNN0M1ZkhzN0ZmSE40Yktn?oc=5",
+          "summary": "Live Updates: U.S. conducts retaliatory strikes after Trump says Iran shot down Apache helicopter CBS News",
+          "published": "2026-06-10T01:53:00+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "US attacks Iran after Apache helicopter downed in Strait of Hormuz",
+          "source": "Al Jazeera",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNa1U3RXhmWS1NWEQ1QzhPZmFULVhEMGwtOVRSSVBKVVowLUxSNUFvYmZUUGljZThPdkVOaVJicmJ2SFJENmdudGZOdWVVNmFqRTJFQ0ZjUzE1RXdJYjNKS2Q2V0Nfcm9HenY0bEF2V1pHdDRadXZxZ1loTlQwYks1VklkV04yRklIQ2FVSXJKQ1pDQmFoeEVXSmtJSEViQnhzQmh3WEg2LVVEV2lS0gGyAUFVX3lxTE4xQ2Ixb01CVTZLSDFRNFZQbGI0M1Z2YmVFZVJoanVEbUJzMk5mc1p5cUo3Z2kzcGNpaVI5RHlFaWJlZ0JaMDBnMUV4UGFFTnFDOHctallaeHJiWHM5WVZVaGhOOExlR1RPUTEwNS15Z2pqYnp1TnRDRWhFdHFzVGplMW1NbEdNVjJmdkhiQXE1ZE9rMVdxSkZRU2FYa0lZdm9CdzA0amluNG5ta0ZEN0h0THc?oc=5",
+          "summary": "US attacks Iran after Apache helicopter downed in Strait of Hormuz Al Jazeera",
+          "published": "2026-06-10T01:52:30+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Donald Trump’s attendance at big games often spells trouble for home team",
+          "source": "TribLIVE.com",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSkJldEJYR1BWOHRIRWJWZ0xNN3BDaDV0dzFxNmljcHhDaldOYXhnZmZ1LVNyZVJGdDFQT042dmo3WjJwX0VwSTFNRkc3azZMa19nenljN1FLWHdGUzhmTWRoOUpvMW1KaGY2a2pBRVpFNFp0YzIwNEE1d1RRZ2drbk9KZjd6UVNvbkJyU09ETWJWQ2RCV3hFTE1VRnVJMi1IVE9n?oc=5",
+          "summary": "Donald Trump’s attendance at big games often spells trouble for home team TribLIVE.com",
+          "published": "2026-06-10T01:48:19+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump Says Bill Pulte Will Take Over as Intelligence Chief on June 19",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSXM0Nmp5UEdFUDdSQ0dSVGNGREh3WW01RmZHMlFDN2VJdEp1enlvNFppT24xSlJJZUsxc3NVd0oyYjlxclZfTTV3cFJlLTVmS2xSdl9uVy1ZWWpaTWc5MEs3ZVVPS2cxZ2V2aXNRc1hZY1B5QWxaY2lnMXNTZXJ5QXJxNFFhNWlzaFE?oc=5",
+          "summary": "Trump Says Bill Pulte Will Take Over as Intelligence Chief on June 19 The New York Times",
+          "published": "2026-06-10T01:44:06+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Trump’s pick moves on in South Carolina governor primary",
+          "source": "The 19th News",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQc2cyOEJxN0tZNUVsQ1BYWnE1bDdqb0dvR3lnX0ZDZ2FNYWMycldFdEpSbUFnZENHdTZ2cVJWRnNlclBJMmsySFBjSV85eE5jX0dpZTd1cnZzVW94X1oyUlF3OU9CTU5SbjJnMTdiSkdzck9POHJwdm5NamRYdi1jVQ?oc=5",
+          "summary": "Trump’s pick moves on in South Carolina governor primary The 19th News",
+          "published": "2026-06-10T01:33:02+00:00",
+          "origin": "關鍵字「Trump」"
+        },
+        {
+          "title": "Evette, backed by Trump, and Wilson, a Trump supporter, head to S.C. governor runoff | News",
+          "source": "WLIW",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVUYybkhqOUx3R0N0ZmpqX3p2X0VEVjRnY3dycWgzNXVZWXp4S25RZTVNTlJHY2VEaVpwakZpQ3d5aTd3TDZvcVZxYXE1MkdLMEhPSmVGaURvWV9ybjdxZUNJNWxjM0JaYTMzXzhpaGk2QUVncGRVRW5mUndkdnhBQVE0QXdLRGFfVGFuZldMeXdPWXNmdWJxUXZ0VHFpemxQM2NaNVFRZkJQT3Ytd3BNUXJR?oc=5",
+          "summary": "Evette, backed by Trump, and Wilson, a Trump supporter, head to S.C. governor runoff | News WLIW",
+          "published": "2026-06-10T01:30:25+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Donald Trump Throws Nepo Baby Bill Pulte Into Spy Chief Role Earlier Than Expected",
+          "source": "The Daily Beast",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPLWRoTnVBeEMyTEk0MDVUSzZlaGNLUDNZN2VlTHdzR0FRbER0OUM1VGY2RHM2NndaVWtvQ0dYdHBmV1pYSVFhOE16TDZWcEh6YlhFbXdIQW5tTFNUNDdMYTE4dGRNNDlfajh5VTVzdm9uOFRWbkNzdGdsZ1RoTk9Ib2Z5U2RKenFHbUowSUkwNTFmNWJZRWp3dWxHdjBkSmZYN0twRnFfTk54Q29jTi1yNUwzZw?oc=5",
+          "summary": "Donald Trump Throws Nepo Baby Bill Pulte Into Spy Chief Role Earlier Than Expected The Daily Beast",
+          "published": "2026-06-10T01:29:00+00:00",
+          "origin": "關鍵字「Donald J. Trump」"
+        },
+        {
+          "title": "Caribbean advocates hail court rejection of Trump’s ‘unlawful’ immigration restrictions",
+          "source": "caribbeanlife.com",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1tNTVoeTJRbHdxa2JaNmFYUVBTOGxKNkdFeTVEZkhBWmczbXhTMTdhRU9OMTg0WlktRER3M1dBZDF6eDZGVXhRR3ZIUmZZYjFvWHdzT3lsTmhMUENMYkdnSWRxSUpTS2xTbDhraWtQNktPZw?oc=5",
+          "summary": "Caribbean advocates hail court rejection of Trump’s ‘unlawful’ immigration restrictions caribbeanlife.com",
+          "published": "2026-06-10T01:25:12+00:00",
+          "origin": "關鍵字「Donald J. Trump」"
+        },
+        {
+          "title": "CNBC Daily Open: Trump's Iran deal is 'days away' — yet again",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNV1QwODB5UmdLaTJYVGdDeVlfeDVLTnF3M19CdVFrNEFTTVhOQlpob2hacGdNM3RhMEROMnJ0N2wyTElxTEF0alN3VXNSLWIxOTBZQlZ2ZXlqSElucGlPbElsYXJxWnlBNDYyR3ZieWtOV3B0cnF2U1RUQ2VEdHFmZjFxYlRvN3hkVEdUWWwxUGpIVGFhU3Jj0gGcAUFVX3lxTE1TTnd3dGVaWmRLX3p1cVh6cDladVhDTmY2d1M2M0h3V3lwbGpXSjJVWkpWVmpHVlJzdlJ5Nk1SeWVWMlRQMUlldm50b3N0dDRLQlVIZTRRLTdmd1VOeHA5RW1rYU5KUEF4enh6YkFMUk42a1JoMW81OVA5Q0owLTJYemFmbDZreWVBQmVBVGtRWGpRbXctNk5GZ2RNNQ?oc=5",
+          "summary": "CNBC Daily Open: Trump's Iran deal is 'days away' — yet again CNBC",
+          "published": "2026-06-10T01:21:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Nancy Mace blames Epstein files backlash as she concedes in South Carolina governor’s race",
+          "source": "The Guardian",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdWVDTUxTSGJhSmt2WDQ4LTlQWU1ZZ2hmLTVYbmRSdUU5eHJpU0EtQTV4N3lOZVVGYVpzYkFYeUpfT2RGVjZyU3FYaHBWbk5CRUdWMGJGeWh4cGJaTHlGWVBzWGwzRDYyZzh4SUZ0RlVZRVlRR2tRei1iT19TMWFhemZzQ2lOSnQ4UmpFN09EdGRLZ2JxVzJUUVBjZE00Sk51NlVRN3B2QQ?oc=5",
+          "summary": "Nancy Mace blames Epstein files backlash as she concedes in South Carolina governor’s race The Guardian",
+          "published": "2026-06-10T01:21:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Arizona to adopt President Trump's tax cuts",
+          "source": "KVOA",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWnI5eGloa3p3NTNONmZBT25Kby1RZTMyLURSaVY1XzkxSENtVW5RTHlJWW53MjFqai1FTHRONlMxMERSS1NKQlltX3VvV3puMVExRW9GNFVVUFlURGljTmZrQUE0eTJJUDJ3TXVqSU1xT2xrZDNsc1lSWHRKOUdEZHdZMnNHVHFuQkdmRERDa2hyamdBMGJORFVFcVRzUGNtT2JVODMtbzRWenFmNkZRNTYzbVlraFJM?oc=5",
+          "summary": "Arizona to adopt President Trump's tax cuts KVOA",
+          "published": "2026-06-10T01:12:00+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "House passes $70B bill to fund immigration enforcement for 3 years, sending to Trump",
+          "source": "AP News",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOX0Z3TU5zRlhmZ21weEdKNWd4TGl1RzQtOG8wd3FXYmtHV2xQWWtmbVlnMEw2U2dxSzk0cDEzYkdvU1M5N2QzMGtCa0NkRmE0aVQ3bWIzYU9ubnRNZmpHaHRuNnRYanZYNFlyVE44T1IxNHV2YUhCU0o1dzRvLVZ6bWhPb3pqVFFuTUNrTmFEbGlpOGZUa0hVRWFybTZrMnVYSGNMak9QQWIzbVFucE1PbjRSMGVrU2NndVE?oc=5",
+          "summary": "House passes $70B bill to fund immigration enforcement for 3 years, sending to Trump AP News",
+          "published": "2026-06-10T01:11:00+00:00",
+          "origin": "關鍵字「Trump」"
+        },
+        {
+          "title": "Trump news at a glance: president returns to old playbook of undermining US election integrity",
+          "source": "The Guardian",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObEFWUVRTM1NzNXlzV3RhMXFfZ2plMU1iQko3eEtiMlNmRks1aFltaUpHR01DOFpUd2FwQUljMG96alN4c0t4Q3RqdWRPcXl5RFd3QnNJS3Bjdm1UN1NZVVdUcG1NbzRfSHk4NzFSWU5zaERidTVoUDZtbFItNkNEWFRiX05kQWp3cERjUWs2aEtCQ2l6ZGc?oc=5",
+          "summary": "Trump news at a glance: president returns to old playbook of undermining US election integrity The Guardian",
+          "published": "2026-06-10T01:02:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump-backed Pamela Evette advances to GOP primary runoff against Alan Wilson in South Carolina governor’s race",
+          "source": "NBC News",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT2NSbDFLZVFRdG9GMGlzQUxkdFFXSWl6TGF2WU12U2c2REVtUWJIZnZLQnJvdFpVVDNTd3VUOEFoMzlPLWVlbFZLbDFtNGVobHBCZ2QwNl9WUk1OV0JoMURJeTJNeE9hVThDMkFzMjc3ZXNNUXMtUkxITlJNZjctN3NiWlIydWt2LVJvbzl5YXZLV3NoR2t6X0I4eS1LM1NhME0xeGNhZ0tSd0pQLTRZczBQUFhFUlE?oc=5",
+          "summary": "Trump-backed Pamela Evette advances to GOP primary runoff against Alan Wilson in South Carolina governor’s race NBC News",
+          "published": "2026-06-10T01:01:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump administration warns more than 500 hospitals to provide more price information or face fines",
+          "source": "WHYY",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRDVIRk1IVGJ0MVBxWVJ4UW9BOVBQTi11LW8wNFBWTnFCVkRhcUtReFdCc2diamd6Ml9obldNLWotRzNGcEtleE9STnVYNkJEQ0ZVa1hFSDVyTTVwTzB5MXp1bDlVMkhEYzlBSUlXbWdZWGZOdzJhcXFZMFpwWmZ5eDRDZXBIazAtMkE?oc=5",
+          "summary": "Trump administration warns more than 500 hospitals to provide more price information or face fines WHYY",
+          "published": "2026-06-10T00:58:04+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "NBA Finals: President Donald Trump reportedly not expected to attend Game 4, but security zone around MSG will remain in place",
+          "source": "Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOQkJVdElBT1ZCNHlwdHRNWkQ5c2pUUG44aFpTX2w5bGZNYUd3TWNSOWxYRXpNaVZPY0U2X0o3VFV4SnVaSE1kWE1udjlRaUV3UEkxQzFxLTJfZkhrWGswc21xMXkyWHViRGFNbkdfbGhwVnBsVnczdDNURU9Xd2pEMEw1dlpKYVM0VkZyTWpYZFIyaWdDYkRlU0tpYnNqM0pmX2h6UUtadDJTaFJFVHlxTVVCbm02SHZtVVI4X1NsVnMzV0FINDRWZWxzY04yOVB0RUt4ZHN0bjdXZTVCcDZCSzJNdS1yaWhJY0IybFBvZWZyOGlkX3VWSUtyVlZKeC0xdFpEMnk2dw?oc=5",
+          "summary": "NBA Finals: President Donald Trump reportedly not expected to attend Game 4, but security zone around MSG will remain in place Yahoo Sports",
+          "published": "2026-06-10T00:43:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Immigration advocates slam Trump administration over World Cup entry treatment",
+          "source": "WBEZ Chicago",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQzJhSU4xUG4tdDZBeWU4VGotVXNuSkdqcWdRS1BqVjhPQ1ZmT19yNFZJNEdiOXVDNlBpS1E1eUR6bTZPOEtzVW5KekludU9zcUY1S081bDVFQWFFTXdiR0VpeGZ3Zmg0NGkxNmJJYkdvRFh2TkVieHA0aGJXSlBjdXgwcTNpQi1RdnZYTXJIVW1yVGlUb0lSV2FxU1lxS3JrdjY5N3hjSHdNcE9Wa1JjbGpHQkVpN0pINDZENWhTZTVKUjI0UFpMNE92NHdUWWJ4d3RlcQ?oc=5",
+          "summary": "Immigration advocates slam Trump administration over World Cup entry treatment WBEZ Chicago",
+          "published": "2026-06-10T00:39:00+00:00",
+          "origin": "關鍵字「Trump」"
+        },
+        {
+          "title": "US strikes Iran in response to downing of helicopter, military says",
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBsMU5qNmNLREM0TFZjR2hkZ1ZTSlZFNktlWjhZX0Z0YnM0UFRicUNkaUxxTzRvM195emt5aWhYX2FONkFUR1ZwNHdwQVphYm5YVnJ4RHJjbEh0QQ?oc=5",
+          "summary": "US strikes Iran in response to downing of helicopter, military says BBC",
+          "published": "2026-06-10T00:33:25+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump says Pulte will take over as acting DNI sooner than expected",
+          "source": "The Hill",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQckQ1aTNoV2NiNFhMRXRwd1RmTzVkcDlrUUVRM0FUZS1kYXZjWmwyZ1JycGhrNjVXRVgzSUh6UUJNaF9CRVZUdDFfQjRyNkJlT2YyQW5lTVNTV0lCdzNWTllES1E2SGpvNWp1cno5N19FaE5iTlZFeldFVFRsT1RaZlFtekJCM0lnZXM00gGQAUFVX3lxTFBiODBiZ0w4T2JqX3NUTnNtUzJrMWo3clRUd0FpWTg5bWlRTll4UFZhSkxRaVpQTE82TFRuMDhKX3duUmpSRkRZanFFOTNuR2lsX0dsd1RZSXZrUVR2ZWRGQWNKZDZFOGoxYWhwdTFEY0JlV2tLa2stTFQtYlUySGhtamlqWm84bm51TWROWWxxMQ?oc=5",
+          "summary": "Trump says Pulte will take over as acting DNI sooner than expected The Hill",
+          "published": "2026-06-10T00:25:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Epstein Reading Room heads to DC for Trump’s birthday",
+          "source": "NewsNation",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOekkzWHZBY21OUjBtOTNIaTRicTRUSnV2THJRMFpnOXh1T1JLRVlTNlVDRC1KM1EyU3ZmVm9JbHQ2M0g3Qm5rcm9RVjltNldzWjlNbUpFQThzN0pWUWt6S2lnQTVlTk9JYkhmWEh1LWg5Q1JrSVpyUlV0SVpzbVp2TXAteEVmZ9IBiwFBVV95cUxOTzc0VGJ2TkxBNllSVmo3T1N4SnkwQ0FyUlBTWGxvak55bDNpY0RpQ1c0c0xVRDdWaE54dm4zcl9sQ3RjeVgtUEt4WWNUWFNxaTRWM09lUlRpQ3JldFI5RWNQNkg2WHhKbWxjcWlqODAyU0RGaE0xVFljMDBrTmtMY0JWT29uYUJvUnRJ?oc=5",
+          "summary": "Epstein Reading Room heads to DC for Trump’s birthday NewsNation",
+          "published": "2026-06-09T23:57:03+00:00",
+          "origin": "關鍵字「Donald J. Trump」"
+        },
+        {
+          "title": "Trump indicates to Speaker Johnson he won’t back down on Pulte despite fight over key surveillance authority",
+          "source": "CNN",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBLZXJmNnUtUFFPd2V5VllmZEZRWldSanNhWm9UVTAxTkljT1FMWklLQ0hWa1pfdDlwTnJCTnJ3T0RfaExZeEYxcS04cUtKdEo2eHF2Y010VGt1bG5xOVQ0amU5MzdhQmRnVXlGLTgtd2JGUQ?oc=5",
+          "summary": "Trump indicates to Speaker Johnson he won’t back down on Pulte despite fight over key surveillance authority CNN",
+          "published": "2026-06-09T23:52:16+00:00",
+          "origin": "關鍵字「Trump」"
+        }
+      ]
+    },
+    {
+      "report_date": "2026-06-10",
+      "query_zh": "黃仁勳",
+      "query_en": "Jensen Huang",
+      "summary": "輝達執行長黃仁勳近期積極拓展AI生態系，包括宣布與蘋果、Google合作，推動CPO技術全面採用，並強化企業AI管理平台，同時警告記憶體短缺將持續數年，並拒絕出席美國參議院的AI聽證會。",
+      "key_statements": [
+        "輝達將與蘋果合作，由蘋果高階AI模型改用Google雲端與輝達晶片。",
+        "輝達喊話全面採用CPO（共同封裝光學元件）技術，儘管SemiAnalysis看衰其時程。",
+        "黃仁勳宣布NVIDIA DGX Spark強化企業級AI管理，以助產業規模化部署。",
+        "黃仁勳指出，記憶體短缺將持續「好幾年」。",
+        "黃仁勳拒絕了美國參議院邀請他出席AI相關聽證會的請求。",
+        "黃仁勳稱Marvell Technology（邁威爾）有潛力成為下一個「兆美元級公司」。"
+      ],
+      "affected_industries": [
+        "半導體製造",
+        "人工智慧軟體與服務",
+        "資料中心",
+        "光通訊",
+        "消費性電子",
+        "PC製造",
+        "記憶體",
+        "電源供應器"
+      ],
+      "stocks": [
+        {
+          "name": "輝達 (Nvidia)",
+          "ticker": "NVDA",
+          "market": "美股",
+          "sector": "半導體",
+          "sentiment": "利多",
+          "reason": "輝達持續擴大AI生態系，獲得蘋果採用其GPU，並強化企業AI管理平台，顯示其在AI領域的領先地位，儘管股價短期波動，市場仍看好其長期潛力。",
+          "evidence_news": [
+            {
+              "title": "蘋果AI策略大轉向：高階模型改用Google雲端與輝達晶片",
+              "source": "Yahoo股市",
+              "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxOdmpMNEsxbzB4SUd2U2o5TUM1UnNyWjVNNFBodUJUVS1vN1BrZjNZNlh3ZXZyY2N5S2ZlQXdWc0I1UFgtLTBhZ2RIcElWSUZDZlkwYWhQRFBYejlXSDQ0c2VRR0hEXzlPN3hLbGNnWW5XaWlWeFhxY01aUU5ndzlIZTlNV01aQ0l4YlJCbDhhb0NRbVpIdWRGZ202eGFHUHlOMDV2RzJBbUlxRy03WDdUbkVjTDkzZHBkQzhTamhDbUtTUFZ4R0FMM0lUTzk5a0Z6R2xYeXEybGQyMnNkek1mcVR3bkFrYmNuU0s4emlTd2ZNRGNaWEU5aUxCVkNRT0thWkZoX1RJZVNhNFh3YzNwTXhjcjZZN04zRVZ1RzRsVEk4NzltZi1kcHgxb3NBWEpPVjQxeDFaX1dSc1pWajdPR01mY1hlZkRZNHQtRXhaRGJEanUyQlhn?oc=5"
+            },
+            {
+              "title": "NVIDIA DGX Spark 強化企業級 AI 管理 助產業規模化部署",
+              "source": "Yahoo股市",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ00zZ0YtZENrb1hDcUlZX3MtcnhfNGNoQ2pPVUZkdjM0TjM2YnJnTy1ZMDdDTUxPLVZwVm43ajBXUUxtaEg1UTJPaTBranNDUWRHNlpkZnNRUTFxUF9CRE1aOWF0UC0xcVptSXR5Y1dOS2FRQ1NMS1dObU5SZHZ5TmdQbkJ3ZFZFa2pvdmFLUk95UzlxRHp0SEJUWEtVZ3B3LTZGWWRJMGtXR3NqQjZZZ1dn?oc=5"
+            }
+          ],
+          "news_count": 63,
+          "first_seen": "2026-06-08",
+          "last_seen": "2026-06-10"
+        },
+        {
+          "name": "邁威爾 (Marvell Technology)",
+          "ticker": "MRVL",
+          "market": "美股",
+          "sector": "半導體",
+          "sentiment": "利多",
+          "reason": "黃仁勳公開點名邁威爾有潛力成為下一個「兆美元級公司」，儘管近期股價下跌，此一言論仍可能提升市場對其長期成長的信心。",
+          "evidence_news": [
+            {
+              "title": "從瀕臨下市 到黃仁勳口中下個「兆美元級公司」 邁威爾汰弱換強 威脅博通ASIC霸業",
+              "source": "今周刊",
+              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNM1d0bzJ5bFVMQkhUMjNLeTF4d0RRTy1XQlNvS0ppS1lYb0llZURJM3BtZ1JsU1lyOEpzcnRWZ3NENmxqN05NTkhLeHRRWGU5OFE3WmU2Tnhxbi1OT2xvMGUzeFVoMUM4SUdPUlBueEF1dVNld2pIRWVoU21janJKcw?oc=5"
+            },
+            {
+              "title": "Nvidia CEO Jensen Huang Believes That Marvell Technology Could Become a $1 Trillion Company. Here's Why He Is Right",
+              "source": "Yahoo Finance",
+              "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQem1sbG9WOXJoZExjb0JFUk1XVFhITDhUZEgxZEplS2lmUWxpUjNFUnVuc0tfQjJiUlRJUEI3M1JfZTVpaVFqU2VPcHFENUZYS2FZYVc3NW56QkdFOHdfdmZlZUx4M0daUXBwUjVlY0pSYmU5Ump5dGw3dTZ1eHVzTUJnTHpWT096cUs4VmJOZHo4aHllUHRYMmdzOG9vZw?oc=5"
+            }
+          ],
+          "news_count": 3,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-10"
+        },
+        {
+          "name": "三星電子 (Samsung Electronics)",
+          "ticker": "",
+          "market": "美股",
+          "sector": "半導體、電子產品",
+          "sentiment": "利多",
+          "reason": "黃仁勳訪韓會晤三星高層，聚焦HBM4E、HBM5等先進邏輯晶片的合作，顯示三星在AI供應鏈中的重要地位有望提升。",
+          "evidence_news": [
+            {
+              "title": "三星擬擴大供應先進邏輯晶片給輝達- 新聞",
+              "source": "MoneyDJ理財網",
+              "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUjdxVXhRNjQ2Q3Jld3J5ODkxd1lhZklXWlpRc1h4SVItcFNLNWp0R2tUOGdNcHRoWWsyb1ViSlNYa3h0WFVxQmNjUjlLN19LTzV4bTU4d3h6X2RocUVDU2xCUG1XZjRIMmtDNG5WOVZFYjBMZDFESjMyTUptY3o5azhFZ2s4MlRWVV9PQkxIR3lzQQ?oc=5"
+            },
+            {
+              "title": "黃仁勳會晤三星全永鉉 聚焦HBM4E、HBM5合作",
+              "source": "非凡新聞台",
+              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9pdFdOODA0UFQ5R0ZpaUxWblFMeDNZb01ndERzNk5QdkJSWEMzSnVNVDlYVGlMc29vVmQwWXczSXh4YzMzb0JCQW14NWhFV2c5UjA2NFlDaDItYlR2dlRn?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "美光 (Micron Technology)",
+          "ticker": "MU",
+          "market": "美股",
+          "sector": "半導體",
+          "sentiment": "利多",
+          "reason": "黃仁勳預警記憶體短缺將持續數年，對DRAM和HBM供應商而言是利多消息，有助於其產品定價和獲利能力。",
+          "evidence_news": [
+            {
+              "title": "The RAM crisis will last 'quite a few years' says Nvidia CEO Jensen Huang — so despite hiked prices, I think if you want a new laptop, now might be the time to buy",
+              "source": "TechRadar",
+              "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYWhiZnpkVElnekthOUkwWUkwdlN1ZXZ0SGw5cmhYNWhuZHBmQnE3MGFjMVFaV2c5TjR0LUhEVWpfaVZqUVhBTGRVQy1mYUlpVS1FdnkzM0VDWm5nNkx6aklkMUMxWDczUkp3U1BOMFZIaVUwN2JaaWwxVlhJM3czbVk0Y2hNUlAzeV9jNjJoeW9YQU01bVRIb2h5VzNhOG11NE13a3Y2dVJvcGhROG05REVYemxrbVpBX3JUeWdBTFdVaHFvV0laWU9mWS1NMExkVHhmVnlWbnlYQWZHWHUyd0JCZndXcjdvcWwzOVBHZE5ZU2RhZy04S3lGM1dJMFRBTFozM0lWRHFXSlQ2VUpWX0xQengwX1dKcVFXTW5QZmR6Q2VrYnAw?oc=5"
+            },
+            {
+              "title": "Nvidia: Why Jensen Huang's Buy The Sell-off Remark Is A Grounded Structural Argument - Micron Technology",
+              "source": "Benzinga",
+              "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNMXJKNVZ5WGlKNHZRU0Z5bXB3d1JMOWZxN1BueUpwU2RtQWY3TkF2WmFhNXZVazRZbF91VTU2QWpWQkRqeHUyMFlTbExBZmFsWDhwSUFRdWotMVhVWHpEMWlqS29EZks5Z3QxdXY2UExrUW1mdkFuSUNqWUtNejNJRmpXak5zSDRueTVaM2JkYjBzemVPaE9WMnlERkVMbDVDdnJnXzlDZDViNUhzeGFoMXI3UmlXYS1RTDZWbFhNTTVYUWhMbTZ0MWxR?oc=5"
+            }
+          ],
+          "news_count": 3,
+          "first_seen": "2026-06-08",
+          "last_seen": "2026-06-09"
+        },
+        {
+          "name": "高通 (Qualcomm)",
+          "ticker": "QCOM",
+          "market": "美股",
+          "sector": "半導體",
+          "sentiment": "觀望",
+          "reason": "黃仁勳與英特爾、AMD、高通在PC市場展開競爭，但也有新聞指出黃仁勳曾背書高通股票，導致市場情緒複雜，需持續觀望。",
+          "evidence_news": [
+            {
+              "title": "PC市況低迷 為何成下一個重要戰場？輝達、聯發科、高通搶卡位",
+              "source": "TVBS新聞網",
+              "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9JVVdfWU1UQ09VaVMtMmVuVm15TTFBM2I2WVNBNnFpMWdaTHpQTVdhekJNcWNqaDJMcEZlY3FhcjBDTVBFdWJQNjZaUDJ2Z28?oc=5"
+            },
+            {
+              "title": "Qualcomm shares rise 2% after Nvidia CEO endorses the stock",
+              "source": "Investing.com",
+              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUmk2VnJ1WW5OeGVtaDB6SnBtNmUyNkR0bXJaN3ZHM28tNmpoYWNXYXZTMXpMZ01fMUt5QVA2dTZ1S0ZrVFJrREF5MmZOa3ljZkpHUjBHYTBJdDhhY0xtSUlNblhyUm43ZDROdHkyc01CckhQbHNjZlE1ZTRoeW9zSjRUcWY0SHRsRUFDV2FFRm9TM181WmhBQ2pGUXAyR2hJclk0aDBkWWt2WmlMWjFsSmhHeHlBUQ?oc=5"
+            }
+          ],
+          "news_count": 4,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-10"
+        },
+        {
+          "name": "聯發科 (MediaTek)",
+          "ticker": "2454",
+          "market": "台股",
+          "sector": "半導體",
+          "sentiment": "觀望",
+          "reason": "輝達在PC市場與聯發科、高通等競爭，可能對聯發科構成壓力，但同時AI PC市場的擴大也可能帶來新的合作機會。",
+          "evidence_news": [
+            {
+              "title": "PC市況低迷 為何成下一個重要戰場？輝達、聯發科、高通搶卡位",
+              "source": "TVBS新聞網",
+              "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9JVVdfWU1UQ09VaVMtMmVuVm15TTFBM2I2WVNBNnFpMWdaTHpQTVdhekJNcWNqaDJMcEZlY3FhcjBDTVBFdWJQNjZaUDJ2Z28?oc=5"
+            },
+            {
+              "title": "1圖懂》凍資1.77兆美元 SpaceX IPO風暴來襲 不只輝達、博通慘了 聯發科、鴻海、昇達科、華通...14檔受害受惠股總盤點",
+              "source": "旺得富理財網",
+              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBCQzRBUEdldVhjOEhmMDVYSS1qNmNJSjRic29ndmR4aHJ1WEQ5ZFc0QXRUbFpIOThlbnV5Sm9tYTRtTG9MTTIyRUN0WENLcFYxa1JBVUVia0V0d1hXanEzcTBwT0w3YVJfTWc?oc=5"
+            }
+          ],
+          "news_count": 2,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-10"
+        },
+        {
+          "name": "研華 (Advantech)",
+          "ticker": "2395",
+          "market": "台股",
+          "sector": "工業電腦",
+          "sentiment": "利多",
+          "reason": "研華攜手NVIDIA推出AI Factory Brain，將NVIDIA技術導入智慧製造，顯示其在AI產業應用中的領先地位和合作潛力。",
+          "evidence_news": [
+            {
+              "title": "COMPUTEX 2026：研華攜手 NVIDIA 推 AI Factory Brain，從設備商上攻營運平台的戰略卡位",
+              "source": "TechNews 科技新報",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNd19DX203MTB3dnNPNHM3QWN6RjM1cTRSc0pzWmg2Q3lhbkN3OW53RTViZjVZY1d3azVvVzRBUGpPOTF3ZFNPeWtoVWE5dWJCVTV6MklTM29RclZqaVIzWW1qM1lPaGROOXQ4cTRSdEJkTVFJZ3drTUd3NEdVTmVEM3lqRlhCQm10a2FENlFmQmtUNldHOXhra0FaMlBMdkwzN3M4cnBYSUNpbWVTc1V3X1IzcWdUc18x?oc=5"
+            },
+            {
+              "title": "前五月營收破1.4兆創新高！這「ICT巨頭」導入NVIDIA技術 加速智慧製造進程",
+              "source": "Yahoo股市",
+              "url": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxQc0puOHJ0aUNUQVRPcnRyYW9KTUoyTUNNSVNzTl9ILWdtYkdYTnJJTkItOTdqQmZtMzFPc3ZWNGJWUmlLNXZMYVFrMktkeHlLczFPdnVjOTZMSkN5TkRhSk82T2pmWmhiV2NabVNHQW8xWGR0MWJGMGZqc0p2NkVGQzVXNmFpdTh4VTh4X2tjaVdTYlhCcTdYM0JVNkZoamZwcUtOanM3eWExbjBlZGdTa0s1aENQN1huMHh6WXFyU2pzLVZXQW9FUjNfUzhqVldITUlELWRZWkRIcFRoWlpILVg2TFJ0c0xPTVllemlCQWJoLThwNVlWdnhlU2NPLXZhVWloYTlwcmpINUV6ZTl1SmV4R1NyRmd4dWxJLVMtSk1GRFpoek95QmxtVUNLT0gxWHBHQjBLSGc0cmc?oc=5"
+            }
+          ],
+          "news_count": 1,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-09"
+        },
+        {
+          "name": "騰雲科技服務 (Accucrazy)",
+          "ticker": "6870",
+          "market": "台股",
+          "sector": "軟體服務",
+          "sentiment": "利多",
+          "reason": "騰雲科技子公司Accucrazy登上黃仁勳GTC演講背板，顯示其AI技術獲得輝達認可，有助提升公司知名度及市場信心。",
+          "evidence_news": [
+            {
+              "title": "騰雲科技子公司 Accucrazy 低調登上黃仁勳GTC 演講後面背板",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxNTGE3T1p5Rm9kbl9QY09adVNpbFFOTjFmcEpqOHE4ZTh3QUF5RklCMG5KOFBWU1hORDFRZ2JNYldvb2NOUF85a3hJdURNM2l0am1laW8waHB4cFZMSjhmVkkxbkRycWllYU9HMG8wTnMtYXB1Q09BQzlXem52bXFnaUFRclpHM3J5MmNBSTZxajdrNEtlemNoZTFKcVBIRkVmNU9TOUI2a1hDenR3YlJPRG45SXFyNEF0QkJFQ3pnU0U5UGc3S3g5OFgtemcwc0M5YVR3TXZtV1BvWUw3WVJkVGYxdUF5RC1oWXROWFg3ekxoQm9uMDVCVTlpc25tbHIweFFyTEtFcjFiYXNqMThlZWdpcHhCenQwRUxxdG9UbzBCa3p1QTVCd2tTNTFwR1RYVkVFa01LdmJCNW9pNDJkUF9VZE9fNFhoWWwzbG5ib1FBTGxuZ05F?oc=5"
+            }
+          ],
+          "news_count": 1,
+          "first_seen": "2026-06-10",
+          "last_seen": "2026-06-10"
+        },
+        {
+          "name": "鴻海 (Foxconn)",
+          "ticker": "2317",
+          "market": "台股",
+          "sector": "電子代工",
+          "sentiment": "觀望",
+          "reason": "SpaceX IPO風暴可能影響相關供應鏈，鴻海作為大型電子代工廠，其業務廣泛，可能受多重因素影響，需持續觀察。",
+          "evidence_news": [
+            {
+              "title": "1圖懂》凍資1.77兆美元 SpaceX IPO風暴來襲 不只輝達、博通慘了 聯發科、鴻海、昇達科、華通...14檔受害受惠股總盤點",
+              "source": "旺得富理財網",
+              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBCQzRBUEdldVhjOEhmMDVYSS1qNmNJSjRic29ndmR4aHJ1WEQ5ZFc0QXRUbFpIOThlbnV5Sm9tYTRtTG9MTTIyRUN0WENLcFYxa1JBVUVia0V0d1hXanEzcTBwT0w3YVJfTWc?oc=5"
+            }
+          ],
+          "news_count": 1,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-09"
+        },
+        {
+          "name": "昇達科 (Sercomm)",
+          "ticker": "3491",
+          "market": "台股",
+          "sector": "網通設備",
+          "sentiment": "觀望",
+          "reason": "SpaceX IPO風暴可能影響相關供應鏈，昇達科作為網通設備供應商，其業務可能間接受到影響，需持續觀察。",
+          "evidence_news": [
+            {
+              "title": "1圖懂》凍資1.77兆美元 SpaceX IPO風暴來襲 不只輝達、博通慘了 聯發科、鴻海、昇達科、華通...14檔受害受惠股總盤點",
+              "source": "旺得富理財網",
+              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBCQzRBUEdldVhjOEhmMDVYSS1qNmNJSjRic29ndmR4aHJ1WEQ5ZFc0QXRUbFpIOThlbnV5Sm9tYTRtTG9MTTIyRUN0WENLcFYxa1JBVUVia0V0d1hXanEzcTBwT0w3YVJfTWc?oc=5"
+            }
+          ],
+          "news_count": 1,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-09"
+        },
+        {
+          "name": "華通 (Compeq)",
+          "ticker": "2313",
+          "market": "台股",
+          "sector": "PCB",
+          "sentiment": "觀望",
+          "reason": "SpaceX IPO風暴可能影響相關供應鏈，華通作為PCB供應商，其業務可能間接受到影響，需持續觀察。",
+          "evidence_news": [
+            {
+              "title": "1圖懂》凍資1.77兆美元 SpaceX IPO風暴來襲 不只輝達、博通慘了 聯發科、鴻海、昇達科、華通...14檔受害受惠股總盤點",
+              "source": "旺得富理財網",
+              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBCQzRBUEdldVhjOEhmMDVYSS1qNmNJSjRic29ndmR4aHJ1WEQ5ZFc0QXRUbFpIOThlbnV5Sm9tYTRtTG9MTTIyRUN0WENLcFYxa1JBVUVia0V0d1hXanEzcTBwT0w3YVJfTWc?oc=5"
+            }
+          ],
+          "news_count": 1,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-09"
+        },
+        {
+          "name": "Navitas Semiconductor (NVTS)",
+          "ticker": "NVTS",
+          "market": "美股",
+          "sector": "半導體",
+          "sentiment": "利多",
+          "reason": "Navitas Semiconductor被點名卡位輝達AI鏈，顯示其在AI電源管理領域的潛力，市場關注其後續發展。",
+          "evidence_news": [
+            {
+              "title": "【即時新聞】NVTS最新卡位輝達AI鏈，爆量近2900萬股還能追嗎？",
+              "source": "CMoney",
+              "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1GU2pZS1lXTmpWYlBsejA2TWpfZFhEY3FsVW5rQXc1NGVid0JNMUZ3UU51VXZaVWdZOEx4Y29QaTFadDN5OWltMlRTM0hBSXdlR0JGOWMxRUlKM0x0bC1yU1pWWnRZekU?oc=5"
+            }
+          ],
+          "news_count": 1,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-09"
+        },
+        {
+          "name": "D-Matrix",
+          "ticker": "",
+          "market": "美股",
+          "sector": "半導體",
+          "sentiment": "觀望",
+          "reason": "D-Matrix聲稱其Corsair平台AI推論效能超越輝達GPU，對輝達構成潛在競爭，但D-Matrix本身尚未上市，需觀望其市場表現。",
+          "evidence_news": [
+            {
+              "title": "D-Matrix 聲稱 Corsair 平台 AI 推論效能超越輝達 GPU",
+              "source": "Yahoo股市",
+              "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWUxrYVQ1NHYteHNqNkpLTl8zbFpqZUk5MjhrNWl3VktadUc4dG01emJHbHhNNEQ5Tjlzd0FEUjdUV2hLbVdFeC1oTmZEUzNGRnlEOGxEWFhDYndWMXYwVXdnM2N0UTJmWm81SyzFsTmxTcW81ZXQ5ZmJsQ1poeUpTZHU1OWJsOVVTUXVMMVV0dDIyMnpTZDUwaFpZUkNFQ1RwZl9v?oc=5"
+            },
+            {
+              "title": "Upstart chipmakers keep challenging Nvidia. This time it's Microsoft-backed D-Matrix",
+              "source": "CNBC",
+              "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdWJ5aVlCMjNDN2pMbnJxZWRRWmx3dzg3TV9Hcng5dHNZeGNMdjlBN0NZX29mMmFIajNvcXgzdFFvOHZqY3hYTHkwM3JRQTh4LVM0c2E4UmdWMUFBUDE4Z25TU0RELTNHS3kyek13eVR5SU55WEdTYU1yZ3FJeENvQlVOSEXSAYoBQVVfeXFMUHBUV2FERlhPMHVkOXJNUFJtdmY3dXJrNFNMNzBRRk9nX0NJVHZwRXBXRjIzRDdQRGZ5cVNmWjFEY1NIUzY2WUluejNYdl9faVNjY1VSVnFjQVc0N0RXbE5GV3FVR3VhNHlzUURVVTVNelJLVnRFTDgxZDl5bTdhNGMzZFpiNkVobzh3?oc=5"
+            }
+          ],
+          "news_count": 2,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-10"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "D-Matrix 聲稱 Corsair 平台 AI 推論效能超越輝達 GPU",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWUxrYVQ1NHYteHNqNkpLTl8zbFpqZUk5MjhrNWl3VktadUc4dG01emJHbHhNNEQ5Tjlzd0FEUjdUV2hLbVdFeC1oTmZEUzNGRnlEOGxEWFhDYndWMXYwVXdnM2N0UTJmWm81SzFsTmxTcW81ZXQ5ZmJsQ1poeUpTZHU1OWJsOVVTUXVMMVV0dDIyMnpTZDUwaFpZUkNFQ1RwZl9v?oc=5"
+        },
+        {
+          "title": "光通訊股暴跌真相曝！SemiAnalysis看衰CPO時程、輝達卻喊話全面採用",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfTFdGMk52dFBnaHNRanpXbzNta1hwNHY0cTY1Y3BjbDgzeEVibEo3cGsxd1lGWTNjQmh5c3M3Zk9yZkVBQkNHZ2I5V3J1Z1k?oc=5"
+        },
+        {
+          "title": "NVIDIA DGX Spark 強化企業級 AI 管理 助產業規模化部署",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ00zZ0YtZENrb1hDcUlZX3MtcnhfNGNoQ2pPVUZkdjM0TjM2YnJnTy1ZMDdDTUxPLVZwVm43ajBXUUxtaEg1UTJPaTBranNDUWRHNlpkZnNRUTFxUF9CRE1aOWF0UC0xcVptSXR5Y1dOS2FRQ1NMS1dObU5SZHZ5TmdQbkJ3ZFZFa2pvdmFLUk95UzlxRHp0SEJUWEtVZ3B3LTZGWWRJMGtXR3NqQjZZZ1dn?oc=5"
+        },
+        {
+          "title": "蘋果AI策略大轉向：高階模型改用Google雲端與輝達晶片",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxOdmpMNEsxbzB4SUd2U2o5TUM1UnNyWjVNNFBodUJUVS1vN1BrZjNZNlh3ZXZyY2N5S2ZlQXdWc0I1UFgtLTBhZ2RIcElWSUZDZlkwYWhQRFBYejlXSDQ0c2VRR0hEXzlPN3hLbGNnWW5XaWlWeFhxY01aUU5ndzlIZTlNV01aQ0l4YlJCbDhhb0NRbVpIdWRGZ202eGFHUHlOMDV2RzJBbUlxRy03WDdUbkVjTDkzZHBkQzhTamhDbUtTUFZ4R0FMM0lUTzk5a0Z6R2xYeXEybGQyMnNkek1mcVR3bkFrYmNuU0s4emlTd2ZNRGNaWEU5aUxCVkNRT0thWkZoX1RJZVNhNFh3YzNwTXhjcjZZN04zRVZ1RzRsVEk4NzltZi1kcHgxb3NBWEpPVjQxeDFaX1dSc1pWajdPR01mY1hlZkRZNHQtRXhaRGJEanUyQlhn?oc=5"
+        },
+        {
+          "title": "從瀕臨下市 到黃仁勳口中下個「兆美元級公司」 邁威爾汰弱換強 威脅博通ASIC霸業",
+          "source": "今周刊",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNM1d0bzJ5bFVMQkhUMjNLeTF4d0RRTy1XQlNvS0ppS1lYb0llZURJM3BtZ1JsU1lyOEpzcnRWZ3NENmxqN05NTkhLeHRRWGU5OFE3WmU2Tnhxbi1OT2xvMGUzeFVoMUM4SUdPUlBueEF1dVNld2pIRWVoU21janJKcw?oc=5"
+        },
+        {
+          "title": "傳LPDDR短缺迫NVIDIA砍半SOCAMM2容量 基板供應鏈意外受惠",
+          "source": "DIGITIMES",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBKUGotclA1cHpDSkxxWTFCMnJueV85VUtjTUZZOGVqaEdzTHJ6eVBHVUZVSlBaZE9LdjRqTlc1Z0tHanFVakFYT1ZKUzVkX3JzaVZUREtVMEtJeTd1Y18tcVVvSTZWQUlFOXEwbEJiNkx4dXdrSHc?oc=5"
+        },
+        {
+          "title": "黃仁勳婉拒美參院聽證邀請",
+          "source": "美南新聞",
+          "url": "https://news.google.com/rss/articles/CBMiREFVV3lxTE9iRWN1QUY4ZjcyaGhZWDR4NXVYZGxZYWxYSWFNbDdwS0IzOTBhNTNjbzRyTHpTRXBoTWl4XzhTWVhMeDJw?oc=5"
+        },
+        {
+          "title": "The RAM crisis will last 'quite a few years' says Nvidia CEO Jensen Huang — so despite hiked prices, I think if you want a new laptop, now might be the time to buy",
+          "source": "TechRadar",
+          "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYWhiZnpkVElnekthOUkwWUkwdlN1ZXZ0SGw5cmhYNWhuZHBmQnE3MGFjMVFaV2c5TjR0LUhEVWpfaVZqUVhBTGRVQy1mYUlpVS1FdnkzM0VDWm5nNkx6aklkMUMxWDczUkp3U1BOMFZIaVUwN2JaaWwxVlhJM3czbVk0Y2hNUlAzeV9jNjJoeW9YQU01bVRIb2h5VzNhOG11NE13a3Y2dVJvcGhROG05REVYemxrbVpBX3JUeWdBTFdVaHFvV0laWU9mWS1NMExkVHhmVnlWbnlYQWZHWHUyd0JCZndXcjdvcWwzOVBHZE5ZU2RhZy04S3lGM1dJMFRBTFo1M0lWRHFXSlQ2VUpWX0xQengwX1dKcVFXTW5QZmR6Q2VrYnAw?oc=5"
+        }
+      ],
+      "news_count": 100,
+      "first_seen": "2026-06-08",
+      "last_seen": "2026-06-10",
+      "raw_news": [
+        {
+          "title": "D-Matrix 聲稱 Corsair 平台 AI 推論效能超越輝達 GPU",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWUxrYVQ1NHYteHNqNkpLTl8zbFpqZUk5MjhrNWl3VktadUc4dG01emJHbHhNNEQ5Tjlzd0FEUjdUV2hLbVdFeC1oTmZEUzNGRnlEOGxEWFhDYndWMXYwVXdnM2N0UTJmWm81SzFsTmxTcW81ZXQ5ZmJsQ1poeUpTZHU1OWJsOVVTUXVMMVV0dDIyMnpTZDUwaFpZUkNFQ1RwZl9v?oc=5",
+          "summary": "D-Matrix 聲稱 Corsair 平台 AI 推論效能超越輝達 GPU Yahoo股市",
+          "published": "2026-06-10T04:27:54+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "光通訊股暴跌真相曝！SemiAnalysis看衰CPO時程、輝達卻喊話全面採用",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfTFdGMk52dFBnaHNRanpXbzNta1hwNHY0cTY1Y3BjbDgzeEVibEo3cGsxd1lGWTNjQmh5c3M3Zk9yZkVBQkNHZ2I5V3J1Z1k?oc=5",
+          "summary": "光通訊股暴跌真相曝！SemiAnalysis看衰CPO時程、輝達卻喊話全面採用 news.cnyes.com",
+          "published": "2026-06-10T04:20:05+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "NVIDIA DGX Spark 強化企業級 AI 管理 助產業規模化部署",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ00zZ0YtZENrb1hDcUlZX3MtcnhfNGNoQ2pPVUZkdjM0TjM2YnJnTy1ZMDdDTUxPLVZwVm43ajBXUUxtaEg1UTJPaTBranNDUWRHNlpkZnNRUTFxUF9CRE1aOWF0UC0xcVptSXR5Y1dOS2FRQ1NMS1dObU5SZHZ5TmdQbkJ3ZFZFa2pvdmFLUk95UzlxRHp0SEJUWEtVZ3B3LTZGWWRJMGtXR3NqQjZZZ1dn?oc=5",
+          "summary": "NVIDIA DGX Spark 強化企業級 AI 管理 助產業規模化部署 Yahoo股市",
+          "published": "2026-06-10T04:18:45+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "輝達市值5兆美元並不貴？對沖基金大鱷：遭嚴重低估 現在放空是陷阱",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1vb2gxWnBpTEdENjlWREpMc0U0S2RWM3I3eHVhUkZyNkhkRWpYQmdTOEhHdDhsYkZsR04yVmpWMHZGMTBPdDdRRmpoQzF1ZE0?oc=5",
+          "summary": "輝達市值5兆美元並不貴？對沖基金大鱷：遭嚴重低估 現在放空是陷阱 news.cnyes.com",
+          "published": "2026-06-10T04:14:46+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "蘋果AI策略大轉向：高階模型改用Google雲端與輝達晶片",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxOdmpMNEsxbzB4SUd2U2o5TUM1UnNyWjVNNFBodUJUVS1vN1BrZjNZNlh3ZXZyY2N5S2ZlQXdWc0I1UFgtLTBhZ2RIcElWSUZDZlkwYWhQRFBYejlXSDQ0c2VRR0hEXzlPN3hLbGNnWW5XaWlWeFhxY01aUU5ndzlIZTlNV01aQ0l4YlJCbDhhb0NRbVpIdWRGZ202eGFHUHlOMDV2RzJBbUlxRy03WDdUbkVjTDkzZHBkQzhTamhDbUtTUFZ4R0FMM0lUTzk5a0Z6R2xYeXEybGQyMnNkek1mcVR3bkFrYmNuU0s4emlTd2ZNRGNaWEU5aUxCVkNRT0thWkZoX1RJZVNhNFh3YzNwTXhjcjZZN04zRVZ1RzRsVEk4NzltZi1kcHgxb3NBWEpPVjQxeDFaX1dSc1pWajdPR01mY1hlZkRZNHQtRXhaRGJEanUyQlhn?oc=5",
+          "summary": "蘋果AI策略大轉向：高階模型改用Google雲端與輝達晶片 Yahoo股市",
+          "published": "2026-06-10T04:13:49+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "NVIDIA重磅財報引爆AI新紀元 3兆美元商機全面啟動 00935卡位核心供應鏈",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMinANBVV95cUxOcHdFanpTRy1NLTBDTEtndjEzU1VmVWdZalhuc0pwVlV1VERiS05HRUstemc5eTV0STRqdmFXRFJTekRuRWFNeHM2V3NEQTluUlpBYm5xUEM0bUk3RzlNQ3VIVlduSFM3ZFBZX3JvSDNmT3lzRnNNZGNfekVqaGNTdzJ1d2VRT1g2cFN1X2MyaC05LXpqSUdhTDdsWHdOMnZfTFNTMEJvWmxRSHFNdDY4UWU3dEJYZThGT05uaGRhVUZWZ3hqeW0tMU1DMkJPRFFmaFhLaW9EX01RLWl4dEgzbU04bWZMUHBRRkJZTGxpZ0txeHVVWkVMaWtDdXI2cEp0QWtGRWlUZ080YllkVm53eWkxVjBqUEZENHBvRTg4VzkzVmYwYWtCTEVUbC1ZLTEtZGpadjF6MEFsdTNCM3hNNUZTVm1CSGJjbGFBaXpFTXBRQ2tGZ1d0b2FCWXNGRGJKNEZHS25WbHVDMVRadlFkalR5bHZJSkJ1RmZqTG5qYlhOMG9hOWNCc2ZiMkwwUWhxWG93M2lWN1V5Ty1t?oc=5",
+          "summary": "NVIDIA重磅財報引爆AI新紀元 3兆美元商機全面啟動 00935卡位核心供應鏈 Yahoo股市",
+          "published": "2026-06-10T04:12:20+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "從瀕臨下市 到黃仁勳口中下個「兆美元級公司」 邁威爾汰弱換強 威脅博通ASIC霸業",
+          "source": "今周刊",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNM1d0bzJ5bFVMQkhUMjNLeTF4d0RRTy1XQlNvS0ppS1lYb0llZURJM3BtZ1JsU1lyOEpzcnRWZ3NENmxqN05NTkhLeHRRWGU5OFE3WmU2Tnhxbi1OT2xvMGUzeFVoMUM4SUdPUlBueEF1dVNld2pIRWVoU21janJKcw?oc=5",
+          "summary": "從瀕臨下市 到黃仁勳口中下個「兆美元級公司」 邁威爾汰弱換強 威脅博通ASIC霸業 今周刊",
+          "published": "2026-06-10T04:12:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳最愛華莎！她曾被嫌又黑又胖 靠「這3招」美到封神",
+          "source": "TVBS新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1IMFlsX3BXTEw0dEoyXzFOVDY3MWx4RlYtdGNYUFFFMzMzaHpuZnl0b1pjMHBiTEJkUlhVVThzQ2dqYkgxQW9NdnJPUl95YW56dmdXbGxPX0tVUQ?oc=5",
+          "summary": "黃仁勳最愛華莎！她曾被嫌又黑又胖 靠「這3招」美到封神 TVBS新聞網",
+          "published": "2026-06-10T04:11:00+00:00",
+          "origin": "關鍵字「輝達執行長」"
+        },
+        {
+          "title": "《放. 新聞／世界新聞／韓國》黃仁勳效應持續發酵 韓媒關注三星、SK與AI供應鏈新競賽",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxOWTVNOXF5Zk93Q0FyNDVYbktXeDJCeDc1SnBRcVNzS0lzWU1PUWM1MVJJdkdYd25Gbm9sbEhfUEs0cXFTWjBVZkpmTkJNTC01aUJBM2NXV1BiZXh0bHBEN3FPQUhnSVVHc0tFdFF4QVBnUDBXNFBiWEhwQUVIS3JodHk0TUlKMDRCSkp1WWlDdjc5cXZtS1lkemRFTjdzbmdJWjBuLU1mZVlaUjFxU20wV1NPc01McXJGMW9zRnBOVkF2NHJpOHZEc0ZUb2hEYXE5YkdLVjh2eTR1MDI4TUt6a2lYLUlXYkdOaU9PVXZrakkxakNDT2hHYTh1OVBpS1cyem9lRTNKMUpka0RZZ1JSRHA2MGxxTS1UN19vTHRUeXhWOVlaVXJOcXJqbTcxTGdp?oc=5",
+          "summary": "《放. 新聞／世界新聞／韓國》黃仁勳效應持續發酵 韓媒關注三星、SK與AI供應鏈新競賽 Yahoo新聞",
+          "published": "2026-06-10T04:08:51+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳為何不去參院聽證？周玉蔻讚戰略家思維 吳嘉隆：身為美國公民更該選邊站",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi7wNBVV95cUxPaGNiLVVSb09rS2tUSWc4cnJKaXBTbU5XZEV0NEozd2c1X3RudVpreE5vWl9WVVhwc1F1bzBpaDR5SGNHTXRxaFFlelBOUVNndlI3M2VCU2NXYkVnYVhwYjN3cmtiNUc4d3BiWHlHc2l3bE8wVE1rVmp2M290cGZscVA1RFRHWXcwanB1SDdWNVRhdFcyUEViMi1GSWx6c2F0aXp1U3kwR3NBOHMzYU12dVRLRTZxN25jUW9SRGNkS0tUS2E4YmNXTkEzQmQ1cHN6RE9vb19hWDNOUllmRUtqbzN2cFdkXzc0MGRqUnB4cEYwaDhrZWxYSHdYdl8yNHdaNzRLQk5DOS02cDlZLTJEYkU5UkNabk9iLWhpR0VuMnl4MXZJb3lhajd5eE92eWZuek44bmFyNzVrWEUxeG9VNUpSVUI4cDJhbWxZLW85RkVZNW1UbC1NR083STk2RGhqWmM3dG95S2tqZ0dyRlZMRXlPYlA0SDNQNFRvNHM4TUtMemZpN0lLcUVZa3ZvSFlfWWEwNzhOQU5Bdm9XeDlhZGZIbGk3MnB0X3FfYzNrVmhxS243cFRvR3NybjIxcTFMc0lYbEtLeGc3UWpNVHFMSjV6SnhIb1hWWGJzOGluQkY5VXhDa2Y0bG9PU0hJdFk?oc=5",
+          "summary": "黃仁勳為何不去參院聽證？周玉蔻讚戰略家思維 吳嘉隆：身為美國公民更該選邊站 Yahoo新聞",
+          "published": "2026-06-10T04:08:50+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "前五月營收破1.4兆創新高！這「ICT巨頭」導入NVIDIA技術 加速智慧製造進程",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxQc0puOHJ0aUNUQVRPcnRyYW9KTUoyTUNNSVNzTl9ILWdtYkdYTnJJTkItOTdqQmZtMzFPc3ZWNGJWUmlLNXZMYVFrMktkeHlLczFPdnVjOTZMSkN5TkRhSk82T2pmWmhiV2NabVNHQW8xWGR0MWJGMGZqc0p2NkVGQzVXNmFpdTh4VTh4X2tjaVdTYlhCcTdYM0JVNkZoamZwcUtOanM3eWExbjBlZGdTa0s1aENQN1huMHh6WXFyU2pzLVZXQW9FUjNfUzhqVldITUlELWRZWkRIcFRoWlpILVg2TFJ0c0xPTVllemlCQWJoLThwNVlWdnhlU2NPLXZhVWloYTlwcmpINUV6ZTl1SmV4R1NyRmd4dWxJLVMtSk1GRFloek95QmxtVUNLT0gxWHBHQjBLSGc0cmc?oc=5",
+          "summary": "前五月營收破1.4兆創新高！這「ICT巨頭」導入NVIDIA技術 加速智慧製造進程 Yahoo股市",
+          "published": "2026-06-10T04:07:30+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "騰雲科技子公司 Accucrazy 低調登上黃仁勳GTC 演講後面背板",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxNTGE3T1p5Rm9kbl9QY09adVNpbFFOTjFmcEpqOHE4ZTh3QUF5RklCMG5KOFBWU1hORDFRZ2JNYldvb2NOUF85a3hJdURNM2l0am1laW8waHB4cFZMSjhmVkkxbkRycWllYU9HMG8wTnMtYXB1Q09BQzlXem52bXFnaUFRclpHM3J5MmNBSTZxakdrNEtlemNoZTFKcVBIRkVmNU9TOUI2a1hDenR3YlJPRG45SXFyNEF0QkJFQ3pnU0U5UGc3S3g5OFgtemcwc0M5YVR3SXZtV1BvWUw3WVJkVGYxdUF5RC1oWXROWFg3ekxoQm9uMDVCVTlpc25tbHIweFFyTEtFcjFiYXNqMThlZWdpcHhCenQwRUxxdG9UbzBCa3p1QTVCd2tTNTFwR1RYVkVFa01LdmRCNW9pNDJkUF9VZE9fNFhoWWwzbG5ib1FBTGxuZ05F?oc=5",
+          "summary": "騰雲科技子公司 Accucrazy 低調登上黃仁勳GTC 演講後面背板 Yahoo新聞",
+          "published": "2026-06-10T03:53:40+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "傳LPDDR短缺迫NVIDIA砍半SOCAMM2容量 基板供應鏈意外受惠",
+          "source": "DIGITIMES",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBKUGotclA1cHpDSkxxWTFCMnJueV85VUtjTUZZOGVqaEdzTHJ6eVBHVUZVSlBaZE9LdjRqTlc1Z0tHanFVakFYT1ZKUzVkX3JzaVZUREtVMEtJeTd1Y18tcVVvSTZWQUlFOXEwbEJiNkx4dXdrSHc?oc=5",
+          "summary": "傳LPDDR短缺迫NVIDIA砍半SOCAMM2容量 基板供應鏈意外受惠 DIGITIMES",
+          "published": "2026-06-10T03:53:00+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "黃仁勳美食地圖爆紅！26間台北台味清單一次看，米其林推薦、夜市小吃、肉粽全上榜",
+          "source": "udn 女子漾",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1EVE1vM2d4Ml9vUDZEQ1VkVHlEOFBfU0ZwRUR2bld3bmF4SlltdkR4cVkzR3BvVGhoaGM1VTQwa0VIQUlxeE1hZkd2azFFblZadUhST3NRN01vV3J0dWpfdzJPYUM4RkJSbGpLeC1WRTPSAWJBVV95cUxPLTJEd2VlYktERDJKMkZieWtWamZzQkJvRjlmR2ZiVXp2bjJJMVlhSnJwOGx4OWlsV1piRms4ZTFEQk1PTG01UzI1SDZuQk92em9VOWZsYzdHMUVCTXhpVDZmdw?oc=5",
+          "summary": "黃仁勳美食地圖爆紅！26間台北台味清單一次看，米其林推薦、夜市小吃、肉粽全上榜 udn 女子漾",
+          "published": "2026-06-10T03:51:50+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "《放. 新聞／世界新聞／韓國》黃仁勳離開首爾了 韓國卻開始緊張了",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPX3pXbTNMWUp5OHY2dXVhQ1d6aWxVenVIVzVSbXV0SXczUllyU0ZMS0FTS091VkEyVTR4aGNpOGYtZ2RzMHpsUFJvczNha3BldWh1NVQtcmZBdUtPWklUcW93cXd6S1dSby1tTVczYVExR0gwbnlZSVEtS0lGZ2oyLVBkYzVZakpiZnBBYWR5REkyQW5NUmEyajZXQUdkY3htLWlNOXUxLUJFSDJQQW1ONXdNMHhEQWdWZGZaNnZtV25zSGctNXM4Qkx2TFV4OEFiV05VSV93WXppYnhkaG94cGxCUEtyVFh3Q19kZ1BUMERoRWVJZm9jTXBIRmFBa0VXalRMd1k1VUZSNU1xNzVkT2NDeDJyZzJndEJSTzN0bnJXUkpt?oc=5",
+          "summary": "《放. 新聞／世界新聞／韓國》黃仁勳離開首爾了 韓國卻開始緊張了 Yahoo新聞",
+          "published": "2026-06-10T03:42:22+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "「在最安全的時候，去做最恐懼的事」：黃仁勳女兒 Madison 一席話，讓工作倦怠的人突然清醒",
+          "source": "A Day Magazine",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE45eDQ3NkZEQnlRMzVaSV9CQkYxUExxSm9iaWpwcUYxMUhXZDlvdHJPVUZCY1ZaQWdPamxCOHo3OVpzLWN2MWY1QU5ucDV2SUo1T01nLThMNm5JNHJoU2NPczFqaXNBb3BNTGl2b3VqelppVTVSYkE?oc=5",
+          "summary": "「在最安全的時候，去做最恐懼的事」：黃仁勳女兒 Madison 一席話，讓工作倦怠的人突然清醒 A Day Magazine",
+          "published": "2026-06-10T03:38:21+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "GTC背板黃仁勳連三年欽點，這１０所大學為什麼能年年上榜？",
+          "source": "Cheers快樂工作人",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1aTk5JRmpUbjhJS3lrMkNUamNSN3RQRy1MR3FmbHYybFBmQmNtbVVkalNzUjZ2VEFzVHVsY19oeHIxSURYZy1VejNwdWQ4cGk5TDhmT2NhdDdOaDdYRmwzVGx4bXNwM0NjeUtj?oc=5",
+          "summary": "GTC背板黃仁勳連三年欽點，這１０所大學為什麼能年年上榜？ Cheers快樂工作人",
+          "published": "2026-06-10T03:33:49+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "蘋果終於採用輝達GPU！輝達股價為何沒反應？原因曝光| 全球財經| 全球",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAwSnF4RUZyeHBJY0FEeTVwUEtnUzRxXzA4WnB1QmkzRjctbldLdTEwWlVRaUREOUl1djVnbXF6R2NSTGxvenZKZm5WNlVVck1w?oc=5",
+          "summary": "蘋果終於採用輝達GPU！輝達股價為何沒反應？原因曝光| 全球財經| 全球 UDN",
+          "published": "2026-06-10T03:20:58+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "OpenAI 洽談 20 年超長租約鎖定價格，Nvidia輝達以「先借後租」模式押注俄亥俄 10GW 資料中心",
+          "source": "動區動趨",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOOUJXc0prUUhiZTlzckFyNS1mMXpza0ZPZERESzljdDJsV3lydlY4UUl5dGVFdFJCNGNSSHJ2RVdjMGctdl80U1Jqb3UzM0ZIRUVyUXFKZDhTQXd4ampzS1hNNG1FTXdUWFQ2U1kxV1hWQUdzS3N2bUJ6MlV2OXVNcE9oamQxdU9tMjRhblhSeVg5Rl9yZmJPZk9WMA?oc=5",
+          "summary": "OpenAI 洽談 20 年超長租約鎖定價格，Nvidia輝達以「先借後租」模式押注俄亥俄 10GW 資料中心 動區動趨",
+          "published": "2026-06-10T03:10:25+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "RTX Spark超級晶片攻AI PC 能否改寫市場引關注| 科技",
+          "source": "中央社 CNA",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9TOHNwVV9xR1V6VFk0b2ZuOWZMZDlad2d5eHVtQ1pqaUhJYWRtRUpoUmFteGFkeHhxNFlCb0FEcWlwM2tGSjFJaUVyZ3ZWUEE2ZlZraUI5SHI3Mm1lTWc?oc=5",
+          "summary": "RTX Spark超級晶片攻AI PC 能否改寫市場引關注| 科技 中央社 CNA",
+          "published": "2026-06-10T03:09:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "午安快評》賴清德能見到黃仁勳嗎？（孫家瑞）",
+          "source": "中時新聞網",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBqUWk5eThVTW81YmlqMmpzLUF2YUYtbnF5M05uM29hd1JXeG9OZzJYUmw5OHEzVDVPS2c4VEZVcGs3bm9ZWG1kQUhWNlU4QTlneENnWGxqa1ktcUlPZmdac2VEWnZpWWZwOUVlMlBn?oc=5",
+          "summary": "午安快評》賴清德能見到黃仁勳嗎？（孫家瑞） 中時新聞網",
+          "published": "2026-06-10T03:00:30+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳訪韓掀美食跟風潮 便利店薯片銷量狂飆766% 2款零食沾光",
+          "source": "香港01",
+          "url": "https://news.google.com/rss/articles/CBMiqgNBVV95cUxPdFBuMEJqTjZQbzlCdENOVEl5Q0xucFJrbldEN1ZPNFQ1S09kekdPZHVkNDM4Y2treDdndXlEREh2QkR5dkNlVnVwMVd6emJBa0VoMHh3cS1VeUl1V1ZfV0pZQWhoZXZweXAwY2pOQXl3OWlnVVFadV9CeU8tU3ZOM0daQjZlM19VVndhUjgxSEdJdnZjV1hjS0pDQkZtMnpiVGNFSVRnMDBNd2NhUnJUbnBQT2FpbU5QRGliZ01Hc3lxdjZmSlpPUG8teE82bnNmN2VaelhvWEJYaUI0Qk41VTJmejJWUEtqdnR5U3VfcElFVHVZSF9wRWRCSDdWQXR4cURXdFV0SFBNQlI5X28zRk5lRE9fdXI2ZWt4MW5pSFdQNHBYelZ3YnlMRGIzX1gtM1JZYXBxbWRNWUxmb3ZhN0pSazE0OHgzTV9qeFFGSzVWUUJVZ0JNSzNyTE1UQnBzZ3NqVmxpN3pzaWVwRDJzX1FsdEl2bGZyRjJ1cTRZSFFzVXZndUxWM0I4cHpVbUZ1NnRTMjJOd2VKdG1rNlM0WUtWZ2ozR0cxNEE?oc=5",
+          "summary": "黃仁勳訪韓掀美食跟風潮 便利店薯片銷量狂飆766% 2款零食沾光 香港01",
+          "published": "2026-06-10T03:00:15+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "SpaceX上市前 馬斯克透露將發射一顆純運算衛星「AI1」、搭載輝達GPU",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxOcmNhR3NWZ2RRczF3OEtRWVNabWNkaV9OUU9XQzFiR1lzMm5temoyVTJxcE5ZVEJyZ3Q4TVZuMnBQYVVvMk5hNXRheU93MWlXZmxhanFxWUg5T2dJTGpkSWdSX1pTdURIbldKaHhsYmJZZE1MWjV2Z3U0bE1heEwzYV95WGdTakNDMWRJYVByaEhsSUcyNVBSRThYZGpSXy0tb3hiQ1RNUktNMno2VV9CVjVIeUN2bFZuckhfbFlTZUdzX0dmVHdqUHVVbHBWNXJHZ0F6a05BMkxnT0ZpaTczWHJUbkpGZThrVE9iaDRXNnp0SmZqZGU4N2pYakZGR3ZNbERwRk9yTGFnaDQtYW1JOGtmOVRUSklyNkk5S0lNRWs3TXVRS21CYXlUX1otT1dSY0dWVE5JT0lpLV9nRFZjU0RQQ0hpR0RNdllSeTNrZzdqOVFHMVJYWVZDeUd0eEZUVnVuNw?oc=5",
+          "summary": "SpaceX上市前 馬斯克透露將發射一顆純運算衛星「AI1」、搭載輝達GPU Yahoo新聞",
+          "published": "2026-06-10T02:48:29+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "NVIDIA RTX 50 Super 復活？爆料稱 5060 升級 12GB GDDR7 記憶體，這次規格終於不擠牙膏",
+          "source": "T客邦",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNUElXelpUU2RyaWp0cm5HYjNWQWQ0WFUxbGxhOEFlVF96MnNxVGJETlVvZ1JVd2RlSk54RXJRZHAzU1VYSEExamVvaUxrNFNUSnFhekNGaWVKOUppOTg4U3hYTTBQZnJXalNyZHpSeXpfY1N2ZDFZa3RfYmdMaVNpMlBEM18?oc=5",
+          "summary": "NVIDIA RTX 50 Super 復活？爆料稱 5060 升級 12GB GDDR7 記憶體，這次規格終於不擠牙膏 T客邦",
+          "published": "2026-06-10T02:30:00+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "PC市況低迷 為何成下一個重要戰場？輝達、聯發科、高通搶卡位",
+          "source": "TVBS新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9JVVdfWU1UQ09VaVMtMmVuVm15TTFBM2I2WVNBNnFpMWdaTHpQTVdhekJNcWNqaDJMcEZlY3FhcjBDTVBFdWJQNjZaUDJ2Z28?oc=5",
+          "summary": "PC市況低迷 為何成下一個重要戰場？輝達、聯發科、高通搶卡位 TVBS新聞網",
+          "published": "2026-06-10T02:29:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "NVIDIA DLSS 4.5 與路徑追蹤將於 9 月 24 日支援《控制：共振》",
+          "source": "BenchLife.info",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1aTWV0Nm91OHBoQl84ZlZMN2RJRFdUQV9IRlZlNDNDYW1NYm9VR0VtUkNJMGUyVm14dDVxcE1YbWNFdVdHdUVEcHpRdU1BaXBUXzhrZnB6dlR0Y2FE?oc=5",
+          "summary": "NVIDIA DLSS 4.5 與路徑追蹤將於 9 月 24 日支援《控制：共振》 BenchLife.info",
+          "published": "2026-06-10T02:20:30+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "黃仁勳婉拒美參院聽證邀請",
+          "source": "美南新聞",
+          "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE9iRWN1QUY4ZjcyaGhZWDR4NXVYZGxZYWxYSWFNbDdwS0IzOTBhNTNjbzRyTHpTRXBoTWl4XzhTWVhMeDJw?oc=5",
+          "summary": "黃仁勳婉拒美參院聽證邀請 美南新聞",
+          "published": "2026-06-10T01:58:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "小龍蝦點燃「算力即營收」新紀元！Vera Rubin 引爆台美供應鏈一次看",
+          "source": "TechNews 科技新報",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9UU3A5Rmg4enQ2VDVZekU1UHY5VTBseWxsclRwbnVOZmN4LW1wNlBIYWExVDVQaFhjN2EtODI4ekZPVUdNamY5N0c1T3lmSzRpYWRNbi1IV2EycmhRM0VGZDExVFNaT0k0eWZHdnEzQ3R5MTdsdVN2dXp3?oc=5",
+          "summary": "小龍蝦點燃「算力即營收」新紀元！Vera Rubin 引爆台美供應鏈一次看 TechNews 科技新報",
+          "published": "2026-06-10T01:32:01+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "林益仁解析／黃仁勳到底在「吃」什麼？黃氏食物公眾學如何打造韌性生態系？",
+          "source": "太報 TaiSounds",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBwZ0FsVzFtQm8ydXZfWHFLUkNPT3ptU3NTeEgzaHpLdkRWVS1yay1pdUNyRi1SblVCdjdPVUlOQXAydUEzR3piM2pGWWV0eHlOZTRVb0hiclpod2lr?oc=5",
+          "summary": "林益仁解析／黃仁勳到底在「吃」什麼？黃氏食物公眾學如何打造韌性生態系？ 太報 TaiSounds",
+          "published": "2026-06-10T01:27:29+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "三星擬擴大供應先進邏輯晶片給輝達- 新聞",
+          "source": "MoneyDJ理財網",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUjdxVXhRNjQ2Q3Jld3J5ODkxd1lhZklXWlpRc1h4SVItcFNLNWp0R2tUOGdNcHRoWWsyb1ViSlNYa3h0WFVxQmNjUjlLN19LTzV4bTU4d3h6X2RocUVDU2xCUG1XZjRIMmtDNG5WOVZFYjBMZDFESjMyTUptY3o5azhFZ2s4MlRWVV9PQkxIR3lzQQ?oc=5",
+          "summary": "三星擬擴大供應先進邏輯晶片給輝達- 新聞 MoneyDJ理財網",
+          "published": "2026-06-10T01:19:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "黃仁勳最愛女神！華莎60→48kg華麗逆襲，曾被嫌又黑又胖如今美到封神靠這幾招",
+          "source": "女人我最大",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1LSzNxVnZ1MFpULS04T2NveFA0UVI5a2JpUllYRkI2WU9FZnc4VkFiT0VjVjFYcGo3Sm91a2E0SWlVV2xWeENldG1yMDhteU0?oc=5",
+          "summary": "黃仁勳最愛女神！華莎60→48kg華麗逆襲，曾被嫌又黑又胖如今美到封神靠這幾招 女人我最大",
+          "published": "2026-06-10T01:15:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "【總質詢結束！蔣萬安喊繳出亮眼成績單 細數輝達、無菸城市政績】 （圖／記者徐文彬攝）",
+          "source": "facebook.com",
+          "url": "https://news.google.com/rss/articles/CBMi9gNBVV95cUxOdFdzU3ZrQVVCT080Nnc3ODVoUzc0eEdSTEZ5cjN5dmpVYXI3QjdDY3F1bFZ6V1lfOFV6OXhkVDduekcxM3EwNFhoZ3BmVDZNdXhFcDZNbmp3b044VV9WU0ZZR0xicGpyTlZtNlc5ODgyZXRiSlFWV2tfc014dFFmT1BySkg1VERfcXJPUzlfNG9lTGtJNEo5UVBxUWZtMTNwdXNZRHViQ0dDSmxQZVYtbHRBT2JzcFNEak90cjZwZUlIRmlYVmdHeG5oUm4xQm5vVXBxUlRaeGUwRVBKSmVvREpwS05GRFFxWlQzSVBRZDlkang4cFdBT0dMSEw0d1hvZ1BvRnkza1IyRk9oVzRRMmVENTI5NklnNTBPMFFmR2FoXzVUUlBKRTJMVjh0Z0FtMm1sSlE0YmdnM0d0cXQ3YmpwblJrU2ZNNEFIYVJfdTE0YU5mRng2cnEyOVFjYXIxQjlseEhDWEFoQ29XT1RrYUpPc19RWkYybkJoamYwWEwzUjdxN1FKSmRFU1VoUEZVSERfVWRKTnUtb2lTaHROejNZYThrTm10V0psSlc3Wm1hWE9hWWw1WGRrTFc5Y2wteGlvWnY4azMyUDRnVWRYRmNsMER0YU15MlJ2WlNLeEpBX0RxUVNUYTBicVFNbmhEbXNBTXR3?oc=5",
+          "summary": "【總質詢結束！蔣萬安喊繳出亮眼成績單 細數輝達、無菸城市政績】 （圖／記者徐文彬攝） facebook.com",
+          "published": "2026-06-10T00:24:45+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "代理 AI 重塑晶片架構！「成本才是王道」，ASIC、CPU 與記憶體牆成新戰場",
+          "source": "TechNews 科技新報",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9GZ3FNWk5fWmtKRzZXYXk1ZDMtWmpRZmRBVFItd0pzdGdKSmswRzZJbWo1MXVzcVZPVVZzS1VsSW95bzJvSkY3clp6VW1ld281dnpVVGVKYWhfUHFGVlR2QnNHNXJhUQ?oc=5",
+          "summary": "代理 AI 重塑晶片架構！「成本才是王道」，ASIC、CPU 與記憶體牆成新戰場 TechNews 科技新報",
+          "published": "2026-06-10T00:11:59+00:00",
+          "origin": "關鍵字「輝達執行長」"
+        },
+        {
+          "title": "輝達終於拿下蘋果AI客戶 為何股價仍跌？",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9ZOFktbEsybDhPSmN2SDV3TGNmNXJOR2ZtelR1dXRRUzZYZUpXLWR1NnFOaWNpal9mUVRWWjVpb2VzVmFaTi01blJ1MlhKVXc?oc=5",
+          "summary": "輝達終於拿下蘋果AI客戶 為何股價仍跌？ news.cnyes.com",
+          "published": "2026-06-10T00:10:04+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "電子時報：NVIDIA AI機櫃功率密度急增，電源架構換代「三大需求」竄升",
+          "source": "富聯網",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNGZhemxPV041VlRYbFFFVElyYWJ0bTEtejBuYWpHRVlhdEN4YXNVVVB5WHlndURXMVdoSHNKeWxibHNWVlZYeDYtSTk3VlV3NWJ6cXpDN3QxYXAyRnl0dVVyWjZEaE1YV0JVLWFGLXhNSkNQemhqOHpPMmFrbmZlamd6ZUNQOFda?oc=5",
+          "summary": "電子時報：NVIDIA AI機櫃功率密度急增，電源架構換代「三大需求」竄升 富聯網",
+          "published": "2026-06-10T00:00:00+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "輝達、蘋果竟落榜！華爾街「聰明錢」最愛5檔股票曝光",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE53bnV2TTlEbnZPNkVpYkdBTUFBTGIyaW9JUTJ2RGQweEtvaENHQWs0dk40eC1wbzNiS3VLWHR0TE4zMGJNZ01xcHBqNExSYkU?oc=5",
+          "summary": "輝達、蘋果竟落榜！華爾街「聰明錢」最愛5檔股票曝光 news.cnyes.com",
+          "published": "2026-06-09T23:49:54+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "COMPUTEX 2026：研華攜手 NVIDIA 推 AI Factory Brain，從設備商上攻營運平台的戰略卡位",
+          "source": "TechNews 科技新報",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNd19DX203MTB3dnNPNHM3QWN6RjM1cTRSc0pzWmg2Q3lhbkN3OW53RTViZjVZY1d3azVvVzRBUGpPOTF3ZFNPeWtoVWE5dWJCVTV6MklTM29RclZqaVIzWW1qM1lPaGROOXQ4cTRSdEJkTVFJZ3drTUd3NEdVTmVEM3lqRlhCQm10a2FENlFmQmtUNldHOXhra0FaMlBMdkwzN3M4cnBYSUNpbWVTc1V3X1IzcWdUc18x?oc=5",
+          "summary": "COMPUTEX 2026：研華攜手 NVIDIA 推 AI Factory Brain，從設備商上攻營運平台的戰略卡位 TechNews 科技新報",
+          "published": "2026-06-09T23:01:53+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "今日重點：蘋果WWDC，攜手Google、輝達，有什麼看點？",
+          "source": "天下雜誌",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5IbFp1UWQ2dlpRcnN2TlFvZHlXOU1KTlRmdjF5YUtrczA3b3VwR3lQWUJaZlA1WFJpellNUkJsZWlNb1NjbXVBWXJvOElMdw?oc=5",
+          "summary": "今日重點：蘋果WWDC，攜手Google、輝達，有什麼看點？ 天下雜誌",
+          "published": "2026-06-09T22:53:21+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "WWDC》蘋果AI技術底層解密：輝達首度現身",
+          "source": "天下雜誌",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5OM3dsUkxqRG9zN1RkTGtSTTNsNGxhUFl3cTJYVXpYT3BtUUNyNnR0dTgxNjdZRkR0UjBETDhGSWpjMGtrbzltRW1GMTI3UQ?oc=5",
+          "summary": "WWDC》蘋果AI技術底層解密：輝達首度現身 天下雜誌",
+          "published": "2026-06-09T22:53:21+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "【美股巨頭】黃仁勳親口點名「下一兆美元公司」，邁威爾卻在今天跌7.6%？",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSGhIdHJxQUhubUdUWlUwUnlSeEFJdWl4Yk10QTdNTHgxU09ERjNhaVhXbWJCSzBOc1ZfVW1YcEZ2VnEtaGtyNWZLbUEybUl1dlNqTXo0aHdUSjg1cGQwTUMwMGNFSU9rZklGcHNtTFlVYkNMdFVoa2dnNXhBejhuM2U5Rl9NZjhPdVB2bzZn?oc=5",
+          "summary": "【美股巨頭】黃仁勳親口點名「下一兆美元公司」，邁威爾卻在今天跌7.6%？ CMoney投資網誌",
+          "published": "2026-06-09T22:34:50+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳結束韓國五天行程拋兩大宣布讚成果豐碩| 國際",
+          "source": "非凡新聞台",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE05UHc3Q2c0ck5KeE93VmVRZ2lhMFltSnJlQUlNLTFxZktkMDRNYUdNRU5TbGkzcTkxRDFpeVdpaENhTk1OalY2RHZUVXF0eFJyVFNhaFU1Wmw2VjJlWVRRRg?oc=5",
+          "summary": "黃仁勳結束韓國五天行程拋兩大宣布讚成果豐碩| 國際 非凡新聞台",
+          "published": "2026-06-09T22:15:50+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "【黃仁勳開球4次「主隊全落敗」！網笑翻：AI教父也有做不好的事】 （圖／翻攝X@NVIDIA）",
+          "source": "facebook.com",
+          "url": "https://news.google.com/rss/articles/CBMirgNBVV95cUxOUXAzSER0RDM4NUZTMC1pZ2pBbWF6YWlTdDN6WUFuM0kyOFl0QmRFeGQ4eGIwWlJCNzZ6b0Q2UkVFa2E1WWJGOXFscmZfdXJRdDBMMngzVzhuTi1waUpnSGJfRGFHbXh5YmVTYk0xUzVScm1QZkJZdUpYczlEbk80OFh0N241MDBRYVlncnF2TllLcmc0bThUX1lxQmdEM0MzZi1hRHU0dHQwTnlnWXI4dmdzbGo1aW1TZkxkbzdTRWlnRTZSODVQX0RCNkdyU1JEelJoN2hHM21nMlFXSy02MnZNRWhoNTYwX200RjgwQWdDbk5WRjdJYW5abmtmdnVTYTZQWXBmak1ERktlcHZrRUtCUERGRGtmVUpfMWhkT3pVU0M0dTRvYmNjazdiUkU2LTVic1ZCdnRkLUpKLTJuY0F5R194UEdSVFJFZGhFV0ktTmQ4dFQtZFZPUkRKMmJlZmRoZXBtNXZTdnhxR3BwbEZHOGtrZ3VKMkNrcVhmR2Z5NXBxZ0xyS3ViNnlVSWR2LW1JYWlLTWZ4OFk5Q0N5U0UxMFY2NlA2T05MSzlR?oc=5",
+          "summary": "【黃仁勳開球4次「主隊全落敗」！網笑翻：AI教父也有做不好的事】 （圖／翻攝X@NVIDIA） facebook.com",
+          "published": "2026-06-09T22:14:07+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "股價黑馬2／輝達、超微沒「它」點頭出不了貨 買設備送工程師打響名號",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxOeUFZck5GLU5tOVBtUmVuMnY4LWJxeEdNNUJCZllmd3UwQW5aUHdtRW9yeFRNV0VibXNHX09ubEVYSC0zV3NfY0pUaW5HaF9vcVBwZllJQVNqUVlnaFJnWXg4QlZxU0VxLUVRanhEQ2cteURoZFc4SGQ1cS1Ecm9rLXRQelVGNERndVFmU19yRmpJTFA0bzdQSXV0RWRGVVZJNmp1al9xN3RRVnVrUFd4YlhjU3pIcjhQUW04ekdxMUNubFdQNG9qTDJkZXRtZUp2dGZBWVJxX214d1hJek42ajI0NUZEaFZ2dkJ4YkI5T2Z3UWlIclh2OWNEcUljUDN2TGFHTGJjQ1NIUEwxYTZjc2xkb2xhemdEekE?oc=5",
+          "summary": "股價黑馬2／輝達、超微沒「它」點頭出不了貨 買設備送工程師打響名號 Yahoo新聞",
+          "published": "2026-06-09T22:00:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "股價黑馬2／輝達、超微沒「它」點頭出不了貨 買設備送工程師打響名號 | 財經 | CTWANT",
+          "source": "CTWANT",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB3akgxOFdpTG9DNlNscEVObjM1NWNDcGVkMmduclQ0VHJhRjZJUXNSQzhwWkNCXzRQNTFHbmpNdjRhY0t0bFpNWVhERUxPWnfSAVRBVV95cUxQZ3I5MmNMQ0pfNGJIWk9jSTFPeU5EV1liXzBSVXhzSVM3aVNhSFRFS0htOWtnWFA5UkUwcVRqOVotM1pDRWRmSl90Ul9CM3FtMnNOczI?oc=5",
+          "summary": "股價黑馬2／輝達、超微沒「它」點頭出不了貨 買設備送工程師打響名號 | 財經 | CTWANT CTWANT",
+          "published": "2026-06-09T22:00:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "NVIDIA AI機櫃功率密度急增 電源架構換代「三大需求」竄升",
+          "source": "DIGITIMES",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPckV1REM3SnptOWNwVjJSNWZSUWNhUERlOVJaZVBTTmNMQ3BxM0FmaHR1VXp2TnBYV2dhb2FLcy16RlhIcG1vSlZzbXd2Y3dIQ0xFTTd3Zl9wd1hJSU4tQ3pENmVXeGJraFBURHZVRnNWUGZNUW44WFRDZlNxWVBTakJxNnlTclZxTnNfcVl3?oc=5",
+          "summary": "NVIDIA AI機櫃功率密度急增 電源架構換代「三大需求」竄升 DIGITIMES",
+          "published": "2026-06-09T21:44:00+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "1圖懂》凍資1.77兆美元 SpaceX IPO風暴來襲 不只輝達、博通慘了 聯發科、鴻海、昇達科、華通...14檔受害受惠股總盤點",
+          "source": "旺得富理財網",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBCQzRBUEdldVhjOEhmMDVYSS1qNmNJSjRic29ndmR4aHJ1WEQ5ZFc0QXRUbFo4aThlbnV5Sm9tYTRtTG9MTTIyRUN0WENLcFYxa1JBVUVia0V0d1hXanEzcTBwT0w3YVJfTWc?oc=5",
+          "summary": "1圖懂》凍資1.77兆美元 SpaceX IPO風暴來襲 不只輝達、博通慘了 聯發科、鴻海、昇達科、華通...14檔受害受惠股總盤點 旺得富理財網",
+          "published": "2026-06-09T21:05:45+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "【即時新聞】NVTS最新卡位輝達AI鏈，爆量近2900萬股還能追嗎？",
+          "source": "CMoney",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1GU2pZS1lXTmpWYlBsejA2TWpfZFhEY3FsVW5rQXc1NGVid0JNMUZ3UU51VXZaVWdZOEx4Y29QaTFadDN5OWltMlRTM0hBSXdlR0JGOWMxRUlKM0x0bC1yU1pWWnRZekU?oc=5",
+          "summary": "【即時新聞】NVTS最新卡位輝達AI鏈，爆量近2900萬股還能追嗎？ CMoney",
+          "published": "2026-06-09T20:38:22+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "蘋果棄「單打獨鬥」？聯手 Google、Nvidia 打造雲端 AI 王國 誰賺最多、誰風險最大",
+          "source": "forecastock.tw",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbzdzN0Yyc05LYnhNLUlSVUM3MVRmNkRmNjJsR1NfMDJGNWhzRVpKRzB0NjNuNG5OUWRYaVpVclJjRlpRS1U0VG5zVTBzSTQzTnV2bW9PRmxyRHQ4Ry1YeGVFSm5DTlBhMU95ai12OUQybnN6bUNIMk5nLWR4Mmp6b2VHTnRZalZtZXRmcWxsWEJWMk15?oc=5",
+          "summary": "蘋果棄「單打獨鬥」？聯手 Google、Nvidia 打造雲端 AI 王國 誰賺最多、誰風險最大 forecastock.tw",
+          "published": "2026-06-09T20:00:50+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "黃仁勳會晤三星全永鉉 聚焦HBM4E、HBM5合作",
+          "source": "非凡新聞台",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9pdFdOODA0UFQ5R0ZpaUxWblFMeDNZb01ndERzNk5QdkJSWEMzSnVNVDlYVGlMc29vVmQwWXczSXh4YzMzb0JCQW14NWhFV2c5UjA2NFlDaDItYlR2dlRn?oc=5",
+          "summary": "黃仁勳會晤三星全永鉉 聚焦HBM4E、HBM5合作 非凡新聞台",
+          "published": "2026-06-09T19:49:41+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "評析：三星仍在牌桌上？ 黃仁勳訪韓牽動HBM供應角力",
+          "source": "DIGITIMES",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOb0VIM0RIaE14a0VPS1hZVjB2NG9fbzB1MU42RXRkU3BDRGdvaWFqRUZJankwUXJMVlpaSDRkQWl4S3MtV2JmemZMaU5aRFJheGplR2tPT2VjT1V5TWFyMnJ0U0hfRldqdXVnQVdHUUs4cW1nMUt0UTZPTEF2dDJTV0NwRnRTdHJ0eGw0Ymxn?oc=5",
+          "summary": "評析：三星仍在牌桌上？ 黃仁勳訪韓牽動HBM供應角力 DIGITIMES",
+          "published": "2026-06-09T19:00:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "\"I Handed Out Business Cards at Yongsan Electronics Market\"... Jensen Huang Reveals His Special Ties to Korea",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5IWG5MU0cyS1B2T21qZllvTFlWWTVZbmpxWjR2NnVUTW1PU3c5RGV5dnF0N0luRTU2NFZtQU9GaDdvdjdBbGdQUzR2YTVPM2NnWmc?oc=5",
+          "summary": "\"I Handed Out Business Cards at Yongsan Electronics Market\"... Jensen Huang Reveals His Special Ties to Korea 매일경제",
+          "published": "2026-06-10T04:08:13+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "AI Chip Stocks Rally: Nvidia, Broadcom, Marvell Climb",
+          "source": "Gotrade",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOR0pHN25ZZHE3LXFMc1NtLTJzbHN3blJhUVh1RVpNZTJ3a3dkOFFITi16QzJ5VDMwVlliVjVJaDFtMVdLeEplZzRsZThqdUloUm05YkNSSzd2TFI0UzFoc25OMkY1MmM4aTVKdEFzOWpiMGNCM04ybGJMYjdVMnRqTFlCa0ViTEE?oc=5",
+          "summary": "AI Chip Stocks Rally: Nvidia, Broadcom, Marvell Climb Gotrade",
+          "published": "2026-06-10T04:08:03+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
+        },
+        {
+          "title": "NVIDIA CEO Jensen Huang Shares Early Days at Yongsan Electronics Market",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQWU41S2VacXUyTkwyeWZyQ3ozR3pBa2t4MXJ5SFFsMDA0Nkg0MzFiZ2dsWENybEQySG5Ha1FmMHF1U09tdWlybTdUc29TNVY0YVRZVEpWSC1KTUtlOHBzcTVjcjVSX1dCaDdSZF9UdDU4b0Z6UW83Q011OGZ0eGxVOUZWcTlqckQ2cnpqd3JB?oc=5",
+          "summary": "NVIDIA CEO Jensen Huang Shares Early Days at Yongsan Electronics Market 조선일보",
+          "published": "2026-06-10T02:46:42+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia's Jensen Huang Shares Life Story on Korea's 'You Quiz on the Block'",
+          "source": "Seoul Economic Daily",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONTJuQ1BUSTVoczNhaEtuZ29rNTFPQjFRSzllTUdpRGt2Z0JKNnBTTjhxWEc5SlliRzNELURmZ3d4SklCTFNzakJTdTNMdzNKRzdTYkh0WFl4aWFybUtQLWRiREZ0ZXFXRWxoR0d3WlNmOFF6Q3ZpRG5qZTNBNDFPdmlhbTZMekxHbnV6dXR0WVJqcm92Q2l4VktETmtDRWQt?oc=5",
+          "summary": "Nvidia's Jensen Huang Shares Life Story on Korea's 'You Quiz on the Block' Seoul Economic Daily",
+          "published": "2026-06-10T02:30:30+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Yoo Jae-suk, Jensen Huang: \"Hyung-nim... That's the 'Chugumi' I envision\" [You Quiz on the Block]",
+          "source": "starnewskorea.com",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNa1ZyMkkzVlpScHdNc2lxZ2ZFMHpqUlRSejQyZ0F3YjQtRlJoMlZMTWt6VVRaWk9lcFB3cGMxRU8tRVZqM3JxMW52VUJhbUdiVVVXY0F3cjBlaXZFTll5VDFDLVNDb3JLR3Nob0Y0TmlUczBNUWhiQlBjRDlRZ19jLUs2WEs?oc=5",
+          "summary": "Yoo Jae-suk, Jensen Huang: \"Hyung-nim... That's the 'Chugumi' I envision\" [You Quiz on the Block] starnewskorea.com",
+          "published": "2026-06-10T02:19:25+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Analyst Warns Jensen Huang's \"Buy the Dip\" Optimism Is Dangerous",
+          "source": "Seoul Economic Daily",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPY2JzSHZtYkF4VmVMU00xMUI2amdTV1V2bGxvNXl6N21QUl85UVMwODVQUHJSOFlrLXUtNkNfbjZsZV8zZ2JBT2VlUDdINXZkUUJuLTNibFFJQUZ3bWNRVlBDbGZwdjN4M21qTGhhdXRMRlBiYlVFckVJRlNiRS1DU2ZWU25wcG5aaUNfOXFwYVVWUWRjWE8tRw?oc=5",
+          "summary": "Analyst Warns Jensen Huang's \"Buy the Dip\" Optimism Is Dangerous Seoul Economic Daily",
+          "published": "2026-06-10T01:54:49+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Jensen Huang Ducks Senate Hearing on AI",
+          "source": "dominotheory.com",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBQWXJ0VW9SUFk3LXZCZ290bU1BbWtDc1l2a2JlMnphQ2diOFljS0Z1V1dqNEloNGlPM1NZbzNkekRBSWdkTV90YUhBa2FLOEFtaURNVFlOWk03OWI0dWpyNzUtbVNHaHh2S2k3NlRNRnhnbDg?oc=5",
+          "summary": "Jensen Huang Ducks Senate Hearing on AI dominotheory.com",
+          "published": "2026-06-10T01:16:13+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "World’s 8th-richest billionaire Jensen Huang’s dining tour sends South Korean food sales soaring",
+          "source": "VnExpress International",
+          "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPUlFzX1BqblhNY0c1dGVaRVRYTWRzRmd6MEVPOVhYV01KVkhtTTA5VTJDN09icFJ2ZUtobVFUc1FGWUxISEtsZmRzZG9seVFLYXFfeDZkN0laMGtFRG1NQlFjSENqcVBNSnluYVIxYlBySUJyRWxYQ3JWVjhoel9EeGphNF9kcUJOeHM5UTR6dlNyTFpuMG9sZTAwTFMwUUpXVEkxT3ZZSlhodzFlVTNrbnBfNE8zeTQ3eDg4UWlzZUkxRmZfNVJKcUUxREdqOUVpZWc3WWhUancwNUdGblY1Y1NlNGhvRDhwM3B3?oc=5",
+          "summary": "World’s 8th-richest billionaire Jensen Huang’s dining tour sends South Korean food sales soaring VnExpress International",
+          "published": "2026-06-09T23:26:54+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Will This Jensen Huang-Endorsed AI Chip Stock Be the Next Trillion-Dollar Company?",
+          "source": "The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQT0pOWkFJYndSRE9JbElZLW81UXNZVXdMTl9tVTNDdFFfaWI2Y19tOXhxV0FpMDdIdWpHQzNsR2lQbjVXNXZZaWM5cV9UQlBEekxfeDRmZThZNzlTUXBYQTZYd3BLNlkza19rTlVNU2NIN2RYMlBQc0I0b2dlYzJaR1phYnV2UTJGTzNBMTFrQVd2bzJtNmFB?oc=5",
+          "summary": "Will This Jensen Huang-Endorsed AI Chip Stock Be the Next Trillion-Dollar Company? The Motley Fool",
+          "published": "2026-06-09T23:23:00+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia tops Wall Street Journal's future-focused company ranking",
+          "source": "The Business Journals",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQMWVYaHNEN1FPSFFJQXNERG1WYncxTUF0clgzbE95TDlKTHNreEZRRWw0V2ZlSnZaX3JqUC0yX25GR3ZxMENzaG44ajIxNlVfdjFhc01KUFpzOTRYOVRWN1BPUGxXZV9xYmlqTzFGNjY0clpXbXE5bzNTVTZuLTQxYUR3Ylo3ZWlmZUx1c3p4Z25hZG9xZGk5MER2R2lFb2dGSmxR?oc=5",
+          "summary": "Nvidia tops Wall Street Journal's future-focused company ranking The Business Journals",
+          "published": "2026-06-09T21:16:00+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "Nvidia CEO Jensen Huang Just Announced a New Multitrillion-Dollar AI Collaboration With an Unexpected Partner",
+          "source": "inc.com",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQUnNWZkdyREFkckRHQU9oemNuSHlrYXNteGpDRE54NzVhTlNyYjA1WVZRTXpMYkhsM2lDWkJFeVFtZGlfbFhNdkJab29lXzAyX2FqdGFmOXZRVDFaM2RBOHFNQVNhelpuYko1X210VUk0VHRfOENzQXJkOE8yNDU0SGI1SEMyYmg5MFB4dlpLdGUwT09pUnRQQUFOV1g1eTFRTGVSOTRyTWJPdGJfN2RCaHl2RlVZWWc4c092TE85aUp1bjkzY3A3dzB0cXdDaXFWbjhhNGJvN2s2QQ?oc=5",
+          "summary": "Nvidia CEO Jensen Huang Just Announced a New Multitrillion-Dollar AI Collaboration With an Unexpected Partner inc.com",
+          "published": "2026-06-09T19:57:12+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Jensen Huang's fastball moves as quick as Nvidia's stock price.",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX3JsNGJxN0NTaGR3Mjh1UVVaaEFjT0tYOHR5eGFiRnl0c2l5NXVnem4zMTJHd2VzajZacU1qTUhILWpwakJjMTBpRl9sS1hCSi1XczNKVG43RVRyUTYxR0QwS3FwQnNDUUZ3UUtUM1dvX3BVNm5LRXNDT3FJdU5Vekg3N3I1Ujc3c0VMM2tvV2JIVUpMVHNQV1ZtQVVxbFJWRS1IQjJJd09GQXc?oc=5",
+          "summary": "Jensen Huang's fastball moves as quick as Nvidia's stock price. Yahoo Finance",
+          "published": "2026-06-09T19:42:50+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Documenting corruption in the Trump White House",
+          "source": "WHYY",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBoaDVaRFpUdUF2MWJ1cDNwU05BZXA2TUlBZ0NDWWtJaXRHeXk2VFVmdWZhYzlnYm5LQjQ5TjlCUjc5XzV0OF9NUWJYOVp2SGFISmVFbzlFRXlEZGpoQ2JiWG44MV8xb1J4d1k0VWdtd3BtRm1xcWRkRU1xb3RkTnM?oc=5",
+          "summary": "Documenting corruption in the Trump White House WHYY",
+          "published": "2026-06-09T19:18:23+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
+        },
+        {
+          "title": "The RAM crisis will last 'quite a few years' says Nvidia CEO Jensen Huang — so despite hiked prices, I think if you want a new laptop, now might be the time to buy",
+          "source": "TechRadar",
+          "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYWhiZnpkVElnekthOUkwWUkwdlN1ZXZ0SGw5cmhYNWhuZHBmQnE3MGFjMVFaV2c5TjR0LUhEVWpfaVZqUVhBTGRVQy1mYUlpVS1FdnkzM0VDWm5nNkx6aklkMUMxWDczUkp3U1BOMFZIaVUwN2JaaWwxVlhJM3czbVk0Y2hNUlAzeV9jNjJoeW9YQU01bVRIb2h5VzNhOG11NE13a3Y2dVJvcGhROG05REVYemxrbVpBX3JUeWdBTFdVaHFvV0laWU9mWS1NMExkVHhmVnlWbnlYQWZHWHUyd0JCZndXcjdvcWwzOVBHZE5ZU2RhZy04S3lGM1dJMFRBTFo1M0lWRHFXSlQ2VUpWX0xQengwX1dKcVFXTW5QZmR6Q2VrYnAw?oc=5",
+          "summary": "The RAM crisis will last 'quite a few years' says Nvidia CEO Jensen Huang — so despite hiked prices, I think if you want a new laptop, now might be the time to buy TechRadar",
+          "published": "2026-06-09T15:29:45+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Dear Nvidia Stock Fans, Mark Your Calendars for June 11",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUWNuYXEtdDVfTU1BU1QwREltLXhsdnBsYjl3SW00LXNJclVKZl9GMUxFdWNmc2dhYXljLV9VNjM0dWlvV2VNdkVtNG8tdGpXY3BWVG1aRWhRR2tHNmctb0daZmZvbmpwc2lUOEp5QnlGR2dud0IwNjB4azRuR3dWdU1qWmFrVGQ4RG5wTWcwUk9IZm1QS2JN?oc=5",
+          "summary": "Dear Nvidia Stock Fans, Mark Your Calendars for June 11 Yahoo Finance",
+          "published": "2026-06-09T15:02:07+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "Jensen Huang Was in South Korea to Dominate the AI Ecosystem. Here Is Why You Should Buy Nvidia Stock Now.",
+          "source": "Barchart",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNelJ1blViWjBSZ0R3X3hLRGFuYzA1S2dPaVg4LUltdTdzTC1IUXpZY042ckhwaXBIUFQ3VVdqaDhsZFg5SFYta1JSLVFyeFN0LVdIaHlUTHNDd1R6cldBbEVvcFlmQmtLS0tsVHdBZWc3MHdVNlJqRHFvanZpT2JZMjd6a21hdk1xQjBrUzU1a2RMbVpkZElkRlQ0R3VQNTdhSFJyY09hN2VIUFVYNnd1amptODFRYnQ1b0dQcy0wWGpKaGxxVTVRMDEzYWpHX3hXN2dVZGNpZWRJVjhneE5DWTBR?oc=5",
+          "summary": "Jensen Huang Was in South Korea to Dominate the AI Ecosystem. Here Is Why You Should Buy Nvidia Stock Now. Barchart",
+          "published": "2026-06-09T14:50:17+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Qualcomm Stock (QCOM) Opinions on Fake Jensen Huang Endorsement Video",
+          "source": "Quiver Quantitative",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQeDZRLWtMVlRDNHlHODd0REFFd1E1QnQzWktid0ZrZTRUT1hoSlcxblFYYVFpLXhVaGtxS1lVbUJIVmp4aFU5amlud2RwZzVKcGQ5eU5ZWlJwVTZpc2xMZ3hHNTh6NldfTHNuLTZMVHM1Ukg0RFZmSFNra2NCX1ZyNFRNdWpRTnJJUjlnRVpiMVAtTkp5UVNHbjdKVl80bXdoZlNsS0RiLVJBdw?oc=5",
+          "summary": "Qualcomm Stock (QCOM) Opinions on Fake Jensen Huang Endorsement Video Quiver Quantitative",
+          "published": "2026-06-09T14:03:00+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia CEO Jensen Huang Believes That Marvell Technology Could Become a $1 Trillion Company. Here's Why He Is Right",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQem1sbG9WOXJoZExjb0JFUk1XVFhITDhUZEgxZEplS2lmUWxpUjNFUnVuc0tfQjJiUlRJUEI3M1JfZTVpaVFqU2VPcHFENUZYS2FZYVc3NW56QkdFOHdfdmZlZUx4M0daUXBwUjVlY0pSYmU5Ump5dGw3dTZ1eHVzTUJnTHpWT096cUs4VmJOZHo4aHllUHRYMmdzOG9vZw?oc=5",
+          "summary": "Nvidia CEO Jensen Huang Believes That Marvell Technology Could Become a $1 Trillion Company. Here's Why He Is Right Yahoo Finance",
+          "published": "2026-06-09T13:05:00+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Upstart chipmakers keep challenging Nvidia. This time it's Microsoft-backed D-Matrix",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdWJ5aVlCMjNDN2pMbnJxZWRRWmx3dzg3TV9Hcng5dHNZeGNMdjlBN0NZX29mMmFIajNvcXgzdFFvOHZqY3hYTHkwM3JRQTh4LVM0c2E4UmdWMUFBUDE4Z25TU0RELTNHS3kyek13eVR5SU55WEdTYU1yZ3FJeENvQlVOSEXSAYoBQVVfeXFMUHBUV2FERlhPMHVkOXJNUFJtdmY3dXJrNFNMNzBRRk9nX0NJVHZwRXBXRjIzRDdQRGZ5cVNmWjFEY1NIUzY2WUluejNYdl9faVNjY1VSVnFjQVc0N0RXbE5GV3FVR3VhNHlzUURVVTVNelJLVnRFTDgxZDl5bTdhNGMzZFpiNkVobzh3?oc=5",
+          "summary": "Upstart chipmakers keep challenging Nvidia. This time it's Microsoft-backed D-Matrix CNBC",
+          "published": "2026-06-09T13:00:01+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "Nvidia CEO Jensen Huang turned down Elizabeth Warren's request to testify on China chip sales",
+          "source": "qz.com",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNbHZZam9zMTVMcG94SlpnWnZHcHhhZFJnWmdjY0ZJdlgwTVY5dUQ0SlBhQ3FrU3FLdVZvNk1yS3pEQ1dDS2pHTlpqVkxpUnJqQ05UYzNhS1Ezb2U5YndFRnlHZlV5Tk1INUlxYW81LUVmQy1TWXlXTldiZlVrdTVvWEJwSy03Q0dUUlJadzh2VQ?oc=5",
+          "summary": "Nvidia CEO Jensen Huang turned down Elizabeth Warren's request to testify on China chip sales qz.com",
+          "published": "2026-06-09T12:53:32+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Elizabeth Warren Lays a Trap for Jensen Huang. He May Have No Choice But to Accept.",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbnE3OEVRNGFSbXNTdFVnSy0wbXBpSkh2YlhHN01KbzhXX2JiZEFTSjA0SFhnS081dTczcTBtSS0wbmdHRXZDVHN3bXBtME1Zc0laSFdIYkJxWGM2TXRPcHlxT2xyTmlhN1FjQWtXeURZTHRmdVVqcEl4SzVpUlNfZEF1aWM3R1pPb3cxQW01NldpdTdwUkMwVTBMbUI5cU1fTnVIMw?oc=5",
+          "summary": "Elizabeth Warren Lays a Trap for Jensen Huang. He May Have No Choice But to Accept. Yahoo Finance",
+          "published": "2026-06-09T11:31:18+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "The Artificial Intelligence War: NVIDIA CEO Jensen Huang Issues A Staggering Multi-Year Warning",
+          "source": "USA Herald",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNYkNHTW93V1RpQTQ3RzNsTzRjXzc3U1dkZ2ppSTVReFRfbmVNbHlQMnREa29aT3ItT0k2WEpwc19tMGhqaDZ4R0tueDl5M2NtTi1CVDdoZm9DeU5RblhCb0RKUG9JNWdMR1JtUVBNV2hjcjVMNGZodkdHTnFYU29aVzFUd3oxUDY3bV9DbjdRcGE3YUlTck44Z0VfZ3NfZGY4bUZBX25jaFM3SFkzcm5UWC02ZTU3ckYw?oc=5",
+          "summary": "The Artificial Intelligence War: NVIDIA CEO Jensen Huang Issues A Staggering Multi-Year Warning USA Herald",
+          "published": "2026-06-09T11:00:07+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Robots May Help Defuse US-China Tensions",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQclNtY3EweEdzM2VvZTFqeWtPbmwzRzdqT3pJcXRVSmEwM19IS1U3T2xBQ2VuU1N5NWRTbTdCbHkwR25kQ19PcmhzYjk2UnhZbUREaUhIWWRQUmxyTWV2REpibGhiNTcwTTRsWjRIWnNKNDBoaEVCbE91bW1tdGZPQmF4TDNtNll0ZFREMlBxbkpYRzJZNWozQV9qLTZ3ODVEVmp4UElDeHFITmUySFpVNmFZRU5XaVVmX3c?oc=5",
+          "summary": "Robots May Help Defuse US-China Tensions Bloomberg.com",
+          "published": "2026-06-09T10:30:01+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "Naver Turns Jensen Huang Visit Into Full-Scale Marketing Push",
+          "source": "thelec.net",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE83QXZGeVlQYjNFeC1rTGY4Z2Q2eFJWMjh2by0xZ3VZcjhNVHZPLUI3V01WOXpjN3RvN2JCRXJZYWgyeXQ1NGNpRjR6cGIxclY4LTFlWnRKRHU4MFNIZlR5WW9Xa0RZc2M?oc=5",
+          "summary": "Naver Turns Jensen Huang Visit Into Full-Scale Marketing Push thelec.net",
+          "published": "2026-06-09T10:04:23+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia CEO Jensen Huang Just Declared War on Intel, AMD, and Qualcomm -- and the PC Market Will Never Be the Same",
+          "source": "The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNk51V0ZrTDh1amEyNk45eDd6bC1jemZCc2UtUHF4NFFTYTRLR0h0T2pNTDJ4N3ZyaG8yQzExS1lGV0ZORTdCVldLT3FLTFltTUZEN2ZzZXlUNnBNalVKLVFIdl9zV3drdjJuc1kybm44dVBBREdWTkVCWEZNMm9kXzVieVpZLVNaa1NobkMxb0xRNExUVHVIcA?oc=5",
+          "summary": "Nvidia CEO Jensen Huang Just Declared War on Intel, AMD, and Qualcomm -- and the PC Market Will Never Be the Same The Motley Fool",
+          "published": "2026-06-09T08:45:00+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia CEO sends strong message to stock market investors",
+          "source": "thestreet.com",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORTdBLS1Fc1U5bVpMVl9HSjZIeTR2QWlKOXowejFjNDdXSUJzWGtfUFN0YzR1dFBuTnQyVlI3Z05lQXQ3V2paejA3YzRpTUlfXy10S2ZFaldocEpJTVBMUE4zbkxDTHJfYU1naEpTVE13M0JWRURFb0huWGdkYjl2VlFLRW9lN2xnZDRCd0ptR1BJSGs1MjNad2dhQ2tSR3o3b2c?oc=5",
+          "summary": "Nvidia CEO sends strong message to stock market investors thestreet.com",
+          "published": "2026-06-09T08:03:00+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "PC cafe visit spotlights NC's 25-year alliance with Nvidia",
+          "source": "The Korea Herald",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE13OUh3SjMyTm93Q1M3Z3E0a1pTeDg0Y05CMHlWUWNoMUdJYUlkYzRHN1hNcW92Zk5ka2hqVlg5ZEl5R1ZPLUYzT2kzUzlWalZzSWwtMHdmcw?oc=5",
+          "summary": "PC cafe visit spotlights NC's 25-year alliance with Nvidia The Korea Herald",
+          "published": "2026-06-09T05:41:50+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
+        },
+        {
+          "title": "Nvidia's Huang pegs Korean AI buildout at potential $360b",
+          "source": "The Korea Herald",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE82eDNTUHNHdm91WGJPUVc1SWhUV3NsZDZwR05UbXYyS2pZQVNaeW5PU09NekZTRWJ0WFFTMmZneFNrMzk0RC1YWlh5eUsyYy1BOGlHZ1NLSQ?oc=5",
+          "summary": "Nvidia's Huang pegs Korean AI buildout at potential $360b The Korea Herald",
+          "published": "2026-06-09T05:28:50+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "How one Korean student built hottest Jensen Huang stock tracker in six hours",
+          "source": "The Korea Herald",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9Xd1JWemZ0YWxfaHpuQXRUWC14YmxMWlVYVV9kZGt6RTlueDloNjBDZ2Raa1hZU0NfRnpNRk55YlNHNjRDQ1Vod0ZCOTUtN1ZiSUs5WGpvRQ?oc=5",
+          "summary": "How one Korean student built hottest Jensen Huang stock tracker in six hours The Korea Herald",
+          "published": "2026-06-09T05:10:30+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "TAEKJIN KIM AND JENSEN HUANG MEET AT PC BANG TO MARK 25 YEARS OF NC-NVIDIA PARTNERSHIP",
+          "source": "NC",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQckh5dDdUdkRlNDgxel9aNXF4VlUtQllfWDBrU3VUN3F4ZFVwTk5CWHNtdHZyZHZWV1BELVkzZ1M2alR6enBFS09mZFE4TWttcTBqZWZHY0xtMS1Pb01PWGpUaTRNYkNPVlZrbVNZZjdhWUJuWkNBTnFscUc5bHQ2TWR3Z19XT3E1eGw1YlQzOFVXWTBBbnhmbUZn?oc=5",
+          "summary": "TAEKJIN KIM AND JENSEN HUANG MEET AT PC BANG TO MARK 25 YEARS OF NC-NVIDIA PARTNERSHIP NC",
+          "published": "2026-06-09T04:41:53+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Elizabeth Warren Says If Jensen Huang Has Time To Attend $1 Billion Mara-A-Lago Dinner He Should Be Able",
+          "source": "Benzinga",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdG1ISHdqT0tsMTdkVXpWRTNkTDJiT2ZtNDRWcFN4QWJtcGdoLURyRVV2TDA5ZUN5S1lGWVJuMy1hdGVyMmw4T2RFQnVvbWg3eXU2YWRVeWl3RjEzcjdNbjRjSHc3UnE0VE9HRnhJMjYwSUVwaHFFRVRqWmJ4ZVlKaTRSTFJUX1FKWXBnLXhjaVhuWWJvbXR6Y3dzbnVjYnctRnhCMGhVbG1BVnMxa050Xw?oc=5",
+          "summary": "Elizabeth Warren Says If Jensen Huang Has Time To Attend $1 Billion Mara-A-Lago Dinner He Should Be Able Benzinga",
+          "published": "2026-06-09T04:17:52+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "What Jensen Huang Said About GPUs In 2009 Sounds Almost Unbelievable Today— And Why Nvidia Is Coming For The CPU Too",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWERmdnFhUHBLREpMcTF3Rnk2WnZrSzVISHNDajQydlhzY3NMcWptWEhEYUN1c1A3dnpSSmVYVEs2cjlNYUdHd0UyOHlSY1BlWWFxS2RReWY0RGEyX1BrckhaWDN4clBjLTRKR0o1YjhkaHZTbWxGekFqNmNLNnF1OFVvQnk1WDdQRF9lUGhYX1dDMW5YMkVYY3UtNkQ?oc=5",
+          "summary": "What Jensen Huang Said About GPUs In 2009 Sounds Almost Unbelievable Today— And Why Nvidia Is Coming For The CPU Too Yahoo Finance",
+          "published": "2026-06-09T03:31:00+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia CEO Jensen Huang calls tech stock selloff a buying opportunity as AI ‘just beginning’",
+          "source": "Crypto Briefing",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9nUDBwcnM4TWY1cUtWUGFLWnRQVmp5YTNrS1RqWUpLM1dDeEY1cVNDcUhSeDhGNXFmYk5tZkZTelp3OHBfQ3NQaWtjaGVQVVNJYXh4S3dxc3ZsV0hWd011NERpNXRFNGgyRDlGMUZEcFQwM01ORFNwdFdkWks?oc=5",
+          "summary": "Nvidia CEO Jensen Huang calls tech stock selloff a buying opportunity as AI ‘just beginning’ Crypto Briefing",
+          "published": "2026-06-09T03:17:41+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Jensen Huang deepens LG alliance as Nvidia expands its AI ambitions in South Korea",
+          "source": "digitimes",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQU2hBUXJQX0gxRFdKMkJOS2pFQXFseURwOVpfLXlZcE01YUVqRk91OVlxb0JJb3hsZzlDQnVsN1U5WkJnaURUTWlEcW5xb3dyWlR0dHIwZFJwaUhwRGl5TmN5MzdZeE8wd085NV94cHlRMUVScWJHMi00UmZfQ2RWdUVXRjN1dnp2cmpYU1hB?oc=5",
+          "summary": "Jensen Huang deepens LG alliance as Nvidia expands its AI ambitions in South Korea digitimes",
+          "published": "2026-06-09T02:49:30+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "(News Focus) Nvidia CEO Jensen Huang's food tour sparks buzz for Korean restaurants, brands",
+          "source": "Yonhap News Agency",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ILXp5LThKT0kzcnk0a2JtTGdHMEJGVnJIdVlsV25SdEVyQm5aOFZlaHZZNXRxcG51UW0yckRVSFgyX0lhNTIwZ21Td3MxSjBIeUdBdW1PY2dGZw?oc=5",
+          "summary": "(News Focus) Nvidia CEO Jensen Huang's food tour sparks buzz for Korean restaurants, brands Yonhap News Agency",
+          "published": "2026-06-09T01:35:50+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
+        },
+        {
+          "title": "Nvidia's Jensen Huang Meets South Korean Game Executives",
+          "source": "Let's Data Science",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQOHdJbEV2bVRkenZ6ZnlCVkJYaGtwX0lZUFFxak5ZVkVhX0p4dGpDQ0FkNEZPOXVTeHR3VDIxb3UzamhScWpLbWgyQkpOOERWUnRvTzBuVlhDWlhvU0s4eEZtZjJkMDRJaUxpamRHR09rZWJEOEpqU3ZZMjEyNkxfUktnXzBxUnRuV0VWNFMtRUNyRGFDeFdyMnUxRW9nZw?oc=5",
+          "summary": "Nvidia's Jensen Huang Meets South Korean Game Executives Let's Data Science",
+          "published": "2026-06-09T01:32:03+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "Qualcomm shares rise 2% after Nvidia CEO endorses the stock",
+          "source": "Investing.com",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUmk2VnJ1WW5OeGVtaDB6SnBtNmUyNkR0bXJaN3ZHM28tNmpoYWNXYXZTMXpMZ01fMUt5QVA2dTZ1S0ZrVFJrREF5MmZOa3ljZkpHUjBHYTBJdDhhY0xtSUlNblhyUm43ZDROdHkyc01CckhQbHNjZlE1ZTRoeW9zSjRUcWY0SHRsRUFDV2FFRm9TM181WmhBQ2pGUXAyR2hJclk0aDBkWWt2WmlMWjFsSmhHeHlBUQ?oc=5",
+          "summary": "Qualcomm shares rise 2% after Nvidia CEO endorses the stock Investing.com",
+          "published": "2026-06-09T01:11:46+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
+        },
+        {
+          "title": "Should You Buy AI Chip Stocks on the Dip? Words from Nvidia's Jensen Huang Offer an Answer That's Crystal Clear (and Echoes Warren Buffett's Wisdom).",
+          "source": "The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeGpyc0p2X0xzLURVZDZIN2t1RzZUZlJSSnR0eVJuTHc5b0dTaHZPeEJLd1JHQW4zdHM0Q0IyR1lQZjlPaDV4OENGczFISWZJazhWUEVuM1FnRlhUSWQ3b0w5ZktRbk9rSVVyMHJhdEdnc1ZIQzdtdy0wZFlPUVBJSDEzV1NaUEZMMVlDbXNra3pGeUNwZlB3RA?oc=5",
+          "summary": "Should You Buy AI Chip Stocks on the Dip? Words from Nvidia's Jensen Huang Offer an Answer That's Crystal Clear (and Echoes Warren Buffett's Wisdom). The Motley Fool",
+          "published": "2026-06-09T00:10:00+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "Nvidia strikes AI cloud, memory deals in Korea",
+          "source": "Light Reading",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOUGFMZ1ZqaUlNNm5BRUVabVBXY1lJME8xZlFiZS13Zkw1MjVIZ3FvU2Nxc3NvZWtzMXJEbXZHR3hNMG9vWDhWYjdCdDZ2RUV5QjlmZmZTRDBwdVBLOHBvSHlQWUJkQXJlU1Jzc0xzV1ltbWQyWEtKM1lnMktBaHZnOVM2bFQ2OVBoLVFSWF80UXVjS0xqbzVIamdB?oc=5",
+          "summary": "Nvidia strikes AI cloud, memory deals in Korea Light Reading",
+          "published": "2026-06-09T00:05:46+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "Watch Why Jensen Huang Talking Up Suppliers Is Worrying",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaHlKQlNNT2VDVnJIREJIRndRU0I3SW1aWVJZUGhraVpVMjZ4Uzd5Q1VuU3dWeGZwWmczSEJwcUxpMF9lNy1yOUctVmJla0RlQzRSU0c1OFdheTh1SzhmMEszQzEzVDVOSTJ5OEo1ZW9HNTVHQUxVdnRaU25BbHQ4TkxLaW5MaXp3MW9xT2tCLTZrODJRSmN0TEhmMlFXdU9UUVZMXzRjWQ?oc=5",
+          "summary": "Watch Why Jensen Huang Talking Up Suppliers Is Worrying Bloomberg.com",
+          "published": "2026-06-09T00:00:00+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Not Tesla? \"No one\" better with robots than Hyundai, Nvidia CEO says",
+          "source": "Axios",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1LTGNjMko1YXFiczE3TkZpdlpaeS1ZSWFwbTk1SUM1QkRac0Vud3hyV2dQcEVLazlwM0xpQlhoQnByeG9LYmg0bnNmT2cwRHpwU1QtZUhRcTFVTWdVN1ctLVFLNkZCdGlpb3lVOVgybXRrc3BaYnc?oc=5",
+          "summary": "Not Tesla? \"No one\" better with robots than Hyundai, Nvidia CEO says Axios",
+          "published": "2026-06-08T21:38:29+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia: Why Jensen Huang's Buy The Sell-off Remark Is A Grounded Structural Argument - Micron Technology",
+          "source": "Benzinga",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNMXJKNVZ5WGlKNHZRU0Z5bXB3d1JMOWZxN1BueUpwU2RtQWY3TkF2WmFhNXZVazRZbF91VTU2QWpWQkRqeHUyMFlTbExBZmFsWDhwSUFRdWotMVhVWHpEMWlqS29EZks5Z3QxdXY2UExrUW1mdkFuSUNqWUtNejNJRmpXak5zSDRueTVaM2JkYjBzemVPaE9WMnlERkVMbDVDdnJnXzlDZDViNUhzeGFoMXI3UmlXYS1RTDZWbFhNTTVYUWhMbTZ0MWxR?oc=5",
+          "summary": "Nvidia: Why Jensen Huang's Buy The Sell-off Remark Is A Grounded Structural Argument - Micron Technology Benzinga",
+          "published": "2026-06-08T20:25:58+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia's Huang said to refuse invite to AI hearing",
+          "source": "Breakingthenews.net",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPXzJ4ZHc3RUtTRDRURXZQdlE0N3hTcjNac3U3NG1yc3FxblFaZTJKZmhVcHcxZU1DdHFhUTRhSXlJbklWdE9GeDQzMk9aeTliNFBjTlZMWUFIeFFMVmZzTV9nRUNCYXRab1lraUFzWl92SUV2MndlNDh5SzZHb2k3b09OWXk5SGVWSTRNM0pMZjlhdy1HLUVocUlkMA?oc=5",
+          "summary": "Nvidia's Huang said to refuse invite to AI hearing Breakingthenews.net",
+          "published": "2026-06-08T20:15:00+00:00",
+          "origin": "關鍵字「J. Huang」"
+        },
+        {
+          "title": "Nvidia CEO Jensen Huang declines Senate testimony on AI, China and exports",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTmRpeURmSGpnYmc4VHZHTEJMSjlxZFZXV3ROUVd4aGJ0TmdXYmF5X0pZX25sX0RDeG9UTG5JV1dZaFRGamhNTEhVNm5sVjRtdS0zOHplNUVOSFRaNzFHanhEdmY5aFRpVmUtWUlXTUZBSGdlNm04bHEyWWtjR1YxY1NwVk1VZnZfRDJ1NTZWVXktRWc3YlRTZ0djRmktLUlBZGdOUGFxb1_SAa4BQVVfeXFMTU0tS1NPRi1kdWVCV2oyaFRWTS0yNnM0dFVLTmFDXzdLcU5jQnAxdTFOejZFSzljUkVrNDdEYjAwT043UmIwRkpqSkRZNmJsY3dfQnU4Nm04cU9jbF9QRGpsWmIyc0xKY3ZBRExEUFRNYjczRTUwdkF1bk1SYjB6RmRWR1FjMnVLQnI4SURhdU9JcUVSX1Y0a1RQbGd5REtmM0VWdDdWUmo2RURtRVJR?oc=5",
+          "summary": "Nvidia CEO Jensen Huang declines Senate testimony on AI, China and exports CNBC",
+          "published": "2026-06-08T20:10:04+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia CEO Jensen Huang Declines Senator Warren’s Request To Testify At AI Hearing - NBC News",
+          "source": "TradingView",
+          "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQX1EwQ3dILVY4bG5DWjBJWTVlTDdVOFdJSF8zdXpLTUxyeEJiVWdJZTU5WHNxUldkaC1zMnplRnA2THR4bDZ4Nmw1MDVSc19QTUp2LU9XajIweGJqeUV6VW92NlNwRnBWUV81cWF4TTR0QkFtMEhER3RVNTNVNDEwTDY4WGZBZ0syc25mRU02WE9Tb3NSUHhlTGxtUDdEaVFXaExhNl9uSHlCY0gxQ2xWQXkxSUkydHhET1RNWFh0Z2lCUU5HcmtyTU5YRm44MDZoQTVjTF9CZWhxRmNfSWl0MlhidTNmTUNQUnV1Z0lWakd6dzQ?oc=5",
+          "summary": "Nvidia CEO Jensen Huang Declines Senator Warren’s Request To Testify At AI Hearing - NBC News TradingView",
+          "published": "2026-06-08T19:37:25+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia CEO Jensen Huang declines Warren’s request to testify at AI hearing",
+          "source": "NBC News",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSDdNb3Y0NkozaWFENC1qY0x6UF8zby1PSTRJcWJjUlplNEJnTUZZNmNXMVpQX1djVHNscnRybkVpdi1JeVRDYzZ6SW9vQ3lWYnRKWDk1aGFhMnJqbDM1Mm5kZTIyLWNBaHJyOVVWeUw4RktldzltRHVlUFFEek41VUxNUGRheTk4U0hDS2JrZmMtVEk2TVdpMl9BMjNmVklYMzJQX3F6OThWaXBTVmVMT3ZPNnNHZw?oc=5",
+          "summary": "Nvidia CEO Jensen Huang declines Warren’s request to testify at AI hearing NBC News",
+          "published": "2026-06-08T19:26:07+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Nvidia Stock Pops. Its CEO Thinks the Chips Selloff Is a Good Thing.",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMi1Jem80T0h2WnBPNGI1MmlkSEVzUWM3V2wxVmJQYnpXTXZmekd2WWN1UlFwanh1OXpFM0JBUlVpUG55dlZVYWtoWWxwYmNRUWJ4MU1nb0NpMUhBcGxMUWNuRXpvcFdDS0cwYS1YYTR0OVZNODFqcVYyYmctT20wZ2JSNA?oc=5",
+          "summary": "Nvidia Stock Pops. Its CEO Thinks the Chips Selloff Is a Good Thing. Barron's",
+          "published": "2026-06-08T18:52:00+00:00",
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "Jensen Huang Is Talking Up His Suppliers. It’s Worrying",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQnIxNG9WeE4tX3pYVWd6N2lpVE1Kc0lCcFc5ZExjQjZfSGVNcGV3RTdKYnZXbVZBQjlTV3JweTJWcG5BVjQ1WWNVcFRGNDhnOVFpNkFsdUVDRzhIamZkTzdfRExJWVFJdjhYOW5KYk5mTmV3enR1bXIyYThlaTRrMUdqUFktT0plcE1rTlgtbXFSMmNkYTlUalhtbWp4MnZQRmdpcHBFLTRjanNy?oc=5",
+          "summary": "Jensen Huang Is Talking Up His Suppliers. It’s Worrying Bloomberg.com",
+          "published": "2026-06-08T18:00:32+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
+          "title": "Crystal J. Huang",
+          "source": "IMDb",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNTlJoVEdpdndwd2JIOXhWWmJLR3VzUUZpRVMxbU9YYXVVX1Q5N3BFdFFvYWZ4ZHlMNF81cXJVODB4NU1fVVRvSFhkVFN5TzhVc01ESmJIWXRQaVhuLWdQbjFFbTZ1QmhWNDVFV0tVRzJOSDEzZ1ltZnJCSTViZkp1cA?oc=5",
+          "summary": "Crystal J. Huang IMDb",
+          "published": "2026-06-08T16:48:22+00:00",
+          "origin": "關鍵字「J. Huang」"
+        },
+        {
+          "title": "Is the market treating Jensen Huang like Warren Buffett now? (NVDA:NASDAQ)",
+          "source": "Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPZUtmemtTQW9QM1hiLU5XbjU0MDlYSy1Md2Z5VXlTMG5wZDhPX3hxU3pFQm10VDJfb2RhQjRHWE1VTjRZYVdkckZWVXNMbzhwM2k5NUhFUXJsQ3MyTjNfeUduMlZOQTd0OVNPUHRDdWVlWEU5cl9XZWtlLUF6NjdKdzg0YnY1ZmluX202a0ZGTVVjSE54ZHRsQ0lMZXh6UQ?oc=5",
+          "summary": "Is the market treating Jensen Huang like Warren Buffett now? (NVDA:NASDAQ) Seeking Alpha",
+          "published": "2026-06-08T16:26:42+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        }
+      ]
+    }
+  ]
+}

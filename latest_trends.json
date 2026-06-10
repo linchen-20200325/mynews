@@ -1,0 +1,238 @@
+{
+  "report_date": "2026-06-10",
+  "trends": [
+    {
+      "rank": 1,
+      "industry": "人工智慧 (AI)",
+      "heat_score": 98,
+      "signals": {
+        "funding": "Supermicro 宣布將透過股權融資籌集 70 億美元以滿足 AI 訂單需求，顯示龐大資本投入 (新聞[48])。SpaceX/xAI 也因資料中心『滋擾』面臨集體訴訟，但其軌道 AI 運算測試計劃仍在進行，資金仍在持續湧入 (新聞[37],[49])。AMD 宣布將在英國投資高達 20 億英鎊擴展 AI 業務 (新聞[38])。日本首相敦促加大對 AI 和數位領域的投資 (新聞[31])。",
+        "hiring": "科技業雖有裁員潮 (新聞[46])，但 AI 相關職位仍是搶手，例如 Yahoo 股市提到『年薪破百萬』且『連AI都搶不走』的職位 (新聞[12])。Coinbase CEO 預言八成工作將轉向『便宜99%』模型，暗示 AI 將深刻改變勞動市場結構，對 AI 專業人才需求不減 (新聞[13])。",
+        "policy": "中國宣布將投入 2 兆人民幣打造 AI 算力網，並指定 8 成採用國產晶片，顯示國家層級的戰略支持與扶植本土產業的決心 (新聞[19])。",
+        "technology": "Apple 在 WWDC 2026 推出 iOS 27 並深度整合 AI 功能，Siri AI 獲得顯著提升 (新聞[1],[21],[33])。Anthropic 推出了最強 AI 模型 Claude Fable 5 並開放大眾使用，同時發布『安全』版本 Claude Mythos AI 模型 (新聞[18],[39])。Google 推出更具價格競爭力的 AI 訂閱服務 (新聞[30])。SpaceX 計劃在明年底前啟動軌道 AI 運算測試，顯示 AI 技術應用拓展至太空領域 (新聞[37])。工研院在英國科技日也強調半導體、AI 與無人系統的合作 (新聞[5])。"
+      },
+      "leading_indicators": [
+        "主要AI晶片製造商(如Nvidia、AMD)的財報及訂單展望",
+        "大型科技公司(如Apple、Google、Microsoft)的AI產品發布與用戶採納率",
+        "各國政府對AI基礎設施建設和AI倫理法規的投入與進展"
+      ],
+      "us_stocks": [
+        {
+          "name": "輝達(Nvidia)",
+          "ticker": "NVDA"
+        },
+        {
+          "name": "超微(AMD)",
+          "ticker": "AMD"
+        },
+        {
+          "name": "美超微(Supermicro)",
+          "ticker": "SMCI"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "台積電",
+          "ticker": "2330"
+        },
+        {
+          "name": "廣達",
+          "ticker": "2382"
+        },
+        {
+          "name": "緯創",
+          "ticker": "3231"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "Supermicro Announces Proposed $7.0 Billion of Equity and Equity-linked Financing Transactions To Fund AI Orders",
+          "source": "Supermicro",
+          "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQNkdibFdBME56Q1J1WlRqX2xzQ1g1Mk9TbUVvTGtsSTdFc3NtRDF0OUpicEtnYjBDTEV0OGpKQmpPaVZIZnJFLUJkRURRSUFJcklmM0hxNVNuLUxpWV9yRnRLVEtUTWJBWHc4QWNoUV9sekp2bXcxWWNhX1Z2VmtXejJnRnRsYXRHc3Y2dWNRQ1docFJWb1ZYdzFwc2tVZ2pUNzNjQlR5Yjl4LUNwNGN1eHIzRFNWOWx6S0lUNDlJTTF0UVl2WVludlc0RUpldnJjUjdGYXV6ZGRvZVp2dlJFY3BoMllIWk90TUl0aUUxYjJkWm9YX3RSUndzQ3MteWlXTXc?oc=5"
+        },
+        {
+          "title": "中國砸2兆人民幣打造AI算力網 指定8成採國產晶片 華為最受惠",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9Pa2h0OFhEZXNSR1ZGSGUxWTh5QjdRVmlpWG5KdTBDUVlhVm1VQzRYUUxvaE9FRm45MXlvRTBMM182WFo5cS1iTllBTUFTTGs?oc=5"
+        },
+        {
+          "title": "iOS 27 支援機型公布：舊 iPhone 仍可升級 AI 功能門檻高",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTW9QRGxYV0VmTWh0VVItQW00RWFCcTNGRUJmUjJ5UEZXalpFSUFVS0EweHkwLW1QMXBJdXo2SmJKaVRPVkVKeUtCb2E1ci1zSFBoRHBTaDE4aHZVbE1BUVVOVDgyd1BmV1Z5MW9SWllUVEZUMTctN2pIQUk3N29heExmZ3JmUmwwaTUtYVpDZ093WXM2bm1UeUFqS1oxRndGYlhvbnRGMXdZOXF5RG9NRGpnX0ZGNjJlbHdkbjVSU3FPSE0?oc=5"
+        }
+      ],
+      "summary": "AI 依然是全球科技和經濟發展的核心驅動力，在資金、政策、技術和市場應用方面均展現出強勁的動能和深遠影響。",
+      "news_count": 27,
+      "first_seen": "2026-06-09",
+      "last_seen": "2026-06-10"
+    },
+    {
+      "rank": 2,
+      "industry": "太空經濟與衛星通訊",
+      "heat_score": 85,
+      "signals": {
+        "funding": "SpaceX 傳出募資超額認購近 4 倍，吸金超過 2500 億美元，顯示市場對太空產業的巨大熱情與資金投入 (新聞[15])。富邦也豪擲 189 億搶上馬斯克太空火箭，證明台灣資本市場對此領域的積極參與 (新聞[17])。",
+        "hiring": "SpaceX 作為領先企業，其持續擴展的業務和技術創新必然伴隨著大量高科技人才的需求，儘管新聞未直接提及具體徵才數據，但其成長動能可間接推斷人才吸納能力強勁。",
+        "policy": "各國政府對太空探索和衛星通訊的戰略重視日益提升，例如美國國防部與 SpaceX 的合作，以及對新一代衛星網路的政策支持，但此次新聞未直接提供具體政策細節。",
+        "technology": "SpaceX 不僅在火箭發射和衛星網路 (Starlink) 方面持續領先，還計劃在明年底前啟動軌道 AI 運算測試，將 AI 技術與太空基礎設施結合，開創新的應用領域 (新聞[37])。這代表太空技術已從發射服務擴展到太空運算與資料應用。"
+      },
+      "leading_indicators": [
+        "SpaceX IPO 進展及估值變化",
+        "全球衛星寬頻服務用戶數增長",
+        "各國政府太空預算投入及相關政策發布"
+      ],
+      "us_stocks": [
+        {
+          "name": "SpaceX (未上市)",
+          "ticker": "PRIVATE"
+        },
+        {
+          "name": "洛克希德馬丁",
+          "ticker": "LMT"
+        },
+        {
+          "name": "波音",
+          "ticker": "BA"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "華航",
+          "ticker": "2610"
+        },
+        {
+          "name": "漢翔",
+          "ticker": "2634"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "吸金超過2500億美元！傳SpaceX超額認購近4倍",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5BYlpEOGlvcENSTkYwdndZaDJ5VXJCTkRycTROZS03Yjg4TXIzeEswYmsyTjFhSzczYVBxV3lxQXRiYVdyT0h4STdxMW9aRzA0Q3JrU003UXpIc3Z2cmZv0gFkQVVfeXFMUFVodEJhc29sN2pudjdPcnB6Y0xWd3Bib0ZjWHRqaHhjT3Bfck1VVXdQY2lJZzFMdEtDVHk2LXlGdXNfVkdqWXlJdGM2Uk1SdFByamptY3ozaGoxYWdrbEhQZWZ6Vg?oc=5"
+        },
+        {
+          "title": "富邦豪擲189億 搶上馬斯克太空火箭",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNTTRXc2FjMU5rQkpYZS02MW1RUGVqeGdaeUFza0oxVWE0OXhTeWJRZktsbTEzb1pSZURPT3VpYUF1ZUdxaVJZdGxzejFVSGhPekFOcGlueWZaVzk0Q0hzdGJkbktvNzYwS25fSFJnSmZnc2twVVkwTGwxelN2M2MyLU1CUHlOdFJlMWRCQk9hRHVLWmItRU9TQXdPRmYwR3JaM0dVTF9mZUVxUGVUSWYzRVpLcHp0Mlh6aV9TMjZyNmVSVjJpTjNPaWRZSGVLVkJiOUJ0UDNwdU5uX2JwWKotc3VRYlZuMS1rMXp1a25yUmo4bGRXOUtrQTdZdlNFd19P?oc=5"
+        },
+        {
+          "title": "SpaceX aims to launch orbital AI computing tests by end of next year, sources say",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSEJ0VnJacU5WYTU0emFkOGlLVi0xQ0E2ckhETkM1SjdFSlgzQzkwSGsxdVNsOFhQN2hCbE5WVy1OOFBDVE9yUHJTU3BwalZsdVdPOWJQRjFGTDFGQmxobXJhX2VkLVFzdWVpZ04td29HeXcxQzdxYVhwNlhhV2JCTVRDYm4zWTdOVjFHTnNjZDl2Mjcycm1LZ3ZTM0hnOVFUbnJnTFNxUkxFLWhGR2VYZDBlQ0czTUd3eHRMM0dNV184QlNFN2pmcHl3OWoxeVNn?oc=5"
+        }
+      ],
+      "summary": "太空經濟以 SpaceX 為首，展現強勁的資金吸納能力和技術創新，特別是與 AI 的結合，預示著巨大的成長潛力。",
+      "news_count": 0
+    },
+    {
+      "rank": 3,
+      "industry": "能源儲存與電動車電池技術",
+      "heat_score": 75,
+      "signals": {
+        "funding": "GM 計劃開發能源儲存電池，並尋求擴大其 AI 資料中心和能源儲存業務，顯示大型企業資本投入正在轉向電池技術的多元應用 (新聞[34])。儘管 EV 銷售放緩，但對能源儲存的投資仍在持續。",
+        "hiring": "隨著 GM 等大廠投入能源儲存電池的研發與製造，預計將帶動相關領域的工程師、研究人員及生產人才需求。",
+        "policy": "全球各國推動能源轉型和碳中和目標，對能源儲存系統的補貼和政策支持預計將持續增加。雖然新聞未直接提及新政策，但此趨勢是產業發展的基石。",
+        "technology": "GM 正在探索開發鈉離子電池技術，不僅用於電動車，更著眼於電網能源儲存。這代表電池技術的創新不僅限於鋰離子，且應用場景正從移動載具擴展到固定式儲能，解決 EV 銷售放緩可能帶來的瓶頸，並開拓新的市場 (新聞[34])。"
+      },
+      "leading_indicators": [
+        "大型車廠及能源公司在電池技術研發上的投資公告",
+        "新型電池技術 (如鈉離子、固態電池) 的商業化進展",
+        "各國電網儲能容量的增長數據"
+      ],
+      "us_stocks": [
+        {
+          "name": "通用汽車",
+          "ticker": "GM"
+        },
+        {
+          "name": "特斯拉",
+          "ticker": "TSLA"
+        },
+        {
+          "name": "量子點",
+          "ticker": "QS"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "台達電",
+          "ticker": "2308"
+        },
+        {
+          "name": "聯華",
+          "ticker": "1720"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "G.M. Plans to Develop Energy Storage Batteries as E.V. Sales Flag",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPY25SUUNtX1dvWE5pMGpLb091TWFCUlU1OEhjQ1F0dEVpa24wdWFoZjg3ekFHWUhwSG9Edng2YzVETGRoMkhmRVBXbWZ6WjhSSDZWak9xZHlvWG9iaDg2VTNMcU1LaldOQ2x3QThOMnktY2xsTjVzNnBtOTJnSUlKaTRhQ3R0eldadjlfVHltWFZsZE43TGxrMm1ZVE5KNHNLUnFBRHZiZDdibHBtOTlnX0t4b19FWlJZZXN3?oc=5"
+        },
+        {
+          "title": "又是自帶線行動電源爆炸！沒充電也起火還燒到筆電 行充品牌曝光「曾2度召回」",
+          "source": "udn科技玩家",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBsUHV1X3N5OUN4ZUFfUlJtX2k2SHBGRGNyR1VmZUJlbGdZVzZ0cnVteGFfVW5IOGpteXZfTG5jb3VuSDlia1hhYW01eE9tdzBBNWQzS3g1dHFOd9IBX0FVX3lxTE9TMmNta0s2V1N1WTY2ang1VnhQRGgzZ2RmUndfY3NZTjJfMC1MV1VMUllqUWxEMU1HRGpGRVV4WktRTGo2TWp1ZDczSldPNGNaN2xpTjFocExRX0lyUlBR?oc=5"
+        }
+      ],
+      "summary": "儘管電動車市場面臨挑戰，能源儲存技術的創新和多元應用，特別是鈉離子電池和電網儲能，為產業帶來新的成長動能。",
+      "news_count": 0
+    },
+    {
+      "rank": 4,
+      "industry": "無人系統與國防科技",
+      "heat_score": 70,
+      "signals": {
+        "funding": "全球地緣政治緊張局勢升級，對國防科技和無人系統的投資預計將持續增加。雖然新聞未直接提供具體募資數據，但軍事衝突會直接刺激國防預算投入。例如，伊朗宣稱打下美軍無人機 (新聞[4])，這類事件往往會促使各國加大對無人機技術的反制與研發投入。",
+        "hiring": "無人機、無人載具和相關國防技術的發展，將帶動軟體工程師、AI 專家、機械工程師等高科技人才的需求。工研院在英國科技日也將『無人系統』列為合作看好項目 (新聞[5])。",
+        "policy": "各國政府將無人系統視為國家安全和戰略競爭的關鍵領域，政策支持和軍事採購訂單將持續增長。例如，美軍對伊朗的『自衛反擊』行動 (新聞[26],[29])，以及伊朗聲稱發動攻擊打下美軍無人機 (新聞[4])，都顯示無人系統在軍事戰略中的重要性，促使政策制定者加大投入。",
+        "technology": "無人機技術持續發展，從偵察、監視到攻擊應用日益成熟。AI 與無人系統的結合，使其具備更高的自主性和作戰效率。工研院與英國在半導體、AI 與無人系統的合作，也顯示技術交流與突破的潛力 (新聞[5])。"
+      },
+      "leading_indicators": [
+        "各國國防預算中無人系統採購比例",
+        "軍事衝突中無人機的實際應用效果",
+        "無人機反制技術的研發進展"
+      ],
+      "us_stocks": [
+        {
+          "name": "洛克希德馬丁",
+          "ticker": "LMT"
+        },
+        {
+          "name": "諾斯洛普格魯曼",
+          "ticker": "NOC"
+        },
+        {
+          "name": "雷神技術",
+          "ticker": "RTX"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "漢翔",
+          "ticker": "2634"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "伊朗報復！稱發動21起攻擊打下美軍MQ-9無人機 美方回應了",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5uUEdNX2ZIY2lJaFBub3RLckJWdnI1N0VYQnRaV1VPa19vWnBIQ0doOTVobnUtOEFCQ0ZZRW4xcTRBR0pza29rakZuWk5ETTg3ZUdr0gFYQVVfeXFMTzc5eS1WbHIwZEIzWXl5eTZSelhXRDQtVGlmS1F3dkNnOWF1S1E1V1hQQmFkWVMtTzJ2VlJxU1M5bVN5UmdrSTd3dGZJb21BbUh2aEs5YkFKNg?oc=5"
+        },
+        {
+          "title": "工研院英國科技日半導體、AI與無人系統合作看好| 全球財經| 全球",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE43dXFhS1lDNGNEU1Vqc2RObWo0V011SS01Q3ZtdmFsQnhlSUVDWTBXOHZJcHM0aTJQeXl4RUlPUXdzZkhGSTh3Sm5lbjZxRHc1?oc=5"
+        },
+        {
+          "title": "Futures Fall As U.S. Strikes Iran After Whipsaw Session",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNOE1hZWZSRXpOWWZLRnBmbEZFMTdKV040X25JbUxvVVU4X2JWQ2ZPbUpJaERPTnJZRlVsMF9Rb1o1NnUweHVxc1NYVVBoU1ZPakhKMDZ6WmlOSXVoWE1Vd3lhMWxkUW5fZ0E5TjVsRW93cU9aMXRtcWpQT2ptVU5yQ3NwRU1TTXZDMGhCbUdxdnNwRF8yMy1LWTBJdG9xeFR5NS1rQWxhcTJydmNvWFh2MFdMNmd4aFgwN0VQZjJFaDkyMjd6clln?oc=5"
+        }
+      ],
+      "summary": "地緣政治緊張刺激無人系統和國防科技的需求，技術與 AI 結合提升自主性，成為各國戰略重點。",
+      "news_count": 0
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "as_of": "2026-06-10 04:29 UTC (TWSE BFI82U)",
+  "unit": "元",
+  "days": [
+    {
+      "date": "2026-06-09",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": 23283537434,
+      "dealer": -6691674226,
+      "dealer_self": -5122810989,
+      "dealer_hedge": -1568863237,
+      "total": -75141552738
+    },
+    {
+      "date": "2026-06-08",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": 8775725700,
+      "dealer": -49146842947,
+      "dealer_self": -9821441715,
+      "dealer_hedge": -39325401232,
+      "total": -134222664138
+    },
+    {
+      "date": "2026-06-05",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": 1620186439,
+      "dealer": -28430714775,
+      "dealer_self": -7280878070,
+      "dealer_hedge": -21149836705,
+      "total": -109441687199
+    },
+    {
+      "date": "2026-06-04",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": 4169222789,
+      "dealer": -21366533747,
+      "dealer_self": -2972687707,
+      "dealer_hedge": -18393846040,
+      "total": -92882741902
+    },
+    {
+      "date": "2026-06-03",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": 5551570132,
+      "dealer": 2596766242,
+      "dealer_self": 2951561944,
+      "dealer_hedge": -354795702,
+      "total": 51544672021
+    },
+    {
+      "date": "2026-06-02",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": 2820321473,
+      "dealer": -15768188108,
+      "dealer_self": -5435018954,
+      "dealer_hedge": -10333169154,
+      "total": -2104918455
+    },
+    {
+      "date": "2026-06-01",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": 7758630147,
+      "dealer": -6508599147,
+      "dealer_self": 207011449,
+      "dealer_hedge": -6715610596,
+      "total": 38067402952
+    },
+    {
+      "date": "2026-05-29",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": 7018067618,
+      "dealer": 15607209549,
+      "dealer_self": 2865270779,
+      "dealer_hedge": 12741938770,
+      "total": 102770738307
+    },
+    {
+      "date": "2026-05-28",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": -6206044668,
+      "dealer": -15038347857,
+      "dealer_self": -4733075910,
+      "dealer_hedge": -10305271947,
+      "total": -59381074337
+    },
+    {
+      "date": "2026-05-27",
+      "foreign": 0,
+      "foreign_main": 0,
+      "foreign_dealer": 0,
+      "trust": -4219051039,
+      "dealer": -3130647620,
+      "dealer_self": -569608105,
+      "dealer_hedge": -2561039515,
+      "total": 30778204645
+    }
+  ]
+}
