@@ -1,0 +1,32 @@
+name: Verify Chip Data (三大法人探針)
+
+# 純手動觸發:在 GitHub 網頁 Actions 點 "Run workflow" 即可。
+# 用途:跑 verify_chip_data.py,驗證證交所三大法人真實資料是否抓得到(走 NAS 中繼)。
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '驗證日期 YYYYMMDD(留空=最近交易日)'
+        required: false
+        default: ''
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Chip-Data Probe
+        env:
+          # 走家用 NAS Squid 中繼(台灣 IP),繞過境外 IP 封鎖;未設則自動降級直連。
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python verify_chip_data.py ${{ inputs.date }}
