@@ -1087,6 +1087,8 @@ def render_intl_alert(data: dict) -> None:
                             if url:
                                 line += f" [連結]({url})"
                             st.markdown(line)
+    elif not data.get("ai_ok", True):
+        st.info("ℹ️ 利空原因解讀因 AI 配額/網路暫缺(原因待補);上方真實報價與大跌偵測不受影響。")
 
     imp = data.get("tw_impact", {})
     if imp:

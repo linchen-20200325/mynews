@@ -1319,9 +1319,17 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
     )
 
     news = fetch_intl_alert_news()
-    gemini = call_gemini_for_json(
-        INTL_ALERT_SYSTEM_PROMPT, build_intl_alert_user_prompt(quotes_doc, news, today)
-    )
+    # Gemini 只做文字研判(利空原因/對台股影響);失敗(如配額 429)不得拖垮
+    # 真實報價與大跌偵測 → 包成容錯:AI 掛了仍保留報價/大跌/LINE 預警,只把原因留白。
+    try:
+        gemini = call_gemini_for_json(
+            INTL_ALERT_SYSTEM_PROMPT, build_intl_alert_user_prompt(quotes_doc, news, today)
+        )
+    except Exception as exc:  # noqa: BLE001 — AI 失敗 → 降級為純報價偵測
+        print(f"  警告: 國際盤 Gemini 解讀失敗,改用純報價偵測(原因留白):{exc}",
+              file=sys.stderr)
+        gemini = {}
+    ai_ok = bool(gemini)
 
     tw_impact = gemini.get("tw_impact")
     if not isinstance(tw_impact, dict):
@@ -1332,6 +1340,10 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
     except Exception as exc:  # noqa: BLE001
         print(f"  警告: 法人事件行事曆計算失敗:{exc}", file=sys.stderr)
         upcoming_events = []
+    summary = gemini.get("summary", "")
+    if not ai_ok:
+        summary = (f"⚠️ AI 解讀暫時無法取得(配額/網路),以下為真實報價偵測到的大跌 {len(drops)} 項。"
+                   if drops else "⚠️ AI 解讀暫時無法取得;目前真實報價未觸及大跌門檻。")
     result = {
         "report_date": today,
         "as_of": quotes_doc.get("as_of", ""),
@@ -1339,9 +1351,10 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         "quotes": qmap,                       # 真實報價(唯一數字來源)
         "drops": drops,                       # 真實大跌清單(程式算)
         "alert_level": gemini.get("alert_level") or ("警戒" if drops else "平靜"),
-        "summary": gemini.get("summary", ""),
+        "summary": summary,
         "interpretation": gemini.get("interpretation", []),
         "tw_impact": tw_impact,
+        "ai_ok": ai_ok,                       # AI 解讀是否成功(供前端/LINE 標註「原因待補」)
         "upcoming_events": upcoming_events,    # 可預測法人賣壓事件(行事曆)
         "raw_news": news,
     }
