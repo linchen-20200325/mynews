@@ -2157,30 +2157,6 @@ def main() -> int:
                 drops = intl.get("drops", [])
                 tag = "、".join(f"{d['name']}{d['change_pct']:+.1f}%" for d in drops[:3]) or "無"
                 print(f"  國際盤預警完成,警示級別:{intl.get('alert_level', '—')}(大跌:{tag})")
-                # 時間差領先市場(美股/期貨)出現大跌 → 主動 LINE 推播盤前預警
-                lead = lead_market_drops(intl)
-                if (lead and intl_alert_line_enabled()
-                        and os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
-                        and os.environ.get("LINE_TO")):
-                    try:
-                        notify_line_intl_alert(intl)
-                        print(f"  ⚠️ 美股/期貨大跌,已推播 LINE 預警({len(lead)} 項)。")
-                    except Exception as exc:  # noqa: BLE001 — 推播失敗不影響存檔
-                        print(f"  警告: 國際盤 LINE 預警推播失敗:{exc}", file=sys.stderr)
-                # 可預測法人事件首次進入 3 個交易日窗口 → 推一次 LINE 預告(防洗版)
-                if (chip_line_enabled()
-                        and os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
-                        and os.environ.get("LINE_TO")):
-                    try:
-                        pushed = load_pushed_events()
-                        due = chip_calendar.pick_new_pushable(
-                            intl.get("upcoming_events", []), pushed)
-                        if due:
-                            notify_line_chip_events(due, today)
-                            save_pushed_events(pushed + [e["id"] for e in due])
-                            print(f"  📅 已推播 LINE 法人事件預告({len(due)} 項)。")
-                    except Exception as exc:  # noqa: BLE001 — 推播失敗不影響存檔
-                        print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
             except Exception as exc:  # noqa: BLE001 — 國際盤預警失敗不影響戰略報告
                 print(f"  警告: 國際盤預警產生失敗:{exc}", file=sys.stderr)
         else:
@@ -2212,21 +2188,15 @@ def main() -> int:
         else:
             print("[6/8] ENABLE_CHIP=0,略過法人籌碼。")
 
-        # D4. 多重賣壓共振預警:美股大跌 + 四力≥2 → 推一則 LINE(真實數據判定)
-        if (confluence_line_enabled()
-                and os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
-                and os.environ.get("LINE_TO")):
-            try:
-                conf = detect_pressure_confluence(intl, chip, margin)
-                if conf["triggered"]:
-                    notify_line_confluence(conf, today)
-                    forces = "、".join(f["key"] for f in conf["forces"])
-                    print(f"  🔴 多重賣壓共振({conf['count']}/4:{forces}),已推 LINE。")
-                else:
-                    print(f"  共振偵測:未觸發(美股大跌={bool(conf['us_drops'])}、"
-                          f"力量 {conf['count']}/4)。")
-            except Exception as exc:  # noqa: BLE001 — 共振偵測失敗不影響主報告
-                print(f"  警告: 共振偵測失敗:{exc}", file=sys.stderr)
+        # D4. 多重賣壓共振偵測(只計算;LINE 於最後依序統一推播)
+        conf = None
+        try:
+            conf = detect_pressure_confluence(intl, chip, margin)
+            forces = "、".join(f["key"] for f in conf["forces"]) or "無"
+            print(f"  共振偵測:{'🔴 觸發' if conf['triggered'] else '未觸發'}"
+                  f"(美股大跌={bool(conf['us_drops'])}、力量 {conf['count']}/4:{forces})")
+        except Exception as exc:  # noqa: BLE001 — 共振偵測失敗不影響主報告
+            print(f"  警告: 共振偵測失敗:{exc}", file=sys.stderr)
 
         # E. 全球人物追蹤(對 FOCUS_TOPICS 每個對象翻英→抓全球新聞→台美股關聯)
         if focus_enabled():
@@ -2266,14 +2236,42 @@ def main() -> int:
             f"白話文來源:{report['dictionary_source']}。"
         )
 
-        # 推播
+        # 推播(依優先順序:① 國際盤大跌 → ② 多重賣壓共振 → ③ 戰略報告 → ④ 法人事件預告)
         if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
-            print("推送 LINE 通知...")
+            print("推送 LINE 通知(依序:國際盤大跌→共振→戰略報告→事件預告)...")
+            # ① 國際盤大跌預警(真實報價,不依賴 AI)
+            lead = lead_market_drops(intl) if intl else []
+            if lead and intl_alert_line_enabled():
+                try:
+                    notify_line_intl_alert(intl)
+                    print(f"  ① 國際盤大跌預警已推({len(lead)} 項)。")
+                except Exception as exc:  # noqa: BLE001
+                    print(f"  警告: 國際盤 LINE 推播失敗:{exc}", file=sys.stderr)
+            # ② 多重賣壓共振(美股大跌 + 四力≥2,真實數據判定)
+            if conf and conf.get("triggered") and confluence_line_enabled():
+                try:
+                    notify_line_confluence(conf, today)
+                    print("  ② 多重賣壓共振預警已推。")
+                except Exception as exc:  # noqa: BLE001
+                    print(f"  警告: 共振 LINE 推播失敗:{exc}", file=sys.stderr)
+            # ③ 全球政經戰略報告(含法人籌碼提示)
             try:
                 notify_line(report, chip_flow_hint(chip))
-                print("  LINE 推播成功。")
+                print("  ③ 戰略報告已推。")
             except Exception as exc:  # noqa: BLE001
-                print(f"  警告: LINE 推播失敗:{exc}", file=sys.stderr)
+                print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
+            # ④ 法人事件預告(進 3 交易日窗口才推,防洗版)
+            if intl and chip_line_enabled():
+                try:
+                    pushed = load_pushed_events()
+                    due = chip_calendar.pick_new_pushable(
+                        intl.get("upcoming_events", []), pushed)
+                    if due:
+                        notify_line_chip_events(due, today)
+                        save_pushed_events(pushed + [e["id"] for e in due])
+                        print(f"  ④ 法人事件預告已推({len(due)} 項)。")
+                except Exception as exc:  # noqa: BLE001
+                    print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
 
         return 0
 

@@ -79,9 +79,13 @@ def _parse_day(payload: dict, date_str: str) -> dict | None:
         if len(row) < 4:
             continue
         name, diff = row[0], _to_int(row[3])
-        if "外資自營商" in name:
+        # 注意:「外資及陸資(不含外資自營商)」字串內含「外資自營商」,
+        # 故必須先判斷「外資及陸資」,再判斷「外資自營商」,否則主力外資會被誤分類為 0。
+        if "外資及陸資" in name:
+            bucket["foreign_main"] = diff
+        elif "外資自營商" in name:
             bucket["foreign_dealer"] = diff
-        elif "外資及陸資" in name or ("外資" in name and "自營" not in name):
+        elif "外資" in name and "自營" not in name:
             bucket["foreign_main"] = diff
         elif "投信" in name:
             bucket["trust"] = diff
