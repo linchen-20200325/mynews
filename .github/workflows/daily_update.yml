@@ -19,6 +19,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          # 永遠在 main 上跑(排程雖由預設分支觸發,但實際 checkout + 寫回都鎖定 main)。
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -85,5 +88,5 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "🤖 自動更新:每日政經戰略情報"
-            git push
+            git push origin HEAD:main
           fi
