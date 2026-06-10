@@ -32,6 +32,8 @@ jobs:
         env:
           # Gemini 全包:讀取爬蟲抓到的真實外電 → 分析 + 白話文 + 趨勢雷達
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # 多把備援金鑰(不同 Google 帳號 → 各自 20 次/日,疊加放大配額);一行一把或逗號分隔皆可
+          GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
           # LINE 推播(Messaging API);兩者皆設定才會推播
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
           LINE_TO: ${{ secrets.LINE_TO }}
