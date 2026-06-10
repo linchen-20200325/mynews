@@ -2236,9 +2236,9 @@ def main() -> int:
             f"白話文來源:{report['dictionary_source']}。"
         )
 
-        # 推播(依優先順序:① 國際盤大跌 → ② 多重賣壓共振 → ③ 戰略報告 → ④ 法人事件預告)
+        # 推播(依優先順序:① 國際盤大跌 → ② 多重賣壓共振 → ③ 法人事件預告 → ④ 戰略報告)
         if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
-            print("推送 LINE 通知(依序:國際盤大跌→共振→戰略報告→事件預告)...")
+            print("推送 LINE 通知(依序:國際盤大跌→共振→事件預告→戰略報告)...")
             # ① 國際盤大跌預警(真實報價,不依賴 AI)
             lead = lead_market_drops(intl) if intl else []
             if lead and intl_alert_line_enabled():
@@ -2254,13 +2254,7 @@ def main() -> int:
                     print("  ② 多重賣壓共振預警已推。")
                 except Exception as exc:  # noqa: BLE001
                     print(f"  警告: 共振 LINE 推播失敗:{exc}", file=sys.stderr)
-            # ③ 全球政經戰略報告(含法人籌碼提示)
-            try:
-                notify_line(report, chip_flow_hint(chip))
-                print("  ③ 戰略報告已推。")
-            except Exception as exc:  # noqa: BLE001
-                print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
-            # ④ 法人事件預告(進 3 交易日窗口才推,防洗版)
+            # ③ 法人事件預告(進 3 交易日窗口才推,防洗版)
             if intl and chip_line_enabled():
                 try:
                     pushed = load_pushed_events()
@@ -2269,9 +2263,15 @@ def main() -> int:
                     if due:
                         notify_line_chip_events(due, today)
                         save_pushed_events(pushed + [e["id"] for e in due])
-                        print(f"  ④ 法人事件預告已推({len(due)} 項)。")
+                        print(f"  ③ 法人事件預告已推({len(due)} 項)。")
                 except Exception as exc:  # noqa: BLE001
                     print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
+            # ④ 全球政經戰略報告(含法人籌碼提示)
+            try:
+                notify_line(report, chip_flow_hint(chip))
+                print("  ④ 戰略報告已推。")
+            except Exception as exc:  # noqa: BLE001
+                print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
 
         return 0
 
