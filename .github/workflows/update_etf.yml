@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          # 永遠在 main 上跑並寫回 main(不受預設分支影響)。
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -64,5 +67,5 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "🤖 自動更新:ETF 成分股 + 台股收盤價 + ETF 圖鑑 + 各縣市房價(含歷年)"
-            git push
+            git push origin HEAD:main
           fi
