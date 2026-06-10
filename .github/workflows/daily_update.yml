@@ -82,6 +82,7 @@ jobs:
                    latest_trends.json data/trends/ latest_stocks.json data/stocks/ \
                    latest_us_stocks.json data/us_stocks/ latest_intl_alert.json data/intl_alert/ \
                    latest_chip.json data/chip/ data/chip_pushed.json latest_margin.json \
+                   latest_futures_chip.json \
                    latest_focus.json data/focus/ latest_housing.json data/housing/; do
             [ -e "$p" ] && git add "$p"
           done

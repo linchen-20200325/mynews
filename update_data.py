@@ -46,6 +46,7 @@ from pathlib import Path
 
 import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
 import chip_fetcher  # 法人籌碼:抓證交所三大法人買賣超(事後驗證,真實數字)
+import futures_chip_fetcher  # 法人籌碼:抓期交所三大法人台指期留倉(外資期貨偏多/偏空)
 import housing_fetcher
 import index_fetcher  # 國際盤預警:抓美股指數/美股期貨真實漲跌幅
 import margin_fetcher  # 融資餘額:散戶槓桿/斷頭訊號(共振偵測用)
@@ -166,6 +167,7 @@ OUTPUT_CHIP = Path("latest_chip.json")
 CHIP_ARCHIVE_DIR = Path("data/chip")
 CHIP_PUSHED_STATE = Path("data/chip_pushed.json")  # 法人事件 LINE 已推清單(防洗版)
 OUTPUT_MARGIN = Path("latest_margin.json")  # 融資餘額(散戶斷頭訊號)
+OUTPUT_FUT_CHIP = Path("latest_futures_chip.json")  # 三大法人台指期留倉(外資期貨偏多/偏空)
 OUTPUT_FOCUS = Path("latest_focus.json")
 FOCUS_ARCHIVE_DIR = Path("data/focus")
 OUTPUT_HOUSING = Path("latest_housing.json")
@@ -1716,31 +1718,54 @@ def fetch_housing_news() -> list[dict]:
 # LINE 推播 (Messaging API push)
 # ---------------------------------------------------------------------------
 
-def chip_flow_hint(chip: dict | None) -> str:
-    """用真實三大法人買賣超,給一行白話籌碼提示(轉賣/連賣→提醒獲利了結)。無資料回空字串。"""
-    days = (chip or {}).get("days") or []
-    if not days:
+def _futures_stance_line(chip: dict | None, fut: dict | None) -> str:
+    """台指期留倉:外資期貨偏多/偏空一行白話(前一交易日盤後庫存)。與現貨同向時點出雙重訊號。"""
+    if not fut or fut.get("foreign_net_oi") is None:
         return ""
-    latest = days[0]
-    f, t, tot = (latest.get("foreign", 0) / 1e8,
-                 latest.get("trust", 0) / 1e8,
-                 latest.get("total", 0) / 1e8)
-    # 合計連續同向天數(由新到舊)
-    streak = 0
-    for d in days:
-        x = d.get("total", 0)
-        if x == 0 or (x < 0) != (tot < 0):
-            break
-        streak += 1
-    side = "賣超" if tot < 0 else ("買超" if tot > 0 else "持平")
-    head = f"💰 法人籌碼:外資{f:+.0f}億、投信{t:+.0f}億,三大法人{side}{abs(tot):.0f}億"
-    if tot < 0 and streak >= 2:
-        return head + f";已連{streak}日站賣方,留意獲利了結賣壓。"
-    if tot < 0:
-        return head + ";由買轉賣,留意獲利了結。"
-    if tot > 0 and streak >= 2:
-        return head + f";連{streak}日買超,暫無獲利了結跡象。"
-    return head + "。"
+    net = fut["foreign_net_oi"]
+    stance = fut.get("stance", "中性")
+    lots = f"{abs(net) / 1e4:.1f}萬口" if abs(net) >= 10000 else f"{abs(net):,}口"
+    base = f"📐 外資台指期:{stance}(淨{'多' if net >= 0 else '空'}{lots},前日盤後留倉)"
+    days = (chip or {}).get("days") or []
+    tot = days[0].get("total", 0) if days else 0
+    if net < 0 and tot < 0:
+        return base + ";與現貨同步偏空,賣壓較一致。"
+    if net > 0 and tot > 0:
+        return base + ";與現貨同步偏多。"
+    return base + "。"
+
+
+def chip_flow_hint(chip: dict | None, fut: dict | None = None) -> str:
+    """真實三大法人買賣超(現貨流量)+ 台指期留倉(期貨部位)→ 白話籌碼提示。無資料回空字串。"""
+    days = (chip or {}).get("days") or []
+    text = ""
+    if days:
+        latest = days[0]
+        f, t, tot = (latest.get("foreign", 0) / 1e8,
+                     latest.get("trust", 0) / 1e8,
+                     latest.get("total", 0) / 1e8)
+        # 合計連續同向天數(由新到舊)
+        streak = 0
+        for d in days:
+            x = d.get("total", 0)
+            if x == 0 or (x < 0) != (tot < 0):
+                break
+            streak += 1
+        side = "賣超" if tot < 0 else ("買超" if tot > 0 else "持平")
+        text = f"💰 法人籌碼:外資{f:+.0f}億、投信{t:+.0f}億,三大法人{side}{abs(tot):.0f}億"
+        if tot < 0 and streak >= 2:
+            text += f";已連{streak}日站賣方,留意獲利了結賣壓。"
+        elif tot < 0:
+            text += ";由買轉賣,留意獲利了結。"
+        elif tot > 0 and streak >= 2:
+            text += f";連{streak}日買超,暫無獲利了結跡象。"
+        else:
+            text += "。"
+    # 期貨留倉(外資偏多/偏空):與現貨互補,接在現貨提示下一行
+    fut_line = _futures_stance_line(chip, fut)
+    if fut_line:
+        text = (text + "\n" + fut_line) if text else fut_line
+    return text
 
 
 def build_line_message(report: dict, chip_hint: str = "") -> str:
@@ -2181,6 +2206,7 @@ def main() -> int:
         # D3. 法人籌碼事後驗證(抓證交所近 N 日三大法人買賣超,真實數字)
         chip = None
         margin = None
+        fut_chip = None
         if chip_enabled():
             print("[6/8] 抓證交所三大法人買賣超(近 N 日,事後驗證真實籌碼)...")
             try:
@@ -2201,6 +2227,15 @@ def main() -> int:
                     save_json(OUTPUT_MARGIN, margin)
             except Exception as exc:  # noqa: BLE001
                 print(f"  警告: 融資餘額抓取失敗:{exc}", file=sys.stderr)
+            # 三大法人台指期留倉(外資期貨偏多/偏空,前一交易日盤後);失敗不影響其他
+            try:
+                fut_chip = futures_chip_fetcher.fetch_futures_chip(log=print)
+                if fut_chip:
+                    save_json(OUTPUT_FUT_CHIP, fut_chip)
+                    print(f"  台指期留倉完成,外資{fut_chip['stance']}"
+                          f"(淨{fut_chip['foreign_net_oi']:+,}口)。")
+            except Exception as exc:  # noqa: BLE001
+                print(f"  警告: 台指期留倉抓取失敗:{exc}", file=sys.stderr)
         else:
             print("[6/8] ENABLE_CHIP=0,略過法人籌碼。")
 
@@ -2284,7 +2319,7 @@ def main() -> int:
                     print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
             # ④ 全球政經戰略報告(含法人籌碼提示)
             try:
-                notify_line(report, chip_flow_hint(chip))
+                notify_line(report, chip_flow_hint(chip, fut_chip))
                 print("  ④ 戰略報告已推。")
             except Exception as exc:  # noqa: BLE001
                 print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)

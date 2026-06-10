@@ -37,6 +37,7 @@ INTL_ALERT_ARCHIVE_DIR = Path("data/intl_alert")
 CHIP_PATH = Path("latest_chip.json")
 CHIP_ARCHIVE_DIR = Path("data/chip")
 MARGIN_PATH = Path("latest_margin.json")
+FUT_CHIP_PATH = Path("latest_futures_chip.json")  # 三大法人台指期留倉(外資期貨偏多/偏空)
 FOCUS_PATH = Path("latest_focus.json")
 FOCUS_ARCHIVE_DIR = Path("data/focus")
 HOUSING_PATH = Path("latest_housing.json")
@@ -1203,6 +1204,21 @@ def render_chip(data: dict) -> None:
         m2.metric("單日增減", f"{margin.get('margin_chg', 0)/1e8:+.0f} 億")
         st.caption(f"資料:{margin.get('date', '—')}(證交所 MI_MARGN,真實)。"
                    "融資大減=去槓桿/斷頭賣壓,為共振偵測四力之一。")
+
+    fut = load_json(FUT_CHIP_PATH)
+    if fut and fut.get("foreign_net_oi") is not None:
+        st.subheader("📐 外資台指期留倉(期貨部位偏多/偏空)")
+        stance = fut.get("stance", "中性")
+        badge = {"偏多": "🟢 偏多", "偏空": "🔴 偏空", "中性": "⚪ 中性"}.get(stance, stance)
+        f1, f2, f3 = st.columns(3)
+        f1.metric("外資 期貨方向", badge, delta=f"{fut.get('foreign_net_oi', 0):+,} 口")
+        f2.metric("投信 留倉淨額", f"{fut.get('trust_net_oi', 0):+,} 口")
+        f3.metric("自營 留倉淨額", f"{fut.get('dealer_net_oi', 0):+,} 口")
+        st.caption(
+            f"資料:{fut.get('date', '—')}(期交所「三大法人台指期」未平倉口數淨額,真實)。"
+            "⚠️ 這是**前一交易日盤後**的『留倉(現在仍持有的部位)』,正=淨多偏多、負=淨空偏空;"
+            "與上方現貨買賣超互補:現貨看當日流量、期貨看持有方向。非投資建議。"
+        )
 
 
 # ---------------------------------------------------------------------------
