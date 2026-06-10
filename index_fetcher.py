@@ -1,9 +1,9 @@
-"""index_fetcher.py — 抓美股指數 / KOSPI / 美股期貨的「最新 vs 前收」漲跌幅。
+"""index_fetcher.py — 抓美股指數 / 美股期貨的「最新 vs 前收」漲跌幅。
 
 用途:利用「時區時間差」做台股盤前預警 —
   * 美股指數(收盤約台灣 04:00)→ 對台股開盤(09:00)是【隔夜領先】訊號。
-  * KOSPI(08:00–14:00 台灣時間)與台股近乎同步 → 視為【同步連動】半導體 peer 對照。
   * 美股期貨(近 24h 連續)→ 台股【盤前即時】最新風向。
+  (台指期夜盤的盤前即時訊號另由 taifex_night_fetcher 抓取。)
 
 來源:Yahoo Finance chart API(JSON、免金鑰、全球可達):
   https://query1.finance.yahoo.com/v8/finance/chart/<symbol>?range=5d&interval=1d
@@ -39,7 +39,6 @@ SYMBOLS: list[dict] = [
     {"symbol": "^IXIC", "name": "那斯達克綜合", "group": "美股指數", "lead_type": "隔夜領先"},
     {"symbol": "^DJI", "name": "道瓊工業", "group": "美股指數", "lead_type": "隔夜領先"},
     {"symbol": "^SOX", "name": "費城半導體", "group": "美股指數", "lead_type": "隔夜領先"},
-    {"symbol": "^KS11", "name": "韓股 KOSPI", "group": "亞股", "lead_type": "同步連動"},
     {"symbol": "ES=F", "name": "標普 500 期貨", "group": "美股期貨", "lead_type": "盤前即時"},
     {"symbol": "NQ=F", "name": "那斯達克 100 期貨", "group": "美股期貨", "lead_type": "盤前即時"},
     # 債匯總經訊號(Fed 利率預期):殖利率走升 / 美元走強 = 資金收緊。不列入「大跌」清單。

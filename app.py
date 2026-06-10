@@ -985,7 +985,7 @@ def render_us_stocks(data: dict) -> None:
 
 
 # ---------------------------------------------------------------------------
-# 國際盤預警(美股指數/KOSPI/期貨真實漲跌幅 → 偵測大跌 → Gemini 解讀台股影響)
+# 國際盤預警(美股指數/期貨/台指期夜盤真實漲跌幅 → 偵測大跌 → Gemini 解讀台股影響)
 # ---------------------------------------------------------------------------
 
 ALERT_BADGE = {"警戒": ("🔴", "error"), "觀察": ("🟠", "warning"), "平靜": ("🟢", "success")}
@@ -996,7 +996,7 @@ def render_intl_alert_live_panel() -> None:
     with st.container(border=True):
         st.markdown("#### ⚡ 即時產生(免等每日排程)")
         st.caption(
-            "抓美股指數(隔夜領先)、韓股 KOSPI(同步連動)、美股期貨(盤前即時)的真實漲跌幅,"
+            "抓美股指數(隔夜領先)、美股期貨與台指期夜盤(盤前即時)的真實漲跌幅,"
             "偵測突然大跌;再由 Gemini 依新聞解讀利空原因與對台股影響。"
             "流程:① 先抓報價(免金鑰)→(看過後)② 按 Gemini 解讀。"
         )
@@ -1060,7 +1060,7 @@ def render_intl_alert(data: dict) -> None:
     )
 
     st.subheader("📊 國際盤即時報價(時間差定位)")
-    st.caption("漲跌幅=最新 vs 前收;美股指數→隔夜領先台股,KOSPI→同步連動,期貨→盤前即時。")
+    st.caption("漲跌幅=最新 vs 前收;美股指數→隔夜領先台股,美股期貨/台指期夜盤→盤前即時。")
     render_index_quotes(data.get("quotes", {}))
 
     drops = data.get("drops", [])
@@ -2681,7 +2681,7 @@ def main() -> None:
             return
         render_us_stocks(data)
     elif report_type == "國際盤預警":
-        st.header("🌏 國際盤預警(盤前) — 美股/韓股大跌的時間差訊號")
+        st.header("🌏 國際盤預警(盤前) — 美股/台指期夜盤大跌的時間差訊號")
         render_intl_alert_live_panel()
 
         # 1) 本次即時產生的完整預警(報價 + Gemini 解讀)優先顯示
@@ -2714,7 +2714,7 @@ def main() -> None:
             if lead:
                 st.caption(f"📉 時間差領先市場(美股/期貨)大跌 {len(lead)} 項 — 每日排程在此情況會自動推播 LINE。")
             elif live.get("drops"):
-                st.caption("ℹ️ 目前僅同步盤(如 KOSPI)下跌;每日排程僅在『美股/期貨』大跌時自動推播。")
+                st.caption("ℹ️ 目前僅非領先盤下跌;每日排程僅在『美股/期貨/台指期夜盤』大跌時自動推播。")
             return
 
         # 2) 已抓到真實報價、尚未解讀:先顯示報價表,再提供第二步 Gemini 按鈕
