@@ -36,6 +36,7 @@ INTL_ALERT_PATH = Path("latest_intl_alert.json")
 INTL_ALERT_ARCHIVE_DIR = Path("data/intl_alert")
 CHIP_PATH = Path("latest_chip.json")
 CHIP_ARCHIVE_DIR = Path("data/chip")
+MARGIN_PATH = Path("latest_margin.json")
 FOCUS_PATH = Path("latest_focus.json")
 FOCUS_ARCHIVE_DIR = Path("data/focus")
 HOUSING_PATH = Path("latest_housing.json")
@@ -1036,9 +1037,13 @@ def render_index_quotes(qmap: dict) -> None:
                 value=q.get("last", "—"),
                 delta=f"{q.get('change_pct', 0):+.2f}%",
             )
-            cap = q.get("lead_type", "")
-            if q.get("is_drop"):
-                cap += " · ⚠️大跌"
+            if group == "債匯":
+                # 殖利率/美元:上升=資金收緊(利空),非「大跌」
+                cap = "📈 走升=資金收緊" if q.get("change_pct", 0) > 0 else "走弱=資金寬鬆"
+            else:
+                cap = q.get("lead_type", "")
+                if q.get("is_drop"):
+                    cap += " · ⚠️大跌"
             if cap:
                 col.caption(cap)
 
@@ -1102,11 +1107,31 @@ def render_intl_alert(data: dict) -> None:
         if sectors:
             st.markdown("**重點族群:** " + "、".join(str(s) for s in sectors))
 
+    render_confluence(data)
     render_chip_events(data.get("upcoming_events", []))
 
     st.caption(
         "⚠️ 時間差僅為參考性連動,非必然因果;本頁由真實報價 + AI 新聞研判組成,僅供參考,非投資建議。"
     )
+
+
+def render_confluence(intl: dict) -> None:
+    """🔴 多重賣壓共振:美股大跌 + 四力≥2(讀 latest_chip / latest_margin,真實數據判定)。"""
+    chip = load_json(CHIP_PATH)
+    margin = load_json(MARGIN_PATH)
+    try:
+        conf = update_data.detect_pressure_confluence(intl, chip, margin)
+    except Exception:  # noqa: BLE001 — 偵測失敗不影響整頁
+        return
+    st.subheader("🔴 多重賣壓共振偵測")
+    forces_txt = "、".join(f.get("detail", "") for f in conf.get("forces", [])) or "無"
+    if conf.get("triggered"):
+        st.error(f"⚠️ 已觸發!美股大跌 + 共振力量 {conf['count']}/4:{forces_txt}")
+        st.caption("非單一利空,多股賣壓疊加 → 排程會自動推 LINE 預警。")
+    else:
+        gate = "✅" if conf.get("us_drops") else "❌"
+        st.info(f"未觸發(美股大跌 {gate}、共振力量 {conf['count']}/4)。成立力量:{forces_txt}")
+    st.caption("四力:外資提款、散戶斷頭(融資)、Fed 收緊(殖利率/美元)、配息賣壓。全為真實數據判定,非投資建議。")
 
 
 def render_chip_events(events: list) -> None:
@@ -1168,6 +1193,16 @@ def render_chip(data: dict) -> None:
         "🟢 正=買超、🔴 負=賣超。外資=外資及陸資+外資自營商;自營商=自行買賣+避險。"
         "單日大幅賣超即你問的『機構賣壓』可在此事後驗證。非投資建議。"
     )
+
+    margin = load_json(MARGIN_PATH)
+    if margin:
+        st.subheader("💳 融資餘額(散戶槓桿/斷頭訊號)")
+        m1, m2 = st.columns(2)
+        m1.metric("融資餘額", f"{margin.get('margin_today', 0)/1e8:.0f} 億",
+                  delta=f"{margin.get('margin_chg_pct', 0):+.2f}%")
+        m2.metric("單日增減", f"{margin.get('margin_chg', 0)/1e8:+.0f} 億")
+        st.caption(f"資料:{margin.get('date', '—')}(證交所 MI_MARGN,真實)。"
+                   "融資大減=去槓桿/斷頭賣壓,為共振偵測四力之一。")
 
 
 # ---------------------------------------------------------------------------

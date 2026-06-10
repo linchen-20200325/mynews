@@ -59,6 +59,12 @@ jobs:
           ENABLE_CHIP: ${{ vars.ENABLE_CHIP }}
           ENABLE_CHIP_LINE: ${{ vars.ENABLE_CHIP_LINE }}
           CHIP_DAYS: ${{ vars.CHIP_DAYS }}
+          # 多重賣壓共振預警(美股大跌 + 四力≥2 → LINE);門檻可用 vars 微調
+          ENABLE_CONFLUENCE_LINE: ${{ vars.ENABLE_CONFLUENCE_LINE }}
+          FORCE_FOREIGN_SELL_YI: ${{ vars.FORCE_FOREIGN_SELL_YI }}
+          FORCE_MARGIN_DROP_PCT: ${{ vars.FORCE_MARGIN_DROP_PCT }}
+          FORCE_YIELD_UP_BPS: ${{ vars.FORCE_YIELD_UP_BPS }}
+          FORCE_DXY_UP_PCT: ${{ vars.FORCE_DXY_UP_PCT }}
         run: python update_data.py
 
       - name: Commit and Push Changes
@@ -70,7 +76,7 @@ jobs:
           for p in latest_report.json data/reports/ latest_reports.json data/reports_multi/ \
                    latest_trends.json data/trends/ latest_stocks.json data/stocks/ \
                    latest_us_stocks.json data/us_stocks/ latest_intl_alert.json data/intl_alert/ \
-                   latest_chip.json data/chip/ data/chip_pushed.json \
+                   latest_chip.json data/chip/ data/chip_pushed.json latest_margin.json \
                    latest_focus.json data/focus/ latest_housing.json data/housing/; do
             [ -e "$p" ] && git add "$p"
           done

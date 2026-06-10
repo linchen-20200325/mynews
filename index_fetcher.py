@@ -42,6 +42,9 @@ SYMBOLS: list[dict] = [
     {"symbol": "^KS11", "name": "韓股 KOSPI", "group": "亞股", "lead_type": "同步連動"},
     {"symbol": "ES=F", "name": "標普 500 期貨", "group": "美股期貨", "lead_type": "盤前即時"},
     {"symbol": "NQ=F", "name": "那斯達克 100 期貨", "group": "美股期貨", "lead_type": "盤前即時"},
+    # 債匯總經訊號(Fed 利率預期):殖利率走升 / 美元走強 = 資金收緊。不列入「大跌」清單。
+    {"symbol": "^TNX", "name": "美10年期公債殖利率", "group": "債匯", "lead_type": ""},
+    {"symbol": "DX-Y.NYB", "name": "美元指數", "group": "債匯", "lead_type": ""},
 ]
 
 # 預設「大跌」門檻(%):當日跌幅 <= 此值才標警示。可用 INTL_DROP_THRESHOLD 覆寫。
