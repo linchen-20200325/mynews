@@ -2063,7 +2063,7 @@ def main() -> int:
             print("[6/8] 抓證交所三大法人買賣超(近 N 日,事後驗證真實籌碼)...")
             try:
                 chip = chip_fetcher.fetch_chip_flow(
-                    days=int(os.environ.get("CHIP_DAYS", "10")), log=print)
+                    days=int(os.environ.get("CHIP_DAYS") or "10"), log=print)
                 save_json(OUTPUT_CHIP, chip)
                 if chip.get("days"):
                     save_json(CHIP_ARCHIVE_DIR / f"{chip['days'][0]['date']}.json", chip)
