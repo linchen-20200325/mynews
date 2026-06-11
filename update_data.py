@@ -39,6 +39,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -57,6 +58,8 @@ import news_fetcher
 # ---------------------------------------------------------------------------
 
 DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
+# 主模型過載(503)時改用的備援模型(逗號分隔);可用 GEMINI_MODEL_FALLBACK 覆寫。
+DEFAULT_GEMINI_FALLBACKS = "gemini-2.0-flash"
 
 # LINE Messaging API(LINE Notify 已於 2025 停用,改用 Messaging API push)
 LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
@@ -1150,25 +1153,67 @@ def _resp_finish_info(resp) -> str:
     return "; ".join(bits) or "無候選內容"
 
 
+_TRANSIENT_HINTS = ("503", "unavailable", "overloaded", "high demand", "try again",
+                    "deadline", "resource_exhausted", "500", "internal error", "502", "504")
+
+
+def _is_transient(exc: Exception) -> bool:
+    """是否為暫時性錯誤(模型過載/5xx/逾時)→ 值得退避重試,而非換金鑰也沒用。"""
+    s = str(exc).lower()
+    return any(h in s for h in _TRANSIENT_HINTS)
+
+
+def _gemini_models(model: str) -> list[str]:
+    """主模型 + 備援模型清單(過載時改用較不壅塞的模型);去重保序。"""
+    out = [model]
+    for fb in (os.environ.get("GEMINI_MODEL_FALLBACK") or DEFAULT_GEMINI_FALLBACKS).split(","):
+        fb = fb.strip()
+        if fb and fb not in out:
+            out.append(fb)
+    return out
+
+
 def _gemini_generate_text(types, genai, model, keys, system_instruction, user_content, max_tokens):
-    """以多把金鑰逐一嘗試取得非空回應文字;全部失敗則丟出最後錯誤。"""
+    """多把金鑰×多模型逐一嘗試取得非空回應;遇暫時性過載(503)以指數退避重試整輪。
+
+    503 UNAVAILABLE 是 Google 模型過載(暫時性),換金鑰當下也常一起撞;故整輪
+    (所有金鑰×備援模型)都失敗且屬暫時性時,退避數秒後重試,而非立刻整批放棄。
+    """
     config = _build_gemini_config(types, system_instruction, max_tokens)
+    models = _gemini_models(model)
+    try:
+        max_attempts = max(1, int(os.environ.get("GEMINI_RETRIES") or 4))
+    except (TypeError, ValueError):
+        max_attempts = 4
+
     last_exc: Exception | None = None
-    for key in keys:
-        try:
-            client = genai.Client(api_key=key)
-            resp = client.models.generate_content(
-                model=model, contents=user_content, config=config,
-            )
-        except Exception as exc:  # noqa: BLE001 — 金鑰/額度/網路錯誤 → 換下一把
-            last_exc = exc
+    for attempt in range(max_attempts):
+        transient = False
+        for mdl in models:
+            for key in keys:
+                try:
+                    client = genai.Client(api_key=key)
+                    resp = client.models.generate_content(
+                        model=mdl, contents=user_content, config=config,
+                    )
+                except Exception as exc:  # noqa: BLE001 — 金鑰/額度/過載/網路錯誤 → 換下一把
+                    last_exc = exc
+                    transient = transient or _is_transient(exc)
+                    continue
+                text = (resp.text or "").strip()
+                if not text:
+                    # 空回應多為 thinking 吃光 token(MAX_TOKENS)或安全阻擋;附診斷再換下一把
+                    last_exc = RuntimeError(f"Gemini 回傳空內容({_resp_finish_info(resp)})")
+                    continue
+                return text
+        # 整輪(所有金鑰×模型)皆失敗;若屬暫時性過載則退避重試,否則直接放棄
+        if attempt + 1 < max_attempts and transient:
+            wait = min(5 * 2 ** attempt, 60)  # 5,10,20,40s 上限 60
+            print(f"  Gemini 暫時性過載(503),{wait}s 後重試"
+                  f"(第 {attempt + 2}/{max_attempts} 輪)...", file=sys.stderr)
+            time.sleep(wait)
             continue
-        text = (resp.text or "").strip()
-        if not text:
-            # 空回應多為 thinking 吃光 token(MAX_TOKENS)或安全阻擋;附診斷再換下一把
-            last_exc = RuntimeError(f"Gemini 回傳空內容({_resp_finish_info(resp)})")
-            continue
-        return text
+        break
     raise last_exc or RuntimeError("所有 Gemini 金鑰皆呼叫失敗")
 
 
@@ -2140,10 +2185,17 @@ def main() -> int:
         multi = len(topics) > 1
         print(f"[1/8] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
 
-        # 主報告必成功(失敗→整體非零碼);其餘主題失敗只警告不中斷。
+        # 主報告:Gemini 過載(503)等失敗時降級為 None,仍續跑真實數據與預警,
+        # 不讓暫時性過載害整批(國際盤/籌碼/共振/LINE)全掛。降級時不存檔 →
+        # 排程備援班次會自動重試,待 Gemini 恢復補上完整戰略報告。
         print(f"  ▸ 主主題:{topics[0]}")
-        report = build_macro_report(topics[0], today, extra_query=topics[0] if multi else None)
-        reports = [report]
+        try:
+            report = build_macro_report(topics[0], today, extra_query=topics[0] if multi else None)
+        except Exception as exc:  # noqa: BLE001 — Gemini 過載等 → 降級續跑
+            print(f"  警告: 主報告產生失敗(Gemini 可能過載),降級續跑真實數據與預警:{exc}",
+                  file=sys.stderr)
+            report = None
+        reports = [report] if report else []
         for extra_topic in topics[1:]:
             print(f"  ▸ 次主題:{extra_topic}")
             try:
@@ -2151,14 +2203,17 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001 — 次主題失敗不影響主報告
                 print(f"  警告: 主題「{extra_topic}」產生失敗:{exc}", file=sys.stderr)
 
-        print("[2/8] 戰略分析完成,寫入報告檔...")
-        save_json(OUTPUT_LATEST, report)
-        save_json(ARCHIVE_DIR / f"{today}.json", report)
-        if multi:
-            multi_doc = {"report_date": today, "reports": reports}
-            save_json(OUTPUT_REPORTS_MULTI, multi_doc)
-            save_json(REPORTS_MULTI_ARCHIVE_DIR / f"{today}.json", multi_doc)
-            print(f"  多主題報告:{len(reports)}/{len(topics)} 份成功。")
+        if report:
+            print("[2/8] 戰略分析完成,寫入報告檔...")
+            save_json(OUTPUT_LATEST, report)
+            save_json(ARCHIVE_DIR / f"{today}.json", report)
+            if multi and reports:
+                multi_doc = {"report_date": today, "reports": reports}
+                save_json(OUTPUT_REPORTS_MULTI, multi_doc)
+                save_json(REPORTS_MULTI_ARCHIVE_DIR / f"{today}.json", multi_doc)
+                print(f"  多主題報告:{len(reports)}/{len(topics)} 份成功。")
+        else:
+            print("[2/8] 主報告降級(Gemini 過載),跳過戰略報告檔,續跑國際盤/籌碼/共振/LINE。")
 
         # B. 趨勢雷達
         trends = None
@@ -2304,10 +2359,13 @@ def main() -> int:
         else:
             print("[8/8] ENABLE_HOUSING=0,略過房市觀察。")
 
-        print(
-            f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
-            f"白話文來源:{report['dictionary_source']}。"
-        )
+        if report:
+            print(
+                f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
+                f"白話文來源:{report.get('dictionary_source', '—')}。"
+            )
+        else:
+            print("資料更新部分完成(主報告降級,國際盤/籌碼/共振仍已產出)。")
 
         # 推播(依優先順序:① 國際盤大跌 → ② 多重賣壓共振 → ③ 法人事件預告 → ④ 戰略報告)
         if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
@@ -2339,12 +2397,15 @@ def main() -> int:
                         print(f"  ③ 法人事件預告已推({len(due)} 項)。")
                 except Exception as exc:  # noqa: BLE001
                     print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
-            # ④ 全球政經戰略報告(含法人籌碼提示)
-            try:
-                notify_line(report, chip_flow_hint(chip, fut_chip))
-                print("  ④ 戰略報告已推。")
-            except Exception as exc:  # noqa: BLE001
-                print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
+            # ④ 全球政經戰略報告(含法人籌碼提示);主報告降級時跳過,不影響前三項真實預警
+            if report:
+                try:
+                    notify_line(report, chip_flow_hint(chip, fut_chip))
+                    print("  ④ 戰略報告已推。")
+                except Exception as exc:  # noqa: BLE001
+                    print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
+            else:
+                print("  ④ 主報告降級(Gemini 過載),本次跳過戰略報告 LINE。")
 
         return 0
 
