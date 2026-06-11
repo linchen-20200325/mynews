@@ -1923,25 +1923,34 @@ def _env_float(name: str, default: float) -> float:
 
 
 def detect_pressure_confluence(intl: dict | None, chip: dict | None,
-                               margin: dict | None) -> dict:
+                               margin: dict | None, fut_chip: dict | None = None) -> dict:
     """多重賣壓共振:美股領先大跌(必要門檻)+ 四力成立≥2 → 觸發。全用真實數字,門檻 env 可調。
 
     四力:外資提款、散戶斷頭(融資)、Fed 收緊(殖利率/美元)、配息賣壓(除權息窗口+法人賣超)。
+    外資提款=賣股+空單+匯出,任一成立即點亮:現貨賣超 / 台指期偏空(留倉淨空)/ 台幣明顯貶值。
     """
     quotes = (intl or {}).get("quotes", {})
     us_drops = lead_market_drops(intl or {})        # 美股隔夜/盤前領先大跌 = 必要門檻
     forces: list[dict] = []
     days = (chip or {}).get("days") or []
 
-    # F1 外資提款:單日賣超夠大,或連2日站賣方
+    # F1 外資提款:現貨賣超 / 台指期偏空 / 台幣貶值,任一成立即點亮(賣股+空單+匯出)
+    f1_reasons: list[str] = []
     if days:
         f0 = days[0].get("foreign", 0) / 1e8
         cons2 = (len(days) >= 2 and days[0].get("total", 0) < 0
                  and days[1].get("total", 0) < 0)
         if f0 <= -_env_float("FORCE_FOREIGN_SELL_YI", 150) or (f0 < 0 and cons2):
-            forces.append({"key": "外資提款",
-                           "detail": f"外資賣超{abs(f0):.0f}億"
-                                     + ("、連2日站賣方" if cons2 else "")})
+            f1_reasons.append(f"現貨賣超{abs(f0):.0f}億" + ("、連2日站賣方" if cons2 else ""))
+    if fut_chip and fut_chip.get("stance") == "偏空":
+        net = abs(fut_chip.get("foreign_net_oi", 0))
+        f1_reasons.append("台指期偏空(淨空"
+                          + (f"{net / 1e4:.1f}萬口)" if net >= 10000 else f"{net:,}口)"))
+    twd_up = (quotes.get("TWD=X") or {}).get("change_pct", 0)
+    if twd_up >= _env_float("FORCE_TWD_DROP_PCT", 0.3):
+        f1_reasons.append(f"台幣貶{twd_up:.1f}%(外資匯出)")
+    if f1_reasons:
+        forces.append({"key": "外資提款", "detail": "、".join(f1_reasons)})
 
     # F4 散戶斷頭:融資餘額單日大減
     if margin:
@@ -2255,7 +2264,7 @@ def main() -> int:
         # D4. 多重賣壓共振偵測(只計算;LINE 於最後依序統一推播)
         conf = None
         try:
-            conf = detect_pressure_confluence(intl, chip, margin)
+            conf = detect_pressure_confluence(intl, chip, margin, fut_chip)
             forces = "、".join(f["key"] for f in conf["forces"]) or "無"
             print(f"  共振偵測:{'🔴 觸發' if conf['triggered'] else '未觸發'}"
                   f"(美股大跌={bool(conf['us_drops'])}、力量 {conf['count']}/4:{forces})")

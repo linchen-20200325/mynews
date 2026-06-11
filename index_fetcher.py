@@ -44,6 +44,8 @@ SYMBOLS: list[dict] = [
     # 債匯總經訊號(Fed 利率預期):殖利率走升 / 美元走強 = 資金收緊。不列入「大跌」清單。
     {"symbol": "^TNX", "name": "美10年期公債殖利率", "group": "債匯", "lead_type": ""},
     {"symbol": "DX-Y.NYB", "name": "美元指數", "group": "債匯", "lead_type": ""},
+    # 新台幣匯率(USD/TWD):走升=台幣貶值=外資賣股後匯出提款的真實訊號。不列入「大跌」清單。
+    {"symbol": "TWD=X", "name": "新台幣匯率", "group": "債匯", "lead_type": ""},
 ]
 
 # 預設「大跌」門檻(%):當日跌幅 <= 此值才標警示。可用 INTL_DROP_THRESHOLD 覆寫。

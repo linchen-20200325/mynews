@@ -1039,8 +1039,13 @@ def render_index_quotes(qmap: dict) -> None:
                 delta=f"{q.get('change_pct', 0):+.2f}%",
             )
             if group == "債匯":
-                # 殖利率/美元:上升=資金收緊(利空),非「大跌」
-                cap = "📈 走升=資金收緊" if q.get("change_pct", 0) > 0 else "走弱=資金寬鬆"
+                up = q.get("change_pct", 0) > 0
+                if sym == "TWD=X":
+                    # 新台幣:USD/TWD 走升=台幣貶值=外資賣股匯出提款的真實訊號
+                    cap = "📈 台幣貶=外資匯出" if up else "台幣升=外資匯入"
+                else:
+                    # 殖利率/美元:上升=資金收緊(利空),非「大跌」
+                    cap = "📈 走升=資金收緊" if up else "走弱=資金寬鬆"
             else:
                 cap = q.get("lead_type", "")
                 if q.get("is_drop"):
@@ -1120,8 +1125,9 @@ def render_confluence(intl: dict) -> None:
     """🔴 多重賣壓共振:美股大跌 + 四力≥2(讀 latest_chip / latest_margin,真實數據判定)。"""
     chip = load_json(CHIP_PATH)
     margin = load_json(MARGIN_PATH)
+    fut_chip = load_json(FUT_CHIP_PATH)
     try:
-        conf = update_data.detect_pressure_confluence(intl, chip, margin)
+        conf = update_data.detect_pressure_confluence(intl, chip, margin, fut_chip)
     except Exception:  # noqa: BLE001 — 偵測失敗不影響整頁
         return
     st.subheader("🔴 多重賣壓共振偵測")
@@ -1132,7 +1138,8 @@ def render_confluence(intl: dict) -> None:
     else:
         gate = "✅" if conf.get("us_drops") else "❌"
         st.info(f"未觸發(美股大跌 {gate}、共振力量 {conf['count']}/4)。成立力量:{forces_txt}")
-    st.caption("四力:外資提款、散戶斷頭(融資)、Fed 收緊(殖利率/美元)、配息賣壓。全為真實數據判定,非投資建議。")
+    st.caption("四力:外資提款(現貨賣超／台指期偏空／台幣貶值任一)、散戶斷頭(融資)、"
+               "Fed 收緊(殖利率/美元)、配息賣壓。全為真實數據判定,非投資建議。")
 
 
 def render_chip_events(events: list) -> None:
