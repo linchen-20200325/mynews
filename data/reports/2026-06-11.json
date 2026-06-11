@@ -3,204 +3,332 @@
   "topic": "全球政經與市場動態:聯準會利率與通膨、地緣政治與軍事衝突、美中科技戰、原油與股匯債走勢,及其對股市與基金的影響",
   "raw_news": [
     {
-      "title": "CPI 一熱，科技股先抖？通膨、利率與台積電怎麼一起看-陳柏宇",
-      "source": "CMoney投資網誌",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVEJsWHZJT2tBNXRRQ1pkMTFoSUt6U0hJTmNqcFoxbXQ1R2JNTUx5NnFOQmdFampBU0dWRnZSc2RXdGlBNkNJR0k4OFBiZFE2X0tWeDE5SVVyYm90a3dFQy1KMk1yMzR2c0FIT09kV01FclNLWlFldXhJcnVGVkJPRw?oc=5",
-      "summary": "CPI 一熱，科技股先抖？通膨、利率與台積電怎麼一起看-陳柏宇 CMoney投資網誌",
-      "published": "2026-06-11T07:03:46+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
+      "title": "FBI查获13个网站 被控征募美国人为中国提供情报",
+      "source": "德國之聲 DW 中文",
+      "url": "https://www.dw.com/zh/fbi查获13个网站-被控征募美国人为中国提供情报/a-77502213?maca=chi-rss-chi-all-1127-rdf",
+      "summary": "美国司法部宣布，联邦调查局查获十余个网站，这些网站假冒咨询公司招聘拥有安全许可、可查看美国政府机密或敏感信息的雇员，向中国提供情报。",
+      "published": "2026-06-11T10:33:00+00:00",
+      "origin": "德國之聲 DW 中文"
     },
     {
-      "title": "外籍勞工建美國駐米蘭領事館 時薪不到2歐元涉剝削",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606110193.aspx",
-      "summary": "（中央社米蘭11日綜合外電報導）興建中的美國駐義大利米蘭新領事館爆發勞工剝削爭議，美國承包建商允諾給予外籍勞工2.5萬歐元年薪，但勞工實領時薪卻不到2歐元（約新台幣57元），義大利檢方已展開調查。",
-      "published": "2026-06-11T06:55:10+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "台股跌76點收43149點 台積電收平盤2250元",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNWHR4VHB4eXl0MU1EMzZIT1huNExtVFhBTUdfblduZ2JCNHFTemJIWnJLX20zbWlOZWFGNjlCTlJneDF2Q0IxQW9pQ0dBUnBRNGhfbWVfZE84enRpQzlhOXNveHVScUgtU3VPTGxiYncybm1VLTlKSWRXS3JpR2s0R1NWbWxZaS1FbmJyYlhDM09sR2JiaFB5eDZGS052d1BDanNRQU9sdDIzVXIwRnFkcE1lMndBYmtESlBORlp3aTF1TUl2QTNPRnZSZGR4OUJDMWFYc2ctY01xVzR4WXFmS0dMeUE1Uk9uTl8tUmJCRkRPdVZYM1I0aU5XUG1NYW8?oc=5",
-      "summary": "台股跌76點收43149點 台積電收平盤2250元 Yahoo新聞台股超猛！ 狂殺1200點「收跌76點」群創瘋漲逾8％ Yahoo股市台股驚魂殺逾千點後守住43K 記憶體撐盤、「這族群」重挫- 證券 工商時報台股有驚無險！記憶體、聯電挑大梁 指數急拉逾千點收跌76點 自由財經台股下跌原因曝光！急殺1200點逼42000點又V拉，0050、00919、009816、00981A…先撿哪檔一表看 今周刊",
-      "published": "2026-06-11T06:54:11+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "台股跌76點留1143點長下影線 主動ETF與AI股撐盤",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606110192.aspx",
-      "summary": "（中央社記者吳家豪台北11日電）受到美伊地緣政治風險劇增影響，台股今天早盤一度重挫逾1200點，險守42000點整數大關；在低接買盤強力湧進主動式ETF與AI族群下，跌勢收斂，終場加權指數收43149.46點，下跌76.08點，跌幅0.18%，留下1143點的長下影線，成交值新台幣1兆2579.75億元。",
-      "published": "2026-06-11T06:54:07+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "伊朗與美國難以維持停火的四大原因",
-      "source": "BBC 中文",
-      "url": "https://www.bbc.com/zhongwen/articles/c5yzxn14z3wo/trad?at_medium=RSS&at_campaign=rss",
-      "summary": "美國與伊朗4月初達成的停火協議，在新一波地區攻擊後嚴重動搖。特朗普與伊朗互放狠話，衝突升級。專家指出四大原因：伊朗認為停火未解決核心問題、以色列持續軍事行動、升級已成談判策略，以及美國影響力有限。",
-      "published": "2026-06-11T06:51:27+00:00",
-      "origin": "BBC 中文"
-    },
-    {
-      "title": "秘魯總統大選膠著 藤森惠子暫領先左派對手651票",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606110191.aspx",
-      "summary": "（中央社利馬10日綜合外電報導）秘魯前獨裁總統之女藤森惠子今晚在漫長的總統大選計票過程中重新領先左派候選人桑傑士，但在98%投票所完成開票的情況下，雙方票數仍過於接近，勝負難分。",
-      "published": "2026-06-11T06:47:05+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "百億補貼是誇大宣傳 北京市監局約談5大電商平台",
+      "title": "鄭麗文訪美爭議延燒 梁文傑：中共勢力滲入美國僑界",
       "source": "中央社 兩岸",
-      "url": "https://www.cna.com.tw/news/acn/202606110187.aspx",
-      "summary": "（中央社記者張淑伶北京11日電）中國電商平台激烈競爭，但充斥虛假宣傳，號稱「百億補貼」實為誇大。北京市市場監督管理局今天約談淘寶（天貓）、京東、拼多多、抖音、小紅書5家電商平台，要求平台整改，並避免「內捲式」競爭。",
-      "published": "2026-06-11T06:41:57+00:00",
+      "url": "https://www.cna.com.tw/news/acn/202606110314.aspx",
+      "summary": "（中央社記者呂佳蓉台北11日電）國民黨主席鄭麗文訪美出席僑宴，傳出與中共統戰官員合照，引發爭議。對此，陸委會副主委兼發言人梁文傑今天說，中共勢力已滲入美國僑界，會將此列為重要警示現象。",
+      "published": "2026-06-11T10:29:30+00:00",
       "origin": "中央社 兩岸"
     },
     {
-      "title": "若林正恭小說「青天」入圍直木賞 創搞笑藝人首例",
+      "title": "押注AI又怕大裁员惹麻烦 中国企业悄然削减职位",
+      "source": "德國之聲 DW 中文",
+      "url": "https://www.dw.com/zh/押注ai又怕大裁员惹麻烦-中国企业悄然削减职位/a-77501566?maca=chi-rss-chi-all-1127-rdf",
+      "summary": "中国政府希望通过普及AI来提告生产效率，但又担心大量岗位流失导致社会动荡。为了规避劳动法限制且不引起政府注意，不少企业采取渐进式小规模裁员的策略。",
+      "published": "2026-06-11T10:19:00+00:00",
+      "origin": "德國之聲 DW 中文"
+    },
+    {
+      "title": "薪資難追物價漲幅 80%馬來西亞人成「月光族」",
       "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/acul/202606110184.aspx",
-      "summary": "（中央社記者戴雅真東京11日專電）第175屆直木賞候選名單今天正式公布，日本知名搞笑組合「奧黛麗」（オードリー）成員若林正恭以首部長篇小說「青天」入圍，成為首位獲得直木賞提名的搞笑藝人。",
-      "published": "2026-06-11T06:31:50+00:00",
+      "url": "https://www.cna.com.tw/news/aopl/202606110309.aspx",
+      "summary": "（中央社記者黃自強吉隆坡11日專電）白天上班、下班駕駛Grab，或週末兼差接案，成為許多馬來西亞家庭的生活寫照。當地學者指出，隨著生活成本攀升，約80%大馬人屬於「月光族」，收入幾乎全數用於日常開支，單靠一份薪資已難追上物價漲幅。",
+      "published": "2026-06-11T10:17:19+00:00",
       "origin": "中央社 國際"
     },
     {
-      "title": "美加墨世界盃規模空前，卻因政治因素而代價高昂",
+      "title": "幼兒園教中共黨慶歌曲 陸委會：已請北市教育局了解",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606110293.aspx",
+      "summary": "（中央社記者呂佳蓉台北11日電）有家長在網路上爆料，小孩就讀的幼兒園教唱中共建黨百年紀念歌曲。陸委會副主委兼發言人梁文傑表示，確實有收到檢舉，事情發生在台北市公立幼兒園，已轉請台北市教育局進行了解。",
+      "published": "2026-06-11T10:08:45+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "陳玉珍稱海峽論壇可統戰對岸 陸委會：請展示成果",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606110290.aspx",
+      "summary": "（中央社記者呂佳蓉台北11日電）陸委會上週宣布禁止地方政府參加海峽論壇，引來立委陳玉珍批評這是限制兩岸交流，還稱「我們也可以統戰他們（中共）」。陸委會副主委兼發言人梁文傑今天回應，請陳玉珍展示統戰對方的成果給大家看看。",
+      "published": "2026-06-11T10:01:39+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "香港籃球教練體罰爭議 前學員打破沉默",
       "source": "BBC 中文",
-      "url": "https://www.bbc.com/zhongwen/articles/cj3gm6884eyo/trad?at_medium=RSS&at_campaign=rss",
-      "summary": "有一點似乎肯定：在賽場的精彩以外，這場規模空前的世界盃，可能會成為史上最具爭議的賽事之一。",
-      "published": "2026-06-11T06:30:44+00:00",
+      "url": "https://www.bbc.com/zhongwen/articles/cj9gnmkk28ro/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "一條香港中學籃球教練在操場掌摑學生的網絡影片，揭開了本地體育界仍然存在的體罰與高壓文化。涉事教練翁金驊已被停職並因涉嫌「普通襲擊」被警方拘捕。多位曾接受其執教的香港大學及中學前球員打破沉默，公開講述自身經歷。",
+      "published": "2026-06-11T09:58:32+00:00",
       "origin": "BBC 中文"
+    },
+    {
+      "title": "首爾松坡區選票足夠 韓國選管會：未妥善分配是嚴重失誤",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606110288.aspx",
+      "summary": "（中央社記者楊啟芳首爾11日專電）韓國各單位持續調查地方選舉選票不足事件，中央選舉管理委員會代理委員長魏哲煥今天表示，其實當時首爾松坡區整體仍有剩約4萬2000張選票，但未能妥善分配是痛心的失誤。",
+      "published": "2026-06-11T09:53:35+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "財部：大額稅款案件減少 前5月土增稅年減8.9%",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606110287.aspx",
+      "summary": "（中央社記者呂晏慈台北11日電）財政部今天公布全國賦稅收入統計，前5月房市相關稅目仍呈現增減互見，契稅年增6.9%，個人房地合一稅年減7.6%，另受到房地交易量及大額稅款案件減少影響，土地增值稅年減8.9%。",
+      "published": "2026-06-11T09:50:32+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "麥考瑞大學放映生成之間 見證台澳原民藝術交流",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606110285.aspx",
+      "summary": "（中央社記者丘德真雪梨11日專電）位於澳洲雪梨的麥考瑞大學（Macquarie University），今天舉辦「生成之間：澳洲與台灣原住民族藝術交流」（In the Making: An Australia–Taiwan Indigenous Art Exchange）電影放映暨座談會，除了吸引多名當地學者和藝文工作者到場之外，更有關注原住民族議題者參與，共同見證台、澳原住民族藝術交流成果。",
+      "published": "2026-06-11T09:48:28+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "曼谷四面佛爆炸案宣判 北京：“中方支持泰方严惩凶手”",
+      "source": "德國之聲 DW 中文",
+      "url": "https://www.dw.com/zh/曼谷四面佛爆炸案宣判-北京：-中方支持泰方严惩凶手/a-77501299?maca=chi-rss-chi-all-1127-rdf",
+      "summary": "2015年的泰国曼谷四面佛爆炸案在历经十年审理后，曼谷法院在周四（6月11日）作出裁决，判处两名中国新疆维吾尔族被告死刑。",
+      "published": "2026-06-11T09:45:00+00:00",
+      "origin": "德國之聲 DW 中文"
+    },
+    {
+      "title": "5月證交稅年增2.9倍 實徵704億元續創單月新高",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606110284.aspx",
+      "summary": "（中央社記者呂晏慈台北11日電）財政部今天公布5月全國賦稅收入初步統計，受惠台股漲勢延續，帶動單月證交稅實徵淨額704億元，再度刷新單月新高紀錄，年增2.9倍，漲幅為逾22年以來新高；累計前5月證交稅實徵淨額2487億元，亦為同期新高。",
+      "published": "2026-06-11T09:44:26+00:00",
+      "origin": "中央社 財經"
     },
     {
       "title": "5月CPI大漲4.2% 3年新高 川普：我愛通膨 戰後會降",
       "source": "世界新聞網",
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBvOEYwd1BIejZfYi10VjN3ZDdTdUF1TVJDczZULXlxb296WW5CUVgtUlBDMnBVMGJtUm1tVnljYnhuZk1HMzZZSGZUV0ZKRTJKQXh6bHBhOGQ0eEUwaHpjMkNB0gFnQVVfeXFMTUpwbE9CajBsTG9UZDRZWkc2aDhOaEVvZ3MyN3N0VFZkRWdPWDVQNGdNbU03RFIyenlMT05qS2p3WEF4alcyc1VNZjdkREhLWTVtOGV2NjdZNkp1NEtYRzhqMFBzRnVSVQ?oc=5",
       "summary": "5月CPI大漲4.2% 3年新高 川普：我愛通膨 戰後會降 世界新聞網",
-      "published": "2026-06-11T06:29:00+00:00",
+      "published": "2026-06-11T09:43:00+00:00",
       "origin": "關鍵字「聯準會 利率 通膨」"
     },
     {
-      "title": "智邦：龜山廠第3季放量 南寮及美、星廠明年量產",
+      "title": "伊朗局勢與升息疑慮拖累 亞股普遍收跌",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606110180.aspx",
-      "summary": "（中央社記者潘智義台北11日電）網通廠智邦科技今天表示，因應客戶需求增溫，積極擴充國內外產能，桃園龜山廠已小量出貨，今年第3季可望放量，南寮廠擴充新產線將在明年投產，美國、新加坡廠預計明年量產。",
-      "published": "2026-06-11T06:27:42+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606110282.aspx",
+      "summary": "（中央社香港11日綜合外電報導）受到伊朗局勢疑慮再起，加上美國升息前景等負面因素影響，亞洲股市今天普遍收跌。",
+      "published": "2026-06-11T09:40:22+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "亞美尼亞總理挺過俄國施壓勝選 川普發文大讚",
+      "title": "漢唐在手訂單1939億 辛耘訂單展望達2028年",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606110279.aspx",
+      "summary": "（中央社記者張建中新竹11日電）無塵室廠漢唐與半導體設備廠辛耘接單暢旺，其中，漢唐在手訂單金額高達新台幣1939.37億元。辛耘部分訂單展望已達2028年。",
+      "published": "2026-06-11T09:38:15+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "中國藉口到台灣東部海域執法 陸委會：需沉著以對",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606110276.aspx",
+      "summary": "（中央社記者呂佳蓉台北11日電）中國以日菲啟動專屬經濟海域談判為藉口，到台灣東部海域展開「海上交通專項執法行動」。陸委會副主委兼發言人梁文傑今天表示，中共對台步步進逼，已從隱憂成為「明憂」，其消滅中華民國的意圖不會改變，台灣要沉著以對，更要堅定。",
+      "published": "2026-06-11T09:34:09+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "溫哥華獲選世界盃球迷體驗最佳城市 將辦7場賽事",
       "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606110176.aspx",
-      "summary": "（中央社華盛頓10日綜合外電報導）美國總統川普今天祝賀亞美尼亞總理帕辛揚（Nikol Pashinyan）領導的「公民契約黨」（Civil Contract）在週末大選中取得「決定性勝利」。",
-      "published": "2026-06-11T06:22:33+00:00",
+      "url": "https://www.cna.com.tw/news/aspt/202606110274.aspx",
+      "summary": "（中央社記者程愛芬溫哥華11日專電）2026年FIFA世界盃足球賽即將開踢，主辦城市之一溫哥華被選為球迷體驗最佳城市，整座城市已充滿濃厚賽事氣氛，拉丁社區還特別設了球迷專區，眾人皆興奮迎接13日在溫哥華舉行的首場比賽。",
+      "published": "2026-06-11T09:34:05+00:00",
       "origin": "中央社 國際"
     },
     {
-      "title": "6月電子期金融期齊跌",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606110174.aspx",
-      "summary": "（中央社台北11日電）台北股市今天下跌76.08點，收43149.46點。6月電子期收2775.15點，下跌21.65點，正價差1.24點；6月金融期收2973.8點，下跌2點，正價差0.77點。",
-      "published": "2026-06-11T06:07:29+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "CPI 比預期更熱，市場到底在怕什麼？通膨、利率與科技股的連鎖反應-陳柏宇",
-      "source": "CMoney投資網誌",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPTE9HU1dFbTI4bm9ralRsOF9udE1XcVVVdWl5b3ZwS1dneXFqZnlPQnhRY3ZKYklpNkFrOHVvSDQ4TWsxbnktRHNxR1VBa3lTV0JIblJ4UTZUMmFRVmtLbnFrSmpob184dzF3LXd6SlVsUWtibVMtakJ5SVRwanN2Mg?oc=5",
-      "summary": "CPI 比預期更熱，市場到底在怕什麼？通膨、利率與科技股的連鎖反應-陳柏宇 CMoney投資網誌",
-      "published": "2026-06-11T06:05:12+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "6月台股期指跌126點",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606110173.aspx",
-      "summary": "（中央社台北11日電）台北股市今天終場跌76.08點，收43149.46點。6月台指期以43241點作收，下跌126點，與現貨相較，正價差91.54點。",
-      "published": "2026-06-11T06:04:27+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "2026 下半年開局震盪：台美股投資人6 到 7 月必看的8 大總經事件｜股市話題｜豐雲學堂2026 年 06 月",
-      "source": "sinotrade.com.tw",
-      "url": "https://news.google.com/rss/articles/CBMi1gNBVV95cUxORmFxM3RLMFNPQXpOY0pzeVpmcUo2VDJ3Y2plZ1l4NUJRNHlkVnNWbkV4ZXoxd19HUDlVNGNmR3F4RlA4SnEzeEtaeEdVaVdWVDU5dlQ1SlZrdjlQb0ZpVTBfZU5qS2pndUx6UGJDX19JQW5mTmhHOTRjVlBWVGxOUGlpamd3dlRoeV9VYi0tUHNvLTRFbVZjTldKQ01ybFNZeVZtcGNta25pNU9IYU5SVTJubWlzMkRPVGdFZTIwcjB2VG5fUW1uLS00WUQzSXFKN0pFdmtFWFp5MUlKdnVIVnZlbXgxV1lZdTlRc3FlRkNzVXh2QlBFR0FhMlNjUDdRTnZLWlpLTDZWYjhWeUg1R0o5ZFBlUlZ2cGcxV0ZqQ3F1emM4QVJBV2E1cW5Ra1I2VUpkY21BS1Y1SkJRdW1ncUpOcVhTQ2JMeV9SNjAyT1NTckRxU3JVY19pbm1qUjc4V0pPOVZ2aHdaRHhwakRNZGtwcmhWeFJrU09IdlNuNk9BSnMwNXh3MjFoQ3ZYR3lQUE5OYXh5QUI3Z0RCNVozSXRtbW5VUDIzUmRwWUVzSEFQQjhPX2ZmcnNpTEh0TVFUNVVPemJtZWJZZHFSOTZxR0l5LWFnQQ?oc=5",
-      "summary": "2026 下半年開局震盪：台美股投資人6 到 7 月必看的8 大總經事件｜股市話題｜豐雲學堂2026 年 06 月 sinotrade.com.tw",
-      "published": "2026-06-11T05:58:36+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "台股跌76.08點",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606110169.aspx",
-      "summary": "（中央社台北11日電）台北股市今天開低震盪，收盤跌76.08點，為43149.46點，跌幅0.18%，成交金額新台幣1兆2579.75億元。",
-      "published": "2026-06-11T05:57:18+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "教宗良十四世西班牙行 為聖家堂新塔主持祝福儀式",
+      "title": "商船行經阿曼遭美軍開火 印度官員：3名本國船員身亡",
       "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606110167.aspx",
-      "summary": "（中央社巴塞隆納10日綜合外電報導）教宗良十四世（Pope Leo XIV）今天在巴塞隆納（Barcelona）著名地標聖家堂（Sagrada Familia Basilica）主持彌撒，為宏偉的新塔進行祝福，這座教堂現已成為全球最高的教堂。",
-      "published": "2026-06-11T05:51:14+00:00",
+      "url": "https://www.cna.com.tw/news/aopl/202606110270.aspx",
+      "summary": "（中央社新德里11日綜合外電報導）印度港口、航運與水道部部長索諾渥（Sarbananda Sonowal）今天表示，一艘商船行經阿曼外海時遭美軍開火擊中，造成三名印度籍船員身亡。",
+      "published": "2026-06-11T09:23:56+00:00",
       "origin": "中央社 國際"
     },
     {
-      "title": "伊朗轟炸美軍基地！美發安全警示：立即尋找掩護",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxPay1JSkZaSXExSU5QOVhjT2tBVUNZYU9UU1JtRnptYXplOHpTU2NhSVg2TzhSSjhwTUlaRDRNTHVBcmVQSG5TRF9SMF9KMzNHTkRuUDJhdmlLMHpfLThSTmhUZmpval9NUEpSaWdPaGdjX0ZPc0JrdGZfTEoxNVdyNFlETktzOHBZbk1paWwzeERjY2pabC1jUVZoOVhzYjFxeU95Q1pXNnVibER3VmRjc3RaY0NKcnZzRGc5VVJadEp3QWc4emRZRTRJNUhfNUdaQnlCM0hNb1dBZFhsWnhxZzRjdkdPYjhodElub29UbUJNR284XzNJZ3VndVZCUHhQdWEwMTNRdGxWUmJmd1JDTElFSU14YnA0RXlybWNTQlNycnB1VmVxTndoVGNxUFJiUG5uUmM0VTV5U00tazluaU9SMG1Jdw?oc=5",
-      "summary": "伊朗轟炸美軍基地！美發安全警示：立即尋找掩護 Yahoo新聞伊朗發射12枚彈道飛彈轟炸約旦美軍指揮中心 聲稱摧毀「大量戰機」 Yahoo新聞天下晨間新聞：美國發動自衛空襲｜美國銀行警告：熊市亮紅燈 天下雜誌川普下令重襲伊朗 中東警報大響 科威特攔截空中目標、荷姆茲海峽全面關閉 news.cnyes.com新聞內容-B19BF398-4C70-40E5-86F8-84A27248826B台股 MoneyDJ",
-      "published": "2026-06-11T05:51:00+00:00",
+      "title": "凌嘉科擬6/15登錄興櫃 前4月每股純益0.51元",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606110266.aspx",
+      "summary": "（中央社記者張建中台北11日電）半導體設備廠凌嘉科技預計6月15日以每股130元參考價登錄興櫃，今年累計前4月營收新台幣3.14億元，稅後淨利4231萬元，每股純益0.51元。",
+      "published": "2026-06-11T09:19:48+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "索羅門與中國安全協議含保密條款 新政府無法如願公開",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606110263.aspx",
+      "summary": "（中央社雪梨11日綜合外電報導）太平洋島國索羅門群島新政府今天告訴法新社，索國2022年與中國簽署的安全協議依法不能對外公開內容。這份協議令美國和澳洲不安，擔憂為中國在南太平洋常態軍事部署開啟大門。",
+      "published": "2026-06-11T09:13:39+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "5月全體上市公司總營收4.88兆元 年增34%",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606110259.aspx",
+      "summary": "（中央社記者曾仁凱台北11日電）台灣證券交易所今天公告，除金融保險業與三商投控，其餘1047家上市公司已於6月10日前完成5月營收申報作業。上述全體上市公司5月營收總計新台幣4兆8806億元，較去年同期大幅成長34.12%。其中，營收成長公司691家，衰退公司356家。",
+      "published": "2026-06-11T09:07:31+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "富察出獄仍未能返台 陸委會重申對案情有掌握",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606110257.aspx",
+      "summary": "（中央社記者呂佳蓉台北11日電）八旗文化總編輯富察（李延賀）因「附加刑」關係，出獄後仍遭中國大陸限制出境，無法返台。陸委會副主委兼發言人梁文傑表示，政府對該案相關情況都有掌握，但需要尊重家屬意見，因此不會對該案進行說明；他同時批評，在中共統治下，沒有任何出版、言論自由的空間。",
+      "published": "2026-06-11T09:04:26+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "全新通過6億元內購置土地 啟動新廠計畫",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606110255.aspx",
+      "summary": "（中央社記者曾仁凱台北11日電）砷化鎵（GaAs）上游磊晶廠全新今天公告，為配合長期發展策略及營運需求，擬購置土地作為建置廠房使用。全新董事會今天決議授權董事長，於不超過新台幣6億元額度內，全權處理土地購置相關事宜。",
+      "published": "2026-06-11T09:03:22+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "半導體先進製造封裝投資穩 全球首季設備銷售額創高",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606110253.aspx",
+      "summary": "（中央社記者張建中新竹11日電）國際半導體產業協會（SEMI）統計，2026年第1季全球半導體製造設備銷售額達365.5億美元，創下單季歷史新高，季增1%，較去年同期增加14%。",
+      "published": "2026-06-11T08:58:18+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "東京池袋傳強盜傷害案 中國籍女性遭搶約160萬元",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606110249.aspx",
+      "summary": "（中央社東京11日綜合外電報導）日本東京池袋街頭昨天晚間發生一起強盜傷害案件，一位60歲中國籍女性疑似遭兩名男子噴灑催淚噴霧、毆打，裝有約800萬日圓（約新台幣160萬元）現金的肩背包也被搶走。",
+      "published": "2026-06-11T08:48:09+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "US inflation spike wobbles markets and puts Fed rate rise on the table",
+      "source": "Portfolio Adviser",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPT29RUU1ic0tVdHpKaHBCTklGNDJRQkJuN1U3ODFBTERNS2tubC1zM2FwM3BGV2luZDZhYXBZOURkMGwtTGZ3ejhTeUVNTzg1V19Oa2V5c1pSdkFoVGxycEVXS05fYUpQSnFsTVJ0Qk9sTTZZZnMyVnBQQWh1ZlVXNjBBZjRYX3ZDQktvX0lLZVhPbld5N2dVdjdrVENFTF9zSUtF?oc=5",
+      "summary": "US inflation spike wobbles markets and puts Fed rate rise on the table Portfolio Adviser",
+      "published": "2026-06-11T10:41:19+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "Federal Reserve to Resist the Urge to Hike US Rates",
+      "source": "Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQak5RNGhHLVZRanZuY09jNFVicXRuM3p5VUVBMVlSaE8xWUZUSGZtSVpfcTlNbVdHZGU1RkNmdEFMYkhFcmdEaTk1bURQSWc1S1lQWmFacVZjZDN0WDIzRlJCMVRUMGV4TzV6UVRYN2dEam5UbG5DcnRtbGRWejJoZVJBdDc5b0FBQjJCaUJyRDl6UzZkdjVZU2N1ai0?oc=5",
+      "summary": "Federal Reserve to Resist the Urge to Hike US Rates Investing.com",
+      "published": "2026-06-11T10:41:06+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "After Blockbuster Data Release, Trump Says \"I Love Inflation\": Will Fed Stay Inactive Next Week? Gold Prices and US Stocks Drop in Advance",
+      "source": "36 Kr",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8xNWJuVDRhb3JKZzM5QzA4bkh6SWN0MFF3YXlpWGVZcl9nMWpFTmp4SkhQYjVJZUx5bDhrNzcxeGxrX25VTWllZ1BXbWY4b0VqTks0?oc=5",
+      "summary": "After Blockbuster Data Release, Trump Says \"I Love Inflation\": Will Fed Stay Inactive Next Week? Gold Prices and US Stocks Drop in Advance 36 Kr",
+      "published": "2026-06-11T10:31:56+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "Trump’s new Fed chief may soon have to raise interest rates",
+      "source": "The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNNFMtaFpTQUd2alhSWEZzMkhCLUZwNDNUcnJtZERyVkY0MUpIV2lHcHktRXEzRERyYUxEN0RJMDk2V1h0Uzg1TDIwS2VyclVxZE9xYWNxelNhTWZwaXltSUYxSklHUkRCYkxFZFMyOEZLbzM4WlNyQ0dBdHJPUF9zVzVEeTM3dnJzUUhkQlliUnlxb3FfdE5zZzR5ekdIVnVyVkxVZVdNdUEtaWVIYVNyNnNpR0dJRkU?oc=5",
+      "summary": "Trump’s new Fed chief may soon have to raise interest rates The Washington Post",
+      "published": "2026-06-11T10:31:43+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "Stock Market Today: Dow Futures Gain, What to Watch — Live Updates",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNc254QUF3M1VKMGZYd3lydnR5SEhiOVhMZFFWakF3TURTSDFqWEc5dW41YnA4QUJQZExmNkxyRVhrY3JwVk1uaFk3OHpVd2p3ZG1kMi1KeXlDNUJraUtCT2V3UzJBWGl2N1E0a25nOTJXaWhhV3dieFRvbE1pWF8tRUgzd0dvRms?oc=5",
+      "summary": "Stock Market Today: Dow Futures Gain, What to Watch — Live Updates WSJAsian Stocks to Fall, Oil Rises as US Strikes Iran: Markets Wrap Bloomberg.comStocks bounce back, oil pares gains as Iran and Israel signal a pause ReutersDow Jones Top Markets Headlines at 5 AM ET: U.S., Iran Exchange Fire for Second Successive Day | Oil ... MoomooStock and Gold Sell-Off Eases; ECB and US PPI Eyed Next Investing.com",
+      "published": "2026-06-11T10:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Donald Trump in massive trouble as US inflation hits three-year high, expensive oil disrupts household budget",
+      "source": "India.Com",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQVEtvLVVvZnV6YUVJNzNHb2ROcEd5R050clhEWXBiNklBNFlfZExkc3FPMVVPTUZWaVBjRnRLbWNBc0lGNzVhUFE1QThuR1VtTUZIZU5TM2NiMURjcUNHdHVsYUdTSWowbUxfVTUzVFdBdzQ2WmxfdzdCQmtrMC1tM3pVX3RaX1V4cV9NcmRDUW45ajBUNXh2VzdvNzZSYkpqdE1yb0tKcDRjV2d0NTlFWUs2cE85bVlwdXZKOWJELTU3cXpzNXJHSURlNnNjc2RkSXludTFyZC0tYjVfbHNNRHZNYVRkM1hDVDdV0gHwAUFVX3lxTFBJOVhISzNpUkF0eFdqbThDVFJCX3J5YjJOaG5nbWYzVG1rWnUxMENmXzNYcTF3YXNGdHRiVFNPR3JsM2JIWW9aTEdWNWQ5NUY5dDJlR2JncHhERUR2ck53LWxiN2l6WFlsQzNDOTVGMGRyUkpVYktOTk9TMzRXY1hoVE16QWlKUnJSZlpwS2RYSHI1b3lSZzAydmpBdmhHVll4ZEV5TEtFWUxUbEhsVTNUcGtISlF1Yy0yQWlORzJicFpaQ01oUmdnc3Q0UENuZVotSzN1WFh5Q2VYN1BUS253N3BiU29RbFpQbkZRZllTZQ?oc=5",
+      "summary": "Donald Trump in massive trouble as US inflation hits three-year high, expensive oil disrupts household budget India.Com",
+      "published": "2026-06-11T09:39:06+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "Copper declines as fresh US-Iran flareup stokes inflation fears",
+      "source": "The Edge Malaysia",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0tZ0FBb0NGLUwxYXNHM2U4THYzc0EzbVFRd01DblVOdGM0bmZfLVZKNFE1b2pCck5LQXprVE5ZRm5oQ0NBaVJ2UU9EeWNFaTA2?oc=5",
+      "summary": "Copper declines as fresh US-Iran flareup stokes inflation fears The Edge Malaysia",
+      "published": "2026-06-11T09:31:28+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "Trump says 'I love the inflation' as US prices rise at fastest rate in three years",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9kcHJ2M1lvRzZMQVhoT216aTFBVjNXQ1EyUkEzaWtnWWE4YTczb05vRWRhQXR1dFlZUHFaZkF0UXZWalVZQjNMZVJmZE9WcllOQUhjUy1MbmhTZw?oc=5",
+      "summary": "Trump says 'I love the inflation' as US prices rise at fastest rate in three years BBC",
+      "published": "2026-06-11T09:14:13+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "Women Who Fled Iran Are to Be Deported to Central African Republic, Lawyers Say",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQzdFYnRNdWpfNnh1dWVZR1R4b1Z6VEtRUTdBS0RvZE96SFBPb1lhc1RtUWdIZ3pwS21zSmNGWDJYSG5Wa3FUM2MzVU9zREt1c05EZjl5ckY3RVdNRWxpR2JTeUJIa0Y5eERFcGRVUzNCQmlZWktHZUNHdGQzeUVDTnRNY3NwbkdWaHBfUFE0cWZyTU90Sjl2ZA?oc=5",
+      "summary": "Women Who Fled Iran Are to Be Deported to Central African Republic, Lawyers Say The New York TimesCentral African Republic to accept third-country deportees from US, sources say ReutersUS-Central African Republic Deportation Agreement Escalates Attack on Immigrants and Puts Lives at Risk Just SecurityCAR Agrees to Accept US Deportees Under Controversial Trump Deal streamlinefeed.co.keInternational Deportation Policy: 5 Major Changes Bangui 2026 Brussels Morning Newspaper",
+      "published": "2026-06-11T09:05:44+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "八方雲集完成董事改選 2大元老功成身退",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606110165.aspx",
-      "summary": "（中央社記者江明晏台北11日電）八方雲集今天召開股東會，完成董事改選，2名元老級主管、副董事長林明哲及曾任總經理的資深董事張瑞蓮任期屆滿退休；曾任財務長的邱忻怡接任法人代表董事，在第二代接班人、現任董事長林欣怡帶領下，八方雲集世代交棒再進一步。",
-      "published": "2026-06-11T05:48:10+00:00",
-      "origin": "中央社 財經"
+      "title": "Treasury yields steady as investors monitor inflation data, U.S. strikes in Iran",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQeWVpZGtTNDJLQmZfUE1yZ29HM1p2UTRBRV83dnB6NE50aW9YZnVVVno3aUU2WGZHQ2h6SHlNV1lJdXNGb2V6MTlPOWRkR1FZSGZkRGxBdnJvUk5kcm84NEFRa080Wmd3aWs4QklqeTc4M2RoamZWSkJzZmk0RW5VSk9MT0d3NmgzNHBNenp3dEh4VnNubjJJcjdqUGhLd3A4QmpCcE5ZRFpMZVlHN01MZUl30gG3AUFVX3lxTE50Szcxd2lPMENqc24xdjFqR3dIbE5NaGY5LTNFeUtzRmpWTGE4Um9XYm5ORkhjN0FPUlNaejhuOVloczJyRDBTOG9sZENlaWhxZ2c3dWlWSDFyanBMUTJ4eU5Qa1NqUzI4bEhzb0dUS1VSN25PSjd2SnBIRk0zRzFhVS0wVE91MVgzaVByRnlFUjdPZ1lIYV9zMEwxdFBpSXZrZU1pZkY4S2tEdmhFZHZuamhYUnhxWQ?oc=5",
+      "summary": "Treasury yields steady as investors monitor inflation data, U.S. strikes in Iran CNBC",
+      "published": "2026-06-11T08:47:38+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
     },
     {
-      "title": "台股終場跌76點收43149點 台積電收平盤2250元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606110163.aspx",
-      "summary": "（中央社記者吳家豪台北11日電）受到美伊地緣政治風險劇增影響，台股今天早盤一度重挫逾1200點，最低觸及42006.39點，險守42000點整數關卡；隨著低接買盤強力湧進，指數跌幅縮減，終場加權指數收在43149.46點，下跌76.08點，跌幅0.18%，留下長下影線，成交值新台幣1兆2579.75億元。",
-      "published": "2026-06-11T05:45:05+00:00",
-      "origin": "中央社 財經"
+      "title": "ECB Rate Decision: What to Expect on June 11",
+      "source": "Morningstar",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWkt5UFpfMVJZcFdtSGRyRE1yc1k4djlQUDhxbDdNWkY5UmoxLU81VVNwVlAxdmpQRWVyUDRpYkhld21TZndJNnNqMXBxZ2dwSlpxYnlhTTNOVUlBamxVMXc0OFYtcC0zS3Yybkd4OUdMV2JMNzdSbHdWcVhUTHN0NjRCZFNwZE1adGc?oc=5",
+      "summary": "ECB Rate Decision: What to Expect on June 11 Morningstar",
+      "published": "2026-06-11T08:39:54+00:00",
+      "origin": "關鍵字「central bank monetary policy bond market」"
     },
     {
-      "title": "中磊：AI帶動寬頻基礎建設升級 將續推新世代產品",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606110161.aspx",
-      "summary": "（中央社記者潘智義台北11日電）電信寬頻設備廠中磊電子董事長王煒今天表示，人工智慧（AI）應用蓬勃發展，帶動寬頻基礎建設升級潮，網路終端設備市場需求熱絡；將持續深耕核心網通技術，推出新世代寬頻產品，提升電信市場占有率。",
-      "published": "2026-06-11T05:37:01+00:00",
-      "origin": "中央社 財經"
+      "title": "Oracle Reports Earnings Amid a Rapid Cloud Transformation",
+      "source": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQlBBOWNiSktjU3FnMzZyR0xMVkhOb1Rxamc1RTBRbzIyMXFmSHV1eldwelhCNlZzeXUzbWZhRjE0SmswcUFFNWhudTZOb0RtOWpHMkQ2RTJ4TkctNTlYZWpWa3JBN3NGY0xxS3VINVFaV2R3QnVaeUxJclRWS1hOcXpsb3g?oc=5",
+      "summary": "Oracle Reports Earnings Amid a Rapid Cloud Transformation Barron'sOracle beats on earnings, but stock drops on plans to raise another $20 billion CNBCOracle's AI spending blows past estimates, raising worries over growing debt ReutersOracle Earnings: This ‘Disappointment’ Sinks Stock 4% ForbesOracle Shares Tumble Amid Pricey Data-Center Build-Out WSJ",
+      "published": "2026-06-11T08:38:00+00:00",
+      "origin": "Google 財經頭條"
     },
     {
-      "title": "住展風向球5月續亮衰退黃藍燈 觀察下週央行會議動向",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606110157.aspx",
-      "summary": "（中央社記者何秀玲台北11日電）代表北台灣新建案市場概況的「住展風向球」，5月燈號維持衰退黃藍燈，分數稍有進步，從4月的34.3分，提升至36.5分。住展雜誌分析，520檔期帶動推案量增加，不過成交表現仍偏弱，後續房市能否回溫，須觀察下週央行理監事會議動向。",
-      "published": "2026-06-11T05:31:52+00:00",
-      "origin": "中央社 財經"
+      "title": "Macroscope | Investors expecting a US interest rate rise could be in for a surprise",
+      "source": "South China Morning Post",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOOUdKWXZUeVdMN1lWNkZRVUtIWFhoeXczNTBYb1ZmNUM5OUlyNkJGUG1fZW1PbGd5RzliZFFIMnQ2MzFnQ3pSakE5NDkwaG45SHQzSWdkX0x5QkVUcG5vUGRBNGhJa3diNUFfVVJicGNYc3o0WS0tOF9rVmpPbTlGdTEyT3dndjdzcWwtY1BkNUJXck9ReVJ0T2ZrUWpiaGk0QjFSdmJKUTByT01mR28tNHRlakNWQXl3V1HSAboBQVVfeXFMT2R0dzN4UEszMmpfdV9hWmVqOThud09uSW5IVWJUU2ZRNnFIRzJRZzJfMUV4ejdfR0dpdGJjWXZ3bVVJMlJncXNXejZORVlqQWhFb3FVWlI0WUFocll0bkR4dGQtNWFaa1pSRjZ0UXZxdHZGRHFCS1FQOHV1RExtcndHdmFDX1lwM1FaVXE0aEtxNnVUNFh1b0IycEZYY0xWMVBhMG1XdjNnUVpKbjJ3NUZoZkFrMWlrOU93?oc=5",
+      "summary": "Macroscope | Investors expecting a US interest rate rise could be in for a surprise South China Morning Post",
+      "published": "2026-06-11T08:30:05+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
     },
     {
-      "title": "印度洋海底發現大面積鯨墓地，可追溯至500多萬年前",
-      "source": "BBC 中文",
-      "url": "https://www.bbc.com/zhongwen/articles/c07y93jm020o/trad?at_medium=RSS&at_campaign=rss",
-      "summary": "印度洋東南部深約7公里處發現了一個長約1200公里的巨大鯨墓地。",
-      "published": "2026-06-11T05:29:24+00:00",
-      "origin": "BBC 中文"
+      "title": "World markets walk a tightrope between AI stocks and oil shocks",
+      "source": "Gulf Business",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNDRaMTBKMnZxLTNVa09JMDRnU3pOSmJpRVVLSjlSSkJSTkc0dVZsZkpvSHFBRUtHNkRrTGFuMkV6VUxCUWpzMmNFWW9pSktYdTlKYWZjX3IwUEhuREJRb0dkSDczTC1GRVoyVFlRNlBnUmdVZjBPM1pTVEpac2haX0EtTU5pRC05MFhseTZNbDhlY01DanF4Njk5OEZIVlQ0S1dsa092TQ?oc=5",
+      "summary": "World markets walk a tightrope between AI stocks and oil shocks Gulf Business",
+      "published": "2026-06-11T08:00:23+00:00",
+      "origin": "關鍵字「global stock market outlook」"
     },
     {
-      "title": "烏克蘭與中東領袖將赴G7峰會 聚焦俄烏及中東衝突",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606110156.aspx",
-      "summary": "（中央社巴黎10日綜合外電報導）法國總統馬克宏今天表示，烏克蘭總統澤倫斯基將出席下週在法國舉行的七大工業國集團（G7）峰會，以「重建挺烏共識」。此外還將邀請4個阿拉伯國家領袖，就中東衝突進行會談。",
-      "published": "2026-06-11T05:28:50+00:00",
-      "origin": "中央社 國際"
+      "title": "Euro to rise on ECB interest rate hike?",
+      "source": "TorFX News",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNcXhpWWdyNmFaaFpadDFUVnFzZW5kQXlGb3dOdVF1M2lwQmVXckhQMmJqYV9RMndzT3g4Rm00OTkteHdmOFB0WVgyLVZmUksyV0Z5MlhvUlhpY29XZzA2bFFoWHpmdG85QU9oSTZHSmVmM3NnZ0lfMmJoUXg5ZTdOZC1kMGI?oc=5",
+      "summary": "Euro to rise on ECB interest rate hike? TorFX News",
+      "published": "2026-06-11T07:57:42+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "Stock futures rise as U.S. completes strikes against Iran: Live updates",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFB6UGRpbzFzYTdJajVPd0p1aTVIV0haSE5vblRKbTBmMVJPY0VyZ2U3cEF0dC15V3NpbWpRaTd3YUlENHlIQmNNX21nWXlYZVV0RmdIRkhXSVlKeHBrcXpFc3kxdndMUjByZlVEemY5bjZEd3FvUWRv0gF8QVVfeXFMTWw2YUhEMVQ0amdmSGxCNkl5dnFpWmxYLTFvZVVaa1lMZnNlT1NhbjJ0Q1ZsMWEzUnJNaERfOFpWUVhHdGhxV1BrSDJhNGlndTJfSjN4RG9rZFJSeW1oMzBpN1k1MHpheUlmVDZEUVJSVGpjNXpXckVYQzFYcg?oc=5",
+      "summary": "Stock futures rise as U.S. completes strikes against Iran: Live updates CNBCStocks Fall on Inflation, War Worries WSJStock market today: Dow, S&P 500, Nasdaq futures rise as US launches new strikes against Iran Yahoo FinanceWall Street indexes fall more than 1%, hit by tech, Iran war worries ReutersStock Market Today: Dow plunges 950 points to close below 50K mark; S&P 500 skids 1.6% and Nasdaq tumbles 2% on tech rout; investors fret Iran conflict, AI and SpaceX IPO; Oracle results on tap MarketWatch",
+      "published": "2026-06-11T07:48:00+00:00",
+      "origin": "Google 財經頭條"
     },
     {
       "title": "Three U.S. Bank Stocks Where Inflation Turns Into Opportunity",
@@ -211,12 +339,52 @@
       "origin": "關鍵字「Federal Reserve interest rate inflation」"
     },
     {
-      "title": "ECB Rate Decision: What to Expect on June 11",
-      "source": "Morningstar",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWkt5UFpfMVJZcFdtSGRyRE1yc1k4djlQUDhxbDdNWkY5UmoxLU81VVNwVlAxdmpQRWVyUDRpYkhld21TZndJNnNqMXBxZ2dwSlpxYnlhTTNOVUlBamxVMXc0OFYtcC0zS3Yybkd4OUdMV2JMNzdSbHdWcVhUTHN0NjRCZFNwZE1adGc?oc=5",
-      "summary": "ECB Rate Decision: What to Expect on June 11 Morningstar",
-      "published": "2026-06-11T05:37:48+00:00",
+      "title": "Hugo Boss pops 8% after top shareholder Frasers launches $2 billion takeover offer",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPX3JjWlZ6eEFrY0psbXRtS1BEcmFlNUl0QnhRajRYSzRqSWNTZjc2WmpMZGprUWFKekUzUEJEamJKWUhvWDB1ZWJ2cl9LR3hsNXpqZ1lKLVhWYzloR2VXYlpCTVVSRURBRzBrODhvUDBzanU0YzlEemEyZlZldDZXUVNSMHdrQkpsOW9zbm5yUGHSAZYBQVVfeXFMTlVPc1REdjItUy1HTnQ4MUVwTFVTa3F5ZS1jZVN1ek5HcklidWd6SEx2dlBzMkcyVzNlcllSSUtZaTdKT2RETnNyZ3doTkZucGNLRllWNFJzOXRYOWRybjEzQnlIV3k5Xzl0OWtzODlPcTJKVXZkd1ZvZ1hmbU1DT3plWURNeWhQeVJrUlVXdFIxN3lZb1l3?oc=5",
+      "summary": "Hugo Boss pops 8% after top shareholder Frasers launches $2 billion takeover offer CNBCMike Ashley's Frasers offers £1.73bn to buy all of Hugo Boss BBCHugo Boss Targeted for Takeover, Boosting Shares WSJHugo Boss shares rise as it reviews Frasers takeover offer The GuardianMike Ashley’s Frasers offers to buy Hugo Boss in €2.7bn deal Financial Times",
+      "published": "2026-06-11T07:06:13+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "SpaceX Will Destroy Other Stocks. These Could Be the Biggest Losers.",
+      "source": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBNdEFHUFVOVURmVXRhRkxsbmpqTHN0VWwwaksxSFZwWmExLTIxZzBFZ2doWE9rbFg0RFM3OEoxbExLc0MtcDFLX1lGdFRCMk4xRkhNZWVNWGFGQ2xuYzJ1YTlKOVRVUy03N3k4VGs5dFoyeDlXc0gwbQ?oc=5",
+      "summary": "SpaceX Will Destroy Other Stocks. These Could Be the Biggest Losers. Barron'sTom Lee says the tech-stock dip ahead of SpaceX’s IPO will reverse afterward MarketWatchWobble this week partly reflects cash raised to fund additional buys of SpaceX post-IPO (due to Nasdaq 100 and Russell 1000 inclusion) Fundstrat DirectWhen SpaceX Finally Trades, What Happens to the Shadow Stocks? MoomooThis Wall Street veteran says the market has bottomed — here’s what he thinks comes next MSN",
+      "published": "2026-06-11T07:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Fixed income, football and Scotland at the World Cup",
+      "source": "Professional Adviser",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQSnl2RS13THQ3TnlZTDNQeEZOcGN2dVREZV9RaWJZVE9nbHJaUVlqaGhrNXhhdWtya09nWDYwQVVONUQwNXZjbUJrdDZGSG5WZmduYkVlemE4UHZPTUltdlU5ejFENU1jc2Q5R05wSGtVYXluY2NmbUVKMFQ0TlhMRWx3RUFUUUhhc241X0ktY242bllRbFZz?oc=5",
+      "summary": "Fixed income, football and Scotland at the World Cup Professional Adviser",
+      "published": "2026-06-11T06:52:35+00:00",
       "origin": "關鍵字「central bank monetary policy bond market」"
+    },
+    {
+      "title": "Three Indian sailors confirmed dead in US strike off Oman, separate incident reported",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMXJDR0NGVFZXVU9sUlQ4M1piTXh4eEk0bFVIeFJCMUVORXVYOHB6b0IwRl9WeTBYZGEtRnhDcWtzcHE3NjZfdGJmeTdfZWNfaWNDYXlRREh4VTVsRFhCeDhQTU4tUW1JRHNuTjljMmVCcFNTbDJlMVlyNmhyclA4R2h4MVQyZFhYaUVSTXhkbEJpNUJJVEpGYkxKMmhDeEZlRkZzMjdVejl0NVNCTmRMRk1Xa0dfWXV0UC13Ymx5NU9Xc2M?oc=5",
+      "summary": "Three Indian sailors confirmed dead in US strike off Oman, separate incident reported ReutersThree Indian sailors killed by US missile near Oman, as US and Iran exchange strikes BBC3 Indian sailors killed in U.S. strike on oil tanker, minister says YahooUS aircraft fires at, disables another oil tanker in Gulf of Oman Navy TimesIran-Linked Oil Tanker Suffers Fire in Gulf of Oman Incident Bloomberg.com",
+      "published": "2026-06-11T06:28:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "‘South Korea’s Amazon’ hit with record fine over data breach",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQSTZQUU96VXVTUFRzcks5UmZ5UkIxSWVwaFU5ZFpFUi15cVd2M2hPVGtLbTJyQVlIZXV6ek5LZnBJQjJuSTQ1YnJfODlnOEs3R2lEakwwRFk1eWNPblVxLV83aUNPRmdsVXhDLWI1Q3A2QVJNYzN3bDhGblBaTjNCdm1FOEo?oc=5",
+      "summary": "‘South Korea’s Amazon’ hit with record fine over data breach Financial Times‘Amazon.com of South Korea’ Is Fined a Record $409 Million The New York TimesKorea fines e-commerce giant $400m over data breach affecting millions BBCSouth Korea Fines Coupang $410 Million Over Data-Law Breaches WSJSouth Korea fines Coupang $409 mln in country's largest data breach penalty Reuters",
+      "published": "2026-06-11T06:21:11+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "U.S. launches new strikes on Iran, hours after Trump issued warning",
+      "source": "The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQW53TFRnTktfUVJtSF9hRmxEXzN6MnlubDE0Q0haU3FHX2h6VlhjQ1BKR21GdjF1OEF1aW1Gdl9SZlFTclZGTzFtdk15eWFoc2VKZEljRWY0UUN5QmxkZHFnNFFkT1Znclh1amVUdWlCbXBJZTl0WmZGSUV5d3g0QnZDQm16Y2lIcGN3Y0xDNXZncGMzMlpYZjk0Z1I2amhkbnVfaVdIUTZUeWU2?oc=5",
+      "summary": "U.S. launches new strikes on Iran, hours after Trump issued warning The Washington PostLive updates: U.S. and Iran trade attacks again after Trump pledges Tehran will \"pay the price\" for not accepting deal CBS NewsU.S. launches a second day of strikes on Iran and Iran fires back at Gulf States NPRTrump boils over after Tehran kept him waiting AxiosThe Memo: Trump faces slippage back toward war in Iran The Hill",
+      "published": "2026-06-11T06:14:53+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "Inflation Jumps as Iran War Intensifies Price Squeeze",
@@ -227,226 +395,65 @@
       "origin": "關鍵字「Federal Reserve interest rate inflation」"
     },
     {
-      "title": "Gold prices rebound from six-month low to $4,079.88 as investors eye key U.S. inflation report",
-      "source": "Economy Middle East",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPVFlzcER6Q0hhV1pwalpTX21lLWpWaG1wZTRaUnI3ckFzaWpveWs0V2ZSOG13TTdCZ2lOdy05T3JDN1BHVjZKSzR5dUZ1ZzRlS2oyeUFKVjNuQWtHQlNSYzMyMUxaVmRrZEhqZTBvcHo2Vy1kR0Y0RFV1Q2FLN2U4MUh5ZHJkME9uMzFfMU5yQi1IM0pRT3d5bjFmYWpCaVFaQUdaRTZ0MmZPNXMwdjVsZE95dHNHVWp3dVE0NDY4VnhkbTlSNUE?oc=5",
-      "summary": "Gold prices rebound from six-month low to $4,079.88 as investors eye key U.S. inflation report Economy Middle East",
-      "published": "2026-06-11T05:11:17+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "A new wave of anti-immigrant violence hits U.K. as riots convulse Belfast",
-      "source": "The Washington Post",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOVnpLXzlLWTBYNDdRVmppb3VVUzN4U3F4RVotV0JiUTlhOWRHUVhvemh3OHVDdHdTREpyMWItU3FIZWQxSC1YYlBSMU55QmRwMk1pQ0lKRDFZeDZGRG84WnZRZFVLekJvOWs2TFlLZjMxVVlrWW5xVVFjQnNqV2xiNmJLVDE3Y3dJdTVvM0R1Z0g2Y0pHVEpwSFdsWFJPYkZoaUxKWXl6NVdQZnZTa3pIb19ac0Jid3BZVElB?oc=5",
-      "summary": "A new wave of anti-immigrant violence hits U.K. as riots convulse Belfast The Washington PostPolice use water cannon against rioters in Northern Ireland The GuardianUK minister says violence in Northern Ireland is racist thuggery ReutersBelfast knife attack latest: Water cannon fired in latest disorder after - follow live BBCRioter sets himself on fire while throwing petrol bomb and 12 police officers injured during second night of violence across NI Belfast Telegraph",
-      "published": "2026-06-11T04:46:43+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "US inflation surges to three-year high of 4.2pc",
-      "source": "Capital FM Kenya",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYXU2Qkk1aUtsZDF2SUdIVU9mZk1aR093YUoycktFTDZxWnJ2enFjTnFXYVhrYmhfWE8xQ3h1VGJyWTN2VUszN1VxSVR4SzE1aWhGRnI1aEp6MDMzRkRYLUVkMjM4TUdaalFieVJUQWZJNHNWY3pOQlBvWU9tZTJKV0VHRTFhYWIteU9NUWZtWmwwWkpIb2E4bA?oc=5",
-      "summary": "US inflation surges to three-year high of 4.2pc Capital FM Kenya",
-      "published": "2026-06-11T04:40:15+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Inflation Hits Three-Year High, but J.P. Morgan Asset Management Expects Fed to Hold Steady",
-      "source": "NAI500",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTm8wbVVENWJHTnpERmtvYm85NFQ4Wjhta0FNLXZ4LVQxM3o0SHh4S2pUb0lhTnVlRUtRQk9zWEswWjM4X0lvLUtoWGdrUnJ6ek4yazd2VVN0SGdOb0dzTGZjdmFidExRTzNucDZMdmk3ei1NRENfT2lJa3NjbXgyS2JtSzdXamtDS3p0bGktaUxzbEhZeFVDc0NBVlFlWEZDdTZHU3ZXYXZQeXV1ZTRaZ1lQQ1VONVdwYnJKc3lObw?oc=5",
-      "summary": "Inflation Hits Three-Year High, but J.P. Morgan Asset Management Expects Fed to Hold Steady NAI500",
-      "published": "2026-06-11T04:37:31+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "The War in Ukraine Has Now Gone On Longer Than World War I",
-      "source": "The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPS3BCdEJRNk4xTnpES3pZX2pKalNEUWV2QllWSEFzZ3R1UUI2MTF3c1ZmUGZBS1Q5TkFmLXJjdDFHbUhiRXVydXZDcFZOejFCa3RzclFvX01xWjhpc3g2N2RkcTlidG05eVJmVkdMX2hWeW1iSEhveGR1LV8zQjVYMjdEME9uQQ?oc=5",
-      "summary": "The War in Ukraine Has Now Gone On Longer Than World War I The New York TimesHow a three-day invasion has surpassed World War One and threatens global catastrophe SMH.com.auUkraine and the War for Memory Center for European Policy Analysis (CEPA)Ukrainians Will Never Be the Same persuasion.communityUkraine war situation update | 23 – 29 May 2026 ACLED",
-      "published": "2026-06-11T04:01:16+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Anthropic’s Dario Amodei has just one direct report",
-      "source": "TechCrunch",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNYmhPVnhlckZhRG00dGtDN1FQN0tScGNHaU80YU5GN21Nd0RJSVlQWGxyX2FZOFVzTmFzODktOWQ1ajZ4VENpaUtBRkRQc2FKclVxWXhFb0NXci1DdHNVQUFiV3RRSW9weDdCVThUMGpLOHBfREh3VTFmVE84RVpyWHhpaGtYc3ppazFWSE53?oc=5",
-      "summary": "Anthropic’s Dario Amodei has just one direct report TechCrunchAnthropic CEO Dario Amodei Has Only One Direct Report Bloomberg.comAnthropic’s CEO Has Only 1 Direct Report. Nvidia’s Jensen Huang Has 60. Here’s Why inc.comAnthropic CEO Dario Amodei says culture, not products, will win the AI race—he spends 40% on it FortuneDario Amodei delegates operations to his sister and focuses on AI strategy mezha.net",
-      "published": "2026-06-11T03:53:06+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Did China's Xi visit North Korea because an emboldened Kim Jong Un wants \"to confront the U.S.\"?",
-      "source": "CBS News",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMV90aS1KWU1RdmRhM3ZpUUFfTmV1LUMzOWFYX1RyWVhDbW9YTG5PeGFObU1zUG41aXRYRG43V2t1ZkNwQkF3ckM4eU1OTzdURUtlRjRWc2x2a0FnUUduMHhDWHpBcDFfM2p1OC05REg3Vjd5UXlHaEx5Qk1DbVVHbUhEcjNzY2wwZ3loQ3J4dkYxN3RSc3dWMWpNQlNWUnRqZXdhTlhUVGR0UQ?oc=5",
-      "summary": "Did China's Xi visit North Korea because an emboldened Kim Jong Un wants \"to confront the U.S.\"? CBS NewsNorth Korea, China claim wins from Xi visit, but limits remain ReutersBehind the Pageantry in Pyongyang With Xi and Kim The New York TimesChina re‑centers North Korea ties as nuclear silence reshapes balance NPRXi Cements Sway Over North Korea as Kim Names China Top Priority Bloomberg.com",
-      "published": "2026-06-11T03:43:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "OpenAI mulls slashing prices as it competes with Anthropic for users: WSJ",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWTVaQ2JmSTJ2dG1yVC1nSHpNbWJqOVlUV2dmMW1vZ2d6VmlFN1ZDRTFOVS04SDZQM01CcDZIRS1WWDluTE5hYzJBV25NZlBKMndtTmRHRG5DZmphLWEydEhmM0g5cEVHcjlvNTBueWpZRmFpcDNPekV2OU9hWV9BMzJsd3NLNWEwcFpydDFQX1JZc0I2Xy1ZcktIZDlxV2RramNQT1F5WnXSAa4BQVVfeXFMTTA0akxwVmdMa0RybEpINXVxTUxTSkJWRWNnY3pDUXN2ZDAyaW53dkRvVG1QM3hQSWt4aFlQTnJwWkVoYUdzd3F3cWFybHA5cE9feHQyTlhHc0pDaFhlMVVTWTBRU3hLRHlWamFsQldzTnpHOWRXcjREbG9UcTRTRGZsLTFhYTlnQWQ4OFpUTEZkR21mR3VsdGpRbmloN01vT0ZxTGl6dEtkM09fZS1n?oc=5",
-      "summary": "OpenAI mulls slashing prices as it competes with Anthropic for users: WSJ CNBCExclusive | OpenAI Considers Drastic Price Cuts, Anticipating War for Users With Anthropic WSJOpenAI considers drastic token price cuts to counter Anthropic: WSJ (OPENAI:Private) Seeking AlphaOpenAI considers drastic price cuts, anticipating war for users with Anthropic, WSJ reports Yahoo FinanceinvestingLive Asia-Pacific FX news wrap: OpenAI is considering major price cuts (WSJ) investingLive",
-      "published": "2026-06-11T03:24:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Dow Jones Futures Rise, Oil Pops, Oracle Dives; SpaceX IPO On Launch Pad",
-      "source": "Investor's Business Daily",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd0lCTFNQS2J5djhfQjMyU0F1V1RwUU45UmVvdlVtRmUzWWVZcHBlaDVtZDl0Vkd5SXRuMjgyTXRKQzQtOTNLck1OalNlcWw4bWxKWUtIQUF4Q1FxZF9pWlY5T0NOQjRySHVYSU15eUs0NTNXd0hxb2JpRmV1S3FSMjAzNDZIazgxUmZtdnJLNFNiUzJoZU1CQ19xSDJXd3JXXzI3aXJ6Qlk0Qmk5RWRxY2tDUG5CM0dPdUE?oc=5",
-      "summary": "Dow Jones Futures Rise, Oil Pops, Oracle Dives; SpaceX IPO On Launch Pad Investor's Business DailyStock futures rise as U.S. completes strikes against Iran: Live updates CNBCStocks Fall on Inflation, War Worries WSJStock market today: Dow sinks 800 points, S&P 500, Nasdaq slide as CPI report lands, US-Iran truce teeters Yahoo FinanceWall Street indexes fall more than 1%, hit by tech, Iran war worries Reuters",
-      "published": "2026-06-11T03:14:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Anthropic Walks Back Policy That Could Have ‘Sabotaged’ AI Researchers Using Claude",
-      "source": "WIRED",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxORnEtMHRDdUF6VkFPSkE5MkpSQ3pKNWdvWGpCd3dDU0dTTEE0UVF0aVhfOC0zaHRNYWdDWXFpQklCOXVRbEEwT19ZNVN3ZnVjRWRsejhMU09scUh1eTdTd2dGa3ltUXJQUHd4ZW8tMWJLU3FjUkRPYW5fQVRSUjJfZ2JnOTQ0NWFDb3NSYTFNa2ZaX1lRV2tmT1BmQmFlclFuT2NZ?oc=5",
-      "summary": "Anthropic Walks Back Policy That Could Have ‘Sabotaged’ AI Researchers Using Claude WIREDClaude Fable 5 and Claude Mythos 5 AnthropicAnthropic’s New Fable AI Model Is Met With User Backlash Over Restrictions WSJClaude Fable 5 available today in Microsoft Foundry: Powering the next era of autonomous agents Microsoft AzureAnthropic Says 'We Made the Wrong Tradeoff' in New Model Guardrails Business Insider",
-      "published": "2026-06-11T03:11:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Gold slides 4% as Middle East escalation fuels inflation and rate-hike concerns",
-      "source": "KITCO",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOTXUzbEREWk9VRDNhNnlsdTJNZ2N2RUsxSVpmU0xvclNkT2EwY1hQNWVUeklzNFVQbnA2QkEtbmFQZE4za25KR0xhR09KTDRGZzRwcG5VU1F5bFpqU0hxQTlrLWlLTEZHUnA3cFh4Q3VTMVFXcEJSVWJyaTRtSjVHeGpNRjBnbWN6c19ETUtmSGNfb1JXc3lZMnVNMDhxQzlXS1NMdWFFS3JDTUZYSENOOGNjcWh2QmM?oc=5",
-      "summary": "Gold slides 4% as Middle East escalation fuels inflation and rate-hike concerns KITCO",
-      "published": "2026-06-11T02:31:23+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
       "title": "Anthropic CEO says government should block dangerous AI",
       "source": "Axios",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPUGFPeVR2VldXM21VWDNBRFdaVEVtVDNwZDBCcnhzWmp1a3p2YTN3eGhUTE13TTRZMzhpckkza0QzRUxaZkJLQ3Q4UnY1U1JweTluZ19zNGdhZndyZW9SQ2JSWGd5dWRJQnJkb1ZhY0pCWmkwaTFkZnVZdTRLYnowMWNR?oc=5",
-      "summary": "Anthropic CEO says government should block dangerous AI AxiosPolicy on the AI Exponential AnthropicWill artificial intelligence soon escape human control? The EconomistAnthropic CEO Says Government Should Be Able to Block New Models Bloomberg.comAnthropic CEO says AI growth is exponential. Anthropic research says otherwise. Mashable",
-      "published": "2026-06-11T02:24:49+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Deadly Indonesia floods wiped out at least 7% of rare orangutan population, report says",
-      "source": "Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPYk54WFRYSmNnaTFCQ00yVFdSTUZGLUdqd0NSTFlPbHFjSWdqby1iNFhYd1lhSG9nZUFMNy1xejBaSzcyei1RYUc0S2RyRTBRRnhPdk91S1k0YUg5em9OUDB3ZF9UUkYtM3lIalNHR3NhWU4xcXVhV2dmbmU1aEc4QTBEci1YSTliYVAzVnd4WQ?oc=5",
-      "summary": "Deadly Indonesia floods wiped out at least 7% of rare orangutan population, report says YahooFour days of extreme rain killed 7% of world's rarest orangutans, study says BBCFour days of extreme rain in Indonesia killed 7% of world’s rarest great apes, study finds The GuardianIndonesia Landslides Devastated Endangered Orangutans, Study Finds The New York TimesCyclone's Toll: The Endangered Tapanuli Orangutan Faces Extinction Threat Devdiscourse",
-      "published": "2026-06-11T02:08:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Gold hits six-month low as fresh US strikes on Iran fuel oil rally, inflation fears",
-      "source": "Firstpost",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSGN1VHI0aHY3MDI5V1pDY3BnVWoweEp3dzFTMG1JUzRhZWRUR2dXa205bFgtbkhaUHdJMHJoLXNhb3F3WDZfc0lCeXk5ZUF0TDVXWlhDZDJGRXJfSjFEYkJjeWVjUS1TZWdEeGNnTndDWm1oNU5UdHhJVWUtSjVua0N1cjRTSUtueVpGTlh4bXJyU2hnN19FU3dZbE9obGFHaWU4RjA2LU1MRko0d1ByWW8xekJ2UVIxcG5xX0M5M2RoR3hsZmh5edIBzgFBVV95cUxNazhvQ3Q0aXdhYm44d2NCTUc0SEJuMlJXU2s0cE9JM2JzbXNkdG9WSWZONy1PMmY1Z3NPdzJxWFFJY19EOVFUSmlKeGFfdDR3ODYtTWtPdjJRc2JEN1dRUEtvSEVlMEpsaXVDbHJMUmk3Z1lQbHo1cmp6ak9QUmF4bjBaTFdzSTBQZW43R09PRnRhR1lONmMxVzlxcmJyWUNaeDlCVmY1ZTZaU3pvQk9CRXRBZHR6M0xNRnMxbEJzQnpBcXB4WEx3TVNsREZzZw?oc=5",
-      "summary": "Gold hits six-month low as fresh US strikes on Iran fuel oil rally, inflation fears Firstpost",
-      "published": "2026-06-11T01:51:37+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Car bomb kills senior Russian military official near Moscow",
-      "source": "The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQaFVQeXRfcXMxVmVWN0NWQW5oclMyUmFjMmwyYVR0NFd5engzaGh5ODdzci1wa0tHRnE2RlNMWVNVekdPaVc1Q1JES1NWdERpSjJfSWhjOVlHT2dPNHpVeG1rYW92SGQzMEJHMWhmU1RnYjVERlFreVVYS0UwVFdQSjF6REZCcmdxUXY2MHVyWVpIVUt6X2Rvc3lEMGxPNFBaOUNTYUxDMGU?oc=5",
-      "summary": "Car bomb kills senior Russian military official near Moscow The GuardianSenior Russian Military Official Is Killed in Car Explosion Near Moscow The New York TimesUkraine war briefing: Moscow car bomb kills Russian ammunition chief – reports The GuardianRussia probes two car bombs in Moscow NBC NewsRussia probes two car bombing incidents, one military official dead The Jerusalem Post",
-      "published": "2026-06-11T01:31:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "CNBC Daily Open: Trump expresses 'love' for inflation print and anger at Iran",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdndIOEVuMGxka2dpNW9nVWlpMmdhMHZVN0hMM192RDRmYjJ2RGJxT2x5MVhicmxZNkNYLUJUQzI3cTMyWlpTNDROaGFOQ1lBNFdJbEdMNlowSkJJdjNfV1JRRUptTTZMcWdVc29Rc0tYT01rVHA2QjM3ZmdkeGVqWXhmbTZmOGJ5NEdSSmNyWnNva1c2ZklqTG05YmxGN2w4U0ZSQnRIRlZhd08tSzhuOdIBtgFBVV95cUxQdHptdEtoU0duWW4waDI3QmNJMU5ndDI3RHlaY2hyYkZBOUVHVUpLSk9kZEhmYllPQUZlTmVfNjVLU1d0Zzd6Z2ZMRmN4bHZJQ3NXZmxqYlBNYWR5c3hiUkNkUW5lRm5RWDJLUFFOUFJiNmxrMEtHaUgyWWhPdU1qTW5oWmRDYVBxOTVTZlBXRTdqa0xyeWJGMDFDVXRHenZQdHUzMWZaRU5rd1BjQnRvQjZ0Q2MzZw?oc=5",
-      "summary": "CNBC Daily Open: Trump expresses 'love' for inflation print and anger at Iran CNBCTrump says 'I love the inflation' after consumer price index hits 3-year high CNBC'I love the inflation,' Trump says as prices rise amid Iran war Reuters'The die has been cast': Trump allies fear it's too late to reverse economic woes PoliticoTrump inflation comment: A ‘Tower of Babel’ moment, Bill O’Reilly says Yahoo",
-      "published": "2026-06-11T01:27:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Ringgit holds firm despite US inflation shock as markets brace for Federal Reserve decision",
-      "source": "The Vibes",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOakZ3b3VsRHhIUGdlTDlUMGM5ZlVtTkxib043Z2EyWC1fRzdRTlNsSTdJUGRpYjE0NVY4XzZ4UGFuZ0VGZEpwZVdBb0hsMC1rWV92VGZ0X01KZjJvbVJEdnRCcDA3T1FrQi1Bb1VvV3pnSzhySFJmTlV4SHQ0WUxzY19WV0FDWWJJSzN2QVowQ0lDalNmRmJkM1Nldi0ycnVRMERUaEJmQm54bkFqU0hHY2tURm01dnB3V2llQi1xRGJQLWNYakd3ZUF5eHpDWExoV1NJc0JSRlc?oc=5",
-      "summary": "Ringgit holds firm despite US inflation shock as markets brace for Federal Reserve decision The Vibes",
-      "published": "2026-06-11T01:10:00+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Shares retreat as techs extend losses, US strikes on Iran lift oil",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1iNlU3bUZXWVJpaVhJRXMwVG1LcUMyUmE1UWFvWTVlQnhqODM1bUZsM2txQmJZRzI4NUNYVlJFRVBkcnVpZHVLQnZaRDhGOV9xVTVnSU5PdEhfdVZJVm40ZU9SaExNWTFvMGZWWEI2dU1wTEwtTEZoVGxkTQ?oc=5",
-      "summary": "Shares retreat as techs extend losses, US strikes on Iran lift oil ReutersAsian Stocks to Fall, Oil Rises as US Strikes Iran: Markets Wrap Bloomberg.comAsia stocks recoup early losses as tech rout cools; US-Iran jitters persist Investing.comAsia chip-linked shares recover after U.S. peers bounce back CNBCStock market jitters remain amid tech fears and renewed Middle East attacks BBC",
-      "published": "2026-06-11T01:03:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Oil rises more than $1 as escalation in US-Iran strikes unnerve traders",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPQUJ5d0JtNmtjVVVwbXhZWS1PS0w4VFRteGVpci1WWnZsRWRKMjFuVWFIX21faGxETGNzZGdKQlhIZ3VLZ1ZFTzUxNWZVTlhXNFRwbmtCWjRvZVp3UG1Tc08teWd3SkgxRXBOc3l0TDlUS1NWdHBhRnlWNDdJMjZlYmJvU3RfVmdBMjgwRDA3U2EtUDdEeGNKNXkxazJuZGR1OWgyLU1qZmdjb1BSUWY3VmZNdEFCMDBTUl9YbnFR?oc=5",
-      "summary": "Oil rises more than $1 as escalation in US-Iran strikes unnerve traders ReutersOil Prices Rise as U.S. Launches New Attack on Iran The New York TimesOil jumps as U.S. fresh strikes on Iran raise worries of extended disruption to energy flows CNBCOil Steady as Israel and Iran Halt Hostilities That Risked Talks Bloomberg.comOil Futures Gain as Middle East Tensions Rise Again WSJ",
-      "published": "2026-06-11T00:33:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Taiwan says its sovereignty cannot be 'violated', as China ends coast guard patrol",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeXh4alRZVXE2bHpfODVBUFlSRWYyRlpXSkx2eUFrQnM3UWhfNHI5NGFtb0g5WG1wWHpjSG5xN0NTWms5X1hqZmRnX2Z5MV80SHlWVDNEOGN6eGNRSFJHeGJ4dVItb196YUFpN0otTXJXQXA5akh2RDd5OEdnZFFTa0JaQUtVblRRbWp1MkdaSlQ4SFNYUjlxUk1KcFBiRTVUMVQxLVluakVNeTBFSG5GNkxRMzByaktBc2xycEt0WnVPUQ?oc=5",
-      "summary": "Taiwan says its sovereignty cannot be 'violated', as China ends coast guard patrol ReutersChina Presses Taiwan by Querying Foreign Ships for First Time Bloomberg.comChinese Flotilla Surges East of Taiwan Amid Spat with the Philippines, Japan USNI NewsBeijing detects suspected Japanese spy planes near Taiwan South China Morning PostThe Taiwan crisis nobody is watching Australian Broadcasting Corporation",
-      "published": "2026-06-11T00:24:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Trump says he 'loves the inflation' as US prices rise at fastest rate in three years",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9kcHJ2M1lvRzZMQVhoT216aTFBVjNXQ1EyUkEzaWtnWWE4YTczb05vRWRhQXR1dFlZUHFaZkF0UXZWalVZQjNMZVJmZE9WcllOQUhjUy1MbmhTZw?oc=5",
-      "summary": "Trump says he 'loves the inflation' as US prices rise at fastest rate in three years BBC",
-      "published": "2026-06-11T00:02:45+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Parabilis now the largest VC-backed biotech IPO",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMC1FMkxUSTl6REVwZ3RmRkpWclFOOVY0TXJpNU8zWlNmSWZZdHF3Mm9ISXFlRmk1aVZ6cWxuYi12TDFxTnpwR0dkM2VPejZEMW9YVm9NbW9DSFlOUldzWWFpMnBndklqTHZBWGpuLTdEaHgxUjBfT1I3R0RKUDdFcHF2UlAxbGJkTXBzWnNDbVBhem9lUmtGaVhFQ2ZWd3daS1E?oc=5",
-      "summary": "Parabilis now the largest VC-backed biotech IPO Yahoo FinanceDrugmaker Parabilis Soars 67% After $745 Million IPO, Placement Bloomberg.comCancer-focused Parabilis’ upsized $670M IPO breaks new record for biotechs Fierce Biotech'Going for our own moonshot': Parabilis CEO on biotech's record IPO Endpoints NewsParabilis could set a new record with updated IPO plans FirstWord Pharma",
-      "published": "2026-06-10T23:59:29+00:00",
+      "summary": "Anthropic CEO says government should block dangerous AI AxiosExclusive: Anthropic CEO calls for stronger regulation of AI ABC News - Breaking News, Latest News and VideosAnthropic CEO Says Government Should Be Able to Block New Models Bloomberg.comPolicy on the AI Exponential AnthropicAnthropic backs mandatory testing for frontier AI models Politico",
+      "published": "2026-06-11T05:25:43+00:00",
       "origin": "Google 財經頭條"
     }
   ],
   "news_span": {
     "news_count": 50,
-    "first_seen": "2026-06-10",
+    "first_seen": "2026-06-11",
     "last_seen": "2026-06-11"
   },
   "strategic_analysis": {
-    "geo_military": "今日地緣政治與軍事戰略焦點集中於中東地區的緊張局勢升級，特別是美國與伊朗之間的衝突加劇。伊朗轟炸美軍基地，以及美國對伊朗發動新的襲擊，導致美伊之間原先的停火協議嚴重動搖，並有演變成全面衝突的風險。此類衝突的升級，不僅會直接影響中東地區的穩定性，更可能透過油價上漲，對全球經濟造成衝擊。此外，俄烏戰爭已持續超過第一次世界大戰的時長，顯示長期化趨勢，對全球糧食、能源供應鏈和地緣政治格局持續產生深遠影響。中國國家主席習近平訪問北韓，以及中國海警在台灣周邊結束巡邏，雖台灣方面聲明主權不容侵犯，但此舉仍顯示區域強權關係的微妙變化及潛在的緊張。英國北愛爾蘭的反移民暴力事件，也反映出西方社會內部的社會矛盾與政治不穩定性。",
-    "supply_chain": "中東地緣政治風險的劇增，特別是美國與伊朗衝突的升級，直接導致原油價格上漲。油價波動會傳導至全球供應鏈，提高運輸成本，進而推升各類商品的生產成本，加劇全球通膨壓力。此外，烏克蘭戰爭的長期化，持續影響全球糧食與能源供應，進一步對供應鏈穩定性構成挑戰。在科技產業方面，儘管台股因美伊衝突而震盪，但AI相關產業如網通廠智邦與中磊，仍積極擴充產能，顯示AI應用帶動的寬頻基礎建設升級需求依然強勁。然而，美國領事館興建案爆發的外籍勞工剝削爭議，也提醒我們全球供應鏈中潛在的勞工權益問題，可能引發國際社會的關注與制裁，進而影響相關企業的營運。",
-    "macro_economy": "全球總體經濟面臨顯著的通膨壓力與利率政策挑戰。美國5月CPI年增率大漲4.2%，創三年新高，且市場預期通膨將因中東戰事升級而進一步加劇。儘管通膨數據火熱，摩根大通資產管理公司預期聯準會將維持利率穩定，但市場對於聯準會後續升息的預期仍可能升溫。歐洲央行（ECB）的利率決策也將是市場關注的焦點。通膨上升和潛在的升息預期，對股市構成壓力，特別是科技股。台股受美伊地緣政治風險及通膨擔憂影響，早盤一度重挫，但在AI股與主動式ETF的買盤支撐下，跌幅收斂。黃金價格在通膨和升息擔憂下，一度從六個月低點反彈，但隨後因中東衝突加劇引發的通膨及升息疑慮再次下跌。債市方面，高通膨環境通常不利於債券表現，因實質收益率可能受侵蝕。整體而言，投資人需密切關注各國央行的貨幣政策動向，以及通膨數據的變化，以評估其對不同資產類別的影響。",
-    "blind_spots_and_kpi": "全球大局觀下，台灣的盲點可能在於過度聚焦於自身科技產業的表現，而忽略了國際地緣政治與總體經濟的深層連動性。雖然AI產業為台股提供了支撐，但若全球主要經濟體因通膨失控或地緣衝突升級而陷入衰退，台灣的出口導向型經濟將難以倖免。對台灣投資者而言，不應僅關注單一產業或股票表現，而需將視野擴展至全球宏觀風險。應緊盯的領先指標包括：\n1. **全球原油價格走勢 (WTI或布蘭特原油期貨):** 中東衝突直接影響油價，油價是全球通膨的重要先行指標，其波動將影響企業成本與消費者購買力。\n2. **主要經濟體(如美國)的通膨數據 (核心CPI、PCE):** 觀察通膨是否持續加速或出現拐點，這將直接影響聯準會的利率決策，進而牽動全球資金流向。\n3. **全球主要央行(聯準會、歐洲央行)的利率決策與前瞻指引:** 利率政策是影響股市、債市、匯市的關鍵因素，其變化將重塑資產定價與配置策略。",
-    "asset_allocation_impact": "鑑於當前地緣政治風險升溫、全球通膨壓力居高不下以及各國央行貨幣政策的不確定性，對資產配置的影響如下：\n- **股市：** 高通膨和潛在的升息預期對科技成長股構成壓力，因為其未來現金流的現值會因利率上升而折損。然而，部分與AI基礎設施相關的網通或半導體龍頭（如台積電）若能持續受益於產業趨勢，仍可能具備韌性。波動性預計將增加，建議降低整體股票曝險，或轉向低波動、高股息的價值型股票，以及具備定價能力的抗通膨產業。\n- **債市：** 高通膨環境對固定收益債券不利，實質收益率可能被侵蝕。若聯準會被迫升息以抑制通膨，債券價格將面臨下跌壓力。建議縮短債券存續期，或考慮抗通膨債券（TIPS）以對沖風險。\n- **原物料：** 中東衝突導致油價上漲，顯示原物料商品可能成為短期內對沖地緣政治風險和通膨的工具。黃金作為傳統避險資產，在地緣衝突升溫和通膨擔憂下可能獲得支撐，但若升息預期強化，黃金的持有成本上升，其漲幅可能受限。\n- **基金與資產配置：** 建議投資者採取更為防禦性的資產配置策略。這可能包括增加現金部位，多元化配置於不同資產類別，並考慮投資於抗通膨資產（如房地產、大宗商品相關基金）。對於股票基金，可考慮配置於能源、公用事業等防禦性板塊，或選擇具有強大護城河和穩定現金流的企業。同時，應密切關注全球宏觀經濟數據和央行政策，靈活調整投資組合。"
+    "geo_military": "今日地緣政治與軍事戰略焦點集中於中東地區緊張局勢升級，特別是美國與伊朗之間的衝突。多則新聞指出，美國對伊朗發動了新的打擊，導致油價上漲，同時也造成商船在阿曼外海遭美軍開火，導致印度籍船員身亡。此舉加劇了市場對中東不穩定的擔憂，並可能對全球能源供應造成影響，進而推升原油價格。此外，索羅門群島與中國的安全協議因保密條款無法公開，使得美國和澳洲對中國在南太平洋的軍事部署疑慮加深，顯示印太區域的戰略競爭持續升溫。美中科技戰方面，FBI查獲中國利用網站招募美國公民竊取機密，以及中國企業在AI發展中悄然裁員以規避社會動盪的報導，凸顯了兩國在情報、科技與經濟領域的全面對抗。台灣方面，陸委會對中共滲透美國僑界、幼兒園教唱中共歌曲以及中國在台灣東部海域執法等事件表達高度警惕，表明台海局勢持續面臨中共的步步進逼，需沉著應對。",
+    "supply_chain": "原物料與供應鏈方面，伊朗局勢的升級直接導致油價上漲，對全球能源供應鏈構成壓力。銅價也因美國與伊朗的衝突而下跌，顯示地緣政治緊張對大宗商品市場的直接衝擊。全球半導體產業方面，2026年第一季全球半導體製造設備銷售額創歷史新高，季增1%、年增14%，顯示半導體先進製造與封裝投資依然強勁。台灣的無塵室廠漢唐在手訂單高達1939億元，半導體設備廠辛耘訂單展望達2028年，全新公司擬購置土地啟動新廠計畫，這些都表明半導體產業鏈的核心環節仍處於擴張階段，對全球高科技供應鏈的穩定性至關重要。然而，中國企業在AI發展中為避免社會動盪而悄然裁員，也可能影響其在全球AI供應鏈中的人力資源配置和研發進程。",
+    "macro_economy": "總體經濟與貨幣定價方面，美國5月CPI大漲4.2%，創下三年新高，通膨壓力顯著。市場對聯準會升息的預期隨之升高，儘管有聲音認為聯準會可能抵抗升息壓力，但通膨數據的衝擊已導致美股和黃金價格下跌，債券殖利率也維持穩定，顯示市場對利率政策走向的敏感。歐洲央行（ECB）也面臨利率決策，歐元有望因升息而走強。馬來西亞80%人口成為「月光族」，反映了薪資漲幅難以追上物價上漲的全球性通膨壓力對民生消費的影響。台灣股市表現強勁，5月證交稅年增2.9倍，實徵704億元再創單月新高，累計前5月證交稅亦為同期新高，顯示台股交易活絡。然而，前5月土地增值稅年減8.9%，個人房地合一稅年減7.6%，契稅年增6.9%，房市相關稅目增減互見，可能反映房市交易結構的變化或部分降溫。",
+    "blind_spots_and_kpi": "全球大局觀下，當前市場面臨的核心矛盾是地緣政治風險（尤其是中東衝突）引發的原油價格上漲與全球通膨壓力，以及主要經濟體央行（特別是聯準會）對利率政策的權衡。美國通膨數據飆升，為聯準會帶來巨大壓力，市場正密切關注其下一步行動。若聯準會被迫升息，將對全球股市、債市、新興市場基金和資產配置造成顯著衝擊。資產配置上，投資者可能需要增持抗通膨資產如黃金或部分原物料，同時審慎評估高成長科技股的估值風險。債市方面，升息預期將壓低債券價格，推高殖利率。台灣的盲點在於，儘管半導體產業表現強勁，但高度依賴單一產業的結構性風險依然存在，且地緣政治緊張情勢對台灣的影響可能超乎預期，特別是中國在台灣周邊的軍事行動與對台滲透。應緊盯的領先指標包括：1. **美國核心CPI數據**：持續高企的通膨數據將迫使聯準會採取更激進的貨幣政策。2. **原油價格走勢**：中東局勢的發展將直接影響原油供應和價格，進而傳導至全球通膨。3. **全球半導體設備訂單增長率**：作為全球經濟景氣的風向球，半導體產業的投資動態能反映未來科技發展和經濟活力。4. **美元指數**：反映全球資金流向與避險情緒，與聯準會政策和地緣政治風險緊密相關。"
   },
   "laymans_dictionary": [
     {
       "term": "CPI (Consumer Price Index)",
-      "explanation": "CPI就像是我們日常生活中買東西的「物價漲幅計」。它會統計一籃子商品和服務（例如食物、衣服、房租、交通費等等）的價格變化，然後告訴我們這些東西的平均價格是漲了還是跌了，漲了多少百分比。如果CPI很高，就表示物價漲得很快，我們的錢就變得比較不值錢了。"
-    },
-    {
-      "term": "通膨 (Inflation)",
-      "explanation": "通膨就是「錢變薄了」的現象。當市場上的錢太多，或者商品變少，導致物價普遍上漲，這時候同樣的錢能買到的東西就變少了。想像一下，以前100元可以買一個便當，現在可能只能買半個，這就是通膨的感覺。"
+      "explanation": "想像你每個月固定買菜、搭車、看電影，CPI就是把這些你常常消費的東西的價格加起來，看看這個月比上個月貴了多少。如果CPI漲很多，就代表物價漲很快，你的錢變薄了。"
     },
     {
       "term": "聯準會 (Federal Reserve, Fed)",
-      "explanation": "聯準會就像是美國的「中央銀行」，它最重要的工作就是控制美國的錢要怎麼流動。他們會決定借錢的利率高低，來影響大家是想存錢還是借錢，進而影響物價和經濟活動。聯準會的決定對全球經濟都有很大的影響力。"
+      "explanation": "你可以把聯準會想像成美國的「中央銀行」，它最重要的工作就是控制美國的錢變多還是變少，還有決定銀行借錢的利息要高還是低。它做的決定會影響全世界的經濟。"
     },
     {
-      "term": "地緣政治風險 (Geopolitical Risk)",
-      "explanation": "地緣政治風險就是因為地理位置和政治因素（例如國家之間的衝突、戰爭、貿易戰等）而可能發生的危險或不確定性。就像鄰居吵架可能會影響到整個社區的安寧一樣，國際間的政治衝突也可能影響到全球的經濟和市場穩定。"
+      "term": "升息",
+      "explanation": "就像銀行突然提高你存款的利息，你把錢存銀行可以賺更多。但同時，如果你跟銀行借錢，要還的利息也會變多。聯準會升息就是讓大家借錢變貴，希望大家少花一點錢，這樣物價就不會漲太快。"
     },
     {
-      "term": "升息 (Interest Rate Hike)",
-      "explanation": "升息就是銀行提高向別人借錢的成本。想像一下，如果你跟銀行借錢，利息變高了，你就會比較不想借錢，也會更想把錢存起來賺利息。這樣一來，市場上的錢就會變少，物價上漲的速度可能就會慢下來，這是央行用來控制通膨的一種方法。"
+      "term": "通膨 (Inflation)",
+      "explanation": "就是「錢變薄了，東西變貴了」。以前100元可以買到很多東西，現在可能只能買一點點。這是因為市場上的錢太多，或者東西太少，導致物價一直往上漲。"
     },
     {
-      "term": "資產配置 (Asset Allocation)",
-      "explanation": "資產配置就像是你在準備一個野餐籃，不會只放一種食物，而是會準備水果、麵包、飲料等等不同的東西。在投資上，就是把你的錢分散投資到不同種類的資產（例如股票、債券、黃金、房地產等），這樣可以降低風險，避免把所有雞蛋放在同一個籃子裡。"
+      "term": "月光族",
+      "explanation": "指那些每個月賺多少錢就花多少錢，到月底錢包就空了的人。他們沒有多餘的錢可以存起來，因為生活開銷太大了。"
     },
     {
-      "term": "下影線 (Lower Shadow)",
-      "explanation": "在股票K線圖上，下影線是指一根K線下方細長的線。它代表當天股價曾經跌到很低，但後來又被買盤拉了起來，收盤時的價格比最低點高很多。下影線越長，通常表示當天股價在低點有很強的買盤支撐，有止跌回升的意味。"
+      "term": "證交稅 (Securities Transaction Tax)",
+      "explanation": "你買賣股票的時候，政府會從中抽一小部分的錢當稅收。如果證交稅收很多，就代表大家很熱絡地在買賣股票，股市很旺。"
     },
     {
-      "term": "避險資產 (Safe-haven Asset)",
-      "explanation": "避險資產就像是當外面下大雨時，你會找個屋簷躲雨一樣。當市場或經濟狀況變得不確定或危險時，投資人會把錢轉移到一些他們認為比較安全、價值相對穩定的資產上，希望這些資產能保值或甚至增值。黃金就是一種常見的避險資產。"
+      "term": "地緣政治",
+      "explanation": "你可以想像成「國家之間的關係和地理位置如何影響世界大事」。比如兩個國家因為地理位置靠近，常常會因為一些資源或邊界問題吵架甚至打仗，這就會影響到全球的經濟和安全。"
+    },
+    {
+      "term": "原物料 (Raw Materials)",
+      "explanation": "就是製造各種產品最基本的材料，像是石油、銅、鐵、玉米等等。如果這些原物料的價格上漲，那麼所有用這些材料做出來的產品也會跟著變貴。"
+    },
+    {
+      "term": "資產配置",
+      "explanation": "就像你在一個籃子裡放各種不同的東西，而不是把所有雞蛋都放在同一個籃子裡。資產配置就是把你手上的錢，分散投資到股票、債券、房地產、黃金等不同的地方，這樣就算其中一種賠錢，其他種類可能還會賺錢，可以降低風險。"
+    },
+    {
+      "term": "殖利率 (Yield)",
+      "explanation": "想像你買了一張政府發行的借據（債券），政府會定期給你利息。殖利率就是你投資這張借據，每年能拿到的利息佔你投資金額的比例。如果殖利率上升，通常代表這張借據的價格下跌了，因為大家覺得有更好的投資選擇，或是覺得未來借錢的利息會變高。"
     }
   ],
   "dictionary_source": "gemini"
