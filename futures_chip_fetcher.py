@@ -122,8 +122,7 @@ def _parse_csv(text: str, date_str: str, log=print) -> dict | None:
     if "foreign_net_oi" not in found:  # 過濾模式商品名稱可能空白 → 退而求其次
         found, sample = _extract(rows, require_big=False)
     if "foreign_net_oi" not in found:
-        log("  [台指期留倉] 未取得外資臺股期貨留倉,略過")
-        return None
+        return None  # 靜默:由 fetch_futures_chip 全敗後統一印一次診斷(避免每日洗版)
     if sample is not None:
         log(f"  [台指期留倉] 樣本列({len(sample)}欄):{sample[-6:]}")
 
@@ -149,17 +148,30 @@ def _parse_csv(text: str, date_str: str, log=print) -> dict | None:
 def fetch_futures_chip(log=print) -> dict | None:
     """抓最近一個交易日的三大法人台指期留倉淨額;自動跳過週末/假日。抓不到回 None。"""
     d = date.today()
+    first = None  # (date_str, text) 第一筆有內容的回傳,供全敗後診斷
     for _ in range(MAX_LOOKBACK):
         if d.weekday() < 5:
             ds = d.strftime("%Y%m%d")
             text = _post_csv(ds, log=log)
             if text:
+                if first is None:
+                    first = (ds, text)
                 parsed = _parse_csv(text, ds, log=log)
                 if parsed:
                     parsed["as_of"] = datetime.now(timezone.utc).strftime(
                         "%Y-%m-%d %H:%M UTC (TAIFEX futContractsDate)")
                     return parsed
         d -= timedelta(days=1)
+    # 全數無法解析 → 印一次診斷,揭露期交所實際回傳格式(供精準修正,不盲試)
+    if first:
+        ds, text = first
+        rows = list(csv.reader(io.StringIO(text)))
+        log(f"  [台指期留倉][診斷] {ds} 回傳 {len(text)} 字、{len(rows)} 列;前 8 列(各取前 6 欄):")
+        for r in rows[:8]:
+            log(f"    {[c[:14] for c in r[:6]]}")
+        log(f"  [台指期留倉][診斷] 前 300 字:{text[:300]!r}")
+    else:
+        log("  [台指期留倉][診斷] 期交所未回傳任何內容(連線/代理問題)")
     return None
 
 
