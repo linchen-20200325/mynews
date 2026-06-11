@@ -41,7 +41,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
@@ -2110,7 +2110,9 @@ def main() -> int:
         print("錯誤: 未設定 GEMINI_API_KEY 環境變數", file=sys.stderr)
         return 1
 
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # 以台灣時區(UTC+8,無日光節約)定義「今天」:排程在台灣清晨(UTC 前一日 21:30 起)
+    # 觸發,用台灣日期才能讓報告日期與你早上看到的日期一致(不會慢一天)。
+    today = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d")
 
     # 排程備援防呆:排程觸發時若今日報告已產出(主班次已成功並寫回 main),直接略過,
     # 避免備援班次重複跑與重複推 LINE。手動 workflow_dispatch 不受此限,可隨時重跑。
