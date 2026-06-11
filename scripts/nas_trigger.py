@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
-"""NAS 主觸發:每日打 GitHub API 觸發 daily_update workflow(workflow_dispatch)。
+"""NAS 備援觸發:GitHub 當主力,NAS 只在「今日尚未成功」時補一槍。
 
-GitHub 自家排程器在尖峰常把清晨班次整批丟棄(6/10、6/11 早上就是這樣漏報);
-改由 24h 開機的 NAS 當「主觸發」最可靠,GitHub 內建排程退為備援。
+GitHub 自家排程器在尖峰常把清晨班次整批丟棄(6/10、6/11 早上漏報主因);
+由 24h 開機的 NAS 當安全網:每天 06:00(GitHub 05:30 主班之後)查一次,
+今日已有成功(或正在跑)的執行就按兵不動,只有 GitHub 漏跑/失敗才觸發。
 
-防重複:NAS 走 workflow_dispatch → 一定完整跑並推一次 LINE;之後 GitHub schedule
-班次(update_data.py 內建守門)看到今日報告已存在就自動略過,故不會雙推。
+為何要「先查」:workflow_dispatch 不受 update_data.py 的 schedule 防重複守門
+限制,會完整跑並推 LINE。若不先查就觸發,可能與進行中的 GitHub run 撞在一起
+變成雙推。先查今日狀態 → 杜絕雙推,且真正只在需要時補位。
 
 Token:fine-grained PAT,僅授權本 repo 的「Actions: Read and write」。
   存成單獨檔案(chmod 600)或放環境變數,切勿進 git。
+
+模式:TRIGGER_MODE=backup(預設,先查再觸發)| always(每天固定觸發,當主力用)
 
 用法(擇一提供 token):
   GITHUB_TOKEN=github_pat_xxx       python3 nas_trigger.py
   GITHUB_TOKEN_FILE=/path/to/token  python3 nas_trigger.py
 
 Synology DSM > 控制台 > 任務排程 > 新增 > 排定的任務 > 使用者定義指令碼,
-每天 05:25(比 GitHub cron 05:30 早 5 分鐘搶頭香),指令:
+每天 06:00,指令:
   GITHUB_TOKEN_FILE=/volume1/homes/<you>/.mynews_gh_token \\
     /usr/bin/python3 /volume1/.../scripts/nas_trigger.py
 """
@@ -25,13 +29,16 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 OWNER = "linchen-20200325"
 REPO = "mynews"
 WORKFLOW = "daily_update.yml"
 REF = "main"  # dispatch 讀此分支的 workflow 檔;job 內亦 checkout main
 RETRIES = 4
+API = f"https://api.github.com/repos/{OWNER}/{REPO}/actions/workflows/{WORKFLOW}"
+# 進行中的執行狀態(任一存在就別補,避免和 GitHub 撞車雙推)
+_PENDING = {"queued", "in_progress", "requested", "waiting", "pending"}
 
 
 def _log(msg: str) -> None:
@@ -58,17 +65,53 @@ def _token() -> str:
     sys.exit(2)
 
 
-def main() -> int:
-    token = _token()
-    url = (f"https://api.github.com/repos/{OWNER}/{REPO}"
-           f"/actions/workflows/{WORKFLOW}/dispatches")
-    body = json.dumps({"ref": REF}).encode()
-    headers = {
+def _headers(token: str) -> dict:
+    return {
         "Accept": "application/vnd.github+json",
         "Authorization": f"Bearer {token}",
         "X-GitHub-Api-Version": "2022-11-28",
-        "Content-Type": "application/json",
     }
+
+
+def _today_tw() -> str:
+    """台灣(UTC+8)今日 YYYY-MM-DD;報告日期亦以台灣時區計,兩邊一致。"""
+    return (datetime.now(timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d")
+
+
+def _run_date_tw(created_at: str) -> str:
+    """GitHub run 的 created_at(UTC ISO)→ 台灣日期 YYYY-MM-DD。"""
+    dt = datetime.strptime(created_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    return (dt + timedelta(hours=8)).strftime("%Y-%m-%d")
+
+
+def _should_skip(token: str) -> bool:
+    """今日已有成功、或有正在跑的執行 → 回 True(不補)。查詢失敗則保守回 False(照補)。"""
+    url = f"{API}/runs?per_page=30"
+    req = urllib.request.Request(url, headers=_headers(token), method="GET")
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            runs = json.loads(resp.read()).get("workflow_runs", [])
+    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        _log(f"WARN 查詢今日狀態失敗:{exc} — 保守起見照常補觸發")
+        return False
+    today = _today_tw()
+    for r in runs:
+        status = (r.get("status") or "").lower()
+        if status in _PENDING:
+            _log(f"今日已有執行進行中(status={status})— NAS 不補,避免撞車")
+            return True
+        if r.get("created_at") and _run_date_tw(r["created_at"]) == today \
+                and r.get("conclusion") == "success":
+            _log(f"今日({today})已有成功執行 — NAS 不補")
+            return True
+    _log(f"今日({today})尚無成功/進行中執行 — NAS 補觸發")
+    return False
+
+
+def _dispatch(token: str) -> int:
+    url = f"{API}/dispatches"
+    body = json.dumps({"ref": REF}).encode()
+    headers = {**_headers(token), "Content-Type": "application/json"}
     for attempt in range(1, RETRIES + 1):
         req = urllib.request.Request(url, data=body, headers=headers, method="POST")
         try:
@@ -90,6 +133,14 @@ def main() -> int:
             time.sleep(min(2 ** attempt, 16))  # 退避 2/4/8/16 秒
     _log(f"ERROR 重試 {RETRIES} 次仍失敗")
     return 1
+
+
+def main() -> int:
+    token = _token()
+    mode = os.environ.get("TRIGGER_MODE", "backup").strip().lower()
+    if mode == "backup" and _should_skip(token):
+        return 0  # 真備援:今日已成功/進行中 → 不補
+    return _dispatch(token)
 
 
 if __name__ == "__main__":
