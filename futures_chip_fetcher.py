@@ -37,11 +37,9 @@ HTTP_TIMEOUT = 25
 # 偏多/偏空門檻(口):外資淨留倉超過此絕對值才表態,避免雜訊。可用 FUT_STANCE_LOTS 覆寫。
 DEFAULT_STANCE_LOTS = 3000
 PRODUCT = "臺股期貨"
-# 臺股期貨(大台)商品代碼;同時容許 TXF 寫法。小型(MTX)/微型(TMF)不在此集合內,自然排除。
-TX_CODES = {"TX", "TXF"}
 
-# OpenAPI 英文欄位名
-CODE_KEY = "ContractCode"     # 商品代碼
+# OpenAPI 英文欄位名(實測:ContractCode 內容為中文商品名稱,如「臺股期貨」)
+CODE_KEY = "ContractCode"     # 商品名稱(中文)
 ITEM_KEY = "Item"             # 身份別(自營商/投信/外資)
 NET_OI_KEY = "OpenInterest(Net)"  # 多空未平倉口數淨額(要口數,非 ContractValue 金額)
 DATE_KEY = "Date"
@@ -130,9 +128,11 @@ def fetch_futures_chip(log=print) -> dict | None:
     for rec in data:
         if not isinstance(rec, dict):
             continue
-        code = str(rec.get(CODE_KEY, "")).strip().upper()
+        code = str(rec.get(CODE_KEY, "")).strip()
         codes_seen.add(code)
-        if code not in TX_CODES:  # 只取大台,排除小型/微型/電子/金融等其他期貨
+        # ContractCode 實際存中文商品名稱;取大台「臺股期貨」,排除小型臺指/微型臺指
+        # (其名為「臺指期貨」不含「臺股期貨」)及其他商品。
+        if ("臺股期貨" not in code and "台股期貨" not in code) or "小型" in code or "微型" in code:
             continue
         key = _institution(rec.get(ITEM_KEY, ""))
         if not key:
@@ -142,7 +142,7 @@ def fetch_futures_chip(log=print) -> dict | None:
 
     if "foreign_net_oi" not in found:
         # 診斷:印出現過的商品代碼,供確認 TX 寫法(不盲試)
-        log(f"  [台指期留倉][診斷] 未找到 TX 外資留倉;出現的商品代碼="
+        log(f"  [台指期留倉][診斷] 未找到臺股期貨外資留倉;出現的商品名稱="
             f"{sorted(c for c in codes_seen if c)[:40]}")
         return None
 
