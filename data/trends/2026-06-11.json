@@ -4,17 +4,18 @@
     {
       "rank": 1,
       "industry": "人工智慧 (AI) 與半導體",
-      "heat_score": 95,
+      "heat_score": 98,
       "signals": {
-        "funding": "AI浪潮持續推升半導體新創募資，儘管有Cerebras上市後股價面臨考驗，但整體資金對AI半導體領域仍高度集中。同時，AI資料中心債規模衝高，顯示巨頭們的資本支出強勁。Nvidia宣布股利大幅增加，也反映其強勁的獲利能力和對未來成長的信心。全球半導體設備銷售額第一季年增14%創新高，AI帶動新一輪資本支出循環。",
-        "hiring": "輝達(Nvidia)持續積極徵才，其CEO黃仁勳親曝徵才標準，顯示產業對特定AI人才的需求旺盛。儘管有科技巨頭光環失效的討論，但AI領域的核心人才競爭依然激烈。",
-        "policy": "德國法院判決AI摘要內容不實需負責，可能對AI產業產生衝擊，促使業者更注重內容真實性與負責任AI的發展。Anthropic CEO呼籲政府應介入阻止危險AI，顯示AI治理與法規制定正受到高度關注。OpenAI考慮降價，競爭激烈可能導致市場價格戰，促使政策制定者思考如何維持公平競爭。",
-        "technology": "AI技術持續演進，Applied Materials CEO指出AI正在重塑半導體創新。Apple新的Siri AI具備更智慧的互動能力，顯示AI已深入消費性產品。儘管CPO製造端良率低的問題被點出，但這也激勵了相關技術的突破與改進。"
+        "funding": "AI浪潮持續推升半導體新創募資，儘管Cerebras上市後股價面臨考驗，但整體資金仍積極流向AI相關領域。SEMI報告指出，Q1全球半導體設備銷售額年增14%創新高，顯示晶圓廠資本支出強勁。台積電月銷售額創歷史新高，印證AI投資週期未減弱。Nvidia宣布25倍股息增長，顯示其對未來盈利能力充滿信心。",
+        "hiring": "新聞中雖未直接提及具體徵才數據，但AI浪潮推動半導體產業的強勁動能，預計將持續帶動相關領域的人才需求與搶奪。",
+        "policy": "德國法院判決AI摘要內容不實需負責，顯示各國政府開始關注AI內容的監管與責任歸屬。Anthropic CEO呼籲政府應阻止危險AI，並支持強制性測試，預示未來AI產業將面臨更嚴格的政策與法規框架。",
+        "technology": "AI持續重塑半導體創新，Applied Materials CEO強調AI對半導體產業的影響。HBM4E成為Nvidia認證的關鍵技術，凸顯高頻寬記憶體在AI運算中的重要性。CPO製造端良率低的挑戰顯示技術瓶頸仍待突破，但解決後將釋放更大潛力。"
       },
       "leading_indicators": [
-        "AI晶片巨頭(如Nvidia)的財報與展望",
-        "半導體設備製造商(如應用材料)的訂單與出貨量",
-        "AI資料中心建置進度與相關資本支出"
+        "Nvidia、AMD等AI晶片巨頭的財報與展望",
+        "全球半導體設備訂單與出貨數據",
+        "HBM、CPO等關鍵AI零組件的技術突破與量產進度",
+        "各國政府對AI倫理、安全及內容責任的立法進程"
       ],
       "us_stocks": [
         {
@@ -22,11 +23,11 @@
           "ticker": "NVDA"
         },
         {
-          "name": "美光科技",
-          "ticker": "MU"
+          "name": "美超微(Super Micro Computer)",
+          "ticker": "SMCI"
         },
         {
-          "name": "應用材料",
+          "name": "應用材料(Applied Materials)",
           "ticker": "AMAT"
         }
       ],
@@ -40,59 +41,56 @@
           "ticker": "2454"
         },
         {
-          "name": "世芯-KY",
-          "ticker": "3661"
+          "name": "日月光投控",
+          "ticker": "3711"
         }
       ],
       "evidence_news": [
-        {
-          "title": "【00991A】06/11 操作日報｜經理人趁回檔加碼AI與半導體",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1iWkJuazJic2YyblVPcXRRZXJPdXFHTDdodnZyMElEME1FTks4NHVPNTVnSndzQ1VqdlhiV3cyTFpGeU5uWG4yVl9aWm90UjB6Nkc2U1h5SWMzYWptNGRWQ0JUVlU0cVF4c1VudmM1VXk5TXlDRkNrYVBZdzUwZw?oc=5"
-        },
         {
           "title": "AI浪潮推升半導體新創募資 Cerebras上市後股價面臨考驗",
           "source": "商傳媒",
           "url": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxNVW5kdlRpaGZrby0zek04YTI4eUVZMXNHMDd2M19JME5kN25VTFlXRzdVdmdUYkk1eWFjYWZBNnU3ejJZZ3VPOXdGbFlHWGRJTTZsQ056SWxBUk1jTDZ6MHpLN0N2VC1IRHZWNWxGMmVKNEM0bWxxdklaX0hhelBSVmpObDBBMnVIbXpZZUliTG5yVGNjTDh5c2F2SjlkQ0N2VlNYdGpUTW5heE1wVUVvWV8wUmNxdWEyY0NoR2I1aC1mb3RVaG13TE82enZpY0N4a1Jkem53LXJJbmoxc3hfTXpmR3pwTUZramE4YjJCR3VFZW1NdzJDeTN0cnREbm5EcVFjNXhpSmluSnpuUEpOQnp6RE5RbmF1SExocGxEUVg5MjdBSGxrTXpQeFNCREljLVlSOU0wUDlCM2VCTGxwOTVEV2JaQk9JTHpYYWZiZVZQbDZwMmpQSzViM0hMR2hqY0htemtzYUtDRlN0TzN6R253?oc=5"
         },
         {
-          "title": "Nvidia Just Announced a Potential Windfall for Shareholders",
-          "source": "The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOei1vU0ZnQlVteldmSWFFNFRjZTAzZ2tsQUZlcWZpTmNYOTI5ZW0zUThjbS04cGI4SDR6cFgwOVRBYnA2WEpHRHNuT3BnZnVlLWpicnQ3NjJsN082Sk1fd19ReGlueWpIRlgwVno4STY2OU91enZXd3QzSHBnZXdLNDlIeDZnR2dQb1FxT05xSE9OSTh5R2UxTQ?oc=5"
+          "title": "AI帶動新一輪資本支出循環！設備、晶圓、材料同步回溫，SEMI：全球半導體設備市場首季創新高| 魏鑫陽 | 財經",
+          "source": "風傳媒",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBSRUN5endfdVowdEVzajNzN0thRjNzTnFCNnBrNmhRYklZa0FyUGxXZ3dibUhpaTF6RTN1QS1pYUV5Zm5Ra3c5S3VFS01Cdw?oc=5"
+        },
+        {
+          "title": "\"The AI investment cycle has not weakened\"... TSMC's monthly sales top 20 trillion won, a record high",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5HU3U0blJTdnB0MEFFVGkxSmEtc0RQOFgxcHFkSEFoZzZFWm9yck5BMGx5d3hXaVNoTXZqQVVrU0dQMl9vU21HNHdkY3RvZ3owSmtF?oc=5"
         }
       ],
-      "summary": "AI與半導體產業在資金、技術和市場需求方面持續強勁，儘管面臨法規挑戰和部分技術瓶頸，但整體動能依然是全球最熱門。",
-      "news_count": 27,
-      "first_seen": "2026-06-10",
+      "summary": "AI與半導體作為驅動全球科技發展的核心，持續獲得巨額資金投入，並在全球供應鏈中扮演關鍵角色，儘管市場短期震盪，但長期成長動能強勁。",
+      "news_count": 28,
+      "first_seen": "2026-06-11",
       "last_seen": "2026-06-11"
     },
     {
       "rank": 2,
       "industry": "低軌衛星通訊",
-      "heat_score": 88,
+      "heat_score": 85,
       "signals": {
-        "funding": "SpaceX即將上市，顯示低軌衛星產業正進入資本市場的熱潮。宣德等公司星鏈訂單翻倍，反映了產業內部的訂單成長和資金流動。儘管有預期SpaceX上市可能對其他股票造成衝擊，但這也代表了大量資金湧入該領域。",
-        "hiring": "SpaceX作為產業龍頭，持續擴張意味著對相關工程師、技術人員的需求增加。",
-        "policy": "低軌衛星通訊作為國家戰略的一部分，各國政府可能提供補貼或政策支持，以促進其發展和普及，尤其在偏遠地區的通訊覆蓋。宏達電與台揚聯手完成通訊技術驗證，鋪路進軍美國市場，也顯示政策對產業發展的影響。",
-        "technology": "SpaceX持續發射低軌衛星，技術不斷進步。宣德的星鏈訂單翻倍，反映了技術的成熟與市場接受度提升。通訊技術的驗證和鋪路進入美國市場，顯示技術標準化和互通性是發展關鍵。"
+        "funding": "SpaceX即將上市，且其AI部門去年已投入巨額資金進行AI基礎設施建設，顯示低軌衛星作為其核心業務，資金投入巨大。宣德等台灣供應鏈廠商訂單翻倍，反映產業擴張帶來的資本需求。",
+        "hiring": "SpaceX的快速發展及其即將IPO，預計將帶動大量工程師與技術人才的需求。台灣供應鏈廠商訂單成長也將刺激相關職缺增加。",
+        "policy": "SpaceX與宏達電、台揚等企業合作，鋪路進軍美國市場，顯示各國政府對低軌衛星通訊的戰略重視和市場開放。這類合作有助於推進相關政策的制定與實施。",
+        "technology": "SpaceX持續攜帶低軌衛星升空，技術迭代與部署速度領先全球。宏達電與台揚完成通訊技術驗證，顯示台灣廠商在低軌衛星通訊技術整合與應用方面取得進展。群創等面板廠挾低軌衛星題材，也反映技術應用面的拓展。"
       },
       "leading_indicators": [
-        "SpaceX IPO後的市場表現與估值",
-        "全球低軌衛星發射數量與覆蓋率",
-        "相關零組件供應商的訂單能見度"
+        "SpaceX IPO進度與估值",
+        "全球低軌衛星發射數量與部署進度",
+        "各國政府對低軌衛星通訊頻譜與服務的開放政策",
+        "台灣供應鏈廠商(如宣德、台揚)的訂單能見度與營收成長"
       ],
       "us_stocks": [
         {
-          "name": "SpaceX (預期上市)",
-          "ticker": "SPCX"
+          "name": "SpaceX",
+          "ticker": "待上市"
         },
         {
-          "name": "Viasat",
-          "ticker": "VSAT"
-        },
-        {
-          "name": "Iridium Communications",
-          "ticker": "IRDM"
+          "name": "高通",
+          "ticker": "QCOM"
         }
       ],
       "tw_stocks": [
@@ -101,12 +99,12 @@
           "ticker": "5457"
         },
         {
-          "name": "華通",
+          "name": "台揚",
           "ticker": "2313"
         },
         {
-          "name": "台揚",
-          "ticker": "2314"
+          "name": "昇達科",
+          "ticker": "3491"
         }
       ],
       "evidence_news": [
@@ -121,72 +119,74 @@
           "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE52SWs5QXcwR25xbERLWmY2S2d0X1JPUXVxM201S2ZfTTZ5LUNUWFJsX0s4VlAwdnpoMWdlWExqTDIzaGNJYnBrTkI3MXZ3eEJYN1HSAW5BVV95cUxQNHZTeFpvM0szd3hTRWZPYU5WZVV5UGJkd2JWQ1UwdTh0RUNzOGtvRDNYaW9WZnV0SXVfQm1vUklYdEdneVVpa2xDSUxXd0ZaOFdRLWxaNy1TVFFsNUdYRnZzRklMa1ROR3RVeXNNQQ?oc=5"
         },
         {
-          "title": "SpaceX Will Destroy Other Stocks. These Could Be the Biggest Losers.",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBNdEFHUFVOVURmVXRhRkxsbmpqTHN0VWwwaksxSFZwWmExLTIxZzBFZ2doWE9rbFg0RFM3OEoxbExLc0MtcDFLX1lGdFRCMk4xRkhNZWVNWGFGQ2xuYzJ1YTlKOVRVUy03N3k4VGs5dFoyeDlXc0gwbQ?oc=5"
+          "title": "SpaceX is poised for blastoff with an IPO likely to break records",
+          "source": "NPR",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5fdzBHc2d3M1ptX0lfanhhZEZiLXF0WTlSTHY3bDhsVGlNMnNDV0htTHVwaVJiZnRlY1JPeXdJbkd3TWhaQjJYTl95T1VTN2Y4LUc5aGVjTl9jbDAwbzQ3RFFkdGlsNXpLa3VtT0VTb3F5bXVhcjFod2FVRQ?oc=5"
         }
       ],
-      "summary": "低軌衛星通訊在SpaceX的帶動下，迎來上市熱潮與訂單成長，技術持續推進，預計將改變全球通訊格局。",
+      "summary": "低軌衛星通訊在全球範圍內受到高度關注，SpaceX的領導地位及其即將上市的預期，加上台灣供應鏈的積極參與，共同推動該產業快速發展。",
       "news_count": 1,
       "first_seen": "2026-06-11",
       "last_seen": "2026-06-11"
     },
     {
       "rank": 3,
-      "industry": "生物科技與製藥",
-      "heat_score": 80,
+      "industry": "網路安全與數據隱私",
+      "heat_score": 75,
       "signals": {
-        "funding": "Parabilis成為最大的創投支持生物科技IPO，顯示大量資金湧入新創生物科技公司，市場對具有創新潛力的藥物研發和生物技術平台有高度興趣。FDA批准長期使用的防曬乳，也預示著新藥或新成分的審批可能加快。",
-        "hiring": "隨著新創公司的成長和IPO，對研發、臨床試驗、監管事務等專業人才的需求將會增加。",
-        "policy": "FDA加速批准長期使用的防曬乳，可能預示著監管機構對於創新藥物和醫療技術的審批流程有所優化，以滿足市場需求。這對生物科技公司來說是利好消息，可加速產品上市。",
-        "technology": "生物科技領域的技術突破持續不斷，新藥研發、基因編輯、細胞療法等前沿技術不斷取得進展。Parabilis的成功IPO也代表其在特定疾病領域的技術或產品具備市場潛力。"
+        "funding": "新聞中未直接提及具體募資數據，但大型企業數據外洩後的鉅額罰款，凸顯企業對網路安全投資的急迫性。這將間接刺激相關解決方案提供商的資金流入。",
+        "hiring": "隨著數據洩露事件頻發和監管趨嚴，企業對網路安全專業人才的需求將持續增長，包括資安分析師、隱私保護工程師等。",
+        "policy": "韓國電商巨頭Coupang因個資外洩被處以創紀錄的140億韓元罰款，德國法院判決AI摘要內容不實需負責，均顯示全球各國政府對數據隱私和網路安全的監管日趨嚴格，罰則也越來越重。這將迫使企業加大合規投入。",
+        "technology": "數據洩露事件頻繁發生，促使企業和研究機構投入更多資源開發先進的加密、身份驗證和威脅檢測技術，以應對日益複雜的網路攻擊和隱私挑戰。"
       },
       "leading_indicators": [
-        "生物科技新創公司的IPO數量與募資規模",
-        "FDA等監管機構新藥審批速度與數量",
-        "癌症治療、基因療法等領域的臨床試驗進展"
+        "全球各國數據隱私法規的更新與實施強度",
+        "大型企業和政府機構在網路安全解決方案上的資本支出增長",
+        "新型網路攻擊的頻率與影響程度",
+        "資安產業的併購活動與新創公司發展"
       ],
       "us_stocks": [
         {
-          "name": "Parabilis (新上市)",
-          "ticker": "PRBL"
+          "name": "Palo Alto Networks",
+          "ticker": "PANW"
         },
         {
-          "name": "Moderna",
-          "ticker": "MRNA"
+          "name": "CrowdStrike",
+          "ticker": "CRWD"
         },
         {
-          "name": "Vertex Pharmaceuticals",
-          "ticker": "VRTX"
+          "name": "Zscaler",
+          "ticker": "ZS"
         }
       ],
       "tw_stocks": [
         {
-          "name": "藥華藥",
-          "ticker": "6446"
+          "name": "零壹",
+          "ticker": "3029"
         },
         {
-          "name": "智擎",
-          "ticker": "4162"
-        },
-        {
-          "name": "台康生技",
-          "ticker": "6589"
+          "name": "精誠",
+          "ticker": "6214"
         }
       ],
       "evidence_news": [
         {
-          "title": "Parabilis now the largest VC-backed biotech IPO",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV_5cTFNMC1FMkxUSTl6REVwZ3RmRkpWclFOOVY0TXJpNU8zWlNmSWZZdHF3Mm9ISXFlRmk1aVZ6cWxuYi12TDFxTnpwR0dkM2VPejZEMW9YVm9NbW9DSFlOUldzWWFpMnBndklqTHZBWGpuLTdEaHgxUjBfT1I3R0RKUDdFcHF2UlAxbGJkTXBzWnNDbVBhem9lUmtGaVhFQ2ZWd3daS1E?oc=5"
+          "title": "史上最重！酷澎害3750萬用戶個資外洩 遭開罰140億元創紀錄",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxPS19Mb1V1R1ROQkJmY3JJQXl4SjNTQVYzZjFNaXBnNHVpZ0JsLVNCcU5ZQ1JkUTZRNi0zal9vZVR3a2xKUHNzN3B5eEhob2I2Y2Y3amtHY0wxMGpPOEc2YTJWLVNYclNjS19iY1FSU0NLQ2VJUUtYZngtR2ltdGV5djZRaG94WUZUZDVBVW1JLXlxcFlwalBjSkFHUG1BS2V5M0lwc0dRTDM3X3Jhd1R4dmM1VGNRM3hOZkRqcWhVN2wwMkhwOVlqQTYtSndnRDB4eHZ4VHRjNldJR3dLYjhsUHc4RlJkYzdaQzVxNHRUTWZsTUE0ZlRSdnpBcUdTMW1jQnBGLTJJRXJUMVZabHdkRlRwVG5MclBkamdILXQ4b1ROZGprYndTaWwwcUpidnpRdDJ0dm52T1VjSktqdTFxLU8tUEJwbHZTWmcyM3o3Q1ROMWp0M0hEX1lCMlc1ZkVYSDhNUW5XSQ?oc=5"
         },
         {
-          "title": "FDA approves long-used sunscreen already sold in Israel and Europe after 25-year delay",
-          "source": "Ynetnews",
-          "url": "https://news.google.com/rss/articles/CBMiakFV_5cTFNzaEZQbTlxYl9LTnd5VmdUWklmVG9kMlV0d3RldG44M0ZteFllODBNQWJfUUdnQ0Rra05DWm9NcG1MY1Q0T2RXUEZMU0ppNGY0b3paanZLUmNpQnVsODRWV3FVM2x5QWRpYUE?oc=5"
+          "title": "Google麻煩大了？德法院判AI摘要內容不實要扛責 恐衝擊AI產業",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5mZnlUekpkMHh4NmJUVDNMbnc1S2tYUS1wdjF4MGZmX2xuaEVoUmtSMG9tY0FtZDgzN3g1dGFESW5MbG05a0tLTXFQUkd0NDdY0gFWQVVfeXFMUEZUaDhjaEFoaEIzRkJGWGIxVmZnMmRWd0Z3dUZQdG9fSG5RNFZycGMtM2lZMVc0N0Z1aFZBRTQ1Mm95MU9sWXByeWhzOVdIeHRaWDZQNlE?oc=5"
+        },
+        {
+          "title": "‘South Korea’s Amazon’ hit with record fine over data breach",
+          "source": "Financial Times",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQSTZQUU96VXVTUFRzcks5UmZ5UkIxSWVwaFU5ZFpFUi15cVd2M2hPVGtLbTJyQVlIZXV6ek5LZnBJQjJuSTQ1YnJfODlnOEs3R2lEakwwRFk1eWNPblVxLV83aUNPRmdsVXhDLWI1Q3A2QVJNYzN3bDhGblBaTjNCdm1FOEo?oc=5"
         }
       ],
-      "summary": "生物科技產業在創投資金湧入和新創IPO的推動下展現強勁動能，預期未來在藥物研發和技術創新方面將有更多突破。",
+      "summary": "頻繁的數據洩露事件和日趨嚴格的全球監管，使網路安全和數據隱私成為企業的必選項，預計相關投資將持續增長。",
       "news_count": 0
     }
   ]

@@ -1,14 +1,14 @@
 {
   "report_date": "2026-06-11",
-  "summary": "今日台股受美股重挫及地緣政治影響震盪劇烈，盤中雖V轉收跌76點，但外資持續賣超，金融股獲利亮眼，半導體設備與低軌衛星題材則表現強勁，CPO概念股因良率問題面臨利空。",
+  "summary": "今日台股在半導體與AI題材交織下呈現震盪，聯電、華邦電、群創等個股表現活躍，惟外資持續賣超，CPO概念股因良率問題面臨利空，整體市場對AI及半導體產業長線仍持樂觀態度。",
   "stocks": [
     {
       "name": "聯電",
       "ticker": "2303",
       "sector": "半導體",
-      "mention_count": 7,
+      "mention_count": 6,
       "sentiment": "利多",
-      "reason": "外資在6月持續買超聯電逾48萬張，且盤中股價由黑翻紅，成熟製程需求回溫、稼動率續攀高，顯示法人看好其後市。",
+      "reason": "外資6月以來買超逾48萬張，且盤中由黑翻紅，成熟製程需求回溫、稼動率續攀高，顯示外資力挺及基本面好轉。",
       "evidence_news": [
         {
           "title": "快訊／聯電「超大咖賣壓」快清空！ 00919從58萬張砍到剩1張",
@@ -21,32 +21,27 @@
           "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE11NjhNYjNPRm82TVQ1aDcyQjV4cS03RjJTcV9KcDYtUmI2Sk1RZUYtSnIwTVpfNzVaekpka0hJSlNmTHVsZEY3d3Q1UEhVUUU?oc=5"
         },
         {
-          "title": "【Follow法人】外資連6賣！狂砍00403A逾13萬張 反手掃貨聯電逾5萬張",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMihgNBVV95cUxQRmJvaTF3NGVDbjd4Y0hXSmVvS1pjZUdscjdqS1JiWW9MUHVoOHpzVlB3Z3RUbnpkbzlRYWo4ajRHNlFKY1Zobl96U0RKay1zUDNaVzFpMG1WVUlDN3RtZFIwbVNoZS1xdDBkUmV6cUNjZ01YbzJsSzZ2VGZmZHBTSTMxRUxtQ1Y0RXU3cDlHYWg4bFNyX2Q3Z0lkT2Fud2xBSEVRYVpPWlVUWm13Uy1PaVcxWVdweFZJWWFlUGp6dDJpQUZualpwclhMUG1fWmhZZFk1dEJ5Q0pySWZNNUpQYVJ4VTRVYWo4aFhfZ3BfeU5oWGdiX0h3TjNSWFdnQ1ozeWFManRsSVJaYWhKOTczNU9EbkdlMGpOZzFEUVhrNkdkbDJncVhJUzcwWHhCdVp2Qm9sckpjNV85TkptYlM4RFFZZzN1bWtzQWpoalFJc0U4TDlxWGk2bU5IN0o3UVg5QWZtd3NzRjR0SjBWSkZVNFZrSW1yVFBXLVR0UWJYZWhPalFTZ1E?oc=5"
-        },
-        {
           "title": "三大法人買賣超 – 外資買超(2303)聯電、(3081)聯亞，投信買超(2382)廣達、(2327)國巨*，法人合計賣超353.91億元",
           "source": "sinotrade.com.tw",
-          "url": "https://news.google.com/rss/articles/CBMitwRBVV95cUxOeUlxcUxxQUpLZ2xVYU1sUmFKaERIVzR3OU9oY3pmSWdibU9BcmR2dHpSM1p1a1A1bFJTZ1g4cDNnOXhKdkN4QVNKSzg4V1JseTVyMFNJaTdZZ1hYcm5uUVZHVjU1a1JlVDh4aVhNTmg5TThYWXRuTFVTZ0t6c3VZb3JnTGsxbGtfR0FxOXdiN0cxSk5MaXZPV1BCdi1sZWdvRGVpMHpPbXdSVmxrc3hJcGxSZTlTYjBoX0tTSW9kOERzY2N2TGhjV2xHYVVXNnR4LXMwZnM3X3lwNVBnTnBpVENLVEhJVjdXdGR0aGx2NnJWN2p4UHlDYWpINWQ3ODhtRnp5VHJMZWFTb0RCYWdoRGRoUnRzUkRiU251aWdyNVNGUmM1bDJkQ3VldWRDUUI0cHJuaVQ5OVJBc1BITEkyeDlNR0pRZjNUbFJVSURWUFZJa3M5ZDdoODZuX002R1h5eFd0VFNPVFNZaXpTTjhmRzdVZ2VfLWtJNVk1YXpud0ZZQ01Od08xTFdRbEJOWmxDZzliRWgyeXMybExXMHlXcHdDOFlrUFAtYUxwVVlMTm5Hc3drQmZOUW9RR2YwWVBMX3VBR1R0dzdFTmM3cnU3TGVTZm9ScGplWkhSVFM1bk84QTlhZGlNNEJwTTctZTBlQVhSOXJPSWdNTnhxNTNEekE1NWFIN3JXYlFQX3B2RXBFcWh2VGl6UXBHdWkzMjFRYkF4M21YamZYTERDSThrbzN0N3JsNkU?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMitwRBVV95cUxOeUlxcUxxQUpLZ2xVYU1sUmFKaERIVzR3OU9oY3pmSWdibU9BcmR2dHpSM1p1a1A1bFJTZ1g4cDNnOXhKdkN4QVNKSzg4V1JseTVyMFNJaTdZZ1hYcm5uUVZHVjU1a1JlVDh4aVhNTmg5TThYWXRuTFVTZ0t6c3VZb3JnTGsxbGtfR0FxOXdiN0cxSk5MaXZPV1BCdi1sZWdvRGVpMHpPbXdSVmxrc3hJcGxSZTlTYjBoX0tTSW9kOERzY2N2TGhjV2xHYVVXNnR4LXMwZnM3X3lwNVBnTnBpVENLVEhJVjdXdGR0aGx2NnJWN2p4UHlDYWpINWQ3ODhtRnp5VHJMZWFTb0RCYWdoRGRoUnRzUkRiU251aWdyNVNGUmM1bDJkQ3VldWRDUUI0cHJuaVQ5OVJBc1BITEkyeDlNR0pRZjNUbFJVSURWUFZJa3M5ZDdoODZuX002R1h5eFd0VFNPVFNZaXpTTjhmRzdVZ2VfLWtJNVk1YXpud0ZZQ01Od08xTFdRbEJOWmxDZzliRWgyeXMybExXMHlXcHdDOFlrUFAtYUxwVVlMTm5Hc3drQmZOUW9RR2YwWVBMX3VBR1R0dzdFTmM3cnU3TGVTZm9ScEplWkhSVFM1bk84QTlhZGlNNEJwTTctZTBlQVhSOXJPSWdNTnhxNTNEekE1NWFIN3JXYlFQX3B2RXBFcWh2VGl6UXBHdWkzMjFRYkF4M21YamZYTERDSThrbzN3N3JsNkU?oc=5"
         },
         {
-          "title": "半導體被血洗！大盤又泛綠光 聯發科跌逾3％、鴻海走弱 台積電小漲一點點",
-          "source": "FTNN 新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9RWkUwaHZTRXNCMkNLWkpsZmp4bTlpNnZyNVRUUDFidlZFMUVoOVVnRVJ6cVdFYm1jd0dPNFFvQ19waFNrMmc5NTRYdw?oc=5"
+          "title": "焦點股》聯電、世界先進：外資力挺 股價逆勢強漲",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0zemRNclllNVBHaGRlVzM0QkJydTlQc3dKRjdEZ3l1M2g4ZF9oZmM4YXVfTFp0cWlEaGUxcGJsRjVFUGtZQlowVXljdWJlNU1ZNVE?oc=5"
         },
         {
-          "title": "台股又崩了！盤中狂瀉逾千點台積電等4大權值股遭拋售- 財經",
-          "source": "中時新聞網",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBMWk5OMnVXMVVIWjNaMWhzYjBWQ2dMOGFzNHFtWXpIZ2xOQ1JScUhJM0Z6bmd3VGZhdDF0d2lJNUdIdWw2UUN6UTJhbEFtbVZHQ3JyaHlXM283T2xCZXY4Z2llUGRUTmpkeUM0VnVn?oc=5"
+          "title": "聯電盤中由黑翻紅！成熟製程需求回溫、稼動率續攀高",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0zemRNclllNVBHaGRlVzM0QkJydTlQc3dKRjdEZ3l1M2g4ZF9oZmM4YXVfTFp0cWlEaGUxcGJsRjVFUGtZQlowVXljdWJlNU1ZNVE?oc=5"
         },
         {
-          "title": "黃仁勳訪韓過後！釋影片感性告白喊「台灣就像家一樣」 點名5家台廠",
-          "source": "三立新聞網SETN.com",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE85Mzk1czJTRzFKb2pUbC1zamxkMWgtX0trb0ZreUtKZVA5aV8yVHhqNGROQ0BFcmpqLXo4eGp4REhMV3huMkhEZkE0UQ?oc=5"
+          "title": "【12:21 即時新聞】聯電(2303)股價上漲至124元，外資回補帶動反彈＋短線均線壓力仍待消化",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0zemRNclllNVBHaGRlVzM0QkJydTlQc3dKRjdEZ3l1M2g4ZF9oZmM4YXVfTFp0cWlEaGUxcGJsRjVFUGtZQlowVXljdWJlNU1ZNVE?oc=5"
         }
       ],
-      "news_count": 4,
+      "news_count": 3,
       "first_seen": "2026-06-11",
       "last_seen": "2026-06-11"
     },
@@ -54,9 +49,9 @@
       "name": "台積電",
       "ticker": "2330",
       "sector": "半導體",
-      "mention_count": 7,
+      "mention_count": 6,
       "sentiment": "觀望",
-      "reason": "台積電雖順利填息，但盤中股價一度翻黑，並受外資大額賣超影響，加上專利侵權訴訟疑慮，多空因素交雜。",
+      "reason": "儘管今日完成填息，但盤中一度翻黑，並面臨外資提款壓力，同時也捲入美國專利侵權訴訟，多空消息交雜。",
       "evidence_news": [
         {
           "title": "外資賣超357億元連6賣 提款台積電110億元 6月來買超聯電逾48萬張",
@@ -69,6 +64,11 @@
           "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNWHR4VHB4eXl0MU1EMzZIT1huNExtVFhBTUdfblduZ2JCNHFTemJIWnJLX20zbWlOZWFGNjlCTlJneDF2Q0IxQW9pQ0dBUnBRNGhfbWVfZE84enRpQzlhOXNveHVScUgtU3VPTGxiYncybm1VLTlKSWRXS3JpR2s0R1NWbWxZaS1FbmJyYlhDM09sR2JiaFB5eDZGS052d1BDanNRQU9sdDIzVXIwRnFkcE1lMndBYmtESlBORlp3aTF1TUl2QTNPRnZSZGR4OUJDMWFYc2ctY01xVzR4WXFmS0dMeUE1Uk9uTl8tUmJCRkRPdVZYM1I0aU5XUG1NYW8?oc=5"
         },
         {
+          "title": "來回兩千點震盪、台股收跌76點 台積電完成填息收平盤",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9ITGYwaS1lcmFVSFB6Q3l1SkRmZ3N5Mloyc3ZIUWJJdFgzQjZYN2lsWWRWZ19mVmU4QVJfR2IyVHdyVHZNVUswSlRVUmlwOENh0gFWQVVfeXFMTW1sVzRieFp3UHQwUG5BTmFFM3NjMUFMM0ROd21YRzZCTVIweHIzMEpGQXQtaDJNRllXRExqTnMxbldVXy1BbDgwTEprTUFJUU04TUVYSkE?oc=5"
+        },
+        {
           "title": "台積電涉美國專利侵權訴訟經部：台廠重視智財權、合規經營| 產經",
           "source": "中央社 CNA",
           "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9mT0pLM0F3eWotUTVRS0dKeFFJMHI1ZnBIcF9EdnJBcC1CRXJJbVZlNEhyUy1oOTZzeEE1TVNBVUZuTnpVeFp1VHBPYUwtczVOTGtzSlJ1YzlKYjRaYVE?oc=5"
@@ -79,50 +79,99 @@
           "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE0yV000TDI0T2JvRllFRkN0NXhueDRTdzlPSndvWThxeGkzQjFRc2QxMUNFMnhpT2ZOLTNodGNTc3UtbzkwYUk5RHNMdw?oc=5"
         },
         {
-          "title": "台股跌205點 台積電小跌5元 記憶體回神「這檔」噴5%",
-          "source": "東森電視",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1WaktrWThQcEJ2dHI4Q1pVTTZ3NHdLb3RQRFRPUWozdXA0ei1SamVNU0pVRHVtc1h0MUdUal9IempZSjJ5cExiSHBnVDVyTWxieWtTSTln?oc=5"
-        },
-        {
-          "title": "半導體被血洗！大盤又泛綠光 聯發科跌逾3％、鴻海走弱 台積電小漲一點點",
-          "source": "FTNN 新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9RWkUwaHZTRXNCMkNLWkpsZmp4bTlpNnZyNVRUUDFidlZFMUVoOVVnRVJ6cVdFYm1jd0dPNFFvQ19waFNrMmc5NTRYdw?oc=5"
-        },
-        {
           "title": "台股又崩了！盤中狂瀉逾千點台積電等4大權值股遭拋售- 財經",
           "source": "中時新聞網",
           "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBMWk5OMnVXMVVIWjNaMWhzYjBWQ2dMOGFzNHFtWXpIZ2xOQ1JScUhJM0Z6bmd3VGZhdDF0d2lJNUdIdWw2UUN6UTJhbEFtbVZHQ3JyaHlXM283T2xCZXY4Z2llUGRUTmpkeUM0VnVn?oc=5"
         }
       ],
-      "news_count": 12,
+      "news_count": 10,
       "first_seen": "2026-06-10",
       "last_seen": "2026-06-11"
     },
     {
-      "name": "台新新光金",
-      "ticker": "2887",
-      "sector": "金融業",
-      "mention_count": 1,
+      "name": "群創",
+      "ticker": "3481",
+      "sector": "面板",
+      "mention_count": 3,
       "sentiment": "利多",
-      "reason": "台新新光金前5月獲利達348億元，年增四倍，創歷史新高EPS 1.36元，展現合併綜效。",
+      "reason": "股價走強漲逾5%，受除息填息行情帶動，外資回補與空單降溫支撐反彈，且有低軌衛星題材加持。",
       "evidence_news": [
         {
-          "title": "71萬股東看過來！台新新光金前5月獲利348億元年增四倍",
+          "title": "台股超猛！ 狂殺1200點「收跌76點」群創瘋漲逾8％",
+          "source": "東森電視",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBNTmtLTEZHbUtUS3NKZWtDemtZNGh0UHBRd1dBdTlvTjIwVUEtbUE5ZUF4YVJxcnROT3BsLURBVHBBWmNHQ3JzbEl3TlRCcHJQSjBBaGJB?oc=5"
+        },
+        {
+          "title": "【13:15 即時新聞】群創(3481)股價走強漲逾5%，除息填息行情帶動＋外資回補與空單降溫支撐反彈",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTU1Za0VCVmhLd3pYRXo5b0ctNnYwMmJLdHRhUGNqVjh5dVBvbHNpLXdjaF9oOGNNZ1JNYlJYWTNuY1UtSGdaZVE0OE5laXNGU0lLRWpMNFhqZlROalN6TDZMSmpTVll3ckJnUG13T0NYN3gwZlBwQXVNcjVLSUxtc3FBdDh3dEI0SHl2SkZB?oc=5"
+        },
+        {
+          "title": "被列處置股還爆量噴半根！「這面板大廠」挾低軌衛星、反彈利多噴出17萬天量網嗨：本來心都死了",
           "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi6wJBVV95cUxOUUVjTGZMczFoSUFiM25UWDk4RGdxYlljWFE2VkdjX1hIVDU2X3NCUlp0WVRaTDlNZ296djl2NnZUSk1wVWpXeUhubHEzLXZ2bWVMeC1qc0ROcEFqaE84NFNScU44dEtCTldicC1NWjdZY1JmTHBJQjJaNk9BZTN4RC1YT2tOS0dzUERtd1J1YTVUNDM3ZmprSDNtTnFldEhna3JrejVkWGdfNC0ySFFHWE5TaFZraHJUYXpxVkZhRFVGbU0zLVNSWlpnR3hVOEs5NFF1Qk13bWlhNTkteVVKYjZpRU5mVEdvVFBIT2FJbE8tUXVvdURyNzRYdVZUTGktdERTWEdnY2l3N0pxM0dKbEVKblRHVExjX2xpYlVpVUE1a1JOZGF2NFhPemN5MzdiZGxwZ3BFVGVwQ0N3clNIUEdPVk1zZ3FlTHB1b25MaVU2blRwdG12S0JZS1A2bHg4SWhwRko4RjBZYmc?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTU1Za0VCVmhLd3pYRXo5b0ctNnYwMmJLdHRhUGNqVjh5dVBvbHNpLXdjaF9oOGNNZ1JNYlJYWTNuY1UtSGdaZVE0OE5laXNGU0lLRWpMNFhqZlROalN6TDZMSmpTVll3ckJnUG13T0NYN3gwZlBwQXVNcjVLSUxtc3FBdDh3dEI0SHl2SkZB?oc=5"
         }
       ],
-      "news_count": 1,
+      "news_count": 2,
       "first_seen": "2026-06-11",
       "last_seen": "2026-06-11"
     },
     {
+      "name": "ETF",
+      "ticker": "",
+      "sector": "金融",
+      "mention_count": 3,
+      "sentiment": "利空",
+      "reason": "多檔主動式ETF掛牌三天即破發，股價下跌逾一成，成交量雖大但顯示散戶瘋狂抄底，市場警示風險。",
+      "evidence_news": [
+        {
+          "title": "掛牌3天殺到見骨！「主動式ETF新兵」破發下探8.65元 成交量仍逾35萬張",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMijANBVV95cUxPWlVDTnpsLTM5aG1LZ0JueF95X3BuSjJVOTdXb3lndlluRlhzaXBwQjducXFXazJkNmp2QTlwRmJxcnZJS2l4dDlUaUxObnQzTTBkbnU2ZEhaeldveFhwMEhKanJvOFp1Rk1pb3NSb1Y0WGE2Q3JCbEw2NlRqcFpHZ2xxMU1TU1l6VEt6dENSNDIxdnJpSTh4UUJyZWZkejZKVlhCUktGc3ZuZ1g4UTUwSUpNRXJrWEFoYkNzTm4zUUktQkYtaW1FdkFoZ1NQcGhXelFfLW5yMmJ5ZEU4NDZoejRwZ0k3YWVPOXBYMHRQNkZGYmN6R0JqWFhrXzViQmhWYkNvUlBzRDRwem1PS191dk91OFdWYVFkRG1tQVlNaFNGemFyTy1qdS10Tkg3aDMwbk9oUVV1RzBGRXZKYk01bEZQN3IxS1FkWkRUYmNyU056V0RSY1lMT0dHVWJzVkRYVEJjWUNRelBQaVZLTklTZFlDMW56TWdHd19Xc25JRS1HQnV3VF9sNlhBNTc?oc=5"
+        },
+        {
+          "title": "這檔掛牌3天血流成河！",
+          "source": "東森新聞",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBxOXRZRTlxZnhZZk43QUlGVzVZRk1rWDY1dzdNdXBnX3NxNngzVE5mNC10S0VQWDVrek5LQ1pmVGJ0WFBhRWg0RVBQa0hzVGdmRzlLNmdmdw?oc=5"
+        },
+        {
+          "title": "00403A又破發！散戶瘋狂抄底 3檔主動式ETF成交量飆破百萬張",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE0zZ0F4dFk4eFhDRlVvN3R1aE9jVmR2LXRvYm9Xbm9rZk5iV296R1V3Z0RzLUNQdVJ4c01tY2pUeGZld2E2R3g2ZzU0Zw?oc=5"
+        }
+      ],
+      "news_count": 4,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "CPO概念股",
+      "ticker": "",
+      "sector": "光通訊",
+      "mention_count": 2,
+      "sentiment": "利空",
+      "reason": "大摩驚爆CPO製造端良率低至20%，短期內難以改善，導致多檔光通訊股跌停，市場對其爆發期預期延後。",
+      "evidence_news": [
+        {
+          "title": "一場2000萬台的泡泡幻滅？大摩驚爆CPO製造端良率低至20%",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBmWDNvTjJ6VE1ENHBSbktSZHNSakN6cm1MU3hZa0RXaE41ZW5LbVhWeVkzV0x5S0JzMmk1bTUyd1h6ekxGblhTVkVYd2Zyam9v0gFWQVVfeXFMTTlOQkl3anhKOHYwQzl6MlEwcEZ0OXE5cUlhY2kxdy1BNVVkTjh4dEEzWTk4QW14OV9WOGowcklrM3F3WnF4VVZ2LUJxdTUwdklDMHpsWWc?oc=5"
+        },
+        {
+          "title": "CPO爆發逃難潮！外資坦言短線沒救...爆發期要等到「這1時間」 點名7檔長線看好",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBmWDNvTjJ6VE1ENHBSbktSZHNSakN6cm1MU3hZa0RXaE41ZW5LbVhWeVkzV0x5S0JzMmk1bTUyd1h6ekxGblhTVkVYd2Zyam9v0gFWQVVfeXFMTTlOQkl3anhKOHYwQzl6MlEwcEZ0OXE5cUlhY2kxdy1BNVVkTjh4dEEzWTk4QW14OV9WOGowcklrM3F3WnF4VVZ2LUJxdTUwdklDMHpsWWc?oc=5"
+        }
+      ],
+      "news_count": 0
+    },
+    {
       "name": "華邦電",
-      "ticker": null,
+      "ticker": "",
       "sector": "記憶體",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "華邦電爆大量拉半根漲停以上，顯示有資金進場追捧。",
+      "reason": "爆大量拉半根漲停以上，記憶體類股回神帶動股價上漲。",
       "evidence_news": [
         {
           "title": "台股11日再陷43000點保衛戰 華邦電爆大量拉半根漲停以上",
@@ -136,11 +185,11 @@
     },
     {
       "name": "漢唐",
-      "ticker": null,
-      "sector": "無塵室工程",
+      "ticker": "",
+      "sector": "無塵室",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "漢唐在手訂單金額高達1939.37億元，接單暢旺，營運展望佳。",
+      "reason": "在手訂單金額高達新台幣1939.37億元，顯示接單暢旺。",
       "evidence_news": [
         {
           "title": "漢唐在手訂單1939億 辛耘訂單展望達2028年",
@@ -154,11 +203,11 @@
     },
     {
       "name": "辛耘",
-      "ticker": null,
+      "ticker": "",
       "sector": "半導體設備",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "辛耘接單暢旺，部分訂單展望已達2028年，顯示未來營運穩健。",
+      "reason": "部分訂單展望已達2028年，顯示接單暢旺。",
       "evidence_news": [
         {
           "title": "漢唐在手訂單1939億 辛耘訂單展望達2028年",
@@ -172,11 +221,11 @@
     },
     {
       "name": "凌嘉科技",
-      "ticker": null,
+      "ticker": "",
       "sector": "半導體設備",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "凌嘉科技預計登錄興櫃，前4月每股純益0.51元，顯示營運良好。",
+      "reason": "預計登錄興櫃，前4月每股純益0.51元，顯示營運表現良好。",
       "evidence_news": [
         {
           "title": "凌嘉科擬6/15登錄興櫃 前4月每股純益0.51元",
@@ -190,11 +239,11 @@
     },
     {
       "name": "全新",
-      "ticker": null,
+      "ticker": "",
       "sector": "砷化鎵磊晶",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "全新為配合長期發展及營運需求，擬購置土地建置廠房，顯示對未來業務發展持樂觀態度。",
+      "reason": "通過6億元內購置土地，啟動新廠計畫，配合長期發展策略及營運需求，顯示擴張積極。",
       "evidence_news": [
         {
           "title": "全新通過6億元內購置土地 啟動新廠計畫",
@@ -208,11 +257,11 @@
     },
     {
       "name": "立凱電",
-      "ticker": null,
-      "sector": "鋰鐵電池材料",
+      "ticker": "",
+      "sector": "鋰鐵電池正極材料",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "立凱電打進特斯拉供應鏈，2.8億元現增案過關，將斥資逾3億元建置新產線，預計2027年出貨，顯示未來營運成長動能強勁。",
+      "reason": "打進特斯拉供應鏈，2.8億元現增過關籌資建廠，規劃建置LFP前驅體新產線，預計2027年出貨。",
       "evidence_news": [
         {
           "title": "立凱電打進特斯拉供應鏈 2.8億元現增過關籌資建廠",
@@ -226,11 +275,11 @@
     },
     {
       "name": "中華立鼎",
-      "ticker": null,
+      "ticker": "",
       "sector": "感測器",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "中華電信轉投資的中華立鼎預計登錄興櫃，前4月每股賺7.07元，顯示獲利能力良好。",
+      "reason": "中華電信轉投資，預計登錄興櫃，前4月每股純益7.07元，顯示營運表現良好。",
       "evidence_news": [
         {
           "title": "中華電小金雞中華立鼎6/17登興櫃 前4月每股賺7.07元",
@@ -244,11 +293,11 @@
     },
     {
       "name": "順達",
-      "ticker": null,
+      "ticker": "",
       "sector": "鋰電池模組",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "順達董事長看好今年下半年業績優於上半年，且明年會更好，BBU需求持續放大，積極擴充產能。",
+      "reason": "BBU需求持續放大，積極擴充新產能，預期下半年業績優於上半年，明年會更好。",
       "evidence_news": [
         {
           "title": "順達通過配息11.5元 下半年業績優於上半年",
@@ -262,11 +311,11 @@
     },
     {
       "name": "宣德",
-      "ticker": null,
-      "sector": "電子零組件",
+      "ticker": "",
+      "sector": "電子連接器",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "宣德耕耘低軌衛星、博弈設備與工業電腦等新市場開花結果，預估今年整體營收可望有2位數成長。",
+      "reason": "耕耘低軌衛星、博弈設備與工業電腦等新市場開花結果，預估今年整體營收可望有2位數成長。",
       "evidence_news": [
         {
           "title": "宣德：耕耘低軌衛星開花結果 今年營收拚增雙位數",
@@ -279,40 +328,17 @@
       "last_seen": "2026-06-11"
     },
     {
-      "name": "群創",
-      "ticker": "3481",
-      "sector": "面板",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "群創股價走強漲逾5%，受除息填息行情帶動，外資回補與空單降溫支撐反彈，且有低軌衛星題材加持。",
-      "evidence_news": [
-        {
-          "title": "台股超猛！ 狂殺1200點「收跌76點」群創瘋漲逾8％",
-          "source": "東森電視",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBNTmtLTEZHbUtUS3NKZWtDemtZNGh0UHBRd1dBdTlvTjIwVUEtbUE5UVAeYVJxcnROT3BsLURBVHBBWmNHQ3JzbEl3TlRCcHJQSjBBaGJB?oc=5"
-        },
-        {
-          "title": "【13:15 即時新聞】群創(3481)股價走強漲逾5%，除息填息行情帶動＋外資回補與空單降溫支撐反彈",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTU1Za0VCVmhLd3pYRXo5b0ctNnYwMmJLdHRhUGNqVjh5dVBvbHNpLXdjaF9oOGNNZ1JNYlJYWTNuY1UtSGdaZVE0OE5laXNGU0lLRWpMNFhqZlROalN6TDZMSmpTVll3ckJnUG13T0NYN3gwZlBwQXVNcjVLSUxtc3FBdDh3dEI0SHl2SkZB?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-11",
-      "last_seen": "2026-06-11"
-    },
-    {
       "name": "旺矽",
-      "ticker": null,
+      "ticker": "",
       "sector": "探針卡",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "外資喊旺矽上萬金，列為「超額報酬」名單，主要受惠於探針卡訂單放量及TPU商機。",
+      "reason": "外資喊旺，列「超額報酬」名單，目標價暴衝，EPS預估飆升，受惠ASIC及CPO商機。",
       "evidence_news": [
         {
           "title": "探針卡大爆發！外資喊旺矽上萬金 列「超額報酬」名單",
           "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBLRmJZQ05RVzlselJmZ0EtRlMxQTNiRE5faVJZUV8wUm9IcUFuTEl2VHJEbUs4NnNPQ1J3SEdKYU5CMG5ueDBPLUlTb3NjcmJqdDhsMm9vRE5ocnZoTk80?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBLRmJZQ05RVzlselJmZ0EtRlMxQTNiRE5faVJZUV_0Um9IcUFuTEl2VHJEbUs4NnNPQ1J3SEdKYU5CMG5ueDBPLUlTb3NjcmJqdDhsMm9vRE5ocnZoTk80?oc=5"
         }
       ],
       "news_count": 1,
@@ -320,49 +346,177 @@
       "last_seen": "2026-06-10"
     },
     {
-      "name": "CPO概念股",
-      "ticker": null,
-      "sector": "光通訊",
+      "name": "樺漢",
+      "ticker": "",
+      "sector": "工業電腦",
       "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "大摩驚爆CPO製造端良率低至20%，恐面臨出貨量下調風險，導致光通訊股普遍收跌。",
+      "sentiment": "利多",
+      "reason": "擬公開收購Kontron，進行全球業務整合，有望擴大市場份額。",
       "evidence_news": [
         {
-          "title": "一場2000萬台的泡泡幻滅？大摩驚爆CPO製造端良率低至20%",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBmWDNvTjJ6VE1ENHBSbktSZHNSajN6cm1MU3hZa0RXaE41ZW5LbVhWeVkzV0x5S0JzMmk1bTUyd1h6ekxGblhTVkVYd2Zyam9v0gFWQVVfeXFMTTlOQkl3anhKOHYwQzl6MlEwcEZ0OXE5cUlhY2kxdy1BNVVkTjh4dEEzWTk4QW14OV9WOGowcklrM3F3WnF4VVZ2LUJxdTUwdklDMHpsWWc?oc=5"
+          "title": "樺漢擬以每股23.5歐元公開收購Kontron 進行全球業務整合",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9MUVVwZW9RQ2o5MVdwblF3bkk5a0dNaEFRS3JqLVI2Ymo5ZXNLRHBZNTZXMGM4eHZWTVA5ZXRZSmhQc3pQNzhPSFQtSW9Ta1k?oc=5"
         }
       ],
-      "news_count": 0
+      "news_count": 1,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-10"
     },
     {
-      "name": "00403A",
-      "ticker": "00403A",
-      "sector": "ETF",
+      "name": "台光電",
+      "ticker": "",
+      "sector": "PCB",
       "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "00403A掛牌3天跌逾1成並破發，且被外資狂砍逾13萬張，顯示市場賣壓沉重。",
+      "sentiment": "利多",
+      "reason": "被PCB女王點名，明年獲利有望增6成，顯示產業前景看好。",
       "evidence_news": [
         {
-          "title": "掛牌3天殺到見骨！「主動式ETF新兵」破發下探8.65元 成交量仍逾35萬張",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMijANBVV95cUxPWlVDTnpsLTM5aG1LZ0JueF95X3BuSjJVOTdXb3lndlluRlhzaXBwQjducXFXazJkNmp2QTlwRmJxcnZJS2l4dDlUaUxObnQzTTBkbnU2ZEhaeldveFhwMEhKanJvOFp1Rk1pb3NSb1Y0WGE2Q3JCbEw2NlRqcFpHZ2xxMU1TU1l6VEt6dENSNDIxdnJpSTh4UUJyZWZkejZKVlhCUktGc3ZuZ1g4UTUwSUpNRXJrWEFoYkNzTm4zUUktQkYtaW1FdkFoZ1NQcGhXelFfLW5yMmJ5ZEU4NDZoejRwZ0k3YWVPOXBYMHRQNkZGYmN6R0JqWFhrXzViQmhWYkNvUlBzRDRwem1PS191dk91OFdWYVFkRG1tQVlNaFNGemFyTy1qdS10Tkg3aDMwbk9oUVV1RzBGRXZKYk01bEZQN3IxS1FkWkRUYmNyU056V0RSY1lMT0dHVWJzVkRYVEJjWUNRelBQaVZLTklTZFlDMW56TWdHd19Xc25JRS1HQnV3VF9sNlhBNTc?oc=5"
+          "title": "不只台光電、欣興，PCB女王喊台股大跌處處是黃金：「這5檔」明年獲利有望增6成，親揭最佳安心買點",
+          "source": "今周刊",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMHIzVTVjdU1pNXlkdDZZd1JHVWM3NmdQUDFUajlfOF9zMGh5Tld3RVp5c3JzcmtPYUN5S09fblREaHlSeFNtQnNhS3N1YnRHOW5sLTFyMG5vajQwRVVwUmdocFpYaGhEamJCWEZGUG54bjdDYUZzUGNFVUxqRlJrUg?oc=5"
         }
       ],
-      "news_count": 2,
+      "news_count": 1,
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "欣興",
+      "ticker": "",
+      "sector": "PCB",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "被PCB女王點名，明年獲利有望增6成，顯示產業前景看好。",
+      "evidence_news": [
+        {
+          "title": "不只台光電、欣興，PCB女王喊台股大跌處處是黃金：「這5檔」明年獲利有望增6成，親揭最佳安心買點",
+          "source": "今周刊",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMHIzVTVjdU1pNXlkdDZZd1JHVWM3NmdQUDFUajlfOF9zMGh5Tld3RVp5c3JzcmtPYUN5S09fblREaHlSeFNtQnNhS3N1YnRHOW5sLTFyMG5vajQwRVVwUmdocFpYaGhEamJCWEZGUG54bjdDYUZzUGNFVUxqRlJrUg?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "廣達",
+      "ticker": "2382",
+      "sector": "電腦及週邊設備",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "投信買超，顯示法人對其持正面態度。",
+      "evidence_news": [
+        {
+          "title": "三大法人買賣超 – 外資買超(2303)聯電、(3081)聯亞，投信買超(2382)廣達、(2327)國巨*，法人合計賣超353.91億元",
+          "source": "sinotrade.com.tw",
+          "url": "https://news.google.com/rss/articles/CBMitwRBVV95cUxOeUlxcUxxQUpLZ2xVYU1sUmFKaERIVzR3OU9oY3pmSWdibU9BcmR2dHpSM1p1a1A1bFJTZ1g4cDNnOXhKdkN4QVNKSzg4V1JseTVyMFNJaTdZZ1hYcm5uUVZHVjU1a1JlVDh4aVhNTmg5TThYWXRuTFVTZ0t6c3VZb3JnTGsxbGtfR0FxOXdiN0cxSk5MaXZPV1BCdi1sZWdvRGVpMHpPbXdSVmxrc3hJcGxSZTlTYjBoX0tTSW9kOERzY2N2TGhjV2xHYVVXNnR4LXMwZnM3X3lwNVBnTnBpVENLVEhJVjdXdGR0aGx2NnJWN2p4UHlDYWpINWQ3ODhtRnp5VHJMZWFTb0RCYWdoRGRoUnRzUkRiU251aWdyNVNGUmM1bDJkQ3VldWRDUUI0cHJuaVQ5OVJBc1BITEkyeDlNR0pRZjNUbFJVSURWUFZJa3M5ZDdoODZuX002R1h5eFd0VFNPVFNZaXpTTjhmRzdVZ2VfLWtJNVk1YXpud0ZZQ01Od08xTFdRbEJOWmxDZzliRWgyeXMybExXMHlXcHdDOFlrUFAtYUxwVVlMTm5Hc3drQmZOUW9RR2YwWVBMX3VBR1R0dzdFTmM3cnU3TGVTZm9ScEplWkhSVFM1bk84QTlhZGlNNEJwTTctZTBlQVhSOXJPSWdNTnhxNTNEekE1NWFIN3JXYlFQX3B2RXBFcWh2VGl6UXBHdWkzMjFRYkF4M21YamZYTERDSThrbzN3N3JsNkU?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "國巨",
+      "ticker": "2327",
+      "sector": "被動元件",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "投信買超，顯示法人對其持正面態度。",
+      "evidence_news": [
+        {
+          "title": "三大法人買賣超 – 外資買超(2303)聯電、(3081)聯亞，投信買超(2382)廣達、(2327)國巨*，法人合計賣超353.91億元",
+          "source": "sinotrade.com.tw",
+          "url": "https://news.google.com/rss/articles/CBMitwRBVV95cUxOeUlxcUxxQUpLZ2xVYU1sUmFKaERIVzR3OU9oY3pmSWdibU9BcmR2dHpSM1p1a1A1bFJTZ1g4cDNnOXhKdkN4QVNKSzg4V1JseTVyMFNJaTdZZ1hYcm5uUVZHVjU1a1JlVDh4aVhNTmg5TThYWXRuTFVTZ0t6c3VZb3JnTGsxbGtfR0FxOXdiN0cxSk5MaXZPV1BCdi1sZWdvRGVpMHpPbXdSVmxrc3hJcGxSZTlTYjBoX0tTSW9kOERzY2N2TGhjV2xHYVVXNnR4LXMwZnM3X3lwNVBnTnBpVENLVEhJVjdXdGR0aGx2NnJWN2p4UHlDYWpINWQ3ODhtRnp5VHJMZWFTb0RCYWdoRGRoUnRzUkRiU251aWdyNVNGUmM1bDJkQ3VldWRDUUI0cHJuaVQ5OVJBc1BITEkyeDlNR0pRZjNUbFJVSURWUFZJa3M5ZDdoODZuX002R1h5eFd0VFNPVFNZaXpTTjhmRzdVZ2VfLWtJNVk1YXpud0ZZQ01Od08xTFdRbEJOWmxDZzliRWgyeXMybExXMHlXcHdDOFlrUFAtYUxwVVlMTm5Hc3drQmZOUW9RR2YwWVBMX3VBR1R0dzdFTmM3cnU3TGVTZm9ScEplWkhSVFM1bk84QTlhZGlNNEJwTTctZTBlQVhSOXJPSWdNTnhxNTNEekE1NWFIN3JXYlFQX3B2RXBFcWh2VGl6UXBHdWkzMjFRYkF4M21YamZYTERDSThrbzN3N3JsNkU?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "聯亞",
+      "ticker": "3081",
+      "sector": "光通訊",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "外資買超，顯示法人對其持正面態度。",
+      "evidence_news": [
+        {
+          "title": "三大法人買賣超 – 外資買超(2303)聯電、(3081)聯亞，投信買超(2382)廣達、(2327)國巨*，法人合計賣超353.91億元",
+          "source": "sinotrade.com.tw",
+          "url": "https://news.google.com/rss/articles/CBMitwRBVV95cUxOeUlxcUxxQUpLZ2xVYU1sUmFKaERIVzR3OU9oY3pmSWdibU9BcmR2dHpSM1p1a1A1bFJTZ1g4cDNnOXhKdkN4QVNKSzg4V1JseTVyMFNJaTdZZ1hYcm5uUVZHVjU1a1JlVDh4aVhNTmg5TThYWXRuTFVTZ0t6c3VZb3JnTGsxbGtfR0FxOXdiN0cxSk5MaXZPV1BCdi1sZWdvRGVpMHpPbXdSVmxrc3hJcGxSZTlTYjBoX0tTSW9kOERzY2N2TGhjV2xHYVVXNnR4LXMwZnM3X3lwNVBnTnBpVENLVEhJVjdXdGR0aGx2NnJWN2p4UHlDYWpINWQ3ODhtRnp5VHJMZWFTb0RCYWdoRGRoUnRzUkRiU251aWdyNVNGUmM1bDJkQ3VldWRDUUI0cHJuaVQ5OVJBc1BITEkyeDlNR0pRZjNUbFJVSURWUFZJa3M5ZDdoODZuX002R1h5eFd0VFNPVFNZaXpTTjhmRzdVZ2VfLWtJNVk1YXpud0ZZQ01Od08xTFdRbEJOWmxDZzliRWgyeXMybExXMHlXcHdDOFlrUFAtYUxwVVlMTm5Hc3drQmZOUW9RR2YwWVBMX3VBR1R0dzdFTmM3cnU3TGVTZm9ScEplWkhSVFM1bk84QTlhZGlNNEJwTTctZTBlQVhSOXJPSWdNTnhxNTNEekE1NWFIN3JXYlFQX3B2RXBFcWh2VGl6UXBHdWkzMjFRYkF4M21YamZYTERDSThrbzN3N3JsNkU?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "鴻海",
+      "ticker": "2317",
+      "sector": "電子代工",
+      "mention_count": 1,
+      "sentiment": "利空",
+      "reason": "股價走弱，與聯發科一同被點名。",
+      "evidence_news": [
+        {
+          "title": "半導體被血洗！大盤又泛綠光 聯發科跌逾3％、鴻海走弱 台積電小漲一點點",
+          "source": "FTNN 新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9RWkUwaHZTRXNCMkNLWkpsZmp4bTlpNnZyNVRUUDFidlZFMUVoOVVnRVJ6cVdFYm1jd0dPNFFvQ19waFNrMmc5aTRYdw?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "聯發科",
+      "ticker": "2454",
+      "sector": "IC設計",
+      "mention_count": 1,
+      "sentiment": "利空",
+      "reason": "跌逾3%，與鴻海一同被點名。",
+      "evidence_news": [
+        {
+          "title": "半導體被血洗！大盤又泛綠光 聯發科跌逾3％、鴻海走弱 台積電小漲一點點",
+          "source": "FTNN 新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9RWkUwaHZTRXNCMkNLWkpsZmp4bTlpNnZyNVRUUDFidlZFMUVoOVVnRVJ6cVdFYm1jd0dPNFFvQ19waFNrMmc5aTRYdw?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "中華電信",
+      "ticker": "2412",
+      "sector": "電信",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "轉投資中華立鼎將登興櫃，且前4月每股純益高達7.07元，顯示轉投資效益良好。",
+      "evidence_news": [
+        {
+          "title": "中華電小金雞中華立鼎6/17登興櫃 前4月每股賺7.07元",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606110215.aspx"
+        }
+      ],
+      "news_count": 1,
       "first_seen": "2026-06-11",
       "last_seen": "2026-06-11"
     }
   ],
   "future_trends": [
     "半導體先進製造與封裝",
-    "低軌衛星",
-    "電動車鋰鐵電池材料",
-    "感測器",
+    "AI相關產業 (AI晶片、AI伺服器)",
+    "低軌衛星通訊",
+    "電動車電池材料 (磷酸鋰鐵)",
     "無人機與安全專區",
-    "AI與半導體成長"
+    "砷化鎵磊晶",
+    "探針卡",
+    "PCB產業 (特別是AI相關應用)"
   ],
-  "sunset_industries": [
-    "CPO製造（短期良率問題）"
-  ]
+  "sunset_industries": []
 }

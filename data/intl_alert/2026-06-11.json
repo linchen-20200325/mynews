@@ -1,6 +1,6 @@
 {
   "report_date": "2026-06-11",
-  "as_of": "2026-06-11 11:34 UTC (Yahoo Finance)",
+  "as_of": "2026-06-11 11:47 UTC (Yahoo Finance)",
   "threshold": -1.5,
   "quotes": {
     "^GSPC": {
@@ -43,18 +43,18 @@
       "name": "標普 500 期貨",
       "group": "美股期貨",
       "lead_type": "盤前即時",
-      "last": 7320.25,
+      "last": 7331.5,
       "prev": 7416.0,
-      "change_pct": -1.29,
+      "change_pct": -1.14,
       "is_drop": false
     },
     "NQ=F": {
       "name": "那斯達克 100 期貨",
       "group": "美股期貨",
       "lead_type": "盤前即時",
-      "last": 28835.75,
+      "last": 28900.0,
       "prev": 29454.75,
-      "change_pct": -2.1,
+      "change_pct": -1.88,
       "is_drop": true
     },
     "^TNX": {
@@ -70,9 +70,9 @@
       "name": "美元指數",
       "group": "債匯",
       "lead_type": "",
-      "last": 100.06,
+      "last": 100.05,
       "prev": 100.05,
-      "change_pct": 0.01,
+      "change_pct": -0.0,
       "is_drop": false
     },
     "TWD=X": {
@@ -116,7 +116,7 @@
     {
       "symbol": "NQ=F",
       "name": "那斯達克 100 期貨",
-      "change_pct": -2.1,
+      "change_pct": -1.88,
       "lead_type": "盤前即時"
     },
     {
@@ -127,32 +127,32 @@
     }
   ],
   "alert_level": "警戒",
-  "summary": "美股隔夜指數全面大跌，尤其費城半導體指數重挫逾12%，台指期夜盤相對抗跌但仍收黑，台股今日開盤恐受美股利空衝擊，需嚴防科技股賣壓。",
+  "summary": "隔夜美股三大指數與費城半導體指數均出現大幅下跌，那斯達克100期貨盤前亦重挫，主要受中東地緣政治緊張升溫、科技股拋售潮及通膨擔憂影響。台指期夜盤雖然跌幅較小，但台股今日開盤仍需嚴防補跌壓力，特別是半導體與電子類股。",
   "interpretation": [
     {
-      "market": "美股主要指數",
-      "cause": "美國前總統川普揚言對伊朗採取「非常猛烈」打擊，導致中東地緣政治緊張情勢升溫，加上科技股出現拋售潮，以及通膨數據高於預期引發的升息疑慮，多重利空夾擊導致美股全面重挫。",
+      "market": "美股三大指數",
+      "cause": "受中東地緣政治緊張升溫（川普揚言猛烈打擊伊朗）以及科技股拋售潮雙重夾擊影響，加上通膨數據創三年新高引發市場擔憂。道瓊工業指數狂瀉超過950點。",
       "evidence_news": [
         {
-          "title": "〈美股盤後〉川普稱將「非常猛烈」打擊伊朗 道瓊狂瀉超過950點 費半重摔逾3.5%",
-          "source": "news.cnyes.com",
-          "url": "https://news.cnyes.com/rss/articles/CBMiT0FVX3lxTE9DS3pneW4xSV9RcVpMeUotNW04eWxweklqMWVQZUtnZ1QwQ0RxSG9XNWtfVWpzQ3BYV2R6UWFVZjVhdm5kUWNucmxXNHRKTkk?oc=5"
+          "title": "美股三大指數重挫逾1%！中東局勢升溫與科技股拋售潮雙重夾擊",
+          "source": "四季線上4gTV",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9EMmhkRFdPaTRMUmFtblRyTVBkWG1MX1B0VlUtbmpyVHRhOTdPT2tZX1BlWDllTjJzTTZkY0xMZWVFWG9nQUQxX1R2WGRLUHpaLUpISmE2VQ?oc=5"
         },
         {
-          "title": "通膨與美伊緊張夾擊！道瓊暴跌逾950點、費半重挫3.5%",
-          "source": "PChome Online 新聞",
-          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNREtjR1p1R2Q5NE1EbnZKU2VaNktzdGJkaEM2Vzc4TFY0NzRlbElJMEVsemJNZVp1ZlZGUUgwLUhfczNGaWRKMmJOQUE4TVdRQjNCSXBlaVJJcFhjeG5Db3ZuSDJaLWcwd1pnZGNCYzFpMG13Qi1rMEpBV1JXOVE5bFhVeENidmtMcnc?oc=5"
+          "title": "川普再嗆伊朗血洗美股！道瓊狂瀉953點 台積電ADR重挫近5%",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxOVWtJV0tVOFRsVURiOFpiX1lYVXRwaTVrUURVTlhaek5pdllfTVFBVnh3YTUyR3NkMWM1ZkdEOGJPNHBVSDlkdFd5bHFvM1NHUFJSbERqYVRSdnoteC1NOFltaDRpa0k4RVJaMmR1LUo5a05hS180Z3VQLVctQk9VMmJZWndjNGZLR1RkdEVOWFp6Zjd2UGZMU3d3eVFvNmRMZ0tVLTBnMnI0dkJnb2FYQy1kWHZKV29vWXZUZEt5cDRfTG1iUjNkb2d4UzJSX0tlZ2xDVUoxejdLUEUwdDU3bmlXQlp1NGY5bDJvUFVzY3kySkdLTHR5U1pnSVNPMk9Da1huTHo0UjVkUXNVU3AxSGR0UWNOVFVicTdZZHM3dnRzLTNmb18xdl93ZHJmc3kxNnR4SEF4ZTFfd0QwQ3pVejFvZFJzbFhFQVU3d1YxcU5VbGRwaGc5c3BSVQ?oc=5"
         }
       ]
     },
     {
-      "market": "美股科技股與半導體類股",
-      "cause": "市場對AI股出現泡沫化的擔憂，導致科技股賣壓擴大，半導體類股首當其衝，Navitas等公司股價重挫，台積電ADR也大幅下跌。",
+      "market": "費城半導體指數",
+      "cause": "半導體類股遭遇嚴重拋售，Navitas單日狂跌10%，美超微暴跌28%，台積電ADR亦重挫近5%。市場對AI股泡沫化論點的擔憂加劇，以及通膨與地緣政治緊張。",
       "evidence_news": [
         {
           "title": "晶片重創美股狂瀉！台股 44,000 大關面臨考驗，資金死守內需防禦",
           "source": "TechNews 科技新報",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYXJmZE5PcjJscXQzYkZ3M0lEWTJqZXI2VFFpYVAwX0h3NW82REpLb3N5Wmt0bzBCcGc4WE9RdHFPS21KVVVGRFpvYjMySWxFYzhaeG56ZXpha3VlR1hFZUt1WGtOMW16TDVIdzZfODh4allzM05xeHI5VHJpcWp1bXJuX3dsWjRDaEZObmk0SnIwbjBmRndSQmlPTEhCcEpPSENfcXRySjNfTDQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYXJmZE5PcjJscXQzYkZ3M0lEWTJqZXI2VFFpYVAwX0h3NW82REpLb3N5Wmt0bzBCcGc4WE9RdHFPS21KVVVGRFpvYjMySWxFYzhaeG56ZXpha3VlR1hFZUt1WGtOMW16TDVIdzZfODh4amZzM05xeHI5VHJpcWp1bXJuX3dsWjRDaEZObmk0SnIwbjBmRndSQmlPTEhCcEpPSENfcXRySjNfTDQ?oc=5"
         },
         {
           "title": "半導體股遭重挫，Navitas單日狂跌10%引發市場震盪！",
@@ -163,39 +163,44 @@
     },
     {
       "market": "台指期夜盤",
-      "cause": "受美股重挫影響，台指期夜盤下跌0.29%，顯示市場對隔日台股開盤已有所反應。",
+      "cause": "美股隔夜重挫對台指期夜盤產生直接影響，雖然跌幅相較美股較小，但仍顯示市場對後市的保守態度。",
       "evidence_news": [
         {
           "title": "台股盤前／美股遭血洗拖累台股！台指夜盤狂瀉752點 台股恐延續跌勢",
           "source": "三立新聞網SETN.com",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBjbTJwQS1wdGYyNzF4ekN6NlllaW1VMjB3Y1VpVGktNzRuNkVFTkxaS2tHT09YQXR4RzVETUNLN25nWGF0b2I1dmpqYw?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBjbTJwQS1wdGYyNzF4ekN6NlllaW1VMjB3Y1VpVGktNzRuNkVFTkxaS2tHT09YQXR4RzVETUNLN25nWGF0b2I1dkpqYw?oc=5"
+        },
+        {
+          "title": "川普揚言猛烈打擊伊朗，美股大跌，台指期夜盤再跌逾700點",
+          "source": "鏈新聞 ABMedia",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1YZEcxQXBZZXRleFcyR2xWNVJnVFFXSTlpUXo5Q1A2UmtWRVduLUZqLURqZ1JFSk93Vm1IWFRhanc0NzFLenhaX05NZndBYWpOUWVHWVNsdkFnaW9iMXhETWlNTQ?oc=5"
         }
       ]
     },
     {
-      "market": "部分個股與產業",
-      "cause": "儘管整體市場偏空，但仍有部分公司因自身營運利多或產業趨勢而逆勢表現，例如立凱電打進特斯拉供應鏈、漢唐與辛耘接單暢旺、全新啟動新廠計畫等。",
+      "market": "美股期貨",
+      "cause": "盤前美股期貨延續隔夜跌勢，那斯達克100期貨跌幅尤為顯著，顯示市場情緒依然偏向悲觀，主要受通膨擔憂和美伊緊張局勢影響。",
       "evidence_news": [
         {
-          "title": "立凱電打進特斯拉供應鏈 2.8億元現增過關籌資建廠",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606110231.aspx"
+          "title": "S&P 500, Nasdaq, Dow Futures Extend Slide As US-Iran Hormuz Tensions Flare Again, Inflation Data Stings: ORCL, DJT, SMCI, TSLA In Focus",
+          "source": "TradingView",
+          "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPOU10dFU4ZnRMR1NXVGgyTmdHTEY5S2tRZE9nX0VtRWlIRTlqSTBaTXNDSC1mVm1EYnVWcG53QU9DZlhXZDYxUXhuNDVpZnJoVEdObzFIMlRRSDVaOUVWMGNXTHFhUFMxMDJTYlVnUXI0N0ZUVU9Dd0VWQVlkQ3lmNjdSRGoyRkpfNkl6YWhwM21qbTNqZllqQ2RIVXJuZGZYeGlxZXF3Z1p3ZmR1ZmVvQkY1eUZERkdiNFpWclpqX3FSZzUxVGltclZVdEdPMWxuV2pzbTd2dzBCb3FpWk41R1VtRmYxRzkxeDZNcnhvSk1GRHJjdVBVOGRGNUhlZFNrdlh3UHgxSmpOQWM1SDMxVG5yS3IxQlRa?oc=5"
         },
         {
-          "title": "漢唐在手訂單1939億 辛耘訂單展望達2028年",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606110279.aspx"
+          "title": "US Stock Market Today: S&P 500 Futures Fall As Inflation Jitters Grip Tech",
+          "source": "simplywall.st",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcjVDZkhtMnRBdzk1VVdzTWpmcWJDWWFlOGFST0NBQlpQSGpxSkROV1BRcGFLemwzSllicm9WbWdhT0FraGI2bEd2UlA5YldyU3cwdldDcDBtYVZKQktfMFU1Y0VQZzlfRDZkUDNuYzhHSm1jTmxMbHhKLTFmbE5pd0tLbXVpd21MSHJJN29LSnpLdERyMEVfLS1hTkNzQVN4NzdQZnRZLWJwTUh3bUtZYjFSRWNvWEgtLS1UcjRMd2xuOU1fX1B5X0FpUDLSAdIBQVVfeXFMT0Y0TXN5ZmhjcDZnaUtYOUFibk54cFd3T2FYdkdYZklpUDFXdi1sYjU0UnlDNnp0d1ViQ20yUFl5UDJmVldqZzJXei1uUTJsVGtZNjI3T1dXN2ZhalVZZXc4OFlpTzYtS211bGJUNFhTWEk2aUxwU3ZkWHJraG4xcGpPUnpnMFNXTWxLRnJfbDBsdGRCVWQ4b19CUC1FQTN0SzFLRk9TOHhQOGZsRXBFMHp2LXoyRkRCYXlvdnplVlhFQW51akI1bVNHWl90SDg5MVRn?oc=5"
         }
       ]
     }
   ],
   "tw_impact": {
     "direction": "偏空",
-    "reason": "隔夜美股主要指數全面大跌，尤其是費城半導體指數重挫12.29%，顯示科技股和半導體產業面臨巨大賣壓。儘管台指期夜盤跌幅相對較小，但美股的領先指標作用強烈，預計今日台股開盤將受到顯著衝擊，尤其半導體及電子類股可能面臨補跌壓力。中東地緣政治緊張與AI股泡沫論將持續影響市場情緒。",
+    "reason": "由於美股隔夜大幅重挫，特別是費城半導體指數跌幅達-12.29%，對台灣股市，尤其是半導體與電子類股將產生顯著的負面影響。儘管台指期夜盤跌幅較輕，但開盤後仍可能面臨補跌壓力。中東地緣政治風險與全球通膨擔憂，將持續影響市場情緒。",
     "sectors": [
-      "半導體",
-      "電子",
-      "AI概念股"
+      "半導體類股",
+      "電子類股",
+      "高科技股"
     ]
   },
   "ai_ok": true,
@@ -481,6 +486,14 @@
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
+      "title": "川普再嗆伊朗血洗美股！道瓊狂瀉953點 台積電ADR重挫近5%",
+      "source": "Yahoo新聞",
+      "url": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxOVWtJV0tVOFRsVURiOFpiX1lYVXRwaTVrUURVTlhaek5pdllfTVFBVnh3YTUyR3NkMWM1ZkdEOGJPNHBVSDlkdFd5bHFvM1NHUFJSbERqYVRSdnoteC1NOFltaDRpa0k4RVJaMmR1LUo5a05hS180Z3VQLVctQk9VMmJZWndjNGZLR1RkdEVOWFp6Zjd2UGZMU3d3eVFvNmRMZ0tVLTBnMnI0dkJnb2FYQy1kWHZKV29vWXZUZEt5cDRfTG1iUjNkb2d4UzJSX0tlZ2xDVUoxejdLUEUwdDU3bmlXQlp1NGY5bDJvUFVzY3kySkdLTHR5U1pnSVNPMk9Da1huTHo0UjVkUXNVU3AxSGR0UWNOVFVicTdZZHM3dnRzLTNmb18xdl93ZHJmc3kxNnR4SEF4ZTFfd0QwQ3pVejFvZFJzbFhFQVU3d1YxcU5VbGRwaGc5c3BSVQ?oc=5",
+      "summary": "川普再嗆伊朗血洗美股！道瓊狂瀉953點 台積電ADR重挫近5% Yahoo新聞",
+      "published": "2026-06-10T23:41:55+00:00",
+      "origin": "關鍵字「美股 大跌 重挫」"
+    },
+    {
       "title": "川普揚言猛烈打擊伊朗，美股大跌，台指期夜盤再跌逾700點",
       "source": "鏈新聞 ABMedia",
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1YZEcxQXBZZXRleFcyR2xWNVJnVFFXSTlpUXo5Q1A2UmtWRVduLUZqLURqZ1JFSk93Vm1IWFRhanc0NzFLenhaX05NZndBYWpOUWVHWVNsdkFnaW9iMXhETWlNTQ?oc=5",
@@ -545,12 +558,20 @@
       "origin": "關鍵字「台指期 夜盤 台股期貨」"
     },
     {
-      "title": "美股三大指數重挫逾1%！科技股領跌、中東戰火升溫引發市場恐慌",
-      "source": "民視新聞網",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE53VnlDOE01UTItUjdiWnhsLUxkTS10Sk52ZWU2SjE2V3lEQjlBNHB1NUxwZ0NBRlhzbW4waVkzdHpVRkdyeDV1LUZsWXAwUHlHLXh2S3FNWHk3Zl9ZT2VFWg?oc=5",
-      "summary": "美股三大指數重挫逾1%！科技股領跌、中東戰火升溫引發市場恐慌 民視新聞網",
-      "published": "2026-06-10T20:45:16+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
+      "title": "Stock Market Today: Dow Futures Gain, What to Watch — Live Updates",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNc254QUF3M1VKMGZYd3lydnR5SEhiOVhMZFFWakF3TURTSDFqWEc5dW41YnA4QUJQZExmNkxyRVhrY3JwVk1uaFk3OHpVd2p3ZG1kMi1KeXlDNUJraUtCT2V3UzJBWGl2N1E0a25nOTJXaWhhV3dieFRvbE1pWF8tRUgzd0dvRms?oc=5",
+      "summary": "Stock Market Today: Dow Futures Gain, What to Watch — Live Updates WSJStock market today: Dow, S&P 500, Nasdaq futures rise after US completes fresh round of Iran strikes Yahoo Finance UKChip stocks rebound ahead of SpaceX IPO despite U.S.-Iran strikes qz.comStock index futures higher as U.S. 'completes' strikes against Iran (SPX:) Seeking AlphaStock Market Today: Futures Point Higher After Indexes Sink; Oil Slips as Investors Take US Attacks on Iran in Stride; Oracle Drops on AI Spending Investopedia",
+      "published": "2026-06-11T11:26:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "SpaceX IPO is a ‘referendum’ on Musk, say market watchers",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5rS1ZTQW4xWExBeGRkUDFBWEh4X3VtaUlBaGJjeWEwbXJFYnJfRkNURWFvdEc5MTRKOE93QUx1Nk44bDNVMVJOOXdZaFVfVW0wMVo0VVoya2dCdmNabG45anJ1ZlJVeGJrQ0ZIc09HMHRGYThxaEHSAXtBVV95cUxQWVA2dVNEenJ5cDJVSWxIQWdsX1ExQTFoeVNfTzB0Rm5pSXQ1ZDQ2STVnUDNtTTAzdVFfdERaNktUeG4yeEx4b19ER0puUGc3Q0hXNmZuZm45dko2SHlDTGhlb3FPRndQY0NmcGtvZElRbWZTSk1sUnMzNms?oc=5",
+      "summary": "SpaceX IPO is a ‘referendum’ on Musk, say market watchers CNBCOn brink of IPO, Musk's SpaceX already a household name, Reuters/Ipsos poll finds ReutersShort Seller Chanos Is Bearish on SpaceX Valuation Fueled by ‘Hopes and Dreams’ Bloomberg.comThe big question facing SpaceX investors: What are you really buying? MarketWatchForbes Daily: You May Want To Think Twice Before Flipping SpaceX Forbes",
+      "published": "2026-06-11T10:37:21+00:00",
+      "origin": "Google 財經頭條"
     },
     {
       "title": "Dow, S&P 500, Nasdaq Futures Edge Higher After Oil Jolt Ahead of Fed",
@@ -569,18 +590,10 @@
       "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
     },
     {
-      "title": "Stock Market Today: Dow Futures Gain, What to Watch — Live Updates",
-      "source": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNc254QUF3M1VKMGZYd3lydnR5SEhiOVhMZFFWakF3TURTSDFqWEc5dW41YnA4QUJQZExmNkxyRVhrY3JwVk1uaFk3OHpVd2p3ZG1kMi1KeXlDNUJraUtCT2V3UzJBWGl2N1E0a25nOTJXaWhhV3dieFRvbE1pWF8tRUgzd0dvRms?oc=5",
-      "summary": "Stock Market Today: Dow Futures Gain, What to Watch — Live Updates WSJStock market today: Dow, S&P 500, Nasdaq futures rise after US completes fresh round of Iran strikes Yahoo FinanceStocks bounce back, oil pares gains as Iran and Israel signal a pause ReutersStocks Bounce, Oil Falls as US Ends Iran Strikes: Markets Wrap Bloomberg.comStock Market Today: Dow, S&P 500 and Nasdaq set to rise as tech stocks rebound ahead of SpaceX IPO; U.S. and Iran exchange strikes for second day; Oracle shares slide MarketWatch",
-      "published": "2026-06-11T10:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
       "title": "Trump's inflation flippancy gifts Dems ready-made midterm ads",
       "source": "Axios",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1JSFZhZ0RtU0M2YUFEZEl4VFNKQVNuS09GQm9iSFROLVdBSV9fa0lTSDI4MnhXZFFaVVdSQ1NKejdXMkUxanNRbHE1M182RlA5ekl6Z1o3aTlRM243dzUtVnVRQmtkSWZQeFp0QVFMOFpuSTVlU0J2MHl1Skc?oc=5",
-      "summary": "Trump's inflation flippancy gifts Dems ready-made midterm ads AxiosTrump says 'I love the inflation' after consumer price index hits 3-year high CNBCConsumers resigned to higher prices as cost of living jumps TribLIVE.com'I love the inflation,' Trump says as prices rise amid Iran war ReutersTrump says ‘I love the inflation,’ Bill Gates testifies about his Epstein ties AP News",
+      "summary": "Trump's inflation flippancy gifts Dems ready-made midterm ads AxiosTrump says ‘I love the inflation,’ Bill Gates testifies about his Epstein ties AP NewsConsumers resigned to higher prices as cost of living jumps TribLIVE.comTrump says 'I love the inflation' after consumer price index hits 3-year high CNBC'I love the inflation,' Trump says as prices rise amid Iran war Reuters",
       "published": "2026-06-11T09:35:25+00:00",
       "origin": "Google 財經頭條"
     },
@@ -593,11 +606,11 @@
       "origin": "Google 財經頭條"
     },
     {
-      "title": "SpaceX is poised for blastoff with an IPO likely to break records",
-      "source": "NPR",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5fdzBHc2d3M1ptX0lfanhhZEZiLXF0WTlSTHY3bDhsVGlNMnNDV0htTHVwaVJiZnRlY1JPeXdJbkd3TWhaQjJYTl95T1VTN2Y4LUc5aGVjTl9jbDAwbzQ3RFFkdGlsNXpLa3VtT0VTb3F5bXVhcjFod2FVRQ?oc=5",
-      "summary": "SpaceX is poised for blastoff with an IPO likely to break records NPRSpaceX IPO is a ‘referendum’ on Musk, say market watchers CNBCElon Musk's SpaceX is about to make its debut on Wall Street. What to know NewsdayThe big question facing SpaceX investors: What are you really buying? MarketWatchHere's How Much a $10,000 Investment Could Get You When SpaceX Goes Public on June 12 Yahoo Finance",
-      "published": "2026-06-11T09:00:00+00:00",
+      "title": "Cathie Wood's latest big bet on Elon Musk is about to pay off",
+      "source": "Business Insider",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNcHBLb2xGdzVKYlpLZThnYWZWY0daNWZwN05wazBMYTdQcTlBUGt2QkVrazctY0VNM1E3TG0yZzdyZ3RfY0NnOHI4QUVxaTU4b1JlRzU5VmFndlY1VWJNYnBoUWpzT3N1YzhiS19GRm9kMEZQcV9SNlNISkFjcW12c3FNMlU0SnFzN3c?oc=5",
+      "summary": "Cathie Wood's latest big bet on Elon Musk is about to pay off Business InsiderWhy SpaceX’s Biggest IPO Catalyst Isn’t AI—It’s Scarcity MorningstarSpaceX’s AI Wing Casts Cloud Over IPO And Future Earnings, Experts Say ForbesThe Eye-Watering Sum SpaceX Spent Last Year Reveals What’s Really Coming Next Yahoo FinanceSpaceX's AI unit lost $6.4B in 2025 as it invests in massive AI infrastructure for future growth. Pluang",
+      "published": "2026-06-11T09:10:16+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -657,18 +670,10 @@
       "origin": "Google 財經頭條"
     },
     {
-      "title": "‘South Korea’s Amazon’ hit with record fine over data breach",
-      "source": "Financial Times",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQSTZQUU96VXVTUFRzcks5UmZ5UkIxSWVwaFU5ZFpFUi15cVd2M2hPVGtLbTJyQVlIZXV6ek5LZnBJQjJuSTQ1YnJfODlnOEs3R2lEakwwRFk1eWNPblVxLV83aUNPRmdsVXhDLWI1Q3A2QVJNYzN3bDhGblBaTjNCdm1FOEo?oc=5",
-      "summary": "‘South Korea’s Amazon’ hit with record fine over data breach Financial Times‘Amazon.com of South Korea’ Is Fined a Record $409 Million The New York TimesKorea fines e-commerce giant $400m over data breach affecting millions BBCSouth Korea Fines Coupang $410 Million Over Data-Law Breaches WSJSouth Korea fines Coupang $409 mln in country's largest data breach penalty Reuters",
-      "published": "2026-06-11T06:21:11+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
       "title": "Anthropic CEO says government should block dangerous AI",
       "source": "Axios",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPUGFPeVR2VldXM21VWDNBRFdaVEVtVDNwZDBCcnhzWmp1a3p2YTN3eGhUTE13TTRZMzhpckkza0QzRUxaZkJLQ3Q4UnY1U1JweTluZ19zNGdhZndyZW9SQ2JSWGd5dWRJQnJkb1ZhY0pCWmkwaTFkZnVZdTRLYnowMWNR?oc=5",
-      "summary": "Anthropic CEO says government should block dangerous AI AxiosExclusive: Anthropic CEO calls for stronger regulation of AI ABC News - Breaking News, Latest News and VideosAnthropic CEO Says Government Should Be Able to Block New Models Bloomberg.comPolicy on the AI Exponential AnthropicAnthropic backs mandatory testing for frontier AI models Politico",
+      "summary": "Anthropic CEO says government should block dangerous AI AxiosExclusive: Anthropic CEO calls for stronger regulation of AI ABC News - Breaking News, Latest News and VideosPolicy on the AI Exponential AnthropicAnthropic CEO Says Government Should Be Able to Block New Models Bloomberg.comAnthropic backs mandatory testing for frontier AI models Politico",
       "published": "2026-06-11T05:25:43+00:00",
       "origin": "Google 財經頭條"
     },
@@ -676,7 +681,7 @@
       "title": "Morning Bid: Tech and war jitters sap confidence",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE10U1BOUUYza1FXSGo5RmpubUx3S1F0XzgxQzlMUHd2Z3pBM2dBbEpNczNiTzVqUUdtMmExQUVtdWNHY25nTVZjbWUyY2xqYXNYQUluZ0hOemJwVkI2OHRSVkdzZW1rbTM4aENyYkgwM3J6aFl6YWk0N3ZxWE94YUk?oc=5",
-      "summary": "Morning Bid: Tech and war jitters sap confidence ReutersAsian shares mixed after another sell-off of AI stocks on Wall St, while oil prices ease AP NewsAsian shares slip after another sell-off of AI stocks on Wall St, while oil prices rise Yahoo FinanceStock market jitters remain amid tech fears and renewed Middle East attacks BBCEmerging-Market Stocks Rise Most in Two Months on AI Dip-Buying Bloomberg.com",
+      "summary": "Morning Bid: Tech and war jitters sap confidence ReutersPeace hopes steady Europe ahead of expected ECB rate hike ReutersAsian shares slip after another sell-off of AI stocks on Wall St, while oil prices rise Yahoo FinanceStock market jitters remain amid tech fears and renewed Middle East attacks BBCEmerging-Market Stocks Rise Most in Two Months on AI Dip-Buying Bloomberg.com",
       "published": "2026-06-11T04:35:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -684,7 +689,7 @@
       "title": "OpenAI mulls slashing prices as it competes with Anthropic for users: WSJ",
       "source": "CNBC",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWTVaQ2JmSTJ2dG1yVC1nSHpNbWJqOVlUV2dmMW1vZ2d6VmlFN1ZDRTFOVS04SDZQM01CcDZIRS1WWDluTE5hYzJBV25NZlBKMndtTmRHRG5DZmphLWEydEhmM0g5cEVHcjlvNTBueWpZRmFpcDNPekV2OU9hWV9BMzJsd3NLNWEwcFpydDFQX1JZc0I2Xy1ZcktIZDlxV2RramNQT1F5WnXSAa4BQVVfeXFMTTA0akxwVmdMa0RybEpINXVxTUxTSkJWRWNnY3pDUXN2ZDAyaW53dkRvVG1QM3hQSWt4aFlQTnJwWkVoYUdzd3F3cWFybHA5cE9feHQyTlhHc0pDaFhlMVVTWTBRU3hLRHlWamFsQldzTnpHOWRXcjREbG9UcTRTRGZsLTFhYTlnQWQ4OFpUTEZkR21mR3VsdGpRbmloN01vT0ZxTGl6dEtkM09fZS1n?oc=5",
-      "summary": "OpenAI mulls slashing prices as it competes with Anthropic for users: WSJ CNBCExclusive | OpenAI Considers Drastic Price Cuts, Anticipating War for Users With Anthropic WSJChatGPT price-war report comes as data shows AI usage already tailing off MarketWatchOpenAI considers drastic price cuts, anticipating war for users with Anthropic, WSJ reports Yahoo FinanceOpenAI considers steep price cuts to compete with Anthropic qz.com",
+      "summary": "OpenAI mulls slashing prices as it competes with Anthropic for users: WSJ CNBCExclusive | OpenAI Considers Drastic Price Cuts, Anticipating War for Users With Anthropic WSJChatGPT price-war report comes as data shows AI usage already tailing off MarketWatchOpenAI considers drastic price cuts, anticipating war for users with Anthropic, WSJ reports Yahoo FinanceOpenAI is considering steep price cuts ahead of a battle with Anthropic qz.com",
       "published": "2026-06-11T03:24:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -700,7 +705,7 @@
       "title": "Anthropic Walks Back Policy That Could Have ‘Sabotaged’ AI Researchers Using Claude",
       "source": "WIRED",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxORnEtMHRDdUF6VkFPSkE5MkpSQ3pKNWdvWGpCd3dDU0dTTEE0UVF0aVhfOC0zaHRNYWdDWXFpQklCOXVRbEEwT19ZNVN3ZnVjRWRsejhMU09scUh1eTdTd2dGa3ltUXJQUHd4ZW8tMWJLU3FjUkRPYW5fQVRSUjJfZ2JnOTQ0NWFDb3NSYTFNa2ZaX1lRV2tmT1BmQmFlclFuT2NZ?oc=5",
-      "summary": "Anthropic Walks Back Policy That Could Have ‘Sabotaged’ AI Researchers Using Claude WIREDClaude Fable 5 and Claude Mythos 5 AnthropicAnthropic’s new AI model is powerful, dazzling—and about to get really expensive Fast CompanyAnthropic: 'We made the wrong tradeoff' in new model guardrails Business InsiderAnthropic’s New Fable AI Model Is Met With User Backlash Over Restrictions WSJ",
+      "summary": "Anthropic Walks Back Policy That Could Have ‘Sabotaged’ AI Researchers Using Claude WIREDClaude Fable 5 and Claude Mythos 5 AnthropicAnthropic’s new AI model is powerful, dazzling—and about to get really expensive Fast CompanyAnthropic: 'We made the wrong tradeoff' in new model guardrails Business InsiderClaude Fable 5 available today in Microsoft Foundry: Powering the next era of autonomous agents Microsoft Azure",
       "published": "2026-06-11T03:11:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -780,7 +785,7 @@
       "title": "Visa plugs its payment network into ChatGPT, letting AI agents shop and pay for users",
       "source": "AP News",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONHZtakxXSFE2bHJoc3JueEthUlNFc2drdW44YkEzWW5VQlNDakRWRUpRM2V6dEs3RldsQkhQLUlMVGRIeGVSYjRMVHJYOHZNbDBuX2tpTzVOVUlXVl9BU3VuREVfeGtzSVlPUEVEV3JRc3NGSkFsbHFqdjVTS3l5R2c4c1JWVGpKSmEwc1N6bWlvMVQwMlhyWlRUUWs5MUtf?oc=5",
-      "summary": "Visa plugs its payment network into ChatGPT, letting AI agents shop and pay for users AP NewsVisa Partners with OpenAI to Power the Next Generation of AI Commerce visa.comVisa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum Business WireVisa to Secure Payments for Shoppers on ChatGPT in OpenAI Partnership WSJOpenAI, Visa Team Up to Let AI Agents Make Purchases Online Bloomberg.com",
+      "summary": "Visa plugs its payment network into ChatGPT, letting AI agents shop and pay for users AP NewsVisa Partners with OpenAI to Power the Next Generation of AI Commerce visa.comVisa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum Business WireVisa to Secure Payments for Shoppers on ChatGPT in OpenAI Partnership WSJVisa lets agents pay through OpenAI Axios",
       "published": "2026-06-10T22:43:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -833,14 +838,6 @@
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Wing drone delivery might not be a novelty anymore",
-      "source": "TechCrunch",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNM3RINEJvNDJ0UEdaN2ZQR1hlejJvazVucTR6MGp6UE9oY2Jka3NROWNqcFlxRFdsYWVyaEtGR21oOHdKUm1CTVl4amZnSm5QQ0tGVTl2MElQRURETHNvVE42S3lGa2RCUUc0Uk5PVzc4a2tuZVpVM2tSWjg1M2JTTXVpQWlPZzlIVWdla253?oc=5",
-      "summary": "Wing drone delivery might not be a novelty anymore TechCrunchCould your next Walmart order arrive by drone? 7 major cities are getting the service. YahooWalmart drone delivery coming to Louisiana KLFY.comWalmart drone deliveries headed to Philadelphia area The Business JournalsSalt Lake City next up for Walmart drone delivery service KSL News",
-      "published": "2026-06-10T19:52:09+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
       "title": "Nomination Sent to the Senate",
       "source": "The White House (.gov)",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOOE5aM3R2aTB2U1dWMG5HbGt0X3d5a285VVZwRVhiX1ZKdU5yRDNLU1Y3cnlDMExXZnRyem5KTW9HNzhseWdsMDAwaE8yRE1QeWw1MV9zYmxhOVktYmJ3QzdKZUVrdTR0MGFvUVFXd2hyRjdHenlVMVBGc3FDdjZjWXlwTlRTQzFScXVPR3pPb2NnRkJ3cEE?oc=5",
@@ -868,8 +865,16 @@
       "title": "Analysts expected oil to surge above $200 but China has quietly kept prices half of that—and can’t for much longer",
       "source": "Fortune",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdnFtWUxGaWpLYk9FN0RmU085TUszdjhmQzBsOWNNeW50WnNIVnMwZC1lVHB2Q3RnNDg2V09YQ3BmZ3lvOEpJSklrQlg3RmV6NnJFNFdfWHhBX3FaX2FUR1ozSkVKaENsVTFtZW5xdGdvTXpGZDlkMHZ6aV96V3pVcS1welg0bEZmNGthYl9mTTNHeVE?oc=5",
-      "summary": "Analysts expected oil to surge above $200 but China has quietly kept prices half of that—and can’t for much longer FortuneTen Reasons Oil Is Still Below $100 a Barrel Bloomberg.comHow the Iran war aftershocks are hitting oil, coal, climate AxiosA Rush to Stockpile Oil Will Keep Prices Higher for Longer WSJWhy the much-feared crunch in oil markets has yet to arrive Financial Times",
+      "summary": "Analysts expected oil to surge above $200 but China has quietly kept prices half of that—and can’t for much longer FortuneTen Reasons Oil Is Still Below $100 a Barrel Bloomberg.comHow the Iran war aftershocks are hitting oil, coal, climate AxiosWhy the much-feared crunch in oil markets has yet to arrive Financial TimesA Rush to Stockpile Oil Will Keep Prices Higher for Longer WSJ",
       "published": "2026-06-10T18:10:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Exclusive | Jeanine Pirro’s Prosecutors Probe Big Banks for Alleged ‘Debanking’",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQl9UQzYwcjZzT1pFaHhodXhKbDhJSmtZSTRNNE1kUTBXWDFhN2xPcDFrX1NTNWRMVlRhMDktT3lKODhkUG5YUzh3aS1WSXR3NzVTMWhRbmhmcHp6VTdYeG9oYTdYY3czZXlqMVFPVGVMeVgwTklaWEhSVGl5Y1ZkdkNFWndqWlFrc1p6YmFzTzFIMkllYXlwaUo5eFFTZFFMZzB1OGJuMmNLZ2NrMHI5UWhR?oc=5",
+      "summary": "Exclusive | Jeanine Pirro’s Prosecutors Probe Big Banks for Alleged ‘Debanking’ WSJUS Justice Department subpoenas major banks over alleged 'debanking,' source says ReutersMajor US Banks Face Federal Probe Over Debanking Allegations Bloomberg.comJustice Department opens sweeping 'debanking' probe into JPMorgan, Bank of America and more New York PostJeanine Pirro has a new target - banks who ‘debanked’ customers for political reasons The Independent",
+      "published": "2026-06-10T17:51:00+00:00",
       "origin": "Google 財經頭條"
     }
   ]
