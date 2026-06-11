@@ -11,9 +11,12 @@
        連不上自動降級直連;沙箱/無代理時抓不到屬正常,回 None 不拋例外。
 
 輸出:fetch_night_quote() -> {
-  "symbol": "TXF-NIGHT", "name": "台指期夜盤", "group": "台股期貨夜盤",
-  "lead_type": "盤前即時", "last": <float>, "prev": <float>,
-  "change_pct": <float %>, "expiry": "YYYYMMDD", "contract": "<期交所中文名>",
+  "symbol": "TXF-NIGHT", "group": "台股期貨", "lead_type": "盤前即時",
+  # name/session 依抓取當下台灣時段誠實標示,避免日盤中跑卻寫「夜盤」誤導:
+  "name": "台指期夜盤|台指期夜盤收盤|台指期(日盤即時)|台指期(日盤收盤)",
+  "session": "night|night_close|day|day_close",
+  "last": <float>, "prev": <float>, "change_pct": <float %>,
+  "expiry": "YYYYMMDD", "contract": "<期交所中文名>",
   "as_of": "YYYY-MM-DD HH:MM UTC (TAIFEX MIS)",
 }  抓不到回 None。
 """
@@ -22,7 +25,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 GETQUOTELIST_URL = "https://mis.taifex.com.tw/futures/api/getQuoteList"
 # 大台「臺股期貨」月契約:KindID=1、CID=TXF;RowSize 取全部後由程式挑近月。
@@ -38,6 +41,23 @@ _REF_KEYS = ("CRefPrice", "CYClosePrice", "CRef", "RefPrice")
 _VOL_KEYS = ("CTotalVolume", "CTotalMatchQty", "CVolume", "CAccVolume", "Volume")
 _NAME_KEYS = ("DispCName", "CName", "SymbolName")
 _EXPIRY_KEYS = ("CExpiryDate", "ExpiryDate", "CSettlementDate")
+
+
+def _session_label() -> tuple[str, str]:
+    """依台灣現在時間判斷台指期所處時段,回 (誠實顯示名稱, 時段標籤)。
+
+    台指期交易時段(台灣):一般(日盤)08:45–13:45、盤後(夜盤)15:00–次日 05:00。
+    其餘為休市,最後一筆報價即前一時段收盤,故標「收盤」避免標籤誤導。
+    """
+    mins = (datetime.now(timezone.utc) + timedelta(hours=8))
+    m = mins.hour * 60 + mins.minute
+    if 8 * 60 + 45 <= m < 13 * 60 + 45:
+        return "台指期(日盤即時)", "day"
+    if 13 * 60 + 45 <= m < 15 * 60:
+        return "台指期(日盤收盤)", "day_close"
+    if m >= 15 * 60 or m < 5 * 60:
+        return "台指期夜盤", "night"
+    return "台指期夜盤收盤", "night_close"  # 05:00–08:45 夜盤已收、日盤未開
 
 
 def _to_float(s) -> float | None:
@@ -124,19 +144,21 @@ def fetch_night_quote(log=print) -> dict | None:
 
     row, last, ref = best
     change_pct = round((last - ref) / ref * 100, 2)
-    name = str(_first(row, _NAME_KEYS) or "台指期").strip()
+    contract = str(_first(row, _NAME_KEYS) or "台指期").strip()
     expiry = str(_first(row, _EXPIRY_KEYS) or "").strip()
-    log(f"  [台指期夜盤] {name} {last:g}(前結算 {ref:g}){change_pct:+.2f}%")
+    disp_name, session = _session_label()  # 依現在時段給誠實名稱(日盤即時/夜盤/收盤)
+    log(f"  [台指期/{session}] {contract} {last:g}(前結算 {ref:g}){change_pct:+.2f}%")
     return {
         "symbol": "TXF-NIGHT",
-        "name": "台指期夜盤",
-        "group": "台股期貨夜盤",
+        "name": disp_name,
+        "session": session,
+        "group": "台股期貨",
         "lead_type": "盤前即時",
         "last": round(last, 2),
         "prev": round(ref, 2),
         "change_pct": change_pct,
         "expiry": expiry,
-        "contract": name,
+        "contract": contract,
         "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC (TAIFEX MIS)"),
     }
 
