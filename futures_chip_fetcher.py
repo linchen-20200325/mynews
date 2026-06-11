@@ -81,60 +81,55 @@ def _post_csv(date_str: str, log=print) -> str | None:
     return None
 
 
+def _extract(rows: list, require_big: bool) -> tuple[dict, list | None]:
+    """掃資料列取三大法人台指期留倉(不靠表頭)。
+
+    期交所這份 CSV 表頭是「兩列」(上層交易/未平倉分組、下層口數欄位),故不找表頭,
+    直接認資料列:含身份別(外資/投信/自營商)即為資料列;『多空未平倉口數淨額』固定是
+    該列**倒數第二欄**(最後一欄為對應契約金額淨額)。
+    require_big=True 時僅取含「臺股期貨」名稱的列(排除小型/微型);
+    若過濾模式下商品名稱欄空白,改用 require_big=False 退而求其次。
+    """
+    out: dict = {}
+    sample = None
+    for r in rows:
+        cells = [c.strip() for c in r]
+        if any("小型" in c or "微型" in c for c in cells):
+            continue
+        if require_big and not any("臺股期貨" in c or "台股期貨" in c for c in cells):
+            continue
+        who = next((c for c in cells if c in ("外資", "投信", "自營商", "外資及陸資")), "")
+        if not who:
+            continue
+        trimmed = list(cells)
+        while trimmed and trimmed[-1] == "":
+            trimmed.pop()
+        if len(trimmed) < 2:
+            continue
+        net = _to_int(trimmed[-2])  # 倒數第二欄 = 多空未平倉口數淨額
+        if sample is None:
+            sample = trimmed
+        key = ("foreign_net_oi" if "外資" in who
+               else "trust_net_oi" if "投信" in who else "dealer_net_oi")
+        out[key] = net
+    return out, sample
+
+
 def _parse_csv(text: str, date_str: str, log=print) -> dict | None:
     """解析 CSV:取『臺股期貨』各身份別的『多空未平倉口數淨額』。無資料回 None。"""
     rows = list(csv.reader(io.StringIO(text)))
-    # 找表頭(含『身份別/身分別』與『未平倉』字樣的那一列)。
-    header = None
-    h_idx = 0
-    for i, r in enumerate(rows):
-        joined = "".join(r)
-        if ("身份別" in joined or "身分別" in joined) and "未平倉" in joined:
-            header, h_idx = r, i
-            break
-    if not header:
-        log("  [台指期留倉] 找不到表頭,略過")
-        return None
-
-    def col(*names) -> int:
-        for j, f in enumerate(header):
-            if any(n in str(f) for n in names):
-                return j
-        return -1
-
-    i_prod = col("商品名稱", "商品")
-    i_who = col("身份別", "身分別")
-    i_net = col("多空未平倉口數淨額", "未平倉口數淨額")
-    if min(i_prod, i_who, i_net) < 0:
-        log(f"  [台指期留倉] 缺必要欄位(prod={i_prod} who={i_who} net={i_net}),略過")
-        return None
-
-    out = {"foreign_net_oi": None, "trust_net_oi": None, "dealer_net_oi": None}
-    for r in rows[h_idx + 1:]:
-        if max(i_prod, i_who, i_net) >= len(r):
-            continue
-        prod = r[i_prod].strip()
-        # 只取大台「臺股期貨」,排除小型/微型臺指。
-        if "臺股期貨" not in prod and "台股期貨" not in prod:
-            continue
-        if "小型" in prod or "微型" in prod:
-            continue
-        who = r[i_who].strip()
-        net = _to_int(r[i_net])
-        if "外資" in who:
-            out["foreign_net_oi"] = net
-        elif "投信" in who:
-            out["trust_net_oi"] = net
-        elif "自營" in who:
-            out["dealer_net_oi"] = net
-
-    if out["foreign_net_oi"] is None:
+    found, sample = _extract(rows, require_big=True)
+    if "foreign_net_oi" not in found:  # 過濾模式商品名稱可能空白 → 退而求其次
+        found, sample = _extract(rows, require_big=False)
+    if "foreign_net_oi" not in found:
         log("  [台指期留倉] 未取得外資臺股期貨留倉,略過")
         return None
+    if sample is not None:
+        log(f"  [台指期留倉] 樣本列({len(sample)}欄):{sample[-6:]}")
 
-    foreign = out["foreign_net_oi"]
-    trust = out["trust_net_oi"] or 0
-    dealer = out["dealer_net_oi"] or 0
+    foreign = found["foreign_net_oi"]
+    trust = found.get("trust_net_oi", 0)
+    dealer = found.get("dealer_net_oi", 0)
     import os
     try:
         thr = int(os.environ.get("FUT_STANCE_LOTS") or DEFAULT_STANCE_LOTS)
