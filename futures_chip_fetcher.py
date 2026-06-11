@@ -1,13 +1,13 @@
 """futures_chip_fetcher.py — 抓期交所「三大法人台指期留倉淨額」(外資期貨部位偏多/偏空)。
 
-來源:台灣期貨交易所**官方 OpenAPI(JSON)**:
-  https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsByDate
+來源:台灣期貨交易所**官方 OpenAPI(JSON)**,端點(依 Swagger 文件實際路徑):
+  https://openapi.taifex.com.tw/v1/MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate
   (「三大法人-區分各期貨契約-依日期」,回傳最新一個交易日全表 JSON。)
-用途:看外資/投信/自營在「臺股期貨(大台)」的**未平倉(留倉)口數淨額** —
-     正=淨多單(偏多)、負=淨空單(偏空)。
+用途:看外資/投信/自營在「臺股期貨(大台,ContractCode=TX)」的**未平倉(留倉)
+     口數淨額** OpenInterest(Net) — 正=淨多單(偏多)、負=淨空單(偏空)。
 
-【為何用 OpenAPI】先前的網頁下載端點(futContractsDateExcel)實測回傳整個 HTML 網頁
-              而非 CSV,無法解析;OpenAPI 直接吐乾淨 JSON,欄位名與報表一致,穩定可靠。
+【欄位】英文欄位:Date、ContractCode(商品代碼)、Item(身份別)、
+       OpenInterest(Net)(多空未平倉口數淨額,即所需)、其餘為交易量/契約金額。
 
 【性質提醒】留倉是「庫存(現在仍持有的部位)」而非當日「流量」,即使是前一交易日盤後結算,
           仍代表外資抱著走進今日早盤的多空方向 → 與現貨買賣超(chip_fetcher)互補。
@@ -32,15 +32,19 @@ import sys
 from datetime import datetime, timezone
 
 OPENAPI_URL = ("https://openapi.taifex.com.tw/v1/"
-               "MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsByDate")
+               "MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate")
 HTTP_TIMEOUT = 25
 # 偏多/偏空門檻(口):外資淨留倉超過此絕對值才表態,避免雜訊。可用 FUT_STANCE_LOTS 覆寫。
 DEFAULT_STANCE_LOTS = 3000
-PRODUCT = "臺股期貨"  # 大台;需排除「小型臺指期貨」「微型臺指期貨」
+PRODUCT = "臺股期貨"
+# 臺股期貨(大台)商品代碼;同時容許 TXF 寫法。小型(MTX)/微型(TMF)不在此集合內,自然排除。
+TX_CODES = {"TX", "TXF"}
 
-_PROD_KEYS = ("商品名稱", "商品", "ContractName", "CommodityName")
-_WHO_KEYS = ("身份別", "身分別", "InstitutionalInvestors", "Investors")
-_DATE_KEYS = ("日期", "Date")
+# OpenAPI 英文欄位名
+CODE_KEY = "ContractCode"     # 商品代碼
+ITEM_KEY = "Item"             # 身份別(自營商/投信/外資)
+NET_OI_KEY = "OpenInterest(Net)"  # 多空未平倉口數淨額(要口數,非 ContractValue 金額)
+DATE_KEY = "Date"
 
 
 def _to_int(s) -> int:
@@ -50,29 +54,21 @@ def _to_int(s) -> int:
         return 0
 
 
-def _first(rec: dict, keys: tuple[str, ...]) -> str:
-    for k in keys:
-        if k in rec and str(rec[k]).strip() != "":
-            return str(rec[k]).strip()
-    return ""
-
-
-def _net_oi_key(rec: dict) -> str | None:
-    """找『多空未平倉口數淨額』欄位(要口數淨額,不要金額淨額)。找不到回 None。"""
-    for k in rec:
-        ks = str(k)
-        if "未平倉" in ks and "淨" in ks and "金額" not in ks:
-            return k
-    for k in rec:  # 英文後備
-        ks = str(k).lower().replace(" ", "")
-        if "openinterest" in ks and "net" in ks and "amount" not in ks:
-            return k
+def _institution(item: str) -> str | None:
+    """把身份別字串歸類成 foreign/trust/dealer(容許中英文);非三大法人回 None。"""
+    s = str(item)
+    if "外資" in s or "Foreign" in s:
+        return "foreign_net_oi"
+    if "投信" in s or "Trust" in s:
+        return "trust_net_oi"
+    if "自營" in s or "Dealer" in s:
+        return "dealer_net_oi"
     return None
 
 
 def _norm_date(s: str) -> str:
     """把『2026/6/10』『2026/06/10』或『20260610』正規化為『2026-06-10』;失敗回原字串。"""
-    s = s.strip()
+    s = str(s).strip()
     try:
         if "/" in s:
             y, m, d = s.split("/")
@@ -115,17 +111,14 @@ def _get_json(log=print):
             log(f"  [台指期留倉] 直連非 200:{resp.status_code}")
     except Exception as exc:  # noqa: BLE001
         log(f"  [台指期留倉] 直連失敗:{type(exc).__name__}")
-    # 取得 200 但內容非 JSON → 印原文揭露實際格式(供精準修正,不盲試)
-    if raw is not None:
-        ct = raw.headers.get("content-type", "")
-        body = (raw.text or "")[:300]
-        log(f"  [台指期留倉][診斷] 200 但非 JSON;url={OPENAPI_URL}")
-        log(f"  [台指期留倉][診斷] content-type={ct};前 300 字:{body!r}")
+    if raw is not None:  # 200 但非 JSON → 印原文揭露實際格式
+        log(f"  [台指期留倉][診斷] 200 但非 JSON;content-type="
+            f"{raw.headers.get('content-type', '')};前 300 字:{(raw.text or '')[:300]!r}")
     return None
 
 
 def fetch_futures_chip(log=print) -> dict | None:
-    """抓最新交易日三大法人台指期留倉淨額(OpenAPI 回傳最新一日)。抓不到回 None。"""
+    """抓最新交易日三大法人台指期(大台)留倉淨額(OpenAPI 回傳最新一日)。抓不到回 None。"""
     data = _get_json(log)
     if not isinstance(data, list) or not data:
         log("  [台指期留倉] OpenAPI 無資料(連線/代理問題或回傳非陣列),略過")
@@ -133,31 +126,24 @@ def fetch_futures_chip(log=print) -> dict | None:
 
     found: dict = {}
     date_str = ""
-    sample_keys = None
+    codes_seen: set[str] = set()
     for rec in data:
         if not isinstance(rec, dict):
             continue
-        if sample_keys is None:
-            sample_keys = list(rec.keys())
-        prod = _first(rec, _PROD_KEYS)
-        if ("臺股期貨" not in prod and "台股期貨" not in prod) or "小型" in prod or "微型" in prod:
+        code = str(rec.get(CODE_KEY, "")).strip().upper()
+        codes_seen.add(code)
+        if code not in TX_CODES:  # 只取大台,排除小型/微型/電子/金融等其他期貨
             continue
-        nk = _net_oi_key(rec)
-        if not nk:
+        key = _institution(rec.get(ITEM_KEY, ""))
+        if not key:
             continue
-        who = _first(rec, _WHO_KEYS)
-        net = _to_int(rec.get(nk))
-        date_str = date_str or _first(rec, _DATE_KEYS)
-        if "外資" in who:
-            found["foreign_net_oi"] = net
-        elif "投信" in who:
-            found["trust_net_oi"] = net
-        elif "自營" in who:
-            found["dealer_net_oi"] = net
+        found[key] = _to_int(rec.get(NET_OI_KEY))
+        date_str = date_str or str(rec.get(DATE_KEY, ""))
 
     if "foreign_net_oi" not in found:
-        # 診斷:印首筆記錄的欄位名,供精準對欄(不盲試)
-        log(f"  [台指期留倉][診斷] 未找到外資臺股期貨;首筆欄位={sample_keys}")
+        # 診斷:印出現過的商品代碼,供確認 TX 寫法(不盲試)
+        log(f"  [台指期留倉][診斷] 未找到 TX 外資留倉;出現的商品代碼="
+            f"{sorted(c for c in codes_seen if c)[:40]}")
         return None
 
     foreign = found["foreign_net_oi"]
