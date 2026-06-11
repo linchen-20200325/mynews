@@ -1,37 +1,37 @@
 {
   "report_date": "2026-06-11",
-  "summary": "美股受中東地緣政治緊張、通膨數據與科技股估值壓力影響普遍下跌，盤後因伊朗局勢趨緩而期貨反彈；AI概念股面臨拋售壓力，但半導體設備銷售創高，部分個股如甲骨文因擴大AI投資而承壓，輝達則宣布股息大增。",
+  "summary": "今日美股焦點受中東局勢升溫、通膨數據及科技股賣壓影響普遍下跌，但盤後期貨顯示科技股有反彈跡象；半導體設備銷售額創高，AI產業競爭激烈，同時特斯拉供應鏈傳出利多。",
   "stocks": [
     {
       "name": "科技股",
       "ticker": "",
       "sector": "科技",
-      "mention_count": 13,
+      "mention_count": 21,
       "sentiment": "利空",
-      "reason": "多則新聞指出科技股因通膨數據、估值壓力及資金輪動而遭遇拋售潮，導致股價下跌。",
+      "reason": "受通膨數據、中東局勢升溫及利率重估影響，科技股面臨估值壓力，賣壓擴大，多則新聞指出其股價重挫。",
       "evidence_news": [
         {
-          "title": "【美股盤前】PPI 今晚登場，科技股估值壓力幾何？（2026.06.11）",
+          "title": "CPI沒嚇壞數字，卻先嚇壞科技股？美股分歧其實在反映資金換檔-葉冠妤",
           "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPVU95QzljV0tJOEdMd2wwQ0xjdzBYWmZQdjFjVzMweWFzRHhNSS1LMHVzdzAyRnRRTVlzRmE5dGsyams5MTZBOGlVNk5PWHYxcVVkZDBValhINFRLOVIwQ1FhNXdYQ0Q3ZG1IbFV4R2k2N2ZWZWNScmtZNnBXNkx4QXUyNEUyRUhRRVEtbXcyeFl1cHBodUh5Szh1NG15VW1EdFRrcHQtUGdLb3JCTmtDQWJxc3BwNVJRWUJjMk5uVHk4cEY5OXg3R2FXZFJNekk?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSkhDU0ZHc2NMNWtsWGxVdU9IeC1Ya190empBQnRIZHNlV1NRYVN5Xzk1NVUwSlV0bkdzZXpQNWpoY2JXQmM5QVh2elR0akt6a2ExTnI2bTkyNkNUM3U3V19vd2tfMUNxNVhfekwtYkZmMWxfOHJGa042Ry1LbjJ2ag?oc=5"
         },
         {
-          "title": "美股三大指數重挫逾1%！中東局勢升溫與科技股拋售潮雙重夾擊",
-          "source": "四季線上4gTV",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9EMmhkRFdPaTRMUmFtblRyTVBkWG1MX1B0VlUtbmpyVHRhOTdPT2tZX1BlWDllTjJzTTZkY0xMZWVFWG9nQUQxX1R2WGRLUHpaLUpISmE2VQ?oc=5"
+          "title": "科技股賣壓擴大、伊朗局勢升溫 美股三大指數重挫逾1%",
+          "source": "優分析UAnalyze",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5RRy04dEVWWHVVSHp5OU5RMEVJUU9rLWxFWlRQbE9nQmN4dy1oWElDNklWTE1IOHp6UElNR0lDaXlhX3ZJZGdPbzhaZ2FHT3lmY3NhbUpB?oc=5"
         }
       ],
-      "news_count": 7,
+      "news_count": 8,
       "first_seen": "2026-06-10",
       "last_seen": "2026-06-11"
     },
     {
       "name": "道瓊工業指數",
       "ticker": "DJIA",
-      "sector": "指數",
-      "mention_count": 10,
+      "sector": "綜合指數",
+      "mention_count": 13,
       "sentiment": "利空",
-      "reason": "受中東局勢升溫、CPI竄高及科技股拋售潮影響，道瓊指數狂瀉逾950點。",
+      "reason": "受川普對伊朗的強硬言論、中東局勢升溫及通膨數據影響，道瓊指數狂瀉超過950點，顯示市場避險情緒高漲。",
       "evidence_news": [
         {
           "title": "〈美股盤後〉川普稱將「非常猛烈」打擊伊朗 道瓊狂瀉超過950點 費半重摔逾3.5%",
@@ -39,9 +39,9 @@
           "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9DS3pneW4xSV9RcVpMeUotNW04eWxweklqMWVQZUtnZ1QwQ0RxSG9XNWtfVWpzQ3BYV2R6UWFVZjVhdm5kUWNucmxXNHRKTkk?oc=5"
         },
         {
-          "title": "川普下令再度攻擊伊朗！美股道瓊暴跌953點、台積電ADR跌4.48% | Newtalk",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1IckcwOG9Vam5MeEdMQ3dKVTkwT05PVHFJWmtNcGx4bkkzRjRyOU1jWjQtWHV4cWtNQ2M3V3NiSGRzX1pmdm1TZXZvQVlpWnZraUdxSUZ3?oc=5"
+          "title": "美股三大指數重挫逾1%！中東局勢升溫與科技股拋售潮雙重夾擊",
+          "source": "四季線上4gTV",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9EMmhkRFdPaTRMUmFtblRyTVBkWG1MX1B0VlUtbmpyVHRhOTdPT2tZX1BlWDllTjJzTTZkY0xMZWVFWG9nQUQxX1R2WGRLUHpaLUpISmE2VQ?oc=5"
         }
       ],
       "news_count": 1,
@@ -50,76 +50,57 @@
     },
     {
       "name": "標準普爾500指數",
-      "ticker": "SPX",
-      "sector": "指數",
-      "mention_count": 10,
+      "ticker": "S&P 500",
+      "sector": "綜合指數",
+      "mention_count": 12,
       "sentiment": "觀望",
-      "reason": "盤中因通膨和地緣政治緊張而下跌，但盤後期貨因伊朗局勢趨緩而上漲。",
+      "reason": "儘管受中東局勢和通膨擔憂影響下跌，但盤前期貨顯示指數有回升跡象，多空消息交雜。",
       "evidence_news": [
         {
-          "title": "Stock market today: Dow, S&P 500, Nasdaq futures rise after US completes fresh round of Iran strikes",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOWmhDRlhKcFdvQ1VjcjZON2dFNzZ4U2tZQlVvYm94Q2hoVGRpTHVDd2t5Wjdjc0Jmc2VLZzRlWTNhaXQ5Y0NoWTd3T0ZsZlNaeDdFcTZWeWpFX3NBY1hqcHZETkthX0trcngzNTR4MlNZNFRTZXRFNDdTSUszdHlNVXE3VmpTWFlfZkxwdWlpeERPdTBfbXJKRkxDSTNtbS1JUm9HdV9GanJRYmNUZUVCbkRISm5fUkRzYWdZYklBZUpnSTNqNVptSTFHTTRhYzhFN2ZmQWZFZl9YaU9XM1VHb3JOSTU?oc=5"
+          "title": "Stock Market Today: Dow, S&P 500 and Nasdaq set to rise as tech stocks rebound ahead of SpaceX IPO; U.S. and Iran exchange strikes for second day; Oracle shares slide",
+          "source": "MarketWatch",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQkwweEhxYnR6Rkh1czRUR1c1bnVJTjc1cG9LQTZpdE55djBlYmowdVBXbkpLTldLa2NrTHdhMklKck9hczF0aXRCcUM1b2dTOWZvTWkyMnpxZTdtU1hKWU5NSGk5eWk0d0xpZldyN0RIZ2tVUDlZOG1NdkJUTktrNC1mQm1nV1hLWTJLTFpiQWFnQXM5QXh3SV93cmxBZWxWbkR1dGRrcUVWUkNqUE9wMzhRREgwZEtkeEkwZQ?oc=5"
         },
         {
-          "title": "US close: S&P 500, Nasdaq sink to five-week low on inflation, geopolitical fears",
-          "source": "Sharecast.com",
-          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNSTZucEd2d3J0VW00RXVHUE44ajBia2txWUtiUnRTekJrbG9KZS1MckNNbVo2OHdIX3B6ajZtcS00eDl6M3N4ZmNxUlp3RHNmMkI1MnNQQzQ4R1ozQW5GVXlkV2cxV2o1RVh6UUJnZmVGSFZjZVVfYzJrcTdTQzRVTzQzMjE0Rnk3bmQ2dFZwOUoyQ3RqTlZoVDVCRGxOaFZsdm41SjZfTGhLU2JFeEowRGdMVGNpbzd6NERHTGJoNEFxdENNamU5clBMb3BzTXlWRVlnelgteWpnQnVUOEE?oc=5"
+          "title": "S&P 500, Nasdaq, Dow Futures Extend Slide As US-Iran Hormuz Tensions Flare Again, Inflation Data Stings: ORCL, DJT, SMCI, TSLA In Focus",
+          "source": "Stocktwits",
+          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQSjhMUFVEZXdPNDBYcjA4YlUxUW4yM2IydTh3aGw0OVZ6VlcyRDAzTHVHaWZzZFFDeHpyZDR6RG8xc3pNZDduMHBfamw0c19yeThadEFyb2FEd3JabnZ3d3B3ck91MGlHbGFYaW9leEwtUVFMR3ZzUW94RU1Gd0dHY2JLVHBMdEV5OWw4OUZpckxpZ3RqM1BHNW9TbGtNYVRDMXNpb01Kb1VoSy1zN1VXRHJucEFjM21ITHZhdWdOcUJRcDI2Ri1MWm1ibFBaNHZuOGlWT0RuTDk3SzduZ1E?oc=5"
         }
       ],
-      "news_count": 0
-    },
-    {
-      "name": "那斯達克指數",
-      "ticker": "IXIC",
-      "sector": "指數",
-      "mention_count": 10,
-      "sentiment": "觀望",
-      "reason": "盤中受通膨和地緣政治緊張導致科技股拋售而下跌，但盤後期貨因伊朗局勢趨緩而上漲。",
-      "evidence_news": [
-        {
-          "title": "Stock market today: Dow, S&P 500, Nasdaq futures rise after US completes fresh round of Iran strikes",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOWmhDRlhKcFdvQ1VjcjZON2dFNzZ4U2tZQlVvYm94Q2hoVGRpTHVDd2t5Wjdjc0Jmc2VLZzRlWTNhaXQ5Y0NoWTd3T0ZsZlNaeDdFcTZWeWpFX3NBY1hqcHZETkthX0trcngzNTR4MlNZNFRTZXRFNDdTSUszdHlNVXE3VmpTWFlfZkxwdWlpeERPdTBfbXJKRkxDSTNtbS1JUm9HdV9GanJRYmNUZUVCbkRISm5fUkRzYWdZYklBZUpnSTNqNVptSTFHTTRhYzhFN2ZmQWZFZl9YaU9XM1VHb3JOSTU?oc=5"
-        },
-        {
-          "title": "US close: S&P 500, Nasdaq sink to five-week low on inflation, geopolitical fears",
-          "source": "Sharecast.com",
-          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNSTZucEd2d3J0VW00RXVHUE44ajBia2txWUtiUnRTekJrbG9KZS1MckNNbVo2OHdIX3B6ajZtcS00eDl6M3N4ZmNxUlp3RHNmMkI1MnNQQzQ4R1ozQW5GVXlkV2cxV2o1RVh6UUJnZmVGSFZjZVVfYzJrcTdTQzRVTzQzMjE0Rnk3bmQ2dFZwOUoyQ3RqTlZoVDVCRGxOaFZsdm41SjZfTGhLU2JFeEowRGdMVGNpbzd6NERHTGJoNEFxdENNamU5clBMb3BzTXlWRVlnelgteWpnQnVUOEE?oc=5"
-        }
-      ],
-      "news_count": 0
-    },
-    {
-      "name": "伊朗",
-      "ticker": "",
-      "sector": "地緣政治",
-      "mention_count": 9,
-      "sentiment": "利空",
-      "reason": "川普威脅猛烈打擊伊朗，導致地緣政治緊張升溫，拖累美股大盤和國際油價上漲。",
-      "evidence_news": [
-        {
-          "title": "〈美股盤後〉川普稱將「非常猛烈」打擊伊朗 道瓊狂瀉超過950點 費半重摔逾3.5%",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9DS3pneW4xSV9RcVpMeUotNW04eWxweklqMWVQZUtnZ1QwQ0RxSG9XNWtfVWpzQ3BYV2R6UWFVZjVhdm5kUWNucmxXNHRKTkk?oc=5"
-        },
-        {
-          "title": "美國空襲伊朗油價大漲！通膨數據重擊美股，亞股科技股慘遭拋售",
-          "source": "民視財經網",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9USVhzemp2bVhhbUdGRWhLa195dFcwcE84XzZIRUc3OHJrS3cxOFN6eUtxdjU0ejU4UFNKWDdvaUhPQldGQ2VLNWpVd1UtRWdWeFczS0tncVQ4b0hhWUJrcWFyTHpDQQ?oc=5"
-        }
-      ],
-      "news_count": 7,
+      "news_count": 13,
       "first_seen": "2026-06-10",
       "last_seen": "2026-06-11"
     },
     {
-      "name": "甲骨文(Oracle)",
-      "ticker": "ORCL",
-      "sector": "軟體服務",
-      "mention_count": 5,
+      "name": "那斯達克指數",
+      "ticker": "Nasdaq",
+      "sector": "綜合指數",
+      "mention_count": 11,
       "sentiment": "利空",
-      "reason": "儘管獲利超預期，但因調高資本支出並續籌資擴建AI，引發市場對債務增加的擔憂，盤後股價重挫。",
+      "reason": "與科技股表現一致，受到通膨數據、中東局勢及AI股拋售潮的影響，指數呈現下跌。",
+      "evidence_news": [
+        {
+          "title": "Stock market today: Futures point higher after indexes sink; oil slips as investors take US attacks on Iran in stride; Oracle drops on AI spending",
+          "source": "MSN",
+          "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxNb1d1U1hDeW9sVGp3UW55NDU3M2hPVW5IRmI2REVJZkR1SFVNLVNWM0hIcjBHVkplRndycXJqT1BRSE51QVdtWWttRVFFVHlEYkRnUDhjSTg5WlJDRV91N1F1UUJKWUNYbS01TE8zLXBnNnRaSm1wWTdGNjJmWFJyRWJxcmktR2p1TEZia2ZYVXdnblNsNmQtSnI5dlJsMVo1cTM2bmNiblg3NXcxaHphR3BOUXB3UEdwVlI1ZC1DTUU1OF9kaktTbHAtUHYyM2lybnFoTFpaRmNIdHZMakIzV3NKZXBGMnp1NTJqc0JiNTNSQUJSd0NONWVEd0pqX1ZnMGdfVnpTeDdoM3FwS0FObk1QMFQwd2hlWXNGZGlZWGJQNmhxWHptelFWNFlzemxrVjYxNlRnX3lLTW9Jd09TYXZDQQ?oc=5"
+        },
+        {
+          "title": "S&P 500, Nasdaq, Dow Futures Extend Slide As US-Iran Hormuz Tensions Flare Again, Inflation Data Stings: ORCL, DJT, SMCI, TSLA In Focus",
+          "source": "Stocktwits",
+          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQSjhMUFVEZXdPNDBYcjA4YlUxUW4yM2IydTh3aGw0OVZ6VlcyRDAzTHVHaWZzZFFDeHpyZDR6RG8xc3pNZDduMHBfamw0c19yeThadEFyb2FEd3JabnZ3d3B3ck91MGlHbGFYaW9leEwtUVFMR3ZzUW94RU1Gd0dHY2JLVHBMdEV5OWw4OUZpckxpZ3RqM1BHNW9TbGtNYVRDMXNpb01Kb1VoSy1zN1VXRHJucEFjM21ITHZhdWdOcUJRcDI2Ri1MWm1ibFBaNHZuOGlWT0RuTDk3SzduZ1E?oc=5"
+        }
+      ],
+      "news_count": 10,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "甲骨文",
+      "ticker": "ORCL",
+      "sector": "軟體",
+      "mention_count": 8,
+      "sentiment": "利空",
+      "reason": "儘管獲利超預期，但因調高資本支出並計劃繼續籌資擴建AI，導致盤後股價重挫逾10%。",
       "evidence_news": [
         {
           "title": "甲骨文獲利超預期 調高資本支出又續籌資 盤後摔逾10％",
@@ -127,58 +108,58 @@
           "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSnRoTHJiZ0hleHZURGRmRVdETmJReldUWUVjTnNXRnVBLVpJdEJNampMU0o5RkpSVUtpeGFub2lMcndISERqM3FpR1dSUE9ETHpJYVM0OHhRSlYtU21SdndxUk5tYUpQQnRWMmlhY1k5d2hEZmxhVGJNZ0JsNjRQWEk4WWVLQQ?oc=5"
         },
         {
-          "title": "Oracle Reports Earnings Amid a Rapid Cloud Transformation",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQlBBOWNiSktjU3FnMzZyR0xMVkhOb1Rxamc1RTBRbzIyMXFmSHV1eldwelhCNlZzeXUzbWZhRjE0SmswcUFFNWhudTZOb0RtOWpHMkQ2RTJ4TkctNTlYZWpWa3JBN3NGY0xxS3VINVFaV2R3QnVaeUxJclRWS1hOcXpsb3g?oc=5"
+          "title": "〈財報〉甲骨文獲利超預期 擬再籌200億美元擴建AI 盤後重挫7%",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9HWlR3ZVpHcllkbzAzZ0h6VWpBVHJxdWNJR3p4MWNBcmVtZ3pfSWZxOUVMZnpXZUpiZW1DZmR0cDRPOW4zLUxNOFBnUWlaRFE?oc=5"
         }
       ],
-      "news_count": 6,
+      "news_count": 3,
       "first_seen": "2026-06-10",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "SpaceX",
+      "ticker": "",
+      "sector": "航太科技",
+      "mention_count": 7,
+      "sentiment": "利多",
+      "reason": "SpaceX即將進行IPO，市場預期將打破紀錄，並被視為有望引領新一波科技趨勢的潛力股。",
+      "evidence_news": [
+        {
+          "title": "SpaceX is poised for blastoff with an IPO likely to break records",
+          "source": "NPR",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5fdzBHc2d3M1ptX0lfanhhZEZiLXF0WTlSTHY3bDhsVGlNMnNDV0htTHVwaVJiZnRlY1JPeXdJbkd3TWhaQjJYTl95T1VTN2Y4LUc5aGVjTl9jbDAwbzQ3RFFkdGlsNXpLa3VtT0VTb3F5bXVhcjFod2FVRQ?oc=5"
+        },
+        {
+          "title": "SpaceX Will Destroy Other Stocks. These Could Be the Biggest Losers.",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTEBNdEFHUFVOVURmVXRhRkxsbmpqTHN0VWwwaksxSFZwWmExLTIxZzBFZ2doWE9rbFg0RFM3OEoxbExLc0MtcDFLX1lGdFRCMk4xRkhNZWVNWGFGQ2xuYzJ1YTlKOVRVUy03N3k4VGs5dFoyeDlXc0gwbQ?oc=5"
+        }
+      ],
+      "news_count": 7,
+      "first_seen": "2026-06-11",
       "last_seen": "2026-06-11"
     },
     {
       "name": "AI概念股",
       "ticker": "",
       "sector": "人工智慧",
-      "mention_count": 4,
+      "mention_count": 5,
       "sentiment": "利空",
-      "reason": "新聞指出華爾街AI概念股再次遭遇拋售，市場對其估值和未來發展存在疑慮。",
+      "reason": "多則新聞提及AI股面臨拋售潮，且OpenAI考慮降價與Anthropic競爭，顯示市場對AI產業的信心出現波動。",
       "evidence_news": [
         {
-          "title": "World shares are mixed after another sell-off of AI stocks on Wall St, while oil prices ease",
-          "source": "BNN Bloomberg",
-          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOSVNuWElaOU8tZnBwdmNqdEdCNHZZaHZHdzdjNTNRblRybjN3Yy1uYml3am5pc1BUVTBUcmhXSUVabDQtZFFEOUJVdDFYSThhaHVPaHJWVW9MNlRqdmx6MmR0OGdLUnFrOElrZjlkcnd4WWFueVBNUWZ4SFB2X1JuaFNCZ1RTWW5JQkpaaHJ2dmxDbWNfTkZUVFlQYzZjV3laaFlXWG1HY3A5UFRjZTV3X3lBUlpRaUVWUThjWXFxMHBJaWY5TG1qNnpSNjEwa0xHRVZLME1n?oc=5"
+          "title": "【美股盤勢】半導體崩跌超3%，AI股拋售潮還沒停？（2026.06.11）",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPS1VoYzdXODFaSTY0ekU5d2xURi01LWVqdXVNNUd1bm5JOHg1dlVNc3FJeXBUNGpRcmJOWnhQb0RJMkVJVVJ2Tl95d0NZLS1OU05ZU2pad21Bekc3SDJhWU9JNTdVaTlPbXlWYmtFRVpLdmh1WG84b3hib3A4eDJfZlQ0RkZlWlN3cmtibHZR?oc=5"
         },
         {
-          "title": "Another sell-off for AI stocks knocks Wall Street back to where it was 5 weeks ago",
-          "source": "AP News",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOTk56ZkgzR0tyRzhaSUtXODBPMWtIdW04WUNsWXljTkhDM1F1V29aOXFNbFlndXZRYzV3blU3MkJEdHlyeHh3b09sVGp2dDVaVF9YNkVJczAxSXdQaEwzcDRIMl9HLVdqbVpQV2ZfOHJMbmRHU2RUbk5WNHM5SUh0cXBOdVpxelVrSzZ0ZVlENWZMa2Vo?oc=5"
+          "title": "OpenAI mulls slashing prices as it competes with Anthropic for users: WSJ",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWTVaQ2JmSTJ2dG1yVC1nSHpNbWJqOVlUV2dmMW1vZ2d6VmlFN1ZDRTFOVS04SDZQM01CcDZIRS1WWDluTE5hYzJBV25NZlBKMndtTmRHRG5DZmphLWEydEhmM0g5cEVHcjlvNTBueWpZRmFpcDNPekV2OU9hWV9BMzJsd3NLNWEwcFpydDFQX1JZc0I2Xy1ZcktIZDlxV2RjamNQT1F5WnXSAa4BQVVfeXFMTTA0akxwVmdMa0RybEpINXVxTUxTSkJWRWNnY3pDUXN2ZDAyaW53dkRvVG1QM3hQSWt4aFlQTnJwWkVoYUdzd3F3cWFybHA5cE9feHQyTlhHc0pDaFhlMVVTWTBRU3hLRHlWamFsQldzTnpHOWRXcjREbG9UcTRTRGZsLTFhYTlnQWQ4OFpUTEZkR21mR3VsdGpRbmloN01vT0ZxTGl6dEtkM09fZS1n?oc=5"
         }
       ],
       "news_count": 0
-    },
-    {
-      "name": "SpaceX",
-      "ticker": "",
-      "sector": "航空航天",
-      "mention_count": 4,
-      "sentiment": "觀望",
-      "reason": "市場關注其IPO進展，有分析指出其IPO可能對其他股票造成衝擊，但也有資金輪動的預期。",
-      "evidence_news": [
-        {
-          "title": "SpaceX Will Destroy Other Stocks. These Could Be the Biggest Losers.",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBNdEFHUFVOVURmVXRhRkxsbmpqTHN0VWwwaksxSFZwWmExLTIxZzBFZ2doWE9rbFg0RFM3OEoxbExLc0MtcDFLX1lGdFRCMk4xRkhNZWVNWGFGQ2xuYzJ1YTlKOVRVUy03N3k4VGs5dFoyeDlXc0gwbQ?oc=5"
-        },
-        {
-          "title": "Dow Jones Futures Rise, Oil Pops, Oracle Dives; SpaceX IPO On Launch Pad",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd0lCTFNQS2J5djhfQjMyU0F1V1RwUU45UmVvdlVtRmUzWWVZcHBlaDVtZDl0Vkd5SXRuMjgyTXRKQzQtOTNLck1OalNlcWw4bWxKWUtIQUF4Q1FxZF9pWlY5T0NOQjRySHVYSU15eUs0NTNXd0hxb2JpRmV1S3FSMjAzNDZIazgxUmZtdnJLNFNiUzJoZU1CQ19xSDJXd3JXXzI3aXJ6Qlk0Qmk5RWRxY2tDUG5CM0dPdUE?oc=5"
-        }
-      ],
-      "news_count": 4,
-      "first_seen": "2026-06-11",
-      "last_seen": "2026-06-11"
     },
     {
       "name": "Anthropic",
@@ -186,7 +167,7 @@
       "sector": "人工智慧",
       "mention_count": 4,
       "sentiment": "觀望",
-      "reason": "Anthropic CEO呼籲政府應阻止危險AI，並與OpenAI在用戶爭奪戰中考慮降價，顯示市場競爭加劇。",
+      "reason": "Anthropic CEO呼籲政府應阻止危險AI，同時面臨OpenAI的價格競爭，顯示AI發展監管與市場競爭並存。",
       "evidence_news": [
         {
           "title": "Anthropic CEO says government should block dangerous AI",
@@ -194,9 +175,9 @@
           "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPUGFPeVR2VldXM21VWDNBRFdaVEVtVDNwZDBCcnhzWmp1a3p2YTN3eGhUTE13TTRZMzhpckkza0QzRUxaZkJLQ3Q4UnY1U1JweTluZ19zNGdhZndyZW9SQ2JSWGd5dWRJQnJkb1ZhY0pCWmkwaTFkZnVZdTRLYnowMWNR?oc=5"
         },
         {
-          "title": "OpenAI mulls slashing prices as it competes with Anthropic for users: WSJ",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWTVaQ2JmSTJ2dG1yVC1nSHpNbWJqOVlUV2dmMW1vZ2d6VmlFN1ZDRTFOVS04SDZQM01CcDZIRS1WWDluTE5hYzJBV25NZlBKMndtTmRHRG5DZmphLWEydEhmM0g5cEVHcjlvNTBueWpZRmFpcDNPekV2OU9hWV9BMzJsd3NLNWEwcFpydDFQX1JZc0I2Xy1ZcktIZDlxV2RjamNQT1F5WnXSAa4BQVVfeXFMTTA0akxwVmdMa0RybEpINXVxTUxTSkJWRWNnY3pDUXN2ZDAyaW53dkRvVG1QM3hQSWt4aFlQTnJwWkVoYUdzd3F3cWFybHA5cE9feHQyTlhHc0pDaFhlMVVTWTBRU3hLRHlWamFsQldzTnpHOWRXcjREbG9UcTRTRGZsLTFhYTlnQWQ4OFpUTEZkR21mR3VsdGpRbmloN01vT0ZxTGl6dEtkM09fZS1n?oc=5"
+          "title": "Anthropic Walks Back Policy That Could Have ‘Sabotaged’ AI Researchers Using Claude",
+          "source": "WIRED",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxORnEtMHRDdUF6VkFPSkE5MkpSQ3pKNWdvWGpCd3dDU0dTTEE0UVF0aVhfOC0zaHRNYWdDWXFpQklCOXVRbEEwT19ZNVN3ZnVjRWRsejhMU09scUh1eTdTd2dGa3ltUXJQUHd4ZW8tMWJLU3FjUkRPYW5fQVRSUjJfZ2JnOTQ0NWFDb3NSYTFNa2ZaX1lRV2tmT1BmQmFlclFuT2NZ?oc=5"
         }
       ],
       "news_count": 3,
@@ -204,25 +185,25 @@
       "last_seen": "2026-06-11"
     },
     {
-      "name": "OpenAI",
-      "ticker": "",
-      "sector": "人工智慧",
+      "name": "台積電ADR",
+      "ticker": "TSM",
+      "sector": "半導體",
       "mention_count": 3,
-      "sentiment": "觀望",
-      "reason": "為應對與Anthropic的用戶競爭，OpenAI考慮大幅降價，顯示AI市場競爭激烈。",
+      "sentiment": "利空",
+      "reason": "受到川普強硬言論影響，美股道瓊指數大跌，台積電ADR也隨之下殺近5%。",
       "evidence_news": [
         {
-          "title": "OpenAI mulls slashing prices as it competes with Anthropic for users: WSJ",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWTVaQ2JmSTJ2dG1yVC1nSHpNbWJqOVlUV2dmMW1vZ2d6VmlFN1ZDRTFOVS04SDZQM01CcDZIRS1WWDluTE5hYzJBV25NZlBKMndtTmRHRG5DZmphLWEydEhmM0g5cEVHcjlvNTBueWpZRmFpcDNPekV2OU9hWV9BMzJsd3NLNWEwcFpydDFQX1JZc0I2Xy1ZcktIZDlxV2RjamNQT1F5WnXSAa4BQVVfeXFMTTA0akxwVmdMa0RybEpINXVxTUxTSkJWRWNnY3pDUXN2ZDAyaW53dkRvVG1QM3hQSWt4aFlQTnJwWkVoYUdzd3F3cWFybHA5cE9feHQyTlhHc0pDaFhlMVVTWTBRU3hLRHlWamFsQldzTnpHOWRXcjREbG9UcTRTRGZsLTFhYTlnQWQ4OFpUTEZkR21mR3VsdGpRbmloN01vT0ZxTGl6dEtkM09fZS1n?oc=5"
+          "title": "川普下令再度攻擊伊朗！美股道瓊暴跌953點、台積電ADR跌4.48% | Newtalk",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1IckcwOG9Vam5MeEdMQ3dKVTkwT05PVHFJWmtNcGx4bkkzRjRyOU1jWjQtWHV4cWtNQ2M3V3NiSGRzX1pmdm1TZXZvQVlpWnZraUdxSUZ3?oc=5"
         },
         {
-          "title": "Visa plugs its payment network into ChatGPT, letting AI agents shop and pay for users",
-          "source": "AP News",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONHZtakxXSFE2bHJoc3JueEthUlNFc2drdW44YkEzWW5VQlNDajRWRUpRM2V6dEs3RldsQkhQLUlMVGRIeGVSYjRMVHJYOHZNbDBuX2tpTzVOVUlXVl9BU3VuREVfeGtzSVlPUEVEV3JRc3NGSkFsbHFqdjVTS3l5R2c4c1JWVGpKSmEwc1N6bWlvMVQwMlhyWlRUUWs5MUtf?oc=5"
+          "title": "川普下令再轟伊朗 美股道瓊暴跌953點、台積電ADR跌近5％ | 中廣新聞網",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBoRGh2anBjU1lrUTZaN3BkX1pITjdFc2lSZUctRXpkcFpXTVUxeFpxa1lZXzdUWVJpa0lLanFkZzB4TlB5bmp6XzZKNEs3Nm1jTTE2a1dn?oc=5"
         }
       ],
-      "news_count": 2,
+      "news_count": 3,
       "first_seen": "2026-06-10",
       "last_seen": "2026-06-11"
     },
@@ -232,7 +213,7 @@
       "sector": "半導體",
       "mention_count": 2,
       "sentiment": "利多",
-      "reason": "輝達宣布大幅提高股息，對股東而言是潛在的利好消息。",
+      "reason": "輝達宣布大幅提高股息，被視為對股東的潛在利多，儘管整體科技股面臨壓力。",
       "evidence_news": [
         {
           "title": "Nvidia Just Announced a Potential Windfall for Shareholders",
@@ -242,30 +223,7 @@
         {
           "title": "Nvidia's 2,500% dividend hike sounds huge, but here's what it really means for investors",
           "source": "MSN",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZlR0VWl6NXZiV1FGM092Z0J5U0k1d0xHWWV2LURhR2pGN0F2R09lU3dEM2t1Z2VwWlR5c2V5Qk9mRmt6b240M3JmYkZzM1EwS01sV0J3Q2pWbHNzZ0pYd1c4b2p4VjZ4Q2lqTjZVM3FjVlZ1aFh6V3R1R3Z6R2NScE91b29sTDFuT3QyQk9kR1R6Z3Z0ZzR3d0VwSWt5V1d4T1U4RTVlZ1o5M0o0b09Ndkc0Q0FB?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-11",
-      "last_seen": "2026-06-11"
-    },
-    {
-      "name": "半導體產業",
-      "ticker": "",
-      "sector": "半導體",
-      "mention_count": 2,
-      "sentiment": "利多",
-      "reason": "全球半導體製造設備銷售額在2026年第一季創下單季歷史新高，顯示產業投資動能強勁。",
-      "evidence_news": [
-        {
-          "title": "半導體先進製造封裝投資穩 全球首季設備銷售額創高",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606110253.aspx"
-        },
-        {
-          "title": "【美股盤勢】半導體崩跌超3%，AI股拋售潮還沒停？（2026.06.11）",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPS1VoYzdXODFaSTY0ekU5d2xURi01LWVqdXVNNUd1bm5JOHg1dlVNc3FJeXBUNGpRcmJOWnhQb0RJMkVJVVJ2Tl95d0NZLS1OU05ZU2pad21Bekc3SDJhWU9JNTdVaTlPbXlWYmtFRVpLdmh1WG84b3hib3A4eDJfZlQ0RkZlWlN3cmtibHZR?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZ3R0bE93b0N5T1V1dG9QZzQxTE9qU0g0aVNoeU9zYm83bWd2ZlZ0d2I5dEdrVjJ1Zl9xQ0xJekh4R21tZl9rY1V3cE9fQkF4bWpXbHlJd191T0pQeXp0N0R0M2t4MWRjM2U4cWlwdnB5T3c1d29vY29lY28zS29vM29lY28?oc=5"
         }
       ],
       "news_count": 1,
@@ -278,7 +236,7 @@
       "sector": "汽車",
       "mention_count": 2,
       "sentiment": "利多",
-      "reason": "鋰鐵電池正極材料廠立凱電打進特斯拉供應鏈，規劃建置新產線，預計2027年開始出貨。",
+      "reason": "立凱電打入特斯拉供應鏈，並將擴建新產線，預計2027年開始出貨，對特斯拉供應鏈是利多消息。",
       "evidence_news": [
         {
           "title": "立凱電打進特斯拉供應鏈 2.8億元現增過關籌資建廠",
@@ -288,7 +246,7 @@
         {
           "title": "S&P 500, Nasdaq, Dow Futures Extend Slide As US-Iran Hormuz Tensions Flare Again, Inflation Data Stings: ORCL, DJT, SMCI, TSLA In Focus",
           "source": "Stocktwits",
-          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQSjhMUFVEZXdPNDBYcjA4YlUxUW4yM2IydTh3aGw0OVZ6VlcyRDAzTHVHaWZzZFFDeHpyZDR6RG8xc3pNZDduMHBfamw0c19yeThadEFyb2FEd3JabnZ3d3B3ck91MGlHbGFYaW9leEwtUVFMR3ZzUW94RU1Gd0dHY2JLVHBMdEV5OWw4OUZpckxpZ3RqM1BHNW9TbGtNYVRDMXNpb01Kb1VoSy1zN1VXRHJucEFjM21ITHZhdWdOcUJRcDI2Ni1MWm1ibFBaNHZuOGlWT0RuTDk3SzduZ1E?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQSjhMUFVEZXdPNDBYcjA4YlUxUW4yM2IydTh3aGw0OVZ6VlcyRDAzTHVHaWZzZFFDeHpyZDR6RG8xc3pNZDduMHBfamw0c19yeThadEFyb2FEd3JabnZ3d3B3ck91MGlHbGFYaW9leEwtUVFMR3ZzUW94RU1Gd0dHY2JLVHBMdEV5OWw4OUZpckxpZ3RqM1BHNW9TbGtNYVRDMXNpb01Kb1VoSy1zN1VXRHJucEFjM21ITHZhdWdOcUJRcDI2Ri1MWm1ibFBaNHZuOGlWT0RuTDk3SzduZ1E?oc=5"
         }
       ],
       "news_count": 3,
@@ -296,33 +254,12 @@
       "last_seen": "2026-06-11"
     },
     {
-      "name": "石油",
-      "ticker": "CL=F",
-      "sector": "能源",
-      "mention_count": 2,
-      "sentiment": "觀望",
-      "reason": "美國空襲伊朗導致油價大漲，但隨著美方結束空襲，油價隨後回落，顯示地緣政治對油價影響迅速。",
-      "evidence_news": [
-        {
-          "title": "美國空襲伊朗油價大漲！通膨數據重擊美股，亞股科技股慘遭拋售",
-          "source": "民視財經網",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9USVhzemp2bVhhbUdGRWhLa195dFcwcE84XzZIRUc3OHJrS3cxOFN6eUtxdjU0ejU4UFNKWDdvaUhPQldGQ2VLNWpVd1UtRWdWeFczS0tncVQ4b0hhWUJrcWFyTHpDQQ?oc=5"
-        },
-        {
-          "title": "Stocks Bounce, Oil Falls as US Ends Iran Strikes: Markets Wrap",
-          "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPajM3dWRKeUZBQWNwSThHVkpOQlYxMVNtTTdBam9Nbk5kc3oxZFVzdmMzMDFuMWN4VGFaMzFfS3hxai1JYk9mcE5FVlVxMWNmZjMtQ2dSd3JqcG0tc1haeEdBTTJJOFhhUTB5U2pVMjdfWWJRRDFnZnhaZC0tVUQ5eHdYUzlHWjUwdTY4VVBCZVg3VExn?oc=5"
-        }
-      ],
-      "news_count": 0
-    },
-    {
       "name": "Visa",
       "ticker": "V",
-      "sector": "金融科技",
+      "sector": "支付服務",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "Visa與OpenAI合作，將其支付網絡整合到ChatGPT中，賦能AI代理進行購物和支付，拓展AI商務應用。",
+      "reason": "Visa與OpenAI合作，將其支付網路導入ChatGPT，讓AI代理商能進行購物和支付，拓展其在AI商務領域的應用。",
       "evidence_news": [
         {
           "title": "Visa plugs its payment network into ChatGPT, letting AI agents shop and pay for users",
@@ -333,13 +270,49 @@
       "news_count": 1,
       "first_seen": "2026-06-10",
       "last_seen": "2026-06-10"
+    },
+    {
+      "name": "Hugo Boss",
+      "ticker": "BOSS",
+      "sector": "服飾零售",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "最大股東Frasers發出20億美元的收購要約，帶動Hugo Boss股價上漲8%。",
+      "evidence_news": [
+        {
+          "title": "Hugo Boss pops 8% after top shareholder Frasers launches $2 billion takeover offer",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPX3JjWlZ6eEFrY0psbXRtS1BEcmFlNUl0QnhRajRYSzRqSWNTZjc2WmpMZGprUWFKekUzUEJEamJKWUhvWDB1ZWJ2cl9LR3hsNXpqZ1lKLVhWYzloR2VXYlpCTVVSRURBRzBrODhvUDBzanU0YzlEemEyZlZldDZXUVNSMHdrQkpsOW9zbm5yUGHSAZYBQVVfeXFMTlVPc1REdjItUy1HTnQ4MUVwTFVTa3F5ZS1jZVN1ek5HcklidWd6SEx2dlBzMkcyVzNlcllSSUtZaTdKT2RETnNyZ3doTkZucGNLRllWNFJzOXRYOWRybmkzQnlIV3k5Xzl0OWtzODlPcTJKVXZkd1ZvZ1hmbU1DT3plWURNeWhQeVJrUlVXdFIxN3lZb1l3?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "Parabilis",
+      "ticker": "",
+      "sector": "生物科技",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "Parabilis成為最大的VC支持生物科技IPO，顯示市場對其前景看好。",
+      "evidence_news": [
+        {
+          "title": "Parabilis now the largest VC-backed biotech IPO",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMC1FMkxUSTl6REVwZ3RmRkpWclFOOVY0TXJpNU8zWlNmSWZZdHF3Mm9ISXFlRmk1aVZ6cWxuYi12TDFxTnpwR0dkM2VPejZEMW9YVm9NbW9DSFlOUldzWWFpMnBndklqTHZBWGpuLTdEaHgxUjBfT1I3R0RKUDdFcHF2UlAxbGJkTXBzWnNDbVBhem9lUmtGaVhFQ2ZWd3daS1E?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-10"
     }
   ],
   "future_trends": [
-    "AI商務應用",
-    "半導體先進製造與封裝",
-    "電動車供應鏈 (如磷酸鋰鐵電池)",
-    "低軌衛星、博弈設備與工業電腦新市場"
+    "人工智慧(AI)應用擴展",
+    "半導體設備投資",
+    "低軌衛星通訊",
+    "電動車鋰電池材料"
   ],
   "sunset_industries": []
 }
