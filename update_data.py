@@ -2112,6 +2112,17 @@ def main() -> int:
 
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
+    # 排程備援防呆:排程觸發時若今日報告已產出(主班次已成功並寫回 main),直接略過,
+    # 避免備援班次重複跑與重複推 LINE。手動 workflow_dispatch 不受此限,可隨時重跑。
+    if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+        try:
+            existing = json.loads(OUTPUT_LATEST.read_text(encoding="utf-8"))
+            if existing.get("report_date") == today:
+                print(f"今日({today})報告已存在,排程備援班次略過(避免重複推播)。")
+                return 0
+        except Exception:  # noqa: BLE001 — 讀不到/壞檔 → 正常往下跑
+            pass
+
     try:
         # A. 戰略報告(支援多主題:第一個為主報告,維持 latest_report.json 向後相容)
         topics = parse_report_topics()
