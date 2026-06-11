@@ -1,37 +1,83 @@
 {
   "report_date": "2026-06-11",
-  "summary": "今日美股受地緣政治緊張(美伊衝突)及通膨數據影響，科技股與半導體類股遭遇顯著賣壓，道瓊指數狂瀉逾950點，台積電ADR也大跌；AI相關公司如OpenAI和SpaceX則有IPO或擴張計畫，展現產業潛力。",
+  "summary": "今日美股受地緣政治風險升溫(美國空襲伊朗)及高於預期的通膨數據(CPI)影響,道瓊指數暴跌超過900點,科技股普遍承壓,半導體及AI相關股票出現拋售潮。然而,部分AI基礎建設相關公司因客戶需求增加而看好未來。",
   "stocks": [
     {
-      "name": "台積電(TSMC)",
-      "ticker": "TSM",
-      "sector": "半導體",
-      "mention_count": 9,
+      "name": "道瓊工業平均指數(Dow Jones Industrial Average)",
+      "ticker": "DJIA",
+      "sector": "綜合指數",
+      "mention_count": 21,
       "sentiment": "利空",
-      "reason": "受美國與伊朗緊張情勢及通膨數據影響，美股科技股賣壓擴大，台積電ADR大跌近5%，台灣本地股價也受衝擊。",
+      "reason": "受美國對伊朗空襲及通膨數據竄高影響,道瓊指數暴跌超過900點,市場恐慌情緒升溫。",
       "evidence_news": [
-        {
-          "title": "川普下令再度攻擊伊朗！美股道瓊暴跌953點、台積電ADR跌4.48%",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1IckcwOG9Vam5MeEdMQ3dKVTkwT05PVHFJWmtNcGx4bkkzRjRyOU1jWjQtWHV4cWtNQ2M3V3NiSGRzX1pmdm1TZXZvQVlpWnZraUdxSUZ3?oc=5"
-        },
         {
           "title": "美股收盤》CPI竄高！道瓊暴跌953點 台積電ADR下殺近4.5％",
           "source": "自由財經",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5wenRvSnpzWjJiTC1vbWtCOEdfTmp0OTNfSnctNU9CdnZmaDZIUmR3RXhjekhOV2l0Tzd3RlNRRDRwZHkzaGVhX2NrMnNWbEtPcjNJa2N6ZU1BXzlzY0dN0gFkQVVfeXFMTU5xZ0I2U3NOOHVEUWpsX21tcTF5YS1NQlBNandXMWcwN1VPZzdRZm55SjJfQ0xXUU92MjJ0MU1Fa1Z6T1BWVDBRc1RBNUVWdTlHSEdCbWQxZ2JVQUQwUGdVMHljbw?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5wenRvSnpzWjJiTC1vbWtCOEdfTmp0OTNfSnctNU9CdnZmaDZIUmR3RXhjekhOV2l0Tzd3RlNRRDRwZHkzaGVhX2NrMnNWbEtPcjNJa2N6ZU1BXzlzY0dN0gFkQVVfeXFMTU5xZ0I2U3NOOHVEUWpsX21tcTF5YS1NQlBNandXMWcwN1VPZzdRZm55SzJfQ0xXUU92MjJ0MU1Fa1Z6T1BWVDBRc1RBNUVWdTlGSEdCbWQxZ2JVQUQwUGdVMHljbw?oc=5"
+        },
+        {
+          "title": "〈美股盤後〉川普稱將「非常猛烈」打擊伊朗 道瓊狂瀉超過950點 費半重摔逾3.5%",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9DS3pneW4xSV9RcVpMeUotNW04eWxweklqMWVQZUtnZ2QwQ0RxSG9XNWtfVWpzQ3BYV2R6UWFVZjVhdm5kUWNucmxXNHRKTkk?oc=5"
         }
       ],
-      "news_count": 9,
+      "news_count": 1,
+      "first_seen": "2026-06-11",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "科技股",
+      "ticker": "",
+      "sector": "科技",
+      "mention_count": 14,
+      "sentiment": "利空",
+      "reason": "CPI數據符合預期但科技股仍遭拋售,加上中東地緣政治風險及AI估值擔憂,導致科技股賣壓擴大。",
+      "evidence_news": [
+        {
+          "title": "CPI只是符合預期，科技股為何先被賣？從利率重估看美股輪動-林思齊",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE8wNl9NbzdORWVmbTZqOWtjUlJoajgtWGJ6LWUwVkRicVBNLXJQWlpEenJiSnZqSV9iNUc2X2F1Um5NWm1rYkNPclhpZjl0SWVkQlVfMWp3TWsyQjlBMjYtVWhsNEw0TGtKTWplUEFZQzhQYU9mZlVVaEY4d05wTFE?oc=5"
+        },
+        {
+          "title": "美國空襲伊朗油價大漲！通膨數據重擊美股，亞股科技股慘遭拋售",
+          "source": "民視財經網",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9USVhzemp2bVhhbUdGRWhLa195dFcwcE84XzZIRUc3OHJrS3cxOFN6eUtxdjU0ejU4UFNKWDdvaUhPQldGQ2VLNWpVd1UtRWdWeFYzS0tncVQ4b0hhWUJrcWFyTHpDQQ?oc=5"
+        }
+      ],
+      "news_count": 7,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "台積電ADR(TSM)",
+      "ticker": "TSM",
+      "sector": "半導體",
+      "mention_count": 6,
+      "sentiment": "利空",
+      "reason": "美股大盤重挫,CPI竄高以及半導體崩跌影響,台積電ADR下殺近4.5%。",
+      "evidence_news": [
+        {
+          "title": "美股收盤》CPI竄高！道瓊暴跌953點 台積電ADR下殺近4.5％",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5wenRvSnpzWjJiTC1vbWtCOEdfTmp0OTNfSnctNU9CdnZmaDZIUmR3RXhjekhOV2l0Tzd3RlNRRDRwZHkzaGVhX2NrMnNWbEtPcjNJa2N6ZU1BXzlzY0dN0gFkQVVfeXFMTU5xZ0I2U3NOOHVEUWpsX21tcTF5YS1NQlBNandXMWcwN1VPZzdRZm55SzJfQ0xXUU92MjJ0MU1Fa1Z6T1BWVDBRc1RBNUVWdTlIQUdCbWQxZ2JVQUQwUGdVMHljbw?oc=5"
+        },
+        {
+          "title": "川普下令再度攻擊伊朗！美股道瓊暴跌953點、台積電ADR跌4.48% | Newtalk",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1IckcwOG9Vam5MeEdMQ3dKVTkwT05PVHFJWmtNcGx4bkkzRjRyOU1jWjQtWHV4cWtNQ2M3V3NiSGRzX1pmdm1TZXZvQVlpWnZraUdxSUZ3?oc=5"
+        }
+      ],
+      "news_count": 5,
       "first_seen": "2026-06-10",
       "last_seen": "2026-06-11"
     },
     {
       "name": "OpenAI",
-      "ticker": "OPEN",
+      "ticker": "OPENAI:Private",
       "sector": "人工智慧",
-      "mention_count": 5,
-      "sentiment": "利多",
-      "reason": "公司考慮大幅調降費用以爭取客戶，並傳出預計一年內公開上市，執行長已向員工透露IPO計畫，顯示積極的市場策略和成長潛力。",
+      "mention_count": 6,
+      "sentiment": "利空",
+      "reason": "OpenAI考慮大幅調降費用以吸引客戶,與競爭對手Anthropic展開市場爭奪戰,顯示市場競爭激烈。",
       "evidence_news": [
         {
           "title": "傳OpenAI考慮大降價 與Anthropic展開客戶爭奪戰",
@@ -39,35 +85,12 @@
           "url": "https://www.cna.com.tw/news/aopl/202606110123.aspx"
         },
         {
-          "title": "傳OpenAI預計一年內上市 阿特曼透露已申請IPO",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606110006.aspx"
+          "title": "美股收盤：道瓊指數跌逾900點，科技股全線受挫，OpenAI擬一年內上市",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYVRheXN5czZPb2J4VkdRcWpIb2pxY3Y1N3JXQ0RnYl9aSDFiSTcxemZCSXc0U0xDdmoxRzNwZDZGYUNDOThmR0otVzdteDRGd1d0d1hqd3RlQk15R2FhbnFfVFZ5cnJ5R3k1Y01HQ1RQTkpXM0ZHc2h5SjhkZFphTFpuV0UyTkNyWmZSNmt4MDdjV0V5NzRqRTZzZ1NUSFl2bGkxYlBXNTVjc1RLNDZxS3B2VmNVZjkwM0prWTdac3Q5cEFNc3hqUQ?oc=5"
         }
       ],
-      "news_count": 8,
-      "first_seen": "2026-06-10",
-      "last_seen": "2026-06-11"
-    },
-    {
-      "name": "SpaceX",
-      "ticker": "",
-      "sector": "太空探索",
-      "mention_count": 4,
-      "sentiment": "利多",
-      "reason": "SpaceX正準備進行史上規模最大的IPO，有望讓共同創辦人馬斯克身價突破1兆美元，顯示市場對其前景高度看好。",
-      "evidence_news": [
-        {
-          "title": "SpaceX挑戰史上最大IPO 馬斯克身價有望突破1兆美元",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/ait/202606110133.aspx"
-        },
-        {
-          "title": "Dow Jones Futures Rise, Oil Pops, Oracle Dives; SpaceX IPO On Launch Pad",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd0lCTFNQS2J5djhfQjMyU0F1V1RwUU45UmVvdlVtRmUzWWVZcHBlaDVtZDl0Vkd5SXRuMjgyTXRKQzQtOTNLck1OalNlcWw4bWxKWUtIQUF4Q1FxZF9pWlY5T0NOQjRySHVYSU15eUs0NTNXd0hxb2JpRmV1S3FSMjAzNDZIazgxUmZtdnJLNFNiUzJoZU1CQ19xSDJXd3JXXzI3aXJ6Qlk0Qmk5RWRxY2tDUG5CM0dPdUE?oc=5"
-        }
-      ],
-      "news_count": 4,
+      "news_count": 5,
       "first_seen": "2026-06-10",
       "last_seen": "2026-06-11"
     },
@@ -75,9 +98,9 @@
       "name": "Anthropic",
       "ticker": "",
       "sector": "人工智慧",
-      "mention_count": 4,
+      "mention_count": 6,
       "sentiment": "觀望",
-      "reason": "在與OpenAI的客戶爭奪戰中，Anthropic的CEO提出通用基本收入以應對AI造成的失業，並承諾投入2億美元研究AI對經濟的影響，顯示公司在競爭中尋求差異化與社會責任，但市場反應尚不明朗。",
+      "reason": "Anthropic與OpenAI競爭客戶,並調整模型政策,其CEO也提出AI相關失業的對策,顯示公司在AI領域策略與社會責任的平衡。",
       "evidence_news": [
         {
           "title": "傳OpenAI考慮大降價 與Anthropic展開客戶爭奪戰",
@@ -90,31 +113,118 @@
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNYmhPVnhlckZhRG00dGtDN1FQN0tScGNHaU80YU5GN21Nd0RJSVlQWGxyX2FZOFVzTmFzODktOWQ1ajZ4VENpaUtBRkRQc2FKclVxWXhFb0NXci1DdHNVQUFiV3RRSW9weDdCVThUMGpLOHBfREh3VTFmVE84RVpyWHhpaGtYc3ppazFWSE53?oc=5"
         }
       ],
-      "news_count": 4,
+      "news_count": 6,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "SpaceX",
+      "ticker": "",
+      "sector": "航太科技",
+      "mention_count": 5,
+      "sentiment": "利多",
+      "reason": "SpaceX準備進行史上最大規模IPO,有望讓馬斯克身價突破1兆美元,顯示市場對其前景看好。",
+      "evidence_news": [
+        {
+          "title": "SpaceX挑戰史上最大IPO 馬斯克身價有望突破1兆美元",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/ait/202606110133.aspx"
+        },
+        {
+          "title": "Dow Jones Futures Rise, Oil Pops, Oracle Dives; SpaceX IPO On Launch Pad",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd0lCTFNQS2J5djhfQjMyU0F1V1RwUU45UmVvdlVtRmUzWWVZcHBlaDVtZDl0Vkd5SXRuMjgyTXRKQzQtOTNLck1OalNlcWw4bWxKWUtIQUF4Q1FxZF9pWlY5T0NOQjRySHVYSU15eUs0NTNXd0hxb2JpRmV1S3FSMjAzNDZIazgxUmZtdnJLNFNiUzJoZU1CQ19xSDJXd3JXXzI3aXJ6Qlk0Qmk5RWRxY2tDUG5CM0dPdUE?oc=5"
+        }
+      ],
+      "news_count": 5,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "人工智慧(AI)股",
+      "ticker": "",
+      "sector": "人工智慧",
+      "mention_count": 4,
+      "sentiment": "利空",
+      "reason": "受地緣政治風險與高通膨數據影響,台股盤中急跌震盪,AI權值股走弱,美股AI股也面臨拋售潮。",
+      "evidence_news": [
+        {
+          "title": "台股跌76點留1143點長下影線 主動ETF與AI股撐盤",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606110192.aspx"
+        },
+        {
+          "title": "台股盤中急跌震盪逾1450點 AI權值股走弱",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606110078.aspx"
+        }
+      ],
+      "news_count": 32,
       "first_seen": "2026-06-10",
       "last_seen": "2026-06-11"
     },
     {
       "name": "甲骨文(Oracle)",
       "ticker": "ORCL",
-      "sector": "軟體/雲端服務",
+      "sector": "軟體服務",
       "mention_count": 3,
-      "sentiment": "利空",
-      "reason": "甲骨文儘管獲利超預期，但因計劃再籌資200億美元擴建AI相關業務，引發市場對債務增加的擔憂，盤後股價重挫。",
+      "sentiment": "觀望",
+      "reason": "甲骨文獲利超預期,並計畫再籌資200億美元擴建AI,但盤後股價重挫,顯示市場對其AI投資成本有所疑慮。",
       "evidence_news": [
         {
           "title": "〈財報〉甲骨文獲利超預期 擬再籌200億美元擴建AI 盤後重挫7%",
           "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9HWlR3ZVpHcllkbzAzZ0h6VWpBVHJxdWNJR3p4MWNBcmVtZ3pfSWZxOUVMZnpXZUpiZW1DZmR0cDRPOW4zLUxNOFBnUWlaRFE?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9HWlR3ZVpHcllkbzAzZ0h6VWpBVHJxdWNJR3p4MWNBcmVtZ3pfSWZxOUVMZnpXZUpiZW1DZmR0cDRPOW4zLUxNOVBnUWlaRFE?oc=5"
         },
         {
-          "title": "Oracle Reports Earnings Amid a Rapid Cloud Transformation",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1DRGFjUEctUmZSX0t0SlBiTVpfODN3dWY2VDVlcnJ4dnpqVXpyVDJ0Rkcyd2NlbHM3OFZrYXhkQW9ncUNQVjFNQWc1WTBDcG1udER5RXl6M0ZQSEJfSExiTFJFbjY2WlBsNlAxb0V2RGg4LWd1U1R4WU5BRnM?oc=5"
+          "title": "Dow Jones Futures Rise, Oil Pops, Oracle Dives; SpaceX IPO On Launch Pad",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd0lCTFNQS2J5djhfQjMyU0F1V1RwUU45UmVvdlVtRmUzWWVZcHBlaDVtZDl0Vkd5SXRuMjgyTXRKQzQtOTNLck1OalNlcWw4bWxKWUtIQUF4Q1FxZF9pWlY5T0NOQjRySHVYSU15eUs0NTNXd0hxb2JpRmV1S3FSMjAzNDZIazgxUmZtdnJLNFNiUzJoZU1CQ19xSDJXd3JXXzI3aXJ6Qlk0Qmk5RWRxY2tDUG5CM0dPdUE?oc=5"
         }
       ],
       "news_count": 5,
       "first_seen": "2026-06-10",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "半導體",
+      "ticker": "",
+      "sector": "半導體",
+      "mention_count": 3,
+      "sentiment": "利空",
+      "reason": "美股盤勢顯示半導體崩跌超3%,加上晶片股承壓,暗示半導體產業面臨較大賣壓。",
+      "evidence_news": [
+        {
+          "title": "〈美股盤後〉川普稱將「非常猛烈」打擊伊朗 道瓊狂瀉超過950點 費半重摔逾3.5%",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9DS3pneW4xSV9RcVpMeUotNW04eWxweklqMWVQZUtnZ2QwQ0RxSG9XNWtfVWpzQ3BYV2R6UWFVZjVhdm5kUWNucmxXNHRKTkk?oc=5"
+        },
+        {
+          "title": "【美股盤勢】半導體崩跌超3%，AI股拋售潮還沒停？（2026.06.11）",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPS1VoYzdXODFaSTY0ekU5d2xURi01LWVqdXVNNUd1bm5JOHg1dlVNc3FJeXBUNGpRcmJOWnhQb0RJMkVJVVJ2Tl95d0NZLS1OU05ZU2pad21Bekc3SDJhWU9JNTdVaTlPbXlWYmtFRVpLdmh1WG84b3hib3A4eDJfZlQ0RkZlWlN3cmtibHZR?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-10",
+      "last_seen": "2026-06-11"
+    },
+    {
+      "name": "智邦(Accton)",
+      "ticker": "",
+      "sector": "網通設備",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "因應客戶需求增溫,智邦積極擴充國內外產能,多個新廠將在今年底或明年量產,顯示未來營收成長可期。",
+      "evidence_news": [
+        {
+          "title": "智邦：龜山廠第3季放量 南寮及美、星廠明年量產",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606110180.aspx"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-11",
       "last_seen": "2026-06-11"
     },
     {
@@ -123,7 +233,7 @@
       "sector": "電腦硬體",
       "mention_count": 1,
       "sentiment": "觀望",
-      "reason": "DIY市場不如預期，但公司積極加速AI伺服器、AIoT、車載等新產品發展，試圖彌補傳統市場下滑，多空因素並存。",
+      "reason": "DIY市場不如預期,微星將加速AI伺服器、AIoT、車載等新產品成長,以彌補傳統市場下滑的影響。",
       "evidence_news": [
         {
           "title": "微星：RTX Spark新品第3季底量產 加速AI伺服器布局",
@@ -141,7 +251,7 @@
       "sector": "半導體",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "電源管理晶片市場供不應求，加上成本高漲，公司決定跟進同業調漲產品售價，為五年來首次漲價。",
+      "reason": "電源管理晶片市場供不應求且成本高漲,致新決定跟進同業調漲產品售價,是相隔五年後再度漲價。",
       "evidence_news": [
         {
           "title": "致新：電源管理晶片供不應求 相隔5年再度漲價",
@@ -152,106 +262,15 @@
       "news_count": 1,
       "first_seen": "2026-06-11",
       "last_seen": "2026-06-11"
-    },
-    {
-      "name": "亞力(Allis Electric)",
-      "ticker": "",
-      "sector": "重電設備",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "公司在手訂單規模超過120億新台幣，能見度可達2029年，並看好半導體擴廠訂單和AIDC機房拉貨需求。",
-      "evidence_news": [
-        {
-          "title": "亞力：半導體擴廠訂單看佳 AIDC機房拉貨可期",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606110086.aspx"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-11",
-      "last_seen": "2026-06-11"
-    },
-    {
-      "name": "醣聯(Lumena)",
-      "ticker": "",
-      "sector": "生技醫療",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "醣聯與日本三菱瓦斯化學合作開發的生物相似藥SPD8，三期臨床試驗解盲達標，預計明年申請台灣藥證，目標2027年底上市銷售。",
-      "evidence_news": [
-        {
-          "title": "醣聯SPD8三期臨床解盲達標 擬於明年申請台灣藥證",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606110077.aspx"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-11",
-      "last_seen": "2026-06-11"
-    },
-    {
-      "name": "日月光投控(ASE)",
-      "ticker": "ASX",
-      "sector": "半導體封測",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "受AI熱潮帶動，日月光投控董事長張虔生與副董事長張洪本兄弟首度躍居富比世台灣首富，顯示AI對其業務的正面影響。",
-      "evidence_news": [
-        {
-          "title": "AI熱潮帶動 日月光張虔生兄弟首登富比世台灣首富",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606110046.aspx"
-        }
-      ],
-      "news_count": 4,
-      "first_seen": "2026-06-10",
-      "last_seen": "2026-06-11"
-    },
-    {
-      "name": "威士卡(Visa)",
-      "ticker": "V",
-      "sector": "金融支付",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "Visa將其支付網絡整合至ChatGPT，讓AI代理商能為用戶購物和支付，顯示其在AI商業應用領域的創新與擴張。",
-      "evidence_news": [
-        {
-          "title": "Visa plugs its payment network into ChatGPT, letting AI agents shop and pay for users",
-          "source": "AP News",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONHZ TmpMV0hRNmxyc3JueEthUlNFc2drdW44YkEzWW5VQlNDakRWRUpRM2V6dEs3RldsQkhQLUlMVGRIeGVSYjRMVHJYOHZNbDBuX2tpTzVOVUlXVl9BU3VuREVfeGtzSVlPUEVEV3JRc3NGSkFsbHFqdjVTS3l5R2c4c1JWVGpKSmEwc1N6bWlvMVQwMlhyWlRUUWs5MUtf?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-10",
-      "last_seen": "2026-06-10"
-    },
-    {
-      "name": "超微(Supermicro)",
-      "ticker": "SMCI",
-      "sector": "電腦硬體",
-      "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "新聞提及超微股價暴跌28%，可能與科技股整體賣壓及AI估值擔憂有關。",
-      "evidence_news": [
-        {
-          "title": "Today’s Market Recap: CPI Rises 4.2% to a Three-Year High; Trump Threats Against Iran Send U.S. Stocks Tumbling; SpaceX Unveils “Super Loop” Ahead of IPO; Supermicro Plummets 28%",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPb3haRmw0Uzl1Tm1QVGQ3VktVMm5TYm9aMFRCRk80SEJUdWUxXzVZenNMTFB6Zm1mOHJ5WUtMZV9DV0VicVpNWmVrT0VnSmZpWEhGSjBoa1BPdFFzUkk2VVROa1VZNUNDaHBhRm51TWtfY29YTmxVT2dtU3pQNDFjWHY2V3p2NUNiU1I4SjZZaE13OFJHdVN0dFNMdjdMclRFYndYeHVTY2hGZw?oc=5"
-        }
-      ],
-      "news_count": 3,
-      "first_seen": "2026-06-10",
-      "last_seen": "2026-06-11"
     }
   ],
   "future_trends": [
-    "人工智慧(AI)伺服器及AIoT",
-    "半導體擴廠與AIDC(AI資料中心)機房建置",
-    "生物相似藥開發",
-    "太空探索與商業化",
-    "雲端服務與AI基礎設施擴建"
+    "人工智慧(AI)應用與基礎建設",
+    "電信寬頻設備升級",
+    "電源管理晶片需求",
+    "半導體新廠擴建"
   ],
   "sunset_industries": [
-    "DIY(自行組裝電腦)市場"
+    "DIY（自行組裝電腦）市場"
   ]
 }

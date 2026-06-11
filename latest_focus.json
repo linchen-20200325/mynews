@@ -5,43 +5,95 @@
       "report_date": "2026-06-11",
       "query_zh": "川普",
       "query_en": "Donald Trump",
-      "summary": "川普近期因其對伊朗的軍事行動、對AI企業的回饋社會要求、對通膨的「喜愛」言論，以及可能不續簽北美貿易協議等議題，引發國際局勢緊張、經濟市場波動及國內外輿論反彈。",
+      "summary": "川普近期因其對伊朗的軍事行動、對通膨的「喜愛」言論，以及其家族在阿爾巴尼亞的度假村開發案等議題持續引發國際關注與爭議，同時也涉及AI發展、貿易協定和文化挪用等多元領域。",
       "key_statements": [
-        "推動美版「共同富裕」概念，將會見AI企業高層，要求企業回饋社會，讓大眾富有。",
-        "提名約翰遜領導消費者金融保護局。",
-        "表示「喜歡通膨」，並認為伊朗戰事結束後物價會下降，稱美軍已護航上億桶原油。",
-        "證實發射49枚戰斧飛彈猛擊伊朗，並警告將「非常猛烈」地打擊伊朗，聲稱美國控制荷姆茲海峽。",
-        "威脅不續簽與加拿大、墨西哥的貿易協議（USMCA）。",
-        "因使用《火影忍者》動漫角色引發日本輿論反彈及近2萬人連署抗議。"
+        "揚言對伊朗採取「非常猛烈」的軍事打擊，並已證實發射49枚戰斧飛彈，聲稱美國控制荷姆茲海峽並協助逾1億桶原油進入全球市場。",
+        "表示「我愛通膨」，並稱戰後物價會下降，引發民主黨及民眾的強烈批評，認為此言論蔑視人民感受。",
+        "威脅不續簽《美墨加貿易協定》（USMCA），理由是不滿貿易逆差。",
+        "推動「美版共同富裕」，計畫與AI企業高層會面，要求他們回饋社會，讓大眾富有。",
+        "其家族在阿爾巴尼亞的度假村開發案引發當地大規模示威抗議。",
+        "白宮被爆濫用《火影忍者》和《遊戲王》等動漫角色進行戰爭宣傳，引發日本動漫迷超過2萬人聯署抗議。"
       ],
       "affected_industries": [
-        "人工智慧（AI）",
-        "能源（石油、天然氣）",
+        "石油與天然氣",
         "國防軍工",
-        "消費金融",
-        "汽車製造",
-        "農業",
-        "動漫娛樂",
-        "醫療保健"
+        "科技與人工智慧（AI）",
+        "金融服務",
+        "觀光與不動產開發",
+        "媒體與娛樂",
+        "航運"
       ],
       "stocks": [
+        {
+          "name": "花旗集團 (Citigroup)",
+          "ticker": "C",
+          "market": "美股",
+          "sector": "金融服務",
+          "sentiment": "利多",
+          "reason": "川普公開讚揚花旗「強勢回歸」，儘管數據有爭議，但其言論可能短期內提振市場對該股的信心。",
+          "evidence_news": [
+            {
+              "title": "“白宮股神”再吹票！特朗普拿着“烏龍數據”大讚花旗(C.US)強勢迴歸",
+              "source": "Investing.com 香港 - 股市報價& 財經新聞",
+              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9MUnZqLUN6WUtlWlBLQ0JpWHNrckRyTzA4TGotRWhpZUF0ZVNCcmZSazJaMENVSjhhSVVuYnJKQ0xMLW1acjNpYl9Wcmc0TEdCSmVwbGlRSnpQN2Jvek5YRkY5R3JzVGFMLU5lcGp5SHM?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
         {
           "name": "輝達 (Nvidia)",
           "ticker": "NVDA",
           "market": "美股",
           "sector": "半導體",
           "sentiment": "觀望",
-          "reason": "川普要求AI企業回饋社會，可能對AI產業的盈利模式和未來投資造成不確定性，導致觀望情緒。",
+          "reason": "OpenAI爆料中國利用ChatGPT反川普並影響美國AI基礎設施，可能導致美國對AI產業的監管和國家安全審查加強，對AI晶片供應商帶來不確定性。",
           "evidence_news": [
             {
-              "title": "共同富裕｜特朗普推美版「共同富裕」 將晤AI企業高層 要求回饋社會令大眾富有",
-              "source": "Yahoo 財經",
-              "url": "https://news.google.com/rss/articles/CBMi2gNBVV95cUxPcnR3TVJkblNtZmd3NnJGcVl5RENwWFdJdTRiU05VdDR4b3dPVnRUY1M1bW1CRW42cF9hNVZNR1o2Q2YzdHBaTXFxaTZfd05zNTVaWG14WU9WME9zeEhscmpuejg1Y1ZwclNhQXRqUmZzbEJ3M1phVXBxN2c2RmNLeWRBVVR6UjFRY1pDM0J2WjFpRlF1VXFkOVhpTTVTNkVuakdrallsTjJrd1BaUVE5aHczcldHMkxqekxYMngxMnpyb09ESlRFNS12Q2ZMRnF5SkRxejlQYnFxdjVkblkxYTNscEl4LUs5OURnRW96Zlg3SHRoVGxORlNnUWl3WV9wOC1KNFhfTFMxSzQ0TTJCZVNqSlIwZUNja2tsZVJuS3BIeTRNemhsd2NsT3RxR0F3TDlRMzZ4WExuRzg5SGxrVnh0bGJ4OHF6aEt0dlMxYTd5Q2s0RHpqbEk0SkhxdkJwdkU2YzA0SmVnNHc1NWNlYjhZWlBKMnJSTWp4czFVUmNTOWxxck9wbnlySllMNEVhd25UWUd2VmlUdzQ4bXNRVmRkbmo5UDhETWlzY29OdGU1SDZsbW92Q015bWhTeURfQjJxbllvQmpIbE9QNTdvY1pPSTJua0hKeFE?oc=5"
+              "title": "OpenAI爆料：中國用ChatGPT吹風向反川普與美國AI基建",
+              "source": "風傳媒",
+              "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBzRDVmN3QwNURoTHBPM0VQLWtISThWVmhZcVFLemZ3Q3QzN3dtUUhsOE9xcURIVnV6TU9BdWdVYS1GckRRN3VQRjR3TjJYZw?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "埃克森美孚 (ExxonMobil)",
+          "ticker": "XOM",
+          "market": "美股",
+          "sector": "能源",
+          "sentiment": "利多",
+          "reason": "川普揚言對伊朗發動攻擊並已實際空襲，導致國際油價應聲大漲，荷姆茲海峽局勢緊張，對石油生產商形成利多。",
+          "evidence_news": [
+            {
+              "title": "美伊衝突再升級！川普揚言「用炸彈談判」 國際油價應聲大漲",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMi9wJBVV95cUxPZjIzNHlyXzlDWEJKQl9WVkxYU3ZrcmMwczJoRmJvYnRjaE9NMmhGLTlJT2FQY3dSaldqcDhXQ01kbDVzNnRBdmlQUVoyekxlWjg2Q1pidFh5RmZrTUE0V3IwLVhBRWIzMlFxbzFRdzRxTUFFZWJZdFlqTlFfaTVhd2VHbkdwSURNS2tnd1BaaEpiSzVxTUNpSWZ2aVQwVER1alhjc29LZHpSU2ZMb2lFSFR0WlJpemVjRC0tUDFiTGpvcW5xeTl1R2Y5UzBmQWd0cnRkQmpDZ05MWTFIRkhXdFA2YWRqTWhtdm5GbTlsNkJ1RjM3cmdpTjdVN0piQ0VkbFZqNDRVcjBiSkJraUE0NjdXQ0Z0X2R1Mjh5UDBmMFMwUTFuYVptUWRGMWlYcU4wMkFLQkIzZmR2M1V6OXhXQ19QdVZjUWgzUW52ZzdaWm9Wbkl2dzI0TC01SlRqR2pFUDBvdzNFNWc5MWJzSnoyTFQ2Wm02VEk?oc=5"
             },
             {
-              "title": "國際兩岸評論｜特朗普要化解反AI浪潮",
-              "source": "Now 新聞",
-              "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBZdG93LVhZLXBDeS1FclcySEVFR2c2NUdfU1Q3eC1qNDV6UlZNZkNtRGZ1MjEwQjM1TmhPQ1pOZXhaYkxXaE1tdS0tM2tlT3pHNFdpWGdTSTM4MjM2d1UzWXhyWndXb3RtcEtiUFI5QQ?oc=5"
+              "title": "川普強調不擔心通膨問題 美軍已護航上億桶原油",
+              "source": "新唐人亞太電視台",
+              "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE15ZTY2dGdvUm5Cb0RhSDYzMWp0RV9oQXh5LVFETlE0SWlhT2txckJyTmI0N0FXVjFqX0loOVNRa0MyZkVJQjBSeVJrX18wWHppZGNYbXpQWGVackFwZ1RvSE52Nkw?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "洛克希德馬丁 (Lockheed Martin)",
+          "ticker": "LMT",
+          "market": "美股",
+          "sector": "國防軍工",
+          "sentiment": "利多",
+          "reason": "川普宣布恢復打擊伊朗，並證實發射飛彈，中東衝突升級，預期將增加軍事採購，對國防軍工企業利多。此外，國防工業領導人正準備與川普會面。",
+          "evidence_news": [
+            {
+              "title": "川普證實發射49枚戰斧飛彈 美軍猛擊伊朗畫面曝",
+              "source": "新唐人亞太電視台",
+              "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAzQkVmTVl0ZURfQ3A3VzFTUGRhTUtpSHctNzhBWlRPckRtWjRpVVMtT21rZF9mY3BDZmF2WmFDYzlNNXFOOVNNU2l1eC14YWQ1dzRoSE15M0w3VThvQk1EQVZLaE8?oc=5"
+            },
+            {
+              "title": "特朗普突传重量级消息！美媒独家：国防工业领导人正准备与特朗普会面",
+              "source": "FX168财经",
+              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBUN1FJTXFkOTJKb2hJLTlBOWpnRlZRNnNXU0JnX0s2VDJDbkxVLTRlbVVicEpwb3VyZDVaR0dIaGdmZlF0TVo3OTZqY3gzUG1HcTZVaUJpRHZJa25CY0FEM3JlZjk1bUZS?oc=5"
             }
           ],
           "news_count": 0
@@ -52,236 +104,94 @@
           "market": "台股",
           "sector": "半導體",
           "sentiment": "觀望",
-          "reason": "川普的貿易保護主義言論及對AI產業的潛在干預，可能影響全球供應鏈穩定及半導體需求，導致觀望。",
+          "reason": "有報導指出川普手機內部零件與台灣設備相似並使用中國零件，若未來美國對科技供應鏈進行更嚴格的審查或貿易政策調整，可能影響台積電等全球供應鏈重要參與者。",
           "evidence_news": [
             {
-              "title": "共同富裕｜特朗普推美版「共同富裕」 將晤AI企業高層 要求回饋社會令大眾富有",
-              "source": "Yahoo 財經",
-              "url": "https://news.google.com/rss/articles/CBMi2gNBVV95cUxPcnR3TVJkblNtZmd3NnJGcVl5RENwWFdJdTRiU05VdDR4b3dPVnRUY1M1bW1CRW42cF9hNVZNR1o2Q2YzdHBaTXFxaTZfd05zNTVaWG14WU9WME9zeEhscmpuejg1Y1ZwclNhQXRqUmZzbEJ3M1phVXBxN2c2RmNLeWRBVVR6UjFRY1pDM0J2WjFpRlF1VXFkOVhpTTVTNkVuakdrallsTjJrd1BaUVE5aHczcldHMkxqekxYMngxMnpyb09ESlRFNS12Q2ZMRnF5SkRxejlQYnFxdjVkblkxYTNscEl4LUs5OURnRW96Zlg3SHRoVGxORlNnUWl3WV9wOC1KNFhfTFMxSzQ0TTJCZVNqSlIwZUNja2tsZVJuS3BIeTRNemhsd2NsT3RxR0F3TDlRMzZ4WExuRzg5SGxrVnh0bGJ4OHF6aEt0dlMxYTd5Q2s0RHpqbEk0SkhxdkJwdkU2YzA0SmVnNHc1NWNlYjhZWlBKMnJSTWp4czFVUmNTOWxxck9wbnlySllMNEVhd25UWUd2VmlUdzQ4bXNRVmRkbmo5UDhETWlzY29OdGU1SDZsbW92Q015bWhTeURfQjJxbllvQmpIbE9QNTdvY1pPSTJua0hKeFE?oc=5"
-            },
-            {
-              "title": "特朗普重大突发！加媒：特朗普威胁不续签与加拿大、墨西哥的贸易协议",
-              "source": "FX168财经",
-              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBFNmY5UGc4UHpFVTVHMUxvNmM0OERVV19LNUdONVhMc2JhSWd1ZVJ4VEdxNWdudUt3VW1HdDA3d242SzJzbVhRM0J6OE5oNExiY0Y0QkxBeUxCNG54QThxaVZ1LW5CUDE2?oc=5"
+              "title": "我們拆開了川普手機 — 它幾乎與使用中國零件的台灣設備相同",
+              "source": "NBC News",
+              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbks0Y1E1bEd6dVVpbzMteGM3bXpPM1k3MWJYUm9GUEQ4ZTRKUkhTcXJCdlJ5U0VnRENSTDctZW9HQjdPT295bmZGNjVKYzh0aS1meV9UYzBxQUxGc0FidDNxcGVDcE5vSjZhcUFjSlZaMHRIQ3BTd0hWNUtaZl8xcUJDYlR0djNMNElWNGRwYXB5WWRHLS1rUzNYQnozNU1VRmN6dWh1dFNUdw?oc=5"
             }
           ],
           "news_count": 0
         },
         {
-          "name": "艾克森美孚 (ExxonMobil)",
-          "ticker": "XOM",
-          "market": "美股",
-          "sector": "能源",
-          "sentiment": "觀望",
-          "reason": "中東局勢因美伊衝突升級而緊張，雖短期油價可能上漲，但長期不確定性及潛在的戰爭代價，導致觀望。",
-          "evidence_news": [
-            {
-              "title": "川普強調不擔心通膨問題 美軍已護航上億桶原油",
-              "source": "新唐人亞太電視台",
-              "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE15ZTY2dGdvUm5Cb0RhSDYzMWp0RV9oQXh5LVFETlE0SWlhT2txckJyTmI0N0FXVjFqX0loOVNRa0MyZkVJQjBSeVJrX18wWHppZGNYbXpQWGVackFwZ1RvSE52Nkw?oc=5"
-            },
-            {
-              "title": "川普：祕密協助一億桶石油通過荷姆茲海峽 避免油價漲至250美元危機",
-              "source": "Yahoo新聞",
-              "url": "https://news.google.com/rss/articles/CBMitANBVV95cUxOMm8wMkRLWVVBaXc0SHNuMVpBR3pNZEVNYXVVVk15ZFFQdlNFUnBvcVRHM2N0eWZHWlprRy05b3hRZHJMbDUwM2haZzFkVEdmTkhUWFZGQU1sY1QzZ0xkbnN1UGYtczF0MU9xM1Zvc2tra2xYeG5iMm4zX0VjNkowMGU5ZVFBcFZLOUloZ1BLV2tlS2RhcVBwOW1ZWVBFRmFBb0thdjNKV0JTOHJTbE9Uc3FMV3FvdFl1d1lzeTZUeHNDbVFVZ3dETzZEYTJadGNNQXJqSHVYbTFNQkhFNW9Ic0dYSGRaenJDREZubjZtNGxNTGlGSDRZQ3I1YVFXNlpDOXZOME1heDEzenVDeXZGaE8wVmt6OV9LaTRLSS0wTnhldFJKaVhRclR2b3FUeGdnVXp0Yk4yQlZWZW9Vck03Qm9WaFhuWkVsT0hnVjJRdkoxdno1M0o3akh3ZXRVdEZ4R0NleTFhOVBvX2ZONWt1dWozcDhFQ1hZeWRwRW5yelBEWEJOZE1CSDBGd1hHbUhMbTBZMEhoSjJKWENqT0M0Y1ZXZUdva2pTeXJtaUVHUUpXVEVY?oc=5"
-            }
-          ],
-          "news_count": 0
-        },
-        {
-          "name": "中油 (CPC Corporation, Taiwan)",
-          "ticker": "",
+          "name": "長榮海運",
+          "ticker": "2603",
           "market": "台股",
-          "sector": "能源",
+          "sector": "航運",
           "sentiment": "觀望",
-          "reason": "荷姆茲海峽的緊張局勢可能影響國際原油供應及價格，進而影響中油的營運成本及獲利，導致觀望。",
+          "reason": "美伊衝突升級，伊朗威脅封鎖荷姆茲海峽，此為全球重要石油運輸航道，若局勢持續緊張，可能影響航運成本及路線，對相關航運公司帶來不確定性。",
           "evidence_news": [
             {
-              "title": "川普爆美軍秘密任務！1億桶石油通過 荷姆茲海峽「隱藏航道」曝光",
-              "source": "自由時報",
-              "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9YRTVDVjNQOTdMZlIxcWtYZmRMcUZGNThaZm54MXA4SGhjQWlac0lqRG1Ba1F3dk52WUVUTmRiUFZVWEJhOXlwZTJ6NEk3cnVMMllNU3JIZWQtZ2RSLWxwUjZCLVdwQdIBa0FVX3lxTE52S28tMzhzeXdzc1JjU2QtMUtNODdibVhKOE1lMlUyWkRKdnpJb2JBc09Od19YMUdiWU5pZ0c1VGgweXJUTTFteGFPdmZxSFVUQkU0WWlHWlRFZHNLWDBPSzJzMjlZWGFHS1pn?oc=5"
+              "title": "伊朗喊再封荷莫茲海峽 川普聲稱協助逾1億桶原油進入全球市場：「控制荷莫茲海峽的是美國」",
+              "source": "風傳媒",
+              "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5vVkgtRGlxa282YjlCRm9Cb21GT3hvU2Zndmhud1hMRG4yUXZ3elBCUTZ4U2E4eDlnNDdPdm0xM19HaHlMTGJZNGR0VktEdw?oc=5"
             },
             {
-              "title": "川普再轟伊朗、荷姆茲海峽又遭封鎖油價走高- 新聞",
-              "source": "MoneyDJ理財網",
-              "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZUZ3VVNMdzUwZ3IyczVoQVRjX0V3R25qdWtXa1pUTnd1emdRMjVkTzE4WFV1WGp6NDRyOXFPdDdjSm83S01WV2hNd01XS0ZxZTNFeTZEektZVjdVbmhsN25MQURQTHBGUm9GSWd0cGhldDRXQVFaY09GX1Q5Ukx5eEt3cFBkMEc0U3ZOQ0xpRmZrUQ?oc=5"
-            }
-          ],
-          "news_count": 1,
-          "first_seen": "2026-06-11",
-          "last_seen": "2026-06-11"
-        },
-        {
-          "name": "洛克希德馬丁 (Lockheed Martin)",
-          "ticker": "LMT",
-          "market": "美股",
-          "sector": "航太與國防",
-          "sentiment": "利多",
-          "reason": "川普下令對伊朗進行軍事打擊，並表示將「非常猛烈」，可能增加國防開支及武器需求，對軍工產業構成利多。",
-          "evidence_news": [
-            {
-              "title": "川普證實發射49枚戰斧飛彈 美軍猛擊伊朗畫面曝",
-              "source": "新唐人亞太電視台",
-              "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAzQkVmTVl0ZURfQ3A3VzFTUGRhTUtpSHctNzhBWlRPckRtWjRpVVMtT21rZF9mY3BDZmF2WmFDYzlNNXFOOVNNU2l1eC14YWQ1dzRoSE15M0w3VThvQk1EQVZLaE8?oc=5"
-            },
-            {
-              "title": "川普宣布恢復打擊伊朗「將會非常猛烈」｜再發動空襲！美軍連轟49枚戰斧飛彈｜企圖運送伊朗石油！美軍飛彈轟炸阿曼灣油輪畫面曝｜2026/06/11 中央社全球午間快報",
-              "source": "中央社 CNA",
-              "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1zVmtVSTAweUp4RUpvUUpST3h1cGxwcE9GWWNNck9SbXhobGQ3aDJGRnhzUmo3Z0N2WEJpOTRoZ1FRUXVJSzRpTXFGY25EbU5GTGlSMGNCN3cwUVE?oc=5"
-            }
-          ],
-          "news_count": 0
-        },
-        {
-          "name": "雷神技術公司 (Raytheon Technologies)",
-          "ticker": "RTX",
-          "market": "美股",
-          "sector": "航太與國防",
-          "sentiment": "利多",
-          "reason": "美伊衝突升級，川普強調對伊朗的軍事行動，可能導致對導彈等國防設備的需求增加，對公司構成利多。",
-          "evidence_news": [
-            {
-              "title": "特朗普稱向伊朗發射49枚導彈 助逾2百艘商船通過霍爾木茲海峽",
-              "source": "香港電台新聞網",
-              "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1YUG5OZnExcUdsbG5vN3ZYa0lyQTRYbHZFWEJVMmVsX2h0ZTdONERjYjZlVUVRT09mcmtBMlNDdmJkUXp2SW5DUHEzTlFUSG5ZdHdra0VXUXkwOGpDVkRGejIzNG00bmhhcE85MnlpSQ?oc=5"
-            },
-            {
-              "title": "川普連2開轟伊朗！美戰爭部長「撂狠話全成真」：將用炸彈談判",
-              "source": "民視新聞網",
-              "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE56eEt1NW5vZHBVWjExeUpKSjY5YnRkX1Njcmg2X21KYVlpRnpxdThrU3lWTm1tdUtxbU5vNnF2dDNUTHBPeUM1dVU5TU42eWhPZlZ1MzhDmZySS15MkxtUw?oc=5"
-            }
-          ],
-          "news_count": 0
-        },
-        {
-          "name": "波音 (Boeing)",
-          "ticker": "BA",
-          "market": "美股",
-          "sector": "航太與國防",
-          "sentiment": "利多",
-          "reason": "中東地區衝突加劇，美軍行動頻繁，可能促使對軍用飛機和相關航太技術的需求上升，對波音有利。",
-          "evidence_news": [
-            {
-              "title": "中東戰爭第103天》川普揚言重擊美軍再襲伊朗 最新發展一次看",
-              "source": "經濟日報",
-              "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9CSTRKbEFjNXVzMEJDNHBoSlRwS0pDaEVpakFqaVg0RTZoQ3hMbE5hQ2pIR21OcS1BLUFmMWdaY0pLMV92TGhXX3RsQ25USnBoUW1jeDQyRmw1UdIBX0FVX3lxTE9mV3dMMm43RWQ1LTlXUUVVQkVneGVYbm4zN2RXTkh6Xy1BdjdKLVpZaWJiWG9Dak9Ud2ZvZEtpXzhpSWZFeUNhRGJRSzZkWlU3b3pSNV9Tc2hfS0o1dWZV?oc=5"
-            },
-            {
-              "title": "美國再次空襲伊朗 特朗普警告將“猛烈打擊” 德黑蘭",
-              "source": "美南新聞",
-              "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1UTU1QQnJ4VW5PTGYxYWpTR0VDX2hiMUlSbkNmeV9ubmhzN1BKSWtmUHpWamJrNmxDMGU0WUo4cVRPNDFX?oc=5"
-            }
-          ],
-          "news_count": 6,
-          "first_seen": "2026-06-11",
-          "last_seen": "2026-06-11"
-        },
-        {
-          "name": "豐田汽車 (Toyota Motor)",
-          "ticker": "TM",
-          "market": "美股",
-          "sector": "汽車製造",
-          "sentiment": "利空",
-          "reason": "川普威脅不續簽USMCA協議，可能對在墨西哥或加拿大設廠生產並銷往美國的汽車製造商造成關稅衝擊。",
-          "evidence_news": [
-            {
-              "title": "特朗普重大突发！加媒：特朗普威胁不续签与加拿大、墨西哥的贸易协议",
-              "source": "FX168财经",
-              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBFNmY5UGc4UHpFVTVHMUxvNmM0OERVV19LNUdONVhMc2JhSWd1ZVJ4VEdxNWdudUt3VW1HdDA3d242SzJzbVhRM0J6OE5oNExiY0Y0QkxBeUxCNG54QThxaVZ1LW5CUDE2?oc=5"
-            },
-            {
-              "title": "Trump says he may not renew USMCA with Mexico and Canada",
-              "source": "The Hill",
-              "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSW8wRUJUQjdTN1F4Y3VpenhySFoxMzVZbU4ybWozQS14bHNUNDU1WmlxVFFsdi1mSkRsNUpvX25zM0NMbGlQNERFbHNBU09tS012LVpCbkNBNDBYZktyZmU2dVhKMnB1YXE3OHpnalRjQjJHOFhEOTU2NGZFLXRLbWpSTkJ5eGvSAYwBQVVfeXFMTy1ONWRRN1l3THJSLTF5bXBkdkJlS2hfVkpFV2NwQUg4eE0zY25SWGIzcmVkajZrWWpsa1U1VW9lMFVxTFNwQjlGTEI1LXlRcEVWczdVd1plaU9oY3BKM212U2VOU2FGUG1zU1VpMnNacExVbUtxOXZyeEx0NXcxNVZod0pmd3lIS3dNdEw?oc=5"
-            }
-          ],
-          "news_count": 0
-        },
-        {
-          "name": "福特汽車 (Ford Motor)",
-          "ticker": "F",
-          "market": "美股",
-          "sector": "汽車製造",
-          "sentiment": "利空",
-          "reason": "若USMCA協議不續簽，福特汽車在北美供應鏈的佈局可能受影響，增加生產成本或貿易障礙，構成利空。",
-          "evidence_news": [
-            {
-              "title": "特朗普重大突发！加媒：特朗普威胁不续签与加拿大、墨西哥的贸易协议",
-              "source": "FX168财经",
-              "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBFNmY5UGc4UHpFVTVHMUxvNmM0OERVV19LNUdONVhMc2JhSWd1ZVJ4VEdxNWdudUt3VW1HdDA3d242SzJzbVhRM0J6OE5oNExiY0Y0QkxBeUxCNG54QThxaVZ1LW5CUDE2?oc=5"
-            },
-            {
-              "title": "Trump says he may not renew USMCA with Mexico and Canada",
-              "source": "The Hill",
-              "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSW8wRUJUQjdTN1F4Y3VpenhySFoxMzVZbU4ybWozQS14bHNUNDU1WmlxVFFsdi1mSkRsNUpvX25zM0NMbGlQNERFbHNBU09tS012LVpCbkNBNDBYZktyZmU2dVhKMnB1YXE3OHpnalRjQjJHOFhEOTU2NGZFLXRLbWpSTkJ5eGvSAYwBQVVfeXFMTy1ONWRRN1l3THJSLTF5bXBkdkJlS2hfVkpFV2NwQUg4eE0zY25SWGIzcmVkajZrWWpsa1U1VW9lMFVxTFNwQjlGTEI1LXlRcEVWczdVd1plaU9oY3BKM212U2VOU2FGUG1zU1VpMnNacExVbUtxOXZyeEx0NXcxNVZod0pmd3lIS3dNdEw?oc=5"
-            }
-          ],
-          "news_count": 0
-        },
-        {
-          "name": "迪士尼 (Walt Disney)",
-          "ticker": "DIS",
-          "market": "美股",
-          "sector": "媒體娛樂",
-          "sentiment": "觀望",
-          "reason": "川普使用動漫IP引發爭議，可能導致未來IP使用規範更趨嚴格或引發消費者對品牌政治中立性的疑慮。",
-          "evidence_news": [
-            {
-              "title": "《火影忍者》：美國總統特朗普使用動漫角色引發日本輿論反彈",
+              "title": "美伊衝突再升級！川普威脅「用炸彈談判」 荷姆茲海峽局勢緊繃",
               "source": "Yahoo新聞",
-              "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxOZEVsS0puX3FzUjN6MjJwZ1MtSmVqR3BtWTMwUUhKVUw1alJmMURSNDQtTGZPc3BDTzRfMzdiZUZLd3JqMEY4c1F3TXlXcDFONzVlZjRNU004RVBCNWlreFF5RlZZejFxbDBUcVpBaElKdk10WmJxSG8tb0gzNTRCTW03LXI5TllnWGdlWTUzM3VYaWZNN2tMWVZmdWJ4a2tTSkxjLWR4Y0p2ZUVCQTFNQXJjSjg4cW9UcjY4ZC1sTDY1azdUeEVUUW1PVEMtM2ViZGNJbVo2T2NOdWpJUEwzUlU3LUJzOUUxbmNlZk9xNzR1VWpCampGYUxoVjV2OGRkVjBzNFFuYkdxOUw4UjhXWm55bU1rbUNyYk80WFpIQk96UUh3dEE4cFdHal9RWkZubmlpR2RzNFh6UDRuWGYyN1hPQnhTR3dtMVRmdkN2UnFWaHpMcWgwQ1R2NTRoOGhLT0xCaEhOLWhLVE5Yejl6Nk5iYVAyWHczcmRpTjl3NnY?oc=5"
-            },
-            {
-              "title": "川普AI變身《火影忍者》漩渦鳴人 動漫迷怒批政治挪用IP 近2萬人連署抗議延燒",
-              "source": "梅花新聞網",
-              "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE83aUUxMlM2RHlja0p0M3laSVozSmZEZG41eG8yOGlGQjNsUFR1ejFEZmt1VTB3M2RVaUxvUG5lZ0lGeE5qRXNTTk96WlYyLUZzaVZvWnhWR2Q?oc=5"
+              "url": "https://news.google.com/rss/articles/CBMigwNBVV95cUxOclRySUlZTWM5cWJkbldFeWpacTlqS091WlMyODhiTGFmdnI5ZGVPU05sLXYtR1BOMGNwaG1SdjhjcExpUk1Eel9ZenZzRDN6RWdLazU4WXBCOG9mQmxjNUE2M0lxQUpwMkItTEoxcXl1aUd5S2tqUHpvNTVqOF9CdmNqYjctNm9PeVBfOEtZcXd6QVhwQWFDSmRmckxGWTBKQ1ZvOXFkaU5yQkhBNHRkYlFPQWVMWW1TTXIwc3ZHeHlSWmhPeUF3dnJVdThjZ08xR0ZPcDZsWjN5TWoxWUhpV0g1cnRpandyand2N0J3M3ZIelJfbEw4TVl2NVowTG03VHZXSW1hLWhHWHVCQUtScGpqUHMtSlBYTnVyaDROWVZ4Ulg1THV6d3JYMUpkdkhueVUzcFBSRGFoSVZEYlJQMUxadm5fMjJTM0hsU1phdnphT1hZS2lHQndoSGZ3NFJPQ0E2Q0RnVllmaWlON0ZmNERyc2ViUjBxdTltN2RkcC01MG8?oc=5"
             }
           ],
-          "news_count": 3,
-          "first_seen": "2026-06-11",
-          "last_seen": "2026-06-11"
+          "news_count": 0
+        },
+        {
+          "name": "星宇航空",
+          "ticker": "2646",
+          "market": "台股",
+          "sector": "航空",
+          "sentiment": "觀望",
+          "reason": "中東地區戰事升級和國際油價上漲，可能導致航空燃油成本增加，並影響部分航班路線，對航空業產生負面影響。",
+          "evidence_news": [
+            {
+              "title": "美伊衝突再升級！川普揚言「用炸彈談判」 國際油價應聲大漲",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMi9wJBVV95cUxPZjIzNHlyXzlDWEJKQl9WVkxYU3ZrcmMwczJoRmJvYnRjaE9NMmhGLTlJT2FQY3dSaldqcDhXQ01kbDVzNnRBdmlQUVoyekxlWjg2Q1pidFh5RmZrTUE0V3IwLVhBRWIzMlFxbzFRdzRxTUFFZWJZdFlqTlFfaTVhd2VHbkdwSURNS2tnd1BaaEpiSzzVxTUNpSWZ2aVQwVER1alhjc29LZHpSU2ZMb2lFSFR0WlJpemVjRC0tUDFiTGpvcW5xeTl1R2Y5UzBmQWd0cnRkQmpDZ05MWTFIRkhXdFA2YWRqTWhtdm5GbTlsNkJ1RjM3cmdpTjdVN0piQ0VkbFZqNDRVcjBiSkJraUE0NjdXQ0Z0X2R1Mjh5UDBmMFMwUTFuYVptUWRGMWlYcU4wMkFLQkIzZmR2M1V6OXhXQ19QdVZjUWgzUW52ZzdaWm9Wbkl2dzI0TC01SlRqR2pFUDBvdzNFNWc5MWJzSnoyTFQ2Wm02VEk?oc=5"
+            }
+          ],
+          "news_count": 0
         }
       ],
       "evidence_news": [
         {
+          "title": "OpenAI爆料：中國用ChatGPT吹風向反川普與美國AI基建",
+          "source": "風傳媒",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBzRDVmN3QwNURoTHBPM0VQLWtISThWVmhZcVFLemZ3Q3QzN3dtUUhsOE9xcURIVnV6TU9BdWdVYS1GckRRN3VQRjR3TjJYZw?oc=5"
+        },
+        {
+          "title": "美伊衝突再升級！川普揚言「用炸彈談判」 國際油價應聲大漲",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi9wJBVV95cUxPZjIzNHlyXzlDWEJKQl9WVkxYU3ZrcmMwczJoRmJvYnRjaE9NMmhGLTlJT2FQY3dSaldqcDhXQ01kbDVzNnRBdmlQUVoyekxlWjg2Q0JidFh5RmZrTUE0V3IwLVhBRWIzMlFxbzFRdzRxTUFFZWJZdFlqTlFfaTVhd2VHbkdwSURNS2tnd1BaaEpiSzVxTUNpSWZ2aVQwVER1alhjc29LZHpSU2ZMb2lFSFR0WlJpemVjRC0tUDFiTGpvcW5xeTl1R2Y5UzBmQWd0cnRkQmpDZ05MWTFIRkhXdFA2YWRqTWhtdm5GbTlsNkJ1RjM3cmdpTjdVN0piQ0VkbFZqNDRVcjBiSkJraUE0NjdXQ0Z0X2R1Mjh5UDBmMFMwUTFuYVptUWRGMWlYcU4wMkFLQkIzZmR2M1V6OXhXQ19QdVZjUWgzUW52ZzdaWm9Wbkl2dzI0TC01SlRqR2pFUDBvdzNFNWc5MWJzSnoyTFQ2Wm02VEk?oc=5"
+        },
+        {
+          "title": "“白宮股神”再吹票！特朗普拿着“烏龍數據”大讚花旗(C.US)強勢迴歸",
+          "source": "Investing.com 香港 - 股市報價& 財經新聞",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9MUnZqLUN6WUtlWlBLQ0JpWHNrckRyTzA4TGotRWhpZUF0ZVNCcmZSazJaMENVSjhhSVVuYnJKQ0xMLW1acjNpYl9Wcmc0TEdCSmVwbGlRSnpQN2Jvek5YRkY5R3JzVGFMLU5lcGp5SHM?oc=5"
+        },
+        {
+          "title": "特朗普威脅不續簽《美墨加貿易協定》 稱不滿貿易逆差",
+          "source": "香港01",
+          "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxObmtLclNFM2o4OFFtT0R1QUFCQ1hETm5BQUZDaUx2SWl5M2J3a0k3Y1hnYmNOYy1pbzFwcXNtajlRQldMMmFRenVSTy1KQmpCLWY4bXlwenVTOVNaQ2RjWF9CNm1jdzJhTVhTU3BJNV9VY0JmZW1Jcy13VjBmVWEwb2Jra1hjVzFtOFFhQnRTczk3RDB1VVhPWWd0ZFlaM3doYTRYSmpnbVhINFlDV1NUMVpzNW85VzBhVUhSd09qRVJwcVI3eHhBWUNrMDRhNnB5clhvWUpKWkVOT0pZRUlBS19Yb3dmRWZIaVFoOGtoY1ozd2tJNGRlMmxNRE9OaDNNeFZwVkU5SWY1b0wxMV9IeEF0YV9UY2loZmlQMFgzam9HRmtxbkVOM1o1U3JVTllIblI4Q21mekpTRHBPeUQ2Zlcwbk1uYmM0RWoxcFFabklTUl95QnBqYTEtUlZyVFpiUkc3aWd4ZjdqanlXNXZVd1FJYXlqZXZkeF9jV0c0ejA?oc=5"
+        },
+        {
           "title": "共同富裕｜特朗普推美版「共同富裕」 將晤AI企業高層 要求回饋社會令大眾富有",
           "source": "Yahoo 財經",
-          "url": "https://news.google.com/rss/articles/CBMi2gNBVV95cUxPcnR3TVJkblNtZmd3NnJGcVl5RENwWFdJdTRiU05VdDR4b3dPVnRUY1M1bW1CRW42cF9hNVZNR1o2Q2YzdHBaTXFxaTZfd05zNTVaWG14WU9WME9zeEhscmpuejg1Y1ZwclNhQXRqUmZzbEJ3M1phVXBxN2c2RmNLeWRBVVR6UjFRY1pDM0J2WjFpRlF1VXFkOVhpTTVTNkVuakdrallsTjJrd1BaUVE5aHczcldHMkxqekxYMngxMnpyb09ESlRFNS12Q2ZMRnF5SkRxejlQYnFxdjVkblkxYTNscEl4LUs5OURnRW96Zlg3SHRoVGxORlNnUWl3WV9wOC1KNFhfTFMxSzQ0TTJCZVNqSlIwZUNja2tsZVJuS3BIeTRNemhsd2NsT3RxR0F3TDlRMzZ4WExuRzg5SGxrVnh0bGJ4OHF6aEt0dlMxYTd5Q2s0RHpqbEk0SkhxdkJwdkU2YzA0SmVnNHc1NWNlYjhZWlBKMnJSTWp4czFVUmNTOWxxck9wbnlySllMNEVhd25UWUd2VmlUdzQ4bXNRVmRkbmo5UDhETWlzY29OdGU1SDZsbW92Q015bWhTeURfQjJxbllvQmpIbE9QNTdvY1pPSTJua0hKeFE?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMi2gNBVV95cUxPcnR3TVJkblNtZmd3NnJGcVl5RENwWFdJdTRiU05VdDR4b3dPVnRUY1M1bW1CRW42cF9hNVZNR1o2Q2YzdHBaTXFxaTZfd05zNTVaWG14WU9WME9zeEhscmpuejg1Y1ZwclNhQXRqUmZzbEJ3M1phVXBxN2c2RmNLeWRBVVR6UjFRY1pDM0J2WjFpRlF1VXFkOVhpTTVTNkVuakdrallsTjJrd1BaUVE5aHczcldHMkxqekxYMngxMnpyb09ESlRFNS12Q2ZMRnF5SkRxejlQYnFxdjVkblkxYTNscEl4LUt5OURnRW96Zlg3SHRoVGxORlNnUWl3WV9wOC1KNFhfTFMxSzQ0TTJCZVNqSlIwZUNja2tsZVJuS3BIeTRNemhsd2NsT3RxR0F3TDlRMzZ4WExuRzg5SGxrVnh0bGJ4OHF6aEt0dlMxYTd5Q2s0RHpqbEk0SkhxdkJwdkU2YzA0SmVnNHc1NWNlYjhZWlBKMnJSTWp4czFVUmNTOWxxck9wbnlySllMNEVhd25UWUd2VmlUdzQ4bXNRVmRkbmo5UDhETWlzY29OdGU1SDZsbW92Q015bWhTeURfQjJxbllvQmpIbE9QNTdvY1pPSTJua0hKeFE?oc=5"
         },
         {
-          "title": "《火影忍者》：美國總統特朗普使用動漫角色引發日本輿論反彈",
+          "title": "「我愛通貨膨脹」! 川普不顧選民感受語出驚人 民主黨趁機痛批 : 蔑視人民",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxOZEVsS0puX3FzUjN6MjJwZ1MtSmVqR3BtWTMwUUhKVUw1alJmMURSNDQtTGZPc3BDTzRfMzdiZUZLd3JqMEY4c1F3TXlXcDFONzVlZjRNU004RVBCNWlreFF5RlZZejFxbDBUcVpBaElKdm10WmJxSG8tb0gzNTRCTW03LXI5TllnWGdlWTUzM3VYaWZNN2tMWVZmdWJ4a2tTSkxjLWR4Y0p2ZUVCQTFNQXJjSjg4cW9UcjY4ZC1sTDY1azdUeEVUUW1PVEMtM2ViZGNJbVo2T2NOdWpJUEwzUlU3LUJzOUUxbmNlZk9xNzR1VWpCampGYUxoVjV2OGRkVjBzNFFuYmdxOUw4UjhXWm55bU1rbUNyYk80WFpIQk96UUh3dEE4cFdHal9RWkZubmlpR2RzNFh6UDRuWGYyN1hPQnhTR3dtMVRmdkN2UnFWaHpMcWgwQ1R2NTRoOGhLT0xCaEhOLWhLVE5Yejl6Nk5iYVAyWHczcmRpTjl3NnY?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiswNBVV95cUxOUkV4MGVldDQ2VFAwdnlxVkQzOUxiR0pjSGVIQWtQQzVXajJvM184Rk9DLVpJYVplRlhmOXgwWExPMnhiUGE3a3pZeEV0WndMVzFlbG9oVlluQkdYbkNpdmNMNHBkSlNhVElQMzI3alF0ZExsSUktN2dXQTd5ZEFsUWVCM3N4SDJLNzlFU0xfTVhOU2xyTHFfNXlCNkRQQTRYbnpuRFBEa2QyOWJYc3JudXpoOEtsYmFpX1FUclJyX0VlRkRSa2FneXZnbzZvSUZOUG5KU0JRZTFMeWcwNnpNN1BfMzdIOUUzMjF1aXhJbGRZVzg3M3FRTXYwNkFCTnFfbmhOajdhR1NFa2RJODUtYjhtWTIzY3d1dk9aWHdEcUNaRkZIMWdYNUdxNHk2UjRkdnNVeGkxbUEwYkJVQ1RZYWcxaFlhd3R6dGpLYmptM2tiUzljQkdwRFhobmlIaWNkTkNMc3lDWUkzWUFkNl9TaXlUWWVBWElUX2dzN2lITU9rLV9LWVNzYjlub2NNZmptNV9EQUxJWFhpVjNEYmM3WFFfWkhQZXVXYmFLNy1xbmlfSk0?oc=5"
         },
         {
-          "title": "川普提名前官員約翰遜領導消費者金融保護局",
-          "source": "大纪元",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9VOVJtRWdIcm15SUg3VGpFTnRGWTlRckJOVmd6YnFmNW5SSUdPWEhIN1ZlY2M4YmpyTnNBNGtLMWJ6ZWZCaGl5VkJJM2Vadnp5cWFnY1QwUGZTV3RncGJ6QdIBZkFVX3lxTE9Jck9LWXgxeWhubXRzTjR5SUlBLUZ5RmpFS3ZfM0p4N1gtcmhlLVAyd0FnaW9hU1RxQ2FCdV9RcHdDV05yTHRNUzRBQlhjMEQyd0pIWnV3LXFLb1FIWjBBcGRPU3Zfdw?oc=5"
+          "title": "反川普家族渡假村開發案 阿爾巴尼亞示威抗議擴大",
+          "source": "rti.org.tw",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9SOWJWbVFNMDY4VjVPeHZ1MmtUaFhCdUZTcklqbkltbF9sSHl6Y2RHTDFTbjZrQkc3VlY4V3FfUW1SbURqM0YwUndCN05nSjVGQ3BEanRpcw?oc=5"
         },
         {
-          "title": "特朗普｜稱喜歡通脹 伊朗戰事結束後物價降",
-          "source": "香港經濟日報HKET",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9fd3IyTU1IWkhidzktR3h0ODcxSTUwZTdhMW5xVnhuYVdtY29PbGxVdi0tU0V3V3lVRUY5aU5MMUNnZnNpQXp3bUNhZTlVSk0?oc=5"
-        },
-        {
-          "title": "川普強調不擔心通膨問題 美軍已護航上億桶原油",
-          "source": "新唐人亞太電視台",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE15ZTY2dGdvUm5Cb0RhSDYzMWp0RV9oQXh5LVFETlE0SWlhT2txckJyTmI0N0FXVjFqX0loOVNRa0MyZkVJQjBSeVJrX18wWHppZGNYbXpQWGVackFwZ1RvSE52Nkw?oc=5"
-        },
-        {
-          "title": "川普證實發射49枚戰斧飛彈 美軍猛擊伊朗畫面曝",
-          "source": "新唐人亞太電視台",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAzQkVmTVl0ZURfQ3A3VzFTUGRhTUtpSHctNzhBWlRPckRtWjRpVVMtT21rZF9mY3BDZmF2WmFDYzlNNXFOOVNNU2l1eC14YWQ1dzRoSE15M0w3VThvQk1EQVZLaE8?oc=5"
-        },
-        {
-          "title": "特朗普重大突发！加媒：特朗普威胁不续签与加拿大、墨西哥的贸易协议",
-          "source": "FX168财经",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBFNmY5UGc4UHpFVTVHMUxvNmM0OERVV19LNUdONVhMc2JhSWd1ZVJ4VEdxNWdudUt3VW1HdDA3d242SzJzbVhRM0J6OE5oNExiY0Y0QkxBeUxCNG54QThxaVZ1LW5CUDE2?oc=5"
-        },
-        {
-          "title": "【川普宣布恢復打擊伊朗 「攻擊將會非常猛烈」】 （#大表哥）",
-          "source": "facebook.com",
-          "url": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxQWENhTHlFM2VtS01zY1Rka3Z2Nk5uMVRsZ0NMS2hoQjBGODcxWEVCb1JQRWV6Z3J5cTJnM3Z6T2JUTVNHTXBNTW1CdVF4UHVSNzJ5b01OMzJDVWNBVVdsV3FMU3dZT1ZBek04ZTZHVTN4Z2lFYnZtRFV4dlMtMW1RT0NURGFFU3lTcVUtQ1hjNnNGU1VSODRzSFN6MGdxQ1FjRDU3ZURxZHRtMVctY3BwbEVjS0tzTWpnRjU0SUtNUS1pMHVQYVUyZ3ZteVVHZGNpQnNJamV3aTlWT2w4ZjNzSWY1ZnV4Q2NFT0FTWXpjX2J6SzlXQUdRVl9WN0g1dEFzd0gxb0lMTTE0Mzk1V1ExOEw3V05RNHlySXJmbUtReXdzRXUwR0FIYVAwSmc5M2pmQlV6cGp3MzFHcjRMZkZtNjZkOEZOZTlqWmY2VTJKZWRXV2VEY3I5OW5QcGUyZEFMZTJCR0V3?oc=5"
+          "title": "川普AI變身《火影忍者》漩渦鳴人 動漫迷怒批政治挪用IP 近2萬人連署抗議延燒",
+          "source": "梅花新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE83aUUxMlM2RHlja0p0M3laSVozSmZEZG41eG8yOGlGQjNsUFR1ejFEZmt1VTB3M2RVaUxvUG5lZ0lGeE5qRXNTTk96WlYyLUZzaVZvWnhWR2Q?oc=5"
         }
       ],
       "news_count": 100,
@@ -289,28 +199,212 @@
       "last_seen": "2026-06-11",
       "raw_news": [
         {
-          "title": "共同富裕｜特朗普推美版「共同富裕」 將晤AI企業高層 要求回饋社會令大眾富有",
-          "source": "Yahoo 財經",
-          "url": "https://news.google.com/rss/articles/CBMi2gNBVV95cUxPcnR3TVJkblNtZmd3NnJGcVl5RENwWFdJdTRiU05VdDR4b3dPVnRUY1M1bW1CRW42cF9hNVZNR1o2Q2YzdHBaTXFxaTZfd05zNTVaWG14WU9WME9zeEhscmpuejg1Y1ZwclNhQXRqUmZzbEJ3M1phVXBxN2c2RmNLeWRBVVR6UjFRY1pDM0J2WjFpRlF1VXFkOVhpTTVTNkVuakdrallsTjJrd1BaUVE5aHczcldHMkxqekxYMngxMnpyb09ESlRFNS12Q2ZMRnF5SkRxejlQYnFxdjVkblkxYTNscEl4LUs5OURnRW96Zlg3SHRoVGxORlNnUWl3WV9wOC1KNFhfTFMxSzQ0TTJCZVNqSlIwZUNja2tsZVJuS3BIeTRNemhsd2NsT3RxR0F3TDlRMzZ4WExuRzg5SGxrVnh0bGJ4OHF6aEt0dlMxYTd5Q2s0RHpqbEk0SkhxdkJwdkU2YzA0SmVnNHc1NWNlYjhZWlBKMnJSTWp4czFVUmNTOWxxck9wbnlySllMNEVhd25UWUd2VmlUdzQ4bXNRVmRkbmo5UDhETWlzY29OdGU1SDZsbW92Q015bWhTeURfQjJxbllvQmpIbE9QNTdvY1pPSTJua0hKeFE?oc=5",
-          "summary": "共同富裕｜特朗普推美版「共同富裕」 將晤AI企業高層 要求回饋社會令大眾富有 Yahoo 財經",
-          "published": "2026-06-11T05:26:15+00:00",
+          "title": "OpenAI爆料：中國用ChatGPT吹風向反川普與美國AI基建 | 謝駒蕥 | 新聞",
+          "source": "風傳媒",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBzRDVmN3QwNURoTHBPM0VQLWtISThWVmhZcVFLemZ3Q3QzN3dtUUhsOE9xcURIVnV6TU9BdWdVYS1GckRRN3VQRjR3TjJYZw?oc=5",
+          "summary": "OpenAI爆料：中國用ChatGPT吹風向反川普與美國AI基建 | 謝駒蕥 | 新聞 風傳媒",
+          "published": "2026-06-11T07:43:41+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普對台變心了？民調：近6成民眾認為川習會後 美對台支持不變 | 中央廣播電臺",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE51OHY0NVdCeVFvM2h3NWREOXh0eUdLS2l4TlFRNjB0eXEzWUgyV296YWpaX2xoVHloWHFXNGhXcDV2OGZ1RTY1aV9tdUhBbzZPUkhQZC1R?oc=5",
+          "summary": "川普對台變心了？民調：近6成民眾認為川習會後 美對台支持不變 | 中央廣播電臺 LINE TODAY",
+          "published": "2026-06-11T07:31:01+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美伊衝突再升級！川普揚言「用炸彈談判」 國際油價應聲大漲",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi9wJBVV95cUxPZjIzNHlyXzlDWEJKQl9WVkxYU3ZrcmMwczJoRmJvYnRjaE9NMmhGLTlJT2FQY3dSaldqcDhXQ01kbDVzNnRBdmlQUVoyekxlWjg2Q1pidFh5RmZrTUE0V3IwLVhBRWIzMlFxbzFRdzRxTUFFZWJZdFlqTlFfaTVhd2VHbkdwSURNS2tnd1BaaEpiSzVxTUNpSWZ2aVQwVER1alhjc29LZHpSU2ZMb2lFSFR0WlJpemVjRC0tUDFiTGpvcW5xeTl1R2Y5UzBmQWd0cnRkQmpDZ05MWTFIRkhXdFA2YWRqTWhtdm5GbTlsNkJ1RjM3cmdpTjdVN0piQ0VkbFZqNDRVcjBiSkJraUE0NjdXQ0Z0X2R1Mjh5UDBmMFMwUTFuYVptUWRGMWlYcU4wMkFLQkIzZmR2M1V6OXhXQ19QdVZjUWgzUW52ZzdaWm9Wbkl2dzI0TC01SlRqR2pFUDBvdzNFNWc5MWJzSnoyTFQ2Wm02VEk?oc=5",
+          "summary": "美伊衝突再升級！川普揚言「用炸彈談判」 國際油價應聲大漲 Yahoo新聞",
+          "published": "2026-06-11T07:30:58+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "NBA總冠軍G3溫班亞馬推頭惹議川普力挺尼克批裁判| 運動",
+          "source": "中央社 CNA",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5CcUtTQ3BGckEzb1p4Vnc1aWpuMDFLYTlvSmdULVRUUUpXZG5DWFBsTGJZVUItUzZ0TllwUUlnSnNKUDVDZXZKbWM5OG12dmM1SDcyRmV5c2w3UTVfdTFB?oc=5",
+          "summary": "NBA總冠軍G3溫班亞馬推頭惹議川普力挺尼克批裁判| 運動 中央社 CNA",
+          "published": "2026-06-11T07:22:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "“白宮股神”再吹票！特朗普拿着“烏龍數據”大讚花旗(C.US)強勢迴歸 作者 智通財經 - Investing.com 香港",
+          "source": "Investing.com 香港 - 股市報價& 財經新聞",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9MUnZqLUN6WUtlWlBLQ0JpWHNrckRyTzA4TGotRWhpZUF0ZVNCcmZSazJaMENVSjhhSVVuYnJKQ0xMLW1acjNpYl9Wcmc0TEdCSmVwbGlRSnpQN2Jvek5YRkY5R3JzVGFMLU5lcGp5SHM?oc=5",
+          "summary": "“白宮股神”再吹票！特朗普拿着“烏龍數據”大讚花旗(C.US)強勢迴歸 作者 智通財經 Investing.com 香港 - 股市報價& 財經新聞",
+          "published": "2026-06-11T07:19:36+00:00",
           "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "特朗普化身《火影忍者》主角 白宮濫用《遊戲王》 宣傳戰爭日動漫迷聯署抗議",
+          "source": "巴士的報",
+          "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxNZ2ExdnZfalNFeXpSRVVnOGh1bEJ1Q2FJMW90eklsRXBYM3hlU1VrcEVCWFNKTEo2NVdabE1BRncwN2o1c01qYmFfdWpJUGY1REYxVXUxN2JSc1J0c2oxTm1zb3ZWRk41RF9pTFN3ZldEMWRXVGh6YUx4Y0hIM2wycE9VZnJ1c3E4TUc1bW1qM3lMb2ZSMzE4S1RnY1VIMjhUbVBxeEI5V3ZlZmZKS3phY3E4MkswUWFab3dxckx2YzlSTEY3aHYtNHc3QjZwQVF2WnN0VGx2SlIzOUdSLUVHbnotUGYyWUVpUGZ5NkdiSjZOTS1HdXdtYTJmOGpvSUtnNHBtTmVhT2JkemFtWHBVLUx0RkZTMi04ZFdUc0pJa1hCbjlEQV9Fb1QzLVZBQlRISDhjVjliQkFkeDlCaTBwajhNVHFSTm9tU3luRkZVT1Npa0FYcVludU0zS0l5cjUtUG1TT0QtTkVhWWpDdjlJ?oc=5",
+          "summary": "特朗普化身《火影忍者》主角 白宮濫用《遊戲王》 宣傳戰爭日動漫迷聯署抗議 巴士的報",
+          "published": "2026-06-11T07:14:59+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "特朗普扮《火影忍者》鳴人惹惱動漫迷 逾2萬人聯署抗議",
+          "source": "香港01",
+          "url": "https://news.google.com/rss/articles/CBMigwNBVV95cUxPbDNXMUU1djR1eXFkdkNERjZaek4tVkk4UlkzUU5haW5TQnVsekxUWGNBOEpteHdyNnU1XzBpQTdhSGM1YjdLaGdpQ3h0MlRmMVV1TEYwNVBCNzRyV3pjV01OdVVtTmpCVlIwdG9Vakl5RTJrVE9tM0kwQS1iUUZ3RGtubV9zc0Q0MVJhMTBtMWFFSWhkMzJCT3VZYjczcXR0ZnZuRWNNdUlyQ1pVZGRxazVraVJTUlFsX2hybXV0cnVBNUtUN2F4VlJ0XzAxdDJhT0dFdDgzLTk3VXNSUUpsT0p1S0lJVkZ6VmlPd0haR05tMmRpOE1wdWs5d0pFNVNrSEJnRUtiTHFBdDg3VU1fbVdFeTAxVk50ZHdXQldncHNRVGwxQzhHYWlISEQ3MG50Mk5KVGl6OUl1aDBDYTVwWXdoM1hGY3B0TElFUW5VYTZUQ0hLYXp5YTVYV0RrRFZ1ejByVnBxMXRNY3RtcHJPeUFfU2VLcFJ3VVBlNUpMV1hsYnc?oc=5",
+          "summary": "特朗普扮《火影忍者》鳴人惹惱動漫迷 逾2萬人聯署抗議 香港01",
+          "published": "2026-06-11T07:06:57+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "特朗普威脅不續簽《美墨加貿易協定》 稱不滿貿易逆差",
+          "source": "香港01",
+          "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxObmtLclNFM2o4OFFtT0R1QUFCQ1hETm5BQUZDaUx2SWl5M2J3a0k3Y1hnYmNOYy1pbzFwcXNtajlRQldMMmFRenVSTy1KQmpCLWY4bVlwenVTOVNaQ2RjWF9CNm1jdzJhTVhTU3BJNV9VY0JmZW1Jcy13VjBmVWEwb2Jra1hjVzFtOFFhQnRTczk3RDB1VVhPWWd0ZFlaM3doYTRYSmpnbVhINFlDV1NUMVpzNW85VzBhVUhSd09qRVJwcVI3eHhBWUNrMDRhNnB5clhvWUpKWkVOT0pZRUlBS19Yb3dmRWZIaVFoOGtoY1ozd2tJNGRlMmxNRE9OaDNNeFZwVkU5SWY1b0wxMV9IeEF0YV9UY2loZmlQMFgzam9HRmtxbkVOM1o1U3JVTllIblI4Q21mekpTRHBPeUQ2Zlcwbk1uYmM0RWoxcFFabklTUl95QnBqYTEtUlZyVFpiUkc3aWd4ZjdqanlXNXZVd1FJYXlqZXZkeF9jV0c0ejA?oc=5",
+          "summary": "特朗普威脅不續簽《美墨加貿易協定》 稱不滿貿易逆差 香港01",
+          "published": "2026-06-11T07:06:54+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "特朗普將迎80歲生日稱生日願望是「世界和平」 - 國際 - 香港文匯網",
+          "source": "香港文匯網",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5WWEVQX3h0cV9BcGFKYXJobUg4N0dEVk45MWxwMDlaNmtVWW5sRzJycU5jMTJTbHZOV2pERDNvZGE0amtpVEhhcGJrTXpmMHR4WGd6c3NxU0hfUk9YaUhUVHFuci15RGFWQl9DSXlramFoZmdETU1R?oc=5",
+          "summary": "特朗普將迎80歲生日稱生日願望是「世界和平」 - 國際 - 香港文匯網 香港文匯網",
+          "published": "2026-06-11T07:01:59+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "伊朗與美國難以維持停火的四大原因",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxQa2pXV1JXWS1yNVd1SE5kbVFlYmQzU293Q19BZ1I4X2dkeGswQkhCM3p1TjdiOE5hTXlZM0VfZWNoSlJmOFFlcG1RNlZSZ3dIRjJQbjd2ZmVId0NPWFVvMEpycG9pc2Y2WXNienVQaEU2X29pMFFXeEkzN2hjMm1HcFBvZi02eU52VDZXWkxMMDZnTHpERU1ta1JvbVNDdVpFWjZZU21qQ2VWbDNaZE85QjNiS3F6azFsZGk3dHBtN0VKOXVWRlY3S28yUUN3bGhsNGdaRXVONzhxbzZmYi1wLVFhOGlYR2FzYnJfRFdFZjJkUmtiUDdXOTRUeWVyS04zVGRlbFV1b2E5Q3JsY1JtSUhWbw?oc=5",
+          "summary": "伊朗與美國難以維持停火的四大原因 Yahoo新聞",
+          "published": "2026-06-11T06:56:15+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "特朗普突传重量级消息！美媒独家：国防工业领导人正准备与特朗普会面",
+          "source": "FX168财经",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBUN1FJTXFkOTJKb2hJLTlBOWpnRlZRNnNXU0JnX0s2VDJDbkxVLTRlbVVicEpwb3VyZDVaR0dIaGdmZlF0TVo3OTZqY3gzUG1HcTZVaUJpRHZJa25CY0FEM3JlZjk1bUZS?oc=5",
+          "summary": "特朗普突传重量级消息！美媒独家：国防工业领导人正准备与特朗普会面 FX168财经",
+          "published": "2026-06-11T06:45:02+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "有片丨威脅要炸伊朗後不久 特朗普：80歲生日願望是「世界和平」",
+          "source": "香港商报",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9tZW1WZ3BCYTUyUjA1UjRZRG5tUVlWcjJ5ZlUtYk9FMmZ3QXREZm50LWFSQkswWW93N296eVQ1bHk0Q3pQOTc0bU5aSGwzSDFtUG1fc0xFSEFVVktOaVBNdUpVWkhUdGVpNWpNSDBRWGRoYldkUFhRNVhyRQ?oc=5",
+          "summary": "有片丨威脅要炸伊朗後不久 特朗普：80歲生日願望是「世界和平」 香港商报",
+          "published": "2026-06-11T06:41:00+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "5月CPI大漲4.2% 3年新高 川普：我愛通膨 戰後會降",
+          "source": "世界新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBvOEYwd1BIejZfYi10VjN3ZDdTdUF1TVJDczZULXlxb296WW5CUVgtUlBDMnBVMGJtUm1tVnljYnhuZk1HMzZZSGZUV0ZKRTJKQXh6bHBhOGQ0eEUwaHpjMkNB0gFnQVVfeXFMTUpwbE9CajBsTG9UZDRZWkc2aDhOaEVvZ3MyN3N0VFZkRWdPWDVQNGdNbU03RFIyenlMT05qS2p3WEF4alcyc1VNZjdkREhLWTVtOGV2NjdZNkp1NEtYRzhqMFBzRnVSVQ?oc=5",
+          "summary": "5月CPI大漲4.2% 3年新高 川普：我愛通膨 戰後會降 世界新聞網",
+          "published": "2026-06-11T06:29:00+00:00",
+          "origin": "關鍵字「川普總統」"
+        },
+        {
+          "title": "川普對台變心了？民調：近6成民眾認為川習會後 美對台支持不變",
+          "source": "rti.org.tw",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1LS0J3S3dnSnVGV0xmXzNSdDB1dmxhV2xVZ1FCZ2JicDY1Ukd1Z1RoeGhfT0xablZha2hQa1czcVpFN0dGcmtOcUFLUmpqaFZTTm1iYmJkdw?oc=5",
+          "summary": "川普對台變心了？民調：近6成民眾認為川習會後 美對台支持不變 rti.org.tw",
+          "published": "2026-06-11T06:26:41+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美5月CPI飆升 特朗普“喜愛通脹”言論引爭議",
+          "source": "hkcna.hk",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBKbjBlNmI3M1NCazByemtMaFlWNnBwalMweVhrR1ZaYTNETHMxbEU4UFVrelZNWUZ1cC15b2Y5MzRLNmVraDlhOEp2d1BtUDZ2aVA0YWhvUU1YT1ZEQWNwQ3dLblppQQ?oc=5",
+          "summary": "美5月CPI飆升 特朗普“喜愛通脹”言論引爭議 hkcna.hk",
+          "published": "2026-06-11T06:24:00+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "公布艾普斯坦案檔案？去年白宮戰情室「吵成一團」",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE85SXlMemhjTHRXR21EVUpLYTBOQ0Q3NUVOU3FxN2FldlQ0OEo1ci1BRm5lcVdtY0tNRXBJMW0yQW91aWI2WDB2aHNLU1RlSHph?oc=5",
+          "summary": "公布艾普斯坦案檔案？去年白宮戰情室「吵成一團」 UDN",
+          "published": "2026-06-11T06:24:00+00:00",
+          "origin": "關鍵字「美國總統川普」"
+        },
+        {
+          "title": "川普施政連遇挫折 恐淪跛鴨總統？",
+          "source": "世界新聞網",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9ILUg5NUw3TUt6eWtLTDcySUdhNEVmM2VncWFQZHNXV2NfaF9wWURLYk8wZmFybi0zNXlxV2ktbE1OSVU3Ni1XWk14eE0xMlRJb0haVTFScDJ0TWEyMTFiR2pZelFaMzZMTUotMGVCS3hGNkpjTzQ1VG9ZUkFWZ9IBZ0FVX3lxTE82amNCdEdyUFhXT0lpdGJSLTBXeEYtNDR1d0JoZVV3c0Z0anZ1dTE1THJjSmsxS2JkSlF3NUMzcjgwT0RTX2JVWG5NczZONVFjdGgzR2lIeG13SF8wYlNySFpOZEx3Nmc?oc=5",
+          "summary": "川普施政連遇挫折 恐淪跛鴨總統？ 世界新聞網",
+          "published": "2026-06-11T06:23:00+00:00",
+          "origin": "關鍵字「川普總統」"
+        },
+        {
+          "title": "世足賽／記者、裁判也被拒入境川普：對的人才能來| 2026美加墨世足| 運動",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5DRlpCWnlXLVR6Z05nVEpZb1p1TjJpLWc1bXV3ZGZ2Q2wwTHpqcUJQTEhmalRHU19EX2J0bjhFbXJNd1NXUlhQTF95SWp4NkFEandV?oc=5",
+          "summary": "世足賽／記者、裁判也被拒入境川普：對的人才能來| 2026美加墨世足| 運動 UDN",
+          "published": "2026-06-11T06:20:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "NBA決賽︱特朗普遭喝倒彩 孫女IG發片遭踢爆「噓爆變歡呼」︱有片",
+          "source": "stheadline.com",
+          "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxNcVhQMjBySTEyZUpxa1FsSklzM3NtWldCUXNpOE1Mc1JVT0JFbExEWHU2Y2I1dktuTnRfbG5XTEZVQXpUbFJJcUpxYmpMRXAzZ1duNUFsX1dsT1RRd1VDbE5aVHpZWVFhMklJVmt5bTBWZjV3WG1pM2pvQzdYdnN4c3lCOUdtR0ljNnFYQ0tXNDRXdTFxMVE2cmd0WHhtSTJzYlFBZHZwVFUyLUV3OGFQUXM2cXl1YUV0THNsSkpBUXo2aDVZdUtXcHJ0bkNNVUlHeWx3UXFXZG9RVUFzN0dXQm1KaFhPSFktZHdxamZqTDhZX2NCd1hhN016N1hXX2ZnX0lYbGVWQV9Jd285dnpqWGRiMjgtZDFGUjR2S2xLYnR3cGMycTZueUdFQlE2Tl9BQkE1UHljNVlBUEFJWE1XUDZiSnFBSzRhREVRbG5kVjlGNHdsWWFxYWlPNF9FTVBRM3lka1NVdGxHMlBkVmtnWVo4U1NaNDF1RnU4?oc=5",
+          "summary": "NBA決賽︱特朗普遭喝倒彩 孫女IG發片遭踢爆「噓爆變歡呼」︱有片 stheadline.com",
+          "published": "2026-06-11T06:11:35+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "川普80歲生日白宮變UFC擂台！設計師竟是看他最不爽的「同寢兄弟」",
+          "source": "TVBS新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBWOTBTZjRna2JLeEtOanpGLW5IZkU4aFZ2TDJ1T1FVemZ5Q1FLd0NLREdGUFZMQXJCa1RJMlFXODcySjdwX01yUlFPYU12d2M?oc=5",
+          "summary": "川普80歲生日白宮變UFC擂台！設計師竟是看他最不爽的「同寢兄弟」 TVBS新聞網",
+          "published": "2026-06-11T06:09:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "救人溺斃的《遊戲王》作者，竟淪為川普的戰爭宣傳？日本2萬人連署抗議：請美國總統放過「漩渦鳴人與皮卡丘」",
+          "source": "風傳媒",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5DMXVvYTNfV01zSHpTTGNFYjA1cFp5bUliTWdEamw3cGJqUTNCYzJHb3dYRTBZMXdKcUZpREIzUm5SR194Q0I0VGRxMGRzUQ?oc=5",
+          "summary": "救人溺斃的《遊戲王》作者，竟淪為川普的戰爭宣傳？日本2萬人連署抗議：請美國總統放過「漩渦鳴人與皮卡丘」 風傳媒",
+          "published": "2026-06-11T05:59:24+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "戰火連天！川普揚言：美今將再次猛烈攻擊伊朗| 國際",
+          "source": "非凡新聞台",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9YaTctdldSOGFMMFBKWXFXcDBySUlHOGdpZURfX2ZjN2YwMUxfTGhVd28xNmZkYWRjaUNmNEdFTmFsMmR1R0owVkNfZ0d2RVdqVGpCWVp6NUZtNEEtczByVQ?oc=5",
+          "summary": "戰火連天！川普揚言：美今將再次猛烈攻擊伊朗| 國際 非凡新聞台",
+          "published": "2026-06-11T05:59:09+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "即使全國民眾支持川普政府修嚴投票法規仍寸步難行藍白修法要改掉韓國稱羨的選舉制度可能造成不可逆後患",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMilgVBVV95cUxPWVlCMkFoN0Z1SjJ6eGJPSFhzVHBad0xRS3gzazVFdXU1dzQ1M3FmM1dacW5lM1hCSUwzUVFxSFBrR0s4dEo3cG5xbVVZYXdDcFphWVl2V2Z0dTJQdTd6U0locmI0WnFEbXdDQkNlWGFnUkF0dkszaGZTWkxldV91bElzbmNQaTQtbjB5cjFqSkN2MGJNeHFjeUtoU21TLUxkeFJrSGpodHV4VXIyZHpac201a0k0SE5rQlJ0X1AyaTZpSGMydEo4ZmNUOTd0RDk0ZW5EbWNFT0g4Yi1xdDA3bWwzLWZMVXhHZ0MyMXVxNTR6dGxCZHpfZU5SenpaUnoyQ2t5NjJYYTItN1VFRzRQR1ZZeDR5VTJGd01KQTE1cHg5VnlPN290cjljRUQ4N2FCVEcyR0w4NEdxQ21kd3VRQm1oTlVoZGtCWnlQM1Z4b21keUt3ZEtOV3BpaWlGSFJYNHZBUUJIc2ZBMzlUaGx5aHVWUWcyd1owRlFfalR2RVBjNkVGWHYtWnZVcUo3LXFNbk5ILVFKRlRxZFUyVkpqblYxRllYMUdTQm1uSnFyNnFXVzdIV0RsRkVfTTJjSm0zdHQzTFZEYWNTU0tTc2xOTENlNXdOVEl6aUs5ZllUaXk1SFM5NW1tNW1VZVJucy1OTEZ5cDVkbjlGT1lxVzl0d2ZkMFdBNUtPUXpUYll4eFUxMGE5b0Q0NzdwSTNwSW1QdFpiNzRIMXdaR090aU5RNW5GVDBYd3ZzbEw3TTBxWldkNS1BMzZsOFhKMlhqT3R3NzZTNWhoeFl3eDNtdnZDZkRpVENXcVR6eWh5SjJhRF9CclY5Sld0NUlQbnBmVEV3a0Y3aXZ3T2ZuTXkxXzB3LV9oaWlSUQ?oc=5",
+          "summary": "即使全國民眾支持川普政府修嚴投票法規仍寸步難行藍白修法要改掉韓國稱羨的選舉制度可能造成不可逆後患 Yahoo新聞",
+          "published": "2026-06-11T05:51:33+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "不滿伊朗拖延協議川普發動空襲揚言繼續炸- 國際",
+          "source": "華視新聞網",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9jRVdua0Z0YVNNRHBmYVVPaGNydmg5SWxua2JwWUtvbldOQkFBZmRtVk56emo4TWdhdVBMc3pRYXNNeUVPTFlBSEFiV19iaWZtVEwydlVkaUJBYTFzMUpsQ2NwT3Q1bTkyQ1lrQ29BM0tnbWlJVng3OA?oc=5",
+          "summary": "不滿伊朗拖延協議川普發動空襲揚言繼續炸- 國際 華視新聞網",
+          "published": "2026-06-11T05:35:00+00:00",
+          "origin": "關鍵字「美國總統川普」"
         },
         {
           "title": "《火影忍者》：美國總統特朗普使用動漫角色引發日本輿論反彈",
           "source": "Yahoo新聞",
           "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxOZEVsS0puX3FzUjN6MjJwZ1MtSmVqR3BtWTMwUUhKVUw1alJmMURSNDQtTGZPc3BDTzRfMzdiZUZLd3JqMEY4c1F3TXlXcDFONzVlZjRNU004RVBCNWlreFF5RlZZejFxbDBUcVpBaElKdk10WmJxSG8tb0gzNTRCTW03LXI5TllnWGdlWTUzM3VYaWZNN2tMWVZmdWJ4a2tTSkxjLWR4Y0p2ZUVCQTFNQXJjSjg4cW9UcjY4ZC1sTDY1azdUeEVUUW1PVEMtM2ViZGNJbVo2T2NOdWpJUEwzUlU3LUJzOUUxbmNlZk9xNzR1VWpCampGYUxoVjV2OGRkVjBzNFFuYkdxOUw4UjhXWm55bU1rbUNyYk80WFpIQk96UUh3dEE4cFdHal9RWkZubmlpR2RzNFh6UDRuWGYyN1hPQnhTR3dtMVRmdkN2UnFWaHpMcWgwQ1R2NTRoOGhLT0xCaEhOLWhLVE5Yejl6Nk5iYVAyWHczcmRpTjl3NnY?oc=5",
           "summary": "《火影忍者》：美國總統特朗普使用動漫角色引發日本輿論反彈 Yahoo新聞",
-          "published": "2026-06-11T05:26:15+00:00",
+          "published": "2026-06-11T05:26:32+00:00",
           "origin": "關鍵字「特朗普」"
         },
         {
-          "title": "川普提名前官員約翰遜領導消費者金融保護局",
-          "source": "大纪元",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9VOVJtRWdIcm15SUg3VGpFTnRGWTlRckJOVmd6YnFmNW5SSUdPWEhIN1ZlY2M4YmpyTnNBNGtLMWJ6ZWZCaGl5VkJJM2Vadnp5cWFnY1QwUGZTV3RncGJ6QdIBZkFVX3lxTE9Jck9LWXgxeWhubXRzTjR5SUlBLUZ5RmpFS3ZfM0p4N1gtcmhlLVAyd0FnaW9hU1RxQ2FCdV9RcHdDV05yTHRNUzRBQlhjMEQyd0pIWnV3LXFLb1FIWjBBcGRPU3Zfdw?oc=5",
-          "summary": "川普提名前官員約翰遜領導消費者金融保護局 大纪元",
-          "published": "2026-06-11T05:26:00+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "title": "共同富裕｜特朗普推美版「共同富裕」 將晤AI企業高層 要求回饋社會令大眾富有",
+          "source": "Yahoo 財經",
+          "url": "https://news.google.com/rss/articles/CBMi2gNBVV95cUxPcnR3TVJkblNtZmd3NnJGcVl5RENwWFdJdTRiU05VdDR4b3dPVnRUY1M1bW1CRW42cF9hNVZNR1o2Q2YzdHBaTXFxaTZfd05zNTVaWG14WU9WME9zeEhscmpuejg1Y1ZwclNhQXRqUmZzbEJ3M1phVXBxN2c2RmNLeWRBVVR6UjFRY1pDM0J2WjFpRlF1VXFkOVhpTTVTNkVuakdrallsTjJrd1BaUVE5aHczcldHMkxqekxYMngxMnpyb09ESlRFNS12Q2ZMRnF5SkRxejlQYnFxdjVkblkxYTNscEl4LUs5OURnRW96Zlg3SHRoVGxORlNnUWl3WV9wOC1KNFhfTFMxSzQ0TTJCZVNqSlIwZUNja2tsZVJuS3BIeTRNemhsd2NsT3RxR0F3TDlRMzZ4WExuRzg5SGxrVnh0bGJ4OHF6aEt0dlMxYTd5Q2s0RHpqbEk0SkhxdkJwdkU2YzA0SmVnNHc1NWNlYjhZWlBKMnJSTWp4czFVUmNTOWxxck9wbnlySllMNEVhd25UWUd2VmlUdzQ4bXNRVmRkbmo5UDhETWlzY29OdGU1SDZsbW92Q015bWhTeURfQjJxbllvQmpIbE9QNTdvY1pPSTJua0hKeFE?oc=5",
+          "summary": "共同富裕｜特朗普推美版「共同富裕」 將晤AI企業高層 要求回饋社會令大眾富有 Yahoo 財經",
+          "published": "2026-06-11T05:26:15+00:00",
+          "origin": "關鍵字「特朗普」"
         },
         {
           "title": "民主黨多州翻盤嚇壞川普！期中選舉版圖大震盪共和黨州長、議員選情告急| 國際",
@@ -361,12 +455,28 @@
           "origin": "關鍵字「川普」"
         },
         {
-          "title": "川普：美軍秘密協助1億桶石油通過荷莫茲海峽| 國際",
-          "source": "中央社 CNA",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB4b3ZDbFNWdFg1Y2U0MUxDa0NJaS1VU2FTeURrQXNPX0xHYlVNZWNSV3NMX19fNDJhenp4SGFLc2I2TmN6WEZyM0tsTDdlVWNCcHdnLWFVZF9OQWh5WHJB?oc=5",
-          "summary": "川普：美軍秘密協助1億桶石油通過荷莫茲海峽| 國際 中央社 CNA",
-          "published": "2026-06-11T04:52:00+00:00",
+          "title": "川普「我愛通膨」被噴 眾議長：遭斷章取義",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPUkJVRWxmTkxGQkJBc2VNZFcyLUI3bGtaV3dMUUdqM0dsVTdkQkxUcUxtZGl1TW9yUVRWMktRc0ZfNTNpbVFQbFJHRGdkNkE4anZvWmgtbjJRZ21aTGJ5ZnlGWmN6TkJSelRod3V4QmNHazhkdkdWYktvYy1QLTduQ2VRRThHWFZ2RndEbV9Ob2tOTHdDMGd5cjJaZG5mcDVPR2RIYkZjT0tQVlFJMnk3ZnNocURUZTRGZ0ZQRk5vVjNNTjFLZjd5VkU0ZnVfUTE3VkIyMmE4UWpuMVBRdzBGMWpxMVVSNHRDWXJ1Uk9mZUFHRlYwSVdFZV9wcUdJRmZrV0k4WF9HcWpQUWRqVWxTbEZWNFFSN3Fh?oc=5",
+          "summary": "川普「我愛通膨」被噴 眾議長：遭斷章取義 Yahoo新聞",
+          "published": "2026-06-11T04:57:01+00:00",
           "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美國5月CPI創新高 川普卻喊愛通膨",
+          "source": "中央社 CNA",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5KSDd3Q2ZHSG9DX3dWVXRVVkY0SGxuVmJzc05MVmZWUkc5bU0tRlpXcTc2a3pwanNuUzhpT00zUW00WngtcVBYTURGV0tBLWRkRkVJ?oc=5",
+          "summary": "美國5月CPI創新高 川普卻喊愛通膨 中央社 CNA",
+          "published": "2026-06-11T04:50:13+00:00",
+          "origin": "關鍵字「川普總統」"
+        },
+        {
+          "title": "​有片｜特朗普稱80歲生日願望是「世界和平」 同場剛宣告將再度打擊伊朗",
+          "source": "橙新聞",
+          "url": "https://news.google.com/rss/articles/CBMivANBVV95cUxOdWNOV3FTZVZUREFhSDNfZU1aRnRrRWx1Q3VMRVZfb1IzTTR4TTl2WUlnLVJXTVhvUFNuYmE5Tks3VzZLSVctSTBVUzNCWHdvTXhjRE5yYlEySlN1MVBSY0tkcFpXVGxmR3Z0M1IxNnNsWnNhTU81a1pHVFJxWWZra1dENWZHSlJSR2ZJTDM4djZzN3BjWnRNUERKWGlzVUVPZnAta1BCek1zaEVCX2x3YVgzQUJPR1p6VWs3VTA1azhKMWpYRnVXQjU3TXR2bFlyT3JGQkJ2MWlXUF9qTUp3cmxUSVIxOVRGMHFQR0d6TlplcEhJVlhQbkJTNUJGU0prYTBlUEx3Smd6czJIX1ZfUWZ1dk53Q2Y4VWN6UjU0TXlDWDFhR1lMQ1lhWnB2Z3h1OURVT2dfSmp0V2dGWGl6WjZrSjlfQWRkWXlqUW5iUGlhYzA4VG1yMldQUExCc0NTbzdWcEFGN2hKejBiT1UyS3UxTVVzcHBQOC1mOFFjWFE4XzFBbEFmMTMwU05zTkVaRElISE9GVjM1bHdqZDB0aGJrS3VsUXBWU0NvNjNxa1BsdWhPWERXUThfSTM?oc=5",
+          "summary": "​有片｜特朗普稱80歲生日願望是「世界和平」 同場剛宣告將再度打擊伊朗 橙新聞",
+          "published": "2026-06-11T04:46:33+00:00",
+          "origin": "關鍵字「特朗普」"
         },
         {
           "title": "川普宣布恢復打擊伊朗「將會非常猛烈」｜再發動空襲！美軍連轟49枚戰斧飛彈｜企圖運送伊朗石油！美軍飛彈轟炸阿曼灣油輪畫面曝｜2026/06/11 中央社全球午間快報",
@@ -374,15 +484,15 @@
           "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1zVmtVSTAweUp4RUpvUUpST3h1cGxwcE9GWWNNck9SbXhobGQ3aDJGRnhzUmo3Z0N2WEJpOTRoZ1FRUXVJSzRpTXFGY25EbU5GTGlSMGNCN3cwUVE?oc=5",
           "summary": "川普宣布恢復打擊伊朗「將會非常猛烈」｜再發動空襲！美軍連轟49枚戰斧飛彈｜企圖運送伊朗石油！美軍飛彈轟炸阿曼灣油輪畫面曝｜2026/06/11 中央社全球午間快報 中央社 CNA",
           "published": "2026-06-11T04:45:00+00:00",
-          "origin": "關鍵字「川普總統」"
+          "origin": "關鍵字「川普」"
         },
         {
-          "title": "特朗普簽法案 移民執法獲700億美元至任期結束",
-          "source": "大紀元時報 香港",
-          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5rajlfaWFSN3pOUEluZDdMZ1RwSDFTYzU5SDIzWFBPb2dxWnRSWGRDc2s2bXFRV2JaU1RIaUlIdDVfbUVJM1l0dDZfTlo5UjJmR200dFZ2U2tMem0wNlE?oc=5",
-          "summary": "特朗普簽法案 移民執法獲700億美元至任期結束 大紀元時報 香港",
-          "published": "2026-06-11T04:40:20+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "川普喊「喜歡通膨」挨轟！CNN盤點失言榜可排第二 最爭議第一名是這句",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiwANBVV95cUxOa2pLWDFfMkdXYXFTQkNPT1VQbVNJNVFUSXdIdjhma29sSGI4dlFIZDI5RUFtVW1zUEtRWWpUWFM3aUozVVJKcDdEVnlyYlRZOW8zNFlUQ2plLVluT3JmbVl0MGtxem1QaEVMYkItOHBIV1dneEo0Qmc5eTF6ckQwTGZvX1JNb3B4M0xkdWNkVTVnMWZ4MjZaQjIwRTBQMnFfMHVyZkJpQmhOSExpbTRQb282YTVvUFY3bWR1TkdqVGdoVTBQbG5yQUNLQzQxVEFhUU4wT09DTWNTbU1LY1F0czBZSmIxU1BLaUlxMDNqUWJ3SWF0Y083NHNXZ0FmRV9DVTFlczN4Mkc1elVVTThWYTlObUplN2p4T2FzaUprWUJmRnVNdjZKcGhMSzAwekY5YjY5cHlCSlFCQy11MjlmcTFibThKcjk1c0JSOXZTUVNkN3ZWZm5CaUFUdnNnX0VydVRhMDNfbnJHSDJaSnNDOUNuNWN6ZV85OElIelhuMUdmQU5GdXNOVlFVV3RTTHRCOE1aNmZGODY5MG1Pd1B4VVlwRlI1SWZXTW5VOEJxcVRaS016MklOY0FxRG5RUmY1?oc=5",
+          "summary": "川普喊「喜歡通膨」挨轟！CNN盤點失言榜可排第二 最爭議第一名是這句 Yahoo新聞",
+          "published": "2026-06-11T04:36:33+00:00",
+          "origin": "關鍵字「川普」"
         },
         {
           "title": "「我愛通貨膨脹」! 川普不顧選民感受語出驚人 民主黨趁機痛批 : 蔑視人民",
@@ -401,30 +511,6 @@
           "origin": "關鍵字「美國總統川普」"
         },
         {
-          "title": "川普爆美軍秘密任務！1億桶石油通過 荷姆茲海峽「隱藏航道」曝光",
-          "source": "自由時報",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9YRTVDVjNQOTdMZlIxcWtYZmRMcUZGNThaZm54MXA4SGhjQWlac0lqRG1Ba1F3dk52WUVUTmRiUFZVWEJhOXlwZTJ6NEk3cnVMMllNU3JIZWQtZ2RSLWxwUjZCLVdwQdIBa0FVX3lxTE52S28tMzhzeXdzc1JjU2QtMUtNODdibVhKOE1lMlUyWkRKdnpJb2JBc09Od19YMUdiWU5pZ0c1VGgweXJUTTFteGFPdkZxSFVUQkU0WWlHWlRFZHNLWDBPSzJzMjlZWGFHS1pn?oc=5",
-          "summary": "川普爆美軍秘密任務！1億桶石油通過 荷姆茲海峽「隱藏航道」曝光 自由時報",
-          "published": "2026-06-11T04:32:13+00:00",
-          "origin": "關鍵字「川普」"
-        },
-        {
-          "title": "即使全國民眾支持川普政府修嚴投票法規仍寸步難行藍白修法要改掉韓國稱羨的選舉制度可能造成不可逆後患| 風傳媒",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBoYmJaWmdRalZFRHV1ak5rT3hxbG1rZVRrcDFCSFlGcWpQS0h6RjFVYk5QMUZSclNsX2QxRjM4c0NNejl6UWNxU192QkZWY1c5LWVSVG1B?oc=5",
-          "summary": "即使全國民眾支持川普政府修嚴投票法規仍寸步難行藍白修法要改掉韓國稱羨的選舉制度可能造成不可逆後患| 風傳媒 LINE TODAY",
-          "published": "2026-06-11T04:30:51+00:00",
-          "origin": "關鍵字「美國總統川普」"
-        },
-        {
-          "title": "特朗普稱向伊朗發射49枚導彈 助逾2百艘商船通過霍爾木茲海峽",
-          "source": "香港電台新聞網",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1YUG5OZnExcUdsbG5vN3ZYa0lyQTRYbHZFWEJVMmVsX2h0ZTdONERjYjZlVUVRT09mcmtBMlNDdmJkUXp2SW5DUHEzTlFUSG5ZdHdra0VXUXkwOGpDVkRGejIzNG00bmhhcE85MnlpSQ?oc=5",
-          "summary": "特朗普稱向伊朗發射49枚導彈 助逾2百艘商船通過霍爾木茲海峽 香港電台新聞網",
-          "published": "2026-06-11T04:30:00+00:00",
-          "origin": "關鍵字「特朗普」"
-        },
-        {
           "title": "「我愛通貨膨脹」! 川普不顧選民感受語出驚人民主黨趁機痛批: 蔑視人民| 國際",
           "source": "Newtalk新聞",
           "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1lX0RJZzEwcEljZXpGa1I0bGtOTklXOWRlWWtVMXlkTVc4bkdSODA3NWFUUE5PYVVoY19pMkJfaTBYUTJlc1FsamppOHVEZkRCWkxsZjZ0T0d0dkE?oc=5",
@@ -441,12 +527,20 @@
           "origin": "關鍵字「川普」"
         },
         {
+          "title": "中東戰爭第103天》川普揚言重擊美軍再襲伊朗最新發展一次看| 中東戰火連綿| 全球",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE55TlBrcXZKTjM0R083VGdETU1SamlJMlY3TW5WSkxaUC1PSUJ4SENrZ2xCR1BMRlhJbWtqMTkxSzVYSVBQcGVYNkRRdTJtTlJheS13?oc=5",
+          "summary": "中東戰爭第103天》川普揚言重擊美軍再襲伊朗最新發展一次看| 中東戰火連綿| 全球 UDN",
+          "published": "2026-06-11T04:14:09+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
           "title": "伊朗喊再封荷莫茲海峽 川普聲稱協助逾1億桶原油進入全球市場：「控制荷莫茲海峽的是美國」 | 謝駒蕥 | 新聞",
           "source": "風傳媒",
           "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5vVkgtRGlxa282YjlCRm9Cb21GT3hvU2Zndmhud1hMRG4yUXZ3elBCUTZ4U2E4eDlnNDdPdm0xM19HaHlMTGJZNGR0VktEdw?oc=5",
           "summary": "伊朗喊再封荷莫茲海峽 川普聲稱協助逾1億桶原油進入全球市場：「控制荷莫茲海峽的是美國」 | 謝駒蕥 | 新聞 風傳媒",
           "published": "2026-06-11T04:13:34+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "origin": "關鍵字「川普」"
         },
         {
           "title": "（有片）美國消費物價指數創三年新高特朗普死撐：我愛通脹- 國際",
@@ -455,14 +549,6 @@
           "summary": "（有片）美國消費物價指數創三年新高特朗普死撐：我愛通脹- 國際 點新聞",
           "published": "2026-06-11T04:12:53+00:00",
           "origin": "關鍵字「特朗普」"
-        },
-        {
-          "title": "中東戰爭第103天》川普揚言重擊美軍再襲伊朗 最新發展一次看",
-          "source": "經濟日報",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9CSTRKbEFjNXVzMEJDNHBoSlRwS0pDaEVpakFqaVg0RTZoQ3hMbE5hQ2pIR21OcS1BLUFmMWdaY0pLMV92TGhXX3RsQ25USnBoUW1jeDQyRmw1UdIBX0FVX3lxTE9mV3dMMm43RWQ1LTlXUUVVQkVneGVYbm4zN2RXbkh6Xy1BdjdKLVpZaWJiWG9Dak9Ud2ZvZEtpXzhpSWZFeUNhRGJRSzZkWlU3b3pSNV9Tc2hfS0o1dWZV?oc=5",
-          "summary": "中東戰爭第103天》川普揚言重擊美軍再襲伊朗 最新發展一次看 經濟日報",
-          "published": "2026-06-11T04:12:49+00:00",
-          "origin": "關鍵字「川普」"
         },
         {
           "title": "非因阿帕契遭擊落？美媒曝川普再度攻擊伊朗真正理由",
@@ -481,20 +567,12 @@
           "origin": "關鍵字「特朗普」"
         },
         {
-          "title": "調查：美企在中國盈利改善但對擴大投資仍謹慎| 全球財經| 全球",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5lZTZwX1o5ZnFHLUZ0MFd1OGZ3VXVVRkVjWDc2S25icUtKT3NDRUtWS3NkUk05VHlnSkc0aUdMYVF4RUs1c1JneTBnS1ZZc0JM?oc=5",
-          "summary": "調查：美企在中國盈利改善但對擴大投資仍謹慎| 全球財經| 全球 UDN",
-          "published": "2026-06-11T04:09:29+00:00",
-          "origin": "關鍵字「美國總統川普」"
-        },
-        {
           "title": "美國5月CPI增幅創3年新高！川普卻說他「喜歡通膨」 Fed下週政策決議怎麼走？",
           "source": "財訊",
           "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBCcENEYUxaemVaNGRuWlZsanRLeEVuZjh1REhHZkRfa2FfWVAzMjZQMERaRzJNS2hWak9yN0x6X01QN0t3OGVjSG5zeVBKTWhtLWJfOThuSmp1MVlxVXN0V1F3eG1BSmtYU0d5SkJzZUQ0OHZVVXRXQkRDcw?oc=5",
           "summary": "美國5月CPI增幅創3年新高！川普卻說他「喜歡通膨」 Fed下週政策決議怎麼走？ 財訊",
           "published": "2026-06-11T04:07:45+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "origin": "關鍵字「川普」"
         },
         {
           "title": "特朗普重大突发！加媒：特朗普威胁不续签与加拿大、墨西哥的贸易协议",
@@ -513,180 +591,132 @@
           "origin": "關鍵字「川普」"
         },
         {
-          "title": "BBC分析：川普與納坦雅胡想「重塑中東格局」，但可能導致消耗性長久危機",
-          "source": "TNL The News Lens 關鍵評論網",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE0ySHJRYzI0U2xFaVZHckVGbTNIY1YwUUNBVXRjSDlNblcyMzhqa3VDMkxiTzFkSVNGaWE0TVNyVEpoWFdrNDZXdTR4eVJaaXFFQnJ0Yg?oc=5",
-          "summary": "BBC分析：川普與納坦雅胡想「重塑中東格局」，但可能導致消耗性長久危機 TNL The News Lens 關鍵評論網",
-          "published": "2026-06-11T04:00:00+00:00",
-          "origin": "關鍵字「川普」"
-        },
-        {
-          "title": "（有片）特朗普自爆80歲生日願望 稱「希望世界和平」",
-          "source": "點新聞",
-          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9mWFVNRWhyRDY3Y0tidjdrUEd2aURkSTMyNGNjNmxWaXBqcWtVeWRhVm4zN0lpYXVVaUxhdXJHVWFFU0pOYk5xc3E0OXE5LTFodlFuX3pjMmJPcV9Dc09laTZnMnE1Ni0zVUVYVFpGVjAzal91Nk9Xai1n?oc=5",
-          "summary": "（有片）特朗普自爆80歲生日願望 稱「希望世界和平」 點新聞",
-          "published": "2026-06-11T03:56:15+00:00",
-          "origin": "關鍵字「特朗普」"
-        },
-        {
-          "title": "川普許下80歲生日願望：這「4個字」",
-          "source": "自由時報",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE11cDR6YjRPcTlmNXpvemd2WDhiRGtDYUFzekVhdEVOTkplRGV0V19nUVFVTk1sMEgwSmpXMWJuT2hrZTZzX3QyV1BlQmJpMlBOWlY0Rjc3ckRVNlBZb3JaSm05SW05d9IBa0FVX3lxTE9Bd0hEeWVjUG52U0VzVVVOV0FnSEtOajhEa1g5T2dPZzdmUW9SV1pUMVdaRmlCdU5kVEdJdlNLcFR3bklRN3JqdU9XVkZyZUY0ZzRRbHFhRDNVeTN5cVdsc2dPOTRTMy1tbS1J?oc=5",
-          "summary": "川普許下80歲生日願望：這「4個字」 自由時報",
-          "published": "2026-06-11T03:55:32+00:00",
-          "origin": "關鍵字「川普」"
-        },
-        {
-          "title": "【加美墨協定】特朗普不打算續簽協定 尹大衛用特朗普的書來諷刺回應",
-          "source": "singtao.ca",
-          "url": "https://news.google.com/rss/articles/CBMi0wNBVV95cUxPbEd3WUxZV0ktTkl2ZlNiVlBGX01iY3dFQUVrd0lHUC1sdDdzQTh1U3B3Z1lMS3hZQ2VmSUlNTm52Z3VHNmtEZXhFTXFBN0tVRjNUWld1RzRKZmkydnFRNlNLYzZxazd2eGV2aTdBanU4U29SYU9tVVdJc3JXZ2xpNkNIZjFZY2NrV2lpcWlGc1lIRXdxcmJqakZvcm1rcU4zRjJtUzJrVnRsaUREV2ZiZEVDOExSbTFGRWJGQWNIV0xFeTlZQmh0blktWU0xcVBkd2R1MnI1eFFIaTNhTlRZNk5xbjNGTS0xRWVlUUk2VlVPRExWZ1lJcU5icmlVSHQ0dy1jamxSd0ZGS0RCRWtVdlNSdkhua2hHMTY3cjBVWHhaeGhkTHMzYVZhMWtRaDZ0ZFJPNWZ4Zk1XbmUtd3FIakNNSmYxWEV4OW1sR1VPSHQ2VklYZkd6MkU1VjZ0aTFtWlNNX3NsNFN4aGs4TDFib2tOUnQzWUptNEFYa3RTQzktUlctc1ZNMnNRTjViS1FGYVRucC16ZnhXX2dUT3oyX3ZUZlpiTXZReHpLMV81NFlmekN5Z0J5NVF0ZHdodkFaWlludl9NV2RJN0NWMzN3OXY4SdIBkgFBVV95cUxNUk9KdTBZTEVQMVdPY0picktCQUJYb3RwRW1FZlhYQngyYTZTejBUQ0dFVFk3TWpMbmo2Tk5rdi1rSmR0ZHZVUW14MjFJd0hVdmpBY0pjbkZNbmR0TnQzUllXbUtWdzlVWU96QkNGQkMtSXBBcDNWTHAyeWwwOEh1Q0J4YkJNZFNSV1BoOUlXLXlidw?oc=5",
-          "summary": "【加美墨協定】特朗普不打算續簽協定 尹大衛用特朗普的書來諷刺回應 singtao.ca",
-          "published": "2026-06-11T03:48:56+00:00",
-          "origin": "關鍵字「特朗普」"
-        },
-        {
-          "title": "川普循環又來！美戰爭部長預告不只打一天：用炸彈和伊朗談判",
-          "source": "NOWnews今日新聞",
-          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1rNUd3WEZWUjUtQklWb1RDUTM2eG9EbU83ZUYwbFZZeTFQcEpwUXhsTHR1Q3laUVptTDNUSTduWU5zb2lvOTNKWHdIcWnSAVJBVV95cUxQb2NLSFhwR3QyTGtudmtobGFHWDZwdmxGakNDOGgydWJEYjZvM01HcS1qNnU0NmoxNlpnVDlPZWtmckRZZnVxN09Ja2FqdVN5dXVR?oc=5",
-          "summary": "川普循環又來！美戰爭部長預告不只打一天：用炸彈和伊朗談判 NOWnews今日新聞",
-          "published": "2026-06-11T03:41:39+00:00",
-          "origin": "關鍵字「美國總統川普」"
-        },
-        {
-          "title": "川普：祕密協助一億桶石油通過荷姆茲海峽 避免油價漲至250美元危機",
+          "title": "金髮飄逸「川普牛」免被殺 政府出手救命",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMitANBVV95cUxOMm8wMkRLWVVBaXc0SHNuMVpBR3pNZEVNYXVVVk15ZFFQdlNFUnBvcVRHM2N0eWZHWlprRy05b3hRZHJMbDUwM2haZzFkVEdmTkhUWFZGQU1sY1QzZ0xkbnN1UGYtczF0MU9xM1Zvc2tra2xYeG5iMm4zX0VjNkowMGU5ZVFBcFZLOUloZ1BLV2tlS2RhcVBwOW1ZWVBFRmFBb0thdjNKV0JTOHJTbE9Uc3FMV3FvdFl1d1lzeTZUeHNDbVFVZ3dETzZEYTJadGNNQXJqSHVYbTFNQkhFNW9Ic0dYSGRaenJDREZubjZtNGxNTGlGSDRZQ3I1YVFXNlpDOXZOME1heDEzenVDeXZGaE8wVmt6OV9LaTRLSS0wTnhldFJKaVhRclR2b3FUeGdnVXp0Yk4yQlZWZW9Vck03Qm9WaFhuWkVsT0hnVjJRdkoxdno1M0o3akh3ZXRVdEZ4R0NleTFhOVBvX2ZONWt1dWozcDhFQ1hZeWRwRW5yelBEWEJOZE1CSDBGd1hHbUhMbTBZMEhoSjJKWENqT0M0Y1ZXZUdva2pTeXJtaUVHUUpXVEVY?oc=5",
-          "summary": "川普：祕密協助一億桶石油通過荷姆茲海峽 避免油價漲至250美元危機 Yahoo新聞",
-          "published": "2026-06-11T03:36:54+00:00",
+          "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQelBMZmNwTnM4bDhiOFc0STBfMDlJaUtlTndXdEc2UmtnajR5bFlHZVdXTmdQWFQ4MW9UVzNicmF3RW5CMnVfcW9RNlJkNXNLZVhkbEQ0ZzdKc05kWEhOS0tmRUM5MnZWRm9kdTJnYklzYkI4WVM1ZU5XTVdlV0lSYXFXNkZqdldBaDdQUlQyaXQ0WGxUbkdVTTJ1dUtuaUdTMmRCbk40cDJqRmxrdW1iemFBUTV5Q0Fra3BJRkpOZDVkLUd1ajA1U0pqVEN0STRncU4xVU9DQVhITmVWeUlMMDBrRWVJSmNhLXhqV1lmeHF5YzhCRFZYeWUxSnM3Z195SzN5RVppXzF3RFpMWE95bkh2OVdQZ0k?oc=5",
+          "summary": "金髮飄逸「川普牛」免被殺 政府出手救命 Yahoo新聞",
+          "published": "2026-06-11T03:56:55+00:00",
           "origin": "關鍵字「川普」"
         },
         {
-          "title": "美國CPI創3年新高川普神回「喜歡通膨」 稱戰後物價會如石頭跌落 | 上報",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0xUUFxZG8yRlRfQXVSMVV6QTJ4NUFZNERSblgtb0VGVUkwMlppQ2p0bDRlbFhhT2pGYVpyVGl4dmJuMFh5YjhUSWdzdzd5TEN4ZVlUQmp3?oc=5",
-          "summary": "美國CPI創3年新高川普神回「喜歡通膨」 稱戰後物價會如石頭跌落 | 上報 LINE TODAY",
-          "published": "2026-06-11T03:29:51+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "title": "Iran live updates: CENTCOM says latest round of strikes completed - ABC News",
+          "source": "ABC News - Breaking News, Latest News and Videos",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQU0lNUGZXMS1EVjUtbGlpOTk3cGxTU1FINDZTSUNyVllOa0JFLWh5VHR0TW9RUDA1RkE0T2pzV3hIbE5PVTA5Y21jdk1ObkQxSy1SUkxuYWVCTW82bjdfbExvZTZRODJmcmdTTGwybU5YR24wbXJ3czVlWm9mMmE3QjRvWnEtOWhad1FQZ0U2OXcwVGFxZXJYT2FWMk5pc3h3OE9yV1dzVVlNYXpKbHRN?oc=5",
+          "summary": "Iran live updates: CENTCOM says latest round of strikes completed ABC News - Breaking News, Latest News and Videos",
+          "published": "2026-06-11T07:30:00+00:00",
+          "origin": "關鍵字「Trump」"
         },
         {
-          "title": "國際兩岸評論｜特朗普要化解反AI浪潮",
-          "source": "Now 新聞",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBZdG93LVhZLXBDeS1FclcySEVFR2c2NUdfU1Q3eC1qNDV6UlZNZkNtRGZ1MjEwQjM1TmhPQ1pOZXhaYkxXaE1tdS0tM2tlT3pHNFdpWGdTSTM4MjM2d1UzWXhyWndXb3RtcEtiUFI5QQ?oc=5",
-          "summary": "國際兩岸評論｜特朗普要化解反AI浪潮 Now 新聞",
-          "published": "2026-06-11T03:27:24+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "Trump accuses Democrats of hypocrisy on Platner, despite questions about his own conduct - ABC News",
+          "source": "ABC News - Breaking News, Latest News and Videos",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdzJLV3VHTy1uRHl5aVFoc25HM24wMjkyV2pTUEhJdlRfQkxXMV9PZE4zWXQzU3FNenpHY3FRelZjM0NiR2VqOW5aV0N4MVBYTm5uY2s0UWxLODdmamtqWmZwV21YM2V4cUJTTWJXQjJlWHlVcTJhY1QyWFdZeTlNWkYwa0RKQWxGc1Bha3FKUEFLbFBlLUlOeU4tOFNxVDNBT0hoNjE1aFhrYVNhZW1r0gG0AUFVX3lxTE16aVJGdFhaRVQtQ2lqaVplM0VPVmFNR3MzSTJFLWNQMzJ3WF9OSEF4RkVROUdHQmZRWngwclN6NlotcE5iUXNpek5nZmc3RzB6V1ppUEF4VUY3VVZiM2ZHUng2Yk1RVERiTDdjMmI5N3NkTHFvbDk2cjZvX25oQUw3SVlvSFJkcGU4Q1gtN21XcTNBekhlME5IMVlDOGVXRTNaRS1PMERHQ0w5Z29kUjZkSm1qcQ?oc=5",
+          "summary": "Trump accuses Democrats of hypocrisy on Platner, despite questions about his own conduct ABC News - Breaking News, Latest News and Videos",
+          "published": "2026-06-11T07:28:21+00:00",
+          "origin": "關鍵字「President Trump」"
         },
         {
-          "title": "特朗普揭露美國秘密行動：每晚移除數百萬桶伊朗石油！",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOMWVSZnloREhMN1VCUGtjOUMyazF4UFlVaUpvY080MXFxcmh4Z2M2TUdjTGtCNzR3V0xrSnUteGc5UW5DMEhuTFBvbEtRdTFxYWlyVl9vcHJlNW9EcmFlM2dCcTlvU0pNbVpsMnlhWW5PcHR6cHhOTEQ3TGJUdTJvVm9hY3dBWnYwTXRQZy1n?oc=5",
-          "summary": "特朗普揭露美國秘密行動：每晚移除數百萬桶伊朗石油！ CMoney投資網誌",
-          "published": "2026-06-11T03:18:44+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "As fighters arrive for White House UFC event, Trump is the invisible guest",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNLW03RUtoc3JXWktzMUYzVGo5YUI5Sm1HbmNDcE01ZlhJeHk2OHpnYzRRNGJqNWE4dDVTbm5WT1JlVl9sWm5XREgwcjRpZjdFeUxvWnkwclhzWm1YNGRiZVIzb0Z3Ni1CX1NqeVNMNHcxMHRWMmozZEkzc1hqRWVZNmtRZFUtRFktQVdhUzJXQVRSTVpYOWdXUHUxd0liTUU?oc=5",
+          "summary": "As fighters arrive for White House UFC event, Trump is the invisible guest The Washington Post",
+          "published": "2026-06-11T07:09:29+00:00",
+          "origin": "關鍵字「President Trump」"
         },
         {
-          "title": "特朗普一句話後，美軍宣佈完成對伊朗新打擊！黃金大變臉 金價巨震94美元 作者 FX168 - Investing.com 香港",
-          "source": "Investing.com 香港 - 股市報價& 財經新聞",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9NWlZTS1FGckYzR0k1amQ4SnM5TjUtUXlLOGpmNmtxTFByc0hpeVlpVzBycHQ4Q3R4TlRXdXQ0OTFFeUMxWmMtb0tFSlY0YkRWMDZRMnRVRzRDVWRDZzdEdkZnRUZjbEpKZ3BBWW5pQQ?oc=5",
-          "summary": "特朗普一句話後，美軍宣佈完成對伊朗新打擊！黃金大變臉 金價巨震94美元 作者 FX168 Investing.com 香港 - 股市報價& 財經新聞",
-          "published": "2026-06-11T03:17:29+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "President Trump Tours Theodore Roosevelt Presidential Library",
+          "source": "C-SPAN",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUXRDT1VDQlpOUTluVU9tRElVTDhpdkU0dWpZczI4SUNiMjFQckVBSWgyV2ptX1FvMXFNUUNxYkRDdGRxcHlhN21QUWg1R2M0RzFHR3Z6TVBVWTAzS0JfclFXU1dWZURRYm9Gdmk4dmUtZ0JYRkRrU09XMjFrbzliVkhNR2VXVGtnb3llQ0RxTXR1Ty1yNGN3NU1mSkhtUWtTZEViNDg3N3IyR2NmTEJDWA?oc=5",
+          "summary": "President Trump Tours Theodore Roosevelt Presidential Library C-SPAN",
+          "published": "2026-06-11T07:04:07+00:00",
+          "origin": "關鍵字「President Trump」"
         },
         {
-          "title": "37次「快成了」，特朗普是真不靠譜",
-          "source": "《超越新聞網》",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9Db0dYQzFEQ2ZvdTdqTDl2d1NDMHUzZk1iM1FYcmdBQnB2cnd4TjZhd01KV1M0ZFNRZzR5cE9Na0t3ZFd3cnFaQmEyelo2aHJOVmFoMQ?oc=5",
-          "summary": "37次「快成了」，特朗普是真不靠譜 《超越新聞網》",
-          "published": "2026-06-11T03:14:18+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "Despite public dismissals, why Trump and his team were privately obsessed with the Jeffrey Epstein scandal",
+          "source": "Fox News",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNXhlSmdKXzlxN2thOXVyblZRQ2w4ZllTUlcxeWg4ZXdWMXhnZXJCanBnS25BRmNvdExZaWpvbHdlTUVXOXZWcW9NT3QzcHBUN19SWHRpOUQ4UmZ1RXhfM1NJTTl1M0ZDcjRHNkZURHNERFotVzVob1Q5OXd4MkVxSFI5V0FBanFHTFVjM2JEbmx6VXNFR0FtenhkYzFPWDF5UW1iRE5QeW5lTkVlNE1YbF9obkxUX0Q3SVpWbU85dkNVd9IBxwFBVV95cUxQTndEYTVweFdLX1JVY0o1Y3lOS3Q2dEpFRWxyNy10YTItRUVybkEzNnNiRXlCbHQ4eDQyOUd2STcxT3pNS3JQTHVvU2IwMmFSOGJqZ0RyaGlUU3I1MFI1cl9XWXY2RlFsNG9QeWtYTVNVangxbGdZV0dsYVE2M0ZwUE43TmNsQmpKNGdYeTJnOUxFWGFaNy1MeHdJZ1NkdUpNYUUzd2lsN3RMMWd5eTBMcmdwdzhBaFlSOXpuY3ZjVHdNVlVUZE53?oc=5",
+          "summary": "Despite public dismissals, why Trump and his team were privately obsessed with the Jeffrey Epstein scandal Fox News",
+          "published": "2026-06-11T07:00:14+00:00",
+          "origin": "關鍵字「Trump」"
         },
         {
-          "title": "〈美股盤後〉川普稱將「非常猛烈」打擊伊朗 道瓊狂瀉超過950點 費半重摔逾3.5%",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9DS3pneW4xSV9RcVpMeUotNW04eWxweklqMWVQZUtnZ1QwQ0RxSG9XNWtfVWpzQ3BYV2R6UWFVZjVhdm5kUWNucmxXNHRKTkk?oc=5",
-          "summary": "〈美股盤後〉川普稱將「非常猛烈」打擊伊朗 道瓊狂瀉超過950點 費半重摔逾3.5% news.cnyes.com",
-          "published": "2026-06-11T03:11:15+00:00",
-          "origin": "關鍵字「川普」"
+          "title": "US and Iran exchange strikes across Middle East for second day in a row",
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE55WWJEczNyUXZjeUZ5WkhHSl9Nd20tSGl1MzZrTmpZNFVDQlZkeFAxbEwyUk9LTmstMTFZaXBoNDdzZUZJR0M4cXBqelVHTWY1NlpOMXFiUWMtZw?oc=5",
+          "summary": "US and Iran exchange strikes across Middle East for second day in a row BBC",
+          "published": "2026-06-11T06:49:10+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "愛潑斯坦檔案如何令白宮陷入癱瘓- 紐約時報中文網",
-          "source": "纽约时报中文网",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQ0FxS2ZlckZubi1JekVoakJkZFNiRGN5VXVfZXE2LVJVTzFJUEJlbXAydkloT0xmd0ZrdkJvMU15MXM1VmVvVVB5QmUzSHE0R3IwaE5WUjNtU3hhUDY4cnJXYnpCTWhialFrWm5ubW93SUMyNmhJYWxPbmVIVW85Q1FWNHQ5M3AyVklLQXZMYw?oc=5",
-          "summary": "愛潑斯坦檔案如何令白宮陷入癱瘓- 紐約時報中文網 纽约时报中文网",
-          "published": "2026-06-11T03:11:15+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "Iran War Live Updates: U.S. and Iran Trade Fresh Attacks",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5Gc3htM1JvcDRxY19PR2JBeUxDYy1hbHB2dUxzV1JKMEtJemJia1VFaFdTYzlXT2N0RHJ6ZDBlWEpxU2JSY0xoRXdjeXdJbDluQjhQY2FyNnNYODhoM1BJSWEtNmZjYUk1eENWTU1uNURqNmk1N1VhbVdn?oc=5",
+          "summary": "Iran War Live Updates: U.S. and Iran Trade Fresh Attacks The New York Times",
+          "published": "2026-06-11T06:48:44+00:00",
+          "origin": "關鍵字「Trump」"
         },
         {
-          "title": "川普下令重襲伊朗 中東警報大響 科威特攔截空中目標、荷姆茲海峽全面關閉",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9BQ1ZLd3NhdURmSTJBb3RyT0dhTjRFT2pMRTVrSWxES2ZEek1yS0RIVkJCWVRvU2c0dWVrWXR5ZWVzVXRUUC1YMFhsUFVzSEU?oc=5",
-          "summary": "川普下令重襲伊朗 中東警報大響 科威特攔截空中目標、荷姆茲海峽全面關閉 news.cnyes.com",
-          "published": "2026-06-11T03:10:03+00:00",
-          "origin": "關鍵字「川普」"
+          "title": "Live updates: U.S. launches 2nd day of strikes; Iran fires back and says Strait of Hormuz closed",
+          "source": "NBC News",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOGh6VE16SGcyemxnaWsxLTlXTjlxSVRSMFhOdXlCZjkya1Z0bzh3UVp2TzJLemtNTzZ2bU9lYnhmSEhaOGJNWFpleE1FWlYzTUl6TmlKd3ZDY3JMZmJLRFBRcXpkOUpPM1pIT2VZbEl2MEZ6YnZPdnN1eU9iUUFfLTFQd3dEWThacDBZbnM5aURzLWJsNEpvUHUtcW5xaW13Vkc0emwwaw?oc=5",
+          "summary": "Live updates: U.S. launches 2nd day of strikes; Iran fires back and says Strait of Hormuz closed NBC News",
+          "published": "2026-06-11T06:48:42+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "美國5月CPI升破4%創三年新高 特朗普死撐：我喜歡通脹",
-          "source": "香港01",
-          "url": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxNUHNEWEd3LXBJZnRqalBQTUE0d1FXc2d6NjJLRWxjVEI0Ni1JRktfNjNQQmRMelhUaE1lYkZlM1FHeGpScjFFa1BWX1lGTzE4ZWs3V003X0Zjb2lWbFB2OHdLUXlYWVdHNm5JWFpjbjRHd2J3a19Xdk05N0ZCeS02Rzd0MTc5MlNEVmFDNmVTLVpwYmJMOEFfTS1jTTFFNU1MbFBuMDJFQTF0d3NlOUc5U3FWSFJMSF94S1NzVVlkMkZRb0tub3VJT3puUmtQdS1lTmoxQVdWUnd0UFN6Zk9GTV92Ym5VaS1uYXRmX0VLYTlMNGZlLXA0ZDdXWHJiYWJrNDRpZmtLVFMwYkJ3d2QyRGpGaXY5bWtDLXIweGJKenlFa0MwMFNscVZjUjN2MWVIeDZzcm1ZOFRaVmFaMVJMRy1fd3dCMmUzRkV6ajBBRmIwOHpqRjJ6OUgxTmlnSWR5TzBfZTVlaFFKUzU4UVN1SA?oc=5",
-          "summary": "美國5月CPI升破4%創三年新高 特朗普死撐：我喜歡通脹 香港01",
-          "published": "2026-06-11T03:07:48+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "'I love the inflation,' Trump says as prices jump again",
+          "source": "Euronews",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYVFsTWpOTFhOZnN3RzZsVU1GNjBrdHVTTElfZFU2U2s0SHktRkpoaTBfRDRDMXJ0WnY0S1FkRXhuOXQ2cUpVd2h2OThlZnB5VS1CX18yR2RPV0lydXhEckdhZHpNUkZSdUVsZ1JLRHBKV1pHVVUxUHZoREhMNVR6VExqaVN5dEoxOWpxdlZnU0RLQQ?oc=5",
+          "summary": "'I love the inflation,' Trump says as prices jump again Euronews",
+          "published": "2026-06-11T06:29:35+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "川普指責德黑蘭當局「拖延談判太久」！(#01J) 【川普下令再轟伊朗！美軍宣布「完成自衛打擊」 開火畫面曝】 （圖／翻攝自X／@CENTCOM）",
-          "source": "facebook.com",
-          "url": "https://news.google.com/rss/articles/CBMi8ARBVV95cUxNXzVnNld5NlVOQmgzRGc5Z2ZsNjFOdzkyMk4zeVFkQmVzaGxhOU5FdjN1aHVibEhSc2dPUmtxenNqNVBOQjJQUVhiajA5NmlaM292SDJ0X2RiQ3U5MUJyVDdsVHJCZDZidFdtNXlZSGpRNV9oY3Z1cjVVdUktalJrS3Z2dWFUZUg0OW53SWRaQXdjUkg0QVRIa25IRmlNWTVsWm9ueU5zaGN6R3lRUXhOUTA0OFhhelBsOHlhNjhwR3dzbEFYVlRCbEI3c2J3TUs0eVVJTGZlZWlCRVZVQ2FXSzh3YUFJY1FZTjdpYTZDN2N5RVJHSWo0c3BMWF82M0RqQzJrdEkwN1BobzhIZHYwZ1EzUjU1TFNLd29xTERza0VSSi1UUG1Rd0JDQVNXTVVQR2Y4Z0Q5dTRLbzFfcFlYY1RsWTdhdHgzdHdKeVFvWWlVdGc3ZWdCZng3Qml6bWJJWG1tT2c1czc2WFAta2FGTkxERVhtVktrSU4zVVpseXY0dXRudnY3T3RTYTJkdDhyYndJMFFqeFhsT0RVYnVrS0hRRVFscG5GNDZncUticHBPbjQ3dnRNMlhFT2JScEVQc0dqVEY5eTdIWk9YWk9jbnRJZ2N1cjlyWWJqaUxob1k3UThjMUxjS2lVeW15U2hhUEp1MFFiZmNaOWY2SkZaaXF1dG5RUEJkVVdqTzQtZU4yOHltTVRqamdZSzlSMThLSVgwMnVJOURPbXhhUmd3OFV2eUM4T0Fpc2F0TXpQYmpVTVNDRHo5dHlqUDgtNEpPRFlnNUdEb3ZjYlV2ekh0bEdmWWRZSE9FQzhyekk1Q1k?oc=5",
-          "summary": "川普指責德黑蘭當局「拖延談判太久」！(#01J) 【川普下令再轟伊朗！美軍宣布「完成自衛打擊」 開火畫面曝】 （圖／翻攝自X／@CENTCOM） facebook.com",
-          "published": "2026-06-11T03:00:07+00:00",
-          "origin": "關鍵字「川普」"
+          "title": "Live updates: US bases in Middle East facing second night of retaliatory Iranian attacks",
+          "source": "CNN",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1SZDdKa1gxeUJSNTBHc1hsN2preWRiM1RqbjRlVDlYUzRjc0twS01jX25uWG83dk1ScmlnSUZpLUE3ckVOSGJRZmxjSXo1dXRYdmMtLWZ1OEY3SFRWU1Y2SERvZmpHeFZUanRqdTc1c2pDMjFzdUVz?oc=5",
+          "summary": "Live updates: US bases in Middle East facing second night of retaliatory Iranian attacks CNN",
+          "published": "2026-06-11T06:28:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "福斯新聞：川普稱伊朗曾致電 請求美方停止轟炸",
-          "source": "東森新聞",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9aOTRtUEthUlhweEZ1TU1mMXp5UVN3TGtiV2htcTFVc25oUTdkTXI5QnhSOGljQnJVX2otXzd3c1V1VmJnMXIxWk44c0dzUmRxZ1Iw?oc=5",
-          "summary": "福斯新聞：川普稱伊朗曾致電 請求美方停止轟炸 東森新聞",
-          "published": "2026-06-11T02:59:00+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "title": "U.S. launches new strikes on Iran, hours after Trump issued warning",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQW53TFRnTktfUVJtSF9hRmxEXzN6MnlubDE0Q0haU3FHX2h6VlhjQ1BKR21GdjF1OEF1aW1Gdl9SZlFTclZGTzFtdk15eWFoc2VKZEljRWY0UUN5QmxkZHFnNFFkT1Znclh1amVUdWlCbXBJZTl0WmZGSUV5d3g0QnZDQm16Y2lIcGN3Y0xDNXZncGMzMlpYZjk0Z1I2amhkbnVfaVdIUTZUeWU2?oc=5",
+          "summary": "U.S. launches new strikes on Iran, hours after Trump issued warning The Washington Post",
+          "published": "2026-06-11T06:14:53+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "自爆用軍事行動控油價！ 川普喊「我愛通膨」 ：這是值得的代價",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxQWTJ6YWxWNjZfV1drTXp1b3hkZEpzZno3eUM1U3VDOWJBejlaVUQzcDlqYndyMlZscWpYc3diS3dGSjMzdGExS04xeGVyZ09YZXYtRGpzVDFXUm0tU015X3FWMlFJUVMtSXRTUDlBQlpWWGF5OGR4TlY5TGlLNG9sWGtzZGxGZDI0UURYWFVuM2RwUTZ0c3c3RGtEbUo0Y0JpYWFvTzBOOFVlN3ZvWFcycmtjUHJxcDQ5SHk4RHNLeW9IYnVOWXlZMmV1Nkx5N3lPa2k4NEFQdGh6VEZ2cTBsdlZwQ2hOandWWFR0RW5xODU0MDZDOEh2SHNYUXFvWEhQeTBXMXpQTElYYUN3UjJMTWJ0ZTJKM3hqR1RTd0NaYnFVcC1uenU0WDlJUzJZNTJILVRyVXdmWnlZTUFScnlJbmtJZkN4cmJqYXZKcG9FUTRiMDZmdkR4bUx4d1JYbDBGY05VVlBRZE9hRWwxZEJXVmxscnlaZ1ZVWDRSZlFtcw?oc=5",
-          "summary": "自爆用軍事行動控油價！ 川普喊「我愛通膨」 ：這是值得的代價 Yahoo股市",
-          "published": "2026-06-11T02:54:40+00:00",
-          "origin": "關鍵字「川普」"
+          "title": "Desi Lydic Does a Spit Take at the Price of Trump’s Gold Coin",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQa2VNZURVZUc1MHZfSnc2b1hQV1NGQUU2SlM4MElnWVIyaVlqdXZGYnBGUDlqRlRvSE4zcFlnNmthejZfUERmYkJJWVM2WHVoREJPTllmS2NmZDNUSS1LOW96NjBLclVoUG1pSXd5eWFNMGhETzZIYjBYUmVhMG93S0RrMjY3SGMxTTNmclJOaGZxQQ?oc=5",
+          "summary": "Desi Lydic Does a Spit Take at the Price of Trump’s Gold Coin The New York Times",
+          "published": "2026-06-11T06:03:53+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "美國再次空襲伊朗 特朗普警告將“猛烈打擊” 德黑蘭",
-          "source": "美南新聞",
-          "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1UTU1QQnJ4VW5PTGYxYWpTR0VDX2hiMUlSbkNmeV9ubmhzN1BKSWtmUHpWamJrNmxDMGU0WUo4cVRPNDFX?oc=5",
-          "summary": "美國再次空襲伊朗 特朗普警告將“猛烈打擊” 德黑蘭 美南新聞",
-          "published": "2026-06-11T02:51:51+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "“I Really Don’t Care, Do U?” Redux",
+          "source": "CounterPunch.org",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE4tTW5nMUlXSDRZUmtHWktxQ0FWQWZ3MGRrVzRnR2NKRmNhVTVxaFpBQVBFZDFMQjNIa3RaeXFmbzZfZ2FfYTFYOWFJbUdGdEYxdTlwbzBRLVZBdzJZQ2pkTTdXSk81MVpqOTdhVFE1RS1jYnprMWcyYVVR?oc=5",
+          "summary": "“I Really Don’t Care, Do U?” Redux CounterPunch.org",
+          "published": "2026-06-11T05:50:33+00:00",
+          "origin": "關鍵字「Donald J. Trump」"
         },
         {
-          "title": "【美國經濟】美CPI創3年高 特朗普稱「我喜歡通脹」但戰後通脹將如石頭墮落般暴跌",
-          "source": "香港經濟日報HKET",
-          "url": "https://news.google.com/rss/articles/CBMikwRBVV95cUxPRWU2dDh5aW1uWWtZWjFrNy1qREVjV0I5SlB1TFZBOEp4ZWI5YUxRV1dLNlpBUEFLdkhGLUZFdmtYTWl3WWpVTzBBS3FYOXo2Rkc5b2U3NHNBQ2oxTkpjNFZETDRseHk0bTF2Ujh4Y3p0TmpDb3BSLU91U1hadG5FQkI0SUR4NVp1TTlEalduSDRuNEFNZDlyc1VVZkdIRF9URlp3LVVhaWxTR2dJWF82eGxlUTVpS0FTUEJzRHJFbVgzVHVTMVpQZEl6cUIyMVo0Ul9Qdy1NUWFMMDZfTnRyeHl2Ul91UjJGTVMtLThRZzNhcmlTREtJWlJSM2w3U05BLVpMNHRIZlZMRHFWZERjUW9xRkt3OFpyQ2VJYnc0N1FOUnFuMGtpcWFtWXVBeDl5SEVjY2xwQkt3T3hsTW84LU9uMFlyVWlqaXhjUnNtbDR1aXlSWWtOUnRsVGxta0R2RTR4Rl8zV2J1WVpvc0c2cUNVTXgzR0hoMnhfMklYNkRmVjJwS1R1QXo0UVloenBkUWs5RHNJUkhkZ2w3TTRfQUwyMUEyWjAybWFkcE4wTTJjM3BNV2c0RTFmVVZLd3FWbHZ4UWcxSnJIb1RkdHh1c2ZGSFc2T19WU05QR2U0MEJ4VVl4eE05Y0xDc1lrX0ZfSnQyRXMyZW50QkstdG5US1I1endsMUtXbXhvMmt0blFodlE?oc=5",
-          "summary": "【美國經濟】美CPI創3年高 特朗普稱「我喜歡通脹」但戰後通脹將如石頭墮落般暴跌 香港經濟日報HKET",
-          "published": "2026-06-11T02:50:57+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "Trump sees 22 medical specialists, appearing to set new bar for presidents",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSzZNbThoOG1SeVpUdFRqb1pyY0ZoUDdfZ3lGak5NM3phckZKUkJHYWxwQ3RncG5ITFlvSFdLS0RxQ08xX25IdHRXMHlISFdEYnBQODlFQzhSM0pBTGRlRUlyOWJacjVTV1FBM3BrRmotY1ZialNYLUlEd0twb0pJcDVxY1dFMW1oQm90M1I4OVNYOHNiUjM3dkxieGtRRjc2a1NjUm5HUXlZTFU3dko4X0NR?oc=5",
+          "summary": "Trump sees 22 medical specialists, appearing to set new bar for presidents The Washington Post",
+          "published": "2026-06-11T05:34:55+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "川普再轟伊朗、荷姆茲海峽又遭封鎖油價走高- 新聞",
-          "source": "MoneyDJ理財網",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZUZ3VVNMdzUwZ3IyczVoQVRjX0V3R25qdWtXa1pUTnd1emdRMjVkTzE4WFV1WGp6NDRyOXFPdDdjSm83S01WV2hNd01XS0ZxZTNFeTZEektZVjdVbmhsN25MQURQTHBGUm9GSWd0cGhldDRXQVFaY09GX1Q5Ukx5eEt3cFBkMEc0U3ZOQ0xpRmZrUQ?oc=5",
-          "summary": "川普再轟伊朗、荷姆茲海峽又遭封鎖油價走高- 新聞 MoneyDJ理財網",
-          "published": "2026-06-11T02:48:00+00:00",
-          "origin": "關鍵字「川普」"
-        },
-        {
-          "title": "川普連2開轟伊朗！美戰爭部長「撂狠話全成真」：將用炸彈談判",
-          "source": "民視新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE56eEt1NW5vZHBVWjExeUpKSjY5YnRkX1Njcmg2X21KYVlpRnpxdThrU3lWTm1tdUtxbU5vNnF2dDNUTHBPeUM1dVU5TU42eWhPZlZ1MzhDamZySS15MkxtUw?oc=5",
-          "summary": "川普連2開轟伊朗！美戰爭部長「撂狠話全成真」：將用炸彈談判 民視新聞網",
-          "published": "2026-06-11T02:44:53+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "title": "Kristen Welker insults President Trump with ‘no evidence’ guff",
+          "source": "thealpenanews.com",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPeTZfOVpKMkRBV3EwNlEyc19hVnZZRE5VZ3dncElBVWFzXzdhb0lXVUJOSndCamZkYWN2V3VBckE3U05XSVZTaEczUVVVamVlcVBwaHRVRm84aEpjMlo1N19JQjVYWGVCTmhSYmZ0OEJtS1E4cEk4QUZ6RlptQklBdjk0a05LLXpraXU3UXhSUld4VUM4aEdFd3JRS29CVEFmZzRhSld4cU9uczQ?oc=5",
+          "summary": "Kristen Welker insults President Trump with ‘no evidence’ guff thealpenanews.com",
+          "published": "2026-06-11T05:32:28+00:00",
+          "origin": "關鍵字「President Trump」"
         },
         {
           "title": "Are the US and Iran Back at War? Why Bombing Your Way to Peace Won’t Work",
@@ -697,36 +727,12 @@
           "origin": "關鍵字「Donald J. Trump」"
         },
         {
-          "title": "As fighters arrive for White House UFC event, Trump is the invisible guest",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNLW03RUtoc3JXWktzMUYzVGo5YUI5Sm1HbmNDcE01ZlhJeHk2OHpnYzRRNGJqNWE4dDVTbm5WT1JlVl9sWm5XREgwcjRpZjdFeUxvWnkwclhzWm1YNGRiZVIzb0Z3Ni1CX1NqeVNMNHcxMHRWMmozZEkzc1hqRWVZNmtRZFUtRFktQVdhUzJXQVRSTVpYOWdXUHUxd0liTUU?oc=5",
-          "summary": "As fighters arrive for White House UFC event, Trump is the invisible guest The Washington Post",
-          "published": "2026-06-11T05:13:57+00:00",
-          "origin": "關鍵字「President Trump」"
-        },
-        {
-          "title": "Live Updates: U.S. Strikes Iran Again After Trump Says Talks Are Taking Too Long",
-          "source": "The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9aV05JeGgybkVNbms1UjJ3N1lDSHcwUHMyVk1MeUg3TVJSZnB3QzZwZEdaRXVQcUZJWnNFSm5nU2xvQTBkalRlWkM4SGwtRm1zOVVROVJsbU5tLUo4dEZMQzl3S0hiWDBIQXkxbWlBMmM?oc=5",
-          "summary": "Live Updates: U.S. Strikes Iran Again After Trump Says Talks Are Taking Too Long The New York Times",
-          "published": "2026-06-11T05:07:45+00:00",
-          "origin": "關鍵字「Trump」"
-        },
-        {
-          "title": "Trump sees 22 medical specialists, appearing to set new bar for presidents",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSzZNbThoOG1SeVpUdFRqb1pyY0ZoUDdfZ3lGak5NM3phckZKUkJHYWxwQ3RncG5ITFlvSFdLS0RxQ08xX25IdHRXMHlISFdEYnBQODlFQzhSM0pBTGRlRUlyOWJacjVTV1FBM3BrRmotY1ZialNYLUlEd0twb0pJcDVxY1dFMW1oQm90M1I4OVNYOHNiUjM3dkxieGtRRjc2a1NjUm5HUXlZTFU3dko4X0NR?oc=5",
-          "summary": "Trump sees 22 medical specialists, appearing to set new bar for presidents The Washington Post",
-          "published": "2026-06-11T04:59:20+00:00",
+          "title": "Thousands rally in Albania in largest protest yet against Kushner resort",
+          "source": "Al Jazeera",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaFhmUGE5TEpWTjNNNWJ2Ny1WZ09FNlJSNERHTW1GMWlqcUdJVkJmYzJZOE5uLVo5T2w2Y29GdmFaeTFsY1VLYXBnbDBpcFI3VjFxYy01dHhIamZRX1lGbFVkTGRiUHluMFdoMHNkSUR5VzEtQlRob05pczhDVUQzX0N0NGI2SUpWekphckw4dGhfUVkxUEt6eS1CVHd4R2NYZ0JDMU1pTHRZWTJTOEIxSGlHTdIBuAFBVV95cUxQenRYeUJUN3lGR0dFX1pWZFNUM205SllIY19uZEswSkx1bmp1amo3bG9KUVlqemNmM2NlWklxV3NrWGZObUt4SGRLWnFlMXlTQTFiQnVucnRncjRoMXZFYzR3dkw2dGhjaG5waXFzOGFyVkg0YVN1WHpaejdwLUtmcmRoaWZ6bUd4Ul9QWmctNllzZXgtLUxSRC00WWdXV2tQQ3ZOSXZxWF9OUjNrSGJoSXJqUHJzTHdS?oc=5",
+          "summary": "Thousands rally in Albania in largest protest yet against Kushner resort Al Jazeera",
+          "published": "2026-06-11T05:09:50+00:00",
           "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "No White House visit for Aces: Team confirms no invitation after 2025 title",
-          "source": "USA Today",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNdXRURXVGSExwdFppcjFLOVNlREx1MzhMaldldVlCRmtRdHAzZXJZRl8yWU5LVU1sVHVMa1RYSTNaZlNxY1llUlRuMnJraWJfUnBZTjRBa0ZHOEFiakF3TDhYZmdnZE1CczhsbUxOREk2N0hhYmRWeVBoaUxzSzU5N2tOU0VUcUZUVXBhUE9Fb081VWNSN0JXNGVVQ0VEWEhubGFvQ25BM29rV0dzY3RQMThEMVZ0ME5YMDRHOUhn?oc=5",
-          "summary": "No White House visit for Aces: Team confirms no invitation after 2025 title USA Today",
-          "published": "2026-06-11T04:50:00+00:00",
-          "origin": "關鍵字「Trump White House」"
         },
         {
           "title": "Donald Trump calls Stephen A. Smith 'dumb as a rock' in scathing post",
@@ -737,28 +743,12 @@
           "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "Europeans to Seek Trump Buy-In at G7 for Peace Talks With Russia",
-          "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPckl6VkhxUGl4bHA1eUZUeG9SakFzVG4xQWtZa2w2NzE2M1F5bkJPcVNRN013X3FqY1M4RldWOGFxM0pyQ1EyMlFWY1d3d1IwOXRobFF5Q1l6Y0ZyRDJyQm55ems5UEVwV25pTXRiTlFWMFJYUWppcEVvZVN3d19aZGtHN2NtbndxTV9OUGxDM004QmcwWDNQckJzWTA5Z0J1R2dPd2xad0NGdjB6ZllGSzM5WlBaQQ?oc=5",
-          "summary": "Europeans to Seek Trump Buy-In at G7 for Peace Talks With Russia Bloomberg.com",
-          "published": "2026-06-11T04:30:00+00:00",
-          "origin": "關鍵字「Trump」"
-        },
-        {
-          "title": "Trump says Iran will ‘pay the price’ after it targets U.S. assets in three countries",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQW53TFRnTktfUVJtSF9hRmxEXzN6MnlubDE0Q0haU3FHX2h6VlhjQ1BKR21GdjF1OEF1aW1Gdl9SZlFTclZGTzFtdk15eWFoc2VKZEljRWY0UUN5QmxkZHFnNFFkT1Znclh1amVUdWlCbXBJZTl0WmZGSUV5d3g0QnZDQm16Y2lIcGN3Y0xDNXZncGMzMlpYZjk0Z1I2amhkbnVfaVdIUTZUeWU2?oc=5",
-          "summary": "Trump says Iran will ‘pay the price’ after it targets U.S. assets in three countries The Washington Post",
-          "published": "2026-06-11T04:27:24+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Middle East crisis live: US and Iran trade strikes again, after Trump warns Tehran will ‘pay the price’ for stalled talks",
-          "source": "The Guardian",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUkZuelN0WFNNOFlaZHVtRjhtSFpHYm5SaFo0NkhIbjktUVVhdzl2Z0phR1hxb3BTM0UzSXF6TnRsb0d4X0VKcXFxT29IbUdTSWQ0Y0hOYVZtY3h6N1BLRkJlMlI3OHlxaGg2NlFWalZGNFRjU3VPVW8zNTYwUXhHQ2dkay15MFRvLXlfNC1iOUpkMFZLRDNpMlI5TTB0bWlseTMxVTZGZ05ualMyMS14WEExdk10c0oxT0h4OWZKNUh2WmtPQ2c?oc=5",
-          "summary": "Middle East crisis live: US and Iran trade strikes again, after Trump warns Tehran will ‘pay the price’ for stalled talks The Guardian",
-          "published": "2026-06-11T04:23:34+00:00",
-          "origin": "關鍵字「Donald Trump」"
+          "title": "Trump inflation comment: A ‘Tower of Babel’ moment, Bill O’Reilly says",
+          "source": "NewsNation",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQMmF3bUZMdDR2UlMtMEJOeVczXzN4d1ZGdVpGcHZSYWpKbXIyTjBkZmtQanJtR1FaWTZJb210RDY5cmd0aEt0MTA1OGJ6Rm9XUGZYWTNyTUZfNF9vV3FKdkkyQVBFM05Qc0pUTWRfanpqQUx5bUgtTm05OGt2bzdlX2V4WEhnLV82RDg00gGQAUFVX3lxTE14dDNVRE5KUWpSMDR2WWRVSXRpS0lSd2NQSzNBNGRjSjFPVk96aEhRdlRuY0JZNTFzNURLc2Jia0dUM19RTzVjbGRFSk5ENHlvTm1jZzh2VW5xcUxhZjNZQ1FQYWRRX2tiVWFoeTJqaUEtV3lKbjZoYV9JN2FCSFo2OHJlSkdjTVlrdmpieERJNQ?oc=5",
+          "summary": "Trump inflation comment: A ‘Tower of Babel’ moment, Bill O’Reilly says NewsNation",
+          "published": "2026-06-11T04:24:51+00:00",
+          "origin": "關鍵字「President Trump」"
         },
         {
           "title": "AZ man convicted of threatening to kill President Trump and former VP Harris",
@@ -769,44 +759,12 @@
           "origin": "關鍵字「President Trump」"
         },
         {
-          "title": "US strikes Iran in retaliation for Apache shoot-down",
-          "source": "Fox News",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBTSXBzNUU4ck1MN3JrbjZnV1dSc0VZYUZrbkdsemQtM05TY09tNGhzbm9TWnZXVG1CRWZBM19ibGpteTc1WGd2OGZTakk1SElpMUFvSGQtRUM1OU91TEZTQjA2Nk9xWFg1aEJ5ckNkX2VWaVA2RXlHVkM4Qzlpd9IBgwFBVV95cUxQSFZfcjEtcG9xNEdGQ05mbXViaElsMWRDWmw4SjFwakxDdzhGaVVua3puMlljTTdkbEVFWkszQWQtWXZvTmdSZ2V4aWVTMUtGaTRCcWZhTmh3VXdUNnBSNjZHdjBCeHd4SXhlbjgzNGJ0TDlfRU9pbm1oaEFTUzBveXYxTQ?oc=5",
-          "summary": "US strikes Iran in retaliation for Apache shoot-down Fox News",
-          "published": "2026-06-11T04:20:51+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Bo Nickal Reflects on Friendship With Donald Trump Before UFC White House",
-          "source": "Cageside Press",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMThwb1ZIX2FLOUhkdGZuM1RXem5UcHprci1ycXBOcFJZbC1PSFZpcmpKU3FOX2ZOaVA2VDVJeVRFLWx6RG5tTEpLcWpWM1NPVVg1aW5EMDJpYTh0VTl1UDkydFhwcU9TclhWOFViUTdTNEdKX1F3dldfSlp5alYybG5pN3JJSFJkZjRWeUJTMkVELTZrc19MbXdsY0ZRR244V3lxTlptTWpyN2xHM2JWaA?oc=5",
-          "summary": "Bo Nickal Reflects on Friendship With Donald Trump Before UFC White House Cageside Press",
-          "published": "2026-06-11T04:14:04+00:00",
-          "origin": "關鍵字「Trump White House」"
-        },
-        {
-          "title": "US and Iran exchange strikes across Middle East for second day in a row",
-          "source": "BBC",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE55WWJEczNyUXZjeUZ5WkhHSl9Nd20tSGl1MzZrTmpZNFVDQlZkeFAxbEwyUk9LTmstMTFZaXBoNDdzZUZJR0M4cXBqelVHTWY1NlpOMXFiUWMtZw?oc=5",
-          "summary": "US and Iran exchange strikes across Middle East for second day in a row BBC",
-          "published": "2026-06-11T04:07:34+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
           "title": "Mamdani was to meet with Colombia’s leader until Trump administration stepped in",
           "source": "The Washington Post",
           "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOaWJyRlBvSC0xNFNRb1NQbkJNMnh5Y3JjZG5LX3RQakd4elNtVFJ1eUhCRzB0X0JYeGZkTW1tZzhyQm5sU2EyaEl0dkNWVjNRb0hDSEY3eGtxb2FkenJKbXEwS3FCNVRTVHNpMnc0d0ctcTROMFhMSnJydU1iUE02T1NMazl5RnR1MGVwZ3UycXlZa0VaaVo5VnhkeXN3TWYwdDFEMHlfUjVSQ2x6cnZueTczY0RRTVdJV0IyMmtnd0t4cHJCUVFhWHRRWQ?oc=5",
           "summary": "Mamdani was to meet with Colombia’s leader until Trump administration stepped in The Washington Post",
           "published": "2026-06-11T04:05:46+00:00",
           "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "FISA spy program at risk over Trump's pick of Pulte for director of national intelligence",
-          "source": "WKMG",
-          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQUlpEMGZjb3NRNExCZEx6TU9RcTc5bTRDcmRrWVBJaHV6dm1PUjdhWlExV0hkNkJTdTRlalotZUN2dGFGX19YQXZIN0ZEQko0MEhNTk42M3RnQXFJTWtITE1UME9VZkg1MGhxWWZrS3pjUFJiLXFiNUhhZDJYaGFBeUd4R25LQi1taXJpcXFzdVViaWZHYUpjUUJLS0E5N0l6NG1xblFRSmFWUGktWjJCOHp6M0xWMmI0dk1FRkRvVW1MazFDMUNkeWt1UnBtVDRYc3g1TmpDU3UyTW8?oc=5",
-          "summary": "FISA spy program at risk over Trump's pick of Pulte for director of national intelligence WKMG",
-          "published": "2026-06-11T04:04:03+00:00",
-          "origin": "關鍵字「Trump White House」"
         },
         {
           "title": "Why a frustrated Trump is turning again to bombs to force Iran’s hand",
@@ -830,15 +788,7 @@
           "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNaDRtYVRfbWhjNVJFTlVEd2pMT2dKVDlzMmUxYjhURVhkblgyelJOc09LRDVleDlKc2FfZHI5blBmUklUcUFCWG0zUGs1NmhXT1FZS0NaeVNCbEFmbGtJcVJ4cnBBUmlSdS1TSjlwMk1venhjWHFzeDJjWTlrMWNqM24zZ0dlT2dMMnZmTVBvTkVJNE4xWkw4ZXU4Q2QzX2VkU3VuUTVOMnpUZ3NvT2dQalJsZ2M1Qm1ZVWg4eU5CeTU5dnBDaHMtcDEtVi1ZclRPdEdXeGU4NDY5YlhOdV9zN2N5VlZwYnZzNDFCYXl6LVlTejcxSnpVX3dDRmFKZFg5TmRV?oc=5",
           "summary": "Claudia Sheinbaum: the wildly popular Mexican president dealing with drug violence, disappearances and Donald Trump The Guardian",
           "published": "2026-06-11T04:00:00+00:00",
-          "origin": "關鍵字「President Trump」"
-        },
-        {
-          "title": "President Trump warns more strikes on Iran are on the way",
-          "source": "13newsnow.com",
-          "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOc0pPU2NWRjJTeUMxdjNGaVU1QlpvR2VEMkM3QURtSm4wdjU1cUdwZi1EaHpvUF9RWEhoZGR4NjlDWGRXZHpLQTlqZ196Vmx2VzllejJkQTRsMUI5SzY2b1NVcUVUOHFXams4UFd3OVFmUmlmVmdOcTFZU2tnd2p2eTRsc0hiMExUN3BMdUhMMV9mVm5iSXh0cDdaTlY1Nm8yVWVGV1VNOFRNZTZ5OHNJWlJfYWt0ejdWM25SQkFad1J4MkFJekRmN2JTQWpudElsSFpnaGlXZWVWblBDTFNndjBaYjVvZmJqNnZlSTIxUWFqbHJ5UFE?oc=5",
-          "summary": "President Trump warns more strikes on Iran are on the way 13newsnow.com",
-          "published": "2026-06-11T03:58:00+00:00",
-          "origin": "關鍵字「President Trump」"
+          "origin": "關鍵字「Donald Trump」"
         },
         {
           "title": "US launches new strikes on Iran, which fires back at Gulf states and Jordan",
@@ -846,14 +796,6 @@
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPU25kWmtrYVNpdHBud0dxUDhZdUx0OFMyQUxOWER5cXowaW8zWk9pdWNBeWdycUNTTXp4VjlmSWF1UDRzOEpBdl9RRTlYeno2cXBHUEJuVDJaTk05dldzaEwza29fR2I1NmpsZU5JZUlUWjNoWlZUTXFiaFFLYm9oSHR5Ukk4X2s5X193eU5fVm5KWjZmSHBsTnJ2U29JU1lVb3ZtLUZuTUpDNHM?oc=5",
           "summary": "US launches new strikes on Iran, which fires back at Gulf states and Jordan AP News",
           "published": "2026-06-11T03:37:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Iran live updates: CENTCOM says latest round of strikes completed - ABC News",
-          "source": "ABC News - Breaking News, Latest News and Videos",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQU0lNUGZXMS1EVjUtbGlpOTk3cGxTU1FINDZTSUNyVllOa0JFLWh5VHR0TW9RUDA1RkE0T2pzV3hIbE5PVTA5Y21jdk1ObkQxSy1SUkxuYWVCTW82bjdfbExvZTZRODJmcmdTTGwybU5YR24wbXJ3czVlWm9mMmE3QjRvWnEtOWhad1FQZ0U2OXcwVGFxZXJYT2FWMk5pc3h3OE9yV1dzVVlNYXpKbHRN0gG0AUFVX3lxTE45aUo0RzJUSDVEek5ldzRSTWVoSjdxV2J2ZWMwVGFfQW1LWW1BY2k4Rjl6Y1BDM3V6WnNNT2FqOE9xQU9UVU5sckUzdmUwV095SVJKVWtMWVRNb0hCbF96V1dYWkQ4ekFCcW1kelRzc1RUT2tISFBHQ2EwTVlqQnNGakhiLXY3cXdhZzNrdkx4SDljc2ZmQXczejhHZ0dDRkF2bThEQ0tDRnNLc1pXdEhaZ0NfOQ?oc=5",
-          "summary": "Iran live updates: CENTCOM says latest round of strikes completed ABC News - Breaking News, Latest News and Videos",
-          "published": "2026-06-11T03:28:00+00:00",
           "origin": "關鍵字「Donald Trump」"
         },
         {
@@ -873,20 +815,12 @@
           "origin": "關鍵字「Trump」"
         },
         {
-          "title": "MTG calls Trump a 'traitor' over lack of Epstein files transparency",
-          "source": "CNN",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQlJYcnNLeEdTU0ZRSWhzRmxQSHdGalUzNWY3NzdGbEhfZDIyd1J2Rk04NmZaNTVZdGEyallVQlFjMHE5bzc1VGpmZGZZM0t6d3pZeEtRSWx6Mk5xOWlqTWl4ZG1PTXJCTzBEdWFTM2FIbVJRX0x0aXlDbFc4LUhWeG1JUkNNSmxkc3hpT3BSOWJaQUpzdUZzcEdvaWhHTmZyNkNpX1dyVnFhZURPQm5nTTVB?oc=5",
-          "summary": "MTG calls Trump a 'traitor' over lack of Epstein files transparency CNN",
-          "published": "2026-06-11T02:48:00+00:00",
+          "title": "Trump signs $70 billion bill to fund ICE and Border Patrol through the end of his term",
+          "source": "NBC News",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNNmZnOTdSc1JnLXB6WnN0RUlUbl9FU3hvbXRxV1NjNi1sM2lkdXJEYXdNZjN3NUVINlNrVTB3YnpNRWdsdFU5MklteHpiamFtbVJKZ29zc2huZ2oyRDgtZGotb3RYOW0wdXIyNFRaRGlDeUZpTW5oOTN1Sy1fOUlnMEkxOWxSUUFFUjRFSjRxZFIzM1NUV2VmVXh1emtjOUs5V0U0SWR4SFBYaUxSc2lPWUk4bjdrNDNQUTRJMmRqcVY0Ty0zME4wTnI3alktbGJvSjhSLS1QRndQRE5L?oc=5",
+          "summary": "Trump signs $70 billion bill to fund ICE and Border Patrol through the end of his term NBC News",
+          "published": "2026-06-11T03:02:00+00:00",
           "origin": "關鍵字「Trump」"
-        },
-        {
-          "title": "President Presses Congress, Angry Over Pulte, to Renew Surveillance Law",
-          "source": "The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9LYnUzVzdzeWxyQlRVeDQ5WTJxWDA2TlNVY2tGOVZmemJmVWZHQWFpR05IRW5rTFBzTHR6aWNuVUUyVEsyekFIdHVWM2hsU0Ftd2JOYXZaTTlYRGJwTEhTaTZZWQ?oc=5",
-          "summary": "President Presses Congress, Angry Over Pulte, to Renew Surveillance Law The New York Times",
-          "published": "2026-06-11T02:42:12+00:00",
-          "origin": "關鍵字「President Trump」"
         },
         {
           "title": "President Trump Loves Inflation, and Bitcoin Could Feel the Impact",
@@ -902,7 +836,7 @@
           "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxORU5xbVUzdklydFAxTnBsbWZERjFING1qN1hKZUhGd2ZFenR4X3FpR2psYmRIUXE3ZEFhR3g4QzlqWVNXYVdjRE5qemp6MzBTVGJMa3JhX2wtX2tIUXdTUXZ1eTRDVmRYZkZDdXREQXVGX0owYzZIUG9tZjFBaVJLaXBZUVBrMmloemNsSkt3cDhTRWtkREhRTXFoM21vUEdPSGpIdVQwcXYzM2lD?oc=5",
           "summary": "Trump demands $350B Pentagon infusion, elections overhaul in next party-line GOP bill Politico",
           "published": "2026-06-11T02:23:19+00:00",
-          "origin": "關鍵字「Trump White House」"
+          "origin": "關鍵字「Donald Trump」"
         },
         {
           "title": "We tore open the Trump phone — it was nearly the same as a Taiwanese device using Chinese parts",
@@ -929,36 +863,12 @@
           "origin": "關鍵字「President Trump」"
         },
         {
-          "title": "Trump inflation comment: A ‘Tower of Babel’ moment, Bill O’Reilly says",
-          "source": "NewsNation",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQMmF3bUZMdDR2UlMtMEJOeVczXzN4d1ZGdVpGcHZSYWpKbXIyTjBkZmtQanJtR1FaWTZJb210RDY5cmd0aEt0MTA1OGJ6Rm9XUGZYWTNyTUZfNF9vV3FKdkkyQVBFM05Qc0pUTWRfanpqQUx5bUgtTm05OGt2bzdlX2V4WEhnLV82RDg00gGQAUFVX3lxTE14dDNVRE5KUWpSMDR2WWRVSXRpS0lSd2NQSzNBNGRjSjFPVk96aEhRdlRuY0JZNTFzNURLc2Jia0dUM19RTzVjbGRFSk5ENHlvTm1jZzh2VW5xcUxhZjNZQ1FQYWRRX2tiVWFoeTJqaUEtV3lKbjZoYV9JN2FCSFo2OHJlSkdjTVlrdmpieERJNQ?oc=5",
-          "summary": "Trump inflation comment: A ‘Tower of Babel’ moment, Bill O’Reilly says NewsNation",
-          "published": "2026-06-11T02:01:11+00:00",
-          "origin": "關鍵字「President Trump」"
-        },
-        {
-          "title": "Donald Trump Launches ‘Massive’ Leak Hunt After Humiliating Revelations",
-          "source": "The Daily Beast",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNdkRrdWI3cnI3TFRyNnNuT2FBdHREWFExYlZCWmV5Mko3MVNYZDdOa01OX2w2ZklESGpya0JWWnZwajZjR0dTTURhVVRLbGVxd2VkWGV6dmw1RGozb3gta1VLV3pkNUhmbUxuZnhNc29Vb01TSWxBUk10TGJJWDRvZS1jTTZvdzlKcTBtNXhvM1REZERHYlRZOERBY1B3TDFhcFE?oc=5",
-          "summary": "Donald Trump Launches ‘Massive’ Leak Hunt After Humiliating Revelations The Daily Beast",
-          "published": "2026-06-11T01:39:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
           "title": "LEADER JEFFRIES ON MS NOW: “DONALD TRUMP’S RECKLESS AND COSTLY WAR OF CHOICE HAS BEEN A DISASTER FOR THE AMERICAN PEOPLE” – Congressman Hakeem Jeffries",
           "source": "Congressman Hakeem Jeffries (.gov)",
           "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOaFE3MkZrN056M3hzME8yNHptMUk1TTZQMXcxU216dDRJUnl3UzFFUGIxdmplbHNRZFRUWFJYc1c5VmpzdUh1QVcwdVpIenZvMEMybGZURmtuSjhzcU1rVzNnQjgyN1VtOWtUMExYbDhYYURmRnJFckZoQ1lacXozd01YdW50RXoyQndxQXJKLXJtQm95aXNxam9KRnZ5WkhQNlhYV1VnVlUyaDJfV1ZTQmNoakR4SWpvOF9nVGw4TXRIRkcyMkRiS1hZd0RYYVY4YVFDY0kzWU1BQlJZUUNrZzI2dHFjNW50S2t2TQ?oc=5",
           "summary": "LEADER JEFFRIES ON MS NOW: “DONALD TRUMP’S RECKLESS AND COSTLY WAR OF CHOICE HAS BEEN A DISASTER FOR THE AMERICAN PEOPLE” – Congressman Hakeem Jeffries Congressman Hakeem Jeffries (.gov)",
           "published": "2026-06-11T01:32:41+00:00",
           "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "The Faceoff: Does president Trump love inflation?",
-          "source": "KTAR News 92.3 FM",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTUlNZWtHRGN1V1JHc25Ra0k5QTliS3RLMjlhckFJX2o2RkJUd3NDU2pNWTFFR2NWSXBqMzRjNlVwLVVmdFp6QXpNUl9CeWZIMnZOdFJYR1Q4bUZDREhObDd2dklYbVZsb09KRWRpZ0tGdXBxWHpjVWVpbFJoZkhKblRYWGRmRGw1NHcyS0F0aFY2WEs3Qmk3SXdTT2ZfNzdIWmxBU2M5Z3pQbkE?oc=5",
-          "summary": "The Faceoff: Does president Trump love inflation? KTAR News 92.3 FM",
-          "published": "2026-06-11T01:26:39+00:00",
-          "origin": "關鍵字「President Trump」"
         },
         {
           "title": "The Wall Street Journal seeks second dismissal of Trump defamation lawsuit",
@@ -975,14 +885,6 @@
           "summary": "\"Regime Change\": New book reveals Trump team's Epstein leak fears Axios",
           "published": "2026-06-11T01:23:49+00:00",
           "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Trump signs $70B immigration bill into law at the White House",
-          "source": "Honolulu Star-Advertiser",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNE1SY0c3WjlYTGhQVjN6QWIyNjJvNlNMNjZWWFh6OTlqOE1DYk1GQ3JDcmZwVmFPcUJWY3lUNWZHS0ZsY0Y4MmtBRU5NN1BRTGpINDJuRGlSMzZRUVVQbXVQOFZUREJEb0VQYmdINUhkNllaNFBXdjJYdHpqVTd3VWRDMlUzQ0pXNENfekJEWmxMa0tkZlpXQm1yU0hua0YtalFMbXA1aEY1eENabFRFU3owQjhJUng3?oc=5",
-          "summary": "Trump signs $70B immigration bill into law at the White House Honolulu Star-Advertiser",
-          "published": "2026-06-11T01:19:08+00:00",
-          "origin": "關鍵字「Trump White House」"
         },
         {
           "title": "U.S. bombs Iran for second straight night",
@@ -1027,7 +929,7 @@
         {
           "title": "Arizona man convicted of threatening to kill President Trump, Kamala Harris",
           "source": "AZ Family",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPa1VhMHYtX2Q1bzlJTmxuT0dkbGdvQlB0RndRckI4TWQ4NTRDM19ZcVc0OHoydWF6MDhvbXhWVFVET0NicGlLY2FhV21CYWRSdjVnVXZNRTFhc0sxTTdoMGo2cEhVc0lvSzZGRmZaUUJYSUZ4aDh6WW9YQ3NxQnZXdk9ka2sydE9RbWduX3VKc0QwZ25KYkFXbGF4bFo5b0tSYTdWQzJtRnU?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPa1VhMHYtX2Q1bzlJTmxuT0dkbGdvQlB0RndRckI4TWQ4NTRDM19ZcVc0OHoydWF6MDhvbXhWVFVET0NicGlLY2FhV21CYWRSdjVnVXZNRTFhc0sxTTdoMGo2cEhVc0lvSzZGRmZaUUJYSUZ4aDh6WW9YQ3NxQnZXdk9ka2sydE9RbWduX3VKc0QwZ25KYkFXbGF4bFo5b0tSYTdWQzJtRnXSAbwBQVVfeXFMUFNmNjh3Q1lrenBlTk5Dd0pkS1F2emlORE1nZmVWMnQtaWc4YTB2RnM0dUFlVDR6OUk0UHdtVEozWm13Wm5KSktaQ1pzYmZhQ2hCLUtYQUV2Mm1wRDhRaUlPSE9qQ0FCdzlGM3ZJZlJNcTRLX0RNT2FLOWtvZUhHQ2N4bnVjN2lINjdjYnlyTGpwNng5S1duUGxUQXZoSDVTWWxjSHBOb1g5dnVZM1BfQlRnU0t2VUpfN0lBZ1Y?oc=5",
           "summary": "Arizona man convicted of threatening to kill President Trump, Kamala Harris AZ Family",
           "published": "2026-06-11T00:26:00+00:00",
           "origin": "關鍵字「Donald Trump」"
@@ -1065,14 +967,6 @@
           "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "NYT: Officials met in Situation Room on Epstein without Trump",
-          "source": "CNN",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRjREdElxRjNjSGF6NlRQc05EWTJzZ0hHandnUWVyRURHWnFSSmdOdGR5Slk5U25Pa3V6WlFUVFJWR0xvWUtqNHJqVVcxTjVtUWgzY05JeFdaRTZxSk5VMnFqdDdPcGFiQkFZN0hXdFpxYkZFNnotOTZQVk9YUVFTY0ZZUmlRZkdYTVM3NVlGZ2xlanJkRDQ1WklTYU1pNU4yOGpXYWR3?oc=5",
-          "summary": "NYT: Officials met in Situation Room on Epstein without Trump CNN",
-          "published": "2026-06-11T00:01:02+00:00",
-          "origin": "關鍵字「Trump」"
-        },
-        {
           "title": "The Latest: US says it is striking targets in Iran again as tensions escalate",
           "source": "SFGATE",
           "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOUkRxOFlOVDlfUmtWMjJWVWlsZlE5dU44N2x0SW05UkdlRkNTZnNQQ2JaVUhJM1NpQ0tFNWZmOHJVNF9qSmZfdXZMbGtxZXNFZHM0RHdyaU4tWDlCUzNrVGk1YmJzbjlpOEJNOHpSYzcwY1RkRnl6NHUxOU1KbXlXRV9fYUtObzJGSXdpUjJPZmZ1TFd2ZzRqdC13RGJzS1V4cWZuZjYtLXU?oc=5",
@@ -1081,11 +975,27 @@
           "origin": "關鍵字「Donald J. Trump」"
         },
         {
+          "title": "President Trump Signs $70B Immigration Package into Law",
+          "source": "news8000.com",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSEhoWk9jQWVpakhXNVlIbldZUEFxYjFwQ0lidnZLQXYtLVJ6WWNsNjAxOV9tNFV2ekNoNElaMVFrMmE4aFRYUmY5NGgyN09qMmctNTRTSzJxVmZTS0NsMVI0UDRJV3J1Qkg2Tkd4b0FmUVNldXl2dkFjNHVzQXNWYy1yM0pOME1kTUhhOEM4b2psbE9iM3hQbzZzUjh2UzR1U0VQRGdsUm9yR0phNHJfbWtpc1JZZnFPVGU2X1B6eHNFbkdTNEJkLUJ2ZWU?oc=5",
+          "summary": "President Trump Signs $70B Immigration Package into Law news8000.com",
+          "published": "2026-06-10T23:41:02+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
           "title": "Trump administration warns hundreds of hospitals to increase price transparency or face fines",
           "source": "PBS",
           "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcEJ4Q1FiYWdJUmctT19iT0N1NmExRTRZd3ktRVRESjBrV2RJeGdIUnpKR3BkbzRBZlRQUUx5VlpEVlI2SDR3OVdOTWJjdFBGaUV6S3NwalZrc01OOWN3Y2VtVzZkbkRjNzBQZmVMbGZwMF95NE4xS2NpM0dLOXkwTTNzNUpfamNETDBLdWdRS19pbUNLb3FrVll3NUJOYVc3ZU1MWkR1MFZGYlpZdURacVh2bThBX3hwWkhRYTJzTm9BRHc4UVljZQ?oc=5",
           "summary": "Trump administration warns hundreds of hospitals to increase price transparency or face fines PBS",
           "published": "2026-06-10T23:27:44+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "States sue Trump administration over anti-DEI terms in federal contracts",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPXzlmWEFEc2pKS1BDalZqSFlNYUtqQS02S2tEZng2UWNyVWhveTlqZ3pOYVc1azBlaDIwdzJPQzY0OWFQMlRXWnNFY1JERUJQMEZMWDM4am4tUWxfM1hnLV9mX1dEb05JQWhLemxOQ2kxVmVLRmoyaUYzZ1U2Z09ENjBYYU5xVUREQjdTT0dYWmRUTlVYUHJhWWFhTG5EVDJPRlVWSTVIRTlZVl96ekQ0dUVtSlhwZEh1djJBSzd5NA?oc=5",
+          "summary": "States sue Trump administration over anti-DEI terms in federal contracts Reuters",
+          "published": "2026-06-10T23:25:49+00:00",
           "origin": "關鍵字「Donald Trump」"
         }
       ]
@@ -1094,46 +1004,48 @@
       "report_date": "2026-06-11",
       "query_zh": "黃仁勳",
       "query_en": "Jensen Huang",
-      "summary": "輝達執行長黃仁勳近期積極參與國際活動，強調AI時代的變革與Nvidia在其中扮演的角色，同時也分享了個人成長經歷與對人才、台灣供應鏈的看法，並持續拓展Nvidia在AI、機器人及資料中心領域的投資與合作。",
+      "summary": "輝達執行長黃仁勳近期頻繁曝光，除了回顧個人奮鬥歷程與分享輝達的選才標準外，也強調台灣在AI供應鏈中的關鍵地位，並預測AI記憶體需求將持續成長，同時輝達的AI晶片與平台持續與各產業夥伴深化合作。",
       "key_statements": [
-        "Nvidia投資德國機器人新創公司NEURA 14億美元，並與亞馬遜、Tether共同參與。",
-        "Nvidia晶片將用於SpaceX的太空AI資料中心，推動太空算力發展。",
-        "黃仁勳在韓國綜藝節目《劉QUIZ》中分享創業歷程、追妻秘訣，並霸氣捐出百萬韓元獎金。",
-        "黃仁勳強調AI時代「慷慨與善良」的重要性，並認為能承受尷尬失敗的人才無價。",
-        "黃仁勳感性告白「台灣一直像家一樣」，並在影片中點名台積電、鴻海等5家台灣核心供應鏈夥伴。",
-        "黃仁勳警告AI記憶體超級週期將導致供應鏈多年受限，並鼓勵企業邁向自主AI代理新時代。"
+        "黃仁勳回顧9歲移民美國的經歷，強調不預設期待，更懂得珍惜眼前的一切，並分享輝達從瀕臨破產到成功的血淚史，歸因於「100%人生哲學」。",
+        "黃仁勳揭露輝達的選才標準，認為「智力像商品」，更看重員工的「慷慨品格」與「毅力」，而非最聰明的人。",
+        "黃仁勳在訪台期間感性表示「台灣一直像家一樣」，並點名感謝台積電、鴻海等五大核心台廠作為供應鏈夥伴，並秀出台灣國旗。",
+        "黃仁勳預測AI記憶體需求將持續成長「好幾年」，並認為AI是「智慧時代的發電機」。",
+        "輝達的AI晶片與平台將被台積電的CoPoS技術採用，並傳出聯陽的EC方案也打入輝達AI PC平台，預計下半年量產。",
+        "黃仁勳出席韓國綜藝節目《劉QUIZ》創下收視新高，並在節目中談及個人經歷、輝達創業史，並霸氣對賭100萬韓元，展現親民與幽默的一面。"
       ],
       "affected_industries": [
-        "半導體製造",
-        "人工智慧(AI)晶片設計",
-        "機器人",
-        "太空科技",
-        "資料中心",
-        "記憶體",
-        "個人電腦(PC)",
-        "軟體與雲端服務"
+        "半導體製造業",
+        "AI晶片設計業",
+        "個人電腦(PC)製造業",
+        "資料中心服務業",
+        "機器人產業",
+        "記憶體產業",
+        "能源產業",
+        "內容創作與媒體業",
+        "軟體服務業(SaaS)",
+        "汽車產業"
       ],
       "stocks": [
         {
           "name": "輝達 (Nvidia)",
-          "ticker": "NVDA",
+          "ticker": "",
           "market": "美股",
           "sector": "半導體",
           "sentiment": "利多",
-          "reason": "Nvidia持續投資AI、機器人及太空算力等新興領域，並與重要夥伴深化合作，顯示其在AI生態系中的主導地位和增長潛力。同時，黃仁勳看好AI記憶體需求，暗示公司長期成長動能。",
+          "reason": "黃仁勳強調AI記憶體需求將持續多年，並將AI視為智慧時代的發電機，預示輝達作為AI晶片領導者的長期成長潛力，且其AI晶片將採用台積電CoPoS技術，強化競爭力。",
           "evidence_news": [
             {
-              "title": "Tether 領投德國機器人 NEURA $1.4B、估值 70 億：Nvidia、Amazon 共投",
-              "source": "鏈新聞 ABMedia",
-              "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOX0NIMXkxT0V0YmR3SDAycHprbDFfWmhONm5HWmpYNlpKTm5qay16WnluZWJwMTQ1VFcwQlZNN053SmFFcjJYSWxxYVMxSk1uUEUzb3JmSExINU5nWDdxYUZZTXdGd2tJa0xlek8zREhoY0FsUjRkeEVFRjJnVjNxcXIwZl8wSFZyOE9pWWc3OUQ2c3JhSUxfUkF1c3lnQXpYd3NoMC14dGE1ODJ0Y1l6QnJGSENEQUprcUlITEhvZm9xVDRLQ2JRajhR?oc=5"
+              "title": "黃仁勳：AI是智慧時代的發電機",
+              "source": "StartupHub.ai",
+              "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPTXYxOFctbzY4Q3h2X0h0TjRtQUZQSUxPejVlNUZuSU1ObWNUWEs3Qk5jUTNqT082YWVBSGVESURyM2RjZkN2bXFLUkItNnYyN1ZvWlZYMC11bFVwTHJ0elNrZ0h1U1NtR19KZHNRS2tnazhjRWZJLVZhdXcwRVpNTEJhRUdiaTJOdkdndWxmWmhVZWF5aU42eDhPVDJMRTl4NGJIamVwcnhMZ1dzNGxFNzFXZ2RYMjQ?oc=5"
             },
             {
-              "title": "SpaceX要把AI資料中心送上軌道！IPO前拋出太空算力劇本 NVIDIA晶片也上天",
-              "source": "放言Fount Media",
-              "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9VWkJ4d00tSzlYWjVtSmNNNmhQLTBGUkZMZk1qNEJ5V0dmNFV4UE5IM2lJQWhGXzBUNjlrOFBMYnpkR2FiRjVZeXNnaFNjc2RtV1E?oc=5"
+              "title": "輝達的執行長表示，記憶體危機將持續「好幾年」—為什麼這個悲觀的預測讓我相信現在是購買新筆記型電腦或PC的時候了，儘管今天的價格令人沮喪",
+              "source": "TechRadar",
+              "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYWhiZnpkVElnekthOUkwWUkwdlN1ZXZ0SGw5cmhYNWhuZHBmQnE3MGFjMVFaV2c5TjR0LUhEVWpfaVZqUVhBTGRVQy1mYUlpVS1FdnkzM0VDWm5nNkx6aklkMUMxWDczUkp3U1BOMFZIaVUwN2JaaWwxVlhJM3czYVk0Y2hNUlAzeV9jNjJoeW9YQU01bVRIb2h5VzNhOG11NE13a3Y2dVJvcGhROG05REVYemxrbVpBX3JUeWdBTFdVaHFvV0laWU9mWS1NMExkVHhmVnlWbnlYQWZHWHUyd0JCZndXcjdvcWwzOVBHZE5ZU2RhZy04S3lGM1dJMFRBTFozM0lWRHFXSlQ2VUpWX0xQengwX1dKcVFXTW5QZmR6Q2VrYnAw?oc=5"
             }
           ],
-          "news_count": 52,
+          "news_count": 50,
           "first_seen": "2026-06-09",
           "last_seen": "2026-06-11"
         },
@@ -1143,20 +1055,20 @@
           "market": "台股",
           "sector": "半導體製造",
           "sentiment": "利多",
-          "reason": "黃仁勳在影片中點名台積電為其核心供應鏈夥伴，強調台灣在全球AI發展中的關鍵地位，Nvidia對其晶圓代工需求將持續增長。",
+          "reason": "郭明錤指出台積電CoPoS技術預計於2028下半年量產，並將被輝達AI晶片採用，顯示台積電在先進封裝技術上的領先地位，將直接受益於輝達的AI晶片需求。",
           "evidence_news": [
             {
-              "title": "「台灣一直像家一樣」 黃仁勳短片致謝台積電、鴻海等供應鏈夥伴",
-              "source": "Yahoo新聞",
-              "url": "https://news.google.com/rss/articles/CBMi-AJBVV95cUxNbXZ1VlhIT2R5ZTZhRV9uWlExZDA1QjU0UnRYdm1NUUdUVEJ5bEFVeXVvLWh6OU1hV1V5dm9HVkozbGdlM0gxT3RuWk9sUHdDRklfeW94Zm53VFVBc0dsTjVHTG9tQ1FtdDNKVVlldTExOEE5cklyZzIwSXVSWGtUT2lEYWpaZnk0OEx5VFNmU240RzJJSE5FYS16QVFkM05aeVlydm1Ed1ZTZEw4UEFQbGt4c0RmaWt5bXE3Qm5fcWVKaGpSU19OMTFwYnJRLXR2ODd5Sm43V2JQV256TTJYMUtyLWNaYnRhT1dSNXVsZFVCVEdGUlNRTHBkeGQ2eVpTLWI3cHppTUFNMGxabVhQYXJVWklUWDJJZ0hleFBVZWVkLXlYdnk0RE9KNjRNWnY4X1RueG9JOGJiU2FoVndQaHdNdjFMSmZydXM3Z2JsNW81bnhIR2tBSGs4aGZBTDJEcHZOZndSelYzYlhUQlhhLVhMdnJnRkNO?oc=5"
+              "title": "台積電CoPoS估2028下半年量產 郭明錤：輝達AI晶片採用",
+              "source": "ETtoday財經雲",
+              "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBEYmFvNl9TSE05d0RyOE1RNW9DSUtaaE9iN213cC1icThvM1VwU0QzVTE2RDZFZFBpTnBNSHQ0UGFtYnZwVk1vZUV5Uk9NelFDamfSAW5BVV95cUxNNzBiSVpxeDN3UGo5RXA5eTNUeWN4YkkwUGIxWmNZWlYzU1J2TWZHOXhObXktc0ZjbFE1ZlpLelR6MlBxd2dhTTBwcy1kWFVvN1ptdEdsb25wLTlMMXhOZzJRMkptZzVmWllUc3BIUQ?oc=5"
             },
             {
-              "title": "臻鼎搭上「台積電、輝達」2大靠山！ 出關一度飆8％",
-              "source": "中時新聞網",
-              "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9ISW1YWWJFYVVfcEZReFlnX2pxTlFKVjBxS2lyS1Exb181ZXBDcFUyNEtmZmo0MW5POVd2cmE0VW4zbVlOcnlsanpQOGd5aVRHdkR5N0VsMlBSZUVWRi1KU3JMN1F5c3JjQzl1RUxB?oc=5"
+              "title": "郭明錤曝台積電CoPoS 2028年下半年量產 輝達這款AI晶片將首度採用",
+              "source": "知新聞",
+              "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9uX0l2cnJUMGFEbm5IYzBlQ2VvNEF1XzVhSl80SXk5LXgxVWpxT0I1Z0NfVG1Td0JTMmtSMExOenFEcUFzdGkzZWRhNGdhbm1TcWFuV3MwcFBfS19tMWxxMUhFR0ZIRjlGMEI4TXBKVQ?oc=5"
             }
           ],
-          "news_count": 3,
+          "news_count": 4,
           "first_seen": "2026-06-10",
           "last_seen": "2026-06-11"
         },
@@ -1164,14 +1076,19 @@
           "name": "鴻海 (Foxconn)",
           "ticker": "2317",
           "market": "台股",
-          "sector": "電子代工服務",
+          "sector": "電子代工",
           "sentiment": "利多",
-          "reason": "黃仁勳影片中點名鴻海為Nvidia的重要合作夥伴，預示鴻海在Nvidia AI供應鏈中的重要角色，尤其在伺服器組裝及AI相關硬體製造方面。",
+          "reason": "黃仁勳在訪台回顧影片中點名鴻海為五大核心台廠之一，顯示鴻海在輝達供應鏈中的重要地位，尤其在AI伺服器組裝等領域。",
           "evidence_news": [
             {
-              "title": "黃仁勳感性告白「台灣像家一樣」 影片曝5核心台廠- 財經",
-              "source": "華視新聞網",
-              "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9icVF1OVk3QmJmdnBORmFWTS1qbjRhYkNjNkRWUV9zdEx5Tml6dVNMclRuemFFUmp1OXRkY2U5U19sVTNudG1FNnFmMk1oMW5kalFvN3F4V3ppTFNuS3YtdFI5WXoxNTVsOUJYUFhn?oc=5"
+              "title": "「台灣一直像家一樣」 黃仁勳短片致謝台積電、鴻海等供應鏈夥伴",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMi-AJBVV95cUxNbXZ1VlhIT2R5ZTZhRV9uWlExZDA1QjU0UnRYdm1NUUdUVEJ5bEFVeXVvLWh6OU1hV1V5dm9HVkozbGdlM0gxT3RuWk9sUHdDRklfeW94Zm53VFVBc0dsTjVHTG9tQ1FtdDNKVVlldTExOEE5cklyZzIwSXVSWGtUT2lEYWpaZnk0OEx5VFNmU240RzJJSE5FYS16QVFkM05aeVlydm1Ed1ZTZEw4UEFQbGt4c0RmaWt5bXE3Qm5fcWVKaGpSU19OMTFwYnJRLXR2ODd5Sm43V2JQV256TTJYMUtyLWNaYnRhT1dSNXVsZFVCVEdGUlNRTHBkeGQ2eVNTLWI3cHppTUFNMGxabVhQYXJVWklUWDJJZ0hleFBVZWVkLXlYdnk0RE9KNjRNWnY4X1RueG9JOGJiU2FoVndQaHdNdjFMSmZydXM3Z2JsNW81bnhIR2tBSGs4aGZBTDJEcHZOZndSelYzYlhUQlhhLVhMdnJnRkNO?oc=5"
+            },
+            {
+              "title": "感性稱台灣一直像家一樣! 黃仁勳點名5大核心台廠 VeraRubin架構全面投產",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMikgNBVV95cUxPRmVwVnBQVHVYT09XYUY4YndINzFWNXlKMF9HMW1Kb0IyMjJweVIzLWdjME50Y082bEdpZUJYR3doNVpIMnNoc0M3SXFyQm80X1R6NndTb3BrV1psN0s3aEIxZV85aXJrczFZVWR2a3BudkNGOWlqaW9XNm1uaDRON0ZoT3BvTWg4eFY4NmNwUWpNeGF5aW1uSEdFMDFsS0tWakhOT1JfVkdWRHNhaXg2RFZib3dkcTFpNW5PY0c4d3FsdnF1NkdQcllrTENobWFLZkExMVl5d1dVVG8zcnhBUzg5VUtIQ09tWHp4ZHJtUW4xZGc3S2NTUUUzWHJvUFNSU29ZMEhlRjVIWWpjSFljTXQ1aUJ4WWc4OXBpVVlmcXdyZURuVjE3dURfeFVqR3dLd1Q1VzR5cHdXTDZXOC1RSk9ZQ2JpTUIyZkxlUWhDU3hJLW01RTFSRlU5NFE5TnNEa1RZOXZ2dzY5ekZsNDh5ZC1SanJ2UGl3S09ZbENwem1sNDNWUUpUbDNSdWx0Tm1ucnc?oc=5"
             }
           ],
           "news_count": 1,
@@ -1179,59 +1096,76 @@
           "last_seen": "2026-06-11"
         },
         {
-          "name": "三星電子 (Samsung Electronics)",
-          "ticker": "",
-          "market": "美股",
-          "sector": "半導體/電子產品",
-          "sentiment": "利多",
-          "reason": "Nvidia認證HBM4E成為關鍵，三星去年半導體投資居全球之冠，且黃仁勳稱讚三星等韓國夥伴，暗示其在AI記憶體和半導體供應鏈中的重要性。",
+          "name": "廣達 (Quanta Computer)",
+          "ticker": "2382",
+          "market": "台股",
+          "sector": "電腦及週邊設備",
+          "sentiment": "觀望",
+          "reason": "新聞提及廣達股價回調，並討論其是否能超越Nvidia成為最佳選擇，顯示市場對其未來表現存在關注與不確定性。",
           "evidence_news": [
             {
-              "title": "HBM4E 成 Nvidia 認證關鍵 三星去年半導體投資 89.9 萬億韓元全球稱冠",
-              "source": "unwire PRO",
-              "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOWDc5Z3c3RnlwdUhvbGprU1pHQklacFF6UHRJU1Zud3Bzd1lFMkRWT0JoblBXUVNJWDdpVkRLUzhHSnd2Qy12cDRESnFzRnhhYmM2ZVlQci1BNkh2ZFpXTnJseVRDdE5RcjVNVUU3cXFReDU2ZkhZSElfQVF5dnVIVEM3Ykpia3lBRV8wTlNoczJUQjA?oc=5"
-            },
-            {
-              "title": "NVIDIA CEO Lauds Samsung, Hyundai, SK Leaders as Close, Excellent",
-              "source": "조선일보",
-              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZFdNUW9BRy0tLWdEWDZpUVo5cG0zek1Od0kyWGxLSmM2emVBSktMdlIxaVRRejh4Z0JLWFc4ZXFMcWIyc2c3YlR5Zm9zLXRsaTN5NWlGY2NnNEQtN1VSQm04V212cjhlRmpKRGpJTGlJTWNVYkdnTkh1WVpXUVRfWkNrQTNrbWZOUDFyaEh3?oc=5"
+              "title": "廣達科技股價回調，是否已成為超越Nvidia的最佳選擇？",
+              "source": "CMoney投資網誌",
+              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPdTg3M05WaFMyTjhlWG9qNU41NmdYMGpRanRTSlU2VVF1dGZKck1IdUpwWFZtbHNNRmgwUDJiTE5IVG93ZS1fN1pZZVF5bnJIX2J5VXV5bUpadlhRcnBJVmNldXVyU1V5cXZnbzhuVUI3VEFZRV9rTTFBaUFNb25PNFlkZ3lSeUhSaGdpQzF3?oc=5"
             }
           ],
-          "news_count": 0
+          "news_count": 1,
+          "first_seen": "2026-06-11",
+          "last_seen": "2026-06-11"
         },
         {
-          "name": "SK海力士 (SK Hynix)",
-          "ticker": "",
-          "market": "美股",
+          "name": "聯陽 (Ite Tech)",
+          "ticker": "3014",
+          "market": "台股",
           "sector": "半導體",
           "sentiment": "利多",
-          "reason": "SK擬在日本打造AI資料中心並與輝達合作，且黃仁勳稱讚SK為其韓國重要夥伴，顯示SK在AI記憶體及資料中心領域與Nvidia的緊密合作。",
+          "reason": "傳出聯陽的EC (嵌入式控制器) 方案打入輝達的AI PC平台，最快將於下半年量產，顯示其產品獲得輝達認可，有望受益於AI PC市場的成長。",
           "evidence_news": [
             {
-              "title": "SK 擬在日本打造 AI 資料中心、和輝達合作",
-              "source": "TechNews 科技新報",
-              "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBlV2t6Y1M3X1pwdVRaYWdQek0wekoxYUpLUUNOb01YMjhaam1KNDlXZWtTTy1YZlBRVzZBZHNhS3JrbERsd29pZTZDTVl5Q3o0UGZ0SEpTRjNGLTY1Ulg4dVNFOXRRX1FSYVNBa1hIcHlGV3ZtX25yVkdFeks4bEk?oc=5"
+              "title": "聯陽EC方案傳打入輝達AI PC平台，最快H2量產",
+              "source": "Yahoo股市",
+              "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxPVXgzNU5iZFpsd2s4cHdsaVpNUGF6eUhMT2JUMXEzRG4wU3VpNlBDSUk2YldpOVEwRENzcHZoQ0tJR1JGMkpNRmdhX3VqQmFsZVd6UzgyMlpkQzNQaXM4dDVMLWZvNHhoenM5bTRVTUJNQU1GUExZZ2FncTI3R05PT0hvYUhHdnE5SGd4WUs3QTlMTzJGY2Zkc1VqZHpDaG50MThTUFFWWXJqVVdQbWRaTEpCQVluVmVlTjR3OU0ybzEyaUxYaG1JNnFUMFRtNG9MZDFzaWtJeWl1MEE5RExDRGQ5RnRCSGt2N3dSSkhYLUZLblhXME1zUGRzc09yc2JlbzFTOE42RHp3MEZhNjgwUGlHQ2dKVkprQ01BcQ?oc=5"
             },
             {
-              "title": "NVIDIA CEO Lauds Samsung, Hyundai, SK Leaders as Close, Excellent",
-              "source": "조선일보",
-              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZFdNUW9BRy0tLWdEWDZpUVo5cG0zek1Od0kyWGxLSmM2emVBSktMdlIxaVRRejh4Z0JLWFc4ZXFMcWIyc2c3YlR5Zm9zLXRsaTN5NWlGY2NnNEQtN1VSQm04V212cjhlRmpKRGpJTGlJTWNVYkdnTkh1WVpXUVRfWkNrQTNrbWZOUDFyaEh3?oc=5"
+              "title": "傳聯陽 EC 打入輝達 RTX Spark 平台",
+              "source": "UDN",
+              "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA1OE41ZzU3YURVYnpQVGNwaDhCdFVZdEF1ZGRxa2tzWlFTbjJ3RElPZWVHT01lRUVyQlltVU11MHlYSmo5ZzNFODNCekpoWDVN0gFWQVVfeXFMTkc4a0Y0WTh5cGhVeGtEQnRHaThyMjdpWVJWZkRFcnRZdUZqeTNwdWJIa3hNWmVFa01KM05pTXpnWXREbXVQWnd6dTNfU0FQVGlmc25vVEE?oc=5"
             }
           ],
-          "news_count": 0
+          "news_count": 2,
+          "first_seen": "2026-06-11",
+          "last_seen": "2026-06-11"
         },
         {
-          "name": "圓剛科技 (AverMedia)",
+          "name": "微星 (MSI)",
+          "ticker": "2377",
+          "market": "台股",
+          "sector": "電腦及週邊設備",
+          "sentiment": "利多",
+          "reason": "微星將輝達AI新品視為下半年成長目標的接棒者，顯示其產品策略與輝達AI技術緊密結合，有望在AI PC市場獲得商機。",
+          "evidence_news": [
+            {
+              "title": "微星拚守穩PC市占率 輝達AI新品接棒下半年成長目標",
+              "source": "UDN",
+              "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4WWV1TnRKeTRMNFg1RHVydWp3RnhWa1ZJb2s4a3hyVE9FMVN1UXlueVNSUnNvdmVHb3k0VkdSTUNZVFVDeHpjcXJJWlhHUVNm0gFWQVVfeXFMTUdjdEVwY2ptU1hMZGRlZFNXRUhOYkVpLWhyOXBVSGNIY183MzBvQ1NWQUNjRzVaUGhQT2FZOW9zTlBEQ1NHSTJCNTllbVFjdlNtZnR5X1E?oc=5"
+            }
+          ],
+          "news_count": 1,
+          "first_seen": "2026-06-11",
+          "last_seen": "2026-06-11"
+        },
+        {
+          "name": "圓剛 (AverMedia)",
           "ticker": "2417",
           "market": "台股",
           "sector": "電腦及週邊設備",
           "sentiment": "利多",
-          "reason": "圓剛科技董事長郭重松表示公司布局人形機器人，並自稱為輝達菁英級夥伴，顯示其在AI及機器人領域與Nvidia的合作關係，有望受惠於Nvidia的生態系拓展。",
+          "reason": "圓剛科技董座郭重松表示公司是輝達的「菁英級夥伴」，並布局人形機器人領域，顯示其與輝達深度合作，有望受益於機器人AI趨勢。",
           "evidence_news": [
             {
               "title": "圓剛科技布局人形機器人 董座郭重松：我們是輝達菁英級夥伴",
               "source": "Yahoo新聞",
-              "url": "https://news.google.com/rss/articles/CBMijgNBVV95cUxPeHRJZDlYalYyYl9oVjFteC01bGdWNXd1cEhTT2ZDNzBvTnBiMkVHVjdpT1htY0NaVjdURVBMMHEwdzZWSnl2Y0tORnM1MTRmR2xnX1pRcmIzZmJzdl9jOWRHUUtsaEdDeEdxSU42bjFRU1VxcEJ3T25GS01jWlpvbThRQUlUTlhNckduMGZ3YXZrWFFsN2ZIUUctS3lxSzAzTVdhM1JsLWEtajgxZGVHdlpVUWNoQm9jbXhFdUEwUmItMUhIdS1IdjFuemp1Q2dKZlBSWlprb1l1T25vd1Vrc3YzT2JybjNGNmduWDBsbERQTjlFVjdTU2g0b3JRSEQ4Q1RySnMyVHB2Rnk1S1ZBU1B3Y2tmLTZ1ZXE2VjlWTURTN2RNSEpVcGlPUFFGdXNtenZ6N0FhbGRzOGxrTWYzaHdzRE1YWC12ZWJ2Q0xPYnlzTVZ5Wl8wcDNVMVc0S3dJOWRzYjY0amNIdEktX0VkOEhaSXB6Tmk3MXRTLUtDVmpvcWsxVDlRM1FmcmVRdw?oc=5"
+              "url": "https://news.google.com/rss/articles/CBMijgNBVV95cUxPeHRJZDlYalYyYl9oVjFteC01bGdWNXd1cEhTT2ZDNzBvTnBiMkVHVjdpT1htY0NaVjdURVBMMHEwdzZWSnl2Y0tORnM1MTRmR2xnX1pRcmIzZmJzdl9jOWRHUUtsR0N5R0dxSU42bjFRU1VxcEJ3T25GS01jWlpvbThRQUlUTlhNckduMGZ3YXZrWFFsN2ZIUUctS3lxSzAzTVdhM1JsLWEtajgxZGVHdlpVUWNoQm9jbXhFdUEwUmItMUhIdS1IdjFuemp1Q2dKZlBSWlprb1l1T25vd1Vrc3YzT2JybjNGNmduWDBsbERQTjlFVjdTU2g0b3JRSEQ4Q1RySnMyVHB2Rnk1S1ZBU1B3Y2tmLTZ1ZXE2VjlWTURTN2RNSEpVcGlPUFFGdXNtenZ6N0FhbGRzOGxrTWYzaHdzRE1YWC12ZWJ2Q0xPYnlzTVZ5Wl8wcDNVMVc0S3dJOWRzYjY0amNIdEktX0VkOEhaSXB6Tmk3MXRTLUtDVmpvcWsxVDlRM1FmcmVRdw?oc=5"
             }
           ],
           "news_count": 1,
@@ -1239,15 +1173,38 @@
           "last_seen": "2026-06-11"
         },
         {
-          "name": "美滿電子科技 (Marvell Technology)",
+          "name": "美光 (Micron Technology)",
+          "ticker": "MU",
+          "market": "美股",
+          "sector": "半導體",
+          "sentiment": "利多",
+          "reason": "黃仁勳預測AI記憶體需求將持續成長「好幾年」，美光作為記憶體大廠，有望直接受益於HBM等AI相關記憶體需求增加。",
+          "evidence_news": [
+            {
+              "title": "黃仁勳認為人工智慧 (AI) 記憶體熱潮不容忽視。這是我的首選，但沒人談論。",
+              "source": "The Motley Fool",
+              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQanB4ckRKV2NTUkZhamVTRGZlRVZpNUFsaEJhNXlRaXNVQ3M0dUxGSWdHMXlDa0puZGpKU2E5YUk2cmFQT0xnaE1ZMWR0NXpiZ2VwZURZdzFjQjVMNEFsYkpUejh6YXdPSlFuOHNqX3k2cHZxYWpkZE1HOTlvRVBBNEtiYUZaZmlReS1HeEE5UUs2RnhyalA3Uw?oc=5"
+            },
+            {
+              "title": "輝達的執行長表示，記憶體危機將持續「好幾年」—為什麼這個悲觀的預測讓我相信現在是購買新筆記型電腦或PC的時候了，儘管今天的價格令人沮喪",
+              "source": "TechRadar",
+              "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOYWhiZnpkVElnekthOUkwWUkwdlN1ZXZ0SGw5cmhYNWhuZHBmQnE3MGFjMVFaV2c5TjR0LUhEVWpfaVZqUVhBTGRVQy1mYUlpVS1FdnkzM0VDWm5nNkx6aklkMUMxWDczUkp3U1BOMFZIaVUwN2JZaWwxVlhJM3czYVk0Y2hNUlAzeV9jNjJoeW9YQU01bVRIb2h5VzNhOG11NE13a3Y2dVJvcGhROG05REVYemxrbVpBX3JUeWdBTFdVaHFvV0laWU9mWS1NMExkVHhmVnlWbnlYQWZHWHUyd0JCZndXcjdvcWwzOVBHZE5ZU2RhZy04S3lGM1dJMFRBTFo1M0lWRHFXSlQ2VUpWX0xQengwX1dKcVFXTW5QZmR6Q2VrYnAw?oc=5"
+            }
+          ],
+          "news_count": 2,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-11"
+        },
+        {
+          "name": "邁威爾科技 (Marvell Technology)",
           "ticker": "MRVL",
           "market": "美股",
           "sector": "半導體",
           "sentiment": "利多",
-          "reason": "黃仁勳表示Marvell Technology可能成為萬億美元公司，突顯其在AI晶片領域的潛力，特別是Nvidia也看好其發展。",
+          "reason": "黃仁勳認為邁威爾科技可能成為下一家兆美元企業，顯示其對該公司在AI領域的潛力高度認可，為投資者帶來利多訊息。",
           "evidence_news": [
             {
-              "title": "Jensen Huang Just Delivered Fantastic News to Marvell Stock Investors",
+              "title": "黃仁勳剛給了邁威爾科技股票投資者一個好消息",
               "source": "The Motley Fool",
               "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNOTFodUZQRUFSU1phUElDR2dKMjIyRkJNR2plUklxZXlCb3d6NUlKaUZSaHVBWjBJMmFnc2RhSmZnZlF2bjNGNlI1S1F5Nk00dFJCTUNzTUx1WTEwYk4wMXgtN2FFc29oLTVsZXZtTGVRUE12UDE5VG9Ubi1zdENhb1hmODlURnhpWlJCVg?oc=5"
             },
@@ -1262,17 +1219,43 @@
           "last_seen": "2026-06-09"
         },
         {
+          "name": "三星電子 (Samsung Electronics)",
+          "ticker": "005930",
+          "market": "台股",
+          "sector": "半導體",
+          "sentiment": "利多",
+          "reason": "黃仁勳盛讚三星等多家韓國企業領導人，且HBM4E成為Nvidia認證關鍵，三星去年半導體投資居全球之冠，顯示其在AI供應鏈中具關鍵地位。",
+          "evidence_news": [
+            {
+              "title": "HBM4E 成 Nvidia 認證關鍵 三星去年半導體投資 89.9 萬億韓元全球稱冠",
+              "source": "unwire PRO",
+              "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOWDc5Z3c3RnlwdUhvbGprU1pHQklacFF6UHRJU1Zud3Bzd1lFMkRWT0JoblBXUVNJWDdpVkRLUzhHSnd2Qy12cDRESnFzRnhhYmM2ZVlQci1BNkh2ZFpXTnJseVRDdE5RcjVNVUU3cXFReDU2ZkhZSElfQVF5dnVIVEM3Ykpia3lBRV8wTlNoczJUQjA?oc=5"
+            },
+            {
+              "title": "NVIDIA CEO 稱讚三星、現代、SK 領導人為親密、優秀的夥伴",
+              "source": "조선일보",
+              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZFdNUW9BRy0tLWdEWDZpUVo5cG0zek1Od0kyWGxLSmM2emVBSktMdlIxaVRRejh4Z0JLWFc4ZXFMcWIyc2c3YlR5Zm9zLXRsaTN5NWlGY2NnNEQtN1VSQm04V212cjhlRmpKRGpJTGlJTWNVYkdnTkh1WVpXUVRfWkNrQTNrbWZOUDFyaEh3?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
           "name": "高通 (Qualcomm)",
           "ticker": "QCOM",
           "market": "美股",
           "sector": "半導體",
-          "sentiment": "利空",
-          "reason": "黃仁勳宣稱Nvidia將進軍CPU市場，挑戰Intel、AMD和Qualcomm，可能加劇PC晶片市場競爭，對高通構成潛在威脅。",
+          "sentiment": "觀望",
+          "reason": "黃仁勳宣告Nvidia將全面進軍PC市場，直接挑戰Intel、AMD和Qualcomm，可能加劇市場競爭，對高通構成潛在壓力，但其AI PC平台發展也存在機會。",
           "evidence_news": [
             {
               "title": "Nvidia CEO Jensen Huang Just Declared War on Intel, AMD, and Qualcomm -- and the PC Market Will Never Be the Same",
               "source": "Yahoo Finance",
               "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMEZRZUdvTndQYzA5STJKeVhDWnJVTC1RU1RJNTduQUF1SzEwRWdQTm5PS2cteFJIdTlrbm9JNkY4R0NCQ1M5X2xseVF0c0wya3BycENDUEtwM2s3blFjb3dsc3ZmcHVBYzl0NlllUUFnYUhOdWlHbnl1S29BbkMtc1NQVURvbW9ZSEpLQ3RjTDZQd3dOYW55Zw?oc=5"
+            },
+            {
+              "title": "高通股票 (QCOM) 對黃仁勳假代言影片的意見",
+              "source": "Quiver Quantitative",
+              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQeDZRLWtMVlRDNHlHODd0REFFd1E1QnQzWktid0ZrZTRUT1hoSlcxblFYYVFpLXhVaGtxS1lVbUJIVmp4aFU5amlud2RwZzVKcGQ5eU5ZWlJwVTZpc2xMZ3hHNTh6NldfTHNuLTZMVHM1Ukg0RFZmSFNra2NCX1ZyNFRNdWpRTnJJUjlnRVpiMVAtTkp5UVNHbjdKVl80bXdoZlNsS0RiLVJBdw?oc=5"
             }
           ],
           "news_count": 2,
@@ -1284,8 +1267,8 @@
           "ticker": "INTC",
           "market": "美股",
           "sector": "半導體",
-          "sentiment": "利空",
-          "reason": "黃仁勳宣稱Nvidia將進軍CPU市場，挑戰Intel、AMD和Qualcomm，將對Intel在CPU市場的主導地位構成威脅，加劇競爭。",
+          "sentiment": "觀望",
+          "reason": "黃仁勳宣告Nvidia將全面進軍PC市場，直接挑戰Intel等現有PC晶片供應商，可能加劇市場競爭，對Intel構成潛在壓力。",
           "evidence_news": [
             {
               "title": "Nvidia CEO Jensen Huang Just Declared War on Intel, AMD, and Qualcomm -- and the PC Market Will Never Be the Same",
@@ -1302,8 +1285,8 @@
           "ticker": "AMD",
           "market": "美股",
           "sector": "半導體",
-          "sentiment": "利空",
-          "reason": "黃仁勳宣稱Nvidia將進軍CPU市場，挑戰Intel、AMD和Qualcomm，將對AMD在CPU及GPU市場的競爭態勢帶來新的壓力。",
+          "sentiment": "觀望",
+          "reason": "黃仁勳宣告Nvidia將全面進軍PC市場，直接挑戰AMD等現有PC晶片供應商，可能加劇市場競爭，對AMD構成潛在壓力。",
           "evidence_news": [
             {
               "title": "Nvidia CEO Jensen Huang Just Declared War on Intel, AMD, and Qualcomm -- and the PC Market Will Never Be the Same",
@@ -1316,33 +1299,35 @@
           "last_seen": "2026-06-09"
         },
         {
-          "name": "臻鼎-KY (Zhen Ding Technology)",
-          "ticker": "4958",
-          "market": "台股",
-          "sector": "電子零組件",
+          "name": "LG",
+          "ticker": "",
+          "market": "美股",
+          "sector": "消費性電子",
           "sentiment": "利多",
-          "reason": "新聞提及臻鼎搭上「台積電、輝達」兩大靠山，顯示其在AI供應鏈中的間接或直接合作機會，有望受惠於Nvidia的強勁需求。",
+          "reason": "黃仁勳深化與LG的聯盟，顯示Nvidia在韓國擴展AI版圖的雄心，此合作有望為LG帶來新的業務機會。",
           "evidence_news": [
             {
-              "title": "臻鼎搭上「台積電、輝達」2大靠山！ 出關一度飆8％",
-              "source": "中時新聞網",
-              "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9ISW1YWWJFYVVfcEZReFlnX2pxTlFKVjBxS2lyS1Exb181ZXBDcFUyNEtmZmo0MW5POVd2cmE0VW4zbVlOcnlsanpQOGd5aVRHdkR5N0VsMlBSZUVWRi1KU3JMN1F5c3JjQzl1RUxB?oc=5"
+              "title": "Jensen Huang deepens LG alliance as Nvidia expands its AI ambitions in South Korea",
+              "source": "digitimes",
+              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQU2hBUXJQX0gxRFdKMkJOS2pFQXFseURwOVpfLXlZcE01YUVqRk91OVlxb0JJb3hsZzlDQnVsN1U5WkJnaURUTWlEcW5xb3dyWlR0dHIwZFJwaUhwRGl5TmN5MzdZeE8wd085NV94cHlRMUVScWJHMi00UmZfQ2RWdUVXRjN1dnp2cmpYU1hB?oc=5"
             }
           ],
-          "news_count": 0
+          "news_count": 1,
+          "first_seen": "2026-06-09",
+          "last_seen": "2026-06-09"
         },
         {
-          "name": "廣達 (Quanta Computer)",
-          "ticker": "2382",
-          "market": "台股",
-          "sector": "電腦及週邊設備",
+          "name": "特斯拉 (Tesla)",
+          "ticker": "TSLA",
+          "market": "美股",
+          "sector": "汽車製造",
           "sentiment": "利多",
-          "reason": "黃仁勳影片中點名廣達為Nvidia的台灣核心供應鏈夥伴之一，預期廣達作為AI伺服器供應商，將持續受惠於AI基礎設施的擴建需求。",
+          "reason": "SpaceX(與特斯拉有密切關聯)計畫將AI資料中心送上軌道，並採用NVIDIA晶片，顯示NVIDIA技術在太空算力領域的應用，對特斯拉的AI發展具協同效應。",
           "evidence_news": [
             {
-              "title": "黃仁勳感性告白「台灣像家一樣」最新影片點名5大台廠",
-              "source": "facebook.com",
-              "url": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxNaVFsanFGYTRmTlNFRkM2a3BSYTRtNm9IRzgyaTNaNG9US3FuRmI2anpVcDdyQXJKOGtVWm9vMGZHUE10M3gtSXpKTWxsQTgxZHJwcHFQZklfOV9ZS2ZidWR1LU5PUWM5MktVblhMSnNObEFsei1Bbjk5NzBXSkhqNUVveXBzME9WQU5tcTkwTFJhVEg4cW55QXA1bUVNTGFHNXg2dXdVc0xLclJpWmR6N3BFMVpQLWgyVnpYMUh5aFZrelVpQUNVSUZWbkZrVWNpOXV1QXVESVdkTzNWS2JpTjQ2RGl4ZHB2aTFsaklzMlZ0Nzdkb3JSUVhaaXpLOTlrRjRUOVNyR0w1ME1VNVVzb1ZDWTVTRzN2TEh0UkRrenk2SjUwX1hvLU5ZcFZJbkdSU3BMTk85WDFRZEtMLXE2Vy12c0pJUjhDYXRKZEEtNVBTckZZWUUyLXk4aFlwWDBYTGl0SWJ0QWFMMGtfeUV6Qk93?oc=5"
+              "title": "SpaceX要把AI資料中心送上軌道！IPO前拋出太空算力劇本 NVIDIA晶片也上天",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMijANBVV95cUxQU1pMdFZ0RUk3bDFDZDdMSkltNG1ZeFIwRGZ0WjRVWHcwSnN2TFlLVnI1bkpFdmNWQ1o3elA0UVE0d3Jqam9wTnJHMmV3WDlNMzktNEdZazlFeFZ3OWZOU0gyQm01T29vYTVCUWZkdm9saW54UnBMYU1VWHdLdm50b0Z6aHRqd2oxanl5bHB3N1FPdG5pM0dJMndEY2RjVTFmNU9GQUFrRm1vc2syTWhMdmVydXdaZVp1ZE5CVzF4SmxSaU1WaUloUlAxUjN2VkYwVGdiekd6UEpLYkZScVVQSzRxRllBUmZMa0hTUVE4OU9xV3dNZEdxWE55YUtEbk1Ed3l6c3dBUG9PXzZVUUpYS3gwTzRVS1hBQy1ieEJzN3g3OTVjOEdMSmtOSWNPTWc2SDJjQWZrR2hTSk1zSjlhcXJibDR2cXZlRktVMVhvRzU4RmNLX0hIZ04yeW05Yjl4XzZaMFdQcjU3RmFjemRDMVBVQi1rN3pmdkdNYnl4emVBMmlGOURpZi1iRUI?oc=5"
             }
           ],
           "news_count": 0
@@ -1350,50 +1335,322 @@
       ],
       "evidence_news": [
         {
-          "title": "讚哥哥了不起！黃仁勳談美國夢體現 曝追妻搭訕台詞",
-          "source": "TVBS新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1ic2JtQ3Foc2l1UDJPdFNVb05RVk8xMWlOZE1TaXhnNzNYZmNsVVN1RmhlUUR3MFlhY010c2tGTTUzTTBPVTd3WVlGRG92TTA?oc=5"
+          "title": "回憶9歲移民的勇敢旅程⋯黃仁勳：不預設期待，反而更懂得珍惜眼前的一切－中央社",
+          "source": "商周",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE81QzEyU1FFbThEaHFVa3BIRXdGZGpIVjhFU0c4cjBZODl3My15NXZENmVSTFp1elZ2dHBzOS1Ic1JVbnFULTJMdnE1c0E1dzF1VHd3OU5hQnRVWEpmQUk1aTNHZldHZw?oc=5"
         },
         {
-          "title": "Tether 領投德國機器人 NEURA $1.4B、估值 70 億：Nvidia、Amazon 共投",
-          "source": "鏈新聞 ABMedia",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOX0NIMXkxT0V0YmR3SDAycHprbDFfWmhONm5HWmpYNlpKTm5qay16WnluZWJwMTQ1VFcwQlZNN053SmFFcjJYSWxxYVMxSk1uUEUzb3JmSExINU5nWDdxYUZZTXdGd2tJa0xlek8zREhoY0FsUjRkeEVFRjJnVjNxcXIwZl8wSFZyOE9pWWc3OUQ2c3JhSUxfUkF1c3lnQXpYd3NoMC14dGE1ODJ0Y1l6QnJGSENEQUprcUlITEhvZm9xVDRLQ2JRajhR?oc=5"
+          "title": "黃仁勳選才標準曝光直言「智力像商品」：我更看重這能力| 上報",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE02QXIwcHVScF8tYWJZWnFCQlBVMHludExf1w?oc=5"
         },
         {
-          "title": "SpaceX要把AI資料中心送上軌道！IPO前拋出太空算力劇本 NVIDIA晶片也上天",
-          "source": "放言Fount Media",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9VWkJ4d00tSzlYWjVtSmNNNmhQLTBGUkZMZk1qNEJ5V0dmNFV4UE5IM2lJQWhGXzBUNjlrOFBMYnpkR2FiRjVZeXNnaFNjc2RtV1E?oc=5"
+          "title": "黃仁勳告白台灣像家一樣！訪台回顧片點名5台廠 秀台灣國旗超罕見",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB3dE9iQlBBR09GMm11MjVEU3libzFGVmlmVWZnNXhnOGFhUkt4SnJQajVUTTlRX3F4NlBWbnpLdG8ya2dfYXkxMFdLbkFQa3Uzd2tEVE14MlpBZkVFRFI40gFkQVVfeXFMTk1KZUZVbU5zY0JqUzYtNzlDSkJiZXk0MUVXcFNJbDFCTTZmRHNsRTljWnVFRkxyN09YRlk4WTFxalhQcExFTmtnb3k3RFZqMlJJel91ZXdnMVJJd3ladmlqVTQwRQ?oc=5"
         },
         {
-          "title": "黃仁勳霸氣征服韓綜！ 與劉在錫對賭100萬韓元｜#鏡新聞",
+          "title": "台積電CoPoS估2028下半年量產 郭明錤：輝達AI晶片採用",
+          "source": "ETtoday財經雲",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBEYmFvNl9TSE05d0RyOE1RNW9DSUtaaE9iN213cC1icThvM1VwU0QzVTE2RDZFZFBpTnBNSHQ0UGFtYnZwVk1vZUV5Uk9NelFDamfSAW5BVV95cUxNNzBiSVpxeDN3UGo5RXA5eTNUeWN4YkkwUGIxWmNZWlYzU1J2TWZHOXhObXktc0ZjbFE1ZlpLelR6MlBxd2dhTTBwcy1kWFVvN1ptdEdsb25wLTlMMXhOZzJRMkptZzVmWllUc3BIUQ?oc=5"
+        },
+        {
+          "title": "聯陽EC方案傳打入輝達AI PC平台，最快H2量產",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxPVXgzNU5iZFpsd2s4cHdsaVpNUGF6eUhMT2JUMXEzRG4wU3VpNlBDSUk2YldpOVEwRENzcHZoQ0tJR1JGMkpNRmdhX3VqQmFsZVd6UzgyMlpkQzNQaXM4dDVMLWZvNHhoenM5bTRVTUJNQU1GUExZZ2FncTI3R05PT0hvYUhHdnE5SGd4WUs3QTlMTzJGY2Zkc1VqZHpDaG50MThTUFFWWXJqVVdQbWRaTEpCQVluVmVlTjR3OU0ybzEyaUxYaG1JNnFUMFRtNG9MZDFzaWtJeWl1MEE5RExDRGQ5RnRCSGt2N3dSSkhYLUZLblhXME1zUGRzc09yc2JlbzFTOE42RHp3MEZhNjgwUGlHQ2dKVkprQ01BcQ?oc=5"
+        },
+        {
+          "title": "黃仁勳登《劉QUIZ》收視創年度新高！超越比爾蓋茲成冠軍 一句話讓劉在錫當場喊「您是大哥」",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxOanl0aGFpSTBVTFM2Wmxha3VuY2hnQ2NPTmtFZWdtaXdJcjQ5b01HRHlBZmE4Z2ZCSk5jOFRHaktGLVJiMFFrV3ItMG41LTdEb0cxRExPbkxNamtxZWhIdEJ3ODBKdFlxdTM0WjhKUW1odG1tVHptY3NwTnE0VDFHZF9VU19WZjFhZ3RheXhpUkRnYzE5TzIzZGdxelVWSVBucVN3c2FfM1NtMG5IQ3kyN3h1aWt6bmFtV3Jzb1BQZGpCeC1PSlVlMkd2Y2t1TmxlTXExWHFSbzAxODUtT3ZoaFdqcWppVXZ0aWtuTnFPR2hOTTJkOVB4QmJEYTRlcmpGekpoWnlYdjQ5SkpaN0RHQ3FXRjZBR3pzb3FtZTZhUFR5dWtpaThmaUYyNGhvS21NTF9oaGg?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMixgNBVV95cUxQSy1TclVOT1R0bmJRSWVVMHBBcEZaNHlnakRKZlBwLW13b3R1NC1XcFp3WGNPalZiMDZoVTdmSmVpUXpTWi11M1BvUWVxNkl6eDg1V1BxWGJIZlQ4cXJxVnd4bmhOZXpHUlBmNW15ZGJKM241N3NhbHVEcVVWTVZFS1ItbUhCRjdaU2kzY3RKekxlbXloeEV5YnlaclUzNzNBTlR1aVpndmRwMFA5QVNyb3U1RzdhbFpvNWRGd3JXYzlMZ3lMcy03dWIwVktkRkZmOWtyZ1Q4U3Q4dnRsbDNZUzVGNk1NTzRkbFU0cXhUUmZYSkVNbVpBVUwxdzFLdHNlRlRrQTl4VFNmZHpiU2hfR2o4UU1UM1ViR3FFQzRjOXBLQVIxbHhFUGVscS15dlN3d0hDNUJUUHNKYlZoSzhWSDBoSG1YT0VHTFFfY3pPN1BVUDhGdFlYMDRuTDlXdGtFclhMWkxoSmtsSWdmV0IwSWltX0hRODFqMGdDYWlqYUdEenFNVDFtRjdkOG81azBVcGNPY3d1V1pMbXRraHdnVldDUW4ySFZ3RWNEdUxTTkFDV2dQcGl6WVNYOGd3Mk9rQnNUV1dR?oc=5"
         },
         {
-          "title": "HBM4E 成 Nvidia 認證關鍵 三星去年半導體投資 89.9 萬億韓元全球稱冠",
-          "source": "unwire PRO",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOWDc5Z3c3RnlwdUhvbGprU1pHQklacFF6UHRJU1Zud3Bzd1lFMkRWT0JoblBXUVNJWDdpVkRLUzhHSnd2Qy12cDRESnFzRnhhYmM2ZVlQci1BNkh2ZFpXTnJseVRDdE5RcjVNVUU3cXFReDU2ZkhZSElfQVF5dnVIVEM3Ykpia3lBRV8wTlNoczJUQjA?oc=5"
+          "title": "黃仁勳認為人工智慧 (AI) 記憶體熱潮不容忽視。這是我的首選，但沒人談論。",
+          "source": "The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQanB4ckRKV2NTUkZhamVTRGZlRVZpNUFsaEJhNXlRaXNVQ3M0dUxGSWdHMXlDa0puZGpKU2E5YUk2cmFQT0xnaE1ZMWR0NXpiZ2VwZURZdzFjQjVMNEFsYkpUejh6YXdPSlFuOHNqX3k2cHZxYWpkZE1HOTlvRVBBNEtiYUZaZmlReS1HeEE5UUs2RnhyalA3Uw?oc=5"
         },
         {
-          "title": "黃仁勳秉持「100%人生哲學」：真心盼別人成功！ 5段金句點醒眾人",
-          "source": "ETtoday星光雲",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1hakhOU2xjdTRUZXY4SnRJUkw0VDl5czdjemdkcXVJN1Vkeko1SDBJN3J6YnpMMjk2MHZjd19TWGM4TTJaSlVOMHJiaUpyQdIBakFVX3lxTE9obEJrbXFfZ0pNZnZCUzJIb0FvZEpfU1R4WG1WTWtmbmxEVEJGOFg0bkNDMk9aVXY3SFBpOUNCaFFXQXgyMmJCa3N1YUs5d214SU1ZbWx1UzVYbExiM2s5Mm1ka1o4MmJ1T1E?oc=5"
-        },
-        {
-          "title": "「台灣一直像家一樣」 黃仁勳短片致謝台積電、鴻海等供應鏈夥伴",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMi-AJBVV95cUxNbXZ1VlhIT2R5ZTZhRV9uWlExZDA1QjU0UnRYdm1NUUdUVEJ5bEFVeXVvLWh6OU1hV1V5dm9HVkozbGdlM0gxT3RuWk9sUHdDRklfeW94Zm53VFVBc0dsTjVHTG9tQ1FtdDNKVVlldTExOEE5cklyZzIwSXVSWGtUT2lEYWpaZnk0OEx5VFNmU240RzJJSE5FYS16QVFkM05aeVlydm1Ed1ZTZEw4UEFQbGt4c0RmaWt5bXE3Qm5fcWVKaGpSU19OMTFwYnJRLXR2ODd5Sm43V2JQV256TTJYMUtyLWNaYnRhT1dSNXVsZFVCVEdGUlNRTHBkeGQ2eVpTLWI3cHppTUFNMGxabVhQYXJVWklUWDJJZ0hleFBVZWVkLXlYdnk0RE9KNjRNWnY4X1RueG9JOGJiU2FoVndQaHdNdjFMSmZydXM3Z2JsNW81bnhIR2tBSGs4aGZBTDJEcHZOZndSelYzYlhUQlhhLVhMdnJnRkNO?oc=5"
-        },
-        {
-          "title": "SK 擬在日本打造 AI 資料中心、和輝達合作",
-          "source": "TechNews 科技新報",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBlV2t6Y1M3X1pwdVRaYWdQek0wekoxYUpLUUNOb01YMjhaam1KNDlXZWtTTy1YZlBRVzZBZHNhS3JrbERsd29pZTZDTVl5Q3o0UGZ0SEpTRjNGLTY1Ulg4dVNFOXRRX1FSYVNBa1hIcHlGV3ZtX25yVkdFeks4bEk?oc=5"
+          "title": "Nvidia CEO Jensen Huang Just Declared War on Intel, AMD, and Qualcomm -- and the PC Market Will Never Be the Same",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMEZRZUdvTndQYzA5STJKeVhDWnJVTC1RU1RJNTduQUF1SzEwRWdQTm5PS2cteFJIdTlrbm9JNkY4R0NCQ1M5X2xseVF0c0wya3BycENDUEtwM2s3blFjb3dsc3ZmcHVBYzl0NlllUUFnYUhOdWlHbnl1S29BbkMtc1NQVURvbW9ZSEpLQ3RjTDZQd3dOYW55Zw?oc=5"
         }
       ],
-      "news_count": 101,
+      "news_count": 100,
       "first_seen": "2026-06-09",
       "last_seen": "2026-06-11",
       "raw_news": [
+        {
+          "title": "回憶9歲移民的勇敢旅程⋯黃仁勳：不預設期待，反而更懂得珍惜眼前的一切－中央社",
+          "source": "商周",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE81QzEyU1FFbThEaHFVa3BIRXdGZGpIVjhFU0c4cjBZODl3My15NXZENmVSTFp1elZ2dHBzOS1Ic1JVbnFULTJMdnE1c0E1dzF1VHd3OU5hQnRVWEpmQUk1aTNHZldHZw?oc=5",
+          "summary": "回憶9歲移民的勇敢旅程⋯黃仁勳：不預設期待，反而更懂得珍惜眼前的一切－中央社 商周",
+          "published": "2026-06-11T07:41:07+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳選才標準曝光直言「智力像商品」：我更看重這能力| 上報",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE02QXIwcHVScF8tYWJZWnFCQlBVMHludExfaTMwS1FFV0FPVTU5cjdBdkN2eVU1VXBJMkpEVzFEYUl5MHZna2cyUkZPSW1HdHctT2dsWTNtRGt4eW95SV8ySmlkV1NUOXRBYmdoeVRGWjZMYWhT?oc=5",
+          "summary": "黃仁勳選才標準曝光直言「智力像商品」：我更看重這能力| 上報 LINE TODAY",
+          "published": "2026-06-11T07:27:03+00:00",
+          "origin": "關鍵字「輝達執行長」"
+        },
+        {
+          "title": "廣達科技股價回調，是否已成為超越Nvidia的最佳選擇？",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPdTg3M05WaFMyTjhlWG9qNU41NmdYMGpRanRTSlU2VVF1dGZKck1IdUpwWFZtbHNNRmgwUDJiTE5IVG93ZS1fN1pZZVF5bnJIX2J5VXV5bUpadlhRcnBJVmNldXVyU1V5cXZnbzhuVUI3VEFZRV9rTTFBaUFNb25PNFlkZ3lSeUhSaGdpQzF3?oc=5",
+          "summary": "廣達科技股價回調，是否已成為超越Nvidia的最佳選擇？ CMoney投資網誌",
+          "published": "2026-06-11T07:09:29+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "就要1特質！黃仁勳親揭輝達選才標準：不要最聰明的",
+          "source": "東森新聞",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9HX1VHamdjaVJZUUR1SmxIdDRSNXNnUU9lWFJTRk9LcDRtc1VDWDJMUl9LbWdSYlFNNjVkOTZJRTVZWUJEZWgzNW1zemNfb3FpUFpiN2Fvbw?oc=5",
+          "summary": "就要1特質！黃仁勳親揭輝達選才標準：不要最聰明的 東森新聞",
+          "published": "2026-06-11T07:02:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳揭輝達徵才秘訣！「慷慨品格」勝聰慧才智",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPdmp5cW9NWVpqZkJBS3cxdmZWZ0pFVFJwbDdGQm1rSktFOVo2T0tTLVdxekdlTU5hZHloZS01dVowcmZhX1BiMGl1THRxcEFqVkl0bGRFU3NsRFI1M1c1VU1OcHBJdWJxVEJhcW9jMU9HQmFTVW45c293M2hiakhLdS1Rb1A3eVFTYms0LVE1VmJtMG5lazk5NlRFd3cwSVVGM3BGNDBzd05sRzU3NzFyT1ZiZ1lrd3liVThhbDBUeHlMMGFDb1RXUzdJWXFKdVFvR1o1MVNUemZCZjM1eGhKVmZlZUxsQmNKY3N1S0dvckxUOGhVNW5hOWFtSGVmRjBrVTIzNmpTWVJOX1YxN2pTbkJkdEVDRTNFeDdsaVNpbTU1TGNvNGd2TUlLQkNhRjhTWlJOdDRxdjFIdw?oc=5",
+          "summary": "黃仁勳揭輝達徵才秘訣！「慷慨品格」勝聰慧才智 Yahoo新聞",
+          "published": "2026-06-11T06:52:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳揭選才標準 直言「智力像商品」：我更看重這能力",
+          "source": "上報Up Media",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1OZm5TZER0Z0c1YlVTWXBMN3NGMnpzVVA5dklWeFdfeHoyTnh0d0RhYVBuVmktYnZEZV9qMUx4c2EwZDhXSGRGbGluZUxVc0FlazRNMzE3SXVmYTFBd250VEN3?oc=5",
+          "summary": "黃仁勳揭選才標準 直言「智力像商品」：我更看重這能力 上報Up Media",
+          "published": "2026-06-11T06:45:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "AI 時代不缺聰明腦！黃仁勳親揭輝達徵才1特質最重要「這種人無價」！",
+          "source": "經濟日報",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9lUlpKWkZ3VDhuelgxSDJFNHBDM1VHcEFSaHIzZUVkQldxSGhYWS1XbVdRV0JaVTlBbmZrYjVRRjVPVkJWamp3dzZiQ3BZOHFXOUZqU0NrSElCdG9TRnl2bkhBSzNTckk5NUJ2bnNUOTZWWTNvaFHSAV9BVV95cUxPR0JkVGNZNklZRlFka3JReVZzRzRWaGY4aTBwbk82azZoMG1WanNNLXhkdHl4X003NUNJN0FBZk12OUdfcUQ0V25RMF85NlEzM2ZBTmJqYWdvVmZtMTEydw?oc=5",
+          "summary": "AI 時代不缺聰明腦！黃仁勳親揭輝達徵才1特質最重要「這種人無價」！ 經濟日報",
+          "published": "2026-06-11T06:44:41+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "記者編輯部| 【梅花專論】別只追黃仁勳 我們更需要AI國家戰略",
+          "source": "梅花新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE93ckxJRkZJZEt1TllfQUlFWFZqTlZuams1TkdxOVJCQ1AyZVFOREc2NFZBdktfNUp1ckhMb2dDWDFYNEhrMUJBZE15cTg5WkNpdWVIUVhJUFo?oc=5",
+          "summary": "記者編輯部| 【梅花專論】別只追黃仁勳 我們更需要AI國家戰略 梅花新聞網",
+          "published": "2026-06-11T06:43:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "台積電CoPoS估2028下半年量產 郭明錤：輝達AI晶片採用",
+          "source": "ETtoday財經雲",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBEYmFvNl9TSE05d0RyOE1RNW9DSUtaaE9iN213cC1icThvM1VwU0QzVTE2RDZFZFBpTnBNSHQ0UGFtYnZwVk1vZUV5Uk9NelFDamfSAW5BVV95cUxNNzBiSVpxeDN3UGo5RXA5eTNUeWN4YkkwUGIxWmNZWlYzU1J2TWZHOXhObXktc0ZjbFE1ZlpLelR6MlBxd2dhTTBwcy1kWFVvN1ptdEdsb25wLTlMMXhOZzJRMkptZzVmWllUc3BIUQ?oc=5",
+          "summary": "台積電CoPoS估2028下半年量產 郭明錤：輝達AI晶片採用 ETtoday財經雲",
+          "published": "2026-06-11T06:41:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "黃仁勳前腳走 奧特曼後腳到 下周訪韓會三星、Kakao",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0zdXlPanBfbHZrRUJ6ZTZWdE53Ylg1QTZIQWUwN2xLUnpIWjV0VWwxellVTXdrN2FfbE5oRnpQbWNhQXp4aUhXTFNwdkRJZ1dyUEVtMUpJdmVWM25tNXBN?oc=5",
+          "summary": "黃仁勳前腳走 奧特曼後腳到 下周訪韓會三星、Kakao 工商時報",
+          "published": "2026-06-11T06:39:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "聯陽EC方案傳打入輝達AI PC平台，最快H2量產",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxPVXgzNU5iZFpsd2s4cHdsaVpNUGF6eUhMT2JUMXEzRG4wU3VpNlBDSUk2YldpOVEwRENzcHZoQ0tJR1JGMkpNRmdhX3VqQmFsZVd6UzgyMlpkQzNQaXM4dDVMLWZvNHhoenM5bTRVTUJNQU1GUExZZ2FncTI3R05PT0hvYUhHdnE5SGd4WUs3QTlMTzJGY2Zkc1VqZHpDaG50MThTUFFWWXJqVVdQbWRaTEpCQVluVmVlTjR3OU0ybzEyaUxYaG1JNnFUMFRtNG9MZDFzaWtJeWl1MEE5RExDRGQ5RnRCSGt2N3dSSkhYLUZLblhXME1zUGRzc09yc2JlbzFTOE42RHp3MEZhNjgwUGlHQ2dKVkprQ01BcQ?oc=5",
+          "summary": "聯陽EC方案傳打入輝達AI PC平台，最快H2量產 Yahoo股市",
+          "published": "2026-06-11T06:36:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "郭明錤曝台積電CoPoS 2028年下半年量產 輝達這款AI晶片將首度採用",
+          "source": "知新聞",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9uX0l2cnJUMGFEbm5IYzBlQ2VvNEF1XzVhSl80SXk5LXgxVWpxT0I1Z0NfVG1Td0JTMmtSMExOenFEcUFzdGkzZWRhNGdhbm1TcWFuV3MwcFBfS19tMWxxMUhFR0ZIRjlGMEI4TXBKVQ?oc=5",
+          "summary": "郭明錤曝台積電CoPoS 2028年下半年量產 輝達這款AI晶片將首度採用 知新聞",
+          "published": "2026-06-11T06:35:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "黃仁勳首登《劉QUIZ》！又寫「一紀錄」超越比爾蓋茲",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxObVVnZ08yYnBrOUJCZkhxS3U5SC1oVnk1ekdWRC1SMFJ1SE5SY3o1SWdvZS1vQzFqekF6MDJVbjQ4LThDU0tRcGQtRHlrb2xmZ2twbDREakFtMUs1OWhPNHRwSUFaRGdYcmZNMUNaYlVVNkxGVUlmMGRKRzVCeXR3SXBIaXFpUTJoeDZIcm5pWU1iN2JoRHFjdVQ3allMM1dNR2kzb19sVXUwUmI1QTRnLWZkd1J1TE1aZk5TSTcxV20yQlRDMlVXYUt0UmJ2WHpRRU8xaGFkRUJlakp3MmlwSmxCRWZfQVM0d2tJUndidWhRTDFzbHVhZVY1NXFteHVRMV85NWxBVFNoV25GS3RQQVpSY2gtdkZ1RVpCcUtR?oc=5",
+          "summary": "黃仁勳首登《劉QUIZ》！又寫「一紀錄」超越比爾蓋茲 Yahoo新聞",
+          "published": "2026-06-11T06:30:28+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳告白台灣像家一樣！訪台回顧片點名5台廠 秀台灣國旗超罕見",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB3dE9iQlBBR09GMm11MjVEU3libzFGVmlmVWZnNXhnOGFhUkt4SnJQajVUTTlRX3F4NlBWbnpLdG8ya2dfYXkxMFdLbkFQa3Uzd2tEVE14MlpBZkVFRFI40gFkQVVfeXFMTk1KZUZVbU5zY0JqUzYtNzlDSkJiZXk0MUVXcFNJbDFCTTZmRHNsRTljWnVFRkxyN09YRlk4WTFxalhQcExFTmtnb3k3RFZqMlJJel91ZXdnMVJJd3ladmlqVTQwRQ?oc=5",
+          "summary": "黃仁勳告白台灣像家一樣！訪台回顧片點名5台廠 秀台灣國旗超罕見 自由財經",
+          "published": "2026-06-11T06:29:01+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "感性稱台灣一直像家一樣! 黃仁勳點名5大核心台廠 VeraRubin架構全面投產",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMikgNBVV95cUxPRmVwVnBQVHVYT09XYUY4YndINzFWNXlKMF9HMW1Kb0IyMjJweVIzLWdjME50Y082bEdpZUJYR3doNVpIMnNoc0M3SXFyQm80X1R6NndTb3BrV1psN0s3aEIxZV85aXJrczFZVWR2a3BudkNGOWlqaW9XNm1uaDRON0ZoT3BvTWg4eFY4NmNwUWpNeGF5aW1uSEdFMDFsS0tWakhOT1JfVkdWRHNhaXg2RFZib3dkcTFpNW5PY0c4d3FsdnF1NkdQcllrTENobWFLZkExMVl5d1dVVG8zcnhBUzg5VUtIQ09tWHp4ZHJtUW4xZGc3S2NTUUUzWHJvUFNSU29ZMEhlRjVIWWpjSFljTXQ1aUJ4WWc4OXBpVVlmcXdyZURuVjE3dURfeFVqR3dLd1Q1VzR5cHdXTDZXOC1RSk9ZQ2JpTUIyZkxlUWhDU3hJLW01RTFSRlU5NFE5TnNEa1RZOXZ2dzY5ekZsNDh5ZC1SanJ2UGl3S09ZbENwem1sNDNWUUpUbDNSdWx0Tm1ucnc?oc=5",
+          "summary": "感性稱台灣一直像家一樣! 黃仁勳點名5大核心台廠 VeraRubin架構全面投產 Yahoo新聞",
+          "published": "2026-06-11T06:22:11+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳背板廠商參與波蘭歐洲台灣形象展準備打進歐洲市場- 產業",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1zWi1ObDZURDJlYnQtenpYaGJuc2c1dzhid1JSQnE2VndBdTdhVHRvaUQyaExNY0FsVmhGdk00ZGo0MllaOXJfOXZBd29LaW4wMnFRcWYwZHZKcnEwY2pZ?oc=5",
+          "summary": "黃仁勳背板廠商參與波蘭歐洲台灣形象展準備打進歐洲市場- 產業 工商時報",
+          "published": "2026-06-11T06:21:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "影／黃仁勳登《劉Quiz》霸氣對賭100萬 輝達股價昔日僅銅板價劉在錫哀嚎：早知道",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMimgNBVV95cUxQZEFoajFXWnJmSzVlaHJyRHp5SnRseHBtTi1QTDBiWTdmZjNBTDc4WGZETGhaSU5fY20zT0NBbWtoVXF0WkpTc3p0VEtoRkxTdUxKRWR6UV94cEpIYWFWcG9VQ01Ha0Z4TU1xYnRLcGtvbkV6dW9jNnF1VTFQRUt2VDRLeDYzbnVvcms4RXB0ZFJXalp4TGtsZVJTWFRoTEQ2RVA3YXdxUGJnNi1tcWN6SXhobGZMZXktamdQc0FtNGJPLVZfVHUyQzNaN2NnR3Z5WGk1dTRibU04QnpsTUd6SVNfLTVoQi02cy1HYkNSWm83clBaeHFhZzE5MlBPWXF0NXQtd2dqZ3Y4RWNxemNWWFMwSHA3NjFqa3NOMEh6Rml3aEUzY2Q0Qmw3UXpVQkJYalV0QkNzVzZhN0lBR1BHVTVUdW9wall4Y0hEVElKUF9NdmhDN2VtS1JRNjRKSE9FR1JmM25uNk5kdW9IUGRxZTZ2LUs2eVQxdzQ5aDl1NTl4RG9qZXpXSlJqa01ncGNXWVRhTS1ra21HQQ?oc=5",
+          "summary": "影／黃仁勳登《劉Quiz》霸氣對賭100萬 輝達股價昔日僅銅板價劉在錫哀嚎：早知道 Yahoo新聞",
+          "published": "2026-06-11T06:19:32+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "立志從醫與追夢輝達的武陵學子分享讀書心法",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxOSEljNFBHWFVYUkNxekJab2xvVnhhaXR6SXlISWo4Tm5WZjJuT1FBQW9MUGhwU0hGMDBiZlBMc0RidURZcFFQYWpXS1BnZmg4Y2hHS1dfREwtVjh5dTlYMHZSRXZYb05OX2cyc2xoeXpDTDZNZU5rb1ZwNlU5aVVMM2c2cWZyNDcwRFNmRk1KMEVuaTFJSTNITGl0eTVjeVdlYW5RXzljUjdJdE9BeGRMaTVrV3Njam84cXFGMlRUWVJ0eTU3UG1EZHBaSDYxWXNiQ200UUN5UXdqUm50YmFkaUxVOGw4ZGctcUdTbHFpRm0ydHM0ejU1anVEOUhyYlZDcE4wODNIekV3OEJFeVJnTFBXdzRjZ1prNXVFZTdVSXdSckxvU1lwNXRiaVRoLWdmRWROS0g3TURpUVd0VkNCaXBiOA?oc=5",
+          "summary": "立志從醫與追夢輝達的武陵學子分享讀書心法 Yahoo新聞",
+          "published": "2026-06-11T06:16:12+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "傳聯陽 EC 打入輝達 RTX Spark 平台",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA1OE41ZzU3YURVYnpQVGNwaDhCdFVZdEF1ZGRxa2tzWlFTbjJ3RElPZWVHT01lRUVyQlltVU11MHlYSmo5ZzNFODNCekpoWDVN0gFWQVVfeXFMTkc4a0Y0WTh5cGhVeGtEQnRHaThyMjdpWVJWZkRFcnRZdUZqeTNwdWJIa3hNWmVFa01KM05pTXpnWXREbXVQWnd6dTNfU0FQVGlmc25vVEE?oc=5",
+          "summary": "傳聯陽 EC 打入輝達 RTX Spark 平台 UDN",
+          "published": "2026-06-11T06:15:49+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "黃仁勳登《劉QUIZ》談9歲洗碗歲月 一句話回應自己人生",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxPc0VLSFllVENQOXN1ZFlNVXdVVG1KSjNCT29ZTHdTZ0h2cE1HdDFrQUV1cnFIbHZfLWtmeHl1YWdoa1d0Z1Z0V3FUYWtsRlA3ZzBLX3hpM1owa1k4QXozSkRaelhBSlQzdk1GVW83NkNUeWZqSjRUcjI0YjdwR3B4Z0FrWlY4bHlCckYxZkU1Q08wQ2cxUUNWemVsc3FzNkM3cFhpTHdXSVdObHlaTkJhbzlOVUFha0NGcmVqd2gxZ1JUZFJPWXRoejJYel8teE5tbXdVQmJ4LV9IRmc4SU9VMFY0X254dWN3OHNWLXhTTFJMcE5UOFBOYnpPY0dENEt5MXcyYXZGR3RTa3N6MWJEemFnTXljZnV3QkFCQ1FEaW93QXFKdnZJWkFveVlVbF9UQ21zSUZLZ3VhZTdRckludU9R?oc=5",
+          "summary": "黃仁勳登《劉QUIZ》談9歲洗碗歲月 一句話回應自己人生 Yahoo新聞",
+          "published": "2026-06-11T06:15:01+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳登《劉QUIZ》收視創年度新高！超越比爾蓋茲成冠軍 一句話讓劉在錫當場喊「您是大哥」",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMixgNBVV95cUxQSy1TclVOT1R0bmJRSWVVMHBBcEZaNHlnakRKZlBwLW13b3R1NC1XcFp3WGNPalZiMDZoVTdmSmVpUXpTWi11M1BvUWVxNkl6eDg1V1BxWGJIZlQ4cXJxVnd4bmhOZXpHUlBmNW15ZGJKM241N3NhbHVEcVVWTVZFS1ItbUhCRjdaU2kzY3RKekxlbXloeEV5YnlaclUzNzNBTlR1aVpndmRwMFA5QVNyb3U1RzdhbFpvNWRGd3JXYzlMZ3lMcy03dWIwVktkRkZmOWtyZ1Q4U3Q4dnRsbDNZUzVGNk1NTzRkbFU0cXhUUmZYSkVNbVpBVUwxdzFLdHNlRlRrQTl4VFNmZHpiU2hfR2o4UU1UM1ViR3FFQzRjOXBLQVIxbHhFUGVscS15dlN3d0hDNUJUUHNKYlZoSzhWSDBoSG1YT0VHTFFfY3pPN1BVUDhGdFlYMDRuTDlXdGtFclhMWkxoSmtsSWdmV0IwSWltX0hRODFqMGdDYWlqYUdEenFNVDFtRjdkOG81azBVcGNPY3d1V1pMbXRraHdnVldDUW4ySFZ3RWNEdUxTTkFDV2dQcGl6WVNYOGd3Mk9rQnNUV1dR?oc=5",
+          "summary": "黃仁勳登《劉QUIZ》收視創年度新高！超越比爾蓋茲成冠軍 一句話讓劉在錫當場喊「您是大哥」 Yahoo新聞",
+          "published": "2026-06-11T06:12:03+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳9歲掃廁所、當洗碗工！揭輝達瀕臨破產血淚史 靠「100%人生哲學」翻身",
+          "source": "蕃新聞",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBTNUpycmQ1Y3ViLUpSRV93YmRkanpwbWYzc3BtbzRCZmlXLXpCMlgzUlpvaUhJV1c1ZE9CZGdJMnVxYlh2bXBvMHc1Yy1UdWpGOWc?oc=5",
+          "summary": "黃仁勳9歲掃廁所、當洗碗工！揭輝達瀕臨破產血淚史 靠「100%人生哲學」翻身 蕃新聞",
+          "published": "2026-06-11T06:10:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "感性稱台灣一直像家一樣! 黃仁勳點名5大核心台廠VeraRubin架構全面投產| 財經",
+          "source": "Newtalk新聞",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1feGR1eDNmeTZaaFd0U1lPbTRwaG93UE96TDdmelRla0RDYWRjemZPWjNUSkVQLWtiSVE1TmNXUE90ZnpYV1J1UFhiS0xiYUhPMkFSUHpqUUZZS2M?oc=5",
+          "summary": "感性稱台灣一直像家一樣! 黃仁勳點名5大核心台廠VeraRubin架構全面投產| 財經 Newtalk新聞",
+          "published": "2026-06-11T06:08:00+00:00",
+          "origin": "關鍵字「輝達執行長」"
+        },
+        {
+          "title": "黃仁勳引爆AI代理熱潮！首檔「美國戰略智造基金」問世 兆豐投信靈活卡位4大題材 | Newtalk",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9nQ2dtMGN0Y1NLNHhtQkVKTGIxZG1kZlZUTHNuelRDOWVaenFxVWhudFI2VmxIYllXT19IbkpJQXJwRWlPd0pHOUxodWo3clFBalhnZzNB?oc=5",
+          "summary": "黃仁勳引爆AI代理熱潮！首檔「美國戰略智造基金」問世 兆豐投信靈活卡位4大題材 | Newtalk LINE TODAY",
+          "published": "2026-06-11T06:07:04+00:00",
+          "origin": "關鍵字「輝達執行長」"
+        },
+        {
+          "title": "黃仁勳魅力太強！登《劉QUIZ》收視飆5.7% 「狠甩比爾蓋茲」寫新紀錄",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPS1RCSUJmTlEwQ1EwQjN1OWZkSEJRbXRHZ1pPbEpUMTZLeGlhM3pYX3lIaE9lSkczb3p2UncwRmVNUDlXQkl4bEtPMmNNUHV4Q29UZ1Bvb0dSa01LTHhGaGtqczVTb1lqR0xoazQwMHV4Zy1WTUNYdnNXOUdyMldCNHF0TTl3UnFZTlBlMGJYWHFzZ2RWTTR0SnNNTTJSRkMtbG5OZEpkTXNsRGo3VElUWVFxTTVQZ0ZXMnRESWY0OXIwZzdhbmVRd01iM29CZ0RCUTIzSEttdHJGcjJlRE9tVkxkTjZvUmo0cGdMTkxTQ1Y?oc=5",
+          "summary": "黃仁勳魅力太強！登《劉QUIZ》收視飆5.7% 「狠甩比爾蓋茲」寫新紀錄 Yahoo新聞",
+          "published": "2026-06-11T06:04:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "AI時代不缺聰明人！ 黃仁勳曝輝達徵才標準：1特質一定成功",
+          "source": "TVBS新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5EVU5icmNzZWNlVk83NG9ZQllXR2ZfM01HSkNadWFzaFJObV9uck1UbnJiNW1HWkJGcTNaTXAzMGJLTzNmWk51aEUtLTZsQQ?oc=5",
+          "summary": "AI時代不缺聰明人！ 黃仁勳曝輝達徵才標準：1特質一定成功 TVBS新聞網",
+          "published": "2026-06-11T06:00:00+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳登《劉QUIZ》收視破紀錄！ 自曝不戴手錶「嚇壞劉在錫」",
+          "source": "太報 TaiSounds",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9KRjRSbmthd29zUFFGWmJhd3pFVEVpa2MyTTZYaEVTaVA2bkFqblgxc0VkMzl2Y0hURmV4c29sMkloR3hTYU5hSzB6NWxNY0RYN2w0dE5sQ0VrQ1VkOEE?oc=5",
+          "summary": "黃仁勳登《劉QUIZ》收視破紀錄！ 自曝不戴手錶「嚇壞劉在錫」 太報 TaiSounds",
+          "published": "2026-06-11T05:55:47+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "【COMPUTEX 2026】微軟發表 Surface Laptop Ultra，搭載 NVIDIA RTX Spark 平台、效能創 Surface 新高",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAxLTZDTWYzalFaT3dMT0I4S3R6YnEwalhuYk5ITGFOOEFzQjJqVlVCNG5teFd1MVJFaUNBelVWaXRiZlZ1b1lWS0Z5ZGV2U1Z6VDZlNGN3?oc=5",
+          "summary": "【COMPUTEX 2026】微軟發表 Surface Laptop Ultra，搭載 NVIDIA RTX Spark 平台、效能創 Surface 新高 LINE TODAY",
+          "published": "2026-06-11T05:55:40+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "沒有能源就沒有經濟成長？黃仁勳點出台灣焦慮，這些造紙廠默默成「隱形發電廠」？",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi4wNBVV95cUxPcEhndTVuOXhQQVlpN3JnUFlqdFd2Y0FLX1lFT3E1LWtKSWk1UjhidUF4cTd0eE90eHAwaUxlT2NhdlNJNzVhbGtEVXJWdU02cGIzekVVQVAxQ2RuM2JxaXlyYVVJSVNUUmZodjdsLVJSTmFxY1MyR3dDMW15UEVLTWlpb3RxcGxmRUlaandzam1hcm5YeE8xYlF6MFY5R2FZMmtucHl4cml2am5DU3lXWFloU3VmZExuNXUzY0dWUHNpVF9CWUUtTWw4RXR0RnZlNzVDU0hsdTRxMU41WVc4ZVZrNHQwNm4xRm90QkFtSDZfWC1KNnVnSlFSSGEwaEFqdC1ScmJYTnlucFpkVm1YVFVPN05WSHlDNXNMR2NfUmEwdXBkODdBTzVFeWNCWE9rNkpRTTczd0VCX21Zd2tLZFFCeFdhV3V3Z2RiSmVlT3pVMWc0clhGWFZPQkpvVFR6VzBEemNBT0ktMkdySVpIQnhoYTFMbzA2aFJKSWFSQmRTU0JZejZnLXk1UWdGeE9IVF90WTJWVWVOSk03RE5MNXpFZlRzdUd1LXl0VmYxci1CWHEyT3JjUFpPTGNLMVpUTVNqSTNwMVRXVFJrRTRvUDVna0NobFRxUHRSbmh2Q01jMTQ?oc=5",
+          "summary": "沒有能源就沒有經濟成長？黃仁勳點出台灣焦慮，這些造紙廠默默成「隱形發電廠」？ Yahoo新聞",
+          "published": "2026-06-11T05:39:08+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "黃仁勳引爆AI代理熱潮！首檔「美國戰略智造基金」問世 兆豐投信靈活卡位4大題材",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi3ANBVV95cUxOb09vYkt1cnBZZVo4M19mRFhfdFV5SGd4Y0phTXVpTmwzNm5sVWNuZ0xuRDZESi0xbjhRR1Jnajh6Xy00djhfbWJ1bGlfQ00za0RPZnlGSF9xTTlfaktKUTN0YU1jdkVYNnJxVnc2YWFMQUR2eERmdFJ5bk1nUWZsczJXYmZuYkhiamNVQjF0QUNtb2RpY1hKLVUwX3hrVTFQNUNocTZYWnNfQ0ZwN1g0bnllWnBsdEY0bVU0aTRycHRrNHFFM2JleS0zRC04YnpBSFZ4TWM1V2ZjTFFidFZCY085VXc2T3ZBYVA2cnhBZHpIOV9ZRTRWNThKbmcta05jTjhqczB0OE1OSWZwaE13Um5NN2lmM2xqT19vYlp0dE03M3BWX2Q0TmIzVm1FZ0dERk55WU5ZZmY1Rmh0SVkwSlJnYm12cS10dGFOTGoySEoxNnBXSUNtcnU2c0xoZ2pfRzU3Q1h1Ym5kUjQ1Rm56N0c0WU9TWXZPNm0zQThmNWFPR2l5Q1lHTUdZWVRFSVJwaVdNTWZUd1ZUV2h2Nkh0QmNCclFrVXdKN0VUTkpGOG5DYXFsU2Z3aF9DOEZETkhCWGJ1NG0wTUVQeENOdGN6Z29WU2VJdWRUMFhPcA?oc=5",
+          "summary": "黃仁勳引爆AI代理熱潮！首檔「美國戰略智造基金」問世 兆豐投信靈活卡位4大題材 Yahoo新聞",
+          "published": "2026-06-11T05:37:39+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "SpaceX要把AI資料中心送上軌道！IPO前拋出太空算力劇本 NVIDIA晶片也上天",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMijANBVV95cUxQU1pMdFZ0RUk3bDFDZDdMSkltNG1ZeFIwRGZ0WjRVWHcwSnN2TFlLVnI1bkpFdmNWQ1o3elA0UVE0d3Jqam9wTnJHMmV3WDlNMzktNEdZazlFeFZ3OWZOU0gyQm01T29vYTVCUWZkdm9saW54UnBMYU1VWHdLdm50b0Z6aFRqd2oxanl5bHB3N1FPdG5pM0dJMndEY2RjVTFmNU9GQUFrRm1vc2syTWhMdmVydXdaZVp1ZE5CVzF4SmxSaU1WaUloUlAxUjN2VkYwVGdiekd6UEpLYkZScVVQSzRxRllBUmZMa0hTUVE4OU9xV3dNZEdxWE55YUtEbk1Ed3l6c3dBUG9PXzZVUUpYS3gwTzRVS1hBQy1ieEJzN3g3OTVjOEdMSmtOSWNPTWc2SDJjQWZrR2hTSk1zSjlhcXJibDR2cXZlRktVMVhvRzU4RmNLX0hIZ04yeW05Yjl4XzZaMFdQcjU3RmFjemRDMVBVQi1rN3pmdkdNYnl4emVBMmlGOURpZi1iRUI?oc=5",
+          "summary": "SpaceX要把AI資料中心送上軌道！IPO前拋出太空算力劇本 NVIDIA晶片也上天 Yahoo新聞",
+          "published": "2026-06-11T05:36:44+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
+          "title": "微星拚守穩PC市占率 輝達AI新品接棒下半年成長目標",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4WWV1TnRKeTRMNFg1RHVydWp3RnhWa1ZJb2s4a3hyVE9FMVN1UXlueVNSUnNvdmVHb3k0VkdSTUNZVFVDeHpjcXJJWlhHUVNm0gFWQVVfeXFMTUdjdEVwY2ptU1hMZGRlZFNXRUhOYkVpLWhyOXBVSGNIY183MzBvQ1NWQUNjRzVaUGhQT2FZOW9zTlBEQ1NHSTJCNTllbVFjdlNtZnR5X1E?oc=5",
+          "summary": "微星拚守穩PC市占率 輝達AI新品接棒下半年成長目標 UDN",
+          "published": "2026-06-11T05:36:26+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "中國砸2兆人民幣打造AI資料中心網 華為取代輝達？算力戰進入國家動員階段",
+          "source": "放言Fount Media",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ZX0hDRHpWZGdpYmdxbENxXzdKVzdrSURVRkxrT3Zpak94NERseUNRQTc5ZmJISUpCVEo4RXRKVFN4WTZFeFMwUVEyRFBtcXlWcmc?oc=5",
+          "summary": "中國砸2兆人民幣打造AI資料中心網 華為取代輝達？算力戰進入國家動員階段 放言Fount Media",
+          "published": "2026-06-11T05:34:59+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "Anthropic獲350億美元算力融資！Broadcom、Apollo、Blackstone聯手挑戰NVIDIA依賴",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMitwJBVV95cUxNUWNSYmlUZHhMcUJ0UkhLa1RVWXVZX0YwakRLMnhZdjhaREUwdHBkdWNjOHQ4YzlzZGJEelU3NC1XVWI0ajVxVmZYSm5hak5IZVJqc3RyQ01BMzJIWEFVVnpWekY4Z21VMEVVdjJRMFcydEJhQk03R0hGcXllSEgyaEVQVm1oaTRFbGt6bzBMYVJZcUlUZFMwTWFmcHZMVnlpdWw5ckJiS2I5bE5rN0FXMHEyR0VLeFRKcFZsTzg2UE9RODNHTUg1WWtVY3dYa1h1ckZMc0Z0VEQtUEpHUGRrcFlZWXQwcUhGT0lVeFVPdEFQeHBRUTZaRXRvUEhyTHZ0VjZTdG8yNWxHZFExZ180ZlM0MWlWbUl1cEFCLS1jZ0tDcUhRT3psblk0Q1B1YlRaQWJuWU9PNA?oc=5",
+          "summary": "Anthropic獲350億美元算力融資！Broadcom、Apollo、Blackstone聯手挑戰NVIDIA依賴 Yahoo新聞",
+          "published": "2026-06-11T05:33:05+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
         {
           "title": "讚哥哥了不起！黃仁勳談美國夢體現 曝追妻搭訕台詞",
           "source": "TVBS新聞網",
@@ -1403,19 +1660,19 @@
           "origin": "關鍵字「黃仁勳」"
         },
         {
+          "title": "台灣擬嚴管AI晶片銷中！從輝達伺服器走私案到出口管制 算力戰正式進入台灣主場",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi8ANBVV95cUxQUm11cWxoMmhnZ3dDcWhsRWNzXzZRTmplNlZPajRIWTgzVmRDczEtcjk1YV9oemk2YjZOY1lrRTNpcFJiNE1GWThRNmdUQmVVX0txZTlERVgyRUdEcjdDWnU3WGROQW5Pal9taUJPdWNSYkFHN2ZDeGVMN0ExOVd0Sll1UDN4UXpxNDlzNFRBR2szM0dKTzhGY2xjbUQ2VWItckc1eEU5TjhxNE5CeUl6R2dpTENNc095NW56RklSTUg2WmxtZWMtYjR6V3ZXNXRlNFFOVFdzYkNrcEdjS2gxT2dCZW1hRXd5TzZBa1dVVGZ3WG9qQjIxTFd4UWZXUEtGRjIwZEhQbF9wTEhqMHZwdEIxZC1yUWh4RjdoMkkxUUN2VnNfOVl0N0l5ODZTa205Uld5T3E4MlRYdXhrSkFDZE9yZDBxMkM0S2c4S1lyZzhOOURuVnAxZ3lPWFlSX3BReU1TUkNHeUJfcVdtdTdKbEdxVm5FMlBnRHhxWWFFV0dEQlFGRFJLQ0haZ1RmYk5RaUJBX0s4WV9wN2hreU0wdzlUZ3lwT3lVTi1nWXVwbUI2cmg0VlVxT005bVNjTXB5anhtbzJlZERwYm56TVFrR1RvS1hXODUtRlZlRVBrSHFnRUZnTXpzYmtLeFFKUlBz?oc=5",
+          "summary": "台灣擬嚴管AI晶片銷中！從輝達伺服器走私案到出口管制 算力戰正式進入台灣主場 Yahoo新聞",
+          "published": "2026-06-11T05:25:32+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
           "title": "Tether 領投德國機器人 NEURA $1.4B、估值 70 億：Nvidia、Amazon 共投",
           "source": "鏈新聞 ABMedia",
           "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOX0NIMXkxT0V0YmR3SDAycHprbDFfWmhONm5HWmpYNlpKTm5qay16WnluZWJwMTQ1VFcwQlZNN053SmFFcjJYSWxxYVMxSk1uUEUzb3JmSExINU5nWDdxYUZZTXdGd2tJa0xlek8zREhoY0FsUjRkeEVFRjJnVjNxcXIwZl8wSFZyOE9pWWc3OUQ2c3JhSUxfUkF1c3lnQXpYd3NoMC14dGE1ODJ0Y1l6QnJGSENEQUprcUlITEhvZm9xVDRLQ2JRamhR?oc=5",
           "summary": "Tether 領投德國機器人 NEURA $1.4B、估值 70 億：Nvidia、Amazon 共投 鏈新聞 ABMedia",
           "published": "2026-06-11T05:23:33+00:00",
-          "origin": "關鍵字「NVIDIA」"
-        },
-        {
-          "title": "SpaceX要把AI資料中心送上軌道！IPO前拋出太空算力劇本 NVIDIA晶片也上天",
-          "source": "放言Fount Media",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9VWkJ4d00tSzlYWjVtSmNNNmhQLTBGUkZMZk1qNEJ5V0dmNFV4UE5IM2lJQWhGXzBUNjlrOFBMYnpkR2FiRjVZeXNnaFNjc2RtV1E?oc=5",
-          "summary": "SpaceX要把AI資料中心送上軌道！IPO前拋出太空算力劇本 NVIDIA晶片也上天 放言Fount Media",
-          "published": "2026-06-11T05:05:39+00:00",
           "origin": "關鍵字「NVIDIA」"
         },
         {
@@ -1440,22 +1697,6 @@
           "url": "https://news.google.com/rss/articles/CBMiwgNBVV95cUxQM015dDBFNWp5WlBtZXRyNDFVdUpGLWxOSUY0aUx1R09ldDJTeS1RNnUyUS1FeFgxTmI1TUhhVmNRWFZKNFl5VjJFRVVkZ092c3hkLXZnbzFsckZaSUtXNUpucWRVaDNZSTk3UHR1bVc5UVY2UXZtTGJXcVY0aXdaeFY2aXUzOXNOWFIwRWVTZG9QXzRTVDhHbmZzYlctMGVTVHJ0WkhMWXlsTnRScFYzbkdwMmlTTUpoTjI4RTNUUlNva3dhVGpoN1VIamFLLWQxeUdETWhSWmkyVnBsYjQ4bkR6WGMzT2xmSkpMbko3YTk5MjJtaHQyZGY1UTd2LVg0V1ppUV8xelVFekp1Ym15aWhRbUZwbW5NaEpSajlZOVpLd3dSTExORmFaUnN4R09rTkNILXlib2ZZcDRLY2lWOHBrWWNvM2xWY3F6MXdtRDZyTmRBUENBOXpsQUtFVDZKZlR0a3I5ZW1LNXpEV3gyaG9IenlVdnRBcWpzcHFXOUFYdXEzdjJSZVFVMW9FdEE5Umk1VUpISzBDQWlYU094c1VBWUlJbTdEUlFYLUhsSXBFeHhhUXY4enppcENfd0JOUHc?oc=5",
           "summary": "輝達新投資標的？詹順貴獻策「黃仁勳改訪台灣這處」：AI龍頭帶動供應鏈轉型 Yahoo新聞",
           "published": "2026-06-11T04:58:13+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳秉持「100%人生哲學」：真心盼別人成功！ 5段金句點醒眾人",
-          "source": "ETtoday星光雲",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1hakhOU2xjdTRUZXY4SnRJUkw0VDl5czdjemdkcXVJN1Vkeko1SDBJN3J6YnpMMjk2MHZjd19TWGM4TTJaSlVOMHJiaUpyQdIBakFVX3lxTE9obEJrbXFfZ0pNZnZCUzJIb0FvZEpfU1R4WG1WTWtmbmxEVEJGOFg0bkNDMk9aVXY3SFBpOUNCaFFXQXgyMmJCa3N1YUs5d214SU1ZbWx1UzVYbExiM2s5Mm1ka1o4MmJ1T1E?oc=5",
-          "summary": "黃仁勳秉持「100%人生哲學」：真心盼別人成功！ 5段金句點醒眾人 ETtoday星光雲",
-          "published": "2026-06-11T04:52:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳上《劉QUIZ》拒拿百萬獎金！霸氣加碼2倍 捐兒童公益團體",
-          "source": "NOWnews今日新聞",
-          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9lYUJPS1RCalY3cWRWZGswWjhIWlRUakg3MkdsU2NERTFRVU1tTDFDYVJVY1F2X1E1NlpaZnluTkN5ZFhaekhabXdlN0fSAVJBVV95cUxQNWV6WUlpQ2I3SzNsSzUyS001WkFWYnR2MUk3N3kxMjFQUm9YczlNLS10cXMzSUVlTjhQa3AxN1dCQXRVZHhYUGV5ckc0bllyczR3?oc=5",
-          "summary": "黃仁勳上《劉QUIZ》拒拿百萬獎金！霸氣加碼2倍 捐兒童公益團體 NOWnews今日新聞",
-          "published": "2026-06-11T04:41:38+00:00",
           "origin": "關鍵字「黃仁勳」"
         },
         {
@@ -1491,19 +1732,19 @@
           "origin": "關鍵字「黃仁勳」"
         },
         {
+          "title": "失敗玩具晶片商10年大變身，黃仁勳為何讚它下一家兆美元企業",
+          "source": "商周",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBtTE12TWVBVTc2NkNYV0x5d3VXeDJEMHg1dTZIS1ZNSU1faUs4aWdyRlhSRjRwem1EME9TQ0xoWXItWHVhNGJ5Q2lvY2lWYTdOamp1bXpya19YMjZUM0RQdFNWZTVMWU1EUUNZdTNRNHk?oc=5",
+          "summary": "失敗玩具晶片商10年大變身，黃仁勳為何讚它下一家兆美元企業 商周",
+          "published": "2026-06-11T04:34:05+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
           "title": "被劉在錫逼問！李在鎔、崔泰源誰最親？黃仁勳高EQ秒答",
           "source": "TVBS新聞網",
           "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1NZGsxV0VReG81UmdRdFJYNzZDQnRHLUpJUVZqaXF2dDBZRU5uc3JIVGJCMTlCajFveHBjUzc1aTJVbktfWUNmeEYyRU11V3M?oc=5",
           "summary": "被劉在錫逼問！李在鎔、崔泰源誰最親？黃仁勳高EQ秒答 TVBS新聞網",
           "published": "2026-06-11T04:32:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳談自身美國夢：承襲父母無退路移民精神| 國際",
-          "source": "中央社 CNA",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBDRFE2cWpyS1V0RjJ2ay1MMlotSHVDSFBraU81REdldjRFV1luQXR0LXVmSl81VnhMM01tTXUwYUpLQXYwaE5Ra291Q1VhTHZHd1phVGNrcHJJWnk4Tzdn?oc=5",
-          "summary": "黃仁勳談自身美國夢：承襲父母無退路移民精神| 國際 中央社 CNA",
-          "published": "2026-06-11T04:31:00+00:00",
           "origin": "關鍵字「黃仁勳」"
         },
         {
@@ -1539,268 +1780,36 @@
           "origin": "關鍵字「輝達執行長」"
         },
         {
-          "title": "AI時代不缺聰明腦！黃仁勳親揭輝達徵才1特質最重要「這種人無價」！",
-          "source": "噓！星聞",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA4b3BoXzdnQTBFZE9VcXVBVjUwUmlVU3hhbzZPWFhYb1hLaTFuVkV4MjNQXy11VjRpYk9NczRGUGMxS1RXWTNTaUpCSThnU1dpUmxzZzUxcGNnc2pmOUdiUjNXOHZ3b3lFYXI4d0VEM0ItUERHcV9WektWVUFkRHPSAV9BVV95cUxQZE92SF9Zc1JhN0sydElQY041dHhPeVpCSWU0N1gyZnp3MzBYajNtQkg1ZVJIVmZuMkt5eGMyR0dZRkJQNWdSVnFjb1ZnM1BwQXFXbVl2T1lWdE5YbnBPWQ?oc=5",
-          "summary": "AI時代不缺聰明腦！黃仁勳親揭輝達徵才1特質最重要「這種人無價」！ 噓！星聞",
-          "published": "2026-06-11T04:16:30+00:00",
-          "origin": "關鍵字「黃仁勳」"
+          "title": "Only In America: w/ Jensen Huang on Vision, Risk, and the GPU (Transcript)",
+          "source": "The Singju Post",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQLUJpVE81WDZ3b25oT1VOVFlINWdOel9QNVptLXhJd29oeVRjekt0bTVZQXBFbHk1VEtienFIa1RBSkd2bUxrSnd1MmxJcHhNMlpHQ1pBWnAwS19lVzlTUnpkVDRKM0NTd0h3b0xMXzYybi1Bc3NRNVJCQk5VTlFTcXZNNGszN29kXzBWSVM4VUtBY0lkdVNn?oc=5",
+          "summary": "Only In America: w/ Jensen Huang on Vision, Risk, and the GPU (Transcript) The Singju Post",
+          "published": "2026-06-11T07:18:40+00:00",
+          "origin": "關鍵字「Jensen Huang」"
         },
         {
-          "title": "黃仁勳《劉QUIZ》金句狂發！直言AI時代「知識變廉價，這2特質最難獲取」，大讚劉在錫「卓越傾聽者」",
-          "source": "Cosmopolitan",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMG9zSkVNR2F4NUR0Mk1RLWNwUEFlUDFTbE1pclAzQXFjbjVfXzd3cDc2aTdqbjhibU9EcXpYaFktLVI1MGJoOUtSeG1oYzl3Nm9mOURJZURKeFp4dXNEY2gzRThIRHBZSzJ6Vi05d1c3eTNRY2tudmFFQTlVUmFWQUtBZEN5d21XM2R1NEZTX3ZWOF9nN214T1lLU3JDcjRWWUNxcndjdzdYeDI1?oc=5",
-          "summary": "黃仁勳《劉QUIZ》金句狂發！直言AI時代「知識變廉價，這2特質最難獲取」，大讚劉在錫「卓越傾聽者」 Cosmopolitan",
-          "published": "2026-06-11T04:15:54+00:00",
-          "origin": "關鍵字「黃仁勳」"
+          "title": "Behind Elon Musk and Jensen Huang's \"AI Factory\": An Invisible \"Freshwater Plunder Battle\" Has Begun",
+          "source": "36 Kr",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9uZEwtdEJMWklYdlU5X3hIcm40eHRxOFZwR21oLWNCbDl1bUdnUEltLS1Wb3BES3h4ZWt6SUUwMWZPTC10UEdDUGtySkl5UktxODU4?oc=5",
+          "summary": "Behind Elon Musk and Jensen Huang's \"AI Factory\": An Invisible \"Freshwater Plunder Battle\" Has Begun 36 Kr",
+          "published": "2026-06-11T07:01:37+00:00",
+          "origin": "關鍵字「Jensen Huang」"
         },
         {
-          "title": "黃仁勳首登韓綜大成功！《劉QUIZ》創今年最高收視5.7%",
-          "source": "NOWnews今日新聞",
-          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE00czlNMGJ4RUY4YTZYVy01RDgzQ2Y3SU5DVDQtVlAwYUxMcGktU1ozSzd3RkNKWkxxejdjMHNhU3VPQVlSXzgxaVZoR0zSAVJBVV95cUxPLXFqREVwcEpMR3VfeGhqZHI0ekFDMlpabmtTWlFsaU8zOFk2OEZndDZaNTlLRS1BbXFfMmRwR1lBTTF0MHdUaUtLYjVtN0NaYV9R?oc=5",
-          "summary": "黃仁勳首登韓綜大成功！《劉QUIZ》創今年最高收視5.7% NOWnews今日新聞",
-          "published": "2026-06-11T04:13:26+00:00",
-          "origin": "關鍵字「輝達執行長」"
+          "title": "Why Jensen Huang wanted Korea to call him ‘K-Jensen’",
+          "source": "The Korea Herald",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5wSkNFcU56RHJKb1VaU2gzUm5WUllKUWxwS3N1MkRjM0UyMkQ0WHYxV1RvTDM2YXpKd1NnWFllWWVKRDNTUExsUHpjUkFJRThYcFhoVkJYTQ?oc=5",
+          "summary": "Why Jensen Huang wanted Korea to call him ‘K-Jensen’ The Korea Herald",
+          "published": "2026-06-11T06:53:57+00:00",
+          "origin": "關鍵字「Jensen Huang」"
         },
         {
-          "title": "Gumayusi收黃仁勳簽名衣！開玩笑透露內幕引感嘆：如果還在T1根本不意外",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMisANBVV95cUxOVmxyRjZvc2dXZXZhN0QwdElhQkFlRmRMaENjYUdXWmJqcXBpVXFUemFLd3JpTlZHdXNEbVMyc21zaFVLMlJqVm1reUZGZUV3Rzg0RHJnc3RNU3NzUzRGMUFsTjY3bHNtYm5LN29uTnk4Rl9BalUtcG1OU3JsZWlZbzZfYnFvUmFMUGJ4Q29NWjM4bW10RDMxUV9Fal9oa3dVYS1jMHJQUjBzanN0NW5tbklvOGV0ZzZFdEtNZHpfQ2R2SUJ2MlhKd3pGbTVMYmtTdmo0M3o1b1M1RWg0bTNFSTk2bWY3NlI4ZWJhUXl4a21JRDZOSjlQdUJ0OHJMTWtwSXowTTVpTUVfbnhVbnFtVGxUSHY2YkpWMmpVX2VPdVRCMTR0UWllWGFkQm1IYV9sVEJkckUyNm9wdEhPUW9MUjNibFZZMXdPQloxajJkZzd0V2UwTmhuX1d0Z0M2NlJZODVTUDRaMjlEc2xPRmI0SThyZVNySjlTSW5tNF96U3lXajNFVEUxN0RGUHZlVXF4b0dYWXV3SmpNNktyOWxtWDBzcDQwa3Bjc2poQXJDbFo?oc=5",
-          "summary": "Gumayusi收黃仁勳簽名衣！開玩笑透露內幕引感嘆：如果還在T1根本不意外 Yahoo新聞",
-          "published": "2026-06-11T04:06:33+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳感性告白「台灣像家一樣」 影片曝5核心台廠- 財經",
-          "source": "華視新聞網",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9icVF1OVk3QmJmdnBORmFWTS1qbjRhYkNjNkRWUV9zdEx5Tml6dVNMclRuemFFUmp1OXRkY2U5U19sVTNudG1FNnFmMk1oMW5kalFvN3F4V3ppTFNuS3YtdFI5WXoxNTVsOUJYUFhn?oc=5",
-          "summary": "黃仁勳感性告白「台灣像家一樣」 影片曝5核心台廠- 財經 華視新聞網",
-          "published": "2026-06-11T04:05:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "Red Hat AI Factory with NVIDIA 全面升級 引領企業邁向自主 AI 代理新時代",
-          "source": "Techritual Hong Kong",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE91UWZmVEUwSjM5VVNRREJ6V0pubGZ4SlhpREprcEtSWEFYRUstbkUzaTRVdmlVeG1YR0ZicWZNRUV0NG1pbVBULVhENTFCcTBQYk5nRGlVWUk?oc=5",
-          "summary": "Red Hat AI Factory with NVIDIA 全面升級 引領企業邁向自主 AI 代理新時代 Techritual Hong Kong",
-          "published": "2026-06-11T04:02:07+00:00",
-          "origin": "關鍵字「NVIDIA」"
-        },
-        {
-          "title": "黃仁勳讚「台灣就像家」新片點名5台廠 登劉在錫專訪曝獨家追妻法",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMinANBVV95cUxPZDMzNTZWX01zR2tJa1Q2MzhnT3k1ZU5CamdxOWQzeUxtaUYtNVNjaUc3YXdtckFaUVR5N2RHLXhEYXI0LUhqMVlPV1RuLXZ4QlcxenZ2SkFVek5VT1FMMW16bVpwdXJaaVZicmxJRTQ2dVlSUlJIdmQyanlYd2otek1CQzZwazlfUEQ2dWhncUFweFJCU3Q3eEJCbTFGMWVndUd1QTlTQUdrODdaQzdhX09adVhxSUcyYVFLT2k2dk5paWpSdnpjQmoydjNCSk1QblJZdm4wbFNUeENsZk5jTkRYc0VuZzBXejdMMlpsZUdveE1DbGdpdTZGZWl2bnRFT0RoOGRQTktxb2pJODdiUER2eGY0QTdmbnRaSEZUX3lFeDV6NnRaRzBsZV8wVWhLSTVKZlJJWGsta2ZkSk5pSWxxZldXX2RGZExFT2ZNUGdLMFQtcWlmQTF2djJPSE5kQlhwQTFWZUI0UmpaT29DZGtRbHpqRjFOb2pXWVJISHFjM25NVEt6RUNETHctcDVjVVh1NW5NVklYRktW?oc=5",
-          "summary": "黃仁勳讚「台灣就像家」新片點名5台廠 登劉在錫專訪曝獨家追妻法 Yahoo新聞",
-          "published": "2026-06-11T03:33:26+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "Neura Robotics 完成 14 億美元 C 輪募資，NVIDIA、亞馬遜、Tether 齊押注歐洲人形機器人",
-          "source": "inside.com.tw",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPVWZLaTFzV1Jnd1ZOZHB2THV3Y2psTkFTYWw5bk1zOTU4ckZFczJyaFJlRDlrdXNlRVBhYlZMZWFzcGpSMl94ZFA5eTlJWnFHYVdwU3NaN2FtanpOb01pRDZLQjk3U0RKYXhmaXlzVF9KRElWQkxYcXo5eEY3OWFmWElJMzk2czNiYS1PZFZzSk43WUlwM2c?oc=5",
-          "summary": "Neura Robotics 完成 14 億美元 C 輪募資，NVIDIA、亞馬遜、Tether 齊押注歐洲人形機器人 inside.com.tw",
-          "published": "2026-06-11T03:31:38+00:00",
-          "origin": "關鍵字「NVIDIA」"
-        },
-        {
-          "title": "自由開講》黃仁勳效應 帶動台灣發展實體AI",
-          "source": "自由評論網",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1KcDZJLXdidFRsNDM4RjhjNlB0Vzh6dXBiOUwzcHhTNHNtc0ZuRW9jNEJIdF9WMHBTQ1RkZEM4am9NMEhiYWhXS0VYcnNpaDc4Zl9pMDdjcFY2SHZXREZLS3F30gFnQVVfeXFMUGZUNkdJcWpBR25HaXBwN2FzWXpoNzVwZzFDVzM2UlhfZlgxSHliUk5DdFptSGVnS01SbDFlcmI1RjRDZ3NCN2t0UmJJWW82MzZGX1BPSXNJQzZJMFFza1hDUkgyajBUYw?oc=5",
-          "summary": "自由開講》黃仁勳效應 帶動台灣發展實體AI 自由評論網",
-          "published": "2026-06-11T03:30:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "打破輝達壟斷！華為把 AI 晶片核心系統全開源，中國終於有了自己的 \"CUDA\"",
-          "source": "鉅亨號",
-          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBjWnlJTzZWVHFsU2lCNGJjUl9ETFZuQVRZX2JieEhCbHkwUGFSemtWcEM3SmZwTVF4US10a2xja0NDby1UTkwtZA?oc=5",
-          "summary": "打破輝達壟斷！華為把 AI 晶片核心系統全開源，中國終於有了自己的 \"CUDA\" 鉅亨號",
-          "published": "2026-06-11T03:29:21+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
-          "title": "黃仁勳首登韓綜《劉Quiz》：當聰明成為標配，「慷慨與善良」才是無價",
+          "title": "Jensen Huang’s Criss-Cross Strait Policy｜Insight｜2026-06-11｜web only",
           "source": "天下雜誌",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1kaEc1UnRMM1ZSQUhMem1ndFVHUS1SdWplZUNuQld3aG95Zll3N29yN2ZvV25iMlRENjdHY2xQeW1qZjkzTkN1Y3pwM1N2dw?oc=5",
-          "summary": "黃仁勳首登韓綜《劉Quiz》：當聰明成為標配，「慷慨與善良」才是無價 天下雜誌",
-          "published": "2026-06-11T03:24:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳：孩子不用全拿A，能承受尷尬失敗更重要",
-          "source": "天下雜誌",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9IRkNtZVVlOEk3cjRRaFUxQkRHRzZXZEo0dXVrWGRGaTJFRGVsV0dVRlEtSGIxTk5Zd3JyNnBmcWNCWnhFZEhiOXlPSWFIQQ?oc=5",
-          "summary": "黃仁勳：孩子不用全拿A，能承受尷尬失敗更重要 天下雜誌",
-          "published": "2026-06-11T03:24:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳攜妻兒登「劉QUIZ」大談創業、追妻史",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOZFRzM3h5SElOMkEzeXJIajBNaGdLcGlKU29CX0RlWlM3RjRDRzJZempGb2l4WXpmQTk4TGZKcEhHcE44NlNNVWR3M1VJSHFLeFRmZldmeGJFMVFCWmxMSVVabnI5RkdPck9VUVdlbEIySEVwSnA1T3ViRVNHY0pHS3NlNWZBNEVzV3ItMzdHREpmYndJb1NzaHhXODhvZTFvWkRVUGNvZDQ5SnM3NzA5eEMwbnNFQ0kxZVhlNVpxMkNkWGJaSFJQYXAtOFU4Y0Q5T0tvWk13VktfQWtBQ3dxMm5Xa2J5NWtHSEp4aWJqQ1R5UGFWOC1uRzA5R1kweFB6MWRZRmpDekNOVnVsMkZfdg?oc=5",
-          "summary": "黃仁勳攜妻兒登「劉QUIZ」大談創業、追妻史 Yahoo新聞",
-          "published": "2026-06-11T03:23:12+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "SK 擬在日本打造 AI 資料中心、和輝達合作",
-          "source": "TechNews 科技新報",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBlV2t6Y1M3X1pwdVRaYWdQek0wekoxYUpLUUNOb01YMjhaam1KNDlXZWtTTy1YZlBRVzZBZHNhS3JrbERsd29pZTZDTVl5Q3o0UGZ0SEpTRjNGLTY1Ulg4dVNFOXRRX1FSYVNBa1hIcHlGV3ZtX25yVkdFeks4bEk?oc=5",
-          "summary": "SK 擬在日本打造 AI 資料中心、和輝達合作 TechNews 科技新報",
-          "published": "2026-06-11T03:22:30+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
-          "title": "黃仁勳《劉QUIZ》播出看點！大跳《Golden》自曝最愛華莎 相約劉在錫10年後同台 懶人包一次看",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMilgRBVV95cUxQZEI5MDlNWTdZaGFCVWdxNXJZYzljSGVSa3FBLXphMlBoN0xqUWxPdzhjSml1cjlqZktabmtRMXdNTzNNY0FLQU5aT1pvaGdwZ2l0LVdGb3BVOG5BMDQ3dTNQWTh3ZmtObnZ3bVlXQTVyckhpT1hlTUNaZ3gwNVV5NXlJc0ZXWkRaYWNUcGVIY0tJZVhHNk42Unp2bDl1VUZXbkhuMldaa1ZvbTNxUzNjaW8xYTJYUG1tT0czckdNcUFzZnM1MGdwVnFJZXhCVWFoTGV4bVVSRzFmRFA4VlZRUWFGRlltZ2ZVbjViQlk0cHZncXRxUjNISVZKVGNWSHdqWTJiMWcxc2F3YnpqanlNc2czYnNrZXRnZV9ULXZjODNWU2FTODNrVGg0VFVRa2JzcHNPeG4zc1FMdURaYlZjZEEwX1FRX2VDV2haV1RETlBZN1M1eHgweVktZElqdG0wOXd4VTdjZk1rMzYtN3NXT0YzNDdGMTJlTl9rV1A4NXF3Mkk5SXRzMkJnbVhwRWlJdUw1eG9IaERqZGMzRTNyS1NvVUF0bkQ3cGlLcEtRX2MtRGlFZmZhaFBZdmJPSFcxa0h6a0Q0YklnQV9vNVBlRFVsZHgxRzRkWG4tcUR3eEhLZzNQU0V1NU5nRi0wVURIMHlpQjFLZFJaVDQ4SDIwOHM3Z05UZW9CV1ZjWVR1RnU2bDNObUE?oc=5",
-          "summary": "黃仁勳《劉QUIZ》播出看點！大跳《Golden》自曝最愛華莎 相約劉在錫10年後同台 懶人包一次看 Yahoo新聞",
-          "published": "2026-06-11T03:22:12+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳一句話打中台灣痛點！周玉蔻籲成立AI使用委員會：不能只會做AI",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMioANBVV95cUxQTzc3NUFiekxRZjNDMDlVWkgzUUwtQlBtNjRIRWtmVVhLQmNrTS1tenJmenJ3alFaUUZCMlpFTUxidUtaMW56T3M1UFJaaUxlTUo5LWhmdXE1a1JKRGtPamNqMUlUS0o1d0ZETm8tSDlaaEVqTDh6Y3V4d0k2MnJubkg4Y3hXRVN1OVAxUGV3bFo4LUlIVlh0X19LeHNCQWpCdUpnazhWSVU2bGlUeUFPRlhUUFUtajZmYVRscDJHSjFjV2dPRmxNcjZCQ2xkZkNjeU5CczVlT2ZXaHhYWTVwdjNEeGZyUzBKajcwN1lXZGNaUk8waDcxcTRMTF9pdDVUNjdsUTlwOHNzZjU3S1ctR1ZmN052a3E5RUZTWkRhaFNMR3haYWdnVFpkQXVuaTBJTU5XRm5NQlFXeEpZOTRXMWtadlVzd0FfdVNhUktkd0hWRHBlLVk2anhPeklLYjlyUHhWQ0tnbTFacjBQdlYtMUlCTWJCelZDQnFVSm5OUHZFY3RLa0JnTWVybS1ybFEwekZrcTdQdk5FMVAxWHNNag?oc=5",
-          "summary": "黃仁勳一句話打中台灣痛點！周玉蔻籲成立AI使用委員會：不能只會做AI Yahoo新聞",
-          "published": "2026-06-11T03:16:58+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "影／輝達最新影片秀AI陣容「點名5家台廠」 黃仁勳感性告白：台灣就像家一樣",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMioANBVV95cUxQekNrbXBfUnVoV21sdmZCUFk2VHR3YXdnSWg2OUQ0U3o3WVpfbmg4VmZ3WC1oanI3N1pLeTV2a1dacnZpa21VbWEzZWFlZ3QtR2hDaVpaZnVNLVZpb0hjMldLYXVvWkRmTE5jNGNfZWotbE40RWNkbEF6SWZEdzUwTzl3VUc3ZVJhTHY2dzlMdmlFSkd0R2FFdm5IVGxBdXRlR0UwbS1VX0VnUVVVcjNjN3FaUnpKNHQ3OHRqN2swU21KMzdCeG5LTXZlTDUwRzBXbWM2LVQ4TXJvU0xYc3FWUkEwbnJSbWVBQ1NtT3BENTRISEpFV042MHItdDJLM2JTT2loNk5pUk43X1pIcFhCXzVvdVZQTFpvaXhab0ozX0lmRjFpNXB2N2VEN3BHN1pORjFtMlpxQndBYmF6VjdDU21pMW5NWUpYdmEyMEFIcnphNXJZYmFPR2ZIdTEwS1VxM2xLa2JTQ3drTHhhOEJQQ3VCV090Ui1sY3BOY0lzUGF5TXhycmNoQ0RlNjQtT0Z4YlpUbGF1WnhZYlRpWmhjZA?oc=5",
-          "summary": "影／輝達最新影片秀AI陣容「點名5家台廠」 黃仁勳感性告白：台灣就像家一樣 Yahoo新聞",
-          "published": "2026-06-11T03:16:33+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "臻鼎搭上「台積電、輝達」2大靠山！ 出關一度飆8％",
-          "source": "中時新聞網",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9ISW1YWWJFYVVfcEZReFlnX2pxTlFKVjBxS2lyS1Exb181ZXBDcFUyNEtmZmo0MW5POVd2cmE0VW4zbVlOcnlsanpQOGd5aVRHdkR5N0VsMlBSZUVWRi1KU3JMN1F5c3JjQzl1RUxB?oc=5",
-          "summary": "臻鼎搭上「台積電、輝達」2大靠山！ 出關一度飆8％ 中時新聞網",
-          "published": "2026-06-11T03:16:00+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
-          "title": "黃仁勳點名實體 AI 機器人來了！兆豐美國戰略智造多重資產基金 6/15 開募",
-          "source": "TechNews 科技新報",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBjRDhueTV0Y2ZXbFFoZjRHVUhvWm1qWU9LY0d0R0tSQ2RURlEyaW84amxOWlhnSGR2NXB2V1h2ajhfWnBxMVQtdXg5RExFR3l5N3hPQ2szVGF2SUpSZDYzY2gwbXJ6djlONGc?oc=5",
-          "summary": "黃仁勳點名實體 AI 機器人來了！兆豐美國戰略智造多重資產基金 6/15 開募 TechNews 科技新報",
-          "published": "2026-06-11T03:15:47+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳AI五層蛋糕藏金礦！法人點名這類資產 成下一波大贏家",
-          "source": "三立新聞網SETN.com",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE10Y3VnSFBQNWdtcUp3SVE4OFBvTzNKUllRU1kwanAtSS0yalpwRTJuZVZwS19nT1VHT19XczBETWE3ZDJsQkZ3R3JsMA?oc=5",
-          "summary": "黃仁勳AI五層蛋糕藏金礦！法人點名這類資產 成下一波大贏家 三立新聞網SETN.com",
-          "published": "2026-06-11T03:15:22+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "輝達曾只差30天就破產！黃仁勳登《劉QUIZ》揭密成功心法「不會祝福一帆風順」…為何他從不戴手錶？",
-          "source": "今周刊",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOQnh6SDNKYUN3a25hT2dJT2ExUHRWMnRoRVJxa2JPeXVrRWFqS0t3QWxtNXMtV3Y5ZFJ5MllMbUp1RmF5VERKZEFaeDU2MGMyaExUSUJQaHluMEd5TVhaS0VTVVRHWTMzM3lydFNiQU1yTlNPVURLRGNfUnBVUVdWTQ?oc=5",
-          "summary": "輝達曾只差30天就破產！黃仁勳登《劉QUIZ》揭密成功心法「不會祝福一帆風順」…為何他從不戴手錶？ 今周刊",
-          "published": "2026-06-11T03:15:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳首登韓綜！親曝40年浪漫情史暖翻 妻子女兒現身全程陪錄影",
-          "source": "三立娛樂星聞",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9pU2R4aDQxTTdFRjJlb2gzOXNsRlVkTEtYaXBweTYtTG41NjBQODhoM2U3bTVXcTdLWnQ4TkJrY0xDeTFxdjhudTNB0gFfQVVfeXFMTTROVlZyRVBCTlJrT1BfckFiX3FBcWNVLUhCWndnSUNFNVQxeDh2WnpHcDZXNjZoaE04Umo5YUpoOW9zWmZzazc5Wk0wdUZhQWItWUhWTGtiWTFTUHQwUjA?oc=5",
-          "summary": "黃仁勳首登韓綜！親曝40年浪漫情史暖翻 妻子女兒現身全程陪錄影 三立娛樂星聞",
-          "published": "2026-06-11T03:13:05+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳感性告白「台灣像家一樣」最新影片點名5大台廠",
-          "source": "facebook.com",
-          "url": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxNaVFsanFGYTRmTlNFRkM2a3BSYTRtNm9IRzgyaTNaNG9US3FuRmI2anpVcDdyQXJKOGtVWm9vMGZHUE10M3gtSXpKTWxsQTgxZHJwcHFQZklfOV9ZS2ZidWR1LU5PUWM5MktVblhMSnNObEFsei1Bbjk5NzBXSkhqNUVveXBzME9WQU5tcTkwTFJhVEg4cW55QXA1bUVNTGFHNXg2dXdVc0xLclJpWmR6N3BFMVpQLWgyVnpYMUh5aFZrelVpQUNVSUZWbkZrVWNpOXV1QXVESVdkTzNWS2JpTjQ2RGl4ZHB2aTFsaklzMlZ0Nzdkb3JSUVhaaXpLOTlrRjRUOVNyR0w1ME1VNVVzb1ZDWTVTRzN2TEg0UkRrenk2SjUwX1hvLU5ZcFZJbkdSU3BMTk85WDFRZEtMLXE2Vy12c0pJUjhDYXRKZEEtNVBTckZZWUUyLXk4aFlwWDBYTGl0SWJ0QWFMMGtfeUV6Qk93?oc=5",
-          "summary": "黃仁勳感性告白「台灣像家一樣」最新影片點名5大台廠 facebook.com",
-          "published": "2026-06-11T03:10:01+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "黃仁勳五層蛋糕藏金礦 法人點名這類資產",
-          "source": "鏡週刊Mirror Media",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1hUkxoUlBJYVdtMlNkWW4zdUFNZ1pqSFlWaHRKUUI5WlBSNVExWHF2Y1RJNHc0QXdfaFRoTlktMlNTU2pIZ1FoS3kxaXNUX0tpR1I3ZjZBTklWOTdj0gFiQVVfeXFMUGdrc2xxam9VTGxyblFQRG5wZjJGNVAzSDdYQWJCZ0RhdHJtcFg3SUJaSlhiZ0Fjand0UjBDYkhnWDBoMUdCTTY2dXN3TjZ6aElUbDUzY01uajVBdXBVMmZRZXc?oc=5",
-          "summary": "黃仁勳五層蛋糕藏金礦 法人點名這類資產 鏡週刊Mirror Media",
-          "published": "2026-06-11T03:09:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "輝達新投資標的？詹順貴獻策「黃仁勳改訪台灣這處」：AI龍頭帶動供應鏈轉型| 風傳媒",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1Hc2Y1d2M4eksxcjRMNWZKRGFxaU9vTTVGbDRzOHJTX040emZfM0UwU3FLeWFDN0NLNlZ1N2tzbkE4WHV1UnR3MmpLZDNDY0NtcFE3RkJ1OTBjYWtBRkJlVVNTd1MyQ3ZBVjRrQTB0QTd1dG9L?oc=5",
-          "summary": "輝達新投資標的？詹順貴獻策「黃仁勳改訪台灣這處」：AI龍頭帶動供應鏈轉型| 風傳媒 LINE TODAY",
-          "published": "2026-06-11T03:04:49+00:00",
-          "origin": "關鍵字「輝達執行長」"
-        },
-        {
-          "title": "黃仁勳首登韓國綜藝談創業血淚 曝17歲學霸搭訕術靠這招追到初戀",
-          "source": "緯來新聞網",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPUTZGd3ZnVG1uQ1ZNLWk1TkhPQlE4a042RzRiZ05UUjhyX2tYX3pHVXI5NkRZMTJHcE45b0RucGZ6TWFvWm5HRVVpMTdNSEtrbXpvLVBENk5GWEcwaWE2cGR3SHFobVdPM1pTX1B1aHg2QVpGN3dXTDlEMEwtMlF6TC03LXdFZw?oc=5",
-          "summary": "黃仁勳首登韓國綜藝談創業血淚 曝17歲學霸搭訕術靠這招追到初戀 緯來新聞網",
-          "published": "2026-06-11T03:01:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "不看聰明才智！ 黃仁勳親揭輝達徵才秘密：更愛1類人",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxNZUQ2MTVCdlhXempnemwtUlVBUWZ0ZnpMV2wzNFBzRWFCTVE1MHRNLU0tM2VWanNfWHpjWjJjODhWS0F3d2tJaGt3UFFMVy1FMTNQNGFDQ09kY29nMzFqajVlbENzbnRaVWFtQUNQYnRqMEt3NlliV3hNYU5UWDBfclllLTU5OHRtajgxX0szZS1BNDhkRnhhQUxUU1ZFZU9KOFQxZXpsSklwQkMyNXFhWUtFX3BwZ0tkek5teDlSNGNHVzBPV0VRMXdxM09GYk52UGV6TFFvLTcxcHF4NFVoRXgzZ2xmZnRRbXVLRUk1ejlaaHk2YXowc0U3bThnd2hSU2NMVmI5WFo0bF9FLXI3VTRmbXltZnJnOXJtZHhRSzBtSGxLSWU4Nms2b2FXTlVYRDBXV0FnV1IzaV9tdkZPNzN5U2E3d0RZSE0xQ2RHUE1PWjg?oc=5",
-          "summary": "不看聰明才智！ 黃仁勳親揭輝達徵才秘密：更愛1類人 Yahoo新聞",
-          "published": "2026-06-11T02:51:50+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "連黃仁勳都被萌翻！世足看自由就有機會把夏普陪伴機器人帶回家",
-          "source": "自由時報",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1aVGxOY3p0U2p5bk5JQU15VXFKT1lkVW80cGFJU0JNY0RVS0R1N0ozQl91UDR2QXhSZjVOeXZ5ZUxIQmJ2THlUYm8wb3hVdGZn?oc=5",
-          "summary": "連黃仁勳都被萌翻！世足看自由就有機會把夏普陪伴機器人帶回家 自由時報",
-          "published": "2026-06-11T02:48:00+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "輝達新投資標的？詹順貴獻策「黃仁勳改訪台灣這處」：AI龍頭帶動供應鏈轉型 | 李瑋萱 | 新聞",
-          "source": "風傳媒",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9IYTkzWVU2ajJleUk1V1ZjV2dkX1BSV2o0ZktPelhBVG1mRG9GVXctVUphZmhvbXhwZHo4ZGF1bWVDRk9yM2ROcjBvSk5IZw?oc=5",
-          "summary": "輝達新投資標的？詹順貴獻策「黃仁勳改訪台灣這處」：AI龍頭帶動供應鏈轉型 | 李瑋萱 | 新聞 風傳媒",
-          "published": "2026-06-11T02:47:36+00:00",
-          "origin": "關鍵字「輝達執行長」"
-        },
-        {
-          "title": "黃仁勳首登韓綜《劉QUIZ》！答題獲100萬獎金「霸氣全捐出」 | Newtalk",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBodGRCUWdNRG42SGxJTXFEWlJyV1AzczctSl9GREMyai1XZ3lsTG1nSklvM3VQSEExT0puRDkxWXVsNmROWnFnT2NPS3NGVFVMS0FZX05n?oc=5",
-          "summary": "黃仁勳首登韓綜《劉QUIZ》！答題獲100萬獎金「霸氣全捐出」 | Newtalk LINE TODAY",
-          "published": "2026-06-11T02:42:49+00:00",
-          "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "輝達逆勢擴編H-1B人才 揭示AI戰略與市場信心",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxNNHZSVGlwZjZ6X0VxOUJqWFI4b1M1eDR2NHprT0l3WXJUYWVTVkJqREZQQngyZ2dLNkVDZmtXTXJSeElNc01Wb0xfVm15c0s0N2xhYVhmdkNEX3kzSmRSQXZZNVFkU2s3R3FXMFVTR05UUVJ4S2VZWnBDRDluajNianFWaXNBQkFRd3EyYXJPSFZBTnNlSktrOVF2TEVqUC0yWDh0cXQtdnY5bnJLWHFFaGZPMVExTUVMazFxUmRGTTRlTG13QlF0amdmMVZXbVRrRU9lYUxLLXlINlZWbk9saERDWHIwUUNNQk1paFBMZ2JjMnFzaEtmVW04NWRkX1NTNG5DLTlIdjFieVBtWlpCNTdtY3pUejl5YXB1VUxYdjNxbDBOcWlfQXhWWjFYa3p3?oc=5",
-          "summary": "輝達逆勢擴編H-1B人才 揭示AI戰略與市場信心 Yahoo股市",
-          "published": "2026-06-11T02:41:26+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
-          "title": "NVIDIA、亞馬遜聯手力挺 德國人形機器人新創Neura完成14億美元融資",
-          "source": "DIGITIMES",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRGF0eEZPSHJLU2xWeU4wMTM1SUdHVnI1eTBqSUNYUEFFaG5yVTJBdktKUEZncFdrUHRHNlVOOEJHSHdWRndGZlRRVlEzWVIxWG81M01ZTFNVbHVzN3R1QjRKWGM1N2w2bFJpYlBsZXdnNUZ4UzNGTDBoU3hnbm4xSmJONmFwaGJkYkUtSndSSHFuZkR5Vlkw?oc=5",
-          "summary": "NVIDIA、亞馬遜聯手力挺 德國人形機器人新創Neura完成14億美元融資 DIGITIMES",
-          "published": "2026-06-11T02:37:00+00:00",
-          "origin": "關鍵字「NVIDIA」"
-        },
-        {
-          "title": "Nvidia CEO tells Taiwan child to learn Taiwanese",
-          "source": "Taiwan News",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5JRnd1Mk1MamRnYUVCVUM0aEdiaEtwWHRxdW5vMW1aTXlydUJxVWRnSExZV2RJUGJtZW5qWER5MEttQkdmNFp2VkF2eDViQnNhSWwyWUNGdDk?oc=5",
-          "summary": "Nvidia CEO tells Taiwan child to learn Taiwanese Taiwan News",
-          "published": "2026-06-11T05:30:00+00:00",
-          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5kYlhBVzhGQmZsWno5enZqWFg5R1JZdUFXSUdvNXZObzgwNGZ2V2Y3Qy01LTZwc0hHX2daNnNfQl9ES2xwMUFQbWtzU25SRHcxdk1Mcmw3MXJjbEtiQkVaTjFZTHNERDA?oc=5",
+          "summary": "Jensen Huang’s Criss-Cross Strait Policy｜Insight｜2026-06-11｜web only 天下雜誌",
+          "published": "2026-06-11T06:42:26+00:00",
+          "origin": "關鍵字「Jensen Huang」"
         },
         {
           "title": "Jensen Huang's 'Saaspocalypse' Prediction Coming True? Oracle Says Customers Have 'Quickly Moved On' From",
@@ -1843,6 +1852,14 @@
           "origin": "關鍵字「Jensen Huang」"
         },
         {
+          "title": "\"A Tycoon's Nose\"...Jensen Huang Breaks Into a Big Smile at Fortune Teller's Face Reading (You Quiz on the Block)",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBSeUk5YkFkSUFKSXU3TlI1YW1FTDBublRlR0l6dHczcnB2SGlDVk1QZWVSd3otM3dYdG4ydlNhS3VQOHg1TE9oTDBuOFJkb2xrWk5peFZn?oc=5",
+          "summary": "\"A Tycoon's Nose\"...Jensen Huang Breaks Into a Big Smile at Fortune Teller's Face Reading (You Quiz on the Block) 매일경제",
+          "published": "2026-06-11T02:08:26+00:00",
+          "origin": "關鍵字「Jensen Huang」"
+        },
+        {
           "title": "Naver Partners with NVIDIA on AI Factory for Global Expansion",
           "source": "조선일보",
           "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNOFJyTXNMUW45X0RvWGxmU3NMUURKWXRxajZZWHNzZ2wyQWEzV2dfTjFDRXdoWENSNmVBWW0wZkh4eVdOc3hIS09sT2RVbkhyLVRJRTF2YjZ1ZVo0Wk54WU9Lb3FXTHNIQnNYNzViZ2kybkFKN1VIWUcyTkxKNzdfbl85RXlnOU1D?oc=5",
@@ -1857,14 +1874,6 @@
           "summary": "You Quiz on the Block Sets Year's Highest Ratings 조선일보",
           "published": "2026-06-11T01:17:04+00:00",
           "origin": "關鍵字「Jensen Huang」"
-        },
-        {
-          "title": "AI Memory Supercycle: Nvidia CEO Warns of Multi-Year Supply Chain Constraints - News and Statistics",
-          "source": "IndexBox",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZFRmclhaZWNxZ0FTZ0g5TU5FWVkzbDRqeVo2Slc0WFFYckVYdWpYTEhyYWc4YTBXTGYxX2V4cEh5X2hDLTlyOTRpMHJSZ3pRWWdfbk9FdVFLT1hOWjNOV2sxSkhHWUhRbU95NUNoT1A0em4tVFZ4eklxcjJVaTNYRnM1Uk5HS3RWVWRpWFRiRUNnbWJhTzVFekJ5d01PSFVfTFAycG0yZ2tETEpSendEdlpHZw?oc=5",
-          "summary": "AI Memory Supercycle: Nvidia CEO Warns of Multi-Year Supply Chain Constraints - News and Statistics IndexBox",
-          "published": "2026-06-10T23:30:00+00:00",
-          "origin": "關鍵字「CEO Jensen Huang」"
         },
         {
           "title": "Jensen Huang Thinks the Artificial Intelligence (AI) Memory Boom Is Impossible to Ignore. Here's My Top Pick That No One Is Talking About.",
@@ -1904,7 +1913,7 @@
           "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQTGlHdHBZRllMUVdUUGNhdDdDaWJsLWFpbkxmS0NrLUozRC11Z2padEpnSlFNQVZsU0NXSXpndWNLMXlOTUh1UW9zQkZobE0wSnNORkFnUnlwamI4NllIa25FbkxfVnBsY0puWmhXWGJIc0U3Y00tb0g5RWwxVFRjNkhtNDdmZnloQno2RUJVMkM0TVQtbDBNakc0ek1jN1RDZXF1YnVEU1dqaHhlSmdHbEpnNG1RanBSclJoaExvcUdDZWZIUldQdTA2VEFCSHhhamt0VllKSmpMRzBXS010WWcyMFI?oc=5",
           "summary": "Nvidia GTC Paris Keynote Headlines VivaTech June 17-20：AI Factories, Sovereign AI, Robotics on Europe Agenda Tech Times",
           "published": "2026-06-10T19:59:49+00:00",
-          "origin": "關鍵字「Jensen Huang」"
+          "origin": "關鍵字「Jensen Huang Nvidia」"
         },
         {
           "title": "Anthropic’s CEO Has Only 1 Direct Report. Nvidia’s Jensen Huang Has 60. Here’s Why",
@@ -1923,10 +1932,10 @@
           "origin": "關鍵字「Jensen Huang」"
         },
         {
-          "title": "Nvidia Earnings 2026: $81.6B Record Quarter",
+          "title": "Nvidia Earnings: $81.6B Quarter, 92% DC Surge [2026]",
           "source": "tech-insider.org",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBmREpnVmp5NDExaURPOVpvSWJHVm5SeEJUN2s0eUhXUnZ2UE9fNmxkblRQNUt1V2pfdXFySUMzNG1WZVRKaURTeVBrVmFBZUxBWTd2Y0ZxYkJjaWhldnJjUnMzU1NQbjJ3ZVdYVEhveG96YW8?oc=5",
-          "summary": "Nvidia Earnings 2026: $81.6B Record Quarter tech-insider.org",
+          "summary": "Nvidia Earnings: $81.6B Quarter, 92% DC Surge [2026] tech-insider.org",
           "published": "2026-06-10T18:42:46+00:00",
           "origin": "關鍵字「Jensen Huang」"
         },
@@ -1952,14 +1961,6 @@
           "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVnB4LWV0eTdxNERCcko5aExtSFJKNmZOTUt2NUREN3RYZkdLbTVHQWxGc3NWZDA2ZnhWRGtpS191ZnpYR3RFY3V1RDkzYWl5WE53TnVSazh6TFNoNG56SE1nQ0tjZWw4dmx0TmktRlFXWDFlblNrVHhhc1dXSk01YVJ6ekVRenJxd3BCNmhkSTdNTDRBb0xleHlqaExQdlFCa3VfaDJRdk5ya2NiVXpKSmR1bkFLNk5k?oc=5",
           "summary": "Nvidia Slips As Macro Rate Fears Clash With Jensen Huang's Infrastructure Mandate Benzinga",
           "published": "2026-06-10T14:43:53+00:00",
-          "origin": "關鍵字「Jensen Huang Nvidia」"
-        },
-        {
-          "title": "Jensen Huang champions Korea partners, credits resilience for Nvidia rise - CHOSUNBIZ",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQREREX25sMFdXcl9qLW54Q2tEU0xQWXNDVGQ4OUFZRzZIUVY2Y3QwT0xhLWtSLVQwY0FCdGdoRnpyLTRDSTJwYV8tZ1pwLUw1VWljREk0M3RFTXBYX0xyQnMzWXRjZ1RyUVNQclBKajNZME1FY1gtWlVSOHNqaFQ1ZEhR0gGWAUFVX3lxTE80V0x6cmxIVjA1cjUzMU9TQ2FJZTJUdXc4T29JT09mZHVaRlhRaGRTNTBJQi05RWZIeHpGRDNudEtnNzN3Q1ZhRmtrVVU5OHIyUzVJcVk0VGowRmZWU0wwajM1V0Ruc0FuVjRzYi1XdjFCd0oxdVNLNWZlU2ZMNGxOOFV6UTcwT2dRTWtLcnF6Znp3dldoZw?oc=5",
-          "summary": "Jensen Huang champions Korea partners, credits resilience for Nvidia rise - CHOSUNBIZ Chosunbiz",
-          "published": "2026-06-10T14:33:00+00:00",
           "origin": "關鍵字「Jensen Huang Nvidia」"
         },
         {
@@ -2008,7 +2009,7 @@
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQWU41S2VacXUyTkwyeWZyQ3ozR3pBa2t4MXJ5SFFsMDA0Nkg0MzFiZ2dsWENybEQySG5Ha1FmMHF1U09tdWlybTdUc29TNVY0YVRZVEpWSC1KTUtlOHBzcTVjcjVSX1dCaDdSZF9UdDU4b0Z6UW83Q011OGZ0eGxVOUZWcTlqckQ2cnpqd3JB?oc=5",
           "summary": "NVIDIA CEO Jensen Huang Shares Early Days at Yongsan Electronics Market 조선일보",
           "published": "2026-06-10T02:46:42+00:00",
-          "origin": "關鍵字「CEO Jensen Huang」"
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
         },
         {
           "title": "Jensen Huang Ducks Senate Hearing on AI",
@@ -2144,7 +2145,7 @@
           "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdG1ISHdqT0tsMTdkVXpWRTNkTDJiT2ZtNDRWcFN4QWJtcGdoLURyRVV2TDA5ZUN5S1lGWVJuMy1hdGVyMmw4T2RFQnVvbWg3eXU2YWRVeWl3RjEzcjdNbjRjSHc3UnE0VE9HRnhJMjYwSUVwaHFFRVRqWmJ4ZVlKaTRSTFJUX1FKWXBnLXhjaVhuWWJvbXR6Y3dzbnVjYnctRnhCMGhVbG1BVnMxa050Xw?oc=5",
           "summary": "Elizabeth Warren Says If Jensen Huang Has Time To Attend $1 Billion Mara-A-Lago Dinner He Should Be Able Benzinga",
           "published": "2026-06-09T04:17:52+00:00",
-          "origin": "關鍵字「Jensen Huang」"
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
         },
         {
           "title": "What Jensen Huang Said About GPUs In 2009 Sounds Almost Unbelievable Today— And Why Nvidia Is Coming For The CPU Too",
@@ -2176,31 +2177,7 @@
           "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ILXp5LThKT0kzcnk0a2JtTGdHMEJGVnJIdVlsV25SdEVyQm5aOFZlaHZZNXRxcG51UW0yckRVSFgyX0lhNTIwZ21Td3MxSjBIeUdBdW1PY2dGZw?oc=5",
           "summary": "(News Focus) Nvidia CEO Jensen Huang's food tour sparks buzz for Korean restaurants, brands Yonhap News Agency",
           "published": "2026-06-09T01:35:50+00:00",
-          "origin": "關鍵字「Jensen Huang Nvidia」"
-        },
-        {
-          "title": "Nvidia chief Huang wraps up visit to Korea focused on AI partnerships",
-          "source": "The Korea Times",
-          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQYjR6Q3FyMlJpemlKYVVTamt4NjIzbXN2Z0FUckhjVllKNEJJVmExdlY5cW9vNlpxdlBpMmV2MzZWRk9PdlpBX3ZxWG83UHdFMDNnY0toQnJ1NVZPb0V0TC1ZNUZ6N1BLRVNYT0pHUklPcldJV2VFRVFXWko2WXZvTkE2cU5uN3EzZXBzNWZLcHpLS01vcnJiZFFFUkYzb3R6aUFrSlFVWHR0OUJEQ2ZUQ2VkMC00ZmNvVEVYYTNXbUtaYzlQ0gHKAUFVX3lxTFBmdXlQSFVoNXA3c0dNbS1TQzd3clBkOGxoNnI1Zm5hNF9VVHlpaURWNmN4d2NPNW9VMkY2eXNfeWFwQWlacVZhRGRUTUV5RlhuS1JFQ1NtNC1JVjg1dUxHOVd4N2tCeE9oMWFuNjVDMUxicEV1M0FBZWdXUnZITmd6Tkh0T3NCYm1TSmxvNlFUZG9uaENWaTVhSm9VWDE2cFJaemYwSUVOR0lqVnh2YlpFUnh6OU9BMzFDWm5neE1wWFlYN3BfZGJwNkE?oc=5",
-          "summary": "Nvidia chief Huang wraps up visit to Korea focused on AI partnerships The Korea Times",
-          "published": "2026-06-09T01:11:02+00:00",
           "origin": "關鍵字「Nvidia CEO Jensen Huang」"
-        },
-        {
-          "title": "Should You Buy AI Chip Stocks on the Dip? Words from Nvidia's Jensen Huang Offer an Answer That's Crystal Clear (and Echoes Warren Buffett's Wisdom).",
-          "source": "The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeGpyc0p2X0xzLURVZDZIN2t1RzZUZlJSSnR0eVJuTHc5b0dTaHZPeEJLd1JHQW4zdHM0Q0IyR1lQZjlPaDV4OENGczFISWZJazhWUEVuM1FnRlhUSWQ3b0w5ZktRbk9rSVVyMHJhdEdnc1ZIQzdtdy0wZFlPUVBJSDEzV1NaUEZMMVlDbXNra3pGeUNwZlB3RA?oc=5",
-          "summary": "Should You Buy AI Chip Stocks on the Dip? Words from Nvidia's Jensen Huang Offer an Answer That's Crystal Clear (and Echoes Warren Buffett's Wisdom). The Motley Fool",
-          "published": "2026-06-09T00:10:00+00:00",
-          "origin": "關鍵字「Jensen Huang Nvidia」"
-        },
-        {
-          "title": "黃仁勳談自身美國夢：承襲父母無退路移民精神（影音）",
-          "source": "自由時報 即時",
-          "url": "https://news.ltn.com.tw/news/world/breakingnews/5468571",
-          "summary": "輝達執行長黃仁勳與前美國國務卿萊斯對談時表示，一連串機率極低的事件造就了輝達，而自己是美國夢的具體體現。他回憶起父母的犧牲、哥哥帶著他前往美國的勇敢旅程，那種時時刻刻為了更好而努力的移民精神...…",
-          "published": "2026-06-11T05:21:48+00:00",
-          "origin": "自由時報 即時"
         }
       ]
     }

@@ -6,15 +6,15 @@
       "industry": "人工智慧 (AI) 基礎設施與應用",
       "heat_score": 98,
       "signals": {
-        "funding": "AI投資週期持續強勁，台積電月銷售額創歷史新高，顯示AI相關半導體需求旺盛。OpenAI考慮大幅降價，預計將與Anthropic展開用戶爭奪戰，反映市場競爭激烈，但同時也刺激更多應用與投資。SpaceX IPO估值近2兆美元，其中部分投資可能與AI相關的高效能運算需求有關。富達投資論壇指出AI帶動亞洲崛起，台灣、南韓半導體最受惠，資金持續湧入。",
-        "hiring": "輝達(Nvidia)徵才策略顯示對特定人才的高度需求。AI公司如Anthropic持續招募人才，並關注AI對勞動市場的影響，甚至提出全民基本收入的討論，顯示其對人才的長期規劃和社會影響的重視。",
-        "policy": "中國高考首次採用AI監考員，顯示AI在公共服務領域的應用與政策推動。OpenAI指控中國利用ChatGPT干預美國AI辯論，以及美國前總統川普考慮政府參與AI公司股權的討論，都反映AI已上升到國家戰略和地緣政治層面。Anthropic CEO呼籲政府應阻止危險AI的發展，顯示政策制定者對AI治理的關注。",
-        "technology": "HBM4E成為Nvidia認證關鍵，凸顯高頻寬記憶體在AI運算中的重要性。蘋果新Siri AI的推出，以及Visa將支付網路與ChatGPT結合，讓AI代理商購物支付，顯示AI技術在終端設備和商業應用上的持續突破與整合。"
+        "funding": "資金持續湧入AI領域，特別是基礎設施和晶片製造。三星去年半導體投資高達89.9萬億韓元，全球稱冠，顯示對AI相關硬體的巨大投入。OpenAI與Anthropic等AI模型開發商在爭奪用戶的同時，也顯示出市場對AI應用的巨大需求和潛在的價格戰，這將進一步推動AI技術普及。亞力等台灣機電公司訂單已看到2031年，並全數吃下AI三大商機，信昌電AI營收佔比也將突破10%，反映資金正流向AI相關供應鏈。",
+        "hiring": "AI領域人才需求旺盛，大學申請相關學群招生率飆破9成。輝達執行長黃仁勳透露徵才更重視特定類型人才，顯示業界對AI專業人才的高度渴求。Anthropic CEO Dario Amodei雖然只有一個直接下屬，但其對AI策略和文化建設的重視，也間接反映了AI領域對頂尖人才的吸引力。",
+        "policy": "多國政府將AI視為國家戰略重點，韓國砸3500億美元投資美國AI與戰略產業，顯示政府層面對AI產業的強力支持。中國大陸高考首次採用「AI監考員」，也反映AI在公共服務領域的應用逐漸深化。Anthropic CEO甚至建議政府應阻擋危險AI的發展，顯示政策制定者已開始關注AI的規範與潛在風險。",
+        "technology": "AI技術持續突破，從基礎半導體（如HBM4E成為Nvidia認證關鍵）到終端應用（如Apple新Siri、Visa將支付網絡接入ChatGPT）都展現強大動能。AI驅動半導體復甦，營收創高、漲價與專利戰頻傳，顯示技術競爭激烈。Intel的Project Firefly也將AI應用於筆記型電腦設計，進一步提升產品效能。"
       },
       "leading_indicators": [
-        "Nvidia下一季財報及HBM訂單狀況",
-        "OpenAI與Anthropic的價格戰及用戶增長數據",
-        "各國政府對AI技術發展與監管的新政策出台"
+        "Nvidia新產品發布與HBM4E認證進度",
+        "OpenAI與Anthropic等主要AI模型廠商的價格策略與用戶增長",
+        "各國政府對AI基礎設施建設與人才培養的具體政策落地情況"
       ],
       "us_stocks": [
         {
@@ -22,8 +22,8 @@
           "ticker": "NVDA"
         },
         {
-          "name": "微軟(Microsoft)",
-          "ticker": "MSFT"
+          "name": "美超微(Super Micro Computer)",
+          "ticker": "SMCI"
         },
         {
           "name": "甲骨文(Oracle)",
@@ -40,52 +40,48 @@
           "ticker": "3711"
         },
         {
-          "name": "廣達",
-          "ticker": "2382"
+          "name": "亞力",
+          "ticker": "1514"
         }
       ],
       "evidence_news": [
         {
-          "title": "HBM4E 成 Nvidia 認證關鍵 三星去年半導體投資 89.9 萬億韓元全球稱冠",
-          "source": "unwire PRO",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOWDc5Z3c3RnlwdUhvbGprU1pHQklacFF6UHRJU1Zud3Bzd1lFMkRWT0JoblBXUVNJWDdpVkRLUzhHSnd2Qy12cDRESnFzRnhhYmM2ZVlQci1BNkh2ZFpXTnJseVRDdE5RcjVNVUU3cXFReDU2ZkhZSElfQVF5dnVIVEM3Ykpia3lBRV8wTlNoczJUQjA?oc=1"
+          "title": "訂單看到2031年！機電四雄前5月營收齊創高 亞力手握120億案量、AI三大商機全吃下",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMi1ANBVV95cUxQMnlRMzZzdll6amo2SVdzNmRyY2ZhQVFseng4MmhzakVHVWFNbFkzODJsRExfZUo4djZNM2xnU25HUFQ3YVhvZ0hFZDRrQ25UR3ZfMl9PZ0VQTnlvS01qMUNhcTFJaFJLdjVSXy1oZGZGa3M2RlRYdFE0aXkwN0lCRGFBSXVwUFRNOVg2RFk1VUw0aUtaWk4taHRpcjdjUnhnbGE3d2JqdlItNUpMNlpOR1dWemVUTTZhZC1va1J5RVpJeklpb0ZWQVRXZWw0dkVkQWZPZWhSN3FxaWZkaUpMY2ZpeDBJaDNHY2J6YWFwbjRLM1lxWUFxbzY4ZXhiYWg4dDE0MnJoemp5Y25lUWtJdlpMV19lV2wtSnVlWlFyWll5WnowNTVyanVlbXlmQjZPbWtrMHdYX3I1NWdQXzJrN1dHeGZ1TG1QajhER19UUzdQMzhhOHRzR1JWckswZFpCSDJ2aFhWZjFSVXhNN2FFajE1MURSZ1laakFEV1lLRGxoQlFlcER4WmNEMVliWGlobFNZY3I4UkRCWE51c0hwWk8yRHRTQXFDVVlKWlVCUU1LVlNuX2s4M0hBU01Ga21LQm1BYkQxNXpmWENKR194VWJkTTI?oc=5"
         },
         {
-          "title": "富達投資論壇：AI 帶動亞洲崛起 台灣、南韓半導體最受惠",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8zMzQ4XzF5NXZweEs2Y25pV1g1N0U2Z3k1R25VZHJGbS1UOThZei1RWVF2RXVFNk5OYjJtdkxlczlhNzN0cjg1ZWY2YmZDdzVCWk5PQk9R0gFWQVVfeXFMTzMzNDhfMXk1dnB4SzZjbmlXWDU3RTZneTVHblVkckZtLVQ5OFl6LVFZUXZFdUU2Tk5iMm12TGVzOWE3M3RyODVlZjZiZkN3NUJaTk9CT1E?oc=1"
+          "title": "AI驅動半導體復甦：營收創高、漲價與專利戰-財經焦點情報站",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPNjVYNXVXQ0lyR0IyMVNfWHhTVy10Skg0elJINGwwNnBFTjBMV2tJbnRKdXU1ZW1KM3o0SzdmR0V1YnphQ3ZxSVhMYS1vVzB5OEF5cDBzM1NidTdGTVJuVjJRQ0t0VF9keWpoaFAwOFJEc183ZHBWeVRfdkAzbHdzS052M09fZS1n?oc=5"
         },
         {
-          "title": "Exclusive | OpenAI Considers Drastic Price Cuts, Anticipating War for Users With Anthropic",
-          "source": "WSJ",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVnFqNTRNQ3kyTnVCSTY1Z1V2QXEzUUd4MndFc2dNLWJqSWNHWTIxa19CelFzT3IzTFVsTEdiY2xJOU52OW1qVERrLTFfSlptTV83cmxtYkYyX3lIRzJjT2xScENLeGdyeEdTaGdFRHp1aGQxRGd4Tm5YS3RWRGlibWJtYXRVeVlXUEtvLUVOM3ZqZlJTTEh5eDJlWVRpRm9PNThFbTNNUXdPRFB3Q2tGa19na0M?oc=1"
+          "title": "Visa plugs its payment network into ChatGPT, letting AI agents shop and pay for users",
+          "source": "AP News",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONHZtakxXSFE2bHJoc3JueEthUlNFc2drdW44YkEzWW5VQlNDakRWRUpRM2V6dEs3RldsQkhQLUlMVGRIeGVSYjRMVHJYOHZNbDBuX2tpTzVOVUlXVl9BU3VuREVfeGtzSVlPUEVEV3JRc3NGSkFsbHFqdjVTS3l5R2c4c1JWVGpKSmEwc1N6bWlvMVQwMlhyWlRUUWs5MUtf?oc=5"
         }
       ],
-      "summary": "AI持續引領全球科技浪潮，資金、技術、政策與人才需求全面爆發，成為當前最強勁的產業趨勢。",
-      "news_count": 29,
+      "summary": "AI作為當前科技浪潮的核心，無論在基礎設施、晶片製造、軟體應用及人才需求上都展現出無與倫比的動能，並獲得各國政府的戰略支持。",
+      "news_count": 32,
       "first_seen": "2026-06-10",
       "last_seen": "2026-06-11"
     },
     {
       "rank": 2,
-      "industry": "太空經濟與衛星通訊",
+      "industry": "太空探索與商業航太",
       "heat_score": 85,
       "signals": {
-        "funding": "SpaceX的IPO備受關注，儘管有放空大師潑冷水，但中東主權基金仍瘋搶，顯示市場對太空產業的巨大潛在估值和投資熱情。SpaceX近2兆美元的估值，反映了資本市場對其未來發展的強烈預期。雖然有聲音質疑其估值，但巨額募資能力不容小覷。",
-        "hiring": "SpaceX作為太空探索領域的龍頭，持續擴大其研發和營運團隊，徵才動能強勁，以支持其火箭發射、星鏈計畫等多元業務。",
-        "policy": "美國參議員Elizabeth Warren呼籲SEC延遲SpaceX IPO，原因在於對其估值和公司治理的擔憂。這顯示政府對新興太空產業的資本市場活動開始密切關注，並試圖制定相關規範以保護投資者和公共利益。SpaceX的IPO進程也可能受到政策因素影響。",
-        "technology": "SpaceX在火箭回收、星鏈衛星網路等領域持續取得技術突破，奠定其在太空經濟中的領先地位。低軌衛星通訊技術的發展，將為全球提供更廣泛的網路覆蓋，並催生更多創新應用。"
+        "funding": "SpaceX即將上市，估值高達1.75兆美元，顯示市場對商業航太的巨大期待。儘管存在IPO可能失敗的隱憂，但其超吸金能力不容小覷，有望推動美元走強。這類大型IPO將為太空產業帶來大量資金。",
+        "hiring": "雖然新聞未直接提及太空產業的徵才動能，但SpaceX的IPO預計將吸引大量人才投入，且隨著產業擴張，對工程師、科學家等專業人才的需求必然會增加。",
+        "policy": "美國參議員Elizabeth Warren呼籲SEC延遲SpaceX IPO，反映政府對新興太空產業的監管關注，但也間接證實了該產業的巨大影響力。儘管有監管壓力，但長期來看，各國對太空戰略的投入將持續支持此產業發展。",
+        "technology": "SpaceX作為領頭羊，其火箭回收、星鏈計畫等技術已大幅降低太空發射成本並擴展應用場景。雖然新聞未有最新技術突破，但其持續的商業運營和IPO本身就代表了技術成熟和商業化進程。"
       },
       "leading_indicators": [
-        "SpaceX IPO的實際進展及估值表現",
-        "星鏈(Starlink)用戶數及服務覆蓋範圍擴張",
-        "各國政府對商業太空活動的法規調整"
+        "SpaceX IPO後的市場表現與資金流向",
+        "其他商業航太公司（如Blue Origin, Rocket Lab）的融資與發射計畫",
+        "各國政府太空預算與合作案進展"
       ],
       "us_stocks": [
-        {
-          "name": "SpaceX (未上市)",
-          "ticker": "SPACEX"
-        },
         {
           "name": "波音(Boeing)",
           "ticker": "BA"
@@ -107,136 +103,71 @@
       ],
       "evidence_news": [
         {
-          "title": "放空大師查諾斯潑冷水！SpaceX近2兆美元估值難自圓其說：這是一場「希望與夢想IPO」",
+          "title": "科技七巨頭過時了？MANGOS正快速竄紅 SpaceX明日上市",
           "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE50VTVIQVFEemNrZjlZNms1V3V6MjBnQjU0QU9taC1IeU00S0pjQ0ZvMUZrbEdnbUQtcHVQRDBhSTItZG9WbzE1THdtRzZIOWs?oc=1"
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5sQzNhNXBlVXgzRGxOUnJHV1BlenY0N1VISXRVWWhiSW1XY2J4dHFCb29LWXRDcGp4VGVyb3pBUDdMUDJZcmdJWTRQUDhoUnM?oc=5"
+        },
+        {
+          "title": "SpaceX IPO可能失敗的五大隱憂",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9QQ2VlVlpvMVF5bXVtRlVSMlFKTE1HOTRtcEtiZFdwN09yaEJyVlY2U1hRclFzVGZYTkJlM1BfMkw5Q1dqTl96TjdjcDJXQlE?oc=5"
         },
         {
           "title": "Sen. Elizabeth Warren Makes Hail Mary Plea to Delay SpaceX IPO",
           "source": "Gizmodo",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSzNrWkJ6WWdZYmdaTWhFZ21lUnNOMExJb2ZrM3NRSXZybEN4QUJCYkJ6alk0Und5d2Q5S2tkOVFCNTRvTzJ4U3dWVTN1bkdzTTllNkFkOW1xZzB0MUpFUng0MUhIOWJ5U212TDhfN3dHQUFOQlZfdlBmcktWaEVvWHE3Z2JUR1FpT0tjU3F5LWl5U3YwamFJ?oc=1"
-        },
-        {
-          "title": "Dow Jones Futures Rise, Oil Pops, Oracle Dives; SpaceX IPO On Launch Pad",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd0lCTFNQS2J5djhfQjMyU0F1V1RwUU45UmVvdlVtRmUzWWVZcHBlaDVtZDl0Vkd5SXRuMjgyTXRKQzQtOTNLck1NalNlcWw4bWxKWUtIQUF4Q1FxZF9pWlY5T0NOQjRySHVYSU15eUs0NTNXd0hxb2JpRmV1S3FSMjAzNDZIazgxUmZtdnJLNFNiUzJoZU1CQ19xSDJXd3JXXzI3aXJ6Qlk0Qmk5RWRxY2tDUG5CM0dPdUE?oc=1"
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSzNrWkJ6WWdZYmdaTWhFZ21lUnNOMExJb2ZrM3NRSXZybEN4QUJCYkJ6alk0Und5d2Q5S2tkOVFCNTRvTzJ4U3dWVTN1bkdzTTllNkFkOW1xZzB0MUpFUng0MUhIOWJ5U212TDhfN3dHQUFOQlZfdlBmcktWaEVvWHE3Z2JUR1FpT0tjU3F5LWl5U3YwamFJ?oc=5"
         }
       ],
-      "summary": "太空經濟在SpaceX的引領下，IPO熱潮與技術突破並行，儘管面臨監管挑戰，但仍是資本市場的焦點。",
+      "summary": "SpaceX的IPO預示著商業航太進入資本市場的黃金時代，儘管伴隨監管挑戰，但其技術領先和巨大市場潛力使其成為動能強勁的新興產業。",
       "news_count": 0
     },
     {
       "rank": 3,
-      "industry": "雲端運算與企業數位轉型",
+      "industry": "生物科技與精準醫療",
       "heat_score": 78,
       "signals": {
-        "funding": "甲骨文(Oracle)在雲端轉型中報告了強勁的盈利，並計劃再募資200億美元，顯示企業在雲端服務上的資本支出持續增長。儘管AI投資週期可能帶來「再通膨」壓力，但企業對雲端轉型的需求仍是強勁的資金驅動力。",
-        "hiring": "甲骨文獲得美國人事管理辦公室(OPM)的重大HR IT現代化合約，將為200萬聯邦員工提供HR軟體，這類大型政府合約通常會帶動相關人才的招聘需求。",
-        "policy": "OPM與Oracle的合作，顯示政府部門積極推動IT基礎設施的現代化和數位轉型，政策上支持雲端服務的採用和發展。",
-        "technology": "Oracle在雲端運算領域持續投入，其快速的雲端轉型和在AI領域的支出，推動了其技術實力。雲端服務與AI的結合，將為企業提供更高效、智能的解決方案。"
+        "funding": "Parabilis成為有史以來規模最大的VC支持的生物科技IPO，顯示創投基金對此領域的高度興趣。其成功上市並股價飆升，為整個生物科技產業注入強心劑，吸引更多資本投入。",
+        "hiring": "生物科技產業對研發、臨床試驗等專業人才的需求持續增長。隨著更多新藥和療法進入臨床階段，相關人才的爭奪將日益激烈。",
+        "policy": "各國政府對新藥研發、基因編輯等生物科技領域的政策支持和監管框架正在逐步完善。加快藥物審批、提供研發補貼等政策將有利於產業發展。",
+        "technology": "新聞中提到Parabilis專注於癌症治療，顯示精準醫療和新藥研發是技術突破的重點。基因編輯、細胞療法等前沿技術的發展，將持續推動生物科技產業的創新。"
       },
       "leading_indicators": [
-        "主要雲端服務供應商(CSP)的財報及資本支出",
-        "企業SaaS採用率及雲端原生應用開發趨勢",
-        "政府及大型機構的數位轉型專案進度"
+        "新藥研發的臨床試驗結果與監管批准進度",
+        "生物科技新創公司的融資規模與IPO活動",
+        "基因編輯等突破性技術的商業化應用情況"
       ],
       "us_stocks": [
         {
-          "name": "甲骨文(Oracle)",
-          "ticker": "ORCL"
+          "name": "安進(Amgen)",
+          "ticker": "AMGN"
         },
         {
-          "name": "亞馬遜(Amazon)",
-          "ticker": "AMZN"
+          "name": "吉利德科學(Gilead Sciences)",
+          "ticker": "GILD"
         },
         {
-          "name": "谷歌(Alphabet)",
-          "ticker": "GOOGL"
+          "name": "莫德納(Moderna)",
+          "ticker": "MRNA"
         }
       ],
       "tw_stocks": [
         {
-          "name": "中華電",
-          "ticker": "2412"
+          "name": "中裕",
+          "ticker": "4147"
         },
         {
-          "name": "緯穎",
-          "ticker": "6669"
+          "name": "藥華藥",
+          "ticker": "6446"
         }
       ],
       "evidence_news": [
         {
-          "title": "Oracle Reports Earnings Amid a Rapid Cloud Transformation",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1DRGFjUEctUmZSX0t0SlBiTVpfODN3dWY2VDVlcnJ4dnpqVXpyVDJ0Rkcyd2NlbHM3OFZrYXhkQW9ncUNQVjFNQWc1WTBDcG1udER5RXl6M0ZQSEJfSExiTFJFbjY2WlBsNlAxb0V2RGg4LWd1U1R4WU5BRnM?oc=1"
-        },
-        {
-          "title": "OPM awards major HR IT modernization contract to Oracle",
-          "source": "Federal News Network",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUkZfS2lLeXZPWVFOdXJkeTgxT08tazVaVGVjUDVERTMxcEhIOGFnTWY1dGg0b3otSUd5RVZ6TlJjRlhaaTFYdmxTQ01odm8zay1kSTllTGt0b1ZBU2JWT2MxalZQNVNJc1FQbmcySHIyMmtxN3VYbGNmemplWlJ4ZFZMNjBWQUhzNWVHd1IwTnRyYVlDVThLZnh3UmFNOEdPeEQ5dWUtY21Zc3c?oc=1"
-        },
-        {
-          "title": "全球告別低通膨時代！富達：能源衝擊+AI投資潮掀「再通膨」 估Fed今年按兵不動",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi7wNBVV95cUxNaTRvZ3paWnAzczdxN0hFUGJ5aVM1Qjc1NWYxeHRCLWNyakRkWF9ZbzN2NkVHb3d5ZWFxQlBhOFFIWHpUOFNObXhSem5yWVY4RFV2Sk02T0dzU2djbTdzc2pCbFI2WWdabEtsd29sdTEyV3FRN0FOUDNxdVl0RkZheXJfaEtQczBfSXJJaWJpcDVRNzhqV2xFVWF0NHBWNTZxTkxCSUZmNWU2ZXFmQUN4NFZEM21GSTlaMkFVdmZuNFpweGJObkdzMXh1Wm05TzJpUkhMTjhOZTJSRkZoYTVWYnVmM00wR05aejhoeXJQdjB1bThQMm5xTnRwT1BZTzhmTXRjTGotUVgwc2JEU00zUlRsQUtYb3cyNGdGZmpPVWt5X1o2aWh5X29NRHU3V3lySUlPS0RwNzk4REZCQk03Z25pREttYkVraGlFRmJNR3M1S0FWNUxlU2pueE5YQnUteDJJczF3cERFUXlJYnJucm1iQTJvdF9ZVjNoZnluZmRrWldXd3JGUjYxSVFMZ2xlVE0wV3VaMlZ0WHNMS2M4V3JGLUNFZklaTGlSdEtEYWVJZmk3VlllcVFrd045bEkxZDRXWjJzZENMMUh2U1drNjVyNm9FbGdxem9yeVpyVzFOUG15MXBKX1NKLTNYMGs?oc=1"
+          "title": "Parabilis now the largest VC-backed biotech IPO",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV_5cUxNMC1FMkxUSTl6REVwZ3RmRkpWclFOOVY0TXJpNU8zWlNmSWZZdHF3Mm9ISXFlRmk1aVZ6cWxuYi12TDFxTnpwR0dkM2VPejZEMW9YVm9NbW9DSFlOUldzWWFpMnBndklqTHZBWGpuLTdEaHgxUjBfT1I3R0RKUDdFcHF2UlAxbGJkTXBzWnNDbVBhem9lUmtGaVhFQ2ZWd3daS1E?oc=5"
         }
       ],
-      "summary": "企業對雲端服務的需求持續增長，特別是AI驅動下的數位轉型，讓雲端運算產業保持穩健動能。",
-      "news_count": 0
-    },
-    {
-      "rank": 4,
-      "industry": "消費電子與智慧裝置創新",
-      "heat_score": 70,
-      "signals": {
-        "funding": "儘管整體科技股面臨賣壓，但蘋果等巨頭在AI和新產品上的投資仍在持續。台灣首富換人由日月光張虔生兄弟挾AI熱潮奪冠，顯示半導體封測產業因AI帶動的終端應用需求而獲益，間接反映消費電子產業鏈的資金流動。",
-        "hiring": "蘋果(Apple)持續在AI和新系統開發上投入大量研發人力，並擴大其軟硬體整合團隊。像Framework Laptop這樣注重模組化和永續性的新創公司，也在持續招聘人才以推動產品上市。",
-        "policy": "目前未見直接針對消費電子產業的重大政策或法規變動，但AI相關的政策（如隱私、數據使用）將會間接影響智慧裝置的設計和功能。",
-        "technology": "蘋果iOS 27、macOS Golden Gate等新系統的250項變更，以及新Siri AI的表現，顯示其在軟體和AI整合上的技術創新。iPhone 18關鍵規格升級的曝光，也預示著未來智慧手機的技術演進方向。模組化筆電如Framework Laptop 13 Pro的推出，代表了消費電子在永續性和客製化方面的新技術趨勢。"
-      },
-      "leading_indicators": [
-        "蘋果新iPhone及其他智慧裝置的銷售數據",
-        "主要消費電子品牌在AI功能上的整合進度",
-        "模組化、永續性產品的市場接受度"
-      ],
-      "us_stocks": [
-        {
-          "name": "蘋果(Apple)",
-          "ticker": "AAPL"
-        },
-        {
-          "name": "高通(Qualcomm)",
-          "ticker": "QCOM"
-        }
-      ],
-      "tw_stocks": [
-        {
-          "name": "鴻海",
-          "ticker": "2317"
-        },
-        {
-          "name": "聯發科",
-          "ticker": "2454"
-        }
-      ],
-      "evidence_news": [
-        {
-          "title": "下一代標準版iPhone 18更香！蘋果疑提前曝光關鍵規格升級",
-          "source": "自由電子報3C科技",
-          "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE5zLXhOQkRJZDNzRzRpVS1neDR4RzJwTXplaDBHclZxcG03UVE1NHZzOGFYSlFoeGs5aEhwMVdISTducU5PSHNn0gFMQVVfeXFMTW9KVXRZbHVodWwxZUd6dXZ3Y1YxdzFkaXlmYzJSUEk3aEVvV3Y4T08ySWRXLVFpcHNLeEd2T1M0ZEFzRjdieVpxYXo4Xw?oc=1"
-        },
-        {
-          "title": "Apple’s new Siri AI knows when to shut up",
-          "source": "The Verge",
-          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1KOXM3dDMwdFJNS19UTFhiVjVjUm9kN1lEdnFiVmJzU21VTzFpM0F2U2FJZDhEdUxFUkVoaEF4WnAtTGs2Zl9ZMHdTN0ltdklYMVBKOVhlZFE5eUd4RnJXcy1kakNNb2FwSjZueVJfOGtSM1RfNjRRZ1lB?oc=1"
-        },
-        {
-          "title": "台灣首富換人！ 日月光張虔生兄弟挾AI熱潮奪《富比士》冠軍",
-          "source": "ETtoday財經雲",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE94RGg1QVFNVmdzeEJsV3VNeE9EM1BZd1BqeVIycDAzM2pvbFNFamF1ODRVN3hWMC1KcVI2NWRhU05wOHMteXA2dW5sQk4xV1loelHSAW5BVV95cUxQME1zcmdWU1ZCNDlBWm1lUnROOUVZRk5RY2RhUVE4eTViM212WXUxTk9LUHQzZXdWVm9hdVd0bHBsRUJGLWlhcmhuLVRGQTh4eDR3dkk3TUxlVDlYQTBIaWluR3U1VGNwaTU0N2RQQQ?oc=1"
-        }
-      ],
-      "summary": "AI與裝置的深度整合，以及模組化、永續性設計，正推動消費電子產業進入新的創新週期。",
+      "summary": "生物科技領域在創投資金的推動下，透過大型IPO展現強勁的成長動能，特別是在精準醫療和新藥研發方面有顯著的技術突破。",
       "news_count": 0
     }
   ]
