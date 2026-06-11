@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-06-10 06:25 UTC (TWSE BFI82U)",
+  "as_of": "2026-06-11 05:32 UTC (TWSE BFI82U)",
   "unit": "元",
   "days": [
     {
       "date": "2026-06-09",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": -91733415946,
+      "foreign_main": -91733415946,
       "foreign_dealer": 0,
       "trust": 23283537434,
       "dealer": -6691674226,
@@ -15,8 +15,8 @@
     },
     {
       "date": "2026-06-08",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": -93851546891,
+      "foreign_main": -93851546891,
       "foreign_dealer": 0,
       "trust": 8775725700,
       "dealer": -49146842947,
@@ -26,8 +26,8 @@
     },
     {
       "date": "2026-06-05",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": -82631158863,
+      "foreign_main": -82631158863,
       "foreign_dealer": 0,
       "trust": 1620186439,
       "dealer": -28430714775,
@@ -37,8 +37,8 @@
     },
     {
       "date": "2026-06-04",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": -75685430944,
+      "foreign_main": -75685430944,
       "foreign_dealer": 0,
       "trust": 4169222789,
       "dealer": -21366533747,
@@ -48,8 +48,8 @@
     },
     {
       "date": "2026-06-03",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": 43396335647,
+      "foreign_main": 43396335647,
       "foreign_dealer": 0,
       "trust": 5551570132,
       "dealer": 2596766242,
@@ -59,8 +59,8 @@
     },
     {
       "date": "2026-06-02",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": 10842948180,
+      "foreign_main": 10842948180,
       "foreign_dealer": 0,
       "trust": 2820321473,
       "dealer": -15768188108,
@@ -70,8 +70,8 @@
     },
     {
       "date": "2026-06-01",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": 36817371952,
+      "foreign_main": 36817371952,
       "foreign_dealer": 0,
       "trust": 7758630147,
       "dealer": -6508599147,
@@ -81,8 +81,8 @@
     },
     {
       "date": "2026-05-29",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": 80145461140,
+      "foreign_main": 80145461140,
       "foreign_dealer": 0,
       "trust": 7018067618,
       "dealer": 15607209549,
@@ -92,8 +92,8 @@
     },
     {
       "date": "2026-05-28",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": -38136681812,
+      "foreign_main": -38136681812,
       "foreign_dealer": 0,
       "trust": -6206044668,
       "dealer": -15038347857,
@@ -103,8 +103,8 @@
     },
     {
       "date": "2026-05-27",
-      "foreign": 0,
-      "foreign_main": 0,
+      "foreign": 38127903304,
+      "foreign_main": 38127903304,
       "foreign_dealer": 0,
       "trust": -4219051039,
       "dealer": -3130647620,
