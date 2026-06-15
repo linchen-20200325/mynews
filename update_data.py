@@ -401,8 +401,11 @@ INTL_ALERT_SYSTEM_PROMPT = """\
   - 美股指數收盤約台灣時間清晨,對台股開盤是【隔夜領先】訊號;美股期貨是【盤前即時】風向。
   - 台指期夜盤(台灣 15:00–次日 05:00)直接反映台股對隔夜美股的定價,屬【盤前即時】最直接訊號。
 
-你的任務:【只根據 (A) 的真實數字與 (B) 的真實新聞】,研判「美股/台指期夜盤是否出現突然大跌或重大利空」,
-並推論「對今日/隔日台股的可能影響」,最後【嚴格且唯一】輸出合法 JSON。
+你的任務:【只根據 (A) 的真實數字與 (B) 的真實新聞】,做兩件事(無論有無大跌,每天都要完整給出):
+  1. 研判「美股/台指期夜盤是否出現突然大跌或重大利空」並列出利空原因;
+  2. 給出「對美股的整體看法(us_view)」與「對今日/隔日台股的可能影響(tw_impact)」——
+     即使盤勢平靜、無大跌,也要依真實報價與新聞給出當下的方向研判與理由,不可留白。
+最後【嚴格且唯一】輸出合法 JSON。
 
 【鐵則 — 數字真實性】
 - 嚴禁竄改或自行編造任何漲跌幅數字;報價數字以程式提供的 (A) 為唯一依據,你的輸出【不要再列數字欄位】,
@@ -422,7 +425,7 @@ INTL_ALERT_SYSTEM_PROMPT = """\
 {
   "report_date": "YYYY-MM-DD",
   "alert_level": "警戒|觀察|平靜",
-  "summary": "一句話總結:美股/台指期夜盤是否大跌、台股要不要當心",
+  "summary": "一句話總結:今日美股/台指期夜盤氛圍(平靜或大跌)、台股要不要當心",
   "interpretation": [
     {
       "market": "美股|台指期夜盤|半導體類股…",
@@ -430,6 +433,11 @@ INTL_ALERT_SYSTEM_PROMPT = """\
       "evidence_news": [ { "title": "新聞標題", "source": "媒體來源", "url": "連結(若有)" } ]
     }
   ],
+  "us_view": {
+    "direction": "偏多|偏空|中性",
+    "reason": "依真實報價與新聞,說明當前美股(大盤/科技/半導體)的整體研判與主要驅動;平靜時也要說明為何中性/偏多/偏空,不可留白",
+    "focus": ["當前最該盯的美股焦點(如 Fed 利率、科技財報、AI 類股…)", "..."]
+  },
   "tw_impact": {
     "direction": "偏空|偏多|中性",
     "reason": "依時間差與連動性,說明對台股(尤其半導體/電子)的可能影響",
@@ -900,8 +908,9 @@ def format_quotes_block(quotes_doc: dict) -> str:
 def build_intl_alert_user_prompt(quotes_doc: dict, news: list[dict], today: str) -> str:
     return (
         f"今天的日期是 {today}。\n"
-        f"請依下列『真實報價』與『真實新聞』,研判美股/台指期夜盤是否突然大跌或有重大利空,"
-        f"並推論對台股(尤其半導體/電子)的可能影響,嚴格輸出 JSON。"
+        f"請依下列『真實報價』與『真實新聞』:(1) 研判美股/台指期夜盤是否突然大跌或有重大利空;"
+        f"(2) 無論有無大跌,都要給出『對美股的整體看法(us_view)』與『對台股(尤其半導體/電子)"
+        f"的可能影響(tw_impact)』,平靜日也要有方向與理由、不可留白。嚴格輸出 JSON。"
         f"數字一律以報價為準、不可竄改;利空原因只能引用新聞。report_date 請填 {today}。\n\n"
         f"{format_quotes_block(quotes_doc)}\n\n"
         f"{format_news_block(news)}"
@@ -1049,6 +1058,8 @@ def validate_intl_alert(data: dict) -> None:
         raise ValueError("quotes 必須是非空字典(真實報價)")
     if not isinstance(data.get("tw_impact"), dict):
         raise ValueError("tw_impact 必須是物件")
+    if not isinstance(data.get("us_view"), dict):
+        raise ValueError("us_view 必須是物件")
 
 
 def validate_focus(data: dict) -> None:
@@ -1400,6 +1411,9 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
     tw_impact = gemini.get("tw_impact")
     if not isinstance(tw_impact, dict):
         tw_impact = {"direction": "中性", "reason": "", "sectors": []}
+    us_view = gemini.get("us_view")
+    if not isinstance(us_view, dict):
+        us_view = {"direction": "中性", "reason": "", "focus": []}
     # 可預測法人賣壓事件(純規則行事曆;失敗不影響國際盤主體)
     try:
         upcoming_events = chip_calendar.upcoming_chip_events()
@@ -1419,6 +1433,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         "alert_level": gemini.get("alert_level") or ("警戒" if drops else "平靜"),
         "summary": summary,
         "interpretation": gemini.get("interpretation", []),
+        "us_view": us_view,                   # 對美股整體看法(平靜日也有)
         "tw_impact": tw_impact,
         "ai_ok": ai_ok,                       # AI 解讀是否成功(供前端/LINE 標註「原因待補」)
         "upcoming_events": upcoming_events,    # 可預測法人賣壓事件(行事曆)
@@ -1874,15 +1889,30 @@ def lead_market_drops(intl: dict) -> list[dict]:
 
 
 def build_intl_alert_line_message(intl: dict) -> str:
-    """把國際盤大跌預警整理成一則精簡 LINE 文字(真實報價數字 + Gemini 利空研判)。"""
+    """把國際盤快報整理成一則精簡 LINE 文字(真實報價數字 + Gemini 美股/台股研判)。
+
+    每天都推:有領先市場大跌(或 AI 判警戒)→『🚨 國際盤大跌預警』;平靜 →『🌅 國際盤快報』。
+    """
+    lead = lead_market_drops(intl)
+    alarm = bool(lead) or intl.get("alert_level") == "警戒"
+    title = "🚨 國際盤大跌預警" if alarm else "🌅 國際盤快報"
     lines = [
-        f"🚨 國際盤大跌預警 {intl.get('report_date', '')}",
+        f"{title} {intl.get('report_date', '')}",
         f"警示級別:{intl.get('alert_level', '—')}",
     ]
     if intl.get("summary"):
         lines.append(intl["summary"])
 
-    lead = lead_market_drops(intl)
+    us = intl.get("us_view", {})
+    if us:
+        lines += ["", f"🇺🇸 美股看法:{us.get('direction', '—')}"]
+        ureason = (us.get("reason", "") or "").strip()
+        if ureason:
+            lines.append(ureason[:200] + ("..." if len(ureason) > 200 else ""))
+        focus = us.get("focus", [])
+        if focus:
+            lines.append("觀察焦點:" + "、".join(str(s) for s in focus))
+
     if lead:
         lines += ["", "📉 大跌(時間差領先台股):"]
         for d in lead:
@@ -1922,7 +1952,7 @@ def build_intl_alert_line_message(intl: dict) -> str:
 
 
 def notify_line_intl_alert(intl: dict) -> None:
-    """國際盤大跌 + 利空 → 推一則 LINE 預警(沿用 Messaging API push)。"""
+    """國際盤快報 → 每天推一則 LINE(含美股/台股看法;大跌時標題自動升級)。"""
     _push_line_text(build_intl_alert_line_message(intl))
 
 
@@ -2370,12 +2400,13 @@ def main() -> int:
         # 推播(依優先順序:① 國際盤大跌 → ② 多重賣壓共振 → ③ 法人事件預告 → ④ 戰略報告)
         if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
             print("推送 LINE 通知(依序:國際盤大跌→共振→事件預告→戰略報告)...")
-            # ① 國際盤大跌預警(真實報價,不依賴 AI)
+            # ① 國際盤快報(每天推:含美股/台股看法;大跌時自動升級為大跌預警標題)
             lead = lead_market_drops(intl) if intl else []
-            if lead and intl_alert_line_enabled():
+            if intl and intl_alert_line_enabled():
                 try:
                     notify_line_intl_alert(intl)
-                    print(f"  ① 國際盤大跌預警已推({len(lead)} 項)。")
+                    tag = f"大跌 {len(lead)} 項" if lead else "平靜快報"
+                    print(f"  ① 國際盤快報已推({tag})。")
                 except Exception as exc:  # noqa: BLE001
                     print(f"  警告: 國際盤 LINE 推播失敗:{exc}", file=sys.stderr)
             # ② 多重賣壓共振(美股大跌 + 四力≥2,真實數據判定)

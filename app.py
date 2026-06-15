@@ -1101,6 +1101,18 @@ def render_intl_alert(data: dict) -> None:
     elif not data.get("ai_ok", True):
         st.info("ℹ️ 利空原因解讀因 AI 配額/網路暫缺(原因待補);上方真實報價與大跌偵測不受影響。")
 
+    us = data.get("us_view", {})
+    if us:
+        st.subheader("🇺🇸 對美股的看法")
+        direction = us.get("direction", "中性")
+        badge = {"偏多": "🟢", "偏空": "🔴", "中性": "⚪"}.get(direction, "")
+        st.markdown(f"**研判方向:{badge} {direction}**")
+        if us.get("reason"):
+            st.write(us["reason"])
+        focus = us.get("focus", [])
+        if focus:
+            st.markdown("**觀察焦點:** " + "、".join(str(s) for s in focus))
+
     imp = data.get("tw_impact", {})
     if imp:
         st.subheader("🇹🇼 對台股可能影響")
