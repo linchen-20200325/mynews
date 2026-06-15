@@ -14,6 +14,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+import etf_data  # ETF 資料單一真相源(快取共用層)
 import etf_fetcher  # 透過代理抓 MoneyDJ 成分股建庫
 import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
 import etf_profile_fetcher  # ETF 圖鑑:抓基本資料(型態/配息/費用/策略)
@@ -42,7 +43,6 @@ FOCUS_PATH = Path("latest_focus.json")
 FOCUS_ARCHIVE_DIR = Path("data/focus")
 HOUSING_PATH = Path("latest_housing.json")
 HOUSING_ARCHIVE_DIR = Path("data/housing")
-ETF_HOLDINGS_PATH = Path("etf_holdings.json")
 GEOJSON_PATH = Path("taiwan_counties.geo.json")
 
 SENTIMENT_STYLE = {
@@ -402,7 +402,7 @@ def render_etf_crawl_panel() -> None:
         st.divider()
         st.markdown("**💾 存檔成分股資料庫**")
         live = st.session_state.get("etf_data_live")
-        holdings_data = live or etf_holdings.load_holdings(ETF_HOLDINGS_PATH) or {}
+        holdings_data = live or etf_data.get_holdings() or {}
         n_etf = len(holdings_data.get("etfs", {}))
         if live:
             st.caption(f"將存入本回合抓到的最新資料({n_etf} 檔 ETF)。")
@@ -575,7 +575,7 @@ def render_etf_profiles() -> None:
                     except Exception as exc:  # noqa: BLE001
                         st.error(f"診斷失敗:{exc}")
 
-    data = st.session_state.get("etf_profiles_live") or etf_profile_fetcher.load_profiles()
+    data = st.session_state.get("etf_profiles_live") or etf_data.get_profiles()
     profiles = list((data.get("profiles") or {}).values()) if isinstance(data, dict) else []
     if not profiles:
         st.info("尚無 ETF 圖鑑資料。請先按上方「🔄 抓取 / 更新」建立(需設定 PROXY_URL)。")
@@ -784,9 +784,8 @@ def render_stocks(data: dict) -> None:
         st.info("本次未整理出台股標的。")
         return
 
-    # 交叉參照:每檔個股被幾檔 ETF 持有(來自 etf_holdings.json)
-    holdings = etf_holdings.load_holdings(ETF_HOLDINGS_PATH)
-    etf_counts = etf_holdings.etf_count_map(holdings) if holdings else {}
+    # 交叉參照:每檔個股被幾檔 ETF 持有(共用 etf_data 快取,與反查頁同一來源)
+    etf_counts = etf_data.get_etf_count_map()
 
     # 總表(新聞提及次數 + ETF 持有檔數 + 首見/最近見報,多個訊號一起看)
     st.subheader("📋 台股標的總表(新聞提及 × ETF 持有 × 見報區間)")
@@ -1785,14 +1784,16 @@ def render_price_update_panel(current_prices: dict) -> None:
 
 
 def render_etf_lookup(data: dict | None = None) -> None:
-    if data is None:
-        data = etf_holdings.load_holdings(ETF_HOLDINGS_PATH)
+    from_cache = data is None  # 未指定 → 用 etf_data 快取的檔案來源(可重用反查快取)
+    if from_cache:
+        data = etf_data.get_holdings()
     if not data:
         st.warning("找不到 `etf_holdings.json` 或格式有誤。請確認檔案存在且為合法 JSON。")
         return
 
     etfs = data.get("etfs", {})
-    rows = etf_holdings.reverse_index(data)
+    # 檔案來源走快取的反查;即時抓取(live)的資料則即時反查,確保剛抓的馬上反映
+    rows = etf_data.get_reverse_index() if from_cache else etf_holdings.reverse_index(data)
 
     # 股價(供「價位範圍」篩選):本次即時抓到的優先,否則讀 repo 內 stock_prices.json
     price_data = st.session_state.get("price_data_live") or price_fetcher.load_prices()
@@ -2455,7 +2456,7 @@ def main() -> None:
     st.sidebar.header("📂 報告類型")
     report_type = st.sidebar.radio(
         "選擇",
-        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "國際盤預警", "法人籌碼", "個股健診", "全球人物追蹤", "房市觀察", "ETF持股反查", "ETF圖鑑"],
+        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "國際盤預警", "法人籌碼", "個股健診", "全球人物追蹤", "房市觀察", "ETF工作台"],
     )
     st.sidebar.divider()
     with st.sidebar:
@@ -2990,15 +2991,16 @@ def main() -> None:
 
         # 3) 否則顯示每日排程存檔(地圖在沒有 AI 判讀時也會顯示房價)
         render_housing(pick_report(HOUSING_PATH, HOUSING_ARCHIVE_DIR))
-    elif report_type == "ETF持股反查":
-        st.header("🧩 ETF 持股反查 — 個股被幾檔 ETF 持有")
-        render_etf_crawl_panel()
-        render_etf_add_panel()
-        # 本次即時抓到的資料庫優先;否則用 repo 內的 etf_holdings.json
-        render_etf_lookup(st.session_state.get("etf_data_live"))
-    else:
-        st.header("📚 ETF 圖鑑 — 投資概念 / 配息 / 費用 / 分類")
-        render_etf_profiles()
+    else:  # ETF工作台:兩視角併成 Tabs,底層共用 etf_data 快取,切 Tab 不重算
+        st.header("🧩 ETF 工作台 — 持股反查 / 圖鑑(共用同一份快取資料)")
+        tab1, tab2 = st.tabs(["🔎 持股反查 / 個股", "📚 ETF 圖鑑(組合配置)"])
+        with tab1:
+            render_etf_crawl_panel()
+            render_etf_add_panel()
+            # 本次即時抓到的資料庫優先;否則用 etf_data 快取的 etf_holdings.json
+            render_etf_lookup(st.session_state.get("etf_data_live"))
+        with tab2:
+            render_etf_profiles()
 
 
 if __name__ == "__main__":
