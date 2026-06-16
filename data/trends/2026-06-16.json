@@ -3,18 +3,18 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "AI與半導體先進封裝",
+      "industry": "人工智慧 (AI) 基礎設施與應用",
       "heat_score": 98,
       "signals": {
-        "funding": "Salesforce以36億美元收購AI客服平台Fin，顯示AI應用領域的併購與資金投入持續活躍。台積電面板級封裝PLP晶片預計明年量產，並已拿下全球AI晶片客戶，預示巨額資本支出與訂單流向。",
-        "hiring": "AI基建推升半導體與散熱需求，預計相關職缺將持續增加，特別是高階封裝、散熱技術和AI晶片設計人才的搶奪將更激烈。",
-        "policy": "美國針對中國科技體系擴大「1260H」清單，顯示美中科技競爭白熱化，鼓勵本土及友善供應鏈發展，對台灣半導體產業形成轉單利多。",
-        "technology": "AI晶片技術持續突破，Google TPU多元化訂單挹注Intel，NVIDIA也啟動18A製程測試。台積電在面板級封裝(PLP)技術上的進展，以及800V HVDC架構興起對第三代半導體的需求，都顯示技術動能強勁。記憶體指標廠因AI需求缺貨，預估獲利暴增900%。"
+        "funding": "輝達發行200億美元公司債，顯示AI巨頭對未來擴張的強勁資本需求。高通考慮砸100億美元收購AI新創，凸顯產業併購活動熱絡。AI基建如硬碟需求飆升，威騰股價大漲16%。儘管有部分警告AI泡沫風險，但資金投入仍持續加速。",
+        "hiring": "AI領域人才競爭激烈，儘管有新聞提及AI導致失業，但對頂尖AI研發和基礎設施人才的需求仍然旺盛，部分公司為爭奪人才不惜重金。然而，AI普及可能導致其他行業的職位重組。",
+        "policy": "美國政府對Anthropic模型實施禁令，顯示政府對AI技術的管制和國家安全考量日益增加。同時，各國政府將AI視為國家戰略重點，可能會有更多補貼或監管政策出台。台灣查獲輝達晶片走私中國，反映地緣政治對AI供應鏈的影響。",
+        "technology": "AMD發布能在地端運行2350億大模型的微型PC，顯示AI模型輕量化及邊緣運算技術的進展。蘋果Siri進行重大iOS 27更新，強化AI功能。台積電猛攻CoPoS和玻璃基板技術，為AI晶片先進封裝提供關鍵支援。Google Gemini出現當機，凸顯AI技術穩定性仍需提升。"
       },
       "leading_indicators": [
-        "台積電CoWoS與PLP產能擴張速度與實際量產進度",
-        "主要AI晶片大廠(NVIDIA, Intel, AMD)新一代產品發布與市場反應",
-        "全球各國對半導體供應鏈在地化的政策支持力度與相關補貼"
+        "AI晶片巨頭的資本支出與訂單預期",
+        "AI相關新創的募資規模與併購活動",
+        "各國政府對AI技術的監管與扶持政策"
       ],
       "us_stocks": [
         {
@@ -22,12 +22,12 @@
           "ticker": "NVDA"
         },
         {
-          "name": "美光科技",
-          "ticker": "MU"
+          "name": "超微(AMD)",
+          "ticker": "AMD"
         },
         {
-          "name": "Salesforce",
-          "ticker": "CRM"
+          "name": "高通(Qualcomm)",
+          "ticker": "QCOM"
         }
       ],
       "tw_stocks": [
@@ -36,67 +36,195 @@
           "ticker": "2330"
         },
         {
-          "name": "日月光投控",
-          "ticker": "3711"
+          "name": "鴻海",
+          "ticker": "2317"
         },
         {
-          "name": "奇鋐",
-          "ticker": "3017"
+          "name": "聯發科",
+          "ticker": "2454"
         }
       ],
       "evidence_news": [
         {
-          "title": "Salesforce acquires AI customer service platform Fin for $3.6 billion",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZVprY0RqNVdWUnNaWW92aVpuOFpFdzZub1d1WmhtV0Z4QUR2NnZNQXhEMG5MX3ZSVm8yZW1CSGEtenFWcWpYbl93OE8zcjQ0OGNKXzAwWjZCeXVxQi1TSjc4VURMaElNZUh6M3VSUTc4Y3pCSHJvd01SR1RBZHpXdmZVZDRZM3FtempmTm5PelRJdmI2U2FVa2lhT00?oc=5"
+          "title": "AI基建點火、威騰周一飆16%！大摩看好硬碟供不應求 雙雄受惠「強者恆強」循環",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE16UWNvTmRJT2R4UzRFNXB6VXk2M2dsSmpJY3dnV0VYNGJZWF95QWV2ZmFTVjRud3dkN1RJOTBHRDZIZ1J3ajRvN3hmUnk0d0k?oc=5"
         },
         {
-          "title": "台積面板級封裝PLP晶片傳明年量產已拿下全球AI晶片客戶| 科技產業| 產經",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1DeXBjQWQ2bTN0aExGMEsySkRHNGUwNFB1ekFRLXRDZ3d2ZUYwV09TWjk2UDUzY0E4TDJsVXBwNlBIMlJWanc1Zlg3djA4ZFFf?oc=5"
+          "title": "輝達擬籌資至少200億美元 AI熱潮以來首度發債",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9wbmRSa0s5dkNZRnIxd2pETHh0OXM5RVlqakJXMUFRX2ZXOG5jNjViQnQzZzgzVlJKSjNRaTFRYzNUeWExdnNwcmlISWJfSDQ?oc=5"
         },
         {
-          "title": "AI基建推升半導體與散熱需求，台廠搶商機-財經焦點情報站",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOd3VvQ3lROUpsSXFlVHpYOW5VUWJlaEwtVjlTRGlBbzByc3h3SU1tTVZUcnJiUExBS3FfMm9tTkNCT01CNTZPSEZ0WDhNT3lrdHhrVlc3RnFNcXRZRncyMG9BYmQzTEk2V1JCRTlzTDlpWExTRzFkbjlhVzY1dC01OF93?oc=5"
+          "title": "蘇姿丰秀「突襲」市場 AMD發布微型PC能在地端跑2350億大模型 股價盤中大漲40美元",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiwwNBVV95cUxORWRlUnZ1UjZoUTl0bkhycDlURWo5cE0xaElvLWN3TktFclpJNFBLUzAwaHNKZFZmcEp5UUxIMGM1N1lrQWFiejNHRVNITVVSQ2llREpiWjgtd1pQOThaRGpGVmRzRjBYZW0tZXBKbU5QeTVHeXNYOVNrWktEMXJJdFBMUjRXT2VTZXFYUkpFSlMxdTM2cGhNZGZsX0M2bWNvZzZQaVpoNTFWRzMyeFJtVFVqemRpWDA1eWFkNWZDVHdCMlJtQUZQR0N5VTh3dnlhRlJPZEs1SE00YjBxSVNoOHZmRVd6S1pud1RyRzFVRzY2TmFTLW94TzctdENhcE9WbWpGNHNQU21UbTRYTXZtakViM2gtdERrLUZBLV8zS0NGb2hRaEZqOFN5MGJZblN3SDczN0NiQ20zWlRNUVM4cjJ6aVVQMGp4ZWMtUklGNlFqNkx6RzJ2MF9YR2ZkTHA4aUp2VzdBRXRVWXVDVHRpaGZxYzFfdjFZT1BDOTBISHJqTWVyLUZ0QURlS2xEUGo4LXliVHFKU2pEMFlVNmNlclpsaDZvOUU2eTlDX3plRTBxZ1JiUGxQa2RMblpjT1c5Z2ow?oc=5"
         }
       ],
-      "summary": "AI技術持續發展與應用擴散，驅動半導體先進製程與封裝需求爆炸性成長，台灣在全球供應鏈中扮演關鍵角色。",
-      "news_count": 0
+      "summary": "AI持續主導科技產業，資金、技術和政策全面推進，尤其在基礎設施和邊緣AI應用方面動能強勁。",
+      "news_count": 25,
+      "first_seen": "2026-06-15",
+      "last_seen": "2026-06-16"
     },
     {
       "rank": 2,
-      "industry": "仿生機器人與自動化",
+      "industry": "太空經濟與低軌衛星",
       "heat_score": 90,
       "signals": {
-        "funding": "中國超仿生機器人掀搶購潮，10天狂吸近4千訂單，顯示市場需求旺盛，預計將吸引更多資金投入研發與擴產。光學族群因機器人鏡頭需求而吸金，佐證產業資金流向。",
-        "hiring": "仿生機器人從家務助手到情感伴侶的應用擴展，將帶動機器人設計、AI演算法、精密製造等領域的人才需求大幅增加。",
-        "policy": "各國政府可能將仿生機器人視為提升生產力、應對勞動力短缺的戰略產業，未來可能會有相關的研發補貼或法規引導。",
-        "technology": "中國超仿生機器人技術突破，實現家務助手與情感伴侶功能。機器人鏡頭成為光學族群吸金焦點，顯示視覺與感知技術的進步是關鍵。AI技術的整合是仿生機器人實現高階功能的基礎。"
+        "funding": "SpaceX上市後股價飆漲20%，馬斯克預言2031年營收破1兆美元，IPO募資超乎預期，顯示市場對太空產業的巨大信心和資金投入。投資人對SpaceX的熱情，也帶動了整個太空經濟的募資氛圍。",
+        "hiring": "SpaceX等太空科技公司持續擴張，對火箭工程師、衛星通訊專家、資料科學家等高階人才需求旺盛。相關供應鏈廠商也積極招募人才以應對訂單增長。",
+        "policy": "各國政府將太空探索和低軌衛星通訊視為國家戰略重點，預期將有更多政策支持和資金投入，例如美國太空軍的預算增長，以及台灣政府對低軌衛星產業鏈的扶持政策。",
+        "technology": "SpaceX的星鏈計畫持續擴大，衛星發射頻率和服務覆蓋範圍不斷提升。低軌衛星技術的進步，使其在通訊、導航、遙感等領域的應用日益成熟，並與AI、物聯網等技術融合，產生更多創新應用。"
       },
       "leading_indicators": [
-        "主要機器人製造商的訂單量與出貨成長率",
-        "關鍵零組件(如機器人鏡頭、AI晶片)的供應鏈狀況",
-        "各國政府對機器人產業的投資與政策支持"
+        "SpaceX等太空公司的上市表現與估值變化",
+        "低軌衛星發射數量與服務用戶增長",
+        "各國政府對太空計畫的預算投入"
       ],
       "us_stocks": [
         {
-          "name": "波士頓動力母公司(Hyundai Motor)",
-          "ticker": "HYMTF"
+          "name": "SpaceX",
+          "ticker": "X"
         },
         {
-          "name": "Intuitive Surgical",
+          "name": "波音(Boeing)",
+          "ticker": "BA"
+        },
+        {
+          "name": "洛克希德馬丁(Lockheed Martin)",
+          "ticker": "LMT"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "昇達科",
+          "ticker": "3491"
+        },
+        {
+          "name": "啟碁",
+          "ticker": "6285"
+        },
+        {
+          "name": "華通",
+          "ticker": "2313"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "SpaceX上市後飆漲20% 馬斯克預言2031年營收破1兆美元 分析師這樣看",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9kSTdEUkhhQm9WQll5SHpRZ2tYUEJxVkdVeXZWRXVrczZpUVNsYjVubUFJT1Z1R3pVZHE3NjFJa2dZS2xGTHRDT1RMUk1qN3M?oc=5"
+        },
+        {
+          "title": "SpaceX IPO raised $10bn more than thought",
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9jV0JPSF9jWkVEMkVEOFBvU3NpOF8wdGlOUXhnRmVXWWp4SWNOS3N2Y3VTU2Jfai15TEMzaEpNcml1bWxZeW5JUVpwMHp4X3lESG1pZjg4X1l2Zw?oc=5"
+        },
+        {
+          "title": "Wall Street's fear gauge tumbles as traders bid up SpaceX shares",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOenpVVTF4d3Rzd1otYUpBdDM0Vm11dS1YbzRqam5jWTcyZlE5dy14d3k3TjIwUlNUSVVBM1B0T1dhVVRyYUFuVm56V1VpS2tkNzBlVlJLMXJtUHplUXdVQ2l5Qy1kSzl1T1cxbkZLMlpFQ2pwQm9BT2Y3SmFkS2Z5aEpUVURaazJUNGtrRXdKb2djRllIV1BxRVVlRGxzTE1oWVHSAacBQVVfeXFMUHlBd2xoSzRxRFdfVWRIalh2Uk9JS2VscHp3UHdfV3RTcFNmVWNrTEtHazdrQy01NW16enJZbjhIZ0M2LTdDRXlOZ1BCWDBkaWRRNGs2bmFmbHBYS0poQi1MdmpHMWFxMWJBRXlhTDNYUGI5T2YxSUMxQXYxNFBkbkdjY05EMG4zSVRoei1tZTFUb2FYeVJGRFBMQlU3cG5mZDlwZURrQzg?oc=5"
+        }
+      ],
+      "summary": "SpaceX IPO引爆市場熱情，低軌衛星和太空探索正成為新的投資熱點和技術前沿。",
+      "news_count": 0
+    },
+    {
+      "rank": 3,
+      "industry": "摺疊手機與先進顯示技術",
+      "heat_score": 85,
+      "signals": {
+        "funding": "蘋果預計Q3狂產5400萬支iPhone，其中可能包含摺疊機型，這將帶動供應鏈的資本支出和投資。三星持續在摺疊手機領域投入研發和生產，顯示大廠對此技術的長期看好。",
+        "hiring": "隨著摺疊手機市場的擴大，對材料科學家、光學工程師、機構設計師以及面板製造人才的需求將會增加。相關供應鏈廠商也將擴大招募。",
+        "policy": "各國政府對高科技製造業的扶持政策，特別是顯示面板和半導體領域，將間接促進摺疊手機相關技術的發展。例如，台灣對先進封裝和顯示技術的投入。",
+        "technology": "蘋果摺疊機即將問世，將刺激市場競爭和技術創新。三星Galaxy Z Fold 8 Ultra的洩露消息顯示摺疊技術持續迭代。台積電攜手Ibiden、群創猛攻CoPoS和玻璃基板，這些先進封裝和基板技術對於實現更輕薄、高效能的摺疊裝置至關重要。"
+      },
+      "leading_indicators": [
+        "蘋果摺疊機的實際發布與市場反應",
+        "三星等主要品牌摺疊手機的銷量與新機發布頻率",
+        "玻璃基板、柔性面板等關鍵材料的技術突破與量產進度"
+      ],
+      "us_stocks": [
+        {
+          "name": "蘋果(Apple)",
+          "ticker": "AAPL"
+        },
+        {
+          "name": "美光(Micron)",
+          "ticker": "MU"
+        },
+        {
+          "name": "應用材料(Applied Materials)",
+          "ticker": "AMAT"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "台積電",
+          "ticker": "2330"
+        },
+        {
+          "name": "鴻海",
+          "ticker": "2317"
+        },
+        {
+          "name": "群創",
+          "ticker": "3481"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "蘋果摺疊機要來了！大摩預測Q3狂產5400萬支iPhone 台積電、鴻海成最大贏家",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMipwNBVV95cUxQMVhiZUduaklXbWRyR3R2eEU0cWtxdEktZlotUUhvd2lhN1VKRjFMbHc5NGNVaGh3SUVoWmwySFdONWZabWtVeE1OUFZNM0NMcHlNUEVPeTBnVm9tcjcyZHQzQWhNYWc5djc0U0ZkXzZETHJkUFdOS1pfc2pFb2hrSTR4aWxqeVI2bWxjSHltdEQxVW91YlVMY25YM0dXRTVnb2JhTFFuQ2ladGtUXzFrNV9RVTkyQmwzbmc2X1E1TG9ad0pZY3YzV3lOcTZqY281MW9YbUVkdG5FNkVWSlIydkp0cDQ5QmVKeVNQclFjYUx3ZXdFcE5WaDVxQ2FROEZwR3M2UXA2eHVCN01UdTRHeU0yQkVscVA0WEx5VnJmZ0xXclRhaklZb1ZzektWLXpobXNGWDlucDZsbmlSQUF0UVlDbFV6bW9LeGtUT1gwaUNjWDJFY2lON0txdXBIMGpqVnM3UjZPdGoydkhlb0Q1ZDJwdlA4QmYzUUN2UlA4QjJ0My1oU1RVNnRjQURkMDA2eFU1Sl8xR3F3WHQybzBYYWpPTHRSaG8?oc=5"
+        },
+        {
+          "title": "台積攜Ibiden、群創猛攻CoPoS 傳出玻璃基板領域踩油門",
+          "source": "DIGITIMES",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQVRCZ2ptYTZJRmF0WkNtcUJoaXZSRmN5VzNWSkNvYmI1c2tWdE5sR1Fib2pOem1LN1RVb2I1X1hOQllUeVRiektkRUFGQ0p5d1ZKeGtVWlpMTTVRSi1vVXY0V3dtUHhUcHA3VllkQnoxbUEyVFQyYnVHdkk5U05oSm45Y0RUN0pfamVkX2FB?oc=5"
+        },
+        {
+          "title": "More Galaxy Z Fold 8 ‘Ultra’ leaks confirm it looks just like a normal Samsung foldable",
+          "source": "9to5Google",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9GRmxXenJBbG1HZmpMR0JSRU9NTERtQmtqU2w1ZWE2VWdKY0h4c2ROUnA3elJnN084VFhGTHBtdlNTSE45dmVKRHg3SUFYSzJjNFh0N0s4Zk9vY09PclFBVjNpVk10VXdwd0Y1MGkwVTNlWXc?oc=5"
+        }
+      ],
+      "summary": "蘋果與三星在摺疊手機領域的競爭加劇，結合先進封裝技術，預示著下一代智慧裝置的創新浪潮。",
+      "news_count": 0
+    },
+    {
+      "rank": 4,
+      "industry": "仿生機器人與智慧製造",
+      "heat_score": 80,
+      "signals": {
+        "funding": "陸超仿生機器人掀搶購潮，10天狂吸近4千訂單，顯示市場對仿生機器人產品的強勁需求，預計將吸引更多投資。政府引導基金如澳門的設立，也可能將智慧製造和機器人產業納入扶持範圍。",
+        "hiring": "仿生機器人、智慧製造和自動化領域對機器人工程師、AI演算法專家、自動化控制工程師以及相關生產製造人才的需求持續增長。光學族群因機器人鏡頭需求而受關注，也反映了相關產業的徵才動能。",
+        "policy": "多國政府將智慧製造和機器人技術視為提升產業競爭力的關鍵，可能推出更多研發補貼、稅收優惠或產業園區政策，以鼓勵技術創新和產業發展。澳門的「三五」規劃也可能包含對高科技製造業的投入。",
+        "technology": "陸超仿生機器人從家務助手到情感伴侶的多功能發展，展現了仿生技術和人機互動的重大進步。機器人鏡頭需求為光學族群帶來成長動能，顯示機器視覺技術在機器人應用中的重要性不斷提升。"
+      },
+      "leading_indicators": [
+        "仿生機器人銷售量與應用場景擴展",
+        "智慧製造相關設備的訂單增長",
+        "機器人技術在各產業的滲透率"
+      ],
+      "us_stocks": [
+        {
+          "name": "波士頓動力(Boston Dynamics)",
+          "ticker": "Private"
+        },
+        {
+          "name": "直覺外科(Intuitive Surgical)",
           "ticker": "ISRG"
         }
       ],
       "tw_stocks": [
         {
-          "name": "上銀",
-          "ticker": "2049"
+          "name": "盟立",
+          "ticker": "2464"
         },
         {
-          "name": "研華",
-          "ticker": "2395"
+          "name": "上銀",
+          "ticker": "2049"
         },
         {
           "name": "大立光",
@@ -107,137 +235,20 @@
         {
           "title": "從家務助手到情感伴侶！陸超仿生機器人掀搶購潮 10天狂吸近4千訂單",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMiqgNBVV95cUxPb3VlOW5OZEk1dVZkSnBsaUZmNE9ZTVhoZmRKaklhYmFqRFFwMVYtNU1pcjQtMmFVcEhBUXBzOFdVWXZ3TTFGMjhRWXN6WWt4b0hUSmo5bEhPRDVHQXhZbHFwS2dkR2lDeHFSNk5ma3U5MUNQaG0zZkhPcU9xNTNjZEozbXJvZktjaTBQdmVlMVdOSUpmQmFMaUZOYmNpYnctM1FnQlpDbC1jSElXUXpwdkdSRm1iNTV0Zm04VzZzRGR6dXQyOWFxM3hyOHdJM21zbEl1T1QyT3NqSV9neVNiLUhXX1lyNnpyRjJSMlJXbG5mN0lncGphTlYzS1dnanNRajl1c1dKX3kyMGJWbHpxQkRDUkd3dlRUWkRHMEVoaExwZnZOZmRaVFVhVFBrWnB0eU1Ic0JBVVNrV3VvYUZiaGs3UEw0UzR4cHlZYWhVNzBOX05sdVZqelMyeG5HRllkQjg3bHBCRWJGRi1wVjFXZzhRaW5aUjFLQTZVZE5NbTQ2UnNnTjNLWDkwSGZoNjJQaVlGb01aVXE1cjg0b3RNRWhvSk5ObkV4X2c?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiqgNBVV95cUxPb3VlOW5OZEk1dVZkSnBsaUZtNE9ZTVhoZmRKaklhYmFqRFFwMVYtNU1pcjQtMmFVcEhBUXBzOFdVWXZ3TTFGMjhRWXN6WWt4b0hUSmo5bEhPRDVHQXhZbHFwS2dkR2lDeHFSNk5ma3U5MUNQaG0zZkhPcU9xNTNjZEozbXJvZktjaTBQdmVlMVdOSUpmQmFMaUZOYmNpYnctM1FnQlpDbC1jSElXUXpwdkdSRm1iNTV0Zm04VzZzRGR6dXQyOWFxM3hyOHdJM21zbEl1T1QyT3NqSV9neVNiLUhXX1lyNnpySjJScldsbGY3SWdwamFOVjNKV2dqU3FqOVVzV0pfeTIwYlZsenFCRENSR2d2VFRaREcwRWhhTHBmdk5mZFpUVWFUSlBrWnB0eU1Ic0JBVVNrV3VvYUZiaGs3UEw0UzR4cHlZYWhVNzBOX05sdVZqelMyeG5HRllkQjg3bHBCRWJGRi1wVjFXZzhRaW5aUjFLQTZVZE5NbTQ2UnNnTjNLWDkwSGZoNjJQaVlGb01aUXE1cjg0b3RNRWhvSk5ObkV4X2c?oc=5"
         },
         {
           "title": "光學族群紅一片！「這檔」成吸金焦點飆漲8.59% 機器人鏡頭添成長動能",
           "source": "Yahoo股市",
           "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQXzNTMzZTYllFN0ZHOC1DQWtob1dlRjlvX0ZZQ1U1ckJiY1F0NUZDX2dwMW1fRkpHRlRacG43T1dWNDB4aHVFNm1hUXBJSEtiMlg1Nko4MXV0VHliZjVYZXNwWjFaUk1SM2Jna2FtOTFYVzZBMjFsZ0NjVE40Y1dxbnl2YWhVU3N1UkZCYy16ODZKV1ktOWlVUHhxZk9UdzdIcTJDRnZCZHA5a2lkVDJiTnhhS1VXbm5hSjRrTGVpSGZWQTl4VHRVUHU3WUlOSkNaWEhRUm9jWUk4LV8zSEdVWEJTdGZwTzFMSVJMU3lOMXFGT3UwR3BmRUdoQ2NTLXByeGdmZ2hmUXlSSkpkQ0RBVkdoOFpfUEx3?oc=5"
+        },
+        {
+          "title": "6／15台股雷達｜華邦電、希華、盟立強勢表態上漲原因曝- 證券",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1zM1diZ0JOcmF0VmY1SnZxUlNmNThZdmdUdnA2SkJOS2lESXg5T1VNaHdNTk9LS2ozZlp6Z3VfUjBIVG9LczlVMVpLSlk1bkNQTi0wZEtxY2hJb243SzJR?oc=5"
         }
       ],
-      "summary": "仿生機器人技術日趨成熟，應用場景從工業擴展至消費端，市場需求與投資動能強勁。",
-      "news_count": 0
-    },
-    {
-      "rank": 3,
-      "industry": "太空科技與衛星通訊",
-      "heat_score": 88,
-      "signals": {
-        "funding": "SpaceX股票在首個完整交易日上漲，Elon Musk更揭示驚人的營收目標，顯示資本市場對太空科技的熱情與信心。大型深空無線電望遠鏡在內華達沙漠興建，代表基礎設施投資持續。",
-        "hiring": "SpaceX等公司快速成長，將持續對火箭工程師、衛星通訊專家、AI與資料科學家等高科技人才產生巨大需求。",
-        "policy": "各國政府對太空探索、衛星通訊和國防太空戰略的投入持續增加，例如美國在深空探測上的基礎設施投資。",
-        "technology": "SpaceX的成功上市及其營收預期，反映其在火箭發射、衛星網路（星鏈）等領域的技術領先。深空無線電望遠鏡的建設，顯示太空探索技術持續發展。"
-      },
-      "leading_indicators": [
-        "SpaceX等太空公司的IPO或募資進度",
-        "衛星發射頻率與新型衛星部署計畫",
-        "全球各國太空預算與國家級太空計畫進展"
-      ],
-      "us_stocks": [
-        {
-          "name": "SpaceX",
-          "ticker": "SPCX"
-        },
-        {
-          "name": "洛克希德馬丁",
-          "ticker": "LMT"
-        },
-        {
-          "name": "波音",
-          "ticker": "BA"
-        }
-      ],
-      "tw_stocks": [
-        {
-          "name": "昇達科",
-          "ticker": "3491"
-        },
-        {
-          "name": "穩懋",
-          "ticker": "3105"
-        }
-      ],
-      "evidence_news": [
-        {
-          "title": "SpaceX’s Stock Rises on First Full Day of Trading",
-          "source": "The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9DVkU0dk5US2xDWkNfWHFZbWhjUzRiUHVDSVVDd09xZS1XdE1zMmoxdTNvWTV1OE13S3BNWGNOM1YyNmRFLTh0NTN4ak05eTBGcjlsMjExdTVWRHFzaWtqNnF5ZG9nVi0wTXdKRGFB?oc=5"
-        },
-        {
-          "title": "SpaceX Stock Jumps Again as Elon Musk Unveils Meteoric Revenue Target",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81WFhHT1FtM3hjNTNyZ0l3U1VXT203eG44cDdwdzlMZFdPbkZvSnhqVjlEUTNwcnFNMTY1OGcwS0tVQkpuOU5jTjNvZ1lJUVJ3dW1DdXBLYXVzZWxlTjRLS0hNTGgyT3VOSmJGemRZZjBOeURmYkkxcmk1MEtzdw?oc=5"
-        },
-        {
-          "title": "The Mother of All Deep Space Radio Telescopes Is Going Up in the Nevada Desert",
-          "source": "Gizmodo",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQi1hUm9FOUk1MVF6VlJUX1dZQUhzc21ZWlpvQ0loakVweEo4dGZDQXQ4bXRiWEt6bWtxRm5YdXFZajRVdWhkdThSVWYtT21tcmtRcXJlTHVSSnJQT1lITWFhamE2S1ZYbkRnNmhwYXZic05kYUw4S1FvdkVieUUzU0xxcGhyZGNPakJpNTVDT0hZb1Z6WWZnbFd0RkFxeFFhMGVjaUxJaW51eDVkX3c?oc=5"
-        }
-      ],
-      "summary": "私人太空公司崛起與國家戰略推動，太空探索與衛星通訊展現巨大商業潛力與技術突破。",
-      "news_count": 0
-    },
-    {
-      "rank": 4,
-      "industry": "沉浸式體驗與遊戲科技",
-      "heat_score": 85,
-      "signals": {
-        "funding": "Fox以220億美元收購Roku，顯示內容與串流平台的整合趨勢，資金流向內容分發與使用者體驗。EA推出遊戲內廣告平台，尋求新的變現模式，反映產業在商業模式上的創新。",
-        "hiring": "遊戲產業持續需要遊戲開發者、AI工程師、VR/AR設計師和數據分析師。Xbox Game Studios高層變動可能預示產業內部的人才流動和策略調整。",
-        "policy": "遊戲產業的內容審核和使用者保護政策越來越受到關注，例如Meta針對未滿13歲帳號的處理，以及Xbox可能引入的先買後付選項，都涉及消費者權益與監管。",
-        "technology": "Google Earth飛行模擬器開放，將沉浸式體驗帶入瀏覽器。iPhone 18 Pro的相機升級預示高階手機在影像與互動技術上的投入。遊戲引擎技術如Final Fantasy 7 Revelation的開發，以及PC掌機如MSI Claw 8 EX+的推出，顯示硬體與軟體雙向推進，提供更豐富的遊戲體驗。"
-      },
-      "leading_indicators": [
-        "大型遊戲主機製造商(Sony, Microsoft, Nintendo)的新品發布與銷售數據",
-        "VR/AR頭戴設備的出貨量與內容生態系發展",
-        "串流媒體平台訂閱用戶數與廣告收入增長"
-      ],
-      "us_stocks": [
-        {
-          "name": "微軟",
-          "ticker": "MSFT"
-        },
-        {
-          "name": "Meta Platforms",
-          "ticker": "META"
-        },
-        {
-          "name": "藝電(Electronic Arts)",
-          "ticker": "EA"
-        }
-      ],
-      "tw_stocks": [
-        {
-          "name": "宏達電",
-          "ticker": "2498"
-        },
-        {
-          "name": "華碩",
-          "ticker": "2357"
-        },
-        {
-          "name": "微星",
-          "ticker": "2377"
-        }
-      ],
-      "evidence_news": [
-        {
-          "title": "Google Earth 飛行模擬器正式全球開放！用瀏覽器就能在世界各地體驗飛行",
-          "source": "電腦王阿達",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE91a1R6OVNMS25IMzA4WjNHVGoyaXlvSHpvTDJha3psSE9KR0lFeF9VeURHVWpzZHJoTDVvVi10dGlJUDlFMms3TGY5TUJUM0k?oc=5"
-        },
-        {
-          "title": "Why Fox Stock Is Tumbling After $22 Billion Roku Deal",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBlMnhQWVlncjUyVTk1N3JWbmNQN2JILTdabHoyU0hjTEg3TXY5YTdhYjBWbmlOMmlZRnhfcDhmc0l5TFFhb0V0ZTBuUnR6RDFuS2V6ZTZBYXBqWkpGemhBQmhCWFpNVWo5VUpYS1ZUR3FlQ2JiYVE?oc=5"
-        },
-        {
-          "title": "Electronic Arts launches EA Advertising, a new way for brands to advertise 'directly into gameplay'",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPY3R0ODhxaHpkQm5pdndRMDRDZkxCN0R2dV9LRV81RlFoTy1YbHlqVFp3SV85QkJWdXMySU51WDAyNjNfTW16bzIwYzFYYzhqQWxUNDVfRlVfbFU3QnczX204clQ4dnVYWXBXUDVvREw5bzk5bFVRbUhRR3ZTTTktS2pzUGVhSGIybExKNjItNHpwTEg2ejdicHZmZzB6RjNwNFNEWUcxYkVjWVXSAbABQVVfeXFMT2hCdWRYbjM0VEdWNFdRNGJOWjhub3BlOG1oNXEyemU3UDh6cmg1RjdoNDQxY2dGcTczVk5zS2FpR2lYTUoyWnJGWEZ3a3FZTU4yYmlYT2Jjby1BZl9UaF9OZk5sWXBKV3JjdjEtU0xJeGR3em1GQkp6dy00aWJkeGkzMm9kazVKaU01OV9RZ2F2aG52dXNpbjlTWHVlSi1ZRTljeGtINk1ZYzJzRnNvSWc?oc=5"
-        }
-      ],
-      "summary": "遊戲與沉浸式體驗技術不斷創新，結合AI、串流和硬體升級，為消費者帶來更豐富的互動娛樂，同時也開拓新的商業模式。",
+      "summary": "仿生機器人技術的突破和商業化應用，正推動智慧製造和自動化產業的快速發展。",
       "news_count": 0
     }
   ]

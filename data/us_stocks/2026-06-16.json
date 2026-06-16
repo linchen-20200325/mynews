@@ -1,135 +1,70 @@
 {
   "report_date": "2026-06-16",
-  "summary": "美伊達成和平協議推動美股全面大漲，科技股及半導體指數表現強勁，SpaceX上市首日股價飆升，顯示市場風險偏好回升，而油價則因協議達成而大跌。",
+  "summary": "美伊達成和平協議帶動美股全面上揚，科技股和晶片股領漲，道瓊、那斯達克及費半指數再創歷史新高，SpaceX上市後股價持續飆升，油價因中東局勢趨緩而大跌。",
   "stocks": [
     {
-      "name": "美股大盤",
-      "ticker": "",
-      "sector": "整體市場",
-      "mention_count": 27,
-      "sentiment": "利多",
-      "reason": "美伊達成初步協議，結束中東衝突並重啟荷莫茲海峽，國際油價大幅下跌，帶動美股全面開盤大漲，道瓊指數狂飆。",
-      "evidence_news": [
-        {
-          "title": "美伊達成協議終結戰爭！油價重挫5%美股開盤全面大漲",
-          "source": "民視財經網",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5sRTh0bU9Qd2hySmtWRk83cEF1S3pQVFBSZnhKdHJBbk9XQU9DNG5WdGdYVk02YnlPdUl5VXlnRGQzX0RMZnJvaU5zV0hGaTBhN1ZBMXRkcUlmT3VyVnpEX2tVV05xZw?oc=5"
-        },
-        {
-          "title": "美股道指狂飆600點！SpaceX續漲7% 美伊戰爭結束油價跌5%",
-          "source": "NOWnews今日新聞",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9QT1RWb3ZuTVpnV1pjNS1EdkE5dTMzSDIyZ2c4RG5RUEJSNFc0Sk1fWE13NWNleHdTWDg5TEQ5c1hIeXk1SC14elhSLW1INVZzckHSAVJBVV95cUxPUE9UVm92bk1aZ1daYzUtRHZBOXUzM0gyMmdnOERuUVBCUjRXNEpNX1hNdzVjZXh3U1g4OUxEOXNYSHh5NUgteHpYUi1tSDVWc3JB?oc=5"
-        }
-      ],
-      "news_count": 0
-    },
-    {
       "name": "SpaceX",
-      "ticker": "",
-      "sector": "太空探索",
+      "ticker": "SPCX",
+      "sector": "太空探索/航太科技",
       "mention_count": 14,
       "sentiment": "利多",
-      "reason": "SpaceX股票上市首日價格飆漲近20%，部分歸功於散戶追捧，且公司預計營收將達1兆美元。",
+      "reason": "SpaceX上市後股價連續兩日飆漲，漲幅超過四成，並超額集資857億美元，市值突破2.5兆美元，顯示市場對其高度追捧。",
       "evidence_news": [
         {
-          "title": "SpaceX掛牌首日股價飆近20% 散戶搶破頭功不可沒",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606150304.aspx"
+          "title": "美股飆！SpaceX掛牌次日漲2成 道瓊指數再創新高",
+          "source": "TVBS新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBTRXB4RHVWcUd1aDhNTzZkNEhQbVFRdmw5b2dzMmd4a21MYldLbXhmQVlMQXBqUEYzdUZWV1pET1Q5U2NIM1dJbGF1aW1pT1E?oc=5"
         },
         {
-          "title": "SpaceX Stock Jumps Again as Elon Musk Unveils Meteoric Revenue Target",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81WFhHT1FtM3hjNTNyZ0l3U1VXT203eG44cDdwdzlMZFdPbkZvSnhqVjlEUTNwcnFNMTY1OGcwS0tVQkpuOU5jTjNvZ1lJUVJ3dW1DdXBLYXVzZWxlTjRLS0hNTGgyT3VOSmJGemRZZjBOeURmYkkxcmk1MEtzdw?oc=5"
+          "title": "SpaceX「穿綠鞋」超額集資857億美元 股價2天漲幅逾4成",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606160014.aspx"
         }
       ],
-      "news_count": 12,
-      "first_seen": "2026-06-13",
-      "last_seen": "2026-06-15"
+      "news_count": 16,
+      "first_seen": "2026-06-15",
+      "last_seen": "2026-06-16"
     },
     {
       "name": "科技股",
       "ticker": "",
       "sector": "科技",
-      "mention_count": 7,
+      "mention_count": 8,
       "sentiment": "利多",
-      "reason": "科技股迎來強力估值修復，費半指數狂飆，成長股反彈，美伊協議推動科技股上漲。",
+      "reason": "受美伊和平協議與油價下跌影響，科技股領軍反彈，那斯達克指數飆漲，費半指數創歷史新高，估值得到強力修復。",
       "evidence_news": [
         {
-          "title": "科技股迎強力估值修復！費半指數狂飆超4%逼近歷史新高，成長股迎來最佳反彈窗口",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQeVp5UEwyNE50TEtURUZDTzdtYkVrcUNSUVFjSGo0TTZmaEtQdi1sak5lTU1nUVg2MkRJTmRvQ0p6Tm9XRUF3cm05bl94YU1UZ3V4dXAzeU1HZy1qR3BYTTVZenVnQl9SVWN3aFF0VWxIM3NkUGtHT1dZTlNPZGxrWHo5aXc1bENJQnJVWDJtVVpTV2FZVVBsdGEtd2hUV1lGMkZSLUZHQk5DVjc3dXlkLUs4c3Nqc0t0QmR6MzFobXpScFA3VGc5U2JIRGs4WVR6YW12bGFvbktpbHc?oc=5"
+          "title": "油價重挫帶動科技股領軍反彈 美股勁揚、費半再創歷史新高",
+          "source": "優分析UAnalyze",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5qb0FUQWpCZi1GWjR1ekI4X2NzelNKYWQ3VXAydnlhOHVfZ2FJRzlkbldkQk81QUtMNmFyLWpSSGNFc3RnaUdqM3c0ZHB3RVExR0pTS0h3?oc=5"
         },
         {
-          "title": "《國際經濟》周五簽！美伊達成終戰協議 美科技股飆起 油價急挫",
-          "source": "富聯網",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVnBSZGY0aFFrYkNhWGM4d0VvRnJBZUp6MGhCY25OU3Z5OEF1NklRaE5WcHRYaHJWa1VTT203bU50XzJJYnhCNVFueFJYQ3FYN0djMXlyNS0xTEdRT2VkUndPU21tb0JMeEpkVHBMek1yR1JHZzMzNkhsa04zNkhQQUJKV3hEMFVH?oc=5"
+          "title": "中東局勢趨緩、晶片股強勁 科技股領軍美股創高",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606160013.aspx"
         }
       ],
       "news_count": 3,
       "first_seen": "2026-06-15",
-      "last_seen": "2026-06-15"
+      "last_seen": "2026-06-16"
     },
     {
       "name": "費城半導體指數",
       "ticker": "",
       "sector": "半導體",
-      "mention_count": 4,
+      "mention_count": 8,
       "sentiment": "利多",
-      "reason": "費半指數狂飆超4%逼近歷史新高，周漲9.42%，創近雙月最佳單日表現，顯示半導體產業動能強勁。",
+      "reason": "受美伊和平協議利多消息激勵，費半指數大漲逾5%，再創歷史新高，晶片股表現強勁。",
       "evidence_news": [
         {
-          "title": "科技股迎強力估值修復！費半指數狂飆超4%逼近歷史新高，成長股迎來最佳反彈窗口",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQeVp5UEwyNE50TEtURUZDTzdtYkVrcUNSUVFjSGo0TTZmaEtQdi1sak5lTU1nUVg2MkRJTmRvQ0p6Tm9XRUF3cm05bl94YU1UZ3V4dXAzeU1HZy1qR3BYTTVZenVnQl9SVWN3aFF0VWxIM3NkUGtHT1dZTlNPZGxrWHo5aXc1bENJQnJVWDJtVVpTV2FZVVBsdGEtd2hUV1lGMkZSLUZHQk5DVjc3dXlkLUs4c3Nqc0t0QmR6MzFobXpScFA3VGc5U2JIRGs4WVR6YW12bGFvbktpbHc?oc=5"
+          "title": "美伊宣布達成和平協議！ 美股費半大漲逾5％、台積電ADR漲4.12％",
+          "source": "Newtalk新聞",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1RcDdSNzFJUmJYZHJ3ZkRMZGItRmtROTg2emdHYy11UTFBbFNoOF9lT1hYemo3WTF4bjVadkhuOXhseHpQMkUyNFF6LWdfMkoyd0RhdjdOU0g3dTg?oc=5"
         },
         {
-          "title": "驚人！費半指數周漲9.42％",
-          "source": "旺得富理財網",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBCYkVCQnNqSXFISFdVQ1hTTDN0dVZnSkJYa212YjZvSnBpb2pnTzZ3ODBHSlBXNXZLVXJ1THFzWHlfZ1RfWENPUUFzUk1jTUd1aFhCX3JDbXNfQU9BaUE0VXlVQlM2OTAtS0E?oc=5"
-        }
-      ],
-      "news_count": 0
-    },
-    {
-      "name": "Roku",
-      "ticker": "ROKU",
-      "sector": "串流媒體",
-      "mention_count": 3,
-      "sentiment": "利多",
-      "reason": "福斯公司宣布將斥資220億美元收購Roku，旨在將福斯的體育及新聞節目與電視串流平台結合，鞏固市場地位。",
-      "evidence_news": [
-        {
-          "title": "福斯斥資220億美元收購Roku 加速數位轉型",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606150300.aspx"
-        },
-        {
-          "title": "Why Fox Stock Is Tumbling After $22 Billion Roku Deal",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBlMnhQWVlncjUyVTk1N3JWbmNQN2JILTdabHoyU0hjTEg3TXY5YTdhYjBWbmlOMmlZRnhfcDhmc0l5TFFhb0V0ZTBuUnR6RDFuS2V6ZTZBYXBqWkpGemhBQmhCWFpNVWo5VUpYS1ZUR3FlQ2JiYVE?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-15",
-      "last_seen": "2026-06-15"
-    },
-    {
-      "name": "台積電ADR",
-      "ticker": "TSM",
-      "sector": "半導體",
-      "mention_count": 3,
-      "sentiment": "利多",
-      "reason": "受美伊和平協議影響，美股大漲慶祝，台積電ADR也隨之衝高，勁揚3.5%。",
-      "evidence_news": [
-        {
-          "title": "美伊和平協議來了！美股大漲慶祝 台積電ADR、台期指夜盤衝高",
+          "title": "美股收盤》美伊協議大利多！費半大漲逾5％ 台積電漲逾4％",
           "source": "自由財經",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5NQjg0dVo3TGNtMmVfQWNGU3hsd0V6UFpMczlUN1QtdWdHWnlIN25NdnFfa0hnVFMtMkU2WmRRbGtERGRoT1dhZmUzU2hsaFU3UlRWcTlPNVRSamdvTm9R0gFkQVVfeXFMT0RpcVpxeE54Uk1JMFRhZjN6ZUxrV1dQSENrVnpuMlU4LW9uSG95MWlCQnlhTU5HMVRZQkotMTN4OW9DYVEtWl9fSE5IZ3FsS3ZudTJhcUVwdVNJdGlraXJod1QySA?oc=5"
-        },
-        {
-          "title": "美股早盤／美伊達成停戰協議油價下跌 道瓊漲600點、台積ADR勁揚3.5%",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9UVUJSdFU1SnN6eVdHbndkbTB4SVV2VmxPemtGZGh2YjZ2cWpzQjJTV3k5dEt0VTBZWVdSRWlMQUl6OExfbVdaSzE3VXZjYUpv?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9qUS1mWloxbndhaEhlY29BdUJSbXVDVWpnTVFScEJOVVFid0V3OVVBenV5dU9PSnkySVI3azNHNDVkaWdyWkVYWXhQdGpNTVUyNDdyZTg5VVl5c2lSM1lv0gFkQVVfeXFMUER3X2lRbXNTbTc2MXh1TUdRY0FMZXlCUWZReGFhelp2cmlscVFfTEtXMVZ6S3I2WFltYld5WHdqMURlejhwaDZKblZiZkJNci15ZnJWeXF5RUdCNnpBWnpvQmk1Vg?oc=5"
         }
       ],
       "news_count": 1,
@@ -137,12 +72,125 @@
       "last_seen": "2026-06-15"
     },
     {
-      "name": "福斯公司(Fox)",
-      "ticker": "FOX",
-      "sector": "媒體/串流媒體",
+      "name": "道瓊工業指數",
+      "ticker": "",
+      "sector": "綜合指數",
+      "mention_count": 8,
+      "sentiment": "利多",
+      "reason": "美伊和平協議與油價下跌激勵，道瓊指數勁揚並數次創下歷史新高。",
+      "evidence_news": [
+        {
+          "title": "美股飆！SpaceX掛牌次日漲2成 道瓊指數再創新高",
+          "source": "TVBS新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBTRXB4RHVWcUd1aDhNTzZkNEhQbVFRdmw5b2dzMmd4a21MYldLbXhmQVlMQXBqUEYzdUZWV1pET1Q5U2NIM1dJbGF1aW1pT1E?oc=5"
+        },
+        {
+          "title": "美股收盤》美伊協議大利多！費半大漲逾5％ 台積電漲逾4％",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9qUS1mWloxbndhaEhlY29BdUJSbXVDVWpnTVFScEJOVVFid0V3OVVBenV5dU9PSnkySVI3azNHNDVkaWdyWkVYWXhQdGpNTVUyNDdyZTg5VVl5c2lSM1lv0gFkQVVfeXFMUER3X2lRbXNTbTc2MXh1TUdRY0FMZXlCUWZReGFhelp2cmlscVFfTEtXMVZ6S3I2WFltYld5WHdqMURlejhwaDZKblZiZkJNci15ZnJWeXF5RUdCNnpBWnpvQmk1Vg?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-15",
+      "last_seen": "2026-06-15"
+    },
+    {
+      "name": "那斯達克指數",
+      "ticker": "",
+      "sector": "綜合指數",
+      "mention_count": 7,
+      "sentiment": "利多",
+      "reason": "受美伊協議利多發酵，那斯達克指數飆漲，晶片股強勁推升。",
+      "evidence_news": [
+        {
+          "title": "晶片股狂飆推升那指逾3% SpaceX市值突破2.5兆美元",
+          "source": "蕃新聞",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5xRXZHdndfLTJFRlJJMTh4ZGoxVGU3Y05NUmFObVIyc29ZUW1BQVhfWEdFeTNOUVNtTV9iaGZ4bDRDMnZnLVd0MmJqSDVPQURlT1E?oc=5"
+        },
+        {
+          "title": "美伊協釋利多！那指飆795點、台積電ADR漲4.12％",
+          "source": "中時新聞網",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1QeldjV2VPX3NUZEUtdnk2R2xvY3dBbDg2V0JZa2pNenMwdmQ0UmlEZTdTaU50NkxibTNpazJDVE0wMmRuM0dFVUR6TVdVSVQtOVROeFdYdC0xRDZXYVN1MVBRNkFrVDNPQzJkLXhR?oc=5"
+        }
+      ],
+      "news_count": 0
+    },
+    {
+      "name": "台積電ADR",
+      "ticker": "TSM",
+      "sector": "半導體",
+      "mention_count": 5,
+      "sentiment": "利多",
+      "reason": "受美伊和平協議及晶片股整體利多影響，台積電ADR股價勁揚逾4%。",
+      "evidence_news": [
+        {
+          "title": "美伊宣布達成和平協議！ 美股費半大漲逾5％、台積電ADR漲4.12％",
+          "source": "Newtalk新聞",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1RcDdSNzFJUmJYZHJ3ZkRMZGItRmtROTg2ZGdBc3VGM1VzSjN5aWJScHl0M0t1dE44eU9mYm12RGlHNGp6ZmNvZ0d0N2t4QzQ4OUMzYk8?oc=5"
+        },
+        {
+          "title": "美伊協議報喜！美股狂飆 那指暴漲664點、台積電ADR勁揚逾2.6%",
+          "source": "ETtoday財經雲",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB4R0Rual8zMGc0ZGJ4TGpzVm1VbDZaQmJIVU8ta19fZfBHRW9xd281Qm1kY2U1blJUeGQxS1gtSE5ZM2p5S1BsVGZiRnNRTXBuUlHSAW5BVV95cUxPaUFDaTJ6aTVIOG1ZRlJzTFc3UFF1XzRHTUJRd01CWllwNzBSbWhoR0pfSldnLXBqUzY3OUpGVTRrNU1Gd2ZNdklIVVBhX0Jqd043QkZEWjJfSXZPQUU1UVpsTUtwQkdzYWpvWkd4UQ?oc=5"
+        }
+      ],
+      "news_count": 4,
+      "first_seen": "2026-06-15",
+      "last_seen": "2026-06-16"
+    },
+    {
+      "name": "油價",
+      "ticker": "",
+      "sector": "能源",
+      "mention_count": 4,
+      "sentiment": "利空",
+      "reason": "美伊達成和平協議，重啟荷莫茲海峽通行，國際油價大幅下跌。",
+      "evidence_news": [
+        {
+          "title": "油價重挫帶動科技股領軍反彈 美股勁揚、費半再創歷史新高",
+          "source": "優分析UAnalyze",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5qb0FUQWpCZi1GWjR1ekI4X2NzelNKYWQ3VXAydnlhOHVfZ2FJRzlkbldkQk81QUtMNmFyLWpSSGNFc3RnaUdqM3c0ZHB3RVExR0pTS0h3?oc=5"
+        },
+        {
+          "title": "川普宣布美伊簽初步協議！美股創歷史新高、油價暴跌5% | 民視新聞網",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5IMm1UbkcwR1cwMXNKVXlNVzd1WUNJLW4wWVVYU215Z2N6TnZpZEo4NWhzR2pMRG9Xemt5ZjZ6WHYyMkh2aEotZ1d4azM3WlBQSWRCNDZB?oc=5"
+        }
+      ],
+      "news_count": 10,
+      "first_seen": "2026-06-15",
+      "last_seen": "2026-06-16"
+    },
+    {
+      "name": "輝達(Nvidia)",
+      "ticker": "NVDA",
+      "sector": "半導體",
       "mention_count": 2,
-      "sentiment": "觀望",
-      "reason": "福斯公司斥資220億美元收購Roku，意在加速數位轉型，但收購消息傳出後其股價下跌。",
+      "sentiment": "利多",
+      "reason": "輝達計劃發行250億美元公司債，為五年來首次，顯示其在AI浪潮中的資金需求與市場信心。",
+      "evidence_news": [
+        {
+          "title": "Nvidia to raise $25 billion, sources say, in first corporate bond sale in five years",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOb3J6OUR4dG9YbWJEWmwzYkQ1SVpMOHFiQU9PMmYweDJ6N0R0dUhmNmt6THBkdlFxMHhUcDA1OFFwSktsNUQ4c3N2WW9ZU0J1YTZHYk95RVc0c25mV3Bqd0kyVEJNMUQ1U2FvSUt4Z1N2a1BMTXJJRHRyWnJRV2J4cGY4NktrTVgzdHVQWXBGZ3hDSnAzb3RJR0FWUXRjUEdkeVpXMTh3dWhINWFrQ3RtMmxINTVrOERqVGctZXJCVF9RRDd2OEtWdg?oc=5"
+        },
+        {
+          "title": "Dow Jones Futures: Trump, Iran Deal Spark Stock Market Surge; Nvidia, Micron, Sandisk SpaceX Are Big Winners",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSGQtV2h3ZzdnWHVES3hfd3ZGbjRTWFBMZ1hoZ2Y3UGJMWFhyZkVKOTBFbkVxX0NYV0Y3a0JNNHBBMVZJNlhrN2oteTlfWFdMbEdjMWVIaVdTZ2ptLWtkOG1uOGpHR3dSV2tBOVNvbkQxUV9pZ3ZLa0tCTjk2NW5walA0NXFuSG13ejQ0ZlRWQzJCeS1sd2hhVUYzVHNQUWstaGpLallzT3V3LS1UZTJ2TFZfbGZBU3JzTmI2WGVhMkV3aWFMOTAxdg?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-15",
+      "last_seen": "2026-06-16"
+    },
+    {
+      "name": "Roku",
+      "ticker": "ROKU",
+      "sector": "串流媒體/消費性電子",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "福斯公司斥資220億美元收購Roku，旨在結合其體育新聞節目與Roku串流平台，加速數位轉型。",
       "evidence_news": [
         {
           "title": "福斯斥資220億美元收購Roku 加速數位轉型",
@@ -150,9 +198,9 @@
           "url": "https://www.cna.com.tw/news/aopl/202606150300.aspx"
         },
         {
-          "title": "Why Fox Stock Is Tumbling After $22 Billion Roku Deal",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBlMnhQWVlncjUyVTk1N3JWbmNQN2JILTdabHoyU0hjTEg3TXY5YTdhYjBWbmlOMmlZRnhfcDhmc0l5TFFhb0V0ZTBuUnR6RDFuS2V6ZTZBYXBqWkpGemhBQmhCWFpNVWo5VUpYS1ZUR3FlQ2JiYVE?oc=5"
+          "title": "Fox to Buy Roku at $22 Billion Value in Streaming Video Push",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdkVYV0JXMHlKeHZhSEctcDN3QVBodDE0SFY4Qy1ZSGd5VHJYQjBZaTZ4clVnQ1Vza3JJNGlkNkVPWHdMWndhVGpRbURrSnBfRklNeUtVYUhSWHJjOFVsWElBODk0RjNROGp4bGpoSmNjRlZvX1NMLVFacUt4bkVXamRSS1pnU1Y1MjFHckNidk5DOU5wTzE0VG5LLWpUcFNnVUIyaG5yZUJjQVd5aGY0?oc=5"
         }
       ],
       "news_count": 3,
@@ -160,17 +208,22 @@
       "last_seen": "2026-06-15"
     },
     {
-      "name": "Salesforce",
-      "ticker": "CRM",
-      "sector": "軟體/雲端服務",
-      "mention_count": 1,
+      "name": "美國航空集團(American Airlines Group)",
+      "ticker": "",
+      "sector": "航空",
+      "mention_count": 2,
       "sentiment": "利多",
-      "reason": "Salesforce以36億美元收購AI客戶服務平台Fin，旨在深化AI自動化並提升代理式服務產品。",
+      "reason": "由於油價因美伊和平協議而下跌，美國航空集團股價上漲。",
       "evidence_news": [
         {
-          "title": "Salesforce acquires AI customer service platform Fin for $3.6 billion",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV_5yqLMeVzkcDj5VWrSZYoOviZn8ZEw6noWuZhmWFxADv6vMAxD0nL_vRVo2emBHaz-znqWqjXn_w8O3r448jCJ_00Z6ByuqB-SJ78UDLhIMeHz3uRQ78czBHowMRGTAdzWvfUd4Y3qmjzffNnOzTJvI6bSaUkiaO0M?oc=5"
+          "title": "Stock Market Today, June 15: American Airlines Group Jumps After Oil Prices Drop on U.S.-Iran Peace Agreement",
+          "source": "The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOc3I3ZWMwV0Y3d09UdE5mSXF4anR3b09YR0wwOFFjYlVmLUJYcDNfX0FHcWVmUU15YXRENTQPeU1mNC14RHFzWnZEaUN0Rm9EY0lxaHJfWTJtUDlQbVhpSi1sblZLY1dyLXJlOFF3ZnV1bEFXRUV6b2dpSHY5VGpGTDYtaE1OWW9CbzdlVllWdWR5X2l1SkRlOXc1V0tjaGVIcEJTNDhOUDVCOEpSaFV4Q1VDc19QVDZNTThDeEp4UDZ3VXRQdEd6Y0RfZThTQTFxaG0zbmZpMGFDeFhYT0ZOM0JEMW16NEVrQVlpRWxaRzdMNFR6eGhrd1RrOA?oc=5"
+        },
+        {
+          "title": "Why Is American Airlines Stock Surging On Monday?",
+          "source": "Benzinga",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdXV3Y1dKa0xCamJDT0Vadkdra0FvajB0QzdBU0hXMGJlbDVuZXlUZWRuc1Zxam5oRnZTcFhubC1OUVpRMHNNVUp4SHd5alBLVy1XUklqXzFYY1FFcHBybjlJbWRnS2JaTGZsZVBoZV9icTB1NEJHMko2dEptaTVMXzhVWkcySjZVTUVrTEVhTnZjMl9GSmI5RTlCNDdBa3h5cVVtLURtT2szUmJ2MGc?oc=5"
         }
       ],
       "news_count": 1,
@@ -178,48 +231,12 @@
       "last_seen": "2026-06-15"
     },
     {
-      "name": "美光 (Micron)",
-      "ticker": "MU",
-      "sector": "半導體/記憶體",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "美光季營收衝上333.5億美元新高，顯示記憶體市場需求旺盛。",
-      "evidence_news": [
-        {
-          "title": "【美股巨頭】美光季營收衝333.5億美元新高，記憶體缺貨才是真正的問題",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNWUUxakx2S2NfNkY3bE5rZDdRd2FvYS1LYzhmSWJUbXAwNVQ3ckNXTDNpblk1emNNTEFpc3BGSEUxOWJ3dmxZMGhHbDZYQktEcEFGMXZISXZQMjJqcHczWWRmYkFLMlc1Snp1dU1tT0VBcUVxTkF5RGhocjN1VUxGUGI0Vy01YjZnRWJTNThR?oc=5"
-        }
-      ],
-      "news_count": 6,
-      "first_seen": "2026-06-14",
-      "last_seen": "2026-06-15"
-    },
-    {
-      "name": "英特爾 (Intel)",
-      "ticker": "INTC",
-      "sector": "半導體",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "代理式AI技術的推升有助於英特爾的發展。",
-      "evidence_news": [
-        {
-          "title": "【美股盤前】SpaceX上市漲19%、馬斯克全球「萬億富豪」！代理式AI推升英特爾，美股多頭排列能續航？",
-          "source": "sinotrade.com.tw",
-          "url": "https://news.google.com/rss/articles/CBMiogRBVV95cUxOUG16M0VERlNBU3pWWV9OTlVLV0hiZGp5UzZKbzEyblVIUjhMOVpiUW9RSm1YZ1dGY2VIVWZib2d2SkJXaTVRTTVnQzZiOTVlaEdJeWQzamQwY2JFN1Z4cDhqU0pnOS11NFdYNWVjZTJYZmVQVTFOdWxwb1RjeFp4NUtwYWp4eHd1b2FqZ0hUcE9JdkVIYVpsaGw1TkdVYkdERGp2OURXOVZrc2w1N0ExOVdlVl9MTm92Vnoybzhub002Smt0UXEzRnRld1k5dmpvMkM3RzFtckp6R2dsSlRhbzRSX01nZEpna1lpOUZ3VUtMVU9iSFhHbnFfQkYtQ1dvQ0tBYjQ2cDZBWHkxV2MwVGl5YzNLcmVxbDNzaHU1XzdkWkV4RnZSR3pNX1psZ0ZUMEcxMGNURDlGdlhQM25IV2kyYVo2MWp1eWlFYnV1N0lfUmFIY0Z0Wk1RVWtHOGEzanNENlh5Q0tSUXc1OWxKYzVULVM4UTI1MUd6TVhScWtiVWtOS1pnVElFLXFydXpYSHpnQm9KZGlvSGVBUHJIOXF4bERsYTlaMTJtRUExYlhPX05peVBqa3JsTjNyWWhMZllsUmhnTEd5TjRmWFJjX1lpQWtXdUpLb0RERnRGaXdSbU9HdG1YTGxIbV8ycW16SzltY0laRmd1Uy04TEFpdlRjUkluYVRPZUNOaDJxeUVyRW52ZXR5cFdKWW9jQXN4WWc?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-15",
-      "last_seen": "2026-06-15"
-    },
-    {
-      "name": "Threads (Meta Platforms)",
+      "name": "Meta (Threads)",
       "ticker": "META",
       "sector": "社群媒體",
       "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "Meta旗下社群平台Threads傳出無預警停權災情，數位發展部已啟動調查。",
+      "sentiment": "觀望",
+      "reason": "Meta旗下的社群平台Threads傳出無預警停權災情，數位發展部已啟動調查。",
       "evidence_news": [
         {
           "title": "Threads停權災情 數發部：維護數位權益、啟動調查",
@@ -232,53 +249,53 @@
       "last_seen": "2026-06-15"
     },
     {
-      "name": "美國航空 (American Airlines)",
-      "ticker": "AAL",
-      "sector": "航空",
+      "name": "福斯公司(Fox Corporation)",
+      "ticker": "FOXA",
+      "sector": "媒體/串流媒體",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "新聞標題指出美國航空股價週一飆升，顯示其近期表現強勁。",
+      "reason": "福斯公司斥資220億美元收購Roku，以加速數位轉型並鞏固其在線上收視領域的地位。",
       "evidence_news": [
         {
-          "title": "Why Is American Airlines Stock Surging On Monday?",
-          "source": "Benzinga",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdXV3Y1dKa0xCamJDT0Vadkdra0FvajB0QzdBU0hXMGJlbDVuZXlUZWRuc1Zxam5oRnZTcFhubC1OUVpRMHNNVUp4SHd5alBLV1ctUklqXzFYY1FFcHBybjlJbWRnS2JaTGZsZVBoZV9icTB1NEJHMko2dEptaTVMXzhVWkcySjZVTUVrTEVhTnZjMl9GSmI5RTlCNDdBa3h5cVVtLURtT2szUmJ2MGc?oc=5"
+          "title": "福斯斥資220億美元收購Roku 加速數位轉型",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/aopl/202606150300.aspx"
         }
       ],
-      "news_count": 1,
+      "news_count": 2,
       "first_seen": "2026-06-15",
       "last_seen": "2026-06-15"
     },
     {
-      "name": "Fiserv",
-      "ticker": "FISV",
-      "sector": "金融科技",
-      "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "Fiserv宣布領導層變動，執行長Mike Lyons離職，導致股價下跌。",
-      "evidence_news": [
-        {
-          "title": "Fiserv Announces Leadership Transition",
-          "source": "Fiserv",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRWlIcFA5WnVfcGdjc0NoVUN5UGpJME5xV05KbktfMHJlb3RMd1FxRVZPdWlwZDVNYndjMVpHTWZva0dZb2ZzWlFGRnFSVmpZMmVPSDAyNk1ReW9wRU5xRC03QXVLTDZNdWd4TlhHeUp2RHN5amtPOUZiSHg4OWY2c3ptX2Ewd0dxSndDNHZwb3MyTlo1THlIVlU1SllJME10VVh0TQ?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-15",
-      "last_seen": "2026-06-15"
-    },
-    {
-      "name": "Zhipu Shares",
+      "name": "匯鑽科",
       "ticker": "",
-      "sector": "人工智慧",
+      "sector": "專業表面處理",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "Zhipu Shares股價飆升48%，因摩根大通上調目標價，且美國對Anthropic AI模型的限制提升了對中國AI公司的看好度。",
+      "reason": "為符合美系客戶非紅供應鏈需求，匯鑽科泰國新廠年底投產，擴大AI、CPO產品布局。",
       "evidence_news": [
         {
-          "title": "Zhipu Shares Surge 48% After JPMorgan Raises Price Target",
-          "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQY1FPS1hURFdpMGdBZ19OWkM2TjZWcnZCWDhLSTRNRjM4VEEwTExHTkJURktEZ3dkN3hPaF9oSHVSSVlBa1dQeG92bDFUYnAta2VUWEZQVWROTkQwaXNxWlo3YWFqZ1FtTDBPLXVUTUdLeldaLThlQ3oxWWxuaWE5a0lxcm5CWVFYTm9WVVhPbGJsX0ZKXy1oR050M09xMVU0VTg1T0JSUUFOeG8?oc=5"
+          "title": "匯鑽科泰國新廠年底投產 擴大AI、CPO產品布局",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606150279.aspx"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-15",
+      "last_seen": "2026-06-15"
+    },
+    {
+      "name": "Western Digital",
+      "ticker": "WDC",
+      "sector": "半導體/儲存設備",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "Western Digital股價飆升15%，帶動那斯達克指數上漲。",
+      "evidence_news": [
+        {
+          "title": "NASDAQ Index, SP500, Dow Jones Forecasts – NASDAQ Rallies As Western Digital Soars 15%",
+          "source": "FXEmpire",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQdUN6b2ZJby11NkVIc0FMdDZCUmdULXVJejVNek5EbzYxVEdiU3o0V0FOMENhUVdKY0tmd1pqTzh4VzJackNhTUZKVFpSczdYQ2NRS0habkRvRFBOMk1xQzVuTmpJVHRHTE5pWHB6MHI3X3NZcmxOMUhfV3Z4VkdpQzFmVG5yYzhpVWFzS3pDQnNDV2ttZVBlMFRzTlVxMjk5c213NExJc1pqdUxUbXpNdndGdHNEVG1fUTQ3MTRkaGpYeG1ERW1JT0Q1VTQ?oc=5"
         }
       ],
       "news_count": 1,
@@ -287,11 +304,11 @@
     }
   ],
   "future_trends": [
-    "人工智慧(AI)",
+    "太空探索與航太科技",
     "半導體產業",
-    "太空探索",
-    "串流媒體內容整合",
-    "離岸風電"
+    "人工智慧(AI)相關產品",
+    "串流媒體與數位轉型",
+    "非紅供應鏈製造"
   ],
   "sunset_industries": []
 }
