@@ -17,6 +17,7 @@
   - GEMINI_API_KEY                 (必填) Gemini 金鑰
   - GEMINI_MODEL                   (選填) Gemini 模型,預設 gemini-2.5-flash
   - GEMINI_MAX_TOKENS              (選填) 單次輸出 token 上限,預設 16384
+  - EARLIEST_TW_HHMM               (選填) schedule 早於此台灣時刻(HHMM)就略過,預設 0530
   - REPORT_TOPIC                   (選填) 戰略報告的分析主題(單一)
   - REPORT_TOPICS                  (選填) 多主題戰略報告,以 ; 分隔(第一個為主報告)
   - NEWS_QUERIES                   (選填) 戰略報告抓新聞的關鍵字,以 ; 分隔
@@ -2196,11 +2197,26 @@ def main() -> int:
 
     # 以台灣時區(UTC+8,無日光節約)定義「今天」:排程在台灣清晨(UTC 前一日 21:30 起)
     # 觸發,用台灣日期才能讓報告日期與你早上看到的日期一致(不會慢一天)。
-    today = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d")
+    now_tw = datetime.now(timezone.utc) + timedelta(hours=8)
+    today = now_tw.strftime("%Y-%m-%d")
 
-    # 排程備援防呆:schedule 班次啟動時若今日報告已產出(NAS 06:00 主力以 dispatch 跑完並寫回
-    # main),直接略過,避免 GitHub 兜底班次重複跑與重複推 LINE。workflow_dispatch 不受此限。
     if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+        # 資料齊備守門:美股現貨收盤(夏 04:00/冬 05:00)+ 台指期夜盤收盤 05:00 後數據才完整。
+        # GitHub 自家排程器常在台灣半夜 00–02 點亂放排程(時間對不上任何 cron),那時跑只會推出
+        # 殘缺的凌晨版。故 schedule 觸發若早於資料齊備點(預設台灣 05:30),直接略過、不跑不推。
+        # 可用 EARLIEST_TW_HHMM 覆寫(四位數 HHMM);workflow_dispatch(NAS 主力/手動補發)不受此限。
+        floor = os.environ.get("EARLIEST_TW_HHMM", "0530").strip()
+        try:
+            fh, fm = int(floor[:2]), int(floor[2:])
+        except (ValueError, IndexError):
+            fh, fm = 5, 30
+        if (now_tw.hour, now_tw.minute) < (fh, fm):
+            print(f"排程於台灣 {now_tw:%H:%M} 觸發,早於資料齊備時間 "
+                  f"{fh:02d}:{fm:02d}(GitHub 排程器半夜亂觸發),略過——不推不完整凌晨版。")
+            return 0
+
+        # 排程備援防呆:今日報告已產出(NAS 06:00 主力以 dispatch 跑完並寫回 main)→ 直接略過,
+        # 避免 GitHub 兜底班次重複跑與重複推 LINE。workflow_dispatch 不受此限。
         try:
             existing = json.loads(OUTPUT_LATEST.read_text(encoding="utf-8"))
             if existing.get("report_date") == today:
