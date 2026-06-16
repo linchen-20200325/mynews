@@ -55,6 +55,8 @@ jobs:
           LINE_TO: ${{ secrets.LINE_TO }}
           # 可選:覆寫 Gemini 模型 / 分析主題 / 抓新聞關鍵字 / 關閉趨勢雷達(設 0)
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          # 單次輸出 token 上限(未設用程式預設 16384);台股精選等長 JSON 被截斷時調高它
+          GEMINI_MAX_TOKENS: ${{ vars.GEMINI_MAX_TOKENS }}
           REPORT_TOPIC: ${{ vars.REPORT_TOPIC }}
           REPORT_TOPICS: ${{ vars.REPORT_TOPICS }}
           NEWS_QUERIES: ${{ vars.NEWS_QUERIES }}

@@ -16,7 +16,7 @@
 環境變數:
   - GEMINI_API_KEY                 (必填) Gemini 金鑰
   - GEMINI_MODEL                   (選填) Gemini 模型,預設 gemini-2.5-flash
-  - GEMINI_MAX_TOKENS              (選填) 單次輸出 token 上限,預設 8192
+  - GEMINI_MAX_TOKENS              (選填) 單次輸出 token 上限,預設 16384
   - REPORT_TOPIC                   (選填) 戰略報告的分析主題(單一)
   - REPORT_TOPICS                  (選填) 多主題戰略報告,以 ; 分隔(第一個為主報告)
   - NEWS_QUERIES                   (選填) 戰略報告抓新聞的關鍵字,以 ; 分隔
@@ -1127,7 +1127,7 @@ def _build_gemini_config(types, system_instruction: str, max_tokens: int | None 
     }
     try:
         if max_tokens is None:
-            max_tokens = int(os.environ.get("GEMINI_MAX_TOKENS", "8192"))
+            max_tokens = int(os.environ.get("GEMINI_MAX_TOKENS", "16384"))
         kwargs["max_output_tokens"] = int(max_tokens)
     except (TypeError, ValueError):
         pass
@@ -1242,13 +1242,13 @@ def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
         raise RuntimeError("未設定 GEMINI_API_KEY")
 
     try:
-        base_budget = int(os.environ.get("GEMINI_MAX_TOKENS", "8192"))
+        base_budget = int(os.environ.get("GEMINI_MAX_TOKENS", "16384"))
     except (TypeError, ValueError):
-        base_budget = 8192
+        base_budget = 16384
     # 第一輪用預設上限;若解析失敗(疑似被截斷)再用更大上限重試一次。
     budgets = [base_budget]
-    if base_budget < 32768:
-        budgets.append(32768)
+    if base_budget < 65536:
+        budgets.append(65536)
 
     last_exc: Exception | None = None
     for i, budget in enumerate(budgets):
