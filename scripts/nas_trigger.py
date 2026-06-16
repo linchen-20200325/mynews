@@ -1,25 +1,24 @@
 #!/usr/bin/env python3
-"""NAS 備援觸發:GitHub 當主力,NAS 只在「今日尚未成功」時補一槍。
+"""NAS 主力觸發:NAS 當「每日第一發送」,GitHub schedule 退為兜底備援。
 
-GitHub 自家排程器在尖峰常把清晨班次整批丟棄(6/10、6/11 早上漏報主因);
-由 24h 開機的 NAS 當安全網:每天 06:00(GitHub 05:30 主班之後)查一次,
-今日已有成功(或正在跑)的執行就按兵不動,只有 GitHub 漏跑/失敗才觸發。
+GitHub 自家排程器在尖峰常把清晨班次整批丟棄(6/10、6/11、6/16 早上漏 LINE 主因);
+故改由 24h 開機的 NAS 當主力:每天台灣 06:00(資料齊備時)以 workflow_dispatch 發第一槍 ——
+dispatch 是 API 直發、不受 GitHub 排程丟棄影響,且繞過 update_data.py 的 schedule 去重守門,
+保證完整跑並推 LINE。GitHub schedule(06:40、07:30)只在 NAS 沒開機/沒網路時補位。
 
-為何要「先查」:workflow_dispatch 不受 update_data.py 的 schedule 防重複守門
-限制,會完整跑並推 LINE。若不先查就觸發,可能與進行中的 GitHub run 撞在一起
-變成雙推。先查今日狀態 → 杜絕雙推,且真正只在需要時補位。
+模式維持 backup(先查再發):NAS 是當天最早的班次,先查今日通常無成功/進行中 → 直接發;
+但若有殘留的手動 run 或前一班仍在跑,先查就能避免撞車雙推。等於「最早且唯一」的第一發。
+(TRIGGER_MODE=always 則不查、每天硬發;一般用預設 backup 即可。)
 
 Token:fine-grained PAT,僅授權本 repo 的「Actions: Read and write」。
   存成單獨檔案(chmod 600)或放環境變數,切勿進 git。
-
-模式:TRIGGER_MODE=backup(預設,先查再觸發)| always(每天固定觸發,當主力用)
 
 用法(擇一提供 token):
   GITHUB_TOKEN=github_pat_xxx       python3 nas_trigger.py
   GITHUB_TOKEN_FILE=/path/to/token  python3 nas_trigger.py
 
 Synology DSM > 控制台 > 任務排程 > 新增 > 排定的任務 > 使用者定義指令碼,
-每天 06:00,指令:
+每天 06:00(主力第一發),指令:
   GITHUB_TOKEN_FILE=/volume1/homes/<you>/.mynews_gh_token \\
     /usr/bin/python3 /volume1/.../scripts/nas_trigger.py
 """

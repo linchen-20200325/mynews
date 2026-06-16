@@ -2198,8 +2198,8 @@ def main() -> int:
     # 觸發,用台灣日期才能讓報告日期與你早上看到的日期一致(不會慢一天)。
     today = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d")
 
-    # 排程備援防呆:排程觸發時若今日報告已產出(主班次已成功並寫回 main),直接略過,
-    # 避免備援班次重複跑與重複推 LINE。手動 workflow_dispatch 不受此限,可隨時重跑。
+    # 排程備援防呆:schedule 班次啟動時若今日報告已產出(NAS 06:00 主力以 dispatch 跑完並寫回
+    # main),直接略過,避免 GitHub 兜底班次重複跑與重複推 LINE。workflow_dispatch 不受此限。
     if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
         try:
             existing = json.loads(OUTPUT_LATEST.read_text(encoding="utf-8"))
