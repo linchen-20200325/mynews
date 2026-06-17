@@ -1,47 +1,47 @@
 {
   "report_date": "2026-06-17",
-  "summary": "今日美股焦點為道瓊指數創歷史新高，SpaceX在上市後股價狂飆並宣布AI交易，油價因美伊和平協議而重挫，科技股則呈現漲跌互見的觀望態勢。",
+  "summary": "今日美股市場呈現分歧，道瓊指數在金融與傳產股帶動下創歷史新高，而科技股則普遍下跌，導致那斯達克和標普500指數收低。SpaceX市值超越亞馬遜和微軟，成為市場焦點。同時，受美伊協議影響，國際油價大跌。",
   "stocks": [
     {
       "name": "SpaceX",
-      "ticker": "SPCX",
-      "sector": "太空探索/人工智慧",
-      "mention_count": 13,
+      "ticker": "",
+      "sector": "航太科技",
+      "mention_count": 18,
       "sentiment": "利多",
-      "reason": "SpaceX上市後股價狂飆，一度超越微軟和亞馬遜成為全球市值第四大公司，並宣布與Cursor達成600億美元的AI編碼交易。",
+      "reason": "SpaceX市值超越亞馬遜、微軟，躍居全球市值前五大企業，且股價飆漲，期權交易需求創紀錄，並達成600億美元的Cursor交易，顯示市場对其前景高度看好。",
       "evidence_news": [
         {
-          "title": "SpaceX上市後股價狂飆 一度超越微軟躍居全球市值第4大",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606160394.aspx"
+          "title": "SpaceX市值超越亞馬遜，美股資金轉向金融股道瓊連兩日改寫歷史新高",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE00bzVlTm0zM2ZKamtMQWY1ZS1TeVV2TmVrcDJqWHlrUGN0eHZTM2xZNDJadFBjOU51aVprTXctdzBSaTAtQ0tzNS1WdnhPam8?oc=5"
         },
         {
-          "title": "SpaceX宣布600億美元Cursor交易，以推動AI編碼",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOLVpkcDZhOWdVandPOWJXNEwwbEtlWmUyMzUzQmIySWFMQUZTVGw4N2Itc3F6eXBZZVg2dktVVjlUcW1WUHhjVVBsMm5HVTR6N0JkUHZRNWhGM3BVSEJMVmRIcC12SHAtdWY4Y3VibVJ6QzVpWXpMTjZHaFpMYnN2Vm8yOTZDRFg2QkZsZ2FJMFRSMm5IMVBKTWoyN0Z6Sk1TWjRteXlFTk5GUzVtMVlpWUU4UTlRSlpTWUE2M0NYcw?oc=5"
+          "title": "SpaceX市值登全球第5大 美股漲跌互見、台積電ADR跌3.5％ | 中廣新聞網",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9hUHM5Z3k3NzBnaVhHeTdNOExzYnpESXhCN2hna3k2dzk5cWNGdkFtQVRXTzNTTjN5MUV0cGJfWERYSEw2YXN5dDQxZnI5bXd2SExyOWh3?oc=5"
         }
       ],
-      "news_count": 15,
+      "news_count": 19,
       "first_seen": "2026-06-16",
-      "last_seen": "2026-06-16"
+      "last_seen": "2026-06-17"
     },
     {
-      "name": "道瓊工業指數(Dow Jones Industrial Average)",
+      "name": "道瓊工業指數",
       "ticker": "",
-      "sector": "綜合指數",
-      "mention_count": 12,
+      "sector": "大盤指數",
+      "mention_count": 16,
       "sentiment": "利多",
-      "reason": "多則新聞指出道瓊指數創歷史新高，主要受美伊和平協議帶動油價下跌及低估值傳統產業受華爾街巨頭喊多影響。",
+      "reason": "道瓊指數受金融股和傳統產業股帶動，連續兩日創歷史新高，一度突破52000點。",
       "evidence_news": [
         {
-          "title": "道瓊再漲500點創歷史新高！科技股高檔熄火，華爾街巨頭集體喊多低估值傳統產業",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVDFYNlo4SWFHYnZWMnVEalBUS25TN1gtQk5HMW1YMkNXdzJ1N29nXzMjalY4UkIwem9oZVhCUDd0aEJkSDMzRmZ1N01EMUFET014eExHQnl4R0h0TGpwcHdXRzlkemRfVktJQWREWndwWkVoaFB3ZnVNRG1KX29sX2NNNE1IOUZNd2JrdktWazN2WENDT19PQkRSTUU2YTZQR09DOXVyUzdQRWNDbVE0Uzh1SjJPekN1aDBCWTgyc2c0YTV0Z0lyUmtQSFhRRk95c1FqejVRdw?oc=5"
+          "title": "道瓊指數創新高油價大跌 SpaceX市值超車亞馬遜",
+          "source": "蕃新聞",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9sN1lfYU4xT3VLaXl5N0QxaWNrMEtIVXo5MFlGbkpwVmVvX18zQVVWS09oNmJUd2JIU1VJRUQwcDI0d0ZGZ1IzejlDb1dBWjh1U3c?oc=5"
         },
         {
-          "title": "油價下跌美股道瓊創歷史新高 SpaceX市值超車亞馬遜",
-          "source": "民視財經網",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBsYkVwWml1M1hCMk94Z3VPTncyU0F5el85S1dSV2swVE5NcUptUm1iNC1YX212VlptTlp1aUxYTllTYy03cGZLU3BsZGZFVktxQnFqVHBLSk9MNHRRaTFReTRsWDJSdw?oc=5"
+          "title": "美股分歧！道瓊連兩日創新高 那指、標普收跌",
+          "source": "東森新聞",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1QcXlDWlUxUHh3ZzhicFBSN0JXZmJvQ1lYUDNxMXptRTYxZ0FWNXExSG9obExPSGJZTlNqRkNVdTdRSlc0TVZXcV9oeS0tTXVJa1pGeUk0Yw?oc=5"
         }
       ],
       "news_count": 1,
@@ -49,58 +49,146 @@
       "last_seen": "2026-06-16"
     },
     {
-      "name": "科技股",
+      "name": "那斯達克指數",
       "ticker": "",
-      "sector": "科技",
-      "mention_count": 6,
-      "sentiment": "觀望",
-      "reason": "多則新聞指出科技股高檔熄火或漲跌互見，部分報導提到費半大漲，但也有對聯準會決策的觀望氣氛。",
+      "sector": "大盤指數",
+      "mention_count": 13,
+      "sentiment": "利空",
+      "reason": "那斯達克指數因科技股重挫而收跌，顯示市場資金從科技股流出。",
       "evidence_news": [
         {
-          "title": "道瓊再漲500點創歷史新高！科技股高檔熄火，華爾街巨頭集體喊多低估值傳統產業",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVDFYNlo4SWFHYnZWMnJEUlRLblN3WEJOMW1YMkNXdzJ1N29nXzMtalY4UkIwem9oZVhCUDd0aEJkSDMzRmZ1N01EMUFET014eExHQnl4R0h0TGpwcHdXRzlkemRfVktJQWREWndwWkVoaFB3ZnVNRG1KX29sX2NNNE1IOUZNd2JrdktWazN2WENDT19PQkRSTUU2YTZQR09DOXVyUzdQRWNDbVE0Uzh1SjJPekN1aDBCWTgyc2c0YTV0Z0lyUmtQSFhRRk95c1FqejVRdw?oc=5"
+          "title": "美股分歧！道瓊連兩日創歷史新高 那指、標普受累收跌 | 民視新聞網",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE84VWFaTXJOWEpPS0Z0aUNHQWZRTkFQcmhCSnAxSXFsR2dtcGRCRkJ0dDcwb0htV28xeW15aXZ4Nkw5T3YtTGlHeW8tai1aNWNVZEJiczJB?oc=5"
         },
         {
-          "title": "〈美股早盤〉Fed決策前市場觀望 主要指數漲跌互現",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE42eUtpNDk1SjJTYVAtUXFINUtNY2Y0aDd4dGowYV80emY5TG9jYnpNdzdXSjVpZl8xUXowNEN3ZEYyYlo0cWUtOFU1UF9WTlk?oc=5"
+          "title": "美股收盤：三大指數分化，晶片股全線受挫；SpaceX市值一度超越微軟，市場關注即將召開的聯準會利率決策會議",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOcDNVYklaX3FSVEEzV3B1RmFJelE4WnA4dXlENGNxOWo5b0lWblg0Q2NpcUt4OWRfZ3BqTFpMMzc3MmtrU3pWRUNuQVIzMHh1bTBlTmJUNlBMcHY1SFNUVUhuTkZoRG5DVE5QeWlpSy1saElyY29HRjVnLWVJS3pUVWFlU0NETXc5SmxZU25MWjdCUEY4d1BEbGh4REpfS2dKVmp1MWpidGxjQWtpZ2gwLU90LWVUX3R2S1c2VTgzTWtURlZRZWJfTnJzQWdtNFF4LXg4WA?oc=5"
         }
       ],
-      "news_count": 4,
+      "news_count": 2,
       "first_seen": "2026-06-16",
       "last_seen": "2026-06-16"
+    },
+    {
+      "name": "標普500指數",
+      "ticker": "",
+      "sector": "大盤指數",
+      "mention_count": 10,
+      "sentiment": "利空",
+      "reason": "標普500指數受科技股下跌拖累，與那斯達克同步收低。",
+      "evidence_news": [
+        {
+          "title": "美股分歧！道瓊連兩日創新高 那指、標普收跌",
+          "source": "東森新聞",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1QcXlDWlUxUHh3ZzhicFBSN0JXZmJvQ1lYUDNxMXptRTYxZ0FWNXExSG9obExPSGJZTlNqRkNVdTdRSlc0TVZXcV9oeS0tTXVJa1pGeUk0Yw?oc=5"
+        },
+        {
+          "title": "美股收盤：三大指數分化，晶片股全線受挫；SpaceX市值一度超越微軟，市場關注即將召開的聯準會利率決策會議",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOcDNVYklaX3FSVEEzV3B1RmFJelE4WnA4dXlENGNxOWo5b0lWblg0Q2NpcUt4OWRfZ3BqTFpMMzc3MmtrU3pWRUNuQVIzMHh1bTBlTmJUNlBMcHY1SFNUVUhuTkZoRG5DVE5QeWlpSy1saElyY29HRjVnLWVJS3pUVWFlU0NETXc5SmxZU25MWjdCUEY4d1BEbGh4REpfS2dKVmp1MWpidGxjQWtpZ2gwLU90LWVUX3R2S1c2VTgzTWtURlZRZWJfTnJzQWdtNFF4LXg4WA?oc=5"
+        }
+      ],
+      "news_count": 0
+    },
+    {
+      "name": "費城半導體指數",
+      "ticker": "",
+      "sector": "半導體",
+      "mention_count": 9,
+      "sentiment": "利空",
+      "reason": "費半指數在連三日大漲後急速回吐5.7%至近6%，晶片股全線受挫，顯示科技股面臨賣壓。",
+      "evidence_news": [
+        {
+          "title": "美股收盤／費半連三日大漲後急速回吐5.7% SpaceX 市值超越亞馬遜 道瓊再創新高",
+          "source": "經濟日報",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5nMmtmMWIteklfZFM5SWV2ZGV0bkthdzRyaW5kVDZYc2pVNXFpaEp2T2Z4TjhLYkxQaDJ0Vy1fc3VpRXBYME1MSHY2ZEEzdFV0dGNYa0xBRXdzR0Vf0gFiQVVfeXFMTlctWnNkT3N4SkV5VXR5WVhHOG5icG1WeXB2WGhKRE1CUGJ3MUJwQlVGNXl3UnpBYmpTckZXMGdIeHUyV1ZmNnRUVGJOMlhBRk9LTFN5NE5qODJFREZjUVIwc1E?oc=5"
+        },
+        {
+          "title": "美國科技股大逃殺！費半暴跌5.7% 台積電ADR下挫3.51% | 民視新聞網",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9hWE1sdktFbk91NmxoQ3hXTkhTbXJGV1hhWUx4b21FVTNlQ0hJWmdQWjhNRHVWbVFrUWpVWm9vNUYxekFRV0FpR3k4MzlMYXpEbjFkaTFn?oc=5"
+        }
+      ],
+      "news_count": 0
     },
     {
       "name": "油價",
       "ticker": "",
       "sector": "能源",
-      "mention_count": 6,
+      "mention_count": 8,
       "sentiment": "利空",
-      "reason": "美伊達成和平協議導致油價重挫，國際油價跌破每桶80美元，創3個月新低。",
+      "reason": "美伊協議達成曙光，市場對原油供應恢復預期升高，導致國際油價跌破80美元，創近月及三個月新低，重挫逾5%。",
       "evidence_news": [
         {
-          "title": "美伊破冰油價崩！那指狂飆3%與輝達豪擲250億發債 全球「瘋牛」行情背後三大暗礁",
+          "title": "道瓊指數創新高油價大跌 SpaceX市值超車亞馬遜",
           "source": "蕃新聞",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB5NmVRM0VqSUU4a0tuNWdodlN5YkhtX3NReWt2ZDJNLVhlSDFwTlhJOHZrYUFRN3VRbldZbDNuUmhJVGJEQkJFYVpxNHZRdGZmMUE?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9sN1lfYU4xT3VLaXl5N0QxaWNrMEtIVXo5MFlGbkpwVmVvX18zQVVWS09oNmJUd2JIU1VJRUQwcDI0d0ZGZ1IzejlDb1dBWjh1U3c?oc=5"
         },
         {
-          "title": "國際油價跌破每桶80美元 創3個月新低",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606160378.aspx"
+          "title": "油價跌破80美元創近月新低 美股科技股拖累大盤",
+          "source": "商傳媒",
+          "url": "https://news.google.com/rss/articles/CBMizgJBVV95cUxPSTNnU3locWhHems4WGJySGw1anQ0azFJQTRvajIxbWRmbU1RV1NMd0t5M3hKTjJHb0wxSk1QRm9ENWFpS2VZenFBWGU2M29OeGtnMnE0dGVsU0FMdWVQVERoY0NLRlRyeDlRV0laSDNMN3NmdXk4Wkt3MXpoQTVMdWtKc0kzUmZXdnZHVENYbTQzYXctVmhMOHhJYWlYei04Mk1USXhaN181VTlGSU1Ec1M5ZjlDZVRHYlhxNUthbi1fbmVzd1NpWFU1eHI2d3QtX2d5cy1BSTlzNURZLW5iYTFDVktZbmhzRTVtOXM3S3VkcDFSWWJVU1hxaUF2aEx5eVNPWU5NU0IwMWlLZFlrZ1U0MDFpSS0yNFI4SEc5RlVoaGlfMmVRYXlhalVZbEh6SzJWQUttTldOWHhKTDVVcnVkRjJuaDVrczNoM3BR?oc=5"
         }
       ],
-      "news_count": 7,
+      "news_count": 10,
       "first_seen": "2026-06-16",
       "last_seen": "2026-06-16"
+    },
+    {
+      "name": "台積電ADR",
+      "ticker": "TSM",
+      "sector": "半導體",
+      "mention_count": 6,
+      "sentiment": "利空",
+      "reason": "台積電ADR受科技股大逃殺影響，下跌超過3.5%，顯示半導體產業短期承壓。",
+      "evidence_news": [
+        {
+          "title": "美股漲跌互見 台積電ADR跌3.5% | NOWNEWS今日新聞",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB1Q19BUFZYTkh1cjhRb1lLZkFGNTNMaEVFbW9BTHN0bE1ZaEV4R2RZbjVQd25FWC1TOVROc3I1dm9NUUpUdm5odHJQVUZRR3FqLWFmU1Nn?oc=5"
+        },
+        {
+          "title": "快新聞／費半重摔5.7%！台指期夜盤暴跌744點 台積電期貨下殺",
+          "source": "民視財經網",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBKcDdoTUJxSHkwZ2dwZVVCaWlzQjh5UmZMXzFmdElpYVBrR1ROMWJSWU9IVGwzR1A3N0ZJSlU1RVlkYjhBZ1Y1eG8zaGlBVHBkTjZ6RzlCb2o0bURIYjFaQzhqV1pRZw?oc=5"
+        }
+      ],
+      "news_count": 8,
+      "first_seen": "2026-06-16",
+      "last_seen": "2026-06-16"
+    },
+    {
+      "name": "亞馬遜(Amazon)",
+      "ticker": "AMZN",
+      "sector": "電子商務/雲端服務",
+      "mention_count": 5,
+      "sentiment": "利空",
+      "reason": "SpaceX市值超越亞馬遜，顯示其市場地位被新興科技公司挑戰。",
+      "evidence_news": [
+        {
+          "title": "SpaceX市值超越亞馬遜，美股資金轉向金融股道瓊連兩日改寫歷史新高",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE00bzVlTm0zM2ZKamtMQWY1ZS1TeVV2TmVrcDJqWHlrUGN0eHZTM2xZNDJadFBjOU51aVprTXctdzBSaTAtQ0tzNS1WdnhPam8?oc=5"
+        },
+        {
+          "title": "道瓊指數創新高油價大跌 SpaceX市值超車亞馬遜",
+          "source": "蕃新聞",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9sN1lfYU4xT3VLaXl5N0QxaWNrMEtIVXo5MFlGbkpwVmVvX18zQVVWS09oNmJUd2JIU1VJRUQwcDI0d0ZGZ1IzejlDb1dBWjh1U3c?oc=5"
+        }
+      ],
+      "news_count": 8,
+      "first_seen": "2026-06-16",
+      "last_seen": "2026-06-17"
     },
     {
       "name": "輝達(Nvidia)",
       "ticker": "NVDA",
       "sector": "半導體",
-      "mention_count": 4,
-      "sentiment": "觀望",
-      "reason": "輝達有豪擲250億發債的消息，但同時也被提及走弱，且市場對其與其他AI晶片股的看法分歧。",
+      "mention_count": 3,
+      "sentiment": "利空",
+      "reason": "輝達股價走弱，且有新聞提到其豪擲250億發債，市場對其高檔熄火有所擔憂。",
       "evidence_news": [
         {
           "title": "美伊破冰油價崩！那指狂飆3%與輝達豪擲250億發債 全球「瘋牛」行情背後三大暗礁",
@@ -118,45 +206,22 @@
       "last_seen": "2026-06-16"
     },
     {
-      "name": "半導體",
-      "ticker": "",
-      "sector": "半導體",
-      "mention_count": 4,
-      "sentiment": "觀望",
-      "reason": "費半指數大漲，但也有報導指出半導體產業面臨掙扎，與金融、消費產業形成對比。",
-      "evidence_news": [
-        {
-          "title": "美伊宣布達成和平協議！ 美股費半大漲逾5％、台積電ADR漲4.12％",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1WbmxXeG9PeGFWeWdRb3ZNakFBZ3AxVFlaODNJNVY4clRkQWxjTUV3eXpRQ2thQmVBUThldEdUWGNQaDBzcFdGc2kzSlE4a2JuTGJVWW93?oc=5"
-        },
-        {
-          "title": "半導體掙扎，金融和消費部門閃耀",
-          "source": "investingLive",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxObXNCTUJZOXhIY1FjVThaYm5kYzBXOUhwQkZLbFBiV2REdzlfMlhvaXVISDZHMktfTU1KTXdXNWpLZTdEdlM1RUVWOHZKbnpPYVAxNnJ4Vm9xTnZxMUhtOWEyMHpSY3NJZC1hQklKb0dQMFBNRlNKTXN0eEo1LTNQeU1SdFN0c3FRRUVhTGxpckd5clBPOWlYQlYxbXk1YnFhMm1QaHBNeHhObHVwVE9nMElHV1JDLVRMYldN?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-16",
-      "last_seen": "2026-06-16"
-    },
-    {
-      "name": "亞馬遜(Amazon)",
-      "ticker": "AMZN",
-      "sector": "電子商務/雲端服務",
-      "mention_count": 3,
+      "name": "微軟(Microsoft)",
+      "ticker": "MSFT",
+      "sector": "軟體/雲端服務",
+      "mention_count": 2,
       "sentiment": "利空",
-      "reason": "SpaceX市值超越亞馬遜，顯示其市場地位受到挑戰。",
+      "reason": "SpaceX市值一度超越微軟，且微軟因資安疑慮放棄與Oracle的30億美元雲端租賃協議，顯示其在某些領域面臨挑戰。",
       "evidence_news": [
         {
-          "title": "油價下跌美股道瓊創歷史新高 SpaceX市值超車亞馬遜",
-          "source": "民視財經網",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBsYkVwWml1M1hCMk94Z3VPTncyU0F5el85S1dSV2swVE5NcUptUm1iNC1YX212VlptTlp1aUxYTllTYy03cGZLU3BsZGZFVktxQnFqVHBLSk9MNHRRaTFReTRsWDJSdw?oc=5"
+          "title": "SpaceX上市後股價狂飆 一度超越微軟躍居全球市值第4大",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606160394.aspx"
         },
         {
-          "title": "美伊協議促油價續跌 美股道瓊開盤後創新高",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606160386.aspx"
+          "title": "Microsoft walked away from a $3 billion deal to lease Oracle cloud capacity over security concerns",
+          "source": "Business Insider",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPd1g0OVVqWnNOOTAzeHcxb1N0MXdQeHZKcGxadnM1dXBOMUVTRnhYbWdoQmJqeTF3NTBFSjUzUTFUMGFDT0hpNXFkdWlVbTlrcUtJUnk2NjBWQWU0cEgxLVo3MVBhUGZJaklxME8teXdhazdiOGR2NDY4WHhCQXRycnFXZGp4Vm1UWHQwVlJwX3ZVMjVaQnBIamhB?oc=5"
         }
       ],
       "news_count": 3,
@@ -164,58 +229,45 @@
       "last_seen": "2026-06-16"
     },
     {
-      "name": "微軟(Microsoft)",
-      "ticker": "MSFT",
-      "sector": "軟體/雲端服務",
+      "name": "金融股",
+      "ticker": "",
+      "sector": "金融",
       "mention_count": 2,
-      "sentiment": "利空",
-      "reason": "SpaceX市值一度超越微軟，顯示其市場地位受到挑戰。",
+      "sentiment": "利多",
+      "reason": "美股資金轉向金融股，道瓊指數受強勁的金融股帶動創新高。",
       "evidence_news": [
         {
-          "title": "SpaceX上市後股價狂飆 一度超越微軟躍居全球市值第4大",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606160394.aspx"
+          "title": "SpaceX市值超越亞馬遜，美股資金轉向金融股道瓊連兩日改寫歷史新高",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE00bzVlTm0zM2ZKamtMQWY1ZS1TeVV2TmVrcDJqWHlrUGN0eHZTM2xZNDJadFBjOU51aVprTXctdzBSaTAtQ0tzNS1WdnhPam8?oc=5"
+        },
+        {
+          "title": "Dow Hits Record High On Strong Banks And Industrial Stocks, Nasdaq And S&P 500 Slip On Tech Weakness — SPCX, YUM, HOOD, RIVN, AAPL, SNAP In Focus",
+          "source": "Stocktwits",
+          "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxQZlpVQVJfam9LM2t6cHoxcU93cFRnY0Zjazd4M1Qxa1MtanJuQkgtS0FmUnM2RENBNEcycTEzWEZ4eFVYMFJFQUZXcERuLVV2bG92QU9rZUxQV25WYmtWb1c3czRPNUJmX21kQ0RuRE9zd2pVQ0t2U1ZlX2xlc0RLVzVRTmhOQUs5OEgxTE56QWJOcVNiRG52c3RfQUM2YXBOQmNoQzF1blFiYjh5SS1mMWNaTV95VHVHY0R2ajdpQXhXeFNHWVFwcUt6WGltd04tbkduSThYaWl1aS1ZbHUwYjBWVl9wZ0w3ZURrVnRSQTBYcV9jN0xjMW9pSWZkVzdvVUZEUlVTWHo0SldpYlpBcGVMUFNnZmJTN2FURloyUHFPNUxSOUswSmdJZw?oc=5"
         }
       ],
       "news_count": 1,
-      "first_seen": "2026-06-16",
-      "last_seen": "2026-06-16"
-    },
-    {
-      "name": "OpenAI",
-      "ticker": "",
-      "sector": "人工智慧",
-      "mention_count": 2,
-      "sentiment": "利空",
-      "reason": "洩漏的財務文件顯示OpenAI每年虧損數十億美元，儘管有軟銀合作消息，但財務狀況令人擔憂。",
-      "evidence_news": [
-        {
-          "title": "洩漏的財務文件顯示OpenAI每年虧損數十億美元",
-          "source": "Ars Technica",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaGpjVVYweWJOTkRfX0hwT2dxcnZLTUcyUHQwSGx2Qk5mc0J4V2d5R2VqWGJjS2ZNMzNwbE1SQWo0N3N5R2RJeGJjSG1GUS1HbWlESkNIdk9iQWtKbEtha1VvUlNyNEtEU29JX0pyaW9nV1JxM211blZxTUhoRVZaTG1UR3VIa0FoYmNjQTFsRnlqaEZ0WHRzUDZBd3lIQ0prSkJDUEJZTkgzdw?oc=5"
-        },
-        {
-          "title": "軟銀宣布與OpenAI合作 將提供資安防護服務",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606160364.aspx"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-16",
-      "last_seen": "2026-06-16"
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-17"
     },
     {
       "name": "傳統產業",
       "ticker": "",
-      "sector": "多元產業",
+      "sector": "多元化傳產",
       "mention_count": 2,
       "sentiment": "利多",
-      "reason": "華爾街巨頭集體喊多低估值傳統產業，顯示資金可能從科技股轉向。",
+      "reason": "華爾街巨頭集體喊多低估值傳統產業，加上道瓊指數受工業股帶動創新高，顯示資金流向傳產。",
       "evidence_news": [
         {
           "title": "道瓊再漲500點創歷史新高！科技股高檔熄火，華爾街巨頭集體喊多低估值傳統產業",
           "source": "TradingKey",
           "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVDFYNlo4SWFHYnZWMnVEalBUS25TN1gtQk5HMW1YMkNXdzJ1N29nXzMtalY4UkIwem9oZVhCUDd0aEJkSDMzRmZ1N01EMUFET014eExHQnl4R0h0TGpwcHdXRzlkemRfVktJQWREWndwWkVoaFB3ZnVNRG1KX29sX2NNNE1IOUZNd2JrdktWazN2WENDT19PQkRSTUU2YTZQR09DOXVyUzdQRWNDbVE0Uzh1SjJPekN1aDBCWTgyc2c0YTV0Z0lyUmtQSFhRRk95c1FqejVRdw?oc=5"
+        },
+        {
+          "title": "Dow Hits Record High On Strong Banks And Industrial Stocks, Nasdaq And S&P 500 Slip On Tech Weakness — SPCX, YUM, HOOD, RIVN, AAPL, SNAP In Focus",
+          "source": "Stocktwits",
+          "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxQZlpVQVJfam9LM2t6cHoxcU93cFRnY0Zjazd4M1Qxa1MtanJuQkgtS0FmUnM2RENBNEcycTEzWEZ4eFVYMFJFQUZXcERuLVV2bG92QU9rZUxQV25WYmtWb1c3czRPNUJmX21kQ0RuRE9zd2pVQ0t2U1ZlX2xlc0RLVzVRTmhOQUs5OEgxTE56QWJOcVNiRG52c3RfQUM2YXBOQmNoQzF1blFiYjh5SS1mMWNaTV95VHVHY0R2ajdpQXhXeFNHWVFwcUt6WGltd04tbkduSThYaWl1aS1ZbHUwYjBWVl9wZ0w3ZURrVnRSQTBYcV9jN0xjMW9pSWZkVzdvVUZEUlVTWHo0SldpYlpBcGVMUFNnZmJTN2FURloyUHFPNUxSOUswSmdJZw?oc=5"
         }
       ],
       "news_count": 1,
@@ -223,25 +275,56 @@
       "last_seen": "2026-06-16"
     },
     {
-      "name": "那斯達克(Nasdaq)",
+      "name": "Moderna",
       "ticker": "",
-      "sector": "綜合指數",
-      "mention_count": 2,
-      "sentiment": "觀望",
-      "reason": "美伊協議利多發酵，那指上漲，但同時也有報導指出其與標普500指數波動不大，且有晶片股回落的影響。",
+      "sector": "生技醫療",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "Moderna的流感mRNA疫苗獲得FDA有利的審查意見，有望推動其股價上漲。",
       "evidence_news": [
         {
-          "title": "美伊破冰油價崩！那指狂飆3%與輝達豪擲250億發債 全球「瘋牛」行情背後三大暗礁",
-          "source": "蕃新聞",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB5NmVRM0VqSUU4a0tuNWdodlN5YkhtX3NReWt2ZDJNLVhlSDFwTlhJOHZrYUFRN3VRbldZbDNuUmhJVGJEQkJFYVpxNHZRdGZmMUE?oc=5"
-        },
-        {
-          "title": "〈美股盤後〉美伊協議利多發酵 費半飆5%那指漲3% 道瓊創歷史新高",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5ycklLbER1TmZxRzB0aXZMaVNwTWRDcldSRjlMbVdFaGVLNzAwblpjTWE5aDdnUWg4VExCdlV3N3FtQ001ckhHaEdkYkY3em8?oc=5"
+          "title": "The Surprising FDA View That Sent Moderna Stock Flying",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVXJvNVZqV3FzWFJ2bE9FOUNiVDFtWE9wWHZKT1JjR3VUUHdjWWx4ZGw4TDBORFhtZk5qM2p2SW1jN3JaQXhOTFJsdzc1WEdWVi14a2pNZkxWc1RqM09oVGNFRmtTM1otSWVjNDVacC1iaEJNN3IzYWJ4NU1sa1ZLVHpDYjhhNXZpX1FBWVI4ejRrZw?oc=5"
         }
       ],
-      "news_count": 8,
+      "news_count": 1,
+      "first_seen": "2026-06-16",
+      "last_seen": "2026-06-16"
+    },
+    {
+      "name": "Trinity Biotech",
+      "ticker": "",
+      "sector": "生技醫療",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "Trinity Biotech第一季度財報顯示虧損大幅收斂，營收增長42.1%，表現出色。",
+      "evidence_news": [
+        {
+          "title": "Trinity Biotech Q1 財報出爐：虧損大幅收斂，營收驚人增長42.1%！",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPcUVPRFRYYmpZemZRRjlLOFVLUEMwV01sOWFGR0pfU29IeENndV92VkktTGppM3RsemVKLUVfWlF0emF2RUpZbDZGa0lxaGFiUlotaFF1Y05GbVNaRXlEZlRyNnFieS1YWnh3Q0VmVEFzWlpXQmZ5NEwyakoxS3pkSmRuZzViUmo1MHFqaUlfWDFQRG9aenlmOXZVbEpxYVBxeW1lakxNdUYxWHJ0T3l1Z3VEbjdHZFRKMG5pTF9WWTk1MXhIemdDNEg5SXJBNUU?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-16",
+      "last_seen": "2026-06-16"
+    },
+    {
+      "name": "Verizon",
+      "ticker": "",
+      "sector": "電信",
+      "mention_count": 1,
+      "sentiment": "利多",
+      "reason": "Verizon推出更簡潔的套餐和新的忠誠度計劃，並取消部分費用，有助於吸引客戶。",
+      "evidence_news": [
+        {
+          "title": "Verizon launches simpler plans and new loyalty program, drops some fees",
+          "source": "Fox Business",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPRGxKN1ZuRHB3UFg1RVRDZXVMMzl6TzEzcE42aTV1RnpyWXhkTWszcGhnOW5weHhab1FQWHJzX0N1Q3FZUVJuc0FQa0VDYmUydUVvNTZ6WnJiNXBPWi1rNGxRU1M4S1V0UWxaenJoazNuYnN2U3o5cnlySmd2cmpXeGN6TnE4MWY3NW1QekxBdFMzN3pDN3Z6WXdHcndFV3NhZVpiU9IBqgFBVV95cUxNb2FnakxEWExpd19iZ19jSXdkTmZQd1Z6azczWTZBckR5N3FmeklLM01JMnhjTHpqcDI2S2EwQmtOdE1YUmZRNkFRdXRkZzc5RUZoN2tONzA1SF80R19RTHdLd0EwRHBIYlVqblRKVWhlRUE4YV8xMjgyejBKQXlsZmZxbF9ZQ1dVQlQ1UFJxdFZWdUdzXzhLUG9JZnZFMHlrQWtxRHhiaGtQdw?oc=5"
+        }
+      ],
+      "news_count": 1,
       "first_seen": "2026-06-16",
       "last_seen": "2026-06-16"
     },
@@ -251,12 +334,30 @@
       "sector": "電動車",
       "mention_count": 1,
       "sentiment": "利空",
-      "reason": "電動車新創公司Rivian在推出R2新車型後，仍進行了數百人的裁員，顯示經營壓力。",
+      "reason": "電動車製造商Rivian在推出新SUV後裁員數百人，顯示其面臨營運挑戰。",
       "evidence_news": [
         {
-          "title": "獨家 | 電動車新創公司Rivian裁員數百人",
-          "source": "WSJ",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQMG9vMmZVQU5BellTUzdIVGctcXZXZnUxV0RIcnJ5N3NlcXZaS04xSFdHblRaSWR2Wk9QRGZrbldOWjFhX1RzdnkzVHhwcmJNblRsOEdsNGVxazk0Tkpyal9zbURxZlkxb2l0X2tmaFJkM3lBN0J3cENoNXZPWXlqMkRnRXhMN3E5dmlISl9OQzg3bHc3?oc=5"
+          "title": "EV-maker Rivian cuts hundreds of jobs after launching new SUV",
+          "source": "Fox Business",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZlZUTmpFaW1hdmo3cXpndkxwUDR1VkFEaVdZQWRRWkJyUmpJcHVsZFdIcThXZnJUVEtNYXNxZndoZmZrd2xpcHA5R0pUOGQ4VnlET096Qmk4Ykw3OEthS3FDNEdDRVNpZHEwbVZQTlZsT3UwM2Q1WHROd2djeFM2dXV3aUloMm5WYlRHcFo4S2M3MEFWV3BCdW130gGfAUFVX3lxTE9yY19idDVfMDN4V1RqNjBCOHlHX3pvaUExNGZEdVFTemowUmpXLWhHeGtSXzBISXhOQWZDSTRzMGpUc29oUlNLRFNfOVdmSlhudDVzUldXR0RKMncxbFpoekQ3ZkFSdmdDSDBEbGktbHRkSlVJdFhZaDdpa1pQQ3dFRnktMmNrRnZKNGkxWTF6M1NpMkp6QXJqOTVjQnlKRQ?oc=5"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-16",
+      "last_seen": "2026-06-16"
+    },
+    {
+      "name": "Meta (臉書母公司)",
+      "ticker": "",
+      "sector": "社群媒體/科技",
+      "mention_count": 1,
+      "sentiment": "利空",
+      "reason": "Meta技術長表示公司士氣「幾乎是史上最糟」，且員工對AI規則不滿，顯示內部管理和員工滿意度存在問題。",
+      "evidence_news": [
+        {
+          "title": "Meta's CTO says morale is almost 'the worst it's ever been'",
+          "source": "Business Insider",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSHNHOVR0QlhGVGg2OVFLaEhsMWh4X1FUOTVhUUpZUGQwYzJ5aVdJYW5zUXpqczZVdkd0VEpxRE5rdk1LcEV5ei00LWlMbW9FX1V1eWVlNUllN3Z2MGVqaDJheVpZci00Qzl1eFRFaUZkZmYycHZQZ1E4T0lDQ3JWa2RreVNEaGVvYXQtMFg1TzQ4aDdjMW80WWZUbmdBNS11U0hrX25R?oc=5"
         }
       ],
       "news_count": 1,
@@ -264,17 +365,17 @@
       "last_seen": "2026-06-16"
     },
     {
-      "name": "Yum Brands",
-      "ticker": "YUM",
-      "sector": "餐飲",
+      "name": "Oracle",
+      "ticker": "",
+      "sector": "軟體/雲端服務",
       "mention_count": 1,
       "sentiment": "利空",
-      "reason": "Yum Brands以27億美元出售旗下苦苦掙扎的必勝客(Pizza Hut)連鎖店，因需求下滑。",
+      "reason": "微軟因資安疑慮放棄與Oracle的30億美元雲端租賃協議，對其業務發展構成負面影響。",
       "evidence_news": [
         {
-          "title": "Yum Brands將以27億美元出售苦苦掙扎的必勝客連鎖店，因需求下滑",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNbXlSYlctdTZ4eDQ0dVBnb3lLX2VDRWF6OWl0blVsVzNNVkdIdW9pNzhEWURZbXZQTF9rMllVa0tOWTdJQ2hvbTMzSTFwSEdLMGpTTFZEUHlxaklWMzVqamt6SW5zMzhqUE56empXbHZxcnVIN1UxcDBHNWhnN01ZRERCS2dEa1B5UjBqVEpBR2YxbHFXQ0FEeEhYOHhaX2JBWVR4QUZ5a1BIUDBaeUFR?oc=5"
+          "title": "Microsoft walked away from a $3 billion deal to lease Oracle cloud capacity over security concerns",
+          "source": "Business Insider",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPd1g0OVVqWnNOOTAzeHcxb1N0MXdQeHZKcGxadnM1dXBOMUVTRnhYbWdoQmJqeTF3NTBFSjUzUTFUMGFDT0hpNXFkdWlVbTlrcUtJUnk2NjBWQWU0cEgxLVo3MVBhUGZJaklxME8teXdhazdiOGR2NDY4WHhCQXRycnFXZGp4Vm1UWHQwVlJwX3ZVMjVaQnBIamhB?oc=5"
         }
       ],
       "news_count": 1,
@@ -283,16 +384,11 @@
     }
   ],
   "future_trends": [
-    "人工智慧(AI)應用與投資",
-    "低估值傳統產業",
-    "再生能源（越南）",
-    "資安防護服務",
-    "AI半導體供應鏈",
-    "航太應用"
+    "航太科技 (SpaceX市值大漲)",
+    "AI新十大建設 (矽光子技術、AI機器人與算力建設)",
+    "再生能源 (鴻海推動越南再生能源)"
   ],
   "sunset_industries": [
-    "石油產業(短期因和平協議)",
-    "電動車新創公司(部分面臨裁員)",
-    "傳統速食連鎖店(部分需求下滑)"
+    "傳統石油產業 (美伊協議導致油價大跌)"
   ]
 }

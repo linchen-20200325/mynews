@@ -3,18 +3,18 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "人工智慧 (AI)",
+      "industry": "AI & Advanced Semiconductors",
       "heat_score": 98,
       "signals": {
-        "funding": "資金持續湧入AI領域，美銀調查顯示AI股票漲勢處於繁榮階段，尚未到狂熱。SpaceX宣布以600億美元收購AI編程新創Cursor，顯示AI技術在跨產業的應用和投資熱度。台灣國發基金「百億投資平台」也偕同「AI新十大建設」吸引逾千億資金，強化關鍵戰略產業。",
-        "hiring": "AI熱潮帶動相關產業徵才動能。儘管部分金融科技公司（如Robinhood）有裁員情況，但AI領域的人才需求依然旺盛，前輝達員工甚至放棄百萬股權創業，顯示AI人才對市場前景的信心。",
-        "policy": "各國政府積極推動AI發展，台灣國發基金的「AI新十大建設」是明確的國家戰略支持。然而，美國政府對Anthropic模型實施出口管制，顯示AI技術發展伴隨著國家安全和倫理法規的考量，可能對特定技術的全球擴散造成影響。",
-        "technology": "AI技術持續突破，蘋果傳出將於2027年推出AI耳機（AirPods也要長眼睛了），並升級可折疊iPhone，將AI視覺與個人裝置深度整合。AI算力需求強勁，驅動PCB上游材料進入「超級週期」，同時也殺入半導體和量子戰場，台積電亞利桑那封裝聯盟和Atom Computing融資都顯示了算力霸權的競爭加劇。"
+        "funding": "SpaceX上市後立即砸下1.8兆美元發展AI，並以600億美元收購AI編程新創Cursor，顯示巨額資本持續湧入AI領域。Atom Computing也獲得融資，投入量子計算。全球經理人持續看好AI牛市，半導體仍是最擁擠交易。AMD併購記憶體新創MEXT，強化AI時代儲存商機。國發會「百億投資平台」與「AI新十大建設」吸引破千億引資。",
+        "hiring": "AI算力需求推動PCB上游材料進入「超級周期」，預計將帶動相關產業徵才。Nokia也大舉擴張美國半導體先進測試與封裝，以支持AI成長。",
+        "policy": "國發會推動「AI新十大建設」與「百億投資平台」顯示台灣政府對AI產業的強力支持。美國川普政府協助xAI處理污染訴訟，並強調軍方對Grok等AI模型的需求，顯示AI已上升至國家戰略層級。",
+        "technology": "英特爾最先進的「18A-P」晶片進入生產，搶攻蘋果等大客戶。台積電2奈米擴產，受馬斯克440億美元晶片訂單帶動。大立光CPO技術領先市場三個世代。Snap推出2195美元AI眼鏡，探索AI硬體新應用。Nvidia黃仁勳強調社會需要AI時代的「新社會規範」，顯示技術發展已進入社會倫理層面。"
       },
       "leading_indicators": [
-        "AI相關晶片供應鏈的產能利用率與擴張計畫",
-        "主要科技巨頭（如Apple, Google, Microsoft, Nvidia）的AI產品發布及市場反應",
-        "各國政府對AI技術的監管政策與國際合作進展"
+        "AI晶片代工訂單量與先進製程進度",
+        "AI軟體與應用新創公司募資情況",
+        "各國政府對AI技術研發與基礎設施建設的投資政策"
       ],
       "us_stocks": [
         {
@@ -22,12 +22,12 @@
           "ticker": "NVDA"
         },
         {
-          "name": "微軟(Microsoft)",
-          "ticker": "MSFT"
+          "name": "超微(AMD)",
+          "ticker": "AMD"
         },
         {
-          "name": "蘋果(Apple)",
-          "ticker": "AAPL"
+          "name": "英特爾(Intel)",
+          "ticker": "INTC"
         }
       ],
       "tw_stocks": [
@@ -36,137 +36,221 @@
           "ticker": "2330"
         },
         {
-          "name": "廣達",
-          "ticker": "2382"
+          "name": "大立光",
+          "ticker": "3008"
         },
         {
-          "name": "技嘉",
-          "ticker": "2376"
+          "name": "群聯",
+          "ticker": "8299"
         }
       ],
       "evidence_news": [
         {
-          "title": "AirPods也要長眼睛了？蘋果傳2027年推出AI耳機",
+          "title": "馬斯克砸440億美元搶晶片！台積電2奈米擴產帶旺2台廠迎爆發",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxNam4tX05mRmxYN0dMZGRKUzNUdkxwWVVJbFJkeDgtM0phR3RjaUltS04tWi1lbmdhdTk4b2tyREppRUdLeWg3VTEtMTRzZnpRdzVFaGozc1RIVmxQOFVGd19NV2FNdlJScnJicUw5RV9DSFFrRWJDLS0yb0tPSGUyZEZxSVAwWGRSbEdkUWlYTXgwS0pfVWZoVHFkcTM2Q05XZnp0cWFZdDhDbzVQbkdrUkIyc0RpaGp1VERqbmZUd2w0NFVoLURQOGlfUncxZ0dhdW9GaHN6Z0czMkg2aXlOZlB0TU5tTTh6M0RxZ254VC1Ubld1RmRIdVpzVjdZaG9icnd6UG1MbGRBZ1VoWERrSTFqN2lyV3ViT0IxbWRoNUVydzgyUkN1SmxPc1pRWmlWeWowVVpyS3NVcXQtaXlnNm1oNXMxSkZYY2RhZzFkUEZxN3pRNHBHTkNmWUxYVG1RLVBxeHc4Z082Yk4yYW5lOXpuR09iNG13emdB?oc=5"
+        },
+        {
+          "title": "才剛上市就出手！SpaceX砸600億美元收購Cursor 強化企業AI布局",
           "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBNbTZGcFhSVVA4eHVtX0xxdlkxMGtISWo0bXBxQlNjS0dWVWItSV9WVkI3MXhvdkxuQ0F2Z0lIaFdabDB4bERlcGQzckliUk0?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBROTJRaWdvaUQ2eC1vb2M5dWhRQjR3UVdoaENDSjFwVWtHUkU1U0duX1lRSVZGUVQ4MV8zQXE2bTNBZXlFZmp6TnBCRm1OZDg?oc=5"
         },
         {
           "title": "AI軍備競賽殺入半導體與量子戰場：從TSMC亞利桑那封裝聯盟到Atom Computing融資，下一輪算力霸權開打",
           "source": "CMoney投資網誌",
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSEZZdjdQRmxJMjZONXZkcHNhcXB6S3JEd01qdjliV3p0MWJTZ1BNSkJoSm9nSEpoRWtVamJsZUdkZ01nY0QxRzdreS1KOXM0LV9sS3l4N0ZHM2RMUTNLaEQ1M0lEYVFReXY5d0N2VlRYd1V5YlpweHFlVVY5QndSSkV6ZkpvVVRXbzlYTnVB?oc=5"
-        },
-        {
-          "title": "SpaceX announces $60 billion Cursor deal to boost AI coding",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOLVpkcDZhOWdVandPOWJXNEwwbEtlWmUyMzUzQmIySWFMQUZTVGw4N2Itc3F6eXBZZVg2dktVVjlUcW1WUHhjVVBsMm5HVTR6N0JkUHZRNWhGM3BVSEJMVmRIcC12SHAtdWY4Y3VibVJ6QzVpWXpMTjZHaFpMYnN2Vm8yOTZDRFg2QkZsZ2FJMFRSMm5IMVBKTWoyN0Z6Sk1TWjRteXlFTk5GUzVtMVlpWUU4UTlRSlpTWUE2M0NYcw?oc=5"
         }
       ],
-      "summary": "AI是當前全球最炙手可熱的產業，資金、技術、政策和市場需求全面爆發，引領新一輪科技革命。",
-      "news_count": 32,
-      "first_seen": "2026-06-16",
-      "last_seen": "2026-06-16"
+      "summary": "AI與先進半導體是當前全球資金、技術、政策動能最強勁的產業，尤其在算力需求與地緣政治競賽下，其戰略地位與投資熱度持續飆升。",
+      "news_count": 0
     },
     {
       "rank": 2,
-      "industry": "太空科技與衛星通訊",
+      "industry": "Space Economy & Advanced Computing Infrastructure",
       "heat_score": 90,
       "signals": {
-        "funding": "SpaceX市值飆升，接連超越亞馬遜和微軟，一度衝上全美第四，並有報導稱其IPO多募逾100億美元，顯示資本市場對太空科技的巨大信心。其600億美元收購AI編程新創Cursor，也展現了其在AI領域的強大資本投入。",
-        "hiring": "SpaceX作為領頭羊，其快速擴張和多元化業務（包含AI編程）暗示了持續的人才需求。儘管新聞未直接提及太空產業的具體徵才數據，但其高估值和業務擴張必然帶動相關領域的職缺增長。",
-        "policy": "雖然新聞未直接提及具體政策，但太空探索和衛星網路通常涉及國家戰略和軍事應用，會獲得政府在研發、發射許可和國際合作方面的支持。SpaceX與美國國防部等機構的合作，也間接反映了政策層面的支持。",
-        "technology": "SpaceX在火箭回收、衛星網路（Starlink）和太空運輸方面的技術持續領先。其市值超越亞馬遜和微軟，以及對AI編程技術的收購，都顯示其在整合先進技術以推動太空產業創新方面的強大動能。"
+        "funding": "SpaceX上市後市值超車亞馬遜，一度擊敗微軟，並砸下巨資發展AI，顯示其資金實力雄厚且持續擴張。SpaceX的期權首次亮相就吸引了創紀錄的需求，投資者爭相追逐「火箭股」。",
+        "hiring": "SpaceX的快速擴張和對AI領域的併購，將帶動相關高科技人才的需求。",
+        "policy": "SpaceX作為美國太空戰略的重要參與者，其發展受到政府政策的間接支持。",
+        "technology": "SpaceX在火箭技術和衛星通訊領域持續創新，其上市與併購AI公司的動作，預示著太空經濟與先進計算基礎設施的深度融合，將產生更多創新應用。"
       },
       "leading_indicators": [
-        "SpaceX的星鏈(Starlink)用戶增長與服務覆蓋範圍擴大",
-        "其他私人太空公司（如Blue Origin, Sierra Space）的募資與技術進展",
-        "衛星發射成功率及發射成本的變化"
+        "SpaceX等太空科技公司的IPO或併購活動",
+        "衛星寬頻用戶數增長與服務範圍擴大",
+        "地緣政治對太空產業的影響與合作"
       ],
       "us_stocks": [
         {
-          "name": "SpaceX (非公開上市，但市場熱度高)",
-          "ticker": "SPCX"
+          "name": "SpaceX",
+          "ticker": "未上市 (但新聞提及IPO)"
         },
         {
-          "name": "洛克希德馬丁(Lockheed Martin)",
-          "ticker": "LMT"
+          "name": "輝達(Nvidia)",
+          "ticker": "NVDA"
         },
         {
-          "name": "波音(Boeing)",
-          "ticker": "BA"
+          "name": "亞馬遜(Amazon)",
+          "ticker": "AMZN"
         }
       ],
-      "tw_stocks": [],
+      "tw_stocks": [
+        {
+          "name": "台積電",
+          "ticker": "2330"
+        }
+      ],
       "evidence_news": [
         {
-          "title": "SpaceX飆10%！美股開盤漲跌互見道指漲382點",
+          "title": "SpaceX上市掀AI淘金潮 輝達成最大贏家",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOU1hlcXhubU91bTJER1RJVXBzdS15WTNEZkdMTkRrRy1aZ0hrWnprTjBYUl9yTVFCOWRiUDJyYVpxd3owUjhWRk5FY1oyMEhHNlVpanAyV0dVSVM0QkZUODhuT3loRzJFV2FyMnZJbElBODdWWUxNcjJEVFBIdlprRXY5N1BsVm9rUFlzdGpkQm5YR2t2QjBXLTJXWHpjZEdOYkxqbXZCYkVteFFKVkZTR25BUERvSktFSjBPcV9VZVpidWN3ZTdqLXMxTnpoVm9ZTkVrOEt3eVljX0J4dDgyeXZQMVBOTmhVQ0tPajc4MVo5a3RFX3pSaFE3M2RLMDQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOZnpIM2R0X19ZbUhubl8xMjFTdTZxN2lYbmZVV2RuU1RLMm1LbHVjZXh1TjV0aUd6TnMzOFhsX182cFNyNVcwTUNDdXdPNDRrSFl4bWw5V01SYXl5SGVzYklYTlpqRnl0Tk15Z1c3dEVlS2w5Q085NUJET2wyc3kxcmZpeERRYWRpbVE4dW55cmdHeEEzU2JEY0R3Q3QzNWVDSjV4TVd1RXkwZVRqLXBheTQ0akNJTHhDTUp6b3pZTVAtdkZNTUlpOGtNRWNCcmJ6X2djN0NRSTcydEdBOHZDSE1EeGg2Vk4xQWpVck5jVXpTSVRfejBUNWc1Yw?oc=5"
         },
         {
-          "title": "SpaceX接連超車亞馬遜、微軟 市值一度衝上全美第四",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9mZThDbm5ZdnRsblFObzd6dExmNExXTGVUYWZQT01tY3JBQVc3ZzBNSzM0RUptOXR3OG5jRHdPdHEwYndmV0NBOERRc2JQbGc?oc=5"
+          "title": "快訊／剛上市就砸1.8兆發展AI！美股開盤SpaceX漲破9%",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNbmUyZWhJVzlzck9hTlY5T3ZuOFFRXzRJZzM0LVI2ZUtRYXVMYWIzTm9NU081Si1HTnBwaS13UkMwVElId20xTWo2a293X254ZHZzUEQxOWhDdW8wUXdleC01bEVvMVRTaUMyYmhSc2laRTd6dTZEZkp3cmZGOW9mbkxycE5YdFZzSUdicUpfUGJBeXdjWE03WkJxWloyTWswLVAwOUZmMkZCaXJQWnBSaC1vUWF6TnBqU050WW82ME81TmhrOWxlRVJGdV9uanR1ZkZhc2dLUmplU0tpZndlZE01dGJmMlAyZFJsSmNCNE1oaVR3VFl6UWJDcnlfNTRoVVd1MkRXNEVqSTgwdGQtcHJGVWUtMzFWWllNQng2OVQ0emNNdGc?oc=5"
         },
         {
-          "title": "SpaceX announces $60 billion Cursor deal to boost AI coding",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOLVpkcDZhOWdVandPOWJXNEwwbEtlWmUyMzUzQmIySWFMQUZTVGw4N2Itc3F6eXBZZVg2dktVVjlUcW1WUHhjVVBsMm5HVTR6N0JkUHZRNWhGM3BVSEJMVmRIcC12SHAtdWY4Y3VibVJ6QzVpWXpMTjZHaFpMYnN2Vm8yOTZDRFg2QkZsZ2FJMFRSMm5IMVBKTWoyN0Z6Sk1TWjRteXlFTk5GUzVtMVlpWUU4UTlRSlpTWUE2M0NYcw?oc=5"
+          "title": "SpaceX Cursor Deal Mints Four Multibillionaires in Their Mid-20s",
+          "source": "Bloomberg",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbEg3ZVVlT0pPQWg4TTFuS3RLczFLMmZfR1JielotM0w4clBKV2xfVkFmZ1E0NTVCTE9WQV9vRE9MOF9RVVRjNVFUWHlLV2YzLThMZGhTNHdkNXI5MWNuaUNaSjFPRUxVcTBRR0c0WlU5dmJSMlJpVV9qSDdwaFhrWVlSY2RiYlM1cWlHM3RsWW1QZWptZWN1ZGg5alhpV3VkZm91ZDFpYWlJSnBQWW4xckVQM1Rtc1lEcVE3ZlRwRzFRdw?oc=5"
         }
       ],
-      "summary": "以SpaceX為代表的太空科技產業展現驚人成長動能，資本市場熱烈追捧，並積極與AI等前沿技術結合。",
+      "summary": "SpaceX的成功上市與其在AI領域的積極佈局，凸顯太空經濟不再僅限於發射服務，而是與先進計算基礎設施深度融合，成為新的投資熱點。",
       "news_count": 0
     },
     {
       "rank": 3,
-      "industry": "擴增實境/虛擬實境 (AR/VR)",
+      "industry": "mRNA生物科技",
       "heat_score": 85,
       "signals": {
-        "funding": "Snap推出高價AR眼鏡Specs，以及Google/Xreal Aura XR眼鏡開放預購，顯示大廠持續投入資金於AR/VR硬體開發。蘋果也傳出將在2027年推出帶有相機的AirPods，可能進一步模糊AR與個人穿戴裝置的界限，吸引更多投資。",
-        "hiring": "隨著主要科技公司推出新的AR/VR硬體和平台，對相關軟體開發、內容創作和硬體工程人才的需求預計將會增加。儘管新聞中未直接提及具體招聘數據，但產品發布通常是人才需求的前奏。",
-        "policy": "AR/VR作為下一代運算平台，其發展可能受到各國政府在數位經濟、內容產業扶植方面的政策支持。同時，數據隱私和內容監管也可能成為政策關注點。",
-        "technology": "Snap Specs和Google/Xreal Aura XR眼鏡的推出，代表AR/VR硬體技術持續演進，提供更沉浸和實用的體驗。蘋果將AirPods與相機結合的傳聞，也預示著AR功能可能以更輕巧、無感的方式融入日常生活，推動技術普及。"
+        "funding": "Moderna股票因FDA的利好消息而大漲，顯示市場對mRNA技術的商業前景抱持信心。儘管未直接提及新的募資輪次，但股價上漲通常預示著未來潛在的資金流入。",
+        "hiring": "mRNA疫苗和藥物研發的進展，將持續帶動生物科技領域的研發人才需求。",
+        "policy": "FDA對Moderna的mRNA流感疫苗審查態度積極，顯示監管機構對mRNA技術的認可與支持，有助於加速新產品的上市。",
+        "technology": "Moderna的mRNA流感疫苗在臨床試驗中展現出廣泛的免疫保護，表明mRNA技術在傳統疫苗領域的應用潛力。這項技術的突破可能開啟更多mRNA平台藥物的研發。"
       },
       "leading_indicators": [
-        "主要科技公司AR/VR產品的銷售量與用戶回饋",
-        "AR/VR內容生態系的發展與殺手級應用出現",
-        "XR晶片技術的進步及成本下降"
+        "FDA對mRNA疫苗的審批進度與擴展適應症",
+        "mRNA技術在其他疾病領域的臨床試驗結果",
+        "製藥巨頭對mRNA技術公司的併購活動"
       ],
       "us_stocks": [
         {
-          "name": "蘋果(Apple)",
-          "ticker": "AAPL"
+          "name": "莫德納(Moderna)",
+          "ticker": "MRNA"
         },
         {
-          "name": "Meta Platforms",
-          "ticker": "META"
-        },
-        {
-          "name": "高通(Qualcomm)",
-          "ticker": "QCOM"
+          "name": "輝瑞(Pfizer)",
+          "ticker": "PFE"
         }
       ],
       "tw_stocks": [],
       "evidence_news": [
         {
-          "title": "Snap finally debuts its long awaited AR glasses, Specs, and, oof, they aren’t cheap",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbjZ0cnBEdm5vZ2Zha2lvYjRQSWtOamdPeVJWa0RnVG9Ja3lmbGN5bDhjRFFVcmlWVG41aGQxcWhQVFdWUG5rYlE5ZC1qRjQ2UVFUWThnMW5veHZVV1czYkM1TkdXNlliZUdOVi0tNUUwYVllYmV2NW5xcGw0TXVOdWlITVN5MG1PeFp4T192TXR0VUtJUnJzbzNSaER4RFFUWERIUXFKaGd2NXl3QjJMNVZUQQ?oc=5"
+          "title": "The Surprising FDA View That Sent Moderna Stock Flying",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVXJvNVZqV3FzWFJ2bE9FOUNiVDFtWE9wWHZKT1JjR3VUUHdjWWx4ZGw4TDBORFhtZk5qM2p2SW1jN3JaQXhOTFJsdzc1WEdWVi14a2pNZkxWc1RqM09oVGNFRmtTM1otSWVjNDVacC1iaEJNN3IzYWJ4NU1sa1ZLVHpDYjhhNXZpX1FBWVI4ejRrZw?oc=5"
         },
         {
-          "title": "The Google / Xreal Aura XR glasses are now available to preorder",
-          "source": "The Verge",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQWFHSjkyQTI5N1Z4OUptQ01pZVI2RUtWcVpaaTBvcmFWeWkzV2RQVWtnVnRpcU9QZmtnQUNnQTFzNTlILVV0WHU5clg0NjV2V1hBNTZka3EwVEd6eGN3RVo5MzNGLURRNEs4UlZQOHZzS19MdXhJOEdaYlM1YzBtVjlxTG5Fdk9KcmRn?oc=5"
-        },
-        {
-          "title": "Apple Plans Camera AirPods Alongside Upgraded Foldable iPhone in 2027",
-          "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUzVZbW1ja0gwZWdDMC1TOVA5OHJPQWpjUzFzRWEyQkxhd2RJcFllVVctcFl4Nl9SOS1vczdMUDFWOEZtWjliVVB4UldzLXZGS09jOTg0NlU5TzJEbVFScktCMVZ5U0poR3MzTEVJLUFtNmtWNGYyV2hGeW1WNFNWcnVtOEVRdHlzVkYtLU5lZkZXYlRVNVhnNmw1UlQ1dmY1ajVtXzhTVmpxbnZIRk81QVFpLTB3TU12VFlWYnEtajhya3RHWUE?oc=5"
+          "title": "mRNA flu vaccine offers immune protection against diverse strains",
+          "source": "Medical Xpress",
+          "url": "https://news.google.com/rss/articles/CBMiY2h0dHBzOi8vbWVkaWNhbHhwcmVzcy5jb20vbmV3cy8yMDI2LTA2LW1ybmEtZmx1LXZhY2NpbmUtaW1tdW5lLXByb3RlY3Rpb24tZGl2ZXJzZS5odG1s0gEA?oc=5"
         }
       ],
-      "summary": "AR/VR硬體技術持續創新，大廠積極布局，預示著下一代個人運算平台的潛力。",
-      "news_count": 25,
-      "first_seen": "2026-06-16",
-      "last_seen": "2026-06-16"
+      "summary": "mRNA技術在流感疫苗領域的突破性進展和FDA的積極態度，預示著生物科技領域的下一波創新浪潮，尤其在疫苗和治療性藥物開發方面潛力巨大。",
+      "news_count": 0
+    },
+    {
+      "rank": 4,
+      "industry": "網路安全與數據隱私",
+      "heat_score": 75,
+      "signals": {
+        "funding": "雖然新聞未直接提及大規模募資，但數據外洩事件頻繁發生，將刺激企業和政府增加對網路安全解決方案的資本支出。微軟因安全顧慮放棄與甲骨文的30億美元雲端租賃協議，也暗示了市場對安全投資的重視。",
+        "hiring": "個資外洩事件凸顯網路安全專業人才的極度稀缺性，將帶動相關職位需求激增。",
+        "policy": "PChome個資外洩事件將促使政府加強數據隱私法規和企業合規性要求。微軟與甲骨文的案例也表明，即使是大型科技公司也對數據安全有極高要求，預計相關政策和法規將更加嚴格。",
+        "technology": "不斷進化的網路攻擊手法要求網路安全技術持續創新，包括AI驅動的威脅檢測、加密技術和身份驗證解決方案。電商平台也需升級防禦機制以應對日益複雜的網路犯罪。"
+      },
+      "leading_indicators": [
+        "全球數據洩露事件數量與影響範圍",
+        "網路安全解決方案供應商的營收增長",
+        "各國政府數據隱私法規的修訂與執行力度"
+      ],
+      "us_stocks": [
+        {
+          "name": "微軟(Microsoft)",
+          "ticker": "MSFT"
+        },
+        {
+          "name": "Palo Alto Networks",
+          "ticker": "PANW"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "中華電信",
+          "ticker": "2412"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "PChome旗下電商證實個資外洩！網友收詐騙信傻眼：買過什麼都知道",
+          "source": "自由電子報3C科技",
+          "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1YZmVHcTRCNlo1c25kVWJia0VwbXpLZkRvYmQtUHhBQkpfN2V1TGhMX0ZKcEZWdzJoN0p2RmxoWklSalRjb1cw0gFMQVVfeXFMUEY4MDYtQnVFWjFtT3JVb1RsYmNlel9fTTRmaWdUVHFaMFhwYXpkeV8waDVuTm1DZGdKV1RMZXJkZkZLUTBvTWJQUDdicQ?oc=5"
+        },
+        {
+          "title": "Microsoft walked away from a $3 billion deal to lease Oracle cloud capacity over security concerns",
+          "source": "Business Insider",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPd1g0OVVqWnNOOTAzeHcxb1N0MXdQeHZKcGxadnM1dXBOMUVTRnhYbWdoQmJqeTF3NTBFSjUzUTFUMGFDT0hpNXFkdWlVbTlrcUtJUnk2NjBWQWU0cEgxLVo3MVBhUGZJaklxME8teXdhazdiOGR2NDY4WHhCQXRycnFXZGp4Vm1UWHQwVlJwX3ZVMjVaQnBIamhB?oc=5"
+        }
+      ],
+      "summary": "頻繁的個資外洩事件與企業對雲端安全的高度重視，使網路安全和數據隱私成為當前刻不容緩的熱點，資金與政策將加速流向此領域以強化防禦。",
+      "news_count": 0
+    },
+    {
+      "rank": 5,
+      "industry": "電動車與綠色能源儲存",
+      "heat_score": 65,
+      "signals": {
+        "funding": "儘管Rivian裁員，但電動車市場仍在持續發展中，特別是SpaceX等公司對AI的巨額投資，也間接支持了電動車自動駕駛等相關技術的發展。SanDisk推出8TB PS5 SSD，顯示對高容量儲存的需求，這對電動車的數據處理和儲存能力至關重要。",
+        "hiring": "Rivian裁員顯示電動車市場競爭激烈，但整體產業對電池技術、軟體開發和充電基礎設施的人才需求依然存在。",
+        "policy": "全球對減碳和新能源的政策支持，將持續推動電動車和綠色能源儲存產業的發展。",
+        "technology": "電動車在電池續航、充電效率和自動駕駛技術方面仍在不斷進步。高容量、高效能的儲存解決方案，如SanDisk的SSD，將是未來電動車發展的關鍵技術支撐。"
+      },
+      "leading_indicators": [
+        "全球電動車銷售數據與市場滲透率",
+        "電池技術的突破與成本下降",
+        "充電基礎設施的建設速度與普及率"
+      ],
+      "us_stocks": [
+        {
+          "name": "特斯拉(Tesla)",
+          "ticker": "TSLA"
+        },
+        {
+          "name": "Rivian Automotive",
+          "ticker": "RIVN"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "台達電",
+          "ticker": "2308"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "EV-maker Rivian cuts hundreds of jobs after launching new SUV",
+          "source": "Fox Business",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZlZUTmpFaW1hdmo3cXpndkxwUDR1VkFEaVdZQWRRWkJyUmpJcHVsZFdIcThXZnJUVEtNYXNxZndoZmZrd2xpcHA5R0pUOGQ4VnlET096Qmk4Ykw3OEthS3FDNEdDRVNpZHEwbVZQTlZsT3UwM2Q1WHROd2djeFM2dXV3aUloMm5WYlRHcFo4S2M3MEFWV3BCdW130gGfAUFVX3lxT09yY19idDVfMDN4V1RqNjBCOHlHX3pvaUExNGZEdVFTemowUmpXLWhHeGtSXzBISXhOQWZDSTRzMGpUc29oUlNLRFNfOVdmSlhudDVzUldXR0RKMncxbFpoekQ3ZkFSdmdDSDBEbGktbHRkSlVJdFhZaDdpa1pQQ3dFRnktMmNrRnZKNGkxWTF6M1NpMkp6QXJqOTVjQnlKRQ?oc=5"
+        },
+        {
+          "title": "SanDisk's New, Officially Licensed 8TB PS5 SSD Costs A Whopping $3800",
+          "source": "Kotaku",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB1SG84bHR1QnNJeGdSTEk2a2dyT1A1ZlItS1JlT0dqTlVZZkVWeG9SRW5NNTg0cjNrdWJUb1Fqak1VWTRMd1dtUndGZDY4NHc0b2pkTnhYZk0zMElBcVB4TUVYemMxaU1qVUVJSUlBZHdoRFBjWXNmSUZkZUFLUQ?oc=5"
+        }
+      ],
+      "summary": "儘管電動車市場短期面臨挑戰，但長期來看，隨著全球減碳共識和技術進步，電動車與綠色能源儲存仍是具備潛力的戰略性產業。",
+      "news_count": 0
     }
   ]
 }

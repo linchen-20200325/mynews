@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-16 18:18 UTC (TWSE BFI82U)",
+  "as_of": "2026-06-17 00:25 UTC (TWSE BFI82U)",
   "unit": "元",
   "days": [
     {
@@ -62,11 +62,11 @@
       "foreign": -91733415946,
       "foreign_main": -91733415946,
       "foreign_dealer": 0,
-      "trust": 20567608321,
+      "trust": 23283537434,
       "dealer": -6691674226,
       "dealer_self": -5122810989,
       "dealer_hedge": -1568863237,
-      "total": -77857481851
+      "total": -75141552738
     },
     {
       "date": "2026-06-08",
