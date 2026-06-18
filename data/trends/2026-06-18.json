@@ -3,18 +3,19 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "人工智慧 (AI) 與 AI 應用",
+      "industry": "人工智慧 (AI) 與半導體",
       "heat_score": 98,
       "signals": {
-        "funding": "全球AI巨頭持續獲得高額融資，新股供給每月達1000億美元，顯示資金高度集中於此領域。多國政府推動「主權AI」概念，帶動跨國投資與半導體創投基金成立。企業資本支出大量投入AI基礎設施，如HBM記憶體需求激增。",
-        "hiring": "AI領域人才爭奪激烈，頂尖AI研究員從Google跳槽OpenAI顯示人才流動與競爭。儘管Meta內部有AI工作轉型引發員工反彈，但整體AI相關職缺仍呈上升趨勢，尤其是在機器人、醫療AI和自動駕駛等應用領域。",
-        "policy": "各國政府將AI視為國家戰略重點，推動「主權AI」計畫，並設立相關創投基金支持產業發展。美國參議院通過法案支持美台無人機合作，其中無人機的智能化與AI密不可分。然而，美中AI角力持續，但微軟仍在大陸大賣OpenAI模型，顯示市場需求超越地緣政治限制。",
-        "technology": "AI技術持續突破，從大型語言模型（OpenAI模型）的廣泛應用到具備極簡美學的AI機器人Eno亮相，再到醫療領域的自主醫療AI代理，都顯示技術動能強勁。遊戲引擎如Unreal Engine 6也將整合AI功能。HBM高頻寬記憶體需求因AI晶片而爆發，推動記憶體產業發展。"
+        "funding": "全球對AI算力投資持續湧入，泰國資料中心投資86%與AI相關，顯示資金高度集中。同時，主權AI浪潮帶動跨國半導體創投基金成立，如ITIC創新與Bpifrance的合作，反映國家層級的資金投入。此外，台股AI概念股持續強勁，群益投信看好下半年投資機會，預期還有漲幅，吸引更多資金流入。記憶體晶片短缺導致Apple預計漲價，也間接反映了對AI硬體需求的資金壓力。",
+        "hiring": "新聞未直接提及具體徵才數據，但AI領域的技術突破與產業擴張（如威盛進軍AI光通訊）通常伴隨大量人才需求。Gemini共同負責人Noam Shazeer加入OpenAI，顯示頂尖人才在AI巨頭間的流動與競爭。",
+        "policy": "多國政府將AI視為國家戰略重點，主權AI的概念推動跨國投資，如ITIC與Bpifrance成立半導體創投基金。美國川普政府對晶片產業的言論（要求在美生產、威脅關稅）也顯示政府對半導體供應鏈的強烈干預與政策導向。",
+        "technology": "AI技術持續突破，如自主醫療AI代理人的發展，以及Apple Watch Ultra 4預計搭載全新血壓監測功能，預示AI在健康醫療領域的應用。台積電「玻璃密碼」等先進封裝技術的突破，以及威盛拿下3奈米ASIC案，顯示半導體技術正為AI提供更強大的硬體支持。Unreal Engine 6的推出也將為AI驅動的遊戲和模擬帶來新進展。"
       },
       "leading_indicators": [
-        "主要AI模型發布與能力提升情況",
-        "AI相關半導體供應鏈產能與價格",
-        "各國政府對AI基礎設施投資規模"
+        "AI晶片巨頭(如NVIDIA)的財報及展望",
+        "先進封裝技術(如玻璃基板)的量產進度",
+        "全球AI資料中心的擴建速度",
+        "主要經濟體對AI產業的政策支持與法規動向"
       ],
       "us_stocks": [
         {
@@ -22,12 +23,12 @@
           "ticker": "NVDA"
         },
         {
-          "name": "微軟",
+          "name": "微軟(Microsoft)",
           "ticker": "MSFT"
         },
         {
-          "name": "Alphabet (Google)",
-          "ticker": "GOOGL"
+          "name": "蘋果(Apple)",
+          "ticker": "AAPL"
         }
       ],
       "tw_stocks": [
@@ -36,126 +37,64 @@
           "ticker": "2330"
         },
         {
-          "name": "群創",
-          "ticker": "3481"
+          "name": "聯發科",
+          "ticker": "2454"
         },
         {
-          "name": "友訊",
-          "ticker": "2332"
+          "name": "威盛",
+          "ticker": "2388"
         }
       ],
       "evidence_news": [
         {
+          "title": "陳文琦：AI帶動科技大海嘯 威盛拿下3奈米ASIC案進軍AI光通訊",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9yUUZ4TEplaTAxdGpmd3UwYXk4QmZ2Wm5DbjVMUm9ic2tObGNQb3oyZzVmUnpkLVd6cXdveHkwdHc3VmgyRUJCRnIyVWo1Qkk?oc=1"
+        },
+        {
           "title": "主權AI浪潮帶動跨國投資ITIC創新與Bpifrance成立半導體創投基金- 商情",
           "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lTlJsYXNTbVZnaUwzM3hTeWFkbkFlNU5jSlRQdzcwcVp6Y2pPR2djQ05nMktXZmhNMG5hNkd1bE5UYk1QLWluZmVFeGNOT0l4UWZLSTl2OEhvTllLTTVj?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lTlJsYXNTbVZnaUwzM3hTeWFkbkFlNU5jSlRQdzcwcVp6Y2pPR2djQ05nMktXZmhNMG5hNkd1bE5UYk1QLWluZmVFeGNOT0l4UWZLSTl2OEhvTllLTTVj?oc=1"
         },
         {
-          "title": "AI巨頭排隊敲鐘 新股供給每月1000億美元 誰來接住SpaceX與OpenAI？",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5rSHdUbWlxNk1wQVoxcEFKYUx2c3VIdS13MXJfWXFueElBTTlOOGcyRHU1Y2hSdmc0allLZ1dUemMxNnNWLTZmX2t3cjBscUU?oc=5"
-        },
-        {
-          "title": "五角大廈證實：馬斯克 Grok AI 助美軍襲擊伊朗 投彈逾兩千枚",
+          "title": "不讓晶片再翹！ 郭明錤揭台積電「玻璃密碼」美系3巨頭心動了",
           "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxOTnRtZmFzY0lGeXpDNkxpQ0ZYQWRPVTB6MGdFWjB3UE9qVTJrQ3lOQTFxdFN4cE9Ka0pxazR4STFQbmVrSmM5dDlpdnJhT0RWNFdaU3dMeHB4N3ZNaC01aUNoV18wT3FNXzBOU1NsZEppazdyTERlZVJTUGVmeUZIMEtpWFRaVGhBSndBeGdtQjNvNnNPNVdUVnVwUmp2M1pvc0ptYV9zU0p5RHo3amlKY1VmQU9iZ3Y2b2NVcXVkeFI2Tl9TV2h4aVd0M29xLUJkSkRoWGE2Vy1SZ0xLYXZyc1pWVGNCNlpaVE8xd0t0V3lOaU15TlFOM25JMnhLa0d4R3ZlNE5ENUY2RlNhQUtjVGZFNXJwbVR1VkF4TUM2akIyc0JIZndGSQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxPWmVTTkpyU3JfU05PSWJhcjk4Z0l4TTRqN05CQ1k2T2ZLX1JsS3VBeHM4ZkZjYWt2T21LLWdZNlVGLUJmb0NZMG5TWV80Q1VBenY5MDBhR0xxSWZvRVctRGhEOFQ3WjFtbWxHOG5aN1ZjMDJzM2syajJkQ2ttZDlKR2JyRi1YR3JZUUhtWHdHemV4Zi1HSTVzbXowLVR1YmpwMXo5RlFYYmhmaXJPNkUyXzBEZS15dDQzdXlGVjJmazA3VWVueXRESEkxbjNmMXpUTWJueS1GM3VmYVNSMFRrWURPRWRXQ1ZtME1VYTNjT182amt0UEtlTExCMjh4SEpjMzNnOEFxeF9ZRy1jbzNPMjlRSlRwTWlXRW9Ua0xWQW9HRE1BT0d4LW5wTkpuM0ZqdlpXR3FHX0h1bThuY1B4dDhYaHh5UkQtczFkYjNPWjhxb05ieG05ZDN2aGVBd24zZjM0X0g5djVpbkZVbnVJTHVULWFPbEt5ZEZ6Yk5XdEc?oc=1"
         }
       ],
-      "summary": "AI作為核心驅動力，持續獲得巨額資金、人才和政策支持，並在各領域實現技術突破和應用擴展，是當前全球最熱門的產業。",
-      "news_count": 30,
+      "summary": "AI與半導體作為驅動數位經濟的核心，在全球資金、技術及政策支持下，持續展現強勁的成長動能與創新潛力。",
+      "news_count": 22,
       "first_seen": "2026-06-17",
       "last_seen": "2026-06-18"
     },
     {
       "rank": 2,
-      "industry": "高效能運算與記憶體",
-      "heat_score": 92,
+      "industry": "無人載具與自動化",
+      "heat_score": 85,
       "signals": {
-        "funding": "蘋果證實記憶體短缺導致產品漲價，暗示記憶體需求強勁。國巨等被動元件廠商獲利爆發，外資調升目標價，顯示產業資金活絡。美光等HBM供應商受AI需求帶動，目標價被調升，吸引大量資金關注。",
-        "hiring": "記憶體與高效能運算相關產業對研發、製造人才需求旺盛，尤其是在HBM等新興技術領域。晶圓代工廠擴產也帶動相關設備與技術人才需求。",
-        "policy": "各國政府雖無直接針對記憶體漲價的政策，但對半導體供應鏈的國家安全重視，間接支持了本地半導體產業的發展。AI政策對高效能運算的需求，也間接推動記憶體產業發展。",
-        "technology": "HBM（高頻寬記憶體）因AI晶片需求而成為市場焦點，技術創新和產能擴張是關鍵。CPU領域也出現「CPU文藝復興」，AMD、Arm、Intel等公司目標價被調升，顯示處理器技術持續演進。先進封裝技術如群創的發展，也是推動高效能運算的關鍵技術之一。"
+        "funding": "台灣政府通過2100億新台幣無人載具採購特別條例，分五年籌獲攻擊型等無人機，顯示龐大的政府資金投入。美國Anduril公司贏得空軍CCA計畫生產合約，也代表國防領域對無人載具的大規模採購。",
+        "hiring": "隨著政府採購與軍事合約的增加，相關產業鏈對研發、製造和維護人才的需求將顯著提升。Waymo無人車年平均行駛里程已高於人類計程車，顯示商業化進程加速，將帶動相關營運和技術人才需求。",
+        "policy": "台灣政府通過2100億無人載具採購特別條例，明確展現了國家戰略層面對無人機產業的扶持。美國空軍的CCA計畫合約，也說明國防政策正積極推動無人機的應用與發展。",
+        "technology": "Waymo的無人車技術已達到高於人類計程車的年平均行駛里程，證明其自動駕駛技術的成熟度與可靠性。Anduril等公司在無人機技術上的持續突破，特別是在攻擊型和協同作戰無人機領域的進展，將推動其在軍事和民用領域的更廣泛應用。"
       },
       "leading_indicators": [
-        "HBM記憶體產能擴張速度",
-        "AI晶片出貨量與新世代產品規格",
-        "記憶體合約價格走勢"
+        "各國政府對無人機/無人載具的採購訂單及預算增幅",
+        "自動駕駛技術的法規開放程度與商業化落地進度",
+        "無人機在軍事衝突中的實際應用成效",
+        "感測器、AI晶片等關鍵零組件的技術發展"
       ],
       "us_stocks": [
         {
-          "name": "美光",
-          "ticker": "MU"
+          "name": "特斯拉(Tesla)",
+          "ticker": "TSLA"
         },
         {
-          "name": "超微(AMD)",
-          "ticker": "AMD"
-        },
-        {
-          "name": "英特爾",
-          "ticker": "INTC"
-        }
-      ],
-      "tw_stocks": [
-        {
-          "name": "台積電",
-          "ticker": "2330"
-        },
-        {
-          "name": "國巨",
-          "ticker": "2327"
-        },
-        {
-          "name": "群創",
-          "ticker": "3481"
-        }
-      ],
-      "evidence_news": [
-        {
-          "title": "記憶體漲價荒誕現實 一個遊戲機硬碟抵三台完整主機",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE11eUg0WGJDdlJXNnF3Q21Hd1Z0MU9OQ2FZa3paRlZMYW9vU3VQT0hVSmU3SEFaR0VaWXh6VWFYX1loZmpiUkFnUmZBNUFHa2s?oc=5"
-        },
-        {
-          "title": "蘋果證實了！庫克曝「記憶體短缺」Apple產品將漲價…1現象已蠢蠢欲動",
-          "source": "udn科技玩家",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YTjdEaWM3UTM3RWg1SGZXdEMwNTR6TVQzcVNFNTJPNjlxSVNoOFd1bFNVbzNCdUVLaUxMZDRBRHhHLXJGcUFJVWt0MURYQ0ltWWc5ZGRQempsUdIBX0FVX3lxTFA2ZFZoRFVGY2tocE81RlQ5SDk3UnpOYm9tQk5ZY3VXMTdyX1lGanozcTZXQTdsN2JxYnYwMmh2ZGgwNGN4QUVqbXA4cGpYeWVwOUFtbUt6ajJqT1pPVDY0?oc=5"
-        },
-        {
-          "title": "美光還能追嗎？HBM榮景能撐多久 他曝記憶體3大隱憂",
-          "source": "壹蘋新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQVUpfTDVxWEZna2VJR0V5Y0lLc1N5ZjBfbDVqVmxhR0VWM3ZTRGpwaDFkYmxxUUNHWl9LTXRTT1Z4X1lDTWlmOVJSVU5IaExRNVRFaEtpTG1VZE9Zdmc0V2dUQU1tbGF6M19pMnRiXzFOV0xYTDV6eUpDd25fMU55ckZn?oc=5"
-        }
-      ],
-      "summary": "AI浪潮驅動高效能運算需求爆發，尤其在HBM記憶體和先進製程領域，資金與技術動能強勁，連帶使相關零組件如被動元件受惠。",
-      "news_count": 0
-    },
-    {
-      "rank": 3,
-      "industry": "無人載具與防禦科技",
-      "heat_score": 88,
-      "signals": {
-        "funding": "台灣政院匡列2100億元籌獲攻擊型等無人機，顯示政府的大規模資本支出投入。美國空軍選擇General Atomics和Anduril開發CCA無人機僚機，代表國防領域的巨大投資。Waymo無人車每年行駛里程高於人類計程車，證明技術商業化潛力，吸引私人投資。",
-        "hiring": "國防科技公司如General Atomics和Anduril獲得重大合約，預計將帶動相關研發、工程和製造人才需求。自動駕駛公司Waymo的進展也意味著對AI、軟體工程師等人才的持續需求。",
-        "policy": "台灣政院通過無人載具採購特別條例，明確支持無人機產業發展。美參院外委會通過藍天法案，支持美台無人機合作，顯示政策層面的合作與推動。美國空軍的CCA計畫是國家戰略的一部分，旨在提升空中作戰能力。",
-        "technology": "無人機技術持續發展，從攻擊型無人機到協同作戰飛機（CCA）僚機。自動駕駛技術日益成熟，Waymo的無人車年行駛里程超越人類計程車，證明其在可靠性和效率上的進步。AI在無人載具中的應用是關鍵技術動能。"
-      },
-      "leading_indicators": [
-        "各國國防預算中無人載具採購比例",
-        "自動駕駛技術的商業化進程與法規鬆綁",
-        "無人機關鍵零組件(如晶片、感測器)供應鏈情況"
-      ],
-      "us_stocks": [
-        {
-          "name": "谷歌 (Waymo母公司)",
+          "name": "Google (Alphabet)",
           "ticker": "GOOGL"
         },
         {
-          "name": "洛克希德馬丁",
-          "ticker": "LMT"
-        },
-        {
-          "name": "諾斯洛普格魯曼",
-          "ticker": "NOC"
+          "name": "安杜里爾(Anduril)",
+          "ticker": "ANDR"
         }
       ],
       "tw_stocks": [
@@ -164,86 +103,135 @@
           "ticker": "8033"
         },
         {
-          "name": "中科院相關概念股",
-          "ticker": "無"
+          "name": "漢翔",
+          "ticker": "2634"
         }
       ],
       "evidence_news": [
         {
-          "title": "政院今通過無人載具採購特別條例 匡列2100億籌獲攻擊型等無人機",
-          "source": "自由時報",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE85MEZ0MVgyS1RrbTRiOWpjQlYxdmxNSkIxZlRlb0pic3g0SlUxbVdPc0lFYXBLOVN2cDQ3SV94cGt5aWtyRmFwS1ltMm55UFpqNTQ2NmxMcGhNdEVmWHpQWWpkV3NTQ3d4cmfSAW9BVV95cUxPdS1mZnBBUnRvRnZiUDRpZEpUNTV1NE9la3RqOXhSQ3c3dEpWelJPMjBfVFJPZXQ0MHdNaVp5TEdUSDhEQ3BBUEQzZGQwTGNJYkFwS2hXbDZYdkhUdzg2M3NWUHR5MnhTRW9rcWpVaVk?oc=5"
+          "title": "政院通過2100億無人載具採購特別條例 分5年籌獲攻擊型等無人機",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMikwNBVV95cUxPXzlkM3RZalVUWFRmU1ZaeFFobTJUYlQ4SXcxZW5WcmVKNW02bmhsT3doUkdhNm1jajBsbDFVd0I4YVlJX0xYV3Byb3d0RXA4bEhQZXlhZ3dBNUJqend3cjd2NnEwaVV4V0pDMjRJelNjejdZWmIxbVpDVW9CUmV5dUg4WmVpSUFDWS1xSjZqUkRrcGVocmhvMGxzekFLN3FPVThUZEJySDA1UHAwcTQ5ekN0Z1V0eF9mRkRQSXhJYjhsVnZjVEQ1b2UyTmsyT1k3SW8wTFoyTjkxX1JmRkpGY2FkQk9EVS16ZmQ3Ti1yM1FXY3p5RjIyeHJCYlJfcWpFWlkzc2Q1dEoybTZGM0p3NmFxc2VROWVyNVBJOTF1WThyOFFFVUVhSHFFQ2R5TzhnMDIyUzVHcGhXMUZYZ0pldHZOY00wUHZHWURuTzNBazlCakV0b2pEODloNG5IWklWWXpCZTV2ZlNfTjVnVEZ1Zl9iQkl2Skc2V0JDUXhBM0lxbFpRUkNxbl9iVm00MFRGNmtN?oc=1"
         },
         {
           "title": "Waymo每輛無人車年平均行駛11萬公里 彭博：已高於一般人類計程車",
           "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMingNBVV95cUxNRzJmdTJ4d0xfd29mSld4OFprOVEwYmNSLXpnclQwbXpneklmUF9lS09UMnlCTmRHZlJobnJQeDA4OExqVEJRLUI3ejhRRlU2aWpyYlptaUZjZWRXcEdRQzZZb0ROX2pXSmFSNmVQcFVDOHA5aWMxelZTcGszRWk1ZDRxOHR2dDdabG92R1BaZjRYaWxNZzN0UmZucHlMc2R3SlZCWS0yNFZVRVlMZ2Y0VHJLWTF2Wk8tR3NUNlVXVWVCX2FWaHYwWlZEM1BHYVA2aElWb1pMMlNNb1hvQ0w5UEhsV1JCX1d4QnpZV0pKd3ZOR3JWYjFZYkl2RGlzYzItQzlfVmhZTS12RjhsVlEtYU1BbEdsTVdfWFMyT3VYOGdkcWtCU1cyd2xLTTRKbXMyTVRJX3dONjltVG51NHppVmVYZzlBMTFCdGUyU0hiN0tvTU8yZVlJZkdTdXJnTTNib01lSzRJdTNaajVxTU5aMk5KYm5HR19lRnRmN1dVYjZMYlR2Vkh3ZHlwZ1U4VUpNYjdfNEdaTUtaYVJTTXc?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMingNBVV95cUxNRzJmdTJ4d0xfd29mSld4OFprOVEwYmNSLXpnclQwbXpneklmUF9lS09UMnlCTmRHZlJobnJQeDA4OExqVEJRLUI3ejhRRlU2aWpyYlptaUZjZWRXcEdRQzZZb0ROX2pXSmFSNmVQcFVDOHA5aWMxelZTcGszRWk1ZDRxOHR2dDdabG92R1BaZjRYaWxNZzN0UmZucHlMc2R3SlZCWS0yNFZVRVlMZ2Y0VHJLWTF2Wk8tR3NUNlVXVWVCX2FWaHYwWlZEM1BHYVA2aElWb1pMMlNNb1hvQ0w5UEhsV1JCX1d4QnpZV0pKd3ZOR3JWYjFZYkl2RGlzYzItQzlfVmhZTS12RjhsVlEtYU1BbEdsTVdfWFMyT3VYOGdkcWtCU1cyd2xLTTRKbXMyTVRJX3dONlltVG51NHppVmVYZzlBMTFCdGUyU0hiN0tvTU8yZVlJZkdTdXJnTTNib01lSzRJdTNaajVxTU5aMk5KYm5HR19lRnRmN1dVYjZMYlR2Vkh3ZHlwZ1U4VUpNYjdfNEdaTUtaYVJTTXc?oc=1"
         },
         {
-          "title": "Air Force picks General Atomics, Anduril to build first CCA drone wingmen",
-          "source": "Breaking Defense",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZGxsVVo2S0tjenhZS2UyMDVYZlhNVUFlN2NOWjhOWGw1SFdtV2JXQ1VkRFRUUDJON040MkpMeXZMbVE2eDFEaFA4WWtMYU9EZjhNZkppU3l2cUpncWRCTEJDek8wd2RkVWJCb1NmYVBwNUo5R0lpbGZjSTE5UjRMQlFCWU84Z3FadlcyTDZLWjFGYTVjMTYyUW9SeG5kLWc?oc=5"
+          "title": "Anduril Wins Production Contract for U.S. Air Force CCA Program",
+          "source": "Anduril",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQMGdHWEVUZ2FKTUVjb285YTFMd25OU09VdDFqOTZQUktIRTZ0NEtqTkJQSXVnODRBeWxNbWt6YUJSQldmTW5sODFaM055dGFNbUZqU3VTbzVYZzRWZ3dIdnBVTnBRWmdCY20xcDh4dWRYTUN0TVlXamJfVEN6b2tzcjk3czZHT2JwTS1QbDNSX2JqM2VveEE?oc=1"
         }
       ],
-      "summary": "在國防戰略和商業應用雙重驅動下，無人載具產業獲得政府巨額投資和政策支持，技術不斷成熟並走向實用化。",
+      "summary": "無人載具在國防和商業領域獲得政府大規模資金支持，技術持續成熟，政策推動明確，預示強勁成長。",
       "news_count": 0
     },
     {
-      "rank": 4,
-      "industry": "XR (延展實境) 與元宇宙內容",
+      "rank": 3,
+      "industry": "潔淨能源 (再生能源)",
       "heat_score": 75,
       "signals": {
-        "funding": "Snap推出昂貴的AR眼鏡，儘管股價下跌，但顯示市場仍在探索高階XR硬體。宏達電轉型AI與XR內容平台並成功轉盈，表明XR內容與服務領域的商業模式正在成熟，吸引資金投入。",
-        "hiring": "宏達電的成功轉型預示著XR內容開發、平台營運等相關職位需求增加。Snap等公司持續在AR硬體領域投入研發，也需要相關的軟硬體工程師。",
-        "policy": "目前沒有直接的政策或法規動向新聞，但XR作為次世代計算平台，長期將受各國數位經濟發展政策影響。",
-        "technology": "宏達電轉型AI與XR內容平台，顯示XR技術與AI的結合是未來趨勢。Snap持續推出AR眼鏡，推動AR硬體技術進步。Android 17和iPadOS 27等操作系統的更新，也為未來XR應用在行動裝置上的整合奠定基礎。"
+        "funding": "中東終戰導致國際油價走跌，IEA預警明年石油供給過剩，這可能促使更多資金轉向可再生能源。東南亞地區因伊朗戰爭造成的能源危機，促使該地區轉向太陽能以尋求能源穩定，顯示對潔淨能源的投資需求增加。然而，川普政府回購海上風電租賃權，取消部分專案，對美國潔淨能源投資造成不確定性。",
+        "hiring": "隨著東南亞等地區對太陽能等再生能源的需求增加，預期將帶動相關產業鏈的就業機會。但美國政府對風電專案的干預，可能影響該領域的徵才動能。",
+        "policy": "台灣政府的綠能政策目標略有下調（降標15%），可能對產業發展產生部分負面影響。然而，東南亞地區轉向太陽能以應對能源危機，顯示該地區政府可能出台更多支持再生能源的政策。美國川普政府取消海上風電專案則反映政策的不穩定性。",
+        "technology": "新聞未直接提及潔淨能源的重大技術突破，但太陽能等成熟技術的應用擴大，以及在能源危機下的戰略重要性提升，將驅動其持續發展。"
       },
       "leading_indicators": [
-        "主要科技公司XR硬體發布與市場接受度",
-        "元宇宙平台用戶增長與內容豐富度",
-        "XR相關應用開發者生態系規模"
+        "國際油價走勢與能源政策的互動",
+        "主要國家再生能源裝置容量的增長",
+        "政府對潔淨能源的補貼與投資政策",
+        "儲能技術的發展與商業化進度"
       ],
       "us_stocks": [
         {
-          "name": "Meta Platforms",
-          "ticker": "META"
+          "name": "太陽能公司(First Solar)",
+          "ticker": "FSLR"
         },
         {
-          "name": "蘋果",
-          "ticker": "AAPL"
-        },
-        {
-          "name": "Snap",
-          "ticker": "SNAP"
+          "name": "新紀元能源(NextEra Energy)",
+          "ticker": "NEE"
         }
       ],
       "tw_stocks": [
         {
-          "name": "宏達電",
-          "ticker": "2498"
+          "name": "元晶",
+          "ticker": "6443"
+        },
+        {
+          "name": "聯合再生",
+          "ticker": "3576"
         }
       ],
       "evidence_news": [
         {
-          "title": "王雪紅：宏達電已轉型AI與XR內容平台 成功轉盈重回獲利軌道",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9FUUNjdlB4cUdCWjFXMTBFTEd2Ny1uUUloM0FYc213anhxZWNvZllEU0wyMU1saUh5cDl4bzBSRkl3U2pnOUNZeTJGMHppLWs?oc=5"
+          "title": "In Southeast Asia, Switching to Solar Offers Relief from Energy Crisis Caused by Iran War",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQ1NjZ1ZmVWVBT284LTIwSmJJOFBZM2xQRjdCNXVEa1Z0bUUwOXZ0bHJFYmN4Vlg3clJMNFVOX3JMdFlWX2RGR2tQU3VIcWdzdXYxT2lmSUtHZVZzVlBrN0NIX2FKdG90TDNmNzRRa2pLOFJLVUFuUThDWU51c2RGelhhRExOSlgwRW0zeA?oc=1"
         },
         {
-          "title": "After unveiling ridiculously expensive AR glasses, Snap’s stock takes a dive",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTWt3akJKVnp1c1FjLWlVT1ZaTGVIdU1kOXc5ODhQSmtCbVF5VE9oU041YWhYUXd4dm85SDRmWUdfSTBROVhCYkx2WGZnajExY0lLNmpnYUQ0N0ZuaEliamtqT3ltejNCSDUydXVSMkFqcEhNQjFDX0hidEFoa1BlaTZvSkkzeHRRUk1aaUJaS0k1WVFGWGxicGRoTzFEZXVnbTAyaUc5RVlSY0FGTUE?oc=5"
+          "title": "Trump administration to buy back another energy company's offshore wind leases for 4 more projects",
+          "source": "AP News",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOczZFYW5IMzlUX0U1N0hIM0F3elBxdmNlS2tKWmpqZlRpa216YVkwLXhaT2ExR2RWQndrMDQ3ODVHTmh3UTM1QmpoNTF2OUFYRUUwYzMxdlIzaHd6V0czbHdHMi1nM3pTLW1yOGpFSzEzX29JTThHNzFpcFN5aWNEYmxpV3JhVmNBT2J6WVRiRmY2MGFPY0JFU2hZOWpyaUNWWkNQRnNhMlNCZ042NHhkRzB0dw?oc=1"
         },
         {
-          "title": "iPadOS 27 Hands-On: Everything New for iPad",
-          "source": "MacRumors",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1jQ3UxNWpyNlRiMmQwSFpWYkdpaDJYVTI1ZVFtOFh5UzZJRmtfdmFoNUh6UkFlSk1ZUUJOcnVMSE1ocUtkWm14enluU3prdDNjN2JjeVZ5NnVFRjNwNnUzcGh1ZnJydEk?oc=5"
+          "title": "美伊終戰效應！國際油價走跌 IEA示警「明年石油恐供給過剩」",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxNd0Z0S1c1WnpkTlZiU0JDWVpqaF8wVjJMVFY0bmI3VmNyX2hqY2otV2owZXpTSFhSbFI3MHlOTjluQkJEd2E0R1d0YjFGYm9rakJTY3BKdUo2aUFkZ0hkeFQtUFVYVThXTjI2QVhWNkp3bDhkM3dQeUpzSzBHY180TndFbjB0dDE0SlJGTjRmamZ6S0MwUHg4VlFZQ2tmTHhaTVpnMVlZVkgyR1lpNFl4X2RmdW1ydTZEQ2J3cVp5a05MWUxuLWxSV01DLU5SVHI0V2UxVzZWbDNaX1NBOWZ4OVNYdC1vc252RGtZX1dweU1pTkphZ2hVR2twSHBGSFp6YjU0c2h2LXFzX0hfU1FTYUY4ekFxb2FKZW5qOHBWaFBIaHRpek02OS00dzZQVlJoaHdQQkd2RlBtMDRiZGVrNDMtWkNHMWhtcThQTlFOeWRuSUJGNWFxNnhoemJmZ1hmVG04WlJyemdqQWpmTkhF?oc=1"
         }
       ],
-      "summary": "儘管硬體市場挑戰仍在，XR產業在內容平台和與AI結合的應用上展現出成長潛力，尤其是宏達電的轉型成功提供正面訊號。",
-      "news_count": 1,
-      "first_seen": "2026-06-18",
-      "last_seen": "2026-06-18"
+      "summary": "國際油價變動與地緣政治緊張推動部分地區對潔淨能源的需求，但政策不確定性仍是挑戰。",
+      "news_count": 0
+    },
+    {
+      "rank": 4,
+      "industry": "資料安全與隱私",
+      "heat_score": 70,
+      "signals": {
+        "funding": "新聞未直接提及針對資料安全與隱私的具體資金流向，但24億筆帳密外洩的事件規模，預計將促使企業增加在資安防護上的資本支出。",
+        "hiring": "大規模資料外洩事件通常會導致企業對資安專業人才的需求激增，以強化防禦機制和應對潛在威脅。",
+        "policy": "大規模資料外洩事件會引起監管機構的關注，可能促使政府出台更嚴格的資料保護法規和隱私政策，例如GDPR等法規的強化。",
+        "technology": "儘管新聞未直接提及技術突破，但面對史上第二大資料外洩事件，相關的資料加密、身分驗證、威脅情報分析等資安技術將會加速發展，以應對日益嚴峻的網路安全挑戰。"
+      },
+      "leading_indicators": [
+        "全球資料外洩事件的頻率與規模",
+        "各國政府對資料保護與隱私的立法進度",
+        "企業在資安軟硬體上的投資增長",
+        "資安技術供應商的創新速度與市場表現"
+      ],
+      "us_stocks": [
+        {
+          "name": "Palo Alto Networks",
+          "ticker": "PANW"
+        },
+        {
+          "name": "CrowdStrike",
+          "ticker": "CRWD"
+        },
+        {
+          "name": "Zscaler",
+          "ticker": "ZS"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "零壹",
+          "ticker": "3029"
+        },
+        {
+          "name": "安碁資訊",
+          "ticker": "6690"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "24億筆帳密外洩？史上第二大資料外洩事件曝光 容量超過8.3TB",
+          "source": "ETtoday新聞雲",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5BTnZUcS1fcDFLMnE0cXJVX053WGNWRUdZRFZBdjM4S29lUldSekUxaHZPMHRyX3BHN29uTnNteDM5YVlkakNnRzRLUQ?oc=1"
+        }
+      ],
+      "summary": "大規模資料外洩事件凸顯資料安全與隱私的迫切性，將刺激企業與政府加大投入，推動產業發展。",
+      "news_count": 0
     }
   ]
 }
