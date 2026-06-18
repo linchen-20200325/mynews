@@ -1873,12 +1873,17 @@ def _push_line_text(text: str) -> None:
 
     if to_raw.lower() == "broadcast":
         endpoint, body = LINE_BROADCAST_ENDPOINT, {"messages": messages}
+        mode = "broadcast(全體好友)"
     else:
         ids = [t for t in re.split(r"[,\s]+", to_raw) if t]
         if len(ids) > 1:
             endpoint, body = LINE_MULTICAST_ENDPOINT, {"to": ids, "messages": messages}
+            mode = f"multicast({len(ids)} 人名單)"
         else:
             endpoint, body = LINE_PUSH_ENDPOINT, {"to": ids[0], "messages": messages}
+            mode = "push(單一對象)"
+    # 診斷:只印模式,不印任何實際 ID(避免外洩);用來確認群發是否真的生效
+    print(f"  LINE 推播模式:{mode}", flush=True)
 
     payload = json.dumps(body).encode("utf-8")
     req = urllib.request.Request(
