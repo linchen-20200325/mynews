@@ -51,6 +51,8 @@ jobs:
           # 多把備援金鑰(不同 Google 帳號 → 各自 20 次/日,疊加放大配額);一行一把或逗號分隔皆可
           GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
           # LINE 推播(Messaging API);兩者皆設定才會推播
+          # LINE_TO 群體發送:設 "broadcast"=發給所有加好友的人;
+          #   多個 ID 逗號分隔=群播名單(≤500);單一 ID=push(可填群組 Cxxx ID,整群可見)
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
           LINE_TO: ${{ secrets.LINE_TO }}
           # 可選:覆寫 Gemini 模型 / 分析主題 / 抓新聞關鍵字 / 關閉趨勢雷達(設 0)
