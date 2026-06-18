@@ -31,7 +31,8 @@
   - ENABLE_STOCK_PICKER            (選填) 設為 0/false/no 可關閉台股觀察
   - ENABLE_HOUSING                 (選填) 設為 0/false/no 可關閉房市觀察
   - HOUSING_MAX / HOUSING_SINCE_HOURS (選填) 房市抓新聞則數上限 / 回溯時數,預設 18 / 72
-  - LINE_CHANNEL_ACCESS_TOKEN/LINE_TO (選填) 兩者皆設才推播
+  - LINE_CHANNEL_ACCESS_TOKEN/LINE_TO (選填) 兩者皆設才推播。LINE_TO 群體發送:
+      填 "broadcast"=發給所有好友;填多個 ID(逗號分隔)=群播名單;單一 ID=push(可為群組 ID)
 """
 
 from __future__ import annotations
@@ -64,6 +65,8 @@ DEFAULT_GEMINI_FALLBACKS = "gemini-2.0-flash"
 
 # LINE Messaging API(LINE Notify 已於 2025 停用,改用 Messaging API push)
 LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
+LINE_MULTICAST_ENDPOINT = "https://api.line.me/v2/bot/message/multicast"
+LINE_BROADCAST_ENDPOINT = "https://api.line.me/v2/bot/message/broadcast"
 LINE_TEXT_LIMIT = 4500  # 單則 text 上限 5000,留安全餘裕
 
 DEFAULT_TOPIC = (
@@ -1857,16 +1860,29 @@ def notify_line(report: dict, chip_hint: str = "") -> None:
 
 
 def _push_line_text(text: str) -> None:
-    """以 LINE Messaging API push 推送一則文字(共用:戰略報告 / 國際盤預警)。"""
+    """以 LINE Messaging API 推送一則文字(共用:戰略報告 / 國際盤預警 / 法人事件)。
+
+    依 LINE_TO 自動選端點,達成「群體發送」且向後相容:
+      * LINE_TO = "broadcast"            → /broadcast,發給所有加官方帳號好友的人(免收集 ID)。
+      * LINE_TO = 多個 ID(逗號/空白分隔) → /multicast,發給指定名單(最多 500)。
+      * LINE_TO = 單一 ID(user/group/room)→ /push(原行為;群組 ID 即整群可見)。
+    """
     token = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
-    to = os.environ["LINE_TO"]
+    to_raw = os.environ["LINE_TO"].strip()
+    messages = [{"type": "text", "text": text}]
 
-    payload = json.dumps(
-        {"to": to, "messages": [{"type": "text", "text": text}]}
-    ).encode("utf-8")
+    if to_raw.lower() == "broadcast":
+        endpoint, body = LINE_BROADCAST_ENDPOINT, {"messages": messages}
+    else:
+        ids = [t for t in re.split(r"[,\s]+", to_raw) if t]
+        if len(ids) > 1:
+            endpoint, body = LINE_MULTICAST_ENDPOINT, {"to": ids, "messages": messages}
+        else:
+            endpoint, body = LINE_PUSH_ENDPOINT, {"to": ids[0], "messages": messages}
 
+    payload = json.dumps(body).encode("utf-8")
     req = urllib.request.Request(
-        LINE_PUSH_ENDPOINT,
+        endpoint,
         data=payload,
         method="POST",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {token}"},
