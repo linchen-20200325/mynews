@@ -1,261 +1,229 @@
 {
   "report_date": "2026-06-18",
-  "summary": "聯準會鷹派言論引發市場對升息的擔憂，導致美股三大指數普遍收黑，科技股承壓；然而，AI相關產業與部分個股仍展現強勁成長動能。",
+  "summary": "聯準會鷹派立場及升息預期衝擊美股三大指數全面下跌，但台積電等部分科技股逆勢上漲。國際油價因美伊協議而重挫。AI應用持續發展，但蘋果可能因AI提高iPhone價格。",
   "stocks": [
     {
-      "name": "道瓊工業指數",
-      "ticker": "",
-      "sector": "指數",
-      "mention_count": 13,
-      "sentiment": "利空",
-      "reason": "聯準會暗示可能升息以及新任主席華許的鷹派言論，導致道瓊指數重挫，跌幅超過500點。",
+      "name": "台積電(TSM)",
+      "ticker": "TSM",
+      "sector": "半導體",
+      "mention_count": 10,
+      "sentiment": "利多",
+      "reason": "儘管聯準會釋出鷹派訊號導致美股大盤下跌，台積電卻逆勢上漲，並帶動台股走高，顯示其基本面強勁。",
       "evidence_news": [
         {
-          "title": "聯準會暗示今年恐升息！美股三大指數重挫道瓊跌507點 | 民視新聞網",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE40dTBBVndoZXNEMlF4aTJSM2RfUFNoeDRzNTAwSW9IeWJ4cGItdG9JZkRSNEw3eTFnZzhkRGh5TG5IQW1qdzRqc0wxaEo0T3lPdG1YdHJB?oc=5"
+          "title": "聯準會放鷹維持利率不變！道瓊重挫，台積電逆漲-財經焦點情報站",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQeDhOVzJzY3JlWEhIOW1GREhwLWdwR2pWRHhhWmZUU0Fud29rdEpEbHpZMzVPTGpaanVETWEtblZSal_tN2xTNmYwN0QwckNJLXdxMzlBV1NVeTI0QjZCSnJDZWdmeE1oZFNvY09wczZ4MWdRdlU5NGlmbXN1dzlFdFZR?oc=5"
         },
         {
-          "title": "Dow closes 500 points lower as Warsh’s first Fed meeting sets off surge in bond yields: Live updates",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9uTFFzUE5SblgwaXNYcjl5R1BNd0dVd3NELUZMRFVkNkpqOV96MUZqNTBQWkZNTzE0Um56VGNRTno4SEJybHRwRnpLTG9nRjJ2ZE0xRTR0ZFNMcXV6UWNNNlk2Y2hFUGRWcnd6V1BNLVhqUGZabUZZ0gF8QVVfeXFMTlV5eGVzUzFGN01QSGRBZHljQkNPeGJyYzIyYVFnMFA4Rk5SN081cXVnNzBZREhtYnVZUU5oSmVfeWtsWGNZX3JxaW5scWMxSzVZMmh5YnBLbmlSeUNwRHloT1JjWGtRWEs1M2Q0NXRmQ2UtTlpXTklRekFudA?oc=5"
+          "title": "《日股》史上首見！日經飆破71Ｋ 台積報喜 ABF載板雙雄衝最高",
+          "source": "富聯網",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSJ_kaHJNeEFUTEt5R3ZIbERtVnhqT2dLNERMcDQxd0k1dl_1ejRyZzEzcklaN2FmZVRIb1BabkZlRE9iM1U4bGVoQjNKVk50Sk9UV0RfWGRmVGJwOEtnWnNYajh2bUI0TGRFam02Tm00RHVvc1h5M3U3S2VRenUzRHp0cUcyVFQ1?oc=5"
         }
       ],
-      "news_count": 0
+      "news_count": 9,
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-18"
     },
     {
-      "name": "標準普爾500指數",
-      "ticker": "",
-      "sector": "指數",
+      "name": "道瓊工業指數(DJI)",
+      "ticker": "DJI",
+      "sector": "大盤指數",
       "mention_count": 10,
       "sentiment": "利空",
-      "reason": "聯準會的鷹派立場和潛在升息預期，導致S&P 500指數下跌，新任主席華許上任後表現為1994年以來最差。",
+      "reason": "聯準會鷹派立場及升息預期導致道瓊指數重挫，跌幅超過500點。",
       "evidence_news": [
         {
-          "title": "S&P 500, Nasdaq And Dow Slip As Investors Assess Rate Hike Possibility — SPCX, UBER, ASTS, BBBY, RXT In Focus",
-          "source": "Stocktwits",
-          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQS1I4V1hhMHd2TDlYbzM2d2J3aG5lRnhYMHJycHNPbTduOU1ZTXJLLXpCVG5YQkM5bWVEYldWUlc3VUxOTkxWTEFFMlVnZHlYUmpmWjJkYjZ2dktIMkctTXptNmRZSW56cVpqZjFFNW9DTTJad1o5YVB4RV9nUHczZ1N3anVzTkduck5zUGhrczVUNDhTQUhhQnloYWdCd2xYMUtRN21YOU5RZVA0c2J4VTkxSHJVZmtOX1ZBZTlDTzlfbTVUeWdqOVFLdWRLUkpUMWc4U1N0OE9JZG9ZTzdNS251LUxJcVEwTFVvM25lV0hEUU1ENk1OYmF1LW5CZFU?oc=5"
+          "title": "聯準會放鷹維持利率不變！道瓊重挫，台積電逆漲-財經焦點情報站",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQeDhOVzJzY3JlWEhIOW1GREhwLWdwR2pWRHhhWmZUU0Fud29rdEpEbHpZMzVPTGpaanVETWEtblZSal_tN2xTNmYwN0QwckNJLXdxMzlBV1NVeTI0QjZCSnJDZWdmeE1oZFNvY09wczZ4MWdRdlU5NGlmbXN1dzlFdFZR?oc=5"
         },
         {
-          "title": "Warsh experiences worst 'Fed day' S&P 500 performance for a new chair since 1994",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE00ODdOSGsxSnVTeE9JOEo2b2JPdFo3R0kxa0paLVlZblA0aEw2XzhXMlNzTHhYSHRtSFJrRU05bzNycUFNRVFJR3R4bTZEYTM0ZmplYnNqeFMxaXNsekNwTHBPZHpZR0ZNN1dHVWNpamtLR1NaSUHSAXtBVV95cUxNTUZXN0ZiQ0RnZWM3S0p3SDc4LWRYc1NrY3czalp1TVNrZGNBQzBSMl9aR0tENkVoM1QxRnJnR1pYRmZ3bGJFWXI5cDJqcF9YVGtFWlRMdHRwaUtlTXp2bm93MVJwSENWckdFcG9EcDkwSzk2SnJ5ZUhUNUU?oc=5"
+          "title": "Fed維持利率不變預期將升息！美股道瓊跌507點、台積電漲近1.5％ | Newtalk",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9EQ0FWaEFxZEFyWkxBSm5kam53b0hCUlNPX2JHR2U4NldKMUdMeGtqY3VOX1I0S09teG1jVzBKbURjS0Q4b3RLRS00ZUFnMWdkTnVLOXl3?oc=5"
         }
       ],
-      "news_count": 0
+      "news_count": 1,
+      "first_seen": "2026-06-18",
+      "last_seen": "2026-06-18"
     },
     {
-      "name": "那斯達克100指數",
+      "name": "聯準會(Fed)",
       "ticker": "",
-      "sector": "指數",
-      "mention_count": 8,
+      "sector": "宏觀經濟",
+      "mention_count": 10,
       "sentiment": "利空",
-      "reason": "聯準會鷹派立場和科技高成長股的風險重估，導致那斯達克指數下跌，AI科技股盤前領跌。",
+      "reason": "聯準會釋出鷹派訊號，維持利率不變但暗示可能升息，引發市場對美股的擔憂。",
       "evidence_news": [
         {
-          "title": "華爾街被「新鷹派聯準會」震撼洗牌：利率高位更久，科技高成長股風險全面重估",
+          "title": "聯準會放鷹維持利率不變！道瓊重挫，台積電逆漲-財經焦點情報站",
           "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPRjFfNFpwTE5ubDlrSmc5VEVRb3BCVUIwSWpTSXhHWUJJWm9QRlloSnF6NnlJSFoxU1ZZaV9ITGg0WDRwSjRvcjZ3YzdhSVVUWFBhMnVTNWcxU1VfeFpBNVhaQUp6eERRT0ZhZTVIUTdIUUJvdlM5QkZrMkd0RFRYRllISjFhM3N2UHlDM2FOdE12WDBUZGVnb2VvMzU5aHlFUThJYkN5UTNGN21hRFNSQXNGSjQyWGl5dEtiV1E5LXBNUk93Q2dEZ2xLM1VZMTg?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQeDhOVzJzY3JlWEhIOW1GREhwLWdwR2pWRHhhWmZUU0Fud29rdEpEbHpZMzVPTGpaanVETWEtblZSal_tN2xTNmYwN0QwckNJLXdxMzlBV1NVeTI0QjZCSnJDZWdmeE1oZFNvY09wczZ4MWdRdlU5NGlmbXN1dzlFdFZR?oc=5"
         },
         {
-          "title": "The Nasdaq 100 index fell during the session, and the Dow Jones dropped nearly 1%",
-          "source": "WEEX",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNdEFMYXBoMG96SS0wSUx3MFdrSzkwMUM3aTVmOG8wU216el9OdFI4S21GV2Jjb0YtWVR4b1NMRl8yNGt4MHFrS2hkV1dMTmhmWkk5Q2pVbHc5QWZqTXZldUZMcmZNX01vZzc4WnJYMS1RU2RMQlp3cEtqbGdWb3FmdUpOMVhMbmtLa2gyWFRadmwxdVh2cE1vemd0SzNRUi1WdC1uMTZ1VVJBVDcxX0lrbDFldHpqaXVvUEU0OGRkQXNGa01pSUJiSFNOUTUtcmp3UTBr?oc=5"
+          "title": "【美股快訊】聯準會點陣圖上修代表什麼？成長股估值恐被重砍？",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPS3JXTFM3a3FqVjhCQUpOMmRtNWZfbmRmUThTcEpJVWF1RnU5SGEwby1Yb3B6cHpRalNMRmdyMjJoY0JMbjZFc0VjY0dJa2VFRUZXdTNyTnREMGhrVnlOWkNUV1hkR2c1QVp0ZGRsaHB1Mko2RkNUV3ZaZldZb05XWjM1NjlTUFF0anBkR0ZB?oc=5"
         }
       ],
-      "news_count": 0
+      "news_count": 33,
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-18"
     },
     {
       "name": "科技股",
       "ticker": "",
       "sector": "科技",
-      "mention_count": 8,
+      "mention_count": 7,
       "sentiment": "利空",
-      "reason": "聯準會鷹派言論引發利率高位更久的預期，導致科技高成長股風險全面重估，美股盤前科技股領跌。",
+      "reason": "聯準會的鷹派立場和升息預期導致科技股普遍下跌，儘管有少數例外。",
       "evidence_news": [
         {
-          "title": "華爾街被「新鷹派聯準會」震撼洗牌：利率高位更久，科技高成長股風險全面重估",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPRjFfNFpwTE5ubDlrSmc5VEVRb3BCVUIwSWpTSXhHWUJJWm9QRlloSnF6NnlJSFoxU1ZZaV9ITGg0WDRwSjRvcjZ3YzdhSVVUWFBhMnVTNWcxU1VfeFpBNVhaQUp6eERRT0ZhZTVIUTdIUUJvdlM5QkZrMkd0RFRYRllISjFhM3N2UHlDM2FOdE12WDBUZGVnb2VvMzU5aHlFUThJYkN5UTNGN21hRFNSQXNGSjQyWGl5dEtiV1E5LXBNUk93Q2dEZ2xLM1VZMTg?oc=5"
+          "title": "科技股慘綠！台股早盤跌635點 台積電下殺45元",
+          "source": "四季線上4gTV",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBqRUZJTVcyejROOHI2MTZUUUJReV92bEIxcEZ1TVkwMUFZM0s5RmdIVE1DMC14ck95ODE2SVo0Yjdta2t6SWtFdHNxWnJ6Z1lZM01iQQ?oc=5"
         },
         {
-          "title": "美股急跌後，台股開盤前最該盯的是什麼？從科技股估值修正到台指期與籌碼變化一次看懂",
-          "source": "CMoney",
-          "url": "https://news.google.com/rss/articles/CBMi4gRBVV95cUxNUG9mR2JHWk01WnNCb0ZfYmxmMDhMUnZwOGpMc1I3NGx0SmplWEZhbjlxTmpzemhQWVU5enNwalNUaG8xUkxzZWdWX3JjR0lyaXY2MGw2Ym5Cc2hDREp0cFR1RnVfdjlrR1Q3NDVjQmdtdnVsc0E0ODJxbXhzTVpWZHdrdF9kX0Z1akpsVTh5eURNaEVTcDltN29rLS1fS3IxY0N5al9CVVI5ZWQ3YWZmb0tRTEptV29jZXVobXE0a0pIdmpVMmcwNkNESlp0aUU1Z2trTFRhY0tfMnYzU3NWZDRoZ3FMbEhQQUthSGZMdHN6RDRMZ1VIeTZLN1czS1FxYzd4RUt0NGdrWHU5TzNPeE4wRG1UWW9JUFBfbHVQbEpVLXlIT285LTVyVmZjLUJyY29DT0hpOUVwdXFoRE1DN216Zm5NNTNlZkxDTHZHVU1lRGVkb3RtZnB0ODlzall3cHpIamNBeE51dVFwal80YVRLN2t3amNvWHppcjM1S3hjdjhJX3YxUWZtNHRKUWNfZTJDSkF2ZklQdl9BZ3ZvQkFlRDU3Z1pySTBBeloxTUx2dnUzTXFOZ1VUWFNoandGOUtIb2ZtemluWGhqT0dSTEFTdDg1R0lDcDBfNm9Zams0SDRZMUpCYVJoT0JsR1NGS2ZyZEZwMGcwMVZydExSYll0bU50TF82cVgxbXBGa0Y4TlV4M0hNNk83UXk1VVozYnktblkzd3lQS3BRSHk0TE5hdDN2NjQ5blNOVHZxY2NPY09VOWN3MFZpZ3BWVktaWVRlblFuLW9tUHdEQ0ZJS1ZB?oc=5"
+          "title": "【美股快訊】Fed點陣圖今天出爐，科技股先跌了",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNcEstX2dDUlpJTUROLWxCMjVCMldzbUtEWXB2QWRHbG5Sb3hGMW9GZzFGdHR3QkJJZ0k3TTdrVmJhRURRM0tQRExJaWxPTHVVN2FmT1A0Zmxtdms4OFpMeW5TalBVTXRoT0pPSGdKdFFKUUdEZHlZakd6cnExY01hWEVnSWswWVhockdhdlFB?oc=5"
         }
       ],
       "news_count": 5,
       "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
+      "last_seen": "2026-06-18"
+    },
+    {
+      "name": "標準普爾500指數(S&P 500)",
+      "ticker": "SPX",
+      "sector": "大盤指數",
+      "mention_count": 6,
+      "sentiment": "利空",
+      "reason": "聯準會可能升息的擔憂導致S&P 500指數下跌。",
+      "evidence_news": [
+        {
+          "title": "S&P 500, Nasdaq and Dow slip as investors assess rate hike possibility — SPCX, UBER, ASTS, BBBY, RXT in focus",
+          "source": "MSN",
+          "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPRU9EeHhFYVBhN2d0WUhseXEwWWxRRjVkYVhzSko2YnA5Nk5WcXljSUhmamV1YmJPRE5zbjZQNlY5Zk1XcVNGUkVGalpjalNidkZnMVdlOHVJWVVDSHBweFg4aTVoMS00eVk5T2wyWHF5S213Zldic0toRl9XX2Jkay1XVFpONE1CbFNTdnFTMEd5b0tHQmUzVHVqWF90NlBZVUhfdnV0cVBnVnJlWWhiWEMydlEyejVtVUx5eHBFVF9ZZ0hOSGxva2pFc3FJNnJ5cTExeXBXcHhZUFp6bXJIc3Fpd3pwQmdBMVk0TzRHTmc4RW94bnRBanFPWHpOSTRySnBEODlmblhOZnRa?oc=5"
+        },
+        {
+          "title": "Stock Market Today (June 17, 2026): S&P 500, Nasdaq plummet as Fed meeting points to rate hike in late 2026",
+          "source": "thestreet.com",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdFVGNXYyZVVpcGZRMmhGUFdXSEVBc3BnWGxUOXQ0MFN5NGtZWnBfc1pweGdYb2NDX0dMMzE1SEZKQ1YxZTYwNzlvZUxnUUFRWlhHVjd5UzJOMW9RYkNhbFp5YjF6Yjd1T1lzbm5OYnU4eDJSWUV6QWtoRC1EbC1ua2RkcW1pd2NpLTVhakptOEdRczBVY0xlR2psa2o0RVRsWEJPRVJZMVlucnhF?oc=5"
+        }
+      ],
+      "news_count": 7,
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-18"
+    },
+    {
+      "name": "那斯達克指數(Nasdaq)",
+      "ticker": "NDAQ",
+      "sector": "大盤指數",
+      "mention_count": 6,
+      "sentiment": "利空",
+      "reason": "聯準會的鷹派貨幣政策立場和升息預期導致那斯達克指數下跌。",
+      "evidence_news": [
+        {
+          "title": "Dow, S&P 500, Nasdaq Futures Climb On US-Iran Agreement Despite Hawkish Fed Outlook: RUM, INTC, NFLX, RXT In Focus",
+          "source": "Stocktwits",
+          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNQ0JxN0JGNkZPMmJOeXdSTld6NXp3REw0ejdmcldjSGltejVGV2dRSWtLbkRlaC1VYWZ3dlZmSTBNVDRTM2MzR0RudFVUNnpKQWVRT0RlQU1lcU13M05uMmJ1elUxOXQzeEp2djlQYUozOUt0QzBMekJ5R3dJTDNvcGxKN0JDVzBBZ2N2U3EyeXd2NjYwcHc1MDlYdWpHckUzbUYweVp0enNDUmhjT2dJUFk1S3BWWnVjQkhFdDc5eFFTQ2d2OXVqQXNvTUphbzdqcGJBMUdvbWdWc3c?oc=5"
+        },
+        {
+          "title": "S&P 500, Nasdaq and Dow slip as investors assess rate hike possibility — SPCX, UBER, ASTS, BBBY, RXT in focus",
+          "source": "MSN",
+          "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPRU9EeHhFYVBhN2d0WUhseXEwWWxRRjVkYVhzSko2YnA5Nk5WcXljSUhmamV1YmJPRE5zbjZQNlY5Zk1XcVNGUkVGalpjalNidkZnMVdlOHVJWVVDSHBweFg4aTVoMS00eVk5T2wyWHF5S213Zldic0toRl9XX2Jkay1XVFpONE1CbFNTdnFTMEd5b0tHQmUzVHVqWF90NlBZVUhfdnV0cVBnVnJlWWhiWEMydlEyejVtVUx5eHBFVF9ZZ0hOSGxva2pFc3FJNnJ5cTExeXBXcHhZUFp6bXJIc3Fpd3pwQmdBMVk0TzRHTmc4RW94bnRBanFPWHpOSTRySnBEODlmblhOZnRa?oc=5"
+        }
+      ],
+      "news_count": 9,
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-18"
     },
     {
       "name": "SpaceX",
-      "ticker": "SPCX",
-      "sector": "航太/運輸",
+      "ticker": "",
+      "sector": "航太科技",
       "mention_count": 5,
       "sentiment": "利空",
-      "reason": "SpaceX股價在盤中下跌，結束了初步上漲的趨勢，並在聯準會會議前受壓。",
+      "reason": "SpaceX股價下跌5%，為首次公開募股後首次下跌，且有董事會成員變動消息。",
       "evidence_news": [
+        {
+          "title": "今日市場回顧：聯準會鷹派點陣圖施壓美股；SpaceX 下跌 5% ， Allbirds 飆升 39%",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTWdBUGs0ZmFzVkNOS0xNQVFJTURlZ1FXamtSQWNCU045a3JUT1dIdUlJbVRSSnNKSEV1VWJZWnJONnBBYU9pRmVyTmlwQ0Nla1pweGJfdWx5d2RwVjJoSl9vbnFJajV4Q2xoVHE4cUtVUjM0U2swMVNJbTFRMlpzM3Q1OE02ODAtSFV0UVR3ZTBfd0FUU1BEWUdyOHNINXdUZVE?oc=5"
+        },
         {
           "title": "Stock Market Today: Dow Slapped As Fed Chair Warsh Stresses Price Stability; SpaceX Falls 5% (Live Coverage)",
           "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNal9xTUk0MXFqX0JwaElHWUJINGlxMlN6bFhFVExhenZ6VEU5ekFNa0tJU0xKMnlyMnBpX1NKajl5Z2hhN19aejcyOTNjR0ViSU9ncC1OeXg2YWdHX3BNaW0yZWJ2eHBLR2VmaV93VHhiWlRsWGMyUnU2ZjNlYmk5cGFaWHJ3RUhqN1E1TjV4YVhGWTktamI4THlzUWVMeFNWSzZJMGVXRHJ1cENGWHhJd3M4YXNvMTlnaFE?oc=5"
-        },
-        {
-          "title": "SpaceX Stock Continues Decline After Initial Spike",
-          "source": "Futurism",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1Pb2kwZkg4WUpHV0NhTk9kWEhpQ2dhZEJCdTJ0VmlBeTlyWGRrdlBWa0ljZVcyblVXS2RUSzUtZ0R1OGdEclFoUjBERmJaRGJza2JmcjFRSzF3VmtwWWZVMExaZw?oc=5"
-        }
-      ],
-      "news_count": 6,
-      "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
-    },
-    {
-      "name": "AI晶片股",
-      "ticker": "",
-      "sector": "半導體",
-      "mention_count": 4,
-      "sentiment": "利多",
-      "reason": "儘管聯準會決議前科技股承壓，AI晶片股仍出現反彈，並被視為市場焦點。",
-      "evidence_news": [
-        {
-          "title": "【美股盤前】聯準會決議來襲！那指期貨領漲，AI晶片股反彈，SpaceX漲超4%",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxNbXZOSHB3ZzBpY2VXNVE1Y1YtRnBUUHpWRWRnTnctdTBPRVFSSk1ydFBkUUJVUGxyVlEySl9PeGUydmk1S1REUVFoTkc4RVpRa1Q3Nm5qQXV5RWVXa0IwY2hQYXNwMnpWdzVRUWlPMGJ4LU85RVlFLW5OQWdpVnVSOHV1RDJPWmVfY0dmLWMyZmhWUjNtTktpbThUSXhKeHE4X1VzU1AwTHFSM2dhUmJwRnpleHVoQm9Kc2wwRkRiZlZTUE85cXhPWk5KdnVtUnAzZFVfWlo1MWZ6RDhVZTI3NVVXM2hqcDVVaUFNTV90ckR3OG5tSDBMUnc2b29vb3hNRmdnV25HekE0R1J4VnN3RmF2SnVwRkNROGxoOTRFMzM?oc=5"
-        },
-        {
-          "title": "台股逐洞賽│Fed決策前夕市場觀望資金聚焦AI與權值股- 證券",
-          "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1OUTM0TURzaW1VTjV3YXdVVlBVTWdBcmM2VkxYMnYzWF9RcndrZjNqMjV4NTlyOW9KemN4YzYtT2Rad0lJRGZPUkYyTVhtbnowX3Q0b1lXZlpqR3JtRlFB?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
-    },
-    {
-      "name": "人工智慧 (AI)",
-      "ticker": "",
-      "sector": "科技",
-      "mention_count": 4,
-      "sentiment": "利多",
-      "reason": "AI營收爆發，部分公司因AI業務表現超預期，且被視為市場資金焦點，國泰金甚至因此上修台灣經濟成長率。",
-      "evidence_news": [
-        {
-          "title": "【財報電話會議】強勢躍進！Jabil Q3 超預期、AI營收爆發並拿下第三家超大型雲端客戶，印度Adani聯盟擬建多GW製造樞紐。",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNYm05dEN5TUlFX3Rad18wZXNudjBBWHhUX2pMTEVQdElMZjEwZTlyektiN0UteFJQUktBdTlTOTVyYUJpOTIzVDVhQ1dVbDRvdVZfT1VLakVYTEtSVFcwS056MG9vVmtpSFFYNDJVcU9wSFpTNUtjRThJTlhnMU44X1FmVGNsRmZ1ZkQzUHlUM3d1ek14NF9GUl9KdEdOd25LTVZnczV4WmdBOWZHb0F0Wlo3X3ZYMjg1Rkplakw2NlZXdS1ZUjdoUWRFci13NUU?oc=5"
-        },
-        {
-          "title": "受惠AI狂潮 國泰金上修台灣今年經濟成長率至10.1%",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606170310.aspx"
-        }
-      ],
-      "news_count": 24,
-      "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
-    },
-    {
-      "name": "油價",
-      "ticker": "",
-      "sector": "能源",
-      "mention_count": 4,
-      "sentiment": "觀望",
-      "reason": "美伊協議曙光導致油價下跌，但市場仍觀望和談進展與關鍵航道重啟，且有報導指出川普新威脅可能使油價上漲。",
-      "evidence_news": [
-        {
-          "title": "美伊協議曙光油價跌5% 道瓊再創新高、科技股重挫",
-          "source": "新唐人電視台",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBGU3QxMDl2cjh1cy1DWTVQb0VaTnBqNEtiekF6LUpwR2pMNjE2TjVYRzcwZWJqM3cxX2VDelNPOFJWWVZteGJkWC10bjU0MUtxa1plNFl6Z0VFdTBCc19MYtIBZkFVX3lxTE5pblZRQURYZDJUbXhBRUNiNlFoeF9QQUJXcVZucnlBdUFweTk3YnRreWw3RklucTc0eVlkNno0Q0FpbGpPQUdCV1VPN1ZqdFVzQ0UzWHh2dF9XYTFzMXBOM2ZsMjdndw?oc=5"
-        },
-        {
-          "title": "中東和平浮現 油價續跌亞股多收漲",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606170292.aspx"
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNal9xTUk0MXFqX0JwaElHWUJINGlxMlN6bFhFVExhenZ6VEU5ekFNa0tJU0xKMnlyMnBpX1NKajl5Z2hhN19aejcyOTNjR0ViSU9ncC1OeXg2YWdHX3BNaW0yZWJ2eHBLR2VmaV93VHhiWlRsWGMyUnU2ZjNlYmk5cGFaWHJ3RUhqN1E1TjV4YVhGWTktamI4THlzUWVMeFNWSK6JMGVXRHJ1cENGWHhJd3M4YXNvMTlnaFE?oc=5"
         }
       ],
       "news_count": 4,
       "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
+      "last_seen": "2026-06-18"
     },
     {
-      "name": "艾克爾(Amkor)",
-      "ticker": "AMKR",
-      "sector": "半導體封測",
-      "mention_count": 2,
-      "sentiment": "利多",
-      "reason": "艾克爾與台積電簽署10年合作協議，旨在強化美國半導體先進封裝能力，對其未來發展有利。",
-      "evidence_news": [
-        {
-          "title": "艾克爾台積電簽10年合作協議 強化美半導體先進封裝",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606170367.aspx"
-        },
-        {
-          "title": "Stock Market Today: Dow Jones Futures Tumble, S&P 500 Gains As Investors Await FOMC Decision—Amkor, La-Z",
-          "source": "Benzinga",
-          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQTllQT1B1X3daVEdkVWV2bXVSQVdPa0wzQU40NldXOU5ZSTJ4WVlLZ0RablVSTE1SWVlFQ05UNXVuS1cwcHFjdUNkdFhkeFNSaXhhb3BJemp1LWgybFQ5WFF0QzdOSzQ4WmVUN1U0U0NuNmVCWWNxeXNGZV82Z1l2SmFlUmJ3Slo2OG5WNjFsaW9kSjR6YnVoN2ZOajJHcmN6M3NOUGRWYjg2UXllTTZDaG1wWU9mWkN2bVlnQ2JKTVcwNmlYakV3UzQxNlVZd2lrOXZBRnBidWdkY2FxYUVUcGtHYjh3R0Rqa0JQYk9kT1EtekE2VkNRMlFNMk1mMW8?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
-    },
-    {
-      "name": "優步(Uber)",
-      "ticker": "UBER",
-      "sector": "運輸/科技",
-      "mention_count": 2,
-      "sentiment": "利多",
-      "reason": "Uber正在休士頓擴大業務，並將自動駕駛計程車服務帶入該市，顯示其增長動能。",
-      "evidence_news": [
-        {
-          "title": "Tech stocks today: Uber and Lucid expanding in Houston, Intel's latest chip moves",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPdE5uUDhvdTdDVUx4b0FmUWJwYVh5c2FUNGxpVXdpWkJydnh6M3ZQVDgwOWxGMmtxbWlqQURmaG16bHNiODh0WnNCM0c4ZF8xLVR0XzZHXzBvZktGbzZTaWZEVTZ5NUxSU09oX2g3dEV4cXBSdlpObzJkRjVuTmFCVm5rUTRNbjhGQ2U5Sm9peEhpdkp1cDlMdlhwZ19kcUM0RDJCak85dFhqVEZxcGk0U3V2dWNKNjRmTDJfSHFrejRfZHRtOU1oZTZ3dWFBNzZr?oc=5"
-        },
-        {
-          "title": "Uber is bringing robotaxi service to Houston Axios",
-          "source": "Axios",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPdE5uUDhvdTdDVUx4b0FmUWJwYVh5c2FUNGxpVXdpWkJydnh6M3ZQVDgwOWxGMmtxbWlqQURmaG16bHNiODh0WnNCM0c4ZF8xLVR0XzZHXzBvZktGbzZTaWZEVTZ5NUxSU09oX2g3dEV4cXBSdlpObzJkRjVuTmFCVm5rUTRNbjhGQ2U5Sm9peEhpdmNKNjRmTDJfSHFrejRfZHRtOU1oZTZ3dWFBNzZr?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
-    },
-    {
-      "name": "蔚華科技(Waymo)",
+      "name": "石油",
       "ticker": "",
-      "sector": "自動駕駛/科技",
-      "mention_count": 1,
-      "sentiment": "觀望",
-      "reason": "Waymo的無人駕駛計程車在短期內可能不會普及，市場對其進展仍持觀望態度。",
+      "sector": "能源",
+      "mention_count": 4,
+      "sentiment": "利空",
+      "reason": "美國與伊朗簽署終戰備忘錄，荷莫茲海峽恢復通行，導致國際油價一週內重挫逾15%。",
       "evidence_news": [
         {
-          "title": "Why Waymo’s Driverless Taxis Won’t Be on Your Streets Anytime Soon",
-          "source": "The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQb3VKTkdUbFRobDVZYm1wZTNFS3dkMXo0U3VGM3pJLWQxMUVOZ2hWRlBiM05TaXM3TkFNeWF0UEM5U2FkT1RVeHVIV0tFbFp2X29LX3dEUldzdDNUdHhrY2JJNFNvU0gwV01RcDZPU0NySnJPTTlra1lReFFrVDhMbGJtVk1Cckw4RkZoOTlXd181Zw?oc=5"
+          "title": "美伊簽署終戰備忘錄 國際油價一週重挫逾15%",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606180098.aspx"
+        },
+        {
+          "title": "Oil slips again as US, Iran sign peace deal",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOZU5Zdm80MlhXLVFYajFEdy1GcU9zNGNaa2FvM2ExTmZkZXJieS10V1ZjQ3NqTndMcG1hT1hpb0FGYTN5M1ZMY2VFRG9QNDZkVGhxVEJTcUVpakJGQWNtODJYOTJpSFJOM0hwN01DT21ZaUxKN2FBa2czX3ZFUHlTMXpuUnZpa1dNOFUtOXFFaUx1LTJwN1E?oc=5"
         }
       ],
-      "news_count": 1,
-      "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
+      "news_count": 0
     },
     {
-      "name": "亞馬遜(Amazon)",
-      "ticker": "AMZN",
-      "sector": "電子商務/零售",
-      "mention_count": 1,
+      "name": "人工智慧(AI)",
+      "ticker": "",
+      "sector": "科技",
+      "mention_count": 4,
       "sentiment": "利多",
-      "reason": "亞馬遜的Prime Day促銷活動提前開始，顯示其零售業務的積極動態。",
+      "reason": "AI技術持續發展，應用領域擴大，國研院國網中心推出AI賦能方案，鴻海也展示AI伺服器機櫃系統。",
       "evidence_news": [
         {
-          "title": "These 50 early Amazon Prime Day deals are worth shopping before next week’s sale",
-          "source": "CNN",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOTjhaeG1JRjRIYlEtS25oTGxPbWliX0ZlSnpUN3J6UzFXMXF1dFVjbnFXNjVqSUtJRW92NjJXUmFGbHhDR1FoQjJlVnJsR21LeG5ZZlNDYlE1NkhpT0lIUU1YZ3RDbmJ1Nk9zUm41S3pFR1RfMWdRYzU2TGxUZjNqdGZ4SVltS1U?oc=5"
+          "title": "國研院國網中心推AI賦能方案與工作坊 助創新應用推進",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606180096.aspx"
+        },
+        {
+          "title": "法VivaTech台灣館展現AI實力 鴻海首秀深化歐洲布局",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606180055.aspx"
+        }
+      ],
+      "news_count": 23,
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-18"
+    },
+    {
+      "name": "蘋果(Apple)",
+      "ticker": "AAPL",
+      "sector": "科技",
+      "mention_count": 2,
+      "sentiment": "利空",
+      "reason": "AI技術進步可能導致記憶體晶片成本上升，迫使蘋果提高iPhone價格。",
+      "evidence_news": [
+        {
+          "title": "AI is hurting Apple in more ways than one: it may force iPhone price increases",
+          "source": "TechCrunch",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdEtvWTZ4dm1lVTBscFBPeGlwT0l2UVoyTDFvRVI2MktGM3ZNcDVMNjVGVVo0WGZEdlpNMFhtdzNzenM0WkFSbXV4aU9TSFhtc1d1a1pIY3dfdjJaNkZScDZnOU10ekNvRjFhVnFudEZvN1VCUHZUTXpNZGlHNnlFbU9OY3BuVXM5RkRKNmlxX3hpMFRLcWNwbncxRElkZlR3SFBlMnNCdnBtZzRONjJ3VGVB?oc=5"
+        },
+        {
+          "title": "Apple boss Tim Cook says prices to rise due to memory chip costs",
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdEtvWTZ4dm1lVTBscFBPeGlwT0l2UVoyTDFvRVI2MktGM3ZNcDVMNjVGVVo0WGZEdlpNMFhtdzNzenM0WkFSbXV4aU9TSFhtc1d1a1pIY3dfdjJaNkZScDZnOU10ekNvRjFhVnFudEZvN1VCUHZUTXpNZGlHNnlFbU9OY3BuVXM5RkRKNmlxX3hpMFRLcWNwbncxRElkZlR3SFBlMnNCdnBtZzRONjJ3VGVB?oc=5"
         }
       ],
       "news_count": 1,
@@ -263,49 +231,106 @@
       "last_seen": "2026-06-17"
     },
     {
-      "name": "卡麥斯(CarMax)",
-      "ticker": "KMX",
-      "sector": "汽車零售",
-      "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "CarMax公布財報後股價下跌10%，CEO詳細說明了轉型計畫，但市場反應負面。",
+      "name": "鴻海(Foxconn)",
+      "ticker": "",
+      "sector": "電子製造",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "鴻海積極拓展海外佈局，規劃在美國與波蘭設立科學園區，並展示AI伺服器機櫃系統，顯示其成長動能。",
       "evidence_news": [
         {
-          "title": "CarMax shares fall 10% after used car retailer reports earnings beats, CEO details turnaround plan",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAzbGc1cERibVF0NFlaS0pQa291cXZmMGJUQk5OSUt2SUZGMlA4VkRsbUYxRmdvaTIyYVFRLWU1VEVxQWtaYnl6OHJhNE1qSUpqN2syZFNJeHUwY2hQY2NFZ1ZiclVOalhtc1kw0gFwQVVfeXFMT2dGWk04OWpibWZ0RjFpVEFOb2UzUW1jbzBDOHBzWDkwa1RwYmFSdzNFZlRzaU9fai1oRXdTNVcwcjZCU2FQNlZrZlpPN0JmSGxwQnV5eDJUY1RHYXNPZ2lndkNaOXFkZFB3R2E4TWxCSw?oc=5"
+          "title": "劉揚偉：TEEMA科學園區招商3大產業 美國最快年底明朗",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606180083.aspx"
+        },
+        {
+          "title": "法VivaTech台灣館展現AI實力 鴻海首秀深化歐洲布局",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606180055.aspx"
         }
       ],
-      "news_count": 1,
-      "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
+      "news_count": 2,
+      "first_seen": "2026-06-18",
+      "last_seen": "2026-06-18"
     },
     {
-      "name": "捷藍航空(JetBlue)",
-      "ticker": "JBLU",
-      "sector": "航空",
-      "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "JetBlue因紐約機場成本上升而縮減在紐瓦克和拉瓜迪亞的業務，顯示其經營面臨挑戰。",
+      "name": "ABF載板",
+      "ticker": "",
+      "sector": "半導體材料",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "受台積電利多消息帶動，ABF載板雙雄股價衝高，顯示產業景氣向上。",
       "evidence_news": [
         {
-          "title": "JetBlue to reduce Newark, LaGuardia footprint as it forges ahead in Fort Lauderdale",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNOW5vUUN5b000OW1sQU95VGFhbFBaZFp2ZW9LLUZ4N3NsQUJsMFJHblpETWkzY1VveG0yRUNaZmNEN3MxMG5ZOUhzMU51Vi04T1FFUTRjU0xTVWdfcjhvcnRDZ2laT2RwT1FGUWU5QnVJcW9fS0tidGhlYzlaNF9XZVlidkU4azluNGpRVGNXd3JCN21aREh4SGlTazFFTXM1dEVPU3AtaFlKQdIBrwFBVV95cUxNQWZEVGZmUDBuY1BlNFZnUmFNRGUwdGNXM1U1OWV1aVdvd1pJWWg1eGgzdlpnUWIzXzBsaXktclZHa2VtT2FuRTN1Nkp5Yy1Eb1IzODhBc0ZWVFpYR1EyZ1RHRGFpUDhBTHNfZ1dzaUJtYkFhVXJtbWlDZUI3dWZJOTRUcTMxWk9aanpZRGtmcU9KWVJWelhWNExqODVzNzR1S1VwdjdPQ1FuVFQxdlpv?oc=5"
+          "title": "《日股》史上首見！日經飆破71Ｋ 台積報喜 ABF載板雙雄衝最高",
+          "source": "富聯網",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSJ_kaHJNeEFUTEt5R3ZIbERtVnhqT2dLNERMcDQxd0k1dl_1ejRyZzEzcklaN2FmZVRIb1BabkZlRE9iM1U4bGVoQjNKVk50Sk9UV0RfWGRmVGJwOEtnWnNYajh2bUI0TGRFam02Tm00RHVvc1h5M3U3S2VRenUzRHp0cUcyVFQ1?oc=5"
+        },
+        {
+          "title": "再見4萬6！ABF載板、被動元件喊衝 指數漲逾560點",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE14V3FUVjE1QzhobFBkdUVjSEZmVGpqVTVRQi1GY08tcFo0ektEUVhoY2ZJWUtQbFphTFlTY2xPd3JWYW4xSUVYNVRxZmNKb0pJRFBVT2NTa2FSckxUWTM00gFkQVVfeXFMT1VrUVh5M193WDVnZFRxRGYxY01wOWhGVXFRaW5raDFTeW5Xa3JyY1RqRzZIanVQWFE0b0FnRHRkb2dhVGZPZVMzeWpXcnlKeUZlZXlLWjNrVHowY19Ka284anB4Sg?oc=5"
         }
       ],
-      "news_count": 1,
-      "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
+      "news_count": 2,
+      "first_seen": "2026-06-18",
+      "last_seen": "2026-06-18"
+    },
+    {
+      "name": "被動元件",
+      "ticker": "",
+      "sector": "電子零組件",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "被動元件族群表現強勢，顯示市場買盤湧入，產業前景看好。",
+      "evidence_news": [
+        {
+          "title": "台股盤中漲逾680點衝46565點新高 中小型科技股強勢",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606180073.aspx"
+        },
+        {
+          "title": "再見4萬6！ABF載板、被動元件喊衝 指數漲逾560點",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE14V3FUVjE1QzhobFBkdUVjSEZmVGpqVTVRQi1GY08tcFo0ektEUVhoY2ZJWUtQbFphTFlTY2xPd3JWYW4xSUVYNVRxZmNKb0pJRFBVT2NTa2FSckxUWTM00gFkQVVfeXFMT1VrUVh5M193WDVnZFRxRGYxY01wOWhGVXFRaW5raDFTeW5Xa3JyY1RqRzZIanVQWFE0b0FnRHRkb2dhVGZPZVMzeWpXcnlKeUZlZXlLWjNrVHowY19Ka284anB4Sg?oc=5"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-18",
+      "last_seen": "2026-06-18"
+    },
+    {
+      "name": "中小型科技股",
+      "ticker": "",
+      "sector": "科技",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "台股盤中衝上新高，中小型科技股表現強勢，顯示市場資金青睞。",
+      "evidence_news": [
+        {
+          "title": "端午節連假前夕 台股6/18盤中漲逾680點 衝46565點新高 中小型科技股強勢",
+          "source": "Taiwan News",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAyU1E5QnRRZGFqQVFuQUtfRm5xN05MODVkMFQzM180bzlleFNPY0pzbGpVTXB2ODdvaWcyYUI4dEVTcVhLUVp5UkxtdUE1YzFOcmFfUkhlMVY?oc=5"
+        },
+        {
+          "title": "台股盤中漲逾680點衝46565點新高 中小型科技股強勢",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606180073.aspx"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-18",
+      "last_seen": "2026-06-18"
     }
   ],
   "future_trends": [
-    "人工智慧(AI)基礎建設與應用",
-    "半導體先進封裝技術",
-    "新世代功率半導體研發"
+    "人工智慧(AI)創新應用與發展",
+    "半導體產業鏈（包含ABF載板、新材料等）",
+    "電動車製造合作",
+    "非紅供應鏈與台灣品牌塑造"
   ],
   "sunset_industries": [
-    "傳統高成長科技股(在利率高企環境下估值可能受壓)",
-    "部分區域航空業"
+    "傳統電信服務（AT&T試圖關閉老舊電話網路）",
+    "離岸風電（川普政府收購租賃權取消項目）"
   ]
 }

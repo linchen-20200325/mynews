@@ -3,18 +3,18 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "人工智慧 (AI) 與半導體",
-      "heat_score": 95,
+      "industry": "人工智慧 (AI) 與 AI 應用",
+      "heat_score": 98,
       "signals": {
-        "funding": "輝達(NVDA)持續領軍AI晶片股，半導體ETF交易量大爆發，顯示資金持續湧入此領域。汎銓科技等企業加碼27億元投資竹科及中南部擴廠，台積電亦加速佈局面板級封裝與玻璃基板，顯示資本支出強勁。然而，有分析師示警AI泡沫風險，需留意市場情緒變化。",
-        "hiring": "新聞未直接提及具體徵才數據，但AI晶片與先進製程的持續發展預示著對相關技術人才的龐大需求。高階半導體人才的競爭預計將更加激烈。",
-        "policy": "Bernie Sanders提出讓公眾直接擁有AI公司股份的計畫，以及G-7討論AI領導力，顯示各國政府對AI發展的重視與潛在的政策介入。美國政府要求Anthropic停止對外國用戶提供特定AI模型，反映了國家安全對AI技術的影響。",
-        "technology": "蘋果A22 Pro晶片將首發台積電1.4奈米製程，功耗降低27%，預計2028年推出，顯示晶片製程技術持續突破。Google Photos推出AI驅動的「Edit with Ask Photos」功能，以及AMD顯卡更新大幅提升遊戲載入速度，展現AI在軟體應用層面的創新與普及。開源AI因Anthropic的決策而獲得更多發展空間，可能加速技術普及。"
+        "funding": "全球AI巨頭持續獲得高額融資，新股供給每月達1000億美元，顯示資金高度集中於此領域。多國政府推動「主權AI」概念，帶動跨國投資與半導體創投基金成立。企業資本支出大量投入AI基礎設施，如HBM記憶體需求激增。",
+        "hiring": "AI領域人才爭奪激烈，頂尖AI研究員從Google跳槽OpenAI顯示人才流動與競爭。儘管Meta內部有AI工作轉型引發員工反彈，但整體AI相關職缺仍呈上升趨勢，尤其是在機器人、醫療AI和自動駕駛等應用領域。",
+        "policy": "各國政府將AI視為國家戰略重點，推動「主權AI」計畫，並設立相關創投基金支持產業發展。美國參議院通過法案支持美台無人機合作，其中無人機的智能化與AI密不可分。然而，美中AI角力持續，但微軟仍在大陸大賣OpenAI模型，顯示市場需求超越地緣政治限制。",
+        "technology": "AI技術持續突破，從大型語言模型（OpenAI模型）的廣泛應用到具備極簡美學的AI機器人Eno亮相，再到醫療領域的自主醫療AI代理，都顯示技術動能強勁。遊戲引擎如Unreal Engine 6也將整合AI功能。HBM高頻寬記憶體需求因AI晶片而爆發，推動記憶體產業發展。"
       },
       "leading_indicators": [
-        "主要AI晶片製造商（如NVIDIA、AMD）的財報與展望",
-        "台積電等晶圓代工廠先進製程的量產良率與客戶訂單狀況",
-        "AI新創公司的融資輪次與估值變化"
+        "主要AI模型發布與能力提升情況",
+        "AI相關半導體供應鏈產能與價格",
+        "各國政府對AI基礎設施投資規模"
       ],
       "us_stocks": [
         {
@@ -22,12 +22,12 @@
           "ticker": "NVDA"
         },
         {
-          "name": "美光科技",
-          "ticker": "MU"
+          "name": "微軟",
+          "ticker": "MSFT"
         },
         {
-          "name": "超微(AMD)",
-          "ticker": "AMD"
+          "name": "Alphabet (Google)",
+          "ticker": "GOOGL"
         }
       ],
       "tw_stocks": [
@@ -36,114 +36,181 @@
           "ticker": "2330"
         },
         {
-          "name": "聯發科",
-          "ticker": "2454"
+          "name": "群創",
+          "ticker": "3481"
         },
         {
-          "name": "汎銓",
-          "ticker": "6830"
+          "name": "友訊",
+          "ticker": "2332"
         }
       ],
       "evidence_news": [
         {
-          "title": "【即時新聞】輝達(NVDA)領軍AI晶片股！半導體ETF交易大爆量，多空激烈交戰揭密",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQVUFXS2lYZHQ5VnZqc0hKYlpuZjFLYzhRdlVtbzN2VFJkVmpNZi1ZWVgtS19BdWJ6NzNabFpwc0poTElmU2ZfdGNDUU5veU45SXRObkxDbzJwVk1OcnI3bEdESWFFZ0FoVmZNcDUxX05JYllDVXQ2R0dlQ0FpV1dpSV9vTFQyejQxV2JmeUdJYms?oc=5"
+          "title": "主權AI浪潮帶動跨國投資ITIC創新與Bpifrance成立半導體創投基金- 商情",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lTlJsYXNTbVZnaUwzM3hTeWFkbkFlNU5jSlRQdzcwcVp6Y2pPR2djQ05nMktXZmhNMG5hNkd1bE5UYk1QLWluZmVFeGNOT0l4UWZLSTl2OEhvTllLTTVj?oc=5"
         },
         {
-          "title": "蘋果晶片升級！A22 Pro將首發台積電1.4奈米製程 功耗降27% 計畫2028到來 英特爾成備胎",
+          "title": "AI巨頭排隊敲鐘 新股供給每月1000億美元 誰來接住SpaceX與OpenAI？",
           "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1KbVVlNnA3Mzg1OXlzZjFXTjl4Tm9kS0pwUUJrcEJGWGp2RlozNHVOemd6SUY3WkxfQ0xRZXl2WnZjazdHY3pwSFlXUFFnVlE?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5rSHdUbWlxNk1wQVoxcEFKYUx2c3VIdS13MXJfWXFueElBTTlOOGcyRHU1Y2hSdmc0allLZ1dUemMxNnNWLTZmX2t3cjBscUU?oc=5"
         },
         {
-          "title": "台積電加速佈局面板級封裝 玻璃基板量產時程曝光",
-          "source": "自由財經",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBvanVHQmJnX0lOb2xXOE9jbnlDTzdZUXljcmhfblFkU2Q3aVB5V242UEZkd093eDdMQzVFQ3NXMWpOSzhpUmVWWnI2Y2JkSVhfWFlZZUZLVzI3TnRTbjRB0gFkQVVfeXFMUGtxbXpvSUhKbE5DQkx3SlFxb05OZFFIdVV0QW1BT05EeWRtQlZoaGVmdHYtUjY0bHhBLWotazY3Y19aT3preW5ETzFiZm1JTERJd000eG1OWTBJZzFvTnlQUlBaeQ?oc=5"
+          "title": "五角大廈證實：馬斯克 Grok AI 助美軍襲擊伊朗 投彈逾兩千枚",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxOTnRtZmFzY0lGeXpDNkxpQ0ZYQWRPVTB6MGdFWjB3UE9qVTJrQ3lOQTFxdFN4cE9Ka0pxazR4STFQbmVrSmM5dDlpdnJhT0RWNFdaU3dMeHB4N3ZNaC01aUNoV18wT3FNXzBOU1NsZEppazdyTERlZVJTUGVmeUZIMEtpWFRaVGhBSndBeGdtQjNvNnNPNVdUVnVwUmp2M1pvc0ptYV9zU0p5RHo3amlKY1VmQU9iZ3Y2b2NVcXVkeFI2Tl9TV2h4aVd0M29xLUJkSkRoWGE2Vy1SZ0xLYXZyc1pWVGNCNlpaVE8xd0t0V3lOaU15TlFOM25JMnhLa0d4R3ZlNE5ENUY2RlNhQUtjVGZFNXJwbVR1VkF4TUM2akIyc0JIZndGSQ?oc=5"
         }
       ],
-      "summary": "AI技術持續突破與應用擴散，加上先進半導體製程的強勁資本投入，使AI與半導體成為當前全球最炙手可熱的產業。",
-      "news_count": 22,
+      "summary": "AI作為核心驅動力，持續獲得巨額資金、人才和政策支持，並在各領域實現技術突破和應用擴展，是當前全球最熱門的產業。",
+      "news_count": 30,
       "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
+      "last_seen": "2026-06-18"
     },
     {
       "rank": 2,
-      "industry": "電動車與自動駕駛",
-      "heat_score": 85,
+      "industry": "高效能運算與記憶體",
+      "heat_score": 92,
       "signals": {
-        "funding": "SpaceX收購Cursor催生少年億萬富豪，顯示其在相關技術領域的投資與估值潛力。特斯拉FSD叩關台灣，訂閱價格曝光，顯示商業模式逐漸成熟，有望帶來穩定營收。",
-        "hiring": "隨著自動駕駛技術的發展，對AI工程師、軟體開發人員和數據科學家的需求持續增長。Waymo等公司在自動駕駛領域的進展也將帶動相關人才需求。",
-        "policy": "特斯拉FSD叩關台灣，顯示各地區政府對自動駕駛技術的開放態度和法規制定進程。然而，Waymo的無人駕駛計程車尚未普及，仍需克服法規、安全和基礎設施等挑戰。",
-        "technology": "特斯拉「全自動輔助駕駛」（FSD）叩關台灣，是技術成熟度提升的象徵。Waymo無方向盤、踏板的Robo Taxi揭示了自動駕駛技術的未來願景。這些進展表明自動駕駛技術在不斷演進，並逐步進入商業化階段。"
+        "funding": "蘋果證實記憶體短缺導致產品漲價，暗示記憶體需求強勁。國巨等被動元件廠商獲利爆發，外資調升目標價，顯示產業資金活絡。美光等HBM供應商受AI需求帶動，目標價被調升，吸引大量資金關注。",
+        "hiring": "記憶體與高效能運算相關產業對研發、製造人才需求旺盛，尤其是在HBM等新興技術領域。晶圓代工廠擴產也帶動相關設備與技術人才需求。",
+        "policy": "各國政府雖無直接針對記憶體漲價的政策，但對半導體供應鏈的國家安全重視，間接支持了本地半導體產業的發展。AI政策對高效能運算的需求，也間接推動記憶體產業發展。",
+        "technology": "HBM（高頻寬記憶體）因AI晶片需求而成為市場焦點，技術創新和產能擴張是關鍵。CPU領域也出現「CPU文藝復興」，AMD、Arm、Intel等公司目標價被調升，顯示處理器技術持續演進。先進封裝技術如群創的發展，也是推動高效能運算的關鍵技術之一。"
       },
       "leading_indicators": [
-        "特斯拉FSD在全球各地的推廣進度與訂閱用戶數",
-        "Waymo、Cruise等自動駕駛公司的商業化運營範圍與安全報告",
-        "各國政府對自動駕駛法規的進一步鬆綁與標準制定"
+        "HBM記憶體產能擴張速度",
+        "AI晶片出貨量與新世代產品規格",
+        "記憶體合約價格走勢"
       ],
       "us_stocks": [
         {
-          "name": "特斯拉",
-          "ticker": "TSLA"
+          "name": "美光",
+          "ticker": "MU"
         },
         {
-          "name": "Alphabet (Waymo母公司)",
-          "ticker": "GOOGL"
+          "name": "超微(AMD)",
+          "ticker": "AMD"
+        },
+        {
+          "name": "英特爾",
+          "ticker": "INTC"
         }
       ],
       "tw_stocks": [
         {
-          "name": "鴻海",
-          "ticker": "2317"
+          "name": "台積電",
+          "ticker": "2330"
         },
         {
-          "name": "台達電",
-          "ticker": "2308"
+          "name": "國巨",
+          "ticker": "2327"
+        },
+        {
+          "name": "群創",
+          "ticker": "3481"
         }
       ],
       "evidence_news": [
         {
-          "title": "特斯拉「全自動輔助駕駛」叩關台灣！FSD買斷方案要停售了 訂閱價格曝光",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMirANBVV95cUxOM3NSUnNoakNoUjZPSzNVOF9HUTZ0eE42RXNoRjBiczl1c1BXcmVSMHNKVmpGakwzRzhZNGlOdUV0SUt1V3lRSGl5QndEMGV3ZmpyOEtvbTNEOFN4QjhscG5PV3ZFbDhWVlpqYVFyRGtFWG1RRGRrU2dYRVVIalNic1dSVmdNZWhxU1Z6bHNZdENkb1RwOWhNS3FUcmhuem1LeHJHSEFFMzFGeFVhcnExTGxFaXphUXZiajF6OGg5bVYxMTczc21YbzlXTGpCcnBMZFlHSldEYTNLYWlGYU80QzZ4M0Fiby1BQVNNdjFGNHVkdjJQcE1QdlhScVlxLXBxOFFvaDdUNGlwR2twSzJ6Z0JCS1RlUmtlS2VDYU1Rb1Vud29JcDhJU3VIQV9iOWdGcmRMY2tNUmcxVV9vS3kzMGMtSDh0TEJ6dVIwUjRXY0RrQ1NvLXVVbFRLc3Y3ZTgxOWxTRFdia1VtZ2VHVzViNjI2UzE0ckNJdm5nUXFuTzdGZ3BJNGxtNlJsWmQwSENzdkNJQjVGbk1Yd0NTNzNud0VwMEk1cTNMcm1WYg?oc=5"
-        },
-        {
-          "title": "Why Waymo’s Driverless Taxis Won’t Be on Your Streets Anytime Soon",
-          "source": "The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQb3VKTkdUbFRobDVZYm1wZTNFS3dkMXo0U3VGM3pJLWQxMUVOZ2hWRlBiM05TaXM3TkFNeWF0UEM5U2FkT1RVeHVIV0tFbFp2X29LX3dEUldzdDNUdHhrY2JJNFNvU0gwV01RcDZPU0Nyalg3Q19pMHRpM1dkeWJSOUk5SVNkOWFEREE?oc=5"
-        },
-        {
-          "title": "SpaceX收購Cursor催生少年億萬富豪！4名MIT同窗25歲身價飆漲 傳統財富模式被改寫",
+          "title": "記憶體漲價荒誕現實 一個遊戲機硬碟抵三台完整主機",
           "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE04RThWaFBmTGkxQXI3QkJ3b1hNR0xTMjdLeFFsMWtwVE1rS1lMWVNoT0hUdkV4NkZma0J4ZWY5QlFIdy1oSE40TjFxNzZKQ1E?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE11eUg0WGJDdlJXNnF3Q21Hd1Z0MU9OQ2FZa3paRlZMYW9vU3VQT0hVSmU3SEFaR0VaWXh6VWFYX1loZmpiUkFnUmZBNUFHa2s?oc=5"
+        },
+        {
+          "title": "蘋果證實了！庫克曝「記憶體短缺」Apple產品將漲價…1現象已蠢蠢欲動",
+          "source": "udn科技玩家",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YTjdEaWM3UTM3RWg1SGZXdEMwNTR6TVQzcVNFNTJPNjlxSVNoOFd1bFNVbzNCdUVLaUxMZDRBRHhHLXJGcUFJVWt0MURYQ0ltWWc5ZGRQempsUdIBX0FVX3lxTFA2ZFZoRFVGY2tocE81RlQ5SDk3UnpOYm9tQk5ZY3VXMTdyX1lGanozcTZXQTdsN2JxYnYwMmh2ZGgwNGN4QUVqbXA4cGpYeWVwOUFtbUt6ajJqT1pPVDY0?oc=5"
+        },
+        {
+          "title": "美光還能追嗎？HBM榮景能撐多久 他曝記憶體3大隱憂",
+          "source": "壹蘋新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQVUpfTDVxWEZna2VJR0V5Y0lLc1N5ZjBfbDVqVmxhR0VWM3ZTRGpwaDFkYmxxUUNHWl9LTXRTT1Z4X1lDTWlmOVJSVU5IaExRNVRFaEtpTG1VZE9Zdmc0V2dUQU1tbGF6M19pMnRiXzFOV0xYTDV6eUpDd25fMU55ckZn?oc=5"
         }
       ],
-      "summary": "自動駕駛技術在商業化進程中不斷取得進展，特斯拉FSD叩關台灣，同時Waymo等公司也持續推進技術，顯示該領域的強勁動能。",
+      "summary": "AI浪潮驅動高效能運算需求爆發，尤其在HBM記憶體和先進製程領域，資金與技術動能強勁，連帶使相關零組件如被動元件受惠。",
       "news_count": 0
     },
     {
       "rank": 3,
-      "industry": "遊戲與沉浸式體驗 (XR/AR)",
-      "heat_score": 78,
+      "industry": "無人載具與防禦科技",
+      "heat_score": 88,
       "signals": {
-        "funding": "NetEase據報撤資《人中之龍》創作者的新遊戲，顯示遊戲產業的資金流向可能存在波動和風險。然而，Snap推出昂貴的AR眼鏡，顯示AR領域仍有資金投入，但市場反應不一。",
-        "hiring": "遊戲產業持續有新作推出，如《寶可夢冠軍》手機版和《決勝時刻》PS5移植版，預示對遊戲開發、美術設計、程式設計等人才的需求。AR/VR領域也將需要硬體工程師、軟體開發者等人才。",
-        "policy": "新聞未直接提及相關政策或法規動向，但隨著沉浸式體驗技術的發展，隱私、數據安全和內容審核等議題可能成為未來政策關注點。",
-        "technology": "AMD顯卡更新使遊戲載入速度大幅提升，改善了遊戲體驗。Google地圖的隱藏版「飛行模擬」和《寶可夢冠軍》手機版的推出，顯示遊戲內容和平台的不斷創新。Snap推出AR眼鏡，儘管價格昂貴，仍代表廠商對AR技術的持續投入。Xbox在遊戲產業的策略調整，也反映了市場競爭和技術演進帶來的挑戰與機遇。"
+        "funding": "台灣政院匡列2100億元籌獲攻擊型等無人機，顯示政府的大規模資本支出投入。美國空軍選擇General Atomics和Anduril開發CCA無人機僚機，代表國防領域的巨大投資。Waymo無人車每年行駛里程高於人類計程車，證明技術商業化潛力，吸引私人投資。",
+        "hiring": "國防科技公司如General Atomics和Anduril獲得重大合約，預計將帶動相關研發、工程和製造人才需求。自動駕駛公司Waymo的進展也意味著對AI、軟體工程師等人才的持續需求。",
+        "policy": "台灣政院通過無人載具採購特別條例，明確支持無人機產業發展。美參院外委會通過藍天法案，支持美台無人機合作，顯示政策層面的合作與推動。美國空軍的CCA計畫是國家戰略的一部分，旨在提升空中作戰能力。",
+        "technology": "無人機技術持續發展，從攻擊型無人機到協同作戰飛機（CCA）僚機。自動駕駛技術日益成熟，Waymo的無人車年行駛里程超越人類計程車，證明其在可靠性和效率上的進步。AI在無人載具中的應用是關鍵技術動能。"
       },
       "leading_indicators": [
-        "主要遊戲發行商（如Sony、Microsoft、Nintendo）的新作發布與銷售表現",
-        "AR/VR頭戴裝置的市場滲透率與消費者接受度",
-        "遊戲訂閱服務的用戶增長與內容豐富度"
+        "各國國防預算中無人載具採購比例",
+        "自動駕駛技術的商業化進程與法規鬆綁",
+        "無人機關鍵零組件(如晶片、感測器)供應鏈情況"
       ],
       "us_stocks": [
         {
-          "name": "微軟",
-          "ticker": "MSFT"
+          "name": "谷歌 (Waymo母公司)",
+          "ticker": "GOOGL"
         },
+        {
+          "name": "洛克希德馬丁",
+          "ticker": "LMT"
+        },
+        {
+          "name": "諾斯洛普格魯曼",
+          "ticker": "NOC"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "雷虎",
+          "ticker": "8033"
+        },
+        {
+          "name": "中科院相關概念股",
+          "ticker": "無"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "政院今通過無人載具採購特別條例 匡列2100億籌獲攻擊型等無人機",
+          "source": "自由時報",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE85MEZ0MVgyS1RrbTRiOWpjQlYxdmxNSkIxZlRlb0pic3g0SlUxbVdPc0lFYXBLOVN2cDQ3SV94cGt5aWtyRmFwS1ltMm55UFpqNTQ2NmxMcGhNdEVmWHpQWWpkV3NTQ3d4cmfSAW9BVV95cUxPdS1mZnBBUnRvRnZiUDRpZEpUNTV1NE9la3RqOXhSQ3c3dEpWelJPMjBfVFJPZXQ0MHdNaVp5TEdUSDhEQ3BBUEQzZGQwTGNJYkFwS2hXbDZYdkhUdzg2M3NWUHR5MnhTRW9rcWpVaVk?oc=5"
+        },
+        {
+          "title": "Waymo每輛無人車年平均行駛11萬公里 彭博：已高於一般人類計程車",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMingNBVV95cUxNRzJmdTJ4d0xfd29mSld4OFprOVEwYmNSLXpnclQwbXpneklmUF9lS09UMnlCTmRHZlJobnJQeDA4OExqVEJRLUI3ejhRRlU2aWpyYlptaUZjZWRXcEdRQzZZb0ROX2pXSmFSNmVQcFVDOHA5aWMxelZTcGszRWk1ZDRxOHR2dDdabG92R1BaZjRYaWxNZzN0UmZucHlMc2R3SlZCWS0yNFZVRVlMZ2Y0VHJLWTF2Wk8tR3NUNlVXVWVCX2FWaHYwWlZEM1BHYVA2aElWb1pMMlNNb1hvQ0w5UEhsV1JCX1d4QnpZV0pKd3ZOR3JWYjFZYkl2RGlzYzItQzlfVmhZTS12RjhsVlEtYU1BbEdsTVdfWFMyT3VYOGdkcWtCU1cyd2xLTTRKbXMyTVRJX3dONjltVG51NHppVmVYZzlBMTFCdGUyU0hiN0tvTU8yZVlJZkdTdXJnTTNib01lSzRJdTNaajVxTU5aMk5KYm5HR19lRnRmN1dVYjZMYlR2Vkh3ZHlwZ1U4VUpNYjdfNEdaTUtaYVJTTXc?oc=5"
+        },
+        {
+          "title": "Air Force picks General Atomics, Anduril to build first CCA drone wingmen",
+          "source": "Breaking Defense",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZGxsVVo2S0tjenhZS2UyMDVYZlhNVUFlN2NOWjhOWGw1SFdtV2JXQ1VkRFRUUDJON040MkpMeXZMbVE2eDFEaFA4WWtMYU9EZjhNZkppU3l2cUpncWRCTEJDek8wd2RkVWJCb1NmYVBwNUo5R0lpbGZjSTE5UjRMQlFCWU84Z3FadlcyTDZLWjFGYTVjMTYyUW9SeG5kLWc?oc=5"
+        }
+      ],
+      "summary": "在國防戰略和商業應用雙重驅動下，無人載具產業獲得政府巨額投資和政策支持，技術不斷成熟並走向實用化。",
+      "news_count": 0
+    },
+    {
+      "rank": 4,
+      "industry": "XR (延展實境) 與元宇宙內容",
+      "heat_score": 75,
+      "signals": {
+        "funding": "Snap推出昂貴的AR眼鏡，儘管股價下跌，但顯示市場仍在探索高階XR硬體。宏達電轉型AI與XR內容平台並成功轉盈，表明XR內容與服務領域的商業模式正在成熟，吸引資金投入。",
+        "hiring": "宏達電的成功轉型預示著XR內容開發、平台營運等相關職位需求增加。Snap等公司持續在AR硬體領域投入研發，也需要相關的軟硬體工程師。",
+        "policy": "目前沒有直接的政策或法規動向新聞，但XR作為次世代計算平台，長期將受各國數位經濟發展政策影響。",
+        "technology": "宏達電轉型AI與XR內容平台，顯示XR技術與AI的結合是未來趨勢。Snap持續推出AR眼鏡，推動AR硬體技術進步。Android 17和iPadOS 27等操作系統的更新，也為未來XR應用在行動裝置上的整合奠定基礎。"
+      },
+      "leading_indicators": [
+        "主要科技公司XR硬體發布與市場接受度",
+        "元宇宙平台用戶增長與內容豐富度",
+        "XR相關應用開發者生態系規模"
+      ],
+      "us_stocks": [
         {
           "name": "Meta Platforms",
           "ticker": "META"
+        },
+        {
+          "name": "蘋果",
+          "ticker": "AAPL"
         },
         {
           "name": "Snap",
@@ -154,33 +221,29 @@
         {
           "name": "宏達電",
           "ticker": "2498"
-        },
-        {
-          "name": "智冠",
-          "ticker": "5478"
         }
       ],
       "evidence_news": [
         {
+          "title": "王雪紅：宏達電已轉型AI與XR內容平台 成功轉盈重回獲利軌道",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9FUUNjdlB4cUdCWjFXMTBFTEd2Ny1uUUloM0FYc213anhxZWNvZllEU0wyMU1saUh5cDl4bzBSRkl3U2pnOUNZeTJGMHppLWs?oc=5"
+        },
+        {
           "title": "After unveiling ridiculously expensive AR glasses, Snap’s stock takes a dive",
           "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTWt3akJKVnp1c1FjLWlVT1ZaTGVIdU1kOXc5ODhQSmtCbVF5VE9oU041YWhYUXd4dm85SDRmWUdfSTBROVhCYkx2WGZnajExY0lLNmpnYUQ0N0ZuaEliamtqT3ltejNCSDUyM3VSMkFqcEhNQjFDX0hidEFoa1BlaTZvSkkzeHRRUk1aaUJaS0k1WVFGWGxicGRoTzFEZXVnbTAyaUc5RVlSY0FGTUE?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTWt3akJKVnp1c1FjLWlVT1ZaTGVIdU1kOXc5ODhQSmtCbVF5VE9oU041YWhYUXd4dm85SDRmWUdfSTBROVhCYkx2WGZnajExY0lLNmpnYUQ0N0ZuaEliamtqT3ltejNCSDUydXVSMkFqcEhNQjFDX0hidEFoa1BlaTZvSkkzeHRRUk1aaUJaS0k1WVFGWGxicGRoTzFEZXVnbTAyaUc5RVlSY0FGTUE?oc=5"
         },
         {
-          "title": "7年前舊顯卡也適用！AMD超神更新「遊戲載入快95%」1大作只花4秒就開好",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMirgNBVV95cUxOVEtVNGotNzVhUHQweTVNQTZYWWhTcG4wSzUyYllQakZmazB4eDQ3djllRERuSnhRMG1lVjVtbndyZnl4cDNSQXpTWkZhQ01FUU1TOE1vOFJNZU56aUs4endnVmU2VXV0dExHbThBV0xycXVvajNpdGR0QnpyQ0t5T2dZY09CWjN3WTJ2MnhaME1OUE9yanJCcUE1OFNDSzdVdmZ4ZW5SQkl3a2Z3YzNkUV9ianl5b1c3LXRyNEhJV3ZMd281bFJlY05Ob2dCQUNZVEtUX2ZtUDJFamY0UmZZQk80V0xUMFdhWTI3WEstU3YwYUZLMTlJQTRrRFh4M3VwdWJiR3RETm5tRG42aG1HWGsxdEVNMnFINjMzVlRjWkxnS1FVYWJ2SXkwTDB1dy14anIzTDAwMWhkbTlsSnZtQUR2Vmd6eEVtelg5MDJNVlNfVHBkcHBQajdaZzgyTVRQZlc1VF8yakVNS21BWEM0bWVBZFpjdm5uSVRVekxIcHFoY1ozbHdRbEVvNlJwbjZFYnlEUk9ZZnJ3a0ZxY09jcDF1T2w1VXYtZ1BxbXRB?oc=5"
-        },
-        {
-          "title": "《寶可夢冠軍》智慧型手機版今日推出和全世界的訓練家一起享受寶可夢對戰的樂趣《Pokémon Champions》",
-          "source": "GNN 新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBHZ0xpNDl1QXA0aG90NkFHNG5DTFRCOENKVFBLYzdLLTlMT3hKQVJ5dWJodTV6X1Ezd1J5SEhQQUJvcS1QaGxnUEItd3lOeHJReFVWMTQ2SXg?oc=5"
+          "title": "iPadOS 27 Hands-On: Everything New for iPad",
+          "source": "MacRumors",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1jQ3UxNWpyNlRiMmQwSFpWYkdpaDJYVTI1ZVFtOFh5UzZJRmtfdmFoNUh6UkFlSk1ZUUJOcnVMSE1ocUtkWm14enluU3prdDNjN2JjeVZ5NnVFRjNwNnUzcGh1ZnJydEk?oc=5"
         }
       ],
-      "summary": "遊戲產業不斷推出新作與平台創新，而AR/VR技術儘管面臨挑戰，仍有廠商持續投入，預示沉浸式體驗的長期潛力。",
-      "news_count": 18,
-      "first_seen": "2026-06-17",
-      "last_seen": "2026-06-17"
+      "summary": "儘管硬體市場挑戰仍在，XR產業在內容平台和與AI結合的應用上展現出成長潛力，尤其是宏達電的轉型成功提供正面訊號。",
+      "news_count": 1,
+      "first_seen": "2026-06-18",
+      "last_seen": "2026-06-18"
     }
   ]
 }
