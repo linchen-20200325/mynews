@@ -21,6 +21,8 @@ from __future__ import annotations
 import csv
 import io
 import json
+import math
+import statistics
 import sys
 import zipfile
 from datetime import datetime, timezone
@@ -220,12 +222,22 @@ def _summarize(rows: list[dict], sample_n: int = 8) -> dict:
     pings = [r["ping_wan"] for r in rows]
     if not pings:
         return {"count": 0, "avg_ping_wan": None, "median_ping_wan": None, "samples": []}
+    avg = round(sum(pings) / len(pings), 2)
+    med = _median(pings)
+    # §4.2 不變量:已過 [MIN,MAX] 濾網,均值/中位數必落在區間內(否則邏輯有 bug)。
+    # §4.3 第二法對帳:自製 avg/_median 與 stdlib 比對,偏離即 raise(Fail-Loud)。
+    if not (MIN_PING_WAN <= avg <= MAX_PING_WAN) or not (MIN_PING_WAN <= med <= MAX_PING_WAN):
+        raise AssertionError(f"房價統計越界:avg={avg}, median={med}(應在 "
+                             f"{MIN_PING_WAN}-{MAX_PING_WAN} 萬)")
+    if not math.isclose(avg, statistics.fmean(pings), abs_tol=0.01) \
+            or not math.isclose(med, statistics.median(pings), abs_tol=0.01):
+        raise AssertionError(f"房價統計對帳不符:avg={avg} vs fmean、median={med} vs stdlib")
     # 樣本取最近交易(交易年月日字串遞減即近似時間序)
     samples = sorted(rows, key=lambda r: r.get("date", ""), reverse=True)[:sample_n]
     return {
         "count": len(pings),
-        "avg_ping_wan": round(sum(pings) / len(pings), 2),
-        "median_ping_wan": _median(pings),
+        "avg_ping_wan": avg,
+        "median_ping_wan": med,
         "samples": samples,
     }
 

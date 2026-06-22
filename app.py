@@ -19,6 +19,7 @@ import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
 import etf_profile_fetcher  # ETF 圖鑑:抓基本資料(型態/配息/費用/策略)
 import freshness  # 資料新鮮度(staleness)判定 SSOT(§2.4)
 import github_store  # 一鍵把資料檔 commit 回 GitHub repo
+import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
 import housing_fetcher  # 房市觀察:抓房市新聞 + 實價登錄各縣市每坪房價
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
 import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
@@ -2249,7 +2250,7 @@ def render_house_price_yoy(history: dict) -> None:
             rows.append({
                 "縣市": county, "交通": housing_fetcher.transport_tag(county),
                 f"{y_prev}每坪": pv, f"{y_cur}每坪": cv,
-                "YoY%": round((cv - pv) / pv * 100, 1),
+                "YoY%": numutil.pct_change(cv, pv, 1),
             })
     if not rows:
         st.info(f"{kind_label} {y_prev}→{y_cur} 資料不足,無法計算年增率。")

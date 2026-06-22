@@ -19,6 +19,8 @@ import json
 import sys
 from datetime import date, datetime, timedelta, timezone
 
+import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
+
 MI_MARGN_URL = (
     "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN"
     "?date={d}&selectType=MS&response=json"
@@ -88,11 +90,11 @@ def _parse(payload: dict, date_str: str) -> dict | None:
                 if max(i_prev, i_today) >= len(row):
                     continue
                 prev_k, today_k = _to_int(row[i_prev]), _to_int(row[i_today])
-                if today_k == 0 and prev_k == 0:
+                if prev_k <= 0:  # 無有效前值 → 不計%(不以 0 充數),續找下一列
                     continue
                 today, prev = today_k * 1000, prev_k * 1000  # 仟元 → 元
                 chg = today - prev
-                pct = round(chg / prev * 100, 2) if prev else 0.0
+                pct = numutil.pct_change(today, prev)  # 含 prev>0 與方向對帳不變量
                 return {
                     "date": f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}",
                     "margin_today": today, "margin_prev": prev,

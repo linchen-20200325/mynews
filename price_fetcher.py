@@ -127,6 +127,11 @@ def fetch_prices(proxy: str | None = None, log=print) -> dict:
     if not prices:
         raise RuntimeError("上市與上櫃皆抓取失敗(檢查 PROXY_URL / 來源是否可達)")
 
+    # §4.2 不變量:收盤價必為正數(_to_float 已保證,此處對帳防未來改壞)。
+    bad = [c for c, v in prices.items() if not (isinstance(v, (int, float)) and v > 0)]
+    if bad:
+        raise AssertionError(f"出現非正收盤價(應已被濾除):{bad[:5]}…共 {len(bad)} 檔")
+
     return {
         "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%d (TWSE/TPEx via proxy)"),
         "prices": prices,

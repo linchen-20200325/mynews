@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import index_fetcher
 import housing_fetcher
+import numutil
 
 
 # ── 風險 ① 前收為 0 → 必須回 None,不可 ZeroDivisionError ──────────────────
@@ -65,6 +66,40 @@ def test_summarize_keeps_valid_and_unit_is_wan_per_ping():
     assert abs(ping - 100.0) < 0.05, f"量綱錯:每坪應≈100萬,實得 {ping}"  # 浮點容差
     summ = housing_fetcher._summarize(rows)
     assert summ["count"] == 1 and abs(summ["avg_ping_wan"] - 100.0) < 0.05
+
+
+# ── §4.2/§4.3 numutil.pct_change:不變量 + 方向對帳 ──────────────────────
+def test_pct_change_normal_and_rounding():
+    assert numutil.pct_change(110, 100) == 10.0
+    assert numutil.pct_change(95, 100) == -5.0
+    assert numutil.pct_change(100, 100) == 0.0
+
+
+def test_pct_change_rejects_nonpositive_prev():
+    for bad_prev in (0, -1, -0.001):
+        try:
+            numutil.pct_change(100, bad_prev)
+            assert False, f"prev={bad_prev} 應 raise"
+        except ValueError:
+            pass
+
+
+def test_pct_change_rejects_non_numeric():
+    try:
+        numutil.pct_change("100", 100)
+        assert False, "非數值應 raise"
+    except TypeError:
+        pass
+
+
+# ── §4.2 housing 統計越界/對帳不變量:正常資料必過、不誤殺 ──────────────
+def test_summarize_invariants_hold_on_valid():
+    rows = [{"ping_wan": p, "date": "1140101"} for p in (50.0, 60.0, 70.0, 80.0)]
+    summ = housing_fetcher._summarize(rows)  # 偶數筆 → 中位數走平均分支
+    assert summ["avg_ping_wan"] == 65.0
+    assert summ["median_ping_wan"] == 65.0  # (60+70)/2,與 stdlib 對帳一致
+    rows3 = [{"ping_wan": p, "date": "1140101"} for p in (50.0, 90.0, 70.0)]
+    assert housing_fetcher._summarize(rows3)["median_ping_wan"] == 70.0  # 奇數筆
 
 
 if __name__ == "__main__":

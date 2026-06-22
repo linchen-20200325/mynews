@@ -27,6 +27,7 @@ import json
 import sys
 from datetime import datetime, timezone
 
+import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
 
 GETQUOTELIST_URL = "https://mis.taifex.com.tw/futures/api/getQuoteList"
@@ -145,7 +146,7 @@ def fetch_night_quote(log=print) -> dict | None:
         return None
 
     row, last, ref = best
-    change_pct = round((last - ref) / ref * 100, 2)
+    change_pct = numutil.pct_change(last, ref)  # 含 prev>0 與方向對帳不變量
     contract = str(_first(row, _NAME_KEYS) or "台指期").strip()
     expiry = str(_first(row, _EXPIRY_KEYS) or "").strip()
     disp_name, session = _session_label()  # 依現在時段給誠實名稱(日盤即時/夜盤/收盤)

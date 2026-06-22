@@ -27,6 +27,8 @@ import json
 import sys
 from datetime import datetime, timezone
 
+import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
+
 YF_CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5d&interval=1d"
 
 HTTP_TIMEOUT = 20
@@ -136,7 +138,7 @@ def fetch_index_quotes(proxy: str | None = None, log=print) -> dict:
                 log(f"  [{sym}] 無有效報價,略過")
                 continue
             last, prev = parsed
-            change_pct = round((last - prev) / prev * 100, 2)
+            change_pct = numutil.pct_change(last, prev)  # 含 prev>0 與方向對帳不變量
             quotes[sym] = {
                 "name": item["name"],
                 "group": item["group"],
