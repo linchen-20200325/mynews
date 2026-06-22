@@ -27,9 +27,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import news_fetcher
+import paths  # 路徑 SSOT
 
-HOUSE_PRICES_PATH = Path("house_prices.json")
-HOUSE_PRICE_HISTORY_PATH = Path("house_price_history.json")
+HOUSE_PRICES_PATH = paths.HOUSE_PRICES
+HOUSE_PRICE_HISTORY_PATH = paths.HOUSE_PRICE_HISTORY
 
 # 1 坪 = 3.305785 平方公尺;每坪單價(元) = 單價元平方公尺 × PING_PER_SQM。
 PING_PER_SQM = 3.305785
@@ -169,7 +170,7 @@ def _is_residential(deal_target: str, building_type: str) -> bool:
     return any(t in building_type for t in RESIDENTIAL_TYPES)
 
 
-def parse_price_csv(csv_bytes: bytes, county: str) -> list[dict]:
+def parse_price_csv(csv_bytes: bytes, county: str, log=None) -> list[dict]:
     """解析單一縣市的買賣 CSV,回傳住宅逐筆 [{district,type,ping_wan,total_wan,date,address}]。
 
     實價登錄 CSV 第 1 列為中文表頭、第 2 列為英文表頭;英文列因單價非數字會自動被略過。
@@ -177,6 +178,7 @@ def parse_price_csv(csv_bytes: bytes, county: str) -> list[dict]:
     text = csv_bytes.decode("utf-8-sig", errors="replace")
     reader = csv.DictReader(io.StringIO(text))
     rows: list[dict] = []
+    outliers = 0  # 住宅但每坪超出合理區間(打錯/車位污染)— 計數而非沉默丟棄
     for r in reader:
         unit_sqm = _to_float(r.get("單價元平方公尺"))
         if unit_sqm is None:
@@ -187,6 +189,7 @@ def parse_price_csv(csv_bytes: bytes, county: str) -> list[dict]:
             continue
         ping_wan = unit_sqm * PING_PER_SQM / 10000.0  # 萬元/坪
         if not (MIN_PING_WAN <= ping_wan <= MAX_PING_WAN):
+            outliers += 1
             continue
         total = _to_float(r.get("總價元"))
         rows.append({
@@ -198,6 +201,8 @@ def parse_price_csv(csv_bytes: bytes, county: str) -> list[dict]:
             "address": (r.get("土地位置建物門牌")
                         or r.get("土地區段位置建物區段門牌") or "").strip(),
         })
+    if outliers and log:
+        log(f"  [{county}] {outliers} 筆每坪超出 {MIN_PING_WAN}-{MAX_PING_WAN} 萬合理區間,剔除")
     return rows
 
 
@@ -260,7 +265,7 @@ def _parse_zip_counties(zf: "zipfile.ZipFile", log) -> dict[str, dict[str, list]
             if fname not in names:
                 continue
             try:
-                entry[kind] = parse_price_csv(zf.read(fname), county)
+                entry[kind] = parse_price_csv(zf.read(fname), county, log)
             except Exception as exc:  # noqa: BLE001 — 單檔解析失敗不影響其他
                 log(f"    {county} {fname} 解析失敗:{exc}")
         if entry:

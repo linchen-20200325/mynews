@@ -35,6 +35,11 @@ ARCHIVE_FOCUS = Path("data/focus")
 LATEST_HOUSING = Path("latest_housing.json")
 ARCHIVE_HOUSING = Path("data/housing")
 
+# ── 市場數據快取(收盤價 / 實價登錄房價) ──
+STOCK_PRICES = Path("stock_prices.json")  # 台股每日收盤價(TWSE/TPEx)
+HOUSE_PRICES = Path("house_prices.json")  # 各縣市最新一季每坪均價
+HOUSE_PRICE_HISTORY = Path("house_price_history.json")  # 各縣市歷年每坪均價
+
 # ── ETF 相關設定檔(成分股 / 圖鑑基本資料 / 來源網址) ──
 ETF_HOLDINGS = Path("etf_holdings.json")
 ETF_PROFILES = Path("etf_profiles.json")

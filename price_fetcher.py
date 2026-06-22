@@ -17,7 +17,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-PRICES_PATH = Path("stock_prices.json")
+import paths  # 路徑 SSOT
+
+PRICES_PATH = paths.STOCK_PRICES
 
 TWSE_URL = "https://www.twse.com.tw/exchangeReport/STOCK_DAY_ALL"
 TPEX_URL = "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
@@ -52,9 +54,10 @@ def _to_float(value) -> float | None:
         return None
 
 
-def parse_twse(text: str) -> dict[str, float]:
+def parse_twse(text: str, log=None) -> dict[str, float]:
     """STOCK_DAY_ALL:回傳 {代號: 收盤價}。容許『欄位字典』或『data 陣列』兩種格式。"""
     prices: dict[str, float] = {}
+    dropped = 0  # 有代號卻無有效收盤價(停牌/無成交)— 計數而非沉默丟棄
     data = json.loads(text)
 
     rows = []
@@ -74,12 +77,17 @@ def parse_twse(text: str) -> dict[str, float]:
         f = _to_float(price)
         if code and f is not None:
             prices[code] = f
+        elif code:
+            dropped += 1
+    if dropped and log:
+        log(f"  [上市 TWSE] {dropped} 檔有代號但收盤價缺/無效,略過(停牌/無成交?)")
     return prices
 
 
-def parse_tpex(text: str) -> dict[str, float]:
+def parse_tpex(text: str, log=None) -> dict[str, float]:
     """櫃買 opendata:每筆含 SecuritiesCompanyCode 與 Close。"""
     prices: dict[str, float] = {}
+    dropped = 0
     for row in json.loads(text):
         if not isinstance(row, dict):
             continue
@@ -87,6 +95,10 @@ def parse_tpex(text: str) -> dict[str, float]:
         f = _to_float(row.get("Close") or row.get("收盤"))
         if code and f is not None:
             prices[code] = f
+        elif code:
+            dropped += 1
+    if dropped and log:
+        log(f"  [上櫃 TPEx] {dropped} 檔有代號但收盤價缺/無效,略過(停牌/無成交?)")
     return prices
 
 
@@ -106,7 +118,7 @@ def fetch_prices(proxy: str | None = None, log=print) -> dict:
         ("上櫃 TPEx", TPEX_URL, parse_tpex),
     ):
         try:
-            got = parser(_http_get(url, proxies))
+            got = parser(_http_get(url, proxies), log)
             prices.update(got)
             log(f"  [{label}] {len(got)} 檔收盤價")
         except Exception as exc:  # noqa: BLE001
