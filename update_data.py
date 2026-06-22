@@ -65,6 +65,7 @@ DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
 DEFAULT_GEMINI_FALLBACKS = "gemini-2.0-flash"
 DEFAULT_GEMINI_MAX_TOKENS = 16384  # 單次輸出 token 上限預設;可用 GEMINI_MAX_TOKENS 覆寫
 DEFAULT_NEWS_MAX = 25  # 單一主題抓新聞則數預設;可用 NEWS_MAX 覆寫
+OKU = 100_000_000  # 1 億(元)— 三大法人/融資金額顯示換算(取代散落的 1e8 魔術數字)
 
 # LINE Messaging API(LINE Notify 已於 2025 停用,改用 Messaging API push)
 LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
@@ -1138,7 +1139,9 @@ def _build_gemini_config(types, system_instruction: str, max_tokens: int | None 
             max_tokens = int(os.environ.get("GEMINI_MAX_TOKENS", str(DEFAULT_GEMINI_MAX_TOKENS)))
         kwargs["max_output_tokens"] = int(max_tokens)
     except (TypeError, ValueError):
-        pass
+        # GEMINI_MAX_TOKENS 設成非數字 → 不靜默,印警告後退回不設上限(由 SDK 預設)
+        print(f"  警告: GEMINI_MAX_TOKENS 非有效數字({max_tokens!r}),"
+              "本次不設 max_output_tokens", file=sys.stderr)
     # 關閉 2.5 系列的 thinking(thinking 會占用輸出 token,長 prompt 易導致空回應)
     try:
         kwargs["thinking_config"] = types.ThinkingConfig(thinking_budget=0)
@@ -1387,7 +1390,8 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
                 "name": night["name"], "group": night["group"],
                 "lead_type": night["lead_type"], "last": night["last"],
                 "prev": night["prev"], "change_pct": night["change_pct"],
-                "is_drop": night["change_pct"] <= quotes_doc.get("threshold", -1.5),
+                "is_drop": night["change_pct"]
+                <= quotes_doc.get("threshold", index_fetcher.DEFAULT_DROP_THRESHOLD),
             }
     except Exception as exc:  # noqa: BLE001 — 夜盤抓取失敗不得拖垮國際盤預警
         print(f"  警告: 台指期夜盤抓取失敗,略過:{exc}", file=sys.stderr)
@@ -1809,9 +1813,9 @@ def chip_flow_hint(chip: dict | None, fut: dict | None = None) -> str:
     text = ""
     if days:
         latest = days[0]
-        f, t, tot = (latest.get("foreign", 0) / 1e8,
-                     latest.get("trust", 0) / 1e8,
-                     latest.get("total", 0) / 1e8)
+        f, t, tot = (latest.get("foreign", 0) / OKU,
+                     latest.get("trust", 0) / OKU,
+                     latest.get("total", 0) / OKU)
         # 合計連續同向天數(由新到舊)
         streak = 0
         for d in days:
@@ -2035,46 +2039,71 @@ def detect_pressure_confluence(intl: dict | None, chip: dict | None,
     forces: list[dict] = []
     days = (chip or {}).get("days") or []
 
+    def _num(d: dict | None, key: str):
+        """取數值;缺鍵/非數字回 None(Fail-Loud:缺值不得當 0 拿去比較或計算)。"""
+        v = (d or {}).get(key)
+        return v if isinstance(v, (int, float)) else None
+
+    def _miss(tag: str) -> None:
+        print(f"  [共振] {tag}資料缺漏,略過此項判定(不以 0 充數)", flush=True)
+
     # F1 外資提款:現貨賣超 / 台指期偏空 / 台幣貶值,任一成立即點亮(賣股+空單+匯出)
     f1_reasons: list[str] = []
     if days:
-        f0 = days[0].get("foreign", 0) / 1e8
-        cons2 = (len(days) >= 2 and days[0].get("total", 0) < 0
-                 and days[1].get("total", 0) < 0)
-        if f0 <= -_env_float("FORCE_FOREIGN_SELL_YI", 150) or (f0 < 0 and cons2):
-            f1_reasons.append(f"現貨賣超{abs(f0):.0f}億" + ("、連2日站賣方" if cons2 else ""))
+        foreign0 = _num(days[0], "foreign")
+        total0 = _num(days[0], "total")
+        total1 = _num(days[1], "total") if len(days) >= 2 else None
+        if foreign0 is None:
+            _miss("外資現貨買賣超")
+        else:
+            f0 = foreign0 / OKU
+            cons2 = (total0 is not None and total1 is not None
+                     and total0 < 0 and total1 < 0)
+            if f0 <= -_env_float("FORCE_FOREIGN_SELL_YI", 150) or (f0 < 0 and cons2):
+                f1_reasons.append(f"現貨賣超{abs(f0):.0f}億"
+                                  + ("、連2日站賣方" if cons2 else ""))
     if fut_chip and fut_chip.get("stance") == "偏空":
-        net = abs(fut_chip.get("foreign_net_oi", 0))
-        f1_reasons.append("台指期偏空(淨空"
-                          + (f"{net / 1e4:.1f}萬口)" if net >= 10000 else f"{net:,}口)"))
-    twd_up = (quotes.get("TWD=X") or {}).get("change_pct", 0)
-    if twd_up >= _env_float("FORCE_TWD_DROP_PCT", 0.3):
+        net_oi = _num(fut_chip, "foreign_net_oi")
+        if net_oi is None:
+            _miss("台指期外資淨口數")
+        else:
+            net = abs(net_oi)
+            f1_reasons.append("台指期偏空(淨空"
+                              + (f"{net / 1e4:.1f}萬口)" if net >= 10000 else f"{net:,}口)"))
+    twd_up = _num(quotes.get("TWD=X") or {}, "change_pct")
+    if twd_up is not None and twd_up >= _env_float("FORCE_TWD_DROP_PCT", 0.3):
         f1_reasons.append(f"台幣貶{twd_up:.1f}%(外資匯出)")
     if f1_reasons:
         forces.append({"key": "外資提款", "detail": "、".join(f1_reasons)})
 
     # F4 散戶斷頭:融資餘額單日大減
     if margin:
-        pct = margin.get("margin_chg_pct", 0)
-        if pct <= -_env_float("FORCE_MARGIN_DROP_PCT", 1.5):
+        pct = _num(margin, "margin_chg_pct")
+        if pct is None:
+            _miss("融資增減%")
+        elif pct <= -_env_float("FORCE_MARGIN_DROP_PCT", 1.5):
             forces.append({"key": "散戶斷頭",
                            "detail": f"融資單日減{abs(pct):.1f}%(去槓桿/斷頭)"})
 
     # F3 Fed 收緊:10年期殖利率跳升,或美元走強
+    # bps 只在 last/prev 都有時才算(缺一律不充 0,避免噴出假 bps)。
     tnx, dxy = quotes.get("^TNX") or {}, quotes.get("DX-Y.NYB") or {}
-    bps = (tnx.get("last", 0) - tnx.get("prev", 0)) * 100 if tnx else 0
-    if bps >= _env_float("FORCE_YIELD_UP_BPS", 4):
+    tnx_last, tnx_prev = _num(tnx, "last"), _num(tnx, "prev")
+    dxy_chg = _num(dxy, "change_pct")
+    bps = (tnx_last - tnx_prev) * 100 if (tnx_last is not None and tnx_prev is not None) else None
+    if bps is not None and bps >= _env_float("FORCE_YIELD_UP_BPS", 4):
         forces.append({"key": "Fed收緊",
                        "detail": f"10年美債殖利率 +{bps:.0f}bps(資金收緊)"})
-    elif dxy.get("change_pct", 0) >= _env_float("FORCE_DXY_UP_PCT", 0.4):
+    elif dxy_chg is not None and dxy_chg >= _env_float("FORCE_DXY_UP_PCT", 0.4):
         forces.append({"key": "Fed收緊",
-                       "detail": f"美元指數 +{dxy['change_pct']:.1f}%(資金收緊)"})
+                       "detail": f"美元指數 +{dxy_chg:.1f}%(資金收緊)"})
 
     # F2 配息賣壓:除權息/ETF除息窗口(5 交易日內)且三大法人賣超
     exdiv = [e for e in (intl or {}).get("upcoming_events", [])
              if e.get("type") in ("除權息旺季", "ETF除息潮")
              and 0 <= e.get("trading_days_until", 99) <= 5]
-    if exdiv and days and days[0].get("total", 0) < 0:
+    total0_f2 = _num(days[0], "total") if days else None
+    if exdiv and total0_f2 is not None and total0_f2 < 0:
         forces.append({"key": "配息賣壓", "detail": f"{exdiv[0]['title']}+法人賣超"})
 
     return {"triggered": bool(us_drops) and len(forces) >= 2,
@@ -2365,7 +2394,7 @@ def main() -> int:
                     save_json(CHIP_ARCHIVE_DIR / f"{chip['days'][0]['date']}.json", chip)
                     latest = chip["days"][0]
                     print(f"  法人籌碼完成,最新 {latest['date']}:"
-                          f"外資 {latest['foreign']/1e8:+.0f}億、投信 {latest['trust']/1e8:+.0f}億。")
+                          f"外資 {latest['foreign']/OKU:+.0f}億、投信 {latest['trust']/OKU:+.0f}億。")
             except Exception as exc:  # noqa: BLE001 — 法人籌碼失敗不影響戰略報告
                 print(f"  警告: 法人籌碼抓取失敗:{exc}", file=sys.stderr)
             # 融資餘額(散戶斷頭訊號,共振偵測用);失敗不影響其他

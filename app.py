@@ -17,6 +17,7 @@ import etf_data  # ETF 資料單一真相源(快取共用層)
 import etf_fetcher  # 透過代理抓 MoneyDJ 成分股建庫
 import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
 import etf_profile_fetcher  # ETF 圖鑑:抓基本資料(型態/配息/費用/策略)
+import freshness  # 資料新鮮度(staleness)判定 SSOT(§2.4)
 import github_store  # 一鍵把資料檔 commit 回 GitHub repo
 import housing_fetcher  # 房市觀察:抓房市新聞 + 實價登錄各縣市每坪房價
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
@@ -24,6 +25,12 @@ import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
+
+# 報告新鮮度門檻(天):歸屬日落後超過此值,看板顯示過期警告。可用 STALE_REPORT_DAYS 覆寫。
+try:
+    STALE_REPORT_DAYS = int(os.environ.get("STALE_REPORT_DAYS", "2"))
+except ValueError:
+    STALE_REPORT_DAYS = 2
 
 # 路徑一律取自 paths.py(SSOT);此處只保留本檔慣用的別名,引用處不動。
 REPORT_PATH = paths.LATEST_REPORT
@@ -1190,10 +1197,10 @@ def render_chip(data: dict) -> None:
     for d in days:  # days 由新到舊
         rows.append({
             "日期": d.get("date", ""),
-            "外資": round(d.get("foreign", 0) / 1e8, 1),
-            "投信": round(d.get("trust", 0) / 1e8, 1),
-            "自營商": round(d.get("dealer", 0) / 1e8, 1),
-            "三大法人合計": round(d.get("total", 0) / 1e8, 1),
+            "外資": round(d.get("foreign", 0) / update_data.OKU, 1),
+            "投信": round(d.get("trust", 0) / update_data.OKU, 1),
+            "自營商": round(d.get("dealer", 0) / update_data.OKU, 1),
+            "三大法人合計": round(d.get("total", 0) / update_data.OKU, 1),
         })
     df = pd.DataFrame(rows)
 
@@ -1219,9 +1226,9 @@ def render_chip(data: dict) -> None:
     if margin:
         st.subheader("💳 融資餘額(散戶槓桿/斷頭訊號)")
         m1, m2 = st.columns(2)
-        m1.metric("融資餘額", f"{margin.get('margin_today', 0)/1e8:.0f} 億",
+        m1.metric("融資餘額", f"{margin.get('margin_today', 0)/update_data.OKU:.0f} 億",
                   delta=f"{margin.get('margin_chg_pct', 0):+.2f}%")
-        m2.metric("單日增減", f"{margin.get('margin_chg', 0)/1e8:+.0f} 億")
+        m2.metric("單日增減", f"{margin.get('margin_chg', 0)/update_data.OKU:+.0f} 億")
         st.caption(f"資料:{margin.get('date', '—')}(證交所 MI_MARGN,真實)。"
                    "融資大減=去槓桿/斷頭賣壓,為共振偵測四力之一。")
 
@@ -1622,6 +1629,10 @@ def render_stock_query(data: dict) -> None:
 # ---------------------------------------------------------------------------
 
 def render_report(report: dict) -> None:
+    # §2.4 新鮮度:報告歸屬日落後今日過久 → 顯式警告,不讓過期資料偽裝成最新。
+    note = freshness.stale_note(report.get("report_date"), STALE_REPORT_DAYS, "戰略報告")
+    if note:
+        st.warning(note)
     col1, col2, col3 = st.columns(3)
     col1.metric("報告日期", report.get("report_date", "—"))
     col2.metric("分析主題", report.get("topic", "—"))
@@ -2201,7 +2212,11 @@ def render_house_price_history_panel() -> None:
     st.caption(f"{sel}（{tag}）　單位:萬元/坪　資料:內政部實價登錄")
     try:
         import plotly.express as px
-        long = df.reset_index().melt("年份", var_name="市場", value_name="每坪(萬元)").dropna()
+        melted = df.reset_index().melt("年份", var_name="市場", value_name="每坪(萬元)")
+        long = melted.dropna()
+        dropped = len(melted) - len(long)
+        if dropped:  # 顯式揭露丟棄筆數,不靜默
+            st.caption(f"（{dropped} 個年份點無資料,折線略過未連接）")
         fig = px.line(long, x="年份", y="每坪(萬元)", color="市場", markers=True,
                       color_discrete_map={"成屋": "#1f77b4", "預售": "#d62728"})
         fig.update_layout(height=380, margin={"r": 0, "t": 10, "l": 0, "b": 0})
