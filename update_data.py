@@ -44,7 +44,6 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
@@ -54,6 +53,8 @@ import housing_fetcher
 import index_fetcher  # 國際盤預警:抓美股指數/美股期貨真實漲跌幅
 import margin_fetcher  # 融資餘額:散戶槓桿/斷頭訊號(共振偵測用)
 import news_fetcher
+import paths  # 檔案/目錄路徑的單一真相源(SSOT)
+import tz_utils  # 台灣時區時間的單一真相源(SSOT)
 
 # ---------------------------------------------------------------------------
 # 設定
@@ -62,6 +63,8 @@ import news_fetcher
 DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
 # 主模型過載(503)時改用的備援模型(逗號分隔);可用 GEMINI_MODEL_FALLBACK 覆寫。
 DEFAULT_GEMINI_FALLBACKS = "gemini-2.0-flash"
+DEFAULT_GEMINI_MAX_TOKENS = 16384  # 單次輸出 token 上限預設;可用 GEMINI_MAX_TOKENS 覆寫
+DEFAULT_NEWS_MAX = 25  # 單一主題抓新聞則數預設;可用 NEWS_MAX 覆寫
 
 # LINE Messaging API(LINE Notify 已於 2025 停用,改用 Messaging API push)
 LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
@@ -158,27 +161,28 @@ _SECTION_LABELS = {
     "SCIENCE": "Google 科學頭條",
 }
 
-OUTPUT_LATEST = Path("latest_report.json")
-ARCHIVE_DIR = Path("data/reports")
-OUTPUT_REPORTS_MULTI = Path("latest_reports.json")
-REPORTS_MULTI_ARCHIVE_DIR = Path("data/reports_multi")
-OUTPUT_TRENDS = Path("latest_trends.json")
-TRENDS_ARCHIVE_DIR = Path("data/trends")
-OUTPUT_STOCKS = Path("latest_stocks.json")
-STOCKS_ARCHIVE_DIR = Path("data/stocks")
-OUTPUT_US_STOCKS = Path("latest_us_stocks.json")
-US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
-OUTPUT_INTL_ALERT = Path("latest_intl_alert.json")
-INTL_ALERT_ARCHIVE_DIR = Path("data/intl_alert")
-OUTPUT_CHIP = Path("latest_chip.json")
-CHIP_ARCHIVE_DIR = Path("data/chip")
-CHIP_PUSHED_STATE = Path("data/chip_pushed.json")  # 法人事件 LINE 已推清單(防洗版)
-OUTPUT_MARGIN = Path("latest_margin.json")  # 融資餘額(散戶斷頭訊號)
-OUTPUT_FUT_CHIP = Path("latest_futures_chip.json")  # 三大法人台指期留倉(外資期貨偏多/偏空)
-OUTPUT_FOCUS = Path("latest_focus.json")
-FOCUS_ARCHIVE_DIR = Path("data/focus")
-OUTPUT_HOUSING = Path("latest_housing.json")
-HOUSING_ARCHIVE_DIR = Path("data/housing")
+# 路徑一律取自 paths.py(SSOT);此處只保留本檔慣用的別名,引用處不動。
+OUTPUT_LATEST = paths.LATEST_REPORT
+ARCHIVE_DIR = paths.ARCHIVE_REPORTS
+OUTPUT_REPORTS_MULTI = paths.LATEST_REPORTS_MULTI
+REPORTS_MULTI_ARCHIVE_DIR = paths.ARCHIVE_REPORTS_MULTI
+OUTPUT_TRENDS = paths.LATEST_TRENDS
+TRENDS_ARCHIVE_DIR = paths.ARCHIVE_TRENDS
+OUTPUT_STOCKS = paths.LATEST_STOCKS
+STOCKS_ARCHIVE_DIR = paths.ARCHIVE_STOCKS
+OUTPUT_US_STOCKS = paths.LATEST_US_STOCKS
+US_STOCKS_ARCHIVE_DIR = paths.ARCHIVE_US_STOCKS
+OUTPUT_INTL_ALERT = paths.LATEST_INTL_ALERT
+INTL_ALERT_ARCHIVE_DIR = paths.ARCHIVE_INTL_ALERT
+OUTPUT_CHIP = paths.LATEST_CHIP
+CHIP_ARCHIVE_DIR = paths.ARCHIVE_CHIP
+CHIP_PUSHED_STATE = paths.CHIP_PUSHED_STATE  # 法人事件 LINE 已推清單(防洗版)
+OUTPUT_MARGIN = paths.LATEST_MARGIN  # 融資餘額(散戶斷頭訊號)
+OUTPUT_FUT_CHIP = paths.LATEST_FUT_CHIP  # 三大法人台指期留倉(外資期貨偏多/偏空)
+OUTPUT_FOCUS = paths.LATEST_FOCUS
+FOCUS_ARCHIVE_DIR = paths.ARCHIVE_FOCUS
+OUTPUT_HOUSING = paths.LATEST_HOUSING
+HOUSING_ARCHIVE_DIR = paths.ARCHIVE_HOUSING
 
 # 全台 22 縣市(官方「臺」),房市分區標記只能用這些名稱
 TAIWAN_COUNTIES = list(housing_fetcher.CITY_CODES.values())
@@ -1131,7 +1135,7 @@ def _build_gemini_config(types, system_instruction: str, max_tokens: int | None 
     }
     try:
         if max_tokens is None:
-            max_tokens = int(os.environ.get("GEMINI_MAX_TOKENS", "16384"))
+            max_tokens = int(os.environ.get("GEMINI_MAX_TOKENS", str(DEFAULT_GEMINI_MAX_TOKENS)))
         kwargs["max_output_tokens"] = int(max_tokens)
     except (TypeError, ValueError):
         pass
@@ -1246,9 +1250,9 @@ def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
         raise RuntimeError("未設定 GEMINI_API_KEY")
 
     try:
-        base_budget = int(os.environ.get("GEMINI_MAX_TOKENS", "16384"))
+        base_budget = int(os.environ.get("GEMINI_MAX_TOKENS", str(DEFAULT_GEMINI_MAX_TOKENS)))
     except (TypeError, ValueError):
-        base_budget = 16384
+        base_budget = DEFAULT_GEMINI_MAX_TOKENS
     # 第一輪用預設上限;若解析失敗(疑似被截斷)再用更大上限重試一次。
     budgets = [base_budget]
     if base_budget < 65536:
@@ -1618,7 +1622,7 @@ def fetch_macro_news(topic: str, extra_query: str | None = None) -> list[dict]:
         en_queries=en_queries,
         zh_feeds=zh_feeds,
         en_feeds=en_feeds,
-        limit=int(os.environ.get("NEWS_MAX", "25")),
+        limit=int(os.environ.get("NEWS_MAX", str(DEFAULT_NEWS_MAX))),
         since_hours=int(os.environ.get("NEWS_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
     )
 
@@ -1630,7 +1634,7 @@ def fetch_trend_news() -> list[dict]:
     queries = parse_queries("TREND_QUERIES", DEFAULT_TREND_QUERIES)
     topics = parse_topics("TREND_TOPICS", DEFAULT_TREND_TOPICS)
     feeds = section_feeds(topics, lang, region)
-    limit = int(os.environ.get("NEWS_MAX", "25"))
+    limit = int(os.environ.get("NEWS_MAX", str(DEFAULT_NEWS_MAX)))
     since = int(os.environ.get("NEWS_SINCE_HOURS", str(SIX_MONTHS_HOURS)))
     tw_news = news_fetcher.fetch_news(
         queries, lang=lang, region=region, feeds=feeds, limit=limit, since_hours=since,
@@ -2218,7 +2222,7 @@ def main() -> int:
 
     # 以台灣時區(UTC+8,無日光節約)定義「今天」:排程在台灣清晨(UTC 前一日 21:30 起)
     # 觸發,用台灣日期才能讓報告日期與你早上看到的日期一致(不會慢一天)。
-    now_tw = datetime.now(timezone.utc) + timedelta(hours=8)
+    now_tw = tz_utils.taiwan_now()
     today = now_tw.strftime("%Y-%m-%d")
 
     if os.environ.get("GITHUB_EVENT_NAME") == "schedule":

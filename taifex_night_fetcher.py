@@ -25,7 +25,9 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
+
+import tz_utils  # 台灣時區時間的單一真相源(SSOT)
 
 GETQUOTELIST_URL = "https://mis.taifex.com.tw/futures/api/getQuoteList"
 # 大台「臺股期貨」月契約:KindID=1、CID=TXF;RowSize 取全部後由程式挑近月。
@@ -49,7 +51,7 @@ def _session_label() -> tuple[str, str]:
     台指期交易時段(台灣):一般(日盤)08:45–13:45、盤後(夜盤)15:00–次日 05:00。
     其餘為休市,最後一筆報價即前一時段收盤,故標「收盤」避免標籤誤導。
     """
-    mins = (datetime.now(timezone.utc) + timedelta(hours=8))
+    mins = tz_utils.taiwan_now()
     m = mins.hour * 60 + mins.minute
     if 8 * 60 + 45 <= m < 13 * 60 + 45:
         return "台指期(日盤即時)", "day"

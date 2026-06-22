@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import json
 import os
-from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -20,30 +19,33 @@ import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
 import etf_profile_fetcher  # ETF 圖鑑:抓基本資料(型態/配息/費用/策略)
 import github_store  # 一鍵把資料檔 commit 回 GitHub repo
 import housing_fetcher  # 房市觀察:抓房市新聞 + 實價登錄各縣市每坪房價
+import paths  # 檔案/目錄路徑的單一真相源(SSOT)
 import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
+import tz_utils  # 台灣時區時間的單一真相源(SSOT)
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
-REPORT_PATH = Path("latest_report.json")
-REPORTS_MULTI_PATH = Path("latest_reports.json")
-ARCHIVE_DIR = Path("data/reports")
-TRENDS_PATH = Path("latest_trends.json")
-TRENDS_ARCHIVE_DIR = Path("data/trends")
-STOCKS_PATH = Path("latest_stocks.json")
-STOCKS_ARCHIVE_DIR = Path("data/stocks")
-US_STOCKS_PATH = Path("latest_us_stocks.json")
-US_STOCKS_ARCHIVE_DIR = Path("data/us_stocks")
-INTL_ALERT_PATH = Path("latest_intl_alert.json")
-INTL_ALERT_ARCHIVE_DIR = Path("data/intl_alert")
-CHIP_PATH = Path("latest_chip.json")
-CHIP_ARCHIVE_DIR = Path("data/chip")
-MARGIN_PATH = Path("latest_margin.json")
-FUT_CHIP_PATH = Path("latest_futures_chip.json")  # 三大法人台指期留倉(外資期貨偏多/偏空)
-FOCUS_PATH = Path("latest_focus.json")
-FOCUS_ARCHIVE_DIR = Path("data/focus")
-HOUSING_PATH = Path("latest_housing.json")
-HOUSING_ARCHIVE_DIR = Path("data/housing")
-GEOJSON_PATH = Path("taiwan_counties.geo.json")
+# 路徑一律取自 paths.py(SSOT);此處只保留本檔慣用的別名,引用處不動。
+REPORT_PATH = paths.LATEST_REPORT
+REPORTS_MULTI_PATH = paths.LATEST_REPORTS_MULTI
+ARCHIVE_DIR = paths.ARCHIVE_REPORTS
+TRENDS_PATH = paths.LATEST_TRENDS
+TRENDS_ARCHIVE_DIR = paths.ARCHIVE_TRENDS
+STOCKS_PATH = paths.LATEST_STOCKS
+STOCKS_ARCHIVE_DIR = paths.ARCHIVE_STOCKS
+US_STOCKS_PATH = paths.LATEST_US_STOCKS
+US_STOCKS_ARCHIVE_DIR = paths.ARCHIVE_US_STOCKS
+INTL_ALERT_PATH = paths.LATEST_INTL_ALERT
+INTL_ALERT_ARCHIVE_DIR = paths.ARCHIVE_INTL_ALERT
+CHIP_PATH = paths.LATEST_CHIP
+CHIP_ARCHIVE_DIR = paths.ARCHIVE_CHIP
+MARGIN_PATH = paths.LATEST_MARGIN
+FUT_CHIP_PATH = paths.LATEST_FUT_CHIP  # 三大法人台指期留倉(外資期貨偏多/偏空)
+FOCUS_PATH = paths.LATEST_FOCUS
+FOCUS_ARCHIVE_DIR = paths.ARCHIVE_FOCUS
+HOUSING_PATH = paths.LATEST_HOUSING
+HOUSING_ARCHIVE_DIR = paths.ARCHIVE_HOUSING
+GEOJSON_PATH = paths.GEOJSON
 
 SENTIMENT_STYLE = {
     "利多": ("🟢", "success"),
@@ -542,7 +544,7 @@ def render_etf_profiles() -> None:
         st.divider()
         st.markdown("**💾 存檔 ETF 圖鑑資料庫**")
         live_p = st.session_state.get("etf_profiles_live")
-        profiles_data = live_p or etf_profile_fetcher.load_profiles() or {}
+        profiles_data = live_p or etf_data.get_profiles() or {}
         n_p = len(profiles_data.get("profiles", {}))
         st.caption(
             f"將存入本回合抓到的最新資料({n_p} 檔)。" if live_p
@@ -708,7 +710,7 @@ def generate_live_report() -> None:
     """第二步:對『已抓到的新聞』請 Gemini 做四維度分析 + 白話文。"""
     news = st.session_state.get("live_news", [])
     topic = get_topic()
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = tz_utils.taiwan_today()
     analysis = update_data.get_macro_analysis(news, topic, today)
     st.session_state["live_report"] = {
         "report_date": today,
@@ -741,7 +743,7 @@ def render_trend_live_panel() -> None:
 def generate_live_trends() -> None:
     """趨勢雷達第二步:對『已抓到的產業新聞』請 Gemini 排名打分。"""
     news = st.session_state.get("live_trend_news", [])
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = tz_utils.taiwan_today()
     st.session_state["live_trends"] = update_data.get_trend_radar(news, today)
     st.session_state.pop("live_trend_news", None)
 
@@ -767,7 +769,7 @@ def render_stock_live_panel() -> None:
 def generate_live_stocks() -> None:
     """台股觀察第二步:對『已抓到的財經新聞』請 Gemini 整理台股標的。"""
     news = st.session_state.get("live_stock_news", [])
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = tz_utils.taiwan_today()
     st.session_state["live_stocks"] = update_data.get_stock_picks(news, today)
     st.session_state.pop("live_stock_news", None)
 
@@ -890,7 +892,7 @@ def render_us_stock_live_panel() -> None:
 def generate_live_us_stocks() -> None:
     """美股觀察第二步:對『已抓到的財經新聞』請 Gemini 整理美股標的。"""
     news = st.session_state.get("live_us_stock_news", [])
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = tz_utils.taiwan_today()
     st.session_state["live_us_stocks"] = update_data.get_us_stock_picks(news, today)
     st.session_state.pop("live_us_stock_news", None)
 
@@ -1015,7 +1017,7 @@ def render_intl_alert_live_panel() -> None:
 def generate_live_intl_alert() -> None:
     """國際盤預警第二步:用『已抓報價』+ 新聞,請 Gemini 解讀利空與台股影響。"""
     quotes = st.session_state.get("live_intl_quotes")
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = tz_utils.taiwan_today()
     st.session_state["live_intl_alert"] = update_data.build_intl_alert(today, quotes=quotes)
     st.session_state.pop("live_intl_quotes", None)
 
@@ -1286,7 +1288,7 @@ def generate_live_focus() -> None:
     tr = st.session_state.get("live_focus_translation", {})
     news = st.session_state.get("live_focus_news", [])
     term = st.session_state.get("live_focus_term", tr.get("query_zh", ""))
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = tz_utils.taiwan_today()
     st.session_state["live_focus"] = update_data.get_focus_analysis(
         term, tr.get("query_en", ""), news, today
     )
@@ -1441,7 +1443,7 @@ def generate_live_stock_query() -> None:
     tr = st.session_state.get("live_stockq_translation", {})
     news = st.session_state.get("live_stockq_news", [])
     term = st.session_state.get("live_stockq_term", tr.get("query_zh", ""))
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = tz_utils.taiwan_today()
     st.session_state["live_stockq"] = update_data.get_stock_query_analysis(
         tr.get("query_zh", term), tr.get("query_en", ""),
         tr.get("ticker", ""), tr.get("market", ""), news, today,
@@ -2093,7 +2095,7 @@ def generate_live_housing() -> None:
     news = st.session_state.get("live_housing_news", [])
     prices = st.session_state.get("house_prices_live") or housing_fetcher.load_house_prices()
     history = st.session_state.get("house_history_live") or housing_fetcher.load_house_price_history()
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = tz_utils.taiwan_today()
     data = update_data.get_housing_analysis(news, prices, today, history)
     data["raw_news"] = news
     st.session_state["live_housing"] = data

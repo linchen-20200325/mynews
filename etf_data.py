@@ -15,15 +15,14 @@
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import streamlit as st
 
 import etf_holdings
 import etf_profile_fetcher
+import paths  # 路徑 SSOT
 
-# 與 app.py 既有常數一致:成分股設定檔路徑(專案根目錄)
-HOLDINGS_PATH = Path("etf_holdings.json")
+# 成分股設定檔路徑取自 paths.py(SSOT),全專案唯一定義
+HOLDINGS_PATH = paths.ETF_HOLDINGS
 
 _CACHE_TTL = 3600  # 秒:資料變動不頻繁,一小時重抓一次即可
 

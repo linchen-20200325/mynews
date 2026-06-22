@@ -26,8 +26,10 @@ from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 
-SOURCES_PATH = Path("etf_sources.json")
-HOLDINGS_PATH = Path("etf_holdings.json")
+import paths  # 路徑 SSOT
+
+SOURCES_PATH = paths.ETF_SOURCES
+HOLDINGS_PATH = paths.ETF_HOLDINGS
 
 HTTP_TIMEOUT = 30
 REQUEST_GAP_SEC = 0.6  # 每檔之間的禮貌性間隔

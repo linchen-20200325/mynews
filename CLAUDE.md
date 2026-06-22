@@ -9,6 +9,7 @@
 - **大檔案防截斷**：讀取超過 500 行的檔案，強制使用 `offset` 與 `limit` 分段讀取；搜尋結果超過 2000 bytes 時，必須用 `grep` 進行二次精確驗證。
 - **動工前大掃除**：重構前優先清理 Dead code 與 Unused imports，極大化釋放 Token 空間。
 - **局部編輯**：閉嘴寫扣 (No-Yapping)。嚴禁整檔覆蓋，僅針對特定函數或行數進行精準替換。
+- **單一真相源 (SSOT)**：同一個事實（檔案路徑、常數、時區/日期邏輯、資料載入）**只准定義一次**。路徑走 `paths.py`、台灣時間走 `tz_utils.py`、ETF 資料走 `etf_data.py`；嚴禁在多檔重複貼字面值或邏輯。新增程式前先檢索既有 SSOT 入口，有就沿用、沒有才建立。刻意的例外（如 `scripts/nas_trigger.py` 在 NAS 單檔執行需零相依）必須就地註明理由。
 
 ## §3 規劃與多線程 (Plan & Parallel Execute)
 - **嚴格三步法**：Explore Agent（唯讀探索環境） -> 提出 Plan（3 句話藍圖）與我確認 -> 獲准後才 Execute（動手改 code）。

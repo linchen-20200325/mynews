@@ -72,6 +72,8 @@ def _headers(token: str) -> dict:
     }
 
 
+# 註:本檔在 NAS 上單檔執行、刻意零專案相依(只用 stdlib),故不共用 tz_utils,
+#     UTC+8 邏輯在此自帶——這是經評估的 SSOT 例外,非疏漏。
 def _today_tw() -> str:
     """台灣(UTC+8)今日 YYYY-MM-DD;報告日期亦以台灣時區計,兩邊一致。"""
     return (datetime.now(timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d")

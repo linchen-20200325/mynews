@@ -16,7 +16,9 @@ import json
 from datetime import date, timedelta
 from pathlib import Path
 
-ETF_PROFILES_PATH = Path("etf_profiles.json")
+import paths  # 路徑 SSOT
+
+ETF_PROFILES_PATH = paths.ETF_PROFILES
 
 # 季底作帳月份;MSCI 季度生效月份。
 _QUARTER_END_MONTHS = {3, 6, 9, 12}

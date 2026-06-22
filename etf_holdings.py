@@ -9,7 +9,9 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-DEFAULT_PATH = Path("etf_holdings.json")
+import paths  # 路徑 SSOT
+
+DEFAULT_PATH = paths.ETF_HOLDINGS
 
 
 def load_holdings(path: Path = DEFAULT_PATH) -> dict | None:
