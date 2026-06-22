@@ -32,6 +32,11 @@ try:
     STALE_REPORT_DAYS = int(os.environ.get("STALE_REPORT_DAYS", "2"))
 except ValueError:
     STALE_REPORT_DAYS = 2
+# 股價新鮮度門檻(天):stock_prices.json 抓取日落後超過此值,價位篩選顯示過期警告。可用 PRICE_STALE_DAYS 覆寫。
+try:
+    PRICE_STALE_DAYS = int(os.environ.get("PRICE_STALE_DAYS", "5"))
+except ValueError:
+    PRICE_STALE_DAYS = 5
 
 # 路徑一律取自 paths.py(SSOT);此處只保留本檔慣用的別名,引用處不動。
 REPORT_PATH = paths.LATEST_REPORT
@@ -1823,6 +1828,10 @@ def render_etf_lookup(data: dict | None = None) -> None:
         f"資料版本:{data.get('as_of', '—')}"
         + (f"　|　股價:{price_data.get('as_of', '—')}" if prices else "")
     )
+    if prices:  # §2.4 股價過期警示:抓取日落後過久 → 價位篩選恐用舊價,顯式提醒不阻斷
+        pnote = freshness.stale_note(price_data.get("as_of"), PRICE_STALE_DAYS, "股價")
+        if pnote:
+            st.warning(pnote + "　價位範圍篩選結果僅供參考,請重新抓取最新收盤價。")
     if data.get("note"):
         st.info("⚠️ " + data["note"])
 

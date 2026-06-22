@@ -5,9 +5,13 @@
 """
 from __future__ import annotations
 
-import index_fetcher
+from datetime import timedelta
+
+import freshness
 import housing_fetcher
+import index_fetcher
 import numutil
+import tz_utils
 
 
 # ── 風險 ① 前收為 0 → 必須回 None,不可 ZeroDivisionError ──────────────────
@@ -100,6 +104,30 @@ def test_summarize_invariants_hold_on_valid():
     assert summ["median_ping_wan"] == 65.0  # (60+70)/2,與 stdlib 對帳一致
     rows3 = [{"ping_wan": p, "date": "1140101"} for p in (50.0, 90.0, 70.0)]
     assert housing_fetcher._summarize(rows3)["median_ping_wan"] == 70.0  # 奇數筆
+
+
+# ── §2.4 freshness.ensure_fresh:過期守門(過期 raise、新鮮回天數、無法解析回 None)──
+def _ago(days: int) -> str:
+    d = tz_utils.taiwan_now().date() - timedelta(days=days)
+    return d.strftime("%Y-%m-%d (test)")
+
+
+def test_ensure_fresh_passes_recent():
+    assert freshness.ensure_fresh(_ago(1), 5, "x") == 1  # 落後1天≤門檻5 → 回天數不 raise
+
+
+def test_ensure_fresh_raises_when_stale():
+    try:
+        freshness.ensure_fresh(_ago(10), 5, "x")
+        assert False, "落後10天>門檻5 應 raise StaleDataError"
+    except freshness.StaleDataError:
+        pass
+
+
+def test_ensure_fresh_unparseable_returns_none():
+    # 無法解析 as_of → 回 None 不 raise(格式意外不誤殺章節,§5)
+    assert freshness.ensure_fresh(None, 5, "x") is None
+    assert freshness.ensure_fresh("無日期字串", 5, "x") is None
 
 
 if __name__ == "__main__":

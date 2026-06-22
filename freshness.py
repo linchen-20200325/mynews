@@ -45,3 +45,21 @@ def stale_note(as_of: str | None, max_days: int, label: str = "資料") -> str |
     if n is None or n <= max_days:
         return None
     return f"⚠️ {label}可能過期:歸屬日落後今日 {n} 天(as_of={as_of})"
+
+
+class StaleDataError(RuntimeError):
+    """資料歸屬日落後超過容忍門檻(過期)。排程呼叫端的 try/except 接住→略過該章節,不拖垮主報告。"""
+
+
+def ensure_fresh(as_of: str | None, max_days: int, label: str = "資料") -> int | None:
+    """排程守門:過期(落後 > max_days)即 raise StaleDataError;新鮮回落後天數。
+
+    無法解析 as_of 回 None 且不 raise — 日期格式由本專案 fetcher 控制且穩定,
+    不因格式意外而誤殺整個章節(§5 副章節失敗不可拖垮主報告);資料本身可能仍可用。
+    """
+    n = staleness_days(as_of)
+    if n is not None and n > max_days:
+        raise StaleDataError(
+            f"{label}過期:歸屬日落後今日 {n} 天(門檻 {max_days} 天,as_of={as_of})"
+        )
+    return n

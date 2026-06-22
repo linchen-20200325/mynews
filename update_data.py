@@ -48,6 +48,7 @@ from pathlib import Path
 
 import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
 import chip_fetcher  # 法人籌碼:抓證交所三大法人買賣超(事後驗證,真實數字)
+import freshness  # 資料新鮮度(staleness)守門的單一真相源(SSOT,§2.4)
 import futures_chip_fetcher  # 法人籌碼:抓期交所三大法人台指期留倉(外資期貨偏多/偏空)
 import housing_fetcher
 import index_fetcher  # 國際盤預警:抓美股指數/美股期貨真實漲跌幅
@@ -66,6 +67,19 @@ DEFAULT_GEMINI_FALLBACKS = "gemini-2.0-flash"
 DEFAULT_GEMINI_MAX_TOKENS = 16384  # 單次輸出 token 上限預設;可用 GEMINI_MAX_TOKENS 覆寫
 DEFAULT_NEWS_MAX = 25  # 單一主題抓新聞則數預設;可用 NEWS_MAX 覆寫
 OKU = 100_000_000  # 1 億(元)— 三大法人/融資金額顯示換算(取代散落的 1e8 魔術數字)
+
+
+def _env_int(name: str, default: int) -> int:
+    try:
+        return int(os.environ.get(name) or default)
+    except (TypeError, ValueError):
+        return default
+
+
+# 資料新鮮度門檻(§2.4)— 過期→該章節 raise 被既有 try/except 接住→略過,不拖垮主報告。
+# 天數依官方發布頻率設定,可用環境變數覆寫(門檻屬領域決策,具名常數帶入而非寫死於 freshness)。
+CHIP_STALE_DAYS = _env_int("CHIP_STALE_DAYS", 5)     # 籌碼(三大法人/融資/台指期留倉)走證交所每日
+HOUSE_STALE_DAYS = _env_int("HOUSE_STALE_DAYS", 40)  # 房價走內政部實價登錄,每約 10 天一批
 
 # LINE Messaging API(LINE Notify 已於 2025 停用,改用 Messaging API push)
 LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
@@ -2387,27 +2401,35 @@ def main() -> int:
         if chip_enabled():
             print("[6/8] 抓證交所三大法人買賣超(近 N 日,事後驗證真實籌碼)...")
             try:
-                chip = chip_fetcher.fetch_chip_flow(
+                fetched = chip_fetcher.fetch_chip_flow(
                     days=int(os.environ.get("CHIP_DAYS") or "10"), log=print)
+                # §2.4 過期守門:歸屬日落後過久→raise→留 chip=None→共振自動略過此力量,不存舊檔當今日
+                latest_date = fetched["days"][0]["date"] if fetched.get("days") else None
+                freshness.ensure_fresh(latest_date, CHIP_STALE_DAYS, "三大法人籌碼")
+                chip = fetched
                 save_json(OUTPUT_CHIP, chip)
                 if chip.get("days"):
                     save_json(CHIP_ARCHIVE_DIR / f"{chip['days'][0]['date']}.json", chip)
                     latest = chip["days"][0]
                     print(f"  法人籌碼完成,最新 {latest['date']}:"
                           f"外資 {latest['foreign']/OKU:+.0f}億、投信 {latest['trust']/OKU:+.0f}億。")
-            except Exception as exc:  # noqa: BLE001 — 法人籌碼失敗不影響戰略報告
+            except Exception as exc:  # noqa: BLE001 — 法人籌碼失敗/過期不影響戰略報告
                 print(f"  警告: 法人籌碼抓取失敗:{exc}", file=sys.stderr)
-            # 融資餘額(散戶斷頭訊號,共振偵測用);失敗不影響其他
+            # 融資餘額(散戶斷頭訊號,共振偵測用);失敗/過期不影響其他
             try:
-                margin = margin_fetcher.fetch_margin(log=print)
-                if margin:
+                fetched = margin_fetcher.fetch_margin(log=print)
+                if fetched:
+                    freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "融資餘額")
+                    margin = fetched
                     save_json(OUTPUT_MARGIN, margin)
             except Exception as exc:  # noqa: BLE001
                 print(f"  警告: 融資餘額抓取失敗:{exc}", file=sys.stderr)
-            # 三大法人台指期留倉(外資期貨偏多/偏空,前一交易日盤後);失敗不影響其他
+            # 三大法人台指期留倉(外資期貨偏多/偏空,前一交易日盤後);失敗/過期不影響其他
             try:
-                fut_chip = futures_chip_fetcher.fetch_futures_chip(log=print)
-                if fut_chip:
+                fetched = futures_chip_fetcher.fetch_futures_chip(log=print)
+                if fetched:
+                    freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "台指期留倉")
+                    fut_chip = fetched
                     save_json(OUTPUT_FUT_CHIP, fut_chip)
                     print(f"  台指期留倉完成,外資{fut_chip['stance']}"
                           f"(淨{fut_chip['foreign_net_oi']:+,}口)。")
@@ -2448,6 +2470,11 @@ def main() -> int:
                 housing_news = fetch_housing_news()
                 print(f"  抓到 {len(housing_news)} 則房市新聞。")
                 prices = housing_fetcher.load_house_prices()
+                # §2.4 外科式守門:房價快取過期→只丟掉價格數字、保留新鮮的房市新聞判讀(§5)
+                note = freshness.stale_note(prices.get("as_of"), HOUSE_STALE_DAYS, "實價登錄房價")
+                if note:
+                    print(f"  {note} → 本次判讀不採用過期房價數字(僅依新聞)", file=sys.stderr)
+                    prices = {}
                 history = housing_fetcher.load_house_price_history()
                 housing = get_housing_analysis(housing_news, prices, today, history)
                 housing["raw_news"] = housing_news
