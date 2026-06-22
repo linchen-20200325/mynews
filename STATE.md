@@ -43,5 +43,6 @@
 6. 所有產出為 AI/工具自動生成,僅供參考,非投資建議。
 
 ## 待辦 ⏳
-- [ ] 全市場化:看板匯入全台 ETF 清單後重抓成分股 + 圖鑑並自動存檔。
-- [ ] (選)repo Secrets 設 `PROXY_URL` 讓每月排程自動抓 ETF/股價/房價(NAS 需放行 Actions IP)。
+- [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
+- [ ] (選,**唯一剩餘阻塞、屬你的帳號操作**)repo Secrets 設 `PROXY_URL`:設妥後上面全市場化與每月排程自動抓 ETF/股價/房價即可自動跑(NAS 需放行 Actions IP)。
+- 註:§5 向量化已實查結案 — 全庫零 `numpy`/`.iterrows()`,既有 pandas(melt/dropna/line_chart)皆已向量化,其餘為小型巢狀 dict 迴圈(縣市×市場×年),改 pandas 反增風險無效益,**刻意保留**。
