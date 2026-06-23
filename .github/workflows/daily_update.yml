@@ -55,6 +55,10 @@ jobs:
           #   多個 ID 逗號分隔=群播名單(≤500);單一 ID=push(可填群組 Cxxx ID,整群可見)
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
           LINE_TO: ${{ secrets.LINE_TO }}
+          # 個股盯盤(第二個 bot):自選 watchlist 消息面 + 月營收,推給指定對象。
+          # 兩者皆設才啟用;未設則 update_data.py 靜默略過此段(見 watch_enabled())。
+          LINE_WATCH_TOKEN: ${{ secrets.LINE_WATCH_TOKEN }}
+          LINE_WATCH_TO: ${{ secrets.LINE_WATCH_TO }}
           # 可選:覆寫 Gemini 模型 / 分析主題 / 抓新聞關鍵字 / 關閉趨勢雷達(設 0)
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           # 單次輸出 token 上限(未設用程式預設 16384);台股精選等長 JSON 被截斷時調高它
@@ -100,7 +104,8 @@ jobs:
                    latest_us_stocks.json data/us_stocks/ latest_intl_alert.json data/intl_alert/ \
                    latest_chip.json data/chip/ data/chip_pushed.json latest_margin.json \
                    latest_futures_chip.json \
-                   latest_focus.json data/focus/ latest_housing.json data/housing/; do
+                   latest_focus.json data/focus/ latest_housing.json data/housing/ \
+                   data/watch_revenue_pushed.json; do
             [ -e "$p" ] && git add "$p"
           done
           # 若無變化就不 commit,避免 workflow 報錯

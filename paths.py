@@ -45,5 +45,9 @@ ETF_HOLDINGS = Path("etf_holdings.json")
 ETF_PROFILES = Path("etf_profiles.json")
 ETF_SOURCES = Path("etf_sources.json")
 
+# ── 個股盯盤(第二個 LINE bot:自選 watchlist + 月營收已推 dedup)──
+WATCHLIST = Path("watchlist.json")  # 自選台股/ETF 盯盤清單(NAS LINE bot 編輯,排程讀)
+WATCH_REVENUE_PUSHED = Path("data/watch_revenue_pushed.json")  # 已推月營收 id(防重複推播)
+
 # ── 其他 ──
 GEOJSON = Path("taiwan_counties.geo.json")  # 全台縣市界(房市地圖)

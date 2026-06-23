@@ -7,6 +7,9 @@
 - Python 3.11;`streamlit` / `google-genai`(官方 SDK)/ `pandas` / `requests` + stdlib(RSS)。見 `requirements.txt`。
 - 部署:Streamlit Cloud(看板)+ GitHub Actions(排程)。
 
+## 個股盯盤(第二個 LINE bot)
+自選台股/ETF 每早推「消息面 AI 總結 + 新月營收」給指定對象。清單 `watchlist.json` 由 `scripts/nas_line_bot.py`(NAS 常駐 webhook,接「加/刪/清單」指令經 GitHub API 寫回 repo)維護;排程端 `update_data.py` 的 `run_watch_section()` 讀清單→逐檔抓真實新聞(`news_fetcher`)+ Gemini 一次總結 + `earnings_fetcher` 抓 TWSE OpenAPI 月營收(真實財報訊號,`watch_revenue_pushed.json` dedup 只推新公告)→ 第二個 bot(`LINE_WATCH_TOKEN`/`LINE_WATCH_TO`)push。未設第二 bot → `watch_enabled()` 為偽,整段靜默略過。
+
 ## 看板章節(`app.py`)
 戰略報告 / 趨勢雷達 / 台股觀察 / 美股觀察 / 國際盤預警 / 全球人物追蹤 / 房市觀察 / 個股健診 / ETF工作台(持股反查 + 圖鑑,`st.tabs` 共用 `etf_data` 快取)。
 前五章節:雙語抓新聞(zh/TW + en/US)、回溯約 6 個月、標的標示 首見/最近/提及次數。
@@ -19,6 +22,7 @@
 - `etf_data.py`:ETF 成分股/反查/圖鑑的快取(`@st.cache_data`)單一入口;app.py 一律向它要資料。
 - `numutil.py`:漲跌幅 `pct_change()`(內建 `prev>0` 與方向對帳不變量)的**唯一**公式;凡算 % 一律走它。
 - `freshness.py`:資料新鮮度(staleness)判定的**唯一**入口。`stale_note()` 給 UI 警語、`ensure_fresh()` 給排程守門(過期 raise)。門檻屬領域決策,以具名常數帶入:籌碼 `CHIP_STALE_DAYS=5`、房價 `HOUSE_STALE_DAYS=40`、股價/報告 `PRICE_STALE_DAYS`/`STALE_REPORT_DAYS=5/2`(皆可環境變數覆寫)。
+- `watchlist.py`:個股盯盤清單(`watchlist.json`)的**唯一**入口。純邏輯(`parse_command/add_stock/remove_stock/format_list/normalize_ticker`)與 I/O(`load/save/dumps`)分離,排程端(本機檔)與 `scripts/nas_line_bot.py`(GitHub API)共用同一套加/刪/解析規則,杜絕兩端漂移。
 
 ## 關鍵檔案
 - `update_data.py`:Gemini 全包(四維戰略分析+白話文、趨勢雷達、台/美股、人物追蹤、房市判讀);每日排程入口。內建資料齊備守門(台灣 05:30 前的 schedule 略過,擋 GitHub 半夜亂觸發)。
@@ -45,4 +49,6 @@
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [ ] (選,**唯一剩餘阻塞、屬你的帳號操作**)repo Secrets 設 `PROXY_URL`:設妥後上面全市場化與每月排程自動抓 ETF/股價/房價即可自動跑(NAS 需放行 Actions IP)。
+- [x] 個股盯盤(第二個 LINE bot)**程式已完成**:`watchlist.py` + `earnings_fetcher.py` + `update_data.run_watch_section()` + `scripts/nas_line_bot.py`(NAS webhook)+ workflow 接線。**待上線:** ① repo Secrets 設 `LINE_WATCH_TOKEN`/`LINE_WATCH_TO`(第二個 Messaging API channel);② NAS 跑 `nas_line_bot.py` 並把 LINE Webhook URL 指到 NAS(需 `LINE_WATCH_SECRET` + 具 contents:write 的 `GITHUB_TOKEN`,對外經 Cloudflare Tunnel/路由器轉發)。沙箱無網路/無第二 bot,無法代跑驗收。
+- [ ] (擴充)個股盯盤財報目前只涵蓋**上市月營收**(TWSE OpenAPI `t187ap05_L`);上櫃月營收與季報 EPS/法說屬後續(MOPS 無正式 API,需 proxy + 表單解析)。
 - 註:§5 向量化已實查結案 — 全庫零 `numpy`/`.iterrows()`,既有 pandas(melt/dropna/line_chart)皆已向量化,其餘為小型巢狀 dict 迴圈(縣市×市場×年),改 pandas 反增風險無效益,**刻意保留**。

@@ -48,6 +48,7 @@ from pathlib import Path
 
 import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
 import chip_fetcher  # 法人籌碼:抓證交所三大法人買賣超(事後驗證,真實數字)
+import earnings_fetcher  # 個股盯盤:抓證交所 OpenAPI 月營收(真實財報更新訊號)
 import freshness  # 資料新鮮度(staleness)守門的單一真相源(SSOT,§2.4)
 import futures_chip_fetcher  # 法人籌碼:抓期交所三大法人台指期留倉(外資期貨偏多/偏空)
 import housing_fetcher
@@ -56,6 +57,7 @@ import margin_fetcher  # 融資餘額:散戶槓桿/斷頭訊號(共振偵測用)
 import news_fetcher
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
+import watchlist  # 個股盯盤清單(watchlist)的單一真相源(SSOT)
 
 # ---------------------------------------------------------------------------
 # 設定
@@ -198,6 +200,7 @@ OUTPUT_FOCUS = paths.LATEST_FOCUS
 FOCUS_ARCHIVE_DIR = paths.ARCHIVE_FOCUS
 OUTPUT_HOUSING = paths.LATEST_HOUSING
 HOUSING_ARCHIVE_DIR = paths.ARCHIVE_HOUSING
+WATCH_REVENUE_PUSHED = paths.WATCH_REVENUE_PUSHED  # 個股盯盤:月營收已推 id(防重複推播)
 
 # 全台 22 縣市(官方「臺」),房市分區標記只能用這些名稱
 TAIWAN_COUNTIES = list(housing_fetcher.CITY_CODES.values())
@@ -1881,16 +1884,19 @@ def notify_line(report: dict, chip_hint: str = "") -> None:
     _push_line_text(build_line_message(report, chip_hint))
 
 
-def _push_line_text(text: str) -> None:
-    """以 LINE Messaging API 推送一則文字(共用:戰略報告 / 國際盤預警 / 法人事件)。
+def _push_line_text(text: str, token: str | None = None, to: str | None = None) -> None:
+    """以 LINE Messaging API 推送一則文字(共用:戰略報告 / 國際盤預警 / 法人事件 / 個股盯盤)。
 
     依 LINE_TO 自動選端點,達成「群體發送」且向後相容:
       * LINE_TO = "broadcast"            → /broadcast,發給所有加官方帳號好友的人(免收集 ID)。
       * LINE_TO = 多個 ID(逗號/空白分隔) → /multicast,發給指定名單(最多 500)。
       * LINE_TO = 單一 ID(user/group/room)→ /push(原行為;群組 ID 即整群可見)。
+
+    token/to 預設讀主 bot 的 LINE_CHANNEL_ACCESS_TOKEN / LINE_TO;傳入則用第二個 bot
+    (個股盯盤)的 LINE_WATCH_TOKEN / LINE_WATCH_TO,讓兩個 bot 共用同一套推播邏輯。
     """
-    token = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
-    to_raw = os.environ["LINE_TO"].strip()
+    token = token or os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
+    to_raw = (to if to is not None else os.environ["LINE_TO"]).strip()
     messages = [{"type": "text", "text": text}]
 
     if to_raw.lower() == "broadcast":
@@ -2258,6 +2264,165 @@ def build_macro_report(topic: str, today: str, *, extra_query: str | None = None
 # 主流程
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# 個股盯盤(第二個 LINE bot:LINE_WATCH_TOKEN / LINE_WATCH_TO)
+#   早上排程讀 watchlist.json,逐檔抓真實新聞 → Gemini 個股消息面總結,
+#   並抓最新月營收(真實財報更新訊號,dedup 只推新公告),用第二個 bot push 給使用者。
+#   未設第二個 bot 的 token/對象時整段靜默略過(程式先就緒,設好 Secrets 即上線)。
+# ---------------------------------------------------------------------------
+
+WATCH_SYSTEM_PROMPT = """\
+你是台股個股盯盤助理。使用者提供一份「個股 → 近期真實新聞」清單,請逐檔做消息面總結。
+
+鐵則:
+1. 只根據提供的新聞做判斷,嚴禁虛構任何事件、數字或消息。
+2. 某檔若沒有相關或重大的新聞,summary 就寫「近期無重大消息」,sentiment 設「中性」。
+3. summary 限 1~2 句、繁體中文、口語白話,點出對股價最關鍵的那件事。
+4. sentiment 僅能是「利多」「利空」「中性」三者之一。
+
+只輸出 JSON,格式:
+{"stocks":[{"ticker":"2330","name":"台積電","sentiment":"利多","summary":"..."}]}
+"""
+
+
+def watch_enabled() -> bool:
+    """第二個 bot 的 token 與推播對象都設了才啟用個股盯盤;否則整段略過。"""
+    return bool(os.environ.get("LINE_WATCH_TOKEN") and os.environ.get("LINE_WATCH_TO"))
+
+
+def fetch_watch_news(stocks: list[dict]) -> dict[str, list[dict]]:
+    """逐檔抓個股近期真實新聞(RSS,無 API 額度顧慮);回 {ticker: [news...]}。"""
+    out: dict[str, list[dict]] = {}
+    for s in stocks:
+        ticker = str(s.get("ticker", "")).strip()
+        if not ticker:
+            continue
+        name = (s.get("name") or "").strip()
+        label = f"{name} {ticker}".strip() if name else ticker
+        try:
+            out[ticker] = news_fetcher.fetch_news(
+                [label, f"{name or ticker} 股價 法人"],
+                lang="zh", region="TW",
+                limit=int(os.environ.get("WATCH_NEWS_MAX", "8")),
+                since_hours=int(os.environ.get("WATCH_SINCE_HOURS", "96")),
+            )
+        except Exception as exc:  # noqa: BLE001 — 單檔抓新聞失敗不影響其他檔
+            print(f"  警告: {label} 新聞抓取失敗:{exc}", file=sys.stderr)
+            out[ticker] = []
+    return out
+
+
+def summarize_watch_stocks(stocks: list[dict], news_by_ticker: dict[str, list[dict]]) -> list[dict]:
+    """把各檔個股新聞整批交給 Gemini,一次回傳逐檔消息面總結(省 API 額度)。"""
+    blocks = []
+    for s in stocks:
+        ticker = str(s.get("ticker", "")).strip()
+        name = (s.get("name") or "").strip()
+        items = news_by_ticker.get(ticker, [])[:8]
+        lines = [f"【{name or ''} {ticker}】"]
+        if items:
+            for n in items:
+                lines.append(f"- {n.get('title', '')}({n.get('source', '')})")
+        else:
+            lines.append("-(近期無抓到相關新聞)")
+        blocks.append("\n".join(lines))
+    user_content = (
+        "以下是各檔個股的近期真實新聞,請逐檔做消息面總結:\n\n" + "\n\n".join(blocks)
+    )
+    data = call_gemini_for_json(WATCH_SYSTEM_PROMPT, user_content)
+    result = data.get("stocks")
+    return result if isinstance(result, list) else []
+
+
+def load_pushed_revenue() -> list[str]:
+    """讀已推播過的月營收 id(``ticker-YYYY-MM``)清單;無檔回空。"""
+    try:
+        return list(json.loads(
+            WATCH_REVENUE_PUSHED.read_text(encoding="utf-8")).get("ids", []))
+    except Exception:  # noqa: BLE001 — 無檔/壞檔 → 視為尚未推過
+        return []
+
+
+def save_pushed_revenue(ids: list[str]) -> None:
+    """寫回已推月營收 id 清單(只留最近 500 筆,避免無限增長)。"""
+    save_json(WATCH_REVENUE_PUSHED, {"ids": ids[-500:]})
+
+
+def build_watch_line_message(today: str, summaries: list[dict],
+                             new_revenue: list[dict]) -> str:
+    """組個股盯盤的 LINE 文字:消息面逐檔 + 新月營收(若有)。"""
+    lines = [f"📈 個股盯盤 {today}", ""]
+    for s in summaries:
+        ticker = str(s.get("ticker", "")).strip()
+        name = (s.get("name") or "").strip()
+        senti = s.get("sentiment", "中性")
+        summary = (s.get("summary", "") or "").strip()
+        head = f"【{name} {ticker}】".replace("  ", " ") if name else f"【{ticker}】"
+        lines.append(f"{head} {senti}")
+        lines.append(summary or "近期無重大消息。")
+        lines.append("")
+    if new_revenue:
+        lines.append("🧾 新財報(月營收):")
+        for r in new_revenue:
+            yoy = r.get("yoy_pct")
+            mom = r.get("mom_pct")
+            yoy_s = f"年增 {yoy:+.1f}%" if isinstance(yoy, (int, float)) else "年增 —"
+            mom_s = f"月增 {mom:+.1f}%" if isinstance(mom, (int, float)) else "月增 —"
+            nm = (r.get("name") or "").strip()
+            lines.append(
+                f"・{nm} {r.get('ticker')}｜{r.get('period')} 營收 "
+                f"{r.get('month_rev', 0) / OKU:.0f}億,{yoy_s}、{mom_s}"
+            )
+        lines.append("")
+    lines.append("(僅供參考,非投資建議。指令:加/刪/清單)")
+    msg = "\n".join(lines).rstrip()
+    if len(msg) > LINE_TEXT_LIMIT:
+        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
+    return msg
+
+
+def run_watch_section(today: str) -> None:
+    """個股盯盤主流程:讀清單 → 消息面 + 月營收 → 推第二個 bot。整段以 try 包覆,失敗不外溢。"""
+    doc = watchlist.load()
+    stocks = doc.get("stocks", [])
+    if not stocks:
+        print("  個股盯盤:watchlist 為空(傳「加 2330」給盯盤 bot 即可建立),略過。")
+        return
+    print(f"  個股盯盤:清單 {len(stocks)} 檔,抓新聞 + 月營收...")
+
+    # 1) 逐檔抓真實新聞 → Gemini 一次總結(省額度)
+    try:
+        news_by_ticker = fetch_watch_news(stocks)
+        summaries = summarize_watch_stocks(stocks, news_by_ticker)
+    except Exception as exc:  # noqa: BLE001 — Gemini 過載等 → 消息面降級為空,仍續推財報
+        print(f"  警告: 個股消息面總結失敗(Gemini 可能過載):{exc}", file=sys.stderr)
+        summaries = []
+
+    # 2) 月營收(真實財報更新訊號);dedup 只推「新出現」的期別
+    new_revenue: list[dict] = []
+    try:
+        pushed = load_pushed_revenue()
+        revenue = earnings_fetcher.fetch_monthly_revenue(watchlist.tickers(doc), log=print)
+        fresh_ids: list[str] = []
+        for ticker, rev in revenue.items():
+            rid = f"{ticker}-{rev.get('period')}"
+            if rid not in pushed:
+                new_revenue.append(rev)
+                fresh_ids.append(rid)
+        if fresh_ids:
+            save_pushed_revenue(pushed + fresh_ids)
+    except Exception as exc:  # noqa: BLE001 — 財報抓取失敗不影響消息面推播
+        print(f"  警告: 月營收抓取失敗:{exc}", file=sys.stderr)
+
+    if not summaries and not new_revenue:
+        print("  個股盯盤:無消息面也無新財報,本次不推播。")
+        return
+
+    msg = build_watch_line_message(today, summaries, new_revenue)
+    _push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=os.environ["LINE_WATCH_TO"])
+    print(f"  ⑤ 個股盯盤已推(消息面 {len(summaries)} 檔、新財報 {len(new_revenue)} 筆)。")
+
+
 def main() -> int:
     if not get_gemini_keys():
         print("錯誤: 未設定 GEMINI_API_KEY 環境變數", file=sys.stderr)
@@ -2534,6 +2699,15 @@ def main() -> int:
                     print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
             else:
                 print("  ④ 主報告降級(Gemini 過載),本次跳過戰略報告 LINE。")
+
+        # ⑤ 個股盯盤(獨立的第二個 LINE bot,自選 watchlist 消息面 + 月營收);
+        #    用自己的 token/對象,與上面四項主報告推播互不影響。未設第二個 bot → 靜默略過。
+        if watch_enabled():
+            print("個股盯盤(第二個 bot):自選台股消息面 + 月營收...")
+            try:
+                run_watch_section(today)
+            except Exception as exc:  # noqa: BLE001 — 個股盯盤失敗不影響主報告與主 bot
+                print(f"  警告: 個股盯盤推播失敗:{exc}", file=sys.stderr)
 
         return 0
 
