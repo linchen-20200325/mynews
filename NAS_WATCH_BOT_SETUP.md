@@ -81,6 +81,9 @@ WATCH_BOT_PORT=8080 \
 - `WATCH_ADMIN_USER`:**管理員**(可下 `授權`/`撤銷`/`名單`)。未設則沿用 `WATCH_ALLOW_USER`。
   一般只要設 `WATCH_ALLOW_USER='<你的userId>'`,你就同時是管理員,其餘人用 LINE `授權` 加。
 - `WATCH_TECH_MONTHS`:技術面回看月數(預設 `4`,約 80 個交易日,夠算 60MA/KD/RSI)。
+- `WATCH_CHIP_DAYS`:籌碼面回看交易日數(預設 `6`,夠呈現外資連買/連賣天數)。
+  > 技術面/籌碼面是「早上排程推播」(`update_data.py`)讀的,設在 NAS bot 不影響推播;
+  > 要調整請設在 GitHub Actions 的環境(或留預設即可)。
 - `GITHUB_REPO` / `GITHUB_BRANCH`:預設 `linchen-20200325/mynews` / `main`。
 
 > **每人各自獨立清單(per-user)**:加/刪會作用在「傳訊者自己」名下,各人各一份、早上各推各的。
@@ -131,7 +134,7 @@ GitHub repo → Settings → Secrets and variables → Actions → **New reposit
 - `LINE_WATCH_TO` = 收訊對象的 userId
 
 > 設好後,隔天早上(或手動觸發 workflow)排程就會多推一則「📈 個股盯盤」
-> (含每檔的消息面 + 一行技術面均線/KD/RSI + 新月營收)。
+> (含每檔的消息面 + 一行技術面均線/KD/RSI + 一行籌碼面外資/投信買賣超張數 + 新月營收)。
 > 沒設這兩個 → 程式 `watch_enabled()` 為偽,整段靜默略過,不影響現有早報。
 
 ### 想多人收到同一則推播(例:再加老公/父母)— 純改 Secret,免改程式

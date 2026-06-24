@@ -48,6 +48,7 @@ from pathlib import Path
 
 import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
 import chip_fetcher  # 法人籌碼:抓證交所三大法人買賣超(事後驗證,真實數字)
+import chip_signals  # 個股盯盤:個股三大法人買賣超(T86)籌碼面訊號的 SSOT
 import earnings_fetcher  # 個股盯盤:抓證交所 OpenAPI 月營收(真實財報更新訊號)
 import freshness  # 資料新鮮度(staleness)守門的單一真相源(SSOT,§2.4)
 import futures_chip_fetcher  # 法人籌碼:抓期交所三大法人台指期留倉(外資期貨偏多/偏空)
@@ -2486,9 +2487,11 @@ def save_pushed_revenue(ids: list[str]) -> None:
 
 def build_watch_line_message(today: str, summaries: list[dict],
                              new_revenue: list[dict],
-                             tech_lines: dict[str, str] | None = None) -> str:
-    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面一行)+ 新月營收(若有)。"""
+                             tech_lines: dict[str, str] | None = None,
+                             chip_lines: dict[str, str] | None = None) -> str:
+    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面、籌碼面各一行)+ 新月營收(若有)。"""
     tech_lines = tech_lines or {}
+    chip_lines = chip_lines or {}
     lines = [f"📈 個股盯盤 {today}", ""]
     for s in summaries:
         ticker = str(s.get("ticker", "")).strip()
@@ -2501,6 +2504,9 @@ def build_watch_line_message(today: str, summaries: list[dict],
         tline = tech_lines.get(ticker)
         if tline:
             lines.append(tline)
+        cline = chip_lines.get(ticker)
+        if cline:
+            lines.append(cline)
         lines.append("")
     if new_revenue:
         lines.append("🧾 新財報(月營收):")
@@ -2546,6 +2552,13 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     except Exception as exc:  # noqa: BLE001 — 技術面整批失敗不影響消息面/財報推播
         print(f"  警告: 技術面整批計算失敗:{exc}", file=sys.stderr)
 
+    # 2.5) 籌碼面(個股三大法人買賣超 T86 → 外資/投信張數 + 連買連賣);抓不到的代號靜默略過
+    chip_lines: dict[str, str] = {}
+    try:
+        chip_lines = chip_signals.signals_for(stocks, log=print)
+    except Exception as exc:  # noqa: BLE001 — 籌碼面整批失敗不影響消息面/技術面/財報推播
+        print(f"  警告: 籌碼面整批計算失敗:{exc}", file=sys.stderr)
+
     # 3) 月營收(真實財報更新訊號);dedup 只推「新出現」的期別
     new_revenue: list[dict] = []
     fresh_ids: list[str] = []
@@ -2563,11 +2576,11 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     if not summaries and not new_revenue:
         return []
 
-    msg = build_watch_line_message(today, summaries, new_revenue, tech_lines)
+    msg = build_watch_line_message(today, summaries, new_revenue, tech_lines, chip_lines)
     _push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=to)
     print(
         f"  · 推給 {to[:6]}…:消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
-        f"新財報 {len(new_revenue)} 筆"
+        f"籌碼面 {len(chip_lines)} 檔、新財報 {len(new_revenue)} 筆"
     )
     return fresh_ids
 
