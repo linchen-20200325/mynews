@@ -143,9 +143,16 @@ def load_trend_history(archive_dir: Path) -> "pd.DataFrame | None":
 
 
 def pick_report(latest_path: Path, archive_dir: Path):
-    """側邊欄報告選擇器,回傳選定的 dict。"""
+    """側邊欄報告選擇器,回傳選定的 dict。
+
+    同一頁會對不同資料源各呼叫一次,故以 latest_path 檔名衍生唯一 key,
+    避免多個「選擇日期」selectbox 撞同一 auto ID(StreamlitDuplicateElementId)。
+    """
     archive = list_archive(archive_dir)
-    choice = st.sidebar.selectbox("選擇日期", ["最新 (latest)"] + archive)
+    choice = st.sidebar.selectbox(
+        "選擇日期", ["最新 (latest)"] + archive,
+        key=f"datepick_{latest_path.stem}",
+    )
     if archive:
         st.sidebar.caption(f"歷史存檔:{len(archive)} 份")
     if choice == "最新 (latest)":
@@ -2886,9 +2893,9 @@ def sec_etf() -> None:
 def page_tw() -> None:
     st.header("📊 台股")
     payload = {
-        "國際盤預警": pick_report(INTL_ALERT_PATH, INTL_ALERT_ARCHIVE_DIR),
-        "法人籌碼": pick_report(CHIP_PATH, CHIP_ARCHIVE_DIR),
-        "台股觀察": pick_report(STOCKS_PATH, STOCKS_ARCHIVE_DIR),
+        "國際盤預警": load_json(INTL_ALERT_PATH),
+        "法人籌碼": load_json(CHIP_PATH),
+        "台股觀察": load_json(STOCKS_PATH),
     }
     render_market_digest("台股", {k: v for k, v in payload.items() if v})
     st.divider(); sec_intl()
@@ -2906,7 +2913,7 @@ def page_tw() -> None:
 
 def page_us() -> None:
     st.header("🇺🇸 美股")
-    payload = {"美股觀察": pick_report(US_STOCKS_PATH, US_STOCKS_ARCHIVE_DIR)}
+    payload = {"美股觀察": load_json(US_STOCKS_PATH)}
     render_market_digest("美股", {k: v for k, v in payload.items() if v})
     st.divider(); sec_us_stocks()
     st.divider()
@@ -2918,9 +2925,9 @@ def page_us() -> None:
 def page_global() -> None:
     st.header("🌍 全球")
     payload = {
-        "戰略報告": pick_report(REPORT_PATH, ARCHIVE_DIR),
-        "趨勢雷達": pick_report(TRENDS_PATH, TRENDS_ARCHIVE_DIR),
-        "全球人物追蹤": pick_report(FOCUS_PATH, FOCUS_ARCHIVE_DIR),
+        "戰略報告": load_json(REPORT_PATH),
+        "趨勢雷達": load_json(TRENDS_PATH),
+        "全球人物追蹤": load_json(FOCUS_PATH),
     }
     render_market_digest("全球", {k: v for k, v in payload.items() if v})
     st.divider(); sec_report()
@@ -2932,7 +2939,7 @@ def page_global() -> None:
 
 def page_housing() -> None:
     st.header("🏠 台灣房市")
-    payload = {"房市觀察": pick_report(HOUSING_PATH, HOUSING_ARCHIVE_DIR)}
+    payload = {"房市觀察": load_json(HOUSING_PATH)}
     render_market_digest("台灣房市", {k: v for k, v in payload.items() if v})
     st.divider(); sec_housing()
 
