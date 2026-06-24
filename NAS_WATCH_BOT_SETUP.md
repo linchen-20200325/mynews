@@ -77,6 +77,9 @@ WATCH_BOT_PORT=8080 \
 
 可選環境變數:
 - `WATCH_ALLOW_USER`:設成你的 userId → 只接受你的指令,陌生人傳訊一律忽略(建議設)。
+  **多人共用同一份清單**(例:你+老公都能加/刪):用逗號分隔多個 userId,如
+  `WATCH_ALLOW_USER='Uxxx,Uyyy'`;留空 = 不限制(任何人都能改,不建議對外開放時留空)。
+- `WATCH_TECH_MONTHS`:技術面回看月數(預設 `4`,約 80 個交易日,夠算 60MA/KD/RSI)。
 - `GITHUB_REPO` / `GITHUB_BRANCH`:預設 `linchen-20200325/mynews` / `main`。
 
 ---
@@ -121,10 +124,26 @@ LINE webhook 必須是 **HTTPS 公開網址**。二選一:
 
 GitHub repo → Settings → Secrets and variables → Actions → **New repository secret**:
 - `LINE_WATCH_TOKEN` = 第二個 bot 的 channel access token
-- `LINE_WATCH_TO` = 你的 userId
+- `LINE_WATCH_TO` = 收訊對象的 userId
 
-> 設好後,隔天早上(或手動觸發 workflow)排程就會多推一則「📈 個股盯盤」。
+> 設好後,隔天早上(或手動觸發 workflow)排程就會多推一則「📈 個股盯盤」
+> (含每檔的消息面 + 一行技術面均線/KD/RSI + 新月營收)。
 > 沒設這兩個 → 程式 `watch_enabled()` 為偽,整段靜默略過,不影響現有早報。
+
+### 想多人收到同一則推播(例:再加老公/父母)— 純改 Secret,免改程式
+
+`LINE_WATCH_TO` 依內容自動選推播模式(`update_data.py` 的 `_push_line_text`):
+
+| `LINE_WATCH_TO` | 行為 |
+|---|---|
+| 單一 userId | 只推一人 |
+| `Uxxx,Uyyy`(逗號/空白分隔) | **multicast** 推給名單(最多 500 人) |
+| `broadcast` | 推給所有加這個 bot 好友的人 |
+
+**加一位收訊人**:① 對方把「個股盯盤」這個 bot 加好友 → ② 對方傳「**id**」給 bot,
+它會回覆對方的 userId → ③ 把那串 userId 用逗號接到 `LINE_WATCH_TO` 後面即可。
+> 提醒:能「收到推播」(`LINE_WATCH_TO`)和能「下指令改清單」(`WATCH_ALLOW_USER`,見上)
+> 是兩件事 —— 要對方也能加/刪股票,記得把他的 userId 也加進 `WATCH_ALLOW_USER`。
 
 ---
 

@@ -56,6 +56,7 @@ import index_fetcher  # 國際盤預警:抓美股指數/美股期貨真實漲跌
 import margin_fetcher  # 融資餘額:散戶槓桿/斷頭訊號(共振偵測用)
 import news_fetcher
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
+import tech_signals  # 個股技術面訊號(日K→均線/KD/RSI)的單一真相源(SSOT)
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
 import watchlist  # 個股盯盤清單(watchlist)的單一真相源(SSOT)
 
@@ -2484,8 +2485,10 @@ def save_pushed_revenue(ids: list[str]) -> None:
 
 
 def build_watch_line_message(today: str, summaries: list[dict],
-                             new_revenue: list[dict]) -> str:
-    """組個股盯盤的 LINE 文字:消息面逐檔 + 新月營收(若有)。"""
+                             new_revenue: list[dict],
+                             tech_lines: dict[str, str] | None = None) -> str:
+    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面一行)+ 新月營收(若有)。"""
+    tech_lines = tech_lines or {}
     lines = [f"📈 個股盯盤 {today}", ""]
     for s in summaries:
         ticker = str(s.get("ticker", "")).strip()
@@ -2495,6 +2498,9 @@ def build_watch_line_message(today: str, summaries: list[dict],
         head = f"【{name} {ticker}】".replace("  ", " ") if name else f"【{ticker}】"
         lines.append(f"{head} {senti}")
         lines.append(summary or "近期無重大消息。")
+        tline = tech_lines.get(ticker)
+        if tline:
+            lines.append(tline)
         lines.append("")
     if new_revenue:
         lines.append("🧾 新財報(月營收):")
@@ -2533,7 +2539,14 @@ def run_watch_section(today: str) -> None:
         print(f"  警告: 個股消息面總結失敗(Gemini 可能過載):{exc}", file=sys.stderr)
         summaries = []
 
-    # 2) 月營收(真實財報更新訊號);dedup 只推「新出現」的期別
+    # 2) 技術面(個股日K → 均線/KD/RSI 白話一行);抓不到的代號不收錄,該檔靜默略過
+    tech_lines: dict[str, str] = {}
+    try:
+        tech_lines = tech_signals.signals_for(stocks, log=print)
+    except Exception as exc:  # noqa: BLE001 — 技術面整批失敗不影響消息面/財報推播
+        print(f"  警告: 技術面整批計算失敗:{exc}", file=sys.stderr)
+
+    # 3) 月營收(真實財報更新訊號);dedup 只推「新出現」的期別
     new_revenue: list[dict] = []
     try:
         pushed = load_pushed_revenue()
@@ -2553,9 +2566,12 @@ def run_watch_section(today: str) -> None:
         print("  個股盯盤:無消息面也無新財報,本次不推播。")
         return
 
-    msg = build_watch_line_message(today, summaries, new_revenue)
+    msg = build_watch_line_message(today, summaries, new_revenue, tech_lines)
     _push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=os.environ["LINE_WATCH_TO"])
-    print(f"  ⑤ 個股盯盤已推(消息面 {len(summaries)} 檔、新財報 {len(new_revenue)} 筆)。")
+    print(
+        f"  ⑤ 個股盯盤已推(消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
+        f"新財報 {len(new_revenue)} 筆)。"
+    )
 
 
 def main() -> int:
