@@ -1,14 +1,4 @@
 {
-  "stocks": [
-    {
-      "ticker": "6770",
-      "name": ""
-    },
-    {
-      "ticker": "0050",
-      "name": ""
-    }
-  ],
   "updated_at": "2026-06-24 23:46",
   "allow": [
     {
@@ -19,5 +9,23 @@
       "id": "Ud7f5cc4f92eeef4f378cd61c53baa784",
       "name": "老公"
     }
-  ]
+  ],
+  "users": {
+    "Ud7f5cc4f92eeef4f378cd61c53baa784": {
+      "stocks": [
+        {
+          "ticker": "6770",
+          "name": ""
+        },
+        {
+          "ticker": "0050",
+          "name": ""
+        },
+        {
+          "ticker": "2230",
+          "name": ""
+        }
+      ]
+    }
+  }
 }
