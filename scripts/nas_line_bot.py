@@ -162,6 +162,106 @@ def format_list_for(doc: dict, user_id: str) -> str:
     return format_list((doc.get("users") or {}).get(user_id) or {"stocks": []})
 
 
+# ── 授權名單(存 watchlist.json 的 "allow";與 repo/watchlist.py 同步)──────────
+# 管理員用 LINE 指令即時加/撤,bot 每次收訊即時讀 → 免重啟、免進 NAS。
+_GRANT_KW = ("授權", "允許")
+_REVOKE_KW = ("撤銷", "取消授權", "解除授權")
+_ALLOWLIST_TEXT = ("名單", "授權名單", "授權清單")
+
+
+def allow_list(doc: dict) -> list:
+    return doc.get("allow") or []
+
+
+def allowed_ids(doc: dict) -> set:
+    return {str(a.get("id")) for a in allow_list(doc) if a.get("id")}
+
+
+def grant(doc: dict, user_id: str, name: str = ""):
+    uid = (user_id or "").strip()
+    if not (uid.startswith("U") and len(uid) >= 10):
+        return False, f"看不懂 userId「{user_id}」,請貼完整的 U 開頭那串。"
+    lst = doc.setdefault("allow", [])
+    if not isinstance(lst, list):
+        lst = doc["allow"] = []
+    for a in lst:
+        if str(a.get("id")) == uid:
+            return False, f"{(a.get('name') or uid)} 已在授權名單內。"
+    lst.append({"id": uid, "name": (name or "").strip()})
+    who = (name.strip() + " ") if name.strip() else ""
+    return True, f"✅ 已授權 {who}{uid[:8]}…"
+
+
+def revoke(doc: dict, user_id: str):
+    uid = (user_id or "").strip()
+    lst = doc.get("allow") or []
+    before = len(lst)
+    doc["allow"] = [a for a in lst if str(a.get("id")) != uid]
+    if len(doc["allow"]) == before:
+        return False, f"{uid[:8]}… 不在授權名單內。"
+    return True, f"🗑️ 已撤銷 {uid[:8]}…"
+
+
+def format_allow(doc: dict) -> str:
+    lst = allow_list(doc)
+    if not lst:
+        return "授權名單目前是空的(此時以環境變數 WATCH_ALLOW_USER 為準)。"
+    lines = [f"🔑 授權名單({len(lst)} 人):"]
+    for a in lst:
+        nm = (a.get("name") or "").strip()
+        lines.append(f"・{(nm + '  ') if nm else ''}{a.get('id', '')}")
+    lines.append("")
+    lines.append("指令:授權 <userId> [名字] / 撤銷 <userId> / 名單")
+    return "\n".join(lines)
+
+
+def parse_admin(text: str):
+    """解析管理員指令 → (action, arg);action ∈ {'grant','revoke','allowlist',''}。"""
+    t = (text or "").strip()
+    if t in _ALLOWLIST_TEXT:  # 先比對完整詞,避免「授權名單」被「授權」吃掉
+        return "allowlist", ""
+    low = t.lower()
+    for kw in _GRANT_KW:
+        if low.startswith(kw.lower()):
+            return "grant", t[len(kw):].strip()
+    for kw in _REVOKE_KW:
+        if low.startswith(kw.lower()):
+            return "revoke", t[len(kw):].strip()
+    return "", t
+
+
+def _split_id_name(arg: str):
+    """把「U… 名字」拆成 (userId, name)。"""
+    parts = (arg or "").split(None, 1)
+    if not parts:
+        return "", ""
+    return parts[0].strip(), (parts[1].strip() if len(parts) > 1 else "")
+
+
+def _env_set(name: str) -> set:
+    return {u for u in re.split(r"[,\s]+", os.environ.get(name, "")) if u}
+
+
+def effective_allowed(doc: dict) -> set:
+    """有效授權集合 = repo 授權名單 ∪ env WATCH_ALLOW_USER(bootstrap)。"""
+    return allowed_ids(doc) | _env_set("WATCH_ALLOW_USER")
+
+
+def is_user_allowed(doc: dict, user_id: str) -> bool:
+    """可用『加/刪/清單』者:有效授權集合;集合為空 = 不限制(對外開放)。"""
+    eff = effective_allowed(doc)
+    return (not eff) or (user_id in eff)
+
+
+def admin_ids() -> set:
+    """管理員 = env WATCH_ADMIN_USER;未設則沿用 env WATCH_ALLOW_USER。"""
+    return _env_set("WATCH_ADMIN_USER") or _env_set("WATCH_ALLOW_USER")
+
+
+def is_admin(user_id: str) -> bool:
+    return bool(user_id) and user_id in admin_ids()
+
+
 # ── 基礎工具 ───────────────────────────────────────────────────────────────
 def _log(msg: str) -> None:
     print(f"{datetime.now():%Y-%m-%d %H:%M:%S} {msg}", flush=True)
@@ -196,7 +296,10 @@ def gh_load():
             payload = json.loads(resp.read())
         raw = base64.b64decode(payload.get("content", "")).decode("utf-8")
         doc = json.loads(raw)
-        if isinstance(doc, dict) and isinstance(doc.get("stocks"), list):
+        # 舊扁平(有 stocks)或 per-user(有 users)都認;否則視為空。
+        if isinstance(doc, dict) and (
+            isinstance(doc.get("stocks"), list) or isinstance(doc.get("users"), dict)
+        ):
             return doc, payload.get("sha")
     except urllib.error.HTTPError as exc:
         if exc.code != 404:
@@ -247,18 +350,43 @@ def line_reply(reply_token: str, text: str) -> None:
 
 def handle_text(text: str, user_id: str) -> str:
     low = (text or "").strip().lower()
+    # 「id」任何人都回(新朋友自助取得 userId,貼給管理員授權);不需被授權。
     if low in ("id", "我的id", "myid"):
         return (f"你的 userId:\n{user_id}\n"
-                "(把它加進 repo Secret 的 WATCH_ALLOW_USER 即可授權使用;"
-                "之後傳「加 2330」就會自動建立你的專屬清單,各人各推各的)")
+                "(把這串貼給管理員,他用「授權 這串」就能開通你;"
+                "開通後傳「加 2330」會建立你的專屬清單)")
 
+    # 管理員指令:授權 / 撤銷 / 名單(寫回 repo,即時生效、免重啟)
+    admin_action, admin_arg = parse_admin(text)
+    if admin_action in ("grant", "revoke", "allowlist"):
+        if not is_admin(user_id):
+            return "（這是管理員指令,你沒有權限。需要的話請管理員幫你操作。）"
+        if admin_action == "allowlist":
+            doc, _ = gh_load()
+            return format_allow(doc)
+        doc, sha = gh_load()
+        if admin_action == "grant":
+            uid, name = _split_id_name(admin_arg)
+            changed, msg = grant(doc, uid, name)
+            commit = f"allow: grant {uid[:8]}"
+        else:
+            changed, msg = revoke(doc, admin_arg.strip())
+            commit = f"allow: revoke {admin_arg.strip()[:8]}"
+        if changed and not gh_save(doc, commit, sha):
+            return "授權名單寫回 repo 失敗,請稍後再試。"
+        return msg + "\n\n" + format_allow(doc)
+
+    # 一般使用者指令(加/刪/清單):需被授權
     action, arg = parse_command(text)
+    doc, sha = gh_load()
+    if not is_user_allowed(doc, user_id):
+        return ("你還沒被授權使用 🙅\n"
+                "把下面這串你的 userId 貼給管理員,請他用「授權 這串」開通:\n"
+                f"{user_id}")
     if action == "list":
-        doc, _ = gh_load()
         # per-user:列自己的清單;舊扁平格式(尚無人遷移)仍列共用清單。
         return format_list_for(doc, user_id) if is_per_user(doc) else format_list(doc)
     if action in ("add", "remove"):
-        doc, sha = gh_load()
         # 一律走 per-user:首位下指令者會把既有扁平清單無損遷移到自己名下。
         if action == "add":
             ticker = normalize_ticker(arg)
@@ -302,17 +430,13 @@ class Handler(BaseHTTPRequestHandler):
             events = json.loads(body or b"{}").get("events", [])
         except Exception:  # noqa: BLE001
             return
-        # 白名單可逗號/空白分隔多個 userId(你+家人共用清單);留空 = 不限制。
-        allow_set = {u for u in re.split(r"[,\s]+", os.environ.get("WATCH_ALLOW_USER", "")) if u}
+        # 授權判斷移到 handle_text(改讀 repo 授權名單,加人免重啟);此處只負責收事件。
         for ev in events:
             if ev.get("type") != "message" or ev.get("message", {}).get("type") != "text":
                 continue
             user_id = ev.get("source", {}).get("userId", "")
             text = ev.get("message", {}).get("text", "")
             _log(f"收到訊息 userId={user_id}:{text!r}")
-            if allow_set and user_id and user_id not in allow_set:
-                _log("非允許名單的 userId,忽略")
-                continue
             try:
                 reply = handle_text(text, user_id)
             except Exception as exc:  # noqa: BLE001 — 單則處理失敗不該拖垮服務

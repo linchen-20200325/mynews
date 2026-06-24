@@ -171,12 +171,69 @@ def format_list_for(doc: dict, user_id: str) -> str:
     return format_list((doc.get("users") or {}).get(user_id) or {"stocks": []})
 
 
+# ── 授權名單(存在 watchlist.json 的 "allow" 鍵,讓管理員用 LINE 即時加人、免重啟)──
+# 結構:``{"allow":[{"id":"U…","name":"老公"}], "users":{…}}``。bot 每次收訊即時讀,
+# 故加/撤授權立即生效。env WATCH_ALLOW_USER 仍作為 bootstrap(見 nas_line_bot 的合併)。
+def allow_list(doc: dict) -> list[dict]:
+    """取授權名單 [{id,name}];無則空。"""
+    return doc.get("allow") or []
+
+
+def allowed_ids(doc: dict) -> set[str]:
+    """取授權名單內所有 userId 的集合。"""
+    return {str(a.get("id")) for a in allow_list(doc) if a.get("id")}
+
+
+def grant(doc: dict, user_id: str, name: str = "") -> tuple[bool, str]:
+    """授權一個 userId(就地寫入 doc["allow"]);回 (是否有變動, 回覆訊息)。"""
+    uid = (user_id or "").strip()
+    if not (uid.startswith("U") and len(uid) >= 10):
+        return False, f"看不懂 userId「{user_id}」,請貼完整的 U 開頭那串。"
+    lst = doc.setdefault("allow", [])
+    if not isinstance(lst, list):
+        lst = doc["allow"] = []
+    for a in lst:
+        if str(a.get("id")) == uid:
+            return False, f"{(a.get('name') or uid)} 已在授權名單內。"
+    lst.append({"id": uid, "name": (name or "").strip()})
+    who = (name.strip() + " ") if name.strip() else ""
+    return True, f"✅ 已授權 {who}{uid[:8]}…"
+
+
+def revoke(doc: dict, user_id: str) -> tuple[bool, str]:
+    """撤銷一個 userId 的授權;回 (是否有變動, 回覆訊息)。"""
+    uid = (user_id or "").strip()
+    lst = doc.get("allow") or []
+    before = len(lst)
+    doc["allow"] = [a for a in lst if str(a.get("id")) != uid]
+    if len(doc["allow"]) == before:
+        return False, f"{uid[:8]}… 不在授權名單內。"
+    return True, f"🗑️ 已撤銷 {uid[:8]}…"
+
+
+def format_allow(doc: dict) -> str:
+    """把授權名單排成一則 LINE 回覆文字。"""
+    lst = allow_list(doc)
+    if not lst:
+        return "授權名單目前是空的(此時以環境變數 WATCH_ALLOW_USER 為準)。"
+    lines = [f"🔑 授權名單({len(lst)} 人):"]
+    for a in lst:
+        nm = (a.get("name") or "").strip()
+        lines.append(f"・{(nm + '  ') if nm else ''}{a.get('id', '')}")
+    lines.append("")
+    lines.append("指令:授權 <userId> [名字] / 撤銷 <userId> / 名單")
+    return "\n".join(lines)
+
+
 # ── 本機檔 I/O(排程端用;NAS bot 走 GitHub API,不用這兩個)─────────────────
 def load() -> dict:
     """讀本機 watchlist.json;無檔/壞檔 → 回空清單(不拋例外)。"""
     try:
         doc = json.loads(paths.WATCHLIST.read_text(encoding="utf-8"))
-        if isinstance(doc, dict) and isinstance(doc.get("stocks"), list):
+        # 舊扁平(有 stocks)或 per-user(有 users)都認;否則視為空。
+        if isinstance(doc, dict) and (
+            isinstance(doc.get("stocks"), list) or isinstance(doc.get("users"), dict)
+        ):
             doc.setdefault("updated_at", "")
             return doc
     except Exception:  # noqa: BLE001 — 無檔/壞檔 → 視為空清單
