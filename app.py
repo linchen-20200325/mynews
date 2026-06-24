@@ -2907,7 +2907,10 @@ def page_tw() -> None:
         tool_stock_query()
     with st.expander("📰 新聞策略 — 貼一則新聞,轉化為台股 ETF 進出場決策"):
         tool_news_strategy()
-    st.divider(); sec_etf()
+
+
+def page_etf() -> None:
+    sec_etf()
 
 
 def page_us() -> None:
@@ -2948,7 +2951,8 @@ def main() -> None:
     st.title("🌐 全球政經戰略每日看板")
 
     st.sidebar.header("📂 領域")
-    view = st.sidebar.radio("選擇", ["📊 台股", "🇺🇸 美股", "🌍 全球", "🏠 台灣房市"])
+    view = st.sidebar.radio(
+        "選擇", ["📊 台股", "🇺🇸 美股", "🌍 全球", "🏠 台灣房市", "🧩 ETF 工作台"])
     st.sidebar.caption("點一個領域,該領域所有面板一次展開,最上方有 AI 今日總結。")
     st.sidebar.divider()
     with st.sidebar:
@@ -2964,8 +2968,10 @@ def main() -> None:
         page_us()
     elif view == "🌍 全球":
         page_global()
-    else:
+    elif view == "🏠 台灣房市":
         page_housing()
+    else:
+        page_etf()
 
 
 if __name__ == "__main__":
