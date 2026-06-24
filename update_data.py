@@ -2522,15 +2522,15 @@ def build_watch_line_message(today: str, summaries: list[dict],
     return msg
 
 
-def run_watch_section(today: str) -> None:
-    """個股盯盤主流程:讀清單 → 消息面 + 月營收 → 推第二個 bot。整段以 try 包覆,失敗不外溢。"""
-    doc = watchlist.load()
-    stocks = doc.get("stocks", [])
-    if not stocks:
-        print("  個股盯盤:watchlist 為空(傳「加 2330」給盯盤 bot 即可建立),略過。")
-        return
-    print(f"  個股盯盤:清單 {len(stocks)} 檔,抓新聞 + 月營收...")
+def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
+                    dedup_prefix: str = "") -> list[str]:
+    """為一份清單抓消息面+技術面+月營收並推給單一對象 to;回本次新推的營收 dedup id。
 
+    不負責存檔(由 run_watch_section 統一 load/save 一次 pushed 清單);dedup_prefix 讓
+    per-user 各自獨立判斷財報新舊(同一檔不同人都能各自收到一次月營收通知)。
+    """
+    if not stocks:
+        return []
     # 1) 逐檔抓真實新聞 → Gemini 一次總結(省額度)
     try:
         news_by_ticker = fetch_watch_news(stocks)
@@ -2548,30 +2548,61 @@ def run_watch_section(today: str) -> None:
 
     # 3) 月營收(真實財報更新訊號);dedup 只推「新出現」的期別
     new_revenue: list[dict] = []
+    fresh_ids: list[str] = []
     try:
-        pushed = load_pushed_revenue()
-        revenue = earnings_fetcher.fetch_monthly_revenue(watchlist.tickers(doc), log=print)
-        fresh_ids: list[str] = []
+        revenue = earnings_fetcher.fetch_monthly_revenue(
+            watchlist.tickers({"stocks": stocks}), log=print)
         for ticker, rev in revenue.items():
-            rid = f"{ticker}-{rev.get('period')}"
+            rid = f"{dedup_prefix}{ticker}-{rev.get('period')}"
             if rid not in pushed:
                 new_revenue.append(rev)
                 fresh_ids.append(rid)
-        if fresh_ids:
-            save_pushed_revenue(pushed + fresh_ids)
     except Exception as exc:  # noqa: BLE001 — 財報抓取失敗不影響消息面推播
         print(f"  警告: 月營收抓取失敗:{exc}", file=sys.stderr)
 
     if not summaries and not new_revenue:
-        print("  個股盯盤:無消息面也無新財報,本次不推播。")
-        return
+        return []
 
     msg = build_watch_line_message(today, summaries, new_revenue, tech_lines)
-    _push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=os.environ["LINE_WATCH_TO"])
+    _push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=to)
     print(
-        f"  ⑤ 個股盯盤已推(消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
-        f"新財報 {len(new_revenue)} 筆)。"
+        f"  · 推給 {to[:6]}…:消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
+        f"新財報 {len(new_revenue)} 筆"
     )
+    return fresh_ids
+
+
+def run_watch_section(today: str) -> None:
+    """個股盯盤主流程:per-user 逐人各推自己清單;舊扁平格式維持單一推。整段失敗不外溢。"""
+    doc = watchlist.load()
+    pushed = load_pushed_revenue()
+
+    if watchlist.is_per_user(doc):
+        uids = watchlist.user_ids(doc)
+        if not uids:
+            print("  個股盯盤:尚無任何使用者清單,略過。")
+            return
+        print(f"  個股盯盤(per-user):{len(uids)} 位使用者,各推自己清單...")
+        fresh_all: list[str] = []
+        for uid in uids:
+            fresh_all += _push_watch_for(
+                today, watchlist.user_stocks(doc, uid), to=uid,
+                pushed=pushed, dedup_prefix=f"{uid}-")
+        if fresh_all:
+            save_pushed_revenue(pushed + fresh_all)
+        print("  ⑤ 個股盯盤(per-user)處理完畢。")
+        return
+
+    # 舊扁平格式:維持今天行為(整份清單單一推 LINE_WATCH_TO),平滑過渡到 per-user
+    stocks = doc.get("stocks", [])
+    if not stocks:
+        print("  個股盯盤:watchlist 為空(傳「加 2330」給盯盤 bot 即可建立),略過。")
+        return
+    print(f"  個股盯盤:清單 {len(stocks)} 檔,抓新聞 + 技術面 + 月營收...")
+    fresh = _push_watch_for(today, stocks, to=os.environ["LINE_WATCH_TO"], pushed=pushed)
+    if fresh:
+        save_pushed_revenue(pushed + fresh)
+    print("  ⑤ 個股盯盤已推。")
 
 
 def main() -> int:

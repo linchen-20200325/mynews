@@ -128,6 +128,40 @@ def dumps(doc: dict) -> str:
     return json.dumps(doc, ensure_ascii=False, indent=2)
 
 
+# ── per-user 多使用者(每個 userId 一份獨立清單;與 repo/watchlist.py 同步)──────
+def is_per_user(doc: dict) -> bool:
+    return isinstance(doc.get("users"), dict)
+
+
+def ensure_user_bucket(doc: dict, user_id: str) -> dict:
+    """確保 per-user 結構並回傳此 userId 的 bucket;首位下指令者無損繼承舊扁平清單。"""
+    users = doc.get("users")
+    if not isinstance(users, dict):
+        users = doc["users"] = {}
+    legacy = doc.pop("stocks", None)
+    bucket = users.setdefault(user_id, {"stocks": []})
+    if not isinstance(bucket.get("stocks"), list):
+        bucket["stocks"] = []
+    if isinstance(legacy, list) and legacy:
+        existing = {str(s.get("ticker")) for s in bucket["stocks"]}
+        for s in legacy:
+            if str(s.get("ticker")) not in existing:
+                bucket["stocks"].append(s)
+    return bucket
+
+
+def add_stock_for(doc: dict, user_id: str, ticker: str, name: str = ""):
+    return add_stock(ensure_user_bucket(doc, user_id), ticker, name)
+
+
+def remove_stock_for(doc: dict, user_id: str, ticker: str):
+    return remove_stock(ensure_user_bucket(doc, user_id), ticker)
+
+
+def format_list_for(doc: dict, user_id: str) -> str:
+    return format_list((doc.get("users") or {}).get(user_id) or {"stocks": []})
+
+
 # ── 基礎工具 ───────────────────────────────────────────────────────────────
 def _log(msg: str) -> None:
     print(f"{datetime.now():%Y-%m-%d %H:%M:%S} {msg}", flush=True)
@@ -214,23 +248,27 @@ def line_reply(reply_token: str, text: str) -> None:
 def handle_text(text: str, user_id: str) -> str:
     low = (text or "").strip().lower()
     if low in ("id", "我的id", "myid"):
-        return f"你的 userId:\n{user_id}\n(設成 repo Secret 的 LINE_WATCH_TO 即可只推給你)"
+        return (f"你的 userId:\n{user_id}\n"
+                "(把它加進 repo Secret 的 WATCH_ALLOW_USER 即可授權使用;"
+                "之後傳「加 2330」就會自動建立你的專屬清單,各人各推各的)")
 
     action, arg = parse_command(text)
     if action == "list":
         doc, _ = gh_load()
-        return format_list(doc)
+        # per-user:列自己的清單;舊扁平格式(尚無人遷移)仍列共用清單。
+        return format_list_for(doc, user_id) if is_per_user(doc) else format_list(doc)
     if action in ("add", "remove"):
         doc, sha = gh_load()
+        # 一律走 per-user:首位下指令者會把既有扁平清單無損遷移到自己名下。
         if action == "add":
             ticker = normalize_ticker(arg)
             name = arg.replace(ticker, "").strip() if ticker else ""
-            changed, msg = add_stock(doc, arg, name)
+            changed, msg = add_stock_for(doc, user_id, arg, name)
         else:
-            changed, msg = remove_stock(doc, arg)
+            changed, msg = remove_stock_for(doc, user_id, arg)
         if changed and not gh_save(doc, f"watchlist: {action} {arg.strip()}", sha):
             return "清單更新失敗(寫回 repo 出錯),請稍後再試。"
-        return msg + "\n\n" + format_list(doc)
+        return msg + "\n\n" + format_list_for(doc, user_id)
     return help_text()
 
 

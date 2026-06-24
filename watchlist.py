@@ -109,6 +109,68 @@ def help_text() -> str:
     )
 
 
+# ── per-user 多使用者結構(每個 userId 一份獨立清單)────────────────────────────
+# 結構演進:舊扁平 ``{"stocks":[...]}`` → 新 ``{"users":{"U…":{"stocks":[...]}}}``。
+# 兩格式並存相容:排程端對舊格式維持單一推播;首位下指令者觸發「無損遷移」把既有
+# 扁平清單併入其名下。per-user 函式只負責解析出對應 bucket,實際增刪/排版仍復用上方
+# add_stock / remove_stock / format_list 純邏輯(SSOT,規則只定義一次)。
+def is_per_user(doc: dict) -> bool:
+    """doc 是否已是 per-user 結構(含 users 鍵)。"""
+    return isinstance(doc.get("users"), dict)
+
+
+def user_ids(doc: dict) -> list[str]:
+    """取所有有清單的 userId;非 per-user → 空。"""
+    return list((doc.get("users") or {}).keys())
+
+
+def user_stocks(doc: dict, user_id: str) -> list[dict]:
+    """取某 userId 的個股清單;無此人或非 per-user → 空清單。"""
+    return ((doc.get("users") or {}).get(user_id) or {}).get("stocks", []) or []
+
+
+def tickers_for(doc: dict, user_id: str) -> list[str]:
+    """取某 userId 清單內所有代號(已去空白)。"""
+    return [str(s.get("ticker", "")).strip()
+            for s in user_stocks(doc, user_id) if s.get("ticker")]
+
+
+def ensure_user_bucket(doc: dict, user_id: str) -> dict:
+    """確保 doc 為 per-user 結構,就地建立並回傳該 userId 的 bucket ``{"stocks":[...]}``。
+
+    無損遷移:首次寫入時把舊扁平頂層 stocks 併入「此使用者」名下(避免既有清單遺失),
+    併入後移除頂層 stocks;重複代號不重覆加入。
+    """
+    users = doc.get("users")
+    if not isinstance(users, dict):
+        users = doc["users"] = {}
+    legacy = doc.pop("stocks", None)
+    bucket = users.setdefault(user_id, {"stocks": []})
+    if not isinstance(bucket.get("stocks"), list):
+        bucket["stocks"] = []
+    if isinstance(legacy, list) and legacy:
+        existing = {str(s.get("ticker")) for s in bucket["stocks"]}
+        for s in legacy:
+            if str(s.get("ticker")) not in existing:
+                bucket["stocks"].append(s)
+    return bucket
+
+
+def add_stock_for(doc: dict, user_id: str, ticker: str, name: str = "") -> tuple[bool, str]:
+    """加入一檔到某 userId 的清單(復用 add_stock);觸發無損遷移。"""
+    return add_stock(ensure_user_bucket(doc, user_id), ticker, name)
+
+
+def remove_stock_for(doc: dict, user_id: str, ticker: str) -> tuple[bool, str]:
+    """從某 userId 的清單移除一檔(復用 remove_stock);觸發無損遷移。"""
+    return remove_stock(ensure_user_bucket(doc, user_id), ticker)
+
+
+def format_list_for(doc: dict, user_id: str) -> str:
+    """把某 userId 的清單排成 LINE 回覆(復用 format_list);唯讀,不遷移。"""
+    return format_list((doc.get("users") or {}).get(user_id) or {"stocks": []})
+
+
 # ── 本機檔 I/O(排程端用;NAS bot 走 GitHub API,不用這兩個)─────────────────
 def load() -> dict:
     """讀本機 watchlist.json;無檔/壞檔 → 回空清單(不拋例外)。"""
