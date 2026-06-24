@@ -2907,8 +2907,7 @@ def page_tw() -> None:
         tool_stock_query()
     with st.expander("📰 新聞策略 — 貼一則新聞,轉化為台股 ETF 進出場決策"):
         tool_news_strategy()
-    with st.expander("🧩 ETF 工作台 — 持股反查 / 圖鑑"):
-        sec_etf()
+    st.divider(); sec_etf()
 
 
 def page_us() -> None:
