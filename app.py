@@ -1464,6 +1464,113 @@ def generate_live_stock_query() -> None:
     st.session_state.pop("live_stockq_news", None)
 
 
+# ---------------------------------------------------------------------------
+# 新聞策略(貼一則新聞 → 首席策略師 → 台股 ETF 進場/持有/出場決策;互動、不存檔)
+# ---------------------------------------------------------------------------
+
+def render_news_strategy_panel() -> None:
+    """輸入框:貼新聞 → Gemini 產生四階段台股 ETF 策略。"""
+    with st.container(border=True):
+        st.markdown("#### 📰 貼上新聞 / 時事")
+        st.caption(
+            "貼一則新聞或時事敘述,Gemini 以「首席投資策略師」角度做深度因果鏈推導,"
+            "轉化為台股 ETF 的進場/持有/出場實戰決策(四階段:因果鏈 → 三大陣營 → ETF 佈局 → 持有出場)。"
+            "ETF 代號為 AI 整理,務必自行核對即時行情與溢價率;僅供參考,非投資建議。"
+        )
+        text = st.text_area(
+            "新聞文本", key="newsetf_text_input", height=180,
+            placeholder="例:美國商務部宣布對先進製程設備擴大出口管制,衝擊 AI 晶片供應鏈…",
+        )
+        has_key = ensure_gemini_key()
+        if st.button(
+            "🧠 產生 ETF 策略分析",
+            use_container_width=True, disabled=not has_key,
+            help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+        ):
+            if len(text.strip()) < 15:
+                st.warning("請貼上較完整的新聞內容(至少一兩句)。")
+            else:
+                with st.spinner("Gemini 策略分析中(約 15–40 秒)…"):
+                    try:
+                        st.session_state["live_newsetf"] = update_data.get_news_etf_strategy(
+                            text.strip(), tz_utils.taiwan_today())
+                        st.rerun()
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"分析失敗:{exc}")
+        if not has_key:
+            render_key_hint()
+
+
+def _render_camp(title: str, items: list, name_key: str) -> None:
+    """渲染一個陣營(受害/受惠/外資回補)。"""
+    st.markdown(f"**{title}**")
+    if not items:
+        st.caption("—(本則新聞此陣營著墨不明顯)")
+        return
+    for it in items:
+        name = (it.get(name_key) or "").strip()
+        reason = (it.get("reason") or "").strip()
+        st.markdown(f"- **{name}**:{reason}" if name else f"- {reason}")
+
+
+def _render_etf_list(title: str, items: list) -> None:
+    """渲染一組 ETF 建議(進攻/防守)。"""
+    st.markdown(f"**{title}**")
+    if not items:
+        st.caption("—")
+        return
+    for e in items:
+        tk = (e.get("ticker") or "").strip()
+        nm = (e.get("name") or "").strip()
+        logic = (e.get("logic") or "").strip()
+        head = f"{nm}（{tk}）" if tk else (nm or "(代號待確認)")
+        st.markdown(f"- **{head}**:{logic}")
+
+
+def render_news_strategy(data: dict) -> None:
+    """渲染新聞策略四階段。"""
+    if data.get("news_summary"):
+        st.info(data["news_summary"])
+    if data.get("category"):
+        st.caption(f"事件類型:{data['category']}")
+    st.caption("AI 依新聞推導,ETF 代號與數字請自行核對即時行情/溢價率;僅供參考,非投資建議。")
+
+    p1 = data.get("phase1_causal", {})
+    st.subheader("① 新聞本質與因果鏈推導")
+    if p1.get("core_turn"):
+        st.markdown(f"**核心轉折:** {p1['core_turn']}")
+    if p1.get("first_order"):
+        st.markdown(f"**第一層效應:** {p1['first_order']}")
+    if p1.get("horizon_nature"):
+        st.markdown(f"**性質研判:** {p1['horizon_nature']}")
+
+    p2 = data.get("phase2_camps", {})
+    st.subheader("② 台股供應鏈三大陣營")
+    _render_camp("🔴 直接衝擊 / 利空受害", p2.get("victims", []), "industry")
+    _render_camp("🟢 直接受惠 / 定價權", p2.get("beneficiaries", []), "industry")
+    _render_camp("🔵 外資回補 / 長線外溢", p2.get("foreign_reflow", []), "sector")
+
+    p3 = data.get("phase3_etf", {})
+    st.subheader("③ 台股 ETF 實戰佈局")
+    _render_etf_list("⚔️ 進攻 / 順勢追擊", p3.get("offense", []))
+    _render_etf_list("🛡️ 防守 / 利空低接", p3.get("defense", []))
+    if p3.get("safety_check"):
+        st.warning(f"⚠️ 即時安全檢視:{p3['safety_check']}")
+
+    p4 = data.get("phase4_playbook", {})
+    st.subheader("④ 持有週期與出場劇本")
+    if p4.get("holding_period"):
+        st.markdown(f"**預計持有週期:** {p4['holding_period']}")
+    sigs = p4.get("exit_signals", [])
+    if sigs:
+        st.markdown("**出場 / 獲利了結訊號:**")
+        for s in sigs:
+            st.markdown(f"- {s}")
+
+    if data.get("data_notes"):
+        st.caption(data["data_notes"])
+
+
 def render_stock_query(data: dict) -> None:
     head = data.get("query_zh", "—")
     ticker = data.get("ticker", "")
@@ -2483,7 +2590,7 @@ def main() -> None:
     st.sidebar.header("📂 報告類型")
     report_type = st.sidebar.radio(
         "選擇",
-        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "國際盤預警", "法人籌碼", "個股健診", "全球人物追蹤", "房市觀察", "ETF工作台"],
+        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "國際盤預警", "法人籌碼", "個股健診", "新聞策略", "全球人物追蹤", "房市觀察", "ETF工作台"],
     )
     st.sidebar.divider()
     with st.sidebar:
@@ -2882,6 +2989,22 @@ def main() -> None:
             return
 
         st.info("在上方輸入個股名稱或代號,先「① 辨識個股並抓新聞」,再用 Gemini 健診。")
+
+    elif report_type == "新聞策略":
+        st.header("📰 新聞策略 — 貼一則新聞,轉化為台股 ETF 進場/持有/出場決策")
+        render_news_strategy_panel()
+        if st.session_state.get("live_newsetf"):
+            live = st.session_state["live_newsetf"]
+            st.success("⚡ 以下為剛剛即時產生的新聞 ETF 策略分析。")
+            st.download_button(
+                "⬇️ 下載分析 JSON",
+                data=json.dumps(live, ensure_ascii=False, indent=2),
+                file_name="news_etf_strategy.json", mime="application/json",
+            )
+            st.divider()
+            render_news_strategy(live)
+            return
+        st.info("在上方貼上一則新聞或時事敘述,按「產生 ETF 策略分析」。")
 
     elif report_type == "全球人物追蹤":
         st.header("🌍 全球人物追蹤 — 中文輸入,自動翻英抓全球新聞,看牽動哪些台美股")
