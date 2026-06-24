@@ -2583,574 +2583,383 @@ def render_housing_ai_summary(ai_summary) -> None:
 # 主程式
 # ---------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------
+# 整合 4 大頁(台股 / 美股 / 全球 / 台灣房市):AI 融合總結 + 一頁展開所有面板
+#   讀唯讀的每日排程資料直接攤開;互動工具(健診/新聞策略/人物追蹤/ETF)收進 expander;
+#   各頁最上方提供「AI 今日總結」(按鈕觸發、當次 session 依日期快取,避免每次重算)。
+# ---------------------------------------------------------------------------
+
+def render_market_digest(view: str, payload: dict) -> None:
+    """各頁最上方:Gemini 把該領域當日各面板數據融成一段統一研判。"""
+    key = f"digest_{view}_{tz_utils.taiwan_today()}"
+    cached = st.session_state.get(key)
+    with st.container(border=True):
+        st.markdown(f"#### 🧠 AI 今日總結 — {view}")
+        if cached:
+            badge = {"偏多": "🟢 偏多", "偏空": "🔴 偏空", "中性": "⚪ 中性"}.get(
+                cached.get("overall", ""), cached.get("overall", ""))
+            if badge:
+                st.markdown(f"**整體傾向:{badge}**")
+            st.markdown(cached.get("digest_markdown", ""))
+            st.caption("AI 依當日各面板數據融合研判,僅供參考、非投資建議。")
+            if st.button("🔄 重新產生總結", key=f"redigest_{view}"):
+                st.session_state.pop(key, None)
+                st.rerun()
+            return
+        if not payload:
+            st.caption("目前無當日資料可融合(等每日排程,或用下方各面板『即時抓取』後再產生)。")
+            return
+        has_key = ensure_gemini_key()
+        if st.button(
+            "🧠 產生 AI 今日總結", key=f"gen_digest_{view}",
+            use_container_width=True, disabled=not has_key,
+            help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
+        ):
+            with st.spinner("Gemini 融合當日數據中(約 10–30 秒)…"):
+                try:
+                    st.session_state[key] = update_data.get_market_digest(
+                        view, payload, tz_utils.taiwan_today())
+                    st.rerun()
+                except Exception as exc:  # noqa: BLE001
+                    st.error(f"產生失敗:{exc}")
+        if not has_key:
+            render_key_hint()
+
+
+# ── 唯讀每日面板(直接攤開;即時重抓收進 expander)──────────────────────────
+def sec_report() -> None:
+    st.subheader("🌐 戰略報告")
+    with st.expander("⚡ 即時重新抓取 / 產生戰略報告"):
+        render_live_panel()
+        if "live_news" in st.session_state and not st.session_state.get("live_report"):
+            news = st.session_state["live_news"]
+            if news:
+                st.success(f"已抓到 {len(news)} 則真實外電,確認後再請 Gemini 分析:")
+                if st.button("🧠 ② 用 Gemini 產生戰略分析 + 白話文", key="rpt_step2",
+                             disabled=not ensure_gemini_key()):
+                    with st.spinner("Gemini 分析中…"):
+                        try:
+                            generate_live_report(); st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"產生報告失敗:{exc}")
+                render_news_cards(news)
+            else:
+                st.info("這次沒抓到新聞,稍後再試或調整關鍵字。")
+    live = st.session_state.get("live_report")
+    if live:
+        st.success("⚡ 以下為剛剛即時產生的報告(尚未存檔)。")
+        render_report(live)
+        return
+    multi = load_json(REPORTS_MULTI_PATH)
+    multi_reports = (multi or {}).get("reports") or []
+    if len(multi_reports) > 1:
+        st.caption(f"📚 本日含 {len(multi_reports)} 個主題報告,可切換:")
+        idx = st.selectbox(
+            "選擇主題", range(len(multi_reports)),
+            format_func=lambda i: multi_reports[i].get("topic", f"主題 {i + 1}"),
+            key="macro_topic_pick",
+        )
+        render_report(multi_reports[idx]); return
+    report = pick_report(REPORT_PATH, ARCHIVE_DIR)
+    if report is None:
+        st.info("尚無每日戰略報告。可用上方『即時抓取』取得。")
+        return
+    render_report(report)
+
+
+def sec_trends() -> None:
+    st.subheader("🔥 趨勢雷達 — 現在最紅的產業")
+    with st.expander("⚡ 即時重新產生趨勢雷達"):
+        render_trend_live_panel()
+        if "live_trend_news" in st.session_state and not st.session_state.get("live_trends"):
+            news = st.session_state["live_trend_news"]
+            if news:
+                st.success(f"已抓到 {len(news)} 則產業新聞:")
+                if st.button("🧠 ② 用 Gemini 產生趨勢雷達", key="trd_step2",
+                             disabled=not ensure_gemini_key()):
+                    with st.spinner("Gemini 排名打分中…"):
+                        try:
+                            generate_live_trends(); st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"產生趨勢雷達失敗:{exc}")
+                render_news_cards(news)
+    live = st.session_state.get("live_trends")
+    if live:
+        st.success("⚡ 以下為剛剛即時產生的趨勢雷達。")
+        render_trends(live); return
+    history = load_trend_history(TRENDS_ARCHIVE_DIR)
+    if history is not None and len(history.index) >= 2:
+        st.caption("📈 產業熱度趨勢(歷史):哪條線持續往上,就是動能最強的產業。")
+        st.line_chart(history)
+    data = pick_report(TRENDS_PATH, TRENDS_ARCHIVE_DIR)
+    if data is None:
+        st.info("尚無趨勢雷達存檔。可用上方『即時產生』取得。")
+        return
+    render_trends(data)
+
+
+def sec_tw_stocks() -> None:
+    st.subheader("📈 台股觀察 — 值得關注的台股標的")
+    with st.expander("⚡ 即時重新抓取台股觀察"):
+        render_stock_live_panel()
+        if "live_stock_news" in st.session_state and not st.session_state.get("live_stocks"):
+            news = st.session_state["live_stock_news"]
+            if news:
+                st.success(f"已抓到 {len(news)} 則財經新聞:")
+                if st.button("🧠 ② 用 Gemini 整理台股標的", key="tws_step2",
+                             disabled=not ensure_gemini_key()):
+                    with st.spinner("Gemini 整理台股標的中…"):
+                        try:
+                            generate_live_stocks(); st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"整理台股標的失敗:{exc}")
+                render_news_cards(news)
+    data = st.session_state.get("live_stocks") or pick_report(STOCKS_PATH, STOCKS_ARCHIVE_DIR)
+    if data is None:
+        st.info("尚無台股觀察存檔。可用上方『即時產生』取得。")
+        return
+    render_stocks(data)
+
+
+def sec_us_stocks() -> None:
+    st.subheader("📈 美股觀察 — 值得關注的美股標的")
+    with st.expander("⚡ 即時重新抓取美股觀察"):
+        render_us_stock_live_panel()
+        if "live_us_stock_news" in st.session_state and not st.session_state.get("live_us_stocks"):
+            news = st.session_state["live_us_stock_news"]
+            if news:
+                st.success(f"已抓到 {len(news)} 則財經新聞:")
+                if st.button("🧠 ② 用 Gemini 整理美股標的", key="uss_step2",
+                             disabled=not ensure_gemini_key()):
+                    with st.spinner("Gemini 整理美股標的中…"):
+                        try:
+                            generate_live_us_stocks(); st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"整理美股標的失敗:{exc}")
+                render_news_cards(news)
+    data = st.session_state.get("live_us_stocks") or pick_report(US_STOCKS_PATH, US_STOCKS_ARCHIVE_DIR)
+    if data is None:
+        st.info("尚無美股觀察存檔。可用上方『即時產生』取得。")
+        return
+    render_us_stocks(data)
+
+
+def sec_intl() -> None:
+    st.subheader("🌏 國際盤預警(盤前) — 美股/台指期夜盤大跌的時間差訊號")
+    with st.expander("⚡ 即時重新抓取國際盤"):
+        render_intl_alert_live_panel()
+        if "live_intl_quotes" in st.session_state and not st.session_state.get("live_intl_alert"):
+            quotes_doc = st.session_state["live_intl_quotes"]
+            st.caption(f"報價時間:{quotes_doc.get('as_of', '—')} · 真實市場報價(Yahoo Finance)")
+            render_index_quotes(quotes_doc.get("quotes", {}))
+            if st.button("🧠 ② 用 Gemini 解讀利空原因 + 對台股影響", key="intl_step2",
+                         disabled=not ensure_gemini_key()):
+                with st.spinner("Gemini 解讀中…"):
+                    try:
+                        generate_live_intl_alert(); st.rerun()
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"解讀失敗:{exc}")
+    data = st.session_state.get("live_intl_alert") or pick_report(
+        INTL_ALERT_PATH, INTL_ALERT_ARCHIVE_DIR)
+    if data is None:
+        st.info("尚無國際盤預警存檔。可用上方『即時產生』取得。")
+        return
+    render_intl_alert(data)
+    render_confluence(data)
+
+
+def sec_chip() -> None:
+    st.subheader("📊 法人籌碼 — 三大法人買賣超(事後驗證真實賣壓)")
+    data = pick_report(CHIP_PATH, CHIP_ARCHIVE_DIR)
+    if data is None:
+        st.info("尚無三大法人籌碼存檔。每日排程會自動更新。")
+        return
+    render_chip(data)
+
+
+def sec_housing() -> None:
+    render_house_price_panel()
+    st.subheader("🏠 房市觀察 — 預售/成屋冷熱、打房政策與各縣市房價")
+    with st.expander("⚡ 即時重新抓取房市判讀"):
+        render_housing_live_panel()
+        if "live_housing_news" in st.session_state and not st.session_state.get("live_housing"):
+            news = st.session_state["live_housing_news"]
+            if news:
+                st.success(f"已抓到 {len(news)} 則房市新聞:")
+                if st.button("🧠 ② 用 Gemini 判讀房市冷熱 + 打房政策", key="hou_step2",
+                             disabled=not ensure_gemini_key()):
+                    with st.spinner("Gemini 判讀中…"):
+                        try:
+                            generate_live_housing(); st.rerun()
+                        except Exception as exc:  # noqa: BLE001
+                            st.error(f"產生房市觀察失敗:{exc}")
+                render_news_cards(news)
+    live = st.session_state.get("live_housing")
+    render_housing(live or pick_report(HOUSING_PATH, HOUSING_ARCHIVE_DIR))
+
+
+# ── 互動工具(收進 expander)────────────────────────────────────────────────
+def tool_stock_query() -> None:
+    render_stock_query_panel()
+    if st.session_state.get("live_stockq"):
+        render_stock_query(st.session_state["live_stockq"]); return
+    if "live_stockq_news" in st.session_state:
+        tr = st.session_state.get("live_stockq_translation", {})
+        news = st.session_state["live_stockq_news"]
+        ticker = tr.get("ticker", "")
+        st.info(f"🔤 辨識為:**{tr.get('query_zh', '')}**"
+                + (f"（{ticker}）" if ticker else "")
+                + f"　·　{tr.get('market', '')}　·　英文:{tr.get('query_en', '')}")
+        if news:
+            st.success(f"已抓到 {len(news)} 則相關新聞,確認後再請 Gemini 健診:")
+            if st.button("🧠 ② 用 Gemini 健診", key="sq_step2",
+                         disabled=not ensure_gemini_key()):
+                with st.spinner("Gemini 分析中…"):
+                    try:
+                        generate_live_stock_query(); st.rerun()
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"分析失敗:{exc}")
+            render_news_cards(news)
+        else:
+            st.info("這次沒抓到相關新聞,換個名稱/代號或稍後再試。")
+
+
+def tool_news_strategy() -> None:
+    render_news_strategy_panel()
+    if st.session_state.get("live_newsetf"):
+        st.divider()
+        render_news_strategy(st.session_state["live_newsetf"])
+
+
+def tool_focus() -> None:
+    render_focus_panel()
+    if st.session_state.get("live_focus"):
+        render_focus(st.session_state["live_focus"]); return
+    if "live_focus_news" in st.session_state:
+        tr = st.session_state.get("live_focus_translation", {})
+        news = st.session_state["live_focus_news"]
+        en = tr.get("query_en", "")
+        st.info(f"🔤 中文「{tr.get('query_zh', '')}」→ 英文檢索:**{en}**")
+        if news:
+            st.success(f"已抓到 {len(news)} 則全球新聞,確認後再請 Gemini 整理:")
+            if st.button("🧠 ② 用 Gemini 整理(他說了什麼 + 衍伸產業 + 台美股)", key="focus_step2",
+                         disabled=not ensure_gemini_key()):
+                with st.spinner("Gemini 分析中…"):
+                    try:
+                        generate_live_focus(); st.rerun()
+                    except Exception as exc:  # noqa: BLE001
+                        st.error(f"分析失敗:{exc}")
+            render_news_cards(news)
+        else:
+            st.info("這次沒抓到相關新聞,換個關鍵字或稍後再試。")
+        return
+    doc = pick_report(FOCUS_PATH, FOCUS_ARCHIVE_DIR)
+    focuses = (doc or {}).get("focuses") or []
+    if not focuses:
+        st.info("尚無每日全球人物追蹤存檔。可在上方輸入中文關鍵字即時產生,或設 FOCUS_TOPICS。")
+        return
+    if len(focuses) > 1:
+        st.caption(f"📚 本日含 {len(focuses)} 個追蹤對象,可切換:")
+        idx = st.selectbox(
+            "選擇追蹤對象", range(len(focuses)),
+            format_func=lambda i: focuses[i].get("query_zh", f"對象 {i + 1}"),
+            key="focus_topic_pick",
+        )
+        render_focus(focuses[idx])
+    else:
+        render_focus(focuses[0])
+
+
+def sec_etf() -> None:
+    st.subheader("🧩 ETF 工作台 — 持股反查 / 圖鑑(共用同一份快取資料)")
+    tab1, tab2 = st.tabs(["🔎 持股反查 / 個股", "📚 ETF 圖鑑(組合配置)"])
+    with tab1:
+        render_etf_crawl_panel()
+        render_etf_add_panel()
+        render_etf_lookup(st.session_state.get("etf_data_live"))
+    with tab2:
+        render_etf_profiles()
+
+
+# ── 4 大頁 ─────────────────────────────────────────────────────────────────
+def page_tw() -> None:
+    st.header("📊 台股")
+    payload = {
+        "國際盤預警": pick_report(INTL_ALERT_PATH, INTL_ALERT_ARCHIVE_DIR),
+        "法人籌碼": pick_report(CHIP_PATH, CHIP_ARCHIVE_DIR),
+        "台股觀察": pick_report(STOCKS_PATH, STOCKS_ARCHIVE_DIR),
+    }
+    render_market_digest("台股", {k: v for k, v in payload.items() if v})
+    st.divider(); sec_intl()
+    st.divider(); sec_chip()
+    st.divider(); sec_tw_stocks()
+    st.divider()
+    st.markdown("### 🛠 互動工具")
+    with st.expander("🩺 個股健診 — 輸入個股,看它跟新聞的相關性與上漲性質"):
+        tool_stock_query()
+    with st.expander("📰 新聞策略 — 貼一則新聞,轉化為台股 ETF 進出場決策"):
+        tool_news_strategy()
+    with st.expander("🧩 ETF 工作台 — 持股反查 / 圖鑑"):
+        sec_etf()
+
+
+def page_us() -> None:
+    st.header("🇺🇸 美股")
+    payload = {"美股觀察": pick_report(US_STOCKS_PATH, US_STOCKS_ARCHIVE_DIR)}
+    render_market_digest("美股", {k: v for k, v in payload.items() if v})
+    st.divider(); sec_us_stocks()
+    st.divider()
+    st.markdown("### 🛠 互動工具")
+    with st.expander("🩺 個股健診 — 美股也能查(輸入 Nvidia / NVDA …)"):
+        tool_stock_query()
+
+
+def page_global() -> None:
+    st.header("🌍 全球")
+    payload = {
+        "戰略報告": pick_report(REPORT_PATH, ARCHIVE_DIR),
+        "趨勢雷達": pick_report(TRENDS_PATH, TRENDS_ARCHIVE_DIR),
+        "全球人物追蹤": pick_report(FOCUS_PATH, FOCUS_ARCHIVE_DIR),
+    }
+    render_market_digest("全球", {k: v for k, v in payload.items() if v})
+    st.divider(); sec_report()
+    st.divider(); sec_trends()
+    st.divider()
+    st.subheader("🌍 全球人物追蹤 — 中文輸入,自動翻英抓全球新聞,看牽動哪些台美股")
+    tool_focus()
+
+
+def page_housing() -> None:
+    st.header("🏠 台灣房市")
+    payload = {"房市觀察": pick_report(HOUSING_PATH, HOUSING_ARCHIVE_DIR)}
+    render_market_digest("台灣房市", {k: v for k, v in payload.items() if v})
+    st.divider(); sec_housing()
+
+
 def main() -> None:
     st.set_page_config(page_title="全球政經戰略看板", page_icon="🌐", layout="wide")
     st.title("🌐 全球政經戰略每日看板")
 
-    st.sidebar.header("📂 報告類型")
-    report_type = st.sidebar.radio(
-        "選擇",
-        ["戰略報告", "趨勢雷達", "台股觀察", "美股觀察", "國際盤預警", "法人籌碼", "個股健診", "新聞策略", "全球人物追蹤", "房市觀察", "ETF工作台"],
-    )
+    st.sidebar.header("📂 領域")
+    view = st.sidebar.radio("選擇", ["📊 台股", "🇺🇸 美股", "🌍 全球", "🏠 台灣房市"])
+    st.sidebar.caption("點一個領域,該領域所有面板一次展開,最上方有 AI 今日總結。")
     st.sidebar.divider()
     with st.sidebar:
         render_proxy_status()
-        # 全域設定:勾一次,三個抓取(成分股/圖鑑/股價)抓完都自動存到 GitHub
         st.checkbox(
             "💾 抓取後自動存到 GitHub", value=True, key="auto_save_github",
-            help="勾選後,各頁『立即抓取』完成即自動 commit 對應 JSON 回 repo。需設 GITHUB_TOKEN。",
+            help="勾選後,各面板『即時抓取』完成即自動 commit 對應 JSON 回 repo。需設 GITHUB_TOKEN。",
         )
-    st.sidebar.divider()
-    st.sidebar.header("📅 報告選擇")
 
-    if report_type == "戰略報告":
-        render_live_panel()
-
-        # 1) 本次即時產生的完整報告(含 Gemini 分析)優先顯示
-        if st.session_state.get("live_report"):
-            live = st.session_state["live_report"]
-            st.success("⚡ 以下為剛剛即時產生的報告(尚未存檔)。")
-            st.download_button(
-                "⬇️ 下載這份報告 JSON",
-                data=json.dumps(live, ensure_ascii=False, indent=2),
-                file_name=f"report_{live.get('report_date', 'latest')}.json",
-                mime="application/json",
-            )
-            st.divider()
-            render_report(live)
-            return
-
-        # 2) 已抓到新聞、尚未分析:顯示新聞,並提供第二步的 Gemini 按鈕
-        if "live_news" in st.session_state:
-            news = st.session_state["live_news"]
-            st.divider()
-            st.header("📰 即時抓取的新聞")
-            if news:
-                st.success(f"已抓到 {len(news)} 則真實外電,確認後再請 Gemini 分析:")
-                has_key = ensure_gemini_key()
-                if st.button(
-                    "🧠 ② 用 Gemini 產生戰略分析 + 白話文",
-                    use_container_width=True,
-                    disabled=not has_key,
-                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
-                ):
-                    with st.spinner("Gemini 分析中(約 10–30 秒)…"):
-                        try:
-                            generate_live_report()
-                            st.rerun()
-                        except Exception as exc:  # noqa: BLE001
-                            st.error(f"產生報告失敗:{exc}")
-                if not has_key:
-                    render_key_hint()
-                st.download_button(
-                    "⬇️ 下載新聞 JSON",
-                    data=json.dumps(news, ensure_ascii=False, indent=2),
-                    file_name="news.json",
-                    mime="application/json",
-                )
-                render_news_cards(news)
-            else:
-                st.info("這次沒抓到新聞,稍後再試或調整關鍵字。")
-            return
-
-        # 3) 否則顯示每日排程存檔的報告(支援多主題:有 latest_reports.json 且 >1 份時可切換)
-        multi = load_json(REPORTS_MULTI_PATH)
-        multi_reports = (multi or {}).get("reports") or []
-        if len(multi_reports) > 1:
-            st.caption(f"📚 本日含 {len(multi_reports)} 個主題報告,可切換:")
-            idx = st.selectbox(
-                "選擇主題", range(len(multi_reports)),
-                format_func=lambda i: multi_reports[i].get("topic", f"主題 {i + 1}"),
-                key="macro_topic_pick",
-            )
-            render_report(multi_reports[idx])
-            return
-        report = pick_report(REPORT_PATH, ARCHIVE_DIR)
-        if report is None:
-            st.warning("尚無每日排程報告。可用上方「⚡ 即時抓取」按鈕馬上取得新聞或產生報告。")
-            return
-        render_report(report)
-    elif report_type == "趨勢雷達":
-        st.header("🔥 趨勢雷達 — 現在最紅的產業")
-        render_trend_live_panel()
-
-        # 1) 本次即時產生的趨勢雷達優先顯示
-        if st.session_state.get("live_trends"):
-            live = st.session_state["live_trends"]
-            st.success("⚡ 以下為剛剛即時產生的趨勢雷達(尚未存檔)。")
-            st.download_button(
-                "⬇️ 下載趨勢 JSON",
-                data=json.dumps(live, ensure_ascii=False, indent=2),
-                file_name=f"trends_{live.get('report_date', 'latest')}.json",
-                mime="application/json",
-            )
-            st.divider()
-            render_trends(live)
-            return
-
-        # 2) 已抓到產業新聞、尚未排名:顯示新聞,並提供第二步的 Gemini 按鈕
-        if "live_trend_news" in st.session_state:
-            news = st.session_state["live_trend_news"]
-            st.divider()
-            st.subheader("📰 即時抓取的產業新聞")
-            if news:
-                st.success(f"已抓到 {len(news)} 則產業新聞,確認後再請 Gemini 排名打分:")
-                has_key = ensure_gemini_key()
-                if st.button(
-                    "🧠 ② 用 Gemini 產生趨勢雷達",
-                    use_container_width=True,
-                    disabled=not has_key,
-                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
-                ):
-                    with st.spinner("Gemini 排名打分中(約 10–30 秒)…"):
-                        try:
-                            generate_live_trends()
-                            st.rerun()
-                        except Exception as exc:  # noqa: BLE001
-                            st.error(f"產生趨勢雷達失敗:{exc}")
-                if not has_key:
-                    render_key_hint()
-                st.download_button(
-                    "⬇️ 下載產業新聞 JSON",
-                    data=json.dumps(news, ensure_ascii=False, indent=2),
-                    file_name="trend_news.json",
-                    mime="application/json",
-                )
-                render_news_cards(news)
-            else:
-                st.info("這次沒抓到產業新聞,稍後再試或調整 TREND_QUERIES 關鍵字。")
-            return
-
-        # 3) 否則顯示每日排程存檔 + 歷史折線圖
-        history = load_trend_history(TRENDS_ARCHIVE_DIR)
-        if history is not None and len(history.index) >= 2:
-            st.subheader("📈 產業熱度趨勢(歷史)")
-            st.caption("看出『網路 → AI』式的長期轉移:哪條線持續往上,就是動能最強的產業。")
-            st.line_chart(history)
-            st.divider()
-        elif history is not None:
-            st.info("歷史折線圖需累積至少兩天的資料,明天就會開始出現。")
-
-        data = pick_report(TRENDS_PATH, TRENDS_ARCHIVE_DIR)
-        if data is None:
-            st.warning("尚無每日趨勢雷達存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
-            return
-        render_trends(data)
-    elif report_type == "台股觀察":
-        st.header("📈 台股觀察 — 值得關注的台股標的")
-        render_stock_live_panel()
-
-        # 1) 本次即時產生的台股觀察優先顯示
-        if st.session_state.get("live_stocks"):
-            live = st.session_state["live_stocks"]
-            st.success("⚡ 以下為剛剛即時產生的台股觀察(尚未存檔)。")
-            st.download_button(
-                "⬇️ 下載台股觀察 JSON",
-                data=json.dumps(live, ensure_ascii=False, indent=2),
-                file_name=f"stocks_{live.get('report_date', 'latest')}.json",
-                mime="application/json",
-            )
-            st.divider()
-            render_stocks(live)
-            return
-
-        # 2) 已抓到財經新聞、尚未整理:顯示新聞,並提供第二步的 Gemini 按鈕
-        if "live_stock_news" in st.session_state:
-            news = st.session_state["live_stock_news"]
-            st.divider()
-            st.subheader("📰 即時抓取的台灣財經新聞")
-            if news:
-                st.success(f"已抓到 {len(news)} 則財經新聞,確認後再請 Gemini 整理台股標的:")
-                has_key = ensure_gemini_key()
-                if st.button(
-                    "🧠 ② 用 Gemini 整理台股標的(總表 + 利多/利空/觀望)",
-                    use_container_width=True,
-                    disabled=not has_key,
-                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
-                ):
-                    with st.spinner("Gemini 整理台股標的中(約 10–30 秒)…"):
-                        try:
-                            generate_live_stocks()
-                            st.rerun()
-                        except Exception as exc:  # noqa: BLE001
-                            st.error(f"整理台股標的失敗:{exc}")
-                if not has_key:
-                    render_key_hint()
-                st.download_button(
-                    "⬇️ 下載財經新聞 JSON",
-                    data=json.dumps(news, ensure_ascii=False, indent=2),
-                    file_name="stock_news.json",
-                    mime="application/json",
-                )
-                render_news_cards(news)
-            else:
-                st.info("這次沒抓到台灣財經新聞,稍後再試或調整 STOCK_QUERIES 關鍵字。")
-            return
-
-        # 3) 否則顯示每日排程存檔
-        data = pick_report(STOCKS_PATH, STOCKS_ARCHIVE_DIR)
-        if data is None:
-            st.warning("尚無每日台股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
-            return
-        render_stocks(data)
-    elif report_type == "美股觀察":
-        st.header("📈 美股觀察 — 值得關注的美股標的")
-        render_us_stock_live_panel()
-
-        # 1) 本次即時產生的美股觀察優先顯示
-        if st.session_state.get("live_us_stocks"):
-            live = st.session_state["live_us_stocks"]
-            st.success("⚡ 以下為剛剛即時產生的美股觀察(尚未存檔)。")
-            st.download_button(
-                "⬇️ 下載美股觀察 JSON",
-                data=json.dumps(live, ensure_ascii=False, indent=2),
-                file_name=f"us_stocks_{live.get('report_date', 'latest')}.json",
-                mime="application/json",
-            )
-            st.divider()
-            render_us_stocks(live)
-            return
-
-        # 2) 已抓到財經新聞、尚未整理:顯示新聞,並提供第二步的 Gemini 按鈕
-        if "live_us_stock_news" in st.session_state:
-            news = st.session_state["live_us_stock_news"]
-            st.divider()
-            st.subheader("📰 即時抓取的美股財經新聞")
-            if news:
-                st.success(f"已抓到 {len(news)} 則財經新聞,確認後再請 Gemini 整理美股標的:")
-                has_key = ensure_gemini_key()
-                if st.button(
-                    "🧠 ② 用 Gemini 整理美股標的(總表 + 利多/利空/觀望)",
-                    use_container_width=True,
-                    disabled=not has_key,
-                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
-                ):
-                    with st.spinner("Gemini 整理美股標的中(約 10–30 秒)…"):
-                        try:
-                            generate_live_us_stocks()
-                            st.rerun()
-                        except Exception as exc:  # noqa: BLE001
-                            st.error(f"整理美股標的失敗:{exc}")
-                if not has_key:
-                    render_key_hint()
-                st.download_button(
-                    "⬇️ 下載財經新聞 JSON",
-                    data=json.dumps(news, ensure_ascii=False, indent=2),
-                    file_name="us_stock_news.json",
-                    mime="application/json",
-                )
-                render_news_cards(news)
-            else:
-                st.info("這次沒抓到美股財經新聞,稍後再試或調整 US_STOCK_QUERIES 關鍵字。")
-            return
-
-        # 3) 否則顯示每日排程存檔
-        data = pick_report(US_STOCKS_PATH, US_STOCKS_ARCHIVE_DIR)
-        if data is None:
-            st.warning("尚無每日美股觀察存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
-            return
-        render_us_stocks(data)
-    elif report_type == "國際盤預警":
-        st.header("🌏 國際盤預警(盤前) — 美股/台指期夜盤大跌的時間差訊號")
-        render_intl_alert_live_panel()
-
-        # 1) 本次即時產生的完整預警(報價 + Gemini 解讀)優先顯示
-        if st.session_state.get("live_intl_alert"):
-            live = st.session_state["live_intl_alert"]
-            st.success("⚡ 以下為剛剛即時產生的國際盤預警(尚未存檔)。")
-            st.download_button(
-                "⬇️ 下載國際盤預警 JSON",
-                data=json.dumps(live, ensure_ascii=False, indent=2),
-                file_name=f"intl_alert_{live.get('report_date', 'latest')}.json",
-                mime="application/json",
-            )
-            st.divider()
-            render_intl_alert(live)
-            # 手動推 LINE(每日排程會在『美股/期貨』大跌時自動推播)
-            has_line = ensure_line_config()
-            lead = update_data.lead_market_drops(live)
-            if st.button(
-                "📲 推送這則預警到 LINE",
-                use_container_width=True,
-                disabled=not has_line,
-                help=None if has_line else "需在 Secrets 設 LINE_CHANNEL_ACCESS_TOKEN 與 LINE_TO",
-            ):
-                with st.spinner("推播中…"):
-                    try:
-                        update_data.notify_line_intl_alert(live)
-                        st.success("✅ 已推送 LINE 預警。")
-                    except Exception as exc:  # noqa: BLE001
-                        st.error(f"推播失敗:{exc}")
-            if lead:
-                st.caption(f"📉 時間差領先市場(美股/期貨)大跌 {len(lead)} 項 — 每日排程在此情況會自動推播 LINE。")
-            elif live.get("drops"):
-                st.caption("ℹ️ 目前僅非領先盤下跌;每日排程僅在『美股/期貨/台指期夜盤』大跌時自動推播。")
-            return
-
-        # 2) 已抓到真實報價、尚未解讀:先顯示報價表,再提供第二步 Gemini 按鈕
-        if "live_intl_quotes" in st.session_state:
-            quotes_doc = st.session_state["live_intl_quotes"]
-            st.divider()
-            st.caption(
-                f"報價時間:{quotes_doc.get('as_of', '—')} · 大跌門檻 "
-                f"{quotes_doc.get('threshold', '')}% · 數字為真實市場報價(Yahoo Finance)"
-            )
-            render_index_quotes(quotes_doc.get("quotes", {}))
-            has_key = ensure_gemini_key()
-            if st.button(
-                "🧠 ② 用 Gemini 解讀利空原因 + 對台股影響",
-                use_container_width=True,
-                disabled=not has_key,
-                help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
-            ):
-                with st.spinner("Gemini 解讀國際盤利空與台股影響中(約 10–30 秒)…"):
-                    try:
-                        generate_live_intl_alert()
-                        st.rerun()
-                    except Exception as exc:  # noqa: BLE001
-                        st.error(f"解讀失敗:{exc}")
-            if not has_key:
-                render_key_hint()
-            return
-
-        # 3) 否則顯示每日排程存檔
-        data = pick_report(INTL_ALERT_PATH, INTL_ALERT_ARCHIVE_DIR)
-        if data is None:
-            st.warning("尚無每日國際盤預警存檔。可用上方「⚡ 即時產生」按鈕馬上取得。")
-            return
-        render_intl_alert(data)
-    elif report_type == "法人籌碼":
-        st.header("📊 法人籌碼 — 三大法人買賣超(事後驗證真實賣壓)")
-        st.caption("每日排程自動抓證交所 BFI82U 近 N 日三大法人買賣超;這裡看『實際是誰在買、誰在賣』。")
-        data = pick_report(CHIP_PATH, CHIP_ARCHIVE_DIR)
-        if data is None:
-            st.warning("尚無三大法人籌碼存檔。每日排程(台灣 08:00)會自動更新。")
-            return
-        render_chip(data)
-    elif report_type == "個股健診":
-        st.header("🩺 個股健診 — 輸入單一個股,看它跟新聞的相關性與上漲性質")
-        render_stock_query_panel()
-
-        # 1) 本次即時產生的健診分析優先顯示
-        if st.session_state.get("live_stockq"):
-            live = st.session_state["live_stockq"]
-            st.success("⚡ 以下為剛剛即時產生的個股健診分析。")
-            st.download_button(
-                "⬇️ 下載分析 JSON",
-                data=json.dumps(live, ensure_ascii=False, indent=2),
-                file_name=f"stock_{live.get('ticker') or live.get('query_en', 'result')}.json",
-                mime="application/json",
-            )
-            st.divider()
-            render_stock_query(live)
-            return
-
-        # 2) 已抓到該股新聞、尚未分析:顯示辨識結果 + 新聞 + 第二步按鈕
-        if "live_stockq_news" in st.session_state:
-            tr = st.session_state.get("live_stockq_translation", {})
-            news = st.session_state["live_stockq_news"]
-            st.divider()
-            ticker = tr.get("ticker", "")
-            note = tr.get("note", "")
-            st.info(
-                f"🔤 辨識為:**{tr.get('query_zh', '')}**"
-                + (f"（{ticker}）" if ticker else "")
-                + f"　·　{tr.get('market', '')}"
-                + f"　·　英文:{tr.get('query_en', '')}"
-                + (f"\n\n{note}" if note else "")
-            )
-            st.subheader("📰 抓到的相關新聞(英文原文 + 台媒中文,分析會翻成中文)")
-            if news:
-                st.success(f"已抓到 {len(news)} 則相關新聞,確認後再請 Gemini 健診:")
-                has_key = ensure_gemini_key()
-                if st.button(
-                    "🧠 ② 用 Gemini 健診(相關性 + 營運績效 + 上漲性質)",
-                    use_container_width=True,
-                    disabled=not has_key,
-                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
-                ):
-                    with st.spinner("Gemini 分析中(約 10–30 秒)…"):
-                        try:
-                            generate_live_stock_query()
-                            st.rerun()
-                        except Exception as exc:  # noqa: BLE001
-                            st.error(f"分析失敗:{exc}")
-                if not has_key:
-                    render_key_hint()
-                st.download_button(
-                    "⬇️ 下載相關新聞 JSON",
-                    data=json.dumps(news, ensure_ascii=False, indent=2),
-                    file_name="stock_news.json",
-                    mime="application/json",
-                )
-                render_news_cards(news)
-            else:
-                st.info("這次沒抓到相關新聞,換個名稱/代號或稍後再試。")
-            return
-
-        st.info("在上方輸入個股名稱或代號,先「① 辨識個股並抓新聞」,再用 Gemini 健診。")
-
-    elif report_type == "新聞策略":
-        st.header("📰 新聞策略 — 貼一則新聞,轉化為台股 ETF 進場/持有/出場決策")
-        render_news_strategy_panel()
-        if st.session_state.get("live_newsetf"):
-            live = st.session_state["live_newsetf"]
-            st.success("⚡ 以下為剛剛即時產生的新聞 ETF 策略分析。")
-            st.download_button(
-                "⬇️ 下載分析 JSON",
-                data=json.dumps(live, ensure_ascii=False, indent=2),
-                file_name="news_etf_strategy.json", mime="application/json",
-            )
-            st.divider()
-            render_news_strategy(live)
-            return
-        st.info("在上方貼上一則新聞或時事敘述,按「產生 ETF 策略分析」。")
-
-    elif report_type == "全球人物追蹤":
-        st.header("🌍 全球人物追蹤 — 中文輸入,自動翻英抓全球新聞,看牽動哪些台美股")
-        render_focus_panel()
-
-        # 1) 本次即時產生的分析優先顯示
-        if st.session_state.get("live_focus"):
-            live = st.session_state["live_focus"]
-            st.success("⚡ 以下為剛剛即時產生的全球人物追蹤分析。")
-            st.download_button(
-                "⬇️ 下載分析 JSON",
-                data=json.dumps(live, ensure_ascii=False, indent=2),
-                file_name=f"focus_{live.get('query_en', 'result')}.json",
-                mime="application/json",
-            )
-            st.divider()
-            render_focus(live)
-            return
-
-        # 2) 已抓到全球新聞、尚未分析:顯示翻譯結果 + 新聞 + 第二步按鈕
-        if "live_focus_news" in st.session_state:
-            tr = st.session_state.get("live_focus_translation", {})
-            news = st.session_state["live_focus_news"]
-            st.divider()
-            en = tr.get("query_en", "")
-            aliases = "、".join(a for a in tr.get("aliases", []) if a)
-            zh_aliases = "、".join(a for a in tr.get("zh_aliases", []) if a)
-            note = tr.get("note", "")
-            st.info(
-                f"🔤 中文「{tr.get('query_zh', '')}」→ 英文檢索:**{en}**"
-                + (f"　(英文別名:{aliases})" if aliases else "")
-                + (f"\n\n🀄 中文別名:{zh_aliases}" if zh_aliases else "")
-                + (f"\n\n{note}" if note else "")
-            )
-            st.subheader("📰 抓到的全球新聞(英文原文 + 台媒中文,分析會翻成中文)")
-            if news:
-                st.success(f"已抓到 {len(news)} 則全球新聞,確認後再請 Gemini 整理:")
-                has_key = ensure_gemini_key()
-                if st.button(
-                    "🧠 ② 用 Gemini 整理(他說了什麼 + 衍伸產業 + 台美股)",
-                    use_container_width=True,
-                    disabled=not has_key,
-                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
-                ):
-                    with st.spinner("Gemini 分析中(約 10–30 秒)…"):
-                        try:
-                            generate_live_focus()
-                            st.rerun()
-                        except Exception as exc:  # noqa: BLE001
-                            st.error(f"分析失敗:{exc}")
-                if not has_key:
-                    render_key_hint()
-                st.download_button(
-                    "⬇️ 下載全球新聞 JSON",
-                    data=json.dumps(news, ensure_ascii=False, indent=2),
-                    file_name="focus_news.json",
-                    mime="application/json",
-                )
-                render_news_cards(news)
-            else:
-                st.info("這次沒抓到相關新聞,換個關鍵字或稍後再試。")
-            return
-
-        # 3) 否則顯示每日排程存檔(可含多個追蹤對象,以下拉切換)
-        doc = pick_report(FOCUS_PATH, FOCUS_ARCHIVE_DIR)
-        focuses = (doc or {}).get("focuses") or []
-        if not focuses:
-            st.info(
-                "尚無每日排程的全球人物追蹤存檔。可在上方輸入中文關鍵字「⚡ 即時產生」,"
-                "或設定 FOCUS_TOPICS 讓每日排程自動追蹤。"
-            )
-            return
-        if len(focuses) > 1:
-            st.caption(f"📚 本日含 {len(focuses)} 個追蹤對象,可切換:")
-            idx = st.selectbox(
-                "選擇追蹤對象", range(len(focuses)),
-                format_func=lambda i: focuses[i].get("query_zh", f"對象 {i + 1}"),
-                key="focus_topic_pick",
-            )
-            render_focus(focuses[idx])
-        else:
-            render_focus(focuses[0])
-    elif report_type == "房市觀察":
-        st.header("🏠 房市觀察 — 預售/成屋冷熱、打房政策與各縣市房價")
-        render_house_price_panel()
-        render_housing_live_panel()
-
-        # 1) 本次即時產生的房市判讀優先顯示
-        if st.session_state.get("live_housing"):
-            live = st.session_state["live_housing"]
-            st.success("⚡ 以下為剛剛即時產生的房市觀察(尚未存檔)。")
-            st.download_button(
-                "⬇️ 下載房市觀察 JSON",
-                data=json.dumps(live, ensure_ascii=False, indent=2),
-                file_name=f"housing_{live.get('report_date', 'latest')}.json",
-                mime="application/json",
-            )
-            st.divider()
-            render_housing(live)
-            return
-
-        # 2) 已抓到房市新聞、尚未判讀:顯示新聞,並提供第二步的 Gemini 按鈕
-        if "live_housing_news" in st.session_state:
-            news = st.session_state["live_housing_news"]
-            st.divider()
-            st.subheader("📰 即時抓取的房市新聞")
-            if news:
-                st.success(f"已抓到 {len(news)} 則房市新聞,確認後再請 Gemini 判讀冷熱與政策:")
-                has_key = ensure_gemini_key()
-                if st.button(
-                    "🧠 ② 用 Gemini 判讀房市冷熱 + 打房政策 + 分區",
-                    use_container_width=True,
-                    disabled=not has_key,
-                    help=None if has_key else "需先在 Streamlit Secrets 設定 GEMINI_API_KEY",
-                ):
-                    with st.spinner("Gemini 判讀中(約 10–30 秒)…"):
-                        try:
-                            generate_live_housing()
-                            st.rerun()
-                        except Exception as exc:  # noqa: BLE001
-                            st.error(f"產生房市觀察失敗:{exc}")
-                if not has_key:
-                    render_key_hint()
-                st.download_button(
-                    "⬇️ 下載房市新聞 JSON",
-                    data=json.dumps(news, ensure_ascii=False, indent=2),
-                    file_name="housing_news.json",
-                    mime="application/json",
-                )
-                render_news_cards(news)
-            else:
-                st.info("這次沒抓到房市新聞,稍後再試或調整關鍵字。")
-            return
-
-        # 3) 否則顯示每日排程存檔(地圖在沒有 AI 判讀時也會顯示房價)
-        render_housing(pick_report(HOUSING_PATH, HOUSING_ARCHIVE_DIR))
-    else:  # ETF工作台:兩視角併成 Tabs,底層共用 etf_data 快取,切 Tab 不重算
-        st.header("🧩 ETF 工作台 — 持股反查 / 圖鑑(共用同一份快取資料)")
-        tab1, tab2 = st.tabs(["🔎 持股反查 / 個股", "📚 ETF 圖鑑(組合配置)"])
-        with tab1:
-            render_etf_crawl_panel()
-            render_etf_add_panel()
-            # 本次即時抓到的資料庫優先;否則用 etf_data 快取的 etf_holdings.json
-            render_etf_lookup(st.session_state.get("etf_data_live"))
-        with tab2:
-            render_etf_profiles()
+    if view == "📊 台股":
+        page_tw()
+    elif view == "🇺🇸 美股":
+        page_us()
+    elif view == "🌍 全球":
+        page_global()
+    else:
+        page_housing()
 
 
 if __name__ == "__main__":

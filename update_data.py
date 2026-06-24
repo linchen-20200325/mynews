@@ -1625,6 +1625,49 @@ def get_news_etf_strategy(news_text: str, today: str) -> dict:
     return data
 
 
+MARKET_DIGEST_SYSTEM_PROMPT = """\
+你是首席投資策略師。你會收到某個市場領域(台股/美股/全球/台灣房市)當日各面板的重點數據(JSON)。
+請把它們融成一段「統一研判」,不要逐項複述數字,而是點出彼此的連動與含義。
+
+輸出規範:
+- overall:整體傾向,僅能是「偏多」「偏空」「中性」三者之一。
+- digest_markdown:3~5 點 markdown 條列(每點以「- 」開頭),繁體中文、口語白話、≤350 字,
+  點出今日該領域最關鍵的訊號、面板之間的因果連動,以及最該留意的風險。
+- 只依提供的數據與常識,嚴禁虛構數據沒有的事實;不喊買賣、不保證漲跌;結尾不必加免責(由前端統一標註)。
+
+只輸出合法 JSON:{"overall": "偏空", "digest_markdown": "- 重點1\\n- 重點2"}
+"""
+
+
+def build_market_digest_prompt(view: str, payload: dict, today: str) -> str:
+    """把該領域當日各面板數據瘦身成精簡 JSON brief(去掉 raw_news 等重欄位、截斷長字串)。"""
+    def _slim(d):
+        if isinstance(d, dict):
+            return {k: _slim(v) for k, v in d.items()
+                    if k not in ("raw_news", "evidence_news", "laymans_dictionary")}
+        if isinstance(d, list):
+            return [_slim(x) for x in d[:12]]
+        if isinstance(d, str):
+            return d[:300]
+        return d
+
+    brief = json.dumps(_slim(payload), ensure_ascii=False)[:6000]
+    return (
+        f"領域:{view}。今天日期:{today}。以下是當日各面板的重點數據(JSON),"
+        f"請依系統指示融成統一研判:\n{brief}"
+    )
+
+
+def get_market_digest(view: str, payload: dict, today: str) -> dict:
+    """Gemini 把某領域當日各面板數據融成一段統一研判(overall + digest_markdown)。"""
+    data = call_gemini_for_json(
+        MARKET_DIGEST_SYSTEM_PROMPT, build_market_digest_prompt(view, payload, today)
+    )
+    data.setdefault("overall", "中性")
+    data.setdefault("digest_markdown", "")
+    return data
+
+
 def get_focus_analysis(term_zh: str, query_en: str, news: list[dict], today: str) -> dict:
     """Gemini 讀全球新聞 → 該對象說了什麼 + 衍伸產業 + 牽動的台股/美股個股。"""
     data = call_gemini_for_json(
