@@ -52,8 +52,3 @@ def reverse_index(data: dict) -> list[dict]:
     ]
     rows.sort(key=lambda r: (r["etf_count"], r["ticker"]), reverse=True)
     return rows
-
-
-def etf_count_map(data: dict) -> dict[str, int]:
-    """回傳 {ticker: 被幾檔 ETF 持有},供其他頁面交叉參照。"""
-    return {r["ticker"]: r["etf_count"] for r in reverse_index(data)}

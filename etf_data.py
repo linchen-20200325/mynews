@@ -50,9 +50,3 @@ def get_etf_count_map() -> dict[str, int]:
 def get_profiles() -> dict:
     """ETF 圖鑑基本資料(型態/配息/費用…)(快取)。"""
     return etf_profile_fetcher.load_profiles()
-
-
-def clear_cache() -> None:
-    """資料更新(例如剛存檔/重抓)後手動清快取,讓下次讀到最新檔案。"""
-    for fn in (get_holdings, get_reverse_index, get_etf_count_map, get_profiles):
-        fn.clear()

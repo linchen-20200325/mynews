@@ -319,19 +319,6 @@ def ensure_gemini_key() -> bool:
     return bool(update_data.get_gemini_keys())
 
 
-def ensure_line_config() -> bool:
-    """確保環境中有 LINE 推播設定(token + 對象):先看環境變數,再從 Streamlit Secrets 補上。"""
-    if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
-        return True
-    try:
-        for k in ("LINE_CHANNEL_ACCESS_TOKEN", "LINE_TO"):
-            if not os.environ.get(k) and k in st.secrets:
-                os.environ[k] = str(st.secrets[k])
-    except Exception:  # noqa: BLE001 — 無 secrets → 視為未設定
-        pass
-    return bool(os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"))
-
-
 def render_key_hint() -> None:
     """金鑰讀不到時的診斷說明:列出目前 Secrets 名稱,幫使用者比對。"""
     st.caption(
