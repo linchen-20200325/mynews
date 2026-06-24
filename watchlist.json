@@ -9,11 +9,15 @@
       "name": ""
     }
   ],
-  "updated_at": "2026-06-24 23:45",
+  "updated_at": "2026-06-24 23:46",
   "allow": [
     {
       "id": "U605a6fff99ea7f095041617202b9a019",
       "name": "自己"
+    },
+    {
+      "id": "Ud7f5cc4f92eeef4f378cd61c53baa784",
+      "name": "老公"
     }
   ]
 }
