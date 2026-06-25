@@ -2133,6 +2133,20 @@ def render_taiwan_choropleth(values: dict, legend: str, scale: str,
         df, geojson=geo, locations="縣市", featureidkey="properties.name",
         color=legend, **px_kwargs,
     )
+    # 鋪一層「全台 22 縣市」淺灰底圖:只標少數縣市時仍看得到台灣完整輪廓
+    # (否則被提到的縣市會孤零零浮在白底上,像地圖不見了)。全有色時被上層蓋住,無影響。
+    all_names = [f["properties"].get("name") for f in geo.get("features", [])
+                 if f.get("properties", {}).get("name")]
+    if all_names:
+        fig.add_trace(go.Choropleth(
+            geojson=geo, locations=all_names, featureidkey="properties.name",
+            z=[0] * len(all_names), showscale=False,
+            colorscale=[[0, "#ececec"], [1, "#ececec"]],
+            marker_line_color="white", marker_line_width=0.5,
+            hoverinfo="skip",
+        ))
+        # 移到最底層(有色縣市與 ★ 標記疊在上面)
+        fig.data = (fig.data[-1],) + tuple(fig.data[:-1])
     # ★ 在指定縣市(高鐵/自強號)疊上標記,於地圖上額外標出
     if marker_counties:
         cents = county_centroids()
