@@ -1,131 +1,105 @@
 {
   "report_date": "2026-06-25",
   "overall_sentiment": "持平",
-  "overall_summary": "短期資金動能受AI產業帶動，但升息預期與國際油價走低顯示市場觀望，台灣房市整體呈現持平。",
+  "overall_summary": "台灣房市目前在部分區域仍維持相對高價，但整體市場動能受政策與供給影響，呈現持平狀態。",
   "presale_market": {
-    "sentiment": "持平",
-    "note": "新聞未直接提及預售屋市場狀況，但國際經濟情勢如AI需求強勁與升息預期，可能間接影響投資信心與資金流向，使預售屋市場持平觀望。"
+    "sentiment": "熱絡",
+    "note": "雖然新聞未直接提及預售屋市場冷熱，但從實價登錄資料顯示，各縣市預售屋均價普遍高於成屋，且多數縣市預售屋價格仍持續上漲，顯示市場對新屋的需求及價格預期仍高。"
   },
   "resale_market": {
     "sentiment": "持平",
-    "note": "新聞未直接提及成屋/中古屋市場狀況，但國際油價回落與升息預期，可能影響購屋者的貸款成本與市場信心，使成屋市場持平觀望。"
+    "note": "新聞[1]指出房價「下不來」，並稱房市正醞釀反彈，但實價登錄數據顯示部分主要縣市成屋均價已出現微幅下跌或漲幅趨緩，例如新北市、新竹市、台中市、新竹縣，顯示成屋市場動能較預售屋市場持平。"
   },
-  "policy": [
+  "policy": [],
+  "regions": [
     {
-      "title": "美國升息預期",
-      "impact": "市場預期美國將升息，可能帶動台灣央行後續升息考量，進而影響房貸利率。若利率調高，將增加購屋者的房貸負擔，對買方不利。"
+      "county": "彰化縣",
+      "sentiment": "持平",
+      "heat_score": 55,
+      "note": "新聞[3]提及彰化房市面臨居住習慣改變的挑戰，可能影響未來市場需求與產品類型。"
     }
   ],
-  "regions": [],
   "ai_summary": {
-    "future_trend": "短期房市受全球AI產業強勁需求帶動，可能吸引資金流向相關產業，間接影響房市交易動能。然而，全球央行貨幣政策分歧，特別是市場預期美國將升息，將增加購屋者的貸款成本，對房市形成壓力。長期而言，台灣人口負成長與少子化趨勢，將導致自住需求逐漸縮減，加上各縣市持續有新屋供給，購屋負擔能力仍是挑戰。綜合來看，短期資金動能可能支撐部分熱區，但長期結構性因素顯示房市將面臨調整壓力，研判未來趨勢將在短期動能與長期結構性壓力之間取得平衡，呈現持平偏向觀望。",
+    "future_trend": "未來房市趨勢研判需同時權衡短期資金動能與長期人口/供給結構。短期內，台灣股市受惠AI浪潮基本面穩固（新聞[2,5,7]），資金動能充沛，加上營建成本高漲，使房價下修空間有限（新聞[1]）。然而，長期來看，台灣人口已連年負成長與少子化，將導致長期自住需求縮減。此外，各區餘屋與待售存量、新屋大量供給與家戶購屋負擔能力（房價所得比偏高）等結構性因素，將對房市形成壓力。綜合判斷，短期內在資金動能支撐下，房價大幅下跌不易，但長期受人口結構與供給過剩影響，房價成長動能將趨緩，甚至面臨修正壓力。",
     "structural_factors": [
       "人口負成長與少子化使長期自住需求縮減",
-      "餘屋/新增供給與待售存量可能對房價造成壓力",
-      "房價所得比偏高，購屋負擔能力持續吃緊"
+      "餘屋/新增供給與待售存量可能對市場形成壓力",
+      "房價所得比偏高，購屋負擔能力吃緊，影響潛在買盤"
     ],
-    "policy_shift": "目前政策仍以穩定市場為主，若美國升息預期實現，台灣央行可能跟進，房貸利率將有上調壓力，對房貸成數或信用管制可能保持現行趨嚴態勢。",
-    "buyer_impact": "偏壞",
-    "buyer_advice": "在升息預期下，購屋者應審慎評估自身還款能力，尤其注意房貸利率上升的風險。考量長期人口結構與供給，應避免追高，並可關注人口外流或供給過剩區域的長期保值風險。可多方比較市場物件，選擇符合自身需求且負擔合理的產品。",
-    "regulations": [
-      "央行選擇性信用管制",
-      "新青安房貸"
-    ],
-    "overview": "短期內，全球經濟的變數與升息預期可能使房市趨於觀望，買方應審慎評估財務能力。長期來看，人口結構變化與市場供給將是影響房市走向的關鍵因素。"
+    "policy_shift": "目前新聞未明確提及新的房市政策轉變方向，但從市場氛圍來看，政府仍可能維持審慎態度，避免市場過熱。",
+    "buyer_impact": "中性",
+    "buyer_advice": "買方可持續觀察市場，特別是關注人口外流或新屋供給量較大的區域，長期保值風險較高。在目前市場持平的情況下，可多方比較預售屋與成屋的價格與條件，選擇符合自身需求且負擔合理的產品。對於有長期自住需求的買方，可評估自身財務狀況，避免追高。",
+    "regulations": [],
+    "overview": "短期內房市受資金動能支撐，價格不易大幅鬆動，但長期而言，人口結構變化與供給量將是影響市場走勢的關鍵。買方應審慎評估，兼顧短期價格表現與長期保值潛力。"
   },
   "evidence_news": [
     {
-      "title": "更多油輪通過荷莫茲海峽 國際油價回落",
+      "title": "為何房價下不來？李同榮曝關鍵：房市正醞釀反彈三部曲| 房產新訊",
+      "source": "udn房地產",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TN3FkdFcxZUtlVzNKMmxIU0xQRGdtSmJ5T2xtQ1p4QzhnSVQ5MTJLcmplVlcydjN5MDJlUGF2UGxjYlVnT0RuWDlyNTVTdnJsOG1sbm9sWkJ4QzVQOW95aGI2Rk0tSlpnOHU4a0tJcVB1LTlNTFozT1U0Mk1OZlk?oc=5"
+    },
+    {
+      "title": "美光財報亮眼、台積電ADR漲 投顧：台股基本面穩固",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606250016.aspx"
+      "url": "https://www.cna.com.tw/news/afe/202606250031.aspx"
+    },
+    {
+      "title": "「這款宅」撐起一片天！彰化房市揭密 面臨居住習慣改變挑戰？",
+      "source": "好房網News",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5sRXdWTExtWTl3XzlMd1FidFNNNVVzTkoxRlIwY1E3QVdZTVBXWllQaVNCSFdQSFVrcmw3LXFGbGJuTVRXdk5vUEk4dHRDb2tMRU1KMW84bDR5RWtZYTIxTFZjTkNyQkxvX01V0gFwQVVfeXFMTkxod1ZvNzBSOXo4UFZXR2F1dkhfN0UwSkJTcmhSYU9ScVRGczNQMEl5NkR6Q0FFMmVUempaMzNYRjA4cmZNOVFiRktibF9hVll2UzV6RXFlZFFDczFZazVWUW1wcjdzVl9GdjhMMFlCZA?oc=5"
+    },
+    {
+      "title": "美光：記憶體晶片需求延續至2027年後",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250020.aspx"
     },
     {
       "title": "AI需求強勁 美光財報營收展望超預期盤後大漲逾15%",
       "source": "中央社 財經",
       "url": "https://www.cna.com.tw/news/aopl/202606250015.aspx"
-    },
-    {
-      "title": "科技股下跌拖累 美股多收黑",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606250013.aspx"
-    },
-    {
-      "title": "SpaceX賣壓湧現 馬斯克從全球首位兆元富豪寶座跌落",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606250008.aspx"
-    },
-    {
-      "title": "布倫特原油跌破每桶75美元 歐股反彈多收紅",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606250003.aspx"
-    },
-    {
-      "title": "郭台強布局接班 郭守富接任正崴總經理",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240370.aspx"
-    },
-    {
-      "title": "薪資協商陷僵局 現代汽車工會表決通過罷工行動",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606240368.aspx"
-    },
-    {
-      "title": "伸興：宇隆董事長異動為既定規劃 減速機進度不變",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240365.aspx"
-    },
-    {
-      "title": "今彩539第115153期 頭獎4注中獎",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606240362.aspx"
-    },
-    {
-      "title": "SK海力士擬赴美發行ADR 募資290億美元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606240361.aspx"
-    },
-    {
-      "title": "巿場預期美國將升息 金價跌破4000美元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606240359.aspx"
-    },
-    {
-      "title": "元瀚材料布局貼合關鍵材料 無溶劑光學膠應用廣",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240356.aspx"
-    },
-    {
-      "title": "美利達：新產品及需求回升 歐洲子公司營收年增13%",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240355.aspx"
-    },
-    {
-      "title": "倫敦布倫特原油跌破每桶75美元 美伊戰爭以來首見",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606240350.aspx"
-    },
-    {
-      "title": "波蘭台灣形象展 雷虎秀4大無人作戰體系",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240345.aspx"
-    },
-    {
-      "title": "今彩539第115153期開獎",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606240344.aspx"
-    },
-    {
-      "title": "展望下半年利率匯率變數 北富銀揭3關鍵",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240343.aspx"
-    },
-    {
-      "title": "中信政大成立家族辦公室智庫 揭家族治理挑戰",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240335.aspx"
     }
   ],
   "raw_news": [
+    {
+      "title": "為何房價下不來？李同榮曝關鍵：房市正醞釀反彈三部曲| 房產新訊",
+      "source": "udn房地產",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TN3FkdFcxZUtlVzNKMmxIU0xQRGdtSmJ5T2xtQ1p4QzhnSVQ5MTJLcmplVlcydjN5MDJlUGF2UGxjYlVnT0RuWDlyNTVTdnJsOG1sbm9sWkJ4QzVQOW95aGI2Rk0tSlpnOHU4a0tJcVB1LTlNTFo1T1U0Mk1OZlk?oc=5",
+      "summary": "為何房價下不來？李同榮曝關鍵：房市正醞釀反彈三部曲| 房產新訊 udn房地產",
+      "published": "2026-06-25T01:09:24+00:00",
+      "origin": "關鍵字「打房 政策 房市」"
+    },
+    {
+      "title": "美光財報亮眼、台積電ADR漲 投顧：台股基本面穩固",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250031.aspx",
+      "summary": "（中央社記者江明晏台北25日電）受科技股跌勢拖累，美股那指與標普收黑；台積電ADR漲逾1%，聯電ADR大漲6.91%，美光財報優於預期，台指期盤後跌後回彈，終場上漲503點。投顧指出，台股受惠AI大浪潮，基本面穩固。",
+      "published": "2026-06-25T00:46:11+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "「這款宅」撐起一片天！彰化房市揭密 面臨居住習慣改變挑戰？",
+      "source": "好房網News",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5sRXdWTExtWTl3XzlMd1FidFNNNVVzTkoxRlIwY1E3QVdZTVBXWllQaVNCSFdQSFVrcmw3LXFGbGJuTVRXdk5vUEk4dHRDb2tMRU1KMW84bDR5RWtZYTIxTFZjTkNyQkxvX01V0gFwQVVfeXFMTkxod1ZvNzBSOXo4UFZXR2F1dkhfN0UwSkJTcmhSYU9ScVRGczNQMEl5NkR6Q0FFMmVUempaMzNYRjA4cmZNOVFiRktibF9hVll2UzV6RXFlZFFDczFZazVWUW1wcjdzVl9GdjhMMFlCZA?oc=5",
+      "summary": "「這款宅」撐起一片天！彰化房市揭密 面臨居住習慣改變挑戰？ 好房網News",
+      "published": "2026-06-25T00:35:00+00:00",
+      "origin": "關鍵字「房市 預售屋 成交」"
+    },
+    {
+      "title": "台灣首例 集保、櫃買董事長受邀荷蘭交易所敲鑼儀式",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250021.aspx",
+      "summary": "（中央社記者黃雅詩阿姆斯特丹24日專電）為強化台歐資本市場合作，台灣集中保管結算所、證券櫃檯買賣中心今天拜會全球歷史最悠久的荷蘭阿姆斯特丹「泛歐交易所」，並受邀於大廳敲鑼宣告交易日開始。這是台灣機構首次受邀參與此一象徵證券市場原點的儀式。",
+      "published": "2026-06-24T23:50:49+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "美光：記憶體晶片需求延續至2027年後",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250020.aspx",
+      "summary": "（中央社記者廖漢原紐約24日專電）美國記憶體大廠美光科技今天公布業績，營收及盈餘均優於分析師預期，盤後交易股價走高。美光評估，市場需求仍遠高於供應，AI浪潮下記憶體晶片吃緊將延續至2027年後。",
+      "published": "2026-06-24T23:27:47+00:00",
+      "origin": "中央社 財經"
+    },
     {
       "title": "更多油輪通過荷莫茲海峽 國際油價回落",
       "source": "中央社 財經",
@@ -228,46 +202,6 @@
       "url": "https://www.cna.com.tw/news/afe/202606240355.aspx",
       "summary": "（中央社記者潘智義台北24日電）自行車廠美利達今天表示，受惠於新產品上市及市場需求逐漸回升，歐洲子公司今年前5月營收較去年同期成長13%，顯示銷售動能已較前期明顯提升。",
       "published": "2026-06-24T13:29:08+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "倫敦布倫特原油跌破每桶75美元 美伊戰爭以來首見",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606240350.aspx",
-      "summary": "（中央社倫敦24日綜合外電報導）隨著華府與德黑蘭於上週達成協議，終結2月28日以來的中東戰爭，國際原油價格持續走跌。布倫特原油今天跌破每桶75美元，為美伊戰爭以來首見。",
-      "published": "2026-06-24T13:07:57+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "波蘭台灣形象展 雷虎秀4大無人作戰體系",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240345.aspx",
-      "summary": "（中央社記者潘智義台北24日電）外貿協會率領超過百家台灣企業，首度於波蘭華沙舉辦「歐洲台灣形象展」，雷虎科技表示，以完整無人作戰解決方案參展，展出沉浸式攻擊無人機、攔截無人機等，涵蓋空中打擊、空中反制、長程攻擊及海上作戰4大領域。",
-      "published": "2026-06-24T12:45:46+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "今彩539第115153期開獎",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606240344.aspx",
-      "summary": "（中央社台北24日電）今彩539第115153期開獎，中獎號碼33、32、21、17、03。3星彩中獎號碼603，4星彩中獎號碼9389。",
-      "published": "2026-06-24T12:42:44+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "展望下半年利率匯率變數 北富銀揭3關鍵",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240343.aspx",
-      "summary": "（中央社記者蘇思云台北24日電）台北富邦銀行總經理郭倍廷表示，美國期中選舉、主要央行貨幣政策分歧，以及地緣政治對通膨與資本流動的影響，都將牽動下半年利率與匯率市場變化；富邦金控首席經濟學家羅瑋分析，若下半年經濟軟著陸，企業應優化現金配置、鎖定利率並強化流動性管理。",
-      "published": "2026-06-24T12:41:42+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "中信政大成立家族辦公室智庫 揭家族治理挑戰",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240335.aspx",
-      "summary": "（中央社記者蘇思云台北24日電）中信銀行今天攜手政大成立中信政大產學合作家族辦公室研究智庫，並發布首篇「家族企業的家族治理」研究報告。報告顯示，家庭企業傳承期間價值平均縮水6成，主因危機在於無形資產流失。專家建議家族治理應走向制度化，呼籲家族掌門人適度放權。",
-      "published": "2026-06-24T12:07:24+00:00",
       "origin": "中央社 財經"
     }
   ]

@@ -3,203 +3,299 @@
   "topic": "全球政經與市場動態:聯準會利率與通膨、地緣政治與軍事衝突、美中科技戰、原油與股匯債走勢,及其對股市與基金的影響",
   "raw_news": [
     {
-      "title": "〈紐約匯市〉美元維持逾一年高點 儘管升息預期略降、公債殖利率回落",
+      "title": "中國芯片出口額暴增110%，是否意味西方「封鎖失敗」？",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cg4w2n5ql32o/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "「我們仍然有一種印象，也就是中國正受到美國的卡脖子或限制。為什麼數據與這種認知之間會存在這種反差？」深入拆解這組數字，就能夠找到答案。",
+      "published": "2026-06-25T01:48:08+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "日本北部地震規模6.9 部分新幹線停駛未傳人員傷亡",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606250042.aspx",
+      "summary": "（中央社東京25日綜合外電報導）日本氣象廳表示，日本東北部外海今天發生規模6.9強震，在數百公里外的東京都能感受到震動。當局並未發布海嘯警報，目前也未獲報有人員傷亡，各核能設施均未發現異常。",
+      "published": "2026-06-25T01:31:35+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "台股早盤漲逾700點 台積電漲30元",
+      "source": "Yahoo新聞",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNS3RIN29mQWw3QUdvM0JlZFJBMUdzNWFzUzdKRi16eTBRZFlEV0JLUUk1NEIxYnl0cHdWZ2pXT3B0MDBIWmJKM3V6V1lqN2tGTWk2c0ZvamhqVFRkWlRJUzRqYjV5NGFZSG5fMU51M3MxWV9Qd3hwd3RTU28xOXNyVFVCd282dWRuYUUzbnByMFVMa1BCYjc2cTlwdFlyaEhRRGp3TWVyR180emxvMUhMLUkwbVU5blJZa3d6Z3p3MTFfZVlraVBLOENjanUxSTVPSEFQaW1SM3JVTTZIeFlHMWNTWEtLUlZ5WXYw?oc=5",
+      "summary": "台股早盤漲逾700點 台積電漲30元 Yahoo新聞台積電漲30元重返2400元關卡！專家：拉回就是送分題 Yahoo股市台股開盤》晶圓雙雄、記憶體領攻 指數漲逾700點 自由財經驚奇拉尾盤！台指期夜盤漲503點 台股開盤上漲296點 | 股匯投資 | 財經 NOWnews今日新聞台股挑戰5萬點恐轉熊？專家曝市場2大雜訊：別被這些鷹派假動作騙了 | 張庭維 | 新聞 Storm.mg",
+      "published": "2026-06-25T01:29:16+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "美政府宣布提供175億美元貸款 強化核能供應鏈",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606250041.aspx",
+      "summary": "（中央社華盛頓24日綜合外電報導）美國能源部今天宣布，將提供175億美元（約新台幣5570億元）的有條件貸款，供公用事業及能源公司採購零件，以強化美國商業核能供應鏈。",
+      "published": "2026-06-25T01:25:33+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "哥倫比亞左翼總統候選人承認落敗 批外國干預大選",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606250033.aspx",
+      "summary": "（中央社波哥大24日綜合外電報導）哥倫比亞總統大選以極微幅差距分勝負，左翼候選人塞培德（Ivan Cepeda）今天承認敗給強硬右派對手艾思普雷雅。",
+      "published": "2026-06-25T00:58:16+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "川普2.0持續清洗五角大廈！美陸軍歐非司令短短18個月突下台",
+      "source": "Yahoo新聞",
+      "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQQzB3X29mN1l0TE9WNWRId2Y4R01veDFKVW1adWQwZTZURkZIbzh2VWZpRm9ZN2ozRmZQZEwwcFNDeG41ejdTeXd2bzVzVlhiMkNWcG8zb0lDOWdkbnltWUc0YVhSQ2tWQVg0SWhheFZKcEltVm1WODRETXRORzI2aGgteDd6dElxV19ZSVY0SmsxcXRVcmtvdFNBU2U3RXZwOGlSdElPdXpnYTMtYUl2cm9weUxqdGlLaEV0UDRkX0Uzb2tEb0tVaW1WdW9uZUVXVFo2VTdnaHJ5RDdPdTRkU1U0c0htbFBQYXFsSFVrS2JKUV9BVXhkMktoeHQ3S1lXY1VLc0hCbUZUYUp3OUk0SkVEYThvUnZBMV82T2xIZExxLVFuLVY2R3h2UU9GVm5hbXdiQjBfdW80bzh3cWxYRFd6LTU4R21zLU1XNHMwVnMzTktaLXQ4S3pINjdMQzlfUkE4eXBQN2phVTlxY3pYQloyLTJ1RDRhUXNV?oc=5",
+      "summary": "川普2.0持續清洗五角大廈！美陸軍歐非司令短短18個月突下台 Yahoo新聞「阿富汗撤軍最後一人」將離職 川普防長再拔四星上將 自由時報赫格塞斯任內又一人 美國駐歐陸軍司令多納霍上將提前退役 | 風傳媒 LINE TODAY赫格塞斯再砍高階將領掀美軍恐懼潮 駐歐最高陸軍軍官被迫退休 上報Up Media美軍又一名四星上將被爆將提前離職 上任僅18個月 香港商报",
+      "published": "2026-06-25T00:53:43+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Fed鷹派訊號衝擊 黃金跌破4000美元大關",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4xbDJLLWRvU2FHblEwa3U5UFBiUzhfcHRBR1VNYXp0dzQ0LTRGTXF2WnYzdWNSYVAtc2UxYlo4SnB2d29HTEJjTGt5UDgxN2xKN3RYMFBZZ3Y?oc=5",
+      "summary": "Fed鷹派訊號衝擊 黃金跌破4000美元大關 自由時報",
+      "published": "2026-06-25T00:50:22+00:00",
+      "origin": "關鍵字「聯準會 利率 通膨」"
+    },
+    {
+      "title": "人妻「摸鳥」三溫暖18歲男 當著丈夫的面被逮捕",
+      "source": "ETtoday新聞雲",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zSG90SXNyU0hBN1YtM29BRmZPWHVYc1lIbk1fRWhzN0prNjRyVDkyb3pSa1NtR19FZTRKLUlCQllwYjNzU1lWVlNaMkE3SGdIMERFWUxLdzZOM3pSSmfSAWhBVV95cUxOa3I1Z2NtZ2Nma2Z6OGdSbE40dGNqT0E0NDFBa0lyWWZRLUphc1VhUmc4dk94RlVrQlU2bHNRcXEzSDdOTk83V2JSWDNHZ0R1M042YlJLOHNic2VObDdZdVZmQjJicmZxeA?oc=5",
+      "summary": "人妻「摸鳥」三溫暖18歲男 當著丈夫的面被逮捕 ETtoday新聞雲",
+      "published": "2026-06-25T00:48:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "美光財報亮眼、台積電ADR漲 投顧：台股基本面穩固",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250031.aspx",
+      "summary": "（中央社記者江明晏台北25日電）受科技股跌勢拖累，美股那指與標普收黑；台積電ADR漲逾1%，聯電ADR大漲6.91%，美光財報優於預期，台指期盤後跌後回彈，終場上漲503點。投顧指出，台股受惠AI大浪潮，基本面穩固。",
+      "published": "2026-06-25T00:46:11+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "規模5.6地震撼動北加州偏遠地區 造成部分民眾受傷",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606250029.aspx",
+      "summary": "（中央社舊金山24日綜合外電報導）美國官員表示，北加州一處偏遠地區今天上午發生規模5.6地震，為當地1940年以來最強烈地震，造成部分民眾受傷，目前尚無重大災情通報。",
+      "published": "2026-06-25T00:40:07+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "遭「強迫飲酒」文化摧殘！韓國女消防員墜樓亡李在明怒斥：最惡劣職場霸淩| 世界萬象| 全球",
+      "source": "UDN",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5iUEFkdzVIdnZ2SmVGMFdIWlNTRjVpNWlIYzI2RnVmcXFqdVpScU5xNXR0Tkl4NUprQXVXLUEybTkxRVVrbm5yQjRxa1loeXRj?oc=5",
+      "summary": "遭「強迫飲酒」文化摧殘！韓國女消防員墜樓亡李在明怒斥：最惡劣職場霸淩| 世界萬象| 全球 UDN韓29歲女消防員「被逼陪酒15個月」職場霸凌導致輕生 長官：快叫我歐巴 Yahoo新聞南韓女消防員被迫和長官陪酒輕生亡 總統李在明震怒徹查 自由時報遭長官灌酒逼陪唱! 韓29 歲女消防員輕生當局冷血甩鍋李在明震怒 MSN南韓29歲女消防員被迫陪酒後輕生 部門偽造報告推卸死因 總統李在明：最惡劣職場霸凌 i-cable.com",
+      "published": "2026-06-25T00:40:05+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "委內瑞拉連2起規模7以上地震 多棟建物倒塌可能傷亡慘重",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606250028.aspx",
+      "summary": "（中央社卡拉卡斯25日綜合外電報導）美國地質調查所（USGS）通報委內瑞拉今天晚間發生兩起地震，規模7.2與7.5，造成首都卡拉卡斯多棟建築物倒塌，鄰國哥倫比亞也有震感。",
+      "published": "2026-06-25T00:39:05+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "委內瑞拉7.1地震建物倒塌 波多黎各受海嘯威脅",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606250026.aspx",
+      "summary": "（中央社華盛頓24日綜合外電報導）美國地質調查所（US Geological Survey）表示，委內瑞拉北部海岸附近發生強震，初步測得規模為7.1，首都卡拉卡斯（Caracas）有建築物倒塌。",
+      "published": "2026-06-25T00:35:01+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "日韓股市瘋了！日經飆逾1500點 韓股一度觸發熔斷",
+      "source": "東森新聞",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE13aVRiSGgyelVNYlNQQjhYYkk4ak9jX1lfZHFncXpWV29FQmtsNUplWUE3N2NJdWpDczZEcE9hemZ1b1htd0hWQzQ4VV9fVFluU0ZJ?oc=5",
+      "summary": "日韓股市瘋了！日經飆逾1500點 韓股一度觸發熔斷 東森新聞美光財報報喜！韓國股市早盤漲幅擴大至6% 日股觸及7萬點 news.cnyes.com韓股大洗三溫暖！三星電子挑大梁 指數強彈390點收漲逾3％ 自由財經《韓股》權值股領軍 KOSPI反彈收漲3.26% 台視全球資訊網韓股半導體巨頭引劇烈震盪 經濟冷熱兩樣情 韓國隊今迎世足關鍵戰 Yahoo股市",
+      "published": "2026-06-25T00:29:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "獨家／房貸千萬「全押3支ETF」慘賠！浩子鬆口財務現況 退休規劃曝",
+      "source": "Yahoo新聞",
+      "url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxPb3pQVVlQbC1zaW1Ga2hJWVNoenIzOVR6RW9wc1JKaUlMX3VTOWQyczV2a182em16eEp2UG5SR3NmaTd3Z3NpWnhXczhaTmlFLVNXUjlNZGVVNTltU3FmaXY4YVNhVUxzdXRxc2hvdklPNVQ1cG5JXy1ZdjdYNEZfM09ERVlWVU85Y2ktaExVczR5WjRzZjdsOFM3U08tYUxkSFU0MmRLTzR2Tm9tQnFENVpaN0dqV2paVEFVMW8yQXVKaEdDWTNHcGt5MHV3am9hMTRYRGtwWGYwaEo4VEhrbE00ZWhya2h4bkN4WlZjMDR0U0RjTHprZGtjSXVvV0V5TVB3X1h3dE1EYklNanhuczRaTFRXUElqNF9qLVZ2RTZyaE50SW9abWpuS3djNEdvbHBPUGhVaTZtTF9jc0psdWtn?oc=5",
+      "summary": "獨家／房貸千萬「全押3支ETF」慘賠！浩子鬆口財務現況 退休規劃曝 Yahoo新聞",
+      "published": "2026-06-25T00:12:46+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "【0625台股盤前】外資暴砍1,774 億元創紀錄，美光財報能否拯救台股?【投本比排行】: 國精化4722 ｜ 遠傳4904 ｜中興電1513｜ 華邦電2344｜豐雲學堂2026 年 06 月",
+      "source": "sinotrade.com.tw",
+      "url": "https://news.google.com/rss/articles/CBMijAVBVV95cUxQQk9ueHdhUTVtV19KNjNjSV83akhQaFctaUk5bXgyeHFTSEtHM3g0dEctOE9UZVNRX1lrVzRBZkpRdm80RUtCM0pnZE9CYUpUbDFQZ0lkRUUtbFpRa0stbHM1MFlVYXhyY01EV01MZERUek5RRHNKWVJIcmFBbzNZMnNFNE9aY1pOMzcwZGpvcHVGUk90QVZGbmViMXpWWUhYTU1MR29FZmEzNWJHSFV6cW9Pbm5rQWpsdFdVbkdtcUtDVWVRaHNqZUZ3RF84TmxhVFJ1LUg5LThvYlNMeS13RlFFcHcwRTloR2hnRlZQTjhsZVJfdzgtdTNXUDNfZEw3Q0JNVU85cnExWWZ3TjF5RzFvbGRpQmx0bkhraVcxcHdQcXJCeC1Ycm1WRlJ4M0VLUmpyY1BlVnZXWU5sT3VJRkgtV3JOM3JETTdfUnhZaXRTWFUycERaU1BmeTFjTGFVWTZfTXFvZTdIMTVPekNfaTQ1OHE0VmNUZTVLeFk2RU5kNWlrNVpsczhoZUVuYVljMzlaRW55SWozNk9NY1JMcE9LeGkwb0ZSZkVEeUd2V0V0Rmw4NXR4WTdhWC1Gc0pwZXdtQlB3NTFGeVdra1BFbTV3NENDRGpCNF9vNG9EX1Z5TmRWcW9nVS1FaEFuWlhEdzZPMnBOQURVejF1elBBODVkeUUtNklmSFZyWHAzdFRWZjNKdVBCTlBHUWhWSkcyblgzam9oTm11aFVpSlcxV3ZXMXlRcWxHTGhlY2dLTkxVc0xMZ05HQ1RGZFZJNHhxYjdfSURhMWFYSzhDcVg4MWctOV83a1ZHSDQ4SjhwNHB0czM1Nzd6cU52YzdoX0dlZ2pxNW9Yd00yVk4t?oc=5",
+      "summary": "【0625台股盤前】外資暴砍1,774 億元創紀錄，美光財報能否拯救台股?【投本比排行】: 國精化4722 ｜ 遠傳4904 ｜中興電1513｜ 華邦電2344｜豐雲學堂2026 年 06 月 sinotrade.com.tw",
+      "published": "2026-06-25T00:11:44+00:00",
+      "origin": "關鍵字「美股 台股 盤勢」"
+    },
+    {
+      "title": "鄧卜君、劉文瑄跨界對藝 雙個展登馬德里皇家植物園",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/acul/202606250023.aspx",
+      "summary": "（中央社記者胡家綺馬德里24日專電）台灣歷來在西班牙規模最大的視覺藝術專展「石羽記：台灣當代藝術雙重奏」24日開展，帶來台灣藝術家鄧卜君及劉文瑄多件作品，與「馬德里皇家植物園」展開跨文化藝術對話。",
+      "published": "2026-06-25T00:04:54+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "《金融》公股銀：日圓看升 美元修正",
+      "source": "富聯網",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQVGpYTjdOQUlpUGt3QlhId3JOSGNlanRrU19UeW1UUGxhMkxpUzZmX2JDaUxINE9wZ21pVDdzd3NxQXNLM3ZnVWMyMVdjYV9DQnJzZWRDSm1ud19oYmQtU2dPT3dkSWVuTUVPQUlXVFNqYk1IcEhwQlpCRXlVWG5Ec0RnSDlpSHln?oc=5",
+      "summary": "《金融》公股銀：日圓看升 美元修正 富聯網",
+      "published": "2026-06-24T23:58:00+00:00",
+      "origin": "關鍵字「聯準會 利率 通膨」"
+    },
+    {
+      "title": "〈財報〉美光Q3營收增逾3倍 獲利暴增12倍 HBM缺貨看到2028年",
       "source": "news.cnyes.com",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5sYmt4ZThiWnp2ZXUycW1ycS1jeS04M25aR05DU0xWc2RNVnlDcXV2SWhvMHQ4RTFGZkxyeVJ2SmdFX0RnZVZlMTlsMURBSk0?oc=5",
-      "summary": "〈紐約匯市〉美元維持逾一年高點 儘管升息預期略降、公債殖利率回落 news.cnyes.com",
-      "published": "2026-06-24T21:25:56+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5pN2E2QVNacW9MeFlzY0g5b3Q1RzNndjR3eXdWeTlhUDlqVHNtNjlNUmh0S3FlM0hDOXBLX2VpN2UtZ19keS1SdUdpaDg3X28?oc=5",
+      "summary": "〈財報〉美光Q3營收增逾3倍 獲利暴增12倍 HBM缺貨看到2028年 news.cnyes.com台股盤前／美光報喜盤後飆10%！台指夜盤上漲503點 台股今拚跌深反彈 Yahoo新聞營收季增200億美元、毛利率破86%！ 美光3QFY26靠AI寫下歷史新頁 DIGITIMES美光大漲14%！獲利年增1400%，下一季還會更好？ 天下雜誌美股期指勁揚！美光高通盤後齊飆14% AI熱潮捲土重來 news.cnyes.com",
+      "published": "2026-06-24T23:51:12+00:00",
+      "origin": "Google 財經頭條"
     },
     {
-      "title": "AI需求強勁 美光財報營收展望超預期盤後大漲逾15%",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606250015.aspx",
-      "summary": "（中央社紐約24日綜合外電報導）美國記憶體晶片大廠美光科技今天公布財報，預估季度營收將高於華爾街預期，顯示AI相關基礎設施大量投資，將持續推動記憶體晶片需求強勁成長，激勵公司盤後股價大漲逾15%。",
-      "published": "2026-06-24T21:19:32+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "川普以拒簽住房法案施壓 要求國會通過投票法案",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606250014.aspx",
-      "summary": "（中央社華盛頓24日綜合外電報導）美國總統川普今天表明，在國會通過「保障美國選民資格法案」（SAVE America Act）之前，將拒簽在國會獲跨黨派支持的住房法案。前者旨在改革美國選舉與加強審查參選資格。",
-      "published": "2026-06-24T21:04:29+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "科技股下跌拖累 美股多收黑",
+      "title": "台灣首例 集保、櫃買董事長受邀荷蘭交易所敲鑼儀式",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606250013.aspx",
-      "summary": "（中央社紐約24日綜合外電報導）市場持續擔憂科技股估值過高，受到科技股跌勢拖累，美國股市那指與標普今天收黑，但原油價格下跌，帶動航空及其他旅遊類股走揚，道瓊終場紅盤作收。",
-      "published": "2026-06-24T20:40:27+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606250021.aspx",
+      "summary": "（中央社記者黃雅詩阿姆斯特丹24日專電）為強化台歐資本市場合作，台灣集中保管結算所、證券櫃檯買賣中心今天拜會全球歷史最悠久的荷蘭阿姆斯特丹「泛歐交易所」，並受邀於大廳敲鑼宣告交易日開始。這是台灣機構首次受邀參與此一象徵證券市場原點的儀式。",
+      "published": "2026-06-24T23:50:49+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "世衛：漢他病毒疫情若無新增病例 有望7/2宣告結束",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606250012.aspx",
-      "summary": "（中央社日內瓦24日綜合外電報導）世界衛生組織（WHO）今天宣布，在荷蘭籍郵輪「洪迪亞斯號」上爆發、掀起國際關注的致命漢他病毒（Hantavirus）疫情，應能在7月2日宣告結束。",
-      "published": "2026-06-24T20:17:24+00:00",
-      "origin": "中央社 國際"
+      "title": "日本東北6.9強震！青森最大震度6強、新幹線部分停駛",
+      "source": "Yahoo新聞",
+      "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxNdWdSRW1mR2VhSlpXYTBMc0pCV2h1WU54MEhoSnp5ZUhpdGwyUWVLVXdWQjhsLVhLQzZBbTYyZExMMDk3TW1Sei1rV1A0cjRHZzB6WndmTWVIZC1VMDVTUV9pXzJwV2JkeTl6ei03N0hjSFRyMXQ1d05Tb3FvZFlBZW9pUURRUE9MT3hSUmt0YWpSUk5HTGtZd1lncjFUUlZUbVhKamtpNXRwdVgyZVVJbW01bHdTN0F6Y1NUcnpHcFJTdXhQdExWTFFEckxZU2pEUUJsSndQcjM5bjF3d0hPT3g4Zmlrd0hSMGVKbzZnMFEwSVN3SEVyQUp5MHFiNVIyY05oVjVNMjRaYThlUC1RbXYtaVVYSG1hOW9uNEtvTlpucV9rd2prRC1WUVpFZDlCd2IwWGk5Q1RxN3ExOFVUVDNpS19CODkzRFdZ?oc=5",
+      "summary": "日本東北6.9強震！青森最大震度6強、新幹線部分停駛 Yahoo新聞快訊／日本地牛翻身！東北爆規模6.9強震 青森震度6強、東京也有感 Yahoo新聞日本北部地震規模6.9 部分新幹線停駛未傳人員傷亡| 國際 中央社 CNA日本岩手外海規模6.9強震 青森最大震度6強 氣象廳：無海嘯之虞 UDN快訊／日本岩手縣近海6.9地震 | NOWNEWS今日新聞 LINE TODAY",
+      "published": "2026-06-24T23:30:42+00:00",
+      "origin": "Google 世界頭條"
     },
     {
-      "title": "高盛：Fed 7月升息機率不小- 財經要聞- 工商時報",
-      "source": "中時新聞網",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0xNVhzaERzVEV6NU9lRHpDM0hvUUUyYUdFd3gzZEdSTDlhSnlKWEtKUjNMRkY4X3dHVzYzYmtOdmVzS1NvQkVpTW5iQ0FVTk9fX2tKXzFZOHgwQzhTSU5qX3I3VDlnMU9CbXpn?oc=5",
-      "summary": "高盛：Fed 7月升息機率不小- 財經要聞- 工商時報 中時新聞網",
-      "published": "2026-06-24T20:10:00+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "盧比歐盼IAEA盡快進伊朗 強調荷莫茲海峽不應收費",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606250010.aspx",
-      "summary": "（中央社記者侯姿瑩華盛頓24日專電）國際原子能總署（IAEA）表示，將依美伊協議，派員檢查伊朗核設施。美國國務卿盧比歐也說，IAEA人員應盡快獲准進入伊朗；他並強調，華府的立場是荷莫茲海峽應免費開放。",
-      "published": "2026-06-24T19:26:19+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "SpaceX賣壓湧現 馬斯克從全球首位兆元富豪寶座跌落",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606250008.aspx",
-      "summary": "（中央社紐約24日綜合外電報導）英國「獨立報」報導，馬斯克（Elon Musk）在成為全球首位兆元（美元）富豪寫下歷史後，不到兩週時間，隨著SpaceX與特斯拉股票賣壓湧現，其身家如今已跌回1兆美元以下。",
-      "published": "2026-06-24T18:49:14+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "美銀預測聯準會今年升息3碼！利率恐飆至4.5%，降息要等2028？｜加密城市 CryptoCity",
-      "source": "加密城市CryptoCity",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5lbGFrRnRxTm41dzZJNE1NMHVxeVZtQ3dxeXM2V0NtUzdGb0JTeFE1bThiS05DSEo2aU9EVzJzNGwtelkweFh3a1dVdFNlQTI4VVRrY2pBOE1Xd1g5Vl8zZHc1TmRJOHR1VW1MR1AtLXo3ZUg3cUcwUnd6bFk1Znc?oc=5",
-      "summary": "美銀預測聯準會今年升息3碼！利率恐飆至4.5%，降息要等2028？｜加密城市 CryptoCity 加密城市CryptoCity",
-      "published": "2026-06-24T18:21:58+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "日本擬砸74兆元投資17個領域 押注AI與半導體",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606250007.aspx",
-      "summary": "（中央社東京25日綜合外電報導）日本政府24日提出「官民投資路線圖」，計劃在截至2041年3月的近15年間，累計投入逾370兆日圓（約新台幣74兆元），重點投資人工智慧、半導體、造船等17個「戰略領域」。",
-      "published": "2026-06-24T18:05:12+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "Fed 轉鷹 專家推演三情境",
-      "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE82NGtMc0stOXo4TzBxbVl1bVBWME91OFdnNmN2RmNaVVNfVDBVdFhlLVdFWDBfQVZ1Rng3MjZYSUl3OXdGaEJwQjZPVUZYWmdzeGlQRzE2MWRJUdIBX0FVX3lxTFBrX0UxZG95UVlnWXBVelFJTmpFX0JTOE5GUkxtcG5tZlpnLTZyTk14VXNkUEdqdTJXekVtNElmVzBsdjRMbEJ2VWhxOVhlakhnZ1dGUmZLeUt1RnRra3Uw?oc=5",
-      "summary": "Fed 轉鷹 專家推演三情境 經濟日報",
-      "published": "2026-06-24T17:57:15+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "歐盟加入美國主導「矽盛世」倡議 降低對中國AI供應鏈依賴",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606250006.aspx",
-      "summary": "（中央社華盛頓24日綜合外電報導）「金融時報」報導，歐盟、荷蘭、德國與希臘已加入美國主導的「矽盛世」倡議。在西方及其盟友面臨中國日益激烈的競爭之際，該倡議旨在強化AI相關科技供應鏈。",
-      "published": "2026-06-24T17:31:09+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "紐約初選左派扳倒民主黨建制派 曼達尼成造王者",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606250005.aspx",
-      "summary": "（中央社記者廖漢原紐約24日專電）美國紐約州各項初選結果出爐，左派紐約市長曼達尼支持的3位聯邦眾議員參選人，擊敗建制派現任議員及其支持的參選者，民主社會主義陣營實力大增。曼達尼造王者的聲勢讓民主黨內憂心，過於左傾恐影響總統選舉。",
-      "published": "2026-06-24T16:30:06+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "美元期 可偏多看待",
-      "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBEVDQtR0xXbUVscXpHcWFRMzRWLVBUa1NDY0REOUJ0b21oZm5ldG5YeDRnaVE3NnN0MkdYckNJWklCdTlYY0RhWVhDNTRsUzBqR2ktb3g0YWp2NVXSAWBBVV95cUxOTnFkN3U2NUZIaHhqQ3FEV1dBY2RoME10M0kyV3RYS0hEcUY3V0pCRG05MWRqX1ZkWkVHWnpUdDdOUHlTQ2pWLXozRk95Y2prVGJDTEsyTEFXa2tNb1FDb2o?oc=5",
-      "summary": "美元期 可偏多看待 經濟日報",
-      "published": "2026-06-24T16:24:41+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "布倫特原油跌破每桶75美元 歐股反彈多收紅",
+      "title": "美光：記憶體晶片需求延續至2027年後",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606250003.aspx",
-      "summary": "（中央社倫敦24日綜合外電報導）市場憂心人工智慧（AI）資本支出激增與融資成本攀升，昨天引發科技股拋售潮，但今天全球股市反彈，歐洲主要股市多收紅，布倫特原油跌破每桶75美元。",
-      "published": "2026-06-24T16:23:01+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606250020.aspx",
+      "summary": "（中央社記者廖漢原紐約24日專電）美國記憶體大廠美光科技今天公布業績，營收及盈餘均優於分析師預期，盤後交易股價走高。美光評估，市場需求仍遠高於供應，AI浪潮下記憶體晶片吃緊將延續至2027年後。",
+      "published": "2026-06-24T23:27:47+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "川普取消住宅法案簽署 施壓共和黨通過選民身分證法",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMi6AJBVV95cUxOYXdyaEpnNnpkX1UweXZKY2NmMVRQYjRIWFBqYXVWZE5nLWI5VU85NzFpSWVQamkxcno1VDRjS3V6VlowaEFYSG1TbWVZVHlkM3F5MHRmN1RkS3A0dHY1NklYNmt0YVhaWE1DVHZfZkl6b1hySFMyR0FmT2lURW5kemRFdGhaWFRSQ3BDa0dUVWFSZTBpZjlRRUluUkwzTldOWlNucFdQaDRxcVRJemtlSWI4Qi1UUlpnbEpDNmlKa0I5aWxIMFVKcHpySGJBQmlBam40NFVjNGNiMnJ4bjRIM25UQ01GdjQzWVFEaVBjU2RwbVpJd0k5TTZIRllFZEhjV2Q2YV9kMW9PdUdNNGRQNFZpd0Q2VUVCRzRrOHJDQW04Q0NHbnpXZUlxR1owQVBEUWNPUWVhZ0JQOURBRTVHc19HNFNFVWFLZVBMVlhYTnhyd0taRVBRR2VfNE13Z2dRUTBKSW9nY1k?oc=5",
-      "summary": "川普取消住宅法案簽署 施壓共和黨通過選民身分證法 Yahoo新聞川普以拒簽住房法案施壓 要求國會通過投票法案 經濟日報川普與參議院共和黨人走向衝突 华尔街日报中文网國際熱議》川普真快成跛鴨？國會共和黨領袖，已經敢大聲跟他說「不」，甚至公開衝突！ | 風傳媒 LINE TODAY代理國家情報總監普爾特開除六政務官、撤換數十情報官 世界新聞網",
-      "published": "2026-06-24T16:10:14+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "英國火車追撞釀1死百傷 調查指司機闖紅燈後剎車不及",
+      "title": "委內瑞拉地震規模7.1餘震不斷 民眾驚慌疏散",
       "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606250002.aspx",
-      "summary": "（中央社倫敦24日綜合外電報導）英國倫敦附近日前發生兩列火車相撞事故，造成一名司機員罹難，鐵路調查人員今天表示，該名司機員闖過紅色警示燈號，撞擊發生前數秒才緊急剎車。",
-      "published": "2026-06-24T16:09:59+00:00",
+      "url": "https://www.cna.com.tw/news/aopl/202606250019.aspx",
+      "summary": "（中央社卡拉卡斯24日綜合外電報導）根據美國地質調查所（United States Geological Survey），委內瑞拉今天遭規模7.1強震侵襲，法新社記者表示，地震晃動引發首都卡拉卡斯民眾驚慌。委內瑞拉已排除發生海嘯可能性。",
+      "published": "2026-06-24T23:15:44+00:00",
       "origin": "中央社 國際"
     },
     {
-      "title": "DW專訪黎智英之女：相信香港人終究愛自由",
-      "source": "德國之聲 DW 中文",
-      "url": "https://www.dw.com/zh/dw專訪黎智英之女：相信香港人終究愛自由/a-77696637?maca=chi-rss-chi-all-1127-rdf",
-      "summary": "6月23日，身陷囹圄的香港傳媒大亨黎智英正式獲頒德國之聲言論自由獎。他的女兒黎釆在德國之聲波昂總部代其父親領獎並接受DW專訪。她表示，單純靠香港內部的運作幾乎不可能讓父親出獄，只能寄望外部施壓。黎釆還說，相信香港人最終都是愛自由的。",
-      "published": "2026-06-24T15:38:00+00:00",
-      "origin": "德國之聲 DW 中文"
+      "title": "一張照片，盡覽銀河系6000萬顆星球——還可能有新的",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cy04v1wnp5vo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "歐洲歐幾里得（Euclid）太空望遠鏡拍攝到了超過6000萬顆恆星、星雲和星團，科學家正式發表有關照片。",
+      "published": "2026-06-24T23:15:11+00:00",
+      "origin": "BBC 中文"
     },
     {
-      "title": "Fed放鷹，市場升息預期狂飆！陳鳳馨直言「升息是假議題」：華爾街在修理華許 | 風傳媒",
-      "source": "LINE TODAY",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE96M0QtbmlEMmxMNkNFUkNyU00tUkktYW9Xd3ZXWFUxeVVvTXRnTTdYV3BNTzhKZVg5YlZIRm9KclI3UEZJSmRVSE8zeFFXUHBBMnhvUWl3?oc=5",
-      "summary": "Fed放鷹，市場升息預期狂飆！陳鳳馨直言「升息是假議題」：華爾街在修理華許 | 風傳媒 LINE TODAY",
-      "published": "2026-06-24T15:26:39+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
+      "title": "斯坦福大學曾是學生們的黃金門票，AI當道下還管用嗎？",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cpq354p324po/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC採訪了斯坦福大學應屆畢業生，了解他們對人工智慧的真實看法。",
+      "published": "2026-06-24T23:13:51+00:00",
+      "origin": "BBC 中文"
     },
     {
-      "title": "美伊協議重創以色列 Benjamin Netanyahu 政治神話破滅",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxOR054R1k3Z3otTzlJMmlaU0dtdk1zLTBDZkR4V1gwMElvSmdtTDc5WUp4Q1d5YXpYd1ZLUWpBTmhBZ1plWTRnWEZrSlVpR1BKXzh2ako0ZFdrRE9hWjNDazhiTHcwbTk4Z05SSC0wTFJjZmtsbTRKUDNiT2xGZlRuYTRYTndzNDV2a1FOSmw1YjF4MnhhdWZibGQwN1U0bGFhby16VDZBVDBpaHBTMEFSaF94bGtnSHVxS1lfUXh6S0RoN3Blbk1lSGJrbk9vVkc0bnNDSkYzU294X1hJWjB0S3A2dEoteWZGQUxfVnFiNmZwYS00WXRTWmRuMVRRRE9SdzFvSXQ3Um02bEZBVVB5a2dXZDAwS2FmQ2NHVi14dEtIUQ?oc=5",
-      "summary": "美伊協議重創以色列 Benjamin Netanyahu 政治神話破滅 Yahoo新聞以黎官員華府會談 商討以軍撤離與試點部署安排 經濟日報寸土不讓！ 黎巴嫩總統放話「不撤軍就沒和平」 以軍再轟黎南和談陷僵局| 國際 Newtalk新聞美伊協議談判添變數 以總理強硬表態不自黎撤軍｜20260622 公視晚間新聞 公視新聞網PNN黎巴嫩總統：與美國、卡達高層討論以色列停火 rti.org.tw",
-      "published": "2026-06-24T15:10:11+00:00",
+      "title": "Venezuela earthquake: powerful back-to-back quakes collapse buildings in capital Caracas",
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWV9Jc0x6VUhlVFZ5MUc5VFVob0Via0dFanBVVzl0dnYydGRpNWZXdV9vWDBqdy1lRVVmUTV5cEliZVdaV0V2QTg3RkFadnBNRnVWYXNCTjFMdlpzQmUyU3VqV1pEdEtOV2poSkdCT0dod2NRaEwyNnVnUzFiYjFNZHNEcDg2a1lMYWRmMURCU29MLU44X1FrdnpR?oc=5",
+      "summary": "Venezuela earthquake: powerful back-to-back quakes collapse buildings in capital Caracas The GuardianLive updates: Powerful 7.5 magnitude earthquake hits Venezuela CNN2 powerful earthquakes hit Venezuela AxiosVenezuela earthquakes live: Two powerful quakes shake S American country Al JazeeraVenezuelans in South Florida Call Relatives and Organize Aid The New York Times",
+      "published": "2026-06-25T01:20:00+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "短今赴日自由行「遭陌生人跟蹤」 她機警自救：想不到吧！",
-      "source": "ETtoday星光雲",
-      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1lU005eVFBMWFVWHVkeXJjZk1xSElZTGlrUU02R21McHFzUkI2TFpheVhLVmtBQllMME5zNWF2cVNkeUpOdGpxSDFscW40d9IBakFVX3lxTE1Ockl1VFZOdHlaMy13am91UUFFY2EzalFxcWFpTXYwZE00Q2VqYmRobUxPMW5ENUFja1RTV1E5Z1ZPVXJqcWJNZ3h2Qm5KY3ZBRTdQRVVKalRUbDc3cmZGSWQtOHdXNUE3Wnc?oc=5",
-      "summary": "短今赴日自由行「遭陌生人跟蹤」 她機警自救：想不到吧！ ETtoday星光雲",
-      "published": "2026-06-24T15:01:00+00:00",
+      "title": "Israel deliberately targeted Palestinian children in Gaza, U.N. commission says",
+      "source": "The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPczBoQV8tZlpNM0pwSUdYckxRdmM4a203N3AtZkRVRkpCUkNtYVBwVnQ5VzlxNm9TdWt3REprdnZ5b2NKM1NDZXVUb0EtTWJ1S19TV2JyQzJMLUhhTGdwN2swaVZMcHNSVXJwT1R4aFljU3lYS0Y2ekI5bm9OS09vSTBUOUZzOWhpbXZFbDY5TzY5LTVhbUR0b2V3QXpCSXNadzh4OFlKUzFSUVI1bnpRbGE3UUJocjZHVGZLOUZ1SQ?oc=5",
+      "summary": "Israel deliberately targeted Palestinian children in Gaza, U.N. commission says The Washington PostU.N. Report Says Israeli Killings of Gaza Children Post-Truce Amount to Genocide The New York TimesIsrael deliberately targeting children in ongoing genocide against Palestinians, UN commission finds CNNUN Watch Legal Rebuttal: Disproving the Pillay Commission’s Charge That Israel Deliberately Targets Palestinian Children UN WatchIsrael continues to commit genocide by targeting children in Gaza, UN inquiry finds The Guardian",
+      "published": "2026-06-25T01:02:48+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "郭台強布局接班 郭守富接任正崴總經理",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240370.aspx",
-      "summary": "（中央社記者曾仁凱台北24日電）正崴董事長郭台強布局接班，正崴今天晚間公告高層異動，郭台強辭任總經理，由兒子郭守富接任。",
-      "published": "2026-06-24T14:55:47+00:00",
-      "origin": "中央社 財經"
+      "title": "Global Market Today: Asian stocks jump with US futures on Micron outlook",
+      "source": "The Economic Times",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQSk9LSlNoX3JCeXo5TS16NDlDcVVDbDNKMVN2SFF5alA3N0JyX3VEX0ZGLWU1NHNLUnE5ZVdxNGtjdFZKQnRxelgxa0Vpb1doY1RiSXBRM29vekRhckE2NHNGdmxfRERYenZsakpRYmstLWpQb1ozMXl6cGx5Ym5LWHNadW9GeG0taElicGh6cGNrVFhrOUNReUU3ZFJJdDRRSF9wbzJCV3hOZXU2OTZ2RHRtOWdXMEFuazB0RmxnWmRSTWhjYkdRSzllaHAtRTJNd19HdF9SV05qVzZCWEpUd1h30gHnAUFVX3lxTFBINEJZTV91RVVYcldkZVlaRUxxWHJPTnlPcTFsUHR6YTc4UUIxMlR2Uy02ZWdqdzFnam5kU2NoOFFwbk9mSXV3RFhRaEJhN242LWFNMmNETVVqT0g1ZHRndnhabk5na3kwNmN6d3NTSG5OeFlCNlFEQmpWYkhVOUl5T0FSQ0dkcklWQVRoVm1DcTdQR0RYWE1RTnZrZ29sWkMwbkZfN2VlcjJuUHY5SkZNdHpqbURZNEtpdlk0UHlTZGJZQ1dneU9lU3M0SklHbTlUQ1NVYUQ2RUx0bFpCNE5lbnZmUkRkMA?oc=5",
+      "summary": "Global Market Today: Asian stocks jump with US futures on Micron outlook The Economic Times",
+      "published": "2026-06-25T01:01:53+00:00",
+      "origin": "關鍵字「global stock market outlook」"
     },
     {
-      "title": "薪資協商陷僵局 現代汽車工會表決通過罷工行動",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606240368.aspx",
-      "summary": "（中央社首爾24日綜合外電報導）韓國汽車大廠現代汽車的工會今天宣布，因薪資協商陷入僵局，員工已經表決通過罷工行動。多個產業受僱勞工紛紛要求改善勞動條件。",
-      "published": "2026-06-24T14:51:43+00:00",
-      "origin": "中央社 國際"
+      "title": "The Slate Truck Is More Expensive Than Expected",
+      "source": "Motor1.com",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5CeXN5VHU4OC1Bc05icXNnV0xCd2pVOEY0WE5kSEwxelRKRkVLQjFzeXZEeGpCeVRhUlBEX1VLM3U2dzBZeUwtVDVfUlhhUmRCOUxfLTlEQmpLRzZRVkFIWEtBMVRBRUtjRnpfekhkYXowS0VYN0tjZQ?oc=5",
+      "summary": "The Slate Truck Is More Expensive Than Expected Motor1.comWill Anyone Buy This Cheap EV Truck With Hand-Crank Windows and No Radio? WSJNo-frills, affordable electric pickup truck to hit the market KTLAWe Rode in the Slate Pickup, and Here’s What We Learned MotorTrendUnderpromise, overdeliver? Hands-on with the $24,950 Slate auto. Ars Technica",
+      "published": "2026-06-25T00:00:23+00:00",
+      "origin": "Google 財經頭條"
     },
     {
-      "title": "俄影子艦隊運油金援戰爭 瑞典籲歐盟積極登船攔截",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606240367.aspx",
-      "summary": "（中央社記者辜泳秝斯德哥爾摩24日專電）瑞典電視台調查報導發現，僅是今年已有262艘俄國影子艦隊油輪，經由波羅的海運送石油；瑞典外長斯典尼嘉德呼籲歐盟各國積極登船檢查，以阻斷俄國規避制裁，透過出口石油繼續取得攻打烏克蘭的資源。",
-      "published": "2026-06-24T14:34:39+00:00",
-      "origin": "中央社 國際"
+      "title": "Magnitude 6.9 quake hits northern Japan",
+      "source": "japantimes.co.jp",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQbzhwZmw3M3RqVi04T1l4MjNNcTE2Q1JzZlR6dUxhVW9oTkxBUkdzYTdFd1N1aElPaS1PeERtME1UTXNDQXpQTWRkRGFpZ3YxcWhPRmpQV2EwTGx1S2dOSEFrWDdhbkxCdFFPVmZWVVZQc3VBdlFBR2xWWGh4T2FkOVFn?oc=5",
+      "summary": "Magnitude 6.9 quake hits northern Japan japantimes.co.jpPowerful 6.9-magnitude earthquake strikes off northern Japan, meteorological agency says ABC7 Los AngelesM6.9 quake hits northeastern Japan, no tsunami warning Japan Wire by Kyodo NewsM6.9 Earthquake Hits Japan’s Aomori Prefecture, No Tsunami Warning Issued The Japan NewsNo tsunami warning after M6.9 quake strikes Japan's northeast Reuters",
+      "published": "2026-06-24T23:10:38+00:00",
+      "origin": "Google 世界頭條"
     },
     {
-      "title": "彭博：高市早苗拒低頭中國 傳APEC不願會晤習近平",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxOUkEtd1dPbHIwR1RIcjZfR0VvY0RTam9VRU5pZDdVcDNPVDIwMWIzYVhseEQ5b21vaEYzWFZJdFJPNG5kTTc0QmR2R2hVYmpWdm9nUkpGRzR2WWxkNkNzbS1jcFM3T1V6UGpXeXI4LVVUc2JValFFMEotRWszUXBrVlNrYWo3c1lPVGZISHFSS2FrRnhvUXlVX0FqTzR1WEVuUUZMbzhrNFAyVEs0VFBfLU5qR240SV9vdTgySTZoV1BxOEs5Xzg5ZlRGM0N5TjVIT3N1c2N3WlUySEJMSGhwOUVHazR2dlBZZGY0TVNJYUxScVpiX014SmlOeE1YOG9FR2JTVEZLR0RkN0tkdzlKVk1WNVVsNm9LbXRoTDdlR1MwcURWX1RWLXI3dWdGUnV1NlZ6RlJ2a1RNaVNQYkpB?oc=5",
-      "summary": "彭博：高市早苗拒低頭中國 傳APEC不願會晤習近平 Yahoo新聞彭博：高市早苗不滿中國人身攻擊APEC峰會不願見習近平| 兩岸 中央社 CNA中國逮捕2日企員工 指控涉嫌走私稀土 公視新聞網PNN中國強化礦產出口管制 實名檢舉可獲獎勵 rti.org.tw還在生「台灣有事」的氣？ 日政府證實中國抓2名日本人 原因恐與「這個」有關... Yahoo新聞",
-      "published": "2026-06-24T14:31:00+00:00",
+      "title": "Court filing reveals President Trump spoke to Live Nation CEO before antitrust case was settled",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMy1OWXFpY3RLUlIxMnhKZ2ZHTFdkNlY2MVM4VmZSTVpTakNzRG9sR3J4M2F3QXNGLWR0bmQzbEFGa2FaSFR6RlhYbW9HSEJXYkRBbXYxZUM1cWZFOUt2ZFNWZm1CNEg1QnBTcXZWVVk1elJwUU5mZzhkUXVKdVBlQTFSOWdlYjd6bFRBMUZFeHgwUW1XVklRc2YtMDV1XzFQQTJ6LXNzajlUUQ?oc=5",
+      "summary": "Court filing reveals President Trump spoke to Live Nation CEO before antitrust case was settled AP NewsTrump spoke with Live Nation CEO shortly before surprise Justice Department settlement, court filing reveals CNNLive Nation Discloses That CEO Spoke With Trump Before Surprise Antitrust Trial Settlement VarietyCourt filing reveals Donald Trump spoke to Live Nation CEO before DOJ settlement Sports Business JournalLive Nation CEO Spoke With Trump Before Reaching DOJ Settlement in Monopoly Case The Hollywood Reporter",
+      "published": "2026-06-24T23:09:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Elon Musk loses trillionaire status as SpaceX and Tesla stock drops",
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQa1MzYTc3djA3UUNJOHhEejFzcEZoQVpLYkFLaTVFandYQkdXcENFeTB6WWNwdFlVWENUaGF4NGIyMXhrMnVZZktvRDBZSzhnc0t4c1pCcFJxWVdNTFgwdkFqTUxJNjhtblpaeGFTd2MybHhQS3I5dTEyRGQ5THAwb3ItNWNBQjA?oc=5",
+      "summary": "Elon Musk loses trillionaire status as SpaceX and Tesla stock drops The GuardianElon Musk loses trillionaire status as global tech rout hits SpaceX BBCElon Musk loses trillionaire status after tech sell-off erases billions from fortune Fox BusinessSpaceX Stock Price Is Slumping After Its Blockbuster IPO The New York TimesElon suffers another day short of trillionaire status Yahoo Finance",
+      "published": "2026-06-24T22:45:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Nasdaq, S&P end lower as tech stocks fall",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOYktYX1NzUUhjN2p1VDBmM2lIS0I4S2c1cmFSQjFxUmFCQWNfeXpycEw3VTdPblhTcDZEUjVSeWNnWjNCaEIzNUpnQjhIYm00R3l1NUwtYk5nX3VhTkp2RTVFaU51TnVDVzh5MFpYZTliMzFuZUNmYllmX0JTRVpycmp5OTU5ZnZUdGxiQ01XY3ItenNodklTQUliMzk?oc=5",
+      "summary": "Nasdaq, S&P end lower as tech stocks fall ReutersStock market today: Dow, S&P 500, Nasdaq rebound after tech rout as oil prices tumble Yahoo FinanceTech Stocks Retreat on Concerns over AI Spending, Valuations WSJTech Stock Selloff Could Just Be a Blip But Watch These 2 Factors and 5 Other Things to Know Today Barron'sNasdaq closes lower as chip sell-off resumes; Micron shares extend losses CNBC",
+      "published": "2026-06-24T22:40:37+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "From ‘Terrible People’ to ‘Smart People’: The Trump-Led Right Rethinks Iran",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5uZWlBVHFCUkp0SjlRai1ZZHFYblRDMnFZVXBOblAtSWNzSk1LXy1ockNJNUpkM0k1Rmp0THJDeUhfaG1ITzJxNktrZ0hfeFgyTVJmTzdlMVdPYjVFaFdtY3RsM3laTTB5T0FmanZZU2VCdUtHUWhN?oc=5",
+      "summary": "From ‘Terrible People’ to ‘Smart People’: The Trump-Led Right Rethinks Iran The New York Times",
+      "published": "2026-06-24T22:31:41+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Stock Market Today: Nasdaq, S&P 500 Inch Up After Two-Day Tech Slide, Dow Flat — Live Updates",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdUo1R3gzOGp3TW5ZS3I3ZGdQOEJWdmozUE8yNHRzYWpDLVNfdVZKUGlIdjNYUFFhaDlJQ0Frb1lORDJiSnNFZTNEaHpWZVJOSXNVWmNFSzZxT2dxZHpwYkR1RnItSUdWYk1MSktOc3ltczBpaUY4Q3AtdjZKcWpsMVRkcVBMYXc?oc=5",
+      "summary": "Stock Market Today: Nasdaq, S&P 500 Inch Up After Two-Day Tech Slide, Dow Flat — Live Updates WSJSee more headlines & perspectives on Google News",
+      "published": "2026-06-24T22:18:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Cerebras Stock Falls Despite Improving Outlook For AI Chip Sales",
+      "source": "Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMEpJZGQ1UEYwYTZ0cmM0RDdZUlBoRDA2Ynl1dzNhVDR1a3Btb1VFZmZjZ0RjVTlBRE9GRHQtZ0NodFh2OXFKN0J0bTNIR3g5UHEydkVIVTN2Y2dtUlh0Mmw4bk9ETUZXM01pWGpTNFBPcWJCU1ZhaVlPc3lOQ0Iyc3pWT2tDT19mTlFZcFdoUkIwVVU?oc=5",
+      "summary": "Cerebras Stock Falls Despite Improving Outlook For AI Chip Sales Investor's Business DailyCerebras CEO says margin forecast was 'misunderstood' as stock plummets after earnings CNBCCerebras Revenue Soars in First Quarter, Forecasts Full-Year Negative Margins WSJCerebras Projects 2026 Sales That Leave Investors Wanting More BloombergCerebras sinks 14% as full-year margin forecast disappoints Yahoo Finance",
+      "published": "2026-06-24T22:15:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "France, UK and Spain see record temperatures as heatwave grips western Europe",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBxQ0g5azU3anZFaUwtNm9ZOXB4YkR2eUdnZFJDcnFlSm5EcEVjeklWYnBNOVF3UkpremZUVTMtTFcyNjVqVFBOSFNpeHBGb0F5WjVrbTJ3RWhydw?oc=5",
+      "summary": "France, UK and Spain see record temperatures as heatwave grips western Europe BBCWhy Europe Is the Fastest-Warming Continent The New York TimesDeadly heat wave grips Europe as most French homes lack AC YahooGlobal warming has made Europe’s heatwave 2-4°C worse The Economist40 people drown as France seeks relief from record heat The Washington Post",
+      "published": "2026-06-24T21:39:18+00:00",
       "origin": "Google 世界頭條"
     },
     {
@@ -211,241 +307,137 @@
       "origin": "關鍵字「Federal Reserve interest rate inflation」"
     },
     {
-      "title": "The Prime Day Alternative: 50+ Walmart Deals That Might Just Beat Amazon",
-      "source": "CNET",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1LaW1OcDlac2hVTkQyaDdqTXFwMUJHSE5LWHF4WS02WTBZVHE5MUtYVDE1ZkY3U1lMYktqSFhPV3p6UDZiWE9FSnNoWW5RVnBxb093Z21TLVRFWHhWamtONjZhckJfYjJPSl9fbnRyb0RNRlhKN0E?oc=5",
-      "summary": "The Prime Day Alternative: 50+ Walmart Deals That Might Just Beat Amazon CNETAttention, Amazon Haters: Walmart Is Also Doing a Big Sale Right Now WIREDWalmart's Prime Day deals are better than Amazon's right now USA TodayHere are my favorite Prime Day-level savings to shop from Walmart’s summer sale CNN37+ deals at Walmart that beat out Prime Day prices right now NBC News",
-      "published": "2026-06-24T21:13:01+00:00",
+      "title": "Trump accuses big oil firms of price-gouging drivers",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0zM3NrelgwZXVINzJzc2tfMkVyOGMwYnNuRTBuelduUVZmbmc0QXdjU2xPSEd5UmlVcl9RVVNlbldNOEFLWlRWN1dMcGplMDEzd3pYZDRTNXFqZw?oc=5",
+      "summary": "Trump accuses big oil firms of price-gouging drivers BBCTrump is frustrated gasoline prices don’t mirror oil’s decline. Experts say it’s not that simple AP NewsTrump accuses oil companies of gouging drivers, orders DOJ to investigate PoliticoTrump calls for probe into gasoline price 'gouging' ReutersWhy Trump suddenly sounds a lot like Biden on gas prices CNN",
+      "published": "2026-06-24T21:24:12+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Nasdaq, S&P end lower as tech stocks fall",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOYktYX1NzUUhjN2p1VDBmM2lIS0I4S2c1cmFSQjFxUmFCQWNfeXpycEw3VTdPblhTcDZEUjVSeWNnWjNCaEIzNUpnQjhIYm00R3l1NUwtYk5nX3VhTkp2RTVFaU51TnVDVzh5MFpYZTliMzFuZUNmYllmX0JTRVpycmp5OTU5ZnZUdGxiQ01XY3ItenNodklTQUliMzk?oc=5",
-      "summary": "Nasdaq, S&P end lower as tech stocks fall ReutersStock market today: Dow rises, S&P 500 and Nasdaq slip as AI jitters return ahead of Micron earnings Yahoo FinanceFutures: Micron Soars On Results, Lifts Chips; Fed Inflation Data Due Investor's Business DailyOil Slump Deepens While Tech Stocks Struggle WSJStocks Rise Before Micron’s Earnings as Oil Slides: Markets Wrap Bloomberg.com",
-      "published": "2026-06-24T21:06:43+00:00",
+      "title": "The best Prime Day deals: Live updates on what to buy from Apple, Adidas, Hanes, Shark and more, plus deals to skip",
+      "source": "Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPYlRkWTZ1M21XVnRxRDBYSDBHbFJIaGJIWjl6bHZpUGV3NkdEdkhTcFhoREdfR2hFLVNsTC1PRjFtUUZUT1JxeEI2SVd0bVFPMDhYd2ptdlRBOVZSWTJ5bHhXTXhCeEMxcnkyYUFJYzNtLXZsLTJyUEtsR2Y1cEtKUUVGdmpiT252eVR1ZFEtTXZrZXBkODZxamhNRHNaVVhaam9qaTJMMUNva2hqUXpYVFZuQldreC1rZG5fWWI0UWVTVWZmcU1IWWFwRms1YmNVOHVLRFU0b2FQOWN2ZWlqa1MyMGR3TmtxRFhzeUhDbkdLcVh5RjVONmVpN2pZWW9Lc3dfQldveFY?oc=5",
+      "summary": "The best Prime Day deals: Live updates on what to buy from Apple, Adidas, Hanes, Shark and more, plus deals to skip Yahoo271+ best Amazon Prime Day deals worth buying after sifting through thousands of offers NBC NewsPrime Day Deals Under $50 We’re Shopping Right Now: Seen on TODAY TODAY.comThe 225 best deals from Day 2 of Amazon Prime Day SFGATEStretch your dollar this Amazon Prime Day with the best deals on everything under $50 CNN",
+      "published": "2026-06-24T21:04:35+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "SpaceX Completes $25 Bil Bond Sale. Rocket Lab Touts Space Force Mission.",
+      "source": "Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPQ2QtLTVHdHlsRVNSQnNxMnJlcTk0VWNaMXZwX2owbnc1bHNkWk5vdFdsQjZkWFBzV25ibXVVdkxxTkh6Y2FyZnZEM1JHMEhab25qeDZHM2FvbGVwcVVoT3pQZE1VYXk1U1V3c1V5YVA1WU5mdExIejhfWDlGWEs2M29aNXVMUy1hTHloM1BLRXQ4QllTMEdOUE1TN21LZzRNS1I5amttd1ZYdS1sZEd5V1AyR2I0RW53?oc=5",
+      "summary": "SpaceX Completes $25 Bil Bond Sale. Rocket Lab Touts Space Force Mission. Investor's Business DailySpaceX stock slips as it announces $25 billion bond offering Yahoo FinanceSpaceX raises $25 billion in debt sale less than two weeks after IPO CNBCAfter $86 billion IPO, SpaceX to borrow $20 billion AxiosSpaceX, Fresh Off Its Historic IPO, Readies Its Bond-Market Debut WSJ",
+      "published": "2026-06-24T20:59:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "JPMorgan Chase unveils $50 billion buyback, Goldman Sachs raises dividend after Fed stress test",
       "source": "CNBC",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONHF4c3BHeFpfeS1FSVlyejQ4cUN0dVJXdS1IYmYtbkpveVd6cjFMdE85OFloNFhDOHFETlYwVWZudzdCOEZOdklXaXZveGRKb0tvc3NpV0ZXYjlocTU0MWVqVmlGMS15UnRVSXlZdWFGQTNJNi1nbVBLWmVjLWhnVdIBhgFBVV95cUxOYVR0TlJOcFVYcjFaekc4ZEVZdWdnMktMTzlxdlpFUDZBOWFGQy1SZFpPQ29kdFpjZkc3ZjJkeDB4SDdsMUxMN1BBaEljaElTUk9GZUs1YnQ0YVZTeGFXd2d6ektDOWpQUmp2OEp4S1Y1NVV3Vy04QWNkbC1QY0UzWGVxQ2FPUQ?oc=5",
-      "summary": "JPMorgan Chase unveils $50 billion buyback, Goldman Sachs raises dividend after Fed stress test CNBCJPMorgan, Wells Fargo, other big banks plan dividend increases, stock buybacks (JPM:NYSE) Seeking AlphaJPMorgan, Goldman Increase Dividends After Passing Stress Tests Bloomberg.comJPMorgan Chase Board OKs Billions in Buybacks WSJJPMorganChase Regulatory Capital Update The National Law Review",
+      "summary": "JPMorgan Chase unveils $50 billion buyback, Goldman Sachs raises dividend after Fed stress test CNBCJPMorgan, Goldman Increase Dividends After Passing Stress Tests BloombergJPMorgan Chase Board OKs Billions in Buybacks WSJJPMorgan, Wells Fargo, other big banks plan dividend increases, stock buybacks (JPM:NYSE) Seeking AlphaJPMorganChase Regulatory Capital Update The National Law Review",
       "published": "2026-06-24T20:58:45+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "The Fed may raise interest rates within months. Here's what it means for you. - ABC News",
+      "source": "ABC News - Breaking News, Latest News and Videos",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNenUzMm5kWTJOUHEtcHhxdmdwbDBYb1dFME1RZ185dkxEcWRIanY3ZmRvUGs5WjZKbVJHLWxHdlNtUVV3Rm1lUE5EOVpjaGV5bVJHeUZhYm9HT29JY0JtSGdWdTkzeGxWMzJBeTBDYThUajFoaURnSG05ZnVpdnhxUHNkbi1uZGtsVFVXcEdB0gGTAUFVX3lxTE5RUERWVjBaZ1pSbEM1MEhPVzZWaWFEX3JOSGJlbmtDbnNwRzJuZ2hkckZ1dlJtbkJ6YjljeGhzdWVvZjhWMFp3TzhLSGM5Um9aSko2QV84cEVMNmtLa2hPNWR3Qnp2aUhHS0hhLWJqZG1HMi16aUc4cEtIdzV6emp3bFlQZ0UySmFpZVUyQWNYOGUwdw?oc=5",
+      "summary": "The Fed may raise interest rates within months. Here's what it means for you. ABC News - Breaking News, Latest News and Videos",
+      "published": "2026-06-24T20:48:37+00:00",
+      "origin": "關鍵字「Federal Reserve interest rate inflation」"
+    },
+    {
+      "title": "Paramount-Warner Bros. Discovery Merger Inches Closer to a Done Deal",
+      "source": "The Hollywood Reporter",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQaHJGTGxOVFhpNVRvUzRtZmxhWDZONG02bjZ0NzdxMFhXcU9ZQUluSkowUmdmVFRSWGIxaG9fWUVBSVlNdlFNX2RFZkQxY0wybkU2LW5YNkFlSGExUGExaC1ldVg3UkRxMkUyd0w4bTNjTjJqYWZidjRpSGhxMmFEQWM1RndNSkI2R254cjlzMjBNRjd2N2VOeWdJaGRhZjhMOE1yU1ZKN2l3aWc?oc=5",
+      "summary": "Paramount-Warner Bros. Discovery Merger Inches Closer to a Done Deal The Hollywood ReporterParamount ready to sell Universal Pictures JV for Warner deal, source says ReutersEU set to clear Paramount’s $111bn takeover of Warner Bros Financial TimesParamount-Warner Merger Reportedly Set To Clear EU Antitrust Hurdles — But With Caveats DeadlineParamount’s $110 Billion Warner Deal Faces EU Moviemaker Test Bloomberg",
+      "published": "2026-06-24T20:44:11+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Iran's economy, military has been 'devastated': US ambassador to UN",
+      "source": "Fox News",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBnZWJXQjF0bGY3X3hsSXNCbUhOUzdOZVZKT1ZuQXJidzhzc3RISWJEajdNZ3FDTEtvY1VjbU5UUW9qbDQxd0lHbm11UkI2WDhKaFBGaFRB?oc=5",
+      "summary": "Iran's economy, military has been 'devastated': US ambassador to UN Fox News",
+      "published": "2026-06-24T20:39:23+00:00",
+      "origin": "關鍵字「geopolitics military conflict war」"
+    },
+    {
+      "title": "US NTSB to investigate fatal Texas Tesla crash",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbzQ4REhDNmNqNW5maVlSakJPdnRrTTFnOVFSOWxiQXFuSl9DRFNKaDM0aEhhNklNMU16dnlOV29ncDc1QXdQek5pZDNJb3Z1X3FUSFlBYXZkQ29XbmVPWGNRYjRqRDl5azcxeVp0R2hjdXZYTVFGd1FBZFhNSnNQRk1rVkQtSFdaZWFuWjZKOHctR19sdjFGVHhrNVM3Z0hueWlnUnhR?oc=5",
+      "summary": "US NTSB to investigate fatal Texas Tesla crash ReutersVictim’s family in fatal Texas Tesla ‘automated driving assistance’ crash files lawsuit NBC NewsTesla Driver Using Autopilot Crashes Into Home in Texas and Kills a Woman, Officials Say The New York TimesDaughter recalls finding her mom \"under the rubble\" after Tesla crashed into Texas home CBS NewsExclusive | Fatal Tesla Crash Into Texas Home Now Under Federal Safety Investigation WSJ",
+      "published": "2026-06-24T20:37:05+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Korea’s SK Hynix To Make Nasdaq Debut",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNRlUtNUFoT3FxLUpISEJ5X09OOGdwQnBnWW5ReV9Fb1d1bEcxbDNDQmludVFsM3ZVM2NBWGhNdGZSVUppalhCakx4ZFJlZG1zNnBPQ3RKNHJEUDI5endtV2pJMkNYU19QeldqSDJTMlBIdzZDYkk4NnJhckRUSnc0T3pHUERfZUE?oc=5",
+      "summary": "Korea’s SK Hynix To Make Nasdaq Debut WSJSK Hynix Seeks $29 Billion With US Listing to Fund AI Boom BloombergSK Hynix Nasdaq Listing: Will the Memory Chip Giant Trigger a Price War? Barron'sSK Hynix targets $29 billion US listing as AI demand surges ReutersTime to Dump Micron? SK hynix to Begin Trading on Nasdaq July 10 Yahoo Finance",
+      "published": "2026-06-24T20:28:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "Why is Wendy’s a Meme Stock? The CFO Shakeup Explained",
       "source": "Barron's",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9TelpSeDVEMmMyNzlVbU1CNHUxanpEX2tjcE5NMTZKTk9ROWJ2Vl9oU2JEd3p6ZEVFRHpVQlBQV3l2cUwxOWRaamdCcDFfdmp4N0RoaldRYmduTHpoWHlhME51VEUzYk5jckxTdFdhLXFmNDZ0SzUxSk55SQ?oc=5",
-      "summary": "Why is Wendy’s a Meme Stock? The CFO Shakeup Explained Barron'sWendy's stock swept up in meme-like rally after viral Reddit post, leadership hire Yahoo FinanceTHE WENDY'S COMPANY NAMES STEVE CIRULIS CHIEF FINANCIAL OFFICER AND CHIEF STRATEGY OFFICER The Wendy's Company - Investor RelationsWendy’s Stock Soars 26% as Meme Traders Flock to Burger Chain Bloomberg.comNew meme stock Wendy's soars more than 25% with trading halted at one point CNBC",
+      "summary": "Why is Wendy’s a Meme Stock? The CFO Shakeup Explained Barron'sWendy's stock swept up in meme-like rally after viral Reddit post, leadership hire Yahoo FinanceTHE WENDY'S COMPANY NAMES STEVE CIRULIS CHIEF FINANCIAL OFFICER AND CHIEF STRATEGY OFFICER The Wendy's Company - Investor RelationsWendy’s Stock Soars 26% as Meme Traders Flock to Burger Chain BloombergNew meme stock Wendy's soars more than 25% with trading halted at one point CNBC",
       "published": "2026-06-24T20:12:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Elon Musk loses trillionaire status as SpaceX and Tesla stock drops",
-      "source": "The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQa1MzYTc3djA3UUNJOHhEejFzcEZoQVpLYkFLaTVFandYQkdXcENFeTB6WWNwdFlVWENUaGF4NGIyMXhrMnVZZktvRDBZSzhnc0t4c1pCcFJxWVdNTFgwdkFqTUxJNjhtblpaeGFTd2MybHhQS3I5dTEyRGQ5THAwb3ItNWNBQjA?oc=5",
-      "summary": "Elon Musk loses trillionaire status as SpaceX and Tesla stock drops The GuardianElon Musk loses trillionaire status as global tech rout hits SpaceX BBCSpaceX Stock Price Is Slumping After Its Blockbuster IPO The New York TimesSpaceX short selling bets increase after post-debut share selloff ReutersSpaceX Dodges Danger Zone, Rebounds Above $2 Trillion Valuation Barron's",
-      "published": "2026-06-24T20:11:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "SpaceX stock slips as it announces $25 billion bond offering",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNQzc4SmVFTXJ3ejlfb2ltVjhJTlRrUmRGQjBmbFkzQ0RBM2NrYXZSdlEtNkdKRkR4ZkJlZWZheG8zdjl2OTNrRlVKeGdON0pNckVycF90NHlsbjktWkR0R3ktNzNlOGZybDRIcGEzUHRRM2E2X18tQmk5RjAwTXRXTno1dDllZ0paajJWMzd6dGtPeEo1YnYybUF0ZUw2elRvN3Nvam5SaUZQb21GYmgyY1VidkxhRnZ2WnN2aDJBMHI?oc=5",
-      "summary": "SpaceX stock slips as it announces $25 billion bond offering Yahoo FinanceSpaceX raises $25 billion in debt sale less than two weeks after IPO CNBCAfter $86 billion IPO, SpaceX to borrow $20 billion AxiosSpaceX, Fresh Off Its Historic IPO, Readies Its Bond-Market Debut WSJElon Musk’s SpaceX Adds Billions in Debt While Cutting Interest Costs Bloomberg.com",
-      "published": "2026-06-24T20:08:46+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Micron stock jumps 10% as soaring prices from memory crunch lead to quadrupling of revenue",
+      "title": "Micron stock jumps 15% as soaring prices from memory crunch lead to quadrupling of revenue",
       "source": "CNBC",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9GVlh2eUZTODFpczdKeFpDLWlMY2k1LUtFV1RPU0FMaW5YSmwzOS1mUUdOOHdlTGloY3NjeGtFNzV1VEFZSHBoSzdCMHlRandyQWRRMTd1STR1VVlkTUE3QzBVcnUyODlRRjZZZF9Jc0hHZ05yNVFDRHZ30gF_QVVfeXFMT1NSQlRZZnJaMVVDZld2Wk1FUTJLU3ZCYlp6LXlzdjZhTDRfWXkwU2VsdDBEbjZFZU5JYW1LdUllY3JGdzFYcDlQc0I1d0JzaEJUaWtra1R5ek9qb2pmX0lKeV9rZ3JLNUpnQ2hNbnZEeEtMYWF4RFBHZU8wckw0WQ?oc=5",
-      "summary": "Micron stock jumps 10% as soaring prices from memory crunch lead to quadrupling of revenue CNBCMicron to report third quarter earnings amid sky-high demand from data centers Yahoo FinanceMicron earnings are out and the stock is rocketing. Here's what to know. MarketWatchMicron Shares Jump as Chip Shortage Projected to Last Beyond 2027 WSJThe memory chip crunch is paying off for this U.S. company TechCrunch",
+      "summary": "Micron stock jumps 15% as soaring prices from memory crunch lead to quadrupling of revenue CNBCMicron to report third quarter earnings amid sky-high demand from data centers Yahoo FinanceMicron’s Blockbuster Earnings Quiet the AI Doubters WSJMicron Stock Soars as Results Blow Past Wall Street Expectations Amid Booming AI Demand InvestopediaMicron Soars After AI-Fueled Forecast Shatters Estimates Bloomberg",
       "published": "2026-06-24T20:07:46+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Trump, Republican senator in shouting match over unpopular Iran war",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd2ZaZ09FYVZua01kNUt3a3EycFVoUi1rZkd3SGc2UUhNa2pqdm5PTEhfMlhMV1ZxRlI3OU5sN3o3aVdjNlpBOEEyelFxY2s5TGVNc2R0ZFZzbEROSmk3MHJGdDVBT3YwbG5KOWZqNWh1Skh6X3RYc0YybzNpU2FMaGxKTEN6Nzd6T3hJN2FJakQ3eFVsdzVFSHJvUVBTMWp0NEpURTAtbk14TDhnS1Vvb21mSUVtNUlFR1FCQ0NXVEg1a0Fn?oc=5",
-      "summary": "Trump, Republican senator in shouting match over unpopular Iran war ReutersUS promises to protect Gulf states' interests in Iran talks YahooRubio says U.S. won't do anything that would undermine Gulf security ReutersRubio Seeks to Reassure Gulf Arab Partners on Iran Deal The New York TimesRubio will visit Gulf allies amid scrutiny of his position on Iran deal The Washington Post",
-      "published": "2026-06-24T20:06:37+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Federal Reserve says U.S. banks can withstand $708 billion in losses amid overhaul of capital rules",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5MUW5nYXVYWEF3VU42X3gwUlhZNnpCQ3E3MjdaaThHcHVSNFFGZnJiU3VGa3FXX3dFWW5GQXEwd2xKZFJuT1lmaktGcmljMTd2TzNTUzdvMVhQaUZhajh4bnRHRjZ1X0J1d2FFOUcyclA0eDRNaGJCY08tdFdxZ9IBgwFBVV95cUxOVndVVGlFZkxHdTc3OHA1THJzczZISjJ6OHp3UWh6ZlVLTmoycDJ3dUFnazE2RXQ0OEFpYnhmMFpZdDhTY19ZNllrTWdvNFhIaEVnLTRyS2dPa2Z6MEQwQzg5eDZhbjJLVFBaT1c5aVUtZFFrOXFZNF8zZEUwRE1jd21Ncw?oc=5",
-      "summary": "Federal Reserve says U.S. banks can withstand $708 billion in losses amid overhaul of capital rules CNBC2026 Bank Stress-Test Results Are Not A Green Light For Lower Capital ForbesFed says large banks well positioned to weather potential downturn ReutersUS banks would lose $700bn in economic crash, Fed stress tests find Financial TimesBig Banks Pass Fed Stress Test, Paving Way for Payouts Bloomberg.com",
-      "published": "2026-06-24T20:00:12+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "US Treasury yields slide as Hormuz reopening eases inflation fears",
-      "source": "FXStreet",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOOW1JclVZZ0FxcWF1RXQzQ3pGOWw5ZU1fcklKX0xXcGlrZWwxR2p3Z21fdW9QTmZ0ZzE3Vk5iTTFiYVU3MVhUeDB2WE50OXJGUlA3aGZ5T3VHc0k0dGZqTl8yalpoaDN2WkhMclozR2QzdjBHWE1IbTFDLUhBSnhOWFdjTXBmSE5GcGV5a1JVSTR6SklDVFpLU1hfNkJxZ2dOTUxEc2pJdERrdkJERWc?oc=5",
-      "summary": "US Treasury yields slide as Hormuz reopening eases inflation fears FXStreet",
-      "published": "2026-06-24T19:47:28+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Extreme heat is melting national records across Europe, with more coming Thursday",
-      "source": "CNN",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPaFQ3ZGx6V0lKd3lWUjJtTjRnalVzd3gwVjFKYVpxQ1pkSTlUcnJ5RDF4Y1pFSDhDalRQNjRhdHhJVTdsY3BNMEdIR1B5LWpVWmJJMlpCV2JBdW9IeFVrdDYzdGlUNWdlbmZvNjNnSm9WWGhWTUFJU2ZCbzlhTlFTUi1NbF9yel9ZbHc?oc=5",
-      "summary": "Extreme heat is melting national records across Europe, with more coming Thursday CNNWhy Europe Is the Fastest-Warming Continent The New York Times40 people drown as France seeks relief from record heat The Washington PostFrance experiences its hottest day since measurements began in 1947 France 24France suffers major power outage as Europe sizzles in record-breaking heat CNBC",
-      "published": "2026-06-24T19:30:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Opinion: These hidden PCE triggers could force a Fed rate hike — and shock the market",
-      "source": "MarketWatch",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOZ2R5T001Nlh0RFpSOExDUF9FYnktc19pMGVvTDJPc3lGYWJCS0gzREFFMlhwcHFsWEo4c3haQnY4RDIwSjdrQ0huQWp6RDRGbTZudFdqM3N6SG96T2pEalJ1OGs3aHdabTJFSUROVVZEaHBjWTJQdzRIdjU2QmVVTk5oYW1KZkw4MkRWc1lIYzRQNmR3aU56azZOcUNpWjhkRUZWdjB2V0RuMXRlMGpxTE5MSktlc2xROUF4V2tPdmRkT1ZRcUxYcQ?oc=5",
-      "summary": "Opinion: These hidden PCE triggers could force a Fed rate hike — and shock the market MarketWatch",
-      "published": "2026-06-24T19:29:00+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Here’s why Slate changed the battery in its cheap EV truck",
-      "source": "TechCrunch",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORTNsN25QRTlTYlRfZmIyMkw5RGxtdHg1VTg5Nk9PNE1LcEVSRTc5ZjFHakFFNFk3SFFuUEZtSDBwalU0SGhmRTRrMU1nc2w5ZkxIS1BvdGphQTdjX2loVkpPZDBtQm5MQkFvQ0RaS3l0T0tDaHU3VmIyTFplaU51TXA4LW5TRk9LQ2l4TGFXdFJpdENuaEN3?oc=5",
-      "summary": "Here’s why Slate changed the battery in its cheap EV truck TechCrunchWill Anyone Buy This Cheap EV Truck With Hand-Crank Windows and No Radio? WSJWe take a ride in Slate’s $24,950 electric pickup Ars TechnicaWe Rode in the Slate Pickup, and Here’s What We Learned MotorTrendJeff Bezos-backed Slate reveals $24,950 starting price for EV pickup, making it the cheapest truck in America Yahoo Finance",
-      "published": "2026-06-24T19:27:56+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Bitcoin crashes, but odds turn darker as MSTR, APLD lead crypto-stocks bloodbath",
-      "source": "Seeking Alpha",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPeGxFNjVybVhxTFdqQXBJUG1INDVZTllFTlpRZW9mZHdIMlBVOFEwSnNrZ29xYXRwelREYVhGRzBxWmJvMm16TFNONDJzQVVIQkNDM1dtOHVvbi13U0pRYUIzTnFFWEpPVmMwQTU2d00zbHQyd0hUM0h4YjZfT2J0ckJVdV91c1lGUERRLVZWazlhS3ZqOS1FQzZkano0SFUtS01sLUduc2JMMVJZcVNFZmlIOEUtX1k?oc=5",
-      "summary": "Bitcoin crashes, but odds turn darker as MSTR, APLD lead crypto-stocks bloodbath Seeking AlphaBitcoin falls back under $60,000, hitting its lowest level since October 2024 CNBCBitcoin’s Retreating Retail Army Exposes Fresh Market Fragility Bloomberg.comBitcoin and ethereum prices today, Wednesday, June 24, 2026: Opened at lowest levels in about two weeks Yahoo Finance'Painful' Bitcoin Sell-Off Drags Ethereum, XRP and Dogecoin Lower as Crypto Stocks Dive Decrypt",
-      "published": "2026-06-24T19:22:59+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "European leaders pledge stronger role in NATO before Trump-Rutte talks",
-      "source": "politico.eu",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSndCSlZaR3pNRUJDUlBkcDJYdXBSUW85eFN3bXpfbUFfQXBKN1lGRmJQNkxOMDMtM0I4X3hyRXJRaHc0b3JpV0tycnFYRW5uMlFuTlNyNFdiNWNub3dBNndWLTJHV2k4UlZRaTVHV1lwVHhTUEx1ZzkwaUlCN09NU0pQUG83SEo2M3Z6MVZjR3BoTkFOaU5aWEFIak01Tnd3OXdJ?oc=5",
-      "summary": "European leaders pledge stronger role in NATO before Trump-Rutte talks politico.euSee more headlines & perspectives on Google News",
-      "published": "2026-06-24T19:10:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "We sifted through thousands of Prime Day deals, 241+ actually worth buying",
-      "source": "NBC News",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZEtXYXFnbzZVOVh4dE56MEhUQjI1SC1wcVV0ZG9rNnROZHN4eGhBbDk2ZEluWnBBSTl5V1pTZERnUjBvNWlnVHItWDVRdnl6c2dKSUl1VGEtMzN0MG1tZmVycVpDNC1wUTlRMnF0RHRlNzByNDNCbS1IalFESWdkd3U1Ql9vWUVXQ296dF9kOTc4R0E?oc=5",
-      "summary": "We sifted through thousands of Prime Day deals, 241+ actually worth buying NBC NewsThe best Prime Day deals: Live updates on what to buy from Apple, Adidas, Hanes, Shark and more, plus deals to skip YahooI found the best budget-friendly Amazon Prime Day deals under $25 CNN40 Prime Day Finds Under $50 We’re Actually Buying The New York TimesThe 225 best deals from Day 2 of Amazon Prime Day SFGATE",
-      "published": "2026-06-24T19:00:12+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Qualcomm stock pops 15% after chipmaker almost doubles projection for 2029 non-handset revenue",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5sNEdnQXFnVjJBMnlEeWJsVzZPM1BjMHdzVWtGMV9UeVhHWTVnWl9HSWFVQ2FsVHdPZlkxcmNrQl9yZW82eF9xdGtXQnlhVC1wbW1BLTNwRzF0Q3FtZE5XaF9xRUthRmtnSHBtWVhxT09SdWhL0gF6QVVfeXFMTVZjamtUbE11Qk9KVVhWZGhlRXlRcjNBeEpWZ3MtQUFvWldYX3FRZGtsUVV2LTVDcC1JbnRQM1ZDck5JYVV3czdTUW44RkNUQ2JhQjZIb19Gb1N6ekl6YW41RTJYUGtUSWJENzVEX05rd0ZaQTNOa05Ha0E?oc=5",
-      "summary": "Qualcomm stock pops 15% after chipmaker almost doubles projection for 2029 non-handset revenue CNBCQualcomm debuts line of AI data center chips and systems, increasing competition with Nvidia Yahoo FinanceQualcomm forecasts $15 billion data center chip sales by 2029, shares soar ReutersQualcomm goes all-in on data center infrastructure; Microsoft, Meta revealed as early customers Seeking AlphaQualcomm Projects Data Center Chip Sales of $15 Billion by 2029 Bloomberg.com",
-      "published": "2026-06-24T19:00:09+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "ICC Judges Sue Trump Administration Over Sanctions",
-      "source": "The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOWlJiRFBHSU9lOVlQRi1jeFpEU3plbTAtQnNPYW9uOE1hdTNUcnNMUmRzeDNwQS1mMUlEeVljb0tyZHVGNWhEcFhTWnFabHpyaG5zMUxGb05DRDVnSU8tS2pfRTZ3X0pDOEo3MS1HOGoxS3Zfc2t3OFlHSkY3T3Zfb1NIZUFIc1Y3RXVN?oc=5",
-      "summary": "ICC Judges Sue Trump Administration Over Sanctions The New York TimesWorld court judges sue Trump administration over sanctions ReutersICC judges sue Trump administration over sanctions it imposed on them The Times of IsraelFoley Hoag Files Suit on Behalf of International Criminal Court Judges Sanctioned Under Trump Administration Executive Order Foley HoagSanctioned ICC judges sue Trump in New York Courthouse News",
-      "published": "2026-06-24T18:59:31+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeUpTSE5UMUdXb1pOaEc0QUxMS0R4R21sdXRudXJMQTRRQUhia0hpczY5Y2gxUzR4djlpQkNlUTBqcC1ZT0VZUDV5UFBnY2YzRC1vMDZNbXpVdFozRHk2X0tpRTJteTJHbkIxN3FCUUxLQ1lETXg3UF9Td0FKWmo0OHJJRlMtUk1VdEl3LWdzWXJVaXFwZVpWag?oc=5",
-      "summary": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers AP NewsSee more headlines & perspectives on Google News",
-      "published": "2026-06-24T18:42:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "SK Hynix Nasdaq Listing: Will the Memory Chip Giant Trigger a Price War?",
-      "source": "Barron's",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOUXlBQzUyNXRLVElCTmNaSUo3MkhXVnYtTnJyemhCbnk5RnFPQjRBcklIendFWGFjYjZmN0JXSE9MYjROZkwyZ1lDbXVIeXpESkotT0dKd1h2bVJkdGVVanUzTGpIYXpQRGZHYWFYb0tOWTQzSmc2WnZoTUZZeUFaNA?oc=5",
-      "summary": "SK Hynix Nasdaq Listing: Will the Memory Chip Giant Trigger a Price War? Barron'sSee more headlines & perspectives on Google News",
-      "published": "2026-06-24T18:42:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "MTA chair calls Amtrak's Penn Station planning 'bizarre,' declines to join as partner",
-      "source": "Gothamist",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZDVnNlM0ekw5XzJQanhDekdxVE9DUE4zNWZlY1lOLXhNYTZGWEdIUGhmZkNpdEx1bHppeURnWVFtYXVCZlBGWnU4OWV3Z2dOQTQ1WjBLMDFmaEJELUtUNWJhTFNSMjJEcTFWZktmRUlPVV9fWWs0UGFGTjFIdkJ6eDhBSFQwWGsyMk5JejNYR01ObVBJYWF0LXNVOE9kSzNRcFB6eWc2RQ?oc=5",
-      "summary": "MTA chair calls Amtrak's Penn Station planning 'bizarre,' declines to join as partner GothamistNY’s MTA Chief Rejects Trump Deal on Penn Station Renovation Bloomberg.comPress Boxed: MTA Boss Accuses Amtrak's Byford Of 'Gamesmanship' With Leaked Letter About Penn Station Streetsblog New York CityAmtrak and MTA spar over participation in Penn Station redevelopment Spectrum News NY1A Glimmer of Hope for Fixing Penn Station The New York Times",
-      "published": "2026-06-24T18:41:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Google delays Gemini 3.5 Pro launch to July as it tweaks its new frontier AI model",
-      "source": "Business Insider",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQREwxNHVteGEyX2VHdWc4NDlHYzlocExKY1VpMExkZnl2SmM1WXJpbjM2SU5yOWhZb25DWTNSVnJYUzduSE1HY3F5MER0Y0VKQXlkX2M2LVlEUDRZUDlNcWEtU19IRURPSFJYV0VRM19BTHNBcmptaGlkZjJpTkJONngtS0liTG44NW90aEpkbHBLakk?oc=5",
-      "summary": "Google delays Gemini 3.5 Pro launch to July as it tweaks its new frontier AI model Business InsiderGoogle delays Gemini 3.5 Pro model release to July - Insider Investing.comAlphabet (GOOGL) Delays Release of Gemini 3.5 Pro AI Model TipRanksMajor Upgrade After 25 Years: The iOS Google Search Box jetstream.blogGemini Enhances Business Profiles with AI-Driven Insights and Support Small Business Trends",
-      "published": "2026-06-24T18:39:32+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Meta plans to release AI-powered prediction market app, documents show",
-      "source": "NPR",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5HYXRiczFPUFM3d0lUNmtZR0p0dktKX3ZvcEFoUWVoSHI0czN5TF9VQ0JyZ1JLSm1VNHVCMUJHYlZrekJFU0NCbTdzQTNpWGt4WXRkSlQ5TkQ5dzJLSkZqUFpSVWxKQnNVRTlZSGRVa3o4R1FDR1EtblJfOVZORjg?oc=5",
-      "summary": "Meta plans to release AI-powered prediction market app, documents show NPRMeta Has Created a Prediction Markets App The New York TimesMeta cooking up its own prediction market app: Reports NewsNationBetting on People’s Worst Instincts Has Kind of Always Been Mark Zuckerberg’s Thing GizmodoMeta's Zuckerberg enters the prediction market arena — again, a step behind Business Insider",
-      "published": "2026-06-24T18:39:06+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Dow Jones Adds 5th Magnificent Seven Stock",
-      "source": "Investor's Business Daily",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMGZWWDdsRl8tRjRfZXdjaF9TeEJLaURPcnFMSHBLTzZKdVNUMFdGdXZXTnJXakJ2WlVjSDZIOUxZN0VzV2c1M1JlamRIVjBaZzFNN1hqckRJNndJOGxuZmpZVHZmdlJ3SGlvMnZQUkowNFV5Z3dHMWVNTVhqU0M5d0lhaTNsampxUGVmSG5WNks1cGVBMFE2eEw0MmVGekhFOXNyOGc1dVZDUQ?oc=5",
-      "summary": "Dow Jones Adds 5th Magnificent Seven Stock Investor's Business DailyAlphabet to replace Verizon in Dow Jones Industrial reshuffle Yahoo FinanceChanges Are Coming to the Big Indexes—and We Don’t Just Mean SpaceX. Here’s What To Know InvestopediaAlphabet Stock (GOOGL) Joins Dow Jones as Mag 7 Takeover Nears Completion Barron'sThe Dow Is Adding Another AI Player. What Does That Tell Us? WSJ",
-      "published": "2026-06-24T18:32:00+00:00",
+      "title": "US banks would lose $700bn in economic crash, Fed stress tests find",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNX2Ryc0pIeDlZMWdXZUYtbHA4NDB2SWNpcnVncW9XZ2dpdFVIaGJkYkdnZVVqMnpIMWhlYkhmT1A3RGFXeDl6cVJOR3djOTlVNy05aXczeDdkNTJPLVprOS1JMUN5WGdoT1ZienZYTGJpaWFiY0pDTXRzZ0NTb0RtYlZ1R0I?oc=5",
+      "summary": "US banks would lose $700bn in economic crash, Fed stress tests find Financial TimesFederal Reserve says U.S. banks can withstand $708 billion in losses amid overhaul of capital rules CNBCExplainer: What are the Fed's bank 'stress tests' and what's new this year? ReutersBig Banks Pass Fed Stress Test, Paving Way for Payouts BloombergAll 32 of the nation’s biggest banks clear the Fed’s annual ‘stress test’ AP News",
+      "published": "2026-06-24T20:01:34+00:00",
       "origin": "Google 財經頭條"
     }
   ],
   "news_span": {
     "news_count": 50,
     "first_seen": "2026-06-24",
-    "last_seen": "2026-06-24"
+    "last_seen": "2026-06-25"
   },
   "strategic_analysis": {
-    "geo_military": "當前地緣政治局勢呈現多點緊張，中東地區因美伊協議（新聞7, 20）而導致以色列總理納坦雅胡政治神話破滅，顯示美國在中東政策上傾向緩和與伊朗的關係，此舉可能引發區域權力平衡的再調整。荷莫茲海峽作為全球主要石油運輸要道，盧比歐強調其應免費開放（新聞7），這對全球能源供應穩定性至關重要，若有任何收費或封鎖，將直接衝擊原油價格與全球經濟。俄烏戰爭方面，瑞典呼籲歐盟積極攔截俄羅斯「影子艦隊」油輪（新聞24），以阻斷其戰費來源，顯示西方國家持續對俄羅斯施壓，但此舉也可能加劇波羅的海的軍事緊張。烏克蘭對俄羅斯天然氣設施與衛星中心的遠程打擊（新聞45），則表明衝突有升級至能源基礎設施的風險。此外，美國總統川普為推動投票法案，拒簽住房法案（新聞3, 16），反映出美國國內政治的兩極化，可能對其外交政策的穩定性產生影響。日本計劃在AI和半導體領域投入巨資（新聞10），以及歐盟加入美國主導的「矽盛世」倡議（新聞12），皆顯示美中科技戰已延伸至全球盟友網絡，旨在降低對中國AI供應鏈的依賴，這將加劇全球技術分化，並可能引發新的貿易摩擦。",
-    "supply_chain": "全球供應鏈正經歷結構性調整。半導體產業方面，美光科技因AI需求強勁而財報超預期（新聞2），高通也大幅調高2029年非手機業務營收預期（新聞43），顯示AI相關基礎設施投資正強力驅動記憶體和晶片需求。然而，SK海力士在納斯達克上市（新聞46）是否會引發價格戰仍需觀察。日本與歐盟對AI和半導體的巨額投資（新聞10, 12），意在強化自主供應鏈並降低對特定國家（中國）的依賴，這將促使全球半導體產能重新布局。原油方面，布倫特原油跌破每桶75美元（新聞15），加上荷莫茲海峽重啟緩解通膨擔憂（新聞36），短期內對能源價格形成壓力。但俄羅斯影子艦隊運油問題（新聞24）仍是潛在的不確定因素，若制裁執行力道加強，可能再度推升油價。此外，現代汽車工會因薪資協商僵局而表決通過罷工（新聞23），這類勞資衝突若擴大，可能影響汽車製造業的供應鏈穩定性。",
-    "macro_economy": "全球總體經濟面臨聯準會（Fed）持續「轉鷹」的壓力。儘管升息預期略降，美元仍維持逾一年高點（新聞1），反映市場對美國經濟韌性與貨幣政策緊縮的預期。高盛與美銀均預測Fed在7月升息機率不小，甚至可能升息3碼，將利率推升至4.5%（新聞6, 9, 11, 19, 38），且降息可能要等到2028年（新聞9, 26），這對全球流動性構成重大挑戰。高利率環境將增加企業融資成本，可能抑制投資，特別是高估值的科技股（新聞4, 15）。銀行業方面，Fed壓力測試結果顯示美國銀行能承受7080億美元的損失（新聞35），且摩根大通與高盛在通過壓力測試後宣布股票回購與提高股息（新聞29），表明大型銀行體系具備一定韌性。然而，比特幣等加密貨幣市場崩盤（新聞40），顯示在高利率預期下，風險資產面臨拋售壓力。原油價格下跌（新聞15, 36）有助於緩解通膨壓力，但若Fed持續緊縮，可能導致經濟放緩甚至衰退。股市方面，科技股因估值擔憂而下跌（新聞4, 15），但AI需求強勁的美光和高通股價上漲（新聞2, 33, 43），顯示市場對AI概念股仍有信心，但整體市場可能呈現分化。債市方面，美國公債殖利率回落（新聞1）與荷莫茲海峽重啟緩解通膨恐懼（新聞36）相關，但若Fed實際升息，殖利率可能再度上行。基金與資產配置方面，在高利率環境下，投資者應偏好現金流穩健、估值合理的資產，並考慮多元化配置，降低對單一高成長科技股的過度曝險。美元期貨可偏多看待（新聞14）。",
-    "blind_spots_and_kpi": "全球大局觀下，台灣的盲點在於過度依賴單一產業鏈（如半導體），儘管AI需求強勁為半導體業帶來利多，但全球去風險化與供應鏈重組的趨勢，以及歐美日對AI和半導體的在地化投資（新聞10, 12），可能導致長期訂單結構變化。此外，地緣政治緊張（如美中科技戰、中東局勢）的升級，可能對台灣的貿易與安全環境造成衝擊。美國國內政治的極化（新聞3, 16）也可能影響其對外政策的穩定性，進而波及台灣。應緊盯的領先指標包括：1. **聯準會（Fed）的利率決策與前瞻指引**：密切關注FOMC會議聲明、官員發言以及市場對升息路徑的預期變化（新聞6, 9, 11, 19, 26, 38），這將直接影響全球資金流動與資產定價。2. **全球半導體產業資本支出與訂單動態**：特別關注主要晶片製造商（如台積電、三星、英特爾）的財報與展望，以及AI相關晶片的需求增長是否能持續彌補其他領域的波動（新聞2, 10, 12, 33, 43）。3. **國際原油價格與海運航線的穩定性**：尤其關注荷莫茲海峽（新聞7, 36）等關鍵航道的安全狀況，以及俄羅斯影子艦隊（新聞24）等規避制裁的行為對全球能源供應和價格的影響，這將直接傳導至通膨壓力與企業營運成本。"
+    "geo_military": "地緣政治與軍事方面，美國的軍事高層人事變動頻繁，川普2.0政府持續清洗五角大廈，導致美陸軍歐非司令在短短18個月內突然下台，這可能反映出美國在軍事戰略方向上的內部調整與權力鬥爭。此外，聯合國委員會報告指出以色列在加薩地帶蓄意針對巴勒斯坦兒童，這項指控將進一步激化中東地區的緊張局勢，並可能引發國際社會對以色列的更多制裁或譴責，進而影響全球原油供應穩定性及相關航運路線安全。同時，川普政府對伊朗的態度似乎有所軟化，從「糟糕的人」轉變為「聰明的人」，這可能暗示美國在中東政策上可能出現策略性調整，影響區域權力平衡。美國政府宣布提供175億美元貸款強化核能供應鏈，顯示其對能源獨立與戰略資源掌控的重視，這不僅是經濟行為，更具備國家安全層面的考量。",
+    "supply_chain": "原物料與供應鏈方面，美光（Micron）財報亮眼，營收與獲利大幅增長，並預期HBM（高頻寬記憶體）缺貨將延續至2028年後，顯示AI浪潮對記憶體晶片的需求極為強勁，且供應端無法快速滿足。這將導致相關半導體材料、設備及高階封裝測試產能持續吃緊，推升價格上漲。中國芯片出口額暴增110%的現象，儘管西方實施封鎖，仍顯示中國在全球半導體供應鏈中的韌性與替代方案的發展，這可能意味著西方國家在部分領域的封鎖效果不如預期，甚至刺激了中國本土產業的快速成長。美國政府強化核能供應鏈的舉措，則反映出對關鍵能源基礎設施自主性的重視，未來可能會看到更多國家級資源投入到能源供應鏈的本土化和多元化佈局。此外，日本北部、北加州和委內瑞拉接連發生強震，儘管目前未傳出重大災情影響全球供應鏈，但其潛在的基礎設施損壞風險仍需持續關注，特別是日本在半導體材料和精密機械領域的重要性。",
+    "macro_economy": "總體經濟與貨幣定價方面，聯準會（Fed）的鷹派訊號衝擊市場，導致黃金跌破4000美元大關，這預示著Fed可能在數月內升息，以應對通膨壓力，這將提升美元的吸引力，並對其他非美元資產造成壓力。升息預期將提高企業借貸成本，可能對股市估值產生負面影響，特別是依賴低利率環境的成長型科技股。與此同時，美國大型銀行在壓力測試中表現良好，摩根大通宣布500億美元庫藏股，高盛也提高股息，顯示美國銀行體系資本充足，能夠承受經濟衝擊，這為金融市場提供了一定的穩定性。日圓看升、美元修正的預期，可能反映市場對日本央行貨幣政策轉向的預期，或美元前期強勢後的技術性回調。亞洲股市，特別是日韓股市，受美光財報利好影響而飆升，甚至韓股一度觸發熔斷，顯示全球科技股在AI題材帶動下仍具備強勁動能，但聯準會的貨幣政策走向將是影響其長期表現的關鍵變數。",
+    "blind_spots_and_kpi": "全球大局觀與領先指標方面，當前市場在AI科技熱潮與聯準會升息預期之間拉扯。台灣的盲點可能在於過度聚焦於科技股的短期漲勢，而忽略了聯準會貨幣政策收緊對整體流動性的影響，以及地緣政治衝突可能對全球貿易和供應鏈造成的長期風險。雖然台積電和美光財報亮眼支撐台股，但外資暴砍1,774億元創紀錄的資金流向，顯示資金正在進行結構性調整，投資人應警惕資金外流的風險。此外，科技股雖然強勢，但那斯達克和標普指數在科技股下跌後收低，以及Elon Musk因SpaceX和Tesla股價下跌而失去萬億富翁地位，都暗示科技股內部可能存在分化，並非所有AI概念股都能持續上漲。應緊盯的領先指標包括：\n1. **聯準會（Fed）利率決策與官員發言：** 密切關注Fed對未來通膨和利率路徑的指引，這將直接影響全球資金成本和風險資產定價。\n2. **全球半導體產業景氣循環指標：** 關注HBM等高階記憶體晶片的供需狀況、資本支出計畫以及主要晶圓廠的稼動率，以評估AI熱潮的持續性與產業健康度。\n3. **美中科技戰進展與中國芯片出口數據：** 中國芯片出口的真實結構和西方國家對此的回應，將影響全球科技供應鏈的重構和相關企業的營運風險。"
   },
   "laymans_dictionary": [
     {
-      "term": "聯準會 (Fed) 轉鷹",
-      "explanation": "想像一下，Fed就像一個開車的人。當它「轉鷹」，意思就是這個司機變得比較凶，踩油門加速，也就是升息。升息是為了讓經濟降溫，避免物價一直漲，但這樣大家借錢會變貴，經濟成長可能就會慢下來。"
+      "term": "鷹派訊號 (Hawkish Signal)",
+      "explanation": "想像一下，央行就像一個管錢的老師。當老師覺得大家花錢花得太兇，物價一直漲（通膨），他就會擺出比較嚴肅的臉，說要收緊錢包，讓大家沒那麼多錢可以花。這種嚴肅的態度，就是「鷹派訊號」。它通常代表央行可能會提高利息，讓借錢變貴，希望大家少花一點錢，把物價壓下來。"
     },
     {
-      "term": "公債殖利率回落",
-      "explanation": "公債就像政府跟你借錢開的借據，上面會寫給你多少利息。殖利率就是這個利息換算下來的報酬率。當殖利率回落，表示大家覺得政府借錢給的利息沒那麼吸引人了，可能是因為市場上錢變多了，或是大家覺得未來經濟沒那麼好，所以願意接受比較低的利息。"
+      "term": "高頻寬記憶體 (HBM)",
+      "explanation": "這就像電腦裡面的「記憶體高速公路」。一般的記憶體是單線道，資料傳輸比較慢；HBM就像是好幾條高速公路疊在一起，讓資料可以又多又快地跑來跑去。這種記憶體是專門為AI（人工智慧）這種需要處理大量、複雜資料的機器設計的，所以現在AI很紅，HBM就變得非常搶手。"
     },
     {
-      "term": "地緣政治",
-      "explanation": "簡單來說，就是地理位置和政治的關係。比如說，兩個國家是鄰居，他們之間的關係（友好或敵對）就會影響到彼此的經濟和軍事，甚至整個區域的穩定。就像你家隔壁的鄰居，他家的狀況會影響到你家一樣。"
+      "term": "庫藏股 (Share Buyback)",
+      "explanation": "想像一家公司賺了很多錢，除了發股息給股東，它還可以把一部分錢拿回來，在市場上買回自己公司的股票。這就像公司把自己的商品買回來一樣，這樣市場上流通的股票變少，每一股股票的價值可能就會升高，對股東來說是個好消息。"
     },
     {
-      "term": "荷莫茲海峽",
-      "explanation": "這是一個非常重要的「海上高速公路」，特別是石油運輸。如果這條路不順暢，或是要收費，就像高速公路突然塞車或漲價，全球的油價就會飆高，影響到每個人的生活。"
+      "term": "熔斷 (Circuit Breaker)",
+      "explanation": "這就像股票市場的「緊急煞車」。當股市漲得或跌得太快、太誇張，為了避免市場失控，交易所會暫時停止交易一段時間，讓大家冷靜一下，就像保險絲燒斷，避免電器過熱一樣。"
     },
     {
-      "term": "影子艦隊",
-      "explanation": "想像一群船隻，它們偷偷摸摸地運送石油，目的是為了躲避國際的制裁和檢查。這些船就像「幽靈船隊」，讓政府很難追蹤，也讓制裁的效果大打折扣。"
+      "term": "領先指標 (Leading Indicator)",
+      "explanation": "這就像天氣預報一樣，是會比實際經濟狀況「提早」變化的數據。例如，新房開工數量增加，通常會比整體經濟好轉還要早發生。觀察這些指標，可以幫助我們預測未來經濟可能會往哪個方向走。"
     },
     {
-      "term": "資產配置",
-      "explanation": "這就像你在準備便當一樣，不能只放一樣菜，要有多種搭配，有肉有菜有飯。在投資上，就是把錢分散投資到不同的東西，像是股票、債券、房地產等等，這樣就算其中一樣表現不好，也不會影響太大，比較安全。"
-    },
-    {
-      "term": "前瞻指引",
-      "explanation": "這就像聯準會（Fed）在告訴大家它未來可能會怎麼做。它會說一些話，讓市場對未來的利率政策有個預期，就像老師在考試前給你一點提示，讓你大概知道考什麼，好準備方向。"
-    },
-    {
-      "term": "去風險化",
-      "explanation": "這就像你在準備一個大計畫，為了避免某個環節出問題，會多準備幾套備用方案，或是把重要的東西分散開來放。在全球供應鏈上，就是各國為了避免過度依賴某個國家或某個供應商，開始尋找更多替代方案，降低風險。"
+      "term": "稼動率 (Capacity Utilization Rate)",
+      "explanation": "想像一家工廠有100台機器，如果它現在有90台機器正在運作生產，那麼稼動率就是90%。這個數字越高，代表工廠越忙碌，生產力越高，通常也表示市場需求很旺盛。反之，如果稼動率很低，可能代表訂單很少，工廠沒什麼事做。"
     }
   ],
   "dictionary_source": "gemini"

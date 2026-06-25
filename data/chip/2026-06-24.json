@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-24 22:16 UTC (TWSE BFI82U)",
+  "as_of": "2026-06-25 02:01 UTC (TWSE BFI82U)",
   "unit": "元",
   "days": [
     {
@@ -80,17 +80,6 @@
       "total": 65499603263
     },
     {
-      "date": "2026-06-12",
-      "foreign": 28690268352,
-      "foreign_main": 28690268352,
-      "foreign_dealer": 0,
-      "trust": 14233248854,
-      "dealer": 8942532337,
-      "dealer_self": 2839811770,
-      "dealer_hedge": 6102720567,
-      "total": 51866049543
-    },
-    {
       "date": "2026-06-11",
       "foreign": -35779281338,
       "foreign_main": -35779281338,
@@ -111,6 +100,17 @@
       "dealer_self": -7873287661,
       "dealer_hedge": -32678205652,
       "total": -117428986380
+    },
+    {
+      "date": "2026-06-09",
+      "foreign": -91733415946,
+      "foreign_main": -91733415946,
+      "foreign_dealer": 0,
+      "trust": 23283537434,
+      "dealer": -6691674226,
+      "dealer_self": -5122810989,
+      "dealer_hedge": -1568863237,
+      "total": -75141552738
     }
   ]
 }

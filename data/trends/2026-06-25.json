@@ -3,18 +3,18 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "人工智慧 (AI) 與半導體",
+      "industry": "人工智慧 (AI) 基礎設施與應用",
       "heat_score": 98,
       "signals": {
-        "funding": "輝達Vera Rubin量產，黃仁勳稱訂單已進來，顯示市場對AI硬體投資巨大。日本擬砸74兆元投資AI與半導體，國家級資金湧入。美光財報強勁，營收翻四倍，進一步驗證AI對半導體需求的強勁拉動。高盛指出AI投資風險轉向，但並無泡沫化跡象，資金持續流入應用層面。",
-        "hiring": "AI相關職缺持續增長，特別是AI晶片設計、機器人、AI應用開發等領域人才需求旺盛。黃仁勳點名機器人公司Agility Robotics將在美上市，預計將帶動相關人才需求。",
-        "policy": "日本政府擬投入74兆日圓大規模投資AI與半導體領域，顯示國家層級的高度戰略支持。美國針對半導體產業的補貼政策持續推動，例如Intel獲得美銀調升目標價至160美元，受益於AI半導體熱潮。",
-        "technology": "輝達Vera Rubin晶片量產，代表AI運算能力持續突破。OpenAI發表首款自研AI晶片，攜手博通挑戰輝達，顯示AI晶片技術競爭激烈。Google Gemini 3.5 Flash增強電腦使用功能，AI應用層面技術持續深化。富達報告指出AI投資已從晶片延伸至機器人，技術發展多元化。"
+        "funding": "輝達(Nvidia)發債推升美國投資級債券銷售創紀錄，其新架構Vera Rubin已全面量產且訂單湧入。美光(Micron)Q3營收暴增12倍，HBM缺貨預計持續至2028年。高通(Qualcomm)搶攻AI資料中心晶片，預計2029年營收上看150億美元，股價盤後飆漲16%。SK海力士(SK Hynix)尋求在美國上市，募資290億美元以資助AI發展，顯示巨額資金持續湧入AI基礎設施領域。",
+        "hiring": "新聞提到斯坦福大學在AI當道下的角色，暗示AI領域人才需求旺盛，傳統學術機構正積極調整以應對產業變革。Alphabet入列道瓊指數，反映AI核心技術人才的高度競爭與價值。",
+        "policy": "黃仁勳強調國家安全優先，走私晶片打造AI資料中心「是條死路」，顯示AI晶片已上升到國家戰略層級，各國政府對其供應鏈與技術自主性高度關注，並可能透過政策引導或限制。",
+        "technology": "輝達Vera Rubin新架構全面量產，代表AI晶片技術持續突破。高通推出AI資料中心晶片，並聲稱其伺服器CPU在單核心性能上具備領導地位。Meta計劃發布AI預測市場App，顯示AI應用層面不斷擴展。阿里巴巴遭Anthropic指控「工業級」蒸餾Claude，也側面反映了AI模型技術的快速迭代與競爭。"
       },
       "leading_indicators": [
-        "主要AI晶片製造商（如NVIDIA、AMD、Intel）的季度財報及訂單展望",
-        "各國政府對AI與半導體產業的最新政策與補貼方案",
-        "AI模型訓練所需算力及新一代AI晶片的技術突破進展"
+        "AI晶片製造商的季度財報與展望",
+        "HBM記憶體市場供需狀況與價格走勢",
+        "大型科技公司AI投資與併購活動"
       ],
       "us_stocks": [
         {
@@ -22,167 +22,8 @@
           "ticker": "NVDA"
         },
         {
-          "name": "美光科技(Micron Technology)",
+          "name": "美光(Micron)",
           "ticker": "MU"
-        },
-        {
-          "name": "英特爾(Intel)",
-          "ticker": "INTC"
-        }
-      ],
-      "tw_stocks": [
-        {
-          "name": "台積電",
-          "ticker": "2330"
-        },
-        {
-          "name": "聯發科",
-          "ticker": "2454"
-        },
-        {
-          "name": "創意",
-          "ticker": "3443"
-        }
-      ],
-      "evidence_news": [
-        {
-          "title": "輝達Vera Rubin量產 黃仁勳稱訂單已進來",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNcXVaVzROV0RUWFpNNmt4LTNVbE15Vkg0LXZwVTczZ3RmUW5jaWpsMjJoOU9CbENzRDczZVZxTjhvNk0tRXdzZFJhbktyM3VCbjVJTDUwMFh5ejFwSnNveVFKNnM5UFh1Tjk0TmFYRGVDZXVxU3cwQmpFNHlTTzZyX081enk0Y21UQjhhaVRITEJaeGtyS29CM2NsY3cyRUNPcXNNOFBZMEM5OFJmTDVqbnM5OVYzN01ZeWdTVktNQkpaNkxreTRWV1QwSnRfdHlMYUg1MzFQbDM3NXFDcXBVcGFRcWdMd2Ewb01zUXB5MV9aQU80WVJ1dkNDYWE0QQ?oc=5"
-        },
-        {
-          "title": "日本擬砸74兆元投資17個領域 押注AI與半導體",
-          "source": "自由時報",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1EN2M1dm1LT2l6R2JNOUlNMURrZ3RzdTEtdVpsWW0ydzdweFV0YWVpLTRnbzNmSFpDamNmdVlIa004R2d1U0VLTFJqaFZHeVZXWV9KbU5jVUUzNHdpQTEzMXJmd19TQdIBa0FVX3lxTFBYSUY2MGVGb092ZjZxV2NxWnhtX01IbnlYS0ZkcGRaR1FQeGt0ZjQ5Wk43R0FNREJLMHRHWmlGM2tPRHlJREcyOWt1VERHSXlXcC05Ql8zSzlBRGpiY3c0bENudFpodGRpTGY4?oc=5"
-        },
-        {
-          "title": "OpenAI發表首款自研AI晶片 攜手博通挑戰輝達霸權",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMitwJBVV95cUxQNnJGMUNWOXk5cFBDZTVvQWZXTEFRWS1nS1JidWpITFlULXRSM0NIN2pDT3hEX1BjbHJMZFZfVW04RWR5SE4zNmZuQ1Z1SkRaY1VKQ21HbTFwOXR1NzVoN2hxZFF2WU8yYUtKSVFiRGppdndKUkFZWFF6VWpVNTFSeGFyZVZBa05IMVJqRlByVE5BeHAtZXREOXZUWk9BTy1rTVJWZTJnbWNON0pndVYyNXJSOFRJZVJXakFweUl5cENGbG5la1BFQ2ctSm5BRXdNZW1DTnpHYmhSR2drUTJFblE0S2RqTEZIb0lBS2FnbC00aFNQVTJ4UFh3UDNGdmxPMjhBb0l0QUVnZHNoMTdGck9mUE9scXFvSm04dDBKU3VuUkZULU5kR1NkaXdaSXFjbUpib2ZLbw?oc=5"
-        }
-      ],
-      "summary": "AI與半導體是當前全球最熱門的產業，無論是資金投入、政策支持、技術創新還是市場需求，都呈現出強勁的增長動能。",
-      "news_count": 29,
-      "first_seen": "2026-06-24",
-      "last_seen": "2026-06-24"
-    },
-    {
-      "rank": 2,
-      "industry": "機器人與自動化",
-      "heat_score": 90,
-      "signals": {
-        "funding": "黃仁勳點名能率亞洲旗下機器人公司Agility Robotics將於9月在美國上市，顯示創投和資本市場對機器人領域的熱情。富達報告指出亞洲AI投資轉向應用，晶片延伸至機器人接棒成長，預示更多資金將流向此領域。",
-        "hiring": "隨著Agility Robotics等機器人公司上市，預計將帶動機器人軟硬體開發、自動化工程師等相關職位的需求增長。",
-        "policy": "雖然目前新聞中未直接提及針對機器人產業的具體政策，但AI與自動化作為國家戰略的一部分，間接獲得政策支持。例如日本對AI與半導體的投資也可能間接促進機器人技術的發展。",
-        "technology": "AI技術的進步直接推動機器人智慧化與應用廣度。Agility Robotics等公司在人形機器人領域的發展代表技術不斷突破。富達報告中提到的「晶片延伸至機器人」也說明AI技術在機器人領域的深度融合與應用。"
-      },
-      "leading_indicators": [
-        "Agility Robotics上市後的市場表現與估值",
-        "主要機器人公司的新產品發布與商業化進度",
-        "AI技術在機器人感知、決策、人機互動方面的最新突破"
-      ],
-      "us_stocks": [
-        {
-          "name": "NVIDIA",
-          "ticker": "NVDA"
-        }
-      ],
-      "tw_stocks": [
-        {
-          "name": "鴻海",
-          "ticker": "2317"
-        }
-      ],
-      "evidence_news": [
-        {
-          "title": "黃仁勳點名！能率亞洲旗下機器人公司Agility Robotics9月在美上市",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi-gJBVV95cUxQVHNadXJfb0hTbnlrS1VEdVR3VGhrSDlNMG1MbWYwSUFXbU1VN2xscTRTczB3RDV0YjB1NDQzcHhJT09ZRWQxaXVPV3ZldGZtNlNGWUVQYndRS0RyWGpIa0pIME1kVjE3SjBOcGVJVHhfam9FbjJ3LWpKcldJSDM4MEVwSHMwbVBmVllPT2lGZkk2WlU2MzZVUUtMMmNKcUttU2twNVZCUnF3UEREeG93TklXNGxZOWQ1RXdMRWdzNE9vNTFaMUk2Ym9iOTdWX2pMc2RJempZUkhDVmZTOEFuNjAxWmZsZzdMUFVuUHZzSEhCRjJvLXprNDhSNUZHSjNvNUNDeFpRMmFBWUxHX0V3S2NERXpiMXJkNFFrOEpNMGFaTkFSbEI5SDU0djVJQWRsQXZTQ2lWSnBaVkV4Z09LYjkweXFOQ1hDaUZxU25QVF9RSzY0MUI3dmZpSHJrYUhsdjFIYm5oMVB1Z19lUWhDY2ZaY2RGMnBnM0E?oc=5"
-        },
-        {
-          "title": "富達：亞洲AI投資轉向應用，晶片延伸至機器人接棒成長",
-          "source": "台視全球資訊網",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUTN3emJGdFd0VDVWd2R2YkdmTERPcV9IY00xaG9Ndld3cmFLNHhfcDBaRXhtX3JEWGx4NjFsZDJKU0RWWlE5M1Qwb2NORW9NSVRTQVJqa1VCYXVkTThJWllIM3gzQkFuYy15V0podnU0MmMxTktqYnhuUU96NzRuck5MbDBTY3BuQnhoSjJ0M29ZOE1jLTFZOUdHam96N0NuT0VyRXIwME90YlE?oc=5"
-        }
-      ],
-      "summary": "機器人與自動化產業受益於AI技術的成熟和資本市場的青睞，正從單純的硬體製造走向智慧化應用，成長潛力巨大。",
-      "news_count": 0
-    },
-    {
-      "rank": 3,
-      "industry": "電動車 (EV) 與電池技術",
-      "heat_score": 85,
-      "signals": {
-        "funding": "新聞提及Slate推出廉價電動卡車，並獲得Jeff Bezos等投資人支持，顯示資金持續關注電動車市場，特別是成本效益高的產品。然而，SpaceX和Tesla股價下跌，Elon Musk失去兆萬富翁地位，也反映了市場對高估值和競爭加劇的審慎態度。",
-        "hiring": "電動車產業的擴張，特別是新車型的開發和量產，將持續帶動電池工程師、電動動力系統工程師、自動駕駛軟體開發人員等人才的需求。",
-        "policy": "全球各國政府對電動車產業的補貼和環保政策仍是推動其發展的重要因素，儘管新聞中未直接提及最新政策，但大方向仍支持電動車發展。",
-        "technology": "Slate電動卡車在電池技術和成本控制上的努力，顯示電動車技術正朝向更實用、更經濟的方向發展。電池續航力、充電速度、成本效率仍是技術突破的關鍵領域。"
-      },
-      "leading_indicators": [
-        "主要電動車製造商（如Tesla、BYD）的季度銷售數據",
-        "電池技術（如固態電池）的商業化進度與成本下降幅度",
-        "全球各國對電動車購買補貼和充電基礎設施建設的政策變化"
-      ],
-      "us_stocks": [
-        {
-          "name": "特斯拉(Tesla)",
-          "ticker": "TSLA"
-        },
-        {
-          "name": "通用汽車(General Motors)",
-          "ticker": "GM"
-        },
-        {
-          "name": "福特汽車(Ford Motor)",
-          "ticker": "F"
-        }
-      ],
-      "tw_stocks": [
-        {
-          "name": "台達電",
-          "ticker": "2308"
-        },
-        {
-          "name": "和碩",
-          "ticker": "4938"
-        }
-      ],
-      "evidence_news": [
-        {
-          "title": "Here’s why Slate changed the battery in its cheap EV truck",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORTNsN25QRTlTYlRfZmIyMkw5RGxtdHg1VTg5Nk9PNE1LcEVSRTc5ZjFHakFFNFk3SFFuUEZtSDBwalU0SGhmRTRrMU1nc2w5ZkxIS1BvdGphQTdjX2loVkpPZDBtQm5MQkFvQ0RaS3l0T0tDaHU3VmIyTFplaU51TXA4LW5TRk9LQ2l4TGFXdFJpdENuaEN3?oc=5"
-        },
-        {
-          "title": "Elon Musk loses trillionaire status as SpaceX and Tesla stock drops",
-          "source": "The Guardian",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQa1MzYTc3djA3UUNJOHhEejFzcEZoQVpLYkFLaTVFandYQkdXcENFeTB6WWNwdFlVWENUaGF4NGIyMXhrMnVZZktvRDBZSThnc0t4c1pCcFJxWVdNTFgwdmFqTUxJNjhtblpaeGFTd2MybHhQS3I5dTEyRGQ5THAwb3ItNWNBQjA?oc=5"
-        }
-      ],
-      "summary": "電動車市場持續擴張，儘管面臨競爭和估值調整，但技術創新和成本優化仍是其主要驅動力，並獲得策略投資支持。",
-      "news_count": 10,
-      "first_seen": "2026-06-24",
-      "last_seen": "2026-06-24"
-    },
-    {
-      "rank": 4,
-      "industry": "低軌衛星通訊",
-      "heat_score": 75,
-      "signals": {
-        "funding": "新聞指出法人看好部分低軌衛星概念股，顯示資本市場對該領域仍有投資興趣。然而，也有部分公司表現不佳，顯示投資者對風險的評估更加謹慎。",
-        "hiring": "隨著低軌衛星星座的部署和服務的推出，衛星製造、發射、地面設備以及網路服務營運商等領域對相關工程師和技術人才的需求將持續存在。",
-        "policy": "各國政府將低軌衛星視為重要的基礎設施和國家戰略的一部分，特別是在偏遠地區網路覆蓋和國防應用方面，政策支持預計將持續。",
-        "technology": "低軌衛星技術的關鍵在於小型化、低成本發射、星間連結和地面接收設備的效率。新聞中雖未直接提及技術突破，但產業動能暗示技術仍在持續發展和優化。"
-      },
-      "leading_indicators": [
-        "SpaceX Starlink、OneWeb等主要低軌衛星服務商的用戶增長數和營收狀況",
-        "新一代衛星發射技術的成本下降與發射頻率",
-        "各國政府對低軌衛星頻譜分配和產業標準的制定"
-      ],
-      "us_stocks": [
-        {
-          "name": "SpaceX (非上市公司)",
-          "ticker": "N/A"
         },
         {
           "name": "高通(Qualcomm)",
@@ -191,22 +32,147 @@
       ],
       "tw_stocks": [
         {
-          "name": "聯發科",
-          "ticker": "2454"
+          "name": "台積電",
+          "ticker": "2330"
         },
         {
-          "name": "昇達科",
-          "ticker": "3491"
+          "name": "欣興",
+          "ticker": "3037"
+        },
+        {
+          "name": "南電",
+          "ticker": "8046"
         }
       ],
       "evidence_news": [
         {
-          "title": "低軌衛星兩樣情！法人看好「這2檔」噴出半根 聯發科、精測與「最慘的它」卻慘陷綠燈",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxPWUJ0MmN3RGk3QzhEMmZGQUc4b1V2N2toZ3haRWtfM2NWQVpNYy02WmNSS2ZoRUpwZ2ZoWWsycm5UTUFXLTFQVWMtV0djVU5xdl95WlRmODhmVnV4QnVMdnZtOUQtbGZDVFkxTkxUcmpoZDdULU9UZTVMLVVxd0hocmE4ZmROUUpiNW1SWHBzNVltYVpRbXhoMFNNTzVIUjVpSlk5YTdhUFhBdUpqdFphYzdBVVJtYkNKUW5pNTVpNVRiMXhCU1NVNmdzbkUwVFZsdTdoOVI5bTQ3Y1dVTjZGYmJxaEN6TXZkUXdaUVI3eVkya2oxQWJxalR0dGVyWWhnRnZoaDROLWVlUmZNRElscWF6SG9JV1dlZDVqWXNIVTQ3anFjTER0RDJMaVhEb25KZEcwRHlSUlZ4Z2YtZmstYXBILWhudVMza2NtRmVnRExMZw?oc=5"
+          "title": "輝達、SpaceX發債推升 美國投資級債券六月銷售創紀錄",
+          "source": "商傳媒",
+          "url": "https://news.google.com/rss/articles/CBMi3wJBVV95cUxQT216Z1J2OU1ZYTh1OEhRVE5rc2hBYXpEYXNadllIMFJqSlhwMFpsZ2NZRk1tQVI5azhIX0lUZWtsUnU5T2p2ZHRFTG50Y1FWYUpZQ1R2U3o1d3d4dUJZdVdfeW1FM25WVG5MZFkwUFl1XzN4Y0MxaXN3eDNkQVZJYVJhREozbU0ta1Jja3V4dVpWbDFfRjN2QTRZdlFXNXdHWWRhZlNZZ0NzTVA0cE5YTDA2eUJGNUwyLVdiTFRRY1RtbklCRG9DVG5KOGFCWl9sNWJBdXNNbW5fQ3RqTDJjOFhPcjNpanRKRnBUdENqWW1IYk1qTUpidTZuN1M4aWVxUjN6b1NKQUdVbHdFVmRGcWtlM3RwNjgwRC1tNzd3Skw0WEpCUWxJN24yS1pZZ1lQeUFRdlVJVU1KbmJPTE9SWHI5SmxCMEJjamtmTEpMNFJGYVRRdjhydEczdXgyMEk?oc=5"
+        },
+        {
+          "title": "〈財報〉美光Q3營收增逾3倍 獲利暴增12倍 HBM缺貨看到2028年",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5pN2E2QVNacW9MeFlzY0g5b3Q1RzNndjR3eXdWeTlhUDlqVHNtNjlNUmh0S3FlM0hDOXBLX2VpN2UtZ19keS1SdUdpaDg3X28?oc=5"
+        },
+        {
+          "title": "高通搶攻 AI 資料中心晶片 2029年營收上看150億美元 盤後股價飆漲16%",
+          "source": "經濟日報",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBFc0UtSGw2UjZOVzc2a25ycnlIdDhGUExsYTlzWjhsTFpIYTh2bkFBMFhLcTdkdTVSOVdiSjNrbDJaNUo5LVZVT2xNS3BKU19MZ2tBSmlBZ296bGNu0gFiQVVfeXFMTVFUU3d4b3ZnUzEwWVBFMWV5bVZkZG1ZV3FVTWdmelNSaXBzaWlmNWpJc2R3cDhpZzJDUFRpb3lkUXBGQ1R5TjVVcEtUUTJ6dF8zRDNDa1R6eUdYNG5JNkY3Nnc?oc=5"
         }
       ],
-      "summary": "低軌衛星通訊產業作為未來全球連結的關鍵，儘管市場表現有分歧，但其戰略重要性和技術潛力仍使其保持一定熱度。",
+      "summary": "AI是當前全球最炙手可熱的產業，無論是基礎設施晶片、HBM記憶體、資料中心技術，還是AI應用層面，都吸引巨額資金、人才與政策支持，技術突破不斷，形成強勁的成長動能。",
+      "news_count": 26,
+      "first_seen": "2026-06-24",
+      "last_seen": "2026-06-25"
+    },
+    {
+      "rank": 2,
+      "industry": "摺疊式裝置與新形態消費電子",
+      "heat_score": 85,
+      "signals": {
+        "funding": "新聞提到蘋果iPhone Fold最快7月量產，9月亮相，這類新興產品的量產通常伴隨大量的研發投入和供應鏈資本支出。雖然沒有直接的募資數據，但蘋果作為科技巨頭的投入，本身就是巨大的資金流向指標。",
+        "hiring": "蘋果解決鉸鏈難題並準備量產，暗示其在材料科學、精密製造、光學顯示等相關領域有大量的人才需求。其他消費電子品牌也會跟進，帶動相關人才流動。",
+        "policy": "目前無直接政策提及，但摺疊式裝置作為高端消費電子產品，可能受益於各國對高科技製造業的產業扶持政策，或面臨貿易政策的影響。",
+        "technology": "蘋果解決鉸鏈難題是摺疊技術的重大突破，這類關鍵技術的克服是產品走向主流的必要條件。新形態的顯示技術、柔性材料、電池技術等都將是此領域的技術動能。"
+      },
+      "leading_indicators": [
+        "蘋果iPhone Fold的實際發表與市場反應",
+        "其他手機品牌摺疊機型發布與銷售數據",
+        "摺疊螢幕面板、鉸鏈等關鍵零組件供應商的產能與技術進展"
+      ],
+      "us_stocks": [
+        {
+          "name": "蘋果",
+          "ticker": "AAPL"
+        },
+        {
+          "name": "三星電子ADR",
+          "ticker": "SSNLF"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "富智康",
+          "ticker": "2038"
+        },
+        {
+          "name": "友達",
+          "ticker": "2409"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "傳蘋果已解決鉸鏈難題 iPhone Fold最快7月量產、9月亮相",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1DLS1MZnpLMnVFbjR0MXpiaDJsWmRwZXRCSTZPUHBqMTBmcXVUNndOUUxLNFg3dGh2M0hNdEhiTWIyVWFkNzJfT0pFVXNZcjQ?oc=5"
+        },
+        {
+          "title": "Prime Day deals are live: Shop today's best tech sales from Apple, Sony, Bose, Anker and others",
+          "source": "Yahoo Tech",
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQYW1GQnZINFR6MUVPY2xyUlEwSVVNMzJkRGU4XzJybS1VS1dhT2taTHk1T3RkX0FkbWpWRVpnNGUtZGpvMmlfNmFwVmtQVUp0VHFCbFl3cDdHX1JfY1BmOEFYakxmYUh5ckhyZnN0c3NwcWhKWFpVZ0hYUDR4amVUVFdKbnlSNVpzWF9IcGp1UHY0NFJQWEw0XzRWQXVTaU5VcUV6cEpnTVdYTURYSmVUY3pKYklmUWk3VDlhbkFxbVdfdTdSV1Nidi1fenVYTHNhaDk2LWhxTjBFaXMzV1lSX2tGYlNEdTM0?oc=5"
+        }
+      ],
+      "summary": "摺疊式裝置以蘋果iPhone Fold為代表，解決關鍵技術難題後將進入量產，預期將引領新一波消費電子產品創新與市場增長。",
+      "news_count": 0
+    },
+    {
+      "rank": 3,
+      "industry": "自駕車與無人載具",
+      "heat_score": 78,
+      "signals": {
+        "funding": "Zoox新版無人計程車亮相，迎戰Waymo，表明該領域有持續的競爭與資金投入。特斯拉(Tesla)雖然遇到事故調查，但其作為自駕車領頭羊，持續的研發投入和市場擴張仍代表龐大資金流動。",
+        "hiring": "自駕車技術涉及AI、感測器、軟體演算法、硬體整合等多個領域，對軟體工程師、AI研究員、機器人專家等高端人才需求持續旺盛。Zoox與Waymo的競爭也意味著人才的爭奪。",
+        "policy": "美國NTSB對德州特斯拉致命事故的調查，顯示政府對自駕車安全與法規的關注日益提高。各國政府在自駕車測試、上路許可、責任歸屬等方面的政策制定將直接影響產業發展。台灣新聞提及無人機，顯示無人載具的政策與國防戰略相關。",
+        "technology": "Zoox新版無人計程車「沒方向盤也沒踏板」的設計，代表自駕技術的進一步成熟與創新。感測器融合、AI決策、高精度地圖、V2X通訊等技術持續迭代，推動自駕能力提升。"
+      },
+      "leading_indicators": [
+        "各國政府對自駕車的法規開放與安全標準制定",
+        "自駕車技術公司L4級別以上的商業化進度",
+        "消費者對自駕車的接受度與普及率"
+      ],
+      "us_stocks": [
+        {
+          "name": "特斯拉",
+          "ticker": "TSLA"
+        },
+        {
+          "name": "Alphabet (Waymo母公司)",
+          "ticker": "GOOGL"
+        },
+        {
+          "name": "亞馬遜 (Zoox母公司)",
+          "ticker": "AMZN"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "華晶科",
+          "ticker": "3059"
+        },
+        {
+          "name": "佳凌",
+          "ticker": "4976"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "沒方向盤也沒踏板！Zoox新版無人計程車亮相 迎戰Waymo",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE01MkFJeENrcTRLMGRqbVlDRmRicXRRVm5DZ1BQemZOY1ZUcHlTNlFPYUZyZ2dwaUhvbnIwYlU0Q3FnRFpfaWVRYTNFYkpOSUU?oc=5"
+        },
+        {
+          "title": "US NTSB to investigate fatal Texas Tesla crash",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbzQ4REhDNmNqNW5maVlSakJPdnRrTTFnOVFSOWxiQXFuSl9DRFNKaDM0aEhhNklNMU16dnlOV29ncDc1QXdQek5pZDNJb3Z1X3FUSFlBYXZkQ29XbmVPWGNRYjRqRDl5azcxeVp0R2hjdXZYTVFGd1FBZFhNSnNQRk1rVkQtSFdaZWFuWjZKOHctR19sdjFGVHhrNVM3Z0hueWlnUnhR?oc=5"
+        },
+        {
+          "title": "新聞透視》綠食髓知味 無人機恐裂解藍營",
+          "source": "中時新聞網",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBudy1WcUhVR0I5QjJQdmxXbVQ0Nkt0QU10c0E2clNqWVVNMU9Qc3V3Tm9mVmdGZEZfei1ZOEFQTGxhVlNwdHE3M3lJMW1rYzVsQW42NG1fTktHQ0czeE9OTWZFcjVDNW9TYlJJ?oc=5"
+        }
+      ],
+      "summary": "自駕車與無人載具技術持續突破，新產品不斷推出，雖然面臨法規與安全挑戰，但其在智慧交通、物流、國防等領域的潛力巨大，吸引著持續的資金投入和技術競賽。",
       "news_count": 0
     }
   ]
