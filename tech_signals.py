@@ -48,8 +48,9 @@ def _iter_months(months: int):
 
 
 def fetch_daily_k(ticker: str, months: int = _DEFAULT_MONTHS, log=print) -> list[dict]:
-    """抓個股近 months 個月日K(由舊到新);回 [{date, open, high, low, close}]。
+    """抓個股近 months 個月日K(由舊到新);回 [{date, open, high, low, close, volume}]。
 
+    volume = 當日成交股數(VCP 量縮判斷用;技術面均線/KD/RSI 不讀它,故新增不影響)。
     逐月呼叫 STOCK_DAY(一次回一個月),去重後依日期排序。任一月抓失敗就略過該月。
     """
     import proxy_helper
@@ -82,7 +83,8 @@ def fetch_daily_k(ticker: str, months: int = _DEFAULT_MONTHS, log=print) -> list
             if c is None or c <= 0:
                 continue  # 停牌/無成交 → 不以 0 充數
             seen.add(day)
-            rows.append({"date": day, "open": o, "high": h, "low": lo, "close": c})
+            rows.append({"date": day, "open": o, "high": h, "low": lo, "close": c,
+                         "volume": _f(r[1])})  # r[1]=成交股數;無效→None
     rows.sort(key=lambda x: x["date"])  # ROC 日期字串('115/06/03')同世紀內可直接字典序
     return rows
 

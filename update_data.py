@@ -59,6 +59,7 @@ import news_fetcher
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
 import tech_signals  # 個股技術面訊號(日K→均線/KD/RSI)的單一真相源(SSOT)
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
+import vcp_signals  # 個股盯盤:VCP 波動收縮型態買點偵測的單一真相源(SSOT)
 import watchlist  # 個股盯盤清單(watchlist)的單一真相源(SSOT)
 
 # ---------------------------------------------------------------------------
@@ -2488,10 +2489,12 @@ def save_pushed_revenue(ids: list[str]) -> None:
 def build_watch_line_message(today: str, summaries: list[dict],
                              new_revenue: list[dict],
                              tech_lines: dict[str, str] | None = None,
-                             chip_lines: dict[str, str] | None = None) -> str:
-    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面、籌碼面各一行)+ 新月營收(若有)。"""
+                             chip_lines: dict[str, str] | None = None,
+                             vcp_lines: dict[str, str] | None = None) -> str:
+    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面、籌碼面、VCP 各一行)+ 新月營收(若有)。"""
     tech_lines = tech_lines or {}
     chip_lines = chip_lines or {}
+    vcp_lines = vcp_lines or {}
     lines = [f"📈 個股盯盤 {today}", ""]
     for s in summaries:
         ticker = str(s.get("ticker", "")).strip()
@@ -2507,6 +2510,9 @@ def build_watch_line_message(today: str, summaries: list[dict],
         cline = chip_lines.get(ticker)
         if cline:
             lines.append(cline)
+        vline = vcp_lines.get(ticker)
+        if vline:
+            lines.append(vline)
         lines.append("")
     if new_revenue:
         lines.append("🧾 新財報(月營收):")
@@ -2559,6 +2565,13 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     except Exception as exc:  # noqa: BLE001 — 籌碼面整批失敗不影響消息面/技術面/財報推播
         print(f"  警告: 籌碼面整批計算失敗:{exc}", file=sys.stderr)
 
+    # 2.6) VCP 波動收縮型態買點(個股日K → 收縮序列+量縮);未成形的代號靜默略過
+    vcp_lines: dict[str, str] = {}
+    try:
+        vcp_lines = vcp_signals.signals_for(stocks, log=print)
+    except Exception as exc:  # noqa: BLE001 — VCP 整批失敗不影響消息面/技術面/籌碼面/財報推播
+        print(f"  警告: VCP 整批偵測失敗:{exc}", file=sys.stderr)
+
     # 3) 月營收(真實財報更新訊號);dedup 只推「新出現」的期別
     new_revenue: list[dict] = []
     fresh_ids: list[str] = []
@@ -2576,11 +2589,11 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     if not summaries and not new_revenue:
         return []
 
-    msg = build_watch_line_message(today, summaries, new_revenue, tech_lines, chip_lines)
+    msg = build_watch_line_message(today, summaries, new_revenue, tech_lines, chip_lines, vcp_lines)
     _push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=to)
     print(
         f"  · 推給 {to[:6]}…:消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
-        f"籌碼面 {len(chip_lines)} 檔、新財報 {len(new_revenue)} 筆"
+        f"籌碼面 {len(chip_lines)} 檔、VCP {len(vcp_lines)} 檔、新財報 {len(new_revenue)} 筆"
     )
     return fresh_ids
 
