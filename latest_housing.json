@@ -1,42 +1,53 @@
 {
   "report_date": "2026-06-25",
   "overall_sentiment": "持平",
-  "overall_summary": "台灣房市目前在部分區域仍維持相對高價，但整體市場動能受政策與供給影響，呈現持平狀態。",
+  "overall_summary": "台灣房市短期受產業利多帶動，但長期仍面臨人口結構與供給的挑戰。",
   "presale_market": {
     "sentiment": "熱絡",
-    "note": "雖然新聞未直接提及預售屋市場冷熱，但從實價登錄資料顯示，各縣市預售屋均價普遍高於成屋，且多數縣市預售屋價格仍持續上漲，顯示市場對新屋的需求及價格預期仍高。"
+    "note": "雖然新聞未直接提及預售屋市場，但整體市場氛圍受AI產業利多影響，且歷年預售屋價格普遍高於成屋，顯示買方對新屋仍有一定追價意願。"
   },
   "resale_market": {
     "sentiment": "持平",
-    "note": "新聞[1]指出房價「下不來」，並稱房市正醞釀反彈，但實價登錄數據顯示部分主要縣市成屋均價已出現微幅下跌或漲幅趨緩，例如新北市、新竹市、台中市、新竹縣，顯示成屋市場動能較預售屋市場持平。"
+    "note": "新聞未直接提及成屋市場，但從實價登錄歷年趨勢來看，多數縣市成屋價格仍維持緩步上漲，顯示市場有一定支撐力道。"
   },
   "policy": [],
   "regions": [
     {
       "county": "彰化縣",
       "sentiment": "持平",
-      "heat_score": 55,
-      "note": "新聞[3]提及彰化房市面臨居住習慣改變的挑戰，可能影響未來市場需求與產品類型。"
+      "heat_score": 50,
+      "note": "彰化房市面臨居住習慣改變的挑戰，顯示當地市場可能存在結構性變化。"
+    },
+    {
+      "county": "新竹市",
+      "sentiment": "熱絡",
+      "heat_score": 75,
+      "note": "高通獲得Meta訂單，聯電、南亞科等新竹地區科技公司有望受惠，科技產業利多可能帶動當地房市買氣。"
     }
   ],
   "ai_summary": {
-    "future_trend": "未來房市趨勢研判需同時權衡短期資金動能與長期人口/供給結構。短期內，台灣股市受惠AI浪潮基本面穩固（新聞[2,5,7]），資金動能充沛，加上營建成本高漲，使房價下修空間有限（新聞[1]）。然而，長期來看，台灣人口已連年負成長與少子化，將導致長期自住需求縮減。此外，各區餘屋與待售存量、新屋大量供給與家戶購屋負擔能力（房價所得比偏高）等結構性因素，將對房市形成壓力。綜合判斷，短期內在資金動能支撐下，房價大幅下跌不易，但長期受人口結構與供給過剩影響，房價成長動能將趨緩，甚至面臨修正壓力。",
+    "future_trend": "未來房市趨勢研判，短期內受AI產業浪潮帶動，科技業景氣看好，股市表現強勁，有利於資金面支撐房市。然而，長期而言，台灣人口已連年負成長，少子化趨勢持續，將使得長期自住需求面臨縮減。此外，部分區域新屋供給量仍大，可能導致供需失衡。因此，短期資金動能與長期人口/供給結構可能背離，研判將呈現短期有撐、長期仍有壓力挑戰的趨勢。",
     "structural_factors": [
       "人口負成長與少子化使長期自住需求縮減",
-      "餘屋/新增供給與待售存量可能對市場形成壓力",
-      "房價所得比偏高，購屋負擔能力吃緊，影響潛在買盤"
+      "餘屋/新增供給與待售存量可能影響供需平衡",
+      "房價所得比偏高、購屋負擔吃緊，影響民眾購屋能力"
     ],
-    "policy_shift": "目前新聞未明確提及新的房市政策轉變方向，但從市場氛圍來看，政府仍可能維持審慎態度，避免市場過熱。",
+    "policy_shift": "目前新聞未提及新的房市政策轉變，政府可能維持現有的信用管制措施，以抑制過熱的房市，對房貸成數和利率可能仍有一定限制。",
     "buyer_impact": "中性",
-    "buyer_advice": "買方可持續觀察市場，特別是關注人口外流或新屋供給量較大的區域，長期保值風險較高。在目前市場持平的情況下，可多方比較預售屋與成屋的價格與條件，選擇符合自身需求且負擔合理的產品。對於有長期自住需求的買方，可評估自身財務狀況，避免追高。",
+    "buyer_advice": "買方在短期內可觀察科技產業周邊區域（如新竹）的房市動態，可能因產業利多而有需求支撐。然而，需留意人口外流或供給過剩區域的長期保值風險。在購屋前應充分評估自身負擔能力，並審慎比較預售屋與成屋的價格差異。",
     "regulations": [],
-    "overview": "短期內房市受資金動能支撐，價格不易大幅鬆動，但長期而言，人口結構變化與供給量將是影響市場走勢的關鍵。買方應審慎評估，兼顧短期價格表現與長期保值潛力。"
+    "overview": "台灣房市短期在AI產業資金動能帶動下，表現相對穩健，但長期而言，人口結構變化與供給量仍是影響市場的關鍵因素，買方需綜合評估短期利多與長期結構性風險。"
   },
   "evidence_news": [
     {
-      "title": "為何房價下不來？李同榮曝關鍵：房市正醞釀反彈三部曲| 房產新訊",
-      "source": "udn房地產",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TN3FkdFcxZUtlVzNKMmxIU0xQRGdtSmJ5T2xtQ1p4QzhnSVQ5MTJLcmplVlcydjN5MDJlUGF2UGxjYlVnT0RuWDlyNTVTdnJsOG1sbm9sWkJ4QzVQOW95aGI2Rk0tSlpnOHU4a0tJcVB1LTlNTFozT1U0Mk1OZlk?oc=5"
+      "title": "高通獲Meta資料中心訂單 聯電南亞科有望受惠",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250059.aspx"
+    },
+    {
+      "title": "台股早盤漲逾700點 台積電走強、記憶體勁揚",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250040.aspx"
     },
     {
       "title": "美光財報亮眼、台積電ADR漲 投顧：台股基本面穩固",
@@ -46,7 +57,7 @@
     {
       "title": "「這款宅」撐起一片天！彰化房市揭密 面臨居住習慣改變挑戰？",
       "source": "好房網News",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5sRXdWTExtWTl3XzlMd1FidFNNNVVzTkoxRlIwY1E3QVdZTVBXWllQaVNCSFdQSFVrcmw3LXFGbGJuTVRXdk5vUEk4dHRDb2tMRU1KMW84bDR5RWtZYTIxTFZjTkNyQkxvX01V0gFwQVVfeXFMTkxod1ZvNzBSOXo4UFZXR2F1dkhfN0UwSkJTcmhSYU9ScVRGczNQMEl5NkR6Q0FFMmVUempaMzNYRjA4cmZNOVFiRktibF9hVll2UzV6RXFlZFFDczFZazVWUW1wcjdzVl9GdjhMMFlCZA?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5sRXdWTExtWTl3XzlMd1FidFNNNVVzTkoxRlIwY1E3QVdZTVBXWllQaVNCSFdQSFVrcmw3LXFGbGJuTVRXdk5vUEk4dHRDb2tMRU1KMW84bDR5RWtZYTIxTFZjTkNyQkxvX01V0gFwQVVfeXFMTkxod1ZvNzBSOXo4UFZXR2F1dkhfN0UwSkJTcmhSYU9ScVRGczNQMEl5NkR6Q0FFMmVUempaMzNYRjA4cmZNOVFiRktibF9hVll2UzV6RXFlZFFDczFZazVWUW1wcjdzVl9GdjhMMFlCZA?oc=1"
     },
     {
       "title": "美光：記憶體晶片需求延續至2027年後",
@@ -61,12 +72,44 @@
   ],
   "raw_news": [
     {
-      "title": "為何房價下不來？李同榮曝關鍵：房市正醞釀反彈三部曲| 房產新訊",
-      "source": "udn房地產",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TN3FkdFcxZUtlVzNKMmxIU0xQRGdtSmJ5T2xtQ1p4QzhnSVQ5MTJLcmplVlcydjN5MDJlUGF2UGxjYlVnT0RuWDlyNTVTdnJsOG1sbm9sWkJ4QzVQOW95aGI2Rk0tSlpnOHU4a0tJcVB1LTlNTFo1T1U0Mk1OZlk?oc=5",
-      "summary": "為何房價下不來？李同榮曝關鍵：房市正醞釀反彈三部曲| 房產新訊 udn房地產",
-      "published": "2026-06-25T01:09:24+00:00",
-      "origin": "關鍵字「打房 政策 房市」"
+      "title": "高通獲Meta資料中心訂單 聯電南亞科有望受惠",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250059.aspx",
+      "summary": "（中央社記者張建中新竹25日電）手機晶片廠高通（Qualcomm）搶攻AI資料中心市場，成功取得Meta訂單，晶圓代工廠聯電與記憶體廠南亞科躋身高通供應鏈合作夥伴，營運可望受惠。",
+      "published": "2026-06-25T02:32:12+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "台股早盤漲逾700點 台積電走強、記憶體勁揚",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250040.aspx",
+      "summary": "（中央社記者江明晏台北25日電）美光財報優於預期，台指期盤後收漲503點，台股今天開高上漲，早盤一度漲逾741點，至46785點附近，重回5日線之上，隨後漲勢有所收斂。",
+      "published": "2026-06-25T01:25:31+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "台灣芒果進軍英國 民眾大讚細膩質地香甜風味",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/ahel/202606250038.aspx",
+      "summary": "（中央社記者陳韻聿倫敦24日專電）台灣愛文芒果前進英國，從倫敦一家台灣特色超市和網路商店出發，規劃打入在地高端消費市場。幾位英國民眾今天在超市試吃，一入口即感受到台灣愛文芒果的不同，對它細膩嫩滑質地和香甜風味更是讚賞有加。",
+      "published": "2026-06-25T01:10:26+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "新台幣開盤貶0.9分 為31.76元",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250036.aspx",
+      "summary": "（中央社台北25日電）台北外匯市場新台幣兌美元匯率今天以31.76元開盤，貶0.9分。",
+      "published": "2026-06-25T01:05:22+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "台股開盤漲296.08點",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606250035.aspx",
+      "summary": "（中央社台北25日電）台北股市今天開盤漲296.08點，加權股價指數為46339.68點，成交金額新台幣238.01億元。1150625",
+      "published": "2026-06-25T01:04:20+00:00",
+      "origin": "中央社 財經"
     },
     {
       "title": "美光財報亮眼、台積電ADR漲 投顧：台股基本面穩固",
@@ -170,38 +213,6 @@
       "url": "https://www.cna.com.tw/news/ahel/202606240362.aspx",
       "summary": "（中央社台北24日電）今彩539第115153期開獎，中獎號碼33、32、21、17、03；派彩結果，頭獎4注中獎，各得獎金新台幣600萬元。",
       "published": "2026-06-24T14:04:27+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "SK海力士擬赴美發行ADR 募資290億美元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606240361.aspx",
-      "summary": "（中央社首爾24日綜合外電報導）人工智慧（AI）資料中心記憶體晶片製造商SK海力士（SK hynix）今天表示，該公司計畫赴美發行美國存託憑證（ADR），以募資45.45兆韓元（約290億美元）。",
-      "published": "2026-06-24T14:02:25+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "巿場預期美國將升息 金價跌破4000美元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606240359.aspx",
-      "summary": "（中央社倫敦24日綜合外電報導）受市場預期美國利率將會調高影響，金價今天跌破每盎司4000美元，為自從去年11月以來首見。",
-      "published": "2026-06-24T13:55:21+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "元瀚材料布局貼合關鍵材料 無溶劑光學膠應用廣",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240356.aspx",
-      "summary": "（中央社記者潘智義台北24日電）電子紙大廠元太科技旗下元瀚材料宣布，自主研發生產的無溶劑光學透明膠（OCA；Optically Clear Adhesive）已成功應用於多款終端產品，並持續與品牌客戶、模組廠及產業夥伴展開產品驗證與共同開發，以支援更多新世代顯示應用需求。",
-      "published": "2026-06-24T13:39:12+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "美利達：新產品及需求回升 歐洲子公司營收年增13%",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606240355.aspx",
-      "summary": "（中央社記者潘智義台北24日電）自行車廠美利達今天表示，受惠於新產品上市及市場需求逐漸回升，歐洲子公司今年前5月營收較去年同期成長13%，顯示銷售動能已較前期明顯提升。",
-      "published": "2026-06-24T13:29:08+00:00",
       "origin": "中央社 財經"
     }
   ]
