@@ -3,18 +3,18 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "人工智慧 (AI) 與記憶體",
+      "industry": "AI晶片與半導體",
       "heat_score": 98,
       "signals": {
-        "funding": "AI投資持續強勁，推動美國第一季GDP上修至2.1%。Micron等記憶體大廠財報亮眼，資本開支預計到2027年仍將維持高檔，顯示大量資金湧入AI相關硬體與基礎設施。",
-        "hiring": "雖然新聞未直接提及徵才數據，但AI領域的快速發展和技術突破，通常伴隨著對頂尖人才的激烈競爭，如史丹佛大學畢業生在AI當道下仍受市場青睞，間接反映人才需求。",
-        "policy": "日本首相提出14年投資計畫，將投入370兆日圓（約2.3兆美元）聚焦AI、半導體等17大戰略產業，顯示國家層級的政策支持與資金挹注。",
-        "technology": "AI技術持續突破，如Databricks前AI主管提出可將AI功耗降低1,000倍的技術。輝達(Nvidia)的800V電源架構將在Q3起備貨，Rubin Ultra世代擴大採用，顯示AI硬體技術加速迭代。蘋果也傳出跳過M6高階版，全力衝刺AI導向M7系列晶片。"
+        "funding": "三星電子和SK海力士計畫在半導體領域投資高達6480億美元，創下韓國企業史上最高紀錄。Defiance也推出鎖定半導體的AI ETF，顯示資金持續湧入。然而，蘋果抱怨記憶體價格過高並調漲產品價格，暗示上游成本壓力。",
+        "hiring": "雖然《經濟學人》指出美國資工科系失業率破7%，但AI巨頭仍在積極延攬哲學家，顯示對跨領域人才的需求，特別是能理解倫理和應用的AI人才。這也暗示AI領域的專業人才結構正在發生轉變。",
+        "policy": "川普政府因國安考量，要求OpenAI分階段推出新模型，顯示政府對AI技術發展的介入與監管趨嚴。韓國政府也大力支持半導體產業，視為國家戰略。",
+        "technology": "蘋果Mac晶片策略大轉彎，跳過M6直攻AI版M7，顯示AI晶片技術迭代加速。高通也殺入AI ASIC市場，加劇競爭。輝達的AI「資金永動機」模式已被Google抄走，預示晶片市場的全面爭奪。SemiFive在日本獲得110億韓元的AI晶片訂單，顯示技術應用擴展。"
       },
       "leading_indicators": [
-        "AI晶片供應商（如Nvidia、AMD）的季度財報與指引",
-        "記憶體大廠（如Micron）的DRAM/NAND價格走勢與資本開支計畫",
-        "各國政府對AI基礎設施建設的投資政策"
+        "主要AI晶片製造商(如Nvidia, Samsung, TSMC)的資本支出與新廠進度",
+        "AI模型發布與監管政策的互動影響",
+        "AI ASIC市場新進者的競爭態勢"
       ],
       "us_stocks": [
         {
@@ -22,12 +22,12 @@
           "ticker": "NVDA"
         },
         {
-          "name": "美光(Micron)",
-          "ticker": "MU"
-        },
-        {
           "name": "高通(Qualcomm)",
           "ticker": "QCOM"
+        },
+        {
+          "name": "美光(Micron Technology)",
+          "ticker": "MU"
         }
       ],
       "tw_stocks": [
@@ -38,6 +38,61 @@
         {
           "name": "聯發科",
           "ticker": "2454"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "三星傳啟動1000兆韓元投資計畫 AI、半導體成未來10年布局核心",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxQVWtxdmVzWFBURHBiQ1BjUWxEeG1WeEZzQXFsUFd5WTBkcTZsWjJ3YVBEUnBNcFdSNUxKOC0zY2FUZkpRbFpjdXl0SVJmRGdMQ3VscU1RYUxFRGt6X1A3R2pZRkp3MmpGQ1RMZGMzWnAtam5qeDFrSUNDLVpGdTBiYnFEdHhVczZqODFLMUhSQ1o4aXdDdE5EZGZvMERDcklkbUdmd1NJUV9EaWdsMWx2U2M5b3p6MF9uSnRSZjM3SDdHWW9wRVA1M09vRDJyeWpPRDdvTm9OU0pZbG9FaGUwZWFkdTNuX0I2dzhnM1pEampzRFdReW5PcEd2am0zenVZclpYY3ZiT29xNGxrbk9OeW9HNWlselVYM0FrVkZSTHJQZGo3VGlYU2haWVg3am4yWUNldEtVR0I5Zy0yS3B3SmZ1d1VObzRfSDFDZVNyOWdLb285OVV1ZU9MS1lpYWN6TnBuei1HWllQSmlyVnhFVVNUWF8?oc=5"
+        },
+        {
+          "title": "蘋果Mac晶片策略大轉彎 傳高階款跳過M6、直攻AI版M7",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9oTWdrRkxIN1E0TzhXLTVlczI5SXhQSWZDSktqaXVybXhfYURnWU53Q3haR3BQanNqc3c0SnRhZm9xdUpMeEdWb0hBQ0tMQW9I?oc=5"
+        },
+        {
+          "title": "《科技人的華爾街》導讀｜輝達獨創的AI「資金永動機」模式，已被Google抄走，準備全面爭奪晶片市場！",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxNeV92TFdNYW51LWJDLVlXbVZyZ2FneUtTQ01CQ0pwOUFYYVdMeC1vZ1dSR1h4OHZuNHAwWDYxYU5Bc1d3OUN4VEh4bE5nLXN5NFpQTTF0YThONFFJc2w4S040T2VENnNRcUNyazIzdnpycXo2bjdhOHRRRTk2cndtWFI0Z2hCSExFb1B3VkRiV1cybnJQcmRIanNQZzM0WGhYMUR6N29JYjlNbHlzQS1maUNvdUEyNGhmQkhXelJVc3BUT2FHcTY1WGZRYUFYOURDVG9obTJGY2I3TzFvRTRxb2d1elYwY0NEeHJsQ19jVFViR2ExUGdXajVGVG11SlVpTkZMeHVVS3pKalJPd1lVY1pKQVhpMDFySFhScHc0cEpnTkFzQ1lGTjRDbl9qQ2hIUzVmVVd0aUw2VnZjamM2aDMzSkFkV0ItVmcyODltWVJtZGd5SE5B?oc=5"
+        }
+      ],
+      "summary": "AI晶片與半導體產業在全球範圍內獲得巨額投資，技術創新不斷，但同時面臨政府監管和市場競爭加劇的挑戰。",
+      "news_count": 0
+    },
+    {
+      "rank": 2,
+      "industry": "AI內容生成與應用",
+      "heat_score": 90,
+      "signals": {
+        "funding": "此領域的資金流向主要體現在企業對AI工具和平台開發的投入，例如Google抄襲Nvidia的AI資金永動機模式，顯示大廠對AI應用層面的重視。Airwallex獲得3.2億美元融資，估值達110億美元，推動金融科技結合AI代理，顯示AI在特定行業應用獲得大筆投資。",
+        "hiring": "資深工程師抱怨每天都在幫AI擦屁股，不再開發軟體，這反映AI工具在軟體開發流程中的滲透，可能改變軟體工程師的職能。矽谷迎來「文組大復興」，AI巨頭延攬哲學家，顯示AI應用需要更多人文思考來解決倫理、內容質量等問題。",
+        "policy": "川普政府要求ChatGPT「分階段」推出新模型，主要是基於安全考量，這將影響AI內容生成的商業化速度和內容規範。",
+        "technology": "「于正全AI短劇掀革命」顯示AI在影視內容創作領域的突破，可能顛覆傳統製片模式。AI生成圖片、影片等技術的成熟，讓「AI生成」的概念深入人心，甚至連富婆騎共享單車都被誤認為AI生成，說明AI內容生成已達到高度逼真水平。"
+      },
+      "leading_indicators": [
+        "AI生成內容的商業化模式與市場接受度",
+        "AI內容倫理與版權相關的法規進展",
+        "影視、媒體等產業對AI內容生成工具的採納率"
+      ],
+      "us_stocks": [
+        {
+          "name": "Alphabet (Google)",
+          "ticker": "GOOGL"
+        },
+        {
+          "name": "Adobe",
+          "ticker": "ADBE"
+        },
+        {
+          "name": "Meta Platforms",
+          "ticker": "META"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "緯創",
+          "ticker": "3231"
         },
         {
           "name": "廣達",
@@ -46,132 +101,73 @@
       ],
       "evidence_news": [
         {
-          "title": "AI記憶體狂潮震翻華爾街：Micron飆漲帶動半導體全面回神，估2027前資本開支不退燒",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOX0FKNGI5OVZQdWhiclZZdWlmYU03SGhTY2pvT05fS08xREtSUjgtY3NGQm1lUlo4V09zdlZoZ3BqLUFVQ25hak5kWHBUMEp1UTQzalNNcEpzT01SNDJ3TnV4TWRKcW05OTk1NDhkWmJTUHBucUhkV08zSWxxMFhqVEZ4a3Y1ekM2Rl9iZjJ3?oc=5"
+          "title": "以後拍戲不用群演了！于正全AI短劇掀革命",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxOeW5HSHo2NV94UldGMWtfSGxKWEJZYm93ZllodHlkUTkyNmxhYW9zQnd1TV9oTm4tQ1RJUGkzWDV4TGJnc21BN2NBU21MYXd5QmJjc2xpcFJ6bmNBMWI1cERxTk5NcnVSY0ZPWmRwa1ZiRDE3QWlqdkF0NzBCeVRpZzZxYWViRGI4SGoxV0xZR0dpWDUxeDRvWkNIQm5MUU9hemd6RFc0UmtQbzZSSUswNTJRY0xUQjZCRy16QloyWWxIWmtuNlMzUWNiS1JrVjFFS3BmVjRmRmtNUTdPWU0xaTFiQm9kQzRlaURld0NuMVJqN042UW50NEVKSllOU2EwUGRDcW5mRlNmYzd4TFlOS2drUUg4MEdKdHVrZVM3dzF0MnM?oc=5"
         },
         {
-          "title": "日相推14年投資計畫 聚焦AI",
-          "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1LcXoxek5hT09tWThGOVVZRjZvZkRmYXVUR0E3LTA1QkxqcWlMSjl4R0gwdXJmbUVJQjNHRVo4VVNMLTh3MG10LUc0Slp3XzhmT0tLSVVCODhQRGxialVr?oc=5"
+          "title": "矽谷迎來「文組大復興」？《經濟學人》：美國資工科系失業率破7%，AI巨頭為何大舉延攬哲學家",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi9ANBVV95cUxQYi05MzV0S2d5WnQwSW1hZXRqUFVUTF9uWm9YYndxY3M5M3gzckNnbHluTmV3c3lHYmpISzFSdG53bkI3Tm9uRjNqa3dnTWh4dDZCMVU3SnN0dHJoWjJVVUsyUWhKNndzZmJ1Z25qVzYtSGhQVVgtMVVPV0QzYWpaSXhablN2WDlZUjItUVJnQjQ2MEo4cWFFZmRmQ01kWXhhSWM4MkVlaHh6WENKQUk4bTRNSjZaTTRUb2NTb1hsdkdra0Jia0F2TnR5UnNURkpkcXZCVVJKOTFpLWFWWEZYSXBIWFJfQ21tWTJpYVd6THpERkplRTBmZVZuQnlES3JDTmFZczVreVdWUHZ5NjVDX3FGTEE3MTE3WDk4ZThqVWVkWXE2S3dOQllmbDJYVVlnX1FTajRDcjh6VG1oOU42TXc3RGptaUNrandFR2V6bFN1dW1ZaDJzNmdjLU10d1RiUm0zX2NoYkYzcGU0YXJ3ZGMxcTlfZklSOTN3WS1ZbU1VZmxXaTF4dUY2Z2hSS0c3VVVMVzBtaTMxRGpSeWZKdWl1T29NOFE5S3hRSHFYSVRGaDJTNERURUs1TkZrSEd3ak5LVXFyWGZXZGt3ZDAyLVZoNGpQSGJ2c1BCTS1YRlkxb0laMnJndXpjREo5OHhzcDhFWQ?oc=5"
         },
         {
-          "title": "蘋果晶片大轉彎！傳跳過M6高階版 全力衝刺AI導向M7系列",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9pTVh2UW44b2dEZXV1V2xmaW1sVUE0SW41NUdlTTJtakw2MHdDOVd5Rk4tak5WVjR5YXREYWhFRnZpNXdLeXIwZ3gyU1hPUEk?oc=5"
+          "title": "川普政府憂影響國安 要求ChatGPT「分階段」推出新模型",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxQTVV4VDh2OFo2MWdKUFVGazQzNEJHN0NDeXhwNElTMDVVcXkxSVRNb2FOS2F4SUtBTUlsMHExUWhoeG4tNXRFcmtDa2pCNDVVTnMzaUlFUkpEQW9JQy1BWFdBemFSSG1JM1kzcFRzMWZNTjlqWWQ2bTFVNzJwSkRfT084MlBSemkzbGJOT1ZHTUVoekptRTd1aHF6eDFXSjNMVkZHakkyV2VoNkl3ZGJlNEFNbnZ2Q1BTX0NvMWk4Yy1PNFRxbmtxWURVRTlKNzZvNTZUa094SUJyRXJGMEF4SE93NDJfbFJUWUlHczVCa1pYOUM2QjdnRjBjSHE1TkZETjVDR3FXdUtLYmVGTFBfRTBPYXFibEF0OHplOVk4VzZRWkJ5aE12bGpKcHlrYWwwZlpBSUtPMWJRc0N4bVg0SWkyaVo?oc=5"
         }
       ],
-      "summary": "AI與其核心驅動的記憶體產業因技術突破、國家戰略投資及企業資本支出大增而熱度爆棚，是當前全球經濟增長的主要動能。",
-      "news_count": 23,
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25"
-    },
-    {
-      "rank": 2,
-      "industry": "摺疊手機與新形態消費電子",
-      "heat_score": 85,
-      "signals": {
-        "funding": "Apple和微軟等主要科技公司因記憶體和儲存零組件成本高漲而調漲產品價格，部分資金流向供應鏈上游。蘋果傳聞中的iPhone Ultra摺疊機以及三星Galaxy Z Fold 8的發布，顯示大廠持續投入研發與市場推廣資金。",
-        "hiring": "大型消費電子品牌在新品研發和生產方面通常有持續的研發團隊擴張需求，以應對新形態裝置的設計挑戰。",
-        "policy": "無直接相關政策訊號，但創新產品的市場接受度將影響未來政策方向。",
-        "technology": "摺疊螢幕技術持續進步，良率和耐用性提升。Apple傳聞中的iPhone Ultra摺疊機以及其跳過M6、直衝AI導向M7系列晶片的策略，顯示其在新產品形態和核心技術上的投入。Galaxy Z Fold 8的發布也代表摺疊技術的持續成熟。"
-      },
-      "leading_indicators": [
-        "主要手機品牌（Apple, Samsung, Google）的摺疊機發布與銷售數據",
-        "摺疊螢幕面板供應商的產能與技術進展",
-        "零組件（如記憶體、儲存）的價格波動對終端產品定價的影響"
-      ],
-      "us_stocks": [
-        {
-          "name": "蘋果(Apple)",
-          "ticker": "AAPL"
-        },
-        {
-          "name": "高通(Qualcomm)",
-          "ticker": "QCOM"
-        },
-        {
-          "name": "美光(Micron)",
-          "ticker": "MU"
-        }
-      ],
-      "tw_stocks": [
-        {
-          "name": "鴻海",
-          "ticker": "2317"
-        },
-        {
-          "name": "大立光",
-          "ticker": "3008"
-        },
-        {
-          "name": "聯詠",
-          "ticker": "3034"
-        }
-      ],
-      "evidence_news": [
-        {
-          "title": "傳 iPhone Ultra 摺疊機可能採用先發表後上市的策略",
-          "source": "ePrice.TW",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBhbENDZVdSUVUxZjVhUnJWLWhYc081eGgzQ2pLazRwUExmdlhQVnR5eVRRbFpFQzFCSXdLMEJFd3VxZjd0TTBvMjFpZmJfMU5tak82ODA5TWlvUERkSkdR?oc=5"
-        },
-        {
-          "title": "Apple shares plunge after it hikes prices on iPads and laptops",
-          "source": "NBC News",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOT1dJazA1cVBJV0FJay03YnFMUFcwWE4xenVYMG94dkk0SUx4TE1mN28wcmtJaWJtNjh1cERIU20zSkZrbXRwVTFPWkxuNWU1a29WVXVsSEUtaFlOU2xLckdJeXhFai1Va3NtamJLMVlKeXQxRnRhNW5MLU84bmh6elgxSVd4M21DeWhZTzktOGlrTmc?oc=5"
-        },
-        {
-          "title": "Galaxy Z Fold 8 release date leaks, hands-on impressions make ‘Ultra’ seem pointless",
-          "source": "9to5Google",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLVltc29pTmNDS2FyNFRVQlo1ZDJHMUNxdk8teU11Q1hfQ2w1WC04RUpvNmVEbXlsaEtvZ2poMVZ0THEtcFBUN0V2cWpXcjBlQWhmQzQtV1h0WUxWdjJUdHUtSkhycEdVZGtLZ3ktcW9pTWtCeS1qZzVSTVhtN1BlTmd1elBVT0tLTnhRRzRiTERlcWpGaER2NjIySVQ3UHlTZi05RlB3SjVoMEI2U1RSdDU2NlVlNWc?oc=5"
-        }
-      ],
-      "summary": "摺疊手機與新形態消費電子產品持續推陳出新，儘管記憶體成本上漲導致終端價格調整，但大廠的研發投入和新品發布仍顯示該領域的強勁動能。",
+      "summary": "AI內容生成正顛覆多個產業，從影視到金融，但其發展速度與應用廣度也引發了對倫理和國安的擔憂，政策監管和跨領域人才需求將日益重要。",
       "news_count": 0
     },
     {
       "rank": 3,
-      "industry": "機器人與自動化",
+      "industry": "無人載具與自動駕駛",
       "heat_score": 75,
       "signals": {
-        "funding": "新聞提到機器人產業有「最強黑馬」漲逾半根，並打入全球PCB大廠供應鏈，預計Q3迎新單出貨，這通常代表有新的資金流向這些有成長潛力的公司。",
-        "hiring": "未直接提及徵才動能，但新訂單與供應鏈擴張通常會帶動相關人才需求。",
-        "policy": "無直接相關政策訊號，但製造業自動化和智慧化是許多國家產業升級的重點。",
-        "technology": "機器人技術持續應用於各產業，特別是在製造業供應鏈中扮演關鍵角色，如打入PCB大廠供應鏈的案例。這顯示機器人技術的成熟度與應用廣度不斷提升。"
+        "funding": "新聞中並未直接提及無人載具的創投募資或企業資本支出，但台灣政院提出2100億「無人載具採購特別條例」，顯示政府層面有大規模資金投入的意圖，儘管該條例目前遭藍白聯手擋下。",
+        "hiring": "新聞中無直接提及該領域的徵才動能。然而，自動駕駛技術的發展通常會帶動相關軟體工程師、AI演算法專家以及硬體設計人才的需求。",
+        "policy": "台灣政院提出2100億「無人載具採購特別條例」，原意是推動無人載具產業發展，但目前被擋下，顯示政策推動面臨阻力。美國參議員Blumenthal要求Tesla對自駕車事故負責，顯示政府對自動駕駛安全性的高度關注和監管壓力。",
+        "technology": "Tesla自動駕駛事故引發社會關注和監管要求，這雖然是負面新聞，但也側面反映自動駕駛技術已深入應用，且其可靠性和安全性仍在不斷提升和檢視中。GMC卡車進行大規模改造，暗示汽車產業在技術升級方面持續投入，其中也可能包含自動化或輔助駕駛技術的進步。"
       },
       "leading_indicators": [
-        "工業機器人訂單量與出貨量",
-        "機器人相關零組件供應商的營收增長",
-        "智慧製造與自動化解決方案的市場滲透率"
+        "各國政府對無人載具的法規鬆綁與扶植政策",
+        "自動駕駛技術安全標準的建立與事故率變化",
+        "無人載具在物流、交通等領域的商業化進展"
       ],
       "us_stocks": [
         {
-          "name": "直覺外科(Intuitive Surgical)",
-          "ticker": "ISRG"
+          "name": "特斯拉(Tesla)",
+          "ticker": "TSLA"
         },
         {
-          "name": "洛克威爾自動化(Rockwell Automation)",
-          "ticker": "ROK"
+          "name": "通用汽車(General Motors)",
+          "ticker": "GM"
         }
       ],
       "tw_stocks": [
         {
-          "name": "上銀",
-          "ticker": "2049"
-        },
-        {
-          "name": "研華",
-          "ticker": "2395"
+          "name": "和碩",
+          "ticker": "4938"
         }
       ],
       "evidence_news": [
         {
-          "title": "機器人最強黑馬！5檔漲逾半根…它「噴漲停有原因」打入全球PCB大廠供應鏈 Q3迎新單出貨",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMitgNBVV95cUxOQ0xaZk1Od1JWbnQ1WS1xTndLZ0xjRUVIUnUxdldPaFFpLW5mQTVma1k0WllTbXFlSDMxZGNVNUtFYTNLWHV5RnJTVk1UNERDVUFWLXV0elpNZ2NSSjgySlVDQTVTRmppR2dQZmpHMXRSb2l1WHJCdld0U1VIdHAtSGJpOHJSWXNiUDVmenRYUWhoVVQxcW8zV0sycE5UQWtTUE02a1hfR3MxaW96aUZwVllpelRmNGJtb3JlckNKLVM5VzAyN1d5WWVmUkxaVmRnOHNiMlhVeXBFeFcxMG1aVlBaVWt0aWRWRnRSNlR4c05oUE5ldlJWT1ljTUliSFhOTy1CWGZwYnNILXdyLUY2VjVjOENSVFFQRzBxUGVzS1dCNTNfVVVOTTM2dEZRUk1WUml3ckhwQ1B4TzZ3QU9LdFdzNmtwR2w2NXY0Yk54NkxlU3lDc2J2cGFyN1htajdyeE9ta1lYelp4MHY1d19VUThJNzZna3BHZ3BwRTZ1NWxwVzNfZlBnRkdGOXphNEl2VWQ5eEZfMkl1ZHpNWnNwWWxvb00tSHhfaVA5ZUYxNUdNc0VvVUE?oc=5"
+          "title": "政院2100億「無人載具採購特別條例」付委遭藍白聯手擋下",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5maFppTzA3R0VYY2gyNkxEdmw5RWNFMk9zWG91V2ozbVJIWndOenFKcy1GSKS0azNod2FQWXlFVTVYV0daTWtHSmd2eWZFRmlw?oc=5"
+        },
+        {
+          "title": "Sen. Blumenthal demands Tesla be held accountable for alleged self-driving crash",
+          "source": "NBC News",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTFldVVVUHF0MUJGZHVnMm02eTRVX2EtME1WSmp2Y1lIYmRhSnJOU1Ezc1lsR1podkl3eGhJQkJFUVctd1NoWks2a3NwaFhfamFRTGpuUVVlQUdwYzhoSXpwU1Ffa1VDMVRkRnlpdVo0YnNqWlkyMGozaG9hTHAwS0ZkNk1UMlNwQkZPbGJibnlEZHNuMmVlUlBTdUNGaHpYRTloS2NQZVdYUW84WVk0VDNvS3BNZw?oc=5"
+        },
+        {
+          "title": "GMC's Best-Selling Truck Just Got a Massive Makeover",
+          "source": "Motor1.com",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNcWpQanB4Qm9wdTJPcDhEN3FHXzlnUUpDM3RHaGFPZ19BcmFZNVA5UjFzNC1kQjIyVFRXRTA2dnBVY2xXMXhkejhobi1mU2FfMUxjNUtIUHdNSXpVTGpHNVUySWRzU0xHWERaZ19DdDllbHMxU3VKOEFuMTdSYlhhWktELW4?oc=5"
         }
       ],
-      "summary": "機器人與自動化產業在製造業升級轉型中扮演關鍵角色，新訂單與供應鏈整合顯示其技術成熟度和市場需求的持續增長。",
+      "summary": "無人載具與自動駕駛技術持續發展，政府層面有投資意圖但面臨阻力，同時安全性問題仍是社會和監管的焦點。",
       "news_count": 0
     }
   ]
