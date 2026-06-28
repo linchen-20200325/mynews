@@ -1,6 +1,6 @@
 # ARCHITECTURE.md — mynews 全球政經戰略看板
 
-> **版本**：v1.0（2026-06-28，由 Phase-1 架構審查生成）
+> **版本**：v2.0（2026-06-28，Phase-1 審查 + Phase-2 SSOT 整合完成）
 > **禁止**：此檔案描述的是「應有」架構；修改程式碼前必須先更新此檔。
 
 ---
@@ -18,15 +18,18 @@
 ```
 mynews/
 │
-├── app.py                      ★ Streamlit UI 入口（2979 行，待拆分）
-├── update_data.py              ★ 資料更新管線入口（2928 行，待拆分）
+├── app.py                      ★ Streamlit UI 入口
+├── update_data.py              ★ 資料更新管線入口
 │
 ├── ── 基礎設施層（零業務邏輯，可任意引入）──
 │   ├── paths.py                SSOT：所有檔案路徑常數
 │   ├── tz_utils.py             SSOT：台灣時區工具（taiwan_now / taiwan_today）
-│   ├── numutil.py              SSOT：數值工具（pct_change）
+│   ├── numutil.py              SSOT：數值工具（OKU 億元係數、pct_change、parse_number）
 │   ├── freshness.py            資料新鮮度判斷（stale / as_of_date）
-│   └── proxy_helper.py         HTTP 代理中繼（NAS Squid proxy → 直連 fallback）
+│   ├── proxy_helper.py         HTTP 代理中繼（NAS Squid proxy → 直連 fallback）
+│   ├── config.py               SSOT：環境變數解析（env_bool/int/float）與功能開關
+│   ├── gemini_client.py        SSOT：Gemini API 呼叫、JSON 清洗、字典正規化
+│   └── line_notify.py          SSOT：LINE Messaging API 推播（broadcast/multicast/push）
 │
 ├── ── 資料擷取層（Fetcher，各自獨立，無 UI 相依）──
 │   ├── chip_fetcher.py         三大法人買賣超（TWSE BFI82U）
@@ -115,9 +118,12 @@ mynews/
 |------|----------|----------|
 | `paths.py` | 定義全域檔案路徑常數（Path 物件） | 不得含業務邏輯；不得直接讀寫檔案 |
 | `tz_utils.py` | 台灣時區（UTC+8）日期 / 時間工具 | 不得含網路請求；不得含路徑 |
-| `numutil.py` | 數值工具：漲跌幅計算、數字格式化 | 不得含時間；不得含路徑 |
+| `numutil.py` | 數值工具：`OKU` 億元係數、`pct_change`、`parse_number` | 不得含時間；不得含路徑 |
 | `freshness.py` | 判斷 JSON 資料新鮮度（stale / as_of） | 不得修改資料；不得含網路請求 |
 | `proxy_helper.py` | HTTP Proxy 中繼（NAS Squid → 直連） | 不得含業務 URL；不得含解析邏輯 |
+| `config.py` | 環境變數統一讀取（`env_bool/int/float`）與 11 個功能開關 | 不得含業務邏輯；不得寫入狀態 |
+| `gemini_client.py` | Gemini API 呼叫、JSON 清洗、字典正規化（SSOT） | 不得含 LINE / 路徑邏輯 |
+| `line_notify.py` | LINE Messaging API 推播（broadcast/multicast/push 自動路由） | 不得含 Gemini；不得含路徑 |
 
 ### 資料擷取層（Fetcher）
 
@@ -190,22 +196,28 @@ mynews/
 | 檔案路徑 | `paths.py` | 所有其他模組 |
 | 台灣時間 | `tz_utils.py` | 所有其他模組 |
 | 漲跌幅計算 | `numutil.pct_change()` | 所有其他模組 |
+| 字串轉數值 | `numutil.parse_number()` | 所有其他模組 |
+| 億元換算係數 | `numutil.OKU` | 所有其他模組（禁用 `1e8` 字面值） |
 | ETF 基本資料 | `etf_data.py` | `app.py`、`etf_fetcher.py` |
-| `_to_int()` / `_to_float()` | `numutil.py`（待建立） | chip_fetcher / margin_fetcher 等 |
-| 2-tier HTTP fetch | `proxy_helper.py`（待擴充） | chip_fetcher / margin_fetcher 等 6 檔 |
-| env var 解析 | `config.py`（待建立） | `update_data.py` 內 60+ 個散落讀取 |
+| 交易日迭代器 | `tz_utils.iter_trading_days()` | chip_fetcher / margin_fetcher 等 |
+| 2-tier HTTP fetch | `proxy_helper.py` | 所有 Fetcher（禁自行實作 2-tier） |
+| env var 解析 / 功能開關 | `config.py` | `update_data.py`（禁散落 os.environ.get） |
+| Gemini API 呼叫 | `gemini_client.py` | `update_data.py`（禁直接 import google.generativeai） |
+| LINE 推播 | `line_notify.py` | `update_data.py`（禁直接呼叫 urllib/requests 推 LINE） |
 
 ---
 
-## 六、已知技術債（Phase-1 審查結論）
+## 六、技術債歷史（Phase-1 審查 → Phase-2 全數結案）
 
-詳見「功能審查報告」（附於 ARCHITECTURE.md 同次提交），以下為嚴重度排序：
+所有 Phase-1 審查項目已於 2026-06-28 Phase-2 整合 Pass 結案。
 
-1. **[CRITICAL]** `update_data.py::main()` 294 行的單體 Pipeline
-2. **[CRITICAL]** `app.py::render_stock_query()` 164 行 God Function
-3. **[HIGH]** 6 個 Fetcher 各自重複 2-tier HTTP fetch 邏輯（~150 行重複）
-4. **[HIGH]** 5 個模組各自定義 `_to_int()` / `_to_float()`（違反 numutil SSOT）
-5. **[HIGH]** `render_stocks()` vs `render_us_stocks()` 90% 重複（~87 行）
-6. **[HIGH]** `update_data.py` 缺少 `gemini_client.py`、`line_notify.py`、`config.py` 拆分
-7. **[MEDIUM]** 10 個 `validate_*()` 函式結構雷同，可泛化
-8. **[MEDIUM]** 日期範圍生成（交易日 iterator）在 3 個 Fetcher 中各自實作
+| # | 原嚴重度 | 項目 | 結案方式 |
+|---|----------|------|----------|
+| 1 | CRITICAL | `update_data.main()` 294 行單體 Pipeline | 拆為 10 個 `_run_*` helper；main() 縮至 48 行 |
+| 2 | CRITICAL | `app.py::render_stock_query()` 164 行 God Function | 拆為 6 個 `_render_stock_query_*` helper；入口縮至 7 行 |
+| 3 | HIGH | 6 個 Fetcher 各自重複 2-tier HTTP fetch（~150 行）| `proxy_helper.fetch_json/fetch_url` 統一入口，Fetcher 改呼叫 |
+| 4 | HIGH | 5 個模組各自定義 `_to_int()` / `_to_float()`（違反 SSOT） | 遷移至 `numutil.parse_number()`；原散落定義全刪 |
+| 5 | HIGH | `render_stocks()` vs `render_us_stocks()` 90% 重複 | 提取 `_render_stock_card_group()`、`_render_trends_sunset()`、`_render_evidence_news()` |
+| 6 | HIGH | `update_data.py` 缺少模組拆分 | 建立 `gemini_client.py`、`line_notify.py`、`config.py`；原 3 個單體替換為呼叫 |
+| 7 | MEDIUM | 9 個 `validate_*()` 函式結構雷同 | 提取 `_validate_structure()` helper；8 個 wrapper 各縮為 1 行 |
+| 8 | MEDIUM | 交易日 iterator 在 3 個 Fetcher 中各自實作 | 遷移至 `tz_utils.iter_trading_days()`（含 TW/US 假日）|
