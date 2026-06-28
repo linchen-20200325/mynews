@@ -25,6 +25,7 @@ import paths  # 檔案/目錄路徑的單一真相源(SSOT)
 import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
+import gemini_client  # Gemini API 金鑰管理 SSOT
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
 # 報告新鮮度門檻(天):歸屬日落後超過此值,看板顯示過期警告。可用 STALE_REPORT_DAYS 覆寫。
@@ -311,12 +312,12 @@ def _collect_keys_from_secrets() -> list[str]:
 
 def ensure_gemini_key() -> bool:
     """確保環境中有 Gemini 金鑰:先看環境變數,再從 Streamlit Secrets 補上。"""
-    if update_data.get_gemini_keys():
+    if gemini_client.get_gemini_keys():
         return True
     keys = _collect_keys_from_secrets()
     if keys:
         os.environ["GEMINI_API_KEY"] = ",".join(keys)
-    return bool(update_data.get_gemini_keys())
+    return bool(gemini_client.get_gemini_keys())
 
 
 def render_key_hint() -> None:
