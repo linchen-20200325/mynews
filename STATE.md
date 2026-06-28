@@ -66,5 +66,5 @@
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
 - [x] 個股盯盤(第二個 LINE bot)**已上線驗收通過(2026-06-28)**:傳「加 2330」bot 正確回「已加入 2330」並顯示 watchlist 4 檔(6770/6239/3231/2330);NAS `nas_line_bot.py` webhook 對外可達,Secrets 全設妥,watchlist.json 寫回 GitHub 正常。
 - [x] **上櫃月營收已實作**(`earnings_fetcher._fetch_otc_bulk`):MOPS `ajax_t05st10_q` POST 一次全抓,`fetch_monthly_revenue()` 透明合併上市(TWSE) + 上櫃(MOPS),呼叫端零改動;需 proxy 過境 MOPS。
-- [ ] (擴充)季報 EPS — `fetch_quarterly_eps()` 已建立 stub;MOPS 無正式 API,需表單 POST + HTML 解析(公告時程:Q1→5/15、Q2→8/14、Q3→11/14、Q4→隔年3/31),留待後續。
+- [x] **季報 EPS 已實作(2026-06-28)**:`fetch_quarterly_eps()` 向 MOPS `ajax_t163sb04` 逐檔 POST,sii/otc 自動辨識;`_push_watch_for` 加 EPS dedup 區塊;LINE 訊息新增「📊 新季報(EPS)」段落。需 proxy + 實機驗收(MOPS 境外限速)。
 - 註:§5 向量化已實查結案 — 全庫零 `numpy`/`.iterrows()`,既有 pandas(melt/dropna/line_chart)皆已向量化,其餘為小型巢狀 dict 迴圈(縣市×市場×年),改 pandas 反增風險無效益,**刻意保留**。
