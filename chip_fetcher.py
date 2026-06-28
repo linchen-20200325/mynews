@@ -95,8 +95,8 @@ def fetch_chip_flow(days: int = DEFAULT_DAYS, log=print) -> dict:
         parsed = _parse_day(_fetch_day_json(date_str), date_str)
         if parsed:
             collected.append(parsed)
-            log(f"  [{parsed['date']}] 外資 {parsed['foreign']/1e8:+.0f}億 "
-                f"投信 {parsed['trust']/1e8:+.0f}億 合計 {parsed['total']/1e8:+.0f}億")
+            log(f"  [{parsed['date']}] 外資 {parsed['foreign']/numutil.OKU:+.0f}億 "
+                f"投信 {parsed['trust']/numutil.OKU:+.0f}億 合計 {parsed['total']/numutil.OKU:+.0f}億")
     if not collected:
         raise RuntimeError("三大法人資料全數抓取失敗(檢查網路/PROXY_URL 或來源是否可達)")
     return {

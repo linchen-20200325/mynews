@@ -84,7 +84,7 @@ def fetch_margin(log=print) -> dict | None:
     for d in tz_utils.iter_trading_days(MAX_LOOKBACK):
         parsed = _parse(_fetch_json(d.strftime("%Y%m%d")), d.strftime("%Y%m%d"))
         if parsed:
-            log(f"  融資餘額 {parsed['date']}:{parsed['margin_today']/1e8:.0f}億"
+            log(f"  融資餘額 {parsed['date']}:{parsed['margin_today']/numutil.OKU:.0f}億"
                 f"({parsed['margin_chg_pct']:+.2f}%)")
             parsed["as_of"] = datetime.now(timezone.utc).strftime(
                 "%Y-%m-%d %H:%M UTC (TWSE MI_MARGN)")
