@@ -46,6 +46,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+import gemini_client  # Gemini API 封裝 SSOT(多 Key/多模型/退避/JSON 解析)
 import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
 import chip_fetcher  # 法人籌碼:抓證交所三大法人買賣超(事後驗證,真實數字)
 import chip_signals  # 個股盯盤:個股三大法人買賣超(T86)籌碼面訊號的 SSOT
@@ -66,10 +67,6 @@ import watchlist  # 個股盯盤清單(watchlist)的單一真相源(SSOT)
 # 設定
 # ---------------------------------------------------------------------------
 
-DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
-# 主模型過載(503)時改用的備援模型(逗號分隔);可用 GEMINI_MODEL_FALLBACK 覆寫。
-DEFAULT_GEMINI_FALLBACKS = "gemini-2.0-flash"
-DEFAULT_GEMINI_MAX_TOKENS = 16384  # 單次輸出 token 上限預設;可用 GEMINI_MAX_TOKENS 覆寫
 DEFAULT_NEWS_MAX = 25  # 單一主題抓新聞則數預設;可用 NEWS_MAX 覆寫
 OKU = 100_000_000  # 1 億(元)— 三大法人/融資金額顯示換算(取代散落的 1e8 魔術數字)
 
@@ -1070,33 +1067,6 @@ def build_housing_user_prompt(news: list[dict], prices: dict | None, today: str,
 
 
 # ---------------------------------------------------------------------------
-# JSON 防護式清理與解析
-# ---------------------------------------------------------------------------
-
-def clean_json_text(text: str) -> str:
-    """去除 markdown 圍欄,並擷取最外層的 JSON 值(物件或陣列)。"""
-    text = text.strip()
-
-    if text.startswith("```"):
-        first_newline = text.find("\n")
-        if first_newline != -1:
-            text = text[first_newline + 1:]
-        if text.rstrip().endswith("```"):
-            text = text.rstrip()[:-3]
-        text = text.strip()
-
-    if text and text[0] not in "{[":
-        candidates = [i for i in (text.find("{"), text.find("[")) if i != -1]
-        if candidates:
-            start = min(candidates)
-            closer = "}" if text[start] == "{" else "]"
-            end = text.rfind(closer)
-            if end > start:
-                text = text[start:end + 1]
-
-    return text.strip()
-
-
 def validate_report(data: dict) -> None:
     """戰略報告的最低限度結構驗證。"""
     missing = [k for k in REQUIRED_TOP_LEVEL_KEYS if k not in data]
@@ -1183,219 +1153,9 @@ def validate_housing(data: dict) -> None:
         raise ValueError("regions 必須是陣列")
 
 
-# ---------------------------------------------------------------------------
-# Gemini:共用的「讀新聞 → JSON」呼叫
-# ---------------------------------------------------------------------------
-
-def get_gemini_keys() -> list[str]:
-    """蒐集一把或多把 Gemini 金鑰(支援複數 key,呼叫失敗時可自動切換)。
-
-    支援的環境變數:
-      - GEMINI_API_KEY    單一,或以逗號/分號/換行分隔多把
-      - GEMINI_API_KEYS   複數(同上分隔)
-      - GEMINI_API_KEY_1 / GEMINI_API_KEY_2 ...  多把分開命名
-    """
-    keys: list[str] = []
-
-    def add_many(raw: str) -> None:
-        for part in re.split(r"[,;\n]+", raw or ""):
-            p = part.strip()
-            if p and p not in keys:
-                keys.append(p)
-
-    add_many(os.environ.get("GEMINI_API_KEY", ""))
-    add_many(os.environ.get("GEMINI_API_KEYS", ""))
-    for name, val in os.environ.items():
-        if re.fullmatch(r"GEMINI_API_KEY_?\d+", name):
-            add_many(val)
-    return keys
-
-
-def _build_gemini_config(types, system_instruction: str, max_tokens: int | None = None):
-    """組 Gemini 生成設定:關閉 thinking、放大輸出上限,避免長 prompt 思考吃光額度。
-
-    舊版 SDK 沒有 ThinkingConfig / max_output_tokens 也能用(逐項 try,失敗就略過該設定)。
-    ``max_tokens`` 可覆寫單次輸出上限(供解析失敗時加大重試)。
-    """
-    kwargs = {
-        "system_instruction": system_instruction,
-        "response_mime_type": "application/json",
-        "temperature": 0.7,
-    }
-    try:
-        if max_tokens is None:
-            max_tokens = int(os.environ.get("GEMINI_MAX_TOKENS", str(DEFAULT_GEMINI_MAX_TOKENS)))
-        kwargs["max_output_tokens"] = int(max_tokens)
-    except (TypeError, ValueError):
-        # GEMINI_MAX_TOKENS 設成非數字 → 不靜默,印警告後退回不設上限(由 SDK 預設)
-        print(f"  警告: GEMINI_MAX_TOKENS 非有效數字({max_tokens!r}),"
-              "本次不設 max_output_tokens", file=sys.stderr)
-    # 關閉 2.5 系列的 thinking(thinking 會占用輸出 token,長 prompt 易導致空回應)
-    try:
-        kwargs["thinking_config"] = types.ThinkingConfig(thinking_budget=0)
-    except Exception:  # noqa: BLE001 — 舊 SDK 無 ThinkingConfig
-        pass
-    try:
-        return types.GenerateContentConfig(**kwargs)
-    except TypeError:
-        # 某些舊版本不支援部分欄位,退回最小可用設定
-        for k in ("thinking_config", "max_output_tokens"):
-            kwargs.pop(k, None)
-        return types.GenerateContentConfig(**kwargs)
-
-
-def _resp_finish_info(resp) -> str:
-    """從回應取出 finish_reason / 安全阻擋等診斷字串,供空回應時報錯。"""
-    bits: list[str] = []
-    try:
-        for cand in (resp.candidates or []):
-            fr = getattr(cand, "finish_reason", None)
-            if fr is not None:
-                bits.append(f"finish_reason={fr}")
-    except Exception:  # noqa: BLE001
-        pass
-    try:
-        fb = getattr(resp, "prompt_feedback", None)
-        if fb:
-            bits.append(f"prompt_feedback={fb}")
-    except Exception:  # noqa: BLE001
-        pass
-    return "; ".join(bits) or "無候選內容"
-
-
-_TRANSIENT_HINTS = ("503", "unavailable", "overloaded", "high demand", "try again",
-                    "deadline", "resource_exhausted", "500", "internal error", "502", "504")
-
-
-def _is_transient(exc: Exception) -> bool:
-    """是否為暫時性錯誤(模型過載/5xx/逾時)→ 值得退避重試,而非換金鑰也沒用。"""
-    s = str(exc).lower()
-    return any(h in s for h in _TRANSIENT_HINTS)
-
-
-def _gemini_models(model: str) -> list[str]:
-    """主模型 + 備援模型清單(過載時改用較不壅塞的模型);去重保序。"""
-    out = [model]
-    for fb in (os.environ.get("GEMINI_MODEL_FALLBACK") or DEFAULT_GEMINI_FALLBACKS).split(","):
-        fb = fb.strip()
-        if fb and fb not in out:
-            out.append(fb)
-    return out
-
-
-def _gemini_generate_text(types, genai, model, keys, system_instruction, user_content, max_tokens):
-    """多把金鑰×多模型逐一嘗試取得非空回應;遇暫時性過載(503)以指數退避重試整輪。
-
-    503 UNAVAILABLE 是 Google 模型過載(暫時性),換金鑰當下也常一起撞;故整輪
-    (所有金鑰×備援模型)都失敗且屬暫時性時,退避數秒後重試,而非立刻整批放棄。
-    """
-    config = _build_gemini_config(types, system_instruction, max_tokens)
-    models = _gemini_models(model)
-    try:
-        max_attempts = max(1, int(os.environ.get("GEMINI_RETRIES") or 4))
-    except (TypeError, ValueError):
-        max_attempts = 4
-
-    last_exc: Exception | None = None
-    for attempt in range(max_attempts):
-        transient = False
-        for mdl in models:
-            for key in keys:
-                try:
-                    client = genai.Client(api_key=key)
-                    resp = client.models.generate_content(
-                        model=mdl, contents=user_content, config=config,
-                    )
-                except Exception as exc:  # noqa: BLE001 — 金鑰/額度/過載/網路錯誤 → 換下一把
-                    last_exc = exc
-                    transient = transient or _is_transient(exc)
-                    continue
-                text = (resp.text or "").strip()
-                if not text:
-                    # 空回應多為 thinking 吃光 token(MAX_TOKENS)或安全阻擋;附診斷再換下一把
-                    last_exc = RuntimeError(f"Gemini 回傳空內容({_resp_finish_info(resp)})")
-                    continue
-                return text
-        # 整輪(所有金鑰×模型)皆失敗;若屬暫時性過載則退避重試,否則直接放棄
-        if attempt + 1 < max_attempts and transient:
-            wait = min(5 * 2 ** attempt, 60)  # 5,10,20,40s 上限 60
-            print(f"  Gemini 暫時性過載(503),{wait}s 後重試"
-                  f"(第 {attempt + 2}/{max_attempts} 輪)...", file=sys.stderr)
-            time.sleep(wait)
-            continue
-        break
-    raise last_exc or RuntimeError("所有 Gemini 金鑰皆呼叫失敗")
-
-
-def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
-    """以 Gemini 讀取內容並回傳解析後的 JSON dict;多把金鑰會逐一嘗試。
-
-    若輸出疑似被 token 上限截斷(JSON 解析失敗),會自動加大輸出上限再重試一次。
-    """
-    from google import genai
-    from google.genai import types
-
-    model = os.environ.get("GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
-    keys = get_gemini_keys()
-    if not keys:
-        raise RuntimeError("未設定 GEMINI_API_KEY")
-
-    try:
-        base_budget = int(os.environ.get("GEMINI_MAX_TOKENS", str(DEFAULT_GEMINI_MAX_TOKENS)))
-    except (TypeError, ValueError):
-        base_budget = DEFAULT_GEMINI_MAX_TOKENS
-    # 第一輪用預設上限;若解析失敗(疑似被截斷)再用更大上限重試一次。
-    budgets = [base_budget]
-    if base_budget < 65536:
-        budgets.append(65536)
-
-    last_exc: Exception | None = None
-    for i, budget in enumerate(budgets):
-        try:
-            text = _gemini_generate_text(
-                types, genai, model, keys, system_instruction, user_content, budget
-            )
-        except Exception as exc:  # noqa: BLE001 — 整輪失敗(含空回應/MAX_TOKENS)→ 換更大上限
-            last_exc = exc
-            continue
-
-        json_text = clean_json_text(text)
-        try:
-            # strict=False:容許字串值內含原始換行/tab 等控制字元
-            # (Gemini 偶爾會在長敘述裡塞真換行,strict 模式會誤判為 Invalid control character)
-            return json.loads(json_text, strict=False)
-        except json.JSONDecodeError as exc:
-            last_exc = exc
-            # 還有更大的預算就重試(多半是輸出過長被截斷);否則才報錯
-            if i + 1 < len(budgets):
-                continue
-            raise ValueError(
-                f"JSON 解析失敗(輸出可能被截斷,可調高 GEMINI_MAX_TOKENS):{exc}\n"
-                f"--- 原始內容前 500 字 ---\n{json_text[:500]}"
-            ) from exc
-
-    raise RuntimeError(f"所有 Gemini 金鑰皆呼叫失敗,最後錯誤:{last_exc}")
-
-
-def normalize_dictionary(raw) -> list:
-    """把模型回傳的白話文字典整理成乾淨的 [{term, explanation}] 陣列。"""
-    if isinstance(raw, dict) and isinstance(raw.get("laymans_dictionary"), list):
-        raw = raw["laymans_dictionary"]
-    if not isinstance(raw, list):
-        raise ValueError("laymans_dictionary 格式不是陣列")
-    cleaned = [
-        {"term": str(d.get("term", "")), "explanation": str(d.get("explanation", ""))}
-        for d in raw
-        if isinstance(d, dict) and d.get("term")
-    ]
-    if not cleaned:
-        raise ValueError("laymans_dictionary 為空")
-    return cleaned
-
-
 def get_macro_analysis(news: list[dict], topic: str, today: str) -> dict:
     """Gemini 讀新聞 → 四維度分析 + 白話文字典。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         ANALYSIS_SYSTEM_PROMPT, build_analysis_user_prompt(news, topic, today)
     )
     analysis = data.get("strategic_analysis")
@@ -1406,13 +1166,13 @@ def get_macro_analysis(news: list[dict], topic: str, today: str) -> dict:
         raise ValueError(f"strategic_analysis 缺少欄位: {missing}")
     return {
         "strategic_analysis": analysis,
-        "laymans_dictionary": normalize_dictionary(data.get("laymans_dictionary")),
+        "laymans_dictionary": gemini_client.normalize_dictionary(data.get("laymans_dictionary")),
     }
 
 
 def get_trend_radar(news: list[dict], today: str) -> dict:
     """Gemini 讀新聞 → 趨勢雷達。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         TREND_SYSTEM_PROMPT, build_trend_user_prompt(news, today)
     )
     data.setdefault("report_date", today)
@@ -1429,7 +1189,7 @@ def get_trend_radar(news: list[dict], today: str) -> dict:
 
 def get_stock_picks(news: list[dict], today: str) -> dict:
     """Gemini 讀台灣財經新聞 → 台股標的(利多/利空/觀望)+ 趨勢/夕陽產業。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         STOCK_SYSTEM_PROMPT, build_stock_user_prompt(news, today)
     )
     data.setdefault("report_date", today)
@@ -1445,7 +1205,7 @@ def get_stock_picks(news: list[dict], today: str) -> dict:
 
 def get_us_stock_picks(news: list[dict], today: str) -> dict:
     """Gemini 讀美股財經新聞 → 美股標的(利多/利空/觀望)+ 趨勢/夕陽產業。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         US_STOCK_SYSTEM_PROMPT, build_us_stock_user_prompt(news, today)
     )
     data.setdefault("report_date", today)
@@ -1499,7 +1259,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
     # Gemini 只做文字研判(利空原因/對台股影響);失敗(如配額 429)不得拖垮
     # 真實報價與大跌偵測 → 包成容錯:AI 掛了仍保留報價/大跌/LINE 預警,只把原因留白。
     try:
-        gemini = call_gemini_for_json(
+        gemini = gemini_client.call_gemini_for_json(
             INTL_ALERT_SYSTEM_PROMPT, build_intl_alert_user_prompt(quotes_doc, news, today)
         )
     except Exception as exc:  # noqa: BLE001 — AI 失敗 → 降級為純報價偵測
@@ -1545,7 +1305,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
 
 def translate_focus_query(term_zh: str) -> dict:
     """把中文關注對象轉成英文新聞檢索詞(Gemini)。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         FOCUS_TRANSLATE_SYSTEM_PROMPT,
         f"請把這個中文關鍵字轉成英文新聞檢索詞:「{term_zh}」",
     )
@@ -1559,7 +1319,7 @@ def translate_focus_query(term_zh: str) -> dict:
 
 def translate_stock_query(term: str) -> dict:
     """把使用者輸入的個股(中文/英文/代號)正規化成中英名+代號+市場(Gemini)。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         STOCK_QUERY_TRANSLATE_SYSTEM_PROMPT,
         f"請把這檔股票正規化成中英文名稱、代號與市場:「{term}」",
     )
@@ -1579,7 +1339,7 @@ def get_stock_query_analysis(
     news: list[dict], today: str,
 ) -> dict:
     """Gemini 讀該股新聞 → ①與新聞的直接相關性 ②營運績效 + 上漲是消息面還是基本面。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         STOCK_QUERY_SYSTEM_PROMPT,
         build_stock_query_user_prompt(term_zh, query_en, ticker, market, news, today),
     )
@@ -1614,7 +1374,7 @@ def build_news_etf_user_prompt(news_text: str, today: str) -> str:
 
 def get_news_etf_strategy(news_text: str, today: str) -> dict:
     """Gemini 讀一則新聞 → 首席策略師四階段台股 ETF 進場/持有/出場決策。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         NEWS_ETF_STRATEGY_SYSTEM_PROMPT,
         build_news_etf_user_prompt(news_text, today),
     )
@@ -1663,7 +1423,7 @@ def build_market_digest_prompt(view: str, payload: dict, today: str) -> str:
 
 def get_market_digest(view: str, payload: dict, today: str) -> dict:
     """Gemini 把某領域當日各面板數據融成一段統一研判(overall + digest_markdown)。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         MARKET_DIGEST_SYSTEM_PROMPT, build_market_digest_prompt(view, payload, today)
     )
     data.setdefault("overall", "中性")
@@ -1673,7 +1433,7 @@ def get_market_digest(view: str, payload: dict, today: str) -> dict:
 
 def get_focus_analysis(term_zh: str, query_en: str, news: list[dict], today: str) -> dict:
     """Gemini 讀全球新聞 → 該對象說了什麼 + 衍伸產業 + 牽動的台股/美股個股。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         FOCUS_SYSTEM_PROMPT, build_focus_user_prompt(term_zh, query_en, news, today)
     )
     data.setdefault("report_date", today)
@@ -1693,7 +1453,7 @@ def get_focus_analysis(term_zh: str, query_en: str, news: list[dict], today: str
 def get_housing_analysis(news: list[dict], prices: dict | None, today: str,
                         history: dict | None = None) -> dict:
     """Gemini 讀房市新聞 + 實價登錄當期/歷年 → 冷熱 + 打房政策 + 縣市標記 + 買方總結。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         HOUSING_SYSTEM_PROMPT, build_housing_user_prompt(news, prices, today, history)
     )
     data.setdefault("report_date", today)
@@ -2467,7 +2227,7 @@ def summarize_watch_stocks(stocks: list[dict], news_by_ticker: dict[str, list[di
     user_content = (
         "以下是各檔個股的近期真實新聞,請逐檔做消息面總結:\n\n" + "\n\n".join(blocks)
     )
-    data = call_gemini_for_json(WATCH_SYSTEM_PROMPT, user_content)
+    data = gemini_client.call_gemini_for_json(WATCH_SYSTEM_PROMPT, user_content)
     result = data.get("stocks")
     return result if isinstance(result, list) else []
 
@@ -2632,7 +2392,7 @@ def run_watch_section(today: str) -> None:
 
 
 def main() -> int:
-    if not get_gemini_keys():
+    if not gemini_client.get_gemini_keys():
         print("錯誤: 未設定 GEMINI_API_KEY 環境變數", file=sys.stderr)
         return 1
 
