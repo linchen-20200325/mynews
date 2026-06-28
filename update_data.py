@@ -2021,234 +2021,292 @@ def run_watch_section(today: str) -> None:
     print("  ⑤ 個股盯盤已推。")
 
 
+def _schedule_guard(now_tw, today: str) -> bool:
+    """排程前哨守門。若應略過本次跑動回 True。"""
+    floor = os.environ.get("EARLIEST_TW_HHMM", "0530").strip()
+    try:
+        fh, fm = int(floor[:2]), int(floor[2:])
+    except (ValueError, IndexError):
+        fh, fm = 5, 30
+    if (now_tw.hour, now_tw.minute) < (fh, fm):
+        print(f"排程於台灣 {now_tw:%H:%M} 觸發,早於資料齊備時間 "
+              f"{fh:02d}:{fm:02d}(GitHub 排程器半夜亂觸發),略過——不推不完整凌晨版。")
+        return True
+    try:
+        existing = json.loads(OUTPUT_LATEST.read_text(encoding="utf-8"))
+        if existing.get("report_date") == today:
+            print(f"今日({today})報告已存在,排程備援班次略過(避免重複推播)。")
+            return True
+    except Exception:  # noqa: BLE001 — 讀不到/壞檔 → 正常往下跑
+        pass
+    return False
+
+
+def _run_strategic_report(today: str) -> dict | None:
+    """A. 戰略報告(支援多主題)。降級時回 None。"""
+    topics = parse_report_topics()
+    multi = len(topics) > 1
+    print(f"[1/8] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
+    print(f"  ▸ 主主題:{topics[0]}")
+    try:
+        report = build_macro_report(topics[0], today, extra_query=topics[0] if multi else None)
+    except Exception as exc:  # noqa: BLE001 — Gemini 過載等 → 降級續跑
+        print(f"  警告: 主報告產生失敗(Gemini 可能過載),降級續跑真實數據與預警:{exc}",
+              file=sys.stderr)
+        report = None
+    reports = [report] if report else []
+    for extra_topic in topics[1:]:
+        print(f"  ▸ 次主題:{extra_topic}")
+        try:
+            reports.append(build_macro_report(extra_topic, today, extra_query=extra_topic))
+        except Exception as exc:  # noqa: BLE001 — 次主題失敗不影響主報告
+            print(f"  警告: 主題「{extra_topic}」產生失敗:{exc}", file=sys.stderr)
+    if report:
+        print("[2/8] 戰略分析完成,寫入報告檔...")
+        save_json(OUTPUT_LATEST, report)
+        save_json(ARCHIVE_DIR / f"{today}.json", report)
+        if multi and reports:
+            multi_doc = {"report_date": today, "reports": reports}
+            save_json(OUTPUT_REPORTS_MULTI, multi_doc)
+            save_json(REPORTS_MULTI_ARCHIVE_DIR / f"{today}.json", multi_doc)
+            print(f"  多主題報告:{len(reports)}/{len(topics)} 份成功。")
+    else:
+        print("[2/8] 主報告降級(Gemini 過載),跳過戰略報告檔,續跑國際盤/籌碼/共振/LINE。")
+    return report
+
+
+def _run_trend_radar(today: str) -> None:
+    """B. 趨勢雷達。"""
+    if not config.trend_radar_enabled():
+        print("[3/8] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
+        return
+    print("[3/8] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
+    try:
+        trend_news = fetch_trend_news()
+        print(f"  抓到 {len(trend_news)} 則產業新聞。")
+        trends = get_trend_radar(trend_news, today)
+        save_json(OUTPUT_TRENDS, trends)
+        save_json(TRENDS_ARCHIVE_DIR / f"{today}.json", trends)
+        top = "、".join(t.get("industry", "") for t in trends["trends"][:3])
+        print(f"  趨勢雷達完成,Top3:{top}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 趨勢雷達產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_stock_picks(today: str) -> None:
+    """C. 台股觀察。"""
+    if not config.stock_picker_enabled():
+        print("[4/8] ENABLE_STOCK_PICKER=0,略過台股觀察。")
+        return
+    print("[4/8] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
+    try:
+        stock_news = fetch_stock_news()
+        print(f"  抓到 {len(stock_news)} 則台灣財經新聞。")
+        stocks = get_stock_picks(stock_news, today)
+        save_json(OUTPUT_STOCKS, stocks)
+        save_json(STOCKS_ARCHIVE_DIR / f"{today}.json", stocks)
+        top = "、".join(s.get("name", "") for s in stocks["stocks"][:5])
+        print(f"  台股觀察完成,最常被提到:{top}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 台股觀察產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_us_stock_picks(today: str) -> None:
+    """D. 美股觀察。"""
+    if not config.us_stock_picker_enabled():
+        print("[5/8] ENABLE_US_STOCK_PICKER=0,略過美股觀察。")
+        return
+    print("[5/8] 爬取美股財經新聞並向 Gemini 整理美股標的...")
+    try:
+        us_stock_news = fetch_us_stock_news()
+        print(f"  抓到 {len(us_stock_news)} 則美股財經新聞。")
+        us_stocks = get_us_stock_picks(us_stock_news, today)
+        save_json(OUTPUT_US_STOCKS, us_stocks)
+        save_json(US_STOCKS_ARCHIVE_DIR / f"{today}.json", us_stocks)
+        top = "、".join(s.get("name", "") for s in us_stocks["stocks"][:5])
+        print(f"  美股觀察完成,最常被提到:{top}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 美股觀察產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_intl_alert(today: str) -> dict | None:
+    """D2. 國際盤預警。回傳 intl dict 或 None。"""
+    if not config.intl_alert_enabled():
+        print("[6/8] ENABLE_INTL_ALERT=0,略過國際盤預警。")
+        return None
+    print("[6/8] 抓國際盤報價(美股/期貨/台指期夜盤)偵測大跌,向 Gemini 解讀台股影響...")
+    try:
+        intl = build_intl_alert(today)
+        save_json(OUTPUT_INTL_ALERT, intl)
+        save_json(INTL_ALERT_ARCHIVE_DIR / f"{today}.json", intl)
+        drops = intl.get("drops", [])
+        tag = "、".join(f"{d['name']}{d['change_pct']:+.1f}%" for d in drops[:3]) or "無"
+        print(f"  國際盤預警完成,警示級別:{intl.get('alert_level', '—')}(大跌:{tag})")
+        return intl
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 國際盤預警產生失敗:{exc}", file=sys.stderr)
+        return None
+
+
+def _run_chip_data(today: str) -> tuple[dict | None, dict | None, dict | None]:  # noqa: ARG001
+    """D3. 法人籌碼(三大法人 + 融資餘額 + 台指期留倉)。回傳 (chip, margin, fut_chip)。"""
+    if not config.chip_enabled():
+        print("[6/8] ENABLE_CHIP=0,略過法人籌碼。")
+        return None, None, None
+    print("[6/8] 抓證交所三大法人買賣超(近 N 日,事後驗證真實籌碼)...")
+    chip = margin = fut_chip = None
+    try:
+        fetched = chip_fetcher.fetch_chip_flow(
+            days=int(os.environ.get("CHIP_DAYS") or "10"), log=print)
+        # §2.4 過期守門:歸屬日落後過久→raise→留 chip=None→共振自動略過此力量
+        latest_date = fetched["days"][0]["date"] if fetched.get("days") else None
+        freshness.ensure_fresh(latest_date, CHIP_STALE_DAYS, "三大法人籌碼")
+        chip = fetched
+        save_json(OUTPUT_CHIP, chip)
+        if chip.get("days"):
+            save_json(CHIP_ARCHIVE_DIR / f"{chip['days'][0]['date']}.json", chip)
+            latest = chip["days"][0]
+            print(f"  法人籌碼完成,最新 {latest['date']}:"
+                  f"外資 {latest['foreign']/OKU:+.0f}億、投信 {latest['trust']/OKU:+.0f}億。")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 法人籌碼抓取失敗:{exc}", file=sys.stderr)
+    try:
+        fetched = margin_fetcher.fetch_margin(log=print)
+        if fetched:
+            freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "融資餘額")
+            margin = fetched
+            save_json(OUTPUT_MARGIN, margin)
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 融資餘額抓取失敗:{exc}", file=sys.stderr)
+    try:
+        fetched = futures_chip_fetcher.fetch_futures_chip(log=print)
+        if fetched:
+            freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "台指期留倉")
+            fut_chip = fetched
+            save_json(OUTPUT_FUT_CHIP, fut_chip)
+            print(f"  台指期留倉完成,外資{fut_chip['stance']}"
+                  f"(淨{fut_chip['foreign_net_oi']:+,}口)。")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 台指期留倉抓取失敗:{exc}", file=sys.stderr)
+    return chip, margin, fut_chip
+
+
+def _run_focus(today: str) -> None:
+    """E. 全球人物追蹤。"""
+    if not config.focus_enabled():
+        print("[7/8] ENABLE_FOCUS=0,略過全球人物追蹤。")
+        return
+    print("[7/8] 翻譯追蹤對象並抓全球新聞,向 Gemini 整理台美股關聯...")
+    try:
+        focus_doc = build_focus_report(today)
+        save_json(OUTPUT_FOCUS, focus_doc)
+        save_json(FOCUS_ARCHIVE_DIR / f"{today}.json", focus_doc)
+        names = "、".join(f.get("query_zh", "") for f in focus_doc["focuses"])
+        print(f"  全球人物追蹤完成,對象:{names}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 全球人物追蹤產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_housing(today: str) -> None:
+    """F. 房市觀察。"""
+    if not config.housing_enabled():
+        print("[8/8] ENABLE_HOUSING=0,略過房市觀察。")
+        return
+    print("[8/8] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
+    try:
+        housing_news = fetch_housing_news()
+        print(f"  抓到 {len(housing_news)} 則房市新聞。")
+        prices = housing_fetcher.load_house_prices()
+        # §2.4 外科式守門:房價快取過期→只丟掉價格數字、保留新鮮的房市新聞判讀
+        note = freshness.stale_note(prices.get("as_of"), HOUSE_STALE_DAYS, "實價登錄房價")
+        if note:
+            print(f"  {note} → 本次判讀不採用過期房價數字(僅依新聞)", file=sys.stderr)
+            prices = {}
+        history = housing_fetcher.load_house_price_history()
+        housing = get_housing_analysis(housing_news, prices, today, history)
+        housing["raw_news"] = housing_news
+        save_json(OUTPUT_HOUSING, housing)
+        save_json(HOUSING_ARCHIVE_DIR / f"{today}.json", housing)
+        print(f"  房市觀察完成,整體氛圍:{housing.get('overall_sentiment', '—')}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 房市觀察產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_line_push(
+    report: dict | None,
+    intl: dict | None,
+    chip: dict | None,
+    fut_chip: dict | None,
+    conf: dict | None,
+    today: str,
+) -> None:
+    """LINE 推播(依序:① 國際盤快報 → ② 共振預警 → ③ 法人事件預告 → ④ 戰略報告)。"""
+    if not (os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO")):
+        return
+    print("推送 LINE 通知(依序:國際盤大跌→共振→事件預告→戰略報告)...")
+    lead = line_notify.lead_market_drops(intl) if intl else []
+    if intl and config.intl_alert_line_enabled():
+        try:
+            line_notify.notify_line_intl_alert(intl)
+            tag = f"大跌 {len(lead)} 項" if lead else "平靜快報"
+            print(f"  ① 國際盤快報已推({tag})。")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  警告: 國際盤 LINE 推播失敗:{exc}", file=sys.stderr)
+    if conf and conf.get("triggered") and config.confluence_line_enabled():
+        try:
+            line_notify.notify_line_confluence(conf, today)
+            print("  ② 多重賣壓共振預警已推。")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  警告: 共振 LINE 推播失敗:{exc}", file=sys.stderr)
+    if intl and config.chip_line_enabled():
+        try:
+            pushed = line_notify.load_pushed_events()
+            due = chip_calendar.pick_new_pushable(intl.get("upcoming_events", []), pushed)
+            if due:
+                line_notify.notify_line_chip_events(due, today)
+                line_notify.save_pushed_events(pushed + [e["id"] for e in due])
+                print(f"  ③ 法人事件預告已推({len(due)} 項)。")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
+    if report:
+        try:
+            line_notify.notify_line(report, line_notify.chip_flow_hint(chip, fut_chip))
+            print("  ④ 戰略報告已推。")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
+    else:
+        print("  ④ 主報告降級(Gemini 過載),本次跳過戰略報告 LINE。")
+
+
 def main() -> int:
     if not gemini_client.get_gemini_keys():
         print("錯誤: 未設定 GEMINI_API_KEY 環境變數", file=sys.stderr)
         return 1
 
-    # 以台灣時區(UTC+8,無日光節約)定義「今天」:排程在台灣清晨(UTC 前一日 21:30 起)
-    # 觸發,用台灣日期才能讓報告日期與你早上看到的日期一致(不會慢一天)。
+    # 以台灣時區(UTC+8,無日光節約)定義「今天」
     now_tw = tz_utils.taiwan_now()
     today = now_tw.strftime("%Y-%m-%d")
 
-    if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
-        # 資料齊備守門:美股現貨收盤(夏 04:00/冬 05:00)+ 台指期夜盤收盤 05:00 後數據才完整。
-        # GitHub 自家排程器常在台灣半夜 00–02 點亂放排程(時間對不上任何 cron),那時跑只會推出
-        # 殘缺的凌晨版。故 schedule 觸發若早於資料齊備點(預設台灣 05:30),直接略過、不跑不推。
-        # 可用 EARLIEST_TW_HHMM 覆寫(四位數 HHMM);workflow_dispatch(NAS 主力/手動補發)不受此限。
-        floor = os.environ.get("EARLIEST_TW_HHMM", "0530").strip()
-        try:
-            fh, fm = int(floor[:2]), int(floor[2:])
-        except (ValueError, IndexError):
-            fh, fm = 5, 30
-        if (now_tw.hour, now_tw.minute) < (fh, fm):
-            print(f"排程於台灣 {now_tw:%H:%M} 觸發,早於資料齊備時間 "
-                  f"{fh:02d}:{fm:02d}(GitHub 排程器半夜亂觸發),略過——不推不完整凌晨版。")
-            return 0
-
-        # 排程備援防呆:今日報告已產出(NAS 06:00 主力以 dispatch 跑完並寫回 main)→ 直接略過,
-        # 避免 GitHub 兜底班次重複跑與重複推 LINE。workflow_dispatch 不受此限。
-        try:
-            existing = json.loads(OUTPUT_LATEST.read_text(encoding="utf-8"))
-            if existing.get("report_date") == today:
-                print(f"今日({today})報告已存在,排程備援班次略過(避免重複推播)。")
-                return 0
-        except Exception:  # noqa: BLE001 — 讀不到/壞檔 → 正常往下跑
-            pass
+    if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and _schedule_guard(now_tw, today):
+        return 0
 
     try:
-        # A. 戰略報告(支援多主題:第一個為主報告,維持 latest_report.json 向後相容)
-        topics = parse_report_topics()
-        multi = len(topics) > 1
-        print(f"[1/8] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
-
-        # 主報告:Gemini 過載(503)等失敗時降級為 None,仍續跑真實數據與預警,
-        # 不讓暫時性過載害整批(國際盤/籌碼/共振/LINE)全掛。降級時不存檔 →
-        # 排程備援班次會自動重試,待 Gemini 恢復補上完整戰略報告。
-        print(f"  ▸ 主主題:{topics[0]}")
-        try:
-            report = build_macro_report(topics[0], today, extra_query=topics[0] if multi else None)
-        except Exception as exc:  # noqa: BLE001 — Gemini 過載等 → 降級續跑
-            print(f"  警告: 主報告產生失敗(Gemini 可能過載),降級續跑真實數據與預警:{exc}",
-                  file=sys.stderr)
-            report = None
-        reports = [report] if report else []
-        for extra_topic in topics[1:]:
-            print(f"  ▸ 次主題:{extra_topic}")
-            try:
-                reports.append(build_macro_report(extra_topic, today, extra_query=extra_topic))
-            except Exception as exc:  # noqa: BLE001 — 次主題失敗不影響主報告
-                print(f"  警告: 主題「{extra_topic}」產生失敗:{exc}", file=sys.stderr)
-
-        if report:
-            print("[2/8] 戰略分析完成,寫入報告檔...")
-            save_json(OUTPUT_LATEST, report)
-            save_json(ARCHIVE_DIR / f"{today}.json", report)
-            if multi and reports:
-                multi_doc = {"report_date": today, "reports": reports}
-                save_json(OUTPUT_REPORTS_MULTI, multi_doc)
-                save_json(REPORTS_MULTI_ARCHIVE_DIR / f"{today}.json", multi_doc)
-                print(f"  多主題報告:{len(reports)}/{len(topics)} 份成功。")
-        else:
-            print("[2/8] 主報告降級(Gemini 過載),跳過戰略報告檔,續跑國際盤/籌碼/共振/LINE。")
-
-        # B. 趨勢雷達
-        trends = None
-        if config.trend_radar_enabled():
-            print("[3/8] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
-            try:
-                trend_news = fetch_trend_news()
-                print(f"  抓到 {len(trend_news)} 則產業新聞。")
-                trends = get_trend_radar(trend_news, today)
-                save_json(OUTPUT_TRENDS, trends)
-                save_json(TRENDS_ARCHIVE_DIR / f"{today}.json", trends)
-                top = "、".join(t.get("industry", "") for t in trends["trends"][:3])
-                print(f"  趨勢雷達完成,Top3:{top}")
-            except Exception as exc:  # noqa: BLE001 — 趨勢雷達失敗不影響戰略報告
-                print(f"  警告: 趨勢雷達產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[3/8] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
-
-        # C. 台股觀察
-        if config.stock_picker_enabled():
-            print("[4/8] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
-            try:
-                stock_news = fetch_stock_news()
-                print(f"  抓到 {len(stock_news)} 則台灣財經新聞。")
-                stocks = get_stock_picks(stock_news, today)
-                save_json(OUTPUT_STOCKS, stocks)
-                save_json(STOCKS_ARCHIVE_DIR / f"{today}.json", stocks)
-                top = "、".join(s.get("name", "") for s in stocks["stocks"][:5])
-                print(f"  台股觀察完成,最常被提到:{top}")
-            except Exception as exc:  # noqa: BLE001 — 台股觀察失敗不影響戰略報告
-                print(f"  警告: 台股觀察產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[4/8] ENABLE_STOCK_PICKER=0,略過台股觀察。")
-
-        # D. 美股觀察
-        if config.us_stock_picker_enabled():
-            print("[5/8] 爬取美股財經新聞並向 Gemini 整理美股標的...")
-            try:
-                us_stock_news = fetch_us_stock_news()
-                print(f"  抓到 {len(us_stock_news)} 則美股財經新聞。")
-                us_stocks = get_us_stock_picks(us_stock_news, today)
-                save_json(OUTPUT_US_STOCKS, us_stocks)
-                save_json(US_STOCKS_ARCHIVE_DIR / f"{today}.json", us_stocks)
-                top = "、".join(s.get("name", "") for s in us_stocks["stocks"][:5])
-                print(f"  美股觀察完成,最常被提到:{top}")
-            except Exception as exc:  # noqa: BLE001 — 美股觀察失敗不影響戰略報告
-                print(f"  警告: 美股觀察產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[5/8] ENABLE_US_STOCK_PICKER=0,略過美股觀察。")
-
-        # D2. 國際盤預警(美股指數/期貨/台指期夜盤真實漲跌幅 → 偵測大跌 → Gemini 解讀台股影響)
-        intl = None
-        if config.intl_alert_enabled():
-            print("[6/8] 抓國際盤報價(美股/期貨/台指期夜盤)偵測大跌,向 Gemini 解讀台股影響...")
-            try:
-                intl = build_intl_alert(today)
-                save_json(OUTPUT_INTL_ALERT, intl)
-                save_json(INTL_ALERT_ARCHIVE_DIR / f"{today}.json", intl)
-                drops = intl.get("drops", [])
-                tag = "、".join(f"{d['name']}{d['change_pct']:+.1f}%" for d in drops[:3]) or "無"
-                print(f"  國際盤預警完成,警示級別:{intl.get('alert_level', '—')}(大跌:{tag})")
-            except Exception as exc:  # noqa: BLE001 — 國際盤預警失敗不影響戰略報告
-                print(f"  警告: 國際盤預警產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[6/8] ENABLE_INTL_ALERT=0,略過國際盤預警。")
-
-        # D3. 法人籌碼事後驗證(抓證交所近 N 日三大法人買賣超,真實數字)
-        chip = None
-        margin = None
-        fut_chip = None
-        if config.chip_enabled():
-            print("[6/8] 抓證交所三大法人買賣超(近 N 日,事後驗證真實籌碼)...")
-            try:
-                fetched = chip_fetcher.fetch_chip_flow(
-                    days=int(os.environ.get("CHIP_DAYS") or "10"), log=print)
-                # §2.4 過期守門:歸屬日落後過久→raise→留 chip=None→共振自動略過此力量,不存舊檔當今日
-                latest_date = fetched["days"][0]["date"] if fetched.get("days") else None
-                freshness.ensure_fresh(latest_date, CHIP_STALE_DAYS, "三大法人籌碼")
-                chip = fetched
-                save_json(OUTPUT_CHIP, chip)
-                if chip.get("days"):
-                    save_json(CHIP_ARCHIVE_DIR / f"{chip['days'][0]['date']}.json", chip)
-                    latest = chip["days"][0]
-                    print(f"  法人籌碼完成,最新 {latest['date']}:"
-                          f"外資 {latest['foreign']/OKU:+.0f}億、投信 {latest['trust']/OKU:+.0f}億。")
-            except Exception as exc:  # noqa: BLE001 — 法人籌碼失敗/過期不影響戰略報告
-                print(f"  警告: 法人籌碼抓取失敗:{exc}", file=sys.stderr)
-            # 融資餘額(散戶斷頭訊號,共振偵測用);失敗/過期不影響其他
-            try:
-                fetched = margin_fetcher.fetch_margin(log=print)
-                if fetched:
-                    freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "融資餘額")
-                    margin = fetched
-                    save_json(OUTPUT_MARGIN, margin)
-            except Exception as exc:  # noqa: BLE001
-                print(f"  警告: 融資餘額抓取失敗:{exc}", file=sys.stderr)
-            # 三大法人台指期留倉(外資期貨偏多/偏空,前一交易日盤後);失敗/過期不影響其他
-            try:
-                fetched = futures_chip_fetcher.fetch_futures_chip(log=print)
-                if fetched:
-                    freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "台指期留倉")
-                    fut_chip = fetched
-                    save_json(OUTPUT_FUT_CHIP, fut_chip)
-                    print(f"  台指期留倉完成,外資{fut_chip['stance']}"
-                          f"(淨{fut_chip['foreign_net_oi']:+,}口)。")
-            except Exception as exc:  # noqa: BLE001
-                print(f"  警告: 台指期留倉抓取失敗:{exc}", file=sys.stderr)
-        else:
-            print("[6/8] ENABLE_CHIP=0,略過法人籌碼。")
-
-        # D4. 多重賣壓共振偵測(只計算;LINE 於最後依序統一推播)
+        report = _run_strategic_report(today)
+        _run_trend_radar(today)
+        _run_stock_picks(today)
+        _run_us_stock_picks(today)
+        intl = _run_intl_alert(today)
+        chip, margin, fut_chip = _run_chip_data(today)
         conf = None
         try:
             conf = detect_pressure_confluence(intl, chip, margin, fut_chip)
             forces = "、".join(f["key"] for f in conf["forces"]) or "無"
             print(f"  共振偵測:{'🔴 觸發' if conf['triggered'] else '未觸發'}"
                   f"(美股大跌={bool(conf['us_drops'])}、力量 {conf['count']}/4:{forces})")
-        except Exception as exc:  # noqa: BLE001 — 共振偵測失敗不影響主報告
+        except Exception as exc:  # noqa: BLE001
             print(f"  警告: 共振偵測失敗:{exc}", file=sys.stderr)
-
-        # E. 全球人物追蹤(對 FOCUS_TOPICS 每個對象翻英→抓全球新聞→台美股關聯)
-        if config.focus_enabled():
-            print("[7/8] 翻譯追蹤對象並抓全球新聞,向 Gemini 整理台美股關聯...")
-            try:
-                focus_doc = build_focus_report(today)
-                save_json(OUTPUT_FOCUS, focus_doc)
-                save_json(FOCUS_ARCHIVE_DIR / f"{today}.json", focus_doc)
-                names = "、".join(f.get("query_zh", "") for f in focus_doc["focuses"])
-                print(f"  全球人物追蹤完成,對象:{names}")
-            except Exception as exc:  # noqa: BLE001 — 人物追蹤失敗不影響戰略報告
-                print(f"  警告: 全球人物追蹤產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[7/8] ENABLE_FOCUS=0,略過全球人物追蹤。")
-
-        # F. 房市觀察(房價走代理,排程無代理時就只用新聞 + repo 既有房價當參考)
-        housing = None
-        if config.housing_enabled():
-            print("[8/8] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
-            try:
-                housing_news = fetch_housing_news()
-                print(f"  抓到 {len(housing_news)} 則房市新聞。")
-                prices = housing_fetcher.load_house_prices()
-                # §2.4 外科式守門:房價快取過期→只丟掉價格數字、保留新鮮的房市新聞判讀(§5)
-                note = freshness.stale_note(prices.get("as_of"), HOUSE_STALE_DAYS, "實價登錄房價")
-                if note:
-                    print(f"  {note} → 本次判讀不採用過期房價數字(僅依新聞)", file=sys.stderr)
-                    prices = {}
-                history = housing_fetcher.load_house_price_history()
-                housing = get_housing_analysis(housing_news, prices, today, history)
-                housing["raw_news"] = housing_news
-                save_json(OUTPUT_HOUSING, housing)
-                save_json(HOUSING_ARCHIVE_DIR / f"{today}.json", housing)
-                print(f"  房市觀察完成,整體氛圍:{housing.get('overall_sentiment', '—')}")
-            except Exception as exc:  # noqa: BLE001 — 房市觀察失敗不影響戰略報告
-                print(f"  警告: 房市觀察產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[8/8] ENABLE_HOUSING=0,略過房市觀察。")
-
+        _run_focus(today)
+        _run_housing(today)
         if report:
             print(
                 f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
@@ -2256,57 +2314,13 @@ def main() -> int:
             )
         else:
             print("資料更新部分完成(主報告降級,國際盤/籌碼/共振仍已產出)。")
-
-        # 推播(依優先順序:① 國際盤大跌 → ② 多重賣壓共振 → ③ 法人事件預告 → ④ 戰略報告)
-        if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
-            print("推送 LINE 通知(依序:國際盤大跌→共振→事件預告→戰略報告)...")
-            # ① 國際盤快報(每天推:含美股/台股看法;大跌時自動升級為大跌預警標題)
-            lead = line_notify.lead_market_drops(intl) if intl else []
-            if intl and config.intl_alert_line_enabled():
-                try:
-                    line_notify.notify_line_intl_alert(intl)
-                    tag = f"大跌 {len(lead)} 項" if lead else "平靜快報"
-                    print(f"  ① 國際盤快報已推({tag})。")
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  警告: 國際盤 LINE 推播失敗:{exc}", file=sys.stderr)
-            # ② 多重賣壓共振(美股大跌 + 四力≥2,真實數據判定)
-            if conf and conf.get("triggered") and config.confluence_line_enabled():
-                try:
-                    line_notify.notify_line_confluence(conf, today)
-                    print("  ② 多重賣壓共振預警已推。")
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  警告: 共振 LINE 推播失敗:{exc}", file=sys.stderr)
-            # ③ 法人事件預告(進 3 交易日窗口才推,防洗版)
-            if intl and config.chip_line_enabled():
-                try:
-                    pushed = line_notify.load_pushed_events()
-                    due = chip_calendar.pick_new_pushable(
-                        intl.get("upcoming_events", []), pushed)
-                    if due:
-                        line_notify.notify_line_chip_events(due, today)
-                        line_notify.save_pushed_events(pushed + [e["id"] for e in due])
-                        print(f"  ③ 法人事件預告已推({len(due)} 項)。")
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
-            # ④ 全球政經戰略報告(含法人籌碼提示);主報告降級時跳過,不影響前三項真實預警
-            if report:
-                try:
-                    line_notify.notify_line(report, line_notify.chip_flow_hint(chip, fut_chip))
-                    print("  ④ 戰略報告已推。")
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
-            else:
-                print("  ④ 主報告降級(Gemini 過載),本次跳過戰略報告 LINE。")
-
-        # ⑤ 個股盯盤(獨立的第二個 LINE bot,自選 watchlist 消息面 + 月營收);
-        #    用自己的 token/對象,與上面四項主報告推播互不影響。未設第二個 bot → 靜默略過。
+        _run_line_push(report, intl, chip, fut_chip, conf, today)
         if config.watch_enabled():
             print("個股盯盤(第二個 bot):自選台股消息面 + 月營收...")
             try:
                 run_watch_section(today)
-            except Exception as exc:  # noqa: BLE001 — 個股盯盤失敗不影響主報告與主 bot
+            except Exception as exc:  # noqa: BLE001
                 print(f"  警告: 個股盯盤推播失敗:{exc}", file=sys.stderr)
-
         return 0
 
     except Exception as exc:  # noqa: BLE001 — CI 需要明確失敗碼
