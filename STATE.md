@@ -24,10 +24,13 @@
 
 ## 架構約定(SSOT — 同類事實只定義一次)
 - `paths.py`:所有資料檔/封存目錄、ETF 三檔路徑的**唯一**定義(各檔 import,勿再貼字面值)。
-- `tz_utils.py`:台灣 UTC+8 時間(`taiwan_now/today`);凡「台灣今日」一律走它。例外:`scripts/nas_trigger.py` 刻意零相依、自帶。
+- `tz_utils.py`:台灣 UTC+8 時間(`taiwan_now/today`);凡「台灣今日」一律走它。例外:`scripts/nas_trigger.py`刻意零相依、自帶。
 - `etf_data.py`:ETF 成分股/反查/圖鑑的快取(`@st.cache_data`)單一入口;app.py 一律向它要資料。
-- `numutil.py`:漲跌幅 `pct_change()`(內建 `prev>0` 與方向對帳不變量)的**唯一**公式;凡算 % 一律走它。
+- `numutil.py`:漲跌幅 `pct_change()`、`parse_number()`、`OKU` 億元係數的**唯一**來源;嚴禁在其他模組重複定義。
 - `freshness.py`:資料新鮮度(staleness)判定的**唯一**入口。`stale_note()` 給 UI 警語、`ensure_fresh()` 給排程守門(過期 raise)。門檻屬領域決策,以具名常數帶入:籌碼 `CHIP_STALE_DAYS=5`、房價 `HOUSE_STALE_DAYS=40`、股價/報告 `PRICE_STALE_DAYS`/`STALE_REPORT_DAYS=5/2`(皆可環境變數覆寫)。
+- `config.py`:環境變數解析(`env_bool/int/float`)與 11 個功能開關的**唯一**入口;嚴禁在 `update_data.py` 散落 `os.environ.get`。
+- `gemini_client.py`:Gemini API 呼叫、JSON 清洗、字典正規化的**唯一**入口;嚴禁直接 `import google.generativeai`。
+- `line_notify.py`:LINE Messaging API 推播(`broadcast/multicast/push` 自動路由)的**唯一**入口;嚴禁直接 urllib/requests 推 LINE。
 - `watchlist.py`:個股盯盤清單(`watchlist.json`)的**唯一**入口。純邏輯(`parse_command/add_stock/remove_stock/format_list/normalize_ticker`)與 I/O(`load/save/dumps`)分離,排程端(本機檔)與 `scripts/nas_line_bot.py`(GitHub API)共用同一套加/刪/解析規則,杜絕兩端漂移。
 
 ## 關鍵檔案
@@ -51,6 +54,12 @@
 4. **金鑰只走環境變數/Secrets**:嚴禁硬編碼或進版控;`PROXY_URL`、`.streamlit/secrets.toml` 不得進 git。
 5. **Gemini 用官方 `google-genai`**;結構化輸出關 thinking、設 `max_output_tokens`,JSON 經清理+驗證,失敗以非零碼結束;趨勢/LINE/各副章節失敗不可拖垮主報告。
 6. 所有產出為 AI/工具自動生成,僅供參考,非投資建議。
+
+## Phase-2 SSOT 整合（2026-06-28 結案，PR #73 已併入 main）
+- ✅ `validate_*()` 泛化：`_validate_structure()` helper，8 個 wrapper 各縮為 1 行（−37 行）
+- ✅ `update_data.main()` 拆分：291→48 行，10 個 `_run_*` helper
+- ✅ `app.py::render_stock_query()` 拆分：164→7 行，6 個 `_render_stock_query_*` helper
+- ✅ `ARCHITECTURE.md` 更新至 v2.0：SSOT 表 11 條，技術債 8 項全結案
 
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
