@@ -3,18 +3,18 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "人工智慧 (AI) 基礎建設與應用",
+      "industry": "人工智慧 (AI) 基礎設施與應用",
       "heat_score": 98,
       "signals": {
-        "funding": "老牌電子代工廠豪砸150億元搶吃AI大餅，全年資本支出上探600億元，顯示產業資本支出強勁。記憶體大廠美光財報炸裂，AI記憶體缺貨嚴重，毛利率有望上看90%，估值重估。載板大廠獲輝達CPU、GPU大單，5月獲利暴增29倍。這些都指向大量資金湧入AI相關硬體與零組件製造。",
-        "hiring": "科技業開始招募大量哲學家，顯示AI發展不僅需要技術人才，也開始重視倫理、邏輯等跨領域人才。比爾蓋茲預測AI時代僅剩4種職業能存活，暗示AI對勞動市場的深遠影響與人才結構的轉變需求。",
-        "policy": "印度政府將AI和半導體視為驅動下一階段成長的關鍵，反映全球主要國家將AI提升至國家戰略層級。美國對台灣在先進封裝技術的依賴，也凸顯AI發展在全球供應鏈中的地緣政治重要性。",
-        "technology": "Agentic AI概念持續洗牌晶片市場，ABF載板缺口擴大至35%，供不應求。台積電在先進封裝（CoWoS）技術市佔率高達95%，成為AI晶片供應鏈的關鍵瓶頸，顯示技術持續突破且需求旺盛。"
+        "funding": "美國標普看好經濟韌性與AI投資，顯示資金持續流入。機電四雄狂吞AI大單，長單排到2031年，法人點名買進。雖然有『AI資金出逃急避險』的聲音，但更多是調整而非撤離，尤其在晶片、伺服器等基礎設施領域資金動能強勁。科技七巨頭光環雖褪色，但AI牛市主角已悄悄換人，資金轉向新興AI公司。",
+        "hiring": "科技業對AI人才的搶奪持續，哲學系畢業生因其批判性思維和問題解決能力，在科技業的失業率甚至低於資工系，反映AI發展對跨領域人才的需求。台灣竹科AI榮景也帶動工程師高薪。",
+        "policy": "美國標普維持AA+主權信評，展望穩定，看好經濟韌性與AI投資，顯示政府層面對AI發展的正面態度與支持。各國政府也陸續將AI納入國家戰略。",
+        "technology": "新一代GPT的亮相，OpenAI獨家採用特定晶片，驗證了新技術的突破。AI晶片股瘋狂洗牌，顯示技術競爭激烈，同時面板級封裝FOPLP技術的興起，將對次世代AI晶片封裝帶來巨大影響，『賣鏟工具商』的技術動能強勁。AI伺服器新品下半年發力，推動PC大廠業績。"
       },
       "leading_indicators": [
-        "AI晶片製造商（如Nvidia）的財報與訂單狀況",
-        "先進封裝（CoWoS）產能擴張速度",
-        "AI伺服器出貨量與相關供應鏈（如載板、記憶體）的營收表現"
+        "主要AI晶片製造商的新產品發布與出貨量",
+        "AI相關專利申請數量與開源專案活躍度",
+        "大型科技公司在AI領域的併購活動"
       ],
       "us_stocks": [
         {
@@ -22,8 +22,12 @@
           "ticker": "NVDA"
         },
         {
-          "name": "美光科技",
-          "ticker": "MU"
+          "name": "美超微(Super Micro Computer)",
+          "ticker": "SMCI"
+        },
+        {
+          "name": "博通(Broadcom)",
+          "ticker": "AVGO"
         }
       ],
       "tw_stocks": [
@@ -32,114 +36,118 @@
           "ticker": "2330"
         },
         {
-          "name": "日月光投控",
-          "ticker": "3711"
+          "name": "廣達",
+          "ticker": "2382"
         },
         {
-          "name": "欣興",
-          "ticker": "3037"
+          "name": "中興電",
+          "ticker": "1513"
         }
       ],
       "evidence_news": [
         {
-          "title": "豪砸150億元搶吃AI大餅！「老牌電子代工廠」全年資本支出上探600億元前5月營收1.42兆元創新高",
-          "source": "tw.stock.yahoo.com",
-          "url": "https://news.google.com/rss/articles/CBMiiARBVV95cUxOUk4yZVlMZHB2VXRQNWV2S0NWT2NSSllCc1ZWcWNqZmlCR2pLU2dRa29IeHplUnRVZ0VDQ3N0aGk4b3hGUEFfa3BtTHZqcE92RVdUU1d0WnB2ZmRxTmxvM2lORHAwMHJnSXJGQnBaTGFMdGJHNTRtRFU1QnJEQUxuVXBNZGJpcEJHV1NKZDUya3lBUUtVNTJob3VPQXBycnNsNjZqQVVLMExWalVkTVBsVDNKeHNMazRiS2xfekNGbHg0ZHBhQ25hVmhRaDhEbTNFdGFIWnFkRUViLUtZcGFiQ295cEYtTFR2RnJhNlNRY3didmw5T2J0b1ZPUkJ0Qm5ZVjVqaFJWdUFfQTBaZEdqWTdJLXRnWHJ5MDVYTjdURGtBc0s4dWZwLUNqOThnTXlFbHdFNHJZS0hhYlBFTDMxaFZRZWVLaExvVEs4cHcyQW45ekNwdkdxZHNCU0ZLeVUtQ0lObk9OYWFnc3N5VkVVam55ZWlpeEFEZmE0ejdrRS1wMVdYX2lPZzVYUlZDQ04tY3U0RGl0ZUlIcUVmYjhjb29COElWaEdKdzFEclZfZFlVc2R6MjBodUlTcjR1THdWQ0tCdGxfYkJHU1NrMkNmamxZa2MxSkltMXR4bElOVHZOMWMtZDJkYlZLQjQ1NE5teEF0eGNnU3ktTHZQRG5qSzhQSEtHQmNw?oc=5"
-        },
-        {
-          "title": "美光財報炸裂、蘋果卻跌！陳鳳馨揭AI供應鏈「兩個世界」：它們苦日子才開始",
+          "title": "新一代GPT亮相！OpenAI獨家用「它」的晶片 白毛股神嗨喊：技術獲驗證",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMitwNBVV95cUxOZ3pUelVmSENjWjVWaWhoQUhVQm5ENXdhVFY0MnFaQ1cybF9BVmdPYkdxYXlnQzQ2cGVwZ3BEVTA4c0lSb0RvWV9nVWUzYnBrdWFxOGVDZXJLWXpGcGpYcnZpMUFUR2ZDak9vRFZ0aERoVDZHYlZ3cDhkdEhtTXZ1eTBIRy02YmktU1AxMWVWOUJuNVliTUNINXJKMnBtb3dqbE91ejI0dWFJV2Y1d2tpTldwcHBmeFRSc3ItUUNGTlRBSVZkaEdVbGxGU2lWZUdrUUFpdUxdelJHSmk5NWhhcmNTdDBfeVVmdDJucE5RUkFwUnpsTzV4UU5OZ25PTFRSVmtZdWNlX2ZGa3NMV2RaMTBzQTE4dEUyOXotd2JIQndiaUFGbi1yaGMzX0FkeVRKbGU3S09xT25OMjRySE1fbFNNSmhldnhWR0kxdmJiNXZGenFoZDhTTjZ6Y3FTeVVMWFRvVk9wWmRBM2Q1aDY4dWFCMTBMUUp5d3drMmI3RDY1bkhVLXhYc0duR0xHQ1MyMEpoWk1QQ1JDeGN4ek83dHQ2bEJZTnptVkxOYWRJSzR2SGdVNktJ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPZWNtZTZOdXVXNk5QVGpoM1J3RnZ1aHBLLWpzckdjMWQtUkI4WHBkZU5ZZjF5d2JyWElISms0elIxcXl0UXU1RDhyeFp5Nm5fZEs0UW0xZzJjeHFvZ09wbVJZem9VcmJBdVFnZHBpUk55LWNaRkNpZG5BbVUwcDJsTHNRRnRVR3pKbTdxaE5SV1BxdUdobTVXa3ByVGJqSFp0SXZ1OFlMZ1g5Z0xWdm1fOThKTi1NWHBtY282ZEVYbXRYVHNMa3BldzU0di12eDF6R0tvUF9rVG1UVkZMMDhGYVdXSnJ0YTV6?oc=5"
         },
         {
-          "title": "市占率95％！紐時：台積電此技術讓美國對台灣空前依賴",
-          "source": "自由時報",
-          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1uZmkwb2tnUWdpOEI0UnpiLXVuTnM1RW1LOUszamY0Z0NFSTR0VzdZN0lyTWZyajJyNGRfM2E0cmdZS3ctY1B3RmYwUGNKNXAzZEdUei1jY3RQVlc5QVBWVFZUaDQwUdIBa0FVX3lxTE5vbE9GRkRKSE5yTFE4WGZvbng4emRWbUhsM0V5QWNWdWVzMjBlX2xQNjdqS3RBU081S2xIMzFBVTk3NlpZcVpqb3FrUUlqZVNDYy1wLUhBVGhtOVVjc09IQUVDM2E4dVdDaHdz?oc=5"
+          "title": "【化圓為方拚AI-2】面板級封裝FOPLP掀巨浪！封測雙雄搶攻次世代霸權",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiggNBVV95cUxOQ0l5ZDBORVR3S1lIelN3RzdoSk9acDZobzBIcERMb1huMkJnRnhsU2xnbGdMendnalB0N3ZUa3pNclRGaGVISUN3V1NRaGNMdExaMURXYkJGNWlTZ2dkN1RKeVprVGhza3hXZmNLLVpUNlVUb3dSYVk5MU9FN1BPX2gzSHdpTk5aMWIxSkE4WFhTVVIweW5zMHRoNFVkeTZfcTRYaFp4cDc1TmRibUlUUzJVOEVhbl9WclRnMDM5bG9ILVRFOXpneC11bGloQzlVTGR4al8yTTdoSHBiOFlTYkhQNGpwT3F3bXNhcHFxZERhSlk3TjZoSE4yb1FBOEJ1aUhwNGdGcVcyZ0gyM1VBdjhHX0thYWV3cmpnSUN5YzR5dmpXMVFMYnJtVzNEUlc4eGJOa1BfRmVCRHpMRlN5M3RKSjFKY2NzYUZkd0Z1ZnI0Z3pQbWhBS3VRX3dTTmdHWXRlcTZGTWpJczQ5MC02ZTBLNkVYUFZMdHY0Wm5ueFJndw?oc=5"
+        },
+        {
+          "title": "長單排到2031年！機電四雄狂吞AI大單 法人均點名「買進」",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9VWHpWOWdKeDdXaVVMakwtWi10VWJvYmJIVDM4eHRLMXhTc21zZHF5bDFTb1BfbFhYME1xMjZfUDAzcWRPSldLRXhGaXQ5cGJVbkVTLU5kMmE4RDBLV3o0?oc=5"
         }
       ],
-      "summary": "AI的軟硬體需求持續爆發，從晶片、載板到記憶體，整個產業鏈都獲得龐大資金挹注與技術突破，並成為各國政策焦點。",
-      "news_count": 20,
+      "summary": "AI持續在全球範圍內引領技術革命，特別是在晶片、伺服器和封裝等基礎設施領域，資金、技術和人才高度集中，儘管市場存在波動，但長期成長動能強勁。",
+      "news_count": 29,
       "first_seen": "2026-06-27",
-      "last_seen": "2026-06-27"
+      "last_seen": "2026-06-28"
     },
     {
       "rank": 2,
-      "industry": "低軌衛星通訊與太空經濟",
+      "industry": "太空經濟與衛星通訊",
       "heat_score": 90,
       "signals": {
-        "funding": "SpaceX持續擴張電信版圖，與特許通訊洽談合作推動手機通訊服務，並在AWS-3頻譜拍賣中獲勝，顯示其在衛星通訊領域的巨大投資與市場擴張野心。儘管SpaceX熱潮降溫，散戶信念不減仍瘋狂加碼，反映市場對其長期潛力的信心。",
-        "hiring": "SpaceX的持續擴張和新服務的推出，預計將帶動相關工程、技術和營運人才的需求。",
-        "policy": "美國聯邦通訊委員會（FCC）的頻譜拍賣（如AWS-3）顯示政府在通訊基礎設施上的政策引導，SpaceX等公司積極參與，代表政策支持與市場發展同步。巴林指控伊朗利用無人機攻擊，以及以色列對黎南的無人機空襲，凸顯無人機技術在國家安全和軍事戰略上的重要性，可能促使各國加強對相關技術的研發與管制。",
-        "technology": "SpaceX的衛星通訊技術持續進步，不僅提供網路服務，更拓展至手機通訊。無人機技術在軍事衝突中的應用日益頻繁，顯示其技術成熟度與戰略價值。"
+        "funding": "SpaceX即將加入Nasdaq 100，這將帶來大量的ETF被動買盤，顯示資本市場對太空產業的看好。SpaceX同時也是AWS-3頻譜拍賣的贏家之一，顯示其在衛星通訊領域的擴張。",
+        "hiring": "雖然新聞未直接提及太空產業的徵才動能，但SpaceX等公司的持續擴張和新技術研發，必然帶動相關領域的人才需求。",
+        "policy": "SpaceX加入Nasdaq 100，反映了監管機構對其市場地位的認可。AWS-3頻譜拍賣的結果，也顯示政府在頻譜資源分配上對太空通訊產業的重視。",
+        "technology": "Elon Musk提出的軌道數據中心概念，儘管受到SoftBank CEO的質疑，但仍顯示太空技術的創新潛力。SpaceX在衛星通訊領域的持續發展，預示著更廣泛的連接能力和數據服務。"
       },
       "leading_indicators": [
-        "SpaceX星鏈(Starlink)用戶數及服務覆蓋範圍擴張",
-        "各國對低軌衛星通訊及無人機技術的政策法規變化",
-        "衛星發射頻率與成本變化"
+        "SpaceX等太空公司的新發射任務數量與成功率",
+        "低軌衛星通訊服務的用戶增長與覆蓋範圍",
+        "太空技術相關的專利申請與合作案"
       ],
       "us_stocks": [
         {
-          "name": "SpaceX",
-          "ticker": "PRIVATE"
+          "name": "SpaceX (非公開，但影響相關供應鏈)",
+          "ticker": "N/A"
         },
         {
-          "name": "美國電話電報(AT&T)",
-          "ticker": "T"
+          "name": "波音",
+          "ticker": "BA"
         },
         {
-          "name": "威瑞森(Verizon)",
-          "ticker": "VZ"
+          "name": "洛克希德馬丁",
+          "ticker": "LMT"
         }
       ],
       "tw_stocks": [
         {
-          "name": "啟碁",
-          "ticker": "6285"
-        },
-        {
           "name": "昇達科",
           "ticker": "3491"
+        },
+        {
+          "name": "穩懋",
+          "ticker": "3105"
         }
       ],
       "evidence_news": [
         {
-          "title": "SpaceX擴張電信版圖！與特許通訊洽談合作、推動手機通訊服務",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5Pem5pUjJyYUxST2xjX0dXOWRrZzFLYzZtTFM2R29nQVUzaWJZMmtNd1VmVEdMenZXenFZZHU5OFdsMjcybWNLYnp2U0c0R3c?oc=5"
+          "title": "It's Official: SpaceX To Join Nasdaq 100. Here's When It'll Join.",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYmowMXUxWlp0QzZHSmowSGhmVDdvcjh4YkR4QVd3VXJPekJvZVhoQlRLdWpwOW5UM3VUMENZQ0NmLXVVVnU1ODBadXBrVHhnV080aUNFRXNhNlgyQnNDc2prUVJ2RWxZcGZjMzRURjVOUFllV3JNVE1VUjBvWUJDREpfc04?oc=5"
         },
         {
-          "title": "「馬斯克總有些花招可以扭轉局面」！SpaceX熱潮降溫 散戶信念不減、仍瘋狂加碼",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE54V3ZseHRZQ0Vsc3U0ZFhMbVE1WkpXSnUwcFJhbklLOG56UGRYeVIzalJBRzlINkRMU2JZVVRTVTN6RFB0TU5xbkxYRGlkWEk?oc=5"
+          "title": "SoftBank’s CEO isn’t the only one with questions about Elon Musk’s orbital data center hype",
+          "source": "TechCrunch",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTFp4UVd3elBlbEk3ckxIOW5LckZ0YS15dWhkNnJGaFVHb3BNSEJlWldteFlGUVdBbnp0emFwWldpWjhlUWoyUDVMNlAtZFFheVM0UWlBbnY4OGItOTNfR2ZWaGFLNjlIZ0xDMlFYWWx3UFQxdlVSSHAtczdGUEJhVlJEd1ZxbWFmV2JONS1oZGM3bDc3dlJfYlVnU292aczBX3dNcXViVV9SVWtYRzBwVGVhWjhmdFZpTmdFNmoxWEtC?oc=5"
         },
         {
-          "title": "新／遭無人機攻擊 巴林怒控伊朗破壞和平",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxOd1JuNlppcDdfc2F0OHhZMzY3VTNUc3NMVDM0MVdDN0VMMEZLU3ZfVVJ3d280UTJiOUJ0OW0wSG1XaFdXTFRSeldCa2VYbHpmSE84LU1uQW9TWFhHYmtZQWZOYUFKelpVY01tb1BCSGFjZ0d4MzFiVGg3NjdMamRvM3NZbHRHdm9pRzFiX1VRNlpzV1VZQzE3UW13alhqSHpxNXdVckJveXFIRF82MlNBOFFlOXAzWUhOdVRJUm5zOU8zNHFmMWhsVU9fSUlSQVRoNHpBZVBFWWVkODJsSlZ6cnBWa3BaRERfRXVOaVNKeFBDamRPeGI5aUwtVy1WZEhpNEx5UXR5OEhzYUsxYlhoQUxKWEhyNlBGQmpKRmROaDhHUQ?oc=5"
+          "title": "SpaceX, AT&T, T-Mobile, Verizon, EchoStar among AWS-3 auction winners",
+          "source": "Light Reading",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOM1BaWk8zWG9VRWVWQ3BTRzhvcWlPWk0wZmJlU1ljODVQa0NRNUNXbTNQNlFZaDlRNUNYcDNkSFRuUl9vY18wZGdmZjZfU2NSVWZWc0RWT2F2UEFPS2xNbE4wbUJZalR3elNwTjdPd2pkR0pKdEs2cTBSWjFzeFJGS1BSNllfeGxMeGc5VlRNWENxVE5hYU5qOHRUbG4tUEhTaU1Ga1Vn?oc=5"
         }
       ],
-      "summary": "低軌衛星通訊在SpaceX的推動下，正從太空網路延伸至手機通訊，並與無人機技術結合，在民用與軍事領域展現強勁動能。",
+      "summary": "太空經濟在資本市場上獲得高度關注，SpaceX的指標性地位帶動整個產業鏈的發展，從衛星通訊到數據中心，技術創新和商業應用潛力巨大。",
       "news_count": 0
     },
     {
       "rank": 3,
-      "industry": "次世代通訊技術 (B5G/Pre-6G)",
-      "heat_score": 85,
+      "industry": "先進封裝與光通訊",
+      "heat_score": 88,
       "signals": {
-        "funding": "網通大廠聚焦B5G/Pre-6G通訊基礎建設，目標打造高階電信公網基地台，顯示產業內部的研發與資本投入。SpaceX在AWS-3頻譜拍賣中獲勝，也間接反映了對未來通訊基礎設施的投資。",
-        "hiring": "通訊基礎建設的發展需要大量的研發工程師、網路架構師和設備製造人才。",
-        "policy": "各國政府對頻譜的拍賣與管理，以及對通訊基礎設施的戰略規劃，直接影響B5G/Pre-6G的發展速度和方向。例如印度政府對數位基礎建設的重視，也會帶動相關通訊技術的部署。",
-        "technology": "網通大廠的關鍵技術被認可，並聚焦於B5G/Pre-6G通訊基礎建設，代表著新一代通訊技術的持續演進與標準制定。這包括更高頻寬、更低延遲、更廣覆蓋的技術突破。"
+        "funding": "光通訊廠打入輝達供應鏈後由虧轉盈，顯示與AI龍頭連結能帶來實質營收。面板級封裝FOPLP技術被封測雙雄搶攻，顯示產業資本正在投入新一代封裝技術的研發與量產。自營商連續5週敲進切入高通AI資料中心供應鏈的晶圓代工大廠，資金流向明確。",
+        "hiring": "隨著先進封裝和光通訊技術的發展，對相關領域的研發、製程和設備人才需求將會增加。",
+        "policy": "台灣在全球半導體供應鏈中的關鍵地位，促使政府持續支持相關產業發展。雖然新聞未直接提及具體政策，但半導體產業的國家戰略地位是長期利好。",
+        "technology": "面板級扇出型封裝 (FOPLP) 被視為次世代封裝霸權的關鍵，技術突破將重新定義晶片封裝格局。光通訊技術作為AI資料中心高速傳輸的基礎，其重要性日益提升，打入輝達供應鏈即是技術實力的證明。"
       },
       "leading_indicators": [
-        "各國5G Advanced (B5G) 標準制定與商用部署進度",
-        "6G技術藍圖發布與研發投入",
-        "高階電信公網基地台的市場需求與出貨量"
+        "先進封裝技術的量產進度與良率",
+        "光通訊模組的出貨量與傳輸速率提升",
+        "主要晶圓代工廠在先進製程與封裝上的資本支出"
       ],
       "us_stocks": [
         {
-          "name": "高通",
-          "ticker": "QCOM"
+          "name": "應用材料",
+          "ticker": "AMAT"
+        },
+        {
+          "name": "科磊",
+          "ticker": "KLAC"
         },
         {
           "name": "思科",
@@ -148,35 +156,37 @@
       ],
       "tw_stocks": [
         {
-          "name": "智邦",
-          "ticker": "2345"
+          "name": "日月光投控",
+          "ticker": "3711"
         },
         {
-          "name": "中磊",
-          "ticker": "5388"
+          "name": "矽光子相關概念股",
+          "ticker": "N/A"
+        },
+        {
+          "name": "台積電",
+          "ticker": "2330"
         }
       ],
       "evidence_news": [
         {
-          "title": "關鍵技術被認可！「網通大廠」聚焦B5G/Pre-6G通訊基礎建設 目標打造高階電信公網基地台",
-          "source": "tw.stock.yahoo.com",
-          "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxQY3lYcVZNUXo4YkZXRGZEaGZQS0prVkN6VnBEbl8ybzZGMjRqNnUzQi1wcFJXbjlfWDlQUndnUXVBWDRZZG02emhSRFhrYlg4MXV1c0pqZzVMSTgycHJGSTRiYVBlWl9EMUtyS1lSZFJKcUNQbXB6OVU3OHJLLW5BRV9TUUx6akZVa243OTA0RldLR2Q4ekZNYXgyci0tZ1VQbHViMjZHR1hqVElMbkRtRlpZTHJDQk5ibXU0emVXMjRwQW4yREVVX1dQeGRPVzh1ZkdfYTNaN25RdFBfN0RGQnpCRGVLTlZQSV9mR0J0NTdzVHpRcGxaaEJaX2k4Q1RKU0dyUWc3MlpRQ2ptSmpPTUhjVzUwNUFGMTlQUEtGMlRjX0hIdVhrTkFVeFE3UXpXYTVCYU5rZlRuakxsWUlPbGE2amxLVDF6eWhKOENnVQ?oc=5"
+          "title": "打入輝達供應鏈！「光通訊廠」5月由虧轉盈EPS達0.02元 周線收黑慘崩19%",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMijANBVV95cUxOMl8tSDdsTlg4cE45OVFGU3ctT0hNTDFiU0lwVUJ5NnJETGtsX0dGSVQwSnA5UjJkSnQzQ3NsY0lUTzBPZUxNenhrcmFZTzhPSEpoaFNLNlJtOEhXTFBEZjNTb09xUlRxV2w4MG52TzR2YTJQOTFOSElhR1pNRXg3bVNQYV94X2tMQXFqMkFvaUFheDFibjFSVWNPdml2c3hMOEtlV002UGZaZ1QzQ1o0MnNVVFNmVUN0dkYyWXAwNXZRZ1RtTUtLZUF5UllTRWhOLWdZV3hOWURQc3ZmaWR5VVAxc01zMFZqSi01Z20zdXNNTnZweFR1YUNuT0I3UlRWR3VFR3JERk9XOUhMdTFSM2dIclYwUHVGNWV5NFRYWU5DRXMtSHZHTHBKYThEWEZjMTRHVGp3QXJ6Ui1iZG5ZeEFJcE8wSDlzaGFaeFVXdm1QT1dDQ1dpOE5RcmxOR2dyZmc2ZTVCRFl5c1M1SDFiVzVkeTA2ZjV3TjhNbGs0anROVUhvcTd1OWtPdmo?oc=5"
         },
         {
-          "title": "SpaceX, AT&T, T-Mobile, Verizon, EchoStar among AWS-3 auction winners",
-          "source": "Light Reading",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOM1BaWk8zWG9VRWVWQ3BTRzhvcWlPWk0wZmJlU1ljODVQa0NRNUNXbTNQNlFaaDlRNUNYcDNkSFRuUl9vY18wZGdmZjZfU2NSVWZWc0RWT2F2UEFPS2xNbE4wbUJZalR3elNwTjdPd2pkR0pKdEs2cTBSWjFzeFJGS1BSNllfeGxMeGc5VlRNWENxVE5hYU5qOHRUbG4tUEhTaU1Ga1Vn?oc=5"
+          "title": "切高通AI資料中心供應鏈！「晶圓代工大廠」週漲12.7% 自營商投69.09億元連5週敲進",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxPaWJMQU5xS3Z6aUpPWFlORmpqMnFYSkxvT09fdS1Na3dMWXFBMXJlRDhyMWJ3LVM2UkF0RDVBQlo4bTZqbDVDR2J6d0NjbGZlMWNPTmh4YkpzbnliaUptZEZWckR3azJYalpMTl9wZ1NjX1A0eFJmNzZhVGtPMkdwRDd3ZzRWZkNrUnp5R2ZKTDh3OXV4dW85SUR4OFJRSzBnRE1rOUIyNnd0Zjdpejg3UG5MaFJLcURUWVlkbzhCSmlTc0V2VHN1eElQMHJ1Z3pIVUZZZlZjVlo3anhCNFZ2bnd2bXVmdzJKeHZXM1RjTXd5R3FZc0ZuVzF5YWtaMm4yLWFSR3VPY3Vfc0lCMDNjUV9PRjF2Q01CQ0gxa1BQNmtKRWJJNG9IaFFRM1AzY3RiR2hYX1Q3T0lfTURrWVMwLWZ3ZThHYmV3TlhGZHNabVZfSkVhUmtvNmd2SGoyZXlfX2JEaVBIdE1NTnphb29mVGx3?oc=5"
         },
         {
-          "title": "As Digital India turns 11, govt bets on AI, semiconductors to drive next growth phase",
-          "source": "ANI News",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNSWkteW1DNTV3ei1OWnNWeDczc3RBWWw0dWlpbWhSSFRPVS10Zm1YTlJFZk5WRkNMaDZWUkpZNFdNQXJ1YzFieWNHVkdwejJWOHFaT0otVjlFdmwyR1dDdFBURmtJOVhzS2hnQXJBM2tlV25rbWJmMVhTdVE5UXBUNFJXLW16bWoyTjRfODR6RjVtQXlNem0wb25WUURXUl9ONUdTc2ZhNGNiUFI2Y2s4bTQ5Mmw4UTR6LXI2NHNvak1vM3d0NjNjUUJ3NzZBZlU?oc=5"
+          "title": "【化圓為方拚AI-2】面板級封裝FOPLP掀巨浪！封測雙雄搶攻次世代霸權",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiggNBVV95cUxOQ0l5ZDBORVR3S1lIelN3RzdoSk9acDZobzBIcERMb1huMkJnRnhsU2xnbGdMendnalB0N3ZUa3pNclRGaGVISUN3V1NRaGNMdExaMURXYkJGNWlTZ2dkN1RKeVprVGhza3hXZmNLLVpUNlVUb3dSYVk5MU9FN1BPX2gzSHdpTk5aMWIxSkE4WFhTVVIweW5zMHRoNFVkeTZfcTRYaFp4cDc1TmRibUlUUzJVOEVhbl9WclRnMDM5bG9ILVRFOXpneC11bGloQzlVTGR4al8yTTdoSHBiOFlTYkhQNGpwT3F3bXNhcHFxZERhSlk3TjZoSE4yb1FBOEJ1aUhwNGdGcVcyZ0gyM1VBdjhHX0thYWV3cmpnSUN5YzR5dmpXMVFMYnJtVzNEUlc4eGJOa1BfRmVCRHpMRlN5M3RKSjFKY2NzYUZkd0Z1ZnI0Z3pQbWhBS3VRX3dTTmdHWXRlcTZGTWpJczQ5MC02ZTBLNkVYUFZMdHY0Wm5ueFJndw?oc=5"
         }
       ],
-      "summary": "全球網通大廠正積極投入B5G/Pre-6G通訊基礎建設，在政策支持下，技術持續演進，為未來萬物互聯奠定基礎。",
-      "news_count": 1,
-      "first_seen": "2026-06-27",
-      "last_seen": "2026-06-27"
+      "summary": "先進封裝與光通訊技術是AI時代的關鍵基礎，特別是FOPLP的發展和與AI巨頭的供應鏈連結，正吸引大量資金和技術投入，預計將有爆發性成長。",
+      "news_count": 0
     }
   ]
 }

@@ -3,243 +3,371 @@
   "topic": "全球政經與市場動態:聯準會利率與通膨、地緣政治與軍事衝突、美中科技戰、原油與股匯債走勢,及其對股市與基金的影響",
   "raw_news": [
     {
-      "title": "西歐熱浪肆虐！德國逾攝氏41度高溫瑞士關閉核反應爐| 世界萬象| 全球",
-      "source": "UDN",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1mSHphLU42bzJNSWItUDhwUXlvc3R5aHBvVzQxVkJEWFFSdVBoRE52dmtBOWstc0EyaGJlazUzUG5WUFdqOTZ6RHVWa0NrMUx2?oc=5",
-      "summary": "西歐熱浪肆虐！德國逾攝氏41度高溫瑞士關閉核反應爐| 世界萬象| 全球 UDN歐洲熱浪襲擊 瑞士冰河流失日提早3個月到來 rti.org.tw丹麥1小時內兩度翻新高溫紀錄 德國捷克破40度 經濟日報熱浪來襲法國急診爆滿 政府祭「禁酒令」減輕醫護負擔｜20260626 公視晚間新聞 公視新聞網PNN歐洲氣溫飆破40度！法國民眾瘋搶冷氣爆推擠釀多人死亡| 國際 Newtalk新聞",
-      "published": "2026-06-27T20:41:53+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "丹麥1小時內兩度翻新高溫紀錄 德國捷克破40度",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606280009.aspx",
-      "summary": "（中央社哥本哈根27日綜合外電報導）丹麥今天兩度改寫歷史高溫紀錄，最高來到攝氏37.0度；這波熱浪也席捲歐洲各地，德國、捷克同樣刷新高溫紀錄，雙雙突破40度。",
-      "published": "2026-06-27T20:21:32+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "中國異議人士數度逃亡終成功 紐時：已抵加拿大",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606280008.aspx",
-      "summary": "（中央社多倫多27日綜合外電報導）上個月駕駛橡皮艇逃往韓國的中國異議人士董廣平（Dong Guangping），今天接受「紐約時報」訪問時表示，他人已飛抵加拿大。",
-      "published": "2026-06-27T19:20:29+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "升息概念股 法人大點將 永豐金、遠東新等有望吸引買盤進駐",
-      "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9jaDQyTWN1TVpsUTFmV01NRWlNblY1ZlByZC1WTEZQOWNaWkRZQzNQbFg4X3hGTzItRzVMSWpmd1NtNzE2VmJVQVpXTGJ3RmFVdVdWZkdTVGQyd9IBX0FVX3lxTE8tb1dKdGp1V1lOUEw2TWhIOU5pZW92Rl9tMVh2ZHVLeXUtczUzM2ZlOG5RR1ZvTUVJSUZZVnFwbGJVdUUtdTgtYUpac2k0VEE0WklWQXl5alpQQXdyTktr?oc=5",
-      "summary": "升息概念股 法人大點將 永豐金、遠東新等有望吸引買盤進駐 經濟日報",
-      "published": "2026-06-27T18:47:38+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "委內瑞拉強震 18天大嬰兒受困32小時獲救",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606280006.aspx",
-      "summary": "（中央社卡拉卡斯27日綜合外電報導）委內瑞拉連環強震今天傳出瓦礫堆中的奇蹟，1名僅18天大的嬰兒在受困32小時後幸運獲救。不過官方同時證實，這場雙重強震造成的死亡人數已攀升至1430人。",
-      "published": "2026-06-27T18:05:24+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "中東戰爭加劇伊朗通膨 6月飆88.6%、食品價翻倍",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606280005.aspx",
-      "summary": "（中央社德黑蘭27日綜合外電報導）官方今天公布的數據顯示，原本就因國際制裁而深陷惡性通膨的伊朗，在中東戰爭的衝擊下，今年6月的通膨率已飆升至88.6%，來到高點。",
-      "published": "2026-06-27T16:55:21+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "阿富汗東北部規模6.1地震 首都喀布爾感受強烈搖晃",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606270213.aspx",
-      "summary": "（中央社喀布爾27日綜合外電報導）美國地質調查所（USGS）資訊顯示，阿富汗東北部今天傍晚發生規模6.1地震，法新社記者在首都喀布爾和其他地區都通報感受強烈搖晃。",
-      "published": "2026-06-27T15:05:58+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "日本遭雙颱侵襲後災情頻傳 已釀3死數傷",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606270209.aspx",
-      "summary": "（中央社東京27日綜合外電報導）受到今年第7號颱風「米克拉」與第8號颱風「無花果」以及梅雨鋒面帶來的豪雨影響，日本多地傳出淹水、土石流災情，截至當地時間今晚7時，已經有3人喪命、數人受傷。",
-      "published": "2026-06-27T14:36:47+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "老牌上櫃食品廠傳噩耗！德麥獨董辭世 公司發重訊證實",
-      "source": "tw.stock.yahoo.com",
-      "url": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxNVW1VYUUzZzZJVk1UcWx6QWVWbzdudXlyUFBhc1R5YkMyc2VtaW41bHgyVGJiNERmLXlEWVd4Q3BQMzQyYmpnU1U3YmdIWW1PUUgxakQycUxMUVc4c3BZMUoyeW04bUtJMUxnM0RxRTR0SmFKVmV6THRMZmhOXy1Qdk1kYmhjZlRnTFl3NlJwRmVwODJ2emtObkVBSUpaNC1UUmlLa3k5VUt5V1NYM09JN1RGTWR6ZFdPdnB0TDhwUGs2T25Tc3Y3QUdleURyXzdQZ2dYSC1xczBsc3ZNWGIwdGZNeUVXR3BrXy1RMFJobE9vcjVyeDl1R0Z5OG5BVGh3TnpDSk5PamVaaFdSWENBSWtMWS1mdnJYSHNFT2JQOHlTUy13a3h3eV9ZUUQ1akFoM2NnZXJQUmI0RVZFakNSZGNESXV2THVTV2JLeFZpdmdoa255ZWU2VXZoTTE3OGR6aVNNZnBoeUw3U3AzczNleV9R?oc=5",
-      "summary": "老牌上櫃食品廠傳噩耗！德麥獨董辭世 公司發重訊證實 tw.stock.yahoo.com上櫃食品公司「德麥」獨董辭世！公司發布重訊證實 ETtoday財經雲食品大廠「德麥」獨董楊蒂敏離世公司證實：深感哀悼- 上市櫃 旺得富理財網台灣食品大廠獨董「驚傳辭世」 公司發重訊證實了 Yahoo新聞任職逾10年！台灣百億食品大廠獨董「驚傳離世」 公司證實：深感哀悼 FTNN 新聞網",
-      "published": "2026-06-27T14:30:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "破紀錄高溫擴散至北歐 丹麥測得攝氏36.6度",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606270208.aspx",
-      "summary": "（中央社哥本哈根27日綜合外電報導）北歐國家丹麥的氣象機關表示，丹麥今天測得有紀錄以來最高氣溫，在東部的奧登斯（Odense）北方出現攝氏36.6度，打破1975年8月創下的原先最高溫紀錄36.4度。",
-      "published": "2026-06-27T14:23:44+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "今彩539第115156期 頭獎1注中獎",
+      "title": "中國汽車歐洲市占首破10% 德國車業有永久萎縮之虞",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606270206.aspx",
-      "summary": "（中央社台北27日電）今彩539第115156期開獎，中獎號碼32、04、31、14、21；派彩結果，頭獎1注中獎，獎金新台幣800萬元。",
-      "published": "2026-06-27T14:08:40+00:00",
+      "url": "https://www.cna.com.tw/news/aopl/202606280075.aspx",
+      "summary": "（中央社柏林27日綜合外電報導）中國汽車上個月在歐洲新車銷售占比首次破10%，歐洲消費者對配置更高、價格更低車型趨之若鶩；與此同時，德國汽車製造商則紛裁員減成本，德國這項核心產業有永久萎縮之虞。",
+      "published": "2026-06-28T04:26:02+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "大众汽车深陷危机 “中国车型”能否解围？",
-      "source": "德國之聲 DW 中文",
-      "url": "https://www.dw.com/zh/大众汽车深陷危机-中国车型-能否解围？/a-77734274?maca=chi-rss-chi-all-1127-rdf",
-      "summary": "大众汽车或将全球再裁员数万人。面对来自中国日益激烈的竞争，这家汽车巨头将如何应对？大众总部所在的德国北部下萨克森州州长利斯主张另辟蹊径。",
-      "published": "2026-06-27T14:03:00+00:00",
-      "origin": "德國之聲 DW 中文"
-    },
-    {
-      "title": "酷热+雷暴：创记录高温下的德国日常",
-      "source": "德國之聲 DW 中文",
-      "url": "https://www.dw.com/zh/酷热-雷暴：创记录高温下的德国日常/a-77734949?maca=chi-rss-chi-all-1127-rdf",
-      "summary": "连日来，德国民众在滚滚热浪中煎熬。本周末预计还将出现强雷暴天气。德国铁路、养老院和居民生活都受到严重影响。“周五为未来”运动组织者表示，最有效的保护是气候保护。",
-      "published": "2026-06-27T14:01:00+00:00",
-      "origin": "德國之聲 DW 中文"
-    },
-    {
-      "title": "美光財報炸裂、蘋果卻跌！陳鳳馨揭AI供應鏈「兩個世界」：它們苦日子才開始",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMitwNBVV95cUxOZ3pUelVmSENjWjVWaWhoQUhVQm5ENXdhVFY0MnFaQ1cybF9BVmdPYkdxYXlnQzQ2cGVwZ3BEVTA4c0lSb0RvWV9nVWUzYnBrdWFxOGVDZXJLWXpGcGpYcnZpMUFUR2ZDak9vRFZ0aERoVDZHYlZ3cDhkdEhNTXZ1eTBIRy02YmktU1AxMWVWOUJuNVliTUNINXJKMnBtb3dqbE91ejI0dWFJV2Y1d2tpTldwcHBmeFRSc3ItUUNGTlRBSVZkaEdVbGxGU2lWZUdrUUFpdUxkelJHSmk5NWhhcmNTdDBfeVVmdDJucE5RUkFwUnpsTzV4UU5OZ25PTFRSVmtZdWNlX2ZGa3NMV2RaMTBzQTE4dEUyOXotd2JIQndiaUFGbi1yaGMzX0FkeVRKbGU3S09xT25OMjRySE1fbFNNSmhldnhWR0kxdmJiNXZGenFoZDhTTjZ6Y3FTeVVMWFRvVk9wWmRBM2Q1aDY4dWFCMTBMUUp5d3drMmI3RDY1bkhVLXhYc0duR0xHQ1MyMEpoWk1QQ1JDeGN4ek83VHQ2bEJZTnptVkxOYWRJSzR2SGdVNktJ?oc=5",
-      "summary": "美光財報炸裂、蘋果卻跌！陳鳳馨揭AI供應鏈「兩個世界」：它們苦日子才開始 Yahoo新聞美光股價有望再「翻倍」？《巴隆》：記憶體史上最嚴重缺貨潮引爆估值重估 news.cnyes.comAI記憶體太缺！美光明年毛利率竟上看90％ 目標價翻倍調升至1,570美元 UDN美光、高通接連報喜 台灣記憶體廠營運受惠 自由財經美光亮眼財報推動台灣記憶體類股上攻，超車輝達成為毛利率之王 TechNews 科技新報",
-      "published": "2026-06-27T14:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "才簽框架協議 黎南又遭以色列無人機空襲",
-      "source": "自由時報",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA0N2NzcjR3R3hUZWdlNVpHLUk2NW1Vb2oyWm1zVEFVRWZIdVREcjc3M3B2Z0JDT0lKdE55aW1lR2tHQnVpSExVN2RIdW95dVdaTnM2MV9QeUdoV0VnWV82d1I2bWV6Z9IBa0FVX3lxTE9XVmIybzUxWTUwMGROc2dzMXM2WWhHN2Z3Y2J2RHVVbmlmUkFUMVMzdi12ckpDQkRtd2NIRTRyQmdGckhPaVlBV0taUWgtb3RxZjVoTWxGMElQbWd5U2JMZjdkY2twU09iU09j?oc=5",
-      "summary": "才簽框架協議 黎南又遭以色列無人機空襲 自由時報黎巴嫩以色列簽協議 美國促和平進程 中央社 CNA分歧未解 以黎美3方協議 UDN美以黎簽框架協議 為和平鋪路 中華新聞雲／中華日報美斡旋見成果！以色列、黎巴嫩簽框架協議 news.cnyes.com",
-      "published": "2026-06-27T13:38:44+00:00",
+      "title": "世足》韓國媒體重批總教練洪明甫「重演世界盃慘案」 國會議員痛斥足協「無能且毫無原則」",
+      "source": "Yahoo運動",
+      "url": "https://news.google.com/rss/articles/CBMiygRBVV95cUxNZmM0bHIxZnZGdFVwTVN1aWs4X3ExY1VMN2pucGlDSjRqeUt6cnQxU2RKNXV6eHVnc1NIUFJKVi1ibk1PTG41bmhKMEF6UTA1Vy1YNTl0aDZ0WlQ5YmU4MVh4Ri1NOHRHSTJsQmxwRUxzM2lueWZvQk5yc053SGNucVpUVDNFTWhqcUwxYW9KTDFrNXdIRlBTeW9HV0hyellhYkFnTWtfMWhsRGYyNzh4d3dCb1M5NTVIUUdhYm1fTzNHMENJTlNvMjZYUlBaUm00bDBxSkVIZUtVa01VVThNUldGSVpaeF9jdGdiNWl0ZkFFbGpXcVNxYXFrLV95U3dQZmxSTFExdk9LOEZkdFV1dTRsbk16dW9HQUlIdnAxZDR4UFllTG0xRlFxT3p4TmUxZWh5Z0s1ZzFvWXVXSUoxeEwyWmJPbVlmN25qQUZ6UVV6VWJJQS1KNHdhMEw4UlpIc3B2RWZSTHRpdUstZkpEQl9KMDJHTUF3TXAtTUJDRjMycTBCSjlaR1F4eVAyQVZFbUNsNnNxSzFSOWlzOFZaS0hpWHdHQnNNYmFDT1pVQnp5aUdNOUtwQ1pJNy1iS0NET2FGRFdPUkIxNHIza3JleTctU1ZhWXZvblQ4RnJHSmRDV0owNlA1WWVtM3NDSHNGV1hpV2tHeE5lNEpqdDBhRFRUaHI4MUphUEtNbVd0VVR4TnBTb2Y4SUpFbkNzWkotWjB5SHFJYThkc2g3MXhGMTJjNHRsTnhLUHhaalVBYWlKV09PcmZjVm13?oc=5",
+      "summary": "世足》韓國媒體重批總教練洪明甫「重演世界盃慘案」 國會議員痛斥足協「無能且毫無原則」 Yahoo運動世足》南韓確定出局！隔8年無緣淘汰賽 韓媒：孫興慜最後一舞遺憾收場 自由體育K組名次爭奪激烈！民主剛果下半場逆轉晉級、哥倫比亞碰上葡萄牙踢和 Yahoo運動韓國32強夢碎！韓媒崩潰「最慘黑歷史」 孫興慜最後世界盃悲劇收場 ETtoday運動雲世足賽／民主剛果晉級寫隊史新猷送南韓打包回家| 運動 | 2026美加墨世足 UDN",
+      "published": "2026-06-28T04:18:45+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "日本山梨強震釀12人傷！外界憂「富士山活動異常」 專家給答案了",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMihgNBVV95cUxQa19RTnZNVU90ZUJLa1p0SDhNTzZZT19ZRFE5Y0Z4X2hWRVhxTTE4R1VFRnU3My1XaTVSVmNsOTRteUV4Rm1oOU9qdVBJUGk3MkJCbjJxVTRlbzJkMmJJX1c1ck0tTkxET1ZqTDVVQlJ2OEpmN1JqNHRYc3dObHZvM2RQOHQtWmh4VXdldk80bkJmNjBQMWlabTNIb3RVdTNpRlljRUY2N3F2QnJHOFlQOGhtUFdSTUhmVFMyb1VBQXBuWktvX2hPY0JGbXUtTzNicVh3UWdMUGlBdzNJZFBkcGd4TWpObjh3cDZ1cDlhRVVwcHhVLWljSTM0b1F2NEtCVTZtdmNXSXg3Q3BMVkFiMVhSeUxFZXozcDBRRUtGbGNMalJYWmJwMWFQZF9qaDlSMWpqS00zNk90dWVnY2ZjS0NVSmZhNVdqX2tab0MxZEdaQVBKOVFOSUVpM2s1M0hld242Q1hBUUdpT19VdE91d2FCRDJhUDhBWXR1b1puNndBMWttb2c?oc=5",
-      "summary": "日本山梨強震釀12人傷！外界憂「富士山活動異常」 專家給答案了 Yahoo新聞東京也明顯搖晃！日本山梨縣發生規模5.6地震 最大震度6弱 UDN日本山梨規模5.6地震10傷富士山無異常| 國際 中央社 CNA鎧俠、TEL、MJC廠房未受地震影響 如常生產-新聞內容-基金 MoneyDJ日本山梨縣強震! 東海道新幹線班車停駛 MSN",
-      "published": "2026-06-27T12:53:38+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "後習時代 學者：中共一人專制可能走回寡頭",
-      "source": "中央社 兩岸",
-      "url": "https://www.cna.com.tw/news/acn/202606270197.aspx",
-      "summary": "（中央社記者李雅雯台北27日電）學者吳國光今天在一場講座中表示，中共領導人習近平權力高度集中，在高度個人專制體制下，接班人不太可能有發展個人專制政治力量的空間，中共領導結構可能在習後走回寡頭。",
-      "published": "2026-06-27T12:48:17+00:00",
-      "origin": "中央社 兩岸"
-    },
-    {
-      "title": "小型飛機撞上北京最高樓「中國尊」 官方時隔近一天後證實",
+      "title": "英王查爾斯報稅表上的三處「與眾不同」",
       "source": "BBC 中文",
-      "url": "https://www.bbc.com/zhongwen/articles/c8625lpy12yo/trad?at_medium=RSS&at_campaign=rss",
-      "summary": "一架小型飛機撞上了中國首都北京的最高建築——「中國尊」，官方在事發後將近一天證實一人死亡，未知事發原因。",
-      "published": "2026-06-27T12:48:17+00:00",
+      "url": "https://www.bbc.com/zhongwen/articles/crkv75e4dp2o/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "英王查爾斯於2024至2025年度繳納1290萬英鎊（1700萬美元；1.16億元人民幣；5.4億元新台幣）稅款——關於其特殊稅務狀況，我們所知的情況如下。",
+      "published": "2026-06-28T04:08:28+00:00",
       "origin": "BBC 中文"
     },
     {
-      "title": "今彩539第115156期開獎",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606270194.aspx",
-      "summary": "（中央社台北27日電）今彩539第115156期開獎，中獎號碼32、04、31、14、21。3星彩中獎號碼374，4星彩中獎號碼5097。",
-      "published": "2026-06-27T12:42:09+00:00",
-      "origin": "中央社 財經"
+      "title": "中俄轟炸機聯合飛行 日本戰鬥機緊急升空",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280069.aspx",
+      "summary": "（中央社東京28日綜合外電報導）日本防衛省統合幕僚監部（類似國防部參謀本部）27日表示，中國與俄羅斯的轟炸機在日本周邊共同飛行，日本自衛隊的戰鬥機已經緊急升空因應。中俄軍機並未進入日本領空。",
+      "published": "2026-06-28T04:05:49+00:00",
+      "origin": "中央社 國際"
     },
     {
-      "title": "黃金迎來重大逆轉！4大跡象反彈行情幾周內爆發？",
-      "source": "自由財經",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5pSXFlU1BTbEV2My1DcWRsdXlkVGpRRGw3X2N5LW1PbUl1RVY3WlFiMUF6Qmt6V2UtNUtKRTBFUC1DU19IMDY1dmctQmV1NXNhX2ZPV3RQNDdxd2J3QklB0gFkQVVfeXFMT1QwazJLVVlMSnRENlIzUjBOdVRQdlJ5NkE1NjRFUG9FUGFjTDZfY1FaVUdrX0d6Sm90R0RoR1hVdUczWS1obU50bDZsc2RYWEJ3QWl6WGhGcjF2Y3h1SlEwNjZNNQ?oc=5",
-      "summary": "黃金迎來重大逆轉！4大跡象反彈行情幾周內爆發？ 自由財經前往 Google 新聞瀏覽更多頭條新聞和觀點",
-      "published": "2026-06-27T12:18:36+00:00",
+      "title": "中國貨車離奇開往非目的地挨罰案 由河南省升級調查",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606280068.aspx",
+      "summary": "（中央社台北28日電）中國2025年發生21輛載運冷凍食品的貨車離奇開往河南省泌陽縣，並遭罰款及查扣的上下多方勾結弊案，官方27日決定提升調查層級，由河南省政府成立省級工作專班接手調查。",
+      "published": "2026-06-28T04:01:46+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "策進會邀請香港網紅來台交流 促觀光互利",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606280067.aspx",
+      "summary": "（中央社台北28日電）為推廣台港觀光交流與南台灣旅遊，策進會委託中華民國全國商業總會於22至27日舉辦「港灣潮旅─香港旅遊達人交流團」，邀集15名香港網紅來台，藉由親身走訪屏東及高雄熱門景點，並與交通部觀光署、高雄市政府觀光局等單位交流，盼吸引更多港澳人士來台觀光，創造觀光經濟互利。",
+      "published": "2026-06-28T03:55:44+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "全家「哈根達斯買6送6」6/24起限時12天開賣，哈根達斯迷你杯、哈根達斯雪糕一次帶走12杯！",
+      "source": "Cosmopolitan",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOYk0wNzQ1T3NEQlVJMnNla1dKZTgyaXh5UkM0RWFkbFFHVXhGS250Nll2bWkxeFU0bmVJczljdTR3SEdla2hiNDVNTGJ2R1ozbVlULWVvX0dqVEZzbHBSZU1KTXdnSVQwUU40dzhUay1FaHA0Z2NHckxmeEhxQUk2ankyVjBYdw?oc=5",
+      "summary": "全家「哈根達斯買6送6」6/24起限時12天開賣，哈根達斯迷你杯、哈根達斯雪糕一次帶走12杯！ Cosmopolitan超商優惠／咖啡買一送一！7-11拿鐵2杯77元「哈根達斯買6送6」，全家霜淇淋2支55元…好康一次看 今周刊五六日咖啡優惠！7-11咖啡2杯66元 全家美式拿鐵買6送6、可寄杯 NOWnews今日新聞全家７月推「水蜜桃霜淇淋」！加碼吃２支55元，7-11哈根達斯買６送６ 食尚玩家7-ELEVEN「哈根達斯買6送6」6/26起限時5天開賣，哈根達斯迷你杯、哈根達斯雪糕任你混搭！ Cosmopolitan",
+      "published": "2026-06-28T03:48:11+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "首爾書展談雨傘運動 陳慧：生命裡不能拿走的東西",
+      "title": "日媒：日本擬導入無人潛艦 劃定防空識別區",
       "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/acul/202606270192.aspx",
-      "summary": "（中央社記者楊啟芳首爾27日專電）來自香港、現居於台灣的作家陳慧，今天在首爾書展與韓國作家趙海珍對談，向韓國讀者分享創作心情，也談到2014年雨傘運動對自己的意義，「是我生命裡不能拿走的東西。」",
-      "published": "2026-06-27T12:08:02+00:00",
+      "url": "https://www.cna.com.tw/news/aopl/202606280048.aspx",
+      "summary": "（中央社東京28日綜合外電報導）日媒引述消息人士披露，日本政府已開始評估研發並導入反艦攻擊等能力的無人潛艦，以強化太平洋一側的國防；另外，日本將評估在小笠原群島上空劃定防空識別區，以強化警戒。",
+      "published": "2026-06-28T03:23:04+00:00",
       "origin": "中央社 國際"
     },
     {
-      "title": "北京最高樓遭撞擊 路透彙整過去20年小飛機直升機失事",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606270189.aspx",
-      "summary": "（中央社北京27日綜合外電報導）目擊者表示，一架車輛大小的飛機昨天撞上北京最高建築。中國首都空域管制嚴格，事件實屬罕見。",
-      "published": "2026-06-27T11:58:56+00:00",
-      "origin": "中央社 國際"
+      "title": "GTA 6為甚麼只剩下載版？光碟大限已至嗎？",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cy8w4w19zpno/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "音樂與電影如今大多已轉向純數碼形式，GTA 6缺乏實體光碟，是否意味著遊戲產業也正走向同樣的道路？",
+      "published": "2026-06-28T03:11:48+00:00",
+      "origin": "BBC 中文"
     },
     {
-      "title": "美伊和談壓低油價 美國房貸利率持穩6.49%",
-      "source": "墨新聞-MORE News",
-      "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE81aHpZT3owX29XTG53ZEFCMVBOX3Z1THZ1cS1RbUJOUG81dThtSk83NUV1R1BGenRIeHRjRmh0UnlnZw?oc=5",
-      "summary": "美伊和談壓低油價 美國房貸利率持穩6.49% 墨新聞-MORE News",
-      "published": "2026-06-27T11:55:41+00:00",
-      "origin": "關鍵字「聯準會 利率 通膨」"
-    },
-    {
-      "title": "长平观察：“现实主义者”为什么总是脱离现实？",
-      "source": "德國之聲 DW 中文",
-      "url": "https://www.dw.com/zh/长平观察：-现实主义者-为什么总是脱离现实？/a-77733638?maca=chi-rss-chi-all-1127-rdf",
-      "summary": "特朗普称道他打过交道的所有专制政权，包括伊朗也“非常友好”，他得到了什么回报呢？时事评论作家长平指出，回避人权和民主的“现实主义者”们付出了高昂的代价，收获的是专制政权的愈加强大。",
-      "published": "2026-06-27T11:44:00+00:00",
-      "origin": "德國之聲 DW 中文"
-    },
-    {
-      "title": "西歐熱浪肆虐 德國逾攝氏41度高溫瑞士關閉核反應爐",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606270186.aspx",
-      "summary": "（中央社柏林26日綜合外電報導）西歐部分地區今天因致命熱浪肆虐，多達1億5000萬人承受攝氏35度高溫，街頭派對與音樂節紛紛取消，酒類銷售也受限。德國測得史上最高溫41.3度，瑞士核電廠反應爐也被迫關閉。",
-      "published": "2026-06-27T11:34:49+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "Pope Leo opens Consistory, asks Cardinals for frankness, loyalty",
-      "source": "Vatican News",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTXFrOEt5MGpjX3NZdmRiVUVaUHBhc3dvcEFBQTlLMWp0Ym9zQ3FKZ3F5UW8wVWx5WVZvTVF6LXBqSFl4MEswUlRIc2RYcGdOR1JjWllVOFlUWFBPU25RanJ6NkxZNU5hSjZGd28zNUFFY0o4UVpjWlF0dnZ4Wk52UnZaRjB3UEFobDJNcDA2UmdwM3B3c1BaWDNPYURIc0tMczdudg?oc=5",
-      "summary": "Pope Leo opens Consistory, asks Cardinals for frankness, loyalty Vatican NewsOpinion | It’s Time to Put This Catholic Teaching to Rest The New York TimesThe Vatican’s extraordinary talkfest The EconomistPope moves to clarify when wars are justified. Trump probably won’t like the answer. politico.euAn Evangelical Update to Just War Theory First Things",
-      "published": "2026-06-27T21:16:16+00:00",
+      "title": "歐洲局勢逆轉：盟友反目成仇！史詩級恩將仇報！",
+      "source": "《超越新聞網》",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1EVWpoWEFNZElmT21sQnd6Q3JVbm5BUGRFbVVqajc1UXRjZE00ZzFCSFdBY0RqMEZQb3BFY3llZUhfOHFmX0xQWDdYMDBydkwxMDVuZw?oc=5",
+      "summary": "歐洲局勢逆轉：盟友反目成仇！史詩級恩將仇報！ 《超越新聞網》烏克蘭重建峰會登場 基輔華沙外交齟齬蒙陰影 rti.org.tw抗俄同盟撕破臉：澤倫斯基寄還「白鷹勳章」給波蘭，兩國歷史嫌隙如何成為普亭博弈籌碼？ TNL The News Lens 關鍵評論網波蘭總理Donald Tusk：與烏克蘭起衝突是「戰略錯誤」 Yahoo新聞撤銷澤連斯基勳章掀爭議 波蘭總理警告：與烏克蘭爆發衝突是「戰略錯誤」！ Newtalk新聞",
+      "published": "2026-06-28T03:07:21+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "Former Arby’s Manager Accused of Infecting Customer with Herpes After 'Intentionally and Deliberately' Spitting on Food",
-      "source": "AOL.com",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRG5jbGxSdjJsdlEyUm1aSVFQbkhycDJHVWVtbXFHOWRDMDVfVV9YaG80TjRDOUZoaGxGeDVMLXplUTc1NnVRSHN6VDRsNE0tODF5bGRlWlVzeHE5NjJmYlBHN2d6WmhlNHNXZ2N0Ump3RUZxTU93OWtKSG5GWW4zNUpid0x1Z3Ba?oc=5",
-      "summary": "Former Arby’s Manager Accused of Infecting Customer with Herpes After 'Intentionally and Deliberately' Spitting on Food AOL.comOklahoma woman says fast-food stop led to herpes, lawsuit expands News On 6Ex-Arby's manager accused of infecting customer with herpes after 'intentionally' spitting on food, lawsuit says kare11.comCustomer says she got herpes after Arby's manager allegedly spat in her food: reports WSYXArby’s Customer Claims Employee Spit in Her Food, Causing Herpes, Says Lawsuit Yahoo",
-      "published": "2026-06-27T21:12:42+00:00",
+      "title": "美國ICE局長懸缺 川普提名前陸戰隊員施羅耶",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280046.aspx",
+      "summary": "（中央社華盛頓27日綜合外電報導）美國總統川普今天提名前奧克拉荷馬州警官、前陸戰隊員施羅耶（Lance Schroyer）擔任備受爭議的移民暨海關執法局（ICE）局長。",
+      "published": "2026-06-28T03:04:59+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "合肥民眾集結抗議建垃圾場爆衝突 成功迫使官方撤消",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606280044.aspx",
+      "summary": "（中央社台北28日電）根據社群媒體平台X帳號「李老師不是你老師」消息，中國安徽省合肥市昨晚爆場民眾抗議興建垃圾場的大規模集結抗議，進而發生警民衝突且引發交通癱瘓。在民眾強大壓力下，當地政府少見地取消建立垃圾場的計劃。",
+      "published": "2026-06-28T02:57:55+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "美國伊朗互轟報復 荷莫茲海峽戰火危及停火協議",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280042.aspx",
+      "summary": "（中央社德黑蘭27日綜合外電報導）美軍表示已對伊朗目標進行反擊，報復伊朗再度攻擊荷莫茲海峽（Strait of Hormuz）這一重要航道的船隻，這讓美國與伊朗之間脆弱的停火協議今天陷入岌岌可危的境地。",
+      "published": "2026-06-28T02:55:51+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "川普警告若重啟戰爭 伊朗將「不復存在」",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280040.aspx",
+      "summary": "（中央社華盛頓27日綜合外電報導）美國總統川普今天警告，若美國「被迫」重啟戰爭，伊朗將「不復存在」，同時指控德黑蘭當局違反停火協議。",
+      "published": "2026-06-28T02:46:46+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "歐洲熱浪爆「冷氣之亂」！陸空調賣到缺貨 二手價竟比新品高",
+      "source": "Yahoo新聞",
+      "url": "https://news.google.com/rss/articles/CBMi9wJBVV95cUxNWnFPcndkc2RrMnNSTWdSVjYwR2dJLWp6LUpHZENlSEtwSVA3MWRIczIzT1hIVWh6Wm9KMkVaNXYwYTBVRWM2MzRYWEgtUTJHbUp1Yzl4SG03R3Bzd0F5aXpxTE5oQWgxZU96LUFpRUR6XzNLamk4bmVOcUVRSXoxQzh0WHVrTk1HbVYwelRDcHg4UzAwTlRmX0FWRVJVdHU0TTdBRFVMY2J0dVRZZW1Yd2ZaaWtMdTgyMHJ4ODlQVGJHVF8zSzRPbFdMazVaUWNZZXVtNXRfM2NfUkZVSHp2UFN1S3JObVpMRlpsNjZXeVZOYjlOSXlFYlpWLTZqTDMtWU9qaTBYenVtTUJBRHhmVE1jNk5tNVFIQXVIUzNEX2JpMWhYSHIzVGNhUlE0dnlmaVZVVkxsX3JGNXFFRGtoM09lam43U2oxM1ZUeExQTFBNMEdpdEVfU05fdVlYXzdUeWItQnpoY1VMclFDRlFyYXdlSHRCOVk?oc=5",
+      "summary": "歐洲熱浪爆「冷氣之亂」！陸空調賣到缺貨 二手價竟比新品高 Yahoo新聞數百人熱死！中國空調成救命稻草 有人在歐盟境內兩天跑了200公里才搶到最後一台 news.cnyes.com丹麥1小時內兩度翻新高溫紀錄 德國捷克破40度 中央社 CNA西歐熱浪東移 多國刷新高溫紀錄醫療單位告急 rti.org.tw陸「避暑神器」在歐洲賣爆在法華人：今年命是它給的- 兩岸 工商時報",
+      "published": "2026-06-28T02:40:28+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "韓媒酸「富裕的台灣，貧困的台灣人」！台網2派戰爆：韓國沒資格說",
+      "source": "Yahoo新聞",
+      "url": "https://news.google.com/rss/articles/CBMihgNBVV95cUxQX3doVkRlTmVVdEpNdjFCZlR6dGIzcFU2N011SWlJQ2lQRm5kcThrbDE3ZjZ1UVZUSXZFQlFZeFI3S2lhTjRmX2hVNmMyZDRhNlEyTDhmQ3pyTHEtcXcxbHhzSG8xQWFsTWxOcUJTclJIcVgzMVRvTnYxQVBKeFV3TkloS3lCN3l1LXJxMXZSd3Y2UFNEZnIzV0t6ZjlDcjRWa2hZOThqQlFhM3JjSDBnVTJha21iYTg3NllaZ2NiaktqSTRMTENVT0JZQkFLY2RHRzV3SWJ3RkpYdkpYQThPVlhqNFlxV2c3WkxqQXZ3UGZCcUY5ZV8xdUVmMlh3ZnFqb3NUYXl0N3FrQzV4VFdmLUN2RC1haFJLNlFWNXB1akpuN2hGRkN1elhtd241TkpqYkQtMkFXdHZiMjlxeWo0ZnR6RjY5b3YyUzdiUFcxV05CVXQ0SDVwTE54WS1DZnFsLUtLVDZ6RzNNdHVabTM3TmZZeTRDY1NWdDJkRTRwbTBlRU8tVXc?oc=5",
+      "summary": "韓媒酸「富裕的台灣，貧困的台灣人」！台網2派戰爆：韓國沒資格說 Yahoo新聞工程師獎金多到不知如何花、非科技業遭排擠：紐時直擊竹科AI榮景另一面 遠見雜誌AI 改寫台灣價值 大型投顧：不能只看出貨量 還要看台廠「定價權」新時代 經濟日報台北月薪4.5萬殘酷現實！外媒直擊：住在蛋殼區的「乞丐超人」 中時新聞網13.69％ VS 3.6％！SK集團會長崔泰源：AI讓韓經濟成長少台灣1個1 自由財經",
+      "published": "2026-06-28T02:26:08+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "手握120萬想買0050！他猶豫「該All in還是分批」 網一面倒喊：歐印刪App",
+      "source": "Yahoo股市",
+      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPMWI2Qm1uSFJGVVlnam9fQVlYZFVrVjlyd1dfZENzN2tnOVJhMnFIY3htaWgzTTRSZ1RNbEQxel9lamtyNW42RHVpUTRna3ZJZS1id2ZjakJQcjJ3M2t1WUVxNUpneEUzNEk2d1FwV1VtcThqNTFWYnd1eDdWdjdmQXdoVk9PX3BXczJjMVVjVzhhQ1BwV3V0TVdrYnEzUzhhOEkzQjJQenpGV25fSUJxUEsyMmd3Q2txUFQyYlJjbTh3MWJGYXNQdVVGMEpxYVA5TjM4MHVHTG5reDFXblROU3ZpQm83RFVLOVB1dnRWOVBCQVdCaEJoOVk4eElBTENwcmFkV3EyTlRUZDJhM2VTaGJId2VIQ2pQ?oc=5",
+      "summary": "手握120萬想買0050！他猶豫「該All in還是分批」 網一面倒喊：歐印刪App Yahoo股市高股息ETF存3年「驚覺報酬輸一半」 她果斷下車改買這3檔 東森電視投資小白求報明牌！財經專家「只推這2檔ETF」 一票網點頭：聽話買尬電 FTNN 新聞網0050該怎麼買手上有120萬資金？網喊「歐印刪App」：不用怕總會漲回來 UDN00919存3年果斷下車「報酬慘輸半」 網友改買「這3檔」 TVBS新聞網",
+      "published": "2026-06-28T02:13:09+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "涉隱匿財產與豪奢生活 阿根廷總統幕僚長辭職",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280034.aspx",
+      "summary": "（中央社布宜諾斯艾利斯27日綜合外電報導）阿根廷總統米雷伊（Javier Milei）的幕僚長今天宣布辭職。就在兩週前，他才承認向稅務機關隱瞞50萬美元的存款。",
+      "published": "2026-06-28T02:07:33+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "台股上週大跌1893點 法人：系統性回調非基本面反轉",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606280032.aspx",
+      "summary": "（中央社記者曾仁凱台北28日電）AI概念股漲多後，遭遇修正壓力，台股上週震盪劇烈，週五集中市場指數收在44571.76點，大跌1893.44點或4.07%，跌破月線，上櫃指數週跌幅更達到7.11%。法人認為，從美光亮眼財報來看，AI成長趨勢並未改變，此波台股回檔屬系統性回調，非基本面反轉。",
+      "published": "2026-06-28T02:01:29+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "《超級少女》：DC工作室高層稱漫畫巨頭須重建影迷信任",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cgmdxmdkjvyo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "作為漫威競爭對手的最新作品，這部電影是其龐大電影宇宙全面重整計劃的一部分。",
+      "published": "2026-06-28T01:56:36+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "中國人大審議律師法修正草案 要求律師堅持黨領導",
+      "source": "中央社 兩岸",
+      "url": "https://www.cna.com.tw/news/acn/202606280029.aspx",
+      "summary": "（中央社台北28日電）中國近期對「律師法修正草案」進行審議，規定律師工作要「堅持中國共產黨的領導」。中國中華全國律師協會對此表態，律師隊伍在思想、政治、行動上要與「以習近平為核心的黨中央」保持高度一致。",
+      "published": "2026-06-28T01:56:22+00:00",
+      "origin": "中央社 兩岸"
+    },
+    {
+      "title": "AI進入工地 根基營造「創新DNA」扭轉缺工困局【專訪】",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606280025.aspx",
+      "summary": "（中央社記者趙敏雅台北28日電）位於台北市萬華區「冠德萬華直興段」新建工程，由根基營造承造，開工逾3年，建物外層搭建施工鷹架，上方吊臂緩緩移動，乍看與一般工地無異。踏入逾559坪的施工現場，少了傳統吆喝聲，取而代之的是規律「嘶、嘶」聲響，只見噴漆機器人正向牆面噴灑米色油漆，遠處一名人員並未拿噴具，而是低頭滑動平板電腦監看數據。",
+      "published": "2026-06-28T01:46:14+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "周線收黑！專家看台股區間震盪、選股3重點 | NOWNEWS今日新聞",
+      "source": "LINE TODAY",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5heXpMOU9xTW9acVdiZU40UzgzUkVkbVBoSXVTNXBSOXNFcEoxMXFSNWJPc3lKcnhsVWNCZnlvb1Q3UGZTNEhqTk83MnpBVHdjTnBHeWJR?oc=5",
+      "summary": "周線收黑！專家看台股區間震盪、選股3重點 | NOWNEWS今日新聞 LINE TODAY",
+      "published": "2026-06-28T01:40:14+00:00",
+      "origin": "關鍵字「美股 台股 盤勢」"
+    },
+    {
+      "title": "中國頻擾台灣海域 美前國防官員：需監控釐清意圖",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aipl/202606280023.aspx",
+      "summary": "（中央社記者侯姿瑩華盛頓27日專電）中國近期頻擾台灣東部海域，聲稱進行海上執法行動及「海洋環境調查」。前美國五角大廈官員胡振東今天表示，進行監控至關重要，必須釐清中國真正意圖，若是為了軍事行動，就代表他們可能打算日後將該區域用於特定軍事目的。",
+      "published": "2026-06-28T01:32:09+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "武契奇數週內辭職下台 塞爾維亞總統國會提前改選",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280022.aspx",
+      "summary": "（中央社貝爾格勒27日綜合外電報導）塞爾維亞總統武契奇（Aleksandar Vucic）今天宣布將在數週內辭職，並將提前舉行總統及國會選舉。在此之前，該國的反政府抗議活動已延燒18個月之久。",
+      "published": "2026-06-28T01:31:07+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "Pope at Consistory Opening Mass: War is never blessed by God",
+      "source": "Vatican News",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPNDlXckdWZFNMNFNKU0ZjWjZFVm82RjRlazM2d1dYaE9HOHJTUno3LUctdm1UZGhtb3BfZDUwZGRSdF85NGVIOGVxTFNKVEExdl9TeENPV2E3bXNuVE1TSXdrQlVDc2RzQVc1cHdRSm1aUWtjVUJNWUF0eDczMThTZUFvelg3UW44UHJIMVZfYkMtUlFSRFJDU3JrTTBoY2hiZU56N2NzSWo1RGU2SV9xSjdB?oc=5",
+      "summary": "Pope at Consistory Opening Mass: War is never blessed by God Vatican NewsOpinion | It’s Time to Put This Catholic Teaching to Rest The New York TimesThe Vatican’s extraordinary talkfest The EconomistPope Leo XIV closes consistory with appeal to help world find God’s paths to peace EWTN NewsAn Evangelical Update to Just War Theory First Things",
+      "published": "2026-06-28T04:39:40+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Chinese dissident who fled to South Korea by dinghy arrives in Canada",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQUmVhMGxNWWpZMFk4ZlZZTUN1RThSMmI4ZUcxdVltLWc1M0lBLXc0NmFVUWltT18zbUo4dVJabThVUzBUd1Z5eGF0VE1YR1cxVFFPLTJjcmowR0F1UkJ3VDJRVkdpWjJzUlFybFYzaGtVaVA2QkRReFMzSFpEcEZaT3ptckt2cWxGMFNtWWdpQVk4b3lEVkpRa1gtMWZyaGdlTnRhRHZMM2Q?oc=5",
+      "summary": "Chinese dissident who fled to South Korea by dinghy arrives in Canada AP NewsSee more headlines & perspectives on Google News",
+      "published": "2026-06-28T01:43:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "American Airlines flight aborts takeoff in Miami after business jet enters the same runway",
+      "source": "CNN",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOMGNHREtvaTJOODVqOC1SNUVLMDZ2N0RvNUZ3UUNyeXFxYVF0bTZqZ1BDQVNkWmN5THoxcEk4OTBDLXhDeG1JZkQzSWVOcGhpTjIxQ2N4VmxwQ3B4MnF5RXo5ZWd5OVNEY1ZEQmZQV1BjWUp1U1ZzNTlvSUxPUk8tVEJNaGtva00?oc=5",
+      "summary": "American Airlines flight aborts takeoff in Miami after business jet enters the same runway CNN",
+      "published": "2026-06-28T01:42:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Amtrak's Penn Station plan includes loads of public benches, a rarity in NYC",
+      "source": "Gothamist",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNSG1MVl9vOTFLdTVpZWpGQUpxLU8tcndqenU4RWJfcU5rMlhpbkZCLVJGM1hwbmRVeC1BWHNBOFF6ek5sU2VudWZMbWxIUms3NVNXVGpTdUcwUXpzeEFXVWJvckFtVEc3azU1NGdrbTc3VmRlV0NWeFNidjRqRmNYUVNxX0s5WGdZTkhGc0FfUUtBMllNbEJDZWNzRTl3WEdMS3U0?oc=5",
+      "summary": "Amtrak's Penn Station plan includes loads of public benches, a rarity in NYC GothamistTrump Administration and the M.T.A. Clash Over Penn Station Redesign The New York TimesPress Boxed: MTA Boss Accuses Amtrak's Byford Of 'Gamesmanship' With Leaked Letter About Penn Station Streetsblog New York CityNY’s MTA Chief Rejects Trump Deal on Penn Station Renovation Bloomberg.comTrump administration and the MTA clash over Penn Station redesign Inquirer.com",
+      "published": "2026-06-28T00:29:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Lib Dems face call for inquiry into deselection of election candidate",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBFdUR3V2wxZUdfUWVkaUYzZ0dkS1puUGlaS3E2Yk45c3RrRU82Rzdsc1ZELUdJV0x0eEwxS1R1aVIteXh3UHktM0FLVHZiLTBCZS1sQUplaDN5Zw?oc=5",
+      "summary": "Lib Dems face call for inquiry into deselection of election candidate BBC",
+      "published": "2026-06-27T23:43:34+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "“I Grit My Teeth When I See It”: People In Their 60s, 70s, And 80s Are Sharing The Modern Home Trends They Simply Cannot Stand",
+      "source": "BuzzFeed",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE8zLWxvaE5pR2Z3ZS14ZnYtSjM3UUhlcWlzTkNnMzdEczh2ZHZ3dU5MMXNkaDNPWWpqNVpwYmVEbnZaQzd1Vkw2eVl3UmhyT1U1SUtaNnRXU1R5Z0xtWC1CU1NSUGxSemwyYVV4SU1EYVNTQQ?oc=5",
+      "summary": "“I Grit My Teeth When I See It”: People In Their 60s, 70s, And 80s Are Sharing The Modern Home Trends They Simply Cannot Stand BuzzFeedPeople Are Sharing The Terrible Home Design Trends That Are Found In Many Newer Homes BuzzFeed",
+      "published": "2026-06-27T23:31:02+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Why North Korean leader Kim Jong Un never talks about his mother, Ko Yong Hui",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0zemRCT0kxWWFBZWFXT2ZnOVBrN3VQTFVEbGs5dXNFbW04OUh4NWtmd3daaktYWkVnMWw2SWtBMGRjNHVIU29WbUJLRldaWG1ieV9NRG83ZW5IQQ?oc=5",
+      "summary": "Why North Korean leader Kim Jong Un never talks about his mother, Ko Yong Hui BBC",
+      "published": "2026-06-27T23:10:39+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Oil refinery burns in Russia's Krasnodar Krai following reported Ukrainian drone attack",
+      "source": "The Kyiv Independent",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOR2h4eFdOQmlxM25STEdncUVQbzFRRHU5eDJHTXVxblRSbEdpaGs5eGdXTGU3TTU0VmtfQnprZkp0VTZBeWtXQ3BkWWd5Z05YTDB4STRiaFRyaWg3Y3FfenZvWjU4NFRUQ0FIZTRLVzUzZEhNWTNJc29WSzJ6TVU3YXJVRnRMUzJMZmM0SjhBUUNXNjE0Z2FubUtQQW1qX0NPRFE?oc=5",
+      "summary": "Oil refinery burns in Russia's Krasnodar Krai following reported Ukrainian drone attack The Kyiv IndependentRussia's NORSI refinery halted after drone attack, sources say ReutersMoscow gets a taste of Vladimir Putin’s war Financial TimesUkraine's Security Service strikes again Vtorovo station supplying fuel to Moscow Українська правдаUkraine Hits Key Russian Oil Facility Supplying Moscow in New Drone Strike Kyiv Post",
+      "published": "2026-06-27T22:56:50+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Russian Offensive Campaign Assessment, June 27, 2026",
+      "source": "Institute for the Study of War",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVmVwai10MDBzeXRSR1dGTFRwZlk5VkpERk5rRW9JOG1DZHNhTmRreEkyU21zbl9EV1dQTFJZaWpRSnBEalF0T0VoUW9Iak90Z29yTGlLdVJyeDF4RUwxaE4wU3dRNHg5dV80MGNIdC1SUlltbEMwWERSWjVLWVphTUYwTWtJXzF0ZVFiczd6ZW5uaWVCTzl0NXhTTmE5dnFmdkxqcnI4bw?oc=5",
+      "summary": "Russian Offensive Campaign Assessment, June 27, 2026 Institute for the Study of WarUkraine hits defence plant in Russia’s Volgograd region, Zelenskyy says NBC NewsUkraine Hits Volgograd Military Plant With Flamingo Missiles Bloomberg.comUkraine hits arms factory as Russian attacks kill two Euronews.comUkraine strikes industrial facility in Russia’s Volgograd as Russian drone attack kills 1 AP News",
+      "published": "2026-06-27T22:54:36+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Marjorie Taylor Greene Says It Is 'Awful' That 'No One Is Standing Up For Cancer Patients' After Bayer Scores Roundup Victory In Supreme Court",
+      "source": "Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbXQxcnZvVjItTWI5c2VzZDZJSWJFaktpYUp3MjZaejVncVIyZkdFd3ZZN28zYTRYWXBwSUd0R1Jpa2MxZ3V1eHRoM3ZGQ2RxeENRbXhMdDkwV3BTQktmYmRWVGNKM2RVTXU3aXUwX2NVNFFmYkFUYWZJZHpYSVR6dE9GNjNqU2RNZi1UaEY0OHNXT1lCR3JjbA?oc=5",
+      "summary": "Marjorie Taylor Greene Says It Is 'Awful' That 'No One Is Standing Up For Cancer Patients' After Bayer Scores Roundup Victory In Supreme Court YahooSupreme Court Rejects Lawsuit Alleging Roundup Weedkiller Caused Cancer The New York TimesSupreme Court backs Monsanto in its fight against liability from popular weed killer NPRWhat science tells us about the health risks of Roundup PBSBayer’s Roundup Win Brings Company New Life—and Renews Breakup Speculation WSJ",
+      "published": "2026-06-27T22:31:04+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Javier Milei’s top aide resigns over corruption scandal in Argentina",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOQU5NLTRKRXhZck5UdGl6TjVoSjdUZmtISDNYQ2g1VzlnSUF1LW1YT0c0TVRVVTBXRDg4WWVueVkxVU5WRHF1Z2JyWFZRdWtZaFZnN0thZkpja3lwcmdaV19KQlZfYm1VRHJ3MmljUmw5a1B2RVVqWGlMWkpEd21kOXp2bE8?oc=5",
+      "summary": "Javier Milei’s top aide resigns over corruption scandal in Argentina Financial TimesArgentina cabinet chief resigns after corruption allegations ReutersMilei’s top aide and Cabinet chief resigns over spiraling corruption scandal AP NewsMilei’s Cabinet Chief Resigns Months After Private Jet Scandal Bloomberg.comManuel Adorni resigns as chief of staff amid flurry of corruption accusations Buenos Aires Herald",
+      "published": "2026-06-27T22:22:39+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Major airline announces daily flights from California to Japan amid surging demand",
+      "source": "New York Post",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPbVdPZURVck5CNV9XRmZxbjRadmhqR0YxQzM0SU5XTjIwcGVoT2Vlcm9WX3RLdUN4QUFPVGRiVnh4Nk80anBjMC1FaWI0Ui1taVNPQXZHUmdsd0R3anItY19aaWptSmtYdFJucVI0b096SDllOFNXbGtTWUt1ekZLWm1uYUgzZWNia2pMdG5TM01XWTV2WF9SWnM2X0ZmNG1hWTEyZWoyVjI1bXFtTU4zTmQ4Q0NzT29vZlNOT0Rn?oc=5",
+      "summary": "Major airline announces daily flights from California to Japan amid surging demand New York PostSan Diego-Tokyo flights to become daily due to high demand fox5sandiego.comSan Diego overseas nonstop is about to expand service San Diego Union-TribuneMore flights to Japan added from San Diego airport NBC 7 San DiegoJapan Travel Surge from US West Coast Fuels Major Capacity Expansion as San Diego to Tokyo Narita Flights Move to Daily Operations from August : You Need To Know Travel And Tour World",
+      "published": "2026-06-27T22:04:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Serbian President Vucic says he will resign within weeks",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQajRQNTlFVUtNb1ItSGkyUTQ4WUE0VkcyUWtBRHdQQk1FeUNOQmJSbFJoRFdWV3IyX0Qtb0JyOFZ3YkxxOEZ1WjNpSFRDWF8xZFJCYklNRWYyRjFfUnNaaUNZc1EyeDg3LUFEMXdWTnc4UmdEdDhHWlpscE1felVGQVVJaWZCVXlZb0lTM1UyamRlMk50SElvQ25fSTRQZUh3Q1pTMzhqaXpJYmF1ZHp3eUpxdTNXalgt?oc=5",
+      "summary": "Serbian President Vucic says he will resign within weeks ReutersSerbian President Vucic says he will resign within weeks amid student-led protests CNNSerbia’s President Aleksandar Vucic says will resign within ‘weeks’ Al JazeeraSerbia’s Ruling Party Prepares Major Belgrade Rally Amid Intimidation Claims Balkan InsightSerbia's Vučić announces he will resign as president and campaign for ruling party Euractiv",
+      "published": "2026-06-27T22:00:31+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Iran Update Special Report, June 27, 2026",
+      "source": "Institute for the Study of War",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQMkpxcXBPSW84SElGOUt6WXc1YVZpRnRTdENrQ3ZlZ3RSUkxQTXhQcnJsbjVNQkRvdVNMY0VUajBHSEYtd3dmUEdNVThMaFdYZUFnMC1fcDJrSWItbVQ2Q1AwTjJZRUN1S0RBeVZGZm1YTG1sREo3QUlscHY0dEo4SXBsWm14ZnlyZ2NYV0l5UzZLazFF?oc=5",
+      "summary": "Iran Update Special Report, June 27, 2026 Institute for the Study of WarEarly Edition: June 23, 2026 Just SecurityWest Asia war updates on June 23, 2026 The HinduLive Coverage of the Iran–U.S.–Israel Conflict / June 25 WANA News AgencyIran Update Evening Special Report, June 23, 2026 Critical Threats",
+      "published": "2026-06-27T21:34:36+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Amazon Prime Day offers a glimpse into U.S. consumer as shoppers navigate with pinched wallets",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNUHUyM0NkZ1RsMWg1RDVkMW9WTjVEQW9rOGc2cmVYY1hRR2dTWVFISFJJYXBUeHhubWZKM0FkNHVQaTlucHl3VzlWVks1cXAwRE5wWkpPcDJfdkIwODdSZlVBaHhVOHFMbHdMeXlGWDFJXy1tMW9YUHNOLXZyYklMYVhmbGxCaDYwdDdKRnBDTTJhM2tJYkdib1FFWkU0dGxuWkhkUG9aMXJGZm9KUXVab2JxblFDaTFCXzI4dDZSYk5ONHlfMHZpTjJZeEI0MmxDZjhvRlpDQQ?oc=5",
+      "summary": "Amazon Prime Day offers a glimpse into U.S. consumer as shoppers navigate with pinched wallets ReutersAmazon Prime Day offers a glimpse into the U.S. consumer as shoppers navigate with pinched wallets CNBCAmazon Prime Day Total Online Spending Beats Estimate on Day One Bloomberg.comAmazon's record Prime Day masks a darker truth: Americans are spending more and getting less FortuneAdobe Reports Strong Online Retail Growth During Summer Sales GuruFocus",
+      "published": "2026-06-27T21:32:27+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "We Investigated Damage From Iran to a U.S. Naval Base. Here’s What We Found.",
       "source": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQUNWcTQtQlFxcFktbGRTa2tINnBIU3NLS0hkWUM5ekRrWjBxZEhvMXRQelB3RHBCN3NpdmFQM0VYV1RnSGoxbjRYZHdjVzJtNkV1M05LbVp3dmpZZ1RYb2Q0cEZqUl9tWHRoYWN6OGpsSjA5bmZEN3NxTnVZNkVGWXBoTFhiVVR4RHZTTlpORHhTQnExRXpyRFo3ejZzbktKNEwzOWFRSERDWHdxcEI5ZWR3aS1nakJsamJV?oc=5",
-      "summary": "We Investigated Damage From Iran to a U.S. Naval Base. Here’s What We Found. WSJUS considering moving Gulf bases hit by Iran westward, including to Israel — report The Times of IsraelIran Rained Drones On Major US Base. It Made America Rethink Its War Strategy NDTVHow Iran Devastated an American Naval Base—and Caused a U.S. Recalculation WSJUS considering moving Gulf bases damaged by Iran to Israel Middle East Eye",
+      "summary": "We Investigated Damage From Iran to a U.S. Naval Base. Here’s What We Found. WSJUS considering moving Gulf bases hit by Iran westward, including to Israel — report The Times of IsraelIran Rained Drones On Major US Base. It Made America Rethink Its War Strategy NDTVHow Iran Devastated an American Naval Base—and Caused a U.S. Recalculation WSJMDAA Alert: “How Iran Devastated an American Naval Base” Missile Defense Advocacy Alliance",
       "published": "2026-06-27T21:00:00+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "Serbian President Vucic says he will resign within weeks",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQajRQNTlFVUtNb1ItSGkyUTQ4WUE0VkcyUWtBRHdQQk1FeUNOQmJSbFJoRFdWV3IyX0Qtb0JyOFZ3YkxxOEZ1WjNpSFRDWF8xZFJCYklNRWYyRjFfUnNaaUNZc1EyeDg3LUFEMXdWTnc4UmdEdDhHWlpscE1felVGQVVJaWZCVXlZb0lTM1UyamRlMk50SElvQ25fSTRQZUh3Q1pTMzhqaXpJYmF1ZHp3eUpxdTNXalgt?oc=5",
-      "summary": "Serbian President Vucic says he will resign within weeks ReutersSerbia’s President Aleksandar Vucic says will resign within ‘weeks’ Al JazeeraSerbia’s Vucic Says He Will Resign Soon to Help Party in Vote Bloomberg.comSerbia’s populist President Vucic says he will resign within weeks as election nears AP NewsSerbia's President Vucic announces plans to resign within weeks The Kyiv Independent",
-      "published": "2026-06-27T20:06:57+00:00",
+      "title": "Benjamin Netanyahu announces government plans, Knesset members lash out",
+      "source": "The Jerusalem Post",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1jakd6UldXVGNNelAyaVdoNjR2eWthdExpQmVTdm40S0RET2gtZUhHWUp2dTl5S1lYVFpfRExiTUNta01RNEpEYUVzM3dUVUoyQTJCY2pnWllidkFNQ202U0k0WXZpd29sZXBxUy1ncWgtOEFWa044NVA3UQ?oc=5",
+      "summary": "Benjamin Netanyahu announces government plans, Knesset members lash out The Jerusalem PostNetanyahu claims he wants 'broad national government,' falsely says Haredi draft evaders being arrested at yeshivas The Times of IsraelNetanyahu says he wants broad coalition after Israel election Middle East EyeNetanyahu plans ‘broad national govt.’ after Israel vote The HinduNetanyahu declares intention to form 'broad national govt' after next election TRT World",
+      "published": "2026-06-27T20:46:44+00:00",
       "origin": "Google 世界頭條"
+    },
+    {
+      "title": "SoftBank’s CEO isn’t the only one with questions about Elon Musk’s orbital data center hype",
+      "source": "TechCrunch",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTFp4UVd6UGVsSTdyTEg5bktLckZ0YS15dWhkNnJGaFVHb3BNSEJlWldteFlGUVdBbnp0emFwWldpWjhlUWoyUDVMNlAtZFFheVM0UWlBbnY4OGItOTNfR2ZWaGFLNjlIZ0xDMlFYWWx3UFQxdlVSSC1zN0ZQQmFWUkR3VnFfYWZXYk41LWhaYzdsNzd2Ul9iVW5Tb3ZaczBXc01xeGJVX1JVa1hHMHBUZWFaOGZ0VmlOZ0U2ajFYS0I?oc=5",
+      "summary": "SoftBank’s CEO isn’t the only one with questions about Elon Musk’s orbital data center hype TechCrunchMasayoshi Son Dismisses Musk’s Idea for Orbital Data Centers Bloomberg.comWhy One of Tech’s Biggest Gamblers Is Betting Against Elon Musk’s AI Vision WSJSoftbank CEO dismisses Elon Musk's idea for orbital data centers, says building on Earth is better FortuneOrbital data centers’ feasibility gap is a governance risk Brookings",
+      "published": "2026-06-27T20:42:36+00:00",
+      "origin": "Google 財經頭條"
     },
     {
       "title": "Central Europe sizzles as heat records are smashed in Switzerland, Denmark and Czech Republic",
       "source": "NBC News",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1NSXpfVlpPMHU4TklIbmtqOFdkczl0VktyZWhRZTRSODI5dFhjYW9HY2xXNnNWUHM1cm8wVzBZMHpSZldzdi1ZT0YzUm5xZE9pUElPaF8wOGtlRUx1VVU0bXVxZlo3YUJGSzdYd3YxaHZRVkJTak1oQTRJaWg?oc=5",
-      "summary": "Central Europe sizzles as heat records are smashed in Switzerland, Denmark and Czech Republic NBC NewsTemperature records shattered in Europe as deadly heatwave moves east YahooFrance counts 74 drowning deaths since June 18 amid record-breaking heatwave Le Monde.frHeat wave blasting Europe is the worst ever recorded, researchers say The Washington PostScenes from the Paris Heat Wave newyorker.com",
+      "summary": "Central Europe sizzles as heat records are smashed in Switzerland, Denmark and Czech Republic NBC NewsFrance Is Too Hot for Shutters and Ceiling Fans The AtlanticScenes from the Paris Heat Wave newyorker.comTemperature records shattered in Europe as deadly heatwave moves east ReutersHeat Wave Takes Toll on Europe’s Infrastructure, Too The New York Times",
       "published": "2026-06-27T19:51:49+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "F.A.A. Investigates Drone Encounter at Newark Airport",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOEI0N2NNbWF1R1F0X3A1eHJNZm01eXpYZVJZc2U5SFY1TF9ONTBmUFlRLTJLSUs5UVZycXRsdzBXSXZhZzFPRUNJU01lbkVnVDBES0Vsd3RvVU1wb3BDNWNGR2VIZ3dLMWtGME9HWThfMXJwVkJyOG9FOVVodUIta2ZNSWJzWGs?oc=5",
+      "summary": "F.A.A. Investigates Drone Encounter at Newark Airport The New York TimesDrone nearly hits United plane landing in Newark, pilot says CNNUnited Airlines flight has near-collision with drone while landing at Newark Airport Yahoo News CanadaUnited jet has close call with drone near Newark Airport NJ.comUnited pilot reports almost hitting drone while landing at Newark Airport ABC7 New York",
+      "published": "2026-06-27T19:48:56+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "A Close Call With an Alberta Grizzly Bear, Recorded in Its Entirety",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdndtR1MtU1hwSl9pS3ZRdkpYOVctT01BX2d4SkdvWDNkX1VjSnNFbnl1UjM5NFMtOUZ3X1BsUlZCNFFNc3NCajR2dWtHX2V1Ti1BZnREdGFzT3ZHeWpOWTMyNE1mazJvTUZTSzRyODhhb3A0Rk9qS2dJOHItNldEaG9yZ1FCdlVnb3o1SHJpTQ?oc=5",
+      "summary": "A Close Call With an Alberta Grizzly Bear, Recorded in Its Entirety The New York TimesAlberta woman catches close encounter with Kananaskis grizzly bear on camera Global NewsViral video captures terrifying grizzly bear charge in Kananaskis CochraneNow‘Not letting him murder my dog’: Woman describes harrowing Kananaskis bear encounter CTV NewsWoman survives terrifying grizzly encounter with flawless safety techniques Upworthy",
+      "published": "2026-06-27T19:38:40+00:00",
       "origin": "Google 世界頭條"
     },
     {
@@ -251,201 +379,66 @@
       "origin": "Google 財經頭條"
     },
     {
+      "title": "Tech Equity Sales Renew AI Debt-Binge Worries",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcnNqeTJJTUY4aXQ3VWh3WUhoYzAxOVVXRjF3c0YyRVYtX2thdjBvcTRnb0d0c3Rkb1FTb0dpcDAwMUhUREVDUnRab0FpTGpYYmJZTU1fb2xweTBSNFhrR2hfb1hTc0ZRakhhZjFNZGEyY3E5eGYtNDNTLWdiX1NTU0tqMURQeWozUFlYY2plR3QyRU9SSnBZYnlkSlNJcjdmMXZjTnZCanl6a3d3emhj?oc=5",
+      "summary": "Tech Equity Sales Renew AI Debt-Binge Worries Bloomberg.com",
+      "published": "2026-06-27T19:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Thousands of Hungarians join first Budapest Pride march since Orban's defeat",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOeFg4bVBmQzRSNmhRb0h4MGJwY1VvMnJuMDJwUmpCZUJBb3ZLdy01NmJmdm1TNDV6RG1pbV9Gd0QxOW9QMnB4OE1aSXgtck9VNTY3ckJtazMzMU4zVDZHWlFGZVUtMzhiRmw3YlNXbzJHRW1zQ0l2MjZ4SG52VDhyMTBKVXNvdU1Ka25TV05lS1lST0xGWFF6Q3Y2VnlCemxzaTlEVklYeWlLQWh2MFZ2ejhZR21TVTdjekxCYVBuaWdnX0lxNXNJNzU0bw?oc=5",
+      "summary": "Thousands of Hungarians join first Budapest Pride march since Orban's defeat ReutersTens of thousands march in the first Budapest Pride since Viktor Orbán was voted out PBSHungary holds first post-Orban Budapest Pride march DW.comBudapest Pride marchers push for equality after reversed ban Yahoo‘Many are still afraid’: hope and caution in Budapest before first Pride since Orbán The Guardian",
+      "published": "2026-06-27T18:49:07+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
       "title": "The end of Putin’s regime will spring from war spending chaos, former central bank advisor says",
       "source": "Fortune",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWVdCbVdORHB3TDlrd2xSb2paRTJGc2tVaDBCbUxLQnFZLWpmMWkzVHlaa1VGYUVPX25OUVhremJTSXBuSUFUQ0EzYXBoTHZYUEh5c0hyYnlSeVJvTmJUM2hFanJYNjQwNHVadVAwcDcxMHUtbEZhZDlPLXBCcnNIQkhhMmpVQzFQQTV6MndSU1lXUERLam1DY19QMDRmUl9wN01MMlBHUTFfUVJFQjRV?oc=5",
-      "summary": "The end of Putin’s regime will spring from war spending chaos, former central bank advisor says FortuneAs the Tide Turns Against Putin, Beware the Drowning Man Foreign PolicyUkraine's drones take the war to Russia AxiosRussian hawks urge Putin to escalate war, drop US talks as Ukraine strikes deep ReutersPutin’s system is in a state of slow implosion Financial Times",
+      "summary": "The end of Putin’s regime will spring from war spending chaos, former central bank advisor says FortuneAs the Tide Turns Against Putin, Beware the Drowning Man Foreign PolicyUkraine's drones take the war to Russia AxiosAs Ukraine seizes ‘first chance to win’, war horrors come home to Russia Al JazeeraPutin’s system is in a state of slow implosion Financial Times",
       "published": "2026-06-27T18:41:00+00:00",
       "origin": "Google 世界頭條"
-    },
-    {
-      "title": "America In Focus: Key inflation gauge surges to 3-year high, mortgage rate climbs",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNTTVmdE5DcU5memNibFY5Y2ZqZ3JCU296Y0QxN1lubUR5UVNLRldWTXpfekNTaVoxNDhTclFveFFwMU5oYVNMenVvaGtpb3pGeHBjOTd1ZmtkRDJJaTlSTFRlSHZKYmIya041aHh5TE9iZ3pheG1tRVd1LWFsZGJCWWQzTjhXMVFMc3hWVUNNVjE0Mlk2WXBLMWxrTUNqbWtZcGE4?oc=5",
-      "summary": "America In Focus: Key inflation gauge surges to 3-year high, mortgage rate climbs AP NewsConsumers are still ‘begrudgingly’ spending more money as inflation rises The Washington PostCore inflation rate hit 3.4% in May, highest since October 2023, Fed’s preferred gauge shows CNBCEconomists Lift US Core Inflation Forecasts, See Fed on Hold Bloomberg.comInflation topped 4% in May, but the worst may be over CNN",
-      "published": "2026-06-27T18:39:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "The Fed Removed This 1 Key Phrase From the Inflation Report. What That Means for the Market.",
-      "source": "The Globe and Mail",
-      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPeUVXS1lVeWpSRWRSYUppME50TThNeE93cExfTmVaMlJhSDF1MGRNS09zRFNnaXFEVFZhd21fOEZTQTYtUjRYNExEeFgwVlF5c2tVU2lxemszRGxyUjhpaHNSend5YkRabFBXVGlWNHZOQVZTSy01RUo3UV9SMGlTczRCSEstUF9NWmloM29MUk5lNUtxTnJ0dHB1WGRsakxkeURGcHN4aHA5b1NMcmZaMjJuQnBObFpnTWlUcU5fV0tJNm10LWtiOXA2QXNYYW5JWDdKanp2aFpyanFBcy1EbGJzZ0p3NkJEaEs3SHBTWF84cGdZNnBWa2dsUVBlNEZ2dmhDbTVuZw?oc=5",
-      "summary": "The Fed Removed This 1 Key Phrase From the Inflation Report. What That Means for the Market. The Globe and Mail",
-      "published": "2026-06-27T18:25:14+00:00",
-      "origin": "關鍵字「Federal Reserve interest rate inflation」"
-    },
-    {
-      "title": "Strong earthquake hits Afghanistan's Hindu Kush region; no initial reports of injuries",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSGlDNE9xSkpHaHphVVptS2lhLXRrTDM5Slc2NVVFWmVNVUVFaUh4ZHJ3NUdKdzBQRjMwS2dOSENSWlNfUm02OFZoTkNoeHlLSU5QUlZUQnpHMjZTOWkxcXVuY3VyamFBTkdLdmdIQm9mNWxqOG53SWY0WmI3RVdtQkhmOV8tYV9OWG1hMFpRQjNDVVNDVUhuT3RCLXlnTGlrYkhwdjJsaEotVmQ5VU9vbzZPYjhFV2Q0R3h3?oc=5",
-      "summary": "Strong earthquake hits Afghanistan's Hindu Kush region; no initial reports of injuries Reuters5.9 magnitude earthquake shakes Pakistan and Afghanistan, no damage reported ABC News - Breaking News, Latest News and VideosTremors In Delhi, J&K After Earthquake Strikes Afghanistan NDTVMagnitude 5.4 earthquake strikes Pakistan, EMSC says The Indian Express6.2 magnitude earthquake hits Afghanistan; tremors felt across north India The Times of India",
-      "published": "2026-06-27T18:24:29+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Militant rams explosive-laden vehicle into paramilitary headquarters in Pakistan",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNN09XY3hBLUg0WUZOc3ZuZVRQSUsySjZtTVFSbWRMNTRFa3VzMjR0Y0hiODA0b2IyMG1tY1hpNHNmVENPN1Z6ajBmaV9hZXVqTWhfazJSU1NxOUxwZGpNRUJyM3RiT19rOENMcXB1MHhaNnpEZktweldza3poT1ZBcjBXZnNjb2IwMHhJdzlhbEd2TlA2RWRlQ3dUenJGSUxlOE9YamVDZzBMR3BZTHdFMmE5V2ZZVk9PRGlpM1VkSXdILUNPS0E?oc=5",
-      "summary": "Militant rams explosive-laden vehicle into paramilitary headquarters in Pakistan AP NewsThree Pakistani rangers killed in Karachi attack, Dawn newspaper reports ReutersExplosion, Gunfire In Pakistan's Karachi, 3 Army Rangers Dead: Local Media NDTV3 Sindh Rangers personnel martyred during attack on local headquarters in Karachi's Gulistan-i-Jauhar: Sindh IG DawnThree security personnel killed in attack in Pakistan’s Karachi Al Jazeera",
-      "published": "2026-06-27T18:20:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Apple wants permission to buy memory from a blacklisted Chinese supplier",
-      "source": "The Verge",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQZnZ2dlFSLTQwRW1WVDZlMVl2dVY0WWw1MzNpbXdqMzBQeGN6SU1MUlpYaU96ZGZtZTRoMkZuTmdSS0p1UlpibGNibWFfblZvNlBmYTlfUlZjTU9QZmI0R0pDXzFUWnBwcVhYSFB0NVJHYWJ4VlVmc190SlZWQ0pTRzVLbHFJdEk?oc=5",
-      "summary": "Apple wants permission to buy memory from a blacklisted Chinese supplier The VergeApple seeks to buy memory chips from blacklisted Chinese company Financial TimesApple seeks U.S. approval to buy chips from blacklisted CXMT: FT FortuneApple asks Trump admin to approve Chinese RAM after product price increases 9to5MacApple lobbying to buy memory chips from blacklisted Chinese firm: FT Seeking Alpha",
-      "published": "2026-06-27T17:28:18+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "SpaceX, AT&T, T-Mobile, Verizon, EchoStar among AWS-3 auction winners",
-      "source": "Light Reading",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOM1BaWk8zWG9VRWVWQ3BTRzhvcWlPWk0wZmJlU1ljODVQa0NRNUNXbTNQNlFaaDlRNUNYcDNkSFRuUl9vY18wZGdmZjZfU2NSVWZWc0RWT2F2UEFPS2xNbE4wbUJZalR3elNwTjdPd2pkR0pKdEs2cTBSWjFzeFJGS1BSNllfeGxMeGc5VlRNWENxVE5hYU5qOHRUbG4tUEhTaU1Ga1Vn?oc=5",
-      "summary": "SpaceX, AT&T, T-Mobile, Verizon, EchoStar among AWS-3 auction winners Light ReadingVerizon, T-Mobile Big Winners in FCC Spectrum Auction WSJVerizon bids $3.2 billion to win US spectrum licenses ReutersAWS-3 auction ends with T-Mobile and Verizon each winning differently PhoneArenaClearing C-band “will be expensive” says SES satnews.com",
-      "published": "2026-06-27T17:28:15+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Tens of thousands march in the first Budapest Pride since Viktor Orbán was voted out",
-      "source": "PBS",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPOHI2c3NBanRsNjFkNXFWamU4Q0RQbE15NTVITnJ2dVRWUDE1aFhCZDYzYnJWdXlNa0lBNWFOTmVnbGJodHNDdjJ3UTdRQktiYjk2WUdzcGFYZFhRQ0JXMVN5RUpGWF95amRHSk5kQ2VQQ2t2cEMtcVhRNm5GbHVGRU5mOGZqS2hCdlBDdGVoNEMyOEZyZk9fM2NYMlpBbVpmc2hHLUZoSERPbjFKeTdfR3lXMmxKUXQzZDNR0gHAAUFVX3lxTFBZdFMwZEVwVVpvQi1HVGxTQkl4ZnZ1b21jeU9yRjBGZDlfVVRYR3h0MHJ1M29fSk0zWUhGcWczMlpEbC1hZmFkSi0tTS1PTjN1SnBmWkthdjMxT2dkckMxZkZDcE83dDgzMG5Zd2V0Z3J4WFpENmVjbVlDNUo0cF9BeUF1RzRMT1pQcnJOQVRkRzBPZjJYSXBDYXJEYmM4c29JTlRPRmJuVEd0QlhBVVQ3azlqZmd6WEpmdzZBempMWQ?oc=5",
-      "summary": "Tens of thousands march in the first Budapest Pride since Viktor Orbán was voted out PBSHungary holds first post-Orban Budapest Pride march DW.comThousands of Hungarians join first Budapest Pride march since Orban's defeat Reuters‘Many are still afraid’: hope and caution in Budapest before first Pride since Orbán The GuardianNew Budapest police chief outlines Pride security plans The Budapest Times",
-      "published": "2026-06-27T17:06:24+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Boy, 12, saved by older brother after shark attack 60 miles offshore on Bahamas family vacation",
-      "source": "New York Post",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOZGtqT0QtYWhlX3Bva3czNmt3Y19Gd3ZwN3FraTEtbmdqREUwblpQcmpKMGhuRnVwUVQxMl9XSlh1NGEtZE5lTXFybTlxTndEMUxTUlhSNExaek1senlZdFFGY0h5M3pfLUxrbHdHa0lDcTF6cGdtME9SMTZiSGNiSUtXeXl5bU5SZDFQQndvaXBycWhaTHR0NnBrbThnN21lOFprU0o5MEJOSkdGQ0pDQkI1ckw?oc=5",
-      "summary": "Boy, 12, saved by older brother after shark attack 60 miles offshore on Bahamas family vacation New York Post12-Year-Old Boy Rescued by His Brother After Shark Attack on Family Vacation: ‘I Could See My Bone' People.com12-year-old boy attacked by shark while swimming in Bahamas - National Global News‘I could see my bone’: Friendswood boy survives shark attack in Bahamas after brother rushes to save him Click2HoustonAmerican Boy, 12, Hospitalized After Terrifying Shark Attack on Family Bahamas Tour The Daily Beast",
-      "published": "2026-06-27T17:05:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "KFC plans to test a new prototype called Open House",
-      "source": "Fox News",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTm1DTnJ4SU1uRTFWQUtGOGZmcS0yUTZHVlN2LS0yNFBRLXdzYlF6OUVHWEtJZmgteEVtdm55S2g1c3UwbGlodHlyMm1ocWp1WTFIN2J1dUhLbDZNNThpazJPMmdrc25uXzJJWEZjR1ZQb3hTMUtEZXdqWjBEdDhueHZnZEt2dHlQ0gGOAUFVX3lxTE9RcWlfcURjcG9qWVNKaEpXSXhDQ21WMUM0c1p1dW9yLVZROC1hdWkwN0lnNWtTYnNBSlI5RGFpQWdQOF9VektfUWlSV2RXU0FiemlkdHFLcFVNLWZyV3QzWkYtMWQzWENfT2wtblZyM3FKNnJ0NGtTZlpkR1daNEU5eXdIalhjX2N1RnE1eWc?oc=5",
-      "summary": "KFC plans to test a new prototype called Open House Fox NewsSee more headlines & perspectives on Google News",
-      "published": "2026-06-27T17:02:35+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Thousands of Vespas swarm Rome’s historic center to mark iconic scooter’s 80th anniversary",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNb0JNazNkT0w1YXQ2LVFuTGRHZ0Nxa2pFVDFwQ1VqZV9KUjFpdy04NlFKaUhKR3lqLXNjell2ZWRZNnFyazJ3dFhpV0hkSG9TU1hGQi1WRkk0WUFkSzRjb3hNRWhsbDV2U3o1WjZmNnpZVkpEc3lKcGJOZnJNQTF4WE5QREViWWFIRE9uZmFuQlE3aS1FSmRVbExhYnExVHdlZXNMMXB3?oc=5",
-      "summary": "Thousands of Vespas swarm Rome’s historic center to mark iconic scooter’s 80th anniversary AP NewsVespa riders take to roads in Rome to mark 80th birthday ReutersOne of Italy’s Most Iconic Rides Gets a Stunning Heritage Redesign Gear Patrol2026 Vespa Edizione Ottantesimo First Look Cycle WorldVespa turns 80: a grand parade in Rome Euronews.com",
-      "published": "2026-06-27T16:22:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Unease deepens in Russia as Ukraine steps up long-range strikes",
-      "source": "The Washington Post",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNb21kOFQySFMxVGJxUDBoRGlqdnI1R3I3M0Q2dm1OaV9yRkhSX25lV0RQem1qZFd1RkIzT3dyZ2Z5YURxSlBOMDAwMmo4blZaczdXVjF4T25iR3p6LVBIS2ExcHJ1YjE3LW9WaUdqaXg5WEwwLUZuOXY1TnNIWkZFMTV0bkJHeVZZcG1walQ3b2VaQjVEYmNRV0FTaVJSYmtObl9vN20ycjdJZw?oc=5",
-      "summary": "Unease deepens in Russia as Ukraine steps up long-range strikes The Washington PostUkraine unleashes one of its heaviest drone bombardments of Russia AP NewsUkraine launches what appears to be one of its largest drone attacks against Russia: report Fox NewsUkraine decimates Russian logistics, bringing chaos to Crimea Al Jazeera‘Morale bombing’ Moscow is not justified | Letter The Guardian",
-      "published": "2026-06-27T16:00:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "United Airlines flight has near-collision with drone while landing at Newark Airport",
-      "source": "Yahoo News Canada",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdjFELUxrSlQ0eTYtM0lDOVUwTDlrb2FQLWkzeXV2cDJDaHRxZUVhS3lrdHNUSmh3N1ZaYjdGeWhnSHZoRmQyMmtWN1A4X0s5WWdCekh5SFJHRWdmYW55NVpRSkFMVHYtcDc2VDNNa1RYbEhpcTZ5MVFrLWhGVkNDMVlmUko?oc=5",
-      "summary": "United Airlines flight has near-collision with drone while landing at Newark Airport Yahoo News CanadaDrone nearly hits United plane landing in Newark, pilot says CNNUnited pilot reports almost hitting drone while landing at Newark Airport ABC7 New YorkF.A.A. Investigates Drone Encounter at Newark Airport The New York TimesUnited Airlines flight almost hit drone ‘100 feet below us’ in scary near-collision at Newark Airport New York Post",
-      "published": "2026-06-27T15:57:40+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Dow Jones goes in hard on Verizon",
-      "source": "thestreet.com",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZXgxZzNncGtaOWJQVmk1V09HT0dPSFUtZEVyd3gxaWZ3cVhVeXcwNVFsQ244aFpaNFdIdk5YWGhpZk1CVXl0aWlGZlJMSEtqb3FUeXRHYjE4cHk5dmhvd3lOcUxodk1QRUt1SGs5YkhIR1Q4WkJyTXhQc3BPN1YtUWZSYTQ0MXRTU2dWMnJUaE8?oc=5",
-      "summary": "Dow Jones goes in hard on Verizon thestreet.comAlphabet Joined the Dow—and It Didn’t Help. What to Do With the Stock Now. Barron'sAlphabet added to Dow Jones Industrial Average, replacing Verizon CNBCGoogle-Parent Alphabet to Replace Verizon in Dow Jones Industrial Average WSJAlphabet makes the Dow look more like the Nasdaq Yahoo Finance",
-      "published": "2026-06-27T15:17:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "How Domo Went From a $2.8 Billion Darling to Fighting for Its Survival",
-      "source": "Business Insider",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPLTJ5Yi0wWFlPWEFYRzRmczhCZktrbS1KZnFBY0stb09oMVpVRWRvUVB6djRhb29QWXcya0xaQ2poNHZIX1hRdjVfOE50bE42WjZ3ZTg1VXNyR0JxNHExM2pFdUtGN3dwVVBjVnFXaUlTcXhxRzhQRHBWV3VQMlBfLWxkZmZhZDBaejZrQQ?oc=5",
-      "summary": "How Domo Went From a $2.8 Billion Darling to Fighting for Its Survival Business InsiderSee more headlines & perspectives on Google News",
-      "published": "2026-06-27T15:16:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "2 tropical storms pound Japan with floods and landslides, killing 1",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUHJCNzlnVE12LU51OWtkZVh2bHpLbFFneXdmbVB2bk5GOG9VSTctV0xEQU04a0VuSVJxVTdxSTVxRFdQSzRCZ2ptTWtlUE5UVDBNcktZNTBGcWRnMGctVXhQc3gwVWlTUkFyU09CMWp4X2ZqT3BmY0kxT1ZBLVhlR3BPOXZDUWxU?oc=5",
-      "summary": "2 tropical storms pound Japan with floods and landslides, killing 1 AP NewsJapan weather agency warns typhoon to make landfall over weekend Japan Wire by Kyodo NewsTwo tropical storms bring heavy rains to parts of Japan The Japan TimesFlights disrupted in Japan as 2 tropical storms move in DW.comJapan braces for double storms, torrential rains shut down parts of Taiwan Reuters",
-      "published": "2026-06-27T14:35:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Billionaire Jeremy Grantham Dismisses Bitcoin, Says Crypto Will Fade 'With a Whimper'",
-      "source": "Decrypt",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOV09GOUhVWlY2SmRpdjB5b0hhUW9BMld1cndPQUdNVzVpR1prdFN3S0ZObWtmQUhhWm1UX2tDWVJNOTJZTXFYT2NBN190a2JVTUI5RVZ3WVVBRGx2UzhoMElfenBLZWVtVW85WHZsVGNOZXJMcFoxTTJNSjk5QnZjODBvQW_SAYwBQVVfeXFMT0RGWUN1VGRjbnd6bmkyajh3ZmFMTEVUTUgzOFlEVUIyOEtub0lGSnNCTFVoanlnbmJROEZRWWZzUnR4Zkw1ckhiUXBCMXZKLVdBNWtuWjl5em1lUVN3U0c4SFF6VWFVeUQ4UzhUeVlacVFrUV8wQWFuMmlvcWhYWHFnQ3NneW1nTWlIQlU?oc=5",
-      "summary": "Billionaire Jeremy Grantham Dismisses Bitcoin, Says Crypto Will Fade 'With a Whimper' DecryptSee more headlines & perspectives on Google News",
-      "published": "2026-06-27T14:34:32+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Northern Lights Forecast: 9 States May See The Aurora Saturday Night",
-      "source": "Forbes",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxORjdkanViY1ZLdzBRNnVqMWNDZ2lfUTZsT1FiOC1OcVE5M2M5SGc4RVRuN1FCVVlVSFVodWpEUDNrQlFpYUEtcmhBY1MtaTM1MTBIV2VMZDJFVG1xT3hHSllfSld4S1liaWYzeTEtWDBfU2x2WmJ2cXQ0aDhSallJUFVQMVJGdTZ1RVNFTVpncU04OXRTUFNIdkdtU2VROV9CYS10R1FaOG5tRUtMV1RZQXR3MzRiNHpJTHlNU1Y1Vmp2VHM?oc=5",
-      "summary": "Northern Lights Forecast: 9 States May See The Aurora Saturday Night Forbes",
-      "published": "2026-06-27T14:04:13+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "American couple left New York City and bought a house in Italy for $13,000: 'We found a different way of life'",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVnQteDhYVG5LN0x2WldDTGladXE1SkVWRGt5UHRjanVJVjFNNTFFTV9NdU5RRG42OUxXZkpJQTVHdFVHWEJhVU52cHFMNVlBOXR3bGFPMXdTb3g5UzVZRWJEOGVWMU90bHdQdDJLT04ySlA1XzNfNmNERC12VTRRTDh5TVRGRVZWSFEzVHZiT2lPbmVQZnZTcExsLUE1VkM2XzlzOXY2QUtvMUNMNHFXU3JLN2l6WUpfTHfSAb8BQVVfeXFMTmxLZVJySW9JOEZrYTVJdTZCbUxyZUdDd2xScVlhY2hPWU1iSXpBRUFBcmNEWmMzdDl5bDJuT1BVMVJ0QjQ3S1pVMW5YMFI0dHd6Q3d1NWJVaGp4NjdVYXBSck9DbExTSklpRDVMVjhLMW1hWUE2TEt1Qm5NbG1Fd2VuMEt4LW9fXzJJemlxSk1NS3RLSHBYZHdncEJXZkwzMVdWbjN1cGJvOHNmT2p3SG5rSENLRThCbnRiRlNEWEU?oc=5",
-      "summary": "American couple left New York City and bought a house in Italy for $13,000: 'We found a different way of life' CNBC",
-      "published": "2026-06-27T14:00:02+00:00",
-      "origin": "Google 財經頭條"
     }
   ],
   "news_span": {
     "news_count": 50,
     "first_seen": "2026-06-27",
-    "last_seen": "2026-06-27"
+    "last_seen": "2026-06-28"
   },
   "strategic_analysis": {
-    "geo_military": "中東地區的地緣政治緊張局勢持續升溫，伊朗通膨率飆升至88.6%（新聞6），顯示其國內經濟因中東戰爭及國際制裁而面臨巨大壓力。WSJ報導伊朗對美國海軍基地造成損害，促使美國重新評估其在中東的軍事部署，考慮將海灣基地西移至包括以色列在內的區域（新聞28）。這表明美伊之間的衝突已從代理人戰爭升級為直接威脅，且美國正調整其區域安全戰略。同時，以色列對黎巴嫩南部的空襲（新聞15）即使在框架協議簽署後仍未停止，顯示區域衝突的複雜性與難解。烏克蘭對俄羅斯發動長程打擊（新聞43），加劇了俄羅斯內部的不安，前央行顧問預測普丁政權可能因戰爭支出混亂而終結（新聞32），這對全球能源市場與地緣政治格局可能產生深遠影響。中國異議人士成功逃亡加拿大（新聞3）以及北京最高樓「中國尊」遭小型飛機撞擊事件（新聞18, 22），雖未直接構成軍事威脅，但可能反映出中國內部社會壓力與管控挑戰。整體而言，中東和東歐的軍事衝突風險仍高，將持續影響全球能源供應與地緣政治穩定。",
-    "supply_chain": "全球氣候變遷對供應鏈的衝擊日益顯著。西歐熱浪肆虐，德國氣溫破41度，瑞士核反應爐被迫關閉（新聞1, 25），丹麥、捷克也創下高溫紀錄（新聞2, 10, 30）。極端高溫不僅影響能源生產（核電廠關閉），也可能導致農業產量下降，進一步推升食品價格。日本則遭受雙颱侵襲，引發淹水、土石流災情（新聞8, 47），這將對其製造業、物流運輸造成短期衝擊，並可能影響全球電子元件供應鏈。委內瑞拉強震造成重大傷亡（新聞5），阿富汗、日本山梨也發生地震（新聞7, 16, 35），雖然目前無大規模供應鏈中斷報導，但自然災害的頻繁發生，增加了全球供應鏈的脆弱性與不確定性。在科技領域，美光財報亮眼，AI記憶體嚴重缺貨（新聞14），顯示對高階記憶體的需求強勁。然而，蘋果公司尋求美國批准從被列入黑名單的中國供應商採購記憶體（新聞37），這凸顯了美中科技戰背景下，供應鏈多元化與去風險化的挑戰，也可能影響未來科技產品的成本與供貨穩定性。大眾汽車面臨來自中國車廠的激烈競爭，可能需要裁員（新聞12），顯示傳統製造業在應對新興市場競爭時的壓力。",
-    "macro_economy": "全球通膨壓力持續存在，美國關鍵通膨指標升至三年新高（新聞33），核心通膨率達3.4%，房貸利率持穩於6.49%（新聞23, 33）。聯準會已從通膨報告中移除某個關鍵詞（新聞34），這可能暗示聯準會對通膨前景的評估有所調整，但整體而言，升息預期仍然存在。在高通膨環境下，市場對「升息概念股」（如永豐金、遠東新）的關注度提升（新聞4）。中東戰爭導致伊朗通膨率飆升至88.6%（新聞6），儘管這是區域性極端案例，但其對全球原油價格的潛在影響不容忽視。美伊和談消息壓低油價（新聞23），顯示市場對地緣政治風險的敏感性。黃金市場則出現反彈跡象（新聞20），可能反映了市場對通膨和地緣政治不確定性的避險需求。加密貨幣方面，億萬富翁Jeremy Grantham認為比特幣及加密貨幣將逐漸消退（新聞48），這對加密資產的長期價值構成挑戰。整體而言，高通膨、高利率環境對全球經濟構成壓力，各國央行的貨幣政策將是影響市場走勢的關鍵。",
-    "blind_spots_and_kpi": "全球大局觀下，除了傳統的通膨、利率和地緣政治風險，氣候變遷與供應鏈韌性正成為日益重要的結構性挑戰。西歐的極端熱浪與日本的雙颱侵襲，不僅是單一事件，而是全球氣候模式變化的縮影，將對能源、糧食、基礎建設等造成長期影響，並可能導致通膨的結構性上升。美中科技戰持續深化，蘋果尋求向被制裁的中國供應商採購晶片，顯示即使是科技巨頭也難以完全脫鉤，這將使全球科技供應鏈持續面臨政治干預與重組壓力。俄烏戰爭與中東衝突的長期化，將持續推升全球軍事開支，並可能導致能源與原物料價格波動。台灣作為全球半導體供應鏈的核心，應密切關注全球氣候變遷對基礎設施的影響，以及美中科技戰對半導體產業鏈的潛在衝擊，並持續強化供應鏈的多元化與韌性。\n\n應緊盯的領先指標：\n1. **全球製造業PMI指數（Purchasing Managers' Index）：** 尤其關注新訂單與庫存分項，可預示全球經濟活動的榮枯與供應鏈的健康狀況。\n2. **美國核心PCE物價指數（Personal Consumption Expenditures Price Index）：** 聯準會最關注的通膨指標，其走勢將直接影響聯準會未來的利率決策。\n3. **波羅的海乾散貨指數（Baltic Dry Index, BDI）：** 作為全球大宗商品海運價格的指標，能反映全球貿易活動的熱絡程度與原物料需求，進而預示全球經濟景氣。"
+    "geo_military": "今日地緣政治與軍事緊張局勢顯著升溫。中俄轟炸機在日本周邊聯合飛行，迫使日本戰鬥機緊急升空，凸顯東北亞地區的軍事對峙常態化，日本隨後評估導入無人潛艦並劃定小笠原群島防空識別區，顯示其正積極強化國防以應對區域威脅。中東方面，美國與伊朗在荷莫茲海峽的衝突再度加劇，美軍對伊朗目標進行反擊，導致脆弱的停火協議瀕臨破裂，川普總統甚至警告伊朗若重啟戰爭將「不復存在」。這不僅對全球石油供應構成嚴重風險，也讓中東地區的戰略不確定性達到新高。此外，中國頻繁擾動台灣東部海域，美方前國防官員呼籲密切監控其軍事意圖，顯示台海局勢依然是全球關注的焦點。歐洲方面，烏克蘭與波蘭之間的外交齟齬，以及塞爾維亞總統武契奇因反政府抗議而宣布辭職，都反映出歐洲內部政治動盪與盟友關係的複雜性。",
+    "supply_chain": "全球供應鏈正經歷結構性調整與氣候變遷帶來的衝擊。中國汽車在歐洲市佔率首次突破10%，其高配置、低價格的競爭優勢，正導致德國傳統汽車產業面臨永久性萎縮的風險，這將重塑全球汽車產業鏈的版圖。此消彼長下，歐洲對中國汽車零組件的需求可能增加，但同時也可能引發貿易保護主義的抬頭。此外，歐洲熱浪導致空調需求激增，中國空調在歐洲市場賣到缺貨，甚至出現二手價高於新品的現象，這不僅反映了氣候變遷對消費模式的直接影響，也凸顯了全球製造業在應對突發需求時的供應鏈韌性問題。這也可能刺激相關產業鏈，如半導體、電子元件等的需求。",
+    "macro_economy": "全球總體經濟面臨多重挑戰與轉型。美國消費者在Amazon Prime Day期間呈現「錢包緊縮」的消費行為，儘管線上銷售總額超出預期，但仍暗示消費者對經濟前景的謹慎態度，這可能影響下半年的消費支出與零售業表現。AI產業的發展持續引領市場，但科技股的股權銷售也引發了對AI相關「債務狂潮」的擔憂，值得投資者警惕。台灣股市近期經歷系統性回調，AI概念股修正壓力大，但法人認為AI成長趨勢未變，此波回檔非基本面反轉，顯示市場對AI長期仍具信心。然而，韓國媒體對台灣「富裕的台灣，貧困的台灣人」的評論，以及台灣內部對AI榮景與非科技業薪資差距的討論，則反映出AI發展下貧富差距擴大的結構性問題，這可能對社會穩定和長期消費力造成影響。阿根廷總統幕僚長因貪腐醜聞辭職，也顯示新興市場政治風險對經濟的潛在衝擊。",
+    "blind_spots_and_kpi": "全球大局觀下，台灣的盲點在於過度依賴單一產業（如AI半導體）可能帶來的結構性風險，以及對地緣政治衝突（如台海、中東）的敏感性可能影響外資信心。儘管AI產業帶來榮景，但台灣內部貧富差距擴大的問題若未妥善解決，長期而言可能影響社會穩定與內需動能。投資者應緊盯以下領先指標：\n1. **聯準會（Fed）利率決策與通膨數據：** 美國消費者支出趨於謹慎，若通膨數據持續高企，聯準會的貨幣政策走向將直接影響全球資金流向、股市估值及債市收益率。任何超預期的升息或降息路徑調整，都將對資產配置產生重大影響。\n2. **原油價格與荷莫茲海峽動態：** 美伊衝突加劇，荷莫茲海峽作為全球重要原油運輸通道，其穩定性直接關係到國際油價。油價飆升將推高全球通膨，衝擊企業成本與消費者購買力，對原物料、能源基金與相關產業股市造成劇烈波動。\n3. **中歐貿易摩擦與中國經濟數據：** 中國汽車在歐洲市佔率的提升可能引發貿易保護主義，需密切關注歐盟對中國進口汽車的相關政策，這將影響全球貿易格局與供應鏈穩定。同時，中國的經濟成長數據及其內部政策調整，將對全球商品市場和新興市場基金產生連動效應。",
+    "investment_implications": "綜合上述分析，對股市、債市、原物料、基金與資產配置有以下可能影響：\n\n**股市：** \n* **科技股/AI概念股：** 儘管短期台股AI概念股回調，但法人認為趨勢未變。長期來看，AI仍是成長主軸，但市場對「AI債務狂潮」的擔憂，可能導致資金從高估值科技股流向更具現金流或穩定獲利的企業。投資者應關注具備實質技術護城河與獲利能力的AI相關公司。\n* **傳統產業：** 德國汽車產業受中國競爭壓力面臨萎縮，歐洲傳統製造業可能持續承壓。然而，歐洲熱浪帶動的空調需求激增，可能短期利好相關家電、製冷設備製造商。這顯示氣候變遷帶來的商機與挑戰並存。\n* **新興市場股市：** 中國經濟結構轉型與內部問題（如貨車弊案、合肥民眾抗議）可能影響投資者信心。阿根廷政治動盪也增加新興市場的風險溢價。投資新興市場需更謹慎，選擇政治穩定、經濟結構多元的國家。\n\n**債市：** \n* **公債：** 若美伊衝突升級導致油價大漲，全球通膨壓力增加，聯準會可能維持高利率更久，將對債券價格構成下行壓力。避險情緒升溫時，高品質公債可能獲得短期支撐，但長期收益率仍受通膨預期影響。\n* **公司債：** 科技股的「債務狂潮」擔憂，可能使高槓桿科技公司的公司債風險上升。投資者應偏好財務穩健、信用評級較高的公司債。\n\n**原物料：** \n* **原油：** 荷莫茲海峽衝突直接影響原油供應，若局勢惡化，油價可能飆升。這將對全球能源價格和相關產業造成巨大衝擊，利好能源類原物料基金。\n* **其他原物料：** 供應鏈重塑、氣候變遷對農產品和工業金屬的需求與供應也可能產生影響，需密切關注。\n\n**基金與資產配置：** \n* **股票型基金：** 建議配置部分資金於AI趨勢明確但估值合理的科技基金，同時可考慮配置於能源、公用事業等具備防禦性和抗通膨能力的產業基金。對於台股，法人建議區間震盪下，選股應側重基本面穩健、具成長潛力且估值合理的個股。\n* **債券型基金：** 在高利率環境下，短期債券型基金相較長期債券型基金風險較低。可考慮配置於高品質、短天期債券型基金，以降低利率風險。\n* **資產配置策略：** 建議採取多元化配置策略，降低單一市場或資產的集中風險。在地緣政治風險升高時，黃金等避險資產可作為配置的一部分。對於有120萬資金的投資者考慮0050，若能承受短期波動，分批或歐印後長期持有並刪除APP是一種常見的策略，但仍需考量個人風險承受能力。\n* **另類投資：** 考慮氣候變遷帶來的商機，可關注再生能源、水資源管理等ESG相關基金，或對應歐洲空調需求增長相關產業的投資機會。"
   },
   "laymans_dictionary": [
     {
-      "term": "通膨率",
-      "explanation": "想像你最喜歡的零食，去年一包10元，今年變成12元，多的這2元就是因為「通膨」造成的。通膨率就是東西變貴的速度有多快。"
+      "term": "地緣政治 (Geopolitics)",
+      "explanation": "想像地球是一個大棋盤，各國就像棋手，為了爭奪地盤、資源或影響力而下棋。地緣政治就是在研究這些國家如何因為地理位置、資源分佈等因素，來制定他們的國家策略，進而影響國際關係和衝突。例如，中東因為石油多，所以常常是各國爭奪的焦點。"
     },
     {
-      "term": "聯準會 (Fed)",
-      "explanation": "美國的中央銀行，就像是美國的「金錢管家」，負責控制美國的錢要多還是少，以及借錢的利息高還是低，這會影響大家買東西、借錢的意願。"
+      "term": "貨幣政策 (Monetary Policy)",
+      "explanation": "就像一個國家的中央銀行（台灣是中央銀行，美國是聯準會），在管理市場上的錢多錢少、利率高低。如果錢太多，大家亂花錢導致物價上漲（通膨），央行可能就會提高利率，讓借錢變貴，大家就不太想花錢了；如果錢太少，經濟不景氣，央行就可能降息，鼓勵大家借錢消費和投資，讓經濟活絡起來。這就像是水龍頭，調整水流大小來控制水池的水位（經濟活動）。"
     },
     {
-      "term": "升息",
-      "explanation": "想像銀行把借錢給你的利息提高了。當聯準會升息，大家借錢成本變高，會比較不想花錢，希望能讓物價不要漲太快（抑制通膨）。"
+      "term": "系統性回調 (Systematic Correction)",
+      "explanation": "想像股市就像一輛車，開了一段時間後，即使車子本身沒壞，但為了安全或讓大家休息一下，整個市場（所有車子）會統一減速，甚至停下來整理。這不是因為某家公司出問題，而是整個大環境或市場情緒影響，導致股價普遍下跌，但通常被認為是健康的調整，讓市場冷靜下來再出發。"
     },
     {
-      "term": "升息概念股",
-      "explanation": "有些公司的生意在升息的時候會比較好，例如銀行，因為銀行可以從放款中賺更多利息。這些股票就被稱為「升息概念股」。"
+      "term": "債務狂潮 (Debt-Binge)",
+      "explanation": "想像一個人為了買很貴的東西（例如AI技術或設備），借了很多很多的錢，甚至超過了他能輕鬆負擔的範圍。當很多公司都這樣做的時候，就會形成「債務狂潮」。雖然短期看起來很熱鬧，但如果未來賺的錢不夠還債，這些公司就會面臨很大的風險，甚至會影響到整個金融系統。"
     },
     {
-      "term": "地緣政治",
-      "explanation": "指的是一個國家的地理位置和資源，如何影響它和其他國家的關係、衝突與合作。就像鄰居之間，住得近、資源多寡都會影響彼此的互動。"
+      "term": "荷莫茲海峽 (Strait of Hormuz)",
+      "explanation": "這是一條非常重要的「海上高速公路」，連接波斯灣和外面的世界。全世界很多石油都是從這裡運出去的，所以如果這條路不安全，油價就會像坐雲霄飛車一樣飆高，因為大家擔心買不到油了。就像城市裡最重要的幹道如果堵住了，整個交通都會癱瘓。"
     },
     {
-      "term": "供應鏈",
-      "explanation": "想像你吃的早餐吐司，從麵粉、雞蛋、牛奶到包裝，中間經過種植、加工、運輸、販售等好多環節。這一整串的流程就叫做「供應鏈」。"
-    },
-    {
-      "term": "PMI指數",
-      "explanation": "這是一個調查報告，問很多工廠老闆和採購經理，他們覺得現在的訂單、生產、庫存狀況怎麼樣。如果大部分人都說好，這個指數就會高，表示經濟景氣不錯，反之則可能變差。"
-    },
-    {
-      "term": "波羅的海乾散貨指數 (BDI)",
-      "explanation": "想像這是一個全球「大船運費」的指標。如果這個指數很高，代表有很多東西要用大船運來運去，像是鐵礦砂、煤炭等原物料，這通常表示全球經濟活動很熱絡。"
+      "term": "風險溢價 (Risk Premium)",
+      "explanation": "想像你借錢給朋友，如果朋友很可靠，你可能只收一點點利息；但如果朋友有點不靠譜，你就會要求多收一點利息，來彌補你可能收不回錢的風險。在投資上也是一樣，當投資一個國家或公司風險比較高的時候，投資人會要求更高的報酬率，這個多出來的報酬率就叫做「風險溢價」。"
     }
   ],
   "dictionary_source": "gemini"
