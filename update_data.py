@@ -56,6 +56,7 @@ import housing_fetcher
 import index_fetcher  # 國際盤預警:抓美股指數/美股期貨真實漲跌幅
 import margin_fetcher  # 融資餘額:散戶槓桿/斷頭訊號(共振偵測用)
 import news_fetcher
+import numutil  # 數值計算的單一真相源(SSOT):pct_change / parse_number / OKU
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
 import tech_signals  # 個股技術面訊號(日K→均線/KD/RSI)的單一真相源(SSOT)
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
@@ -67,7 +68,7 @@ import watchlist  # 個股盯盤清單(watchlist)的單一真相源(SSOT)
 # ---------------------------------------------------------------------------
 
 DEFAULT_NEWS_MAX = 25  # 單一主題抓新聞則數預設;可用 NEWS_MAX 覆寫
-OKU = 100_000_000  # 1 億(元)— 三大法人/融資金額顯示換算(取代散落的 1e8 魔術數字)
+OKU = numutil.OKU  # 億元換算係數 SSOT 在 numutil,此處保留別名供本檔既有參照
 
 
 # 資料新鮮度門檻(§2.4)— 過期→該章節 raise 被既有 try/except 接住→略過,不拖垮主報告。
@@ -186,7 +187,6 @@ OUTPUT_FOCUS = paths.LATEST_FOCUS
 FOCUS_ARCHIVE_DIR = paths.ARCHIVE_FOCUS
 OUTPUT_HOUSING = paths.LATEST_HOUSING
 HOUSING_ARCHIVE_DIR = paths.ARCHIVE_HOUSING
-WATCH_REVENUE_PUSHED = paths.WATCH_REVENUE_PUSHED  # 個股盯盤:月營收已推 id(防重複推播)
 
 # 全台 22 縣市(官方「臺」),房市分區標記只能用這些名稱
 TAIWAN_COUNTIES = list(housing_fetcher.CITY_CODES.values())
@@ -1918,14 +1918,14 @@ def load_pushed_revenue() -> list[str]:
     """讀已推播過的月營收 id(``ticker-YYYY-MM``)清單;無檔回空。"""
     try:
         return list(json.loads(
-            WATCH_REVENUE_PUSHED.read_text(encoding="utf-8")).get("ids", []))
+            paths.WATCH_REVENUE_PUSHED.read_text(encoding="utf-8")).get("ids", []))
     except Exception:  # noqa: BLE001 — 無檔/壞檔 → 視為尚未推過
         return []
 
 
 def save_pushed_revenue(ids: list[str]) -> None:
     """寫回已推月營收 id 清單(只留最近 500 筆,避免無限增長)。"""
-    save_json(WATCH_REVENUE_PUSHED, {"ids": ids[-500:]})
+    save_json(paths.WATCH_REVENUE_PUSHED, {"ids": ids[-500:]})
 
 
 

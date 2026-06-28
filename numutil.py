@@ -6,6 +6,9 @@
 """
 from __future__ import annotations
 
+# 顯示用億元換算係數(元 → 億),全專案唯一定義
+OKU: int = 100_000_000
+
 
 def pct_change(last: float, prev: float, ndigits: int = 2) -> float:
     """漲跌幅(%)= (last - prev) / prev × 100,四捨五入到 ndigits 位。

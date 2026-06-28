@@ -21,6 +21,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+import numutil
 import paths
 
 # ---------------------------------------------------------------------------
@@ -35,7 +36,7 @@ LINE_TEXT_LIMIT = 4500  # 單則 text 上限 5000,留安全餘裕
 # 對台股有「時間差領先」意義的市場(美股指數=隔夜、美股期貨/台指期夜盤=盤前)
 LEAD_DROP_TYPES = ("隔夜領先", "盤前即時")
 
-OKU = 100_000_000  # 1 億(元)— 與 update_data.OKU 定義相同;待 ③ config.py 整合後合一
+OKU = numutil.OKU  # 億元換算係數 SSOT 在 numutil
 
 
 # ---------------------------------------------------------------------------
