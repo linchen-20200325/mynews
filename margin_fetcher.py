@@ -29,13 +29,6 @@ HTTP_TIMEOUT = 20
 MAX_LOOKBACK = 14
 
 
-def _to_int(s) -> int:
-    try:
-        return int(str(s).replace(",", "").replace(" ", "").strip())
-    except (TypeError, ValueError):
-        return 0
-
-
 def _fetch_json(date_str: str) -> dict | None:
     try:
         import proxy_helper
@@ -89,7 +82,8 @@ def _parse(payload: dict, date_str: str) -> dict | None:
             if "融資" in label and ("仟元" in label or "金額" in label):
                 if max(i_prev, i_today) >= len(row):
                     continue
-                prev_k, today_k = _to_int(row[i_prev]), _to_int(row[i_today])
+                prev_k = numutil.parse_number(row[i_prev], as_int=True, default=0)
+                today_k = numutil.parse_number(row[i_today], as_int=True, default=0)
                 if prev_k <= 0:  # 無有效前值 → 不計%(不以 0 充數),續找下一列
                     continue
                 today, prev = today_k * 1000, prev_k * 1000  # 仟元 → 元

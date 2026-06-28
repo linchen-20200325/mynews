@@ -17,6 +17,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import numutil  # 數值工具 SSOT
 import paths  # 路徑 SSOT
 
 PRICES_PATH = paths.STOCK_PRICES
@@ -47,11 +48,9 @@ def _http_get(url: str, proxies: dict | None) -> str:
 
 
 def _to_float(value) -> float | None:
-    try:
-        f = float(str(value).replace(",", "").strip())
-        return f if f > 0 else None
-    except (TypeError, ValueError):
-        return None
+    # 業務規則：收盤價必為正數；parse_number 負責字串清理，> 0 檢查留在此處
+    f = numutil.parse_number(value)
+    return f if (f is not None and f > 0) else None
 
 
 def parse_twse(text: str, log=None) -> dict[str, float]:

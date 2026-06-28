@@ -63,12 +63,6 @@ def _session_label() -> tuple[str, str]:
     return "台指期夜盤收盤", "night_close"  # 05:00–08:45 夜盤已收、日盤未開
 
 
-def _to_float(s) -> float | None:
-    try:
-        v = str(s).replace(",", "").replace("%", "").strip()
-        return float(v) if v not in ("", "-", "--") else None
-    except (TypeError, ValueError):
-        return None
 
 
 def _first(row: dict, keys: tuple[str, ...]):
@@ -132,11 +126,11 @@ def fetch_night_quote(log=print) -> dict | None:
     for row in quote_list:
         if not isinstance(row, dict):
             continue
-        last = _to_float(_first(row, _LAST_KEYS))
-        ref = _to_float(_first(row, _REF_KEYS))
+        last = numutil.parse_number(_first(row, _LAST_KEYS))
+        ref = numutil.parse_number(_first(row, _REF_KEYS))
         if last is None or not ref:
             continue
-        vol = _to_float(_first(row, _VOL_KEYS)) or 0.0
+        vol = numutil.parse_number(_first(row, _VOL_KEYS)) or 0.0
         if vol > best_vol:
             best_vol = vol
             best = (row, last, ref)

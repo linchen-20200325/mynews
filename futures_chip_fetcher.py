@@ -31,6 +31,8 @@ import os
 import sys
 from datetime import datetime, timezone
 
+import numutil
+
 OPENAPI_URL = ("https://openapi.taifex.com.tw/v1/"
                "MarketDataOfMajorInstitutionalTradersDetailsOfFuturesContractsBytheDate")
 HTTP_TIMEOUT = 25
@@ -43,13 +45,6 @@ CODE_KEY = "ContractCode"     # 商品名稱(中文)
 ITEM_KEY = "Item"             # 身份別(自營商/投信/外資)
 NET_OI_KEY = "OpenInterest(Net)"  # 多空未平倉口數淨額(要口數,非 ContractValue 金額)
 DATE_KEY = "Date"
-
-
-def _to_int(s) -> int:
-    try:
-        return int(str(s).replace(",", "").replace(" ", "").strip())
-    except (TypeError, ValueError):
-        return 0
 
 
 def _institution(item: str) -> str | None:
@@ -137,7 +132,7 @@ def fetch_futures_chip(log=print) -> dict | None:
         key = _institution(rec.get(ITEM_KEY, ""))
         if not key:
             continue
-        found[key] = _to_int(rec.get(NET_OI_KEY))
+        found[key] = numutil.parse_number(rec.get(NET_OI_KEY), as_int=True, default=0)
         date_str = date_str or str(rec.get(DATE_KEY, ""))
 
     if "foreign_net_oi" not in found:

@@ -1,6 +1,6 @@
 """numutil.py — 數值計算的單一真相源(SSOT)。
 
-把跨模組重複的數值公式(如漲跌幅)集中一處,並就地內建不變量與第二法對帳,
+把跨模組重複的數值公式(如漲跌幅、字串轉數值)集中一處,並就地內建不變量與第二法對帳,
 讓「公式 + 防呆」只定義與測試一次(憲法 §2.1 SSOT / §4.2 不變量 / §4.3 對帳)。
 零相依(只用 stdlib),可被任何 fetcher 安全 import。
 """
@@ -24,3 +24,19 @@ def pct_change(last: float, prev: float, ndigits: int = 2) -> float:
         raise AssertionError(
             f"pct_change 方向不一致(疑公式錯):last={last}, prev={prev}, pct={pct}")
     return pct
+
+
+def parse_number(s, *, as_int: bool = False, default=None):
+    """字串轉數值的 SSOT。去除逗號/空格/百分號後轉型;空字串、'-'、'--' 視為無效。
+
+    - as_int=False(預設): 回傳 float;as_int=True: 回傳 int。
+    - 解析失敗或無效符號 → 回傳 default(預設 None)。
+    - 業務規則(如「必須 > 0」)由呼叫端自行判斷,本函式不介入。
+    """
+    try:
+        v = str(s).replace(",", "").replace("%", "").replace(" ", "").strip()
+        if v in ("", "-", "--"):
+            return default
+        return int(v) if as_int else float(v)
+    except (TypeError, ValueError):
+        return default

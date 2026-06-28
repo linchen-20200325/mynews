@@ -22,6 +22,8 @@ import json
 import sys
 from datetime import date, datetime, timedelta, timezone
 
+import numutil
+
 BFI82U_URL = (
     "https://www.twse.com.tw/rwd/zh/fund/BFI82U"
     "?dayDate={d}&type=day&response=json"
@@ -30,13 +32,6 @@ HTTP_TIMEOUT = 20
 DEFAULT_DAYS = 10
 MAX_LOOKBACK = 30  # 最多往回找的日曆天數,避免連假/長停盤無限迴圈
 
-
-def _to_int(s: str) -> int:
-    """把『-91,733,415,946』這類字串轉 int;失敗回 0。"""
-    try:
-        return int(str(s).replace(",", "").replace(" ", "").strip())
-    except (TypeError, ValueError):
-        return 0
 
 
 def _fetch_day_json(date_str: str) -> dict | None:
@@ -78,7 +73,7 @@ def _parse_day(payload: dict, date_str: str) -> dict | None:
     for row in payload["data"]:
         if len(row) < 4:
             continue
-        name, diff = row[0], _to_int(row[3])
+        name, diff = row[0], numutil.parse_number(row[3], as_int=True, default=0)
         # 注意:「外資及陸資(不含外資自營商)」字串內含「外資自營商」,
         # 故必須先判斷「外資及陸資」,再判斷「外資自營商」,否則主力外資會被誤分類為 0。
         if "外資及陸資" in name:
