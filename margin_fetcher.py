@@ -17,7 +17,9 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timezone
+
+import tz_utils
 
 import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
 
@@ -79,17 +81,14 @@ def _parse(payload: dict, date_str: str) -> dict | None:
 
 def fetch_margin(log=print) -> dict | None:
     """抓最近一個交易日的融資餘額;自動跳過週末/假日。抓不到回 None。"""
-    d = date.today()
-    for _ in range(MAX_LOOKBACK):
-        if d.weekday() < 5:
-            parsed = _parse(_fetch_json(d.strftime("%Y%m%d")), d.strftime("%Y%m%d"))
-            if parsed:
-                log(f"  融資餘額 {parsed['date']}:{parsed['margin_today']/1e8:.0f}億"
-                    f"({parsed['margin_chg_pct']:+.2f}%)")
-                parsed["as_of"] = datetime.now(timezone.utc).strftime(
-                    "%Y-%m-%d %H:%M UTC (TWSE MI_MARGN)")
-                return parsed
-        d -= timedelta(days=1)
+    for d in tz_utils.iter_trading_days(MAX_LOOKBACK):
+        parsed = _parse(_fetch_json(d.strftime("%Y%m%d")), d.strftime("%Y%m%d"))
+        if parsed:
+            log(f"  融資餘額 {parsed['date']}:{parsed['margin_today']/1e8:.0f}億"
+                f"({parsed['margin_chg_pct']:+.2f}%)")
+            parsed["as_of"] = datetime.now(timezone.utc).strftime(
+                "%Y-%m-%d %H:%M UTC (TWSE MI_MARGN)")
+            return parsed
     return None
 
 

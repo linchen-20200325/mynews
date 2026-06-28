@@ -19,9 +19,10 @@
 
 from __future__ import annotations
 
-import datetime as _dt
 import os
 import time
+
+import tz_utils
 
 # T86:三大法人買賣超「個股」明細(selectType=ALL 回全市場個股),欄位以名稱定位(抗格式漂移)
 TWSE_T86 = "https://www.twse.com.tw/rwd/zh/fund/T86"
@@ -39,20 +40,6 @@ def _to_lots(shares) -> int | None:
     except (TypeError, ValueError):
         return None
 
-
-def _iter_recent_dates(days: int):
-    """由新到舊產出近期日期字串 'YYYYMMDD'(僅跳週末;國定假日由 stat≠OK 自然略過)。
-
-    多回看一些日曆天(days*2 + 4),確保即使夾到假日仍湊得到 days 個交易日。
-    """
-    d = _dt.date.today()
-    produced = 0
-    limit = days * 2 + 4
-    while produced < limit:
-        if d.weekday() < 5:  # 0~4 = 週一~週五
-            yield d.strftime("%Y%m%d")
-            produced += 1
-        d -= _dt.timedelta(days=1)
 
 
 def _col_index(fields: list[str], *needles: str) -> int | None:
@@ -122,9 +109,10 @@ def fetch_recent(tickers: list[str], days: int, log=print) -> dict[str, list[dic
         return {}
     series: dict[str, list[dict]] = {t: [] for t in want}
     got = 0
-    for date_str in _iter_recent_dates(days):
+    for d in tz_utils.iter_trading_days(days * 2 + 4):
         if got >= days:
             break
+        date_str = d.strftime("%Y%m%d")
         day = fetch_t86_day(date_str, log=log)
         time.sleep(_THROTTLE_SEC)
         if not day:
@@ -134,7 +122,7 @@ def fetch_recent(tickers: list[str], days: int, log=print) -> dict[str, list[dic
             row = day.get(t)
             if row is not None:
                 series[t].append({"date": date_str, **row})
-    # _iter_recent_dates 由新到舊,故各代號時序反轉成由舊到新
+    # iter_trading_days 由新到舊,故各代號時序反轉成由舊到新
     for t in series:
         series[t].reverse()
     return series

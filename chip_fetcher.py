@@ -20,7 +20,9 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timezone
+
+import tz_utils
 
 import numutil
 
@@ -86,18 +88,15 @@ def _parse_day(payload: dict, date_str: str) -> dict | None:
 def fetch_chip_flow(days: int = DEFAULT_DAYS, log=print) -> dict:
     """抓近 days 個交易日的三大法人買賣超(由新到舊),自動跳過週末/假日。"""
     collected: list[dict] = []
-    d = date.today()
-    looked = 0
-    while len(collected) < days and looked < MAX_LOOKBACK:
-        looked += 1
-        if d.weekday() < 5:  # 只試工作日,省請求
-            parsed = _parse_day(_fetch_day_json(d.strftime("%Y%m%d")),
-                                 d.strftime("%Y%m%d"))
-            if parsed:
-                collected.append(parsed)
-                log(f"  [{parsed['date']}] 外資 {parsed['foreign']/1e8:+.0f}億 "
-                    f"投信 {parsed['trust']/1e8:+.0f}億 合計 {parsed['total']/1e8:+.0f}億")
-        d -= timedelta(days=1)
+    for d in tz_utils.iter_trading_days(MAX_LOOKBACK):
+        if len(collected) >= days:
+            break
+        date_str = d.strftime("%Y%m%d")
+        parsed = _parse_day(_fetch_day_json(date_str), date_str)
+        if parsed:
+            collected.append(parsed)
+            log(f"  [{parsed['date']}] 外資 {parsed['foreign']/1e8:+.0f}億 "
+                f"投信 {parsed['trust']/1e8:+.0f}億 合計 {parsed['total']/1e8:+.0f}億")
     if not collected:
         raise RuntimeError("三大法人資料全數抓取失敗(檢查網路/PROXY_URL 或來源是否可達)")
     return {
