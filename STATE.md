@@ -63,7 +63,7 @@
 
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
-- [ ] (選,**唯一剩餘阻塞、屬你的帳號操作**)repo Secrets 設 `PROXY_URL`:設妥後上面全市場化與每月排程自動抓 ETF/股價/房價即可自動跑(NAS 需放行 Actions IP)。
+- [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
 - [x] 個股盯盤(第二個 LINE bot)**已上線驗收通過(2026-06-28)**:傳「加 2330」bot 正確回「已加入 2330」並顯示 watchlist 4 檔(6770/6239/3231/2330);NAS `nas_line_bot.py` webhook 對外可達,Secrets 全設妥,watchlist.json 寫回 GitHub 正常。
 - [x] **上櫃月營收已實作**(`earnings_fetcher._fetch_otc_bulk`):MOPS `ajax_t05st10_q` POST 一次全抓,`fetch_monthly_revenue()` 透明合併上市(TWSE) + 上櫃(MOPS),呼叫端零改動;需 proxy 過境 MOPS。
 - [ ] (擴充)季報 EPS — `fetch_quarterly_eps()` 已建立 stub;MOPS 無正式 API,需表單 POST + HTML 解析(公告時程:Q1→5/15、Q2→8/14、Q3→11/14、Q4→隔年3/31),留待後續。
