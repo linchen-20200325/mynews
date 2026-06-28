@@ -1070,73 +1070,68 @@ def validate_report(data: dict) -> None:
         raise ValueError("laymans_dictionary 必須是陣列")
 
 
-def validate_trends(data: dict) -> None:
-    """趨勢雷達的最低限度結構驗證。"""
+def _validate_structure(
+    data: dict,
+    *,
+    required_lists: tuple = (),
+    nonempty_lists: tuple = (),
+    required_dicts: tuple = (),
+    nonempty_dicts: tuple = (),
+) -> None:
     if "report_date" not in data:
         raise ValueError("缺少 report_date")
-    if not isinstance(data.get("trends"), list) or not data["trends"]:
-        raise ValueError("trends 必須是非空陣列")
+    for k in required_lists:
+        if not isinstance(data.get(k), list):
+            raise ValueError(f"{k} 必須是陣列")
+    for k in nonempty_lists:
+        if not isinstance(data.get(k), list) or not data[k]:
+            raise ValueError(f"{k} 必須是非空陣列")
+    for k in required_dicts:
+        if not isinstance(data.get(k), dict):
+            raise ValueError(f"{k} 必須是物件")
+    for k in nonempty_dicts:
+        if not isinstance(data.get(k), dict) or not data[k]:
+            raise ValueError(f"{k} 必須是非空字典")
+
+
+def validate_trends(data: dict) -> None:
+    """趨勢雷達的最低限度結構驗證。"""
+    _validate_structure(data, nonempty_lists=("trends",))
 
 
 def validate_stocks(data: dict) -> None:
     """台股觀察的最低限度結構驗證。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("stocks"), list) or not data["stocks"]:
-        raise ValueError("stocks 必須是非空陣列")
+    _validate_structure(data, nonempty_lists=("stocks",))
 
 
 def validate_us_stocks(data: dict) -> None:
     """美股觀察的最低限度結構驗證(與台股同契約)。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("stocks"), list) or not data["stocks"]:
-        raise ValueError("stocks 必須是非空陣列")
+    _validate_structure(data, nonempty_lists=("stocks",))
 
 
 def validate_intl_alert(data: dict) -> None:
     """國際盤預警的最低限度結構驗證(報價必須是非空字典:無真實數字就不該成立)。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("quotes"), dict) or not data["quotes"]:
-        raise ValueError("quotes 必須是非空字典(真實報價)")
-    if not isinstance(data.get("tw_impact"), dict):
-        raise ValueError("tw_impact 必須是物件")
-    if not isinstance(data.get("us_view"), dict):
-        raise ValueError("us_view 必須是物件")
+    _validate_structure(data, nonempty_dicts=("quotes",), required_dicts=("tw_impact", "us_view"))
 
 
 def validate_focus(data: dict) -> None:
     """全球人物追蹤的最低限度結構驗證(允許 stocks 為空:該對象未必對應到個股)。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("stocks"), list):
-        raise ValueError("stocks 必須是陣列")
+    _validate_structure(data, required_lists=("stocks",))
 
 
 def validate_stock_query(data: dict) -> None:
     """個股健診的最低限度結構驗證。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("relevance_points"), list):
-        raise ValueError("relevance_points 必須是陣列")
+    _validate_structure(data, required_lists=("relevance_points",))
 
 
 def validate_news_etf(data: dict) -> None:
     """新聞 ETF 策略的最低限度結構驗證(四階段皆須為物件)。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    for key in ("phase1_causal", "phase2_camps", "phase3_etf", "phase4_playbook"):
-        if not isinstance(data.get(key), dict):
-            raise ValueError(f"{key} 必須是物件")
+    _validate_structure(data, required_dicts=("phase1_causal", "phase2_camps", "phase3_etf", "phase4_playbook"))
 
 
 def validate_housing(data: dict) -> None:
     """房市觀察的最低限度結構驗證。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("regions"), list):
-        raise ValueError("regions 必須是陣列")
+    _validate_structure(data, required_lists=("regions",))
 
 
 def get_macro_analysis(news: list[dict], topic: str, today: str) -> dict:
