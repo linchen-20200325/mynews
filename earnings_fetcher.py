@@ -29,6 +29,8 @@ from datetime import datetime, timezone
 TWSE_MONTHLY_REVENUE_URL = "https://openapi.twse.com.tw/v1/opendata/t187ap05_L"
 # 上櫃公司月營收(MOPS 表單 POST,需 proxy 過境)。
 MOPS_OTC_URL = "https://mops.twse.com.tw/mops/web/ajax_t05st10_q"
+# 上市/上櫃 IFRS 綜合損益表(含「基本每股盈餘」行)。
+MOPS_EPS_URL = "https://mops.twse.com.tw/mops/web/ajax_t163sb04"
 HTTP_TIMEOUT = 25
 
 # OpenAPI 欄位名可能微調,逐一容錯比對(包含子字串即可)。
@@ -85,8 +87,8 @@ def _fetch_listed_rows() -> list[dict]:
 
 def _latest_roc_period() -> tuple[int, int]:
     """回傳最可能已公告的月份(10日後→上月;10日前→上上月)。回 (ROC年, 月)。"""
-    from tz_utils import taiwan_today
-    today = taiwan_today()
+    from tz_utils import taiwan_now
+    today = taiwan_now()
     months_back = 1 if today.day >= 10 else 2
     month = today.month - months_back
     year = today.year
@@ -241,15 +243,131 @@ def fetch_monthly_revenue(tickers: list[str], log=print) -> dict[str, dict]:
     return out
 
 
-def fetch_quarterly_eps(tickers: list[str], log=print) -> dict[str, dict]:
-    """(後續擴充) 抓上市/上櫃最新季報 EPS。
-
-    尚未實作:MOPS 無正式 API,需表單 POST + HTML 解析;公告時程依季度不同。
-    目前回空 dict,不影響月營收推播。
+def _latest_quarter() -> tuple[int, int]:
+    """最可能已公告的季別(ROC年, 季1-4)。
+    截止日:Q1→5/15、Q2→8/14、Q3→11/14、Q4→隔年3/31。
     """
-    if tickers:
-        log("  季報 EPS:尚未實作(MOPS 無正式 API),本次略過。")
-    return {}
+    from tz_utils import taiwan_now
+    today = taiwan_now()
+    y, m, d = today.year, today.month, today.day
+    if m > 11 or (m == 11 and d >= 14):
+        return y - 1911, 3
+    if m > 8 or (m == 8 and d >= 14):
+        return y - 1911, 2
+    if m > 5 or (m == 5 and d >= 15):
+        return y - 1911, 1
+    return y - 1912, 4  # 前一年 Q4
+
+
+def _parse_eps_from_html(html: str) -> "tuple[float | None, float | None]":
+    """從 MOPS 損益表 HTML 萃取 (本期EPS, 前期EPS)。"""
+    import io
+    import pandas as pd
+
+    try:
+        tables = pd.read_html(io.StringIO(html), thousands=",")
+    except Exception:
+        return None, None
+
+    for df in tables:
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = [
+                "|".join(str(c) for c in col if "Unnamed" not in str(c)).strip("|")
+                for col in df.columns
+            ]
+        for col_idx, col in enumerate(df.columns):
+            mask = df[col].astype(str).str.contains("基本每股盈餘", na=False)
+            if not mask.any():
+                continue
+            row = df[mask].iloc[0]
+            nums = [
+                _to_float(str(row[c]))
+                for c in list(df.columns)[col_idx + 1:]
+                if _to_float(str(row[c])) is not None
+            ]
+            nums = [v for v in nums if abs(v) < 500]  # EPS 合理範圍(-500~500 元)
+            if nums:
+                return nums[0], (nums[1] if len(nums) > 1 else None)
+    return None, None
+
+
+def _fetch_eps_for(ticker: str, roc_year: int, season: int,
+                   sess, proxies: dict, verify: bool) -> "dict | None":
+    """向 MOPS 抓單一代號 EPS;先試上市(sii)再試上櫃(otc)。失敗回 None。"""
+    import time
+
+    as_of = datetime.now(timezone.utc).strftime(
+        f"%Y-%m-%d %H:%M UTC (MOPS {roc_year}/Q{season})"
+    )
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept-Language": "zh-TW,zh;q=0.9",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Referer": "https://mops.twse.com.tw/mops/web/t163sb04",
+    }
+    period_str = f"{roc_year + 1911}-Q{season}"
+
+    for typek in ("sii", "otc"):
+        form_data = {
+            "step": "1", "firstin": "1",
+            "TYPEK": typek,
+            "year": str(roc_year),
+            "season": str(season),
+            "co_id": ticker,
+        }
+        try:
+            resp = sess.post(
+                MOPS_EPS_URL, data=form_data, headers=headers,
+                proxies=proxies, verify=verify, timeout=HTTP_TIMEOUT,
+            )
+            resp.encoding = "utf-8"
+            if resp.status_code == 200 and resp.text:
+                eps, prior_eps = _parse_eps_from_html(resp.text)
+                if eps is not None:
+                    return {
+                        "ticker": ticker,
+                        "period": period_str,
+                        "season": season,
+                        "roc_year": roc_year,
+                        "eps": eps,
+                        "prior_eps": prior_eps,
+                        "market": typek,
+                        "as_of": as_of,
+                    }
+        except Exception:
+            pass
+        time.sleep(0.5)  # MOPS 限速緩衝
+
+    return None
+
+
+def fetch_quarterly_eps(tickers: list[str], log=print) -> dict[str, dict]:
+    """抓 watchlist 各代號最新季報 EPS(上市 sii / 上櫃 otc 自動辨識)。
+
+    每檔向 MOPS ajax_t163sb04 POST(需 proxy);找不到者靜默略過。
+    公告截止:Q1→5/15、Q2→8/14、Q3→11/14、Q4→隔年3/31。
+    """
+    wanted = [str(t).strip() for t in tickers if str(t).strip()]
+    if not wanted:
+        return {}
+
+    import proxy_helper
+    roc_year, season = _latest_quarter()
+    proxies = proxy_helper.get_proxy_config() or {}
+    verify = not bool(proxies)
+    sess = proxy_helper.make_retry_session()
+
+    out: dict[str, dict] = {}
+    for ticker in wanted:
+        result = _fetch_eps_for(ticker, roc_year, season, sess, proxies, verify)
+        if result:
+            out[ticker] = result
+
+    if out:
+        log(f"  季報 EPS:抓到 {len(out)} 檔({roc_year + 1911}-Q{season})。")
+    else:
+        log(f"  季報 EPS:全部代號均未抓到({roc_year + 1911}-Q{season}),略過。")
+    return out
 
 
 if __name__ == "__main__":

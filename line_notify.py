@@ -327,8 +327,9 @@ def build_watch_line_message(today: str, summaries: list[dict],
                              new_revenue: list[dict],
                              tech_lines: dict[str, str] | None = None,
                              chip_lines: dict[str, str] | None = None,
-                             vcp_lines: dict[str, str] | None = None) -> str:
-    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面、籌碼面、VCP 各一行)+ 新月營收(若有)。"""
+                             vcp_lines: dict[str, str] | None = None,
+                             new_eps: list[dict] | None = None) -> str:
+    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面、籌碼面、VCP)+ 新月營收 + 新季報 EPS(若有)。"""
     tech_lines = tech_lines or {}
     chip_lines = chip_lines or {}
     vcp_lines = vcp_lines or {}
@@ -363,6 +364,20 @@ def build_watch_line_message(today: str, summaries: list[dict],
                 f"・{nm} {r.get('ticker')}｜{r.get('period')} 營收 "
                 f"{r.get('month_rev', 0) / OKU:.0f}億,{yoy_s}、{mom_s}"
             )
+        lines.append("")
+    if new_eps:
+        lines.append("📊 新季報(EPS):")
+        for e in new_eps:
+            eps = e.get("eps")
+            prior = e.get("prior_eps")
+            ticker = e.get("ticker", "")
+            period = e.get("period", "")
+            eps_s = f"EPS {eps:+.2f}元" if isinstance(eps, (int, float)) else "EPS —"
+            if isinstance(eps, (int, float)) and isinstance(prior, (int, float)):
+                chg_s = f",較前期 {eps - prior:+.2f}元"
+            else:
+                chg_s = ""
+            lines.append(f"・{ticker}｜{period} {eps_s}{chg_s}")
         lines.append("")
     lines.append("(僅供參考,非投資建議。指令:加/刪/清單)")
     msg = "\n".join(lines).rstrip()
