@@ -30,28 +30,8 @@ MAX_LOOKBACK = 14
 
 
 def _fetch_json(date_str: str) -> dict | None:
-    try:
-        import proxy_helper
-        resp = proxy_helper.fetch_url(
-            MI_MARGN_URL.format(d=date_str),
-            headers={"Accept": "application/json"}, timeout=HTTP_TIMEOUT,
-        )
-        if resp is not None and resp.status_code == 200:
-            return resp.json()
-    except Exception:  # noqa: BLE001
-        pass
-    try:
-        import requests
-        resp = requests.get(
-            MI_MARGN_URL.format(d=date_str),
-            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
-            timeout=HTTP_TIMEOUT,
-        )
-        if resp.status_code == 200:
-            return resp.json()
-    except Exception:  # noqa: BLE001
-        pass
-    return None
+    import proxy_helper
+    return proxy_helper.fetch_json(MI_MARGN_URL.format(d=date_str), timeout=HTTP_TIMEOUT)
 
 
 def _parse(payload: dict, date_str: str) -> dict | None:

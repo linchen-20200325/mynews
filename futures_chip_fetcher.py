@@ -74,40 +74,9 @@ def _norm_date(s: str) -> str:
 
 
 def _get_json(log=print):
-    """GET OpenAPI(走 NAS 代理 + 自動降級直連)。回 JSON;200 但非 JSON 時印原文診斷後回 None。"""
-    raw = None  # 保留最後一個 200 回應,供非 JSON 時印原文診斷
-    try:
-        import proxy_helper
-        resp = proxy_helper.fetch_url(
-            OPENAPI_URL, headers={"Accept": "application/json"}, timeout=HTTP_TIMEOUT)
-        if resp is not None and resp.status_code == 200:
-            raw = resp
-            try:
-                return resp.json()
-            except Exception:  # noqa: BLE001 — 非 JSON → 留待診斷
-                pass
-    except Exception as exc:  # noqa: BLE001 — proxy_helper 不可用 → 直連保底
-        log(f"  [台指期留倉] 代理連線失敗:{type(exc).__name__}")
-    try:
-        import requests
-        resp = requests.get(
-            OPENAPI_URL,
-            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
-            timeout=HTTP_TIMEOUT)
-        if resp.status_code == 200:
-            raw = raw or resp
-            try:
-                return resp.json()
-            except Exception:  # noqa: BLE001
-                pass
-        else:
-            log(f"  [台指期留倉] 直連非 200:{resp.status_code}")
-    except Exception as exc:  # noqa: BLE001
-        log(f"  [台指期留倉] 直連失敗:{type(exc).__name__}")
-    if raw is not None:  # 200 但非 JSON → 印原文揭露實際格式
-        log(f"  [台指期留倉][診斷] 200 但非 JSON;content-type="
-            f"{raw.headers.get('content-type', '')};前 300 字:{(raw.text or '')[:300]!r}")
-    return None
+    """GET OpenAPI(走 proxy_helper.fetch_json proxy→直連兩段降級)。失敗回 None。"""
+    import proxy_helper
+    return proxy_helper.fetch_json(OPENAPI_URL, timeout=HTTP_TIMEOUT)
 
 
 def fetch_futures_chip(log=print) -> dict | None:

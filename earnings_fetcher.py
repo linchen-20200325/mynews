@@ -71,31 +71,10 @@ def _roc_period_to_iso(roc: str) -> str:
 
 
 def _fetch_rows() -> list[dict]:
-    """抓 OpenAPI 整包(走 NAS 代理 + 自動降級直連);失敗回空清單。"""
-    try:
-        import proxy_helper
-        resp = proxy_helper.fetch_url(
-            TWSE_MONTHLY_REVENUE_URL,
-            headers={"Accept": "application/json"}, timeout=HTTP_TIMEOUT,
-        )
-        if resp is not None and resp.status_code == 200:
-            data = resp.json()
-            if isinstance(data, list):
-                return data
-    except Exception:  # noqa: BLE001 — 代理/解析失敗 → 試直連
-        pass
-    try:
-        import requests
-        resp = requests.get(
-            TWSE_MONTHLY_REVENUE_URL,
-            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
-            timeout=HTTP_TIMEOUT,
-        )
-        if resp.status_code == 200 and isinstance(resp.json(), list):
-            return resp.json()
-    except Exception:  # noqa: BLE001 — 直連也失敗 → 回空,當天略過財報
-        pass
-    return []
+    """抓 OpenAPI 整包(走 proxy_helper.fetch_json proxy→直連兩段降級);失敗回空清單。"""
+    import proxy_helper
+    data = proxy_helper.fetch_json(TWSE_MONTHLY_REVENUE_URL, timeout=HTTP_TIMEOUT)
+    return data if isinstance(data, list) else []
 
 
 def fetch_monthly_revenue(tickers: list[str], log=print) -> dict[str, dict]:

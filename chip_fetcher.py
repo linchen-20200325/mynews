@@ -35,29 +35,9 @@ MAX_LOOKBACK = 30  # 最多往回找的日曆天數,避免連假/長停盤無限
 
 
 def _fetch_day_json(date_str: str) -> dict | None:
-    """走 proxy_helper 抓單日 BFI82U JSON;非 200 / 非 JSON / None 回 None。"""
-    try:
-        import proxy_helper
-        resp = proxy_helper.fetch_url(
-            BFI82U_URL.format(d=date_str),
-            headers={"Accept": "application/json"}, timeout=HTTP_TIMEOUT,
-        )
-        if resp is not None and resp.status_code == 200:
-            return resp.json()
-    except Exception:  # noqa: BLE001 — proxy_helper 不可用 → 直連保底
-        pass
-    try:
-        import requests
-        resp = requests.get(
-            BFI82U_URL.format(d=date_str),
-            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
-            timeout=HTTP_TIMEOUT,
-        )
-        if resp.status_code == 200:
-            return resp.json()
-    except Exception:  # noqa: BLE001
-        pass
-    return None
+    """走 proxy_helper.fetch_json 抓單日 BFI82U JSON(proxy→直連兩段降級)。"""
+    import proxy_helper
+    return proxy_helper.fetch_json(BFI82U_URL.format(d=date_str), timeout=HTTP_TIMEOUT)
 
 
 def _parse_day(payload: dict, date_str: str) -> dict | None:

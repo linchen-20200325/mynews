@@ -195,6 +195,29 @@ def fetch_url(
     return None
 
 
+def fetch_json(
+    url: str,
+    *,
+    headers: "dict | None" = None,
+    timeout: int = 20,
+) -> "dict | list | None":
+    """GET JSON 兩段降級 SSOT：fetch_url(proxy→direct) 後解 JSON。
+
+    非 200、非 JSON、或 fetch_url 回 None，一律回 None。
+    業務規則(如「必須是 list」)由呼叫端自行判斷。
+    """
+    _hdr = {"Accept": "application/json"}
+    if headers:
+        _hdr.update(headers)
+    resp = fetch_url(url, headers=_hdr, timeout=timeout)
+    if resp is None:
+        return None
+    try:
+        return resp.json()
+    except Exception:  # noqa: BLE001 — 200 但非 JSON
+        return None
+
+
 def check_proxy(probe_url: str = DEFAULT_PROBE_URL, timeout: int = 10) -> dict:
     """檢驗 NAS 中繼站是否可以使用。
 
