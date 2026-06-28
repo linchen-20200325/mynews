@@ -4,3 +4,4 @@ pandas>=2.0
 requests>=2.31
 urllib3>=2.0  # NAS 中繼站(proxy_helper.py)retry session 用
 plotly>=5.18  # 房市觀察:台灣縣市互動 choropleth 地圖
+lxml>=4.9    # pandas.read_html 解析 MOPS 上櫃月營收 HTML 表格
