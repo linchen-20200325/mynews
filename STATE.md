@@ -24,10 +24,13 @@
 
 ## 架構約定(SSOT — 同類事實只定義一次)
 - `paths.py`:所有資料檔/封存目錄、ETF 三檔路徑的**唯一**定義(各檔 import,勿再貼字面值)。
-- `tz_utils.py`:台灣 UTC+8 時間(`taiwan_now/today`);凡「台灣今日」一律走它。例外:`scripts/nas_trigger.py` 刻意零相依、自帶。
+- `tz_utils.py`:台灣 UTC+8 時間(`taiwan_now/today`);凡「台灣今日」一律走它。例外:`scripts/nas_trigger.py`刻意零相依、自帶。
 - `etf_data.py`:ETF 成分股/反查/圖鑑的快取(`@st.cache_data`)單一入口;app.py 一律向它要資料。
-- `numutil.py`:漲跌幅 `pct_change()`(內建 `prev>0` 與方向對帳不變量)的**唯一**公式;凡算 % 一律走它。
+- `numutil.py`:漲跌幅 `pct_change()`、`parse_number()`、`OKU` 億元係數的**唯一**來源;嚴禁在其他模組重複定義。
 - `freshness.py`:資料新鮮度(staleness)判定的**唯一**入口。`stale_note()` 給 UI 警語、`ensure_fresh()` 給排程守門(過期 raise)。門檻屬領域決策,以具名常數帶入:籌碼 `CHIP_STALE_DAYS=5`、房價 `HOUSE_STALE_DAYS=40`、股價/報告 `PRICE_STALE_DAYS`/`STALE_REPORT_DAYS=5/2`(皆可環境變數覆寫)。
+- `config.py`:環境變數解析(`env_bool/int/float`)與 11 個功能開關的**唯一**入口;嚴禁在 `update_data.py` 散落 `os.environ.get`。
+- `gemini_client.py`:Gemini API 呼叫、JSON 清洗、字典正規化的**唯一**入口;嚴禁直接 `import google.generativeai`。
+- `line_notify.py`:LINE Messaging API 推播(`broadcast/multicast/push` 自動路由)的**唯一**入口;嚴禁直接 urllib/requests 推 LINE。
 - `watchlist.py`:個股盯盤清單(`watchlist.json`)的**唯一**入口。純邏輯(`parse_command/add_stock/remove_stock/format_list/normalize_ticker`)與 I/O(`load/save/dumps`)分離,排程端(本機檔)與 `scripts/nas_line_bot.py`(GitHub API)共用同一套加/刪/解析規則,杜絕兩端漂移。
 
 ## 關鍵檔案
@@ -52,9 +55,16 @@
 5. **Gemini 用官方 `google-genai`**;結構化輸出關 thinking、設 `max_output_tokens`,JSON 經清理+驗證,失敗以非零碼結束;趨勢/LINE/各副章節失敗不可拖垮主報告。
 6. 所有產出為 AI/工具自動生成,僅供參考,非投資建議。
 
+## Phase-2 SSOT 整合（2026-06-28 結案，PR #73 已併入 main）
+- ✅ `validate_*()` 泛化：`_validate_structure()` helper，8 個 wrapper 各縮為 1 行（−37 行）
+- ✅ `update_data.main()` 拆分：291→48 行，10 個 `_run_*` helper
+- ✅ `app.py::render_stock_query()` 拆分：164→7 行，6 個 `_render_stock_query_*` helper
+- ✅ `ARCHITECTURE.md` 更新至 v2.0：SSOT 表 11 條，技術債 8 項全結案
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
-- [ ] (選,**唯一剩餘阻塞、屬你的帳號操作**)repo Secrets 設 `PROXY_URL`:設妥後上面全市場化與每月排程自動抓 ETF/股價/房價即可自動跑(NAS 需放行 Actions IP)。
-- [x] 個股盯盤(第二個 LINE bot)**程式已完成**:`watchlist.py` + `earnings_fetcher.py` + `update_data.run_watch_section()` + `scripts/nas_line_bot.py`(NAS webhook)+ workflow 接線。**待上線:** ① repo Secrets 設 `LINE_WATCH_TOKEN`/`LINE_WATCH_TO`(第二個 Messaging API channel);② NAS 跑 `nas_line_bot.py` 並把 LINE Webhook URL 指到 NAS(需 `LINE_WATCH_SECRET` + 具 contents:write 的 `GITHUB_TOKEN`,對外經 Cloudflare Tunnel/路由器轉發)。沙箱無網路/無第二 bot,無法代跑驗收。
-- [ ] (擴充)個股盯盤財報目前只涵蓋**上市月營收**(TWSE OpenAPI `t187ap05_L`);上櫃月營收與季報 EPS/法說屬後續(MOPS 無正式 API,需 proxy + 表單解析)。
+- [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
+- [x] 個股盯盤(第二個 LINE bot)**已上線驗收通過(2026-06-28)**:傳「加 2330」bot 正確回「已加入 2330」並顯示 watchlist 4 檔(6770/6239/3231/2330);NAS `nas_line_bot.py` webhook 對外可達,Secrets 全設妥,watchlist.json 寫回 GitHub 正常。
+- [x] **上櫃月營收已實作**(`earnings_fetcher._fetch_otc_bulk`):MOPS `ajax_t05st10_q` POST 一次全抓,`fetch_monthly_revenue()` 透明合併上市(TWSE) + 上櫃(MOPS),呼叫端零改動;需 proxy 過境 MOPS。
+- [x] **季報 EPS 已實作(2026-06-28)**:`fetch_quarterly_eps()` 向 MOPS `ajax_t163sb04` 逐檔 POST,sii/otc 自動辨識;`_push_watch_for` 加 EPS dedup 區塊;LINE 訊息新增「📊 新季報(EPS)」段落。需 proxy + 實機驗收(MOPS 境外限速)。
 - 註:§5 向量化已實查結案 — 全庫零 `numpy`/`.iterrows()`,既有 pandas(melt/dropna/line_chart)皆已向量化,其餘為小型巢狀 dict 迴圈(縣市×市場×年),改 pandas 反增風險無效益,**刻意保留**。

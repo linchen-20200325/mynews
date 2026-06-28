@@ -1976,16 +1976,32 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     except Exception as exc:  # noqa: BLE001 — 財報抓取失敗不影響消息面推播
         print(f"  警告: 月營收抓取失敗:{exc}", file=sys.stderr)
 
-    if not summaries and not new_revenue:
+    # 4) 季報 EPS;dedup key 含期別(如「eps-2330-2026-Q1」)
+    new_eps: list[dict] = []
+    fresh_eps_ids: list[str] = []
+    try:
+        eps_data = earnings_fetcher.fetch_quarterly_eps(
+            watchlist.tickers({"stocks": stocks}), log=print)
+        for ticker, eps in eps_data.items():
+            rid = f"{dedup_prefix}eps-{ticker}-{eps.get('period')}"
+            if rid not in pushed:
+                new_eps.append(eps)
+                fresh_eps_ids.append(rid)
+    except Exception as exc:  # noqa: BLE001 — EPS 失敗不影響消息面/月營收推播
+        print(f"  警告: 季報 EPS 抓取失敗:{exc}", file=sys.stderr)
+
+    if not summaries and not new_revenue and not new_eps:
         return []
 
-    msg = line_notify.build_watch_line_message(today, summaries, new_revenue, tech_lines, chip_lines, vcp_lines)
+    msg = line_notify.build_watch_line_message(
+        today, summaries, new_revenue, tech_lines, chip_lines, vcp_lines, new_eps)
     line_notify._push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=to)
     print(
         f"  · 推給 {to[:6]}…:消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
-        f"籌碼面 {len(chip_lines)} 檔、VCP {len(vcp_lines)} 檔、新財報 {len(new_revenue)} 筆"
+        f"籌碼面 {len(chip_lines)} 檔、VCP {len(vcp_lines)} 檔、"
+        f"月營收 {len(new_revenue)} 筆、季報 EPS {len(new_eps)} 筆"
     )
-    return fresh_ids
+    return fresh_ids + fresh_eps_ids
 
 
 def run_watch_section(today: str) -> None:
