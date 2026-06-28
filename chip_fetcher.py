@@ -20,7 +20,11 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timezone
+
+import tz_utils
+
+import numutil
 
 BFI82U_URL = (
     "https://www.twse.com.tw/rwd/zh/fund/BFI82U"
@@ -31,38 +35,11 @@ DEFAULT_DAYS = 10
 MAX_LOOKBACK = 30  # 最多往回找的日曆天數,避免連假/長停盤無限迴圈
 
 
-def _to_int(s: str) -> int:
-    """把『-91,733,415,946』這類字串轉 int;失敗回 0。"""
-    try:
-        return int(str(s).replace(",", "").replace(" ", "").strip())
-    except (TypeError, ValueError):
-        return 0
-
 
 def _fetch_day_json(date_str: str) -> dict | None:
-    """走 proxy_helper 抓單日 BFI82U JSON;非 200 / 非 JSON / None 回 None。"""
-    try:
-        import proxy_helper
-        resp = proxy_helper.fetch_url(
-            BFI82U_URL.format(d=date_str),
-            headers={"Accept": "application/json"}, timeout=HTTP_TIMEOUT,
-        )
-        if resp is not None and resp.status_code == 200:
-            return resp.json()
-    except Exception:  # noqa: BLE001 — proxy_helper 不可用 → 直連保底
-        pass
-    try:
-        import requests
-        resp = requests.get(
-            BFI82U_URL.format(d=date_str),
-            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
-            timeout=HTTP_TIMEOUT,
-        )
-        if resp.status_code == 200:
-            return resp.json()
-    except Exception:  # noqa: BLE001
-        pass
-    return None
+    """走 proxy_helper.fetch_json 抓單日 BFI82U JSON(proxy→直連兩段降級)。"""
+    import proxy_helper
+    return proxy_helper.fetch_json(BFI82U_URL.format(d=date_str), timeout=HTTP_TIMEOUT)
 
 
 def _parse_day(payload: dict, date_str: str) -> dict | None:
@@ -78,7 +55,7 @@ def _parse_day(payload: dict, date_str: str) -> dict | None:
     for row in payload["data"]:
         if len(row) < 4:
             continue
-        name, diff = row[0], _to_int(row[3])
+        name, diff = row[0], numutil.parse_number(row[3], as_int=True, default=0)
         # 注意:「外資及陸資(不含外資自營商)」字串內含「外資自營商」,
         # 故必須先判斷「外資及陸資」,再判斷「外資自營商」,否則主力外資會被誤分類為 0。
         if "外資及陸資" in name:
@@ -111,18 +88,15 @@ def _parse_day(payload: dict, date_str: str) -> dict | None:
 def fetch_chip_flow(days: int = DEFAULT_DAYS, log=print) -> dict:
     """抓近 days 個交易日的三大法人買賣超(由新到舊),自動跳過週末/假日。"""
     collected: list[dict] = []
-    d = date.today()
-    looked = 0
-    while len(collected) < days and looked < MAX_LOOKBACK:
-        looked += 1
-        if d.weekday() < 5:  # 只試工作日,省請求
-            parsed = _parse_day(_fetch_day_json(d.strftime("%Y%m%d")),
-                                 d.strftime("%Y%m%d"))
-            if parsed:
-                collected.append(parsed)
-                log(f"  [{parsed['date']}] 外資 {parsed['foreign']/1e8:+.0f}億 "
-                    f"投信 {parsed['trust']/1e8:+.0f}億 合計 {parsed['total']/1e8:+.0f}億")
-        d -= timedelta(days=1)
+    for d in tz_utils.iter_trading_days(MAX_LOOKBACK):
+        if len(collected) >= days:
+            break
+        date_str = d.strftime("%Y%m%d")
+        parsed = _parse_day(_fetch_day_json(date_str), date_str)
+        if parsed:
+            collected.append(parsed)
+            log(f"  [{parsed['date']}] 外資 {parsed['foreign']/numutil.OKU:+.0f}億 "
+                f"投信 {parsed['trust']/numutil.OKU:+.0f}億 合計 {parsed['total']/numutil.OKU:+.0f}億")
     if not collected:
         raise RuntimeError("三大法人資料全數抓取失敗(檢查網路/PROXY_URL 或來源是否可達)")
     return {

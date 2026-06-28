@@ -17,7 +17,9 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timezone
+
+import tz_utils
 
 import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
 
@@ -29,36 +31,9 @@ HTTP_TIMEOUT = 20
 MAX_LOOKBACK = 14
 
 
-def _to_int(s) -> int:
-    try:
-        return int(str(s).replace(",", "").replace(" ", "").strip())
-    except (TypeError, ValueError):
-        return 0
-
-
 def _fetch_json(date_str: str) -> dict | None:
-    try:
-        import proxy_helper
-        resp = proxy_helper.fetch_url(
-            MI_MARGN_URL.format(d=date_str),
-            headers={"Accept": "application/json"}, timeout=HTTP_TIMEOUT,
-        )
-        if resp is not None and resp.status_code == 200:
-            return resp.json()
-    except Exception:  # noqa: BLE001
-        pass
-    try:
-        import requests
-        resp = requests.get(
-            MI_MARGN_URL.format(d=date_str),
-            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
-            timeout=HTTP_TIMEOUT,
-        )
-        if resp.status_code == 200:
-            return resp.json()
-    except Exception:  # noqa: BLE001
-        pass
-    return None
+    import proxy_helper
+    return proxy_helper.fetch_json(MI_MARGN_URL.format(d=date_str), timeout=HTTP_TIMEOUT)
 
 
 def _parse(payload: dict, date_str: str) -> dict | None:
@@ -89,7 +64,8 @@ def _parse(payload: dict, date_str: str) -> dict | None:
             if "融資" in label and ("仟元" in label or "金額" in label):
                 if max(i_prev, i_today) >= len(row):
                     continue
-                prev_k, today_k = _to_int(row[i_prev]), _to_int(row[i_today])
+                prev_k = numutil.parse_number(row[i_prev], as_int=True, default=0)
+                today_k = numutil.parse_number(row[i_today], as_int=True, default=0)
                 if prev_k <= 0:  # 無有效前值 → 不計%(不以 0 充數),續找下一列
                     continue
                 today, prev = today_k * 1000, prev_k * 1000  # 仟元 → 元
@@ -105,17 +81,14 @@ def _parse(payload: dict, date_str: str) -> dict | None:
 
 def fetch_margin(log=print) -> dict | None:
     """抓最近一個交易日的融資餘額;自動跳過週末/假日。抓不到回 None。"""
-    d = date.today()
-    for _ in range(MAX_LOOKBACK):
-        if d.weekday() < 5:
-            parsed = _parse(_fetch_json(d.strftime("%Y%m%d")), d.strftime("%Y%m%d"))
-            if parsed:
-                log(f"  融資餘額 {parsed['date']}:{parsed['margin_today']/1e8:.0f}億"
-                    f"({parsed['margin_chg_pct']:+.2f}%)")
-                parsed["as_of"] = datetime.now(timezone.utc).strftime(
-                    "%Y-%m-%d %H:%M UTC (TWSE MI_MARGN)")
-                return parsed
-        d -= timedelta(days=1)
+    for d in tz_utils.iter_trading_days(MAX_LOOKBACK):
+        parsed = _parse(_fetch_json(d.strftime("%Y%m%d")), d.strftime("%Y%m%d"))
+        if parsed:
+            log(f"  融資餘額 {parsed['date']}:{parsed['margin_today']/numutil.OKU:.0f}億"
+                f"({parsed['margin_chg_pct']:+.2f}%)")
+            parsed["as_of"] = datetime.now(timezone.utc).strftime(
+                "%Y-%m-%d %H:%M UTC (TWSE MI_MARGN)")
+            return parsed
     return None
 
 

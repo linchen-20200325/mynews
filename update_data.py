@@ -41,12 +41,12 @@ import json
 import os
 import re
 import sys
-import time
-import urllib.error
-import urllib.request
 from pathlib import Path
 
+import gemini_client  # Gemini API 封裝 SSOT(多 Key/多模型/退避/JSON 解析)
+import line_notify  # LINE 推播 SSOT(路由/訊息組建/事件去重)
 import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
+import config  # 環境變數讀取 + 功能開關的 SSOT
 import chip_fetcher  # 法人籌碼:抓證交所三大法人買賣超(事後驗證,真實數字)
 import chip_signals  # 個股盯盤:個股三大法人買賣超(T86)籌碼面訊號的 SSOT
 import earnings_fetcher  # 個股盯盤:抓證交所 OpenAPI 月營收(真實財報更新訊號)
@@ -56,6 +56,7 @@ import housing_fetcher
 import index_fetcher  # 國際盤預警:抓美股指數/美股期貨真實漲跌幅
 import margin_fetcher  # 融資餘額:散戶槓桿/斷頭訊號(共振偵測用)
 import news_fetcher
+import numutil  # 數值計算的單一真相源(SSOT):pct_change / parse_number / OKU
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
 import tech_signals  # 個股技術面訊號(日K→均線/KD/RSI)的單一真相源(SSOT)
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
@@ -66,31 +67,15 @@ import watchlist  # 個股盯盤清單(watchlist)的單一真相源(SSOT)
 # 設定
 # ---------------------------------------------------------------------------
 
-DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
-# 主模型過載(503)時改用的備援模型(逗號分隔);可用 GEMINI_MODEL_FALLBACK 覆寫。
-DEFAULT_GEMINI_FALLBACKS = "gemini-2.0-flash"
-DEFAULT_GEMINI_MAX_TOKENS = 16384  # 單次輸出 token 上限預設;可用 GEMINI_MAX_TOKENS 覆寫
 DEFAULT_NEWS_MAX = 25  # 單一主題抓新聞則數預設;可用 NEWS_MAX 覆寫
-OKU = 100_000_000  # 1 億(元)— 三大法人/融資金額顯示換算(取代散落的 1e8 魔術數字)
-
-
-def _env_int(name: str, default: int) -> int:
-    try:
-        return int(os.environ.get(name) or default)
-    except (TypeError, ValueError):
-        return default
+OKU = numutil.OKU  # 億元換算係數 SSOT 在 numutil,此處保留別名供本檔既有參照
 
 
 # 資料新鮮度門檻(§2.4)— 過期→該章節 raise 被既有 try/except 接住→略過,不拖垮主報告。
 # 天數依官方發布頻率設定,可用環境變數覆寫(門檻屬領域決策,具名常數帶入而非寫死於 freshness)。
-CHIP_STALE_DAYS = _env_int("CHIP_STALE_DAYS", 5)     # 籌碼(三大法人/融資/台指期留倉)走證交所每日
-HOUSE_STALE_DAYS = _env_int("HOUSE_STALE_DAYS", 40)  # 房價走內政部實價登錄,每約 10 天一批
+CHIP_STALE_DAYS = config.env_int("CHIP_STALE_DAYS", 5)     # 籌碼(三大法人/融資/台指期留倉)走證交所每日
+HOUSE_STALE_DAYS = config.env_int("HOUSE_STALE_DAYS", 40)  # 房價走內政部實價登錄,每約 10 天一批
 
-# LINE Messaging API(LINE Notify 已於 2025 停用,改用 Messaging API push)
-LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
-LINE_MULTICAST_ENDPOINT = "https://api.line.me/v2/bot/message/multicast"
-LINE_BROADCAST_ENDPOINT = "https://api.line.me/v2/bot/message/broadcast"
-LINE_TEXT_LIMIT = 4500  # 單則 text 上限 5000,留安全餘裕
 
 DEFAULT_TOPIC = (
     "全球政經與市場動態:聯準會利率與通膨、地緣政治與軍事衝突、美中科技戰、"
@@ -196,14 +181,12 @@ OUTPUT_INTL_ALERT = paths.LATEST_INTL_ALERT
 INTL_ALERT_ARCHIVE_DIR = paths.ARCHIVE_INTL_ALERT
 OUTPUT_CHIP = paths.LATEST_CHIP
 CHIP_ARCHIVE_DIR = paths.ARCHIVE_CHIP
-CHIP_PUSHED_STATE = paths.CHIP_PUSHED_STATE  # 法人事件 LINE 已推清單(防洗版)
 OUTPUT_MARGIN = paths.LATEST_MARGIN  # 融資餘額(散戶斷頭訊號)
 OUTPUT_FUT_CHIP = paths.LATEST_FUT_CHIP  # 三大法人台指期留倉(外資期貨偏多/偏空)
 OUTPUT_FOCUS = paths.LATEST_FOCUS
 FOCUS_ARCHIVE_DIR = paths.ARCHIVE_FOCUS
 OUTPUT_HOUSING = paths.LATEST_HOUSING
 HOUSING_ARCHIVE_DIR = paths.ARCHIVE_HOUSING
-WATCH_REVENUE_PUSHED = paths.WATCH_REVENUE_PUSHED  # 個股盯盤:月營收已推 id(防重複推播)
 
 # 全台 22 縣市(官方「臺」),房市分區標記只能用這些名稱
 TAIWAN_COUNTIES = list(housing_fetcher.CITY_CODES.values())
@@ -1070,33 +1053,6 @@ def build_housing_user_prompt(news: list[dict], prices: dict | None, today: str,
 
 
 # ---------------------------------------------------------------------------
-# JSON 防護式清理與解析
-# ---------------------------------------------------------------------------
-
-def clean_json_text(text: str) -> str:
-    """去除 markdown 圍欄,並擷取最外層的 JSON 值(物件或陣列)。"""
-    text = text.strip()
-
-    if text.startswith("```"):
-        first_newline = text.find("\n")
-        if first_newline != -1:
-            text = text[first_newline + 1:]
-        if text.rstrip().endswith("```"):
-            text = text.rstrip()[:-3]
-        text = text.strip()
-
-    if text and text[0] not in "{[":
-        candidates = [i for i in (text.find("{"), text.find("[")) if i != -1]
-        if candidates:
-            start = min(candidates)
-            closer = "}" if text[start] == "{" else "]"
-            end = text.rfind(closer)
-            if end > start:
-                text = text[start:end + 1]
-
-    return text.strip()
-
-
 def validate_report(data: dict) -> None:
     """戰略報告的最低限度結構驗證。"""
     missing = [k for k in REQUIRED_TOP_LEVEL_KEYS if k not in data]
@@ -1114,288 +1070,73 @@ def validate_report(data: dict) -> None:
         raise ValueError("laymans_dictionary 必須是陣列")
 
 
-def validate_trends(data: dict) -> None:
-    """趨勢雷達的最低限度結構驗證。"""
+def _validate_structure(
+    data: dict,
+    *,
+    required_lists: tuple = (),
+    nonempty_lists: tuple = (),
+    required_dicts: tuple = (),
+    nonempty_dicts: tuple = (),
+) -> None:
     if "report_date" not in data:
         raise ValueError("缺少 report_date")
-    if not isinstance(data.get("trends"), list) or not data["trends"]:
-        raise ValueError("trends 必須是非空陣列")
+    for k in required_lists:
+        if not isinstance(data.get(k), list):
+            raise ValueError(f"{k} 必須是陣列")
+    for k in nonempty_lists:
+        if not isinstance(data.get(k), list) or not data[k]:
+            raise ValueError(f"{k} 必須是非空陣列")
+    for k in required_dicts:
+        if not isinstance(data.get(k), dict):
+            raise ValueError(f"{k} 必須是物件")
+    for k in nonempty_dicts:
+        if not isinstance(data.get(k), dict) or not data[k]:
+            raise ValueError(f"{k} 必須是非空字典")
+
+
+def validate_trends(data: dict) -> None:
+    """趨勢雷達的最低限度結構驗證。"""
+    _validate_structure(data, nonempty_lists=("trends",))
 
 
 def validate_stocks(data: dict) -> None:
     """台股觀察的最低限度結構驗證。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("stocks"), list) or not data["stocks"]:
-        raise ValueError("stocks 必須是非空陣列")
+    _validate_structure(data, nonempty_lists=("stocks",))
 
 
 def validate_us_stocks(data: dict) -> None:
     """美股觀察的最低限度結構驗證(與台股同契約)。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("stocks"), list) or not data["stocks"]:
-        raise ValueError("stocks 必須是非空陣列")
+    _validate_structure(data, nonempty_lists=("stocks",))
 
 
 def validate_intl_alert(data: dict) -> None:
     """國際盤預警的最低限度結構驗證(報價必須是非空字典:無真實數字就不該成立)。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("quotes"), dict) or not data["quotes"]:
-        raise ValueError("quotes 必須是非空字典(真實報價)")
-    if not isinstance(data.get("tw_impact"), dict):
-        raise ValueError("tw_impact 必須是物件")
-    if not isinstance(data.get("us_view"), dict):
-        raise ValueError("us_view 必須是物件")
+    _validate_structure(data, nonempty_dicts=("quotes",), required_dicts=("tw_impact", "us_view"))
 
 
 def validate_focus(data: dict) -> None:
     """全球人物追蹤的最低限度結構驗證(允許 stocks 為空:該對象未必對應到個股)。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("stocks"), list):
-        raise ValueError("stocks 必須是陣列")
+    _validate_structure(data, required_lists=("stocks",))
 
 
 def validate_stock_query(data: dict) -> None:
     """個股健診的最低限度結構驗證。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("relevance_points"), list):
-        raise ValueError("relevance_points 必須是陣列")
+    _validate_structure(data, required_lists=("relevance_points",))
 
 
 def validate_news_etf(data: dict) -> None:
     """新聞 ETF 策略的最低限度結構驗證(四階段皆須為物件)。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    for key in ("phase1_causal", "phase2_camps", "phase3_etf", "phase4_playbook"):
-        if not isinstance(data.get(key), dict):
-            raise ValueError(f"{key} 必須是物件")
+    _validate_structure(data, required_dicts=("phase1_causal", "phase2_camps", "phase3_etf", "phase4_playbook"))
 
 
 def validate_housing(data: dict) -> None:
     """房市觀察的最低限度結構驗證。"""
-    if "report_date" not in data:
-        raise ValueError("缺少 report_date")
-    if not isinstance(data.get("regions"), list):
-        raise ValueError("regions 必須是陣列")
-
-
-# ---------------------------------------------------------------------------
-# Gemini:共用的「讀新聞 → JSON」呼叫
-# ---------------------------------------------------------------------------
-
-def get_gemini_keys() -> list[str]:
-    """蒐集一把或多把 Gemini 金鑰(支援複數 key,呼叫失敗時可自動切換)。
-
-    支援的環境變數:
-      - GEMINI_API_KEY    單一,或以逗號/分號/換行分隔多把
-      - GEMINI_API_KEYS   複數(同上分隔)
-      - GEMINI_API_KEY_1 / GEMINI_API_KEY_2 ...  多把分開命名
-    """
-    keys: list[str] = []
-
-    def add_many(raw: str) -> None:
-        for part in re.split(r"[,;\n]+", raw or ""):
-            p = part.strip()
-            if p and p not in keys:
-                keys.append(p)
-
-    add_many(os.environ.get("GEMINI_API_KEY", ""))
-    add_many(os.environ.get("GEMINI_API_KEYS", ""))
-    for name, val in os.environ.items():
-        if re.fullmatch(r"GEMINI_API_KEY_?\d+", name):
-            add_many(val)
-    return keys
-
-
-def _build_gemini_config(types, system_instruction: str, max_tokens: int | None = None):
-    """組 Gemini 生成設定:關閉 thinking、放大輸出上限,避免長 prompt 思考吃光額度。
-
-    舊版 SDK 沒有 ThinkingConfig / max_output_tokens 也能用(逐項 try,失敗就略過該設定)。
-    ``max_tokens`` 可覆寫單次輸出上限(供解析失敗時加大重試)。
-    """
-    kwargs = {
-        "system_instruction": system_instruction,
-        "response_mime_type": "application/json",
-        "temperature": 0.7,
-    }
-    try:
-        if max_tokens is None:
-            max_tokens = int(os.environ.get("GEMINI_MAX_TOKENS", str(DEFAULT_GEMINI_MAX_TOKENS)))
-        kwargs["max_output_tokens"] = int(max_tokens)
-    except (TypeError, ValueError):
-        # GEMINI_MAX_TOKENS 設成非數字 → 不靜默,印警告後退回不設上限(由 SDK 預設)
-        print(f"  警告: GEMINI_MAX_TOKENS 非有效數字({max_tokens!r}),"
-              "本次不設 max_output_tokens", file=sys.stderr)
-    # 關閉 2.5 系列的 thinking(thinking 會占用輸出 token,長 prompt 易導致空回應)
-    try:
-        kwargs["thinking_config"] = types.ThinkingConfig(thinking_budget=0)
-    except Exception:  # noqa: BLE001 — 舊 SDK 無 ThinkingConfig
-        pass
-    try:
-        return types.GenerateContentConfig(**kwargs)
-    except TypeError:
-        # 某些舊版本不支援部分欄位,退回最小可用設定
-        for k in ("thinking_config", "max_output_tokens"):
-            kwargs.pop(k, None)
-        return types.GenerateContentConfig(**kwargs)
-
-
-def _resp_finish_info(resp) -> str:
-    """從回應取出 finish_reason / 安全阻擋等診斷字串,供空回應時報錯。"""
-    bits: list[str] = []
-    try:
-        for cand in (resp.candidates or []):
-            fr = getattr(cand, "finish_reason", None)
-            if fr is not None:
-                bits.append(f"finish_reason={fr}")
-    except Exception:  # noqa: BLE001
-        pass
-    try:
-        fb = getattr(resp, "prompt_feedback", None)
-        if fb:
-            bits.append(f"prompt_feedback={fb}")
-    except Exception:  # noqa: BLE001
-        pass
-    return "; ".join(bits) or "無候選內容"
-
-
-_TRANSIENT_HINTS = ("503", "unavailable", "overloaded", "high demand", "try again",
-                    "deadline", "resource_exhausted", "500", "internal error", "502", "504")
-
-
-def _is_transient(exc: Exception) -> bool:
-    """是否為暫時性錯誤(模型過載/5xx/逾時)→ 值得退避重試,而非換金鑰也沒用。"""
-    s = str(exc).lower()
-    return any(h in s for h in _TRANSIENT_HINTS)
-
-
-def _gemini_models(model: str) -> list[str]:
-    """主模型 + 備援模型清單(過載時改用較不壅塞的模型);去重保序。"""
-    out = [model]
-    for fb in (os.environ.get("GEMINI_MODEL_FALLBACK") or DEFAULT_GEMINI_FALLBACKS).split(","):
-        fb = fb.strip()
-        if fb and fb not in out:
-            out.append(fb)
-    return out
-
-
-def _gemini_generate_text(types, genai, model, keys, system_instruction, user_content, max_tokens):
-    """多把金鑰×多模型逐一嘗試取得非空回應;遇暫時性過載(503)以指數退避重試整輪。
-
-    503 UNAVAILABLE 是 Google 模型過載(暫時性),換金鑰當下也常一起撞;故整輪
-    (所有金鑰×備援模型)都失敗且屬暫時性時,退避數秒後重試,而非立刻整批放棄。
-    """
-    config = _build_gemini_config(types, system_instruction, max_tokens)
-    models = _gemini_models(model)
-    try:
-        max_attempts = max(1, int(os.environ.get("GEMINI_RETRIES") or 4))
-    except (TypeError, ValueError):
-        max_attempts = 4
-
-    last_exc: Exception | None = None
-    for attempt in range(max_attempts):
-        transient = False
-        for mdl in models:
-            for key in keys:
-                try:
-                    client = genai.Client(api_key=key)
-                    resp = client.models.generate_content(
-                        model=mdl, contents=user_content, config=config,
-                    )
-                except Exception as exc:  # noqa: BLE001 — 金鑰/額度/過載/網路錯誤 → 換下一把
-                    last_exc = exc
-                    transient = transient or _is_transient(exc)
-                    continue
-                text = (resp.text or "").strip()
-                if not text:
-                    # 空回應多為 thinking 吃光 token(MAX_TOKENS)或安全阻擋;附診斷再換下一把
-                    last_exc = RuntimeError(f"Gemini 回傳空內容({_resp_finish_info(resp)})")
-                    continue
-                return text
-        # 整輪(所有金鑰×模型)皆失敗;若屬暫時性過載則退避重試,否則直接放棄
-        if attempt + 1 < max_attempts and transient:
-            wait = min(5 * 2 ** attempt, 60)  # 5,10,20,40s 上限 60
-            print(f"  Gemini 暫時性過載(503),{wait}s 後重試"
-                  f"(第 {attempt + 2}/{max_attempts} 輪)...", file=sys.stderr)
-            time.sleep(wait)
-            continue
-        break
-    raise last_exc or RuntimeError("所有 Gemini 金鑰皆呼叫失敗")
-
-
-def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
-    """以 Gemini 讀取內容並回傳解析後的 JSON dict;多把金鑰會逐一嘗試。
-
-    若輸出疑似被 token 上限截斷(JSON 解析失敗),會自動加大輸出上限再重試一次。
-    """
-    from google import genai
-    from google.genai import types
-
-    model = os.environ.get("GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
-    keys = get_gemini_keys()
-    if not keys:
-        raise RuntimeError("未設定 GEMINI_API_KEY")
-
-    try:
-        base_budget = int(os.environ.get("GEMINI_MAX_TOKENS", str(DEFAULT_GEMINI_MAX_TOKENS)))
-    except (TypeError, ValueError):
-        base_budget = DEFAULT_GEMINI_MAX_TOKENS
-    # 第一輪用預設上限;若解析失敗(疑似被截斷)再用更大上限重試一次。
-    budgets = [base_budget]
-    if base_budget < 65536:
-        budgets.append(65536)
-
-    last_exc: Exception | None = None
-    for i, budget in enumerate(budgets):
-        try:
-            text = _gemini_generate_text(
-                types, genai, model, keys, system_instruction, user_content, budget
-            )
-        except Exception as exc:  # noqa: BLE001 — 整輪失敗(含空回應/MAX_TOKENS)→ 換更大上限
-            last_exc = exc
-            continue
-
-        json_text = clean_json_text(text)
-        try:
-            # strict=False:容許字串值內含原始換行/tab 等控制字元
-            # (Gemini 偶爾會在長敘述裡塞真換行,strict 模式會誤判為 Invalid control character)
-            return json.loads(json_text, strict=False)
-        except json.JSONDecodeError as exc:
-            last_exc = exc
-            # 還有更大的預算就重試(多半是輸出過長被截斷);否則才報錯
-            if i + 1 < len(budgets):
-                continue
-            raise ValueError(
-                f"JSON 解析失敗(輸出可能被截斷,可調高 GEMINI_MAX_TOKENS):{exc}\n"
-                f"--- 原始內容前 500 字 ---\n{json_text[:500]}"
-            ) from exc
-
-    raise RuntimeError(f"所有 Gemini 金鑰皆呼叫失敗,最後錯誤:{last_exc}")
-
-
-def normalize_dictionary(raw) -> list:
-    """把模型回傳的白話文字典整理成乾淨的 [{term, explanation}] 陣列。"""
-    if isinstance(raw, dict) and isinstance(raw.get("laymans_dictionary"), list):
-        raw = raw["laymans_dictionary"]
-    if not isinstance(raw, list):
-        raise ValueError("laymans_dictionary 格式不是陣列")
-    cleaned = [
-        {"term": str(d.get("term", "")), "explanation": str(d.get("explanation", ""))}
-        for d in raw
-        if isinstance(d, dict) and d.get("term")
-    ]
-    if not cleaned:
-        raise ValueError("laymans_dictionary 為空")
-    return cleaned
+    _validate_structure(data, required_lists=("regions",))
 
 
 def get_macro_analysis(news: list[dict], topic: str, today: str) -> dict:
     """Gemini 讀新聞 → 四維度分析 + 白話文字典。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         ANALYSIS_SYSTEM_PROMPT, build_analysis_user_prompt(news, topic, today)
     )
     analysis = data.get("strategic_analysis")
@@ -1406,13 +1147,13 @@ def get_macro_analysis(news: list[dict], topic: str, today: str) -> dict:
         raise ValueError(f"strategic_analysis 缺少欄位: {missing}")
     return {
         "strategic_analysis": analysis,
-        "laymans_dictionary": normalize_dictionary(data.get("laymans_dictionary")),
+        "laymans_dictionary": gemini_client.normalize_dictionary(data.get("laymans_dictionary")),
     }
 
 
 def get_trend_radar(news: list[dict], today: str) -> dict:
     """Gemini 讀新聞 → 趨勢雷達。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         TREND_SYSTEM_PROMPT, build_trend_user_prompt(news, today)
     )
     data.setdefault("report_date", today)
@@ -1429,7 +1170,7 @@ def get_trend_radar(news: list[dict], today: str) -> dict:
 
 def get_stock_picks(news: list[dict], today: str) -> dict:
     """Gemini 讀台灣財經新聞 → 台股標的(利多/利空/觀望)+ 趨勢/夕陽產業。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         STOCK_SYSTEM_PROMPT, build_stock_user_prompt(news, today)
     )
     data.setdefault("report_date", today)
@@ -1445,7 +1186,7 @@ def get_stock_picks(news: list[dict], today: str) -> dict:
 
 def get_us_stock_picks(news: list[dict], today: str) -> dict:
     """Gemini 讀美股財經新聞 → 美股標的(利多/利空/觀望)+ 趨勢/夕陽產業。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         US_STOCK_SYSTEM_PROMPT, build_us_stock_user_prompt(news, today)
     )
     data.setdefault("report_date", today)
@@ -1499,7 +1240,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
     # Gemini 只做文字研判(利空原因/對台股影響);失敗(如配額 429)不得拖垮
     # 真實報價與大跌偵測 → 包成容錯:AI 掛了仍保留報價/大跌/LINE 預警,只把原因留白。
     try:
-        gemini = call_gemini_for_json(
+        gemini = gemini_client.call_gemini_for_json(
             INTL_ALERT_SYSTEM_PROMPT, build_intl_alert_user_prompt(quotes_doc, news, today)
         )
     except Exception as exc:  # noqa: BLE001 — AI 失敗 → 降級為純報價偵測
@@ -1545,7 +1286,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
 
 def translate_focus_query(term_zh: str) -> dict:
     """把中文關注對象轉成英文新聞檢索詞(Gemini)。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         FOCUS_TRANSLATE_SYSTEM_PROMPT,
         f"請把這個中文關鍵字轉成英文新聞檢索詞:「{term_zh}」",
     )
@@ -1559,7 +1300,7 @@ def translate_focus_query(term_zh: str) -> dict:
 
 def translate_stock_query(term: str) -> dict:
     """把使用者輸入的個股(中文/英文/代號)正規化成中英名+代號+市場(Gemini)。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         STOCK_QUERY_TRANSLATE_SYSTEM_PROMPT,
         f"請把這檔股票正規化成中英文名稱、代號與市場:「{term}」",
     )
@@ -1579,7 +1320,7 @@ def get_stock_query_analysis(
     news: list[dict], today: str,
 ) -> dict:
     """Gemini 讀該股新聞 → ①與新聞的直接相關性 ②營運績效 + 上漲是消息面還是基本面。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         STOCK_QUERY_SYSTEM_PROMPT,
         build_stock_query_user_prompt(term_zh, query_en, ticker, market, news, today),
     )
@@ -1614,7 +1355,7 @@ def build_news_etf_user_prompt(news_text: str, today: str) -> str:
 
 def get_news_etf_strategy(news_text: str, today: str) -> dict:
     """Gemini 讀一則新聞 → 首席策略師四階段台股 ETF 進場/持有/出場決策。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         NEWS_ETF_STRATEGY_SYSTEM_PROMPT,
         build_news_etf_user_prompt(news_text, today),
     )
@@ -1663,7 +1404,7 @@ def build_market_digest_prompt(view: str, payload: dict, today: str) -> str:
 
 def get_market_digest(view: str, payload: dict, today: str) -> dict:
     """Gemini 把某領域當日各面板數據融成一段統一研判(overall + digest_markdown)。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         MARKET_DIGEST_SYSTEM_PROMPT, build_market_digest_prompt(view, payload, today)
     )
     data.setdefault("overall", "中性")
@@ -1673,7 +1414,7 @@ def get_market_digest(view: str, payload: dict, today: str) -> dict:
 
 def get_focus_analysis(term_zh: str, query_en: str, news: list[dict], today: str) -> dict:
     """Gemini 讀全球新聞 → 該對象說了什麼 + 衍伸產業 + 牽動的台股/美股個股。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         FOCUS_SYSTEM_PROMPT, build_focus_user_prompt(term_zh, query_en, news, today)
     )
     data.setdefault("report_date", today)
@@ -1693,7 +1434,7 @@ def get_focus_analysis(term_zh: str, query_en: str, news: list[dict], today: str
 def get_housing_analysis(news: list[dict], prices: dict | None, today: str,
                         history: dict | None = None) -> dict:
     """Gemini 讀房市新聞 + 實價登錄當期/歷年 → 冷熱 + 打房政策 + 縣市標記 + 買方總結。"""
-    data = call_gemini_for_json(
+    data = gemini_client.call_gemini_for_json(
         HOUSING_SYSTEM_PROMPT, build_housing_user_prompt(news, prices, today, history)
     )
     data.setdefault("report_date", today)
@@ -1941,248 +1682,6 @@ def fetch_housing_news() -> list[dict]:
     )
 
 
-# ---------------------------------------------------------------------------
-# LINE 推播 (Messaging API push)
-# ---------------------------------------------------------------------------
-
-def _futures_stance_line(chip: dict | None, fut: dict | None) -> str:
-    """台指期留倉:外資期貨偏多/偏空一行白話(前一交易日盤後庫存)。與現貨同向時點出雙重訊號。"""
-    if not fut or fut.get("foreign_net_oi") is None:
-        return ""
-    net = fut["foreign_net_oi"]
-    stance = fut.get("stance", "中性")
-    lots = f"{abs(net) / 1e4:.1f}萬口" if abs(net) >= 10000 else f"{abs(net):,}口"
-    base = f"📐 外資台指期:{stance}(淨{'多' if net >= 0 else '空'}{lots},前日盤後留倉)"
-    days = (chip or {}).get("days") or []
-    tot = days[0].get("total", 0) if days else 0
-    if net < 0 and tot < 0:
-        return base + ";與現貨同步偏空,賣壓較一致。"
-    if net > 0 and tot > 0:
-        return base + ";與現貨同步偏多。"
-    return base + "。"
-
-
-def chip_flow_hint(chip: dict | None, fut: dict | None = None) -> str:
-    """真實三大法人買賣超(現貨流量)+ 台指期留倉(期貨部位)→ 白話籌碼提示。無資料回空字串。"""
-    days = (chip or {}).get("days") or []
-    text = ""
-    if days:
-        latest = days[0]
-        f, t, tot = (latest.get("foreign", 0) / OKU,
-                     latest.get("trust", 0) / OKU,
-                     latest.get("total", 0) / OKU)
-        # 合計連續同向天數(由新到舊)
-        streak = 0
-        for d in days:
-            x = d.get("total", 0)
-            if x == 0 or (x < 0) != (tot < 0):
-                break
-            streak += 1
-        side = "賣超" if tot < 0 else ("買超" if tot > 0 else "持平")
-        text = f"💰 法人籌碼:外資{f:+.0f}億、投信{t:+.0f}億,三大法人{side}{abs(tot):.0f}億"
-        if tot < 0 and streak >= 2:
-            text += f";已連{streak}日站賣方,留意獲利了結賣壓。"
-        elif tot < 0:
-            text += ";由買轉賣,留意獲利了結。"
-        elif tot > 0 and streak >= 2:
-            text += f";連{streak}日買超,暫無獲利了結跡象。"
-        else:
-            text += "。"
-    # 期貨留倉(外資偏多/偏空):與現貨互補,接在現貨提示下一行
-    fut_line = _futures_stance_line(chip, fut)
-    if fut_line:
-        text = (text + "\n" + fut_line) if text else fut_line
-    return text
-
-
-def build_line_message(report: dict, chip_hint: str = "") -> str:
-    """把報告整理成一則精簡的 LINE 文字訊息(標題、法人籌碼提示、盲點/領先指標)。"""
-    lines = [
-        f"🌐 全球政經戰略報告 {report.get('report_date', '')}",
-        f"主題:{report.get('topic', '')}",
-    ]
-
-    if chip_hint:
-        lines += ["", chip_hint]
-
-    kpi = report.get("strategic_analysis", {}).get("blind_spots_and_kpi", "").strip()
-    if kpi:
-        lines += ["", "🎯 盲點與領先指標:", kpi[:400] + ("..." if len(kpi) > 400 else "")]
-
-    lines += ["", f"(白話文來源:{report.get('dictionary_source', '—')})"]
-
-    msg = "\n".join(lines)
-    if len(msg) > LINE_TEXT_LIMIT:
-        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
-    return msg
-
-
-def notify_line(report: dict, chip_hint: str = "") -> None:
-    """透過 LINE Messaging API push 推送報告摘要(可附帶法人籌碼提示)。"""
-    _push_line_text(build_line_message(report, chip_hint))
-
-
-def _push_line_text(text: str, token: str | None = None, to: str | None = None) -> None:
-    """以 LINE Messaging API 推送一則文字(共用:戰略報告 / 國際盤預警 / 法人事件 / 個股盯盤)。
-
-    依 LINE_TO 自動選端點,達成「群體發送」且向後相容:
-      * LINE_TO = "broadcast"            → /broadcast,發給所有加官方帳號好友的人(免收集 ID)。
-      * LINE_TO = 多個 ID(逗號/空白分隔) → /multicast,發給指定名單(最多 500)。
-      * LINE_TO = 單一 ID(user/group/room)→ /push(原行為;群組 ID 即整群可見)。
-
-    token/to 預設讀主 bot 的 LINE_CHANNEL_ACCESS_TOKEN / LINE_TO;傳入則用第二個 bot
-    (個股盯盤)的 LINE_WATCH_TOKEN / LINE_WATCH_TO,讓兩個 bot 共用同一套推播邏輯。
-    """
-    token = token or os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
-    to_raw = (to if to is not None else os.environ["LINE_TO"]).strip()
-    messages = [{"type": "text", "text": text}]
-
-    if to_raw.lower() == "broadcast":
-        endpoint, body = LINE_BROADCAST_ENDPOINT, {"messages": messages}
-        mode = "broadcast(全體好友)"
-    else:
-        ids = [t for t in re.split(r"[,\s]+", to_raw) if t]
-        if len(ids) > 1:
-            endpoint, body = LINE_MULTICAST_ENDPOINT, {"to": ids, "messages": messages}
-            mode = f"multicast({len(ids)} 人名單)"
-        else:
-            endpoint, body = LINE_PUSH_ENDPOINT, {"to": ids[0], "messages": messages}
-            mode = "push(單一對象)"
-    # 診斷:只印模式,不印任何實際 ID(避免外洩);用來確認群發是否真的生效
-    print(f"  LINE 推播模式:{mode}", flush=True)
-
-    payload = json.dumps(body).encode("utf-8")
-    req = urllib.request.Request(
-        endpoint,
-        data=payload,
-        method="POST",
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {token}"},
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            if resp.status != 200:
-                raise RuntimeError(f"LINE 回應非 200: {resp.status}")
-    except urllib.error.HTTPError as exc:
-        body = exc.read().decode("utf-8", "replace")
-        raise RuntimeError(f"LINE 推播失敗 ({exc.code}): {body}") from exc
-
-
-# 對台股有「時間差領先」意義的市場(美股指數=隔夜、美股期貨/台指期夜盤=盤前)。
-LEAD_DROP_TYPES = ("隔夜領先", "盤前即時")
-
-
-def lead_market_drops(intl: dict) -> list[dict]:
-    """取『時間差領先』市場(美股指數/美股期貨/台指期夜盤)的大跌清單。"""
-    return [d for d in intl.get("drops", []) if d.get("lead_type") in LEAD_DROP_TYPES]
-
-
-def build_intl_alert_line_message(intl: dict) -> str:
-    """把國際盤快報整理成一則精簡 LINE 文字(真實報價數字 + Gemini 美股/台股研判)。
-
-    每天都推:有領先市場大跌(或 AI 判警戒)→『🚨 國際盤大跌預警』;平靜 →『🌅 國際盤快報』。
-    """
-    lead = lead_market_drops(intl)
-    alarm = bool(lead) or intl.get("alert_level") == "警戒"
-    title = "🚨 國際盤大跌預警" if alarm else "🌅 國際盤快報"
-    lines = [
-        f"{title} {intl.get('report_date', '')}",
-        f"警示級別:{intl.get('alert_level', '—')}",
-    ]
-    if intl.get("summary"):
-        lines.append(intl["summary"])
-
-    us = intl.get("us_view", {})
-    if us:
-        lines += ["", f"🇺🇸 美股看法:{us.get('direction', '—')}"]
-        ureason = (us.get("reason", "") or "").strip()
-        if ureason:
-            lines.append(ureason[:200] + ("..." if len(ureason) > 200 else ""))
-        focus = us.get("focus", [])
-        if focus:
-            lines.append("觀察焦點:" + "、".join(str(s) for s in focus))
-
-    if lead:
-        lines += ["", "📉 大跌(時間差領先台股):"]
-        for d in lead:
-            lines.append(
-                f"・{d.get('name', '')} {d.get('change_pct', 0):+.2f}%({d.get('lead_type', '')})"
-            )
-    others = [d for d in intl.get("drops", []) if d.get("lead_type") not in LEAD_DROP_TYPES]
-    if others:
-        lines.append(
-            "・(同步盤)"
-            + "、".join(f"{d.get('name', '')} {d.get('change_pct', 0):+.2f}%" for d in others)
-        )
-
-    interp = intl.get("interpretation", [])
-    if interp:
-        lines += ["", "🧭 利空原因(依新聞):"]
-        for it in interp[:3]:
-            mk = it.get("market", "")
-            cause = (it.get("cause", "") or "").strip()
-            lines.append(f"・{mk}:{cause}" if mk else f"・{cause}")
-
-    imp = intl.get("tw_impact", {})
-    if imp:
-        lines += ["", f"🇹🇼 對台股:{imp.get('direction', '—')}"]
-        reason = (imp.get("reason", "") or "").strip()
-        if reason:
-            lines.append(reason[:200] + ("..." if len(reason) > 200 else ""))
-        sectors = imp.get("sectors", [])
-        if sectors:
-            lines.append("重點族群:" + "、".join(str(s) for s in sectors))
-
-    lines += ["", "⚠️ 真實報價 + AI 研判,僅供參考,非投資建議"]
-    msg = "\n".join(lines)
-    if len(msg) > LINE_TEXT_LIMIT:
-        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
-    return msg
-
-
-def notify_line_intl_alert(intl: dict) -> None:
-    """國際盤快報 → 每天推一則 LINE(含美股/台股看法;大跌時標題自動升級)。"""
-    _push_line_text(build_intl_alert_line_message(intl))
-
-
-def build_chip_events_line_message(events: list[dict], today: str) -> str:
-    """把『進入窗口的可預測法人賣壓事件』整理成一則精簡 LINE 文字。"""
-    lines = [f"📅 法人事件預告 {today}", "未來數日已知的籌碼/賣壓窗口:"]
-    for e in events:
-        td = e.get("trading_days_until", 0)
-        when = "今日" if td == 0 else f"約 {td} 個交易日後"
-        lines.append(f"・{e.get('title', '')}({e.get('date', '')},{when})")
-        if e.get("detail"):
-            lines.append(f"　{e['detail']}")
-    lines += ["", "⚠️ 日期為慣例/曆法推算,實際以官方公告為準;僅供參考,非投資建議"]
-    msg = "\n".join(lines)
-    if len(msg) > LINE_TEXT_LIMIT:
-        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
-    return msg
-
-
-def notify_line_chip_events(events: list[dict], today: str) -> None:
-    """可預測法人事件進入窗口 → 推一則 LINE 預告(沿用 Messaging API push)。"""
-    _push_line_text(build_chip_events_line_message(events, today))
-
-
-def load_pushed_events() -> list[str]:
-    """讀已推播過的法人事件 id 清單(防 LINE 洗版);無檔回空。"""
-    try:
-        return list(json.loads(CHIP_PUSHED_STATE.read_text(encoding="utf-8")).get("ids", []))
-    except Exception:  # noqa: BLE001 — 無檔/壞檔 → 視為尚未推過
-        return []
-
-
-def save_pushed_events(ids: list[str]) -> None:
-    """寫回已推播事件 id 清單(只保留最近 60 筆,避免無限增長)。"""
-    save_json(CHIP_PUSHED_STATE, {"ids": ids[-60:]})
-
-
-def _env_float(name: str, default: float) -> float:
-    try:
-        return float(os.environ.get(name) or default)
-    except (TypeError, ValueError):
-        return default
 
 
 def detect_pressure_confluence(intl: dict | None, chip: dict | None,
@@ -2193,7 +1692,7 @@ def detect_pressure_confluence(intl: dict | None, chip: dict | None,
     外資提款=賣股+空單+匯出,任一成立即點亮:現貨賣超 / 台指期偏空(留倉淨空)/ 台幣明顯貶值。
     """
     quotes = (intl or {}).get("quotes", {})
-    us_drops = lead_market_drops(intl or {})        # 美股隔夜/盤前領先大跌 = 必要門檻
+    us_drops = line_notify.lead_market_drops(intl or {})  # 美股隔夜/盤前領先大跌 = 必要門檻
     forces: list[dict] = []
     days = (chip or {}).get("days") or []
 
@@ -2217,7 +1716,7 @@ def detect_pressure_confluence(intl: dict | None, chip: dict | None,
             f0 = foreign0 / OKU
             cons2 = (total0 is not None and total1 is not None
                      and total0 < 0 and total1 < 0)
-            if f0 <= -_env_float("FORCE_FOREIGN_SELL_YI", 150) or (f0 < 0 and cons2):
+            if f0 <= -config.env_float("FORCE_FOREIGN_SELL_YI", 150) or (f0 < 0 and cons2):
                 f1_reasons.append(f"現貨賣超{abs(f0):.0f}億"
                                   + ("、連2日站賣方" if cons2 else ""))
     if fut_chip and fut_chip.get("stance") == "偏空":
@@ -2229,7 +1728,7 @@ def detect_pressure_confluence(intl: dict | None, chip: dict | None,
             f1_reasons.append("台指期偏空(淨空"
                               + (f"{net / 1e4:.1f}萬口)" if net >= 10000 else f"{net:,}口)"))
     twd_up = _num(quotes.get("TWD=X") or {}, "change_pct")
-    if twd_up is not None and twd_up >= _env_float("FORCE_TWD_DROP_PCT", 0.3):
+    if twd_up is not None and twd_up >= config.env_float("FORCE_TWD_DROP_PCT", 0.3):
         f1_reasons.append(f"台幣貶{twd_up:.1f}%(外資匯出)")
     if f1_reasons:
         forces.append({"key": "外資提款", "detail": "、".join(f1_reasons)})
@@ -2239,7 +1738,7 @@ def detect_pressure_confluence(intl: dict | None, chip: dict | None,
         pct = _num(margin, "margin_chg_pct")
         if pct is None:
             _miss("融資增減%")
-        elif pct <= -_env_float("FORCE_MARGIN_DROP_PCT", 1.5):
+        elif pct <= -config.env_float("FORCE_MARGIN_DROP_PCT", 1.5):
             forces.append({"key": "散戶斷頭",
                            "detail": f"融資單日減{abs(pct):.1f}%(去槓桿/斷頭)"})
 
@@ -2249,10 +1748,10 @@ def detect_pressure_confluence(intl: dict | None, chip: dict | None,
     tnx_last, tnx_prev = _num(tnx, "last"), _num(tnx, "prev")
     dxy_chg = _num(dxy, "change_pct")
     bps = (tnx_last - tnx_prev) * 100 if (tnx_last is not None and tnx_prev is not None) else None
-    if bps is not None and bps >= _env_float("FORCE_YIELD_UP_BPS", 4):
+    if bps is not None and bps >= config.env_float("FORCE_YIELD_UP_BPS", 4):
         forces.append({"key": "Fed收緊",
                        "detail": f"10年美債殖利率 +{bps:.0f}bps(資金收緊)"})
-    elif dxy_chg is not None and dxy_chg >= _env_float("FORCE_DXY_UP_PCT", 0.4):
+    elif dxy_chg is not None and dxy_chg >= config.env_float("FORCE_DXY_UP_PCT", 0.4):
         forces.append({"key": "Fed收緊",
                        "detail": f"美元指數 +{dxy_chg:.1f}%(資金收緊)"})
 
@@ -2268,26 +1767,6 @@ def detect_pressure_confluence(intl: dict | None, chip: dict | None,
             "us_drops": us_drops, "forces": forces, "count": len(forces)}
 
 
-def build_confluence_line_message(conf: dict, today: str) -> str:
-    """多重賣壓共振 → 一則白話 LINE(列出哪幾股力量 + 真實數字)。"""
-    lines = [f"🔴 多重賣壓共振預警 {today}"]
-    us = conf.get("us_drops", [])
-    if us:
-        lines.append("美股大跌:" + "、".join(
-            f"{d.get('name', '')} {d.get('change_pct', 0):+.1f}%" for d in us[:3]))
-    lines.append(f"共振力量({conf.get('count', 0)}/4):")
-    for f in conf.get("forces", []):
-        lines.append(f"・{f.get('detail', '')}")
-    lines += ["", "→ 非單一利空,多股賣壓疊加,留意修正延續。",
-              "⚠️ 真實數據判定,僅供參考,非投資建議"]
-    msg = "\n".join(lines)
-    return msg[:LINE_TEXT_LIMIT] if len(msg) > LINE_TEXT_LIMIT else msg
-
-
-def notify_line_confluence(conf: dict, today: str) -> None:
-    """推一則多重賣壓共振 LINE 預警。"""
-    _push_line_text(build_confluence_line_message(conf, today))
-
 
 # ---------------------------------------------------------------------------
 # 工具函式
@@ -2299,41 +1778,6 @@ def save_json(path: Path, data: dict) -> str:
     path.write_text(payload, encoding="utf-8")
     return payload
 
-
-def trend_radar_enabled() -> bool:
-    return os.environ.get("ENABLE_TREND_RADAR", "1").lower() not in ("0", "false", "no")
-
-
-def stock_picker_enabled() -> bool:
-    return os.environ.get("ENABLE_STOCK_PICKER", "1").lower() not in ("0", "false", "no")
-
-
-def us_stock_picker_enabled() -> bool:
-    return os.environ.get("ENABLE_US_STOCK_PICKER", "1").lower() not in ("0", "false", "no")
-
-
-def intl_alert_enabled() -> bool:
-    return os.environ.get("ENABLE_INTL_ALERT", "1").lower() not in ("0", "false", "no")
-
-
-def intl_alert_line_enabled() -> bool:
-    return os.environ.get("ENABLE_INTL_ALERT_LINE", "1").lower() not in ("0", "false", "no")
-
-
-def chip_enabled() -> bool:
-    return os.environ.get("ENABLE_CHIP", "1").lower() not in ("0", "false", "no")
-
-
-def chip_line_enabled() -> bool:
-    return os.environ.get("ENABLE_CHIP_LINE", "1").lower() not in ("0", "false", "no")
-
-
-def confluence_line_enabled() -> bool:
-    return os.environ.get("ENABLE_CONFLUENCE_LINE", "1").lower() not in ("0", "false", "no")
-
-
-def focus_enabled() -> bool:
-    return os.environ.get("ENABLE_FOCUS", "1").lower() not in ("0", "false", "no")
 
 
 def build_focus_report(today: str) -> dict:
@@ -2360,9 +1804,6 @@ def build_focus_report(today: str) -> dict:
         raise RuntimeError("所有追蹤對象都失敗")
     return {"report_date": today, "focuses": focuses}
 
-
-def housing_enabled() -> bool:
-    return os.environ.get("ENABLE_HOUSING", "1").lower() not in ("0", "false", "no")
 
 
 def parse_report_topics() -> list[str]:
@@ -2423,10 +1864,6 @@ WATCH_SYSTEM_PROMPT = """\
 """
 
 
-def watch_enabled() -> bool:
-    """第二個 bot 的 token 與推播對象都設了才啟用個股盯盤;否則整段略過。"""
-    return bool(os.environ.get("LINE_WATCH_TOKEN") and os.environ.get("LINE_WATCH_TO"))
-
 
 def fetch_watch_news(stocks: list[dict]) -> dict[str, list[dict]]:
     """逐檔抓個股近期真實新聞(RSS,無 API 額度顧慮);回 {ticker: [news...]}。"""
@@ -2467,7 +1904,7 @@ def summarize_watch_stocks(stocks: list[dict], news_by_ticker: dict[str, list[di
     user_content = (
         "以下是各檔個股的近期真實新聞,請逐檔做消息面總結:\n\n" + "\n\n".join(blocks)
     )
-    data = call_gemini_for_json(WATCH_SYSTEM_PROMPT, user_content)
+    data = gemini_client.call_gemini_for_json(WATCH_SYSTEM_PROMPT, user_content)
     result = data.get("stocks")
     return result if isinstance(result, list) else []
 
@@ -2476,62 +1913,15 @@ def load_pushed_revenue() -> list[str]:
     """讀已推播過的月營收 id(``ticker-YYYY-MM``)清單;無檔回空。"""
     try:
         return list(json.loads(
-            WATCH_REVENUE_PUSHED.read_text(encoding="utf-8")).get("ids", []))
+            paths.WATCH_REVENUE_PUSHED.read_text(encoding="utf-8")).get("ids", []))
     except Exception:  # noqa: BLE001 — 無檔/壞檔 → 視為尚未推過
         return []
 
 
 def save_pushed_revenue(ids: list[str]) -> None:
     """寫回已推月營收 id 清單(只留最近 500 筆,避免無限增長)。"""
-    save_json(WATCH_REVENUE_PUSHED, {"ids": ids[-500:]})
+    save_json(paths.WATCH_REVENUE_PUSHED, {"ids": ids[-500:]})
 
-
-def build_watch_line_message(today: str, summaries: list[dict],
-                             new_revenue: list[dict],
-                             tech_lines: dict[str, str] | None = None,
-                             chip_lines: dict[str, str] | None = None,
-                             vcp_lines: dict[str, str] | None = None) -> str:
-    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面、籌碼面、VCP 各一行)+ 新月營收(若有)。"""
-    tech_lines = tech_lines or {}
-    chip_lines = chip_lines or {}
-    vcp_lines = vcp_lines or {}
-    lines = [f"📈 個股盯盤 {today}", ""]
-    for s in summaries:
-        ticker = str(s.get("ticker", "")).strip()
-        name = (s.get("name") or "").strip()
-        senti = s.get("sentiment", "中性")
-        summary = (s.get("summary", "") or "").strip()
-        head = f"【{name} {ticker}】".replace("  ", " ") if name else f"【{ticker}】"
-        lines.append(f"{head} {senti}")
-        lines.append(summary or "近期無重大消息。")
-        tline = tech_lines.get(ticker)
-        if tline:
-            lines.append(tline)
-        cline = chip_lines.get(ticker)
-        if cline:
-            lines.append(cline)
-        vline = vcp_lines.get(ticker)
-        if vline:
-            lines.append(vline)
-        lines.append("")
-    if new_revenue:
-        lines.append("🧾 新財報(月營收):")
-        for r in new_revenue:
-            yoy = r.get("yoy_pct")
-            mom = r.get("mom_pct")
-            yoy_s = f"年增 {yoy:+.1f}%" if isinstance(yoy, (int, float)) else "年增 —"
-            mom_s = f"月增 {mom:+.1f}%" if isinstance(mom, (int, float)) else "月增 —"
-            nm = (r.get("name") or "").strip()
-            lines.append(
-                f"・{nm} {r.get('ticker')}｜{r.get('period')} 營收 "
-                f"{r.get('month_rev', 0) / OKU:.0f}億,{yoy_s}、{mom_s}"
-            )
-        lines.append("")
-    lines.append("(僅供參考,非投資建議。指令:加/刪/清單)")
-    msg = "\n".join(lines).rstrip()
-    if len(msg) > LINE_TEXT_LIMIT:
-        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
-    return msg
 
 
 def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
@@ -2589,8 +1979,8 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     if not summaries and not new_revenue:
         return []
 
-    msg = build_watch_line_message(today, summaries, new_revenue, tech_lines, chip_lines, vcp_lines)
-    _push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=to)
+    msg = line_notify.build_watch_line_message(today, summaries, new_revenue, tech_lines, chip_lines, vcp_lines)
+    line_notify._push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=to)
     print(
         f"  · 推給 {to[:6]}…:消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
         f"籌碼面 {len(chip_lines)} 檔、VCP {len(vcp_lines)} 檔、新財報 {len(new_revenue)} 筆"
@@ -2631,234 +2021,292 @@ def run_watch_section(today: str) -> None:
     print("  ⑤ 個股盯盤已推。")
 
 
+def _schedule_guard(now_tw, today: str) -> bool:
+    """排程前哨守門。若應略過本次跑動回 True。"""
+    floor = os.environ.get("EARLIEST_TW_HHMM", "0530").strip()
+    try:
+        fh, fm = int(floor[:2]), int(floor[2:])
+    except (ValueError, IndexError):
+        fh, fm = 5, 30
+    if (now_tw.hour, now_tw.minute) < (fh, fm):
+        print(f"排程於台灣 {now_tw:%H:%M} 觸發,早於資料齊備時間 "
+              f"{fh:02d}:{fm:02d}(GitHub 排程器半夜亂觸發),略過——不推不完整凌晨版。")
+        return True
+    try:
+        existing = json.loads(OUTPUT_LATEST.read_text(encoding="utf-8"))
+        if existing.get("report_date") == today:
+            print(f"今日({today})報告已存在,排程備援班次略過(避免重複推播)。")
+            return True
+    except Exception:  # noqa: BLE001 — 讀不到/壞檔 → 正常往下跑
+        pass
+    return False
+
+
+def _run_strategic_report(today: str) -> dict | None:
+    """A. 戰略報告(支援多主題)。降級時回 None。"""
+    topics = parse_report_topics()
+    multi = len(topics) > 1
+    print(f"[1/8] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
+    print(f"  ▸ 主主題:{topics[0]}")
+    try:
+        report = build_macro_report(topics[0], today, extra_query=topics[0] if multi else None)
+    except Exception as exc:  # noqa: BLE001 — Gemini 過載等 → 降級續跑
+        print(f"  警告: 主報告產生失敗(Gemini 可能過載),降級續跑真實數據與預警:{exc}",
+              file=sys.stderr)
+        report = None
+    reports = [report] if report else []
+    for extra_topic in topics[1:]:
+        print(f"  ▸ 次主題:{extra_topic}")
+        try:
+            reports.append(build_macro_report(extra_topic, today, extra_query=extra_topic))
+        except Exception as exc:  # noqa: BLE001 — 次主題失敗不影響主報告
+            print(f"  警告: 主題「{extra_topic}」產生失敗:{exc}", file=sys.stderr)
+    if report:
+        print("[2/8] 戰略分析完成,寫入報告檔...")
+        save_json(OUTPUT_LATEST, report)
+        save_json(ARCHIVE_DIR / f"{today}.json", report)
+        if multi and reports:
+            multi_doc = {"report_date": today, "reports": reports}
+            save_json(OUTPUT_REPORTS_MULTI, multi_doc)
+            save_json(REPORTS_MULTI_ARCHIVE_DIR / f"{today}.json", multi_doc)
+            print(f"  多主題報告:{len(reports)}/{len(topics)} 份成功。")
+    else:
+        print("[2/8] 主報告降級(Gemini 過載),跳過戰略報告檔,續跑國際盤/籌碼/共振/LINE。")
+    return report
+
+
+def _run_trend_radar(today: str) -> None:
+    """B. 趨勢雷達。"""
+    if not config.trend_radar_enabled():
+        print("[3/8] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
+        return
+    print("[3/8] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
+    try:
+        trend_news = fetch_trend_news()
+        print(f"  抓到 {len(trend_news)} 則產業新聞。")
+        trends = get_trend_radar(trend_news, today)
+        save_json(OUTPUT_TRENDS, trends)
+        save_json(TRENDS_ARCHIVE_DIR / f"{today}.json", trends)
+        top = "、".join(t.get("industry", "") for t in trends["trends"][:3])
+        print(f"  趨勢雷達完成,Top3:{top}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 趨勢雷達產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_stock_picks(today: str) -> None:
+    """C. 台股觀察。"""
+    if not config.stock_picker_enabled():
+        print("[4/8] ENABLE_STOCK_PICKER=0,略過台股觀察。")
+        return
+    print("[4/8] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
+    try:
+        stock_news = fetch_stock_news()
+        print(f"  抓到 {len(stock_news)} 則台灣財經新聞。")
+        stocks = get_stock_picks(stock_news, today)
+        save_json(OUTPUT_STOCKS, stocks)
+        save_json(STOCKS_ARCHIVE_DIR / f"{today}.json", stocks)
+        top = "、".join(s.get("name", "") for s in stocks["stocks"][:5])
+        print(f"  台股觀察完成,最常被提到:{top}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 台股觀察產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_us_stock_picks(today: str) -> None:
+    """D. 美股觀察。"""
+    if not config.us_stock_picker_enabled():
+        print("[5/8] ENABLE_US_STOCK_PICKER=0,略過美股觀察。")
+        return
+    print("[5/8] 爬取美股財經新聞並向 Gemini 整理美股標的...")
+    try:
+        us_stock_news = fetch_us_stock_news()
+        print(f"  抓到 {len(us_stock_news)} 則美股財經新聞。")
+        us_stocks = get_us_stock_picks(us_stock_news, today)
+        save_json(OUTPUT_US_STOCKS, us_stocks)
+        save_json(US_STOCKS_ARCHIVE_DIR / f"{today}.json", us_stocks)
+        top = "、".join(s.get("name", "") for s in us_stocks["stocks"][:5])
+        print(f"  美股觀察完成,最常被提到:{top}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 美股觀察產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_intl_alert(today: str) -> dict | None:
+    """D2. 國際盤預警。回傳 intl dict 或 None。"""
+    if not config.intl_alert_enabled():
+        print("[6/8] ENABLE_INTL_ALERT=0,略過國際盤預警。")
+        return None
+    print("[6/8] 抓國際盤報價(美股/期貨/台指期夜盤)偵測大跌,向 Gemini 解讀台股影響...")
+    try:
+        intl = build_intl_alert(today)
+        save_json(OUTPUT_INTL_ALERT, intl)
+        save_json(INTL_ALERT_ARCHIVE_DIR / f"{today}.json", intl)
+        drops = intl.get("drops", [])
+        tag = "、".join(f"{d['name']}{d['change_pct']:+.1f}%" for d in drops[:3]) or "無"
+        print(f"  國際盤預警完成,警示級別:{intl.get('alert_level', '—')}(大跌:{tag})")
+        return intl
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 國際盤預警產生失敗:{exc}", file=sys.stderr)
+        return None
+
+
+def _run_chip_data(today: str) -> tuple[dict | None, dict | None, dict | None]:  # noqa: ARG001
+    """D3. 法人籌碼(三大法人 + 融資餘額 + 台指期留倉)。回傳 (chip, margin, fut_chip)。"""
+    if not config.chip_enabled():
+        print("[6/8] ENABLE_CHIP=0,略過法人籌碼。")
+        return None, None, None
+    print("[6/8] 抓證交所三大法人買賣超(近 N 日,事後驗證真實籌碼)...")
+    chip = margin = fut_chip = None
+    try:
+        fetched = chip_fetcher.fetch_chip_flow(
+            days=int(os.environ.get("CHIP_DAYS") or "10"), log=print)
+        # §2.4 過期守門:歸屬日落後過久→raise→留 chip=None→共振自動略過此力量
+        latest_date = fetched["days"][0]["date"] if fetched.get("days") else None
+        freshness.ensure_fresh(latest_date, CHIP_STALE_DAYS, "三大法人籌碼")
+        chip = fetched
+        save_json(OUTPUT_CHIP, chip)
+        if chip.get("days"):
+            save_json(CHIP_ARCHIVE_DIR / f"{chip['days'][0]['date']}.json", chip)
+            latest = chip["days"][0]
+            print(f"  法人籌碼完成,最新 {latest['date']}:"
+                  f"外資 {latest['foreign']/OKU:+.0f}億、投信 {latest['trust']/OKU:+.0f}億。")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 法人籌碼抓取失敗:{exc}", file=sys.stderr)
+    try:
+        fetched = margin_fetcher.fetch_margin(log=print)
+        if fetched:
+            freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "融資餘額")
+            margin = fetched
+            save_json(OUTPUT_MARGIN, margin)
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 融資餘額抓取失敗:{exc}", file=sys.stderr)
+    try:
+        fetched = futures_chip_fetcher.fetch_futures_chip(log=print)
+        if fetched:
+            freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "台指期留倉")
+            fut_chip = fetched
+            save_json(OUTPUT_FUT_CHIP, fut_chip)
+            print(f"  台指期留倉完成,外資{fut_chip['stance']}"
+                  f"(淨{fut_chip['foreign_net_oi']:+,}口)。")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 台指期留倉抓取失敗:{exc}", file=sys.stderr)
+    return chip, margin, fut_chip
+
+
+def _run_focus(today: str) -> None:
+    """E. 全球人物追蹤。"""
+    if not config.focus_enabled():
+        print("[7/8] ENABLE_FOCUS=0,略過全球人物追蹤。")
+        return
+    print("[7/8] 翻譯追蹤對象並抓全球新聞,向 Gemini 整理台美股關聯...")
+    try:
+        focus_doc = build_focus_report(today)
+        save_json(OUTPUT_FOCUS, focus_doc)
+        save_json(FOCUS_ARCHIVE_DIR / f"{today}.json", focus_doc)
+        names = "、".join(f.get("query_zh", "") for f in focus_doc["focuses"])
+        print(f"  全球人物追蹤完成,對象:{names}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 全球人物追蹤產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_housing(today: str) -> None:
+    """F. 房市觀察。"""
+    if not config.housing_enabled():
+        print("[8/8] ENABLE_HOUSING=0,略過房市觀察。")
+        return
+    print("[8/8] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
+    try:
+        housing_news = fetch_housing_news()
+        print(f"  抓到 {len(housing_news)} 則房市新聞。")
+        prices = housing_fetcher.load_house_prices()
+        # §2.4 外科式守門:房價快取過期→只丟掉價格數字、保留新鮮的房市新聞判讀
+        note = freshness.stale_note(prices.get("as_of"), HOUSE_STALE_DAYS, "實價登錄房價")
+        if note:
+            print(f"  {note} → 本次判讀不採用過期房價數字(僅依新聞)", file=sys.stderr)
+            prices = {}
+        history = housing_fetcher.load_house_price_history()
+        housing = get_housing_analysis(housing_news, prices, today, history)
+        housing["raw_news"] = housing_news
+        save_json(OUTPUT_HOUSING, housing)
+        save_json(HOUSING_ARCHIVE_DIR / f"{today}.json", housing)
+        print(f"  房市觀察完成,整體氛圍:{housing.get('overall_sentiment', '—')}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  警告: 房市觀察產生失敗:{exc}", file=sys.stderr)
+
+
+def _run_line_push(
+    report: dict | None,
+    intl: dict | None,
+    chip: dict | None,
+    fut_chip: dict | None,
+    conf: dict | None,
+    today: str,
+) -> None:
+    """LINE 推播(依序:① 國際盤快報 → ② 共振預警 → ③ 法人事件預告 → ④ 戰略報告)。"""
+    if not (os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO")):
+        return
+    print("推送 LINE 通知(依序:國際盤大跌→共振→事件預告→戰略報告)...")
+    lead = line_notify.lead_market_drops(intl) if intl else []
+    if intl and config.intl_alert_line_enabled():
+        try:
+            line_notify.notify_line_intl_alert(intl)
+            tag = f"大跌 {len(lead)} 項" if lead else "平靜快報"
+            print(f"  ① 國際盤快報已推({tag})。")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  警告: 國際盤 LINE 推播失敗:{exc}", file=sys.stderr)
+    if conf and conf.get("triggered") and config.confluence_line_enabled():
+        try:
+            line_notify.notify_line_confluence(conf, today)
+            print("  ② 多重賣壓共振預警已推。")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  警告: 共振 LINE 推播失敗:{exc}", file=sys.stderr)
+    if intl and config.chip_line_enabled():
+        try:
+            pushed = line_notify.load_pushed_events()
+            due = chip_calendar.pick_new_pushable(intl.get("upcoming_events", []), pushed)
+            if due:
+                line_notify.notify_line_chip_events(due, today)
+                line_notify.save_pushed_events(pushed + [e["id"] for e in due])
+                print(f"  ③ 法人事件預告已推({len(due)} 項)。")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
+    if report:
+        try:
+            line_notify.notify_line(report, line_notify.chip_flow_hint(chip, fut_chip))
+            print("  ④ 戰略報告已推。")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
+    else:
+        print("  ④ 主報告降級(Gemini 過載),本次跳過戰略報告 LINE。")
+
+
 def main() -> int:
-    if not get_gemini_keys():
+    if not gemini_client.get_gemini_keys():
         print("錯誤: 未設定 GEMINI_API_KEY 環境變數", file=sys.stderr)
         return 1
 
-    # 以台灣時區(UTC+8,無日光節約)定義「今天」:排程在台灣清晨(UTC 前一日 21:30 起)
-    # 觸發,用台灣日期才能讓報告日期與你早上看到的日期一致(不會慢一天)。
+    # 以台灣時區(UTC+8,無日光節約)定義「今天」
     now_tw = tz_utils.taiwan_now()
     today = now_tw.strftime("%Y-%m-%d")
 
-    if os.environ.get("GITHUB_EVENT_NAME") == "schedule":
-        # 資料齊備守門:美股現貨收盤(夏 04:00/冬 05:00)+ 台指期夜盤收盤 05:00 後數據才完整。
-        # GitHub 自家排程器常在台灣半夜 00–02 點亂放排程(時間對不上任何 cron),那時跑只會推出
-        # 殘缺的凌晨版。故 schedule 觸發若早於資料齊備點(預設台灣 05:30),直接略過、不跑不推。
-        # 可用 EARLIEST_TW_HHMM 覆寫(四位數 HHMM);workflow_dispatch(NAS 主力/手動補發)不受此限。
-        floor = os.environ.get("EARLIEST_TW_HHMM", "0530").strip()
-        try:
-            fh, fm = int(floor[:2]), int(floor[2:])
-        except (ValueError, IndexError):
-            fh, fm = 5, 30
-        if (now_tw.hour, now_tw.minute) < (fh, fm):
-            print(f"排程於台灣 {now_tw:%H:%M} 觸發,早於資料齊備時間 "
-                  f"{fh:02d}:{fm:02d}(GitHub 排程器半夜亂觸發),略過——不推不完整凌晨版。")
-            return 0
-
-        # 排程備援防呆:今日報告已產出(NAS 06:00 主力以 dispatch 跑完並寫回 main)→ 直接略過,
-        # 避免 GitHub 兜底班次重複跑與重複推 LINE。workflow_dispatch 不受此限。
-        try:
-            existing = json.loads(OUTPUT_LATEST.read_text(encoding="utf-8"))
-            if existing.get("report_date") == today:
-                print(f"今日({today})報告已存在,排程備援班次略過(避免重複推播)。")
-                return 0
-        except Exception:  # noqa: BLE001 — 讀不到/壞檔 → 正常往下跑
-            pass
+    if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and _schedule_guard(now_tw, today):
+        return 0
 
     try:
-        # A. 戰略報告(支援多主題:第一個為主報告,維持 latest_report.json 向後相容)
-        topics = parse_report_topics()
-        multi = len(topics) > 1
-        print(f"[1/8] 爬取真實外電並請 Gemini 分析(主題數:{len(topics)})...")
-
-        # 主報告:Gemini 過載(503)等失敗時降級為 None,仍續跑真實數據與預警,
-        # 不讓暫時性過載害整批(國際盤/籌碼/共振/LINE)全掛。降級時不存檔 →
-        # 排程備援班次會自動重試,待 Gemini 恢復補上完整戰略報告。
-        print(f"  ▸ 主主題:{topics[0]}")
-        try:
-            report = build_macro_report(topics[0], today, extra_query=topics[0] if multi else None)
-        except Exception as exc:  # noqa: BLE001 — Gemini 過載等 → 降級續跑
-            print(f"  警告: 主報告產生失敗(Gemini 可能過載),降級續跑真實數據與預警:{exc}",
-                  file=sys.stderr)
-            report = None
-        reports = [report] if report else []
-        for extra_topic in topics[1:]:
-            print(f"  ▸ 次主題:{extra_topic}")
-            try:
-                reports.append(build_macro_report(extra_topic, today, extra_query=extra_topic))
-            except Exception as exc:  # noqa: BLE001 — 次主題失敗不影響主報告
-                print(f"  警告: 主題「{extra_topic}」產生失敗:{exc}", file=sys.stderr)
-
-        if report:
-            print("[2/8] 戰略分析完成,寫入報告檔...")
-            save_json(OUTPUT_LATEST, report)
-            save_json(ARCHIVE_DIR / f"{today}.json", report)
-            if multi and reports:
-                multi_doc = {"report_date": today, "reports": reports}
-                save_json(OUTPUT_REPORTS_MULTI, multi_doc)
-                save_json(REPORTS_MULTI_ARCHIVE_DIR / f"{today}.json", multi_doc)
-                print(f"  多主題報告:{len(reports)}/{len(topics)} 份成功。")
-        else:
-            print("[2/8] 主報告降級(Gemini 過載),跳過戰略報告檔,續跑國際盤/籌碼/共振/LINE。")
-
-        # B. 趨勢雷達
-        trends = None
-        if trend_radar_enabled():
-            print("[3/8] 爬取產業新聞並向 Gemini 請求趨勢雷達...")
-            try:
-                trend_news = fetch_trend_news()
-                print(f"  抓到 {len(trend_news)} 則產業新聞。")
-                trends = get_trend_radar(trend_news, today)
-                save_json(OUTPUT_TRENDS, trends)
-                save_json(TRENDS_ARCHIVE_DIR / f"{today}.json", trends)
-                top = "、".join(t.get("industry", "") for t in trends["trends"][:3])
-                print(f"  趨勢雷達完成,Top3:{top}")
-            except Exception as exc:  # noqa: BLE001 — 趨勢雷達失敗不影響戰略報告
-                print(f"  警告: 趨勢雷達產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[3/8] ENABLE_TREND_RADAR=0,略過趨勢雷達。")
-
-        # C. 台股觀察
-        if stock_picker_enabled():
-            print("[4/8] 爬取台灣財經新聞並向 Gemini 整理台股標的...")
-            try:
-                stock_news = fetch_stock_news()
-                print(f"  抓到 {len(stock_news)} 則台灣財經新聞。")
-                stocks = get_stock_picks(stock_news, today)
-                save_json(OUTPUT_STOCKS, stocks)
-                save_json(STOCKS_ARCHIVE_DIR / f"{today}.json", stocks)
-                top = "、".join(s.get("name", "") for s in stocks["stocks"][:5])
-                print(f"  台股觀察完成,最常被提到:{top}")
-            except Exception as exc:  # noqa: BLE001 — 台股觀察失敗不影響戰略報告
-                print(f"  警告: 台股觀察產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[4/8] ENABLE_STOCK_PICKER=0,略過台股觀察。")
-
-        # D. 美股觀察
-        if us_stock_picker_enabled():
-            print("[5/8] 爬取美股財經新聞並向 Gemini 整理美股標的...")
-            try:
-                us_stock_news = fetch_us_stock_news()
-                print(f"  抓到 {len(us_stock_news)} 則美股財經新聞。")
-                us_stocks = get_us_stock_picks(us_stock_news, today)
-                save_json(OUTPUT_US_STOCKS, us_stocks)
-                save_json(US_STOCKS_ARCHIVE_DIR / f"{today}.json", us_stocks)
-                top = "、".join(s.get("name", "") for s in us_stocks["stocks"][:5])
-                print(f"  美股觀察完成,最常被提到:{top}")
-            except Exception as exc:  # noqa: BLE001 — 美股觀察失敗不影響戰略報告
-                print(f"  警告: 美股觀察產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[5/8] ENABLE_US_STOCK_PICKER=0,略過美股觀察。")
-
-        # D2. 國際盤預警(美股指數/期貨/台指期夜盤真實漲跌幅 → 偵測大跌 → Gemini 解讀台股影響)
-        intl = None
-        if intl_alert_enabled():
-            print("[6/8] 抓國際盤報價(美股/期貨/台指期夜盤)偵測大跌,向 Gemini 解讀台股影響...")
-            try:
-                intl = build_intl_alert(today)
-                save_json(OUTPUT_INTL_ALERT, intl)
-                save_json(INTL_ALERT_ARCHIVE_DIR / f"{today}.json", intl)
-                drops = intl.get("drops", [])
-                tag = "、".join(f"{d['name']}{d['change_pct']:+.1f}%" for d in drops[:3]) or "無"
-                print(f"  國際盤預警完成,警示級別:{intl.get('alert_level', '—')}(大跌:{tag})")
-            except Exception as exc:  # noqa: BLE001 — 國際盤預警失敗不影響戰略報告
-                print(f"  警告: 國際盤預警產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[6/8] ENABLE_INTL_ALERT=0,略過國際盤預警。")
-
-        # D3. 法人籌碼事後驗證(抓證交所近 N 日三大法人買賣超,真實數字)
-        chip = None
-        margin = None
-        fut_chip = None
-        if chip_enabled():
-            print("[6/8] 抓證交所三大法人買賣超(近 N 日,事後驗證真實籌碼)...")
-            try:
-                fetched = chip_fetcher.fetch_chip_flow(
-                    days=int(os.environ.get("CHIP_DAYS") or "10"), log=print)
-                # §2.4 過期守門:歸屬日落後過久→raise→留 chip=None→共振自動略過此力量,不存舊檔當今日
-                latest_date = fetched["days"][0]["date"] if fetched.get("days") else None
-                freshness.ensure_fresh(latest_date, CHIP_STALE_DAYS, "三大法人籌碼")
-                chip = fetched
-                save_json(OUTPUT_CHIP, chip)
-                if chip.get("days"):
-                    save_json(CHIP_ARCHIVE_DIR / f"{chip['days'][0]['date']}.json", chip)
-                    latest = chip["days"][0]
-                    print(f"  法人籌碼完成,最新 {latest['date']}:"
-                          f"外資 {latest['foreign']/OKU:+.0f}億、投信 {latest['trust']/OKU:+.0f}億。")
-            except Exception as exc:  # noqa: BLE001 — 法人籌碼失敗/過期不影響戰略報告
-                print(f"  警告: 法人籌碼抓取失敗:{exc}", file=sys.stderr)
-            # 融資餘額(散戶斷頭訊號,共振偵測用);失敗/過期不影響其他
-            try:
-                fetched = margin_fetcher.fetch_margin(log=print)
-                if fetched:
-                    freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "融資餘額")
-                    margin = fetched
-                    save_json(OUTPUT_MARGIN, margin)
-            except Exception as exc:  # noqa: BLE001
-                print(f"  警告: 融資餘額抓取失敗:{exc}", file=sys.stderr)
-            # 三大法人台指期留倉(外資期貨偏多/偏空,前一交易日盤後);失敗/過期不影響其他
-            try:
-                fetched = futures_chip_fetcher.fetch_futures_chip(log=print)
-                if fetched:
-                    freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "台指期留倉")
-                    fut_chip = fetched
-                    save_json(OUTPUT_FUT_CHIP, fut_chip)
-                    print(f"  台指期留倉完成,外資{fut_chip['stance']}"
-                          f"(淨{fut_chip['foreign_net_oi']:+,}口)。")
-            except Exception as exc:  # noqa: BLE001
-                print(f"  警告: 台指期留倉抓取失敗:{exc}", file=sys.stderr)
-        else:
-            print("[6/8] ENABLE_CHIP=0,略過法人籌碼。")
-
-        # D4. 多重賣壓共振偵測(只計算;LINE 於最後依序統一推播)
+        report = _run_strategic_report(today)
+        _run_trend_radar(today)
+        _run_stock_picks(today)
+        _run_us_stock_picks(today)
+        intl = _run_intl_alert(today)
+        chip, margin, fut_chip = _run_chip_data(today)
         conf = None
         try:
             conf = detect_pressure_confluence(intl, chip, margin, fut_chip)
             forces = "、".join(f["key"] for f in conf["forces"]) or "無"
             print(f"  共振偵測:{'🔴 觸發' if conf['triggered'] else '未觸發'}"
                   f"(美股大跌={bool(conf['us_drops'])}、力量 {conf['count']}/4:{forces})")
-        except Exception as exc:  # noqa: BLE001 — 共振偵測失敗不影響主報告
+        except Exception as exc:  # noqa: BLE001
             print(f"  警告: 共振偵測失敗:{exc}", file=sys.stderr)
-
-        # E. 全球人物追蹤(對 FOCUS_TOPICS 每個對象翻英→抓全球新聞→台美股關聯)
-        if focus_enabled():
-            print("[7/8] 翻譯追蹤對象並抓全球新聞,向 Gemini 整理台美股關聯...")
-            try:
-                focus_doc = build_focus_report(today)
-                save_json(OUTPUT_FOCUS, focus_doc)
-                save_json(FOCUS_ARCHIVE_DIR / f"{today}.json", focus_doc)
-                names = "、".join(f.get("query_zh", "") for f in focus_doc["focuses"])
-                print(f"  全球人物追蹤完成,對象:{names}")
-            except Exception as exc:  # noqa: BLE001 — 人物追蹤失敗不影響戰略報告
-                print(f"  警告: 全球人物追蹤產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[7/8] ENABLE_FOCUS=0,略過全球人物追蹤。")
-
-        # F. 房市觀察(房價走代理,排程無代理時就只用新聞 + repo 既有房價當參考)
-        housing = None
-        if housing_enabled():
-            print("[8/8] 爬取房市新聞並向 Gemini 判讀冷熱 + 打房政策...")
-            try:
-                housing_news = fetch_housing_news()
-                print(f"  抓到 {len(housing_news)} 則房市新聞。")
-                prices = housing_fetcher.load_house_prices()
-                # §2.4 外科式守門:房價快取過期→只丟掉價格數字、保留新鮮的房市新聞判讀(§5)
-                note = freshness.stale_note(prices.get("as_of"), HOUSE_STALE_DAYS, "實價登錄房價")
-                if note:
-                    print(f"  {note} → 本次判讀不採用過期房價數字(僅依新聞)", file=sys.stderr)
-                    prices = {}
-                history = housing_fetcher.load_house_price_history()
-                housing = get_housing_analysis(housing_news, prices, today, history)
-                housing["raw_news"] = housing_news
-                save_json(OUTPUT_HOUSING, housing)
-                save_json(HOUSING_ARCHIVE_DIR / f"{today}.json", housing)
-                print(f"  房市觀察完成,整體氛圍:{housing.get('overall_sentiment', '—')}")
-            except Exception as exc:  # noqa: BLE001 — 房市觀察失敗不影響戰略報告
-                print(f"  警告: 房市觀察產生失敗:{exc}", file=sys.stderr)
-        else:
-            print("[8/8] ENABLE_HOUSING=0,略過房市觀察。")
-
+        _run_focus(today)
+        _run_housing(today)
         if report:
             print(
                 f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
@@ -2866,57 +2314,13 @@ def main() -> int:
             )
         else:
             print("資料更新部分完成(主報告降級,國際盤/籌碼/共振仍已產出)。")
-
-        # 推播(依優先順序:① 國際盤大跌 → ② 多重賣壓共振 → ③ 法人事件預告 → ④ 戰略報告)
-        if os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO"):
-            print("推送 LINE 通知(依序:國際盤大跌→共振→事件預告→戰略報告)...")
-            # ① 國際盤快報(每天推:含美股/台股看法;大跌時自動升級為大跌預警標題)
-            lead = lead_market_drops(intl) if intl else []
-            if intl and intl_alert_line_enabled():
-                try:
-                    notify_line_intl_alert(intl)
-                    tag = f"大跌 {len(lead)} 項" if lead else "平靜快報"
-                    print(f"  ① 國際盤快報已推({tag})。")
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  警告: 國際盤 LINE 推播失敗:{exc}", file=sys.stderr)
-            # ② 多重賣壓共振(美股大跌 + 四力≥2,真實數據判定)
-            if conf and conf.get("triggered") and confluence_line_enabled():
-                try:
-                    notify_line_confluence(conf, today)
-                    print("  ② 多重賣壓共振預警已推。")
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  警告: 共振 LINE 推播失敗:{exc}", file=sys.stderr)
-            # ③ 法人事件預告(進 3 交易日窗口才推,防洗版)
-            if intl and chip_line_enabled():
-                try:
-                    pushed = load_pushed_events()
-                    due = chip_calendar.pick_new_pushable(
-                        intl.get("upcoming_events", []), pushed)
-                    if due:
-                        notify_line_chip_events(due, today)
-                        save_pushed_events(pushed + [e["id"] for e in due])
-                        print(f"  ③ 法人事件預告已推({len(due)} 項)。")
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
-            # ④ 全球政經戰略報告(含法人籌碼提示);主報告降級時跳過,不影響前三項真實預警
-            if report:
-                try:
-                    notify_line(report, chip_flow_hint(chip, fut_chip))
-                    print("  ④ 戰略報告已推。")
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  警告: 戰略報告 LINE 推播失敗:{exc}", file=sys.stderr)
-            else:
-                print("  ④ 主報告降級(Gemini 過載),本次跳過戰略報告 LINE。")
-
-        # ⑤ 個股盯盤(獨立的第二個 LINE bot,自選 watchlist 消息面 + 月營收);
-        #    用自己的 token/對象,與上面四項主報告推播互不影響。未設第二個 bot → 靜默略過。
-        if watch_enabled():
+        _run_line_push(report, intl, chip, fut_chip, conf, today)
+        if config.watch_enabled():
             print("個股盯盤(第二個 bot):自選台股消息面 + 月營收...")
             try:
                 run_watch_section(today)
-            except Exception as exc:  # noqa: BLE001 — 個股盯盤失敗不影響主報告與主 bot
+            except Exception as exc:  # noqa: BLE001
                 print(f"  警告: 個股盯盤推播失敗:{exc}", file=sys.stderr)
-
         return 0
 
     except Exception as exc:  # noqa: BLE001 — CI 需要明確失敗碼

@@ -781,6 +781,68 @@ def generate_live_stocks() -> None:
     st.session_state.pop("live_stock_news", None)
 
 
+def _render_evidence_news(evidence: list, label: str = "📰 佐證新聞") -> None:
+    if not evidence:
+        return
+    with st.expander(label):
+        for n in evidence:
+            title = n.get("title", "")
+            src = n.get("source", "")
+            url = n.get("url", "")
+            line = f"- {title}" + (f" — _{src}_" if src else "")
+            if url:
+                line += f" [連結]({url})"
+            st.markdown(line)
+
+
+def _render_stock_card_group(stocks: list, etf_counts: dict | None = None) -> None:
+    """依傾向(利多/利空/觀望)分組顯示個股卡片。etf_counts 僅台股版傳入。"""
+    for label in ("利多", "利空", "觀望"):
+        group = [s for s in stocks if s.get("sentiment") == label]
+        if not group:
+            continue
+        emoji, _ = SENTIMENT_STYLE.get(label, ("", "info"))
+        st.subheader(f"{emoji} {label}（{len(group)} 檔）")
+        for s in group:
+            name = s.get("name", "")
+            ticker = s.get("ticker", "")
+            head = f"**{name}**" + (f"（{ticker}）" if ticker else "")
+            sector = s.get("sector", "")
+            with st.container(border=True):
+                st.markdown(
+                    head
+                    + (f"　·　{sector}" if sector else "")
+                    + f"　·　📰 被提及 {s.get('mention_count', 0)} 次"
+                )
+                cap = mention_caption(s)
+                if cap:
+                    st.caption(cap)
+                if s.get("reason"):
+                    st.write(s["reason"])
+                _render_evidence_news(s.get("evidence_news", []))
+
+
+def _render_trends_sunset(data: dict) -> None:
+    """未來趨勢產業 / 夕陽轉弱產業 兩欄(台股觀察 + 美股觀察共用)。"""
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader("🚀 未來趨勢產業")
+        trends = data.get("future_trends", [])
+        if trends:
+            for t in trends:
+                st.markdown(f"- {t}")
+        else:
+            st.caption("(本次新聞未明顯提及)")
+    with col2:
+        st.subheader("🌇 夕陽 / 轉弱產業")
+        sunset = data.get("sunset_industries", [])
+        if sunset:
+            for t in sunset:
+                st.markdown(f"- {t}")
+        else:
+            st.caption("(本次新聞未明顯提及)")
+
+
 def render_stocks(data: dict) -> None:
     st.metric("資料日期", data.get("report_date", "—"))
     if data.get("summary"):
@@ -818,59 +880,8 @@ def render_stocks(data: dict) -> None:
         hide_index=True,
     )
 
-    # 依傾向分組卡片
-    for label in ("利多", "利空", "觀望"):
-        group = [s for s in stocks if s.get("sentiment") == label]
-        if not group:
-            continue
-        emoji, _ = SENTIMENT_STYLE.get(label, ("", "info"))
-        st.subheader(f"{emoji} {label}（{len(group)} 檔）")
-        for s in group:
-            name = s.get("name", "")
-            ticker = s.get("ticker", "")
-            head = f"**{name}**" + (f"（{ticker}）" if ticker else "")
-            sector = s.get("sector", "")
-            with st.container(border=True):
-                st.markdown(
-                    head
-                    + (f"　·　{sector}" if sector else "")
-                    + f"　·　📰 被提及 {s.get('mention_count', 0)} 次"
-                )
-                cap = mention_caption(s)
-                if cap:
-                    st.caption(cap)
-                if s.get("reason"):
-                    st.write(s["reason"])
-                evidence = s.get("evidence_news", [])
-                if evidence:
-                    with st.expander("📰 佐證新聞"):
-                        for n in evidence:
-                            title = n.get("title", "")
-                            src = n.get("source", "")
-                            url = n.get("url", "")
-                            line = f"- {title}" + (f" — _{src}_" if src else "")
-                            if url:
-                                line += f" [連結]({url})"
-                            st.markdown(line)
-
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader("🚀 未來趨勢產業")
-        trends = data.get("future_trends", [])
-        if trends:
-            for t in trends:
-                st.markdown(f"- {t}")
-        else:
-            st.caption("(本次新聞未明顯提及)")
-    with col2:
-        st.subheader("🌇 夕陽 / 轉弱產業")
-        sunset = data.get("sunset_industries", [])
-        if sunset:
-            for t in sunset:
-                st.markdown(f"- {t}")
-        else:
-            st.caption("(本次新聞未明顯提及)")
-
+    _render_stock_card_group(stocks, etf_counts)
+    _render_trends_sunset(data)
     st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
 
 
@@ -937,59 +948,8 @@ def render_us_stocks(data: dict) -> None:
         hide_index=True,
     )
 
-    # 依傾向分組卡片
-    for label in ("利多", "利空", "觀望"):
-        group = [s for s in stocks if s.get("sentiment") == label]
-        if not group:
-            continue
-        emoji, _ = SENTIMENT_STYLE.get(label, ("", "info"))
-        st.subheader(f"{emoji} {label}（{len(group)} 檔）")
-        for s in group:
-            name = s.get("name", "")
-            ticker = s.get("ticker", "")
-            head = f"**{name}**" + (f"（{ticker}）" if ticker else "")
-            sector = s.get("sector", "")
-            with st.container(border=True):
-                st.markdown(
-                    head
-                    + (f"　·　{sector}" if sector else "")
-                    + f"　·　📰 被提及 {s.get('mention_count', 0)} 次"
-                )
-                cap = mention_caption(s)
-                if cap:
-                    st.caption(cap)
-                if s.get("reason"):
-                    st.write(s["reason"])
-                evidence = s.get("evidence_news", [])
-                if evidence:
-                    with st.expander("📰 佐證新聞"):
-                        for n in evidence:
-                            title = n.get("title", "")
-                            src = n.get("source", "")
-                            url = n.get("url", "")
-                            line = f"- {title}" + (f" — _{src}_" if src else "")
-                            if url:
-                                line += f" [連結]({url})"
-                            st.markdown(line)
-
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader("🚀 未來趨勢產業")
-        trends = data.get("future_trends", [])
-        if trends:
-            for t in trends:
-                st.markdown(f"- {t}")
-        else:
-            st.caption("(本次新聞未明顯提及)")
-    with col2:
-        st.subheader("🌇 夕陽 / 轉弱產業")
-        sunset = data.get("sunset_industries", [])
-        if sunset:
-            for t in sunset:
-                st.markdown(f"- {t}")
-        else:
-            st.caption("(本次新聞未明顯提及)")
-
+    _render_stock_card_group(stocks)
+    _render_trends_sunset(data)
     st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
 
 
@@ -1097,15 +1057,7 @@ def render_intl_alert(data: dict) -> None:
                     st.markdown(f"**{it['market']}**")
                 if it.get("cause"):
                     st.write(it["cause"])
-                ev = it.get("evidence_news", [])
-                if ev:
-                    with st.expander("📰 佐證新聞"):
-                        for n in ev:
-                            title, src, url = n.get("title", ""), n.get("source", ""), n.get("url", "")
-                            line = f"- {title}" + (f" — _{src}_" if src else "")
-                            if url:
-                                line += f" [連結]({url})"
-                            st.markdown(line)
+                _render_evidence_news(it.get("evidence_news", []))
     elif not data.get("ai_ok", True):
         st.info("ℹ️ 利空原因解讀因 AI 配額/網路暫缺(原因待補);上方真實報價與大跌偵測不受影響。")
 
@@ -1370,31 +1322,11 @@ def render_focus(data: dict) -> None:
                         st.caption(cap)
                     if s.get("reason"):
                         st.write(s["reason"])
-                    evidence = s.get("evidence_news", [])
-                    if evidence:
-                        with st.expander("📰 佐證新聞"):
-                            for n in evidence:
-                                title = n.get("title", "")
-                                src = n.get("source", "")
-                                url = n.get("url", "")
-                                line = f"- {title}" + (f" — _{src}_" if src else "")
-                                if url:
-                                    line += f" [連結]({url})"
-                                st.markdown(line)
+                    _render_evidence_news(s.get("evidence_news", []))
     else:
         st.info("本次新聞未對應到明確的台股/美股個股。")
 
-    evidence = data.get("evidence_news", [])
-    if evidence:
-        with st.expander("📰 全部佐證新聞"):
-            for n in evidence:
-                title = n.get("title", "")
-                src = n.get("source", "")
-                url = n.get("url", "")
-                line = f"- {title}" + (f" — _{src}_" if src else "")
-                if url:
-                    line += f" [連結]({url})"
-                st.markdown(line)
+    _render_evidence_news(data.get("evidence_news", []), "📰 全部佐證新聞")
 
     st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
 
@@ -1565,7 +1497,7 @@ def render_news_strategy(data: dict) -> None:
         st.caption(data["data_notes"])
 
 
-def render_stock_query(data: dict) -> None:
+def _render_stock_query_header(data: dict) -> None:
     head = data.get("query_zh", "—")
     ticker = data.get("ticker", "")
     col1, col2, col3 = st.columns(3)
@@ -1584,7 +1516,8 @@ def render_stock_query(data: dict) -> None:
         )
     st.caption("由 AI 依真實新聞整理,可能有誤,僅供參考,非投資建議。")
 
-    # ① 與目前新聞的直接相關性
+
+def _render_stock_query_relevance(data: dict) -> None:
     st.subheader("① 與目前新聞的直接相關性")
     level = data.get("relevance_level", "")
     level_emoji = {"高": "🟢 高", "中": "🟡 中", "低": "⚪ 低"}.get(level, level)
@@ -1597,18 +1530,21 @@ def render_stock_query(data: dict) -> None:
     else:
         st.caption("新聞中未見對本檔的直接著墨。")
 
-    # ② 股價與籌碼動向
-    pc = data.get("price_chip") or {}
-    if any(pc.get(k) for k in ("price_action", "chip_flow", "technical")):
-        st.subheader("② 股價與籌碼動向")
-        if pc.get("price_action"):
-            st.markdown(f"**盤面/量能:** {pc['price_action']}")
-        if pc.get("chip_flow"):
-            st.markdown(f"**法人/籌碼:** {pc['chip_flow']}")
-        if pc.get("technical"):
-            st.markdown(f"**技術面:** {pc['technical']}")
 
-    # ③ 基本面與推升動能
+def _render_stock_query_price_chip(data: dict) -> None:
+    pc = data.get("price_chip") or {}
+    if not any(pc.get(k) for k in ("price_action", "chip_flow", "technical")):
+        return
+    st.subheader("② 股價與籌碼動向")
+    if pc.get("price_action"):
+        st.markdown(f"**盤面/量能:** {pc['price_action']}")
+    if pc.get("chip_flow"):
+        st.markdown(f"**法人/籌碼:** {pc['chip_flow']}")
+    if pc.get("technical"):
+        st.markdown(f"**技術面:** {pc['technical']}")
+
+
+def _render_stock_query_fundamentals(data: dict) -> None:
     st.subheader("③ 基本面與推升動能")
     if data.get("operating_performance"):
         st.markdown(f"**營運績效:** {data['operating_performance']}")
@@ -1632,28 +1568,15 @@ def render_stock_query(data: dict) -> None:
         st.markdown(f"**上漲性質:** {nature_emoji}")
     if data.get("rally_reason"):
         st.write(data["rally_reason"])
+    _render_evidence_news(data.get("evidence_news", []))
 
-    evidence = data.get("evidence_news", [])
-    if evidence:
-        with st.expander("📰 佐證新聞"):
-            for n in evidence:
-                title = n.get("title", "")
-                src = n.get("source", "")
-                url = n.get("url", "")
-                line = f"- {title}" + (f" — _{src}_" if src else "")
-                if url:
-                    line += f" [連結]({url})"
-                st.markdown(line)
-
-    # ④ 護城河與競爭
+def _render_stock_query_moat(data: dict) -> None:
     st.subheader("④ 護城河與競爭")
     st.caption("本段含產業結構常識(非僅來自新聞),數字未必即時,僅供參考。")
     lead = data.get("is_leader", "")
     lead_emoji = {
-        "龍頭": "👑 龍頭",
-        "前段班": "🥈 前段班",
-        "中後段": "📉 中後段",
-        "資料不足": "❓ 資料不足",
+        "龍頭": "👑 龍頭", "前段班": "🥈 前段班",
+        "中後段": "📉 中後段", "資料不足": "❓ 資料不足",
     }.get(lead, lead)
     moat = data.get("moat_level", "")
     moat_emoji = {
@@ -1668,7 +1591,6 @@ def render_stock_query(data: dict) -> None:
         st.markdown(f"**地位依據:** {data['leader_reason']}")
     if data.get("moat_reason"):
         st.markdown(f"**護城河來源:** {data['moat_reason']}")
-
     competitors = data.get("competitors", [])
     if competitors:
         st.markdown("**主要競爭對手:**")
@@ -1682,7 +1604,6 @@ def render_stock_query(data: dict) -> None:
             if note:
                 line += f" — {note}"
             st.markdown(line)
-
     sc = data.get("supply_chain") or {}
     seg_labels = [("upstream", "上游"), ("midstream", "中游"), ("downstream", "下游")]
     if any(sc.get(k) for k, _ in seg_labels):
@@ -1699,7 +1620,8 @@ def render_stock_query(data: dict) -> None:
             if names:
                 st.markdown(f"- **{label}**:{names}")
 
-    # ⑤ 估值與風險
+
+def _render_stock_query_valuation(data: dict) -> None:
     val = data.get("valuation") or {}
     risks = data.get("risks", [])
     watch = data.get("watch_points", [])
@@ -1722,13 +1644,20 @@ def render_stock_query(data: dict) -> None:
         if watch:
             st.markdown("**後續觀察指標:**")
             st.markdown("　".join(f"`{w}`" for w in watch))
-
     if data.get("long_term_view"):
         st.success(f"**長期持有研判:** {data['long_term_view']}")
-
     if data.get("data_notes"):
         st.caption(f"📌 數字來源:{data['data_notes']}")
     st.caption("⚠️ 本頁由 AI 自動整理新聞而成,部分數字為 AI 估算、非即時,可能有誤,僅供參考,非投資建議。")
+
+
+def render_stock_query(data: dict) -> None:
+    _render_stock_query_header(data)
+    _render_stock_query_relevance(data)
+    _render_stock_query_price_chip(data)
+    _render_stock_query_fundamentals(data)
+    _render_stock_query_moat(data)
+    _render_stock_query_valuation(data)
 
 
 # ---------------------------------------------------------------------------
@@ -1844,17 +1773,7 @@ def render_trends(data: dict) -> None:
                 for ind in indicators:
                     st.markdown(f"- {ind}")
 
-            evidence = t.get("evidence_news", [])
-            if evidence:
-                with st.expander("📰 佐證新聞"):
-                    for n in evidence:
-                        title = n.get("title", "")
-                        source = n.get("source", "")
-                        url = n.get("url", "")
-                        line = f"- {title}" + (f" — _{source}_" if source else "")
-                        if url:
-                            line += f" [連結]({url})"
-                        st.markdown(line)
+            _render_evidence_news(t.get("evidence_news", []))
 
     st.caption("⚠️ 趨勢評估由 AI 自動生成,非投資建議。新聞屬同步/落後訊號,請搭配資金與徵才等領先指標判讀。")
 
@@ -2514,17 +2433,7 @@ def render_housing(analysis: dict | None) -> None:
                 st.write(p.get("impact", ""))
 
     # 5) 佐證新聞
-    evidence = analysis.get("evidence_news") or analysis.get("raw_news") or []
-    if evidence:
-        with st.expander("📰 佐證新聞"):
-            for n in evidence:
-                title = n.get("title", "")
-                src = n.get("source", "")
-                url = n.get("url", "")
-                line = f"- {title}" + (f" — _{src}_" if src else "")
-                if url:
-                    line += f" [連結]({url})"
-                st.markdown(line)
+    _render_evidence_news(analysis.get("evidence_news") or analysis.get("raw_news") or [])
 
     # 6) 🧠 Gemini AI 買方總結(放最下方:綜合整頁房價/趨勢/冷熱/政策/新聞)
     render_housing_ai_summary(analysis.get("ai_summary"))

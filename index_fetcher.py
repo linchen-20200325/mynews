@@ -32,7 +32,6 @@ import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
 YF_CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5d&interval=1d"
 
 HTTP_TIMEOUT = 20
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 
 # 追蹤標的:symbol(Yahoo)→ 中文名 / 分組 / 時間差性質。
 # lead_type:對台股的時間差定位(隔夜領先 / 同步連動 / 盤前即時)。
@@ -62,26 +61,10 @@ def _drop_threshold() -> float:
         return DEFAULT_DROP_THRESHOLD
 
 
-def _http_get_json(url: str, proxy: str | None) -> dict:
-    """GET JSON:優先走 proxy_helper(含自動降級直連),取不到再直連保底。"""
-    try:
-        import proxy_helper
-        resp = proxy_helper.fetch_url(
-            url, headers={"Accept": "application/json"}, timeout=HTTP_TIMEOUT,
-        )
-        if resp is not None and resp.status_code == 200:
-            return resp.json()
-    except Exception:  # noqa: BLE001 — proxy_helper 不可用 → 走直連保底
-        pass
-
-    import requests
-    proxies = {"http": proxy, "https": proxy} if proxy else None
-    resp = requests.get(
-        url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
-        proxies=proxies, timeout=HTTP_TIMEOUT, verify=not bool(proxies),
-    )
-    resp.raise_for_status()
-    return resp.json()
+def _http_get_json(url: str) -> dict | None:
+    """GET JSON:走 proxy_helper.fetch_json(proxy→直連兩段降級);失敗回 None。"""
+    import proxy_helper
+    return proxy_helper.fetch_json(url, timeout=HTTP_TIMEOUT)
 
 
 def _parse_chart(payload: dict) -> tuple[float, float] | None:
@@ -120,20 +103,12 @@ def _parse_chart(payload: dict) -> tuple[float, float] | None:
 
 def fetch_index_quotes(proxy: str | None = None, log=print) -> dict:
     """抓所有追蹤指數/期貨的最新漲跌幅;單一標的失敗只略過,不影響其他。"""
-    try:
-        import proxy_helper
-        cfg = proxy_helper.get_proxy_config(proxy)
-        proxy_url = cfg["http"] if cfg else None
-    except Exception:  # noqa: BLE001
-        import os
-        proxy_url = (proxy or os.environ.get("PROXY_URL") or "").strip() or None
-
     threshold = _drop_threshold()
     quotes: dict[str, dict] = {}
     for item in SYMBOLS:
         sym = item["symbol"]
         try:
-            parsed = _parse_chart(_http_get_json(YF_CHART_URL.format(symbol=sym), proxy_url))
+            parsed = _parse_chart(_http_get_json(YF_CHART_URL.format(symbol=sym)))
             if not parsed:
                 log(f"  [{sym}] 無有效報價,略過")
                 continue
