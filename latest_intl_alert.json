@@ -1,183 +1,130 @@
 {
   "report_date": "2026-06-30",
-  "as_of": "2026-06-29 22:07 UTC (Yahoo Finance)",
+  "as_of": "2026-06-29 23:46 UTC (Yahoo Finance)",
   "threshold": -1.5,
   "quotes": {
-    "^GSPC": {
-      "name": "標普 500",
-      "group": "美股指數",
-      "lead_type": "隔夜領先",
-      "last": 7440.43,
-      "prev": 7472.79,
-      "change_pct": -0.43,
-      "is_drop": false
-    },
-    "^IXIC": {
-      "name": "那斯達克綜合",
-      "group": "美股指數",
-      "lead_type": "隔夜領先",
-      "last": 25820.15,
-      "prev": 26166.6,
-      "change_pct": -1.32,
-      "is_drop": false
-    },
-    "^DJI": {
-      "name": "道瓊工業",
-      "group": "美股指數",
-      "lead_type": "隔夜領先",
-      "last": 52182.74,
-      "prev": 51712.71,
-      "change_pct": 0.91,
-      "is_drop": false
-    },
-    "^SOX": {
-      "name": "費城半導體",
-      "group": "美股指數",
-      "lead_type": "隔夜領先",
-      "last": 13709.66,
-      "prev": 14634.72,
-      "change_pct": -6.32,
-      "is_drop": true
-    },
-    "ES=F": {
-      "name": "標普 500 期貨",
-      "group": "美股期貨",
-      "lead_type": "盤前即時",
-      "last": 7493.5,
-      "prev": 7428.25,
-      "change_pct": 0.88,
-      "is_drop": false
-    },
-    "NQ=F": {
-      "name": "那斯達克 100 期貨",
-      "group": "美股期貨",
-      "lead_type": "盤前即時",
-      "last": 29995.0,
-      "prev": 29514.25,
-      "change_pct": 1.63,
-      "is_drop": false
-    },
-    "^TNX": {
-      "name": "美10年期公債殖利率",
-      "group": "債匯",
-      "lead_type": "",
-      "last": 4.37,
-      "prev": 4.49,
-      "change_pct": -2.65,
-      "is_drop": true
-    },
     "DX-Y.NYB": {
       "name": "美元指數",
       "group": "債匯",
       "lead_type": "",
       "last": 101.11,
       "prev": 101.61,
-      "change_pct": -0.5,
+      "change_pct": -0.49,
       "is_drop": false
     },
     "TWD=X": {
       "name": "新台幣匯率",
       "group": "債匯",
       "lead_type": "",
-      "last": 31.86,
-      "prev": 31.69,
+      "last": 31.87,
+      "prev": 31.7,
       "change_pct": 0.53,
-      "is_drop": false
-    },
-    "TXF-NIGHT": {
-      "name": "台指期夜盤收盤",
-      "group": "台股期貨",
-      "lead_type": "盤前即時",
-      "last": 45550.0,
-      "prev": 44452.0,
-      "change_pct": 2.47,
       "is_drop": false
     }
   },
-  "drops": [
-    {
-      "symbol": "^SOX",
-      "name": "費城半導體",
-      "change_pct": -6.32,
-      "lead_type": "隔夜領先"
-    }
-  ],
-  "alert_level": "警戒",
-  "summary": "隔夜美股四大指數漲跌互見，費城半導體指數因AI退潮而大幅重挫，台指期夜盤則在盤前電子盤回穩下強勁反彈，台股今日開盤需留意半導體類股壓力。",
+  "drops": [],
+  "alert_level": "平靜",
+  "summary": "美股四大指數因投資人逢低買入科技類股而全面收高，台指期夜盤也受激勵大漲，整體市場氛圍平靜偏多。",
   "interpretation": [
     {
-      "market": "美股費城半導體指數",
-      "cause": "AI退潮引發半導體類股重挫，OpenAI延後IPO及美光、Intel等主要晶片股延長跌勢，導致投資人預期美股夏季修正。",
+      "market": "美股大盤",
+      "cause": "投資人逢低買入近期遭受重挫的科技類股，推動美國股市從上週跌勢中反彈，四大指數今天收盤全面走高。",
       "evidence_news": [
         {
-          "title": "AI退潮費半重挫，美銀預警美股夏季修正-財經焦點情報站",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQTnNyeGEyNVQxT1I2SHR4ajVJSkN4dWwtTk0yZFpjSkh2Y2pja2czUUtVa2pzZDd0eUF1aFZ4TUt6WFdEZ1dJY2RqZV9SZ2FyWkowc014QTk1MXlqak5FZWE1QVdhWWlLVmROcEplZ1cwbHA1STNRekwwX0Z6cGIwOEZR?oc=5"
+          "title": "投資人逢低買進科技類股 美國股市收高",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606300011.aspx"
         },
         {
-          "title": "【美股盤後】OpenAI傳延後IPO 四大指數齊跌、費半重挫逾5%",
-          "source": "非凡新聞台",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE93RG9XUWVzUVNRSmIzanlZOFpvbTl0WWhaSm1EaWJva3hNdTZLbTR6QzJ4ZzlUa2lCa0ViYlNBYmY4VkwtQTJlYmRkQVMxMzRUSEF5a0g1XzdwZGVQZHV0MQ?oc=5"
+          "title": "US stocks rise and recover some of their losses from a rare losing week",
+          "source": "AP News",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNYTBrZkhPRzlzdzlwU0pDMk40NDNtYy1zZDdvVkFFSVk5UHFjSXdVRzdPcW14Ykx2NWVtelNDYzNySHJvU2tLOV84T1JUM2NONGlibWYtTlA4eFlXOGpDcjRIV0s4SzhCMDhGU3daZU94cEpmOEhidFozWVVnUjdsMlVrNHNjQXVUTHF3b05sVGFaRjd1MEtCSXcwRGE?oc=5"
         }
       ]
     },
     {
-      "market": "美股主要指數",
-      "cause": "中東局勢趨緩，美國與伊朗停火談判進展，使得華爾街股市整體收高，科技股在經歷近期下跌後也出現反彈。",
+      "market": "美股科技/半導體類股",
+      "cause": "上週受AI退潮影響，費半指數重挫，但今日投資人逢低買進科技類股，使美股四大指數全面上漲。然而，Micron和Intel等晶片股仍延續跌勢，且有消息指出AI記憶體短缺問題影響硬體製造商。",
       "evidence_news": [
         {
-          "title": "Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbGhfTkRBNnFnWmRfbmpsUFZjNHByR1hpUHhzMU12ZEhnQmx0cmk5bkpneU9CdmI1X01JVl9qMXZoWEg4X0dOV1Q5QnduaFJSSXB2eTRMM0l3TUQ0RGU3RzRma0V4MGd0XzhHWU5INzdSMkp0NG51QUc4OWg4T09YUGJ4OGUtVGo3Vm5wN09lbEJ3RTZSeWc1Q0dhWTZZYU42VlhkRVZ0dlk?oc=5"
+          "title": "美股早盤美光回檔重挫!台積電ADR 小漲",
+          "source": "MSN",
+          "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxOeWFTUEpxN0hkS2k1eGFlQno3ZDZpbU5PT1BCWDRrRjRKaDlyRllSQWtrYXhlWWdNQVV5bXNHcUhablFPSE9qSERCaTJZTmpra0FISlBhTGtKNlpST3lkdGhfb2N1YWtQV0w2bXVWRGZIeW5XNEtncGEydV95U2Q3RVZxbnhwTmVScFdfUVY4XzQ1TFJwcHdBQWdiWHZXYWVfdk9hUVNWZGthVUpUSnFmSy1pZ0FaajJSWldGelJSMW1vZlFpUWgweklpQ0c0UnVOZjJ1cGxlZmRiZTc1dDIxQjdXXy1xUEs5V0NVVjlNX2NYaWdlN21KemFZNUZkTzRBM09DaDNGUDY2aVdpOHlyR3gxWU96QXNLemFmZnM4RG5JVzR6YlZSb3RWS3Z3d2UwOE9jNlpQNFk1QQ?oc=5"
         },
         {
-          "title": "Stock Market Today: Nasdaq Rises, Comcast Stock Jumps on Split Plans — Live Updates",
-          "source": "WSJ",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV_5cUxQSU9vaXJhWDZsS2U0U0NEOXlQQVlmWVAtdnJIeGFmWnZmaEtxeHpSQk1VNzZTUjZBc1pTcWZZMTl4NjlobEJ1UnpQNGpKNWNuZUhVb0hZb3RNOGdOMTRFZ0ptWThPRG5IS1NCRENkdnhPeFJJVlBIdjRuVGF0VzVIRGROSmhYRVU?oc=5"
+          "title": "Micron, Intel Stocks Extend Selloff as $200 Billion Chip Sector Wipes Out",
+          "source": "TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPV1ZoZV9uMGNKd0pOd3VEMm9vNWl2YkdXaktDMldnNHQtTTIxSFEwcE9MY19aSEwxOVFjSDdFbkt6dVdEblhnZ2FXZkRsdTFJSzlCUnBtbUVLTl9UeDEwV3FBZVIzM3JoTzQwdjZjNTJZeEhRTlRQaWoxQ1dqNnFpQUx0SUJRdl9BRkFpbHBHdGdmSE1TbTJ1OURodjJXMEM5NzI0LWFXam9OTUtMZmd3Y0lLeHlmaDZqX2FlMWFrZExKUjNTNU53M2VMMA?oc=5"
         }
       ]
     },
     {
       "market": "台指期夜盤",
-      "cause": "受美股電子盤一掃頹勢的影響，台指期夜盤強勁反彈，一度大漲逾400點，顯示市場對隔夜美股的利空反應有所消化。",
+      "cause": "受美股電子盤反彈激勵，台指期夜盤一度大漲逾400點，顯示對隔夜美股的樂觀情緒。",
       "evidence_news": [
         {
-          "title": "美股電子盤一掃頹勢 台指期夜盤一度大漲逾400點 | 期貨市場 | 期貨",
+          "title": "美股電子盤一掃頹勢 台指期夜盤一度大漲逾400點",
           "source": "經濟日報",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3Vi10dVFlLTJvREx5VlJ1aG9nbGF1WWljcnhwQl9SazZvemlEaVpKcDRtOWNRa093SnBNN3FDZE5sdVdNQjF2OEpkTTdzNjhld0tET1A1MHdmMXM?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3Vi10dVFlLTJvREx5VlJ1aG9nbGF1WWljcnhwQl9SazZvemlEaVpKcDRtOWNRa093SnBNN3FDZE5sdVdNQjF2OEpkTTdzNjhld0tET1A1MHdmMXPSAWBBVV95cUxOQjBndEp4MHlxR1ltMXVMMmllN0t4LTZjLWpkUWhuUERMQng5ejhiYkVxVU81eUFCMENpRXNHcUVRcGRPY1IyV1FpcGV1TG0yOXk1QWl3ZFZqVmJ1UjJSRGE?oc=5"
+        },
+        {
+          "title": "川普喊美伊將在卡達談判！美股四大指數僅費半重挫近3% 台指期夜盤一度衝高到4萬6",
+          "source": "FTNN 新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9iZ3V5WHdWbjZ6MlpFZEQxYUVZZWViOENHVU9URDBlcld0WjZ4OWpPaFBXcHpMamhXWlotTmJ4djkwWVg3dDVmVXZXSQ?oc=5"
         }
       ]
     },
     {
-      "market": "半導體產業",
-      "cause": "台灣擴大晶片走私調查，Super Micro辦公室遭突擊搜查，恐對半導體供應鏈帶來不確定性。",
+      "market": "地緣政治",
+      "cause": "美國與伊朗在卡達舉行會談，儘管伊朗外交部否認部分報導，但中東局勢趨緩，國際油價小幅回升。",
       "evidence_news": [
         {
-          "title": "Super Micro Office Raided as Taiwan Expands Chip Smuggling Probe",
-          "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV_5cUxOdE8wWm9URTJrXzMwc0xQakVNdjBRV0kzenJvOFN3OUZDLS1DaXFtMWVHWkpnVFRVNVBWMUNad2FmU0piSDhSaGpJNnRSZ1ZWaWxBcGg0UjdWdlk5UE4zV3B2TXlDbWZRSjRYTEdMeVRPM1lHZTB5Nk5KQmZPcGIwWTIzZHFJbHhBaEFRc3h5d2czZU5SMUg5MDI5RlU5dTRrWHdRUVFoaUdyS1ZvZFg2eEg2UnRwZw?oc=5"
+          "title": "美伊停火局勢脆弱 國際油價微漲",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606300010.aspx"
+        },
+        {
+          "title": "Trump and Iran issue conflicting statements about new talks",
+          "source": "CNN",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9MVi1NaU82STg3WmRydk9wSkcyR1BhTmNHQnRxR1lvcWNJVXdWMngtZlBmQXJrR0M5eW4tU28zd3ZvdFpobFNVYkF1Z29DNEVFQWFCaGZDb0NaSmp5RWVmZGdxX2xwalRUa0lhQVlqLWlZbEp3QjJLQg?oc=5"
+        }
+      ]
+    },
+    {
+      "market": "半導體產業政策",
+      "cause": "韓國宣布將投入逾37兆韓元打造新的半導體聚落與AI資料中心，顯示各國對半導體和AI產業的戰略佈局。",
+      "evidence_news": [
+        {
+          "title": "韓國將投入逾37兆 打造新半導體聚落與AI資料中心",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/aopl/202606290237.aspx"
+        },
+        {
+          "title": "South Korea to spend $1T on more memory chip production and humanoid robots",
+          "source": "Ars Technica",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNU9hRmtBOEQ3S2F4RGRES1JXaW84ODNUQlpGQ2tFckZnT2RsSE5ubzdJbHQ5eVRvZXVVdmlSQmVaOHdNRGpRRGlFOTJnSGVmUm13M2FaY0o5UjVVWkpSSXlTZFFDMUxRd0tMajg1b1J1R1FoWnFqQnEtbXduS08xRTRfeGlWajVmeFJPaV8xTTdVTHIzR2owTk42UWRQODZ3TDdzeFpub3BlLVhBbWhN?oc=5"
         }
       ]
     }
   ],
   "us_view": {
-    "direction": "中性",
-    "reason": "美股大盤指數漲跌互見，道瓊工業指數上漲，標普500和那斯達克綜合指數小幅下跌，但費城半導體指數因AI退潮而大幅修正。中東地緣政治緊張局勢趨緩對市場情緒有正面影響，但AI相關類股的獲利了結壓力仍需關注。Alphabet首次納入道瓊工業指數，以及特斯拉FSD更新，為科技股帶來部分支撐。",
+    "direction": "偏多",
+    "reason": "美股四大指數全面收高，主要受投資人逢低買進科技類股推動。儘管費半上週重挫，且有報導指出AI記憶體供應緊張，但市場整體情緒因科技股反彈而趨於樂觀。美伊談判也為地緣政治風險帶來緩解跡象。",
     "focus": [
-      "AI相關類股的修正與資金流向",
-      "中東地緣政治的後續發展與油價",
-      "美國聯準會的利率政策預期",
-      "科技巨頭的財報與展望"
+      "科技巨頭財報",
+      "AI相關產業供應鏈",
+      "美伊局勢發展",
+      "Fed利率政策動向"
     ]
   },
   "tw_impact": {
-    "direction": "偏空",
-    "reason": "隔夜費城半導體指數大幅下跌，對今日台股的半導體及電子類股將構成直接壓力，尤其台灣擴大晶片走私調查對相關供應鏈的影響也需留意。儘管台指期夜盤反彈，但主要因美股電子盤回穩，實際開盤後仍可能受到費半重挫的拖累。新台幣匯率小幅升值，顯示資金外流壓力暫時減輕，但不足以抵銷半導體利空。",
+    "direction": "偏多",
+    "reason": "隔夜美股四大指數全面上漲，且台指期夜盤大漲，預期將對今日台股開盤帶來正面影響。尤其美股科技股的反彈，可望提振台股半導體及電子類股表現。儘管部分晶片股仍有賣壓，但整體市場氛圍有利於台股。",
     "sectors": [
       "半導體",
-      "AI概念股",
       "電子零組件",
-      "IC設計"
+      "AI相關概念股",
+      "金融(匯率穩定)"
     ]
   },
   "ai_ok": true,
@@ -204,6 +151,22 @@
     }
   ],
   "raw_news": [
+    {
+      "title": "西雅圖同志遊行 台灣隊伍搭彩虹橋邀國際友人赴台",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/ahel/202606300012.aspx",
+      "summary": "（中央社記者張欣瑜舊金山29日專電）西雅圖同志驕傲遊行28日登場，台裔變裝皇后Felicia Oh穿上珍奶裝坐鎮花車，駐西雅圖辦事處長林美呈到場為台灣隊伍打氣，盼讓國際友人看見台灣多元價值，並將能量延續至10月31日登場的台灣同志遊行。",
+      "published": "2026-06-29T21:51:16+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "投資人逢低買進科技類股 美國股市收高",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606300011.aspx",
+      "summary": "（中央社紐約29日綜合外電報導）投資人逢低買入近期遭受重挫的科技類股，推動美國股市從上週跌勢中反彈，4大指數今天收盤全面走高。",
+      "published": "2026-06-29T21:46:14+00:00",
+      "origin": "中央社 財經"
+    },
     {
       "title": "6月29日 期交所夜盤行情",
       "source": "經濟日報",
@@ -245,7 +208,7 @@
       "origin": "中央社 國際"
     },
     {
-      "title": "台灣航海探險家影像硬碟倫敦遭竊 駐英代表處已協助",
+      "title": "台灣航海探險家陳懷璞硬碟遭竊 駐英代表處籲倫敦警積極處理",
       "source": "中央社 國際",
       "url": "https://www.cna.com.tw/news/aopl/202606300004.aspx",
       "summary": "（中央社記者陳韻聿倫敦29日專電）台灣青年航海探險家陳懷璞近日完成橫越南冰洋與南大西洋壯舉，但返程在倫敦入住旅館時，兩顆儲存探險影像紀錄的硬碟遭竊。駐英國代表處今天表示，持續提供他必要協助及聯繫。",
@@ -365,10 +328,10 @@
       "origin": "中央社 財經"
     },
     {
-      "title": "美股電子盤一掃頹勢 台指期夜盤一度大漲逾400點 | 期貨市場 | 期貨",
+      "title": "美股電子盤一掃頹勢 台指期夜盤一度大漲逾400點",
       "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3Vi10dVFlLTJvREx5VlJ1aG9nbGF1WWljcnhwQl9SazZvemlEaVpKcDRtOWNRa093SnBNN3FDZE5sdVdNQjF2OEpkTTdzNjhld0tET1A1MHdmMXM?oc=5",
-      "summary": "美股電子盤一掃頹勢 台指期夜盤一度大漲逾400點 | 期貨市場 | 期貨 經濟日報",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3Vi10dVFlLTJvREx5VlJ1aG9nbGF1WWljcnhwQl9SazZvemlEaVpKcDRtOWNRa093SnBNN3FDZE5sdVdNQjF2OEpkTTdzNjhld0tET1A1MHdmMXPSAWBBVV95cUxOQjBndEp4MHlxR1ltMXVMMmllN0t4LTZjLWpkUWhuUERMQng5ejhiYkVxVU81eUFCMENpRXNHcUVRcGRPY1IyV1FpcGV1TG0yOXk1QWl3ZFZqVmJ1UjJSRGE?oc=5",
+      "summary": "美股電子盤一掃頹勢 台指期夜盤一度大漲逾400點 經濟日報",
       "published": "2026-06-29T13:08:08+00:00",
       "origin": "關鍵字「台指期 夜盤 台股期貨」"
     },
@@ -525,14 +488,6 @@
       "origin": "中央社 財經"
     },
     {
-      "title": "「造山者」瑞士巴塞爾上映 台灣晶片奇蹟驚艷全球",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/ahel/202606290255.aspx",
-      "summary": "（中央社記者郭芳君蘇黎世29日專電）台灣駐瑞士代表處於28日在瑞士德語區巴塞爾，舉辦「造山者」紀錄片放映會，吸引瑞士及鄰國德法台僑及國際友人共同出席觀影，深入了解台灣創建晶片王國的艱辛過程與傳奇際遇，國民外交成功出擊。",
-      "published": "2026-06-29T10:23:40+00:00",
-      "origin": "中央社 國際"
-    },
-    {
       "title": "期貨最新報價06／29期交所夜盤行情- 證券",
       "source": "工商時報",
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAtYXFSWUVpTjEzdy1KRk1TTW1YWmFGVTFWRGpCZ01mMWVkYk5CMU52NnR5SXN4UWRFVndYXzVSZmxNZVlZUzBGTEV4VTVfS09LYW5NSjMxMjRtWEdxSmZZ?oc=5",
@@ -573,14 +528,6 @@
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
-      "title": "永豐餘強化能源布局 永餘智能奪嘉南防災微電網案",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290233.aspx",
-      "summary": "（中央社記者何秀玲台北29日電）永豐餘旗下永餘智能表示，去年丹娜絲颱風來襲造成多地電力、通訊、交通等災情，為強化電力供應韌性及應變能力，經濟部編列預算推動「小型防災微電網建置計畫」，永餘智能取得台南市及嘉義縣防災微電網案場，為本次微電網專案重要的防災微電網建置執行案。",
-      "published": "2026-06-29T09:28:53+00:00",
-      "origin": "中央社 財經"
-    },
-    {
       "title": "歐洲「正在融化」：熱浪襲來 超過千人因高溫相關原因死亡",
       "source": "BBC 中文",
       "url": "https://www.bbc.com/zhongwen/articles/cgevz5p98plo/trad?at_medium=RSS&at_campaign=rss",
@@ -611,14 +558,6 @@
       "summary": "網絡流傳中國安徽合肥爆發民眾大規模抗議，反對興建大型垃圾中轉站。BBC中文翻查資料，中國近年已發生多宗類似因「鄰避效應」而生、環繞「厭惡設施」選址鄰近民居的抗議事件。",
       "published": "2026-06-29T08:00:26+00:00",
       "origin": "BBC 中文"
-    },
-    {
-      "title": "7月台股期指漲1098點",
-      "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZnVrVUpJcmZlRmRpVDZ1WGpsRWJPaXlmUEs5RkljYmZ5R3V3UmY4UFdqc3hacmE0aVJGeFRKNHBHbEdoQ0M2ekloZFJ3UTV5WUljMHdwNktVYkF0X09nX3Nua2VkREF3dWMtTWFlYjFXWmxNcE8tLVIwd053QktrTTU3UdIBYEFVX3lxTFBzZm84UlBLaEFOYS0xT2k1VFhoSElMTUpSemVLcmRxSTZMbjRFVXk2Rml3ZnFjSzJsNEc5UUpEak4wWUJ2d21jMDJYTDBYeHFkWjV4X1ZwaW5iajRXYng0aA?oc=5",
-      "summary": "7月台股期指漲1098點 經濟日報",
-      "published": "2026-06-29T06:21:26+00:00",
-      "origin": "關鍵字「台指期 夜盤 台股期貨」"
     },
     {
       "title": "歐洲熱浪：世衛稱逾1300人死亡 德國錄得攝氏41.7度高溫",
@@ -685,84 +624,140 @@
       "origin": "BBC 中文"
     },
     {
+      "title": "美股費半重挫，台股跌逾千點失守四萬五大關-財經焦點情報站",
+      "source": "CMoney投資網誌",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNZmFTSWo2Mk1BdzYxX09TZi14Y0lIdzRKUVlzeFRGSU15OFdoN25fM3JjUXIxLTdXb1gydUN6S0txQUl0ZUdBMS11aWVXeXdaMmllRHZ2b2VhS3VLOFd0clg1ZGNHWTdlOTlMbGI0V2xvSjJ0VHN1RW42dGUzWk9jRDV3?oc=5",
+      "summary": "美股費半重挫，台股跌逾千點失守四萬五大關-財經焦點情報站 CMoney投資網誌",
+      "published": "2026-06-28T07:30:04+00:00",
+      "origin": "關鍵字「美股 大跌 重挫」"
+    },
+    {
+      "title": "Some Russian soldiers last just minutes on front lines against Ukraine's drones, military bloggers say",
+      "source": "CBS News",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNaWZxNlVOdGZ4VTRYVjBPV1BHUnN0eXR6cEsyU09FLThoQ29vblI5WU9VbWRCOUN1X0JlTUUtU1F0UWhsdkJ5bVowRDNrc0dqNFg1eGI1UHdJMDZ0WVpsQnZEMUxzc3VkVGVyNWpJNWVZNkJVcGNLelJlRzBWeTFfTTJtcXQ1N1RFM1NXVw?oc=5",
+      "summary": "Some Russian soldiers last just minutes on front lines against Ukraine's drones, military bloggers say CBS NewsMost Russian recruits have life expectancy of just 20 minutes on Ukraine front lines, chilling report claims New York PostPutin risks public fury with army call-up The Telegraph‘Something could start as early as October’: Russian authorities are discussing a new wave of mobilization after the State Duma elections MeduzaRussian soldiers could die within 20 minutes of being put on Ukraine frontline, report finds WION",
+      "published": "2026-06-29T22:09:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Oil Prices Rise As US, Iran Strikes Raise Supply Risks",
+      "source": "MarketForces Africa",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSFNxcktRcGpJdHdGZmcyN2xha0NvQlpETEhUTEpkckFBR2NTTUVROVpkY2ZZbWZzVWFMMU9yc2ltbDBnQkxlU2UxNDBkR1ZCQnEzdjZtU0t3YnBGRlJaVzlCbDhNZzFTZUNvRFBBOTJmTDlYbm03SDgtUnBMUXVtRGdJdmRKLTQ?oc=5",
+      "summary": "Oil Prices Rise As US, Iran Strikes Raise Supply Risks MarketForces Africa",
+      "published": "2026-06-29T22:03:33+00:00",
+      "origin": "關鍵字「Iran US military attack oil price surge」"
+    },
+    {
+      "title": "Three people injured after explosion in Monaco, French media report",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBnaHphVXFzUW45LVNtdzVIcmR1Z1FoaGtldUliSUtBZWRTV3FXOGN0Q2EwYVF1MF82ZXlXSld2T09nVUtvYmtteFhaZ19aRnRJRFBKa05nQ3NLdw?oc=5",
+      "summary": "Three people injured after explosion in Monaco, French media report BBCMonaco explosion injures three and triggers police hunt The GuardianMonaco explosion leaves three wounded as authorities probe deliberate attack France 243 injured in Monaco after makeshift bomb explodes in street, police hunting for suspect New York PostPolice hunt fugitive in Monaco after 3 wounded in ‘deliberate explosion’ South China Morning Post",
+      "published": "2026-06-29T21:59:56+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Nearly 100K Hyundai vehicles recalled after software glitch raises crash risk",
+      "source": "Fox Business",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbFh6V19zdDNfNS1qdUo5Ym5OUWxuYktMV29PTFN1cjllNzFncV83a2lRV0dZOW1YSWY1dzdYS1c2cl9DeVpHSmpVaG1JXzR1VTdxNEFTelhPN2FuUGM5RmIyblozMmxvRWhyU21tcEV6TFFBSXQ3R2xTNmo3ZVpxRUxjREl2X2VGMnhxcTd5dU1QeFNPQTBxYV9FcUtWVVYwSmZ5bWdNcnU3TTRhY1HSAbMBQVVfeXFMTXB1T3ozMndhbTNxbDNyN3ZZdWIxb21WX2ZTY3FMai03QlJOTU04OXU1ckgxT0xYRTZmSDg1djkwTXBIbVh6RGhZVWV3N0x3V3o2U0ozaEFxOHlreUYwMy12VVFydlpoanVCYUI3dkpMcU5reFpMd2NiN29TTmdyeWR4WmhjbVFRMDMzZWRwb2dKRDh1S1BHejlnSFFGUVE5UzUwdGN0TmY4dDZ6UGN1a0VsSk0?oc=5",
+      "summary": "Nearly 100K Hyundai vehicles recalled after software glitch raises crash risk Fox BusinessOver 96K Hyundai vehicles recalled. See affected models USA TodayHyundai recalls 96K Tucson SUVs as dashboards may go blank FOX 5 AtlantaHyundai recalls more than 96,000 SUVs over instrument panel display issue WFAAOver 96,000 Hyundai vehicles recalled over instrument panel error WRAL",
+      "published": "2026-06-29T21:44:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Top tobacco company to cut thousands of jobs",
+      "source": "Fox Business",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5KcENYRHNRYk15Uzk4WlJOS3d4ZDdyc2NjeDlyZC05ZWpGRXNBSklPanc4Y3p1ZGs1bFR0Q0J6WGJya0V2RWlObXRBb1Z4T09PTVBIWXFvNlJoYnBUQS1ySUo3Rk1PMjQ0bVNPcV9yODNtTjQ2NmlSMXoxakZ0MTjSAYQBQVVfeXFMTkx6aVhPS2hJQ2ZJb3BvZ2JnWWFuUkVyNjRSTkdOeFBvM1MzbkZiTUtxSG5wdWYzMXQzNXgtTmxQUV9IbnJmTHNkaEw0cmUxRW9fVEtKaURSbTlLRHdib213VUhrQXZwUkp6MHFLSEhxaS1YR2xERkVOWGxUZWd1cWRSRDNY?oc=5",
+      "summary": "Top tobacco company to cut thousands of jobs Fox BusinessBAT Cuts 9,000 Jobs as Its Turnaround Program Intensifies Bloomberg.comBritish American Tobacco cost-cutting hits 9,000 roles ReutersBAT to Reduce Workforce by Nearly a Fifth WSJBritish American Tobacco to cut 9,000 jobs BBC",
+      "published": "2026-06-29T21:24:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
       "title": "Live updates: Trump and Iran issue conflicting statements about new talks",
       "source": "CNN",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9MVi1NaU82STg3WmRydk9wSkcyR1BhTmNHQnRxR1lvcWNJVXdWMngtZlBmQXJrR0M5eW4tU28zd3ZvdFpobFNVYkF1Z29DNEVFQWFCaGZDb0NaSmp5RWVmZGdxX2xwalRUa0lhQVlqLWlZbEp3QjJLQg?oc=5",
-      "summary": "Live updates: Trump and Iran issue conflicting statements about new talks CNNUS says ships can 'move freely' in Strait of Hormuz amid ceasefire with Iran Fox NewsIran War Live Updates: U.S. and Iran Set for New Talks in Qatar After Exchanging Strikes, Trump Says The New York TimesUS and Iran pause strikes but disagree over next steps on talks AP NewsU.S., Iran Prepare for Talks on Strait of Hormuz Foreign Policy",
+      "summary": "Live updates: Trump and Iran issue conflicting statements about new talks CNNIran and the U.S. gear up for tense talks NBC NewsIsrael warns war could begin 'within two days' as US pushes ahead with Iran technical talks in Doha Fox NewsIran War Live Updates: U.S. and Iran Set for New Talks in Qatar After Exchanging Strikes, Trump Says The New York TimesTrump administration officials head to Qatar for Iran talks The Hill",
       "published": "2026-06-29T21:20:00+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbGhfTkRBNnFnWmRfbmpsUFZjNHByR1hpUHhzMU12ZEhnQmx0cmk5bkpneU9CdmI1X01JVl9qMXZoWEg4X0dOV1Q5QnduaFJSSXB2eTRMM0l3TUQ0RGU3RzRma0V4MGd0XzhHWU5INzdSMkp0NG51QUc4OWg4T09YUGJ4OGUtVGo3Vm5wN09lbEJ3RTZSeWc1Q0dhWTZZYU42VlhkRVZ0dlk?oc=5",
-      "summary": "Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump ReutersStock Indexes Push Higher as Megacap Tech Stocks Rally Barchart.comDow Jones Futures Rise On U.S.-Iran News, S&P 500 To Reclaim Key Level; Tesla, Jobs Report Loom. Investor's Business DailyUS stocks advance on Middle East de-escalation, tech rebound (SP500:) Seeking AlphaWall Street climbs as US, Iran halt attacks; Comcast surges USA Today",
-      "published": "2026-06-29T21:05:39+00:00",
+      "title": "FDA panel on peptides will include experts who promote the unproven chemicals favored by RFK Jr.",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQYmpnSzY0aFE0SmtaRUVqcXUzY2FHRDhLTlM3dGRoMDg3bTY5VGpFLUZlQ3dzNEgzU21GRXo0UzRGamRLYXlzU1N2akZqUThHUHNMdWJxT2FlUjF3OFptR3NfM0JaaHlhLWliM1ZPeEpaSElyNi15dXNiMTVhVDNDTVpOX1loN1RZaDBZRHdLZkRXN3hiTDAwQnh3?oc=5",
+      "summary": "FDA panel on peptides will include experts who promote the unproven chemicals favored by RFK Jr. AP NewsSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T21:11:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Stock Market Today: Nasdaq Rises, Comcast Stock Jumps on Split Plans — Live Updates",
-      "source": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSU9vaXJhWDZsS2U0U0NEOXlQQVlmWVAtdnJIeGFmWnZmaEtxeHpSQk1VNzZTUjZBc1pTcWZZMTl4NjlobEJ1UnpQNGpKNWNuZUhVb0hZb3RNOGdOMTRFZ0ptWThPRG5IS1NCRENkdnhPeFJJVlBIdjRuVGF0VzVIRGROSmhYRVU?oc=5",
-      "summary": "Stock Market Today: Nasdaq Rises, Comcast Stock Jumps on Split Plans — Live Updates WSJSee more headlines & perspectives on Google News",
-      "published": "2026-06-29T21:04:00+00:00",
+      "title": "South Korea to spend $1T on more memory chip production and humanoid robots",
+      "source": "Ars Technica",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNU9hRmtBOEQ3S2F4RGRES1JXaW84ODNUQlpGQ2tFckZnT2RsSE5ubzdJbHQ5eVRvZXVVdmlSQmVaOHdNRGpRRGlFOTJnSGVmUm13M2FaY0o5UjVVWkpSSXlTZFFDMUxRd0tNajg1b1J1R1FoWnFqQnEtbXduS08xRTRfeGlWajVmeFJPaV8xTTdVTHIzR2owTk42UWRQODZ3TDdzeFpub3BlLVhBbWhN?oc=5",
+      "summary": "South Korea to spend $1T on more memory chip production and humanoid robots Ars TechnicaSamsung, SK Hynix to Spend $520 Billion on Chip Plants in South Korea WSJSouth Korean tech giants to build a $518 billion chipmaking hub to serve soaring AI demand Yahoo FinanceSamsung Electronics, SK Hynix to invest in two new fabrication sites in South Korea, government says ReutersSouth Korea says Samsung and SK Hynix investing in AI, semiconductor mega-projects CNBC",
+      "published": "2026-06-29T21:09:43+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Woke Paris pol blames Americans and our air conditioning for Europe heat wave that has killed 1,300 people",
+      "source": "New York Post",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNZ21nRVFkNjNCU1VsWjNReENWUVhPczBTdDl6a3dJYnEycDA1LWRqWjVKcXh5VFJZYjA1VUFqcHhuQXltQ2t4SEZsNDJaT0hEQ2dUbTBFSjBtTjFDSmRLX3NDQnRvZ2hBQllQTlBHS0oybTFjcGVjRnZMdkRFWWdUZzFaY0VRSlp6SHRsclA0OFZrNW02a0MyVC1BdEY2elNyakJaVEJoNzlFWkVmMWNqSldmVHM4dExHeEI2cjJLT0p3WWc0QzhnLXhoRHVmSlNPQ1FhbzA0dzBGTHJzY2FrTURVVQ?oc=5",
+      "summary": "Woke Paris pol blames Americans and our air conditioning for Europe heat wave that has killed 1,300 people New York PostParis deputy mayor blames the United States' carbon emissions for deadly heat wave Fox NewsParis official fires back at US tourists over air-conditioning criticism amid heat wave Anadolu AjansıParis Deputy Mayor Rebuffs U.S. on Air Conditioners, Emissions 조선일보French official blames the US for deadly heat wave ravaging Europe AOL.com",
+      "published": "2026-06-29T21:09:24+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "T-Mobile is booting customers from its oldest plans",
+      "source": "The Verge",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1nYzY5b0FURGd2dXFNQS1SR3pLU3JKYU0tR1Z3MVBSelF2dFpXeXBEX2VkbGw0ZEU1ZDlJVXNFVHNUYVFrTWhJWTgzVk42RFBXWUVkSDI1TVZyUzVneUQ2aTlOaXc0QURkQ1c2UzU1X01KMHRUQTlVSTF3dw?oc=5",
+      "summary": "T-Mobile is booting customers from its oldest plans The VergeT-Mobile Is Automatically Pushing Legacy Customers Onto Its Current Plans CNETT-Mobile will automatically upgrade some legacy phone plans to higher-price plans MashableT-Mobile Just Ripped 8 Million Customers Off Their Grandfathered Plans - and Raised Their Bills Gadget ReviewBreaking: T-Mobile To Force Migrate Over 8 Million Customers To More Expensive Plans The Mobile Report",
+      "published": "2026-06-29T21:06:14+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Drone Strikes JetBlue Flight Landing at Kennedy Airport, Pilot Says",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVUVJQVpRcEJKa3BRM1ByemN0LV9xcmJUV29raDZiVktmcDdXWDIzRURRR0lYX2pwZTBnY05KWUFVUUhpNE9tTlNobkdwOUlEdVlXaGlGQndaZXRLa3U0U3ZKSVEwQ3IxdFZJMmVFTE5qYWxkLV9jQmR2dldsamxOb1pEbEs?oc=5",
+      "summary": "Drone Strikes JetBlue Flight Landing at Kennedy Airport, Pilot Says The New York TimesJetBlue pilot reports hitting drone as flight approached landing at JFK Airport in NYC ABC7 New YorkAir traffic audio captures JetBlue pilot alerting controllers: 'We collided with a drone' Fox NewsJetBlue plane collides with drone in New York City NBC NewsJetBlue flight hit drone while approaching JFK airport, FAA says Reuters",
+      "published": "2026-06-29T20:55:22+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "US stocks rise and recover some of their losses from a rare losing week",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNYTBrZkhPRzlzdzlwU0pDMk40NDNtYy1zZDdvVkFFSVk5UHFjSXdVRzdPcW14Ykx2NWVtelNDYzNySHJvU2tLOV84T1JUM2NONGlibWYtTlA4eFlXOGpDcjRIV0s4SzhCMDhGU3daZU94cEpmOEhidFozWVVnUjdsMlVrNHNjQXVUTHF3b05sVGFaRjd1MEtCSXcwRGE?oc=5",
+      "summary": "US stocks rise and recover some of their losses from a rare losing week AP NewsStock Market Today: Nasdaq Rises, Comcast Stock Jumps on Split Plans — Live Updates WSJStock market today: Dow, S&P 500, Nasdaq futures slip after tech rebounds Yahoo FinanceSA analyst says the AI selloff may resume despite Monday’s rally Seeking AlphaNasdaq jumps 2% as communication services and tech rebound, Dow posts record close Investing.com",
+      "published": "2026-06-29T20:50:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "Strategy’s Turnaround Plan Includes Stock Buyback, Bitcoin Sales and More Reserves",
       "source": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPNHo1TVU4Q19RTWxZcVdqYjFyemNoWmtaN1ZNd1FIR3d4T0Q4U0czamw3TVNzNFNGYTFYUW5iYWMzVUoxR1dUbDFaQ0ZPOEg4UmdWQ1lvekd3WG9TNXNJdGhaeWdrcGlWd0ZUdGt6djZVVk1acnpYOXNiSGZ1Z25EXzVjRnplQW5oQkY4RlBkWjBVNFZFYjJvelVzTU5HSmtmTEpWdmM0QVlwTHhPTjBMQXRPWlRadGx6OGdWM0dEa1RXRS0xaktB?oc=5",
-      "summary": "Strategy’s Turnaround Plan Includes Stock Buyback, Bitcoin Sales and More Reserves WSJStrategy Announces Digital Credit Capital Framework, USD Reserve Policy, STRC Dividend Policy, Digital Credit and MSTR Repurchase Authorizations, and BTC Monetization Program StrategyStrategy Just Unveiled a Financial Overhaul: Bitcoin Sales, Dividends, and Stock Buybacks Barron'sBitcoin-hoarder Strategy unveils $2bn buyback as share price tumbles Financial TimesStrategy Says It May Sell Up to $1.25 Billion of Bitcoin Yahoo Finance",
+      "summary": "Strategy’s Turnaround Plan Includes Stock Buyback, Bitcoin Sales and More Reserves WSJStrategy Announces Digital Credit Capital Framework, USD Reserve Policy, STRC Dividend Policy, Digital Credit and MSTR Repurchase Authorizations, and BTC Monetization Program StrategyMicroStrategy Stops Just Hoarding Bitcoin — Now It Will Manage It Like Smart Money Yahoo FinanceStrategy Just Unveiled a Financial Overhaul: Bitcoin Sales, Dividends, and Stock Buybacks Barron'sStrategy Says It May Sell Up to $1.25 Billion of Bitcoin Bloomberg.com",
       "published": "2026-06-29T20:41:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Stock Market News June 29, 2026: Dow finishes above 52,000 for first time; S&P 500 and Nasdaq snap five-day losing streak as 'Magnificent Seven' recover",
-      "source": "MarketWatch",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNeHB2bENqM0J4bDVuT2ROSnV0aU1RdjhnekVCZDBXd0ROR1Z4a0I3c2huZHpDYlZFZEh4SXFmQzdncEtveW1ITGRHdExPRklMSklxa1cyTXZ1b1huRkhyRndHbjJaSmtxc2R4d3NMUndTcHU2cjFGOF9rVm55NjJ2aURwaml2OEZiZzA0dnBlcFktRXdtNXo4RF92M3ZNMFFlaEMtSTdnTm9NUQ?oc=5",
-      "summary": "Stock Market News June 29, 2026: Dow finishes above 52,000 for first time; S&P 500 and Nasdaq snap five-day losing streak as 'Magnificent Seven' recover MarketWatchStock Market Today: Dow Closes at Record; S&P 500, Nasdaq Rebound From Last Week's Tech Sell-Off; Comcast Surges on Plan to Split InvestopediaStock Market Today: Dow Climbs; Rocket Lab Takes Off; Nvidia Tests Key Level Amid 18% Dive (Live Coverage) Investor's Business DailyU.S. stocks higher at close of trade; Dow Jones Industrial Average up 0.59% Investing.comStock Market News for Monday, June 29, 2026: Dow, S&P 500, Nasdaq Rise; Micron, SpaceX, Nvidia, More Movers Barron's",
-      "published": "2026-06-29T20:40:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump?",
       "source": "Barron's",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaUhVZGl6UDlFTjVjYTRCWFlWZDhpTnFnTkJaT1AzOVdjNV8yM2Rrak5WWG90NzR4MkFlY2xRQUNlVDZwc2V6T2RfSTI2Zi1ndFA1bW9VY1ZMbHdOcHR5LUxyajdIRVhqRHVfOTVlbnJRcEZ6cmJ5bWN6X3lYai1lclpFdWNQUQ?oc=5",
-      "summary": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump? Barron'sSpaceX to join the Nasdaq-100 in a fast-tracked process that will drive huge ETF buying demand CNBCWhy is Space Exploration Technologies stock gaining today? Investing.comMore Nasdaq 100 ETFs Are Coming. That Means More Buyers For SpaceX Stock InvestopediaSpaceX Will Join the Nasdaq-100 on July 7. Here's What a $10,000 Investment Could Be Worth in December, According to History. Yahoo Finance",
+      "summary": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump? Barron'sSpaceX to join the Nasdaq-100 in a fast-tracked process that will drive huge ETF buying demand CNBCWhy is Space Exploration Technologies stock gaining today? Investing.comSpaceX Stock Options Are Now Cheap With Nasdaq-100 Inclusion Upcoming Investor's Business DailySpaceX set to join Nasdaq 100, paving way for wave of passive buying Reuters",
       "published": "2026-06-29T20:37:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Leaked iPhone 18 Pro photos reportedly wound up on the dark web",
-      "source": "The Verge",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA0bTF0czFqRkxURU52OFZQX1laV2NJRTY1V2tEXzhHNzEwTlhaUDFPWDU2b0N3YWxxaV9feXNOOWc3Ym53TjdpM0NkTVRGYjl4R3J4a0IwUTZYWjZCRWcyRkp0dmNCdktidGdoMEVoOVJPc2ZzdGZVUTVB?oc=5",
-      "summary": "Leaked iPhone 18 Pro photos reportedly wound up on the dark web The VergeApple iPhone 18 Pro supplier list, parts and photos exposed in Tata data leak ReutersTata Electronics, a major tech supplier to Apple and Tesla, confirms data breach TechCrunchApple 'Concerned' Over iPhone 18 Pro Data Leak From Supplier Tata MacRumorsPhotos of iPhone 18 Pro drop tests and other sensitive info hits the dark web 9to5Mac",
-      "published": "2026-06-29T20:18:26+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "France Recorded 1,000 Excess Deaths During Heat Wave, Officials Say",
       "source": "The New York Times",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQNl9Sd1ZQMUxmU0d6QkZKOGRoQ0Jia2ppNUtrTEZVb0hHaTd0Y2ZNbHpJT2VldkhyRFlvemhCWUxKYVlfNXJHT2V5dUdEYjRfTnI1dGRnbndkajRVc1NhVTc4SlJIeWo0QWxRaWFIeUplaGhya19iS0tWTmQ4WVNGQjdtM2JWV25YTGNV?oc=5",
-      "summary": "France Recorded 1,000 Excess Deaths During Heat Wave, Officials Say The New York TimesEurope’s ‘Heat Dome’ Has Moved East. Here’s What to Know. The New York TimesAn American in Paris, Sans Air-Conditioning CurbedDeadly heatwave grips Italy and Balkans as wildfire fears grow Al JazeeraFrance records around 1,000 additional deaths as extreme heat breaks European records NBC News",
+      "summary": "France Recorded 1,000 Excess Deaths During Heat Wave, Officials Say The New York TimesEurope's heatwave 'linked to 1,300 deaths' as more records broken BBCParis mortuaries overwhelmed amid Europe's record heat PBSDeadly heatwave grips Italy and Balkans as wildfire fears grow Al JazeeraFrance records around 1,000 additional deaths as extreme heat breaks European records NBC News",
       "published": "2026-06-29T20:06:46+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "Tesla Leads Magnificent Seven Recovery, Analysts Chime In On Deliveries",
-      "source": "Investor's Business Daily",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSTZGUHVrUXlVYnlIN3RlOFg5aFRuTUx0V3EtSmlHNUM0MUR2U3dzOVZ5LVZZUTQ3WWkzRkYyREd3Ym15TWU2azFGcDlDWUVvaGFpY0ZiV0Y5V01jTHk4bUVHM0hWRWZSVUFzdm9kbDJ3NU9KUlNWME10dzg2VEdpR2ZqSkpOcGYtX1ZGQjNneG93Wms2Ykp6aV9FTG01eTV6OEE?oc=5",
-      "summary": "Tesla Leads Magnificent Seven Recovery, Analysts Chime In On Deliveries Investor's Business DailyTesla Stock Rises as Musk’s EV Maker Deepens Ties With SpaceX Barron'sWhat's Behind Tesla's Rally Today? TradingViewTesla Stock Rises as EV Maker Deepens Ties With SpaceX -- Barrons.com MoomooWhy is Tesla stock rallying today? Investing.com",
-      "published": "2026-06-29T20:05:00+00:00",
+      "title": "Medicare to cover GLP-1 drugs for weight loss starting July 1. Here's what to know.",
+      "source": "CBS News",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOeFZQZmU3Q3o0M0Y4QUF0azZhQ0ZCdy0tei10SjhrNTdTYU1mQVUzX3NLOGdqaExDTzhnSzNyZVVja3BzcG5YOTZpSXhiSk1rSzBUTlZCazdqMEswSUo0S2dheF9XNDBQck9MTzVvbkpkSjBGRHJzSlhVR0kxTnJ3UUh3?oc=5",
+      "summary": "Medicare to cover GLP-1 drugs for weight loss starting July 1. Here's what to know. CBS NewsMedicare will start covering weight-loss drugs on July 1 for the first time. Here’s what you need to know CNNMedicare is about to cover GLP-1 drugs for weight loss. Here’s what to know. The Washington PostSeniors in Medicare are about to get landmark obesity drug coverage — but many may not know it yet CNBCMedicare to Cover GLP-1 Weight-Loss Drugs For $50 a Month: See If You’re Eligible TODAY.com",
+      "published": "2026-06-29T19:39:00+00:00",
       "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Paris official blames Americans and their air conditioning for Europe heat wave that has killed 1,300 people",
-      "source": "New York Post",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNZ21nRVFkNjNCU1VsWjNReENWUVhPczBTdDl6a3dJYnEycDA1LWRqWjVKcXh5VFJZYjA1VUFqcHhuQXltQ2t4SEZsNDJaT0hEQ2dUbTBFSjBtTjFDSmRLX3NDQnRvZ2hBQllQTlBHS0oybTFjcGVjRnZMdkRFWWdUZzFaY0VRSlp6SHRsclA0OFZrNW02a0MyVC1BdEY2elNyakJaVEJoNzlFWkVmMWNqSldmVHM4dExHeEI2cjJLT0p3WWc0QzhnLXhoRHVmSlNPQ1FhbzA0dzBGTHJzY2FrTURVVQ?oc=5",
-      "summary": "Paris official blames Americans and their air conditioning for Europe heat wave that has killed 1,300 people New York PostParis official fires back at US tourists over air-conditioning criticism amid heat wave Anadolu AjansıFrench official blames the US for deadly heat wave ravaging Europe AOL.com'Do your part!' Furious French blame US for deadly European heatwaves GB News",
-      "published": "2026-06-29T19:47:00+00:00",
-      "origin": "Google 世界頭條"
     },
     {
       "title": "Israeli strikes kill at least 8 in Gaza, including 2 children, health officials say",
@@ -771,14 +766,6 @@
       "summary": "Israeli strikes kill at least 8 in Gaza, including 2 children, health officials say AP NewsSee more headlines & perspectives on Google News",
       "published": "2026-06-29T19:35:00+00:00",
       "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Another Trump Administration Payment to Stop Offshore Wind Farm",
-      "source": "The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQaUYyZ214ODFWZm9JbUFNSW8yWmxTaXpseTM5ZmFGb2JuZGNhX2ZBTG1GTGtSVmwwYVd2ZjdYczhkel9xbEdPdURaNjBTUlh4M2xQVDc2UEE4bGFfVU05U3h2S1pic0I2S3R5NHBKZ2dhemZadndLWThxd09UR2I0NUJaNEZmQQ?oc=5",
-      "summary": "Another Trump Administration Payment to Stop Offshore Wind Farm The New York TimesTrump Pulls Plug on Carolina Wind Project as Cancellations Mount Bloomberg.comDuke Energy to terminate North Carolina offshore wind lease ReutersInterior Unveils Pact to Boost NC Energy Security, Cut Costs Mirage NewsInterior notches new offshore wind settlement in Carolinas E&E News by POLITICO",
-      "published": "2026-06-29T19:25:23+00:00",
-      "origin": "Google 財經頭條"
     },
     {
       "title": "Opinion: Inflation fears are overblown. What the rate-hike camp gets wrong about the stock market.",
@@ -800,47 +787,23 @@
       "title": "Saks emerges from bankruptcy with a new name and a leaner store footprint",
       "source": "Fox Business",
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPM1k3Yml3S1JnQ05wWThWUEJJel9aRUFOek9OZ3M0YkRlOXlwSm1TSkw1SXA5ek1kTEpYLTg5N0Z2MDhhTExUakQxbVhENzdmRExXdVRvdlJoWlBqbVV0MUNacXBod3dKRlNYcm9nUGtDM0hpeS1YQ1dIa0J2WmppNWQyODV5aHpBZ3lYVEx0SkQ1eHJuM3VRaUR1ODTSAaIBQVVfeXFMUFhWa0puMWw1Y1Jua3VBc05HSUlNSVFMOUJtSDhyNmFJcWFHMHp1WXRmSkRlaDNYRzR5YXJZREZGc2VwSTZadG5PRUUxY1l1VmxNckppblJPQzFwcTZlZ3BRVmJhWDQ4Y3ZrM3ljMXpoM2dTSDJnMzBOR2hlT1VwUjZFc01pb1ZQNUpwOEltR1Y1TUd2blZ5bVQxYmdsV3FHc0V3?oc=5",
-      "summary": "Saks emerges from bankruptcy with a new name and a leaner store footprint Fox BusinessSaks Emerges From Bankruptcy With Plan to Focus on Luxury Shopping and Service The New York TimesSaks officially emerges from Chapter 11 bankruptcy with less debt and a new name ABC News - Breaking News, Latest News and VideosSaks, exiting bankruptcy, bets on high-end luxury to revive sales ReutersSaks Global Emerges From Bankruptcy as Exemplar Luxury Group WSJ",
+      "summary": "Saks emerges from bankruptcy with a new name and a leaner store footprint Fox BusinessSaks Emerges From Bankruptcy With Plan to Focus on Luxury Shopping and Service The New York TimesSaks officially emerges from Chapter 11 bankruptcy with less debt and a new name ABC News - Breaking News, Latest News and VideosSaks, exiting bankruptcy, bets on high-end luxury to revive sales ReutersSaks Global exits bankruptcy, renamed Exemplar Luxury Group Yahoo Finance",
       "published": "2026-06-29T19:17:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Citi Wealth warns investors to move out of excess cash because of hot inflation",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcWdCSEhfbUFJZVkwWDZ0Z2w3dEJZa2xkWXRUWjhjbk0za29uMDB2a0dYd09sTjhPNFZxTXluWWs4NHZkd3FoWGVqdG5tNGpmWmdTSEVXMkhEVm5pbmtnN0tFdVJJc2NfMl9qU0VjRWhJcTVIR1VEeFNmaEp1UW9RSjU2RWVoNFRVeGNxRjRsak00YW5BTXZiUGRRendvaW4zQ3lIVGxIYktLOWFieG54cWJnaTRYbDg?oc=5",
-      "summary": "Citi Wealth warns investors to move out of excess cash because of hot inflation CNBCEverything tied to the data center is suddenly suspect. Can Big Tech fix it? CNBCHoneywell Aerospace Starts Trading, Completing 3-Way Breakup Barron'sHoneywell Aerospace shares slip in Nasdaq debut ReutersHoneywell Aerospace completes spin-off from Honeywell Technologies and begins trading on Nasdaq Honeywell",
-      "published": "2026-06-29T19:02:45+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Eli Lilly, Regeneron among first companies selected for FDA initiative to speed review of new manufacturing facilities",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVDhYOGZPSGdVZUEySGNlMW9xekNweVpFdzY4dm9lblFBbHRtWkRvRGZiRzVsT2N1ams3bEF0WEgzRTVucEFqcS1JVGJOZW5jWVFucGJEcXFfSnNZc29xQ0hOM1oyQ1o3WERYSlJtLWhINi0xdkJDbjYtNHZldTNNaHFaUDRLWWwyQy1FRTNSVy1mQnNaako2dTdB0gGfAUFVX3lxTE9BdVp0LW9vS3IyeTlIQWRmN1owblN2RUpKSFRxR01vVlk3SWM0WEJyZzc5RmRMak12RmZjZkw1UGZmaGpoa1h3bXllY21Nb0hpeUFTaW9BdHdwT2pvQmQyUnVZcUlRbXFQNEdMdTB0Q052SEpMSVlaaDJKMHpNM0ZiQjM3OUtJcFJYaWhfWHJJWmtnZjFHRF94SUtLU0tQSQ?oc=5",
-      "summary": "Eli Lilly, Regeneron among first companies selected for FDA initiative to speed review of new manufacturing facilities CNBCA new FDA strategy aims to get medicines to the market faster Baton Rouge Business ReportLilly, Regeneron selected for US program to review new manufacturing plants faster, CNBC reports ReutersLilly, Regeneron selected for US program to review new manufacturing facilities faster, CNBC reports YahooKriya Selected for FDA PreCheck Pilot Program Business Wire",
-      "published": "2026-06-29T18:50:03+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Microsoft’s $570 Billion Rout Sets Up Its Worst Month Since 2000",
-      "source": "Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTVg5YXFBOVNZajNGLXNlUkc4a1k1ZEg4ZWZxYjF4TjJqZVMza0VOel83OU83WnlFNTYwRDdIVm1EZXFuZVBKUktfcWtGaVJWdWU0Q0stRUk3c0ZZMUxHYnlzNjhpV0NPdHlTTlA2TkhfMGVPRU1ncmt2QjdBelBUanN6U2ljOExLNmZjbF9QVDVBVURkbnF0WDI1ZWZ0Tms1YjF2MGl3MGJiRGJXbngzRmVIbDA?oc=5",
-      "summary": "Microsoft’s $570 Billion Rout Sets Up Its Worst Month Since 2000 Bloomberg.comSee more headlines & perspectives on Google News",
-      "published": "2026-06-29T18:40:12+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "JetBlue pilot reports striking a drone while landing at JFK airport",
-      "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE53Tzk5YVU2aWlMQm9UQkRHR2NxamtBQmZSQ0dtU0JsYjlUZUt4UTlwYi1udHozSHBpTlZ2enJ6TWZpWGttSEU3UC1XOG9OOWRHNG14eWRwdUtRZw?oc=5",
-      "summary": "JetBlue pilot reports striking a drone while landing at JFK airport BBCJetBlue pilot reports hitting drone as flight approached landing at JFK Airport in NYC ABC7 New YorkFlight Tracker Animation Shows Path of JetBlue Plane Following Alleged Drone Collision Report YahooDrone Strikes JetBlue Flight Landing at Kennedy Airport, Pilot Says The New York TimesJetBlue plane collides with drone in New York City NBC News",
-      "published": "2026-06-29T18:36:18+00:00",
-      "origin": "Google 財經頭條"
+      "title": "Zelenskyy condemns ‘horrific attacks’ as Russian strikes kill 12 and wound 40 in Ukraine",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNRTdLbWJIbWFjcnU4YTRndkV2WHdnSjQ4b3hYTXpHY2lIZkNhem1lWi1hN2JMSGF0TjZ5SHgtRlBwVXhUVHlBM0xQNGs1dkdMMVNSdENpTHVvOUJZclQwNWUxbGdjSVVhN0w1TGhkREljZmw5dU5jN3BTb2VIWWlEV3lIYkpnaEliY2VJVWVSZXZsUUowLTV5RU5tQ2lIaGRYbXBFcFJMMXBadw?oc=5",
+      "summary": "Zelenskyy condemns ‘horrific attacks’ as Russian strikes kill 12 and wound 40 in Ukraine AP NewsUnease deepens in Russia as Ukraine steps up long-range strikes The Washington PostUkraine Targets Russian Refineries in Fresh Drone Strikes Bloomberg.comZelenskyy condemns 'horrific attacks' as Russian strikes kill 11 and wound 40 in Ukraine ABC News - Breaking News, Latest News and VideosDrone, artillery attacks kill civilians on both sides of Russia-Ukraine border CNN",
+      "published": "2026-06-29T18:50:00+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "Comcast, Charter, Rocket Lab, SpaceX, Tesla, and More Stocks That Explain Today’s Market",
       "source": "Barron's",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9RMkQtSWN5T3NvM1hIdmNUTkNxQ3hld0tTcXQ2bjBWcUpsTW5vQTdpdWpaRmtyMkR0RjlCcEpma25ISlJ4Nnd6MF9PUmw2cUg0S0JHaW1NQ0VFUTNkbGFBMGh6MEU?oc=5",
-      "summary": "Comcast, Charter, Rocket Lab, SpaceX, Tesla, and More Stocks That Explain Today’s Market Barron'sTech stocks today: Tech stocks gain, Google rises after joining the Dow Yahoo FinanceStocks to Watch Recap: Comcast, Rocket Lab, Palantir, Verizon WSJMidday Need to Know: Comcast spin off, Rocket Lab to acquire Iridium & more (SPY:NYSEARCA) Seeking AlphaComcast, Alphabet, Palantir, SpaceX, Microsoft, and More Stocks That Explain Today's Market -- Barrons.com Moomoo",
+      "summary": "Comcast, Charter, Rocket Lab, SpaceX, Tesla, and More Stocks That Explain Today’s Market Barron'sTech stocks today: Tech stocks gain, Google rises after joining the Dow Yahoo FinanceStocks to Watch Recap: Comcast, Rocket Lab, Palantir, Verizon WSJMidday Need to Know: Comcast spin off, Rocket Lab to acquire Iridium & more (SPY:NYSEARCA) Seeking AlphaUS stocks rise as Comcast split, deal activity lift sentiment MSN",
       "published": "2026-06-29T18:34:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -853,12 +816,12 @@
       "origin": "Google 財經頭條"
     },
     {
-      "title": "The Strait of Hormuz’s future is unsettled in wake of latest strikes",
-      "source": "TribLIVE.com",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPeDRxQ09XSTJxeDRTSWF0SXZXMXJNQ3ZEMU92N3JoT1NfejF2eDFYWEZXYmpDdlZfNnhpbm44dFFoZm5NV3BBLVFOaEQ5UlkweVVIZ2Z1X3A3dGo2MGFScVpBSUlKWDNFZVkzNWwwMUhFcExhWXo1WkpmLVVFZmM3LXlEbEpqSHNYN081bXE1UkhYMGM0U2R2MVo4OGY5WFBqQVE?oc=5",
-      "summary": "The Strait of Hormuz’s future is unsettled in wake of latest strikes TribLIVE.com",
-      "published": "2026-06-29T18:18:24+00:00",
-      "origin": "關鍵字「geopolitical risk war military strike market impact」"
+      "title": "EU and China seek to head off trade war with new dialogue",
+      "source": "politico.eu",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE00aEd0X19UdHZRN1A1a3dwcjRyOVZmOTBGNHRVSG5IQzcxd24yN19FOUp5QmhJOTJzUC01QWFLUGtBblRkS1RSOFI1cG5USHhMYUwyMVdCY04tNzRyVHFBajlVbzZoeG15alVCNQ?oc=5",
+      "summary": "EU and China seek to head off trade war with new dialogue politico.euEU sets up three months of talks with China over €360bn trade deficit The GuardianEU sets deadline of October for reduction in trade deficit with China Financial TimesEU's trade chief wants results on trade talks with China by October ReutersEU and China reopen trade talks as Brussels hardens its stance politico.eu",
+      "published": "2026-06-29T18:24:00+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "IRS says Trump Account contributions will not trigger annual gift tax reporting requirements",
@@ -872,7 +835,7 @@
       "title": "Super Micro Office Raided as Taiwan Expands Chip Smuggling Probe",
       "source": "Bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdE8wWm9URTJrXzMwc0xQakVNdjBRV0kzenJvOFN3OUZDLS1DaXFtMWVHWkpnVFRVNVBWMUNad2FmU0piSDhSaGpJNnRSZ1ZWaWxBcGhOSlRWcTlQTjNXUHB2TXlDbWZRSjRYTEdMeVRPM1lHZTB5Nk5KQmZPcGIwWTIzZHFJbHhBaEFRc3h5d2czZU5SMUg5MDI5RlU5dTRrWHdRUVFoaUdyS1ZvZFg2eEg2UnRwZw?oc=5",
-      "summary": "Super Micro Office Raided as Taiwan Expands Chip Smuggling Probe Bloomberg.comSupermicro (SMCI) Faces Taiwan Raids In Nvidia Chip Smuggling Probe Yahoo FinanceFirstFT: Supermicro’s Taiwan offices raided in chip smuggling investigation Financial TimesSupermicro shares falls as Taiwan office raided due to chip smuggling investigation: report Seeking AlphaTaiwan raids Super Micro offices in expanding chip exports probe, shares fall Investing.com",
+      "summary": "Super Micro Office Raided as Taiwan Expands Chip Smuggling Probe Bloomberg.comSupermicro (SMCI) Faces Taiwan Raids In Nvidia Chip Smuggling Probe Yahoo FinanceTaiwan raids Super Micro offices in expanding chip exports probe, shares fall Investing.comSupermicro shares falls as Taiwan office raided due to chip smuggling investigation: report Seeking AlphaSupermicro Taiwan offices raided in chip smuggling probe Financial Times",
       "published": "2026-06-29T17:59:46+00:00",
       "origin": "Google 財經頭條"
     },
@@ -885,10 +848,18 @@
       "origin": "Google 財經頭條"
     },
     {
+      "title": "Trump Administration Pays Duke Energy $129 Million to Halt Offshore Wind Farm",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQaUYyZ214ODFWZm9JbUFNSW8yWmxTaXpseTM5ZmFGb2JuZGNhX2ZBTG1GTGtSVmwwYVd2ZjdYczhkel9xbEdPdURaNjBTUlh4M2xQVDc2UEE4bGFfVU05U3h2S1pic0I2S3R5NHBKZ2dhemZadndLWThxd09UR2I0NUJaNEZmQQ?oc=5",
+      "summary": "Trump Administration Pays Duke Energy $129 Million to Halt Offshore Wind Farm The New York TimesTrump Ends Carolina Wind Project as Cancellations Mount Bloomberg.comDuke Energy to terminate North Carolina offshore wind lease ReutersInterior Unveils Pact to Boost NC Energy Security, Cut Costs Mirage NewsInterior notches new offshore wind settlement in Carolinas E&E News by POLITICO",
+      "published": "2026-06-29T17:42:08+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
       "title": "How a Thai teen's night at a Pattaya beach ended in death",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNNmtRMTVEZzhrRWxleXJHcnlBYVN4bk5GNjV3OUtNdGVlQ2pDeER2OHRrZm41eDhLUHBsbWdsRDJTVTlkNVhEb1Bpa2NTMklXeWRGRGJhRVJ6WkRPNDI2R0RfRERGUjQ0dUNUWjZVLURUdnFCQnpEWEotZkY5N3J2NUU3X3g2bDhhZzBlN2g5a0xLRjNRQUF4bXBmYXJNRmYwSllv?oc=5",
-      "summary": "How a Thai teen's night at a Pattaya beach ended in death ReutersAustralian man charged with murder after dead girl found in suitcase in Thailand BBCAustralian murder suspect shopped and did laundry while girl’s body lay in suitcase SMH.com.auAustralian charged with murdering Thai girl found in suitcase YahooThai police release timeline of alleged suitcase murder Nine.com.au",
+      "summary": "How a Thai teen's night at a Pattaya beach ended in death ReutersAustralian charged with murder of Thai teen found in suitcase BBCAustralian murder suspect shopped and did laundry while girl’s body lay in suitcase SMH.com.auThai police release timeline of alleged suitcase murder Nine.com.auAustralian man arrested after Thai teen girl found dead in suitcase CNN",
       "published": "2026-06-29T17:41:08+00:00",
       "origin": "Google 世界頭條"
     },
@@ -896,7 +867,7 @@
       "title": "Rocket Lab buys Iridium in $8 billion deal to take on SpaceX",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQejk2T29RQV9nS05KV205R1FobVVPcFFySVdTaEhkYzV4djZNVDlPaEpOQTF5bGYxMUVxTG1LekJabG5PZ2w0TUsxRjRrQm1EVzdBdHZ2dkZSNEVCS0toS2ROV1dBWk1OSkI3Qk9hRjB2bnlNcXdjNV9PYlJyaDNzbmhFM3otb2hQc2FpWUt2YWdjRGN2dDZPZWZVSExvdDFPcWdHYUJRMEs5eVFQT1ZoYnkyUGhSMVUzQzJZZDRmeWxCZWlj?oc=5",
-      "summary": "Rocket Lab buys Iridium in $8 billion deal to take on SpaceX ReutersRocket Lab to Acquire Iridium in Historic Deal, Creating A Fully Vertically Integrated Space Powerhouse Primed for Growth PR NewswireRocket Lab Buys Satellite Operator Iridium in Bid to Challenge SpaceX WSJWhy Planet Labs Stock Went to the Moon Today Yahoo FinanceBeck: Iridium acquisition the “logical next step” for Rocket Lab SpaceNews",
+      "summary": "Rocket Lab buys Iridium in $8 billion deal to take on SpaceX ReutersRocket Lab Deal for Iridium Creates Mini SpaceX. What It Means for the Stocks. Barron'sRocket Lab Buys Satellite Operator Iridium in Bid to Challenge SpaceX WSJWhy Planet Labs Stock Went to the Moon Today Yahoo FinanceBeck: Iridium acquisition the “logical next step” for Rocket Lab SpaceNews",
       "published": "2026-06-29T17:35:19+00:00",
       "origin": "Google 財經頭條"
     },
@@ -904,8 +875,24 @@
       "title": "Putin makes rare admission of fuel shortages caused by Ukrainian strikes",
       "source": "BBC",
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5lMlVxYWE2QVptNHZNS3VjNXN1RVVWdXVsRDk4aWEyMWRLZ2NIZ0JkMWpXRkg2YTdYcDJBbEJZMmZmd2Z0THRIYmEwcERBX3hRVWpSZXhfbmpFQQ?oc=5",
-      "summary": "Putin makes rare admission of fuel shortages caused by Ukrainian strikes BBCRussia is burning, but don’t expect Putin to blink CNNPutin’s fuel shortage admission signals growing strain on Russia’s energy infrastructure CNBCPutin says Ukrainian strikes on infrastructure causing \"problems\" for Russia CBS NewsFuel shortages spread to more parts of Russia as Ukrainian attacks bite Reuters",
+      "summary": "Putin makes rare admission of fuel shortages caused by Ukrainian strikes BBCRussia is burning, but don’t expect Putin to blink CNNPutin says Ukrainian strikes on infrastructure causing \"problems\" for Russia CBS NewsPutin’s fuel shortage admission signals growing strain on Russia’s energy infrastructure CNBCFuel shortages spread to more parts of Russia as Ukrainian attacks bite Reuters",
       "published": "2026-06-29T17:28:59+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Small towns get burned by fireworks bills",
+      "source": "Axios",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFA5cG5zNS03cGxGNmpMbUViTXNQTldkblhlY0ZSMjRQcHFHWThMYWJaNGxwc0ZHVmJvdHBMQUx6QkdrTGpDck5WR0QxeHAtNDB3TVdyaXFNZ2tDUkt6Q0NKQXdwLXM1SkN5b045VjZQMHBocVFsS0E?oc=5",
+      "summary": "Small towns get burned by fireworks bills AxiosAmerica’s 250th birthday boosts fireworks sales in region, local sellers say TribLIVE.comCaledonia fireworks shop sees early holiday rush amid tariff uncertainty FOX6 News MilwaukeeFireworks sales surge ahead of July Fourth as stores, firefighters stress safety 6abc PhiladelphiaFireworks store in Great Bend gears up for Fourth of July weekend WBNG",
+      "published": "2026-06-29T17:28:16+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Russian Elites Contemplate Exit Strategies Over Economic Strain and War Escalation",
+      "source": "UNITED24 Media",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORGp1S2dkdHMyOEpFd0dwYkxOZ1hnUFFrX1JGWUtsTnB2TkJ1UllJNEtnVWZKd3dpM2NxbUZaclNfbnN4Q2IxX3RWSkpoYVFDYWdOTlVrOWNTZ3RlaHdLQktvSjFQWDdsZmJrLUVSSUR2dWFTTXB0LVRpZm80Smp0Z3lkZ2ZHSVJZRk1HVXdiUjRSWXJmZXJhREx6TXppQlZGQWFYOVU1REpmT081RzNtUFo4dGtST1B1Sm9aRw?oc=5",
+      "summary": "Russian Elites Contemplate Exit Strategies Over Economic Strain and War Escalation UNITED24 MediaUkraine is raising the cost of war for Russia — and testing Putin's resolve CNBCA Critical Moment for Russia Geopolitical FuturesSome Russians are turning on Putin as drones hit Moscow. Does it matter? CBCRussian hawks urge Putin to escalate war, drop US talks as Ukraine strikes deep Reuters",
+      "published": "2026-06-29T17:25:23+00:00",
       "origin": "Google 世界頭條"
     },
     {
@@ -920,7 +907,7 @@
       "title": "NBCUniversal & Sky “Fit Well Together And Are Set Up For Success” After Comcast Split, Mike Cavanagh Says",
       "source": "Deadline",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdEI4eW1mNjZmYnR4emNiUFNmcXdzLWZITWFpRjVzcUsyc2FFMDRMVC1uZU52cFlBbGwtdzBEMEFsVmFfbWZnc3NrclNuZkdRRUQyUnk4NTd1MW1MTnpDcWJQZkl4c0ZLaGg5T0lHRzhhWWtzdDc3Z0VETnRKMmVkUDkzSVJoWkZFLUxmUG9n?oc=5",
-      "summary": "NBCUniversal & Sky “Fit Well Together And Are Set Up For Success” After Comcast Split, Mike Cavanagh Says DeadlineComcast to Spin Off NBCUniversal, Ending a Long Union of Cable and Media The New York TimesComcast’s NBCUniversal Split Could Shake Up Media M&A: Here’s Who Might Be Interested The Hollywood ReporterCable giant Comcast to spin off NBCUniversal media groups, including Peacock The Washington PostComcast Announces Plans to Separate Media and Technology Businesses into Two Leading Public Companies Comcast Corporation",
+      "summary": "NBCUniversal & Sky “Fit Well Together And Are Set Up For Success” After Comcast Split, Mike Cavanagh Says DeadlineComcast says it will spin off NBCUniversal CNNThe ‘X’ factor behind Comcast’s spin-off announcement: SpaceX NBC NewsCable giant Comcast to spin off NBCUniversal media groups, including Peacock The Washington PostComcast Bosses Say NBCU-Cable Separation ‘Absolutely Not’ Designed to Pursue M&A Deals; ‘We’ve Now Simply Changed Our Mind’ That the Businesses Are Better Together Variety",
       "published": "2026-06-29T17:07:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -933,18 +920,10 @@
       "origin": "Google 世界頭條"
     },
     {
-      "title": "Medicare is about to cover GLP-1 drugs for weight loss. Here’s what to know.",
-      "source": "The Washington Post",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQMjQ3ZEtsbzdTUHFDYzlqQjluNlE5V0hUaS1lSldMRzQzM0Zaejk0b1JSZzZ3ZHVZWnk5TlFGX1RoMFExalRzb2VLRWdlMUhwZ2JBdUY4cnY5MFVYTE9jMmt5SEZELWNmX3BDSnVuZzFRZm1ja0I0RWU5TF9xcEt5SW9YS0xpS1BCMTNpTmpfY3VDOWlhdENKTWZ4d3NYR0VrNzhydE1adGdVWjBldHVQZlBJdw?oc=5",
-      "summary": "Medicare is about to cover GLP-1 drugs for weight loss. Here’s what to know. The Washington PostSeniors in Medicare are about to get landmark obesity drug coverage — but many may not know it yet CNBCMedicare to Cover GLP-1 Weight-Loss Drugs For $50 a Month: See If You’re Eligible TODAY.comMedicare will help pay for weight-loss drugs Wegovy, Zepbound. What to know USA TodayMedicare will start covering weight-loss drugs on July 1 for the first time. Here’s what you need to know CNN",
-      "published": "2026-06-29T17:00:01+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
       "title": "Ford rehires experienced engineers after AI misses the mark",
       "source": "Fox Business",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQdm1FT093SnJ0bklVeTVxbU8xektacFJKRFpuTUFDQWFVYnZFbHUtc2NPbFk1M05KamZVTjhvSWluX1VRb1pjYU9DbGFNdEVtbzk4OWEwYVBLeVRwN3FMRkVIVmNMVDZhN0k5eXFmbWVPejVNTGFCTjlTeFBBSEN0cVdmc2NDaXAzb0ROVzhVU0ZKQURVSG04cS130gGfAUFVX3lxTE40NDFpZFJtV2dmaHUwYm9CUTdqT1d5MUM2bW0yb2RUSGNaX2ZIa3ZXZTBzX2hfVDlZY3lZLTlLbUp5dDhIZzdfNlBkWk9idnZMUFJ6LUZiSVRLRjFKV0FnR3d1NV95ajJSY3RLeHM0bEdfUFJOYnpVc3JSakNrd3k5VUhQX21RalRrRS1nbTZtMm0tZGZQNkVpS3hPWGJsSQ?oc=5",
-      "summary": "Ford rehires experienced engineers after AI misses the mark Fox BusinessFord Has Been Rehiring Quality Inspectors After AI Fell Short Bloomberg.comFord rehires human engineers after AI fails to match quality checks BBCFord rehired 350 'gray beard' engineers as it realized AI wasn't capable of taking human jobs FortuneFord’s AI wasn’t smart enough to replace veteran engineers — so it hired 350 of them to fix quality control issues Yahoo Finance",
+      "summary": "Ford rehires experienced engineers after AI misses the mark Fox BusinessFord rehires human engineers after AI fails to match quality checks BBCFord Has Been Rehiring Quality Inspectors After AI Fell Short Bloomberg.comFord realized AI wasn’t capable of taking human jobs years ago—and hired 350 ‘gray beard’ engineers to steer its program Yahoo FinanceFord rehires engineers after A.I. backfires KTLA",
       "published": "2026-06-29T16:44:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -952,8 +931,16 @@
       "title": "The best July 4th sales we found so far",
       "source": "The Verge",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE16ZlJ0b1FUM0lpRTFmS1B1d0t1bTVtTC12TG12UFBQclBqaTRucV9scG0td1Y3SFNtQTNiTjJmeWlYQWJWcjVUQk84NGZZSWtiMzEyeG5BbFpVemRuU2ZHT05wUmFLMmNQUUxVa01ZQmYtR2pFZlhr?oc=5",
-      "summary": "The best July 4th sales we found so far The VergeOur deals editors shopped 111 sales to find the 56 best 4th of July discounts CNNThe Very Best 4th of July Deals, Including Summer Discounts You Won’t See Anywhere Else The New York TimesThe best Fourth of July 2026 sales to shop now Good Morning AmericaThe Editor-Vetted Fourth of July Deals That Are Worth Shopping Now TODAY.com",
+      "summary": "The best July 4th sales we found so far The VergeAmazon just launched its annual 4th of July sale. I found the 30 best deals CNNThe Very Best 4th of July Deals, Including Summer Discounts You Won’t See Anywhere Else The New York TimesThe best Fourth of July 2026 sales to shop now Good Morning AmericaThe Editor-Vetted Fourth of July Deals That Are Worth Shopping Now TODAY.com",
       "published": "2026-06-29T16:42:48+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Why our cybersecurity stocks are soaring, plus Big Tech tries to rebound",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPbENlaGIzS2VQVVROekVkaDh6dzQyOTY4Z0hDenRrYllBN1RpeUE1MzQ0c0lBRWRaYUNnMUhkWnoxcTRYVER5R0tuWDZyazZna2FCYm9OVEJvcDNiZWVNVFphQ0xmLW1PazMzdVk2WVM5eG0yUzR5QTBKclZjZ3o1ejJMdXI4ZGM0dDZIVUVlMmRJcDFUZE1DZXlQeFBpVERhVnl6SjJ2NTRUNXFq?oc=5",
+      "summary": "Why our cybersecurity stocks are soaring, plus Big Tech tries to rebound CNBCHoneywell Aerospace shares slip in Nasdaq debut ReutersTuesday's big stock stories: What’s likely to move the market in the next trading session CNBCHoneywell Aerospace completes spin-off from Honeywell Technologies and begins trading on Nasdaq HoneywellHoneywell completes spin-off into three companies. Just one remains in Charlotte. Charlotte Observer",
+      "published": "2026-06-29T16:28:12+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -965,10 +952,26 @@
       "origin": "Google 財經頭條"
     },
     {
-      "title": "American family calls its quits on overpriced NYC, buys home in Italy for $13K: ‘Nothing is that important’",
+      "title": "Everything You Need to Know About Tesla FSD V14 Lite",
+      "source": "Not a Tesla App",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNOXVQTXhwOVFaMXBXTGQtVktfVzBoUkc0UEdKSVlqbUJCa2tVUzBRb1ZKOFotYlZ0cGExLTJ4SDhDX19XWjFZN3RwaVVra0ZBOG1yc0lDdmZhYTRFSDFvY0M0dmdvWHU1NzFCY0tyVmctY1FucFh1a0ZtWmVnbzF2VndFcTBONDNhWVpMTlVRUGtKNGtjNk9EeUx1SjBvM1NPd2dYUFkzRGRxTjQ?oc=5",
+      "summary": "Everything You Need to Know About Tesla FSD V14 Lite Not a Tesla AppTesla starts FSD v14 ‘Lite’ rollout to HW3 cars ElectrekTSLA Stock Rises Premarket: Tesla Gives Millions Of Older Cars A Major FSD Boost Yahoo FinanceTesla’s stock rips higher after a long-awaited update to self-driving technology MarketWatchTesla Starts FSD V14 Lite Rollout to Hardware 3 Vehicles eletric-vehicles.com",
+      "published": "2026-06-29T16:27:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Man killed, dragged by crocodile into water on the beach near a resort",
+      "source": "USA Today",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUWZjV2UwYkpDb09YejZHTk40NGFhVGZWX1I2OGM4cDNPTk5MbHJwZXBlczNRVEhyNWE2N2xYTjJudUhXSjNFTTF6dVB5R05TSUF6WXlBWGkyajgxVlNTS2V0ZXRUS0NxRFJaYjBfTGtyMzFDZDZUd21vbEhJb0NwNHlWSEdRalF3bURiREVkNXRTUzBiMktRMFdZT0dZeGZvc1FVdE1tdDVRMTQ?oc=5",
+      "summary": "Man killed, dragged by crocodile into water on the beach near a resort USA TodayMan, 28, dragged out to sea and killed by crocodile at popular resort: Police ABC News - Breaking News, Latest News and Videos28-Year-Old Man Dies in Fatal Crocodile Attack at Popular Tourist Spot People.comCouple Tries to Save Man From Crocodile at Luxury Resort The Daily BeastSan Clemente family witnesses deadly crocodile attack in Puerto Vallarta NBC Los Angeles",
+      "published": "2026-06-29T16:10:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "American family calls it quits on overpriced NYC, buys home in Italy for $13K: ‘Nothing is that important’",
       "source": "New York Post",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNaXI3NlZmN2dqVE9wcVBMdW1iUEFycmVxYlozZFJzTERVNXRiWkZaVTRmck5nMW5nR2pJUVpadnNveEFMZzcxbHh5UHVoSllSc3NJTC1mZEJNY3VQRGFtSmdsbWpHekM0cVZuMXpJQjVKUk5kTXRrX0dQTDRJbTdDNDFKakUyRzRib3hHZF83TVBzbWlFMnpzS0liYUp0aVhVV0xtd09MMmRDUjR2MjBEQWpVOEh2VnNKaHJDUlRn?oc=5",
-      "summary": "American family calls its quits on overpriced NYC, buys home in Italy for $13K: ‘Nothing is that important’ New York PostSee more headlines & perspectives on Google News",
+      "summary": "American family calls it quits on overpriced NYC, buys home in Italy for $13K: ‘Nothing is that important’ New York PostSee more headlines & perspectives on Google News",
       "published": "2026-06-29T16:09:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -976,33 +979,9 @@
       "title": "Alphabet stock pops 4% on Dow debut, but the tech giant faces major AI questions",
       "source": "CNBC",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1Qc0o0SVZsMDY5RmRKQ0RmcFFiTjhqSnl5VHFRQ3dZZmNlQXp3cXNQSW41Rzl0SlBHdzkxYnl3QkZZMjBiN0htQUxFV2NhaW9DVFcxakdaSkV0dmVwbFhEX3owaHpaQl84U21ISC0ybkdCU0F3NGdSZ9IBfkFVX3lxTE9tMGUwNERJVm1pdm42NWExVGZtWHdsSUZrTjYzR1N1cEVmWk40Nm9icWNzNVMxNUI1SjN1Y0hmNUJoRkRJZ0xzTWFTUzRYZjFPYk5KZ2N6ektEMjhsazQ0M0Q4bXQwNkJtYmVBN2VuajQ1TDA3WmkxU0V3UVpXUQ?oc=5",
-      "summary": "Alphabet stock pops 4% on Dow debut, but the tech giant faces major AI questions CNBCWhy Is Alphabet Stock (GOOGL) Up? Dow Entry and Google AI Limits on Meta. Barron'sAlphabet debuts in Dow Jones Industrial Average as index tilts toward tech ReutersGoogle joins the Dow as index tops 52,000 for first time qz.comAlphabet Joins The Dow Jones Industrial Average Real Investment Advice",
+      "summary": "Alphabet stock pops 4% on Dow debut, but the tech giant faces major AI questions CNBCWhy Is Alphabet Stock (GOOGL) Up? Dow Entry and Google AI Limits on Meta. Barron'sGoogle joins the Dow as index tops 52,000 for first time qz.comAlphabet debuts in Dow Jones Industrial Average as index tilts toward tech ReutersAlphabet Joins The Dow Jones Industrial Average Real Investment Advice",
       "published": "2026-06-29T16:00:53+00:00",
       "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Stocks rise, oil climbs after US-Iran clashes",
-      "source": "The Times of Israel",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNLTdiTzhCMjB0dF9lNGIzc3NOQzVzREg2SkdXX3RPcUVTZ1dWajlkc242d3ZWdi16Y0F0REhGRVg1Z2MzX2hEOUhySFRPYlpDMU1jOG1GMjF5VVMtS2d0eWdhLTJzUTN5X2RBM2poQ2NjeXp5SXNVcHVjdzRRZUZQNWlSc1JYYzk1TExSc2ZsVlZjei1Y?oc=5",
-      "summary": "Stocks rise, oil climbs after US-Iran clashes The Times of Israel",
-      "published": "2026-06-29T16:00:05+00:00",
-      "origin": "關鍵字「geopolitical risk war military strike market impact」"
-    },
-    {
-      "title": "Supplements sold online through major retailers recalled nationwide over potential salmonella risk",
-      "source": "Fox Business",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQcXI3YUdPZXFMS0xienJ3dGtxc1lCc0gzRlNqR3BtaGF4dHE2c09TVVRSVkZOUFlFZ1NKSURaR1V6ZWg1MVEzU0YtMWFCSGF1RHI3dklqOVV6SVNnTDNoY25BVGdzMHppUU5vMjJ6MXNmYVRKSDVvVGhncnkwMXEwM21ocEptNUFmbWptM3ZEWVNnaUlJd0pvY3ZvUXBHX0pXMm43TmZoMHBUNThqakhhdkVRc3ljd3NlY3I2Ql9na2Z4UG44TGtaWVB3UThaUXE3Y2fSAdcBQVVfeXFMTVJGNVgybjFHWlNQM3YyMS1rRnJsUEIzVC1sU2tSWkhRaVdXUlFsaVpEZV9lcTFGTnF4Rl9Za2lFckRCTmFtcGJieDdKRk9INklpbkYtWV9oMUw1SmgzN3ZDa3VBY09QaTMwTUo3WHhGQjNON3ZyWjllUHNCN3dIWHBNSE5jNUhkamt4N1dSMDFFZGwwa2NiVi1QWVhLdHF1enA5OFpQUmJ3bU5oS0hTMUNjcVhQTHB2OF9ELXdPRFJacG1MaDJaX0wxeHRDRHRFYlcxc0lwdzg?oc=5",
-      "summary": "Supplements sold online through major retailers recalled nationwide over potential salmonella risk Fox BusinessCompany recalling moringa products over Salmonella risk KCRGMore supplements sold on Amazon, Walmart, TikTok Shop, Target sites recalled FOX6 News MilwaukeeTNVitamins moringa supplement recall issued over salmonella risk, FDA says Houston ChronicleMore Lots of TNVitamins Moringa Powder Recalled For Salmonelal Food Poisoning Bulletin",
-      "published": "2026-06-29T15:44:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "U.S. Stocks Still Lead Global Markets Since Iran Conflict Erupted",
-      "source": "Seeking Alpha",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUDdHSEZjU3k5NkRBM2hycmVwUFFMbWlZNzNNUmZkNE41bEdPYkFJWHU0X09OR24tbF9iYnNwNEtDUkZtcWdfdEFjVHhyTng1eUJLdXVyNWhsSFNhMDVmUFVoT01CcENqQk4tYS1UZWVnRExBLTdfWUFNSlExY0trcFdQTXQ1Q1JxaEZuOXF6RTRndGdVWXJN?oc=5",
-      "summary": "U.S. Stocks Still Lead Global Markets Since Iran Conflict Erupted Seeking Alpha",
-      "published": "2026-06-29T15:25:00+00:00",
-      "origin": "關鍵字「geopolitical risk war military strike market impact」"
     },
     {
       "title": "Elon Musk on MacKenzie Scott giving away $26 billion of her fortune: 'sadly,' it makes the world a worse place",
@@ -1013,11 +992,27 @@
       "origin": "Google 財經頭條"
     },
     {
+      "title": "Warsh's Fed debut: Worse than a World Cup without Italy? (US2Y:)",
+      "source": "Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZkNkQkUzejRpSTItUUNod2lBX05TbU5WdXIyYXRKaVVqQ0wyZllIVjNUZUlmeEtTRXltcmlwYU1SQmlNNUo1NzFpWHduNzZlS25Bc2dfUWpueGlRSHBWUjF6Um1tb3dpNGNOajNVY0N6THBOYUdjcmstN3J2alBtOFJUNGJ6YUFKRkhUUWwyclZFa3pWa0E?oc=5",
+      "summary": "Warsh's Fed debut: Worse than a World Cup without Italy? (US2Y:) Seeking AlphaHow Warsh Has Begun to Change the Fed The New York TimesHow a Tight-Lipped Fed Could Lead to Higher Mortgage Rates WSJCitadel Securities Warns of ‘Shifting Landscape’ Under Warsh Fed Bloomberg.comFed rate cuts: Payrolls will weaken, inflation will plunge, and Warsh was 'largely performative' Fortune",
+      "published": "2026-06-29T15:19:35+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
       "title": "Andy Burnham says he’d hand more power to local governments if he becomes UK leader",
       "source": "AP News",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOeFdBUmxVUmlLN1BuNU1BMlFOZUdDTWd1aE16N3R6QWx2UkhxVmNOUG5Kbk5jLUF0My1mVHdjb25xUkZ6MWx6aVJkclU4RG5iS19nYk9jVE50eFR5MENfWHpFeGZTeXFYRVVlN0xqWTFYZVFHZE8tcXJQMjFCUDdHSkVjMVJ3Q25jX1I1d0pOdnkwYmZUZGU4ZzI4WGdmbkpuX3FSdg?oc=5",
-      "summary": "Andy Burnham says he’d hand more power to local governments if he becomes UK leader AP NewsNew 'No 10 North' plan will rebalance power in Britain, Burnham promises BBCUK's prime minister-in-waiting vows to rip up politics as usual ReutersAt the People’s History Museum, Burnham gives Labour people hope they might just have a future | John Crace The GuardianBritain’s Likely Next Leader Promises Major Shift of Power Out of London The New York Times",
+      "summary": "Andy Burnham says he’d hand more power to local governments if he becomes UK leader AP NewsNew 'No 10 North' plan will rebalance power in Britain, Burnham promises BBCUK's prime minister-in-waiting vows to rip up politics as usual ReutersBurnham’s vibe shift gives Labour one more chance but voters also need hope The GuardianAndy Burnham, the UK’s Likely Next Prime Minister, Promises Shift of Power Out of London The New York Times",
       "published": "2026-06-29T15:15:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Israel could go to war with Iran 'tomorrow,' Katz warns",
+      "source": "Ynetnews",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5Vdlc0SjRVXzVDN2NWNDhNQUM4c3RIY1F1T084VjRSbXBFdTB6QkRHcFNpSno1T2Z3djh5eUtWNC11NmtQcUJRWWRRX1BPZ2VrRDZCaXJR?oc=5",
+      "summary": "Israel could go to war with Iran 'tomorrow,' Katz warns YnetnewsDefense Minister Katz: IDF is prepared for independent action against Iran www.israelhayom.comUS-Israel-Iran War Latest Update: Israel Says If Tehran Attacks Military ‘Ready to Finish the Job’ as Israel Continues Clash with Iran Amid Trump’s Urge to End War The Sunday GuardianIsrael Warns of 3rd War with Iran as Brent Crude Spikes 3.5% on Conflict Risk sahi.comIsrael ready for ‘Blue and White’ operation in Iran, long-term stay in Lebanon Crypto Briefing",
+      "published": "2026-06-29T15:14:47+00:00",
       "origin": "Google 世界頭條"
     },
     {
@@ -1029,34 +1024,26 @@
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Citadel Securities Warns of ‘Shifting Landscape’ Under Warsh Fed",
-      "source": "Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONHJ1ZkF3SUVyWktOcmhaQ1V2X3o0OXU1WURoSkV2bVkzT0VVTFJpY0JSRnRzWTVGSEdRWXhkanlVUDBQajhXS2lQQ3RybmV0aDhBdk5DczVNZUhUcVk3S0VNeEQtVDVqUURMSnctQkd3RU1sLTh4cjdYcDZrX3prdjg1a3FEUV9STDFCZzdqS1lFaE1hbnFuc0E3Y28yRnlNNzVVcTFZcDRjQkxqdVRVQXV2MA?oc=5",
-      "summary": "Citadel Securities Warns of ‘Shifting Landscape’ Under Warsh Fed Bloomberg.comHow Warsh Has Begun to Change the Fed The New York TimesHow a Tight-Lipped Fed Could Lead to Higher Mortgage Rates WSJFed rate cuts: Payrolls will weaken, inflation will plunge, and Warsh was 'largely performative' FortuneNew Fed chair’s vision: A leaner, faster, more modern central bank Baton Rouge Business Report",
-      "published": "2026-06-29T14:51:28+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
       "title": "JPY/USD Yen Hits Four-Decade Low in Historic Slide That’s Rattled Japan",
       "source": "Bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcWE4U0NoM1RuX21yeDd5RDFFaXFMamdMN3d3OTVGSWxGbjRYd211cXBieExLYktnYnVSZ2RMUHM5aW5vWEFKXzFicmwtU0Y2ZHdmc1RrX2hOZG1mSGJ2RVVHU3lyYzBQQ1dyQkdMQnVaNi1oVHJRbGZzanJQRFhod0pqRzNuVkc0d1hOZno3Ulk5cXJXZHhScmJjRjNZSXNLREFzRVcyTnRwT0xTbXg5dkh6Z2lLemxvcGxBdnBHWQ?oc=5",
-      "summary": "JPY/USD Yen Hits Four-Decade Low in Historic Slide That’s Rattled Japan Bloomberg.comDollar slips, yen reaches 40-year low ReutersYen Slides, Putting Traders on Intervention Watch Bloomberg.comYen’s decline makes perfect sense to some analysts The Japan TimesJapanese Yen Hits 39-1/2-year Low TradingView",
+      "summary": "JPY/USD Yen Hits Four-Decade Low in Historic Slide That’s Rattled Japan Bloomberg.comDollar slips, yen reaches 40-year low ReutersYen Hits 40-Year Low in Historic Slide That’s Rattled Japan Bloomberg.comYen’s decline makes perfect sense to some analysts The Japan TimesJapanese Yen Hits 39-1/2-year Low TradingView",
       "published": "2026-06-29T14:09:50+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Pregnant Woman, 35, Says Fiancé And His 14-Year-Old Daughter Think She's 'Ridiculous' For Putting $50K Lottery Win Aside For Baby, But Not Her Too",
-      "source": "Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPendsR3NaOS1qVjFlSUJLNTBDTGJtdDdxQVJBRVZIeG94SktfYVNISmxxUE93T3prNnRYcTRhZkswOGZWSzZ3R20wak9DMElpYWtqN3psNTAxTmRBWDdjcWx0Y3BtVkhvWExzempSVUNRdW5iRnNlMDlPODNyZ1EyQnBWenN0NUVMY3BOTw?oc=5",
-      "summary": "Pregnant Woman, 35, Says Fiancé And His 14-Year-Old Daughter Think She's 'Ridiculous' For Putting $50K Lottery Win Aside For Baby, But Not Her Too Yahoo",
-      "published": "2026-06-29T14:01:07+00:00",
+      "title": "Microsoft stock is headed for its worst month since 2000",
+      "source": "Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObWVNRE40SkdPWW1sVUVJOS15dTY0czk5ekU3RS0zU0NpbTlGVzNOaGkycXJKaTl0c0FITXZsZ194R2NTbkxEV2dYdEdLeHFJRmgzQUFqOVVkckJsdmktQ2kwcEJ5ZXVib2JXTFk0S1NrVGV0T0sxRkZhdFFqSG5VbVlaSE5mc3duQ294bm5zZ1JZbzdwSkwyaHdVV3N1akpLV08wZDhsZFZyRkdTSE5rdWtONA?oc=5",
+      "summary": "Microsoft stock is headed for its worst month since 2000 Yahoo FinanceSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T14:09:04+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "American Airlines flight aborts Miami takeoff after business jet enters runway",
       "source": "Fox News",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQZ0lPbmRNY0lUYkZKUkRRMTdtWUJDNjhmVHZkN0FDbFVRaTVKWVVTTW1FbWs2RHE1MFJBSlVCTkg5OWlKNFJlbkVTVXE2Mzh3Wm5JM0VSYUJPVjdtRXRRMTFIaUlOTmh5d2YwSWMwX1pOWC0xSlpWcWoxeEhmcnRRaHZZc1B2UU1id1lSN0ZYRHI3cEpYSXdsMTVTbjFvTmk3?oc=5",
-      "summary": "American Airlines flight aborts Miami takeoff after business jet enters runway Fox NewsAmerican Airlines flight aborts takeoff in Miami after business jet enters the same runway CNNAmerican Airlines flight leaving MIA stops takeoff after other plane spotted on runway NBC 6 South FloridaAmerican Airlines plane forced to abort takeoff after another jet veers onto same runway at Miami airport New York PostAmerican Airlines Flight Forced to Abort Takeoff in Terrifying Close Call The Daily Beast",
+      "summary": "American Airlines flight aborts Miami takeoff after business jet enters runway Fox NewsAmerican Airlines flight aborts takeoff in Miami after business jet enters the same runway CNNAmerican Airlines flight leaving MIA stops takeoff after other plane spotted on runway NBC 6 South FloridaAmerican Airlines Flight Forced to Abort Takeoff in Terrifying Close Call The Daily BeastAmerican Airlines flight aborts takeoff at MIA after business jet enters runway WPLG Local 10",
       "published": "2026-06-29T13:56:59+00:00",
       "origin": "Google 財經頭條"
     },
@@ -1064,32 +1051,16 @@
       "title": "Verizon and BT form joint venture | About Verizon",
       "source": "Verizon",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNeFlQbmpKalM1MzdnakhiMkk1M1pkNGNoZlBEYVY4R3dvQ0RySm95elViVEhrR3F2aDRGYzdOYjA2Mnd5MFRSRGNBMjBzSXgxYW5JeEptSWhYZkVnTW5iRGFoZ0NsSmlZbE5wcE9MODA0LTJnRWZzVVloRG5aNGZKT1VwRXFaZw?oc=5",
-      "summary": "Verizon and BT form joint venture | About Verizon VerizonVerizon Flags Up To $800M BT Group JV Hit – Discloses More ‘Ongoing Transformation’ Charges Yahoo FinanceBreakingviews - BT-Verizon deal puts global telco ghosts to bed ReutersBT and Verizon to create joint global business in $4bn deal The GuardianVerizon, BT Merge International Units in Pivot to Home Markets Bloomberg.com",
+      "summary": "Verizon and BT form joint venture | About Verizon VerizonBreakingviews - BT-Verizon deal puts global telco ghosts to bed ReutersVerizon Flags Up To $800M BT Group JV Hit – Discloses More ‘Ongoing Transformation’ Charges Yahoo FinanceBT and Verizon to create joint global business in $4bn deal The GuardianVerizon, BT Merge International Units in Pivot to Home Markets Bloomberg.com",
       "published": "2026-06-29T13:55:33+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Mizuho says ignore Apple noise, flags key catalyst for Micron and memory in H2",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPbDY0R1FsZHVvN0JYOUtvSTl6S1E3aTZZbU1TSDcyWDB2eF9ucFlZYjJCaHo0WFN0QzBBcVNmeXFiTEFXS3JkY3h6Tml5cHhjVVNYUHdlbDRZVC1VX2NCcWVTZEVJZVNpVUtVcTVxNzNuX0hsenpiaGJfcmVRUFQ2RVNUclFXRUoxMjN0WWJrdnQ0ZUV1MzlWN2w3Zw?oc=5",
-      "summary": "Mizuho says ignore Apple noise, flags key catalyst for Micron and memory in H2 Yahoo FinanceMicron's monster post-earnings rally is almost gone. Traders divided on where it goes next CNBCMicron Stock Falls After Memory Rivals SK Hynix, Samsung Sink KOSPI Index Barron'sMicron, Intel lead chip stocks lower on Monday despite broader market gains Seeking AlphaSpaceX Stock Climbs Back to End Day With Gains WSJ",
-      "published": "2026-06-29T13:54:07+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "Inside Cannes, the Advertising Industry’s Biggest Party",
       "source": "404 Media",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOaFp2dV9rOVNtMDkyN2FKOTd1T3RJczZXcVB4elJaSWc5eHd6LVRBZ1N2U19nQTI5bENuM1NkS18yZGc3MC1jdUFCRkZ6M1pEWUtvV0lKSHZKdXFoczYzVTNJaWl4TzFLQmlpRVlRaU9jYzl1dTJqXzA2Qkl5TkNkejdheDQ?oc=5",
-      "summary": "Inside Cannes, the Advertising Industry’s Biggest Party 404 MediaThe top 10 Grand Prix winners from Cannes Lions 2026 Ad Age5 Cannes Lions takeaways as marketers wrestle with an industry in flux Marketing DiveCannes 2026: Ranking the Six Gold Lions Winners PRovoke MediaCannes Lions 2026: It Was Hot. The Creator Economy Was Hotter Forbes",
+      "summary": "Inside Cannes, the Advertising Industry’s Biggest Party 404 MediaThe top 10 Grand Prix winners from Cannes Lions 2026 Ad Age5 Cannes Lions takeaways as marketers wrestle with an industry in flux Marketing DiveCannes 2026: Ranking the Six Gold Lions Winners PRovoke MediaTakeaways from Cannes: Don't forget about the power of the US consumer Yahoo Finance",
       "published": "2026-06-29T13:45:24+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Tesla starts FSD v14 ‘Lite’ rollout to HW3 cars",
-      "source": "Electrek",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5jWHBseGwzTDZlZ0Z6eFVYY3dZRnBJemZJbThNcWo4MGVyZ3lzMTVYN1h6N3NsV0JGMXNseHNfa2VnNW0yQnBLZkJnNWNxdWJBZzEzU0d5UXozRTBKZVJKazNOdHE2ejFraGRhRmJxUQ?oc=5",
-      "summary": "Tesla starts FSD v14 ‘Lite’ rollout to HW3 cars ElectrekTesla’s stock rips higher after a long-awaited update to self-driving technology MarketWatchTSLA Stock Rises Premarket: Tesla Gives Millions Of Older Cars A Major FSD Boost Yahoo FinanceTesla Starts FSD V14 Lite Rollout to Hardware 3 Vehicles eletric-vehicles.comUpdate 2026.20.5.1 (FSD 14) - Release Notes Not a Tesla App",
-      "published": "2026-06-29T13:41:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -1112,16 +1083,8 @@
       "title": "Pakistan says its security forces killed 29 fighters along Afghan border",
       "source": "Al Jazeera",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR19Jc1poM0dWbnJLdjlyTmtYRk9HMUhaeDhILVdqQmNmWjF4RC1jMzNmZW51Sl85QVVmeTZlQl9qMnZUWVJzQlZHUkNqTWVXNFhLR2dMdU1jb0psN3g5dHppRHZCbjM2aE9ROWZQRGJBbkpHNDB4bGhKcWtsbG1ZVC1zc1dmVW1DZFVxMjNacDhlT29DdmRnemVEVnExMFFfUGtXeGxoOVZWOUthLS1aOE1hY9IBuAFBVV95cUxNUEhRTFg1SVJfeXk5bUxBTkhyUGxldTFoWk1TZU9QX21xWTBITHcxUENhaDQwZVpLM29KWE9LaC1VanBUdXhJanh6YnhJY2JfQ2NRdk5lTlBUVkVGRGR0dWFSR0ZFUXdjNWtmM09hdlpvaG9MODlpTWFyYVFvWlNlTWNyZ0kzN01WazMwTEdqTk80QS01MlVzaGk5N2Frdi1MNlI3V05oUUVseHVWSXkzTVozZlAtMXAt?oc=5",
-      "summary": "Pakistan says its security forces killed 29 fighters along Afghan border Al JazeeraAt least 28 killed in Pakistan air operations on Afghanistan, UN says ReutersPakistani airstrikes kill 36 civilians in Afghanistan and wound 160, officials say NPRPakistani strikes kill at least 28 civilians in Afghanistan, UN says BBCAfghan families mourn loved ones as border tensions with Pakistan rise Al Jazeera",
+      "summary": "Pakistan says its security forces killed 29 fighters along Afghan border Al JazeeraPakistani airstrikes kill 36 civilians in Afghanistan and wound 160, officials say NPRAt least 28 killed in Pakistan air operations on Afghanistan, UN says ReutersPakistani strikes kill at least 28 civilians in Afghanistan, UN says BBCAfghan families mourn loved ones as border tensions with Pakistan rise Al Jazeera",
       "published": "2026-06-29T12:51:17+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Ukrainian drones have struck nearly every major Russian refinery. Which facilities have yet to be hit?",
-      "source": "Meduza",
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOekNWODJqa0w3WEUzc2pRZGs3dUFiQ05fLUJNMkQwMmlWNklzQVptU0c2YTYweTFDMUNUbWozMGpsNnJFajd6dkVrcnNuY2JQcVNWZjR6RUxJeE9JVm1hSTNKNjM0alkyUkdENHZ1YzZIeVRXVWVSMzhzblU4Tm9Od1BNY0hkRE1Kc3BwUldwZmxpOU9yZ1l4Nm16S2swZ3gyQlpMNHhBNlBYbGpKWWdMSVBtM1pENzdOcUtfSGo5bEFGempPdmJuRnh5Y2ViY2RvYWFDLXRlNNIB3AFBVV95cUxON21UckdYc2N1Q0VNZ2EtQUlVSEIxRW1HQjVpMDVTMXh4WXFna0hXRVQzUF9GblVwenR4bVNTMmV1Y3c1MmJRZ0RGUHY2OVRyN2tQR0dPLXVWWTd3VHJ1WFVSN1ZkQVNjeERBOS1yR2N3a3NMZ0YyQTdIUUhnWGVpSGdSZFF5UnBCOFNLU1pZRXNSbFV1blR1ZE43VDB1RlV6dVRtTEpSalUzXzJYR1p2UmY4V2VBY0FDX0dFN1dzaXNENkRGWVdDYkhNQ3p6SkpNVWNCNEtoZXdUNXZE?oc=5",
-      "summary": "Ukrainian drones have struck nearly every major Russian refinery. Which facilities have yet to be hit? MeduzaUnease deepens in Russia as Ukraine steps up long-range strikes The Washington PostUkraine Targets Russian Refineries in Fresh Drone Strikes Bloomberg.comZelenskyy condemns 'horrific attacks' as Russian strikes kill 11 and wound 40 in Ukraine ABC News - Breaking News, Latest News and VideosUkraine’s targets in Russia are fully justified | Letters The Guardian",
-      "published": "2026-06-29T12:32:00+00:00",
       "origin": "Google 世界頭條"
     },
     {
@@ -1133,35 +1096,19 @@
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Ipsen pens $1.7B deal to acquire Kartos for potential Jakafi add-on therapy for myelofibrosis",
-      "source": "Fierce Biotech",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQMTZrNW5KbEEwOEZEQlB4UENlV2ZoMHBQbjJHTWNOMVdYVmRNZDNzQUpsT1FscDRoZF85aXp0bFE3cFZLQnVUdEl2LVdKNDd5ZkNfVE15c2Q4MHpLZ25KUDJ4amYxdmhNSjhYcDAtVWZ0TmVNZG5uck5vSzBHQzV5TjR4YzRYTVBGSGpyT3ZkTWp0dE1xVFpIVE1aZjI0OXlwSGw5aHBzX0RObHNTb2hkcEx4aXM1UQ?oc=5",
-      "summary": "Ipsen pens $1.7B deal to acquire Kartos for potential Jakafi add-on therapy for myelofibrosis Fierce BiotechIpsen to pay $1.75B for Kartos and its blood cancer asset FirstWord PharmaIpsen to Buy Kartos Therapeutics for Up to $1.75 Billion WSJFrench biotech company Ipsen to buy Kartos Therapeutics for $450 million ReutersIpsen to acquire Kartos Therapeutics, expanding hemato-oncology late-stage pipeline GlobeNewswire",
-      "published": "2026-06-29T12:03:17+00:00",
+      "title": "Dow Jones Futures Rise On U.S.-Iran News, S&P 500 To Reclaim Key Level; Tesla, Jobs Report Loom.",
+      "source": "Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWDNMaFJMX3hmdWRlMm9TaDBuSlRRa2hrUER5bC1EbnRuUkR3cTByR1h3TDlndDhfcUFETW5CZUlXaFVta09fZ3lheDJMNkJjdHV0cHlITG1Pb05jV1FYZV9vajUyYlRQRmlpb1MyUVRUVkJscjdKVjV6eGpXelV3WWR2X2RuNW9NZFFBNGxVeTAtSEJud0ktTlhnQnZYdURZeUdLQk1lZ2Y2MDVTQ0RFaHVlTVQ?oc=5",
+      "summary": "Dow Jones Futures Rise On U.S.-Iran News, S&P 500 To Reclaim Key Level; Tesla, Jobs Report Loom. Investor's Business DailyDow Jones Futures: Stock Market Rallies On U.S.-Iran News; Alphabet, Rocket Lab, SpaceX, Tesla Are Big Winners Investor's Business DailyUS stocks advance on Middle East de-escalation, tech rebound (SP500:) Seeking AlphaTrading Day: Wall Street gains, Dow hits record closing high as fragile U.S.-Iran truce holds Yahoo FinanceTrump’s weekend Iran strikes keep sparking Monday stock rallies. Here’s what the data shows us. MarketWatch",
+      "published": "2026-06-29T12:06:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "Iran says $6B in assets in Qatar will be released",
       "source": "The Hill",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQLTlCajJZcjhySThCbk0xRmdza3l2djJtSzFrejA0MDdMdmsxV3lFS0MzYjhDZTVOVjZucTk2ODNUenVRbnFnY2QtQkxybzllLTZBSnpocUg1N1pJd2R4b1Z4WHdxV29LT2hHNzVrWFAwVl9aU1FmNkdTUVVCUmJHdmJSSE80Z9IBiwFBVV95cUxOM2pOelVoRmJRSEQ4dG9UNWZsVUFTanl6X0E5dWxNeVJ5QktOd0VLZDlwS0R4OElwQTdCMW52bmdxak85dFMtX1BlOGU2MTlObXc3VTZMLXVsMTBKWWcwdjlpSWVOQWJGUzd6d1RkdGtlM29qWm1hb2hwTldQamhEOFJReVBCN2ZWVFBN?oc=5",
-      "summary": "Iran says $6B in assets in Qatar will be released The HillSee more headlines & perspectives on Google News",
+      "summary": "Iran says $6B in assets in Qatar will be released The HillIran says $6B in assets to be released, fact checking Trump’s claims on birthright citizenship AP NewsPezeshkian says Iran will get half of frozen assets from lifted sanctions The Jerusalem PostPezeshkian meets Grand Ayatollahs in Qom Tehran TimesIran says $6 billion of its assets in Qatar to be released — state media; US, Iran teams to meet in Doha The Times of Israel",
       "published": "2026-06-29T11:55:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Saab receives order for three A26 submarines for Poland",
-      "source": "navalnews.com",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNLXp2X0RkQUpLdVRPRkl5LTJnRWVfbFV2WXZTNzNlbDhzVzFkbEgxNjBNOEUzZTVVUTVrX2pCaFFVb0pBMVpKTUZVdGlDd2p3MTFfZ094OHZ3c1Z5bXFNd0ZxZ2Q1SEtVdlVRUklIWkU3NENLbkJOUlUzWlM2V01YMHAzdUtTY0U3S3hrcUQwRlpKbXktNXIzaHVjaVA4ODNJZjl3?oc=5",
-      "summary": "Saab receives order for three A26 submarines for Poland navalnews.comPoland orders Swedish submarines to bulk up navy dw.comPoland awards $4.8 billion A26 submarine deal to Saab Defense NewsPoland signs $4.8 billion contract for Saab-made A26 submarines Breaking DefensePoland inks order for three submarines from Sweden's Saab for $4.8 billion Reuters",
-      "published": "2026-06-29T11:53:50+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "At least six Common Combat Vessels will be built for the Royal Navy",
-      "source": "navalnews.com",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOEdqXzdycEhtN2FkTzVFRU5KSkV0eGlRQUVwc3pJVE9sd1hjODlKaC12c09EVUNURmt0N3d6N0pDYTY2ZzQ3Q0ZsQldENFNlb1ZKd0NteXI2OTBuTkZiNzZoRUptUHdvU05rM2E1cmlaVkpBYVVCSFotYTlKVTJES29ZQTgxd3F1dWFyRjdBUTB2bnktOXktTHdQNHJzNVlGd2VPdkloMUNjWlVWMm9PSVpHRQ?oc=5",
-      "summary": "At least six Common Combat Vessels will be built for the Royal Navy navalnews.comFrank Gardner: Navy plans reflect sea change in how wars are fought BBCBabcock International Shares Fall after U.K. Switches Warship Plans WSJUK scraps plans to replace destroyers with focus on drone warships ReutersRoyal Navy rethinks frigate plans to focus on drone warfare Financial Times",
-      "published": "2026-06-29T11:47:59+00:00",
       "origin": "Google 世界頭條"
     }
   ]

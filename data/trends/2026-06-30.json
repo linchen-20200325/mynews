@@ -3,18 +3,18 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "AI晶片與半導體製造",
+      "industry": "AI與半導體基礎設施",
       "heat_score": 98,
       "signals": {
-        "funding": "韓國政府宣布未來10年將投資2千兆韓元（約1.3兆美元）推動半導體與AI大投資，三星和SK海力士承諾投入超過800兆韓元於先進封裝和AI記憶體，顯示國家級與企業資本的大規模投入。亞馬遜Trainium供應鏈與1.6T光通訊模組放量，帶動相關PCB大廠獲利急漲。儘管有微軟股價重挫等疑慮，但整體資本流向仍強力支持AI半導體基礎建設。",
-        "hiring": "AI助攻半導體漲價潮，記憶體與廠務迎爆發，暗示相關領域的人才需求將持續增長。先進封裝技術如CoWoS、FOPLP的商機也帶動機器人族群人氣，預計對相關工程師及技術人員的爭奪將更趨激烈。",
-        "policy": "南韓李在明政府高調宣布打造「AI國家隊」，祭出16兆韓元（約6500億美元）強攻半導體，並點名台灣為「頭號競爭國」，凸顯AI半導體已上升至國家戰略層級。美國對三星、美光、SK Hynix發起反壟斷訴訟，顯示政府對關鍵產業的影響力加劇。",
-        "technology": "AI效應擴散至半導體材料與封裝廠，先進封裝技術如CoWoS、FOPLP成為關鍵。AI光通訊與矽光子技術的突破性進展，以及亞馬遜Trainium等新一代AI晶片的應用，都預示著技術革新正加速推動產業發展。"
+        "funding": "韓國政府宣布未來10年將投資1.3兆美元(約1800兆韓元)於半導體與AI產業，三星、SK海力士等巨頭加碼投資AI記憶體與資料中心，顯示龐大資金持續湧入。儘管有大摩示警半導體短線可能見頂，AI行情未完但資金開始降溫，但整體資金動能仍強勁。",
+        "hiring": "隨著各國政府與企業加大AI及半導體投資，相關人才需求預計將持續增加，特別是先進製程、AI晶片設計、資料中心營運等領域。",
+        "policy": "南韓政府積極推動「三大巨型專案」和「AI超級計畫」，目標是打造國家級AI隊伍，仿效台灣經驗，顯示政府將AI與半導體視為國家戰略核心。",
+        "technology": "AI效應持續擴散至半導體材料、封裝廠，記憶體與廠務迎來爆發，顯示技術創新正帶動整個供應鏈的升級。Meta等公司雖對模型污染有所顧慮，但AI技術的發展與應用仍在快速推進。"
       },
       "leading_indicators": [
-        "各國政府AI半導體投資計畫的實際進度與撥款情況",
-        "主要晶圓代工廠先進製程產能利用率與擴張計畫",
-        "AI相關記憶體（HBM）的市場供需與價格走勢"
+        "主要AI晶片製造商(如NVIDIA)的財報與展望",
+        "各國政府對半導體與AI產業的補貼政策與投資計畫細節",
+        "HBM等高頻寬記憶體的出貨量與價格走勢"
       ],
       "us_stocks": [
         {
@@ -32,48 +32,48 @@
           "ticker": "2330"
         },
         {
-          "name": "金像電",
-          "ticker": "2368"
-        },
-        {
           "name": "聯發科",
           "ticker": "2454"
+        },
+        {
+          "name": "日月光投控",
+          "ticker": "3711"
         }
       ],
       "evidence_news": [
         {
-          "title": "韓砸2千兆韓元推半導體、AI大投資- 日報",
-          "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5fdHhhZW1sQTZqVkxwMWdxZ0hNUVpxb0F4bnFaSERlTFZVdkZmR0FpbVFjTkNyVllscmxGMmphVkQ1N2ZhWmxjYjh6YVFnUDA1aXg0aDV3WTF3aDQ4Y2lJ?oc=5"
+          "title": "砸1兆美元！南韓「三大巨型專案」投資半導體與AI 三星、SK海力士聯手推動非首都圈發展| AI浪潮",
+          "source": "udn科技玩家",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5Pdi1qaGk3VnhlYlFMLWk3Ny1ORGMxWE5ha3pnR1Z5M24ydzVPbnRmVi16amllQjVPTlc1Z1J6ODNhc3I3WkFJTkFhak1OZ3pPUlNZVUhVWlVyb0d0RWRUTl80VFM2ZnB6UTBOWHpWZUdCWDFnSEFqVGVMLUI?oc=5"
+        },
+        {
+          "title": "韓國祭出十年 1.3 万亿美金半导体投资，三星 SK 加码 AI 存储重塑全球芯片格局",
+          "source": "FX168财经",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5UMkE0cGxHaDdmaVhvY1Y3ckkxRUM2YzdkdlJ1dkFJODQ5dDJQVlFNYmJCa01CaGF6RHp6elZfUVItWUxlNnY1amNuVExfQXJfTHBhbG9IUGZSeUhKWHc?oc=5"
         },
         {
           "title": "AI助攻半導體漲價潮！記憶體與廠務迎爆發-財經焦點情報站",
           "source": "CMoney投資網誌",
           "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdWdhZURYVXpNbGZ5VUJQY1FkV2htM2tUOWZIbWRORnc1STVhMXc4SFktQUNNWFdJeFVnR0UxRmJpM3U3UFlpc2RZX25YSE5tODB0cExmZDd0T3pSV1hxbXcwSF91YXROUXJBUUtaeFpOX1dsNFVuV2VkZ0dQM2s1aHJ3?oc=5"
-        },
-        {
-          "title": "5月獲利狂飆升938%！「這檔」卡位AI光通訊、矽光子商機 法人看旺全年營運",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMioANBVV95cUxPWFpkNlpTLVJCY1hMdW1UTlJTYXZNNDNMOVNTZ0NyNndieDZMZFVzSzVBcmVsNTZRMGJGNzhacm9iQllEMDVrVHpBWXEyb1UxbmxVWWE3dThkZy1WZmYzc1dxMTFpdlJ5eS1wbkluSmNoU2lZY1k3T3lwS0ljeXNlX1VmOGhhVF95Uk55eHdQdTdHenZWdzRPMHdMOVR4TG4xTkdsWTZaOW9ZaWphQ2lkS0NBQk9BaFl1Vnl0cFp2eDdMZkJ6UjhIYmxTMGJ6R01kQjVBbE9CcHNTSEF2dU12MXFjNHNfeXR5bjZTZmJKWDVLWUd5OTE1ZVNsY0RodWh2TWRqQ3hxaXJCVHB2S1lVRUE5eHVmMHpmbkF1OGliX3NQMGlySXpFZU5QdU5OWTlTdzNoRjlDa2VISW9mSWYwR19aZTZnMjRpdlgzcUlPSGpfNVhZVFJ0R01PUEJRYzVPVlE3WjdWam9LaHg0RXM5bEF0VHN5c0VOY3Q1R0JJbzVrMUpHRHE3Z2l1LWR5RGxKbmJYeXVNZzMydFMyTTJRQw?oc=5"
         }
       ],
-      "summary": "AI晶片與半導體製造在全球各國政府與科技巨頭的巨額投資下，持續扮演產業火車頭，技術創新與應用擴散動能強勁。",
+      "summary": "AI與其所需的半導體基礎設施獲得全球政府與科技巨頭的巨額投資，技術持續突破，成為全球經濟動能最強勁的產業。",
       "news_count": 0
     },
     {
       "rank": 2,
-      "industry": "AI應用與服務",
-      "heat_score": 85,
+      "industry": "生成式AI與應用",
+      "heat_score": 90,
       "signals": {
-        "funding": "雖然微軟股價出現回檔，但Meta仍持續投入AI眼鏡等消費性AI硬體，顯示巨頭持續的研發與產品化投入。AI短劇大爆發，佔比突破95%，儘管獲利模式仍在探索，但低成本、高流量的特性吸引大量資金與內容創作者湧入。",
-        "hiring": "AI短劇內容創作、AI眼鏡相關軟硬體開發等領域，對具備AI模型應用、內容製作、產品設計能力的專業人才需求旺盛。",
-        "policy": "目前政策主要聚焦在AI基礎設施與晶片，對於應用層面的直接補貼或管制較少，但AI晶片走私案顯示政府對AI技術流向的關注與控制。",
-        "technology": "AI短劇的普及代表AI在內容生成領域的技術成熟度大幅提升。Meta Fury AI Glasses的推出，顯示AI已能整合至消費性電子產品，提供更智慧化的互動體驗。蘋果M7系列晶片預期將聚焦AI，將推動MacBook Ultra等產品的AI功能革新。"
+        "funding": "儘管有聲音指出AI資金開始降溫，但Meta等科技巨頭仍在AI領域持續投入，例如開發AI眼鏡。AI短劇等低成本高流量應用爆發，顯示資金正流向更具商業潛力的垂直應用。",
+        "hiring": "AI相關職位，尤其是應用開發、模型訓練、內容生成等領域的需求持續旺盛，企業積極爭搶具備AI技能的人才。",
+        "policy": "各國政府將AI視為戰略重點，除了基礎設施投資外，也可能推出支持AI應用創新與倫理規範的政策，例如Meta對模型遭「蒸餾」污染的擔憂，可能促使相關政策出台。",
+        "technology": "AI短劇佔比已突破95%，顯示生成式AI在內容創作領域的應用已趨成熟並大規模普及。Meta推出AI眼鏡，將AI應用從雲端延伸至邊緣設備，顯示技術正朝多模態、沉浸式體驗發展。"
       },
       "leading_indicators": [
-        "AI短劇平台用戶成長與商業模式變現能力",
-        "AI智慧眼鏡等消費性AI產品的市場接受度與銷售數據",
-        "大型科技公司AI軟體服務的訂閱用戶數與營收成長"
+        "主要科技公司AI產品發布與商業化進度",
+        "AI模型訓練成本與效率的改善",
+        "AI內容生成平台的用戶增長與變現能力"
       ],
       "us_stocks": [
         {
@@ -81,29 +81,29 @@
           "ticker": "MSFT"
         },
         {
-          "name": "Meta Platforms",
-          "ticker": "META"
+          "name": "谷歌(Alphabet)",
+          "ticker": "GOOGL"
         },
         {
-          "name": "蘋果",
-          "ticker": "AAPL"
+          "name": "Meta Platforms",
+          "ticker": "META"
         }
       ],
       "tw_stocks": [
         {
-          "name": "是方電訊",
-          "ticker": "6561"
+          "name": "廣達",
+          "ticker": "2382"
         },
         {
-          "name": "青雲",
-          "ticker": "5386"
+          "name": "緯創",
+          "ticker": "3231"
         }
       ],
       "evidence_news": [
         {
           "title": "AI短劇大爆發「佔比已突破95%」低成本、高流量戰時代來臨：獲利更難了",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMilgNBVV95cUxOY3k4Z0F6WUNNR2dYeDEta3JqcDM2U1Z1OWRsRnFVeU1UMXhPaFpOYWRQMVh1TnhxTWpoQVhyTld4TGdtY1l4dXdoZGRSSDUxZGRGUWZjU3RvUm9SN2JvcHdUZ2I3VHg2eV85eGZYbGFaUWxURGc3Y01INWlOdi1meXFXQjU5SUJvY1BIbko1d296cGZVYmlwUEtjR1NLS0xSSnhOZWc2M083al9CeE5HWk5YNFlicERCT3VjR3d6Tm9UVEJNMnEzYklDSVptb2F4RHEydzdUZkM4RDhFWFkyRUZZY2h1Wk83bEZoMXJRanYzRGhXN3hxSGpSMHRkNm50TGVBYWZBamRVcU1GSzJNb1BrN1pBYUlFSTBXWVlvTzI2U2E5TmUtb1N3SElLNVdPdGdXSzdvZkprWXRkRGRxMWVJX1g3REJwQkNCQ01yQWJQQmpONDlhclRSNlJnLXp4UzVVV082ZXJRTU4wX21LYXNSV3RsUzY4RThXZFc4QlBhVUJKSEQ3czZuaTJOc1lvLXNQazRB?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMilgNBVV95cUxOY3k4Z0F6WUNNR2dYeDEta3JqcDM2U1Z1OWRsRnFVeU1UMXhPaFpOYWRQMVh1TnhxTWpoQVhyTld4TGdtY1l4dXdoZGRSSDUxZGRGUWZjU3RvUm9SN2JvcHdUZ2I3VHg2eV85eGZYbGFaUWxURGc3Y01INWlOdi1meXFXQjU5SUIwY1BIbko1d296cGZVYmlwUEtjR1NLS0xSSnhOZWc2M083al9CeE5HWk5YNFlicERCT3VjR3d6Tm9UVEJNMnEzYklDSVptb2F4RHEydzdUZkM4RDlFWFkyRUZZY2h1Wk83bEZoMXJSanYzRGhXN3hxSGpSMHRkNm50TGVBYWZBamRVcU1GSzJNb1BrN1pBYUlFSTBXWVlvTzI2U2E5TmUtb1N3SElLNVhPdGdXSzdvZkprWXRkRGRxMWVJX1g3REJwQkNCQ01yQWJQQmpONDlhclRSNlJnLXp4UzVVV082ZXJRTU4wX21LYXNSV3RsUzY4RThXZFc4QlBhVUJKSEQ3czZuaTJOc1lvLXNQazRB?oc=5"
         },
         {
           "title": "Meta Fury AI Glasses Review: The Worst Company Still Makes the Best Smart Glasses",
@@ -111,85 +111,67 @@
           "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPT3hOTHR5dmhQVGY4ZVZ6S0w0TnJ1TG1Ra3N5T05jNUxZY18yOHlZRnBaZTZENHlOSU41Uy11OHExeGxzMnFJeDg2UUFZM092aThvQ1VlRFlRck8ybXVvVkFPdzcybC1IWjRKX0p6UW9zbEl0SnVhcVFzZjFvSGVzc0liS3FvWmFwandsWkxlRk5yQms4S3pueGQxeFRhczREVTdXUXZTcklFSzA2TThGMA?oc=5"
         },
         {
-          "title": "MacBook Ultra rumors: What to expect including the touchscreen, chips, release date and more",
-          "source": "Engadget",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1UUG45QWdUbEVYdEpBVkRQZC1Gd241Q0RfdXlneGE1N1hDb0w0bHpiMGlyczJnVS1EcTNqeGtpcTBhN28xR1k4c0dVSmMtR1BveTdfTWZaTkJBUjdUZTVCU3B3bGw?oc=5"
+          "title": "Meta憂自家模型遭「蒸餾」污染 傳禁用Claude Code、Codex",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1PTDFwdmVpcHZoTnZ2NGtVSXFXNjVhQmw4LTR1VDlzWXlnZzJteTgyaWxOX2Zldlg5X3lsLUlvWFFveW9zSDdxcnFLZ2hwdw4?oc=5"
         }
       ],
-      "summary": "AI應用正從基礎設施向內容創作和消費性電子產品滲透，儘管商業模式仍在演進，但其廣泛的影響力與創新潛力不容小覷。",
+      "summary": "生成式AI在內容創作和終端應用上持續突破，儘管存在挑戰，但其商業化潛力與技術進步仍推動產業高速發展。",
       "news_count": 0
     },
     {
       "rank": 3,
-      "industry": "無人機技術與應用",
-      "heat_score": 75,
+      "industry": "航太與無人機技術",
+      "heat_score": 85,
       "signals": {
-        "funding": "盧秀燕市長力挺「藍版無人機條例」，並稱無人機為「下一座護國神山」，顯示政府層面已有將無人機產業視為國家級重點發展的趨勢，未來可能會有更多政策性資金投入。JetBlue飛機與無人機相撞事件雖然是負面新聞，但也突顯無人機應用日益普及，監管與產業發展需同步跟進。",
-        "hiring": "隨著無人機應用場景的擴大（例如物流、農業、國防），對無人機設計、製造、飛控、維護以及相關軟體開發的人才需求將持續增長。",
-        "policy": "台灣地方政府積極推動無人機條例立法，旨在規範並扶植產業發展。美國亦將無人機安全視為重要議題，未來可能會有更完善的法規出台，引導產業健康發展。",
-        "technology": "無人機技術持續進步，包括更長的續航力、更精準的飛控系統、更強大的酬載能力以及AI在無人機上的應用。民用與軍用無人機的技術界線逐漸模糊，推動雙重用途技術的發展。"
+        "funding": "SpaceX被納入Russell 1000指數，預計將帶來大量ETF被動買盤，顯示資本市場對航太新創的信心。Rocket Lab等公司也在積極拓展業務，預示著該領域的投資熱度。",
+        "hiring": "隨著航太與無人機技術的發展，相關研發、製造、營運與維護人才的需求將持續增加。特別是與AI、自動化結合的無人機應用，將創造更多新興職位。",
+        "policy": "台灣地方政府如盧秀燕力挺藍版無人機條例，將其視為「下一座護國神山」，顯示政府對無人機產業的重視與政策支持。然而，無人機意外事件（如撞擊飛機）也可能引發更嚴格的法規管制。",
+        "technology": "SpaceX在火箭回收與衛星互聯網技術持續領先，而無人機技術則在軍事、物流、監控等多領域快速發展。與AI結合的自主飛行、集群控制等技術正成為新的突破點。"
       },
       "leading_indicators": [
-        "各國政府無人機相關法規的頒布與實施進度",
-        "大型企業在物流、檢測等領域導入無人機的規模與效益",
-        "無人機產業鏈上下游企業的併購與合作活動"
-      ],
-      "us_stocks": [],
-      "tw_stocks": [],
-      "evidence_news": [
-        {
-          "title": "盧秀燕力挺藍版無人機條例：下一座護國神山",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNc1ZrY1NEZzUxX0xZS2VvUnRYcUdqRXRtQndieWhnUmZSV1NyMGlES3JCVWVXeFk2Q2RxdVRXY2tkcXQwZ3luelVGc21OZjhzdDRYWV8yM1FfSnVxUUplOC02MGV6YzR5eHVrYldodUtEcXBodzJILWYzc1JHdEhhcS1VTG5rM2JUZzFvX0NoZ1VsLVowOTMxWVZudC1VRmRvYjRRMElSNl9KcmpNZnozWGR1OTJXMi1NbldfM0VkeDBsYXk2dmxiUUtvblRNcVpJVzQtOFhXRlVJT0Z1aUZsOWdySVJrNThwNzk0SzUtckliN3hIdm8xaGhkNE9kVHRuLWxBVWY3U2trWTN4S3p4dW0td2pGOWlCNjJLYnFDMTUwUjlYUkNxUWtiUEVPUQ?oc=5"
-        },
-        {
-          "title": "JetBlue pilot reports striking a drone while landing at JFK airport",
-          "source": "BBC",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE53Tzk5YVU2aWlMQm9UQkRHR2NxamtBQmZSQ0dtU0JsYjlUZUt4UTlwYi1udHozSHBpTlZ2enJ6TWZpWGttSEU3UC1XOG9OOWRHNG14eWRwdUtRZw?oc=5"
-        }
-      ],
-      "summary": "無人機技術被視為未來國家經濟與國防發展的關鍵，政府政策與應用場景的擴大將持續推動其成長。",
-      "news_count": 0
-    },
-    {
-      "rank": 4,
-      "industry": "太空科技與衛星通訊",
-      "heat_score": 70,
-      "signals": {
-        "funding": "SpaceX被納入Russell 1000指數，將帶動大量ETF買盤需求，顯示資本市場對太空科技的投資興趣濃厚。SpaceX的IPO後表現雖然有波動，但其市場地位與未來潛力仍被看好。",
-        "hiring": "SpaceX等公司持續的太空探索與衛星部署計畫，對航空工程師、軟體開發人員、數據科學家等高科技人才需求巨大。",
-        "policy": "美國政府對太空產業的戰略支持持續，SpaceX的Russell 1000指數納入，也間接反映了政策對新興科技公司的支持態度。",
-        "technology": "SpaceX在火箭回收、衛星網路部署（星鏈）等領域持續取得技術突破，大幅降低太空探索成本並擴展商業應用。未來衛星通訊的普及，將對全球通訊基礎設施帶來革命性影響。"
-      },
-      "leading_indicators": [
-        "SpaceX等私人太空公司發射任務的頻率與成功率",
-        "衛星寬頻服務的用戶增長與覆蓋範圍",
-        "太空旅遊與資源探索領域的商業化進展"
+        "SpaceX的星艦發射與星鏈服務進展",
+        "各國政府對無人機產業的扶植政策與採購訂單",
+        "無人機在商業應用（如物流、農業）的普及率"
       ],
       "us_stocks": [
         {
-          "name": "SpaceX",
-          "ticker": "SPCX"
+          "name": "波音",
+          "ticker": "BA"
         },
         {
-          "name": "Rocket Lab",
-          "ticker": "RKLB"
+          "name": "洛克希德馬丁",
+          "ticker": "LMT"
+        },
+        {
+          "name": "雷神技術",
+          "ticker": "RTX"
         }
       ],
-      "tw_stocks": [],
+      "tw_stocks": [
+        {
+          "name": "雷虎",
+          "ticker": "8033"
+        }
+      ],
       "evidence_news": [
         {
           "title": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump?",
           "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaUhVZGl6UDlFTjVjYTRCWFlWZDhpTnFnTkJaT1AzOVdjNV8yM2Rrak5WWG90NzR4MkFlY2xRQUNlVDZwc2V6T2RfSTI2Zi1ndFA1bW9VY1ZMbHdOcHR5LUxyajdIRXhqRHVfOTVlbnJRcEZ6cmJ5bWN6X3lYai1lclpFdWNQUQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaUhVZGl6UDlFTjVjYTRCWFlWZDhpTnFnTkJaT1AzOVdjNV8yM2Rrak5WWG90NzR4MkFlY2xRQUNlVDZwc2V6T2RfSTI2Zi1ndFA1bW9VY1ZMbHdOcHR5LUxyajdIRVhqRHVfOTVlbnJRcEZ6cmJ5bWN6X3lYai1lclpFdWNQUQ?oc=5"
         },
         {
-          "title": "Dow Jones Futures: Stock Market Rallies On U.S.-Iran News; Alphabet, Rocket Lab, SpaceX, Tesla Are Big Winners",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbGhfTkRBNnFnWmRfbmpsUFZjNHByR1hpUHhzMU12ZEhnQmx0cmk5bkpneU9CdmI1X01JVl9qMXZoWEg4X0dOV1Q5QnduaFJSSXB2eTRMM0l3TUQ0RGU3RzRma0V4MGd0XzhHWU5INzdSMkp0NG51QUc4OWg4T09YUGJ4OGUtVGo3Vm5wN09lbEJ3RTZSeWc1Q0dhWTZZYU42VlhkRVZ0dlk?oc=5"
+          "title": "盧秀燕力挺藍版無人機條例：下一座護國神山",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNc1ZrY1NEZzUxX0xZS2VvUnRYcUdqRXRtQndieWhnUmZSV1NyMGlES3JCVWVXeFk2Q2RxdVRXY2tkcXQwZ3luelVGc21OZjhzdDRYWV8yM1FfSnVxUUplOC02MGV6YzR5eHVrYldodUtEcXBodzJILWYzc1JHdEhhcS1VTG5rM2JUZzFvX0NoZ1VsLVo5MzFZdm50LVVGZG9iNE1RMElSNl9KcmpNZnozWGR1OTJXMi1NbldfM0VkeDBsYXk2dmxiUUtvblRNcVpJVzQtOFhXRlVJT0Z1aUZsOWdySVJrNThwNzk0SzUtckliN3hIdm8xaGhkNE9kVHRuLWxBVWY3U2trWTN4S3p4dW0td2pGOWlCNjJLYnFDMTUwUjlYUkNxUWtiUEVPUQ?oc=5"
+        },
+        {
+          "title": "Drone Strikes JetBlue Flight Landing at Kennedy Airport, Pilot Says",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVUVJQVpRcEJKa3BRM1ByemN0LV9xcmJUV29raDZiVktmcDdXWDIzRURRR0lYX2pwZTBnY05KWUFVUUhpNE9tTlNobkdwOUlEdVlXaGlGQndaZXRLa3U0U3ZKSVEwQ3IxdFZJMmVFTE5qYWxkLV9jQmR2dldsamxOb1pEbEs?oc=5"
         }
       ],
-      "summary": "太空科技在私人企業的推動下，正從國家級項目轉向商業化應用，資本市場的關注度與技術突破將持續推動其快速發展。",
+      "summary": "航太與無人機技術在政策支持和資本市場關注下持續發展，技術創新不斷，但監管挑戰也日益浮現。",
       "news_count": 0
     }
   ]

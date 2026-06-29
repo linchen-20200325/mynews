@@ -1,27 +1,27 @@
 {
   "report_date": "2026-06-30",
-  "summary": "美伊衝突降溫激勵科技股強勁反彈，推動道瓊指數創歷史新高，那斯達克與費城半導體指數也顯著上漲，Alphabet首度納入道瓊指數並大漲，然有分析師示警美股有步入熊市的機率，且AI龐大支出帶來隱憂。",
+  "summary": "美股今日因中東局勢降溫及科技股反彈而全面收漲，道瓊指數創歷史新高並首度站上52000點，Alphabet入列道瓊指數後股價勁揚，費半指數也大幅上漲，然而部分記憶體個股如美光則出現下跌。",
   "stocks": [
     {
       "name": "Alphabet (Google)",
       "ticker": "GOOGL",
       "sector": "科技",
-      "mention_count": 9,
+      "mention_count": 8,
       "sentiment": "利多",
-      "reason": "Alphabet首度納入道瓊指數，並在消息公布後股價勁揚近5%，顯示市場對其前景樂觀，儘管有AI支出隱憂，但其新地位帶來積極影響。",
+      "reason": "Alphabet入選道瓊工業指數成分股後，股價大漲近5%，帶動道瓊指數創下歷史新高。",
       "evidence_news": [
         {
-          "title": "〈美股盤後〉Alphabet入列道瓊首日勁揚近5% 道瓊首度站上52000點",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5WeVRPLWhzV1lQMVFqcTEwYmdJalhXSkxDM05TQ2VvMDJOTFlkcEUwTE1RM3FJelRlQ1YzaGRoSy1ITk41RmxTcjByUnpvZ2M?oc=5"
+          "title": "Alphabet入道指股價漲近5% 道瓊首登5.2萬",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE40OThicmtvdTQzczFuVU5KUUR4dGdqTUxqdDdla0ZYSTZpZzBUYVVUUm9qR01LYWV2NDE4SURhRXp4WVpDVURCTTd3bXdIQWRJVlZ2emxR?oc=5"
         },
         {
-          "title": "【即時新聞】Alphabet(GOOGL)納入道瓊大漲4%！AI龐大支出釀隱憂，還能追嗎",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQeEpSeXI2RzdrVGF0clo5d1kybldWdmhrZThDY0pmZ3ZRbzBJeXhMcWEwV25xV3pHVW0wQS1ETXBHTGZzQXBjMklmUWFOQnhlVUVoS1JUUW1Ca3dVUk5xWHZhN0I3MjZsdlJ6R2dxUW1zSFNrS0h1XzBsMkZCM1lUb3hBNUlmcHA3S0xEOXZ3ZEQ?oc=5"
+          "title": "美股收盤》Alphabet入列道瓊上漲近5％ 台積電ADR大漲5.26％",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBkVjd2NXBCVHF2NG1uYUZMRmlCZGxlTmlLWWF3d2dJdHZfYktYdWVUWG9PdGI2cmd2cDZfRVFXNWVWOURvN3VqLXgwamJKOEdEakNlZ19LYkpuM0h6Vklv0gFkQVVfeXFMT1V6X3poLTRGY0k5VjlxSC1ZeThRR2dKVHprUkEzY3VNdm5CR3F6TWg0QjM2dkRESVBfOHJrblBHU0RwaFBkdWcydmJhUmhqb2xVUHBSRzJNTFBQODJ5cmdhZ0xsbg?oc=5"
         }
       ],
-      "news_count": 9,
+      "news_count": 11,
       "first_seen": "2026-06-29",
       "last_seen": "2026-06-29"
     },
@@ -31,17 +31,61 @@
       "sector": "科技",
       "mention_count": 8,
       "sentiment": "利多",
-      "reason": "受美伊衝突降溫影響，科技股強勁反彈，那斯達克指數和費城半導體指數均大幅上漲，顯示市場對科技板塊的信心回升。",
+      "reason": "投資人逢低買盤帶動科技股強勁反彈，加上美伊局勢降溫，使科技股全面上漲。",
       "evidence_news": [
         {
-          "title": "美伊衝突降溫科技股強彈！美股大漲道瓊再創歷史新高",
-          "source": "民視新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB5WjNGWmJIeHlwM0NLZjBHTUxUQXRDTWtrWWZ6ejcyY2IwWXBpMWJpdERPaWVHbDlqOGRQVVR2UDVnS0phd09PNTVlZXVWLVJSNFpXWGdvQmxrNU1nT1Q2Rw?oc=5"
+          "title": "美股收盤／道瓊創新高、費半勁揚近4% 逢低買盤帶動科技股反彈",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE02a1lSaHZlc0Y5bWVOeGlHU1JnbExaMWFJXzdvODE5Sno2aW9VYTNTRGhsZHlreEhXOTdhZG90RDlwVndOV1EtSlEtTzd0YnlHOUQtZ3lFbkE4RHlrclJSanJNVDVyVEx0Tjotb1Vlei1IYXc?oc=5"
         },
         {
-          "title": "美股收盤：那指漲超2%，費半指數漲超3%；特斯拉漲超8%，太空股、科技股漲幅居前",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOZjVQdTh0Y0IySHBFekNGQzQxQ1lzTDZkQ3VqSkRBa2RLdUs4NFR1ckhFVDRZNGF1ZkF1SHN4VVR4YnQzV0JFeTREcWhYQ0JqMWN0R2NCSC1YeDdXcERPeXg5N3p1NjhOeEVJdjY4SUI1MFBJVjk1Sy1Xc2hWbmJrem1haWt6SklnYmtveHd2RmhUZWlBRHF1N1lWcW9FdGZVMXpISFE5ay1vblY2T0c0RFFkQ0xCMlBDRGkzcHRDRWNDOTVtUDFudDhudGp3TnhSVlE?oc=5"
+          "title": "美股｜投資人低接科技股 4大指數齊揚 台積電ADR飆5.3％",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBQSWxzY19yTG54bnJ5RFRxeUZnMlMzd1hoT3NmMnQxME1pRGExNnBvcnliWlR1MENsdXBBeHdtd3RUb0IwQ2F3NF8ySEVUR1RnaHlnR2ZQVUNXLWEyREV3?oc=5"
+        }
+      ],
+      "news_count": 7,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "費城半導體指數",
+      "ticker": "SOX",
+      "sector": "半導體",
+      "mention_count": 6,
+      "sentiment": "利多",
+      "reason": "受美伊停火及科技股反彈影響，費半指數暴衝近4%，顯示半導體產業受到正面提振。",
+      "evidence_news": [
+        {
+          "title": "美股收盤／道瓊創新高、費半勁揚近4% 逢低買盤帶動科技股反彈",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE02a1lSaHZlc0Y5bWVOeGlHU1JnbExaMWFJXzdvODE5Sno2aW9VYTNTRGhsZHlreEhXOTdhZG90RDlwVndOV1EtSlEtTzd0YnlHOUQtZ3lFbkE4RHlrclJSanJNVDVyVEx0Tjotb1Vlei1IYXc?oc=5"
+        },
+        {
+          "title": "【美股盤勢】美伊停火解鎖風險偏好，費半暴衝近4%（2026.06.30）",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPd0lSbGNJVzBEYjV0ZzhrNlVxWWZvX3MzTWhCQUNUTExvdlMyaFIzMlEta21fZG1kZjFZaERRcHo1ZHQ4UEsyYTlxdVdoeGtPN1o1dWZTWFZGXzlJRW9qUmJQcFR4SF9abFotbXprT3VNTFpwbDI0eWVjSk1qTW9qNDJHY2JzcWxKT1RQb0d3?oc=5"
+        }
+      ],
+      "news_count": 0
+    },
+    {
+      "name": "台積電ADR",
+      "ticker": "TSM",
+      "sector": "半導體",
+      "mention_count": 5,
+      "sentiment": "利多",
+      "reason": "美股科技股反彈及中東局勢降溫，帶動台積電ADR飆漲逾5%，表現強勁。",
+      "evidence_news": [
+        {
+          "title": "美股｜投資人低接科技股 4大指數齊揚 台積電ADR飆5.3％",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBQSWxzY19yTG54bnJ5RFRxeUZnMlMzd1hoT3NmMnQxME1pRGExNnBvcnliWlR1MENsdXBBeHdtd3RUb0IwQ2F3NF8ySEVUR1RnaHlnR2ZQVUNXLWEyREV3?oc=5"
+        },
+        {
+          "title": "美股收盤》Alphabet入列道瓊上漲近5％ 台積電ADR大漲5.26％",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBkVjd2NXBCVHF2NG1uYUZMRmlCZGxlTmlLWWF3d2dJdHZfYktYdWVUWG9PdGI2cmd2cDZfRVFXNWVWOURvN3VqLXgwamJKOEdEakNlZ19LYkpuM0h6Vklv0gFkQVVfeXFMT1V6X3poLTRGY0k5VjlxSC1ZeThRR2dKVHprUkEzY3VNdm5CR3F6TWg0QjM2dkRESVBfOHJrblBHU0RwaFBkdWcydmJhUmhqb2xVUHBSRzJNTFBQODJ5cmdhZ0xsbg?oc=5"
         }
       ],
       "news_count": 4,
@@ -49,35 +93,12 @@
       "last_seen": "2026-06-29"
     },
     {
-      "name": "特斯拉 (Tesla)",
-      "ticker": "TSLA",
-      "sector": "汽車、科技",
-      "mention_count": 6,
-      "sentiment": "利多",
-      "reason": "特斯拉股價大漲超過8%，並在「華麗七雄」復甦中領漲，顯示市場對其有正面預期，部分原因可能與SpaceX的合作關係加深有關。",
-      "evidence_news": [
-        {
-          "title": "美股收盤：那指漲超2%，費半指數漲超3%；特斯拉漲超8%，太空股、科技股漲幅居前",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOZjVQdTh0Y0IySHBFekNGQzQxQ1lzTDZkQ3VqSkRBa2RLdUs4NFR1ckhFVDRZNGF1ZkF1SHN4VVR4YnQzV0JFeTREcWhYQ0JqMWN0R2NCSC1YeDdXcERPeXg5N3p1NjhOeEVJdjY4SUI1MFBJVjk1Sy1Xc2hWbmJrem1haWt6SklnYmtveHd2RmhUZWlBRHF1N1lWcW9FdGZVMXpISFE5ay1vblY2T0c0RFFkQ0xCMlBDRGkzcHRDRWNDOTVtUDFudDhudGp3TnhSVlE?oc=5"
-        },
-        {
-          "title": "Tesla Leads Magnificent Seven Recovery, Analysts Chime In On Deliveries",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSTZGUHVrUXlVYnlIN3RlOFg5aFRuTUx0V3EtSmlHNUM0MUR2U3dzOVZ5LVZZUTQ3WWkzRkYyREd3Ym15TWU2azFGcDlDWUVvaGFpY0ZiV0Y5V01jTHk4bUVHM0hWRWZSVUFzdm9kbDJ3NU9KUlNWME10dzg2VEdpR2ZqSkpOcGYtX1ZGQjNneG93Wms2Ykp6aV9FTG01eTV6OEE?oc=5"
-        }
-      ],
-      "news_count": 8,
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29"
-    },
-    {
       "name": "康卡斯特 (Comcast)",
       "ticker": "CMCSA",
-      "sector": "媒體、電信",
-      "mention_count": 6,
+      "sector": "電信媒體",
+      "mention_count": 4,
       "sentiment": "利多",
-      "reason": "康卡斯特因分拆計畫而股價飆升，市場對其將媒體和科技業務分拆的策略給予正面反應，預期有助於提升價值。",
+      "reason": "康卡斯特因分拆計畫而股價飆升，顯示市場對其業務重組持樂觀態度。",
       "evidence_news": [
         {
           "title": "美伊局勢緩和美股齊揚！康卡斯特分拆計畫助攻大漲",
@@ -85,32 +106,9 @@
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9lRWEyOHVvaUNseng0NWMwLWNCZXZfU3VaMVhZcV9rVDQwbGNCSi1VMnJPM2VGWVF4NmVQY19vSTVieTAyaWlPMkJONzNtWEQyUUxZZWFvVzhFVmdESlM4dHdSNzJnQQ?oc=5"
         },
         {
-          "title": "Stock Market Today: Dow Closes at Record; S&P 500, Nasdaq Rebound From Last Week's Tech Sell-Off; Comcast Surges on Plan to Split",
-          "source": "Investopedia",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNYlhNMlJCbk8tR0M0Z3V1VEFoUzM1eV9jbmg1X2VBNUJHODdKYlotaTJEbUNpc256QU1LTFBJWHd0c0drb3p6UEdRYi1iQkdReXltbnZMenpaNm96bGp3WkpYWG9PZ3EzQjVTeUhZT1JvTlNrQ1BJOXhldGhrU3BsT1pJM3RWbHJPOEw1Ym9EdmQ?oc=5"
-        }
-      ],
-      "news_count": 8,
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29"
-    },
-    {
-      "name": "SpaceX",
-      "ticker": "SPCX",
-      "sector": "航太、科技",
-      "mention_count": 5,
-      "sentiment": "利多",
-      "reason": "SpaceX因可能納入羅素1000指數而受到關注，市場預期將帶來ETF大量買盤需求，且其股價在美伊衝突降溫後大漲。",
-      "evidence_news": [
-        {
-          "title": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump?",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaUhVZGl6UDlFTjVjYTRCWFlWZDhpTnFnTkJaT1AzOVdjNV8yM2Rrak5WWG90NzR4MkFlY2xRQUNlVDZwc2V6T2RfSTI2Zi1ndFA1bW9VY1ZMbHdOcHR5LUxyajdIRVhqRHVfOTVlbnJRcEZ6cmJ5bWN6X3lYai1lclpFdWNQUQ?oc=5"
-        },
-        {
-          "title": "Dow Jones Futures: Stock Market Rallies On U.S.-Iran News; Alphabet, Rocket Lab, SpaceX, Tesla Are Big Winners",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNVzFhRGJSQWNhR2pMY2FPVGtYRERZV1dDWmtzdkFHaW92VTBvT2Z0YXRpY21DejFna3ZGNFpPRFlzUjRlZTgxMWVBbGNYU2NZaVBlc0wwX2U2UFBVcmR5dGE5RjdQRzNDSkRWamlrQ0Q3alBoR0lHejdZYzgyZ1hTR09jd3lBZHB2c0o5U1ZYNTA5VnBUaURDUFNPQmxTYjFVZS1laEZFRzNfMS1mRTJ4UXRB?oc=5"
+          "title": "Stock Market Today: Nasdaq Rises, Comcast Stock Jumps on Split Plans — Live Updates",
+          "source": "WSJ",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSU9vaXJhWDZsS2U0U0NEOXlQQVlmWVAtdnJIeGFmWnZmaEtxeHpSQk1VNzZTUjZBc1pTcWZZMTl4NjlobEJ1UnpQNGpKNWNuZUhVb0hZb3RNOGdOMTRFZ0ptWThPRG5IS1NCRENkdnhPeFJJVlBIdjRuVGF0VzVIRDROSmhYRVU?oc=5"
         }
       ],
       "news_count": 6,
@@ -118,17 +116,17 @@
       "last_seen": "2026-06-29"
     },
     {
-      "name": "Rocket Lab",
-      "ticker": "RKLB",
-      "sector": "航太",
-      "mention_count": 4,
+      "name": "特斯拉 (Tesla)",
+      "ticker": "TSLA",
+      "sector": "汽車",
+      "mention_count": 3,
       "sentiment": "利多",
-      "reason": "Rocket Lab宣布以80億美元收購Iridium，旨在挑戰SpaceX，此舉被視為邁向完全垂直整合的太空強權，預期將帶來成長。",
+      "reason": "在美股全面上漲的背景下，特斯拉股價勁揚超過8%，為太空股和科技股中的大贏家。",
       "evidence_news": [
         {
-          "title": "Rocket Lab buys Iridium in $8 billion deal to take on SpaceX",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQejk2T29RQV9nS05KV205R1FobVVPcFFySVdTaEhkYzV4djZNVDlPaEpOQTF5bGYxMUVxTG1LekJabG5PZ2w0TUsxRjRrQm1EVzdBdHZ2dkZSNEVCS0toS2ROV1dBWk1OSkI3Qk9hRjB2bnlNcXdjNV9PYlJyaDNzbmhFM3otb2hQc2FpWUt2YWdjRGN2dDZPZWZVSExvdDFPcWdHYUJRMEs5eVFQT1ZoYnkyUGhSMVUzQzJZZDRmeWxCZWlj?oc=5"
+          "title": "美股收盤：那指漲超2%，費半指數漲超3%；特斯拉漲超8%，太空股、科技股漲幅居前",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOZjVQdTh0Y0IySHBFekNGQzQxQ1lzTDZkQ3VqSkRBa2RLdUs4NFR1ckhFVDRZNGF1ZkF1SHN4VVR4YnQzV0JFeTREcWhYQ0JqMWN0R2NCSC1YeDdXcERPeXg5N3p1NjhOeEVJdjY4SUI1MFBJVjk1Sy1Xc2hWbmJrem1haWt6SklnYmtveHd2RmhUZWlBRHF1N1lWcW9FdGZVMXpISFE5ay1vblY2T0c0RFFkQ0xCMlBDRGkzcHRDRWNDOTVtUDFudDhudGp3TnhSVlE?oc=5"
         },
         {
           "title": "Dow Jones Futures: Stock Market Rallies On U.S.-Iran News; Alphabet, Rocket Lab, SpaceX, Tesla Are Big Winners",
@@ -137,6 +135,29 @@
         }
       ],
       "news_count": 4,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "太空股",
+      "ticker": "",
+      "sector": "航太",
+      "mention_count": 3,
+      "sentiment": "利多",
+      "reason": "太空股在美股收盤時漲幅居前，顯示市場對該領域的樂觀情緒。",
+      "evidence_news": [
+        {
+          "title": "美股收盤：那指漲超2%，費半指數漲超3%；特斯拉漲超8%，太空股、科技股漲幅居前",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOZjVQdTh0Y0IySHBFekNGQzQxQ1lzTDZkQ3VqSkRBa2RLdUs4NFR1ckhFVDRZNGF1ZkF1SHN4VVR4YnQzV0JFeTREcWhYQ0JqMWN0R2NCSC1YeDdXcERPeXg5N3p1NjhOeEVJdjY4SUI1MFBJVjk1Sy1Xc2hWbmJrem1haWt6SklnYmtveHd2RmhUZWlBRHF1N1lWcW9FdGZVMXpISFE5ay1vblY2T0c0RFFkQ0xCMlBDRGkzcHRDRWNDOTVtUDFudDhudGp3TnhSVlE?oc=5"
+        },
+        {
+          "title": "US Stocks Close: Nasdaq Rises Over 2%, Philadelphia Semiconductor Index Rises Over 3%; Tesla Rises Over 8%, Space Stocks, Tech Stocks Lead Gains",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNM3htWnkyYWh1bzlXQ1Fxc3g2dm5ub290clEtVERpYV9BaF9EaWVwNWo4bDJoa1lnWC1QZHlhVUhlZUduWUtOb1N6cERVSkNmVE5jZDFHRURBaVFERWxENGxEdXd3WnRmZ09Ma0Z4bWpJVHozMEVsVG5DeE1iMnlEUEk4WGNoOVNzR1RLQ3pCLUo0UThneXJkTkZ1ZjVIMzRicEdWc2NBeFBKX1lmaU5zZ0Q5VEFYR3dXWC1nQ1p3QVNVV28ta2VuMQ?oc=5"
+        }
+      ],
+      "news_count": 1,
       "first_seen": "2026-06-29",
       "last_seen": "2026-06-29"
     },
@@ -145,110 +166,41 @@
       "ticker": "MU",
       "sector": "半導體",
       "mention_count": 3,
-      "sentiment": "觀望",
-      "reason": "美光股價在早盤下殺，但有分析師預測其股價一年內將大幅上漲，顯示市場對其前景存在分歧，需觀望後續發展。",
+      "sentiment": "利空",
+      "reason": "美股早盤記憶體類股開盤崩跌，美光重摔7%，顯示其近期面臨下行壓力。",
       "evidence_news": [
+        {
+          "title": "美股早盤記憶體開崩！美光重摔7% 台積電ADR小漲開出",
+          "source": "NOWnews今日新聞",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA0VmphZ0gyd2kza19hdE92MkI2N2V5LUhlSS1zbENsTXVIXzgxem5GU1Bld2N2QjFHRkN6MDVWakhxVWFmcGUtekstd2jSAVJBVV95cUxNQ0NNVDdncWN5cTF5bkV5dVRsTlBuN280Y2cwRWtzUUJwR2NpOXFZOHZXMzFsSUI4NkJ5THJXRnFMVHpUTXpGdjIwS2NUR1lJU0xB?oc=5"
+        },
         {
           "title": "美股早盤／美光、SanDisk 下殺 但三大指數上揚 台積電 ADR 漲2%",
           "source": "經濟日報",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IM2tJZ1RtTUp3bkk1WVg5U0hYTXBYZDBQQW5WVDlNS2czREx4VVctWUVQMU5icnc2bmktVnc3eU1SM2hodERRQ0NBT2ZQZ1pYSkxPMHRldHliV1E00gFiQVVfeXFMTVZMNzU2RGd4c2d2N3BNdHFRaU9uYjNUNUlJZlBVeGJ2Q3dmb1VkZzFIR0VLVEVnWE1WRFFpamEycm9VTE5FT0Jqa2RDdndDT055SkZBbmxvTlpyZWZVRS1yYkE?oc=5"
-        },
-        {
-          "title": "Prediction: Micron Technology Stock Is Going to $3,900 in 1 Year After Its Blowout Quarter",
-          "source": "The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTk5XTEtxYlRlYTUzb3BwWWdBZ3RqZXZPaXpvMmc5UmFnZUhWbXNINHhvUFVRSHhiMk5fenFUZW1BcThBY0dWZkpPaFVwTXJjTXc2U1lVbFJKZ1VhcWtZNS0zOHRyOS1BNFNnX0FyUVJjbUVXcVM4VjJ3RF9MRVQ2c1p5NFVYSGJveTk2eDFpQk9BUTlQU3NaA?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IM2tJZ1RtTUp3bkk1WVg5U0hYTXBYZDBQQW5WVDlNS2czREx4VVctWUVQMU5icrc2bmktVnc3eU1SM2hodERRQ0NBT2ZQZ1pYSkxPMHRldHliV1E00gFiQVVfeXFMTVZMNzU2RGd4c2d2N3BNdHFRaU9uYjNUNUlJZlBVeGJ2Q3dmb1VkZzFIR0VLVEVnWE1WRFFpamEycm9VTE5FT0Jqa2RDdndDT055SkZBbmxvTlpyZWZVRS1yYkE?oc=5"
         }
       ],
-      "news_count": 5,
+      "news_count": 4,
       "first_seen": "2026-06-29",
       "last_seen": "2026-06-29"
     },
     {
-      "name": "AI股",
-      "ticker": "",
-      "sector": "科技",
-      "mention_count": 3,
-      "sentiment": "觀望",
-      "reason": "高盛指出AI投資熱潮未結束，但Alphabet新聞也提及AI龐大支出釀隱憂，顯示市場對AI股短期看法存在不確定性，需觀察後續發展。",
-      "evidence_news": [
-        {
-          "title": "【即時新聞】Alphabet(GOOGL)納入道瓊大漲4%！AI龐大支出釀隱憂，還能追嗎",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQeEpSeXI2RzdrVGF0clo5d1kybldWdmhrZThDY0pmZ3ZRbzBJeXhMcWEwV25xV3pHVW0wQS1ETXBHTGZzQXBjMklmUWFOQnhlVUVoS1JUUW1Ca3dVUk5xWHZhN0I3MjZsdlJ6R2dxUW1zSFNrS0h1XzBsMkZCM1lUb3hBNUlmcHA3S0xEOXZ3ZEQ?oc=5"
-        },
-        {
-          "title": "高盛揭AI股上週暴跌真相！AI投資熱潮未結束、下半年「這」更重要",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE53VzFxWW9oZUhEV29MWDNyaEd3T0NSanBqdjNQbjlHS0FhUHhRZUc1aEFIR0xEVW9aZnVYS09SZjVMenlRb0lwMGQxVERJRmc?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29"
-    },
-    {
-      "name": "半導體產業",
-      "ticker": "",
-      "sector": "半導體",
+      "name": "Rocket Lab",
+      "ticker": "RKLB",
+      "sector": "航太",
       "mention_count": 3,
       "sentiment": "利多",
-      "reason": "韓國將投入超過37兆韓元打造新半導體聚落與AI資料中心，加上記憶體雙雄大規模投資，整體半導體板塊受到提振。",
+      "reason": "Rocket Lab在美股大漲的背景下被提及為大贏家之一，顯示其受到市場的正面關注。",
       "evidence_news": [
         {
-          "title": "【美股盤前】韓國記憶體雙雄三星、SK海力士合超2.4兆美元投資提振晶片板塊，美國退休基金300億賣壓同步來襲",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQd0ZjQTJ3NXExaVNVZk9HWFRtVlg0MXpibkY3OGoxU0tRSmw1STdDUS1GNEpYak1kb3VVQV9xMS1WSTJKNlRrODNNc2Nra1FrQUtkYy0ySmtrZWNvNUdKaFIydG9GWjRpOUFIaVUtMFJYbVZnZFBSS0Y4bGZWdTJWXzZPelFZUGxPblIyZy1zcDdEcE12OTB3Um84dlFVbUQwVjVydERoTE9WaDlTQ0FidHh3OFhkaTRIYkpuUA?oc=5"
+          "title": "S&P 500, Nasdaq End Higher To Record Best Quarter Since 2020, While Alphabet Debut Drives Dow — VZ, CMCSA, RKLB, SMCI, BATL, GOOGL In Focus",
+          "source": "Stocktwits",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNamZrYW5hZFhxWWI5bEVrUnpYX3RLRUc1UFJqN2RWdDJVY3hYSXBnUC1NekpvTnBMZTlJX2VIZzBOeHN3aEVueVlSUFh6aGtvSnVSYS1IMUpPREpwNjNHNzBkWWJkbU9SMVJSM2dlYlpCWlZkN3RXa29PRUcxUkoybWdxOXVQRnFHMlZIeUxtZmlzRUdMX3dMWGZuUi1pQnk3bWRMWU9BNlcwWVJlLW5fYW9UUVBYMWN6RzI5YU9UbkFIdHIzZ2dOeGZsaWJxaWJHLS0wdTVkUWtJT01PekE4?oc=5"
         },
         {
-          "title": "韓國將投入逾37兆 打造新半導體聚落與AI資料中心",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606290237.aspx"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29"
-    },
-    {
-      "name": "超微 (Super Micro Computer)",
-      "ticker": "SMCI",
-      "sector": "科技、伺服器",
-      "mention_count": 2,
-      "sentiment": "利空",
-      "reason": "超微台灣辦公室因晶片走私調查被突襲搜查，導致股價下跌，對公司聲譽和營運造成負面影響。",
-      "evidence_news": [
-        {
-          "title": "Super Micro Office Raided as Taiwan Expands Chip Smuggling Probe",
-          "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdE8wWm9URTJrXzMwc0xQakVNdjBRV0kzenJvOFN3OUZDLS1DaXFtMWVHWkpnVFRVNVBWMUNad2FmU0piSDhSaGpJNnRSZ1ZWaWxBcGhOSlRWcTlQTjNXUHB2TXlDbWZRSjRYTEdMeVRPM1lHZTB5Nk5KQmZPcGIwWTIzZHFJbHhBaEFRc3h5d2czZU5SMUg5MDI5RlU5dTRrWHdRUVFoaUdyS1ZvZFg2eEg2UnRwZw?oc=5"
-        },
-        {
-          "title": "Stock Market News for Monday, June 29, 2026: Dow, S&P 500, Nasdaq Rise; Micron, SpaceX, Nvidia, More Movers",
-          "source": "Barron's",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4wTkRDem4temRVRWRPR1NGNGp6ZWwwY2lzRXB3c3NPSW9BZWw4VkVwNmIySWE0ZHJJdjJSZkJPcl9tQ3VJY2VyMnh5LXgzUWlPXzdkY2JhSEM1RFBiOS1WTmV6MW5TNHdMRUJTMkxKVVc3TVR3NFE?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29"
-    },
-    {
-      "name": "輝達 (Nvidia)",
-      "ticker": "NVDA",
-      "sector": "半導體",
-      "mention_count": 2,
-      "sentiment": "觀望",
-      "reason": "輝達在新聞中被提及，但主要是在半導體走私調查和與美光比較獲利能力時被帶到，並無直接利多或利空消息，故維持觀望。",
-      "evidence_news": [
-        {
-          "title": "Supermicro (SMCI) Faces Taiwan Raids In Nvidia Chip Smuggling Probe",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdE8wWm9URTJrXzMwc0xQakVNdjBRV0kzenJvOFN3OUZDLS1DaXFtMWVHWkpnVFRVNVBWMUNad2FmU0piSDhSaGpJNnRSZ1ZWaWxBcGhOSlRWcTlQTjNXUHB2TXlDbWZRSjRYTEdMeVRPM1lHZTB5Nk5KQmZPcGIwWTIzZHFJbHhBaEFRc3h5d2czZU5SMUg5MDI5RlU5dTRrWHdRUVFoaUdyS1ZvZFg2eEhCNlJ0Zw?oc=5"
-        },
-        {
-          "title": "Why Wall Street thinks US memory maker Micron is the next Nvidia",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTk5XTEtxYlRlYTUzb3BwWWdBZ3RqZXZPaXpvMmc5UmFnZUhWbXNINHhvUFVRSHhiMk5fenFUZW1BcThBY0dWZkpPaFVwTXJjTXc2U1lVbFJKZ1VhcWtZNS0zOHRyOS1BNFNnX0FyUVJjbUVXcVM4VjJ3RF9MRVQ2c1p5NFVYSGJveTk2eDFpQk9BUTlQU3NaA?oc=5"
+          "title": "Dow Jones Futures: Stock Market Rallies On U.S.-Iran News; Alphabet, Rocket Lab, SpaceX, Tesla Are Big Winners",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNVzFhRGJSQWNhR2pMY2FPVGtYRERZV1dDWmtzdkFHaW92VTBvT2Z0YXRpY21DejFna3ZGNFpPRFlzUjRlZTgxMWVBbGNYU2NZaVBlc0wwX2U2UFBVcmR5dGE5RjdQRzNDSkRWamlrQ0Q3alBoR0lHejdZYzgyZ1hTR09jd3lBZHB2c0o5U1ZYNTA5VnBUaURDUFNPQmxTYjFVZS1laEZFRzNfMS1mRTJ4UXRB?oc=5"
         }
       ],
       "news_count": 3,
@@ -256,45 +208,45 @@
       "last_seen": "2026-06-29"
     },
     {
-      "name": "蘋果 (Apple)",
-      "ticker": "AAPL",
-      "sector": "科技",
-      "mention_count": 2,
-      "sentiment": "利空",
-      "reason": "iPhone 18 Pro的照片和敏感資訊從供應商 Tata 洩露到暗網，引發蘋果對資料洩露的擔憂，對其產品保密性和供應鏈管理構成負面影響。",
+      "name": "SpaceX",
+      "ticker": "SPCX",
+      "sector": "航太",
+      "mention_count": 3,
+      "sentiment": "利多",
+      "reason": "SpaceX在美股大漲的背景下被提及為大贏家之一，且有新聞報導其有望被納入Russell 1000指數。",
       "evidence_news": [
         {
-          "title": "Leaked iPhone 18 Pro photos reportedly wound up on the dark web",
-          "source": "The Verge",
-          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA0bTF0czFqRkxURU52OFZQX1laV2NJRTY1V2tEXzhHNzEwTlhaUDFPWDU2b0N3YWxxaV9feXNOOWc3Ym53TjdpM0NkTVRGYjl4R3J4a0IwUTZYWjZCRWcyRkp0dmNCdktidGdoMEVoOVJPc2ZzdGZVUTVB?oc=5"
+          "title": "Dow Jones Futures: Stock Market Rallies On U.S.-Iran News; Alphabet, Rocket Lab, SpaceX, Tesla Are Big Winners",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNVzFhRGJSQWNhR2pMY2FPVGtYRERZV1dDWmtzdkFHaW92VTBvT2Z0YXRpY21DejFna3ZGNFpPRFlzUjRlZTgxMWVBbGNYU2NZaVBlc0wwX2U2UFBVcmR5dGE5RjdQRzNDSkRWamlrQ0Q3alBoR0lHejdZYzgyZ1hTR09jd3lBZHB2c0o5U1ZYNTA5VnBUaURDUFNPQmxTYjFVZS1laEZFRzNfMS1mRTJ4UXRB?oc=5"
         },
         {
-          "title": "Apple 'Concerned' Over iPhone 18 Pro Data Leak From Supplier Tata",
-          "source": "MacRumors",
-          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA0bTF0czFqRkxURU52OFZQX1laV2NJRTY1V2tEXzhHNzEwTlhaUDFPWDU2b0N3YWxxaV9feXNOOWc3Ym53TjdpM0NkTVRGYjl4R3J4a0IwUTZYWjZCRWcyRkp0dmNCdktidGdoMEVoOVJPc2ZzdGZVUTVB?oc=5"
+          "title": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump?",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaUhVZGl6UDlFTjVjYTRCWFlWZDhpTnFnTkJaT1AzOVdjNV8yM2Rrak5WWG90NzR4MkFlY2xRQUNlVDZwc2V6T2RfSTI2Zi1ndFA1bW9VY1ZMbHdOcHR5LUxyajdIRVhqRHVfOTVlbnJRcEZ6cmJ5bWN6X3lYai1lclpFdWNQUQ?oc=5"
         }
       ],
-      "news_count": 1,
+      "news_count": 4,
       "first_seen": "2026-06-29",
       "last_seen": "2026-06-29"
     },
     {
-      "name": "微軟 (Microsoft)",
-      "ticker": "MSFT",
+      "name": "Super Micro Computer (美超微)",
+      "ticker": "SMCI",
       "sector": "科技",
       "mention_count": 2,
       "sentiment": "利空",
-      "reason": "微軟本月市值蒸發5700億美元，可能創下2000年以來最差月度表現，顯示公司面臨顯著的負面壓力。",
+      "reason": "美超微台灣辦公室因晶片走私調查而遭到突襲，導致股價下跌，對公司聲譽和營運造成負面影響。",
       "evidence_news": [
         {
-          "title": "Microsoft’s $570 Billion Rout Sets Up Its Worst Month Since 2000",
+          "title": "Super Micro Office Raided as Taiwan Expands Chip Smuggling Probe",
           "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTVg5YXFBOVNZajNGLXNlUkc4a1k1ZEg4ZWZxYjF4TjJqZVMza0VOel83OU83WnlFNTYwRDdIVm1EZXFuZVBKUktfcWtGaVJWdWU0Q0stRUk3c0ZZMUxHYnlzNjhpV0NPdHlTTlA2TkhfMGVPRU1ncmt2QjdBelBUanN6U2ljOExLNmZjbF9QVDVBVURkbnF0WDI1ZWZ0Tms1YjF2MGl3MGJiRGJXbngzRmVIbDA?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdE8wWm9URTJrXzMwc0xQakVNdjBRV0kzenJvOFN3OUZDLS1DaXFtMWVHWkpnVFRVNVBWMUNad2FmU0piSDhSaGpJNnRSZ1ZWaWxBcGhOSlRWcTlQTjNXUHB2TXlDbWZRSjRYTEdMeVRPM1lHZTB5Nk5KQmZPcGIwWTIzZHFJbHhBaEFRc3h5d2czZU5SMUg5MDI5RlU5dTRrWHdRUVFoaUdyS1ZvZFg2eEg2UnRwZw?oc=5"
         },
         {
-          "title": "Comcast, Alphabet, Palantir, SpaceX, Microsoft, and More Stocks That Explain Today's Market -- Barrons.com",
-          "source": "Moomoo",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9RMkQtSWN5T3NvM1hIdmNUTkNxQ3hld0tTcXQ2bjBWcUpsTW5vQTdpdWpaRmtyMkR0RjlCcEpma25ISlJ4Nnd6MF9PUmw2cUg0S0JHaW1NQ0VFUTNkbGFBMGh6MEU?oc=5"
+          "title": "Taiwan raids Super Micro offices in expanding chip exports probe, shares fall",
+          "source": "Investing.com",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE93a203S0t1V2p2d0F5Z2x2SEV6a0hIcHZ4c195T1l4d2h2V093X1pUeFp0VzVvR2ZpU0xOaHpyY3J3U3h0Q1pXcm9oTjV1d09xRjVwZ0lPZXh0cUNjU0lMNzQ1b012YW51Z00?oc=5"
         }
       ],
       "news_count": 2,
@@ -302,35 +254,71 @@
       "last_seen": "2026-06-29"
     },
     {
-      "name": "禮來 (Eli Lilly)",
-      "ticker": "LLY",
-      "sector": "製藥",
+      "name": "現代汽車 (Hyundai)",
+      "ticker": "HYMLF",
+      "sector": "汽車",
       "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "禮來被美國FDA選中參與一項新計畫，旨在加速新藥製造設施的審查，有助於更快將藥物推向市場，對公司發展有利。",
+      "sentiment": "利空",
+      "reason": "現代汽車因軟體故障可能增加碰撞風險，召回近10萬輛汽車，對其品牌形象和財務可能造成負面影響。",
       "evidence_news": [
         {
-          "title": "Eli Lilly, Regeneron among first companies selected for FDA initiative to speed review of new manufacturing facilities",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVDhYOGZPSGdVZUEySGNlMW9xekNweVpFdzY4dm9lblFBbHRtWkRvRGZiRzVsT2N1ams3bEF0WEgzRTVucEFqcS1JVGJOZW5jWVFucGJEcXFfSnNZc29xQ0hOM1oyQ1o3WERYSlJtLWhINi0xdkJDbjYtNHZldTNNaHFaUDRLWWwyQy1FRTNSVy1mQnNaako2dTdB0gGfAUFVX3lxTE9BdVp0LW9vS3IyeTlIQWRmN1owblN2RUpKSFRxR01vVlk3SWM0WEJyZzc5RmRMak12RmZjZkw1UGZmaGpoa1h3bXllY21Nb0hpeUFTaW9BdHdwT2pvQmQyUnVZcUlRbXFQNEdMdTB0Q052SEpMSVlaaDJKMHpNM0ZiQjM3OUtJcFJYaWhfWHJJWmtnZjFHRF94SUtLU0tQSQ?oc=5"
+          "title": "Nearly 100K Hyundai vehicles recalled after software glitch raises crash risk",
+          "source": "Fox Business",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbFh6V19zdDNfNS1qdUo5Ym5OUWxuYktMV29PTFN1cjllNzFncV83a2lRV0dZOW1YSWY1dzdYS1c2cl9DeVpHSmpVaG1JXzR1VTdxNEFTelhPN2FuUGM5RmIy NilsMmxvRWhyU21tcEV6TFFBSXQ3R2xTNmo3ZVpxRUxjREl2X2VGMnhxcTd5dU1QeFNPQTBxYV9FcUtWVVYwSmZ5bWdNcnU3TTRhY1HSAbMBQVVfeXFMTXB1T3ozMndhbTNxbDNyN3ZZdWIxb21WX2ZTY3FMai03QlJOTU04OXU1ckgxT0xYRTZmSDg1djkwTXBIbVh6RGhZVWV3N0x3V3o2U0ozaEFxOHlreUYwMy12VVFydlpoanVCYUI3dkpMcU5reFpMd2NiN29TTmdyeWR4WmhjbVFRMDMzZWRwb2dKRDh1S1BHejlnSFFGUVE5UzUwdGN0TmY4dDZ6UGN1a0VsSk0?oc=5"
         }
       ],
-      "news_count": 7,
+      "news_count": 1,
       "first_seen": "2026-06-29",
       "last_seen": "2026-06-29"
     },
     {
-      "name": "再生元製藥 (Regeneron)",
-      "ticker": "REGN",
-      "sector": "製藥",
+      "name": "英美菸草集團 (British American Tobacco)",
+      "ticker": "BTI",
+      "sector": "菸草",
       "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "再生元製藥同樣被FDA選中參與加速審查新藥製造設施的計畫，預期將受益於更快的藥物上市流程。",
+      "sentiment": "利空",
+      "reason": "為推動AI轉型和削減成本，英美菸草集團計劃裁減約20%的員工人數，對其勞動市場和營運產生負面影響。",
       "evidence_news": [
         {
-          "title": "Eli Lilly, Regeneron among first companies selected for FDA initiative to speed review of new manufacturing facilities",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVDhYOGZPSGdVZUEySGNlMW9xekNweVpFdzY4dm9lblFBbHRtWkRvRGZiRzVsT2N1ams3bEF0WEgzRTVucEFqcS1JVGJOZW5jWVFucGJEcXFfSnNZc29xQ0hOM1oyQ1o3WERYSlJtLWhINi0xdkJDbjYtNHZldTNNaHFaUDRLWWwyQy1FRTNSVy1mQnNaako2dTdB0gGfAUFVX3lxTE9BdVp0LW9vS3IyeTlIQWRmN1owblN2RUpKSFRxR01vVlk3SWM0WEJyZzc5RmRMak12RmZjZkw1UGZmaGpoa1h3bXllY21Nb0hpeUFTaW9BdHdwT2pvQmQyUnVZcUlRbXFQNEdMdTB0Q052SEpMSVlaaDJKMHpNM0ZiQjM3OUtJcFJYaWhfWHJJWmtnZjFHRF94SUtLU0tQSQ?oc=5"
+          "title": "英美菸草集團推動AI轉型 9000個職位受影響",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/aopl/202606290308.aspx"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "T-Mobile",
+      "ticker": "TMUS",
+      "sector": "電信",
+      "mention_count": 1,
+      "sentiment": "利空",
+      "reason": "T-Mobile將強制舊有客戶轉移至較高價位的現有方案，可能引發客戶不滿。",
+      "evidence_news": [
+        {
+          "title": "T-Mobile is booting customers from its oldest plans",
+          "source": "The Verge",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1nYzY5b0FURGd2dXFNQS1SR3pLU3JKYU0tR1Z3MVBSelF2dFpXeXBEX2VkbGw0ZEU1ZDlJVXNFVHNUYVFrTWhJWTgzVk42RFBXWUVkSDI1TVZyUzVneUQ2aTlOaXc0QURkQ1c2UzU1X01KMHRUQTlVSTF3dw?oc=5"
+        }
+      ],
+      "news_count": 1,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "JetBlue",
+      "ticker": "JBLU",
+      "sector": "航空",
+      "mention_count": 1,
+      "sentiment": "利空",
+      "reason": "JetBlue航班在甘迺迪機場降落時與無人機相撞，引發飛安疑慮。",
+      "evidence_news": [
+        {
+          "title": "Drone Strikes JetBlue Flight Landing at Kennedy Airport, Pilot Says",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVUVJQVpRcEJKa3BRM1ByemN0LV9xcmJUV29raDZiVktmcDdXWDIzRURRR0lYX2pwZTBnY05KWUFVUUhpNE9tTlNobkdwOUlEdVlXaGlGQndaZXRLa3U0U3ZKSVEwQ3IxdFZJMmVFTE5qYWxkLV9jQmR2dldsamxOb1pEbEs?oc=5"
         }
       ],
       "news_count": 1,
@@ -339,14 +327,14 @@
     }
   ],
   "future_trends": [
-    "人工智慧 (AI) 與資料中心",
-    "半導體產業 (尤其記憶體與晶片製造)",
-    "太空科技",
-    "生物製藥 (特別是加速藥物審查與新藥開發)",
-    "循環經濟與綠色設計 (零售業)",
-    "智慧機器人與AI液冷技術"
+    "人工智慧 (AI) 轉型與應用",
+    "半導體產業擴大投資",
+    "智慧機器人與人形機器人",
+    "循環經濟與綠色設計",
+    "航太科技與太空探索"
   ],
   "sunset_industries": [
-    "菸草業 (因AI轉型及裁員，顯示產業結構調整壓力)"
+    "傳統菸草產業 (受AI轉型與監管挑戰影響)",
+    "記憶體產業 (部分個股短期下殺)"
   ]
 }

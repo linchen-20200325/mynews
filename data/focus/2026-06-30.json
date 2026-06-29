@@ -5,183 +5,149 @@
       "report_date": "2026-06-30",
       "query_zh": "川普",
       "query_en": "Donald Trump",
-      "summary": "川普近期在外交上宣布美伊將於卡達會談，但遭到伊朗否認，同時他在國內面臨最高法院對其解僱聯準會理事庫克的挑戰，以及在郵寄選票和房屋法案上的挫敗，但最高法院擴大了總統開除獨立機關官員的權力，顯示其影響力仍在拉扯。",
+      "summary": "近期川普在政治、外交與法律方面均有重大動態，包括最高法院裁定其可擴大解僱獨立機構官員權力但不能解僱聯準會理事，他本人宣稱將與伊朗進行談判但遭伊朗否認，同時也面臨性虐待賠償案判決確定及其他政策爭議。",
       "key_statements": [
-        "宣布美伊將於卡達（多哈）舉行會談，但伊朗方面否認將進行任何層級的談判。",
-        "簽署備忘錄，旨在促進車輛維修自由，以降低美國民眾的生活成本。",
-        "與哈薩克敲定鎢礦案，被指背後有家族利益牽涉，引發利益衝突爭議。",
-        "美國最高法院裁定總統有權開除獨立機關官員，川普稱這是「重大勝利」，但同時最高法院也駁回其解僱聯準會理事麗莎·庫克的請求，並裁定其暫時續任。",
-        "對郵寄選票的挑戰遭到美國最高法院駁回，最高法院裁定各州可點算遲到郵寄選票。",
-        "稱房屋法案是「無聊事」（a big yawn），並表示對簽署該法案不確定。"
+        "美國最高法院裁定，總統有權解僱獨立機構首長，但聯準會理事莉莎·庫克(Lisa Cook)暫時不能被解僱，維護了聯準會的獨立性。",
+        "川普宣稱美國與伊朗將在杜哈舉行談判，但此說法遭到伊朗方面否認。",
+        "最高法院駁回川普上訴，確定其須支付性虐待案500萬美元賠償金。",
+        "川普簽署備忘錄，旨在促進車輛維修自由以降低成本。",
+        "川普政府施壓奏效，世界銀行放棄了45%的氣候貸款目標。",
+        "川普針對新關稅政策，引發搶運潮，馬士基(Maersk)因此上調全年財測獲利估計至少增加10億美元。"
       ],
       "affected_industries": [
+        "航運業",
         "汽車維修業",
-        "礦業",
-        "能源產業 (石油、天然氣)",
-        "金融服務業 (聯準會相關)",
-        "房地產業",
-        "高爾夫球產業"
+        "金融業",
+        "能源產業",
+        "房地產與營建業",
+        "國防工業",
+        "科技業(AI)"
       ],
       "stocks": [
         {
-          "name": "特斯拉 (Tesla)",
-          "ticker": "TSLA",
+          "name": "馬士基 (Maersk)",
+          "ticker": "",
           "market": "美股",
-          "sector": "汽車製造",
-          "sentiment": "觀望",
-          "reason": "川普簽署促進車輛維修自由的備忘錄，雖旨在降低消費者成本，可能影響汽車製造商的售後服務收入，但目前對電動車產業的具體影響尚不明確。",
+          "sector": "航運業",
+          "sentiment": "利多",
+          "reason": "川普新關稅政策引發搶運潮，推升海運需求，使馬士基上調全年財測，預計獲利增加至少10億美元。",
           "evidence_news": [
             {
-              "title": "川普簽署備忘錄 車輛維修自由降低成本",
-              "source": "大纪元",
-              "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9wODlfdVJERndhRERZQ0tKWWxRUnFBRmY4MlBTSEV4SUV3b05nN1lXdFQxSU9NNURsdHltc056M2Q5NGtfV0pmOEVGXzdmSjk0VndOWDFFSlBqc2pwcTJPUdIBZkFVX3lxTE1SSTJRY1VWS053bDdlWnBhVkhPomFJcWV5T25Wbk9kQ2F4dHZPdW9YY3ZhUTBZRjNPYV91TVRSeUpiZFNIRFhua3NkVGtScG1Ha21KR3hYNXhLU3A5NDFVTlJ5VmRmdw?oc=5"
-            },
+              "title": "川普新關稅掀搶運潮！馬士基上調全年財測獲利估增至少10億美元- 國際",
+              "source": "工商時報",
+              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lSlM0eGJyekVjNVFRdmFvclZRZG5WU1RmVmtVVE0teFRSYmttSkxwUWZQV2NUZ3BneThnVDZKM3pseEx5bG1zaHdVQmotaUNwRjV6akZYZWM2dGVNVE5V?oc=5"
+            }
+          ],
+          "news_count": 1,
+          "first_seen": "2026-06-29",
+          "last_seen": "2026-06-29"
+        },
+        {
+          "name": "美國通用汽車 (General Motors)",
+          "ticker": "GM",
+          "market": "美股",
+          "sector": "汽車製造業",
+          "sentiment": "觀望",
+          "reason": "川普簽署促進車輛維修自由的備忘錄，長期可能影響汽車製造商的售後零件和維修服務利潤，但同時也可能刺激汽車銷售。",
+          "evidence_news": [
             {
               "title": "川普簽備忘錄 美國人自行修車更簡便經濟",
               "source": "大纪元",
               "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9SZHdmRm1wYkFDZExQbWlsbDc3X0tLQXZ2Q2JCemRvWlhzS3JBMjk2WFZMUm5tY05mWktaSXZFaDlGQkFJaC1idXNOVmVCSFROOThzMjh1YVF6b1pFNVlpUNIBZkFVX3lxTFBVRzhqTG1uVGllQWh5T2xBZmJXemtOUVFXdXR2cE1yV2pQZ2NQRjVGcjRmdWNVTVBfT2pyZVU0ejVDNjM5TFF0VU9YUVJrSDA0cl9pNUYyQnVXTm1kaTRDQWVXd0ZRUQ?oc=5"
-            }
-          ],
-          "news_count": 0
-        },
-        {
-          "name": "嘉能可 (Glencore)",
-          "ticker": "GLCNF",
-          "market": "美股",
-          "sector": "礦業",
-          "sentiment": "觀望",
-          "reason": "川普敲定哈薩克鎢礦案，顯示其對關鍵礦產供應鏈的關注。嘉能可作為全球主要礦業公司，其業務可能受美國政府對礦產資源政策的影響。",
-          "evidence_news": [
-            {
-              "title": "美中角力下川普敲定哈薩克鎢礦案 被指背後有家族利益",
-              "source": "聯合報數位版",
-              "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQS3FSQW8xTHdxMXVpUXB2TDJpWTVVRkFiSGNHa2poSXVCeFBLZ1pUSjNuUzl3QVA0Qk9IYmg2X1FscWxyXzhoZW85b2Z5MThkbnQxNnRHVnhHam5Yb1VvZFZ5eGg5ZXVOamgyLU9lZGl1V2RfX1k5MkJDYzd1ck9Pc29LOA?oc=5"
             },
             {
-              "title": "特朗普家族被揭投資哈薩克鎢礦",
-              "source": "信報網站",
-              "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPeTkzUzJZY1QxVGZKUF8xWDJRQmhDVU9OMUpNdnVFMTV0WUhDaDNMQ1dKS2YzczJia25IOG1fTDQ1bk5RVGM3UzFRajIwMWExQWxVS1JSTG9LMmdOak9LR0dxdVkwalNVLWpoc2d2MmQ2VHBGWVpoSkFSOVZfLWlfR1FjTGsxU2JHOGFQRDZqb1l3RzgwbGhwU2szNjhQZ3g1RWlaNlAwVElvZzVZWkZqb3RLeFk2UFNBX2pUTFF5bXJpQ0VjenR6UTRZV3RrWlpNUHFQQTF0bmhma2lsQTREVGcySnVQck5TV05JeWc1LXBnS2VfcU5SeGF4ZjlXWEtjSnRldFZLSmladkQ4dmJnNFg5YUNDZw?oc=5"
+              "title": "【重播】川普簽署備忘錄 車輛維修自由降低成本",
+              "source": "大纪元",
+              "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9wODlfdVJERndhRERZQ0tKWWxRUnFBRmY4MlBTSEV4SUV3b05nN1lXdFQxSU9NNURsdHltc056M2Q5NGtfV0pmOEVGXzdmSjk0VndOWDFFSlBqc2pwcTJPUdIBZkFVX3lxTE1SSTJRY1VWS053bDdlWnBhVkhPamFJcWV5T25Wbk9kQ2F4dHZPdW9YY3ZhUTBZRjNPYV91TVRSeUpiZFNIRFhua3NkVGtScG1Ha21KR3hYNXhLU3A5NDFVTlJ5VmRmdw?oc=5"
             }
           ],
-          "news_count": 0
+          "news_count": 1,
+          "first_seen": "2026-06-29",
+          "last_seen": "2026-06-29"
         },
         {
-          "name": "艾克森美孚 (ExxonMobil)",
-          "ticker": "XOM",
+          "name": "美國聯邦準備理事會 (Federal Reserve System)",
+          "ticker": "",
           "market": "美股",
-          "sector": "石油與天然氣",
+          "sector": "金融業",
           "sentiment": "觀望",
-          "reason": "川普宣布美伊將重啟多哈談判，儘管伊朗否認，但任何關於中東地緣政治緊張局勢緩和的跡象，都可能影響國際油價，進而影響石油公司的營運。",
+          "reason": "最高法院裁定川普不能解僱聯準會理事庫克，維護了聯準會的獨立性，這對市場穩定性是利多，但也限制了總統對貨幣政策的直接影響力，可能導致未來政策不確定性。",
           "evidence_news": [
             {
-              "title": "特朗普突然宣佈：美伊明日重啓多哈談判！原油卻不跌反漲 機構警告市場過於樂觀",
-              "source": "Investing.com 香港 - 股市報價& 財經新聞",
-              "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE95VWtwWmtPcGoxanpXY0Q1QzZzXzZzTzVlN2Z2bHo2SnF5VjBxalhjMXc2V3NvVk9IRmR0SVE3Qk9JdFI2YURqOWYzQzQybFpJSGZ5S0V1THRLa0VFVzZlaGdoZ3V1dDNabWN4SUJFWQ?oc=5"
-            },
-            {
-              "title": "美伊卡達會談荷莫茲優先議題",
-              "source": "旺得富理財網",
-              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ENWQ4amFUVDF4NnFBNUR5SnQ5V2t2aS15QXhGb0U5QkgwU0ZJeUZabHgzcW4wamx2RVlibWE0Z0RkRE11YmZzbUQzVDNOeDJzZVJZTUxXWGUtWjhjN3l0SG4zWnhZOWQtNVE?oc=5"
-            }
-          ],
-          "news_count": 0
-        },
-        {
-          "name": "聯邦快遞 (FedEx)",
-          "ticker": "FDX",
-          "market": "美股",
-          "sector": "運輸服務",
-          "sentiment": "觀望",
-          "reason": "最高法院駁回川普解僱聯準會理事庫克的請求，維持Fed獨立性，有助於貨幣政策的穩定性，對依賴穩定經濟環境的運輸業是好事，但影響間接。",
-          "evidence_news": [
-            {
-              "title": "美最高法院裁定Fed理事庫克留任",
-              "source": "旺得富理財網",
-              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5XUURYQXdNY2s4MFBQa0NROHNaRWR5ODZKTXlOX3VrUFNyUURGWnJfMF9UdnlwVGhCdHlVUU1wSjFtcmVwOVdiNjJQUl9Ca1IxVkpKNXhYNGtRcV8tVmx0VjU4MFJuUXgxVmc?oc=5"
+              "title": "美國最高法院裁定特朗普無權解僱庫克 維護聯儲局獨立性",
+              "source": "香港電台新聞網",
+              "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZHIxY1ZyNG44RE9rMXJwZHFZUGwyd2ZEYVZBcHlXS1g4WTA2V2pYNEYydFlPeVRlbVFLM25nUXdHTXNaYlQwSXhtWE1VVkZHaHE0RFFKemIzQWZrcTBkajJicUE1ZGFYN2pMWG5IT1pVNFI3QXE0OENmN3Y4VFRfSEgzcE1RZ2s?oc=5"
             },
             {
               "title": "美最高法院雙裁定 擴大總統權力但護聯準會獨立",
               "source": "自由時報",
-              "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE96UmU5alZTZzctX29ZQW83OVpDWi1uZ1p3Y2puN0x5aU9LSEw1WGI4TnV3NHZiVFRVdzlFUzRFZ1V3cTlXd0lHRFMwSE8teFJvNERMZnZWbWtnNXNBY2xyRWlzUC02d9IBa0FVX3lxTE1vSXBqVkhKZW9GNk5FdlNORmNKNDRlb2FTcVdPVW1qR1hUTFJsU0RPQzhiZHV3TVZqTnJXQWVoWVlWekI0QVUtbU5oSk5yT3piZGI4MzhVTldTNTc4T3hkN1VZbVZhc0ZYOGtz?oc=5"
+              "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE96UmU5alZTZzctX29ZQW83OVpDWi1uZ1p3Y2puN0x5aU9LSEw1WGI4TnV3NHZiVFRVdzlFUzRFZ1V3cTlXd0lHRFMwSE8teFJvNERMZnZWbWtnNXNBY2xyRWlzUC02d9IBa0FVX3lxTE1vSXBqVkhKZW9GNk5FdlNORmNKNDRlb2FTcVdPVW1qR1hUTFJsU0RPYzhiZHV3TVZqTnJXQWVoWVlWekI0QVUtbU5oSk5yT3piZGI4MzhVTldTNTc4T3hkN1VZbVZhc0ZYOGtz?oc=5"
             }
           ],
-          "news_count": 0
+          "news_count": 1,
+          "first_seen": "2026-06-29",
+          "last_seen": "2026-06-29"
         },
         {
-          "name": "富邦金 (Fubon Financial)",
-          "ticker": "2881",
-          "market": "台股",
-          "sector": "金融業",
-          "sentiment": "觀望",
-          "reason": "美國聯準會的獨立性受到最高法院的維護，有助於全球金融市場的穩定。台灣金融業會間接受益於此穩定性，但直接影響不大。",
-          "evidence_news": [
-            {
-              "title": "美最高法院裁定 特朗普無權解僱聯儲局理事庫克",
-              "source": "singtao.ca",
-              "url": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxPUXB0Yi1kMnZ2a1hiX2c2S2VtV3E3WndNTGtGRy1pcjJSZ3dTcXp5bXlaS2RfTkwxbVNSZC1tS1JyZ21IWlFaMldYc1N2QXAyMFVVUXBWOWRXc3k4dEVJZzZWYXgyOGdKVDJXOXZZa2h3ZldXNk02YVh2NWlweWQ4MXNnM1U3N2xLTTZKcDNBWXRwU2xoZmJ5MC1TSjVhQ2NfTmtBQ2paWi1LYi15enpER2Q2V2pGQm81Ni1LR2dicVlKMVk3UGNVUHg5RlRwdldqQzNoczFLS2FwYnpZcGsxZTZPWWNTMF9MWFExMVNUeFMtUnI2OTJ2d0ZTZ2VTVlo0VVpqRmFHTGphUVNMWndoQy0wY3YtNF9VaVRqeE1mUEdraElEY3FURWdCaFF4ZXFiLTIwRmZhTlMzUWVhcHNVTWlndEZJcnptRDdZYktWTGZETW84SG1yeldB0gGMAUFVX3lxTFBSNkpRbXdQaU82QS1iXzl2WWhpOHRWVHV4ckJ0bUR2UGt3cVJyZk1waUNFSk03MkNYY3B6clRLVEE3TmhoZnhwRWlkWE1tTXlkQkhhbzNWYkl6ZXZUd01aZk5iWXZSZkRsZE5ualpqSGFSNmFzMVhKRHdUN3pIUGFKOTNJQkN0M2tCcV9C?oc=5"
-            },
-            {
-              "title": "最高法院駁回川普解僱美聯儲理事的請求",
-              "source": "大纪元",
-              "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5jbWpmX25VZWJvZlhrN2g2VW5sUVVoTlJnMEdWb0x2WnNpNURaVWxiTTJsdno1OVAwb1pmR3Vrbm0ybVhPOTlWSGhfVzBlTEMwTVEwYWJKYzlRdU5XcWdWcdIBZkFVX3lxTFBZbGJKNWRUZUdBVzJlZGhZMHRZcnN5Ymxza0NkOGIzeXNaZEdOcnpMeHpiYS1sSlZmb0gzQjRvQmNTaFBZaWM5eUVEYm9EOUFXMWVyVzRRellNNS1iSm01UE5Id3dhZw?oc=5"
-            }
-          ],
-          "news_count": 0
-        },
-        {
-          "name": "台積電 (TSMC)",
+          "name": "台灣積體電路製造 (TSMC)",
           "ticker": "2330",
           "market": "台股",
-          "sector": "半導體",
+          "sector": "半導體業",
           "sentiment": "觀望",
-          "reason": "雖然新聞未直接提及半導體，但川普政府的政策方向（如美中角力）對全球供應鏈有影響。台積電作為關鍵供應商，其營運間接受到國際政治經濟局勢的影響。",
+          "reason": "川普的貿易政策和對中企的態度可能影響全球供應鏈，進而間接影響台積電等全球半導體製造商的營運布局和訂單，但目前影響不明確。",
           "evidence_news": [
             {
-              "title": "雷根中心民調2/3美民眾認為台灣攸關美安全繁榮 74%關切中國犯台",
-              "source": "LINE TODAY",
-              "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBVMUxUUmtGS053cEc4R3pEbHZIcWdQdmFna0gxVmpxeDVlUEpwTkNUWG92N25MbHZOZnpVMHpfM1RiQmFhM0d0ZmtIWnpKeDNMY2FjaTdR?oc=5"
-            },
-            {
-              "title": "美中角力下川普敲定哈薩克鎢礦案 被指背後有家族利益",
-              "source": "聯合報數位版",
-              "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQS3FSQW8xTHdxMXVpUXB2TDJpWTVVRkFiSGNHa2poSXVCeFBLZ1pUSjNuUzl3QVA0Qk9IYmg2X1FscWxyXzhoZW85b2Z5MThkbnQxNnRHVnhHam5Yb1VvZFZ5eGg5ZXVOamgyLU9lZGl1V2RfX1k5MkJDYzd1ck9Pc29LOA?oc=5"
+              "title": "川普上任後 中企紛紛回國 但留下技術",
+              "source": "大纪元",
+              "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9HRGZLUFZIcnhTSEtVRS1xcm9yN2ZBblBMU2xhQUlSYTJGbzVsQWRVM05LYVJ0WE53Z1FmMFBHTXRrb19yRTZxZUM3MHY4Q1ZuZkFsRVFvTTBPWlE4VUxmaNIBZkFVX3lxTE1hbUVMZ214Sk1obHhUbTZ2aGtYME9QaF8ybTdxbUFENVNvSmhrcWwyZTZxRGhXMVNRanpleF9Ub0JmYmNFWEdVWmdZNXpuZmtvQW5ETUFpTlpWbFhOak5NbTBqVFJxZw?oc=5"
             }
           ],
           "news_count": 0
         },
         {
-          "name": "美國航空 (American Airlines)",
-          "ticker": "AAL",
+          "name": "英特爾 (Intel)",
+          "ticker": "INTC",
           "market": "美股",
-          "sector": "航空運輸",
+          "sector": "半導體業",
           "sentiment": "觀望",
-          "reason": "川普政府的政策若導致國際關係緊張或緩和，可能影響國際旅行需求和燃油價格，進而對航空公司的營運產生影響，但目前談判結果未定。",
+          "reason": "與台積電類似，川普的貿易政策和科技限制可能影響全球半導體供應鏈和市場需求，對英特爾的業務構成不確定性。",
           "evidence_news": [
             {
-              "title": "美伊卡達會談荷莫茲優先議題",
-              "source": "旺得富理財網",
-              "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ENWQ4amFUVDF4NnFBNUR5SnQ5V2t2aS15QXhGb0U5QkgwU0ZJeUZabHgzcW4wamx2RVlibWE0Z0RkRE11YmZzbUQzVDNOeDJzZVJZTUxXWGUtWjhjN3l0SG4zWnhZOWQtNVE?oc=5"
-            },
-            {
-              "title": "川普：伊朗要求會談 敲定30日卡達舉行",
-              "source": "自由時報",
-              "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE85X1lmQWpZR01lY25zWmsxaERIaVVtN2xFaU5VNHdwRjdWbjh2clk2MVN2TkV5eVVZLW1kdEhwMWxBTENJVEZOMUgxdE40Wm9RUDJ1c0VzUEJ5RUhM0gFiQVVfeXFMT0hxUUtBNVI3MG13emJaR2dsVGFjYlVJVF9BNU9PT3p1Yk5GN2NSRU8tYjJPVDExMThVa3dkaHRJZDNsMjQ5S2VMSUxaTWZfRGgwcnpfbEQ2b2NlcGRDUl9sZEE?oc=5"
+              "title": "川普上任後 中企紛紛回國 但留下技術",
+              "source": "大纪元",
+              "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9HRGZLUFZIcnhTSEtVRS1xcm9yN2ZBblBMU2xhQUlSYTJGbzVsQWRVM05LYVJ0WE53Z1FmMFBHTXRrb19yRTZxZUM3MHY4Q1ZuZkFsRVFvTTBPWlE4VUxmaNIBZkFVX3lxTE1hbUVMZ214Sk1obHhUbTZ2aGtYME9QaF8ybTdxbUFENVNvSmhrcWwyZTZxRGhXMVNRanpleF9Ub0JmYmNFWEdVWmdZNXpuZmtvQW5ETUFpTlpWbFhOak5NbTBqVFJxZw?oc=5"
             }
           ],
           "news_count": 0
         },
         {
-          "name": "宏碁 (Acer)",
-          "ticker": "2353",
+          "name": "長榮海運 (Evergreen Marine)",
+          "ticker": "2603",
           "market": "台股",
-          "sector": "電腦及週邊設備",
-          "sentiment": "觀望",
-          "reason": "川普政府對AI控制的言論引發言論自由辯論。科技產業如宏碁等，若未來面臨更嚴格的內容或技術管制，可能影響創新和市場拓展。",
+          "sector": "航運業",
+          "sentiment": "利多",
+          "reason": "川普實施新關稅政策導致的「搶運潮」預期將增加海運需求，對長榮海運等航運公司構成利多。",
           "evidence_news": [
             {
-              "title": "Trump's AI controls spark free speech debate",
-              "source": "Politico",
-              "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNbGQ4VHZMV0hpR1Q3V1FmVWxvbEVtUy1DQkNkcFpKVENFZWhVdVZQblF5WVlZaFU2UU1aQ1c5ajZMLXFNU1VxY2psR1hWNU9Sb0UxSTZWMDFHMWFNOGRPUWZqd0NSWnMzNW5ya0xvVy00TjhTRFE5NjB4QXFpdzRaSHUzMkVUd2ZUOUQtQ3VaTU4?oc=5"
+              "title": "川普新關稅掀搶運潮！馬士基上調全年財測獲利估增至少10億美元- 國際",
+              "source": "工商時報",
+              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lSlM0eGJyekVjNVFRdmFvclZRZG5WU1RmVmtVVE0teFRSYmttSkxwUWZQV2NUZ3BneThnVDZKM3pseEx5bG1zaHdVQmotaUNwRjV6akZYZWM2dGVNVE5V?oc=5"
+            }
+          ],
+          "news_count": 0
+        },
+        {
+          "name": "陽明海運 (Yang Ming Marine Transport)",
+          "ticker": "2609",
+          "market": "台股",
+          "sector": "航運業",
+          "sentiment": "利多",
+          "reason": "與長榮海運相同，川普新關稅政策引起的「搶運潮」將增加貨櫃海運需求，對陽明海運營收帶來正面影響。",
+          "evidence_news": [
+            {
+              "title": "川普新關稅掀搶運潮！馬士基上調全年財測獲利估增至少10億美元- 國際",
+              "source": "工商時報",
+              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lSlM0eGJyekVjNVFRdmFvclZRZG5WU1RmVmtVVE0teFRSYmttSkxwUWZQV2NUZ3BneThnVDZKM3pseEx5bG1zaHdVQmotaUNwRjV6akZYZWM2dGVNVE5V?oc=5"
             }
           ],
           "news_count": 0
@@ -189,57 +155,201 @@
       ],
       "evidence_news": [
         {
-          "title": "美中角力下川普敲定哈薩克鎢礦案 被指背後有家族利益",
-          "source": "聯合報數位版",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQS3FSQW8xTHdxMXVpUXB2TDJpWTVVRkFiSGNHa2poSXVCeFBLZ1pUSjNuUzl3QVA0Qk9IYmg2X1FscWxyXzhoZW85b2Z5MThkbnQxNnRHVnhHam5Yb1VvZFZ5eGg5ZXVOamgyLU9lZGl1V2RfX1k5MkJDYzd1ck9Pc29LOA?oc=5"
+          "title": "美國最高法院阻止川普解僱美聯準會理事莉莎·庫克",
+          "source": "华尔街日报中文网",
+          "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxOMGw2SWpRME1lRUdyLUdTMHNNOExSVTFDdDNienFDdXR1REd2V3d1ZWRFUHBsTEJOa1ZVQkZGblBNT2wtMXY2X1hUUVdHUkVlczFRaWd4VnpvRXZEcHdYRDVxbS1QaGZOUHRfVHBEZjZoWDZQc3lkMVJrejFTNzVFSHdBOVJscm8xdVZ2b290LXp4cU9kM1ZBTFdWeFdQUUlYTi04SlRiZFA2Ulg2OU10Unc0UGRvNnVXM2ZpZXAwQ1RwZkl1QkVPdURub3hFRzdxV283TkZPQzJBcGJNbkI3djFEMVB5bi1QMFlLWFJkRFpYSU5kRm5JSS1iMzNuSGo1MnZoUlBrcnpueGJscEtyano0Q2E1WHlKNmtXUG9ZUUVpdm9uRlJKc1g1aUkzYlhnUXNEQ2M3U0FTVXRuQmFrMUUxajFTOURxbUhFWkVUT2VRMWVZbmE4?oc=5"
         },
         {
-          "title": "川普簽署備忘錄 車輛維修自由降低成本",
+          "title": "美國最高法院裁定特朗普無權解僱庫克 維護聯儲局獨立性",
+          "source": "香港電台新聞網",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZHIxY1ZyNG44RE9rMXJwZHFZUGwyd2ZEYVZBcHlXS1g4WTA2V2pYNEYydFlPeVRlbVFLM25nUXdHTXNaYlQwSXhtWE1VVkZHaHE0RFFKemIzQWZrcTBkdjJicUE1ZGFYN2pMWG5IT1pVNFI3QXE0OENmN3Y4VFRfSEgzcE1RZ2s?oc=5"
+        },
+        {
+          "title": "川普新關稅掀搶運潮！馬士基上調全年財測獲利估增至少10億美元- 國際",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lSlM0eGJyekVjNVFRdmFvclZRZG5WU1RmVmtVVE0teFRSYmttSkxwUWZQV2NUZ3BneThnVDZKM3pseEx5bG1zaHdVQmotaUNwRjV6akZYZWM2dGVNVE5V?oc=5"
+        },
+        {
+          "title": "最高法院駁回上訴 川普性虐待案500萬美元賠償判決確定",
+          "source": "中天新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9qQWp1bnJFWHNnUnBLUDlPYmtJd2JQQ2lyV05UNkxBQlpoV2k1M043R2tJMERsTUZoSVYwTnB0bGFRNU1SMkVNSm9hWldlUkFkbWJZ?oc=5"
+        },
+        {
+          "title": "川普宣稱美伊將在杜哈談判：德黑蘭主動求見 | 國際 | CTWANT",
+          "source": "CTWANT",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE85VWQ2S3NGTjFMSG8zSVVnR3JEVVRMZEtOYnpSTjlQV1l6RGJhd21zTDJMV09MRlhaRXRGWUp4QmhaaUNGWUNXMVR1aUhNVVnSAVRBVV95cUxPWExkYmc4aFFmR2ZJZDJ3Zm8zVS1QamlmMnd6azJ0TGJWMXhtNkhzWDM0eG93OUprSXBjZVcyX25td0JpaWRlVVhJVURYdHZuVlVsbUY?oc=5"
+        },
+        {
+          "title": "美伊舉行杜哈會談？ 川普又被伊朗打臉",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNLVpxdDE4LURucHVKRi1YNXB4TW5yRnVST055RFJUbXY3aDFIcVdPR3pLVGVxcVRiVUNvUlZSRjV3N1VLRW1nbm5QVElkVjc4WHNEdXk3eDE2ZDJkMGdEam84RUFmbkRXU24xREJ0NVNMTEdKc2VaWHUyVVhmYjhyQV8yMlRrb1dFYlZlVU84UF9pdm9MMFBMMklSdnowUThCMW1EaHJrUC0tUURXSUFpWG5oVGJuS09QZ2xrSVBtVmd3TDRzSWhUOV8zc1haMjlONjhSTGlOYUNSSlprZ1VVdHBZNU9Ybzd6Y2xPSFhLRjFjRndMWjdDOXlsRkpybDQ1YjdvS042cjFxbTJ1OXFiYU9VLXpWMk4?oc=5"
+        },
+        {
+          "title": "川普行政權擴大！最高法院推翻逾90年判例 總統可解職獨立機構首長",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE80SDhyVnlrX3YyVXU2dEZxa0xmdWFhN1R5VjRGVUgwaV9OdVpoQ2RscWxTN3dYc3NLU3F0REdQaVQ2WGRWbExFeFFMelR4dE03?oc=5"
+        },
+        {
+          "title": "川普簽備忘錄 美國人自行修車更簡便經濟",
           "source": "大纪元",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9wODlfdVJERndhRERZQ0tKWWxRUnFBRmY4MlBTSEV4SUV3b05nN1lXdFQxSU9NNURsdHltc056M2Q5NGtfV0pmOEVGXzdmSjk0VndOWDFFSlBqc2pwcTJPUdIBZkFVX3lxTE1SSTJRY1VWS053bDdlWnBhVkhPomFJcWV5T25Wbk9kQ2F4dHZPdW9YY3ZhUTBZRjNPYV91TVRSeUpiZFNIRFhua3NkVGtScG1Ha21KR3hYNXhLU3A5NDFVTlJ5VmRmdw?oc=5"
-        },
-        {
-          "title": "【華府連線】川普：伊朗請求和談 美伊週二多哈會晤",
-          "source": "新唐人電視台",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE91ZzByalA3RTJ5NHBaVl9zMGF3YjNYa1FqUHNjdTA1LXFYTUl4RHM3RjhaY0dwWHV5NEhmVG5VbVpTc3ZKek5lTnloRm9Vck5rNkU5bkQ1Mko3VE1kcjI2VtIBZkFVX3lxTFBScFE2ZVZOMTV3elF6QWFEbnkwUkxhUGhkbXFRV3hQX1o0am1pWFNFaEhQbUlSS2E1ZHVDZ0RGWmlQNmpvNGJpM1h2X00yX1F2d2k4OVk0MEgtdDduajNqYTQyRi13dw?oc=5"
-        },
-        {
-          "title": "川普撤 Fed 理事吃癟！美最高法院裁定 庫克訴訟期間可暫時續任",
-          "source": "經濟日報",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBmMGQ3X2lPNnBPNk80TzhRY1NJNE4xUnp5R0EtN1FwekpvQ3YtcXFkSl9IeDlIdExWMDBoUEhWamtVRHlsUFdhcHo3a3prdmx1aENMbnlGd281Z9IBX0FVX3lxTFBjMmRQUFplMk50YnFEcjE2ZHgtaTJPdnp2UlNmOS1qd0R6Qno4X2JjUkI1Ylp2ODk4YXJVeVBKY0w0bnJ3RFJ5cWJobkhDQkFydHNuUU9lTVZYUl9DWmRF?oc=5"
-        },
-        {
-          "title": "【最高法院確認：總統可開除獨立機關官員 川普嗨喊「重大勝利」】",
-          "source": "facebook.com",
-          "url": "https://news.google.com/rss/articles/CBMiuwNBVV95cUxQelpkY29XS3FPaXZib3F5ZmVWNFZqTlFDcXNqVVVYTkR0WnB1LW1hZU14djZiNVVQT3ZIYl9Kd0tZZ3lReEhyOUstb0c5RzZXU3BjUmNvYmhfOUJ1TV9zeDNMTmNvVnpNMEtEU0ZHazRzb21rOTJuQTkzQm40TlNibnBKM3FUek5GdFlqa3hZd3p0aU9URUxGV0tpS2pCR09DN3pjVlRZVURFSEx0M0gwRVFQT0Yzd25BZzI0ekRVZE5BZG9Va0l3UUV3Tk5QbTQ3ank1YmF4SUY4Q2R6NU1KcXRZTWpsbEtGUVR6T3pheXhKQ1BzLUI2eG40VXNWWGhXUVE3RUpQV3NET2FXeTdOU0t3LUJUZURhTmxzWDIzZ2pSZ2ROa3RuNjdnNFJZU2FSb1pjZlhKZUFJVm1GS3lyUkJyVEFETE1jOHJUV2Z6bTRGYWlTd2xVejBTVmdyY1JmdDE4OWdUNmI5ajIzZUlVRUMwSzlnSGQwLXo3Y24wVnFSc1luLVhRLU5sc3lNaUtyVFZPUTlKQW85OFVkejBGQlJGYUVJdGxpTU0yU1RDZWltRUpsMHpHTFVDcw?oc=5"
-        },
-        {
-          "title": "最高法院裁定各州可點算遲到郵寄選票 駁回特朗普挑戰",
-          "source": "巴士的報",
-          "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxObllJYzA3RU01N3Azdkpya1RNT0hlRHlPdHJwMGFnX3hMSVpjdzdjYzV3Y1psZU5UZC0xekdKc3lrS1lBYnVEeWpmZ1ZJLTFhbHZaQ0xfN3NzVWpVT05IZU0wSXVnY0gtSlp1SFQ1T2JUeDJ5MUJNMDV2cjVuQk5WT0hCZ29vU1ZBLVFjV0FiejQyX2NzNnFxalpEZkRHcG1TVUNjMkQwS0V4cllyZEo5Z0QwbjZIbW45ajhjQ0R5eF9SeEE2TzdJOWZwRDlEcEc5aWQ0NnlGM1N1cnUzZVM3OTVJLW9RcXFHVy1qY0xIWjY1QmtJRmRoNHUtX3RLdEhvWGlXLWRnVzNpMGpHNjlFQWtLekNLZVlZVHRlTVNyejVyTnJ1REcwcTR6LUhyWGNVVDAwb19vZzdBclNHYlVpQkx5RlF0V2FQQ0pDcE5EUm5ZR2ZLcXM3ckg4LUpiRllNNURHR3FrUmVFV0Z0Z2sw?oc=5"
-        },
-        {
-          "title": "伊朗打臉川普！美伊不會有任何層級會談 杜哈談判前景蒙陰影",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMilgNBVV95cUxNX0NuNGNXYXFVc0VmUHZxY2dlbGp3M2lRa2dEN29XaWlZREVHdnRNazFEOFhWMG1SSk5STzd2ampCQlRGMkVBSVNVY0VGdnR1dFpSZERQelhUazFaRzBnRDBNelRyemoyeVZ2Z1g4Y3NkX2YzWFVhMGVaN202Y3B0Ti1WTGVtdk5OVDJRdGJtc1B1WGFNbVFXVW00blp4YW9LRjdOSWY3RDc1ZzM4eXFDclVTYjltUEtaclNhQkpjUlFDMmp2cGNmN0JIcTdhRUpZakNfY2RCW3QyY3VJZjc1SU02Qm56OWZ0V29qRWVIMGJLTmQza2M5QmZZWVBRYmpBWUlBZjJrTGU1OGdHc2c0UjFzdjFlWWlLRjh3YXpxMXBDLUhjblZPU0Exb25hblZjeUhyVVBtZFBlNFo0dkNaYXZOUlNZMDZMd0NZSVN2SUtsTnpwRHFYd1g0Nng1NFhYNm0tNDNoZEVnbkFJYWtNaVRpSGUyYm1BM3FqNmxNTi02NjNNLWxOX3VaVUI0V2tWZnBVaWlR?oc=5"
-        },
-        {
-          "title": "Trump says he's unsure on signing affordable housing bill",
-          "source": "USA Today",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSDZrejk1YXVBQVdMU1BCM0dqR1prMWJIRHN3bzdxWGhqWUk2YnBBdFJFdEZCUzRsSkxxMmUxTVVmbkVnX1J3UURzZEEwWHJ2S01pM3BiSjRNRjVHVy1mLUl6Y3NyLWVXXzRrY2drVnFlaHU0S0pYckZHQ3NtRTY5TXVCREk0OWQ2R2JLSzNlNHNueWtWclJfX25IZXdfYWxNdVVidURQZ0tUQ3l5Sk9LU0l0Wmx2Z1VNZS1fOXRicEZFZw?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9SZHdmRm1wYkFDZExQbWlsbDc3X0tLQXZ2Q2JCemRvWlhzS3JBMjk2WFZMUm5tY05mWktaSXZFaDlGQkFJaC1idXNOVmVCSFROOThzMjh1YVF6b1pFNVlpUNIBZkFVX3lxTFBVRzhqTG1uVGllQWh5T2xBZmJXemtOUVFXdXR2cE1yV2pQZ2NQRjVGcjRmdWNVTVBfT2pyZVU0ejVDNjM5TFF0VU9YUVJrSDA0cl9pNUYyQnVXTm1kaTRDQWVXd0ZRUQ?oc=5"
         }
       ],
-      "news_count": 100,
+      "news_count": 101,
       "first_seen": "2026-06-29",
       "last_seen": "2026-06-29",
       "raw_news": [
         {
-          "title": "美中角力下川普敲定哈薩克鎢礦案 被指背後有家族利益",
-          "source": "聯合報數位版",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQS3FSQW8xTHdxMXVpUXB2TDJpWTVVRkFiSGNHa2poSXVCeFBLZ1pUSjNuUzl3QVA0Qk9IYmg2X1FscWxyXzhoZW85b2Z5MThkbnQxNnRHVnhHam5Yb1VvZFZ5eGg5ZXVOamgyLU9lZGl1V2RfX1k5MkJDYzd1ck9Pc29LOA?oc=5",
-          "summary": "美中角力下川普敲定哈薩克鎢礦案 被指背後有家族利益 聯合報數位版",
-          "published": "2026-06-29T22:00:00+00:00",
+          "title": "美國最高法院阻止川普解僱美聯準會理事莉莎·庫克",
+          "source": "华尔街日报中文网",
+          "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxOMGw2SWpRME1lRUdyLUdTMHNNOExSVTFDdDNienFDdXR1REd2V3d1ZWRFUHBsTEJOa1ZVQkZGblBNT2wtMXY2X1hUUVdHUkVlczFRaWd4VnpvRXZEcHdYRDVxbS1QaGZOUHRfVHBEZjZoWDZQc3lkMVJrejFTNzVFSHdBOVJscm8xdVZ2b290LXp4cU9kM1ZBTFdWeFdQUUlYTi04SlRiZFA2Ulg2OU10Unc0UGRvNnVXM2ZpZXAwQ1RwZkl1QkVPdURub3hFRzdxV283TkZPQzJBcGJNbkI3djFEMVB5bi1QMFlLWFJkRFpYSU5kRm5JSS1iMzNuSGo1MnZoUlBrcnpueGJscEtyano0Q2E1WHlKNmtXUG9ZUUVpdm9uRlJKc1g1aUkzYlhnUXNEQ2M3U0FTVXRuQmFrMUUxajFTOURxbUhFWkVUT2VRMWVZbmE4?oc=5",
+          "summary": "美國最高法院阻止川普解僱美聯準會理事莉莎·庫克 华尔街日报中文网",
+          "published": "2026-06-29T23:44:32+00:00",
           "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美國最高法院裁定特朗普無權解僱庫克 維護聯儲局獨立性",
+          "source": "香港電台新聞網",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZHIxY1ZyNG44RE9rMXJwZHFZUGwyd2ZEYVZBcHlXS1g4WTA2V2pYNEYydFlPeVRlbVFLM25nUXdHTXNaYlQwSXhtWE1VVkZHaHE0RFFKemIzQWZrcTBkajJicUE1ZGFYN2pMWG5IT1pVNFI3QXE0OENmN3Y4VFRfSEgzcE1RZ2s?oc=5",
+          "summary": "美國最高法院裁定特朗普無權解僱庫克 維護聯儲局獨立性 香港電台新聞網",
+          "published": "2026-06-29T23:42:00+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "慶祝「川普帳戶」上路 那斯達克、紐約證交所將首度在白宮橢圓形辦公室同步敲鐘",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE55OEViRXRfbldUd0RNdzNhUnpRUS1WZkVZQlVPZVYzeUd2VDRZMm85akdrVFlKbldEeFRrNmw1bm5qNjlMVldMT3VLUzFEcjA?oc=5",
+          "summary": "慶祝「川普帳戶」上路 那斯達克、紐約證交所將首度在白宮橢圓形辦公室同步敲鐘 news.cnyes.com",
+          "published": "2026-06-29T23:40:32+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普宣稱美伊將在杜哈談判：德黑蘭主動求見 | 國際 | CTWANT",
+          "source": "CTWANT",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE85VWQ2S3NGTjFMSG8zSVVnR3JEVVRMZEtOYnpSTjlQV1l6RGJhd21zTDJMV09MRlhaRXRGWUp4QmhaaUNGWUNXMVR1aUhNVVnSAVRBVV95cUxPWExkYmc4aFFmR2ZJZDJ3Zm8zVS1QamlmMnd6azJ0TGJWMXhtNkhzWDM0eG93OUprSXBjZVcyX25td0JpaWRlVVhJVURYdHZuVlVsbUY?oc=5",
+          "summary": "川普宣稱美伊將在杜哈談判：德黑蘭主動求見 | 國際 | CTWANT CTWANT",
+          "published": "2026-06-29T23:37:55+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普新關稅掀搶運潮！馬士基上調全年財測獲利估增至少10億美元- 國際",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lSlM0eGJyekVjNVFRdmFvclZRZG5WU1RmVmtVVE0teFRSYmttSkxwUWZQV2NUZ3BneThnVDZKM3pseEx5bG1zaHdVQmotaUNwRjV6akZYZWM2dGVNVE5V?oc=5",
+          "summary": "川普新關稅掀搶運潮！馬士基上調全年財測獲利估增至少10億美元- 國際 工商時報",
+          "published": "2026-06-29T23:34:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "最高法院駁回上訴 川普性虐待案500萬美元賠償判決確定",
+          "source": "中天新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9qQWp1bnJFWHNnUnBLUDlPYmtJd2JQQ2lyV05UNkxBQlpoV2k1M043R2tJMERsTUZoSVYwTnB0bGFRNU1SMkVNSm9hWldlUkFkbWJZ?oc=5",
+          "summary": "最高法院駁回上訴 川普性虐待案500萬美元賠償判決確定 中天新聞網",
+          "published": "2026-06-29T23:29:22+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "美伊舉行杜哈會談？ 川普又被伊朗打臉",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNLVpxdDE4LURucHVKRi1YNXB4TW5yRnVST055RFJUbXY3aDFIcVdPR3pLVGVxcVRiVUNvUlZSRjV3N1VLRW1nbm5QVElkVjc4WHNEWW0xWFU4MWdEamo4RUFmbkRXU24xREJ0NVNMTEdKc2VaWHUyVVhmYjhyQV8yMlRrb1dFYlZlVU84UF9pdm9MMFBMMklSdnowUThCMW1EaHJrUC0tUURXSUFpWG5oVGJuS09QZ2xrSVBtVmd3TDRzSWhUOV8zc1haMjlONjhSTGlOYUNSSlprZ1VVdHBZNU9Ybzd6Y2xPSFhLRjFjRndMWjdDOXlsRkpybDQ1YjdvS042cjFxbTJ1OXFiYU9VLXpWMk4?oc=5",
+          "summary": "美伊舉行杜哈會談？ 川普又被伊朗打臉 Yahoo新聞",
+          "published": "2026-06-29T23:29:11+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普、馬斯克齊轟共產主義 紐約選舉效應延燒",
+          "source": "新唐人電視台",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9jM1ZGZnJvMy1PZy1FbHJxU3FzRU1LcnFZMmViSkVESkhfU0xvMDBSOGF6RzBxZlV5TElwUXYtLWd5SWJ6bTRPZzVqeHlSYnhvdHhSZUhtTUpxamtWQllWNNIBZkFVX3lxTE54ZmJBdWxnN3k0S0wzMzRDbDRHcXdjeTByNVQtQkphX3htRFE1c09vcTlIeUpQN3BodDlWTF92b28tNWl1ODQxRXRrcGxsUnFaSkZXSndBZFZiTnpSLVdTTnUwd2ZSZw?oc=5",
+          "summary": "川普、馬斯克齊轟共產主義 紐約選舉效應延燒 新唐人電視台",
+          "published": "2026-06-29T23:23:28+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "伊朗提出會晤請求 美伊將在多哈舉行關鍵會談",
+          "source": "新唐人電視台",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB2TW9ycHo1ZFZaMWp0akk0LWtxcU1Gb3A1cEl1aC02Z0lLVUFxN1cyTW5tNThQSU8zaFVjOE5LalY4eXpweVd4VnEyaEc1S3B2UlRKOER3b0c0WUxZN3hiUNIBZkFVX3lxTE4zbnBsX2t1YU8zOG1hYzVuemhvbWV3TGY2S2VyTzJqMGltN196WVdPX0pmcW5kUE5nNTFSOEZvbWZHc2o2TUdDcnprU3p3UkltYnMxTktIOTlVQm9PV2p1RjMtSUlxdw?oc=5",
+          "summary": "伊朗提出會晤請求 美伊將在多哈舉行關鍵會談 新唐人電視台",
+          "published": "2026-06-29T23:23:28+00:00",
+          "origin": "關鍵字「川普總統」"
+        },
+        {
+          "title": "川普行政權擴大！最高法院推翻逾90年判例 總統可解職獨立機構首長",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE80SDhyVnlrX3YyVXU2dEZxa0xmdWFhN1R5VjRGVUgwaV9OdVpoQ2RscWxTN3dYc3NLU3F0REdQaVQ2WGRWbExFeFFMelR4dE03?oc=5",
+          "summary": "川普行政權擴大！最高法院推翻逾90年判例 總統可解職獨立機構首長 UDN",
+          "published": "2026-06-29T23:20:32+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "晨早新聞重點｜羅淑佩冀西九文化區能紓解財赤／特朗普說美伊代表今日將在多哈談判伊朗否認",
+          "source": "Yahoo",
+          "url": "https://news.google.com/rss/articles/CBMitwRBVV95cUxOZ3ktTE9ndF9hSmFRblpSTERpOXJhMnk3eGRRVVFPR2xkWVpDeVpMZEhZRkJjcWkwZ2dlbFZmdndpWGxmdTVqSExhZUF1TzA1UDNocTJWSHF0ZFluXzFEQzNtRjlKWUVMa2hqNUprNVA4em9hRXpRdEdvWFRYYW5tNklreHREZk9HeHlOaDVySkdvLURxNlVpUV94azJCNzB0Tk90VXZQWHJXWUVLTzFpZ3FTb2FtdEFucnhlVEF0SDJ6TS1NMDZjTkN3ZGtUSnh3QVNONEZ0UEExczdfbkFXU1ltaC1LRDVnbGRXb0RkQVBGZXA5bTdfYmVoQ2dLdV9lLTZjemlLQVozaG1pZTI0a2c1T3ZYUWhGSFl5SVBVTm9ROGJGWTJ3RFRYX0VsSlRpX0NWSmhLaEJzUUN3a0tRQkxSOVJEYms3Qm5mT1cxZ1UybmRnT3JQVGtPYVBEZkRfelk2NGZQemxhQlM5U2ZrQ2UwUEpwWVg0RC14Mk44M1pValQ5ZmFHcHRyTnJ6YTVUSEhndGNLeDUzb3c1eXdFRnVwYklxbUF2bHV3UllnQXdOSWhMWWQ5cHM3UVNHOERDVTllODNyT2NJMDkxSmxsRjJzeGtMaEZfNWtyWEJrcDF5dHdWV0I2U1FXSGFNeXZObjF0SGtqVW1jSmFmX1NHVXBSel9HOGNVVXdkanJVeEM4Qmx3WFJ1bEhtTkdVeUkzaWJEQkMzMDViV3JUbEJlS2tvTHJ0ODA?oc=5",
+          "summary": "晨早新聞重點｜羅淑佩冀西九文化區能紓解財赤／特朗普說美伊代表今日將在多哈談判伊朗否認 Yahoo",
+          "published": "2026-06-29T23:17:23+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "川普：伊朗請求會晤 下輪談判30日在杜哈舉行",
+          "source": "新唐人亞太電視台",
+          "url": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxQMzdOSHFlbFZTU0Q4b2Z3bEIzWmk2RXpWbUZPV1JKQm5nS1RQMHJhQUlxNlBnQnVONTJIQjY0d0hiSl8yZHlvWTVnLXVpRDV6ZFlhNVRpakpGenlsa3VmbHJkTF9JcklXbmxkV3VmcHU3bUJOOEhUclRSenhkMU9iamFaZGVmNHVXN1hFUHVEZlRuak1PNWVERWFGbGZzRkU4NVZkSktQc2w3Mllfa2FrZzh0dUdNdTBicXFFME9HQmJmVXZ4alRsdXE3bUV6aUs2Wmp1ZHlRT3JuVnc2T29pWlJNUEJYWE5WVUNDZjFHOFhJSElfcnc2Y3dQTUlITHYybkhpSTBuZVlYM2RsSzAxZXZlS1pNVkg4c01neEdvb2hVMWkweDY0T2lNRTN0ckhPc0pyRUt0OG5fdnJ1c21hREN6ellveWdJYWZaQUVYaXg?oc=5",
+          "summary": "川普：伊朗請求會晤 下輪談判30日在杜哈舉行 新唐人亞太電視台",
+          "published": "2026-06-29T23:17:15+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普：伊朗請求會晤 下輪談判在多哈舉行",
+          "source": "新唐人電視台",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE82Tjl4MkpWWDBLSFR4YTZFelFPYXlvdVdtbWNsMl96b0I2SjAzWXB0Nm5nYmhpQWg5SmVpaEpIb2dBUjRxUGRHYXBIdEwyc2RRNFBXaHdpa2trTXh6UjdyM9IBZkFVX3lxTFBVMk1TcWlDaEh6SXVWYTB1U2xKSy1qRkdtR0lvUEFhaW5CU1hBUy1aNXktT2NKaWY0RzhaM19DZWpvQm1NdjJESDhvY09tZkxrZ3ZKRjkzQjN6ZkZTTF9yaE5zVlU5UQ?oc=5",
+          "summary": "川普：伊朗請求會晤 下輪談判在多哈舉行 新唐人電視台",
+          "published": "2026-06-29T23:05:22+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "江岷欽觀點：美國最高法院幫川普擴張權力─正義女神惡意的缺席？ | 江岷欽 | 評論",
+          "source": "Storm.mg",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1aX0xQaE1hMEs1SUcybVU3TFFxMm1TbnA2MGwzYms2ZlBzenp5T1ZrMHFZaFFTS0ZHM0xPU2loYjRjSHBRdTZDcVBqeHJLdw?oc=5",
+          "summary": "江岷欽觀點：美國最高法院幫川普擴張權力─正義女神惡意的缺席？ | 江岷欽 | 評論 Storm.mg",
+          "published": "2026-06-29T23:00:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "澳門日報電子版",
+          "source": "澳門日報",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAtc1RxSDUxRmd3SGh0WW5WNWp0QllvcUpmUEpONEFQWkNfVjlNSndKUzdtZFBVb1V6NHFMMllWN1NENjhwckl0dVlERmxmU1VrelViclE5aE81MGktRUVqLUVkeXlwNEFDT0x3aWJQMA?oc=5",
+          "summary": "澳門日報電子版 澳門日報",
+          "published": "2026-06-29T22:58:24+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "不敵川普政府施壓 世界銀行放棄45%氣候貸款目標",
+          "source": "民視新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9WUEdIZXVuODJVc3VuMWUxNGFPenNCVjJhMzFuc1BsVUF4cTJRb042dFdZLVlKbFpjTUdhRkQ3VTA1MXAtclJSOUt3dkxzUURwbnJXckIzbDhobEFwcVdYOQ?oc=5",
+          "summary": "不敵川普政府施壓 世界銀行放棄45%氣候貸款目標 民視新聞網",
+          "published": "2026-06-29T22:38:55+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "特朗普稱美伊將於多哈會面 伊朗否認消息",
+          "source": "香港電台新聞網",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1hekdwT0pkOXRGVEdjUU82QmM5TFl0WllPTjJNVFF1RW80Tk5YMDNjdUZJYXVTb0JMMEV6dUsyMzB5TWdMNHM5cUFxMVVRLXF0TnBGd2pmMnd1bnJLMFd6MXR3TnRzeFVVRi1xWlJqdw?oc=5",
+          "summary": "特朗普稱美伊將於多哈會面 伊朗否認消息 香港電台新聞網",
+          "published": "2026-06-29T22:35:00+00:00",
+          "origin": "關鍵字「特朗普」"
+        },
+        {
+          "title": "川普上任後 中企紛紛回國 但留下技術",
+          "source": "大纪元",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9HRGZLUFZIcnhTSEtVRS1xcm9yN2ZBblBMU2xhQUlSYTJGbzVsQWRVM05LYVJ0WE53Z1FmMFBHTXRrb19yRTZxZUM3MHY4Q1ZuZkFsRVFvTTBPWlE4VUxmaNIBZkFVX3lxTE1hbUVMZ214Sk1obHhUbTZ2aGtYME9QaF8ybTdxbUFENVNvSmhrcWwyZTZxRGhXMVNRanpleF9Ub0JmYmNFWEdVWmdZNXpuZmtvQW5ETUFpTlpWbFhOak5NbTBqVFJxZw?oc=5",
+          "summary": "川普上任後 中企紛紛回國 但留下技術 大纪元",
+          "published": "2026-06-29T22:27:00+00:00",
+          "origin": "關鍵字「川普」"
+        },
+        {
+          "title": "川普政府施壓奏效？世界銀行宣布取消氣候融資目標 | 民視新聞網",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE40S3c3TTBKTFQ1Vnlrb1NKazNwRzRnaTBEVVhSZUphLWdrM1hLRXl0UWFubUxqNEpYVUNzTXBFbHl4bzd2UDA1aVFaSDhxeGxYZzNpQnlB?oc=5",
+          "summary": "川普政府施壓奏效？世界銀行宣布取消氣候融資目標 | 民視新聞網 LINE TODAY",
+          "published": "2026-06-29T22:13:18+00:00",
+          "origin": "關鍵字「川普總統」"
         },
         {
           "title": "【重播】川普簽署備忘錄 車輛維修自由降低成本",
@@ -255,15 +365,15 @@
           "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1jZ2FEUFp4aFNCRTVXc3JyWnR0X1NuZXBjVUdiMFZVcmxQQXE1RWd6MmllZ1NLcU9pUE5oOTBseXM5N05RQzFpVjBkZDFSZHNEZDdHUzVJZFdWZ0d2TUxuSNIBZkFVX3lxTFBNZ1ZZcXBObXBySmlsdlFpdF94dnF3SXN5VndkcmUtZHBZNnA0eGcxNW5xdVBGaVBpQ19QcTFwR1ViNF94UHZMT0Nsc2gyb05WZGdrdDFucDMyQTNmWGY5azJFT25LZw?oc=5",
           "summary": "【新聞直擊】伊假談真拖？毛拉團反常發聲 策劃「懲罰川普」 新唐人電視台",
           "published": "2026-06-29T21:54:50+00:00",
-          "origin": "關鍵字「川普」"
+          "origin": "關鍵字「川普總統」"
         },
         {
-          "title": "【新聞第一線】美軍剛轟炸 伊朗急求明天談！ 委國7萬人失蹤",
+          "title": "【直播】促進車輛維修自由來降低生活成本 川普簽署總統備忘錄",
           "source": "新唐人電視台",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5yRUtLam5WRE5vclBwdXdvZ3BEUGJTejJVRGpRSWU3TFFCLUN3VUFzTnk2UVlyVEM1eXhpVEwwM2pWd3FkZmhTTkxuRk9mTWwtV1JsR1g1V282QW9BOVUtUNIBZkFVX3lxTFBwS3hVaWxwZzZvWGtnZ3hiZGJxZTgyMWY0WWhnakg4UDBrY1FfcmtqaEpDRGJic2FxQURES0dhc3hjcXBJVS1FQmVEb2d6c213X2VqM1BqaEgtTHR0MUZ5d0hjUmYzdw?oc=5",
-          "summary": "【新聞第一線】美軍剛轟炸 伊朗急求明天談！ 委國7萬人失蹤 新唐人電視台",
-          "published": "2026-06-29T21:54:50+00:00",
-          "origin": "關鍵字「川普總統」"
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5pUWV2U1RXSWE0SXZscjY4NHZXRGxtQmZNbWpWNi1IXzB6VkxSbGwtQW5pNTl3SWhjQ0JiYlBvUy1oN2RYdkFmQkV2TnhmSk1FUzFWa2UzR2k1MmJFWWxiVNIBZkFVX3lxTE10Z3BCQ2ZzZHdPMHQ4MnR2a3RTd3pKWHFBTFBlZUY0cE5icVJVdjBVTkFrdWtpSHJvUWMzWndDQVJEc2J5czhVZjJnUEY3TTMweVQ2Q3V6RUJBZkw4Y3RrQXpVMGhxQQ?oc=5",
+          "summary": "【直播】促進車輛維修自由來降低生活成本 川普簽署總統備忘錄 新唐人電視台",
+          "published": "2026-06-29T21:54:49+00:00",
+          "origin": "關鍵字「川普」"
         },
         {
           "title": "普京燃油危機喊要與川普談 專家析俄內憂外患",
@@ -272,14 +382,6 @@
           "summary": "普京燃油危機喊要與川普談 專家析俄內憂外患 新唐人電視台",
           "published": "2026-06-29T21:54:49+00:00",
           "origin": "關鍵字「川普」"
-        },
-        {
-          "title": "【直播】促進車輛維修自由來降低生活成本 川普簽署總統備忘錄",
-          "source": "新唐人電視台",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5pUWV2U1RXSWE0SXZscjY4NHZXRGxtQmZNbWpWNi1IXzB6VkxSbGwtQW5pNTl3SWhjQ0JiYlBvUy1oN2RYdkFmQkV2TnhmSk1FUzFWa2UzR2k1MmJFWWxiVNIBZkFVX3lxTE10Z3BCQ2ZzZHdPMHQ4MnR2a3RTd3pKWHFBTFBlZUY0cE5icVJVdjBVTkFrdWtpSHJvUWMzWndDQVJEc2J5czhVZjJnUEY3TTMweVQ2Q3V6RUJBZkw4Y3RrQXpVMGhxQQ?oc=5",
-          "summary": "【直播】促進車輛維修自由來降低生活成本 川普簽署總統備忘錄 新唐人電視台",
-          "published": "2026-06-29T21:54:49+00:00",
-          "origin": "關鍵字「美國總統川普」"
         },
         {
           "title": "川普警告華盛頓市長候選人勿推共產政策",
@@ -322,14 +424,6 @@
           "origin": "關鍵字「川普」"
         },
         {
-          "title": "川普撤Fed理事吃癟！美最高法院裁定庫克訴訟期間可暫時續任| 全球財經| 全球",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB2R2NwalZVOE5FTDhsdDMyTGpoSmRaN0VESGhSODdsclJsdExBOEVONmhUV0lsME9jbjBYZjZWVkVqcW9GT2J4dlJ2VV81MnZi?oc=5",
-          "summary": "川普撤Fed理事吃癟！美最高法院裁定庫克訴訟期間可暫時續任| 全球財經| 全球 UDN",
-          "published": "2026-06-29T21:48:14+00:00",
-          "origin": "關鍵字「川普」"
-        },
-        {
           "title": "【最高法院確認：總統可開除獨立機關官員 川普嗨喊「重大勝利」】 （#大表哥）",
           "source": "facebook.com",
           "url": "https://news.google.com/rss/articles/CBMiuwNBVV95cUxQelpkY29XS3FPaXZib3F5ZmVWNFZqTlFDcXNqVVVYTkR0WnB1LW1hZU14djZiNVVQT3ZIYl9Kd0tZZ3lReEhyOUstb0c5RzZXU3BjUmNvYmhfOUJ1TV9zeDNMTmNvVnpNMEtEU0ZHazRzb21rOTJuQTkzQm40TlNibnBKM3FUek5GdFlqa3hZd3p0aU9URUxGV0tpS2pCR09DN3pjVlRZVURFSEx0M0gwRVFQT0Yzd25BZzI0ekRVZE5BZG9Va0l3UUV3Tk5QbTQ3ank1YmF4SUY4Q2R6NU1KcXRZTWpsbEtGUVR6T3pheXhKQ1BzLUI2eG40VXNWWGhXUVE3RUpQV3NET2FXeTdOU0t3LUJUZURhTmxzWDIzZ2pSZ2ROa3RuNjdnNFJZU2FSb1pjZlhKZUFJVm1GS3lyUkJyVEFETE1jOHJUV2Z6bTRGYWlTd2xVejBTVmdyY1JmdDE4OWdUNmI5ajIzZUlVRUMwSzlnSGQwLXo3Y24wVnFSc1luLVhRLU5sc3lNaUtyVFZPUTlKQW85OFVkejBGQlJGYUVJdGxpTU0yU1RDZWltRUpsMHpHTFVDcw?oc=5",
@@ -354,14 +448,6 @@
           "origin": "關鍵字「特朗普」"
         },
         {
-          "title": "美最高法院雙裁定！認總統可開除獨立機關官員川普嗨喊：重大勝利| 國際",
-          "source": "三立新聞網SETN.com",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5IcmFmeFhpOG9Sc2pDWHJMVkFnT0hVd0REUHFJNkJWd04xMV9vWklMQ2xYeUptTHFWUHZLTzI5eENvQldncUE4VTNDZW9kclVCT20td1kxNVE?oc=5",
-          "summary": "美最高法院雙裁定！認總統可開除獨立機關官員川普嗨喊：重大勝利| 國際 三立新聞網SETN.com",
-          "published": "2026-06-29T21:31:00+00:00",
-          "origin": "關鍵字「美國總統川普」"
-        },
-        {
           "title": "川普：伊朗要求會談 敲定30日卡達舉行",
           "source": "自由時報",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE85X1lmQWpZR01lY25zWmsxaERIaVVtN2xFaU5VNHdwRjdWbjh2clk2MVN2TkV5eVVZLW1kdEhwMWxBTENJVEZOMUgxdE40Wm9RUDJ1c0VzUEJ5RUhM0gFiQVVfeXFMT0hxUUtBNVI3MG13emJaR2dsVGFjYlVJVF9BNU9PT3p1Yk5GN2NSRU8tYjJPVDExMThVa3dkaHRJZDNsMjQ5S2VMSUxaTWZfRGgwcnpfbEQ2b2NlcGRDUl9sZEE?oc=5",
@@ -375,7 +461,7 @@
           "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBQWW5KU2VZeEc2eFFaRV9EMnZPQ3BkZldka2FaNzB0Q0FReXhBSWp5UlljdE03dlRwdnVTYlRza09sREdmUzc2eVMxaVE2dEtF0gFWQVVfeXFMTUVxaGVuQzlvYXBSUzlpUEJPeThiZHRsYW5tS2lHY0hiNExmVVhXSmVrRDRFcnlZNGQtdGFzakk1V2dtbGNqekVEdlFIVjJvY1RuMlVuTWc?oc=5",
           "summary": "美狂蓋資料中心 加劇通膨 UDN",
           "published": "2026-06-29T21:29:19+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "origin": "關鍵字「川普總統」"
         },
         {
           "title": "川普政府施壓奏效？世界銀行宣布取消氣候融資目標",
@@ -384,14 +470,6 @@
           "summary": "川普政府施壓奏效？世界銀行宣布取消氣候融資目標 民視新聞網",
           "published": "2026-06-29T21:28:50+00:00",
           "origin": "關鍵字「川普」"
-        },
-        {
-          "title": "美最高法院裁定 特朗普無權解僱聯儲局理事庫克",
-          "source": "singtao.ca",
-          "url": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxPUXB0Yi1kMnZ2a1hiX2c2S2VtV3E3WndNTGtGRy1pcjJSZ3dTcXp5bXlaS2RfTkwxbVNSZC1tS1JyZ21IWlFaMldYc1N2QXAyMFVVUXBWOWRXc3k4dEVJZzZWYXgyOGdKVDJXOXZZa2h3ZldXNk02YVh2NWlweWQ4MXNnM1U3N2xLTTZKcDNBWXRwU2xoZmJ5MC1TSjVhQ2NfTmtBQ2paWi1LYi15enpER2Q2V2pGQm81Ni1LRGdicVlKMVk3UGNVUHg5RlRwdldqQzNoczFLS2FwYnpZcGsxZTZPWWNTMF9MWFExMVNUeFMtUnI2OTJ2d0ZTZ2VTVlo0VVpqRmFHTGphUVNMWndoQy0wY3YtNF9VaVRqeE1mUEdraElEY3FURWdCaFF4ZXFiLTIwRmZhTlMzUWVhcHNVTWlndEZJcnptRDdZYktWTGZETW84SG1yeldB0gGMAUFVX3lxTFBSNkpRbXdQaU82QS1iXzl2WWhpOHRWVHV4ckJ0bUR2UGt3cVJyZk1waUNFSk03MkNYY3B6clRLVEE3TmhoZnhwRWlkWE1tTXlkQkhhbzNWYkl6ZXZUd01aZk5iWXZSZkRsZE5ualpqSGFSNmFzMVhKRHdUN3pIUGFKOTNJQkN0M2tCcV9C?oc=5",
-          "summary": "美最高法院裁定 特朗普無權解僱聯儲局理事庫克 singtao.ca",
-          "published": "2026-06-29T21:20:19+00:00",
-          "origin": "關鍵字「特朗普」"
         },
         {
           "title": "特朗普買入不到兩週，ICE拋出2.2億美元大單！特朗普再陷利益衝突爭議 作者 FX168 - Investing.com 香港",
@@ -410,20 +488,20 @@
           "origin": "關鍵字「特朗普」"
         },
         {
-          "title": "伊朗打臉川普！美伊不會有任何層級會談 杜哈談判前景蒙陰影",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMilgNBVV95cUxNX0NuNGNXYXFVc0VmUHZxY2dlbGp3M2lRa2dEN29XaWlZREVHdnRNazFEOFhWMG1SSk5STzd2ampCQlRGMkVBSVNVY0VGdnR1dFpSZERQelhUazFaRzBnRDBNelRyemoyeVZ2Z1g4Y3NkX2YzWFVhMGVaN202Y3B0Ti1WTGVtdk5OVDJRdGJtc1B1WGFNbVFXVW00blp4YW9LRjdOSWY3RDc1ZzM4eXFDclVTYjltUEtaclNhQkpjUlFDMmp2cGNmN0JIcTdhRUpZakNfY2RCV3QyY3VJZjc1SU02Qm56OWZ0V29qRWVIMGJLTmQza2M5QmZZWVBRYmpBWUlBZjJrTGU1OGdHc2c0UjFzdjFlWWlLRjh3YXpxMXBDLUhjblZPU0Exb25hblZjeUhyVVBtZFBlNFo0dkNaYXZOUlNZMDZMd0NZSVN2SUtsTnpwRHFYd1g0Nng1NFhYNm0tNDNoZEVnbkFJYWtNaVRpSGUyYm1BM3FqNmxNTi02NjNNLWxOX3ZVaUI0V2tWZnBVaWlR?oc=5",
-          "summary": "伊朗打臉川普！美伊不會有任何層級會談 杜哈談判前景蒙陰影 Yahoo股市",
-          "published": "2026-06-29T20:47:42+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "title": "特朗普挑戰百年慣例失敗 最高法院裁定：無權解僱聯儲局理事庫克",
+          "source": "星島頭條",
+          "url": "https://news.google.com/rss/articles/CBMisANBVV95cUxObUdEdElDZUVtNjlaemNXWVNHOENMamFIdUNmTm1wVXJKRlk0QzJSMzhnMkRKZm1iWUs5eHRCYkVJYmlxamVsSEoxckYwUVpIMDdSZEtFNTNJc0tubDVSRGpnTlh6MW1idGtVRzFaRTdIQWlMejZFTVJYX1NfYmdlMjc3b0hPaXRzd3R1YnZEM3pkUnhGVS1QTnFsQUpiWW1LNWVuUXJqcHg2aWZZTGVZaUFsYW9BOVdMYXJudzRoU1FSZTN6blp4TFJYN01sR0NNbUtXV2FBelJpSkxZdjVwMlduRnlLY3JPWlhjZVNvNEZqMHRiNmxEV3lFbjRTRTAzRW5iRDMwdnRjc0dPOXNWajU0RHFKY0VqY3Q3Y3VCSkhMdTlLV1o4WHQ5bGNqVHdyWEpVRng3NEdJSjJRclBkUkJBRk5BeEhXY0dIREJrdmY0eElSWHV3enVXZTRaU2tKR3JaUGh5RUlQNzk0TVZmMi14T3J0YndiV1J5dXdGcm9ZdGVOdkdlVzhOLXJkcko4UkpzOFlqaDBKajdZVHRtR011MXcwOERlT09kbGdZSVE?oc=5",
+          "summary": "特朗普挑戰百年慣例失敗 最高法院裁定：無權解僱聯儲局理事庫克 星島頭條",
+          "published": "2026-06-29T20:57:32+00:00",
+          "origin": "關鍵字「特朗普」"
         },
         {
-          "title": "美國最高法院駁回共和黨針對郵寄選票的挑​​戰",
-          "source": "Radio-Canada",
-          "url": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxQN2dXdldMWGs5bktiS3Uxa2NSTXgxLURwSG9kaWpDRkU5eU5wbWhLeGxTNnRseWNaSy1IUFdyb3l5QXZITDhEZGhHS0xWMFJlei1uR3Yyc0hkbm40cjE4dElLZnNHd196V2Itd1ZZSUktSzV4VmpBQk9sbkItd21sYnlrelJUODE1U2t0MU9YRndPd1Z5anZoSTZUYUs4YWw2NDRIdEJJbE13dG5FZk1NVUYwSG1neUhyYjZBRnlSTVpnRXk2MGxQTk9UYVlvWTJDTV9pYlZQYmlfWGlRa25MeHVxanNZN3ZubS1KOEtnc01XdjY1YUhEaDd6RURFd2RjQ0o4Qm5VQ3Rtb21jc1UtQVdRWVRzNDFlSjZEdWNSLW9QSW1zREVySkUtU0g2eDdQU0xabUhMTERIZUZRZFlOOXNENXZIY3Y0ZHFOTWc0dFliSURTSmI2eXp4b3RweGZnZW9zdXRGcw?oc=5",
-          "summary": "美國最高法院駁回共和黨針對郵寄選票的挑​​戰 Radio-Canada",
-          "published": "2026-06-29T20:33:08+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "伊朗打臉川普！美伊不會有任何層級會談 杜哈談判前景蒙陰影",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8tNk92MXI2dHEzUXgya0RtanlVUWRwWUVsRTdEVkw3bllKTXRRbVFNTWxGc21QdjYxY0pMRzFPa05WOVQ4djVQNVM0Y0h2RGs?oc=5",
+          "summary": "伊朗打臉川普！美伊不會有任何層級會談 杜哈談判前景蒙陰影 news.cnyes.com川普：伊朗要求恢復談判 美伊協商明日登場 Yahoo新聞【大師講堂】川普想與伊朗和平收場 必須充當黎巴嫩的保護人 上報Up Media",
+          "published": "2026-06-29T20:48:03+00:00",
+          "origin": "關鍵字「川普」"
         },
         {
           "title": "虛榮腐敗拜登批川普失敗者- 國際",
@@ -434,14 +512,6 @@
           "origin": "關鍵字「川普」"
         },
         {
-          "title": "美伊卡達會談荷莫茲優先議題- 國際",
-          "source": "旺得富理財網",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ENWQ4amFUVDF4NnFBNUR5SnQ5V2t2aS15QXhGb0U5QkgwU0ZJeUZabHgzcW4wamx2RVlibWE0Z0RkRE11YmZzbUQzVDNOeDJzZVJZTUxXWGUtWjhjN3l0SG4zWnhZOWQtNVE?oc=5",
-          "summary": "美伊卡達會談荷莫茲優先議題- 國際 旺得富理財網",
-          "published": "2026-06-29T20:26:49+00:00",
-          "origin": "關鍵字「美國總統川普」"
-        },
-        {
           "title": "美墨加協定7月1日聯合審查特朗普料「半推半就」續約- 國際 - 香港文匯網",
           "source": "香港文匯網",
           "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9DN285NHVveVhnbEdlMm5SMEhNUV91dFBhTURGcUZrZThPS2tqaFFUQ21ibWxrQlpEVDFLZ2RfNWM5eXN3UHc1clgzSVVqcnoxazJTOXZkcDRFYVlJZWZURlVLQk9FZVh0OGNzSlhEUDJPZ3Fld0Y0?oc=5",
@@ -450,36 +520,12 @@
           "origin": "關鍵字「特朗普」"
         },
         {
-          "title": "美最高法院裁決Fed理事庫克留任- 國際",
-          "source": "旺得富理財網",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5XUURYQXdNY2s4MFBQa0NROHNaRWR5ODZKTXlOX3VrUFNyUURGWnJfMF9UdnlwVGhCdHlVUU1wSzFtcmVwOVdiNjJQUl9Ca1IxVkpKNXhYNGtRcV8tVmx0VjU4MFJuUXgxVmc?oc=5",
-          "summary": "美最高法院裁決Fed理事庫克留任- 國際 旺得富理財網",
-          "published": "2026-06-29T20:25:11+00:00",
-          "origin": "關鍵字「美國總統川普」"
-        },
-        {
           "title": "川普本週首搭卡達贈送專機 憲政與安全疑慮引發爭議",
           "source": "民視新聞網",
           "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA4dmI3dmlwbWtGRzhBcHJwM1ROMWJKbl94NURDQUFONHNoZjlWcUlmQVQ3dmR0bUY1SXNMUDFtcW0wVWEtaVJWelk1M185OHdZZFNlTFZxdWQxMDh3SWJfZA?oc=5",
           "summary": "川普本週首搭卡達贈送專機 憲政與安全疑慮引發爭議 民視新聞網",
           "published": "2026-06-29T20:23:45+00:00",
           "origin": "關鍵字「川普」"
-        },
-        {
-          "title": "民主黨人控告特朗普政府 挑戰醫療補助計劃工作要求過嚴",
-          "source": "巴士的報",
-          "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxNUWJvZS1rVG9tcFB5VE1ITTJ6c2xtWDdZZHUwWjNPcmZFd0h2U2MzejZ5T0VjS0dmS0xLMmNmdlJZejE1UDRWRmxSTGhPSVdVUDJPYWM0bk1sLTR1ZGViNTFJNmpxMy16WUNuMVMyTzFJeFhFVXloY0oxaWxYOGFtR0MxWWRqNm9TNXNXY1hrbXh5MnJXZ3FDc1VPTXY0MVJIcDFoeFJHVlcxOUI1c2ZVTk1RbG0tbWFPSXhSNUFQSFFpcDRWZVN2SDhTcmNzTmh0S05OVUVPUjZQMGk2Um9rbVpOU2E3UXhPS3FaZlMyOE93WWNmRzJRVUY0LXRvUkhsWEpIQVB6VS1NbFB4cHdUVjdBOWFtRWVvWVc3MDRNQ1JwTERSSzNTb2hfaUJqWjdxbzBzb0xuLTZZdy1BN3VIOTRPanVqV3pIT1pSdlZocmFxNmhDTFdHSGc4NWw0RjRaOV8wZDJHZmM2QUhzTVZz?oc=5",
-          "summary": "民主黨人控告特朗普政府 挑戰醫療補助計劃工作要求過嚴 巴士的報",
-          "published": "2026-06-29T20:11:55+00:00",
-          "origin": "關鍵字「特朗普」"
-        },
-        {
-          "title": "虛榮腐敗拜登批川普失敗者- 國際新聞- 旺報",
-          "source": "中時新聞網",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1oM09zS0NxWUhlOWJFbVo5bFl3cDRXTWVfMEFIelMxZTRmVThycVNrR0cxRkhpQkpaVC1XU2lrWl9sU2NvejNucmZ5cUYyRVFpaXF5Uk13OEhfRzcyX0x2VmVfV2g1a2pHLVc4?oc=5",
-          "summary": "虛榮腐敗拜登批川普失敗者- 國際新聞- 旺報 中時新聞網",
-          "published": "2026-06-29T20:10:00+00:00",
-          "origin": "關鍵字「美國總統川普」"
         },
         {
           "title": "美最高法院裁定特朗普暫不得解僱聯儲局理事庫克 捍衛其獨立性",
@@ -495,14 +541,6 @@
           "url": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxQczRLcVVOdU1hRmMzcXkzZzhIaUNNcnVWR184cm5kYnRLVlFOQVdoNlE4RXNCTGNzWjktUjd0alhHNlNjR2VZT25Ba2pWU1FLXzljMGp2d1h5aUs5WnVyQmJUXzZLWmkzcUlRQjZEelBaaUhNUkY1d1l4TGlMODJwSmR2WjVVaFNrdVhwSHFMa1FJMENrNlBOWTM4V2tuOGw3ZlVtb0VQcU84ZkZ4RDJ0UlptSWxPZDFwTFpJR21taG0zaU1mMDRoZTRPZzVCUWlyc3JVLWNLcE1IQWxIUm9xR1Z6MGdlcnNYcGdPb0gyUFpZbWhXeWVqTWxyUmk4VG1qOWlaUTItZGFqa0t0ejJmN2ZMcXpsQmhLX3oxeV9RWlo5M04wR04xZm5UWU13eXdoejBmUmN4ZDdIUzVqbHpLRlIxanRaeGt3NEdSdlQ3T3V6Ml9ZbkxVUGpvU0lEV3FQZ2ZWRnV0cmdTT0ZJZ3BSUA?oc=5",
           "summary": "特朗普:將確保聯儲局理事庫克不會作出關鍵決定 信報網站",
           "published": "2026-06-29T19:40:42+00:00",
-          "origin": "關鍵字「特朗普」"
-        },
-        {
-          "title": "最高法院將裁決出生公民權 特朗普行政令迎重大考驗",
-          "source": "Singtaousa",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNV05WY1JzTnlMUTN2Z0tZY0dxLWZKbVFyaXpodFRLM0pxa2ktTUpNQmhuQTJIMkQ2WnNSUktYeFlQNlF5TmNyUzZFUEl0bks4aVRsNzRjY1p0Z1VDZXhFN1dfMFR1cHlNWkpxU3pNYk0zR19oRkcycjU1b0dOelJJc29QWFAwYVI4TlNId1h5SUdEOWRiNFJhU2J1N05KQU5yT1M2dQ?oc=5",
-          "summary": "最高法院將裁決出生公民權 特朗普行政令迎重大考驗 Singtaousa",
-          "published": "2026-06-29T18:56:32+00:00",
           "origin": "關鍵字「特朗普」"
         },
         {
@@ -530,20 +568,28 @@
           "origin": "關鍵字「特朗普」"
         },
         {
+          "title": "美最高法院擴大川普開除官員權力 卻出手力挺聯準會 | 民視新聞網",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBVcHRWaTE5bU9XTl80dVdhbUpQX1ZXNHNtNWtleWpwMWZqVFA4enJoSmVQSkVlVjM3RloyUVcwekk3aktCSDZ1NE10TnM2T1VKUkN3OU5B?oc=5",
+          "summary": "美最高法院擴大川普開除官員權力 卻出手力挺聯準會 | 民視新聞網 LINE TODAY",
+          "published": "2026-06-29T17:51:45+00:00",
+          "origin": "關鍵字「川普總統」"
+        },
+        {
           "title": "美最高法院雙裁定 擴大總統權力但護聯準會獨立",
           "source": "自由時報",
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE96UmU5alZTZzctX29ZQW83OVpDWi1uZ1p3Y2puN0x5aU9LSEw1WGI4TnV3NHZiVFRVdzlFUzRFZ1V3cTlXd0lHRFMwSE8teFJvNERMZnZWbWtnNXNBY2xyRWlzUC02d9IBa0FVX3lxTE1vSXBqVkhKZW9GNk5FdlNORmNKNDRlb2FTcVdPVW1qR1hUTFJsU0RPQzhiZHV3TVZqTnJXQWVoWVlWekI0QVUtbU5oSk5yT3piZGI4MzhVTldTNTc4T3hkN1VZbVZhc0ZYOGtz?oc=5",
           "summary": "美最高法院雙裁定 擴大總統權力但護聯準會獨立 自由時報",
           "published": "2026-06-29T17:45:06+00:00",
-          "origin": "關鍵字「川普」"
+          "origin": "關鍵字「川普總統」"
         },
         {
-          "title": "雷根中心民調2/3美民眾認為台灣攸關美安全繁榮 74%關切中國犯台 | Newtalk",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBVMUxUUmtGS053cEc4R3pEbHZIcWdQdmFna0gxVmpxeDVlUEpwTkNUWG92N25MbHZOZnpVMHpfM1RiQmFhM0d0ZmtIWnpKeDNMY2FjaTdR?oc=5",
-          "summary": "雷根中心民調2/3美民眾認為台灣攸關美安全繁榮 74%關切中國犯台 | Newtalk LINE TODAY",
-          "published": "2026-06-29T17:40:15+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "title": "雷根中心民調2/3美民眾認為台灣攸關美安全繁榮74%關切中國犯台| 國際",
+          "source": "Newtalk新聞",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9vd1RpNnpEWkxwMFBGSGJJUUQyLUQ4RzF2b0JMeW01RVlaTVRmb3ZMdUNhQzZLYThoc21GWUNNTVFzVU5OaTJ2UktraV9hQnhoajRzNWR6ZUNVSGs?oc=5",
+          "summary": "雷根中心民調2/3美民眾認為台灣攸關美安全繁榮74%關切中國犯台| 國際 Newtalk新聞",
+          "published": "2026-06-29T17:34:10+00:00",
+          "origin": "關鍵字「川普總統」"
         },
         {
           "title": "最高法院裁定特朗普可隨意撤換FTC委員，打破90年先例！",
@@ -554,84 +600,284 @@
           "origin": "關鍵字「特朗普」"
         },
         {
-          "title": "從首位黑人女理事到特朗普\"眼中釘\"！美聯儲理事庫克的傳奇人生",
-          "source": "FX168财经",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9xNURBc3ZRdjZRcmpKTmdzN0sxNl9JcERULS1ZNGZyWHJUdlRNcFhycDNRMUNPeXRreUc1QmJLZ3BWbVZ2VGZfWHM3QjcwUlV2Tlh1VzJFVDhDSjZKcnVz?oc=5",
-          "summary": "從首位黑人女理事到特朗普\"眼中釘\"！美聯儲理事庫克的傳奇人生 FX168财经",
-          "published": "2026-06-29T17:31:38+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "Tracking Trump: Supreme Court rules in several Trump cases; Trump says U.S., Iran will negotiate again; Trump’s trees; and more",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOSHJaeDhYU2w0b0l1OTFSUUNYb2dlY1JUYVdrbWZaNGlyQUFLVVd0SHZFb296YXhicklBQ1dpdzZNRDhEM2FNSXo4b2phLTNNZnI4VkpZUTFVd1dQVmxmaVFQVXpsa1IycXZhRVpnM0lpNVFSeGlBVzAtdTU3eEN3MGc2XzEwMUs2YzlyNmluMFREZEdwLVQxZ19LTlQzNFVFeV9jZmFlMHZnVnJGX0JhckZwclVIcEt3SzNnTXM0Wm9DdU9XRWV2NTVxQ3Z3OGRpYTgyN0ExdHd6MldqMXktc2FVd01VOVduZzI0TG8yUWhYMW1ZVzBIcG9ZWFlULWE0?oc=5",
+          "summary": "Tracking Trump: Supreme Court rules in several Trump cases; Trump says U.S., Iran will negotiate again; Trump’s trees; and more The Washington Post",
+          "published": "2026-06-29T23:39:08+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "川普：庫克案僅因程序理由發回 不該再參與Fed重大決策",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1kZGptX21NeXcyazZ3VS1qbTB6SVpEcnRwSHVMQkt5WDI3Vk9zUFZUWXVkTnlpX2NpUXBXQnd1c2xja2NDSk9Vc1g1RmZaaFU?oc=5",
-          "summary": "川普：庫克案僅因程序理由發回 不該再參與Fed重大決策 news.cnyes.com",
-          "published": "2026-06-29T17:31:01+00:00",
-          "origin": "關鍵字「川普」"
+          "title": "SCOTUS gave Trump more power than a king: Sotomayor",
+          "source": "All Rise News",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE83QkZQSVhWUzZRai1BRWd3U3NNSThvM18zN0djU1BmcTg0WXJPeTMtd3ppclRNZU5CbkF2UlRlck9ONWZkSDhGVjZTbDlXMUp1bXpFOEpDR01IMndaSUZ2WXp3VnUzOER4emdINEVFYlRHYi12dTh3?oc=5",
+          "summary": "SCOTUS gave Trump more power than a king: Sotomayor All Rise News",
+          "published": "2026-06-29T23:36:49+00:00",
+          "origin": "關鍵字「Donald J. Trump」"
         },
         {
-          "title": "控CNN斷章取義！美最高法院拒受理名律師誹謗上訴 | 民視新聞網",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5Vd1R2SzFLRy1hTG5MQmZQd2g4d0lvMWJ6TDFrWVkzQUxvZENfQS1CZXIzdG96S20yOXl3cC1taUVDUFoxTlNwUGRIR2JsekM3MUEwVHlB?oc=5",
-          "summary": "控CNN斷章取義！美最高法院拒受理名律師誹謗上訴 | 民視新聞網 LINE TODAY",
-          "published": "2026-06-29T17:26:58+00:00",
-          "origin": "關鍵字「美國總統川普」"
+          "title": "Michigan governor threatens to pull troops from D.C. if used for Trump task force",
+          "source": "NPR",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPejU3dDJpN0JORXd1dXpkVFdZaGNURnRwWXBWWTI0WUpzRlU0Nzh5SVoydDN4aGsyWUliVzlHUEZoajYwbUpqTkYxbHpOT1ZUb1FFQks3NkdzOWszRGZLVzYtZTAxaHRCNDFlanFkZ0tKR3hMRDJBOW4yNWFtRzdfVTlZc3djZ28?oc=5",
+          "summary": "Michigan governor threatens to pull troops from D.C. if used for Trump task force NPR",
+          "published": "2026-06-29T23:34:58+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "美特使將赴多哈與伊朗會談 魯比奧同步向國會簡報",
-          "source": "RFI",
-          "url": "https://news.google.com/rss/articles/CBMi6AJBVV95cUxObEltMFZOYk51a1kwbHdCYlcyX3pHUTFiSUowcExkMW5XTHh6QkY5eGFLQjhSUTQyNFhoS2VXMXQ4OXFlMmNHOVpaRDVJUHJoTHB5MGVvbHA5TUJTeVptQWJXSzJEc2hES1RiazZLN2E2MVJKWDBYTzFlVEpONzQ4dGpqbU0tbzlGeTNZb2xlMVVlWm9KNVhOME1iYmFBTm1YVGI5Mk9KaE52TG1CdkVoWFFwSWY0XzNlQlRDOE5DcUstZlV3bU92R0owbjJNZ0V6cW82NmpBbXZFbFc0QWlaQnVCYnlSNlItZmQ5cloweEY0b0FzVDBNaXVTMlVHOThFb0VQc0ZXMnhFWVFNQ25EU21icnFrdUQ4QW16WEdPQnhfQVdYMmpjSmJDSjgyVW41NjQ0QlNqYzRqRHdQN294b19NZDNqRjhxTGlva0pHR0VSb25OOGN1d1NkVmhfV1Vzd3hRR1J0RFU?oc=5",
-          "summary": "美特使將赴多哈與伊朗會談 魯比奧同步向國會簡報 RFI",
-          "published": "2026-06-29T17:15:31+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "If the USMNT returns to Seattle for a World Cup match, will President Trump be in attendance?",
+          "source": "KING5.com",
+          "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQdnItZE5sQVV0bkloX0k1LU1nc1BRendReElINUEzdnhnU0lBRkFRc0ZRbVNqZVFQNzJjZTdFRkNnazFoNTgtTjVJUGhDbzZxS0FpamVzZnRlSVhDRnhCdmwwcDdEbEcxWVYxdmhmd2dOU3BndWh3Wk9kRnZqc1dvYVRCOGVVYTR6MURlVTRDTEFDMFBtYW1ueXYyUVpBS09Xek11NlF1MVI3dEZ2QV9RejFfZlRXdDNsMTFCLWFuLUd5MDJhNDRrSHRoa09xT3p6aGR0UjBRSjZrNjh1QWtLdjFiM0k0NzRqc0pvc0k0SVVVc05fa2QwcjNYVHY?oc=5",
+          "summary": "If the USMNT returns to Seattle for a World Cup match, will President Trump be in attendance? KING5.com",
+          "published": "2026-06-29T23:32:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "美最高法院裁決：選後送達郵寄選票仍有效 川普受挫 | 民視新聞網",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5oUjB3a0xaRzhmVDZNOFBpVlktTmtRREFRZ3BxdGdrejlVVE1Tc1BGLXQ4bzV4Z1VpWmxGSHBXVE9mV044TnJpSUZBbkwydV96RjhZQVZn?oc=5",
-          "summary": "美最高法院裁決：選後送達郵寄選票仍有效 川普受挫 | 民視新聞網 LINE TODAY",
-          "published": "2026-06-29T16:48:41+00:00",
-          "origin": "關鍵字「川普」"
+          "title": "After Supreme Court ruling, will Trump order more firings at independent federal agencies?",
+          "source": "KCRA",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd1Ayd05md0hwZEktOFJDeVNGXy1fRlFlRE5rTWpGeDJJaHR0VUtDaFpIbVEzMlR1Y2UyemYyb1VfYzhQSDhLWF9IM3VqM0hhbE9yeDVEaTEySy14czJCTVM1cTFqa2VTTW1qYzV6WkFQZ3JTZkpjTl85dTBHMFVwSUI2bHRzNFV2SFF2MmNQajR5U2w3dEhGcUJhOTVMaXF2VVVkY3REbmFnTzFjS3A4bGVwNnRtMzVKTWVLd2NDWG1HLUh4?oc=5",
+          "summary": "After Supreme Court ruling, will Trump order more firings at independent federal agencies? KCRA",
+          "published": "2026-06-29T23:18:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "特朗普突然宣佈：美伊明日重啓多哈談判！原油卻不跌反漲 機構警告市場過於樂觀 作者 FX168 - Investing.com 香港",
-          "source": "Investing.com 香港 - 股市報價& 財經新聞",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE95VWtwWmtPcGoxanpXY0Q1QzZzXzZzTzVlN2Z2bHo2SnF5VjBxalhjMXc2V3NvVk9IRmR0SVE3Qk9JdFI2YURqOWYzQzQybFpJSGZ5S0V1THRLa0VFVzZlaGdoZ3V1dDNabWN4SUJFWQ?oc=5",
-          "summary": "特朗普突然宣佈：美伊明日重啓多哈談判！原油卻不跌反漲 機構警告市場過於樂觀 作者 FX168 Investing.com 香港 - 股市報價& 財經新聞",
-          "published": "2026-06-29T16:47:17+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "Professor known for 'torture memos' will advise conspiracy probe focused on perceived Trump foes",
+          "source": "PBS",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPM0Z5eEFteDJ6VXM2ZXlFVzRqY0Q2SmNWVnVOdkxSWXFhY1NlV0doQzN4cmNia29HWlVKcGl5QTlNUWI4bXhLLTdQR2JuSkEySVEwZzlLY1laWTgyVlR4NlJBOV95eEtNX043dW0tRlUzYlFYVS1VT3p5TV9ncHFMUHM2Nlo5WjZKQmNPQy1wblc2bFA5VFFLM0tDV0pWZ09jMjRWYVRSZk43d2lyRXdMZ0RkeTFMdXdMdDUxeHVqcFlRV3pnLWNuQlZQYnLSAdIBQVVfeXFMTUIyck5ZUEFxdXpoR3hmUE5TU1Z6T3ZDa1U5RS1RdkZ1Uy0tTHI5aFpnampuREw0T0pyUi05ZUNvbEpUbm50elBPTzVsZVhaYVNxSXlwMmxwRnlHZ29wMmxnbXJVUHBwb096TDJXT3FGMmxYYTQ1aHZkUEkzdUhvNVk1Z0VPcmxYSWJTYkZPUEptM2l2cGdOVTZoaVdzdVNsRDctT2M2Vl90T3I0MHQyMVhKWnBIQy1ES0pOTFluV242SzVCU1BGNFlsU2JybXdjbjdB?oc=5",
+          "summary": "Professor known for 'torture memos' will advise conspiracy probe focused on perceived Trump foes PBS",
+          "published": "2026-06-29T23:16:32+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "美最高法院週二最終裁決！川普限制出生公民權成焦點 | 民視新聞網",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBBZEhEb0VEcE13QUxHQm9ZU0kyZmtfYUNEVEdqZ2czUTNBMEF4TUtMUU5lY1ZLcWF5bndKM0lwemVSMFVYX3MyUVdSWHhrRUxrQ2FkaEpn?oc=5",
-          "summary": "美最高法院週二最終裁決！川普限制出生公民權成焦點 | 民視新聞網 LINE TODAY",
-          "published": "2026-06-29T16:42:18+00:00",
-          "origin": "關鍵字「川普總統」"
+          "title": "On Monday, the Supreme Court declined to review Donald Trump’s appeal of the $5 million civil judgment against him after a jury found him liable for sexually abusing and defaming writer E. Jean Carroll. The justices did not provide a reason for declining the c",
+          "source": "instagram.com",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBFejNuRThWN2RhX3dUWkVZaEhBckVsMnJQNFJ3YWpiUGZ0Z3JSRGR4dTI1TE11bXpXSUl5cklvMmFuUVN3dGdkZS0zNUlWMUV4ZDVmeFJR?oc=5",
+          "summary": "On Monday, the Supreme Court declined to review Donald Trump’s appeal of the $5 million civil judgment against him after a jury found him liable for sexually abusing and defaming writer E. Jean Carroll. The justices did not provide a reason for declining the c instagram.com",
+          "published": "2026-06-29T23:14:33+00:00",
+          "origin": "關鍵字「Donald J. Trump」"
         },
         {
-          "title": "特朗普宣布華府百年高爾夫球場9月開工改造",
-          "source": "大紀元時報 香港",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5ZTXRBNWJXOGIzdkg0YzRvRGZIYXBSSXFNcXNwSU5PV2pCSzdZb2o2ZFJQQUhaRDU2SG03NFk3enpNZHJnc3hLZTVqMmk5QjNYRFBIZldzUEhmQ0dTY1ZF?oc=5",
-          "summary": "特朗普宣布華府百年高爾夫球場9月開工改造 大紀元時報 香港",
-          "published": "2026-06-29T16:41:52+00:00",
-          "origin": "關鍵字「特朗普」"
+          "title": "Trump says U.S. and Iran will meet to negotiate after days of strikes",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaHV2VTJKdkhDT2taRjN2R19WLVJESnV1SmRNaVRLU2xGcU5JZG1Id1hGZG01TWhLdzlIdnc0THdDdTRPdC1HM3JoZFBsMm54b2RhSjl5QWY1WnFMSUZ3bTEzM1BpSjJxZXlIeVF0a191RlVTTFhXWGFMLVJySXFVSTc5RVJjbUhRYW9OeEphSk1NaE05b3FqaXo1WWgyM1dRS1hmVXM3V2RxUQ?oc=5",
+          "summary": "Trump says U.S. and Iran will meet to negotiate after days of strikes The Washington Post",
+          "published": "2026-06-29T23:08:38+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "最高法院駁回川普解僱美聯儲理事的請求",
-          "source": "大纪元",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5jbWpmX25VZWJvZlhrN2g2VW5sUVVoTlJnMEdWb0x2WnNpNURaVWxiTTJsdno1OVAwb1pmR3Vrbm0ybVhPOTlWSGhfVzBlTEMwTVEwYWJKYzlRdU5XcWdWcdIBZkFVX3lxTFBZbGJKNWRUZUdBVzJlZGhZMHRZcnN5Ymxza0NkOGIzeXNaZEdOcnpMeHpiYS1sSlZmb0gzQjRvQmNTaFBZaWM5eUVEYm9EOUFXMWVyVzRRellNNS1iSm01UE5Id3dhZw?oc=5",
-          "summary": "最高法院駁回川普解僱美聯儲理事的請求 大纪元",
-          "published": "2026-06-29T16:29:59+00:00",
-          "origin": "關鍵字「川普」"
+          "title": "At the Kennedy Center, a prize for Bill Maher — and a lot of Trump jokes",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSFpfNThtMTdzU0ZXNzI4bkRKNHBKZEJGR3VPVG8zR2NDTlhCcTZHbEc2NmZaVmN0Yll1ck5TLXJXdVUyN2lQZDZfa1A2ejFXakx6Rm1oS3gwdWZTMFNFUi1QamVaMDRSS2NpdVBwTGtpWXg5cWJ2eHdodmVOV0E2ZGRib2ZKMVIwS0Y4WVA1TGNoc19ORk9rSXJoRjJIdkxvYUpQNGoxM0NnSjN4NzJUTWs4RQ?oc=5",
+          "summary": "At the Kennedy Center, a prize for Bill Maher — and a lot of Trump jokes The Washington Post",
+          "published": "2026-06-29T23:04:23+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "美最高法院擴大川普開除官員權力 卻出手力挺聯準會 | 民視新聞網",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBVcHRWaTE5bU9XTl80dVdhbUpQX1ZXNHNtNWtleWpwMWZqVFA4enJoSmVQSkVlVjM3RloyUVcwekk3aktCSDZ1NE10TnM2T1VKUkN3OU5B?oc=5",
-          "summary": "美最高法院擴大川普開除官員權力 卻出手力挺聯準會 | 民視新聞網 LINE TODAY",
-          "published": "2026-06-29T16:28:41+00:00",
-          "origin": "關鍵字「川普總統」"
+          "title": "Justices Expand Presidential Power Over Regulators, but Not the Fed",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbXQzdmo2Sm55N3phSWc4R0VvQnUxNkFoOE1XS2lEeGs5WS1GWGpYV2Ntbnk2Tm9FTW5yeFJxRWZTYldfZUdqXy1hVFhoSmNBVGEyZG5GY1lLTkFGVlhTSVpHY0hrQl8xRmJsSGdoX1Y1dHJMcGFxSGtERlJEVHJqeHRSM2ljNjFm?oc=5",
+          "summary": "Justices Expand Presidential Power Over Regulators, but Not the Fed The New York Times",
+          "published": "2026-06-29T23:03:33+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump calls housing bill 'a big yawn,' presses voting curbs",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRVhlRTFyX3N4TFVhSzdPQ0FseEx3UjBhd1RKMnBnWWFpckZCS3JEVlg2dWdleHpJY2tGQVVSMVVJa1RZcVFIVVBsekR2bmQtQ0g5LTh5ck1Kbm1ySmxreXBNREZJdHBhM2lUdHFNTHZlcEpoUGN4Rm1fYWN3Zjk0QUhyWXhfTGVGajFOcE5XQVVZUk9BNGVMWUZQa3VnZkNUVVYw?oc=5",
+          "summary": "Trump calls housing bill 'a big yawn,' presses voting curbs Reuters",
+          "published": "2026-06-29T22:59:43+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump says he is nominating former Oklahoma state trooper Lance Schroyer as ICE director",
+          "source": "Federal News Network",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxONTVXS013ckZNckVpZkJRVkppS0pMRHhjU2lJb3JTdlo0NnRNeUtsYlluX2k4Y3dzemVmVUxWd0dQVXgzNkhKclhIQmczVW5WeV9GTk9idXRyZzQtT2lGdm5QZTk1LTZndDhyYnVORWY2dTNzVzUtZkxlcTlYUE01Vm1zWTBBNXJsSnlqSTdTelo0RUFnODF3SDdpZ2hyYldlMmJTX05SRU5uSldYRnVSb3A1Z3B6Rmlocml6a3dkLWRhQ0w2dHViYlJPS2tieFkz?oc=5",
+          "summary": "Trump says he is nominating former Oklahoma state trooper Lance Schroyer as ICE director Federal News Network",
+          "published": "2026-06-29T22:57:57+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "A ‘Tremendous Loss’ and a ‘Big Win’: Trump Reacts to Mixed Bag of Supreme Court Rulings",
+          "source": "Time Magazine",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPT19ETXoxRWYydUZZbUpOWGV3NktSRm1vWXdObm9tV0dTWlBneVVfMnhMWXctQ09iTTRtaTBZanZqcTQ3WmdWVlp2aVhwQi1HcUpfRkFGejJkOFQ4RVNfbnY4SEg0X0Z5QldoaTFGRUx1cVVxb1d4T2g2Z0Fxc3h3cGNQbURhcEQ1bU9Id2JSdGRXZU5oT25yc3Vtc3hFclZpSkFPaG5nb05hZEJtb2pHTE5JZWdsRnoyeTllbVZR?oc=5",
+          "summary": "A ‘Tremendous Loss’ and a ‘Big Win’: Trump Reacts to Mixed Bag of Supreme Court Rulings Time Magazine",
+          "published": "2026-06-29T22:56:56+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Outcry over supreme court decision to grant Trump power to fire agency chiefs",
+          "source": "The Guardian",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPSHlab2VkOWNROFFFOFlFVVNoZ3lvVmNvZzhMQkk4YXlhMmJpYjRWNzR5c1pKSUI2NXZqS3ZkOGw1MmUxcWhpSE8walN2NWVwS0NRTmo3TDhqMzNKczktVWpNOXk0c3BVRllhRFpHUDNoWnZkRVZ3UWcwTkdvV1NJOUVGaGRqV2p3eXZBUlFTRkpYS29wWkpJekFDbkE?oc=5",
+          "summary": "Outcry over supreme court decision to grant Trump power to fire agency chiefs The Guardian",
+          "published": "2026-06-29T22:52:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "US Supreme Court gives Trump the power to fire top officials across the administration – except at the Fed",
+          "source": "Le Monde.fr",
+          "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPbTJRNHJOQjZaOUtNTDN1WDB1ZThtLUlncWhBQ3IxZk04aG1MQkFUQVlGNWZ2cVViZVZ1VmdsMGp3SUhJYXg2el9JRTFMYTVCbkdKTTAwX0tRUVh5OG5oeDBMWFdRY3FveTFfUmxZRFdMX1BBZGNVQVVzN2VjVTBTbkxtWlZFcWZabWp4R3NmSkkyLXBXR2NfLTh2cmhQNnRESFFQYUxHWnFlV3I0WWVWZHFRaW5HdWdscGJHTUhSNlpoTzRka1JpNU41a3Z5OXBPYVJpUE9BYUdDa1JCMXVQenhwSk1ET0I3SDJpMEZhek0tblBFYXZNMUozTTR1dHlqYjRV?oc=5",
+          "summary": "US Supreme Court gives Trump the power to fire top officials across the administration – except at the Fed Le Monde.fr",
+          "published": "2026-06-29T22:50:31+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "'It's a yawn': Trump downplays bipartisan landmark housing bill - ABC News",
+          "source": "ABC News - Breaking News, Latest News and Videos",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRnJuZFNpOTFhNWNRWkxZblJmU29sYjVOZlVLNTc2TjhBcUNOUHhNUDk2Zkx6WjRROHVWNEcyWFJRODJOMlljZ2pSeEF4dTNnUXhDc1Y4T3JKMnkwcmpfVk1XMFFIQXlJWVhDcmVmMTFfR3lhQjBxTHJmNHNQeWN2STlvdVdSUk9BZlZQckZNc0JZcEQtdFpFY2JfbXdKQjR2QThV0gGoAUFVX3lxTE9HNTZDWDBydnhDVWo1WDFSc3VRbVpRTEhMQ3otRE1SNm5DcWstUWVEMFZEMVNKLUNrTjk3OEpKd0RHZzdTOG5hSHlLdmVLM25TMk1hWDNiSE5qZ29xRUlnUmZLTVdRWVc5NnRBamZ6alFZVzA2amJJVERpNGpFQ3Q5RU8zRGJHcU1vdWtaWTh3Tk9SYXNlZ25oOUhtY2Zzdi1ZampRN0lYVw?oc=5",
+          "summary": "'It's a yawn': Trump downplays bipartisan landmark housing bill ABC News - Breaking News, Latest News and Videos",
+          "published": "2026-06-29T22:49:17+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Workmen Begin Putting E. Jean Carroll’s Name on Trump Tower",
+          "source": "The Borowitz Report",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE4xSzFDR2JRUWlrVlZldmwtOTBJMEFvNWs2US1peDFEQU1ZU1FOaHY0Z3BqZ19DLVFjUVRrSmNhRXgycmJ2WFRkVk5VZ2d3LUlFWi1OMGVJM1AxSUNUWUl3YUp0aVNZQk90bEZsZXFpaWVIc0JKNFNEV3FB?oc=5",
+          "summary": "Workmen Begin Putting E. Jean Carroll’s Name on Trump Tower The Borowitz Report",
+          "published": "2026-06-29T22:46:57+00:00",
+          "origin": "關鍵字「Donald J. Trump」"
+        },
+        {
+          "title": "Supreme Court rejects Trump bid to fire Fed's Cook but expands presidential powers",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQb1JHcW4zcGozWE9wcl9IM2FnczFEbHBaRVVvdDRhQm9DTXVEOVJYaVJoS3hIakhvQjE1RWNRU182N3FNRmNMbkJhZFQtbXI1Zlh1M1M5R054QnNid1ZNdmFKbnVjX1h2M2xNR0M3eXJGM29pNVR6Zkh2R0IyU2ZpNDZ0OXJFVFJ3dnd4c3NZVGc1bnhuaWJtM2hLVVlWUVQtZDM1UFAxd1dqUQ?oc=5",
+          "summary": "Supreme Court rejects Trump bid to fire Fed's Cook but expands presidential powers Reuters",
+          "published": "2026-06-29T22:38:45+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Supreme Court ruling in sex assault case means Trump will have to pay up",
+          "source": "The Detroit News",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNM1JjQzl6LUxET0pSQ0piZG5QeWd1STkzaHN6U19ZdGljVVI1QjEyYnIxOExwYlF3cFlqWnBLd0h6Q0lhRkV5YnRlV3psV05aS0pVaVZGTHRHUS1xcEsxUnZIbXF3ZzRYdkhzb0Q0c2I1OXdxWUZaNGNsYUxmUWRRU3A2SkZWbWxkb2UxMFdfU1JPcVpRMFJOTHBKd3lockFOZ1UyY09vTXJaczNJcE13amVCaWJsaXEybXMzYThDRndxUVhtYzJ3?oc=5",
+          "summary": "Supreme Court ruling in sex assault case means Trump will have to pay up The Detroit News",
+          "published": "2026-06-29T22:38:00+00:00",
+          "origin": "關鍵字「Donald J. Trump」"
+        },
+        {
+          "title": "Supreme Court says Fed’s Cook can keep her job for now, but it upholds other Trump firings",
+          "source": "AP News",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNUpHUThVcUFPblZQMHFjVWs4NEpSRDl4bHFvZFpLYVN5MWdtR2MxQ3ZVLWRSZGZhWlVxTnpjVllmakdvbHRuSTlIVW5qQUN3Y0VDNEUxWlNOUC1JbmJPSDc4NFFVNkY5c09jYjFuWjNSLW9jTFdWQTJaWmhCUEFFakNndXJ0cE93bHZ1S1NTVm0yZFR2X1BGSURTMEZORDhmVVhHa3FicHF5UUk?oc=5",
+          "summary": "Supreme Court says Fed’s Cook can keep her job for now, but it upholds other Trump firings AP News",
+          "published": "2026-06-29T22:37:00+00:00",
+          "origin": "關鍵字「Trump」"
+        },
+        {
+          "title": "Slotkin, Peters, Walberg and Huizenga Urge President Trump to Reconsider Denial of Major Disaster Declaration for Southwest Michigan Communities Impacted by Deadly Tornadoes",
+          "source": "U.S. Senate (.gov)",
+          "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxOYjY0ejNoSlkxbjhnUW56WDNtcXdCN3BaT2kyRmctNmxiOVdWS2Q0VnRYU1JwUVVYTTFzV05tMFNZcDdOQm5SaXlkZ0diX1lYbE5kNlM0b2VEMGhFcDIyZW9HakRmRVU1RFo1c2JZUGdEWG1XREYzN1RpcWp4RnNJOEkyMzQwR0NlX1VFdHBZb3hCcVlHVS1BSktGQ2lRdy1zV29XLVEwbTNwVFBaOS1UeVdRVV9Hcm5uVGM4OFVycTVVU3U5My1NN2h1dDFkOWhXMnR4RldENFFlLU5wblpXNUlkODdUODNOSm1HTWQzRUNmMVhNQjF3MVM3ZGNJWjFtQWJUdHJJcmxFU0pmOEJHYVJwUzBzS2k1V0NHb1FRb3IwUF8tWTlfNzZCekZrVm1vZE9tTmF2VGN6dw?oc=5",
+          "summary": "Slotkin, Peters, Walberg and Huizenga Urge President Trump to Reconsider Denial of Major Disaster Declaration for Southwest Michigan Communities Impacted by Deadly Tornadoes U.S. Senate (.gov)",
+          "published": "2026-06-29T22:36:29+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Trump’s election crusade hits another wall at the Supreme Court",
+          "source": "Politico",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPcTJqdExvSmR0MUxxR21VcFdRazZURGZPZjJ0NHdDNmdnRWFfTHB1bHo3WHNLaUJmVmVXY29CdkFXZEowLTdRaml6WHdqNFRaNXBfTkUydjVLQXRYalcya18yTjBlTXk2bDgtWWtQUVRDRF85cHpwRWdoeGo4bTFmcXR0MzJ3ZDFoMmNPX2ZB?oc=5",
+          "summary": "Trump’s election crusade hits another wall at the Supreme Court Politico",
+          "published": "2026-06-29T22:35:37+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "The White House Considers Granting 250 Pardons for the Nation’s Birthday",
+          "source": "The Atlantic",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdFBhQ1pnX3FLVXc5eXIzQi02VHhwMHpMSGlrUGMzOHByNGNEcWlmWGZTbmJhRFhyNW1Qb2JuaGJMVHRUS1lzRm5QOEhyU1o1VC1fRTZIcEZxZ1lsbDQ5ZTJ5NTl0MGtNbEVoWXdrei1UZ2dkeE1JRG16NHdtSC1XX0VXSFFqWm9jeXF0c0N3?oc=5",
+          "summary": "The White House Considers Granting 250 Pardons for the Nation’s Birthday The Atlantic",
+          "published": "2026-06-29T22:35:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "'A big yawn': Trump says he's unsure on signing affordable housing bill",
+          "source": "USA Today",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSDZrejk1YXVBQVdMU1BCM0dqR1prMWJIRHN3bzdxWGhqWUk2YnBBdFJFdEZCUzRsSkxxMmUxTVVmbkVnX1J3UURzZEEwWHJ2S01pM3BiSjRNRjVHVy1mLUl6Y3NyLWVXXzRrY2drVnFlaHU0S0pYckZHQ3NtRTY5TXVCREk0OWQ2R2JLSzNlNHNueWtWclJfX25IZXdfYWxNdVVidURQZ0tUQ3l5Sk9LU0l0Wmx2Z1VNZS1fOXRicEZFZw?oc=5",
+          "summary": "'A big yawn': Trump says he's unsure on signing affordable housing bill USA Today",
+          "published": "2026-06-29T22:35:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Supreme Court expands Trump’s power to fire independent agency officials but lets Lisa Cook remain at Fed",
+          "source": "CNN",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSTZabUYtUy1lTGUxLVV1bTA2NTl4bEo3cHo1R0xubGo5M0t3TzNKblU5THNhem5aX1RlRDVWb0xUZzVyS01zRlNFd0h6NVVoeGd3ek9KMjBoejNnWEE4T0szZW80RGJTN2VIVXhlUlc5eTlOTTRYUC1fcGwyejVQSjJSUFJzUQ?oc=5",
+          "summary": "Supreme Court expands Trump’s power to fire independent agency officials but lets Lisa Cook remain at Fed CNN",
+          "published": "2026-06-29T22:32:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Supreme Court hands Trump new power to tighten his grip on the federal government",
+          "source": "NBC News",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNaXYyUmRFTzFHZVZKZ0U2WGs0eFRIcVhQZ25jMGJTMnlmbnQzUndxT1AyU204bTRCWEVVbEFQQU5vMHZIaVZwejhHVkFFMExzN2V5OEFtdUM2bHBTVFhzZ1R5NnVQRGRPOWt6WmZ3VkpRR01YRkxWckpVYWpDRTRTbnFPUTBucjk5Z2ZBeld4QWpMbTE1TUg0SFlCUjBzYzVSaGF6djdySFhtVDU2c2FTX2F5eERLcFA3eEdYdnp2Zw?oc=5",
+          "summary": "Supreme Court hands Trump new power to tighten his grip on the federal government NBC News",
+          "published": "2026-06-29T22:26:46+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump on Legislation to Address the Nation’s Housing Crisis: ‘It’s a Yawn’",
+          "source": "The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ZNE5xUERtQlRUVjI4bnZ3eXdFeUIzNk5qbFVUbGdHVW5HQmVNa1ZNYmRpb0VqRVpFMTZUVExrQmgzMlZ5YjZ4ZnJwTno0VFdrWktrZzRZaVVnUk5lUUdjbWFMNjhxU2Z0RjZobDBXakJxd0k3LVQ2SlRR?oc=5",
+          "summary": "Trump on Legislation to Address the Nation’s Housing Crisis: ‘It’s a Yawn’ The New York Times",
+          "published": "2026-06-29T22:21:14+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "New York Times’s Haberman, Swan: Trump ‘answers more questions than Joe Biden’",
+          "source": "The Hill",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNV0xWSzdLN1AzYU01ZWhwaTl6T0pXUmc2VWJYZUZLTi1hVXUzbVZqN014and2V2ZGNWNHSElRMFJfWDZ6UTNTbUlOWXR5d2ZqLVhLNTRYejhzd2JYWXlVQmY1QXZNWWNXYnRFT1ppcGVnMC1wTkgtcE4wRmo5ZlpSRDBuLUpfeFhHU0g00gGQAUFVX3lxTE5jal9EVm42Tk4zQlRvZlJDTTdGcnJBNWdOVGJXNkF4ZkQ4TzZ1NFZ0RmFSUGxZY18wWHVqUUJwRW5yU2xfUnE4OVFVR1F6RkFVLUE3TTJLbTVfQnBsYk81UWRINkdFeVhOTHNFdDVMbDdJVkh5Q3ZGaDVjNDNTVjFEUk1UeWV5NURTWEloNnV5Qg?oc=5",
+          "summary": "New York Times’s Haberman, Swan: Trump ‘answers more questions than Joe Biden’ The Hill",
+          "published": "2026-06-29T22:19:00+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "In major opinions, Supreme Court rules on mail-in ballots, Fed’s Lisa Cook, and Trump firings. Here’s a recap.",
+          "source": "The Boston Globe",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQkVOUkw1R3FkbmllRThOOHVfY2V2bGpxTE1LWnZHaDdzN0FnUFZ6OWNHSmdINEctRWNSeE03QUtoVDFUMVdOZGNVSWVGMVBBMDBkQUVzZTFzeHVib2lxS3JlVjFfOXVxTDR6NHlIUFNGM0pRby1GcDR6dGJEWWE4S1NB?oc=5",
+          "summary": "In major opinions, Supreme Court rules on mail-in ballots, Fed’s Lisa Cook, and Trump firings. Here’s a recap. The Boston Globe",
+          "published": "2026-06-29T22:16:27+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Supreme Court expands Trump’s power over the federal bureaucracy",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZnYtQlF3d3VfR2xkV29CdGFUWUxpUEY5Ml9Ld3V1Z0pveHFDTkJkTE1oUEc1U0E4a3VrS1pLRFBsZlFiQzhkd2p1UHhrSnF3S3M4cmJXZHNtbDVDWjhMY1NpUGdfN0VHUVNEQ3N3U0trZ0VyeHk2ODVTR1ZuZXBzd3ZuYks3ZnY1Ym9IZEZaaXNNa0VjOUlYM0ZCVnNabklCS1N3OGZ5Z3RKZmRQd0c1SQ?oc=5",
+          "summary": "Supreme Court expands Trump’s power over the federal bureaucracy The Washington Post",
+          "published": "2026-06-29T22:15:52+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Housing bill that Trump refuses to sign heads to his desk",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWVR5U0plUWdLSnlIVXN4eDRhamFvbHU5YVN0eVptWU5BU3RaQjA5RlFHTmJvWlpaLWJUZHR0WkxwQVVHVldVSlNNWmxKMldqdTZKZlB6R0VvNldKdnNxYVA3OXF5UFYyc0g5dHh5LWs5WkpVdTBzLXItbklVOGlLNGRPQldGa2FpOFJEb1Y3TkNtVmo1TUNaOXR6cnBNQlZhWTU1blR1ZGZhOVhpZjRHWDRnOA?oc=5",
+          "summary": "Housing bill that Trump refuses to sign heads to his desk The Washington Post",
+          "published": "2026-06-29T22:13:52+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Trump Administration says President Trump's patience with Iran could wear out",
+          "source": "kens5.com",
+          "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNUHJkbklLMHpkcEItUFBVN3hKQlVzaXBxMEhzblhVZzd1SFJ5OTFFNy05MlRMcGRWWk5QZl82dG9TaEtoSGJtZGthellKLWszeFFFdHFpSzJmdjNhQUlad3AxMUZUWWNXVmJ5UkNsNVJuM1R5M1NnVnVZaWNNd0lhTzBNbzY3TFlGbEdZekozMzlSY0xaNUJwQ3B2TG1Yb19UVk16eUFhbElESktySmlXdTdTTDRKbTN2MHRkSGdkWUphbVlpWklSU3RwbTFsNHBZY2NJcHVoaHhTN2dIdVd0NlFTRm1WYlB0bnJ0T1VWalVoVTVyTFE?oc=5",
+          "summary": "Trump Administration says President Trump's patience with Iran could wear out kens5.com",
+          "published": "2026-06-29T22:13:00+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "President Trump Reacts to Supreme Court Rulings Upholding MS Law on Mail-In Ballots and Agency Firings",
+          "source": "C-SPAN",
+          "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPcHUwdDhTLXhET09WZ29INllaeVZURjM5MFpFSWlWQnRaZGUzZ2ZWejJsd0xhTW9BNGpTZ1JUbnl6LTJEekpOQk9TLU9NMXVSVjI5ZExUNkEyZG5MbGk0RDNRSERDMkk1bUh1UG51aHdadmFELTlnUks4SEhNQlA2MWJkZzl4Zm05dkRWRjAwd1dpSFJ2WEI3NkJ5eDYyUVNYR0J3QnZubllzSHo1LV9tQ3ctZnVHTWxzRUxQd1NJaVNCb19ubjRZNjY1WkkwOTNjOW02MWYxdkc0NFFxSEdhMUY2RkdYUzRrYzcwSA?oc=5",
+          "summary": "President Trump Reacts to Supreme Court Rulings Upholding MS Law on Mail-In Ballots and Agency Firings C-SPAN",
+          "published": "2026-06-29T22:12:13+00:00",
+          "origin": "關鍵字「President Trump」"
+        },
+        {
+          "title": "Judge Permanently Blocks Trump From Withholding Hudson Tunnel Funding",
+          "source": "WSJ",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNVmFFeEQ5dXlHcE9ralZSajNkdHJlZkpDcVVGVXVzdzBzLThINmFKeVhzbE5iaGlVSVRhWjZDLVEtNlJ6d2xwTUVPQnJLd29TdkU5cVFCUVlRend5eXR5eTd0Z0Y4blhrcW5RaV9xQm5MS2xfUmdELVdSbEszS2ZKMExZT2hDMHRQSjNsZ2R0eVdlLVNPVm1XVnowOFhmcFMwZURPRVQ3b0pEOFYwX1MtaF9GdVA?oc=5",
+          "summary": "Judge Permanently Blocks Trump From Withholding Hudson Tunnel Funding WSJ",
+          "published": "2026-06-29T22:11:00+00:00",
+          "origin": "關鍵字「Donald J. Trump」"
+        },
+        {
+          "title": "Supreme Court, for now, blocks Trump from firing Fed board member Lisa Cook",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUFNlUlB0R3JhOTJlNUlYVmNhMzNvQWV1TlZabUJnc3RrdE1XVTJxMzFyb0lOVXByRkFBN3YtS3BPQl9CRUxlZlZ3MlQwTGZZSFBJNmxuMkNxXzNCeWZDV1J1OHJUQmNudkxuYi04dmJKdmtBTDJTUm5tQUozLVI0VHBmcXRLNHZFNV9zX3A2N2VMUWkzTE5palpxVTNpT05UUk5jMmljRkNFMDk1QVllNXJHa0VmY0t4YVZ5TTd3?oc=5",
+          "summary": "Supreme Court, for now, blocks Trump from firing Fed board member Lisa Cook The Washington Post",
+          "published": "2026-06-29T22:06:31+00:00",
+          "origin": "關鍵字「Donald Trump」"
         },
         {
           "title": "5 takeaways on divided day for Trump at Supreme Court",
@@ -650,22 +896,6 @@
           "origin": "關鍵字「Donald J. Trump」"
         },
         {
-          "title": "Live Updates: Path forward for U.S.-Iran talks unclear after weekend strikes",
-          "source": "CBS News",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOVFNwUDZyaW5TYVZ1alBuV1FGWlcwUlZETlowb2czZ0RjdjJ1UHZ5UU5YRGszN1F3THlENG9KMkhTV2lVblU1Q2tUOVBnd0VjaUVrajZKQ3VoRzBaUnZlREZnd1hOZS1VOTVSd2JJQnBWT0x4Rm5HRjktRE9kRU5uWEx1OHR4eVRUWGxhOGpIZ1Vqa0lvR1U0dFFRUVVpUDBuRDJCTl9JQQ?oc=5",
-          "summary": "Live Updates: Path forward for U.S.-Iran talks unclear after weekend strikes CBS News",
-          "published": "2026-06-29T21:52:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "'A big yawn': Trump says he's unsure on signing affordable housing bill",
-          "source": "USA Today",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSDZrejk1YXVBQVdMU1BCM0dqR1prMWJIRHN3bzdxWGhqWUk2YnBBdFJFdEZCUzRsSkxxMmUxTVVmbkVnX1J3UURzZEEwWHJ2S01pM3BiSjRNRjVHVy1mLUl6Y3NyLWVXXzRrY2drVnFlaHU0S0pYckZHQ3NtRTY5TXVCREk0OWQ2R2JLSzNlNHNueWtWclJfX25IZXdfYWxNdVVidURQZ0tUQ3l5Sk9LU0l0Wmx2Z1VNZS1fOXRicEZFZw?oc=5",
-          "summary": "'A big yawn': Trump says he's unsure on signing affordable housing bill USA Today",
-          "published": "2026-06-29T21:50:00+00:00",
-          "origin": "關鍵字「Trump」"
-        },
-        {
           "title": "President Trump wants to make over East Potomac Golf Course",
           "source": "WUSA9",
           "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNUUJKV2pOMWVONl81M05hT0c1eFFKdGtlNnZBamhiNklVVmpaemVkc0JkbkFybF94MnM4VnFIOFRsNVNOSFI2aW53d3FuQ2lBVl9XT3VoMUNnMm1OUFFnVm9pVGduSXh3akdHVVY1YVppcEd6bXpCZ2RVdFVwRk1NMktKeUF2NVVhXzRLMWNTc01LNm5WTFhIc1VjVjZuUHVqTzdKdnc5eWtmeERHZktSbkk0T1pyd2M5c096MUpQc0FENTlaSzN0MmtHVWYzbGMtYUJUZk15eW1RUQ?oc=5",
@@ -674,11 +904,11 @@
           "origin": "關鍵字「President Trump」"
         },
         {
-          "title": "How a Trump-backed election bill could affect Missourians",
-          "source": "First Alert 4",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQTHJnYkJjODh3Rkw5T25mUFRIVTBEUU93YXFWem05YW5FLWRCWUFQNHYtWjVXSmJ2Q3hXWXlXcDlsY3pMQnhXRzZaUVdiZmRjR1l3RmlLbHUxRkNKbFZvb3lLeDVONXREcnlDcGtCYUNkcjRPemxELUtyX29CZC1oSnVLTi01MHpmdEJ1MXhLemRtanBRRkZNLTdZVQ?oc=5",
-          "summary": "How a Trump-backed election bill could affect Missourians First Alert 4",
-          "published": "2026-06-29T21:46:00+00:00",
+          "title": "IRS Top Lawyer Nominee Discloses Ties to Trump-Linked Company",
+          "source": "news.bloombergtax.com",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNY2owUURNZ01sQmtBUmZKX1BaSU55cVBJajVjSnpqY1pCbVd2d1p2LWFIM04zcXppNGV4LXRCYi1nbUxyZU1tdHpBVDZDVTJBSm82VU8xZDNBOE1VRVJReUNiMDhUc0xSXzJQZnJQblNYb2t1RG5JMDUwVW5sZ0YwTm5lN3ZmaWRLaXZfS0VXOXFVSFpXdWxXOVhhZkVlZmRRS1YtY3RyQ2RrV0lLQTFXTTNn?oc=5",
+          "summary": "IRS Top Lawyer Nominee Discloses Ties to Trump-Linked Company news.bloombergtax.com",
+          "published": "2026-06-29T21:48:00+00:00",
           "origin": "關鍵字「Donald Trump」"
         },
         {
@@ -690,27 +920,19 @@
           "origin": "關鍵字「Donald Trump」"
         },
         {
-          "title": "Tracking Trump: Supreme Court rules in several Trump cases; Trump says U.S., Iran will negotiate again; Trump’s trees; and more",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOSHJaeDhYU2w0b0l1OTFSUUNYb2dlY1JUYVdrbWZaNGlyQUFLVVd0SHZFb296YXhicklBQ1dpdzZNRDhEM2FNSXo4b2phLTNNZnI4VkpZUTFVd1dQVmxmaVFQVXpsa1IycXZhRVpnM0lpNVFSeGlBVzAtdTU3eEN3MGc2XzEwMUs2YzlyNmluMFREZEdwLVQxZ19LTlQzNFVFeV9jZmFlMHZnVnJGX0JhckZwclVIcEt3SzNnTXM0Wm9DdU9XRWV2NTVxQ3Z3OGRpYTgyN0ExdHd6MldqMXktc2FVd01VOVduZzI0TG8yUWhYMW1ZVzBIcG9ZWFlULWE0?oc=5",
-          "summary": "Tracking Trump: Supreme Court rules in several Trump cases; Trump says U.S., Iran will negotiate again; Trump’s trees; and more The Washington Post",
-          "published": "2026-06-29T21:36:40+00:00",
-          "origin": "關鍵字「President Trump」"
-        },
-        {
-          "title": "Housing bill that Trump refuses to sign heads to his desk",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWVR5U0plUWdLSnlIVXN4eDRhamFvbHU5YVN0eVptWU5BU3RaQjA5RlFHTmJvWlpaLWJUZHR0WkxwQVVHVldVSlNNWmxKMldqdTZKZlB6R0VvNldKdnNxYVA3OXF5UFYyc0g5dHh5LWs5WkpVdTBzLXItbklVOGlLNGRPQldGa2FpOFJEb1Y3TkNtVmo1TUNaOXR6cnBNQlZhWTU1blR1ZGZhOVhpZjRHWDRnOA?oc=5",
-          "summary": "Housing bill that Trump refuses to sign heads to his desk The Washington Post",
-          "published": "2026-06-29T21:34:37+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
           "title": "Trump's AI controls spark free speech debate",
           "source": "Politico",
           "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNbGQ4VHZMV0hpR1Q3V1FmVWxvbEVtUy1DQkNkcFpKVENFZWhVdVZQblF5WVlZaFU2UU1aQ1c5ajZMLXFNU1VxY2psR1hWNU9Sb0UxSTZWMDFHMWFNOGRPUWZqd0NSWnMzNW5ya0xvVy00TjhTRFE5NjB4QXFpdzRaSHUzMkVUd2ZUOUQtQ3VaTU4?oc=5",
           "summary": "Trump's AI controls spark free speech debate Politico",
           "published": "2026-06-29T21:32:59+00:00",
+          "origin": "關鍵字「Donald Trump」"
+        },
+        {
+          "title": "Susan Collins wants guardrails on Donald Trump’s $300B Iran deal",
+          "source": "Bangor Daily News",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTnVuY3V2T20xdWNlamlLM3ZrTlJwOUMzR1FKNlFUajhKRGFxalgwRU5uMXVqcXU2Tk1kMzZyVU5SUDZPRWxLa3JWVlFtMTFoQzJ6WGVGVlN5NkotcFNXWFhubkJkMjVUTHlnVFhMVlNBQkVJaE1sNEpSak5GQ3Nna1g2c1RKY2VkdUhnRWRkZWFvRHltbkxvemJLX0c2QQ?oc=5",
+          "summary": "Susan Collins wants guardrails on Donald Trump’s $300B Iran deal Bangor Daily News",
+          "published": "2026-06-29T21:32:37+00:00",
           "origin": "關鍵字「Donald Trump」"
         },
         {
@@ -720,6 +942,14 @@
           "summary": "US President Donald Trump told reporters he has very little interest in the housing bill headed to his desk, saying he’d much rather be signing the SAVE America Act. facebook.com",
           "published": "2026-06-29T21:30:18+00:00",
           "origin": "關鍵字「Donald J. Trump」"
+        },
+        {
+          "title": "The New York Times. . The Supreme Court ruled on Monday that President Trump could fire independent regulators for any reason. But the justices carved out an exception for the Federal Reserve, preventing the immediate removal of Lisa Cook. https://nyti.ms",
+          "source": "facebook.com",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNU3ZMOWFMVk5aU056TDJZRzBuUzJYdk02aDl4ZlgyaEdSNzluNzRrMHM3ZzFodW9WWXAtM3Z2cTVvbXgtSnFaRkNYV1NOUFluSlR5cHFYWGhxNzloWmttNDZYd0pWSkNIbGJJV1J3dWxjWXE4ajZtWUZUcHRaZXRKaHlpdElZbFZ0SXVCT25LSFozRXp5ZDJkdVE4UGE3bGpmcGkyanh0b0NTR3l4N2F4amVfQ2wwOFZGRElvWG1Jay0wUjFqb2piZEJlbkRGYW9wMVJaWg?oc=5",
+          "summary": "The New York Times. . The Supreme Court ruled on Monday that President Trump could fire independent regulators for any reason. But the justices carved out an exception for the Federal Reserve, preventing the immediate removal of Lisa Cook. https://nyti.ms facebook.com",
+          "published": "2026-06-29T21:30:02+00:00",
+          "origin": "關鍵字「President Trump」"
         },
         {
           "title": "In loss for Trump, Supreme Court keeps Lisa Cook at the Fed",
@@ -735,7 +965,7 @@
           "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9MVi1NaU82STg3WmRydk9wSkcyR1BhTmNHQnRxR1lvcWNJVXdWMngtZlBmQXJrR0M5eW4tU28zd3ZvdFpobFNVYkF1Z29DNEVFQWFCaGZDb0NaSmp5RWVmZGdxX2xwalRUa0lhQVlqLWlZbEp3QjJLQg?oc=5",
           "summary": "Live updates: Trump and Iran issue conflicting statements about new talks CNN",
           "published": "2026-06-29T21:20:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
+          "origin": "關鍵字「President Trump」"
         },
         {
           "title": "FEDERAL RESERVE SYSTEM—Trump’s efforts to stay Cook injunction thwarted by High Court",
@@ -746,14 +976,6 @@
           "origin": "關鍵字「Donald J. Trump」"
         },
         {
-          "title": "Trump directs rollback of emissions penalties for those who fix cars",
-          "source": "E&E News by POLITICO",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOV193Q0xuTEZnZ0pKdjVuS1Fna1R3RkxQWGhIVzcwcXNWNGVPTzBxSlY0Rl9xaWpNcW9JTkFkWHVsZFZZTWtMekpMLW5yWVF1YjlrQUNvd1pOYVhGUFBRWEhoYk5pclRHV3p3STJZZ3ZqV3FjelI3Ul8yd0lfemI0ODRJcTRlWV9kaFdDUlRkaU5WSXdTQ1c0dEx2bExSd01Ka2hB?oc=5",
-          "summary": "Trump directs rollback of emissions penalties for those who fix cars E&E News by POLITICO",
-          "published": "2026-06-29T21:17:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
           "title": "Supreme Court Rejects Trump’s Request to Overturn E. Jean Carroll Verdict",
           "source": "Truthout",
           "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOTzc0U0dpeHNQbVlOc3pVc3lYY05seTdDX3FabV9NWHI2OGZKQ3ZGR05YR0xKcWxUamJUdFVxWGRwdUYyNEtzaEN0dFdhb2ZjSmE1SFQ2NTJtay02N2g0ZE55U0RiUnNGT2JiUEpyUTBnclN2TTN3VVM5WHVidlhSbVdRd0wzWE9TLXVMYkdVNmpqeE1tcDRtR1N2dldqbjltYmVlRg?oc=5",
@@ -762,12 +984,12 @@
           "origin": "關鍵字「Donald J. Trump」"
         },
         {
-          "title": "Trump says U.S. and Iran will meet to negotiate after days of strikes",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaHV2VTJKdkhDT2taRjN2R19WLVJESnV1SmRNaVRLU2xGcU5JZG1Id1hGZG01TWhLdzlIdnc0THdDdTRPdC1HM3JoZFBsMm54b2RhSjl5QWY1WnFMSUZ3bTEzM1BpSjJxZXlIeVF0a191RlVTTFhXWGFMLVJySXFVSTc5RVJjbUhRYW9OeEphSk1NaE05b3FqaXo1WWgyM1dRS1hmVXM3V2RxUQ?oc=5",
-          "summary": "Trump says U.S. and Iran will meet to negotiate after days of strikes The Washington Post",
-          "published": "2026-06-29T21:14:10+00:00",
-          "origin": "關鍵字「Donald Trump」"
+          "title": "What is quantum computing, and why does Trump care?",
+          "source": "Mashable",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9fU1Q2SVQ0NUd2dHpNdjNiMlI0Ukx4SDVtcnRaMkNxMndKNUpWM1VHOWR1MUljZmpzUklnTHBnM01MY3BSYkQzTWU3QW5oQ0NaWGNWd1J1eUNjZmVndzlnZ1MyYjlYZE55SjlRaFFn?oc=5",
+          "summary": "What is quantum computing, and why does Trump care? Mashable",
+          "published": "2026-06-29T21:14:02+00:00",
+          "origin": "關鍵字「President Trump」"
         },
         {
           "title": "Iran war live: Trump announces Qatar meeting; Tehran says nothing planned",
@@ -778,260 +1000,12 @@
           "origin": "關鍵字「President Trump」"
         },
         {
-          "title": "At the Kennedy Center, a prize for Bill Maher — and a lot of Trump jokes",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSFpfNThtMTdzU0ZXNzI4bkRKNHBKZEJGR3VPVG8zR2NDTlhCcTZHbEc2NmZaVmN0Yll1ck5TLXJXdVUyN2lQZDZfa1A2ejFXakx6Rm1oS3gwdWZTMFNFUi1QamVaMDRSS2NpdVBwTGtpWXg5cWJ2eHdodmVOV0E2ZGRib2ZKMVIwS0Y4WVA1TGNoc19ORk9rSXJoRjJIdkxvYUpQNGoxM0NnSjN4NzJUTWs4RQ?oc=5",
-          "summary": "At the Kennedy Center, a prize for Bill Maher — and a lot of Trump jokes The Washington Post",
-          "published": "2026-06-29T21:07:09+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Hyderabad, the capital of the Indian State of Telangana, has honored President Donald Trump by naming a road after him. Telangana Chief Minister A. Revanth Reddy and U.S. Ambassador to India Sergio Gor dedicated Donald Trump Avenue on Tuesday. Th",
-          "source": "facebook.com",
-          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxONDNkOUNyb2xzZWRlUk9hMl81UVBra3BtTjhHOEpLWTFfVTByRkItd29SOFBNQk5mWktJTGg5alJsZ1NEMC1xVjlUYnlGbHktaTE1TjBvcW1YcW9OalcwWEFKLXU2ZVBWd2l0OG1JdUQ0NUZVV0VmV0RwUXYwbVhhWnpOT3JTbUlST2t3UUxHTnRkYlRJbkUzT2ExTTl0elczaHJwY0FrMERYSHpwdWZQVHBNOEVEa2hWSS03cmpQb21YTmtpTGdJaEtnM1Q0UF9SSVNWOTlzLWloNjY1TWtER3NB?oc=5",
-          "summary": "Hyderabad, the capital of the Indian State of Telangana, has honored President Donald Trump by naming a road after him. Telangana Chief Minister A. Revanth Reddy and U.S. Ambassador to India Sergio Gor dedicated Donald Trump Avenue on Tuesday. Th facebook.com",
-          "published": "2026-06-29T21:00:05+00:00",
-          "origin": "關鍵字「Donald J. Trump」"
-        },
-        {
-          "title": "Trump’s voting restrictions face roadblocks from Congress and the Supreme Court",
-          "source": "NBC News",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRkxyVHZZYllYaFozdmQ1Mm02di1UbVM2UEp1WFpXaE1VUXMwWmpBVGxLTXBubmpRb0wyamM3UEM1OFVUUzlzbU9PSHc4dHpoQ0FHQUh2b05UaFZhWmNxQnIxSEViNHhrODVteE42VDdDUHhPUG5Qc0Mtd0MtSG1CZWxsOEZhaEo3QnNSTTZmbkJCMkdvS3VTb3VER2JvUlF3dFpJal93c2M3bDM4NnliZU80aFExV256?oc=5",
-          "summary": "Trump’s voting restrictions face roadblocks from Congress and the Supreme Court NBC News",
-          "published": "2026-06-29T20:59:12+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "25 Democratic-led states sue Trump administration over Medicaid work requirements",
-          "source": "Stateline",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQYTBIQWpqYlMwRGxHYWNRTWVSclE5d2FJODNMTnA5UkNqeGZmeUFlQXFoeDYwNWVSVFo1QjBjVlUzOWtZQ05uUG1PWE5ub2M2d3Fkc2ptWnh6RGxwczNaV0txeEJQeEtXUEtyd1lOQUcxMnN0YzIzMlBWeVppazd0dmhwTTBQdkNvSng1T1RoaVY2X1MyaFNWajd0Qkh0OVVXTm8xVGs3M0Q4Wjc0cDBlZDloWlE4dw?oc=5",
-          "summary": "25 Democratic-led states sue Trump administration over Medicaid work requirements Stateline",
-          "published": "2026-06-29T20:58:20+00:00",
-          "origin": "關鍵字「Trump」"
-        },
-        {
-          "title": "Murphy: Trump, not leftist candidates, is ‘biggest threat’ to US",
-          "source": "The Hill",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPUDg2UlBxbVJ4QzZyS3FSN1JvS2o3WDBwNlk5akdZSi1meklYWldqZml1YmlReVl0MU1UWVlCVjZtSmcza2dUajFqNkpwLUFIa3FqaHZqREJmWDBEdURHMXh6M1JhVGlBTWZuWlpNeGQyZVpyVXBEYy1yZ0dFdm12QnJnMWdhbU5ZTEpUSzhqazJoZ9IBlwFBVV95cUxQdnBva0RJVzl5WjVzaGtjRW1KdW04dllXbTd0VWZLMXYtblVkSUF2Wnkxd2NESVVkYUliaUNhdFFsTFhpMXZJbUVfOFVYazMzQ0tESVJwQS1MLWNxeEtUVHdkOFJ5by1pQUh4QWtxLXowY19iTEREX1JKSTgyWmdmUzlHTFdMdmxPMHVoZVNoX2lsbXZ2cXRz?oc=5",
-          "summary": "Murphy: Trump, not leftist candidates, is ‘biggest threat’ to US The Hill",
-          "published": "2026-06-29T20:58:00+00:00",
-          "origin": "關鍵字「President Trump」"
-        },
-        {
-          "title": "Judge bars Trump from cutting off Hudson Tunnel funding",
-          "source": "Courthouse News",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQNFVoUmRCem1RMS1DbUtHcWZuTXFfUHVDZGZrOTJqNWJIV3g5ZUMyX0duVGtEd0pweVRpNlRaSHU0Tno3UWx0WWFTZEJvQkJwTVJhV1QwaGMzVWJBRUdmLXJ4NVV2OENPcU4tRUJCb1cxTlZSNzFBV2stNzNYSi1XWVJmcGpuTksybVQyUVZGWWE?oc=5",
-          "summary": "Judge bars Trump from cutting off Hudson Tunnel funding Courthouse News",
-          "published": "2026-06-29T20:56:52+00:00",
-          "origin": "關鍵字「Donald J. Trump」"
-        },
-        {
-          "title": "Supreme Court expands Trump’s power over the federal bureaucracy",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZnYtQlF3d3VfR2xkV29CdGFUWUxpUEY5Ml9Ld3V1Z0pveHFDTkJkTE1oUEc1U0E4a3VrS1pLRFBsZlFiQzhkd2p1UHhrSnF3S3M4cmJXZHNtbDVDWjhMY1NpUGdfN0VHUVNEQ3N3U0trZ0VyeHk2ODVTR1ZuZXBzd3ZuYks3ZnY1Ym9IZEZaaXNNa0VjOUlYM0ZCVnNabklCS1N3OGZ5Z3RKZmRQd0c1SQ?oc=5",
-          "summary": "Supreme Court expands Trump’s power over the federal bureaucracy The Washington Post",
-          "published": "2026-06-29T20:54:03+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Supreme Court lets stand $5 million civil verdict against Trump in Carroll case",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQ2RheVpkSlVLYmt0ZEQxMFhFNTJ2MnZ4cEM4a1VnQnJpb1pkY3o5NWZLcUVacXJRd2dpdjJIaFNfRW14a3NWRk9kb2dDaU9TZGkwUEJrSEJNNzFxQnVEMV9kMzdNaWx5Z0FWLTk3UXZsVWVlOFZobW9CUHp5UTNwMURvMDJUZFRsSzBGc0o5STRydnJQbVNJWDk0cHJTcG1wUXZTOE1TRURoblBGbjR5a1FYLU5pcG1kUm9USUZNTDRsZWZydmc?oc=5",
-          "summary": "Supreme Court lets stand $5 million civil verdict against Trump in Carroll case The Washington Post",
-          "published": "2026-06-29T20:53:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Trump shines as new Bond super-villain: Oilfinger",
-          "source": "Forward Kentucky",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQR3lOa2FQakI5TkgzdVZZYnRxeTc4ZU1ydnJMM1IzNzVDSmJTLS1jMTV1c3I2b0JVT0drcFU1Y3laaHp2MzNMWlhkc2l2XzBTNGF0ZHY5dEprdHRNUVc0ME5sV1dVS012b0FrdEtIb2xBaGMtSHR0RGZQMDlpdV8yQg?oc=5",
-          "summary": "Trump shines as new Bond super-villain: Oilfinger Forward Kentucky",
-          "published": "2026-06-29T20:52:55+00:00",
-          "origin": "關鍵字「Donald J. Trump」"
-        },
-        {
-          "title": "Trump signs memo making it easier for Americans to fix own vehicles",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQR3ZPZXBLVlBtb0NQbDNRVEIyNFp6dGxidXZ0Z1FNblZicENrS2FrVVhmQTZ6Ykg4WGc5RzBzbzh6SEJUemlkNzJtUlpxdndhUTRCYmYxN1hCSlpqR3djUFNtV0hHdWVXendKOWdMcU9IcTJGQ2JRcDBEN20zTTM5SEFlTVBzZ3RuOGlyWXFyNWJVdElNNnpJX21hdjRJTVNjRThkd1ZiZHc?oc=5",
-          "summary": "Trump signs memo making it easier for Americans to fix own vehicles Reuters",
-          "published": "2026-06-29T20:52:49+00:00",
-          "origin": "關鍵字「Trump」"
-        },
-        {
-          "title": "Supreme Court gives Trump more power over agencies, overturning precedent",
-          "source": "USA Today",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPRHRJY0ljRUVodHQ2aHVtRUlkbDhWaUt4bGRpc0FVTU5XbW9jT2wzLWkyaUg0ZTZackw4QTVMdkNqRl8xaWZxdXpQX3RyOC1qUDhiYXRpaWlFZkhsRW0zbzdDaFdPU21oLUh4VlVNTnowWUNUMUh2NlNoSG1CSktmWEtIakdSSHZOM1lkbU95TWVGUlg1ZUhnNFE0NXNjLUpsaC1aa3NpTTFWdk9yTVJSOQ?oc=5",
-          "summary": "Supreme Court gives Trump more power over agencies, overturning precedent USA Today",
-          "published": "2026-06-29T20:51:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Supreme Court backs Trump's FTC firing, expands presidential power",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPR2Q4WW4xekI0cWU3SVJSOWh4VFV3TnZkNkdkcUdsbXlSTU9LR0JGLVY5NU5CejJOYmxvRHF3V0VjcTU1QTlxZHE0blR6UUZqSXM4aGdDdE5zbWkyX001dHF6N20yZ1RydEVLMnN4a1JFazdwbWRaV2ZJdFpSeXdUcmR2emk4VEp3amxwdEp5d2pPRGM?oc=5",
-          "summary": "Supreme Court backs Trump's FTC firing, expands presidential power Reuters",
-          "published": "2026-06-29T20:48:46+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Trump calls democratic socialists ‘biggest threat to our nation there is’",
-          "source": "The Hill",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUFB1VzI2UmNZVF9ZdjRpVnNTSl9iRjJnR0dXMkprbEF3UWU5WGZaSUw5Q1VIeW1DVDdEWHc1VVJuTnhCZFhMWUV4NkVkdlRSU01OVXNwS0ROZnljMnAyMVZRREw3cjJoYjk5UGZDd2hLVGZ1djMwaWlQRVdGTDlBX1VxaXpHWE9OTktlZ1ZUejd6Nzdoa21pctIBngFBVV95cUxNbDl5aVRTcXZJZ1pPeURRam5SMW05eVdLQ1psUTFiTW9uZHNvSUhMY01KaFA3QkhTcnhKX0VNSmxCQ2dnQVBGdExkM3EzdnNNSVhNQ21OeWN2d0JKdElQbDBscENWb3EtSXNlX3QxVnlsUEpYNEF2ZDIzS3hJb3VLV0V0RGpKMjNPemN2RDBlZzBtampSRUJHTGhQTUx6dw?oc=5",
-          "summary": "Trump calls democratic socialists ‘biggest threat to our nation there is’ The Hill",
-          "published": "2026-06-29T20:48:00+00:00",
-          "origin": "關鍵字「President Trump」"
-        },
-        {
-          "title": "Trump says he will ‘continue the fight’ after Supreme Court declines to review Carroll abuse verdict",
-          "source": "930 WFMD Free Talk",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNQU50amo0NnRZOC1UdzFTcmVteG5iQTBxLWhDV3k3UjlSQUhyandBTUVQb2VzQlNHV3lxWFJjdlFxY2FnZF9Na3Z2ZW90eHFZcnFITURzTXZqTjE4ZVdMZ190RVZlNkZBX1A3S0NPd0FqdEFUdDFXNHdaNHBxWXlxcWxBa2czM29Iam9YRm1rVG1vdGVjOVNRdVlWNWQzR0U3R2xFc0JtRTkyRGFqNkRCM3RvMFozYXo4OEtVU0R3V25LNVBKYmVMZDFjdw?oc=5",
-          "summary": "Trump says he will ‘continue the fight’ after Supreme Court declines to review Carroll abuse verdict 930 WFMD Free Talk",
-          "published": "2026-06-29T20:47:03+00:00",
-          "origin": "關鍵字「Donald J. Trump」"
-        },
-        {
-          "title": "Supreme Court, for now, blocks Trump from firing Fed board member Lisa Cook",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUFNlUlB0R3JhOTJlNUlYVmNhMzNvQWV1TlZabUJnc3RrdE1XVTJxMzFyb0lOVXByRkFBN3YtS3BPQl9CRUxlZlZ3MlQwTGZZSFBJNmxuMkNxXzNCeWZDV1J1OHJUQmNudkxuYi04dmJKdmtBTDJTUm5tQUozLVI0VHBmcXRLNHZFNV9zX3A2N2VMUWkzTE5palpxVTNpT05UUk5jMmljRkNFMDk1QVllNXJHa0VmY0t4YVZ5TTd3?oc=5",
-          "summary": "Supreme Court, for now, blocks Trump from firing Fed board member Lisa Cook The Washington Post",
-          "published": "2026-06-29T20:46:23+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Minot area farmer carves ‘45 47′ in field ahead of President Trump’s visit",
-          "source": "KFYR-TV",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZ0REeUdsODJvVDB1SFZFRHhwN1d2ejBlNW9wbmdxanJBWlRDdnVlMHhaNXZhbmNKS3NORUtpUndUQkMtMS1iWVAwWlRfUExQM0hkdFpyTDBMaEU1NVp4TEpncklTcHYxR2R5YXVUMWsxQkJvQTYzM1RRamQwR3I1YmVZQU5nOFJZZGN5Ri1hWkFVeHFxaDZyNHdkVUdvOER4bGfSAbYBQVVfeXFMTUxGcnlhTExnbDFNaHRWOXMtYUg5V1NkaGllaHgwWVN6NU1jVnd1aXlyamVWXzJSWl9yTDZHeVJjczZBWGtTbWpUZ3NKYXFaUVl6QXdoYXVkRm9aR19waHpJeFNBRFlFTlhibzNPM1ctc0pfaUhvblFNaTNiNXdIRTlhTnJySHhJcVNHcjBmSnFrYnhlaXZqWGJqRVRZVmw0RG5CT1huYlp6ZHpzWmdacGlBV01wX0E?oc=5",
-          "summary": "Minot area farmer carves ‘45 47′ in field ahead of President Trump’s visit KFYR-TV",
-          "published": "2026-06-29T20:44:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Trump calls housing bill ‘a yawn,’ concedes SAVE America Act unlikely to pass",
-          "source": "The Hill",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQSnBrdWtYRUdzczNjVm12ZkczZF95Sk41OHd4OXZoT0tUMUg1NVhBcFJfYl9COG93bnV1UmtabERBNk1uQXNETmpmTGFOTW1ONGVONHhDa1NkeVBXWk5WLUNwZ1FIdDJTT3dMaGFGUkZwdGpqS0h2RG1GVkNiN1ZscTJScE9tcnZKTVBwaVRrRG14d9IBlwFBVV95cUxQNFI0U29NbnB3dm9ncnd2RkdIRlNjdG1JTTdZUzdRcDRYWTlLc0ZRR1daZjhGMjFNRTNnNnhtb0I4UjJ6ZW9qVlotY1o4ZEczRkhqUmROeU9QZ01xRHF0MXRkZEJabV9aRThHMnFkaXdOS2k4b1hDUEVGMm00YVMwZzNsMDhxeGdXQkxBUDBKUUIxblJCNzc0?oc=5",
-          "summary": "Trump calls housing bill ‘a yawn,’ concedes SAVE America Act unlikely to pass The Hill",
-          "published": "2026-06-29T20:42:00+00:00",
-          "origin": "關鍵字「Trump」"
-        },
-        {
-          "title": "Discussing President Trump and the IRGC: Continetti on ‘The Hugh Hewitt Show’ - American Enterprise Institute",
-          "source": "American Enterprise Institute - AEI",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOTktPR19WZVM5T0x5RWUweVFGa3RqUmhsdUhxbWZHVFRnY05aeTZWV1VOT2VVdnlHdVBDQTRyUVJjQTFFVFE4a2g4WnpKVkwxU0hzOTBYamdBYThLTHMxWnJBVldkdnBDUU02THhwRDdiMDF3Y244VkRjZUJ3YXE2Unp5V1g2Q01Gb3VKZVBRNTZLaGNKR1lIYVF2azRocVA4RlNr?oc=5",
-          "summary": "Discussing President Trump and the IRGC: Continetti on ‘The Hugh Hewitt Show’ American Enterprise Institute - AEI",
-          "published": "2026-06-29T20:39:30+00:00",
-          "origin": "關鍵字「President Trump」"
-        },
-        {
-          "title": "Supreme Court: President Trump cannot fire Fed governor Lisa Cook, for now",
-          "source": "mpamag.com",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS3Y5dHR6d1RfTWt2UmdYSEVISlJUTU5GbGN3RTFnY0VtekwxeUVhNTVNQ0VhVUtmR280M1lVUjdwRlF6dm42TktIdmg2bm9Kd1F6eE01Wkw5aC0xcUxtR3YyTzcxVEc4YzBoNjU4dmNEejJyaUFqV2ZmMjVsaVdTQ2tXSVBWWGZQOGdibFRNWHBqZjVRS3RwZmd0d1dMTlRiaEtxeE1kQnFXRjVKb1VJam85VE9HYlBDRHc?oc=5",
-          "summary": "Supreme Court: President Trump cannot fire Fed governor Lisa Cook, for now mpamag.com",
-          "published": "2026-06-29T20:37:30+00:00",
-          "origin": "關鍵字「President Trump」"
-        },
-        {
-          "title": "One big win and three defeats for Trump in dramatic day at Supreme Court",
-          "source": "BBC",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBYQ19SY2EyYWdsTTRjU2Y0bWIwQUlpT2JiOUxBd3ZsX3dEVzR0U2l2NVg5UkxRMXV5MTgyNTg0LTZwVVJiUVRDZTZFUGRKdnJpcEpIU3JsaEg2dw?oc=5",
-          "summary": "One big win and three defeats for Trump in dramatic day at Supreme Court BBC",
-          "published": "2026-06-29T20:34:52+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Trump announces meeting with Iran in Qatar despite military skirmishes",
-          "source": "Al Jazeera",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQcnM3Z1FiUWg0cGtGRWVxRHdUYmJ0UTFXVWhEZ0lObm1FY2FHMGRUNTN4bTR5al9ySmx0RW93QW15d09NQ1VjZFJkNDd0eFpQZlNBaS1wa1VNSkRpLWVVTjM4c0JSOHBzYXB6ak1WWXUtZ2xZVm1pbUN4V0xSQXB3TFd6c1NFckp6elV2Q3lIRXZUQnBFYXpGRkd6OVFLVHlVMkdZOTJQWjdYMTZLX0U2eNIBtgFBVV95cUxOb1p4aVRaMk04eHdua3FnTmpLd3lISjRZYkdjLWQ4cHZfVHRMYWF6LUw0M3JURXBBWDE0N1Z1djRmNDNLc2c1eWNPQ0ZPSHlYUF8zOGF4b1BhZFIxUVRDRHBxMGJBbURSa2Y4Z3dmLTE5aS0yaVE1TzF3cTQzNWpXU0JaQlpxYVRvQVZUM2ZXWUdSeTQ4MkpLVE44MjVCWUtYSkpnbmNiSzVJWXlLUDQyZU5wWERodw?oc=5",
-          "summary": "Trump announces meeting with Iran in Qatar despite military skirmishes Al Jazeera",
-          "published": "2026-06-29T20:33:16+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Trump dice que «seguirá luchando» después de que el Tribunal Supremo haya rechazado revisar la sentencia por abuso sexual de Carroll",
-          "source": "Fox News",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQ0Y3aHhoYkIwNG8tTi1OaER4TTlUSks3aGdxSzIyT0xVcDdHVHpqeDQ2RVljQkswMGhzRmdtRTVMYU9QZGJfVVdudmNmOTBpdDRRcHBjM1ZKTzdmNDNkbmxxaWxoakhKcjVYQVY3akI5eUZDS011SUJKSlNZdklZVXd6X2tUNXJmYm1PQWNEMWtWX0JRdzZVbGdxamhkLWp3UzlfMGdsZEJHa05MNDhQQlRqdUhDUXhqcmpwSmtCRmlsUdIBxwFBVV95cUxPUTBNUzd0cHZ3SnN0SUVpM1pZWXB4U05uY1QyTkhJZ2dIbXoxN1JneGtleHB0eVpJdEtSa3V0U0FodExGS1ZqVUFBVThYUUZDbjJPaWtUSy1VbXFQY2RoeHVqdjZUMUhESUNTNEFra1BZc19INkMybTRuTDdpbDFoYXFrOXJORW1aUklQcHVieE1xalZOMU5nRWt4LXdZLU1TTS1WV2lQcFVkXzNQc19HTHU5cXlzQlEwRWstZEhVWjQ5SVRUUlVv?oc=5",
-          "summary": "Trump dice que «seguirá luchando» después de que el Tribunal Supremo haya rechazado revisar la sentencia por abuso sexual de Carroll Fox News",
-          "published": "2026-06-29T20:27:08+00:00",
-          "origin": "關鍵字「Donald J. Trump」"
-        },
-        {
-          "title": "Supreme Court Blocks Trump From Firing Fed Governor Lisa Cook",
-          "source": "WSJ",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZUdpaDFOb0hFX1ZaVXY5ZUxJYTNsY3Yyanh5aWJBTlVka0ZLZFZLVnZ4WW5yc29pOTY0QlJCMmRqN0hmN2JBdnBzUEFhUHd3VGhaYTEySzBzNHV5OUtnV1hQVWNzejlCV2hTb19lZjJOaWZOZHlUcmR6TlNMMVVTS040ZVZ3Umk0Z1hUY3EybUNZVUdKXzBYZGpCSzJUOUN1eV83Rkg2c29Da2g2cUVBNi1TajI3V3dr?oc=5",
-          "summary": "Supreme Court Blocks Trump From Firing Fed Governor Lisa Cook WSJ",
-          "published": "2026-06-29T20:25:00+00:00",
-          "origin": "關鍵字「Trump」"
-        },
-        {
-          "title": "Whitney Cummings Unleashes Shocking Trump-Epstein Roast at Kennedy Center Event",
-          "source": "People.com",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPaGNZWW1ubF9rRUNwWXhGWEVQOTlOVW9XaEE1dnpVMER0UzFKQ2x6N2k5bFlvN29FVVNrenJlOS1oSGZzQzFFWjJPMVVkMnhwN1FuMnF3YThJSDVGZHUxQTZCM3F2TVpoZmd1WF8yS3dYbk4yRkJkSG9qSzV3RldieEFZZzVGa2o0S2NGWFFpeGZ3UQ?oc=5",
-          "summary": "Whitney Cummings Unleashes Shocking Trump-Epstein Roast at Kennedy Center Event People.com",
-          "published": "2026-06-29T20:19:21+00:00",
-          "origin": "關鍵字「Donald J. Trump」"
-        },
-        {
-          "title": "Trump officials to slash public input on fossil fuel drilling on federal lands",
-          "source": "The Guardian",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZktQR1M5aWd6QWZkNWpyQmVrbHZqZzFsLUh3eUgtZHN1QmVURWN4UklONVhKcXBmVXBxZEE3a1hvRWZ2eFZIU09ZV1FacFV3V0tCRGtYZElYZ2N4elhFM2V3MTUtUW9WMFplRzhDSF8xZ3A4Ymhzb0pNcDhUVlhaWnJfRTNJaDhkNG9vWWUzUQ?oc=5",
-          "summary": "Trump officials to slash public input on fossil fuel drilling on federal lands The Guardian",
-          "published": "2026-06-29T20:16:00+00:00",
-          "origin": "關鍵字「Trump」"
-        },
-        {
-          "title": "Supreme Court allows late-arriving mail-in ballots in defeat for Trump",
-          "source": "BBC",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9LczhNT3lyOXc0RmNFWlo5OVNuRC1pQnRnWnNvSlJUS0M5TEowNGxhTGxueTZmRmw5czdCQW9VZGRPYXdFQlQybzh5c2MybHlDRmF5aF9YcndLUQ?oc=5",
-          "summary": "Supreme Court allows late-arriving mail-in ballots in defeat for Trump BBC",
-          "published": "2026-06-29T20:15:08+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Supreme Court refuses Trump’s appeal of E. Jean Carroll’s $5-million sexual abuse verdict",
-          "source": "Los Angeles Times",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOSjkyUXBXMlM0UEhZV0RqMWJaU1FZUWNzRm1hcl9TOVFNejV4MGwwNHdTZDJBTVZ6dkxmU2FTU0ZBT2V4elpFaGp6UmE2SUpNRml3RUFmN1JsejFmSkVBRWRiLTZ2NmlTbC04Tm83enZtSHd5c1Ywb3VtMHBZZ2dqYThObmtvWnF3a2p1ci1KZWRiZWhXYnRWX2E2bG5ZZ2g1djl6ajFHUmE3TmdkZm5tTjRnaTdlNWViN3E1VFBNbHpUNDVRcHlwMExMb3M3MW03?oc=5",
-          "summary": "Supreme Court refuses Trump’s appeal of E. Jean Carroll’s $5-million sexual abuse verdict Los Angeles Times",
-          "published": "2026-06-29T20:15:00+00:00",
-          "origin": "關鍵字「President Trump」"
-        },
-        {
-          "title": "US Supreme Court backs Trump’s firings; Fed’s Cook reserved as exception",
-          "source": "Al Jazeera",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZ3VveExyaHAtR2Jfd2tnN0JTZUpIZnBTcDNOUmYxbWRIQTd1U3VxSVo1NGdvRE4xeTduM3pUQzV2UnR6UlZ5dmhoMXU5dDVudTUwN2JybEcwNmxuWm94VVd5TGVyVnp5OTFFeHFaWTF0MDROdVduc2ZWQ3NtYkY1T1B4MGgxRjdUMHVPQVRmbndGZ3A3c2ZWYzEyT0t0TWpYVzltZUl6REtRZGd2NU1JQ0kzSdIBuAFBVV95cUxNeER0QW9sQ1hrdnhDRS1FZExFcVY1ZThJSmU3UDZiNm9NRE5IMFpGZ0xJdHQ5bnl0QS11VTFITl9GQ2pKMUlEVGVjTElLM1MxNks1a3J2NGZoX2Q1YkdUSXNsTV9tdlFoN2hyM0hfdXhHaUxwR21HMUlSNkxYV3F5QjlRdS1VOTVFNkMtX0sxT1JQaGhTX2pTa3JuVmVfYTR5WGhvOEV3RHRNZFNTbmFxMnFabHJ2QXpD?oc=5",
-          "summary": "US Supreme Court backs Trump’s firings; Fed’s Cook reserved as exception Al Jazeera",
-          "published": "2026-06-29T20:14:54+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "US supreme court rules Trump’s firing of Lisa Cook from Fed was unconstitutional",
-          "source": "The Guardian",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdGdQOFdkdi1iR0dmX0RqQ3RYLU5sNXJJeVQ4VTczcUFuYmpPY042Nkh6bzMwd0tlWnJWNElrTkllMnVuNU9JZ0pvc1NYekVzRXMwZWVpRUhtbmtuelRxZE94ck9QRjh4NnJScHVKS2V0RUliT1lJQUduQjVhNGRqa0R6d1RtdVh0RFJ5aA?oc=5",
-          "summary": "US supreme court rules Trump’s firing of Lisa Cook from Fed was unconstitutional The Guardian",
-          "published": "2026-06-29T20:11:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Trump says housing bill he tanked last week is a ‘big yawn’",
-          "source": "Politico",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTWMxSVNWYkpMTDZTRWNxLVFYbnVwWWFpdk9MZFpPZ0R5YTFBY2VsZk5xTkNCa2pJaTdvMmlOT2FrWVlPemRrUWg1c0xjemF4VmZwMTBJODQzWDdGWFNINjNzT1JFal9fVFBHSlhvcmRZbTFma2c1cmxIVUZiRENreHBSUVNTZTBr?oc=5",
-          "summary": "Trump says housing bill he tanked last week is a ‘big yawn’ Politico",
-          "published": "2026-06-29T20:11:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "Virginia Democrats criticize Supreme Court ruling on Trump's firing authority",
-          "source": "13newsnow.com",
-          "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOYzNWeW9YbmNLTUpaWHZza0VfdGtGNlVEaUVYek5pMElSWGNKNnRLNmJXMEZtX2JTdGtnWEJqcFdfUWhvT00wd044MnhoSmlPbnlDdXJwc1FWdmFnakYtRTIxMWFDdmxSUHlVTHgtQXVSczRwUndNYUNFcGZPX1d3bjUzb1JrbzlFT1cyMUNVd3RkaVZ1TjdFNk5PN3ZuT2RQcXFxZmVqdjNaa0d6UmhpbWFoX3JVSkgyZ0tPWVM2dEFmSFpib1M4b2dyaUxuLXlvNnN6QVFNYnBsNHItZHVOUm5LSVMzUDF1OU5JSGZyeGtzd2VDTVNFNGQ3aDdwbmJ1VmZIZ0xsc2I?oc=5",
-          "summary": "Virginia Democrats criticize Supreme Court ruling on Trump's firing authority 13newsnow.com",
-          "published": "2026-06-29T20:11:00+00:00",
-          "origin": "關鍵字「Donald Trump」"
-        },
-        {
-          "title": "‘Insecurity’: Rev. Al Sharpton pins down Trump’s ‘obsession’ with Obama",
-          "source": "MS NOW",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5YTVV6RHFLYTVWZGpDUE1Ld1hFMEt4VkZLZ1hJZ1R6c3pwX3c0d2NxUndDSVh1YWJqVmpSZGp2RkZ0Wk4xOU5qLWFxV2NsQ1RfbGc0MkRXRmQwR3RiNHZDaVJrbXh0blJXN044a3N6ZE5jaXp6RjFObw?oc=5",
-          "summary": "‘Insecurity’: Rev. Al Sharpton pins down Trump’s ‘obsession’ with Obama MS NOW",
-          "published": "2026-06-29T20:10:55+00:00",
-          "origin": "關鍵字「President Trump」"
+          "title": "川普再吞敗！美最高法院判決：庫克暫留任聯準會理事",
+          "source": "自由時報 即時",
+          "url": "https://ec.ltn.com.tw/article/breakingnews/5488243",
+          "summary": "初次上稿06-29 23:56 更新時間06-30 06：59 美國最高法院29日判決，美國總統川普目前無權開除聯準會（Fed）理事庫克（Lisa Cook）。該...…",
+          "published": "2026-06-29T22:59:32+00:00",
+          "origin": "自由時報 即時"
         }
       ]
     },
@@ -1039,25 +1013,24 @@
       "report_date": "2026-06-30",
       "query_zh": "黃仁勳",
       "query_en": "Jensen Huang",
-      "summary": "輝達執行長黃仁勳近期言論圍繞AI對社會、產業及勞動市場的影響，強調國家安全優先於商業利益，並預告AI技術將從Prompt走向Loop Engineering，同時輝達在全球積極擴展AI資料中心建置，但其晶片在中國市場的銷售面臨挑戰。",
+      "summary": "黃仁勳近期新聞聚焦於輝達AI晶片技術的持續進展與廣泛應用，包括與微軟、Palantir等夥伴的合作，同時也面臨高階晶片走私至中國的法律挑戰，並對AI發展對社會及就業的影響發表看法。",
       "key_statements": [
-        "輝達（Nvidia）執行長黃仁勳表示，國家安全優先於商業機會和晶片出口。",
-        "黃仁勳認為AI將像工業革命一樣重塑工作，並強調美國應引領AI發展。",
-        "他指出，AI時代需要新的社會規範，並預測未來的百萬富翁將是水電工而非程式設計師，因為AI將提升製造業工作機會。",
-        "黃仁勳稱「Prompt已過時」，整個AI產業將轉向「Loop Engineering」。",
-        "輝達正與Firmus合作在印尼巴淡島建立大型AI資料中心，預計部署17萬顆GPU。",
-        "輝達在中國的AI晶片銷售停滯，華為等當地晶片製造商逐漸佔據主導地位，儘管黃仁勳曾表示中國是重要的技術中心。"
+        "輝達GB300 GPU加速Anthropic Claude模型在微軟Azure Foundry上的推論，展現AI基礎設施的領先地位。",
+        "NVIDIA Halos for Robotics用於建構Physical AI安全系統，加速機器人商用落地。",
+        "黃仁勳提出「Prompt Engineering已死」，強調AI發展正從手寫提示轉向自主AI循環（Loop Engineering）。",
+        "輝達正秘密招募航太人才，計畫將AI算力版圖擴張至外太空。",
+        "黃仁勳表示國家安全優先於商業機會，且輝達在中國的AI晶片銷售面臨挑戰，部分原因是當地晶片製造商如華為的崛起。",
+        "黃仁勳認為AI將像工業革命一樣重塑工作模式，並主張社會需建立新的社會規範以適應AI時代，同時預期AI將創造數十萬的電工和水管工等製造業工作機會。"
       ],
       "affected_industries": [
-        "半導體製造",
+        "半導體產業",
         "人工智慧軟體與服務",
-        "資料中心基礎設施",
-        "能源與電力供應",
+        "資料中心",
+        "機器人與自動化",
         "航太科技",
-        "製造業",
-        "醫療機器人",
-        "記憶體產業",
-        "電梯製造"
+        "雲端運算",
+        "伺服器製造",
+        "能源與公共事業"
       ],
       "stocks": [
         {
@@ -1066,99 +1039,7 @@
           "market": "美股",
           "sector": "半導體",
           "sentiment": "觀望",
-          "reason": "輝達作為AI晶片領導者，受惠於全球AI資料中心建置需求，但中國市場銷售停滯及AI疲勞論點可能帶來短期股價波動。",
-          "evidence_news": [
-            {
-              "title": "【即時新聞】輝達(NVDA)震盪翻紅！資金輪動半導體，盤中熱門美股焦點一次看！",
-              "source": "CMoney",
-              "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1DdVU2UXg1SjVxRkhoaXY0OU9BRTMzcS1EQWdKaW5UOUNwWkE4Y1V1Q1ZCQ0loVXY1Nm5VR2x6ZnhjQ1RadXJpZVJlaVJSSm9wWTVGdWptMVVYRlZBNlpkYVU2N3k4RkU?oc=5"
-            },
-            {
-              "title": "Nvidia的AI晶片在中國的銷售停滯，華為等本地晶片製造商佔據領先地位",
-              "source": "Carolina Coast Online",
-              "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOeEtIdlhFSldyRzUwOEhoajZ1aFFWUkdRU3VFQUZFcFlZcXVmbWRaZTVzbEN3QmE3a1FDWThWa1Awd3IwSVZjLXVrMUtMRURuWk5xdzZIR0xMYTdSN1VKNUVKWnMxYW4ySDY5NUxJMF9XZER3ODNoaFRaLVlRYi12cHpFa3dTNHMzS0FPMnRSMUgyVk9sY0d5ZTBB?oc=5"
-            }
-          ],
-          "news_count": 82,
-          "first_seen": "2026-06-16",
-          "last_seen": "2026-06-29"
-        },
-        {
-          "name": "美超微 (Super Micro Computer)",
-          "ticker": "SMCI",
-          "market": "美股",
-          "sector": "電腦硬體",
-          "sentiment": "利空",
-          "reason": "美超微因涉嫌違規轉售輝達高階AI晶片至中港澳遭到檢方搜索約談，可能面臨法律風險及業務影響。",
-          "evidence_news": [
-            {
-              "title": "涉走私輝達高階AI晶片赴中 檢方二度搜索青雲、是方電訊等多大廠",
-              "source": "三立新聞網SETN.com",
-              "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBaTHgwY3NScnJyUW5WQTZfNGxqbVczQzVtYnJxWGVkY05LQWlJYmVIbjlPQWtXM1hQb2l0eS1TYzUtcXQ5S3VTeXBXanNZYmUtVmtWRWphR3fSAV9BVV95cUxQV2dyYnd3bVAzR2VRWTMyUmNpek12dXFUWUE5MnBoUlZLbVBCVWxkeXJ1V1MwLURfZlFTNlBMTlZ3V0hBbXBSMVFxUHFOZGVKaUFucnRLZzNkT3lPaTYyTQ?oc=5"
-            },
-            {
-              "title": "涉走私輝達GB300至中港澳 美超微、青雲、是方電訊遭檢方搜索",
-              "source": "自由財經",
-              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9RdGJpYjBjNWRqRVM0WnktQ1d6bjR6UHdxVElzLUwzZWdOLUZkNjNYVXJHc3lDZ1o5TUpNNVEtZ28zU1d6ZE02cTRGVmhwY09NNlFHWnhCTHdKRHhHR0JN0gFkQVVfeXFMT0IzSy1XaHZWcEw1bDVQUDhnYUVINE9BRjZpa0lLSzNCYnVxSFI0WUR3WkZHQjJPNDNWZWFqc192VDJZVENYU3JjRGc4eFZWODhOZUtOT09oQzBpcTlMaDNkWEdSLQ?oc=5"
-            }
-          ],
-          "news_count": 6,
-          "first_seen": "2026-06-29",
-          "last_seen": "2026-06-29"
-        },
-        {
-          "name": "高通 (Qualcomm)",
-          "ticker": "QCOM",
-          "market": "美股",
-          "sector": "半導體",
-          "sentiment": "利多",
-          "reason": "高通不與輝達在AI訓練市場競爭，轉而專注於AI推論市場，並傳出競購Tenstorrent，有望在AI領域開拓新商機。",
-          "evidence_news": [
-            {
-              "title": "高通不跟輝達拚訓練 改攻AI推論市場數千億商機",
-              "source": "news.cnyes.com",
-              "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE56MWVHcnNGMWlxYzVRLThCUjBPbUhiUG9sd3VjclFYdmVKZFd3Z01jQUotXzlSZzFDRWtJNEZ6cmp1dG9DcUxSZDI3Tllnb1k?oc=5"
-            },
-            {
-              "title": "《DJ Insight》高通、Intel傳競購Tenstorrent，輝達霸權將受挑戰？",
-              "source": "MoneyDJ",
-              "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPWDRFYWRGdW5ySXJ4cGNZSUxJSFVveU9GZlpKQ250akVkalZ0ZEhGTDJRS0xVUjNfY0RSdkNNcVR6X3FFRmcxTDhqU0VYOTloYlRuM3Q2ZFhzU1dHeVpSb0hPRnIyTkdScFlIQVNLWHdjVHh0SXNITDFpb1lDWEJFMG95Tm5DS1gtdXBYWUJFVnVKdw?oc=5"
-            }
-          ],
-          "news_count": 3,
-          "first_seen": "2026-06-27",
-          "last_seen": "2026-06-29"
-        },
-        {
-          "name": "美光 (Micron)",
-          "ticker": "MU",
-          "market": "美股",
-          "sector": "記憶體",
-          "sentiment": "利多",
-          "reason": "美光季報優於預期，記憶體漲價以及被華爾街視為「下一個Nvidia」，在AI記憶體需求帶動下，市值一度超越Meta和特斯拉。",
-          "evidence_news": [
-            {
-              "title": "美光季報優於預期 記憶體漲價考驗輝達蘋果AI利潤",
-              "source": "Yahoo股市",
-              "url": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxONVVseGhEcVFjS2FtMzBlT0dxSVlvMExtVlYtRXNkQWNvSjlrdkwtSjZBNzltcmV1RVFkV25GTDdmWnVvcnZsRkg3V3B3ckk1Yl91ODJ6OWJaZmw1RS1UQjdCM2tNY25vSjZCMGlNa3hSdEhKeGwxektRN0lNanh0b1hhRzNmT0JidGtoT3pMQUx4N2NMbEVCSUlPcW1oSG1DQW5UaGxjZ2F0LWs4RVE1ZDVXVEltSDI0UEgzNkZ5Sk5RWEZ0amwycEtZUmo0WTljamk4blJhbGNtaHMtREFuWGVHT0xuMjZKaWVkWmpDcEt6VXdqRG5XMVNIeEY0Zy11bW5kQUktUlZsempOOUZtN2g1eHBwbTRmV0hQNHFESkM2TXRBd0FTQlJiaGZRX3NpaGliRXNUTGVlSHFtb0RlWi1IMW1Bdl84V3NSV2szV2VLZ3J5a2t6UHQtUQ?oc=5"
-            },
-            {
-              "title": "華爾街瘋喊「美光就是下一個Nvidia」！AI記憶體荒讓美光市值一度超越Meta、特斯拉",
-              "source": "動區動趨",
-              "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdmk5d2RRY3F0c1pZblJxR00tNmlKcGFYc05JR0RobGN0VVhHNnpnbE9iVjJVcUFmNWtMVWNMdHpBRmkxakI1dUVSejhPTFpNemJoMUMtSThOa3ozT2hvazlWQWo1ejdNUHhmdVg0TndKQ3p3VHc4ZTZRb1Q0VC1HS0FjUW5tUHRzX2dKeDlTNENqTEtycTdFMThR?oc=5"
-            }
-          ],
-          "news_count": 12,
-          "first_seen": "2026-06-24",
-          "last_seen": "2026-06-29"
-        },
-        {
-          "name": "微軟 (Microsoft)",
-          "ticker": "MSFT",
-          "market": "美股",
-          "sector": "軟體服務",
-          "sentiment": "利多",
-          "reason": "微軟的Azure雲端平台與輝達合作，將部署搭載NVIDIA GB300 GPU的Anthropic Claude模型，強化其AI服務能力。",
+          "reason": "輝達GB300 GPU與Anthropic Claude模型在微軟Azure上的應用顯示技術領先，但高階晶片走私案及中國市場銷售受阻帶來不確定性，導致股價震盪。",
           "evidence_news": [
             {
               "title": "Nvidia攜手Anthropic推出Claude模型，Azure上運行超強GB300 GPU！",
@@ -1166,27 +1047,50 @@
               "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPc0hsbjMtVndscmZwZWVuYUplSUtheTZQNFlZcUVKeERLMFF0Vkw1eFhYZlhqWkFMZ3pVTjN5RnByc3BUdV9mS1pCWEdweTBkLUYwY0pwRHBmQS02NE1hLXY3bTZKUXExd0VRdnoxQkFCdkhsLV9HRFNmWm1VWTlkM2ZzalBOQjlwQWxhN3A0bGxxWXhtQVpFLW9JVFBUY3AzUzVOcWhvNC1TOVBQRnRNTUdGbFpNOS16Rzk1dlBFT3FUakFBOWlHWG1TVFRqczg?oc=5"
             },
             {
-              "title": "Anthropic將Claude模型部署至微軟Azure，搭載NVIDIA GB300 GPU",
-              "source": "Investing.com 香港 - 股市報價& 財經新聞",
-              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB3dkF4b1NlelotWFlDYXJYSGdRR2FvU25zaXZ1ZUtXeUJLOVNNR2FfeklmTG10OVd6cUI1elc5U1FLaVdockRrcUtPb2hVX09JRHJvRFI4dERBQ1BlWTRCMFhGSjZ4MHB6ZHVCVHJkV3k?oc=5"
+              "title": "輝達高階晶片伺服器違法賣香港 檢擴大約談6人",
+              "source": "壹蘋新聞網",
+              "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5Yb2NLdkFzVGN3RERHVlIyRDBuS0lPQ1lyY3ZIWm9FMFN1Q0ZDMEQtVFBmbG8yTTYxTDdoNmNtTkdlc1QzMTdvYUJjX2RNZ0c1ajlBWEQ4eUZzYzZYdE56OThYckhEOE4wc3hQeTIybnBGNnNlTENSeU5xT2ZITUU?oc=5"
             }
           ],
-          "news_count": 2,
-          "first_seen": "2026-06-17",
+          "news_count": 78,
+          "first_seen": "2026-06-16",
           "last_seen": "2026-06-29"
         },
         {
-          "name": "青雲科技 (INGRASYS)",
-          "ticker": "6174",
-          "market": "台股",
-          "sector": "電腦及週邊設備",
+          "name": "美超微 (Supermicro)",
+          "ticker": "SMCI",
+          "market": "美股",
+          "sector": "伺服器",
           "sentiment": "利空",
-          "reason": "青雲科技因涉嫌違規轉售輝達高階AI晶片至中港澳遭到檢方搜索約談，可能面臨法律追訴及商譽受損。",
+          "reason": "美超微因涉嫌走私輝達高階晶片到中國而遭檢方搜索，導致股價下跌超過8%，短期內營運與聲譽受損。",
+          "evidence_news": [
+            {
+              "title": "美超微涉走私輝達晶片到中國 檢方發動第二波搜索 股價崩超8%",
+              "source": "news.cnyes.com",
+              "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfaVc0TXBDdGowS3VMQmlwRTdDZDFDUTR6Yy1TTXZOY0toQWNhQ091UlBHaFJTSkpHblpsQkZ4Rk1qem9uMld3eTdwUGFMUGc?oc=5"
+            },
+            {
+              "title": "【美股巨頭】Supermicro台灣辦公室遭搜查，輝達GPU走私中國案升溫",
+              "source": "CMoney投資網誌",
+              "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOTmFYdXZhQmZpRXZQcWJVMzBMSC1RZmhpdkdCUlozU1V4b0pTZV9WT2Q1RFlVZVd4eDBPbXQ0SERkUnpzVjByOU1oNXdzZDlTcXpZNDAwWUJDdE9LTnVfMmhaZWVXTUFYSnVXZUpSNE5VeWNGOWF3eXZYR2psUWJvV0xqeEtQVUtsa1lNS3dnclZhM3RCdi1hUFNMWmxEZEtPV2tZTUlpa2J5N010M3pnQUdaQXFaQ01XbUxkYkxqY0hoZ1VETFRiTUQxN3JCQzg?oc=5"
+            }
+          ],
+          "news_count": 8,
+          "first_seen": "2026-06-29",
+          "last_seen": "2026-06-29"
+        },
+        {
+          "name": "青雲 (ACloud)",
+          "ticker": "",
+          "market": "台股",
+          "sector": "記憶體與伺服器代理",
+          "sentiment": "利空",
+          "reason": "青雲科技因涉嫌違規轉售輝達晶片至中港澳，遭檢方搜索約談，對公司營運及市場形象造成負面影響。",
           "evidence_news": [
             {
               "title": "涉嫌違規轉售輝達晶片 檢方搜索青雲科技、是方電訊",
-              "source": "CTWANT",
-              "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE91eUN5SUhyYktGMDB3TlFtREtPdHlnWmhYRl_6TDR3aXBYaXpCS3NrcThhYzRGLWVYemxOREVPa0QzWS1JSzJFRVJGQ0VWUDTSAVRBVV95cUxObklWaV9BVXBQNTc5alBYRjBrTlpVallGdXZVNG1pMVo1YU5pWlhuWjgxcl9KNFlfeG9xVGtoOFJHZU5LUG5kTkIzTkRYVHl4aXozTlQ?oc=5"
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxQcTRYa0tSMXkyQmFRdFJDbl8zRDdLTmJDZEhfd1duT3RSR3N3VGtuVUJGZElaTVRuclozWUJaSWRpTEVZQTg2SWdNUzdxbzc2X000LWhIdV8tOGhWUGdXUVZ3dVo2aE1NR3lXaWZZMldzV2thZmtwZXpYd1U4b3otMUVKU1hoN19OMWRsSTQ0VWM4YVM4cS1fbElMTGphZkVMNnhibGFYQldwTlZRejZZbXNvOUt1eTJIUUR1enprOGt0X29fenJCdWdsRzJURC1zVlZXRTh5TFVwMmNUaG9BWVZBeDhUVllqNUQtWjZCaVptWkhHNDREbGh5QU94RFc4eFNYN0VYRC1mcVMxcUFob3kzaVZZdWNnS19EZTlRVkkyTThsQzJzSElxeGpFaW8ydnRodURoSkVLVXNfblMwdG1JVnNPNEJnVHc5bi0yRlZtbUl4YUQ3WnJyQ3AxUQ?oc=5"
             },
             {
               "title": "記憶體飆股、美光代理商「青雲」爆遭檢調搜索 公司急發重訊",
@@ -1194,7 +1098,7 @@
               "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBJeEhRUDJaVmEyZVNKNzJiek5wcWR5dDR1bmhTdkVncm9rb3k2ajl3Q3FrRGZTaHpveFNzX2pzOFliaGRYenRtajFOSQ?oc=5"
             }
           ],
-          "news_count": 3,
+          "news_count": 9,
           "first_seen": "2026-06-29",
           "last_seen": "2026-06-29"
         },
@@ -1204,43 +1108,66 @@
           "market": "台股",
           "sector": "電信服務",
           "sentiment": "利空",
-          "reason": "是方電訊因涉嫌違規轉售輝達高階AI晶片至中港澳遭到檢方搜索約談，可能面臨法律風險及業務影響。",
+          "reason": "是方電訊因捲入輝達晶片走私案遭檢方搜索，儘管公司表示無伺服器買賣業務，但仍受市場關注，短期股價可能承壓。",
           "evidence_news": [
             {
-              "title": "涉嫌違規轉售輝達晶片 檢方搜索青雲科技、是方電訊",
-              "source": "CTWANT",
-              "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE91eUN5SUhyYktGMDB3TlFtREtPdHlnWmhYRl_6TDR3aXBYaXpCS3NrcThhYzRGLWVYemxOREVPa0QzWS1JSzJFRVJGQ0VWUDTSAVRBVV95cUxObklWaV9BVXBQNTc5alBYRjBrTlpVallGdXZVNG1pMVo1YU5pWlhuWjgxcl9KNFlfeG9xVGtoOFJHZU5LUG5kTkIzTkRYVHl4aXozTlQ?oc=5"
+              "title": "檢方查走私輝達GB300案搜索美超微、青雲、是方電訊 但是方電訊沒有買賣伺服器業務",
+              "source": "Yahoo新聞",
+              "url": "https://news.google.com/rss/articles/CBMi6gNBVV95cUxOMlhjUjdlVmZ2ck5zVk1YUjY5VWo1eVExVER6eUpVNmhqcXZSZnpRdmdjOHY4akt3aUs2NUswYmZhdGFhUnBVVmpnSjZQcEJLUWswZHU2UmlyQ0hJOXFDVnRwQUlZWmwwVm81TjV3Rm5VcXVnOWppRl9XQTZKNTRKT21LMGxjUmpSUEQ2RHN3YW8wTm1hVTZ6S2pxTGFtXzZ4TGlvWkphNlFLbnJFVU9XMWFENW56Z3pqUVBhM0xYbk9zZS04NG9SUmp1S09GcVIwMWZ4Nm1sQV9DRER4LVVUbHVCVzVnbExhWXMtNHJ4WHRham9ULVgweXJjTE9Oa1NhSjVjSVBpaWdodnIta3U1MEJFbE1ZRnNzeFp1T2NETWhYT1FBTnNsYjFQZUU2NFFTbl9TcGxnaWtITUF4RHcwNDdvZUJQSy0yS2RDQWt4YzhzdXllSkt0eUZaM3lUM0hWTWVkZm9Iczl2bWRMcjdmQmxOaGd5cC05YU0xRWUtZVZiSTNMQ0hsQUw4a3pvZDBlTWlsc18zRXUwYUNNRkNMSnhuR2NOZTVLWkhyY3Z6ZUJrTVg0TlR4amZVN043VUR3bWpnTzViX0NCdWt3MHBJMUVVVVBPdmJscjBGQXVBX0Ywc19PMnFvejZB?oc=5"
             },
             {
-              "title": "走私輝達晶片到中港澳！檢方搜索青雲、是方電訊及美超微 約談6人",
-              "source": "ETtoday新聞雲",
-              "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9zc0I5dDNoMDYtbXozWkNTQWRxb3VRMmtzNjY1cTV2WUQzSzFJWEY4QmhLOEt3azc5TUxrT1o3MFB5NHItUTVhcDJlUk5vdjU5VzFtWlZGWUx6U1JvSWfSAWhBVV95cUxOa29kOE9YUUhma0RSRlNSdzRLZHZMdnlXQ1FDWURoc0lydDYwQWdxeTlzU0daaHJlQkppRk5mTzVCOU9sQnRpbmN4UWM3eGdhdWl2RU1VaktVMzFpUDUyYTZMVFdNWkppTw?oc=5"
+              "title": "涉走私輝達高階AI晶片赴中 檢方二度搜索青雲、是方電訊等多大廠",
+              "source": "三立新聞網SETN.com",
+              "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBaTHgwY3NScnJyUW5WQTZfNGxqbVczQzVtYnJxWGVkY05LQWlJYmVIbjlPQWtXM1hQb2l0eS1TYzUtcXQ5S3VTeXBXanNZYmUtVmtWRWphR3fSAV9BVV95cUxQV2dyYnd3bVAzR2VRWTMyUmNpek12dXFUWUE5MnBoUlZLbVBCVWxkeXJ1V1MwLURfZlFTNlBMTlZ3V0hBbXBSMVFxUHFOZGVKaUFucnRLZzNkT3lPaTYyTQ?oc=5"
             }
           ],
-          "news_count": 7,
+          "news_count": 8,
           "first_seen": "2026-06-29",
           "last_seen": "2026-06-29"
         },
         {
-          "name": "崇友 (Chong You)",
-          "ticker": "4506",
-          "market": "台股",
-          "sector": "機械",
+          "name": "微軟 (Microsoft)",
+          "ticker": "MSFT",
+          "market": "美股",
+          "sector": "軟體與雲端服務",
           "sentiment": "利多",
-          "reason": "崇友電梯拿下輝達總部鄰近的金仁寶集團總部70台電梯大單，顯示其在建築與基礎設施領域的市場競爭力。",
+          "reason": "微軟Azure Foundry導入Anthropic Claude並採用輝達GB300加速推論，顯示其在AI雲端服務領域的領先地位及與輝達的緊密合作。",
           "evidence_news": [
             {
-              "title": "搭過101世界最快電梯嗎？背後廠商崇友再出手 拿下黃仁勳輝達鄰居金仁寶總部70台電梯大單",
-              "source": "鏡週刊Mirror Media",
-              "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBSa2llSGc4eTZSZThFMVBKX2FxXzljdU1DNkRPSzAtdVZjekpvY3dZaXhLbWlLX3B1SDZwUzlja1YzTWNleUdsaGJnelJsSml2UWdoT2FTZS1PNWFhVzd5QWFYY9IBaEFVX3lxTE1PV2lrcTZEX2pUS2hDR0E3dmNIeTFXQlRsVWJYOUdpSnBqZXpReW5nY1pKQUNVbk5nNF80ak1McjAyTENBTVdTYWRHVEQwS2dJMkxBYkNGMUd5eEwyU256U21SR3BEUHp6?oc=5"
+              "title": "微軟 Azure Foundry 導入 Anthropic Claude，採用輝達 GB300 加速推論",
+              "source": "TechNews 科技新報",
+              "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5fa2xtYUNxMW5CZHpUdUNfVks1Slh5NHNKSUJVVjRZTVFWX0RYb3ZKa29UX3ZmVDRIZjRVWUFlT2gtUENpOEZjaFhMTm5sZ1NKSUlIZnZRWXpzVzVpNnBpM05IMUo?oc=5"
             },
             {
-              "title": "北士科輝達總部旁T16 金仁寶集團總部電梯由崇友承攬",
-              "source": "信傳媒",
-              "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9wbVhwNGlCTHRPZi1TM3FWMFh3TlFmT1FYWXZFOVVacmRxWks4N3pxMlVCMk9ROENCTkFya0hYOFJQVFUtTDZST2M2NTltVmNaaWJLWnZ6MU9MQQ?oc=5"
+              "title": "Nvidia CEO Jensen Huang Just Announced Fantastic News to Microsoft Stock Investors",
+              "source": "The Motley Fool",
+              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYmpuM2hsR0FpclVpMlBGc3ZBRVROOHd6NXhaLXRRTFBpN2lyLXUtN2dIc0ZEdm5vdlhFa1JkcVNKWjcxNTdLTGZBbHU0YlUxbFJ4WWI1WDZBdVN1cjFienBXZjJyN0h1NE5xcXJkdXBzTkllSFk3T19LVlRxN25SOVBEa3JVdDRwN1Vrc211eGVKTmNWbTY1dg?oc=5"
             }
           ],
-          "news_count": 2,
+          "news_count": 3,
+          "first_seen": "2026-06-17",
+          "last_seen": "2026-06-29"
+        },
+        {
+          "name": "Palantir Technologies (Palantir Technologies)",
+          "ticker": "PLTR",
+          "market": "美股",
+          "sector": "軟體與數據分析",
+          "sentiment": "利多",
+          "reason": "Palantir與輝達攜手推動新軟體商業化，將Open AI模型導入美國政府系統，並助力航空產業轉型，強化其AI題材。",
+          "evidence_news": [
+            {
+              "title": "Palantir攜手Nvidia推動新軟體商業化，助力美國航空產業轉型！",
+              "source": "CMoney投資網誌",
+              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRGRudTJuRS05Z0FqUG1nZTZCNk4tcEhyQklaSGx2WEZLenF3TE9BdkZyYmNTbmdMM2ZWeGVPeXFDSmRpZ3VKeE90a3ozeUYxSXhUSlV5MWFlWHZWdGVFUTc5QkU5NHJVclZGZFpKNGV4STZ2NUVnSW5LaFZNNWgyZUpHbUwyc2llSnV3NVJ3?oc=5"
+            },
+            {
+              "title": "【美股巨頭】Palantir攜手輝達、股價漲2.45%，但市場最怕的事沒解決",
+              "source": "CMoney投資網誌",
+              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZ2hyZWJ3RVJKdDlFeUc4dmNqYXNkUXJJeEp4dWYxR2ZqZ293bkRpVDFPM0ZzUTBiSmNyaEttUUJtWEQyT2w3dVpmUEpxOFdEOVFXaV9WTXRMWk9pd0QyRDd1UFQ0dU5xRDVybF9tY1hTNkVIMnMwa1Yxck9KY2huVk0xWmlqajJWNWtQVjl3?oc=5"
+            }
+          ],
+          "news_count": 1,
           "first_seen": "2026-06-29",
           "last_seen": "2026-06-29"
         },
@@ -1250,12 +1177,30 @@
           "market": "台股",
           "sector": "記憶體模組",
           "sentiment": "利多",
-          "reason": "威剛攜手輝達、研華強攻「物理AI」醫療機器人，並首度展示AI省算力神技，顯示其在AI應用及記憶體領域的創新與合作。",
+          "reason": "威剛與輝達、研華合作強攻「物理AI」醫療機器人，並首秀AI省算力神技，顯示其在AI應用領域的積極佈局與潛力。",
           "evidence_news": [
             {
               "title": "威剛(3260)迎25週年軟硬通吃！首秀 AI 省算力神技 攜手輝達、研華強攻「物理 AI」醫療機器人",
               "source": "優分析UAnalyze",
-              "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ySG52bkg0NHNRME0tdFRjMFdvd01FM1NJN1hQV0RITkJ1ZU5pUl9YX0FfQ081a2tIWFplc3NpcGR3cWV6TFoxRzAtbHdIeXNYTXpuQmN3?oc=5"
+              "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ySG52SDR4cTBNa3RUYzBXb3dNRTNTSTdYUFdESE5CdWVOaVJfWF9BX0NPNWtLWFplc3NpcGR3cWV6TFoxRzAtbHdIeXNYTXpuQmN3?oc=5"
+            }
+          ],
+          "news_count": 1,
+          "first_seen": "2026-06-29",
+          "last_seen": "2026-06-29"
+        },
+        {
+          "name": "研華 (Advantech)",
+          "ticker": "2395",
+          "market": "台股",
+          "sector": "工業電腦",
+          "sentiment": "利多",
+          "reason": "研華與輝達、威剛合作強攻「物理AI」醫療機器人，有助於其在AI及邊緣運算領域的業務拓展。",
+          "evidence_news": [
+            {
+              "title": "威剛(3260)迎25週年軟硬通吃！首秀 AI 省算力神技 攜手輝達、研華強攻「物理 AI」醫療機器人",
+              "source": "優分析UAnalyze",
+              "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ySG52SDR4cTBNa3RUYzBXb3dNRTNTSTdYUFdESE5CdWVOaVJfWF9BX0NPNWtLWFplc3NpcGR3cWV6TFoxRzAtbHdIeXNYTXpuQmN3?oc=5"
             }
           ],
           "news_count": 1,
@@ -1266,9 +1211,9 @@
           "name": "技嘉 (GIGABYTE)",
           "ticker": "2376",
           "market": "台股",
-          "sector": "電腦及週邊設備",
+          "sector": "電腦與週邊設備",
           "sentiment": "利多",
-          "reason": "技嘉的量子HPC（高效能運算）助攻日本超級電腦啟用，顯示其在AI基礎設施和先進運算領域的技術實力與市場拓展。",
+          "reason": "技嘉量子HPC助攻日本超級電腦啟用，顯示其在高效能運算領域的實力，可望間接受惠於AI算力需求。",
           "evidence_news": [
             {
               "title": "技嘉量子HPC助攻 日本超級電腦啟用",
@@ -1281,58 +1226,45 @@
           "last_seen": "2026-06-29"
         },
         {
-          "name": "Palantir Technologies (PLTR)",
-          "ticker": "PLTR",
-          "market": "美股",
-          "sector": "軟體服務",
+          "name": "崇友 (Chong You)",
+          "ticker": "4506",
+          "market": "台股",
+          "sector": "電梯製造",
           "sentiment": "利多",
-          "reason": "Palantir與Nvidia合作推出新軟體商業化，並共同為美國政府提供AI平台，強化其在AI領域的競爭力。",
+          "reason": "崇友拿下輝達鄰居金仁寶總部70台電梯大單，顯示其在高端商業建築市場的競爭力，間接受惠於AI產業帶動的基礎設施建設需求。",
           "evidence_news": [
             {
-              "title": "【21:52 即時新聞】Palantir Technologies(PLTR) 勁揚5%／軟體族群逆勢走強+與Nvidia合作強化AI題材",
-              "source": "CMoney投資網誌",
-              "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOWnBnZVc1TTgwUm52ZVR1a2Z3ZEdSMGJmVlBOMmhTN3dhVTBoLWRvdnlndE9JNXRKMzROT25yVXRObVZST0NCa083NXVDaUgzNTViSVdhaEk3ak1HSVJSRHA0V1pFcGRQNVV0THdDSnJZZDJpdmpNTjJtVUVnWHh5SWdxRnZjaGM5MmF1bkt3?oc=5"
+              "title": "搭過101世界最快電梯嗎？背後廠商崇友再出手 拿下黃仁勳輝達鄰居金仁寶總部70台電梯大單",
+              "source": "鏡週刊Mirror Media",
+              "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBSa2llSGc4eTZSZThFMVBKX2FxXzljdU1DNkRPSzAtdVZjekpvY3dZaXhLbWlLX3B1SDZwUzlja1YzTWNleUdsaGJnelJsSml2UWdoT2FTZS1PNWFhVzd5YWFYY9IBaEFVX3lxTE1PV2lrcTZEX2pUS2hDR0E3dmNIeTFXQlRsVWJYOUdpSnBqZXpReW5nY1pKQUNVbk5nNF80ak1McjAyTENBTVdTYWRHVEQwS2dJMkxBYkNGMUd5eEwyU256U21SR3BEUHp6?oc=5"
             },
             {
-              "title": "Palantir與Nvidia合作為美國政府推出AI平台",
-              "source": "qz.com",
-              "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5iMEdPMHdYZERSbXNZWmZNRWc5RWlpSmdfNS1ZWVduTlZaaVpGLWVuRmNNTmEwRF9MOE9vZGs0Z0NhbEFKUjVzNjg2d1JQR1I0MGl3Mm5oOE9GMGYwSldTUjdnVUU1SF9jc1NuS2N1WkU?oc=5"
+              "title": "北士科輝達總部旁T16 金仁寶集團總部電梯由崇友承攬",
+              "source": "信傳媒",
+              "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9wbVhwNGlCTHRPZi1TM3FWMFh3TlFmT1FYWXZFOVVacmRxWks4N3pxMlVCMk9ROENCTkFya0hYOFJQVFUtTDZST2M2NTltVmNaaWJLWnZ6MU9MQQ?oc=5"
             }
           ],
-          "news_count": 1,
+          "news_count": 2,
           "first_seen": "2026-06-29",
           "last_seen": "2026-06-29"
         },
         {
-          "name": "AMD (超微)",
-          "ticker": "AMD",
+          "name": "高通 (Qualcomm)",
+          "ticker": "QCOM",
           "market": "美股",
           "sector": "半導體",
           "sentiment": "觀望",
-          "reason": "摩根士丹利預期NVIDIA的Vera CPU出貨量仍低於AMD Zen 6處理器，顯示AMD在CPU市場仍具競爭力。",
+          "reason": "高通選擇不與輝達競爭AI訓練市場，轉而專攻AI推論市場，此策略調整可能為其帶來數千億商機，但市場仍需觀望其執行成效。",
           "evidence_news": [
             {
-              "title": "摩根士丹利預期NVIDIA的Vera CPU出貨量仍低於AMD Zen 6處理器",
-              "source": "Cool3c",
-              "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBDa01Xd2xqYVlvQVVQSlVEdHF6TjNqck1ySFVkUTNlSjdSTk5uQkt1b2lqUWtLSXh5Ymg5RVdkckJjZ1VRaF80dnJ4SUdGQQ?oc=5"
-            }
-          ],
-          "news_count": 7,
-          "first_seen": "2026-06-29",
-          "last_seen": "2026-06-29"
-        },
-        {
-          "name": "Bit Origin (BTOG)",
-          "ticker": "BTOG",
-          "market": "美股",
-          "sector": "區塊鏈/加密貨幣",
-          "sentiment": "利多",
-          "reason": "Bit Origin豪擲1100萬美元收購Nvidia Blackwell AI伺服器，表明其對AI基礎設施的投資，受Nvidia生態系影響。",
-          "evidence_news": [
+              "title": "高通不跟輝達拚訓練 改攻AI推論市場數千億商機",
+              "source": "news.cnyes.com",
+              "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE56MWVHcnNGMWlxYzVRLThCUjBPbUhiUG9sd3VjclFYdmVKZFd3Z01jQUotXzlSZzFDRWtJNEZ6cmp1dG9DcUxSZDI3Tllnb1k?oc=5"
+            },
             {
-              "title": "Bit Origin豪擲1100萬美元收購Nvidia Blackwell AI伺服器 股價大漲12%！",
-              "source": "CMoney投資網誌",
-              "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOXzZ2dmt6b0tlTU1RX0tQb3JEal95b2N6WU9VNHdkd3VkTjN5eVQxVXg5SURReWVIMmFPUW93cjJoZmhzVlA0OTkwYzRKTU8xZ1BVc1dFcDdiNVRQUkJsZUJ0TUJCVUtadGdDd29EZHJEbGNvc0hZSGh4OGdoY1hyYnJKcVZXUkRncExxQTkyM3J1X2w2SzRGSkhXNHFwWVN0VFNXcHBwaVNWMm5FWE5ENVhucnpZVC13V19JU2NIcF9Ic1hQX3VwVFJvSVVUWG8?oc=5"
+              "title": "LTN經濟通》昔手機晶片巨人 A I浪潮中四面楚歌？",
+              "source": "自由財經",
+              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5BMFFqZzZlazZqQi1RVTVJYXNBMmpiMWN2Y1JKUlU0OWo3RlQ2X0FsS1h4c2R1Yl9zS1J6c19sZmVQUG1CWnFweHU5ZGRneUxzUld4aVFST2xBLW5Wc0tj0gFkQVVfeXFMUGhfVzYyTFhrdl96NFQxOVdRUlVDN0U1NnBUcDdKejktSG1RckMzaEJvRVd2T1JXRURZSDRWaFJqZUxSQndZeTRvREt5cFpnelpHc0VCdmJoSXdYbmZfaDFrUDMwOA?oc=5"
             }
           ],
           "news_count": 1,
@@ -1342,9 +1274,24 @@
       ],
       "evidence_news": [
         {
-          "title": "涉嫌違規轉售輝達晶片 檢方搜索青雲科技、是方電訊",
-          "source": "CTWANT",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE91eUN5SUhyYktGMDB3TlFtREtPdHlnWmhYRl_6TDR3aXBYaXpCS3NrcThhYzRGLWVYemxOREVPa0QzWS1JSzJFRVJGQ0VWUDTSAVRBVV95cUxObklWaV9BVXBQNTc5alBYRjBrTlpVallGdXZVNG1pMVo1YU5pWlhuWjgxcl9KNFlfeG9xVGtoOFJHZU5LUG5kTkIzTkRYVHl4aXozTlQ?oc=5"
+          "title": "微軟 Azure Foundry 導入 Anthropic Claude，採用輝達 GB300 加速推論",
+          "source": "TechNews 科技新報",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5fa2xtYUNxMW5CZHpUdUNfVks1Slh5NHNKSUJVVjRZTVFWX0RYb3ZKa29UX3ZmVDRIZjRVWUFlT2gtUENpOEZjaFhMTm5sZ1NKSUlIZnZRWXpzVzVpNnBpM05IMUo?oc=5"
+        },
+        {
+          "title": "檢方查走私輝達GB300案搜索美超微、青雲、是方電訊 但是方電訊沒有買賣伺服器業務",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi6gNBVV95cUxOMlhjUjdlVmZ2ck5zVk1YUjY5VWo1eVExVER6eUpVNmhqcXZSZnpRdmdjOHY4akt3aUs2NUswYmZhdGFhUnBVVmpnSjZQcEJLUWswZHU2UmlyQ0hJOXFDVnRwQUlZWmwwVm81TjV3Rm5VcXVnOWppRl9XQTZKNTRKT21LMGxjUmpSUEQ2RHN3YW8wTm1hVTZ6S2pxTGFtXzZ4TGlvWkphNlFLbnJFVU9XMWFENW56Z3pqUVBhM0xYbk9zZS04NG9SUmp1S09GcVIwMWZ4Nm1sQV9DRER4LVVUbHVCVzVnbExhWXMtNHJ4WHRham9ULVgweXJjTE9Oa1NhSjVjSVBpaWdodnIta3U1MEJFbE1ZRnNzeFp1T2NETWhYT1FBTnNsYjFQZUU2NFFTbl9TcGxnaWtITUF4RHcwNDdvZUJQSy0yS2RDQWt4YzhzdXllSkt0eUZaM3lUM0hWTWVkZm9Iczl2bWRMcjdmQmxOaGd5cC05YU0xRWUtZVZiSTNMQ0hsQUw4a3pvZDBlTWlsc18zRXUwYUNNRkNMSnhuR2NOZTVLWkhyY3Z6ZUJrTVg0TlR4amZVN043VUR3bWpnTzViX0NCdWt3MHBJMUVVVVBPdmJscjBGQXVBX0Ywc19PMnFvejZB?oc=5"
+        },
+        {
+          "title": "加速商用落地，NVIDIA Halos for Robotics 建構 Physical AI 安全系統",
+          "source": "TechNews 科技新報",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOMnNhaTFUWTZLSFdMeUw2UjNWNERkNWtvN1g5UHlpYnhPa2hqTzR3MnpBZDY3WnNKdWtubk5ESmNrUXNmZHVUR1R2QVZlWndUTXVjMTQzeHJ0YjVmNDY0cFFfaFJlX1Rpa3JVdTJLYnkxNUY2VURDZ2pmc2xoVmlDSEFtNjE3cVlwTHVEWWY2Y1RqWUt6UkdHOU5xOHVjUGdQRlp4SnVWNF9LOXpXUUU2Q1NIOEZlUmVqRmg0?oc=5"
+        },
+        {
+          "title": "美超微涉走私輝達晶片到中國 檢方發動第二波搜索 股價崩超8%",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfaVc0TXBDdGowS3VMQmlwRTdDZDFDUTR6Yy1TTXZOY0toQWNhQ091UlBHaFJTSkpHblpsQkZ4Rk1qem9uMld3eTdwUGFMUGc?oc=5"
         },
         {
           "title": "黃仁勳稱Prompt過時？「Loop Engineering」揭示AI下一步",
@@ -1352,40 +1299,113 @@
           "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPbDRXOUlrdEF5UGpMcUFoaVFPdUxQUkNoZWhteGVhM29LWURDcVZ0RUk5MGdnSG85bFFQN2hFdUZKeHlCSE5oMFpENjROZUp0Uy1SNXY2UE9BczY4SFEtdFN4M0JJY0h6alc3ZW5oVjhObGdkYm4yVFFBLTZMWE1QaUN5cWVaWElXWC02N1pPUFpnVEVxZ3FfQw?oc=5"
         },
         {
-          "title": "輝達攜手Firmus打造17萬顆GPU AI基地 印尼成亞太算力新樞紐",
-          "source": "TVBS新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9FWi1hSllueE15c3VUWFF3bFRpcEludkhjbS1MeGN1eDVvMkJWcUZ2Um9JUFU0VjVFYk1rSXRZd1YxOXhoYkxWYUpaa0ZDQQ?oc=5"
-        },
-        {
           "title": "Nvidia 秘密招募航太人才 黃仁勳欲將 AI 算力版圖擴張至外太空",
           "source": "Business Insider Taiwan",
           "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB3LVFvU3ZNYXoyekNJYlZzUjRTdWhySjdTMHFwbXhYWk1XMGwtRE9iS2x6Y1dKSXVQeFJTNWduZTRGYUtyNXMtVmhSbHF3ZFAtSVpDZkFn?oc=5"
         },
         {
-          "title": "輝達(NVDA)遇高溫危機！全球79%資料中心受氣候威脅，AI散熱迎爆發",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbkN1QlBVUUZBaEpKbTNCRzE3VHhhVjhmaE82aTJyeVlqd3d0RmJZYTl4bXNGTi0xYUJVYUF5RFpjdG9WUGhoNW1JVkhCeE9XemZyZmFIN0tkZ19xS3p4dkV3UHpMaUd6VFo4dDdXYlJzYlRtVHh4LU5BY2RwZXJwcXFod2lheFZRVFFxYkFhVUw?oc=5"
-        },
-        {
-          "title": "Nvidia CEO表示國家安全優先於商業機會",
+          "title": "Nvidia CEO says national security takes priority over commercial opportunities",
           "source": "Crypto Briefing",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9jMFRZZ0RIY25DU2JSc1UybjlwaWJ0RGF0SEZ6WktjU3JQWDMzaU1ZOFlJRmEzMWZhcmlWUVdXTklBT2xWSG9VVEFxT0dZT0E2ME9WUmZFYkN4eDZXUllFLTctTnB0V29rNV96c2hZSEJKaTQ?oc=5"
         },
         {
-          "title": "黃仁勳表示，AI將提升製造業工作機會。德州將會是一個考驗。",
-          "source": "TelegraphHerald.com",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbVBnbmZpcGhhZlpVajB3c3VxYy05U1lyRjVPb3BMY2FNeGRBUnJ0UjNILThuMlRmOWpMWmliVmJqQ3VhM1VXRUpmaGotR0FPVHgzWkItRHBwN0dkblloQk1YQ3pVNlNQNUpIRldYUUhsd3RDMEJsTkswdXpOUU5wTWpRT1gxZjhjVERRM3lRWmU2Q2ltZGpSazQxRQ?oc=5"
-        },
-        {
-          "title": "黃仁勳表示，Nvidia在中國的收入已歸零。這是他200億美元的翻身計畫。",
-          "source": "The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVVRQUk1kQUx3bmZHTmUzZWh2YkpTWU01SUV3X1Y4MThZQjg1cDhsc0R2UGUzb1NpWS1EZGtHTUxQN1RPUGZQekI5QXlkLXJFLXpIV3NiWk9sLXdaa2hIZVRGQW1COFJTX25VTHNLUGdFNXJleDV6QzVhZVMwdmRtLXRDaElrX1hySTBfcVkwZGUtZTJw?oc=5"
+          "title": "Nvidia's AI chip sales in China stall, as local chipmakers like Huawei take the lead",
+          "source": "Carolina Coast Online",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOeEtIdlhFSldyRzUwOEhoajZ1aFFWUkdRU3VFQUZFcFlZcXVmbWRaZTVzbEN3QmE3a1FDWThWa1Awd3IwSVZjLXVrMUtMRURuWk5xdzZIR0xMYTdSN1VKNUVKWnMxYW4ySDY5NUxJMF9XZER3ODNoaFRaLVlRYi12cHpFa3dTNHMzS0FPMnRSMUgyVk9sY0d5ZTBB?oc=5"
         }
       ],
       "news_count": 100,
       "first_seen": "2026-06-16",
       "last_seen": "2026-06-29",
       "raw_news": [
+        {
+          "title": "微軟 Azure Foundry 導入 Anthropic Claude，採用輝達 GB300 加速推論",
+          "source": "TechNews 科技新報",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5fa2xtYUNxMW5CZHpUdUNfVks1Slh5NHNKSUJVVjRZTVFWX0RYb3ZKa29UX3ZmVDRIZjRVWUFlT2gtUENpOEZjaFhMTm5sZ1NKSUlIZnZRWXpzVzVpNnBpM05IMUo?oc=5",
+          "summary": "微軟 Azure Foundry 導入 Anthropic Claude，採用輝達 GB300 加速推論 TechNews 科技新報",
+          "published": "2026-06-29T23:31:39+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "檢方查走私輝達GB300案搜索美超微、青雲、是方電訊 但是方電訊沒有買賣伺服器業務",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi6gNBVV95cUxOMlhjUjdlVmZ2ck5zVk1YUjY5VWo1eVExVER6ZUpVNmhqcXZSZnpRdmdjOHY4akt3aUs2NUswYmZhdGFhUnBVVmpnSjZQcEJLUWswZHU2UmlyQ0hJOXFDVnRwQUlZWmwwVm81TjV3Rm5VcXVnOWppRl9XQTZKNTRKT21LMGxjUmpSUEQ2RHN3YW8wTm1hVTZ6S2pxTGFtXzZ4TGlvWkphNlFLbnZFVU9XMWFENW56Z3pqUVBhM0xYbk9zZS04NG9SUmp1S09GcVIwMWZ4Nm1sQV9DRER4LVVUbHVCVzVnbExhWXMtNHJ4WHRham9ULVgweXJjTE9Oa1NhSjVjSVBpaWdodnIta3U1MEJFbE1ZRnNzeFp1T2NETWhYT1FBTnNsYjFQZUU2NFFTbl9TcGxnaWtITUF4RHcwNDdvZUJQSy0yS2RDQWt4YzhzdXllSkt0eUZaM3lUM0hWTWVkZm9Iczl2bWRMcjdmQmxOaGd5cC05YU0xRWUtZVZiSTNMQ0hsQUw4a3pvZDlNaW1zXzNFdTB5WUNNRkNMSnhuR2NOZTVLWkhyY3Z6ZUJrTVg0TlR4amZVN043VUR3bWpnTzViX0NCdWt3MHBJMUVVVVBPdmJscjBGQXVBX0Ywc19PMnFvejZB?oc=5",
+          "summary": "檢方查走私輝達GB300案搜索美超微、青雲、是方電訊 但是方電訊沒有買賣伺服器業務 Yahoo新聞",
+          "published": "2026-06-29T23:30:27+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "加速商用落地，NVIDIA Halos for Robotics 建構 Physical AI 安全系統",
+          "source": "TechNews 科技新報",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOMnNhaTFUWTZLSFdMeUw2UjNWNERkNWtvN1g5UHlpYnhPa2hqTzR3MnpBZDY3WnNKdWtubk5ESmNrUXNmZHVUR1R2QVZlWndUTXVjMTQzeHJ0YjVmNDY0cFFfaFJlX1Rpa3JVdTJLYnkxNUY2VURDZ2pmc2xoVmlDSEFtNjE3cVlwTHVEWWY2Y1RqWUt6UkdHOU5xOHVjUGdQRlp4SnVWNF9LOXpXUUU2Q1NIOEZlUmVqRmg0?oc=5",
+          "summary": "加速商用落地，NVIDIA Halos for Robotics 建構 Physical AI 安全系統 TechNews 科技新報",
+          "published": "2026-06-29T23:00:56+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "LTN經濟通》昔手機晶片巨人 A I浪潮中四面楚歌？",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5BMFFqZzZlazZqQi1RVTVJYXNBMmpiMWN2Y1JKUlU0OWo3RlQ2X0FsS1h4c2R1Yl9zS1J6c19sZmVQUG1CWnFweHU5ZGRneUxzUld4aVFST2xBLW5Wc0tj0gFkQVVfeXFMUGhfVzYyTFhrdl96NFQxOVdRUlVDN0U1NnBUcDdKejktSG1RckMzaEJvRVd2T1JXRURZSDRWaFJqZUxSQndZeTRvREt5cFpnelpHc0VCdmJoSXdYbmZfaDFrUDMwOA?oc=5",
+          "summary": "LTN經濟通》昔手機晶片巨人 A I浪潮中四面楚歌？ 自由財經",
+          "published": "2026-06-29T23:00:00+00:00",
+          "origin": "關鍵字「輝達執行長」"
+        },
+        {
+          "title": "黃仁勳訪韓掀轟動 女兒致謝韓警 李在明宣布打造AI計畫",
+          "source": "民視新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBlbGlyT2xMMVp6alA0TjM2ZWxpS0JIWHg5ZVR3bjFqM2VLZk41V3dJaFIxcjR4Ni01VmRDSnh3Mmt6aXBZeHg5c2ZXelFZai1CVFNYRUprRXNoUXN3XzM0TA?oc=5",
+          "summary": "黃仁勳訪韓掀轟動 女兒致謝韓警 李在明宣布打造AI計畫 民視新聞網",
+          "published": "2026-06-29T22:55:48+00:00",
+          "origin": "關鍵字「黃仁勳」"
+        },
+        {
+          "title": "美超微涉走私輝達晶片到中國 檢方發動第二波搜索 股價崩超8%",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfaVc0TXBDdGowS3VMQmlwRTdDZDFDUTR6Yy1TTXZOY0toQWNhQ091UlBHaFJTSkpHblpsQkZ4Rk1qem9uMld3eTdwUGFMUGc?oc=5",
+          "summary": "美超微涉走私輝達晶片到中國 檢方發動第二波搜索 股價崩超8% news.cnyes.com",
+          "published": "2026-06-29T22:51:26+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "【美股巨頭】Palantir攜手輝達、股價漲2.45%，但市場最怕的事沒解決",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZ2hyZWJ3RVJKdDlFeUc4dmNqYXNkUXJJeEp4dWYxR2ZqZ293bkRpVDFPM0ZzUTBiSmNyaEttUUJtWEQyT2w3dVpmUEpxOFdEOVFXaV9WTXRMWk9pd0QyRDd1UFQ0dU5xRDVybF9tY1hTNkVIMnMwa1Yxck9KY2huVk0xWmlqajJWNWtQVjl3?oc=5",
+          "summary": "【美股巨頭】Palantir攜手輝達、股價漲2.45%，但市場最怕的事沒解決 CMoney投資網誌",
+          "published": "2026-06-29T22:38:11+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "【美股巨頭】Supermicro台灣辦公室遭搜查，輝達GPU走私中國案升溫",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOTmFYdXZhQmZpRXZQcWJVMzBMSC1RZmhpdkdCUlozU1V4b0pTZV9WT2Q1RFlVZVd4eDBPbXQ0SERkUnpzVjByOU1oNXdzZDlTcXpZNDAwWUJDdE9LTnVfMmhaZWVXTUFYSnVXZUpSNE5VeWNGOWF3eXZYR2psUWJvV0xqeEtQVUtsa1lNS3dnclZhM3RCdi1hUFNMWmxEZEtPV2tZTUlpa2J5N010M3pnQUdaQXFaQ01XbUxkYkxqY0hoZ1VETFRiTUQxN3JCQzg?oc=5",
+          "summary": "【美股巨頭】Supermicro台灣辦公室遭搜查，輝達GPU走私中國案升溫 CMoney投資網誌",
+          "published": "2026-06-29T22:35:19+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "資訊業者走私輝達晶片輸出中港澳 檢方搜索2科技公司約談6人",
+          "source": "鏡報",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE94M19xQ2dvQ19RSGdaMlBEWlFlQktNYWJrbEZsSVVHbUFxNVdxbTlFTm91NF9oUjh1RmpkQnlQTHhwQ1dVd2FhdjhidGZqRzhCVFE?oc=5",
+          "summary": "資訊業者走私輝達晶片輸出中港澳 檢方搜索2科技公司約談6人 鏡報",
+          "published": "2026-06-29T22:30:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "輝達高階晶片伺服器違法賣香港 檢擴大約談6人",
+          "source": "壹蘋新聞網",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5Yb2NLdkFzVGN3RERHVlIyRDBuS0lPQ1lyY3ZIWm9FMFN1Q0ZDMEQtVFBmbG8yTTYxTDdoNmNtTkdlc1QzMTdvYUJjX2RNZ0c1ajlBWEQ4eUZzYzZYdE56OThYckhEOE4wc3hQeTIybnBGNnNlTENSeU5xT2ZITUU?oc=5",
+          "summary": "輝達高階晶片伺服器違法賣香港 檢擴大約談6人 壹蘋新聞網",
+          "published": "2026-06-29T22:19:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
+          "title": "涉嫌違規轉售輝達晶片 檢方搜索青雲科技、是方電訊",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxQcTRYa0tSMXkyQmFRdFJDbl8zRDdLTmJDZEhfd1duT3RSR3N3VGtuVUJGZElaTVRuclozWUJaSWRpTEVZQTg2SWdNUzdxbzc2X000LWhIdV8tOGhWUGdXUVZ3dVo2aE1NR3lXaWZZMldzV2thZmtwZXpYd1U4b3otMUVKU1hoN19OMWRsSTQ0VWM4YVM4cS1fbElMTGphZkVMNnhibGFYQldwTlZRejZZbXNvOUt1eTJIUUR1enprOGt0X29fenJCdWdsRzJURC1zVlZXRTh5TFVwMmNUaG9BWVZBeDhUVllqNUQtWjZCaVptWkhHNDREbGh5QU94RFc4eFNYN0VYRC1mcVMxcUFob3kzaVZZdWNnS19EZTlRVkkyTThsQzJzSElxeGpFaW8ydnRodURoSkVLVXNfblMwdG1JVnNPNEJnVHc5bi0yRlZtbUl4YUQ3WnJyQ3AxUQ?oc=5",
+          "summary": "涉嫌違規轉售輝達晶片 檢方搜索青雲科技、是方電訊 Yahoo新聞",
+          "published": "2026-06-29T21:35:00+00:00",
+          "origin": "關鍵字「輝達」"
+        },
         {
           "title": "涉嫌違規轉售輝達晶片 檢方搜索青雲科技、是方電訊 | 社會 | CTWANT",
           "source": "CTWANT",
@@ -1427,6 +1447,14 @@
           "origin": "關鍵字「輝達」"
         },
         {
+          "title": "NetApp storage certified for NVIDIA DGX SuperPOD",
+          "source": "NetApp",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPS29tbnpQZzliSTlPenVkLTRfbUZtcVVubWdDdzdxcmZBTWhULWt1UDJHZm5zWGRqYjNEWnJXTTE5dXNxY2N0NGs4OGt1ekZqNUlzaC12amdJbzNDZ0I1U3diODk0anJESmtsaUFRUUdBZWh0WUkxTWViQnVKem02eDM2akotdUFCQUx3OVRwQnB5QUFYSmt4enpWRE5mM0k?oc=5",
+          "summary": "NetApp storage certified for NVIDIA DGX SuperPOD NetApp",
+          "published": "2026-06-29T19:33:58+00:00",
+          "origin": "關鍵字「NVIDIA」"
+        },
+        {
           "title": "矽谷新星！分析師熱議當前最具吸引力的晶片股，Nvidia成為焦點",
           "source": "CMoney投資網誌",
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPU2dwRWdra055R2VBVWthS1Ruajk5cGtSWlBBMnNxM2JNWHlaU0FtMUd4NFE2bk5xTjdZeVgyZ3BDZnhjaE5FckRPYU1hcnV2RFNHUTZKTWp5a205MV9yQXViZFY0RVZpTV9aQUNCcE1lVUhFUFZEZWN3WVdUcDNabmZGYTBmYXFSczB6c1pR?oc=5",
@@ -1451,6 +1479,14 @@
           "origin": "關鍵字「NVIDIA」"
         },
         {
+          "title": "輝達跌破頸線! 鏈上分析師估「這個目標價」",
+          "source": "MSN",
+          "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxNaFA3eFFobGNQYWVlM3VDNzF4OWNueHdVTTNpUF9OaGp0enpLRVhQX29lZ1NhM0RWbXhXVUdZUVBhQ2RUWGl5ZjIwZjFnNlVRdXNMc2lOTm5jcWdwalpFbTFsaV96dTdIUWcwRFlIS19lZlBhQ0ZiSmtVZmkxYXJqUVhLMHlxWmloUTdLWU1Jd0U4UThpa3FBMm0wUGF3ODFqckd4ZUk1ckJnMzFKSG9TVEhvQ1Jjdkk0QWtSREtud3F0VElfUEZlRExraWRrVWthbXRoY0JiWDdWd0c3c3I1R3BUOXdfOGpsVk52SW9jWS14VENFNjNZSU1lTTlPX09mOFNBeC1jMndPWUxDS01xZWYxR3M4dkFKY19RM1gxSEROU3FBSTZyMTdVQ1BGdGRFdFQ5cWI0WjNNeXBBRWk4dFFuMHNyeVlzQzVhRm1iQQ?oc=5",
+          "summary": "輝達跌破頸線! 鏈上分析師估「這個目標價」 MSN",
+          "published": "2026-06-29T18:49:17+00:00",
+          "origin": "關鍵字「輝達」"
+        },
+        {
           "title": "輝達競爭者Cerebras反彈近20%！市場押注其有望受惠於HBM短缺潮，花旗料股價有90%的上漲空間",
           "source": "TradingKey",
           "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOENUMFJjZGhDb3JEOGFYa2tHS0N2cUFZaGprUlcwaTV4ZTR6bllqdjB1YkkxaVljSm5WcXJJQWpPaWJLc1N3ZlNXWjFfTkE3WERVaWM4Rl90REZRTGJma3hBcy1NWFYzTlZrT1VtUVdidlpNVEFmUWI0TXljNkVRUGRtMVdzZF8tY01ldk5TVTFORHFLR1V6YnhIZWYtdFVqZVVRZFZuTkFNdmZIYTlmaFZPcERBVFFJdG5TbktUYlJtcloxVGc?oc=5",
@@ -1473,14 +1509,6 @@
           "summary": "Nvidia攜手Anthropic推出Claude模型，Azure上運行超強GB300 GPU！ CMoney投資網誌",
           "published": "2026-06-29T18:17:18+00:00",
           "origin": "關鍵字「NVIDIA」"
-        },
-        {
-          "title": "輝達跌破頸線！鏈上分析師估「這個目標價」",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNUFlKbEtTNXVrV0JERW9wR0dvUndlYUE1TnpPdng5YTlRN0pocTBfNFM5aUE1MktOQjNmZVJxOEw4QWpIOWI5NlgxZ21lQjFYQnV4ZHJqeFVKYXY4WDRjdU55WHRMRDd4eTJ5bl9Gdl9IVnhRM1ZQYTZKRzJReGpLYl9iR3ZMS0swdVFrQXdtdURnU2FpV2xmNGx3bTc1ZTA2dElYX1c1LWVTanhkUWlYUk9MRHdrb0laOUl1NUttSmJ4QklpNmRVZ3J6QUtXMTVOdmdDb0ZKNktGekJITFhGU0NDN0E5RlVmblp3R1pDMWRxMU1WbFR6emdWZ0xUVnVSaXNvZHVxUUU0SktDcU9McWJqOVZBVXZERGtNMEN0Mmp5QQ?oc=5",
-          "summary": "輝達跌破頸線！鏈上分析師估「這個目標價」 Yahoo新聞",
-          "published": "2026-06-29T18:15:00+00:00",
-          "origin": "關鍵字「輝達」"
         },
         {
           "title": "Anthropic將Claude模型部署至微軟Azure，搭載NVIDIA GB300 GPU 作者 Investing.com - Investing.com 香港",
@@ -1523,11 +1551,11 @@
           "origin": "關鍵字「輝達」"
         },
         {
-          "title": "涉走私輝達高階晶片 美超微、青雲科技、是方電訊遭搜索",
-          "source": "中時新聞網",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA5SExTQkRneXh5QjIwZG5ZOHBkSXVKR2JRVWxZbUlRZEdFdGl2bmdqOVNlQmlXaEZua2lPWlowWHREcThfWTV4R09ZRERvWUhUZkMxai1aWHEtSGgyNkNHcV9WeHZTQUR1NHpCell3?oc=5",
-          "summary": "涉走私輝達高階晶片 美超微、青雲科技、是方電訊遭搜索 中時新聞網",
-          "published": "2026-06-29T14:58:42+00:00",
+          "title": "台人走私輝達晶片到大陸！檢方搜索青雲、是方、美超微分公司 約談6人",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiqgNBVV95cUxPWlJKWURabzNnNF82VnZhQ2N5bFFsc3NPN0duRjdON0k3S3VjVzVzakNIMm11WWV0by15TWpCaGhWNndlclA0UEZNYjlGaElrbGJXd3V2UFM2VEdNMGJaWjlOSUtPeXduSXRMb2lCWW1Yb2FlNDREajhvNU92Rlp5VTdfa00xNW1RcUt0bm5vQUJFR3lGWnJUbHpFOEZVN1lLVjUxUjB4RjZaSTFJM25fanIwR2xGWEhMWGV5dVo2bElwRjRWV3E5MTJZajk1X1hHc2NCSjEzM1dfc0ZhMTdUeWZjYlRUY1V0UmlUSGxpY3R1OXhBNmRQc2dxM285b3Rsenh2ZHpYVXl2SW1GZkQ1ODMxQ0NqM05WNExQT08wQUhQYTI3QkdyNEVfcWlaek1vZmNhUmNrMkctYlpVTmY5RDltdzJJVTNKeV9BT2lNbG84OXFRMFREQm9TV1hmSUxaWHJCTHJ2NldZc0FPQjZBSk1iaENhTlRWZ1F2WGptcU8wMkpVWFJJT0sxRmJBSGk5bG5IX0tnU0JQS2FLbkZKeUVtaDIzd2k3QUE?oc=5",
+          "summary": "台人走私輝達晶片到大陸！檢方搜索青雲、是方、美超微分公司 約談6人 Yahoo新聞資訊業者走私輝達晶片輸出中港澳 檢方搜索2科技公司約談6人 Yahoo新聞涉走私輝達GB300至中港澳 美超微、青雲、是方電訊遭檢方搜索 自由財經",
+          "published": "2026-06-29T14:46:13+00:00",
           "origin": "關鍵字「輝達」"
         },
         {
@@ -1595,14 +1623,6 @@
           "origin": "關鍵字「輝達執行長」"
         },
         {
-          "title": "涉走私輝達GB300至中港澳 美超微、青雲、是方電訊遭檢方搜索",
-          "source": "自由財經",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9RdGJpYjBjNWRqRVM0WnktQ1d6bjR6UHdxVElzLUwzZWdOLUZkNjNYVXJHc3lDZ1o5TUpNNVEtZ28zU1d6ZE02cTRGVmhwY09NNlFHWnhCTHdKRHhHR0JN0gFkQVVfeXFMT0IzSy1XaHZWcEw1bDVQUDhnYUVINE9BRjZpa0lLSzNCYnVxSFI0WUR3WkZHQjJPNDNWZWFqc192VDJZVENYU3JjRGc4eFZWODhOZUtOT09oQzBpcTlMaDNkWEdSLQ?oc=5",
-          "summary": "涉走私輝達GB300至中港澳 美超微、青雲、是方電訊遭檢方搜索 自由財經台人走私輝達晶片到大陸！檢方搜索青雲、是方、美超微分公司 約談6人 Yahoo新聞涉嫌違規轉售輝達晶片 檢方搜索青雲科技、是方電訊 Yahoo新聞",
-          "published": "2026-06-29T12:21:16+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
           "title": "輝達市值上10兆？ChatGPT預測「這時」達成",
           "source": "三立新聞網SETN.com",
           "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9qLThuWWhKMDl4TGFWa05uZU5ONVJWMWxwSVRVeTFubUpSVW9oMTFPNFVzV2Z2VnJ2U2M2ekFBeDBxSTVuV2dmWE1HOA?oc=5",
@@ -1635,28 +1655,12 @@
           "origin": "關鍵字「輝達」"
         },
         {
-          "title": "輝達攜手Firmus打造17萬顆GPU AI基地 印尼成亞太算力新樞紐 | TVBS",
-          "source": "LINE TODAY",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9vRmZZb1Z2Z09qQzlZbnhTd1h4TmJxUFFFckFnTk9sU0RYSmxzLXQ2WkljLTZnMnp4WEJkX25pVVFPc0Y4azJ3Tnpid0F4eGcyQS1LaWxB?oc=5",
-          "summary": "輝達攜手Firmus打造17萬顆GPU AI基地 印尼成亞太算力新樞紐 | TVBS LINE TODAY",
-          "published": "2026-06-29T10:18:52+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
           "title": "搭過101世界最快電梯嗎？背後廠商崇友再出手 拿下黃仁勳輝達鄰居金仁寶總部70台電梯大單",
           "source": "鏡週刊Mirror Media",
           "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBSa2llSGc4eTZSZThFMVBKX2FxXzljdU1DNkRPSzAtdVZjekpvY3dZaXhLbWlLX3B1SDZwUzlja1YzTWNleUdsaGJnelJsSml2UWdoT2FTZS1PNWFhVzd5QWFYY9IBaEFVX3lxTE1PV2lrcTZEX2pUS2hDR0E3dmNIeTFXQlRsVWJYOUdpSnBqZXpReW5nY1pKQUNVbk5nNF80ak1McjAyTENBTVdTYWRHVEQwS2dJMkxBYkNGMUd5eEwyU256U21SR3BEUHp6?oc=5",
           "summary": "搭過101世界最快電梯嗎？背後廠商崇友再出手 拿下黃仁勳輝達鄰居金仁寶總部70台電梯大單 鏡週刊Mirror Media",
           "published": "2026-06-29T09:38:00+00:00",
           "origin": "關鍵字「黃仁勳」"
-        },
-        {
-          "title": "輝達攜手Firmus打造17萬顆GPU AI基地 印尼成亞太算力新樞紐",
-          "source": "TVBS新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9FWi1hSllueE15c3VUWFF3bFRpcEludkhjbS1MeGN1eDVvMkJWcUZ2Um9JUFU0VjVFYk1rSXRZd1YxOXloYkxWYUpaa0ZDQQ?oc=5",
-          "summary": "輝達攜手Firmus打造17萬顆GPU AI基地 印尼成亞太算力新樞紐 TVBS新聞網",
-          "published": "2026-06-29T09:12:00+00:00",
-          "origin": "關鍵字「輝達」"
         },
         {
           "title": "Nvidia 秘密招募航太人才 黃仁勳欲將 AI 算力版圖擴張至外太空",
@@ -1715,76 +1719,28 @@
           "origin": "關鍵字「輝達」"
         },
         {
-          "title": "輝達、美光都不怕！國民黨怕什麼？｜20260629 自由觀點｜#shorts",
-          "source": "自由時報",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQOE42Ulc1NzBzZzBVTlhWOGFXelBxRFZQWm9DWWMtdWFTdC1MR0hVRFVRYVpCR25uZ0RfY2d4RUhMWGI0YUdHbFRUWlRWTlZtbWcxazYyelBiYWVHNFI3OW9GSVRJaDlucEdVZlNhai03MURDV1hXOU41eVJOSmdpNkl4Uk0wQQ?oc=5",
-          "summary": "輝達、美光都不怕！國民黨怕什麼？｜20260629 自由觀點｜#shorts 自由時報",
-          "published": "2026-06-29T06:31:00+00:00",
-          "origin": "關鍵字「輝達」"
+          "title": "Nvidia flew to Beijing with Trump to sell but China said no",
+          "source": "Asia Times",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPR01GMzhKY0xhX3dhdUxEYXpaWjBaZzdwVTZiQ3JySEpGQ2piblNIcTlFeUVmcXlPV28ycTVrb2pMOWRJRHNTcnB0M0NhMXRKSVZkM0UxNzZlTVQwanVHUk9wd2paLWNHd1djSGtJRE9aS2h2VkhicE82cnVaTDFqMjN4c2ZKR0NCVDhEaHZ3MzlFZm5i?oc=5",
+          "summary": "Nvidia flew to Beijing with Trump to sell but China said no Asia Times",
+          "published": "2026-06-29T21:58:49+00:00",
+          "origin": "關鍵字「Jensen Huang」"
         },
         {
-          "title": "輝達聯手澳洲業者印尼打造全新AI資料中心| 科技",
-          "source": "非凡新聞台",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE44RGU3THcweGJNcVE5SVRhcmpMUndrV0NvVm9KNUJiSXAxVFBpeDU2MzIwTmF2czB2Mk5senhWdDEyNy1fYXlRcGlhbUVPakJBU1k5OFY3eWxVLXJrVjdjbQ?oc=5",
-          "summary": "輝達聯手澳洲業者印尼打造全新AI資料中心| 科技 非凡新聞台",
-          "published": "2026-06-29T06:24:19+00:00",
-          "origin": "關鍵字「輝達」"
+          "title": "Goodbye Handwritten Prompts: Silicon Valley Goes All-In on Autonomous AI Loops, Jensen Huang Declares \"Prompt Engineering Is Dead\"",
+          "source": "BigGo Finance",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9KbEZXczE3SF8tbkZROHltWDRSRlJmYUtkaHJfMlRFeC1QQU9EZHVLSWVBR19LdFdHNHRrS0x4WVN3M1pqTHBON0dLVWJjaEpEVTdRTktHTDR3SVhaQlEwM1NLNDVaZmk5Q0ppaEcxdFN6ZkNPSEE?oc=5",
+          "summary": "Goodbye Handwritten Prompts: Silicon Valley Goes All-In on Autonomous AI Loops, Jensen Huang Declares \"Prompt Engineering Is Dead\" BigGo Finance",
+          "published": "2026-06-29T18:05:00+00:00",
+          "origin": "關鍵字「Jensen Huang」"
         },
         {
-          "title": "缺電？去年夜尖峰備轉容量率 117天不到1成 - 生活新聞 - PChome Online 新聞",
-          "source": "PChome Online 新聞",
-          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOSWU1NFRJcmlNbFNmdXpvX3F3cUpDelB3bmxBRVNGd3dNQ0JMdDhQRGxGdFVQek94anpzR0RmVFRYZUkySFdLYWVWUFZ5dGNkbUVJZ1pzU0lLdTgwWWJUR0oxMGVocmlUR2FlVS1RUU83QmlZeWRaVUJtSmU1d1lpdUszZkticC1rQmc?oc=5",
-          "summary": "缺電？去年夜尖峰備轉容量率 117天不到1成 - 生活新聞 - PChome Online 新聞 PChome Online 新聞",
-          "published": "2026-06-29T06:12:16+00:00",
-          "origin": "關鍵字「輝達執行長」"
-        },
-        {
-          "title": "美光季報優於預期 記憶體漲價考驗輝達蘋果AI利潤",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxONVVseGhEcVFjS2FtMzBlT0dxSVlvMExtVlYtRXNkQWNvSjlrdkwtSjZBNzltcmV1RVFkV25GTDdmWnVvcnZsRkg3V3B3ckk1Yl91ODJ6OWJaZmw1RS1UQjdCM2tNY25vSjZCMGlNa3hSdEhKeGwxektRN0lNanh0b1hhRzNmT0JidGtoT3pMQUx4N2NMbEVCSUlPcW1oSG1DQW5UaGxjZ2F0LWs4RVE1ZDVXVEltSDI0UEgzNkZ5Sk5RWEZ0amwycEtZUmo0WTljamk4blJhbGNtaFMtREFuWGVHT0xuMjZKaWVkWmpDcEt6VXdqRG5XMVNIeEY0Zy11bW5kQUktUlZsempOOUZtN2g1eHBwbTRmV0hQNHFESkM2TXRBd0FTQlJiaGZRX3NpaGliRXNUTGVlSHFtb0RlWi1IMW1Bdl84V3NSV2szV2VLZ3J5a2t6UHQtUQ?oc=5",
-          "summary": "美光季報優於預期 記憶體漲價考驗輝達蘋果AI利潤 Yahoo股市",
-          "published": "2026-06-29T05:45:12+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
-          "title": "《DJ Insight》高通、Intel傳競購Tenstorrent，輝達霸權將受挑戰？",
-          "source": "MoneyDJ",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPWDRFYWRGdW5ySXJ4cGNZSUxJSFVveU9GZlpKQ250akVkalZ0ZEhGTDJRS0xVUjNfY0RSdkNNcVR6X3FFRmcxTDhqU0VYOTloYlRuM3Q2ZFhzU1dHeVpSb0hPRnIyTkdScFlIQVNLWHdjVHh0SXNITDFpb1lDWEJFMG95Tm5DS1gtdXBYWUJFVnVKdw?oc=5",
-          "summary": "《DJ Insight》高通、Intel傳競購Tenstorrent，輝達霸權將受挑戰？ MoneyDJ",
-          "published": "2026-06-29T05:21:00+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
-          "title": "輝達NVidia印尼大布局！Firmus砸17萬顆GPU建360MW AI園區 6年估進帳300億美元",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBKbmxicHc3U1lKYVNTUjFsMjMycXNidHB1bV80UUNTbGRqSDh3cVd2Q2VwaVdaMGhBcnNJa1lkbTdiWmFZN01DSm42RzB3MDg?oc=5",
-          "summary": "輝達NVidia印尼大布局！Firmus砸17萬顆GPU建360MW AI園區 6年估進帳300億美元 news.cnyes.com",
-          "published": "2026-06-29T05:02:34+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
-          "title": "華爾街瘋喊「美光就是下一個Nvidia」！AI記憶體荒讓美光市值一度超越Meta、特斯拉",
-          "source": "動區動趨",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdmk5d2RRY3F0c1pZblJxR00tNmlKcGFYc05JR0RobGN0VVhHNnpnbE9iVjJVcUFmNWtMVWNMdHpBRmkxakI1dUVSejhPTFpNemJoMUMtSThOa3ozT2hvazlWQWo1ejdNUHhmdVg0TndKQ3p3VHc4ZTZRb1Q0VC1HS0FjUW5tUHRzX2dKeDlTNENqTEtycTdFMThR?oc=5",
-          "summary": "華爾街瘋喊「美光就是下一個Nvidia」！AI記憶體荒讓美光市值一度超越Meta、特斯拉 動區動趨",
-          "published": "2026-06-29T03:25:45+00:00",
-          "origin": "關鍵字「NVIDIA」"
-        },
-        {
-          "title": "AI記憶體荒造神！美光市值一度超車Meta 華爾街喊它是下一個輝達",
-          "source": "PChome Online 新聞",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOVzBOaktYTDNXamZUMnZEbG9sLUUtYXVFb2xKTHBGdFoxUEhWQlloajZ6Z2kzUmpSb1ZKTkxMWWpaRGIyd3g4Q0ZoX183Nlp2SFU1TndLTThTd1lDejVTTE9YU3BzaFN1b1NFM3FXcVlNdjFtOVliZDRiWUdZSHRHVVhXRUpQLVFhM1p5Tg?oc=5",
-          "summary": "AI記憶體荒造神！美光市值一度超車Meta 華爾街喊它是下一個輝達 PChome Online 新聞",
-          "published": "2026-06-29T03:10:58+00:00",
-          "origin": "關鍵字「輝達」"
-        },
-        {
-          "title": "美伊再交火推升國際油價！日韓股同步下殺 華爾街曝市場「AI疲勞」輝達、谷歌重摔",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMiswNBVV95cUxPaHFEeXQtSWxoZkU5ZWtWSmUyMERxa2dFVllKTTNhbzFDNXFrcUE1ekc2WmpmUkRIOHZEYnE4MG9BZVpfVk84QzFTU1N1d3lCYkd0UGhSUG5Ka2tPa2lVWUpLWUNJNmxkNUtRbUZfaHdVZUV0eThvRjJJMXFvNGNhTzNWUXZDTzYxd1BvNkUtRHF6T3dnSEJRVG1DNmU5MVNCTFZwNHREQWktWWw2VnpaMFZFWWFkNGhuYzhIY2VSZ3d5LVhRQVBUVHkxamQ1SnE4MjJXZ255ZU9TMXZsY1UxZ25SQXhJMlNMbXdKLVp5S0ctRE5UMnpNNWtzREFpeERHZDg4dnpHTGZ4eGtRdVNNVHF1RFgxRVdxbm9pVXlYRzV6UVREczBpQ01ROU5qeTZyQnRsOElKVmNVX3RUYURTdEV0bDZib1cwLWZmWHRzZFRQcmtyOFdESkVuUm1ESEM0dnc3MzIxNmVKWUhDZGxuRmh3Qnh6SmtYWmN5aldNNWExX1FTRElZWk4tdER6d1ViSnlWa09yOXltemh0TUtpbTQyR2d6VklDUmRQNmlDRjhxczA?oc=5",
-          "summary": "美伊再交火推升國際油價！日韓股同步下殺 華爾街曝市場「AI疲勞」輝達、谷歌重摔 Yahoo股市",
-          "published": "2026-06-29T02:50:41+00:00",
-          "origin": "關鍵字「輝達」"
+          "title": "Palantir and Nvidia Bring Open AI Models Inside U.S. Government Systems",
+          "source": "TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQallINHRKbk9tVUpUbTJOTGJFY3VVUDhsdlNLOC1raXpXNk5FallXbDdOUGxHUGVTWXpLMmxpdU41RjFaT0x2NUtNWFp0MDA1em9sNHZXc2VVQmN3WERteE5oODZRSzE2R0pZcE90SExQaktKb2tnVXAyME53ajIwdkMwX1l4bmhhOFR3OVE5QkxRX3QyOFJ6V1JhZDd0MHh2dkJzRFVLOFc2QXFGZVNUUE5waDZ4SUFpR1VBUW9nd3B0ZlRaZDZVNHpR?oc=5",
+          "summary": "Palantir and Nvidia Bring Open AI Models Inside U.S. Government Systems TradingView",
+          "published": "2026-06-29T17:54:10+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
         },
         {
           "title": "This Unexpected Tech Founder Is Now Richer Than Mark Zuckerberg, Larry Ellison and Jensen Huang",
@@ -1795,12 +1751,12 @@
           "origin": "關鍵字「Jensen Huang」"
         },
         {
-          "title": "Palantir and Nvidia partner on AI platform for U.S. government",
-          "source": "qz.com",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5iMEdPMHdYZERSbXNZWmZNRWc5RWlpSmdfNS1ZWVduTlZaaVpGLWVuRmNNTmEwRF9MOE9vZGs0Z0NhbEFKUjVzNjg2d1JQR1I0MGl3Mm5oOE9GMGYwSldTUjdnVUU1SF9jc1NuS2N1WkU?oc=5",
-          "summary": "Palantir and Nvidia partner on AI platform for U.S. government qz.com",
-          "published": "2026-06-29T16:50:45+00:00",
-          "origin": "關鍵字「Nvidia CEO」"
+          "title": "Marvell Technology Will Be Worth $1 Trillion on This Date",
+          "source": "24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdDk0ZXp5NFpzWDRwdXhlQnZBSWhRRUJ1ZjAzUGdvQnpDY2ZyNlpvRWhwT0xWUUM0d2pvaTZyY3diT2F4YWxtajVEU3k0VmxKUzhzNFRBT3NkNEpmUnFuZWNOdFJfMEE4Z2dxZGhDZzd0VXFSeTlOellLZGNDcHhmbXgwUmxUa25YZUFNZlNXUkxNV3AtUmpoa28xemdjNDd6VFE?oc=5",
+          "summary": "Marvell Technology Will Be Worth $1 Trillion on This Date 24/7 Wall St.",
+          "published": "2026-06-29T16:40:32+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
         },
         {
           "title": "Nvidia's AI chip sales in China stall, as local chipmakers like Huawei take the lead",
@@ -1816,14 +1772,6 @@
           "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1XSUhES3VLdU1CMG9hY3hjcVRUYVl3NG84enhBUElwNURvM1djNXpCY0R6M2dxUWFBa2ZweWw1MzBydGszbUlNUmFZMWEwcGFPVlJKNHBNbS1yczY5YnhUZnhzZ1NIN0tpV3JzNl9Mc1FDUzNj?oc=5",
           "summary": "These 7 Stocks Will Solve AI’s Most Important Bottleneck AOL.com",
           "published": "2026-06-29T14:10:19+00:00",
-          "origin": "關鍵字「Jensen Huang」"
-        },
-        {
-          "title": "Jia Yangqing's Lightning Exit from Nvidia: Just One Year After $700 Million Acquisition, Open-Source Faith Collides with Hardware Hegemony",
-          "source": "BigGo Finance",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBPUW10UUxxRkdGOGhFaEg0bFNBU2V0UTFZZkdzVmpBT3AzUG5xSk5EX1Jubm1jYUJ5YXloZHNSLU9PNTVtUDRwTDQyME1Bd2U3N1FTNTBYRGV3WDlrMjJFU1pXUEh0MFFpSUF1NFZuMHlmYjdwMFE?oc=5",
-          "summary": "Jia Yangqing's Lightning Exit from Nvidia: Just One Year After $700 Million Acquisition, Open-Source Faith Collides with Hardware Hegemony BigGo Finance",
-          "published": "2026-06-29T13:55:00+00:00",
           "origin": "關鍵字「Jensen Huang」"
         },
         {
@@ -1880,7 +1828,7 @@
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9zSi1QVFNac05wTkNpNnRXcE51Z2pGQktaZTI2bkxNUTM0RmF0RGRmeXp3anNra0NqZGtMMXo0ZlY1UkVoUWJVckR0N3Z2LXJQT3ZXY2ZYdWRWbjUtZ0ItSUQ0WmhoUQ?oc=5",
           "summary": "Nvidia CEO's Daughter Sends Thank-You Note to Seoul Police After Hongdae Visit SBS 뉴스",
           "published": "2026-06-29T03:07:00+00:00",
-          "origin": "關鍵字「Nvidia CEO」"
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
         },
         {
           "title": "Nvidia team praises Seoul police",
@@ -1888,7 +1836,7 @@
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE03X2NRSWtucXAzclZFWTVOYzczUTJlR2tQQ3l1RnJycnVzcHdyXzVUVHFNM1pDN1M5ODJhb3F2TlEtdWpKdW5WclRlNE9pcHFhS3lPUXZ2UlF5RVBTWTJwRlNOdzVlUQ?oc=5",
           "summary": "Nvidia team praises Seoul police 동아일보",
           "published": "2026-06-28T23:30:31+00:00",
-          "origin": "關鍵字「Jensen Huang Nvidia」"
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
         },
         {
           "title": "Quote of the day by Nvidia founder Jensen Huang: ‘Without intellectual honesty, you can't have a culture t",
@@ -1928,7 +1876,7 @@
           "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNWFNSFBaMkpDdDFDR1RxOXN4UnVrcno5M2pMdmlEU01pWmk5RXRiSEhQNXNPNm9ubFFnNnRuM29GUkFsb0EzSVNCTDVfOTlrbmlRSmpfWE0tcjlkR2NnNTEzbmNCZEhsREExdmN5a2RLMnhhaGZra0xwbFVKSnBmUS1rMnNvNUkx?oc=5",
           "summary": "Jeonbuk Governor-Elect Proposes Saemangeum Investment With NVIDIA 조선일보",
           "published": "2026-06-28T05:15:02+00:00",
-          "origin": "關鍵字「Nvidia CEO」"
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
         },
         {
           "title": "AI is creating America’s next underclass",
@@ -1945,14 +1893,6 @@
           "summary": "The Zen of Jensen: Nvidia CEO Says ‘I Let the World Come to Me’ Benzinga",
           "published": "2026-06-27T17:30:38+00:00",
           "origin": "關鍵字「Jensen Huang」"
-        },
-        {
-          "title": "Qualcomm’s big AI gamble: Breaking Nvidia’s chips stronghold",
-          "source": "Fortune",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0yNUdBTjZtVGQ1STdRQW9kT1p4b0c1bG9YaGZTRTNzdTF4dmR6Z1Y5ZmNEQV93eXdGVDBTcGF0LU9JMU5TV2xfQmVtTzJWLVItVHFmOFVCT3Vud1M0Q25uWi03dkYyQWYtdHFuWDNnZkRybFQzdWVv?oc=5",
-          "summary": "Qualcomm’s big AI gamble: Breaking Nvidia’s chips stronghold Fortune",
-          "published": "2026-06-27T07:00:00+00:00",
-          "origin": "關鍵字「Nvidia CEO」"
         },
         {
           "title": "\"People talk about AI reducing jobs — complete nonsense\": QOTD by Jensen Huang",
@@ -2003,20 +1943,20 @@
           "origin": "關鍵字「Jensen Huang」"
         },
         {
-          "title": "Nvidia’s CEO Says the Next Millionaires Will Be Plumbers and Electricians, Not Coders",
-          "source": "24/7 Wall St.",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZFV0S3dlYWlNLUxZcDB0Qm9Vc3A0LXpwMWhuQU9qUmRkX05xZHdBeVlvaXZMdXJFeDNEdkFqaEw2dUhRcXFjVC1Nc1VZcy1JQTdURGJyRFVLSGFPVWZubGZMdVpZeFY1YllTNUV1anRNVXRrOEplWmRuZldjc21vUzcyeVo5dEdDYy1jcko4dExKcHhFSjVVRjg3dVM5LV9teG9Qb00tMFhXeGVPZ1R1Y2VlUjRYaGxQcS00VGZreFlPSHBzVTJIcmp2Z2hndzQ?oc=5",
-          "summary": "Nvidia’s CEO Says the Next Millionaires Will Be Plumbers and Electricians, Not Coders 24/7 Wall St.",
-          "published": "2026-06-25T19:10:21+00:00",
-          "origin": "關鍵字「Nvidia CEO」"
-        },
-        {
           "title": "What to Watch at Nvidia’s 2026 Shareholder Meeting? Jensen Huang: Every Token Is Profit, AI Monetization Already Has an Answer",
           "source": "TradingKey",
           "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQa2YtWGNCR2lwUmJZaGtybXA1c1VlRmRzUUtXbjFoVlhKS3Fnd3ZWb3l5XzJTM0h5M0ktbHYwTkpYUEh2eXIxQ0g1NDFJRXB2NmFwQjdLYmcya2hsMWtkRlBoOFBtTTBXMmFoaWktT1ZTWWo3eVdsVzhPcERSUTItNmJIejVKbHBGbHgxUEFGbnR1dnh5S29fcXVjNktGU3ItcGRadTNQSTczd3JneWgyOThaLUtobXNsUFlDVE1EdmlWSEZMcmY4eFRMSVNaOXVVR3BoYQ?oc=5",
           "summary": "What to Watch at Nvidia’s 2026 Shareholder Meeting? Jensen Huang: Every Token Is Profit, AI Monetization Already Has an Answer TradingKey",
           "published": "2026-06-25T17:05:10+00:00",
-          "origin": "關鍵字「Jensen Huang」"
+          "origin": "關鍵字「Jensen Huang Nvidia」"
+        },
+        {
+          "title": "Nvidia quietly rose to the top of a $10 billion market you may have never heard of",
+          "source": "Business Insider",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTUR4d0RaM1VPV0M2ZGRXRno2aXg5a2wxdU0zVGxUODEwbTVUdF9QaVpkeE5sSkRSQl83TGZ4WHFZdjcxQnc5Zm8yOW5oVW9maXJWWDI4Q3JZeEgwc3JjX3ducW5SY1ZSdVBaUldxVjNuMjRJbkxNUXZuWDlfODRBdUdTRzRPVUxlbS1SdkJfVUNNQnl0OGE4RTJpS3dPUQ?oc=5",
+          "summary": "Nvidia quietly rose to the top of a $10 billion market you may have never heard of Business Insider",
+          "published": "2026-06-25T09:00:00+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
         },
         {
           "title": "Why did Jensen Huang refuse to see the future?",
@@ -2033,22 +1973,6 @@
           "summary": "Jensen Huang Says National Security Takes Priority Over Exports thelec.net",
           "published": "2026-06-25T04:07:05+00:00",
           "origin": "關鍵字「Jensen Huang」"
-        },
-        {
-          "title": "Summary of NVIDIA Shareholders' Meeting: Jensen Huang Asserts the Question on AI Investment Returns 'Has Already Been Answered'",
-          "source": "Moomoo",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPWHN3NzNIV2ZNMnY3RG9iN3l3d1FmMVVDTXVCS3ZyRU9iMWlvNVRpbF9kWGpLMzR1MnZNLWVScHpGV2lRVm9kbFg3QWE5anZPS2FzeEJZODNULVVpR09KUDFubWlSLUtSQm1MYmtWU01OOHpPRWtzaXJPQWt1SXc5VGoxMjVycFpDVS1WWi05bmtNWlRZTWhQT1E1UnFJbGhjd0U0dDk4aEF3aXJiQ0JUX0RhVEk?oc=5",
-          "summary": "Summary of NVIDIA Shareholders' Meeting: Jensen Huang Asserts the Question on AI Investment Returns 'Has Already Been Answered' Moomoo",
-          "published": "2026-06-24T19:30:50+00:00",
-          "origin": "關鍵字「Huang Jensen」"
-        },
-        {
-          "title": "Nvidia's Huang calls black market data centers made of smuggled parts a 'dead end'",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOWVFtMGJFRGIxYWc0Qm1DMEJxVGE4MG9LY1Mtcy1NNUZWR0NWZTZxdWQxaS1pUGJWUzVFajJXcS1EakhmN0NIVmxmNDAzOWVvemFDUkxLSjZsbFRiZHF5ZnVQQXlNclRBckVvcXFNZ0lBb2xJS09NNUZDdHREOERpRHVn0gGHAUFVX3lxTE5LZy12eUtCbzZNbzF0NHBrWWVwTU41SWlBR05rODBfdkg3MDR3ZU9zX0FEaEc2SUpzdV9wVjJjSVpYYmJzTnNIYmo2Q2dEVlIxSTh1bGpkdURSWkdGMi1xWGtKdXdrTG82Zkk2djNLN3NMMVVEcEE0QXhaclZkT2xBRFQ4UHRKYw?oc=5",
-          "summary": "Nvidia's Huang calls black market data centers made of smuggled parts a 'dead end' CNBC",
-          "published": "2026-06-24T18:20:46+00:00",
-          "origin": "關鍵字「Nvidia CEO」"
         },
         {
           "title": "Jensen Huang, Nvidia CEO, Points Out An \"Incredible Time\" To Be A Software Company As Agentic Era Begins.",
@@ -2099,6 +2023,30 @@
           "origin": "關鍵字「Jensen Huang」"
         },
         {
+          "title": "Huang Y / Wen R vs Chen J / Xiang P scores & schedule",
+          "source": "Sofascore",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNN00zRldoZ0F4dng1ajBKSy15dFVqV3h5RGZYanNwbGpTU0VpM0lqR1Bnck9Id0F4LVlNMVpwZ3c1NFhIMTVQdlNzYnNnaFJvSFlKVURtSGt0TzVvU1luMUg4SGtmZHJBZWRjZ2pGdE43VnVjWDVDNUtVbm55UFM2MA?oc=5",
+          "summary": "Huang Y / Wen R vs Chen J / Xiang P scores & schedule Sofascore",
+          "published": "2026-06-19T07:00:00+00:00",
+          "origin": "關鍵字「J. Huang」"
+        },
+        {
+          "title": "Jensen Huang urges society to embrace AI with ‘new social norms’",
+          "source": "eciks.org",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBRUkRyTG9leTAtX1VJbnJGVEZJTWpMLTNoQ0x5emppMnVYMHcwSHoxXzVWS2h6ajdkWkxSV0JPV2U2OXRLQlBQZjlETlZWVklOYk1jY3BlaXRWMVBSZWc0SThrLUlYVHNk?oc=5",
+          "summary": "Jensen Huang urges society to embrace AI with ‘new social norms’ eciks.org",
+          "published": "2026-06-18T22:53:46+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
+        },
+        {
+          "title": "NVIDIA CEO Jensen Huang on AI Stock Dips: “Everybody Should Be Very Excited to Buy Stock at a Cheaper Price\" — These Stocks are on My Radar After a Worrisome Wednesday",
+          "source": "24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxNRHNpQXhtbVltVVhMcHIyb1FFa05UYzRIZU9rcWc3bEJNczJCV0h6R3N0NzZYaG1fVk1Pb0tVbVRxQ1RubG1aWlh6dldKWUdWcUxwY29LaHNBejBvLWdTRU15MUh3VEprdXA3clVOZGEydHJEWUlKZGI0TVFnVFRxM0FLbFV0eHZSYXJGWWV4VFpTY0Z1U3V0N1BwS1hDZlNHN0dXMF9EZVlfR1BjZV93TmZnRnF3T1F4UnU5cVJJV2tmOFlXT01jWGhwMXRWQ1VQTjhMYXhXSVdFbzlkT0YzQ2RJbU15MzNValRhVEMxNS1YOU9KY1h0ZW1wTGt5TkdldmRiQWtiRFktMDFGOTZYZVdvU0N5TV94SUZxenQ2MzVfRnk1RTM0cjBn?oc=5",
+          "summary": "NVIDIA CEO Jensen Huang on AI Stock Dips: “Everybody Should Be Very Excited to Buy Stock at a Cheaper Price\" — These Stocks are on My Radar After a Worrisome Wednesday 24/7 Wall St.",
+          "published": "2026-06-18T07:00:00+00:00",
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
+        },
+        {
           "title": "Quote of the day by Nvidia CEO Jensen Huang: “One of my great advantages is that I have very low...”",
           "source": "The Times of India",
           "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQX2ZacTItaVNlUWRjQV9OSU9pazJhcG9JeDFxXzd4Q3cwZlpWNG5ycmJJaFBBOElwUjNpZGFSTW5kY0Y0UkFoZG5VV3pFU0gxb3MzMmVYLW9mdEtuWkdYLVE5ZWgyMTl4M1dIaDktNU1wTF9sN1JINy14Vm1XNWRZWl9fSmd0R2FwdnJhWmFGWkx1VjA2ZGZRakhienhFZGtmZFk5UUZsX3BOVXQzV2xXUlJDbTRJVlZoVXB2aGpYQjFiQzk1bU5qWmNXbnlNZnRRc0huUzVFUV9rbnNGSVJPajE3YkhCT1I3V0w5YUJ1QlJWdlRFZWJObVRPbGs3RjJFSDFsT2h5aVRhZ9IBjwJBVV95cUxQMWJOeFJ2N1pGQ2QzYWJYVkotSW1KWXo4cm1IUElhSVhxZVJWMzhjZ1FPX0ZRbzhuZ1k3eGVnV2VzOFhMY3VJRzNaeVZLYUp2THkyeEhYQW1iRk5MeU40emtON21OSWdoNXFaeHpSUTdLRllnNGEwUlgzU0J0S1FQYnNPRDFMdVdlOFoxYmZkRVg3VF9oZW5JMGhTVXNudmxXekVUSlF1SFdSQ2pVQm95MmRrNlpJRERwdWYtdmhNaG9nX3A2cldiaEZoX2VrRXJNbjV5N3FMMV9LOG4zWUFnSkRkVGk5NWhTczEzNDBkUFUwMjc3Q2gzTlBMYi1YOVRpbU1rVFh2OGIxbUJ2SUtZ?oc=5",
@@ -2139,28 +2087,12 @@
           "origin": "關鍵字「Jensen Huang」"
         },
         {
-          "title": "Nvidia CEO says AI can reindustrialize US, create jobs, reshape society. A North Texas factory could play a role",
-          "source": "The Spokesman-Review",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUk8yT0lWTkltazZmanp0UkJEaDM5blI1SU85UVJiRWVGX1FubTREb1ZueFAyel9zVTRNOEpUb3R1cm5kdjRLMVFBOGtKY0FkeUw2anppZmVyaENOYVlYSjZWSnMyc092WkFkODFkQlZRM1d6VEkwaDFoeXZOQ3FLd2pmQWJEMFltVG9FRDE4S2hQbkdxTUgxWjJybktOdw?oc=5",
-          "summary": "Nvidia CEO says AI can reindustrialize US, create jobs, reshape society. A North Texas factory could play a role The Spokesman-Review",
+          "title": "Nvidia CEO Jensen Huang urges society to adapt to AI",
+          "source": "KHOU",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOaWRkd1d4MTdSb1luWURZZVNKVFVnMXlJSDB1WWF1NDBWaHlxZEx1RWtSdlVEVXZtZ0pudGRJRFVwYWlkYU13eExwV2RQS25tYmhPaG5uSGI5Z0JsdzlSUW43V0E1WFRPQVFUM0MzNjQwMm1uRjdmekZrVzIyMDhobEtiQVgtaHFIUW1CZmVUQmQ3NmhfYUloQlcyVFYtVWZSOVFIMThjMG83RHlBb2IwR1VsekQ1aEVhWmhoelhKOEk4MkE?oc=5",
+          "summary": "Nvidia CEO Jensen Huang urges society to adapt to AI KHOU",
           "published": "2026-06-17T07:00:00+00:00",
-          "origin": "關鍵字「Nvidia CEO」"
-        },
-        {
-          "title": "Nvidia CEO Issues Urgent Warning on AI Power Demands",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPb0tXUHh6TjJ0QXNEbEd2Y05LMVpFVXRyWFhoMEt6aWxnZ2JuMHRxbF8xeWh0bjN6My1JM1c4bEJUa19CQUZMck8yNnhTX0tWWjV2TzBHRnplRnMxQTVQZkR4MnNMSTdubkVydTJrSFRnd29qWjhTX3dhSUtEbzg5Nkk3OEtCdE1DaW1FbWcyX2JzZDN0ckM5T2JPcGQ?oc=5",
-          "summary": "Nvidia CEO Issues Urgent Warning on AI Power Demands Yahoo Finance",
-          "published": "2026-06-17T07:00:00+00:00",
-          "origin": "關鍵字「Nvidia CEO」"
-        },
-        {
-          "title": "Why Jensen Huang wanted Korea to call him ‘K-Jensen’",
-          "source": "The Korea Herald",
-          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5wSkNFcU56RHJKb1VaU2gzUm5WUllKUWxwS3N1MkRjM0UyMkQ0WHYxV1RvTDM2YXpKd1NnWFllWWVKRDNTUExsUHpjUkFJRThYcFhoVkJYTQ?oc=5",
-          "summary": "Why Jensen Huang wanted Korea to call him ‘K-Jensen’ The Korea Herald",
-          "published": "2026-06-17T07:00:00+00:00",
-          "origin": "關鍵字「Huang Jensen」"
+          "origin": "關鍵字「Nvidia CEO Jensen Huang」"
         },
         {
           "title": "AP Exclusive: Nvidia’s Jensen Huang says society needs ‘new social norms’ in the age of AI",
@@ -2179,10 +2111,10 @@
           "origin": "關鍵字「Jensen Huang Nvidia」"
         },
         {
-          "title": "Nvidia’s Jensen Huang urges society to adapt to new norms in the age of AI",
+          "title": "Nvidia CEO Jensen Huang tries to quell fears on future of technology",
           "source": "AP News",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQR1pnYUJBMzVRenZ0SlVlWWJFZTBYUkpER0dUN0hvelFSVXlrUTJDRTdjcUUzSW1MTDRuTWhLbnBWeGx5a0tzc2MzR2FoMDB0d2hkcW5YRWpvZ1BpcFEtYlgtejV0S2RhcDBfV09mdnh6QkdLV3ZDbVAzV2htem96czlzVFRvSTBXRFJoZFg5SVBNS21xaXMybEVvOUUxN3JFRDNKVk9wRTBLbzdidWpfWXhJaDZQbENRaHM2UFpjZzZHeUVGTTZOaUlidw?oc=5",
-          "summary": "Nvidia’s Jensen Huang urges society to adapt to new norms in the age of AI AP News",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOQXhpd0tiQU11VWtsZ3ZEdU42YVpSUmtoMWVoNXZwWEVQTG5iRDBWRURHTmNBYjlrZzlZdVgxdWxLNUFQbzZsQWxZRU1hczFUVmRzWTJVOU9xelF4UmVTaHZnNjVlMU1XUnJnMU5SNDFva1VqRXV3THRXUFZLamdTbG8zam1LekM2OXNHTzhDaXBWaXJpU0daMUtUOVNfMEY5bTZNS2dkZlh6VVVqemxsZExrUUp1dW9qQ1dpN1Bka1VxTXAt?oc=5",
+          "summary": "Nvidia CEO Jensen Huang tries to quell fears on future of technology AP News",
           "published": "2026-06-16T07:00:00+00:00",
           "origin": "關鍵字「Jensen Huang Nvidia」"
         }
