@@ -26,6 +26,7 @@ import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
 import gemini_client  # Gemini API 金鑰管理 SSOT
+import season_chart  # 總統任期週期季節性分析 SSOT
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
 # 報告新鮮度門檻(天):歸屬日落後超過此值,看板顯示過期警告。可用 STALE_REPORT_DAYS 覆寫。
@@ -2800,6 +2801,24 @@ def sec_etf() -> None:
         render_etf_profiles()
 
 
+@st.cache_data(ttl=3600, show_spinner=False)
+def _fetch_2026_cached() -> dict:
+    return season_chart.fetch_sp500_2026() or {}
+
+
+def _tool_cycle_chart() -> None:
+    import matplotlib.pyplot as plt
+    actual = _fetch_2026_cached() or None
+    fig = season_chart.build_cycle_figure(actual)
+    st.pyplot(fig, use_container_width=True)
+    plt.close(fig)
+    if actual:
+        months = sorted(actual.keys())
+        st.caption(f"2026 實際資料：{months} 月份已更新（每小時自動刷新）")
+    else:
+        st.caption("2026 實際走勢暫無法取得，僅顯示歷史均線。")
+
+
 # ── 4 大頁 ─────────────────────────────────────────────────────────────────
 def page_tw() -> None:
     st.header("📊 台股")
@@ -2818,6 +2837,8 @@ def page_tw() -> None:
         tool_stock_query()
     with st.expander("📰 新聞策略 — 貼一則新聞,轉化為台股 ETF 進出場決策"):
         tool_news_strategy()
+    with st.expander("📅 總統任期週期 — 2026 走勢預測參考"):
+        _tool_cycle_chart()
 
 
 def page_etf() -> None:
