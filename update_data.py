@@ -46,6 +46,7 @@ from pathlib import Path
 import gemini_client  # Gemini API 封裝 SSOT(多 Key/多模型/退避/JSON 解析)
 import line_notify  # LINE 推播 SSOT(路由/訊息組建/事件去重)
 import chip_calendar  # 法人籌碼:可預測賣壓事件行事曆(純規則,零網路零 AI)
+import feature_aligner  # 四路特徵對齊合流 SSOT → 中央決策大腦輸入
 import config  # 環境變數讀取 + 功能開關的 SSOT
 import chip_fetcher  # 法人籌碼:抓證交所三大法人買賣超(事後驗證,真實數字)
 import chip_signals  # 個股盯盤:個股三大法人買賣超(T86)籌碼面訊號的 SSOT
@@ -804,6 +805,90 @@ HOUSING_SYSTEM_PROMPT = """\
   "evidence_news": [ { "title": "新聞標題", "source": "媒體來源", "url": "連結(若有)" } ]
 }
 """
+
+
+MASTER_DECISION_SYSTEM_PROMPT = """
+你是一位量化金融分析師，根據台股當日四路整合特徵做出綜合決策。
+
+【輸入格式】
+使用者會傳入一個 JSON，包含：
+  macro  — 前夜美股指數漲跌幅、DXY、10Y 美債殖利率、美元/台幣匯率
+  chip   — 當日盤後三大法人買賣超（億元）
+  news   — 當日新聞情感分數（-1.0 極空 ~ +1.0 極多）+ 前5則標題
+  tech   — 台股觀察清單多空比（bull_ratio / bear_ratio）
+
+【輸出格式（嚴格 JSON，禁止 markdown、禁止任何額外文字）】
+{
+  "date": "YYYY-MM-DD",
+  "market_regime": "多頭趨勢 / 多頭拉回 / 盤整觀望 / 空頭反彈 / 空頭趨勢 中擇一",
+  "action_signal": "BUY / SELL / HOLD 中擇一",
+  "confidence_score": 0到100的整數,
+  "decision_weights": {
+    "chip": 0.0到1.0,
+    "macro": 0.0到1.0,
+    "news": 0.0到1.0,
+    "tech": 0.0到1.0
+  },
+  "key_drivers": ["最重要原因1（15字內）", "最重要原因2（15字內）", "最重要原因3（15字內）"],
+  "risk_alert": "最主要潛在風險（30字內）",
+  "disclaimer": "此為 AI 輔助分析，僅供研究參考，非投資建議"
+}
+
+【評分準則】
+- 籌碼(chip)：外資連續買超>看多；合計淨賣超且外資賣>看空
+- 總經(macro)：DXY上升且TNX上升且美股跌=風險環境；反之=有利
+- 新聞(news)：sentiment_score < -0.3 加重空方權重
+- 技術(tech)：bull_ratio > 0.6 偏多；bear_ratio > 0.5 偏空
+- confidence_score：各路共振越強越高；相互矛盾時降低
+- decision_weights：四者加總必須等於 1.0（精確）
+- 某路數據缺失（空 dict）時，將其 weight 設為 0，加總仍須等於 1.0
+
+⚠️ 硬規則：所有欄位必填；decision_weights 四者加總必須精確等於 1.0；
+  confidence_score 為 0-100 整數；action_signal 只能是 BUY/SELL/HOLD 之一。
+⚠️ 此分析為研究工具，使用者應自行承擔投資決策風險。
+"""
+
+
+def get_master_decision(date: str | None = None) -> dict:
+    """整合四路特徵後呼叫 Gemini，產出結構化市場決策 JSON。
+
+    Returns 格式：
+      {date, market_regime, action_signal, confidence_score,
+       decision_weights, key_drivers, risk_alert, disclaimer}
+    失敗時 raise（由呼叫端決定是否 swallow）。
+    """
+    features = feature_aligner.build_feature_json(date)
+    result = gemini_client.call_gemini_for_json(
+        system_instruction=MASTER_DECISION_SYSTEM_PROMPT,
+        user_content=json.dumps(features, ensure_ascii=False, default=str),
+    )
+    # 基本驗證
+    required = {"date", "market_regime", "action_signal", "confidence_score",
+                "decision_weights", "key_drivers", "risk_alert"}
+    missing = required - set(result)
+    if missing:
+        raise ValueError(f"Gemini master decision 缺少欄位: {missing}")
+    weights = result.get("decision_weights") or {}
+    total = sum(float(v) for v in weights.values())
+    if not (0.98 <= total <= 1.02):
+        raise ValueError(f"decision_weights 總和異常: {total:.3f}")
+    return result
+
+
+def _run_master_decision(today: str, log=print) -> dict | None:
+    """排程 helper：執行中央決策並歸檔，失敗靜默回 None（不拖垮主流程）。"""
+    log("🧠 [master] 四路合流 → Gemini 中央決策...")
+    try:
+        decision = get_master_decision(today)
+        save_json(paths.LATEST_DECISION, decision)
+        save_json(paths.ARCHIVE_DECISION / today / "decision.json", decision)
+        signal = decision.get("action_signal", "?")
+        score = decision.get("confidence_score", "?")
+        log(f"   ✅ 決策完成：{signal}  信心分數：{score}")
+        return decision
+    except Exception as exc:  # noqa: BLE001
+        log(f"   ⚠️  中央決策失敗（不影響主流程）：{exc}")
+        return None
 
 
 def format_house_price_block(prices: dict | None) -> str:
