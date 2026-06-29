@@ -64,6 +64,11 @@
 ## Hotfix（2026-06-28，PR #75 已併入 main）
 - ✅ `app.py::ensure_gemini_key()` AttributeError 修復：補 `import gemini_client`，兩處錯誤呼叫 `update_data.get_gemini_keys()` → `gemini_client.get_gemini_keys()`（SSOT 正名）。
 
+## 國際盤快報 UX 大改版（2026-06-29，PR #77 已併入 main）
+- ✅ `root_cause` 欄位：Gemini Prompt 強制萃取今日最大觸發事件（15字內，地緣政治優先），LINE 訊息第二行顯示 `🔥 主因:XXX`
+- ✅ 地緣政治新聞源：`DEFAULT_INTL_ALERT_QUERIES` 加入戰爭/伊朗/關稅/台海關鍵字；zh_feeds 補「中央社 國際」「BBC 中文」；en_feeds 加 WORLD 版塊
+- ✅ LINE 訊息精簡：reason 壓 100 字、focus ≤2 條、sectors ≤3 個、interpretation ≤2 條
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
