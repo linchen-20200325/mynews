@@ -214,6 +214,26 @@ _M_LABEL = (
 )
 
 
+def get_cycle_data(actual_2026: dict[int, float] | None = None) -> dict:
+    """各線月底累積報酬率原始數值，供診斷資料 tab 使用（SSOT）。
+
+    Returns
+    -------
+    dict with keys:
+      month_labels : list[str]   月份標籤（1月…12月 or Jan…Dec）
+      blue/red/green/black : list[float]  各線月均值（nan = 無資料）
+      orange : list[float | None] or None  2026 實際走勢（無資料時為 None）
+    """
+    return {
+        "month_labels": _M_LABEL,
+        "blue":  _avg_months(YEARS_ALL),
+        "red":   _avg_months(YEARS_RED),
+        "green": _avg_months(YEARS_GREEN),
+        "black": _avg_months(YEARS_BLACK),
+        "orange": [actual_2026.get(m) for m in _MONTHS] if actual_2026 else None,
+    }
+
+
 def build_cycle_figure(
     actual_2026: dict[int, float] | None = None,
     figsize: tuple[float, float] = (14, 7),

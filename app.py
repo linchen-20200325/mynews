@@ -2809,14 +2809,34 @@ def _fetch_2026_cached() -> dict:
 def _tool_cycle_chart() -> None:
     import matplotlib.pyplot as plt
     actual = _fetch_2026_cached() or None
-    fig = season_chart.build_cycle_figure(actual)
-    st.pyplot(fig, use_container_width=True)
-    plt.close(fig)
-    if actual:
-        months = sorted(actual.keys())
-        st.caption(f"2026 實際資料：{months} 月份已更新（每小時自動刷新）")
-    else:
-        st.caption("2026 實際走勢暫無法取得，僅顯示歷史均線。")
+    tab_chart, tab_data = st.tabs(["📊 圖表", "📋 診斷資料"])
+
+    with tab_chart:
+        fig = season_chart.build_cycle_figure(actual)
+        st.pyplot(fig, use_container_width=True)
+        plt.close(fig)
+        if actual:
+            st.caption(f"2026 實際資料：{sorted(actual.keys())} 月份已更新（每小時自動刷新）")
+        else:
+            st.caption("2026 實際走勢暫無法取得，僅顯示歷史均線。")
+
+    with tab_data:
+        d = season_chart.get_cycle_data(actual)
+        def _fmt(v) -> str:
+            try:
+                return f"{float(v):+.2f}%" if v is not None else "—"
+            except (TypeError, ValueError):
+                return "—"
+        cols: dict = {
+            "月份":          d["month_labels"],
+            "藍 全年均%":    [_fmt(v) for v in d["blue"]],
+            "紅 第六年%":    [_fmt(v) for v in d["red"]],
+            "綠 共和黨6th%": [_fmt(v) for v in d["green"]],
+            "黑 期中選舉%":  [_fmt(v) for v in d["black"]],
+        }
+        if d["orange"]:
+            cols["橘 2026實際%"] = [_fmt(v) for v in d["orange"]]
+        st.dataframe(pd.DataFrame(cols), use_container_width=True, hide_index=True)
 
 
 # ── 4 大頁 ─────────────────────────────────────────────────────────────────
