@@ -849,15 +849,25 @@ MASTER_DECISION_SYSTEM_PROMPT = """
 """
 
 
-def get_master_decision(date: str | None = None) -> dict:
+def get_master_decision(
+    date: str | None = None,
+    _features: dict | None = None,
+) -> dict:
     """整合四路特徵後呼叫 Gemini，產出結構化市場決策 JSON。
+
+    Parameters
+    ----------
+    date : str or None
+        台股交易日，預設今日。
+    _features : dict or None
+        已建立的特徵 JSON（避免重複呼叫 feature_aligner）。
 
     Returns 格式：
       {date, market_regime, action_signal, confidence_score,
        decision_weights, key_drivers, risk_alert, disclaimer}
     失敗時 raise（由呼叫端決定是否 swallow）。
     """
-    features = feature_aligner.build_feature_json(date)
+    features = _features if _features is not None else feature_aligner.build_feature_json(date)
     result = gemini_client.call_gemini_for_json(
         system_instruction=MASTER_DECISION_SYSTEM_PROMPT,
         user_content=json.dumps(features, ensure_ascii=False, default=str),
@@ -879,7 +889,9 @@ def _run_master_decision(today: str, log=print) -> dict | None:
     """排程 helper：執行中央決策並歸檔，失敗靜默回 None（不拖垮主流程）。"""
     log("🧠 [master] 四路合流 → Gemini 中央決策...")
     try:
-        decision = get_master_decision(today)
+        features = feature_aligner.build_feature_json(today)
+        decision = get_master_decision(today, _features=features)
+        decision["features"] = features  # 嵌入特徵供 Streamlit 儀表板展示
         save_json(paths.LATEST_DECISION, decision)
         save_json(paths.ARCHIVE_DECISION / today / "decision.json", decision)
         signal = decision.get("action_signal", "?")
@@ -2423,6 +2435,7 @@ def main() -> int:
             print(f"  警告: 共振偵測失敗:{exc}", file=sys.stderr)
         _run_focus(today)
         _run_housing(today)
+        _run_master_decision(today)
         if report:
             print(
                 f"資料更新成功!新聞 {len(report.get('raw_news', []))} 則、"
