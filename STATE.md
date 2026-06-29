@@ -77,6 +77,12 @@
 - ✅ PR #81：`requirements.txt` 補 `matplotlib>=3.7`（修復 Streamlit Cloud ModuleNotFoundError）
 - ✅ PR #82：`season_chart.py` 新增 `get_cycle_data()` 公開函數（SSOT，月均報酬率原始數值）；`app.py` `_tool_cycle_chart()` 改為雙 tab：📊 圖表 / 📋 診斷資料（資料來自 SSOT，不重複計算）
 
+## Phase 2 中央決策大腦（2026-06-29，PR #83 已併入 main）
+- ✅ `feature_aligner.py`（新 SSOT）：四路特徵對齊合流（macro/chip/news/tech），各路獨立容錯
+- ✅ `paths.py`：新增 `LATEST_DECISION` / `ARCHIVE_DECISION`
+- ✅ `update_data.py`：`MASTER_DECISION_SYSTEM_PROMPT` + `get_master_decision()` + `_run_master_decision()`
+- 待辦：Phase 3 Streamlit 中央決策儀表板（四象限視覺化 + action_signal 燈號）
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
