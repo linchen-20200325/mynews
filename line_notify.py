@@ -165,7 +165,7 @@ def build_line_message(report: dict, chip_hint: str = "") -> str:
         lines += ["", chip_hint]
     kpi = report.get("strategic_analysis", {}).get("blind_spots_and_kpi", "").strip()
     if kpi:
-        lines += ["", "🎯 盲點與領先指標:", kpi[:400] + ("..." if len(kpi) > 400 else "")]
+        lines += ["", "🎯 盯盤關鍵:", kpi[:120] + ("…" if len(kpi) > 120 else "")]
     lines += ["", f"(白話文來源:{report.get('dictionary_source', '—')})"]
     msg = "\n".join(lines)
     if len(msg) > LINE_TEXT_LIMIT:
@@ -198,6 +198,10 @@ def build_intl_alert_line_message(intl: dict) -> str:
     lines = [f"{title} {intl.get('report_date', '')}"]
 
     root_cause = (intl.get("root_cause") or "").strip()
+    if not root_cause:
+        interp0 = (intl.get("interpretation") or [{}])[0]
+        rc_text = (interp0.get("cause") or "").strip()
+        root_cause = rc_text[:30] + ("…" if len(rc_text) > 30 else "")
     if root_cause:
         lines.append(f"🔥 主因:{root_cause}")
 
