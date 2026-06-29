@@ -73,6 +73,10 @@
 - ✅ `season_chart.py`（SSOT）新建：內嵌 S&P 500 1949-2024 月底累積報酬率；四條分析線（全年/第六年/共和黨第六年/期中選舉年）；`fetch_sp500_2026()` 透過 `proxy_helper.fetch_json()` 抓 Yahoo Finance v8 取得 2026 實際走勢；`build_cycle_figure()` 回傳 matplotlib Figure
 - ✅ `app.py` 整合：`import season_chart`、`_fetch_2026_cached(ttl=3600)`、`_tool_cycle_chart()`；`page_tw()` 新增第三個 expander「📅 總統任期週期 — 2026 走勢預測參考」
 
+## 總統任期週期診斷資料 Tab（2026-06-29，PR #81 #82 已併入 main）
+- ✅ PR #81：`requirements.txt` 補 `matplotlib>=3.7`（修復 Streamlit Cloud ModuleNotFoundError）
+- ✅ PR #82：`season_chart.py` 新增 `get_cycle_data()` 公開函數（SSOT，月均報酬率原始數值）；`app.py` `_tool_cycle_chart()` 改為雙 tab：📊 圖表 / 📋 診斷資料（資料來自 SSOT，不重複計算）
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
