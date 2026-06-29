@@ -51,3 +51,7 @@ WATCH_REVENUE_PUSHED = Path("data/watch_revenue_pushed.json")  # 已推月營收
 
 # ── 其他 ──
 GEOJSON = Path("taiwan_counties.geo.json")  # 全台縣市界(房市地圖)
+
+# ── 中央決策大腦輸出（feature_aligner → Gemini master decision）──
+LATEST_DECISION = Path("latest_decision.json")   # 最新綜合決策 JSON
+ARCHIVE_DECISION = Path("data/decision")          # 決策歸檔目錄
