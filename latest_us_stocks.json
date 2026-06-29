@@ -1,116 +1,265 @@
 {
   "report_date": "2026-06-29",
-  "summary": "今日美股市場受中東衝突升溫、油價上漲及AI晶片股回檔影響，費城半導體指數表現疲軟，但SpaceX被納入那斯達克100指數帶來利多，市場焦點轉向美國非農就業數據。",
+  "summary": "今日美股因美伊局勢緩和及科技股回神而普遍上漲，但記憶體和部分AI晶片股面臨賣壓。康卡斯特分拆計畫帶來利多，而微軟則經歷2000年以來最差月份。",
   "stocks": [
     {
-      "name": "SpaceX",
-      "ticker": "",
-      "sector": "太空探索與衛星通訊",
-      "mention_count": 7,
-      "sentiment": "利多",
-      "reason": "SpaceX被納入那斯達克100指數，預計將引導大量被動資金買盤湧入，對股價形成正面支撐。",
+      "name": "美光(Micron)",
+      "ticker": "MU",
+      "sector": "半導體",
+      "mention_count": 5,
+      "sentiment": "利空",
+      "reason": "新聞指出美光股價重摔7%，且面臨三星和SK海力士合計5000億美元的記憶體市場威脅，記憶體板塊整體開崩。",
       "evidence_news": [
         {
-          "title": "SpaceX納那指100，估迎千億資金-財經焦點情報站",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUUszNGlTMXJ2MGlkTU1NQlNBc0xuVHBHTndaSWp0UmxSQ19DSU5ZYUlaQUpacVQwcjdISU5lTjZ5cVp4S2tMdUY2aHpXR2ZvV09qLS1aQU1tazNlY0VEUnlqVFhDbFJ6WU13MVE2cVdNODY5a0w5RnNnX2RQZ3lmNElB?oc=5"
+          "title": "美股早盤記憶體開崩！美光重摔7% 台積電ADR小漲開出",
+          "source": "NOWnews今日新聞",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA0VmphZ0gyd2kza19hdE92MkI2N2V5LUhlSS1zbENsTXVIXzgxem5GU1Bld2N2QjFHRkN6MDVWakhxVWFmcGUtekstd2jSAVJBVV95cUxNQ0NNVDdncWN5cTF5bkV5dVRsTlBuN280Y2cwRWtzUUJwR2NpOXFZOHZXMzFsSUI4NkJ5THJXRnFMVHpUTXpGdjIwS2NUR1lJU0xB?oc=5"
         },
         {
-          "title": "被動買盤估1350億！SpaceX上市2週火速進那斯達克100",
-          "source": "FTNN 新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiS1FVX3lxTE5DYU05TVVZSmNNZTlSMUwxcmgyUVFYTjBvREQ4WGpkbXBxcE40R0lRcWlabXJRdEFHSjJwbW9uYVhhcVlQcG9fa29zbw?oc=5"
+          "title": "TradingKey 每日市場簡報：AI晶片股回檔，美光跌逾6%，6月非農數據成市場焦點",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQVlN5QXB5dW9HeWptTEZjRDBJN1ZWVFViamF4MFlfMEhVWi1kN0Mza2t5OTBrVEdMaUJfV3MwR21CNjN5emQ3d3NSb2NrTEpYNEsyUW91Qy0zeGc1aHNHazVHUTJrUHhxbFJCUjNrQWtFT0twZnZTNkRLV1NVN0ZtRzRYamE0dHgwODlpbEZ0TTQ0UlB6dHFNS1ByNUFkZ1NiTlJoVlBvTVRyMFp5LVV1MnpwS0xGYXJlSkFZa3hOSnJjZG5FNlhYYmtPMkdjV0hweVZQeEhHaFpuQ3RDZlplQ2pReFI4TVVJaGxEQVBDbFVfdw?oc=5"
+        }
+      ],
+      "news_count": 9,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "康卡斯特(Comcast)",
+      "ticker": "",
+      "sector": "媒體與通訊",
+      "mention_count": 5,
+      "sentiment": "利多",
+      "reason": "康卡斯特宣布分拆計畫，市場反應正面，助攻股價大漲。",
+      "evidence_news": [
+        {
+          "title": "康卡斯特分拆計畫助攻大漲",
+          "source": "民視新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9KdFBTaW5yeGx0Um5iVU5DTUxrd3V6bDE3cF9tSXdJTVdtQmVmRk90bnJ2M3VRQ1Bhc3ZteHVCa0QxVXJYSFB1NmIzdWZodXZ1eC1tZUlR?oc=5"
+        },
+        {
+          "title": "Stock Market Today: Major Indexes Rebound From Last Week's Tech Sell-Off; Comcast Stock Jumps on Plan to Split",
+          "source": "Investopedia",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNYlhNMlJCbk8tR0M0Z3V1VEFoUzM1eV9jbmg1X2VBNUJHODdKYlotaTJEbUNpc256QU1LTFBJWHd0c0drb3p6UEdRYi1iQkdReXltbnZMenpaNm96bGp3WkpYWG9PZ3EzQjVTeUhZT1JvTlNrQ1BJOXhldGhrU3BsT1pJM3RWbHJPOEw1Ym9EdmQ?oc=5"
+        }
+      ],
+      "news_count": 5,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "谷歌母公司(Alphabet)",
+      "ticker": "GOOGL",
+      "sector": "科技",
+      "mention_count": 4,
+      "sentiment": "利多",
+      "reason": "谷歌母公司因被納入道瓊指數以及在AI領域的進展而股價上漲，顯示其市場地位提升。",
+      "evidence_news": [
+        {
+          "title": "Why Is Alphabet Stock (GOOGL) Up? Dow Entry and Google AI Limits on Meta.",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNQ0k1TXJOVVctSXA1ZWx3R1c5WDRydk84a21iSjd5M1hNQXBSajNOWlU5Snp2VWJBelpzcElZRVZoZUVzV0lHQUhsbG1RSjh1TEhnTW1zSWY3RFpYQ0JUWWlLSk5fQnRRZzhSdnBxbUM3VjBDZUFlZlFzQ0xLa1FMWkQteUZwVWVtOGgtdQ?oc=5"
+        },
+        {
+          "title": "US Stock Market Today: Nasdaq Up 1.2% As Big Tech Stocks Jump; Meta, Amazon, Alphabet Gain Over 2%",
+          "source": "NDTV Profit",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNNFdyOFlBWnBXMVdOek4ySFRuSThtWnhJSG5BVzlFb2ZrbGJ5elU2MEVCRUEwYnVxd3dpUGdYRHBxOC1HenZhSnNyYmxQX3F6NDRmdm5NRmFIRERzX3I0cnZ2ZEJocUUtNFBmbEpEbmJLOGstMFg3WVp5MkNHRzJCVG13bXJRMFBPb08wSnYwMGFVdkd3QTNxU0FuT2ZaanhjamxLaHI5REE3eXNBczJpSGhsNjVuSzl3dWZvS1hzeVJyN3I4Nmk1X3ViUjN1dXVsd3gwNjVsTFQ3cFptbjNTWFFWV1diTFHSAe8BQVVfeXFMTXdkUExhTGxpSDEzTzZnYlRuNHV3SGtHanpVYmZQc2QtQzRoVGIwa2VJVXNCLVl3VDVXam9vYkZmbDB3ellrckVqWmV1TTQ5d1dKeGJUMG5lSk1CR1Buem5IbXVPdkF1eUhDZHpjdlQwOVdJSkpraW10UjkySElVYkIwQkZ5SzB3RnBNaFpUdlBjaXBKbmlOajZUTXFwYnpNUXJSQ25TRkdrYWVybWtUeU5nckh6c1pPQmFiNkc4dnQ1a3ZxNHNZLTBybXV1SDgwRkI3bVlNSEQtY0RqQzM5MmlpQlNSTkVHV1luTjZlTW8?oc=5"
         }
       ],
       "news_count": 6,
-      "first_seen": "2026-06-27",
-      "last_seen": "2026-06-28"
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
     },
     {
-      "name": "美光(Micron)",
-      "ticker": "",
-      "sector": "半導體",
+      "name": "太空探索技術公司(SpaceX)",
+      "ticker": "SPCX",
+      "sector": "航太與國防",
       "mention_count": 4,
-      "sentiment": "觀望",
-      "reason": "儘管第三季營收暴增346%，但股價仍下跌，顯示市場可能已部分消化利多，或存在其他觀望因素。",
+      "sentiment": "利多",
+      "reason": "SpaceX因被納入羅素1000指數和納斯達克100指數，以及推動美國股票發行量創紀錄，市場對其前景樂觀。",
       "evidence_news": [
         {
-          "title": "TradingKey 每日市場簡報：AI晶片股回檔，美光跌逾6%，6月非農數據成市場焦點",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQVlN5QXB5dW9HeWptTEZjRDBJN1ZWVFViamF4MFlfMEhVWi1kN0Mza2t5OTBrVEdMaUJfV3MwR21CNjN5emQ3d3NSb2NrTEpYNEsyUW91Qy0zeGc1aHNHazVHUTJrUHhxbFJCUjNrQWtFT0twZnNFNkRLV1NVN0ZtRzRYamE0dHgwODlpbEZ0TTQ0UlB6dHFNS1ByNUFkZ1NiTlJoVlBvTVRyMFp5LVV1MnpwS0xGYXJlSkFZa3hOSnJjZG5FNlhYYmtPMkdjV0hweVZQeEhHaFpuQ3RDZlplQ2pReFI4TVVJaGxEQVBDbFVfdw?oc=5"
+          "title": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump?",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaUhVZGl6UDlFTjVjYTRCWFlWZDhpTnFnTkJaT1AzOVdjNV8yM2Rrak5WWG90NzR4MkFlY2xRQUNlVDZwc2V6T2RfSTI2Zi1ndFA1bW9VY1ZMbHdOcHR5LUxyajdIRVhqRHVfOTVlbnJRcEZ6cmJ5bWN6X3lYai1lclpFdWNQUQ?oc=5"
         },
         {
-          "title": "【美股巨頭】美光Q3營收暴增346%，股價卻在跌什麼？",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQU3ljb3JjaTZ4N2VfcDV3ZUlMc09uZWkycmtoV0pzNW1iTFRGaXcydl9uWGU2LVN1QXkzUmpuYlRMd2l6Y1lBTHliR0dOVUFEUldNbVpPVGQ1ODNqaV82dlV2dkJBQUtGVVB5QWV4aE9YNDM0bUJQMi1KM2hKSTVwUGdLM2VJTUJGWXVzZ05n?oc=5"
+          "title": "SpaceX Pushes US Share Sales to Record $251 Billion at Midyear",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPS0tYLXBqS3BGMmt3ZEdkdWxkdEhXRDdkNjNERHo4TTRRWVpCM0NpekU0dFlwNDZQQk4weE5xU3hScHZONmlmQWtIV1pBOFZqT2J2WEo3TDNHQ1NvUDd1QUxmVU1vM1M2cUxFVVA5a2F3UEo0WXlST1FkalExLXRNWUprVHVZbnZIc0tfbm9qNkhSeHo1Q3prNE1fMkpUNXdlZlVVT2NsRGgwc0lzQmVSaVdR?oc=5"
         }
       ],
       "news_count": 5,
-      "first_seen": "2026-06-27",
+      "first_seen": "2026-06-29",
       "last_seen": "2026-06-29"
     },
     {
-      "name": "費城半導體指數",
-      "ticker": "",
-      "sector": "半導體",
-      "mention_count": 4,
-      "sentiment": "利空",
-      "reason": "美股費城半導體指數上週大跌5.29%至7.94%，顯示AI晶片股面臨估值修正壓力。",
-      "evidence_news": [
-        {
-          "title": "美股週五收黑！台股開盤大漲逾400點站回4萬5 台積電漲5元",
-          "source": "NOWnews今日新聞",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBXajNrUE0tV3JwZGdfb3RtZFc4R1dONUJ3a0FHYWhBbXFwdWNCcmNJRjZsZlFUR2t6Q2tHQjlrVFhqeTNGUEFMbVRUUFQzV1RlUmfSAVJBVV95cUxQV2oza1BNLVdycGRnX290bWRXOEdXTjVCd2tBR2FoQW1xcHVjQnJjSUY2bGZRVEdrekNrR0I5a1RYankzRlBBTG1UVFBUM1dUZVJn?oc=5"
-        },
-        {
-          "title": "《美股》一周回顧：費城半導體指數周跌7.94% 最弱",
-          "source": "富聯網",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOakw1c1l1VUduYUEzNnJSeXRfTml3enhzQkktVjBUU0o5S25DbHpqbWVfZ0NGeGJPdFBnOU5hcXdLMUhkTHk5TnJGdUFHWGhNUVV0dkJDTllkZ3VRU2k5RDRsT3JzV1NfU3lESnV4b2pWZF9XYk5ndGZVaXpmSUFMUy13WElmR21q?oc=5"
-        }
-      ],
-      "news_count": 3,
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-29"
-    },
-    {
-      "name": "台積電(TSM)",
+      "name": "台積電ADR(TSM ADR)",
       "ticker": "TSM",
       "sector": "半導體",
       "mention_count": 3,
-      "sentiment": "觀望",
-      "reason": "台積電ADR上週下跌0.61%，先進封裝技術仍是AI競爭關鍵，美國對其依賴更甚以往，但整體半導體族群疲軟。",
+      "sentiment": "利多",
+      "reason": "美伊衝突降溫，美股開高，台積電ADR逆勢小漲開出，顯示市場對其前景仍抱持信心。",
       "evidence_news": [
         {
-          "title": "美股週五收黑！台股開盤大漲逾400點站回4萬5 台積電漲5元",
-          "source": "NOWnews今日新聞",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBXajNrUE0tV3JwZGdfb3RtZFc4R1dONUJ3a0FHYWhBbXFwdWNCcmNJRjZsZlFUR2t6Q2tHQjlrVFhqeTNGUEFMbVRUUFQzV1RlUmfSAVJBVV95cUxQV2oza1BNLVdycGRnX290bWRXOEdXTjVCd2tBR2FoQW1xcHVjQnJjSUY2bGZRVEdrekNrR0I5a1RYankzRlBBTG1UVFBUM1dUZVJn?oc=5"
+          "title": "美伊衝突降溫！美股開高 台積電ADR、台指期夜盤全漲了",
+          "source": "自由財經",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAxaXN5bTlkQXlmeU9qeUM1Sk1IdDJGYk4zQmh1R2EyVGJKaV9IUFJnaXJqb1RoUGJzMDZ1ZmstVU1SMWRnYTM4ZlVBbXZKNDdVRjBQQWoxM3dLOHlpVnlr0gFkQVVfeXFMUDg2dVdOM3k1QlVGOW9xcGNQVDIyNlpYYVEtdk1JcGZoelAyOXc4T1hvdlkydXd4bkdsR25ta2tQUXpIRTVJLTQ2ZVNhWVBDNVRYV05EdU5DQjhWTy05dFlpNEd4bA?oc=5"
         },
         {
-          "title": "先進封裝成AI競爭關鍵 紐時：美國依賴台積電更甚以往",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606270165.aspx"
+          "title": "美股早盤記憶體開崩！美光重摔7% 台積電ADR小漲開出",
+          "source": "NOWnews今日新聞",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA0VmphZ0gyd2kza19hdE92MkI2N2V5LUhlSS1zbENsTXVIXzgxem5GU1Bld2N2QjFHRkN6MDVWakhxVWFmcGUtekstd2jSAVJBVV95cUxNQ0NNVDdncWN5cTF5bkV5dVRsTlBuN280Y2cwRWtzUUJwR2NpOXFZOHZXMzFsSUI4NkJ5THJXRnFMVHpUTXpGdjIwS2NUR1lJU0xB?oc=5"
         }
       ],
-      "news_count": 5,
-      "first_seen": "2026-06-26",
+      "news_count": 3,
+      "first_seen": "2026-06-29",
       "last_seen": "2026-06-29"
     },
     {
-      "name": "AI晶片股",
-      "ticker": "",
+      "name": "輝達(Nvidia)",
+      "ticker": "NVDA",
       "sector": "半導體",
-      "mention_count": 3,
-      "sentiment": "利空",
-      "reason": "AI晶片股近期出現回檔，市場對其估值進行修正，導致相關類股表現疲軟。",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "儘管近期AI晶片股回檔，但輝達仍被認為與美光和博通共同掌握股市命運，並與Palantir在政府AI領域合作，暗示其在AI領域的關鍵地位。",
       "evidence_news": [
         {
-          "title": "TradingKey 每日市場簡報：AI晶片股回檔，美光跌逾6%，6月非農數據成市場焦點",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQVlN5QXB5dW9HeWptTEZjRDBJN1ZWVFViamF4MFlfMEhVWi1kN0Mza2t5OTBrVEdMaUJfV3MwR21CNjN5emQ3d3NSb2NrTEpYNEsyUW91Qy0zeGc1aHNHazVHUTJrUHhxbFJCUjNrQWtFT0twZnNFNkRLV1NVN0ZtRzRYamE0dHgwODlpbEZ0TTQ0UlB6dHFNS1ByNUFkZ1NiTlJoVlBvTVRyMFp5LVV1MnpwS0xGYXJlSkFZa3hOSnJjZG5FNlhYYmtPMkdjV0hweVZQeEhHaFpuQ3RDZlplQ2pReFI4TVVJaGxEQVBDbFVfdw?oc=5"
+          "title": "Nvidia, Micron, and Broadcom hold the stock market's fate in the palm of their hands",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPNjRXTTh2RGxqaVNXLXEzbHVhWEthVkFJSGFSaTVaQ1Y4amE2V3ltOEJCa1RDNnVWdVVuSGt3SEFTbFkzbGltSE4zc2J1dklWSG1NZEJOMXVtVFU5N3pfWVlwd2tUN2FuRzdOMEtDdVhpU2dXRWxYZlc1cTM0N2pnTGtBMWV3WlBINmZDVmtXR0JjaUtGUVBfU3prdFVyMmg0b21jcTJnNFVLSHZkOGF2OTlua2lQUkE0MEIxZFc2SEhabDRtaHFyc0J4a215U2RBUG9Cdw?oc=5"
         },
         {
-          "title": "費半周線慘崩近8％！科技股爆AI估值修正潮 後市盯3關鍵",
-          "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB3MUk1c1NyOHpQUWJNOGFVOFExdTdONzN2dllZbTExMk1SbU51OGYtMW0wa0hCdkpxOFE0azQ5YzdJUFQ5YWhGc2VpaGhaalZYa2VyWU5USVowOVVtNV9N?oc=5"
+          "title": "Palantir Stock (PLTR) Rises on Nvidia Government AI Partnership",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNWWJjQXN4MFZCXzRYYTFyYzZCMmNxeGx0T3RGd1p0WUJIYjJOVjJzV0NKYkZRQnIwQ1lNYjF5ay1GcTVmT0tPTGtfSHhxSmVDa0pGSkJyaWQ5clFNTGJnX2RSclpEbFhfeWJpWWIwMzVQN3lrd2E2aGt2Zk4wTWFNd25XWnRyOUpWLUlSWUN5ZG81alZNbVFrMW9IMHRueHpveV9wT3JuQW1UOTZOdGlTa0hTOUl0aWRKRU0wcFlVLWhQeFpoa1hBRmVDUUZWZUVKRVdUZUwxYXdCcEk3YzQyMC1GQ2VCX08xU3dLekhtREVldlNhUS1ZY0pLNEZ2dUY5WjQtclBWWVY1TVFCazFDTUxR?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "亞馬遜(Amazon)",
+      "ticker": "AMZN",
+      "sector": "電子商務與雲端服務",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "亞馬遜股價上漲，被認為是市場中表現亮眼的公司之一，顯示其業務強勁。",
+      "evidence_news": [
+        {
+          "title": "Stock Market Today: Dow Pops As Trump Fed Firing Is Blocked; Google Parent, Amazon Shine (Live Coverage)",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNdGduRnZNOUxma3k4RldsLUc1aXhjTFNVRC0yQ2tEY2QxSE9icTVzR05jazNJV18tcEpqSi1Pa0ZHSHlQSm55WFJUSzR0VGRVck9OVEJaUXB5WlFwR09HdzVHS2Vta2lBbzF4Uk1leVVHWWlKc0JEMWFTbVU5dFVGMUE3ejQtQnZ3TlZLVXN4bVB6MEhFeHJvRFVFcFNtV2tOWjZPblBuaFNRS1RtX0IxS0pyUkxwYmlYcmc?oc=5"
+        },
+        {
+          "title": "US Stock Market Today: Nasdaq Up 1.2% As Big Tech Stocks Jump; Meta, Amazon, Alphabet Gain Over 2%",
+          "source": "NDTV Profit",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNNFdyOFlBWnBXMVdOek4ySFRuSThtWnhJSG5BVzlFb2ZrbGJ5elU2MEVCRUEwYnVxd3dpUGdYRHBxOC1HenZhSnNyYmxQX3F6NDRmdm5NRmFIRERzX3I0cnZ2ZEJocUUtNFBmbEpEbmJLOGstMFg3WVp5MkNHRzJCVG13bXJRMFBPb08wSnYwMGFVdkd3QTNxU0FuT2ZaanhjamxLaHI5REE3eXNBczJpSGhsNjVuSzl3dWZvS1hzeVJyN3I4Nmk1X3ViUjN1dXVsd3gwNjVsTFQ3cFptbjNTWFFWV1diTFHSAe8BQVVfeXFMTXdkUExhTGxpSDEzTzZnYlRuNHV3SGtHanpVYmZQc2QtQzRoVGIwa2VJVXNCLVl3VDVXam9vYkZmbDB3ellrckVqWmV1TTQ5d1dKeGJUMG5lSk1CR1Buem5IbXVPdkF1eUhDZHpjdlQwOVdJSkpraW10UjkySElVYkIwQkZ5SzB3RnBNaFpUdlBjaXBKbmlOajZUTXFwYnpNUXJSQ25TRkdrYWVybWtUeU5nckh6c1pPQmFiNkc4dnQ1a3ZxNHNZLTBybXV1SDgwRkI3bVlNSEQtY0RqQzM5MmlpQlNSTkVHV1luTjZlTW8?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "帕蘭泰爾(Palantir)",
+      "ticker": "PLTR",
+      "sector": "軟體與數據分析",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "Palantir與Surf Air Mobility擴大合作，並與Nvidia在政府AI領域合作，顯示其在AI商業化方面的積極進展。",
+      "evidence_news": [
+        {
+          "title": "Palantir and Surf Air Mobility Expand Partnership to Accelerate Commercialization of OperatorOS, OwnerOS, and Enterprise Products",
+          "source": "Business Wire",
+          "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNWWJjQXN4MFZCXzRYYTFyYzZCMmNxeGx0T3RGd1p0WUJIYjJOVjJzV0NKYkZRQnIwQ1lNYjF5ay1GcTVmT0tPTGtfSHhxSmVDa0pGSkJyaWQ5clFNTGJnX2RSclpEbFhfeWJpWWIwMzVQN3lrd2E2aGt2Zk4wTWFNd25XWnRyOUpWLUlSWUN5ZG81alZNbVFrMW9IMHRueHpveV9wT3JuQW1UOTZOdGlTa0hTOUl0aWRKRU0wcFlVLWhQeFpoa1hBRmVDUUZWZUVKRVdUZUwxYXdCcEk3YzQyMC1GQ2VCX08xU3dLekhtREVldlNhUS1ZY0pLNEZ2dUY5WjQtclBWWVY1TVFCazFDTUxR?oc=5"
+        },
+        {
+          "title": "Palantir Stock (PLTR) Rises on Nvidia Government AI Partnership",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNWWJjQXN4MFZCXzRYYTFyYzZCMmNxeGx0T3RGd1p0WUJIYjJOVjJzV0NKYkZRQnIwQ1lNYjF5ay1GcTVmT0tPTGtfSHhxSmVDa0pGSkJyaWQ5clFNTGJnX2RSclpEbFhfeWJpWWIwMzVQN3lrd2E2aGt2Zk4wTWFNd25XWnRyOUpWLUlSWUN5ZG81alZNbVFrMW9IMHRueHpveV9wT3JuQW1UOTZOdGlTa0hTOUl0aWRKRU0wcFlVLWhQeFpoa1hBRmVDUUZWZUVKRVdUZUwxYXdCcEk3YzQyMC1GQ2VCX08xU3dLekhtREVldlNhUS1ZY0pLNEZ2dUY5WjQtclBWWVY1TVFCazFDTUxR?oc=5"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "微軟(Microsoft)",
+      "ticker": "MSFT",
+      "sector": "軟體與雲端服務",
+      "mention_count": 2,
+      "sentiment": "利空",
+      "reason": "微軟股價經歷了5700億美元的暴跌，可能迎來2000年以來最差月份，儘管AI支出增加，但市場對其估值存在疑慮。",
+      "evidence_news": [
+        {
+          "title": "Microsoft’s $570 Billion Rout Sets Up Its Worst Month Since 2000",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTVg5YXFBOVNZajNGLXNlUkc4a1k1ZEg4ZWZxYjF4TjJqZVMza0VOel83OU83WnlFNTYwRDdIVm1EZXFuZVBKUktfcWtGaVJWdWU0Q0stRUk3c0ZZMUxHYnlzNjhpV0NPdHlTTlA2TkhfMGVPRU1ncmt2QjdBelBUanN6U2ljOExLNmZjbF9QVDVBVURkbnF0WDI1ZWZ0Tms1YjF2MGl3MGJiRGJXbngzRmVIbDA?oc=5"
+        },
+        {
+          "title": "Microsoft’s Worst Month Since 2000: Why Is This Happening?",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTVg5YXFBOVNZajNGLXNlUkc4a1k1ZEg4ZWZxYjF4TjJqZVMza0VOel83OU83WnlFNTYwRDdIVm1EZXFuZVBKUktfcWtGaVJWdWU0Q0stRUk3c0ZZMUxHYnlzNjhpV0NPdHlTTlA2TkhfMGVPRU1ncmt2QjdBelBUanN6U2ljOExLNmZjbF9QVDVBVURkbnF0WDI1ZWZ0Tms1YjF2MGl3MGJiRGJXbngzRmVIbDA?oc=5"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "威訊(Verizon)",
+      "ticker": "VZ",
+      "sector": "通訊服務",
+      "mention_count": 2,
+      "sentiment": "觀望",
+      "reason": "威訊與BT成立合資企業，但同時因資產重分類預計產生第二季虧損，且被道瓊指數替換，多空消息並存，需觀望。",
+      "evidence_news": [
+        {
+          "title": "Verizon and BT form joint venture | About Verizon",
+          "source": "Verizon",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNeFlQbmpKalM1MzdnakhiMkk1M1pkNGNoZlBEYVY4R3dvQ0RySm95elViVEhrR3F2aDRGYzdOYjA2Mnd5MFRSRGNBMjBzSXgxYW5JeEptSWhYZkVnTW5iRGFoZ0NsSmlZbE5wcE9MODA0LTJnRWZzVVloRG5aNGZKT1VwRXFaZw?oc=5"
+        },
+        {
+          "title": "Alphabet added to Dow Jones Industrial Average, replacing Verizon",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNQ0k1TXJOVVctSXA1ZWx3R1c5WDRydk84a21iSjd5M1hNQXBSajNOWlU5Snp2VWJBelpzcElZRVZoZUVzV0lHQUhsbG1RSjh1TEhnTW1zSWY3RFpYQ0JUWWlLSk5fQnRRZzhSdnBxbUM3VjBDZUFlZlFzQ0xLa1FMWkQteUZwVWVtOGgtdQ?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "超微半導體(AMD)",
+      "ticker": "AMD",
+      "sector": "半導體",
+      "mention_count": 1,
+      "sentiment": "利空",
+      "reason": "儘管新聞未直接提及AMD，但費城半導體指數上週大跌，記憶體股開崩，顯示整個半導體板塊面臨壓力。",
+      "evidence_news": [
+        {
+          "title": "《美股》一周回顧：費城半導體指數周跌7.94% 最弱",
+          "source": "富聯網",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOakw1c1l1VUduYUEzNnJSeXRfTml3enhzQkktVjBUU0o5S25DbHpqbWVfZ0NGeGJPdFBnOU5hcXdLMUhkTHk5TnJGdUFGWGhtUVV0dkJDTllkZ3VRU2k5RDRsT3JzV1NfU3lESnV4b2pWZF9XYk5ndGZVaXpmSUFMUy13WElmR21q?oc=5"
+        }
+      ],
+      "news_count": 0
+    },
+    {
+      "name": "博通(Broadcom)",
+      "ticker": "AVGO",
+      "sector": "半導體",
+      "mention_count": 1,
+      "sentiment": "觀望",
+      "reason": "新聞提及博通與輝達、美光共同掌握股市命運，但半導體市場整體波動，需進一步觀察。",
+      "evidence_news": [
+        {
+          "title": "Nvidia, Micron, and Broadcom hold the stock market's fate in the palm of their hands",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPNjRXTTh2RGxqaVNXLXEzbHVhWEthVkFJSGFSaTVaQ1Y4amE2V3ltOEJCa1RDNnVWdVVuSGt3SEFTbFkzbGltSE4zc2J1dklWSG1NZEJOMXVtVFU5N3pfWVlwd2tUN2FuRzdOMEtDdVhpU2dXRWxYZlc1cTM0N2pnTGtBMWV3WlBINmZDVmtXR0JjaUtGUVBfU3prdFVyMmg0b21jcTJnNFVLSHZkOGF2OTlua2lQUkE0MEIxZFc2SEhabDRtaHFyc0J4a215U2RBUG9Cdw?oc=5"
         }
       ],
       "news_count": 1,
@@ -118,163 +267,33 @@
       "last_seen": "2026-06-29"
     },
     {
-      "name": "國際油價",
-      "ticker": "",
-      "sector": "能源",
-      "mention_count": 3,
-      "sentiment": "利多",
-      "reason": "美國與伊朗在中東的衝突導致荷莫茲海峽能源運輸放緩，國際油價因此上漲，且期貨市場顯示上漲趨勢。",
-      "evidence_news": [
-        {
-          "title": "美伊中東互襲重創和平協議 國際油價走揚",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606290045.aspx"
-        },
-        {
-          "title": "Stock futures edge higher, Asia mixed as renewed U.S.-Iran attacks push oil prices up: Live updates",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5TU0NGQ09YzelllZHBxYzEtRTQwU1o5LXM1WEZ2VFNtd01hZXF6N3lMdDd3WVJmT1BBM0tNN2FjdG5vbU9VY2ZrUkRNemlFeDVsVlB3dEx3Nl9sM3BYbzQxaDRiNDBTenYzY0J0QUd5VW1mOEx1UjdHQdIBfkFVX3lxTE1yRFlHdnhwX2QydWJWbHFhY3ZXUXR0LTRHV1NJNmFLdG1laUU0Y3lCbi1rM3VQU2k2SllNV1FuLVkzUGVqa3UwcVpzampLWHZ4ZlM3d0FZUVhpMkY0OExQTkJaSGdNOHZXemdJOW0wTFpzQjN5NEFHTlh1ZmlYQQ?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-29"
-    },
-    {
-      "name": "那斯達克指數",
-      "ticker": "",
-      "sector": "科技",
-      "mention_count": 3,
-      "sentiment": "利空",
-      "reason": "受科技股拋售及OpenAI延後上市消息影響，那斯達克指數連續五天下跌，顯示市場對科技股前景持謹慎態度。",
-      "evidence_news": [
-        {
-          "title": "OpenAI傳延後上市！科技股遭拋售 納指連跌5天 | 財經 | CTWANT",
-          "source": "CTWANT",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5TVl80c0ttUzhuVlNaeVc1N2FKV3ZfbVUyNzZ0aHF2SUd6dktwWTF6LW9xNm5CTjZvN29raVRtVEJZeFo5Wl9PTzMybEFlbTDSAVRBVV95cUxORUszMTFUOERRWDYzcy1zZUZBMnZRWjlJaTdfOElZQ0VvLW9IdUhUQ0lIWU9lVjg5UjNYOU92MmIxWl9xTnBFMUhzdGdzR2JfcXU1dno?oc=5"
-        },
-        {
-          "title": "S&P 500 and Nasdaq Forecast: S&P Slides Below 50-Day MA as Nasdaq Drops 5th Straight",
-          "source": "FXEmpire",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNVE9JcUU5R1lKUmpPN2JScFBzOVNZWkpyQ3dDZWg1RG1PeldBQjJjcTBsWHBWdlJzTWF3RUl3VXRoTUpzNTB5Ym9mWFlLZkZKeXNldGtWV2RNb3UxbUQ0dUp0Ql9PNVJQQWpGeXhfRmdzR1NYeE1FOTRoRmUwSFRnV1plM1ZwMERjdzZDNlhnX1RYWUhhMHpHb1NFZVptaEcyOWtvbnR6bnlLWmNMZW9JeWNBSVNHWE5hY0FVb2tNdlBKMDI3OFItazkyUXg?oc=5"
-        }
-      ],
-      "news_count": 0
-    },
-    {
-      "name": "科技七巨頭",
-      "ticker": "",
-      "sector": "科技",
-      "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "新聞指出美股連跌的「背後真相」是最大權重「科技七巨頭」的隕落，暗示其成長動能減弱。",
-      "evidence_news": [
-        {
-          "title": "美股連跌「背後真相」曝！最大權重「科技七巨頭」的隕落",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB4T1B5ejd1emVmX3NDYVNVcUsyQ0ViUU53UWU5cXU3ZTNDdkxQd3c3Rm1xQVkxQzNkeTVwU3UtRnN2VzJBUHRzVGxLbHVyNHc?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-06-27",
-      "last_seen": "2026-06-27"
-    },
-    {
-      "name": "蘋果(Apple)",
-      "ticker": "",
-      "sector": "科技",
-      "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "蘋果大幅提高產品價格，反映AI時代成本上升，可能影響消費者需求。",
-      "evidence_news": [
-        {
-          "title": "Apple’s Sweeping Price Increases Bring Home the Costs of the AI Era",
-          "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQck9VWUhHSldFamxVOWxLT0xMZTdrSVRDX0duWWxiRjAyN3lfU28zc1hHbWFyRzEtOXo4b2Rpc1dVM3J4YUJPTWhKU1BsZzZLSHh1dzhZRTVoN3cxRl9ObDRBYTNJVXdFczR0X2pWRnAwQllwZWhHLXhONEtmNngyeWFjbHRjcjd4WFFQeXhjWkFXTnZMS1haMmJiLXF6UXdmcWFWQUNNTmhqTzFoWk1mMnpXTG82VGFBRHNkdkRnWFk1ZS13MmNn?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-26",
-      "last_seen": "2026-06-28"
-    },
-    {
-      "name": "特斯拉(Tesla)",
-      "ticker": "",
-      "sector": "汽車",
+      "name": "超微半導體(Intel)",
+      "ticker": "INTC",
+      "sector": "半導體",
       "mention_count": 1,
       "sentiment": "觀望",
-      "reason": "市場密切關注特斯拉全自動輔助駕駛(FSD)的發展，其技術進展將影響公司未來表現。",
+      "reason": "新聞提及韓國記憶體雙雄投資提振晶片板塊，但同時也有美國退休基金賣壓，整體半導體市場多空交雜。",
       "evidence_news": [
         {
-          "title": "TechCrunch Mobility: All eyes on Tesla FSD",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQLVBoUGJfM0FDNGhPdzdLeVlDVExWTXY0d3VKUFNDREJQczQ3LWdiUXNvdlAtRExzNEI2Y0IzbHQ5eHJhdTgyYURvX3RjRkdJbFRkWHhpMjYxaFJ0cV9Wa0JVN0JtMjBpNU5BTGR0cnc2TUhpMzBZb1JIbV9pSk9xQnZ3?oc=5"
+          "title": "【美股盤前】韓國記憶體雙雄三星、SK海力士合超2.4兆美元投資提振晶片板塊，美國退休基金300億賣壓同步來襲",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQd0ZjQTJ3NXExaVNVZk9HWFRtVlg0MXpibkY3OGoxU0tRSmw1STdDUS1GNEpYak1kb3VVQV9xMS1WSTJKNlRrODNNc2Nra1FrQUtkYy0ySmprZWNvNUdKaFIydG9GWjRpOUFIaVUtMFJYbVZnZFBSS0Y4bGZWdTJWXzZPelFZUGxPblIyZy1zcDdEcE12OTB3Um84dlFVbUQwVjVydERoTE9WaDlTQ0FidHh3OFhkaTRIYkpuUA?oc=5"
         }
       ],
       "news_count": 2,
-      "first_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
       "last_seen": "2026-06-29"
-    },
-    {
-      "name": "比特幣(Bitcoin)",
-      "ticker": "",
-      "sector": "加密貨幣",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "美股三大指數上週小幅收跌之際，比特幣逆勢上揚，顯示其作為避險資產或獨立市場的吸引力。",
-      "evidence_news": [
-        {
-          "title": "美股開盤前瞻：三大指數上週小幅收跌，比特幣、貴金屬逆勢上揚",
-          "source": "獨家報導",
-          "url": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxOVzluS0RIVl90X05SZ0RLWFZ2RHZlbGlBSGNLcVZ0MEJGd0JvZ2MtelFKVjd4YjFRX0ZNZWY0eXhuZ0FGcGZTOFlfV2V2M19hOGFSMGJuQ3VRLWl0ZjhoSXc3YzBXSDVFUHJla1Fwa2txLUhlc3NrZEJsOV9Ham5YSHhrVXpLWmV2VDF6V28zcEN0R0tDQ08xcE5rZFdXeGU0Vk5Ua0ZfZTFJc2ppcXI3U3lPUmd1RVBxYWtVbVJtRVVqTUg2THJHZVFVNkR2WW8wUi11cVAwOGJKMmprU2d6d0RlNVNpOTRpUGR6LTZwNkJURUxXbUowV29mOTltWHpyRHFSTjNPY1BISXY3YkZMNEVNZFduZTZJZWNnWWVXNzQydHU0TXdPUGU2UjNnaEp0SjJaRm44WVU3bGNmRzZRRjM1WGs5Vkhaa241bHNBNFBNazV6a3d6TkZUNA?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-29"
-    },
-    {
-      "name": "能源資產",
-      "ticker": "",
-      "sector": "能源",
-      "mention_count": 1,
-      "sentiment": "利多",
-      "reason": "主權投資者正將29兆美元資金轉向能源資產，顯示市場對能源板塊的信心。",
-      "evidence_news": [
-        {
-          "title": "Sovereign investors with $29 trillion pivot to energy assets, flag dollar fears",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPcTU1TGpUQS1nWm1VemNlanY2aXd4Z014UklJSE5ubTl2Z1BMclhzMHlES1dfYktWd212anFRSWVZRV9rSVlGN0JzR1NZSF9iMmc3Mlp3NHYyNnRJNUdCSlFmdEg1R3VmeG41a3hsc0lIbnRHdWdndmkzTkdDQVMwcmRKVHJudFNQT3Vzdmg3b1Z6VjJGUzNZZ3dJaWhZQXZwZXkyYkJKTDNlNGhyc29OcGtNZmw5XzQtYkJiV0tpc3dyTG1BTlE?oc=5"
-        }
-      ],
-      "news_count": 0
-    },
-    {
-      "name": "德國汽車業",
-      "ticker": "",
-      "sector": "汽車",
-      "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "中國汽車在歐洲市佔率突破10%，德國汽車製造商裁員減成本，面臨永久萎縮風險。",
-      "evidence_news": [
-        {
-          "title": "中國汽車歐洲市占首破10% 德國車業有永久萎縮之虞",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606280075.aspx"
-        }
-      ],
-      "news_count": 0
     }
   ],
   "future_trends": [
-    "AI科技股 (儘管短期修正，長期成長趨勢未變)",
-    "半導體先進封裝技術",
-    "電子級氫氣應用於半導體產業",
-    "能源資產投資",
-    "資安防護技術"
+    "人工智慧(AI)技術與應用",
+    "半導體產業(晶片製造、AI晶片、晶圓傳載盒清洗設備)",
+    "數位健康科技與預防醫學",
+    "再生能源與防災微電網",
+    "循環經濟與綠色設計",
+    "航太科技與衛星通訊"
   ],
   "sunset_industries": [
-    "傳統汽車製造業 (受中國電動車競爭影響)",
-    "缺乏創新的營造業 (面臨缺工及AI轉型壓力)"
+    "傳統菸草產業(因AI轉型及監管挑戰)"
   ]
 }

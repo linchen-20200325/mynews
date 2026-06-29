@@ -1,23 +1,19 @@
 {
   "report_date": "2026-06-29",
-  "overall_sentiment": "持平",
-  "overall_summary": "政府持續打房政策使市場交易量受壓抑，但中高資產族群仍加速布局房市，顯示資金動能仍在，房價呈現僵持局面。",
+  "overall_sentiment": "冷清",
+  "overall_summary": "政府限貸政策導致預售屋市場買氣全面熄火，尤其高雄地區受影響顯著，房市呈現冷清態勢。",
   "presale_market": {
     "sentiment": "冷清",
-    "note": "高雄預售屋成交量僅剩1成，業者呼籲央行將預售量納入房市警示指標，顯示預售屋市場交易明顯萎縮。"
+    "note": "高雄代銷龍頭指出限貸令已導致預售買氣全面熄火，甚至誤傷換屋族群。"
   },
   "resale_market": {
     "sentiment": "持平",
-    "note": "新聞指出政府打房使市場結凍，但房價卻未下跌，且有中高資產族群加速布局房市，顯示成屋市場在量縮的同時，價格仍有支撐。"
+    "note": "新聞主要聚焦預售屋市場的冷清，成屋市場雖未直接提及，但整體房市政策壓力下，預期也難以熱絡。"
   },
   "policy": [
     {
-      "title": "政府打房政策",
-      "impact": "新聞提到政府打房政策導致市場交易量結凍，但房價並未明顯下跌，對買方而言可能面臨價格僵持的局面，議價空間有限，但能抑制投機炒作。"
-    },
-    {
-      "title": "央行選擇性信用管制",
-      "impact": "高雄業者呼籲央行納預售量為房市警示指標，暗示現行信用管制可能未完全涵蓋預售屋市場的風險，若未來擴大管制，可能影響買方的貸款成數與資金運用。"
+      "title": "限貸令",
+      "impact": "政府實施的限貸措施，旨在打擊房市炒作，但新聞指出已導致預售屋市場買氣全面熄火，並誤傷了需要換屋的買方，使得購屋門檻變高，資金週轉困難。"
     }
   ],
   "regions": [
@@ -25,192 +21,174 @@
       "county": "高雄市",
       "sentiment": "冷清",
       "heat_score": 30,
-      "note": "預售屋成交量僅剩1成，顯示預售市場交易非常不活躍。"
+      "note": "高雄代銷龍頭謝哲耀警示，限貸令已導致當地預售買氣全面熄火，並誤傷換屋孤兒。"
     }
   ],
   "ai_summary": {
-    "future_trend": "未來房市趨勢研判，短期資金動能仍偏強，從新聞中高資產族群加速布局房市可見一斑，加上通膨預期與營建成本支撐，房價難有大幅修正。然而，長期結構性因素如人口負成長與少子化，將逐步削弱自住需求，加上新屋供給量可能過剩，會對房市造成下行壓力。因此，研判房市將呈現短期資金面支撐與長期結構面壓力拉鋸的局面，核心區域價格可能維持高檔，但非核心區域或供給量大的區域可能面臨保值挑戰。",
+    "future_trend": "短期內，政府的限貸政策對房市的降溫效果顯著，特別是預售屋市場將持續面臨買氣不足的壓力，資金動能受到抑制。然而，長期來看，台灣人口已連年負成長與少子化，將使自住需求逐步縮減，加上各縣市持續有新屋供給，購屋負擔能力仍偏高，這些結構性因素將對房市構成長期壓力。本研判主要建立在短期政策抑制與長期人口結構變化的綜合影響。",
     "structural_factors": [
       "人口負成長與少子化使長期自住需求縮減",
-      "餘屋/新增供給與待售存量可能增加，尤其在預售屋市場",
-      "房價所得比偏高，購屋負擔吃緊，影響年輕族群購屋能力"
+      "餘屋/新增供給與待售存量可能持續增加",
+      "房價所得比偏高、購屋負擔吃緊，影響民眾購屋能力"
     ],
-    "policy_shift": "房市政策目前仍偏向打炒房，雖然新聞提到「天花板已落定」，但政府仍關注市場動態。未來可能針對預售屋市場的交易量納入警示指標，進一步加強信用管制，使房貸成數和資金取得更趨嚴格，對於買方而言會增加購屋門檻。",
+    "policy_shift": "房市政策目前仍朝向趨嚴打炒房的方向發展，限貸令等措施旨在抑制投機行為，並可能影響房貸成數，使購屋者需準備更多自備款，增加購屋門檻。",
     "buyer_impact": "偏壞",
-    "buyer_advice": "在政策抑制下，房價難以下跌，買方應觀察市場交易量變化。對於有剛性需求的買方，核心區域的成屋市場相對保值，但需留意高房價負擔。預售屋市場在部分區域成交量萎縮，買方可多加比較，並注意開發商的財務穩健性。長期而言，應避開人口外流嚴重或供給過剩的區域，以降低未來保值風險。",
-    "regulations": [],
-    "overview": "短期內房市在資金動能與打房政策間拉鋸，呈現量縮價穩的僵持局面。長期則需留意人口結構變化與供給量對房市的影響，購屋決策應更審慎，兼顧區域發展潛力與自身負擔能力。"
+    "buyer_advice": "在政策持續緊縮下，買方應特別留意市場變化，避免衝動購屋。目前預售市場受限貸令影響較大，議價空間可能增加，可多方比較。長期而言，應審慎評估人口外流或供給過剩區域的保值風險。建議買方審慎評估自身財務狀況，並關注未來政策走向。",
+    "regulations": [
+      "央行選擇性信用管制(限貸令)"
+    ],
+    "overview": "短期內房市受限貸令影響，買氣趨冷，尤其預售市場面臨挑戰。長期則需關注人口結構變遷與供給量對房市的結構性影響，購屋者應保持審慎。"
   },
   "evidence_news": [
     {
-      "title": "南韓打房照樣買！13%購屋資金來自賣股 網一句話區分台韓投資策略",
-      "source": "FTNN 新聞網",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBRRzhiZUlWRm9UNm5lSDN3ZGxWTmtBTGszS2QyZVE4bWlfMVdfMzNuRGt2WWdUaFhEZFJBWUJxcjJWZ2hjTjhqaWp6bw?oc=5"
-    },
-    {
-      "title": "中高資產族群 加速布局房市",
-      "source": "好房網News",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1oaGlVMjBhREZYVS1WZFJrSHhqMFJQbGRpQ0JheFZfZTlJVkpyNElCSnJramhFZGZXQjBEX3k3UHVEV1dldWxSeU1DQmhVbW9BSGpBS3FWdC1JZ3lqNkxYOXNkbnc2TmVfbTVR0gFwQVVfeXFMTlhSV3Z5SkFvelFDOTM5RDNpSFNxRXpvbmQ3cktMRmh6ckZMd29PaWFpUl_7cDREZEMyNTF4WndYcVBISkM0ZWFZbm9pUExSckowdVZHeGRNMVNGbTVQWk9nWms1dFotMXRLTFQxUzZWeg?oc=5"
-    },
-    {
-      "title": "高雄預售屋成交剩1成 業者籲央行納預售量為房市警示指標",
-      "source": "好房網News",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE10eGREeWhObFZfbFpBZmJNaTUtT21RdXYtMktNYnBTbkFFY1NqempyUUxYTFpuM0hXVlM4RHhlaVMzaHpSYVNIRmdILVBLblFReG1kOXdBZ1RnLVZYLXc4Nk9tNWtERFZmR01aamktRDTSAXBBVV95cUxMdHhkRHloTmxWX2xaQWZiTWk1LU9tUXV2LTJLTWJwU25BRWNTanpqclFMWExabjNIV1ZTOER4ZWlTM2h6UmFTSEZnSC1QS25RUXhtZDl3QWdUZy1WWC13ODZPbTVrRERWZkdNWmppLUQ0?oc=5"
-    },
-    {
-      "title": "打房政策「天花板已落定」？房價仍難有共識？剛需支撐核心區",
-      "source": "好房網News",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1vU3RqZnVVNXlFZWdFcllNUjY4S3h1dll5TF9uRmQ5R19nMWphbEQ2LVFiYUFId3ZCU2F5ZWY0Mno2REJ0OXdRN0Y5a1VJaUFIMHBTSFROLU9BNXdtSHVENmtVQXlxNjA1VlcwSm1WZ0vSAXBBVV95cUxNb1N0amZ1VTV5RWVnRXJZTVI2OEt4dXZZeUxfbkZkOUdfZzFqYWxENi1RYmFBSHd2QlNheWVmNDJ6NkRCdDl3UTdGOWtVSWlBSDBwU0hUTi1PQTV3bUh1RDZrVUF5cTYwNVZXMEptVmdL?oc=5"
-    },
-    {
-      "title": "政府打房，市場結凍 房價為何就是不跌？",
-      "source": "蕃新聞",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5yaTZuTDhkRE9RdVFnV1dUOFUtbTVfOTJveG1FbkJtRWpNNDIzVHV2RDN2aWlRTUNsWlk3dGd0T3FNbDlLaTNSSkZsRlRzX1NSNVE?oc=5"
+      "title": "打炒房是怎麼變成產業結冰？預售買氣全面熄火！高雄代銷龍頭謝哲耀拋警訊：限貸令已誤傷「換屋孤兒」",
+      "source": "富比士地產王",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNTmh1MGdBZEpjYkRNeHltSjB2MUh3cnZQTm5RZHV1N2lfM0xlck5aQ2NKbVNHSmN6S0tDY1otd2xvSjBqTVludy1fVTk0TmppV3BhQ19TcVV6TDAxdEhyV29VNjNGQmtkQURVUXRXMDgtNnVRRXpBVkxkYVdwdTgtWGV3VDNpYi1QTVNwWEVRMmdMMUNkVlE?oc=5"
     }
   ],
   "raw_news": [
     {
-      "title": "南韓打房照樣買！13%購屋資金來自賣股 網一句話區分台韓投資策略",
-      "source": "FTNN 新聞網",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBRRzhiZUlWRm9UNm5lSDN3ZGxWTmtBTGszS2QyZVE4bWlfMVdfMzNuRGt2WWdUaFhEZFJBWUJxcjJWZ2hjTjhqaWp6bw?oc=5",
-      "summary": "南韓打房照樣買！13%購屋資金來自賣股 網一句話區分台韓投資策略 FTNN 新聞網",
-      "published": "2026-06-29T02:50:00+00:00",
-      "origin": "關鍵字「打房 政策 房市」"
-    },
-    {
-      "title": "美伊中東互襲重創和平協議 國際油價走揚",
+      "title": "今彩539第115157期 頭獎槓龜",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606290045.aspx",
-      "summary": "（中央社新加坡29日綜合外電報導）由於美國與伊朗在中東爆發數天的針鋒相對攻擊，不僅凸顯出雙方臨時和平協議的脆弱性，也導致荷莫茲海峽（Strait of Hormuz）的能源運輸再度放緩，國際油價今天上漲。",
-      "published": "2026-06-29T02:01:02+00:00",
+      "url": "https://www.cna.com.tw/news/ahel/202606290328.aspx",
+      "summary": "（中央社台北29日電）今彩539第115157期開獎，中獎號碼36、30、15、34、11；派彩結果，頭獎槓龜。",
+      "published": "2026-06-29T14:05:22+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "財部：去年研發支出抵減稅額近492.5億元創新高",
+      "title": "威力彩第115052期 頭獎槓龜",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290038.aspx",
-      "summary": "（中央社記者呂晏慈台北29日電）財政部統計，去年產業創新條例減免稅額核定件數777件，研究發展支出新台幣2540.7億元，年減25%，核定抵減稅額近492.5億元創歷史新高，年增66%。",
-      "published": "2026-06-29T01:43:47+00:00",
+      "url": "https://www.cna.com.tw/news/ahel/202606290326.aspx",
+      "summary": "（中央社台北29日電）威力彩第115052期今晚開獎，第一區中獎號碼為16、33、05、06、09、15，第二區中獎號碼為05號。派彩結果，頭獎、貳獎都槓龜。",
+      "published": "2026-06-29T14:03:18+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "個股槓桿ETF引韓股巨震？證交所：台灣不考慮開放",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290032.aspx",
-      "summary": "（中央社記者曾仁凱台北29日電）近期韓股劇烈波動，多次引發熔斷，市場將茅頭指向連結三星電子、SK海力士等權值個股的2倍槓桿ETF。台灣證券交易所表示，以台灣的市場情勢、投資人交易與保護、ETF市場特性等因素，目前不考慮開放個股ETF。",
-      "published": "2026-06-29T01:20:34+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "台股早盤漲逾500點 回到45100點之上",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290031.aspx",
-      "summary": "（中央社記者潘智義台北29日電）美股費城半導體指數上週五下跌5.29%，台積電ADR跌0.61%，台股今天早盤反彈漲逾500點，回到45100點之上。",
-      "published": "2026-06-29T01:20:32+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "新台幣開盤貶2分 為31.88元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290030.aspx",
-      "summary": "（中央社台北29日電）台北外匯市場新台幣兌美元匯率今天以31.88元開盤，貶2分。1150629",
-      "published": "2026-06-29T01:06:30+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "中高資產族群 加速布局房市",
-      "source": "好房網News",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1oaGlVMjBhREZYVS1WZFJrSHhqMFJQbGRpQ0JheFZfZTlJVkpyNElCSnJramhFZGZXQjBEX3k3UHVEV1dldWxSeU1DQmhVbW9BSGpBS3FWdC1JZ3lqNkxYOXNkbnc2TmVfbTVR0gFwQVVfeXFMTlhSV3Z5SkFvelFDOTM5RDNpSFNxRXpvbmQ3cktMRmh6ckZMd29PaWFpUl83cDREZEMyNTF4WndYcVBISkM0ZWFZbm9pUExSckowdVZHeGRNMVNGbTVQWk9nWms1dFotMXRLTFQxUzZWeg?oc=5",
-      "summary": "中高資產族群 加速布局房市 好房網News",
-      "published": "2026-06-29T01:06:00+00:00",
+      "title": "打炒房是怎麼變成產業結冰？預售買氣全面熄火！高雄代銷龍頭謝哲耀拋警訊：限貸令已誤傷「換屋孤兒」",
+      "source": "富比士地產王",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNTmh1MGdBZEpjYkRNeHltSjB2MUh3cnZQTm5RZHV1N2lfM0xlck5aQ2NKbVNHSmN6S0tDY1otd2xvSjBqTVludy1fVTk0TmppV3BhQ19TcVV6TDAxdEhyV29VNjNGQmtkQURVUXRXMDgtNnVRRXpBVkxkYVdwdTgtWGV3VDNpYi1QTVNwWEVRMmdMMUNkVlE?oc=5",
+      "summary": "打炒房是怎麼變成產業結冰？預售買氣全面熄火！高雄代銷龍頭謝哲耀拋警訊：限貸令已誤傷「換屋孤兒」 富比士地產王",
+      "published": "2026-06-29T13:33:03+00:00",
       "origin": "關鍵字「房市 預售屋 成交」"
     },
     {
-      "title": "台股開盤漲23.05點",
+      "title": "科嶠與Brooks技術授權 攻晶圓傳載盒清洗設備",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290029.aspx",
-      "summary": "（中央社台北29日電）台北股市今天開盤漲23.05點，加權股價指數為44594.81點，成交金額新台幣105.27億元。1150629",
-      "published": "2026-06-29T01:02:28+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606290313.aspx",
+      "summary": "（中央社記者吳家豪、鍾榮峰台北29日電）印刷電路板設備廠科嶠工業今天董事會決議通過，與國際半導體設備商Brooks Automation簽訂技術授權協議，科嶠將授予Brooks全球獨家授權，雙方將結合技術與製造能力，推動半導體晶圓傳載盒（FOUP）清洗設備於全球市場的開發與應用。",
+      "published": "2026-06-29T13:13:45+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "高雄預售屋成交剩1成 業者籲央行納預售量為房市警示指標",
-      "source": "好房網News",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE10eGREeWhObFZfbFpBZmJNaTUtT21RdXYtMktNYnBTbkFFY1NqempyUUxYTFpuM0hXVlM4RHhlaVMzaHpSYVNIRmdILVBLblFReG1kOXdBZ1RnLVZYLXc4Nk9tNWtERFZmR01aamktRDTSAXBBVV95cUxNdHhkRHloTmxWX2xaQWZiTWk1LU9tUXV2LTJLTWJwU25BRWNTanpqclFMWExabjNIV1ZTOER4ZWlTM2h6UmFTSEZnSC1QS25RUXhtZDl3QWdUZy1WWC13ODZPbTVrRERWZkdNWmppLUQ0?oc=5",
-      "summary": "高雄預售屋成交剩1成 業者籲央行納預售量為房市警示指標 好房網News",
-      "published": "2026-06-29T00:35:00+00:00",
-      "origin": "關鍵字「房市 預售屋 成交」"
-    },
-    {
-      "title": "台股漲多面臨修正 觀察歐央行論壇及非農就業數據",
+      "title": "製藥業海外布局報捷 美時攻美、台康拓日市場",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290016.aspx",
-      "summary": "（中央社記者潘智義台北29日電）台股上週五大跌1683.50點，加上美股費城半導體指數下跌5.29%，台積電ADR跌0.61%，分析師認為，AI科技股帶動台股不斷創高，漲多回檔並非基本面變差，現階段先觀察歐洲央行舉辦論壇內容、美國公布非農就業數據。",
-      "published": "2026-06-29T00:20:59+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606290311.aspx",
+      "summary": "（中央社記者何秀玲台北29日電）製藥業者海外布局再傳進展，美時取得美國食品藥物管理局（FDA）核准流感藥物Xofluza首款學名藥資格，將搶攻美國市場；台康生技則宣布與日本藥廠簽署乳癌生物相似藥EG1206A日本市場授權合作，擴大亞洲布局。",
+      "published": "2026-06-29T13:03:41+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "打房政策「天花板已落定」？房價仍難有共識？剛需支撐核心區",
-      "source": "好房網News",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1vU3RqZnVVNXlFZWdFcllNUjY4S3h1dll5TF9uRmQ5R19nMWphbEQ2LVFiYUFId3ZCU2F5ZWY0Mno2REJ0OXdRN0Y5a1VJaUFIMHBTSFROLU9BNXdtSHVENmtVQXlxNjA1VlcwSm1WZ0vSAXBBVV95cUxNb1N0amZ1VTV5RWVnRXJZTVI2OEt4dXZZeUxfbkZkOUdfZzFqYWxENi1RYmFBSHd2QlNheWVmNDJ6NkRCdDl3UTdGOWtVSWlBSDBwU0hUTi1PQTV3bUh1RDZrVUF5cTYwNVZXMEptVmdL?oc=5",
-      "summary": "打房政策「天花板已落定」？房價仍難有共識？剛需支撐核心區 好房網News",
-      "published": "2026-06-29T00:15:00+00:00",
-      "origin": "關鍵字「打房 政策 房市」"
-    },
-    {
-      "title": "國銀富豪戶單月增1090人 5月底AUM衝2.6兆",
+      "title": "英美菸草集團推動AI轉型 9000個職位受影響",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280161.aspx",
-      "summary": "（中央社記者蘇思云台北28日電）投資市場氛圍持續好轉，帶動富豪戶管理資產規模與戶數大增。金管會統計顯示，21家國銀截至2026年5月底高資產客戶數達2萬5290人，單月大增1090人，高資產客戶管理資產規模（AUM）也增至新台幣2兆6633億元，月增1110億元。",
-      "published": "2026-06-28T09:48:12+00:00",
+      "url": "https://www.cna.com.tw/news/aopl/202606290308.aspx",
+      "summary": "（中央社倫敦29日綜合外電報導）英國英美菸草集團今天表示，為推動內部人工智慧（AI）轉型計畫，以削減成本，提升獲利能力，並因應監管挑戰及新產品上市延宕等情況，集團計劃裁減約20%的員工人數。",
+      "published": "2026-06-29T12:55:35+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "台塑石化：29日凌晨1時起 汽柴油分別降1元、0.8元",
+      "title": "威力彩第115052期開獎",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606280096.aspx",
-      "summary": "（中央社記者曾仁凱台北28日電）台塑石化今天表示，考量國際油價走勢、新台幣兌美元匯率、國內市場競爭力及亞洲鄰國最低價等因素後，決定自6月29日凌晨1時起，汽、柴油每公升批售價格分別調降新台幣1元和0.8元，為連續第2週調降。市場零售價則由加油站自行決定。",
-      "published": "2026-06-28T05:45:49+00:00",
+      "url": "https://www.cna.com.tw/news/ahel/202606290305.aspx",
+      "summary": "（中央社台北29日電）威力彩第115052期今晚開獎，第一區中獎號碼為16、33、05、06、09、15，第二區中獎號碼為05。",
+      "published": "2026-06-29T12:54:28+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "全台水庫估進帳3.7億噸 曾文及烏山頭蓄水率逾6成",
+      "title": "台南預算較多？經部：治水是依各地需求規劃治理策略",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280089.aspx",
-      "summary": "（中央社記者趙敏雅台北28日電）全台各地降下豪雨，水庫大進補。經濟部水利署指出，自24日上午至28日上午，預估全台水庫入流量逾3.7億噸，曾文及烏山頭水庫蓄水率已突破6成；寶山及寶二水庫、永和山水庫、南化水庫蓄水率達100%。",
-      "published": "2026-06-28T05:25:34+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606290303.aspx",
+      "summary": "（中央社記者謝怡璇台北29日電）網傳台南治水預算比台北還多，經濟部今天表示，1982年至2013年治水預算較集中於北部，中央並於2014年至今強化全國流域治理；治水不是哪個縣市拿比較多預算，而是依各地需求規劃合適的治理策略。",
+      "published": "2026-06-29T12:49:24+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "去年高資產族平均繼承3.7億元遺產 每案繳稅近3500萬元",
+      "title": "今彩539第115157期開獎",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280082.aspx",
-      "summary": "（中央社記者呂晏慈台北28日電）財政部統計去年遺產稅核定情形，核定件數逾18.3萬件，當中93%為免稅案件。觀察高資產族群，適用最高遺產稅率20%實徵件數案件為733件，合計實徵遺產總額為新台幣2676億元，換算平均每件繼承遺產金額近3.7億元，若觀察實徵淨額為253億元，平均每件繳交3458萬元遺產稅。",
-      "published": "2026-06-28T04:57:17+00:00",
+      "url": "https://www.cna.com.tw/news/ahel/202606290301.aspx",
+      "summary": "（中央社台北29日電）今彩539第115157期開獎，中獎號碼36、30、15、34、11。3星彩中獎號碼067，4星彩中獎號碼7740。",
+      "published": "2026-06-29T12:44:20+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "中國汽車歐洲市占首破10% 德國車業有永久萎縮之虞",
+      "title": "Contact TAIWAN前進馬來西亞 深入校園搶人才",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606280075.aspx",
-      "summary": "（中央社柏林27日綜合外電報導）中國汽車上個月在歐洲新車銷售占比首次破10%，歐洲消費者對配置更高、價格更低車型趨之若鶩；與此同時，德國汽車製造商則紛裁員減成本，德國這項核心產業有永久萎縮之虞。",
-      "published": "2026-06-28T04:26:02+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606290275.aspx",
+      "summary": "（中央社記者黃自強吉隆坡29日專電）馬來西亞身為東南亞半導體產業重鎮，吸引全球科技業進駐，台灣也透過經濟部Contact TAIWAN平台提前布局，深入大學攬才；大馬學者認為，台灣擁有完整半導體與電子產業聚落，未來雙方在人才及產業合作深具發展潛力。",
+      "published": "2026-06-29T11:05:23+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "政府打房，市場結凍 房價為何就是不跌？",
-      "source": "蕃新聞",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5yaTZuTDhkRE9RdVFnV1dUOFUtbTVfOTJveG1FbkJtRWpNNDIzVHV2RDN2aWlRTUNsWlk3dGd0T3FNbDlLaTNSSkZsRlRzX1NSNVE?oc=5",
-      "summary": "政府打房，市場結凍 房價為何就是不跌？ 蕃新聞",
-      "published": "2026-06-28T03:01:00+00:00",
-      "origin": "關鍵字「打房 政策 房市」"
+      "title": "美國連43季居國銀最大曝險國 美中差距再刷新高",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290269.aspx",
+      "summary": "（中央社記者潘姿羽台北29日電）中央銀行今天公布3月底國家風險統計，依直接交易對手基礎，美國連續43季蟬聯國銀最大曝險國，金額續創歷史新高；中國維持第3名，而國銀對美中曝險的差距持續擴大，不只連續12季突破千億美元規模，也再創新高紀錄。",
+      "published": "2026-06-29T10:52:10+00:00",
+      "origin": "中央社 財經"
     },
     {
-      "title": "台股上週大跌1893點 法人：系統性回調非基本面反轉",
+      "title": "台電防未來一週高溫 強化高負載區設備維護保供電",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280032.aspx",
-      "summary": "（中央社記者曾仁凱台北28日電）AI概念股漲多後，遭遇修正壓力，台股上週震盪劇烈，週五集中市場指數收在44571.76點，大跌1893.44點或4.07%，跌破月線，上櫃指數週跌幅更達到7.11%。法人認為，從美光亮眼財報來看，AI成長趨勢並未改變，此波台股回檔屬系統性回調，非基本面反轉。",
-      "published": "2026-06-28T02:01:29+00:00",
+      "url": "https://www.cna.com.tw/news/ahel/202606290265.aspx",
+      "summary": "（中央社記者謝怡璇台北29日電）氣象署今天表示，未來一週大台北、中南部及花東防攝氏36度高溫。台電表示，因應近期高溫，預期用電量將攀升，已強化重點用戶及高負載區域電力設備維護，也規劃紅外線熱影像儀檢測，適時辦理預防性設備汰換。",
+      "published": "2026-06-29T10:50:02+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "外資賣超60億元調節力積電 加碼友達逾17萬張",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290263.aspx",
+      "summary": "（中央社記者潘智義台北29日電）台股今天量縮反彈428.14點，外資賣超新台幣60.11億元，調節力積電2萬6786張居冠，其次為元大台灣50（0050）2萬1649張、華邦電2萬610張。",
+      "published": "2026-06-29T10:38:57+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "環境雙法效應 零售業搶攻循環消費商機",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290257.aspx",
+      "summary": "（中央社記者何秀玲台北29日電）7月1日環境雙法將上路，促使零售業者加速布局循環經濟與綠色設計。全家宣布推出以咖啡渣、茶纖維等回收材料製成的自有品牌商品，並擴大咖啡渣回收店數；新光三越則舉辦綠循環生活展，集結60個永續品牌與回收活動，搶攻永續消費商機。",
+      "published": "2026-06-29T10:26:45+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "宇隆：人事底定營運正常 AI液冷和機器人雙軸並進",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290256.aspx",
+      "summary": "（中央社記者鍾榮峰台北29日電）精密零件機械加工廠宇隆董事長劉俊昌22日辭職，引發市場關注，宇隆今天傍晚發布新聞稿指出，公司各項營運、接單、生產、交貨及客戶服務正常，以人工智慧伺服器AI液冷、智慧機器人雙軸布局為核心策略，與信邦電子持續布局北美人形機器人應用。",
+      "published": "2026-06-29T10:23:42+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "外資賣超縮手 新台幣小升收31.845元、貶值警報暫解",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290250.aspx",
+      "summary": "（中央社記者潘姿羽台北29日電）外資上週狂砍台股，匯出浪潮持續帶來貶值壓力，新台幣匯率今天再次摜破31.9元價位，不過午後貶幅逐步收斂，尾盤更上演豬羊變色，收盤收在31.845元，升值1.5分，守住31字頭。外匯交易員認為，只要台股不要再度重挫，新台幣貶值警報暫時解除。",
+      "published": "2026-06-29T10:07:30+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "華新：考量客戶競爭力 7月不銹鋼盤元維持平盤",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290242.aspx",
+      "summary": "（中央社記者潘智義台北29日電）電纜及不銹鋼廠華新麗華今天宣布，7月不銹鋼盤元產品價格，包括200、300、400系列皆維持平盤。",
+      "published": "2026-06-29T09:42:12+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "韓國將投入逾37兆 打造新半導體聚落與AI資料中心",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/aopl/202606290237.aspx",
+      "summary": "（中央社首爾29日綜合外電報導）韓國將在未來幾年投資近1.2兆美元（約新台幣逾37兆元），以打造新半導體生產基地與人工智慧（AI）資料中心。",
+      "published": "2026-06-29T09:38:02+00:00",
       "origin": "中央社 財經"
     }
   ]

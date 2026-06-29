@@ -1,96 +1,96 @@
 {
   "report_date": "2026-06-29",
-  "as_of": "2026-06-29 03:26 UTC (Yahoo Finance)",
+  "as_of": "2026-06-29 15:47 UTC (Yahoo Finance)",
   "threshold": -1.5,
   "quotes": {
     "^GSPC": {
       "name": "標普 500",
       "group": "美股指數",
       "lead_type": "隔夜領先",
-      "last": 7354.02,
-      "prev": 7500.58,
-      "change_pct": -1.95,
-      "is_drop": true
+      "last": 7409.27,
+      "prev": 7472.79,
+      "change_pct": -0.85,
+      "is_drop": false
     },
     "^IXIC": {
       "name": "那斯達克綜合",
       "group": "美股指數",
       "lead_type": "隔夜領先",
-      "last": 25297.62,
-      "prev": 26517.93,
-      "change_pct": -4.6,
+      "last": 25624.37,
+      "prev": 26166.6,
+      "change_pct": -2.07,
       "is_drop": true
     },
     "^DJI": {
       "name": "道瓊工業",
       "group": "美股指數",
       "lead_type": "隔夜領先",
-      "last": 51876.11,
-      "prev": 51564.7,
-      "change_pct": 0.6,
+      "last": 52130.35,
+      "prev": 51712.71,
+      "change_pct": 0.81,
       "is_drop": false
     },
     "^SOX": {
       "name": "費城半導體",
       "group": "美股指數",
       "lead_type": "隔夜領先",
-      "last": 13203.57,
-      "prev": 14341.78,
-      "change_pct": -7.94,
+      "last": 13435.76,
+      "prev": 14634.72,
+      "change_pct": -8.19,
       "is_drop": true
     },
     "ES=F": {
       "name": "標普 500 期貨",
       "group": "美股期貨",
       "lead_type": "盤前即時",
-      "last": 7444.75,
-      "prev": 7437.5,
-      "change_pct": 0.1,
+      "last": 7465.5,
+      "prev": 7428.25,
+      "change_pct": 0.5,
       "is_drop": false
     },
     "NQ=F": {
       "name": "那斯達克 100 期貨",
       "group": "美股期貨",
       "lead_type": "盤前即時",
-      "last": 29543.75,
-      "prev": 29666.0,
-      "change_pct": -0.41,
+      "last": 29767.75,
+      "prev": 29514.25,
+      "change_pct": 0.86,
       "is_drop": false
     },
     "^TNX": {
       "name": "美10年期公債殖利率",
       "group": "債匯",
       "lead_type": "",
-      "last": 4.37,
-      "prev": 4.51,
-      "change_pct": -3.04,
+      "last": 4.38,
+      "prev": 4.49,
+      "change_pct": -2.56,
       "is_drop": true
     },
     "DX-Y.NYB": {
       "name": "美元指數",
       "group": "債匯",
       "lead_type": "",
-      "last": 101.33,
-      "prev": 101.41,
-      "change_pct": -0.07,
+      "last": 101.16,
+      "prev": 101.61,
+      "change_pct": -0.44,
       "is_drop": false
     },
     "TWD=X": {
       "name": "新台幣匯率",
       "group": "債匯",
       "lead_type": "",
-      "last": 31.87,
+      "last": 31.86,
       "prev": 31.69,
-      "change_pct": 0.58,
+      "change_pct": 0.53,
       "is_drop": false
     },
     "TXF-NIGHT": {
-      "name": "台指期(日盤即時)",
+      "name": "台指期夜盤",
       "group": "台股期貨",
       "lead_type": "盤前即時",
-      "last": 45261.0,
+      "last": 45550.0,
       "prev": 44452.0,
-      "change_pct": 1.82,
+      "change_pct": 2.47,
       "is_drop": false
     }
   },
@@ -98,107 +98,113 @@
     {
       "symbol": "^SOX",
       "name": "費城半導體",
-      "change_pct": -7.94,
+      "change_pct": -8.19,
       "lead_type": "隔夜領先"
     },
     {
       "symbol": "^IXIC",
       "name": "那斯達克綜合",
-      "change_pct": -4.6,
-      "lead_type": "隔夜領先"
-    },
-    {
-      "symbol": "^GSPC",
-      "name": "標普 500",
-      "change_pct": -1.95,
+      "change_pct": -2.07,
       "lead_type": "隔夜領先"
     }
   ],
   "alert_level": "警戒",
-  "summary": "隔夜美股因地緣政治衝突和AI成本上升導致科技股和半導體類股大跌，台指期夜盤卻逆勢反彈，今日台股需密切關注國際局勢及AI產業動態。",
+  "summary": "隔夜美股費半指數出現大幅下跌，主要受AI股退潮影響；台指期夜盤雖有反彈，但台股開盤仍需當心AI相關類股的賣壓。",
   "interpretation": [
     {
-      "market": "美股大盤",
-      "cause": "美國與伊朗在中東爆發數天的針鋒相對攻擊，導致國際油價上漲，同時OpenAI傳出延後IPO，引發科技股重挫，市場恐慌蔓延。",
+      "market": "費城半導體指數",
+      "cause": "AI股退潮引發市場對半導體類股的修正預期，美銀預警美股夏季可能修正。",
       "evidence_news": [
         {
-          "title": "美伊中東互襲重創和平協議 國際油價走揚",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606290045.aspx"
+          "title": "AI退潮費半重挫，美銀預警美股夏季修正-財經焦點情報站",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQTnNyeGEyNVQxT1I2SHR4ajVJSkN4dWwtTk0yZFpjSkh2Y2pja2czUUtVa2pzZDd0eUF1aFZ4TUt6WFdEZ1dJY2RqZV9SZ2FyWkowc014QTk1MXlqak5FZWE1QVdhWWlLVmROcEplZ1cwbHA1STNRekwwX0Z6cGIwOEZR?oc=5"
         },
+        {
+          "title": "全球AI股急跌拖累美股 亞洲主要指數週五同步重挫",
+          "source": "商傳媒",
+          "url": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxQNUNXM0p4dU0zRnNISWFMUEkyTDRaR1MzTkNnd0Z0R01xV3Z6ekE2WVZuS2VvZk94bzlzNEFITFg5UzhyalpXVkRKS0lhQndQZ1dFbVZrZ1VGNEV5MWRHODFSWTdGMmcyb1ZZR0MwaWI1TWJjYXU3VVFXLWJqaWplWXhqSXhuZUl4VTZpcEFQVDl6blhIY2s3dzNWbGItV2duYnNoU2VLNW9WS3FxamJmdC1GMTV6blRRd0RIeUhwTjlDRDhmbFkxOXc3VTZoc3p0djl3a2lOeV8yZTNGTFpMd1A2QkVYcWFWNWM4RGZzVFFaUF9tZV9qZzhPVmZnSXhsWExKc0pXWGZUbW9rMHFEempFWlRLQXhlaTMxSXh2Vk8zUWlpZS00R1VKMUhqS0NEeG1FWlo1bHJzclpSNFhENmotRGxyaXFTTWctUUF2V2ExNmJmamRxOWNNRQ?oc=5"
+        }
+      ]
+    },
+    {
+      "market": "那斯達克綜合指數",
+      "cause": "OpenAI傳出延後IPO的消息，以及科技與電玩企業紛紛將漲價歸咎於AI成本上升，導致科技股整體承壓。",
+      "evidence_news": [
         {
           "title": "【美股盤後】OpenAI傳延後IPO 四大指數齊跌、費半重挫逾5%",
           "source": "非凡新聞台",
           "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE93RG9XUWVzUVNRSmIzanlZOFpvbTl0WWhaSm1EaWJva3hNdTZLbTR6QzJ4ZzlUa2lCa0ViYlNBYmY4VkwtQTJlYmRkQVMxMzRUSEF5a0g1XzdwZGVQZHV0MQ?oc=5"
-        }
-      ]
-    },
-    {
-      "market": "費城半導體指數",
-      "cause": "AI成本上升導致科技與電玩企業紛紛漲價，引發對半導體產業利潤空間的擔憂，加上OpenAI延後IPO，費半指數重挫。",
-      "evidence_news": [
+        },
         {
           "title": "蘋果加價之際 科技與電玩企業紛紛怪罪AI",
           "source": "BBC 中文",
           "url": "https://www.bbc.com/zhongwen/articles/cvg5jl7gd4ro/trad?at_medium=RSS&at_campaign=rss"
-        },
-        {
-          "title": "科技股重挫引發市場恐慌，華爾街主要指數全線下跌！-CMoney 研究員",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPd0FlNXNzY3pZd19ISldrc3hoR1BQQzFjUTQ5SThTM1RJT2k2YnlETU1vTDRpd2xqZ0ZDUUtWTUpQdDE4TENzMHFyUEJhZ0VLMmFNcHJSZzZxRzA5U2gwa2hjY1lKSHMyeXptcV92YXctSzdMclVyX2hWWHVEMWJoOEpCZUdCMWlLSjhhYVl3?oc=5"
         }
       ]
     },
     {
-      "market": "國際油價",
-      "cause": "美國與伊朗在中東地區的衝突升級，引發市場對荷莫茲海峽能源運輸放緩的擔憂，導致國際油價走揚。",
+      "market": "美股期貨",
+      "cause": "美國總統川普表示美伊將在卡達舉行會談，中東地緣政治緊張局勢趨緩，提振市場情緒，使美股電子盤一掃頹勢。",
       "evidence_news": [
         {
-          "title": "美伊中東互襲重創和平協議 國際油價走揚",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606290045.aspx"
+          "title": "川普喊美伊將在卡達談判！美股四大指數僅費半重挫近3% 台指期夜盤一度衝高到4萬6",
+          "source": "FTNN 新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9iZ3V5WHdWbjZ6MlpFZEQxYUVZZWViOENHVU9URDBlcld0WjZ4OWpPaFBXcHpMamhXWlotTmJ4djkwWVg3dDVmVXZXSQ?oc=5"
         },
         {
-          "title": "Oil Rises as Renewed U.S.-Iran Strikes Reignite Middle East Supply Fears",
-          "source": "Discovery Alert",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPak0wZ3liQ296U0k0Qkd4ZFdBOWh3QkQ1ZnVvWUFPZXNua1lRQm1DeVgyVjl6MW9KMGtjZVdIRDhaS05pQ0FHVUFBZXBXaTAySXRVaEQxTm1kajhXWEQ5XzA3b25wVmJzOFJFVkFYUWk4LWVYaERnRVl6anptUU9IYWhQOUJBUWs?oc=5"
+          "title": "白宮：川普特使魏科夫與庫許納將赴杜哈參加伊朗會談",
+          "source": "中央社 國際",
+          "url": "https://www.cna.com.tw/news/aopl/202606290321.aspx"
         }
       ]
     },
     {
       "market": "台指期夜盤",
-      "cause": "儘管美股費半大跌，台指期夜盤卻逆勢上漲，顯示市場可能已經提前反應部分利空，或有資金逢低買進，但仍需觀察後續走勢。",
+      "cause": "受美伊地緣政治緊張趨緩及美股電子盤反彈帶動，台指期夜盤出現顯著漲幅，反映市場情緒回穩。",
       "evidence_news": [
         {
-          "title": "台指期夜盤狂飆543點！真反彈還是假突破？「專家推演跌破月線3套劇本」這1檔神操作：開盤直接加價10元 - 上市櫃",
-          "source": "旺得富理財網",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE43YzNtVTVnUlJGcW1IcjNVY0EyWjA0c2ROTndiYnI2WFllTkgyOF9sRWhEdEc0dFhieS05U0xRWUVIY1lBMXNfYmpISjZFSzQwT2t5cEJrRG9jMWN4Xzd2elA4RmJnZTBNLWc?oc=5"
+          "title": "美股電子盤一掃頹勢 台指期夜盤一度大漲逾400點",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBpc3preHJLRTlCZDZ3SEpEVmdYU0RsdF9Cd1gwWHhwRmZRTHNobWdWaVlaNjdvbVJQeExLdlZMR2lpQWM3WVVLbmQ4dTFjMlFG0gFWQVVfeXFMUDlGT3UxZUh3SWZwSFBKaXA3ckFkcEZrY2ZCVnlSU01aNVhxLWJRVGp6cUJsTU5wcm1mWjJXSEJuM2VIYl9WdE5iVndTYjlYM3VFRHhaLXc?oc=5"
         },
         {
-          "title": "台股早盤漲逾500點 回到45100點之上",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606290031.aspx"
+          "title": "〈台股盤前要聞〉史上第三大跌點洗出融資200億元、台指期夜盤反彈戰4萬5關卡",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5MQllVYnpjbkJGQnNSTmJIYXFfdUxxcHJDSDBNWTJvcmVpMlAtZFpoZUs4aEFUVHVJX3JtMWZEQXZjWDcyUVFKOWxJbkVhcUk?oc=5"
+        }
+      ]
+    },
+    {
+      "market": "全球央行",
+      "cause": "國際清算銀行 (BIS) 警告AI投資熱潮可能引發股市暴跌並危及全球經濟，顯示對AI相關風險的擔憂。",
+      "evidence_news": [
+        {
+          "title": "The central bank of central banks warns AI frenzy could trigger stock-market slump and jeopardize economy",
+          "source": "MarketWatch",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPN1JjRk5kamVRbE8yX1pzdVFibllJYUxxRWgyckx1Z1JscjVoT3hKSFFDd2syY3J1Nk1pYU9sYUJoY3RpZzJiTm9QeUNfTnVER2RveTlmRmZxdUZGSW5OTm9LbTBrRXExRlBfSF9xZ2RoZ05CalVZYUZ5ZUs4QkRVcVp4em9YemVZQW1iYVZRODM2bnRkdzJXcTFSWUJHemNBY2ZLbkRZYmp5ay1kODcxTGZfLUtibEprdV9vaGl1QkM4V2hfVHZneDFpU0hjTHA4VTZ0aEU4ZkJJLUloQURPRlRn?oc=5"
         }
       ]
     }
   ],
   "us_view": {
     "direction": "偏空",
-    "reason": "美股主要指數，尤其是科技股和半導體股，因地緣政治緊張導致油價上漲，以及OpenAI IPO延後、AI成本上升等因素面臨顯著修正。雖然美伊同意停火談判，但短期內市場對地緣政治和科技產業的擔憂仍將持續。",
+    "reason": "隔夜美股四大指數表現分歧，道瓊上漲但那斯達克與費半大跌，費半跌幅尤重，顯示AI相關科技股面臨嚴重修正。儘管盤前期貨市場受中東局勢趨緩而反彈，但AI退潮的結構性利空仍是主要擔憂。美銀預警夏季修正，以及BIS對AI熱潮的風險提示，均指向市場潛在的下行壓力。",
     "focus": [
-      "美伊地緣政治衝突發展",
-      "AI產業成本與獲利前景",
-      "美股財報季表現"
+      "AI相關科技股的修正趨勢",
+      "企業財報對AI成本的說明",
+      "聯準會利率政策預期",
+      "地緣政治發展對油價的影響"
     ]
   },
   "tw_impact": {
-    "direction": "中性",
-    "reason": "隔夜美股大跌，特別是費城半導體指數重挫，對台股半導體和電子類股構成壓力。然而，台指期夜盤逆勢反彈，顯示市場可能已部分消化利空，或有資金進場承接。今日台股可能開低走高，但仍需觀察國際油價走勢及美股期貨盤前表現。",
+    "direction": "偏空",
+    "reason": "費城半導體指數大幅重挫8.19%，對台股的半導體與電子類股構成巨大壓力。儘管台指期夜盤因地緣政治趨緩而大漲，但這是對前一日跌勢的技術性反彈，無法完全抵銷美股科技巨頭和半導體產業的利空衝擊。台股今日開盤時，AI相關概念股預計將面臨賣壓，整體市場情緒偏向謹慎。",
     "sectors": [
       "半導體",
-      "電子",
       "AI概念股",
-      "原物料(受油價影響)"
+      "電子零組件",
+      "權值股"
     ]
   },
   "ai_ok": true,
@@ -226,132 +232,420 @@
   ],
   "raw_news": [
     {
-      "title": "南韓股市下跌1.75%，晶片股隨費半重挫",
-      "source": "優分析UAnalyze",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1xbFUwQjNTOFRpZHY1R2xhMXYyQldGS1lGOVBkdExOYlp4UXprQjBMUEpmYUd4emloZC11dWNuSUxwNGZDMXJXNG9Jd191MlpYWW1iNTNB?oc=5",
-      "summary": "南韓股市下跌1.75%，晶片股隨費半重挫 優分析UAnalyze",
-      "published": "2026-06-29T02:30:06+00:00",
+      "title": "川普喊美伊將在卡達談判！美股四大指數僅費半重挫近3% 台指期夜盤一度衝高到4萬6",
+      "source": "FTNN 新聞網",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9iZ3V5WHdWbjZ6MlpFZEQxYUVZZWViOENHVU9URDBlcld0WjZ4OWpPaFBXcHpMamhXWlotTmJ4djkwWVg3dDVmVXZXSQ?oc=5",
+      "summary": "川普喊美伊將在卡達談判！美股四大指數僅費半重挫近3% 台指期夜盤一度衝高到4萬6 FTNN 新聞網",
+      "published": "2026-06-29T14:40:00+00:00",
+      "origin": "關鍵字「台指期 夜盤 台股期貨」"
+    },
+    {
+      "title": "英國海軍首艘混合戰艦 結合無人系統取代傳統驅逐艦",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290330.aspx",
+      "summary": "（中央社記者陳韻聿倫敦29日專電）英國持續發展結合載人、無人和自主系統的「混合海軍」（Hybrid Navy），國防部今天宣布擬建造至少6艘「通用戰鬥艦」，這將是英國海軍第一批「混合戰艦」，將整合空中、海上及海下無人系統，提供更具韌性的空防戰力。",
+      "published": "2026-06-29T14:09:26+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "今彩539第115157期 頭獎槓龜",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/ahel/202606290328.aspx",
+      "summary": "（中央社台北29日電）今彩539第115157期開獎，中獎號碼36、30、15、34、11；派彩結果，頭獎槓龜。",
+      "published": "2026-06-29T14:05:22+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "威力彩第115052期 頭獎槓龜",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/ahel/202606290326.aspx",
+      "summary": "（中央社台北29日電）威力彩第115052期今晚開獎，第一區中獎號碼為16、33、05、06、09、15，第二區中獎號碼為05號。派彩結果，頭獎、貳獎都槓龜。",
+      "published": "2026-06-29T14:03:18+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "談中國言論自由 流亡異議人士董廣平：像住在牢籠",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290325.aspx",
+      "summary": "（中央社香港29日綜合外電報導）中國異議人士董廣平數度逃亡後於近日抵達加拿大，他接受美聯社專訪談到中國缺乏言論自由，「像住在牢籠、非常令人窒息」，「國內生活環境極惡劣，活著跟死了幾乎沒有區別」。",
+      "published": "2026-06-29T14:02:16+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "白宮：川普特使魏科夫與庫許納將赴杜哈參加伊朗會談",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290321.aspx",
+      "summary": "（中央社華盛頓29日綜合外電報導）白宮發言人表示，美國總統川普的特使魏科夫和庫許納，將出席明天在卡達首都杜哈舉行的伊朗會談，同時技術性談判也將在場邊繼續進行。",
+      "published": "2026-06-29T13:54:07+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "日本拚2027年開採南鳥島稀土 盼降低對中國依賴",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290318.aspx",
+      "summary": "（中央社東京29日綜合外電報導）日本首相高市早苗今天在內閣綜合海洋政策本部會議上，指示相關閣僚儘速以產業規模，在2027年度內，推進東京都小笠原村南鳥島外海的海底稀土開發與驗證。",
+      "published": "2026-06-29T13:36:00+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "印俄達成緝毒3項協議 合作打擊跨國毒品犯罪",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290317.aspx",
+      "summary": "（中央社記者羅薇佳雅加達29日專電）印尼與俄羅斯近期針對打擊跨國毒品犯罪達成3項雙邊協議，雙方建立即時情報交換機制，針對外籍遊客在峇里島等地涉及的案件進行聯合查緝，合作應對外籍犯罪集團利用影響精神物質與數位手段進行走私，以處置外籍網絡在印尼境內以科技化手段運作的毒品犯罪鏈與跨國結構。",
+      "published": "2026-06-29T13:33:58+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "科嶠與Brooks技術授權 攻晶圓傳載盒清洗設備",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290313.aspx",
+      "summary": "（中央社記者吳家豪、鍾榮峰台北29日電）印刷電路板設備廠科嶠工業今天董事會決議通過，與國際半導體設備商Brooks Automation簽訂技術授權協議，科嶠將授予Brooks全球獨家授權，雙方將結合技術與製造能力，推動半導體晶圓傳載盒（FOUP）清洗設備於全球市場的開發與應用。",
+      "published": "2026-06-29T13:13:45+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "美股電子盤一掃頹勢 台指期夜盤一度大漲逾400點",
+      "source": "UDN",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBpc3preHJLRTlCZDZ3SEpEVmdYU0RsdF9Cd1gwWHhwRmZRTHNobWdWaVlaNjdvbVJQeExLdlZMR2lpQWM3WVVLbmQ4dTFjMlFG0gFWQVVfeXFMUDlGT3UxZUh3SWZwSFBKaXA3ckFkcEZrY2ZCVnlSU01aNVhxLWJRVGp6cUJsTU5wcm1mWjJXSEJuM2VIYl9WdE5iVndTYjlYM3VFRHhaLXc?oc=5",
+      "summary": "美股電子盤一掃頹勢 台指期夜盤一度大漲逾400點 UDN",
+      "published": "2026-06-29T13:08:10+00:00",
+      "origin": "關鍵字「台指期 夜盤 台股期貨」"
+    },
+    {
+      "title": "製藥業海外布局報捷 美時攻美、台康拓日市場",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290311.aspx",
+      "summary": "（中央社記者何秀玲台北29日電）製藥業者海外布局再傳進展，美時取得美國食品藥物管理局（FDA）核准流感藥物Xofluza首款學名藥資格，將搶攻美國市場；台康生技則宣布與日本藥廠簽署乳癌生物相似藥EG1206A日本市場授權合作，擴大亞洲布局。",
+      "published": "2026-06-29T13:03:41+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "美伊技術團隊傳將在卡達會談 伊朗外交部否認",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290310.aspx",
+      "summary": "（中央社德黑蘭29日綜合外電報導）伊朗與美國技術團隊據報導將於近日會面，討論如何落實結束中東戰爭的協議，但伊朗外交部今天予以否認。",
+      "published": "2026-06-29T13:03:39+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "英美菸草集團推動AI轉型 9000個職位受影響",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/aopl/202606290308.aspx",
+      "summary": "（中央社倫敦29日綜合外電報導）英國英美菸草集團今天表示，為推動內部人工智慧（AI）轉型計畫，以削減成本，提升獲利能力，並因應監管挑戰及新產品上市延宕等情況，集團計劃裁減約20%的員工人數。",
+      "published": "2026-06-29T12:55:35+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "威力彩第115052期開獎",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/ahel/202606290305.aspx",
+      "summary": "（中央社台北29日電）威力彩第115052期今晚開獎，第一區中獎號碼為16、33、05、06、09、15，第二區中獎號碼為05。",
+      "published": "2026-06-29T12:54:28+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "台南預算較多？經部：治水是依各地需求規劃治理策略",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290303.aspx",
+      "summary": "（中央社記者謝怡璇台北29日電）網傳台南治水預算比台北還多，經濟部今天表示，1982年至2013年治水預算較集中於北部，中央並於2014年至今強化全國流域治理；治水不是哪個縣市拿比較多預算，而是依各地需求規劃合適的治理策略。",
+      "published": "2026-06-29T12:49:24+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "今彩539第115157期開獎",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/ahel/202606290301.aspx",
+      "summary": "（中央社台北29日電）今彩539第115157期開獎，中獎號碼36、30、15、34、11。3星彩中獎號碼067，4星彩中獎號碼7740。",
+      "published": "2026-06-29T12:44:20+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "德國北部爆槍擊釀5死 警方拘留1男嫌",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290299.aspx",
+      "summary": "（中央社柏林29日綜合外電報導）德國警方今天表示，該國北部城市施塔德（Stade）爆發槍擊事件，導致5人喪命，警方已拘留1名男性嫌犯，這起案件的動機尚不明朗。",
+      "published": "2026-06-29T12:41:15+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "川普：伊朗要求舉行會談 將於6/30在杜哈舉行",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290288.aspx",
+      "summary": "（中央社華盛頓29日綜合外電報導）美國總統川普今天在自家社媒平台「真實社群」（Truth Social）發文寫道，伊朗要求舉行會談，將於明天在卡達首都杜哈舉行。",
+      "published": "2026-06-29T12:12:52+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "27航班、24場比賽 國際足總主席如何穿梭世界盃",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cr5j7q29vmjo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "國際足協主席因凡蒂諾迄今已在整個北美洲累積飛行數以千計的飛行里程。",
+      "published": "2026-06-29T11:41:41+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "新英相熱門人選柏南將發表施政願景 聚焦權力下放地方",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290282.aspx",
+      "summary": "（中央社倫敦29日綜合外電報導）英國首相施凱爾的熱門繼任人選、工黨議員柏南（Andy Burnham）的辦公室表示，柏南今天將概述他對國家的願景，將承諾改變國家治理模式，把更多權力從中央政府移轉至地方。",
+      "published": "2026-06-29T11:36:38+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "香港泛民主派初選案出獄者赴日 遭入境審查約20小時",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/acn/202606290278.aspx",
+      "summary": "（中央社台北29日電）在香港泛民主派初選案被判違反國安法的岑子杰，2025年出獄。日本產經新聞報導，岑子杰6月16日在日本羽田機場入境時，接受了長達約20小時的入境審查；當時相關職員表示，因他曾被判處一年以上刑期，需要進一步審查。",
+      "published": "2026-06-29T11:10:29+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "Contact TAIWAN前進馬來西亞 深入校園搶人才",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290275.aspx",
+      "summary": "（中央社記者黃自強吉隆坡29日專電）馬來西亞身為東南亞半導體產業重鎮，吸引全球科技業進駐，台灣也透過經濟部Contact TAIWAN平台提前布局，深入大學攬才；大馬學者認為，台灣擁有完整半導體與電子產業聚落，未來雙方在人才及產業合作深具發展潛力。",
+      "published": "2026-06-29T11:05:23+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "美國連43季居國銀最大曝險國 美中差距再刷新高",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290269.aspx",
+      "summary": "（中央社記者潘姿羽台北29日電）中央銀行今天公布3月底國家風險統計，依直接交易對手基礎，美國連續43季蟬聯國銀最大曝險國，金額續創歷史新高；中國維持第3名，而國銀對美中曝險的差距持續擴大，不只連續12季突破千億美元規模，也再創新高紀錄。",
+      "published": "2026-06-29T10:52:10+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "中東局勢趨緩 伊朗媒體：德黑蘭與杜拜恢復通航",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290268.aspx",
+      "summary": "（中央社德黑蘭28日綜合外電報導）伊朗多家媒體報導，德黑蘭與杜拜之間的航班將於29日重啟。伊朗在中東戰爭期間曾發射無人機與飛彈，攻擊阿拉伯聯合大公國境內目標，但僅數週後兩地將恢復通航。",
+      "published": "2026-06-29T10:52:08+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "台電防未來一週高溫 強化高負載區設備維護保供電",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/ahel/202606290265.aspx",
+      "summary": "（中央社記者謝怡璇台北29日電）氣象署今天表示，未來一週大台北、中南部及花東防攝氏36度高溫。台電表示，因應近期高溫，預期用電量將攀升，已強化重點用戶及高負載區域電力設備維護，也規劃紅外線熱影像儀檢測，適時辦理預防性設備汰換。",
+      "published": "2026-06-29T10:50:02+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "外資賣超60億元調節力積電 加碼友達逾17萬張",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290263.aspx",
+      "summary": "（中央社記者潘智義台北29日電）台股今天量縮反彈428.14點，外資賣超新台幣60.11億元，調節力積電2萬6786張居冠，其次為元大台灣50（0050）2萬1649張、華邦電2萬610張。",
+      "published": "2026-06-29T10:38:57+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "京都電車脫軌全天停駛影響8.5萬人 復駛時間未定",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290262.aspx",
+      "summary": "（中央社記者戴雅真東京29日專電）日本近鐵京都線今天清晨發生列車脫軌事故，一列載有30名乘客的普通列車在駛離京都站後不久脫軌，所幸無人受傷，但截至下午，恢復行駛時間尚未確定，估計影響約8萬5000名旅客。近鐵召開記者會，就事故向乘客及相關人士致歉。",
+      "published": "2026-06-29T10:37:55+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "環境雙法效應 零售業搶攻循環消費商機",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290257.aspx",
+      "summary": "（中央社記者何秀玲台北29日電）7月1日環境雙法將上路，促使零售業者加速布局循環經濟與綠色設計。全家宣布推出以咖啡渣、茶纖維等回收材料製成的自有品牌商品，並擴大咖啡渣回收店數；新光三越則舉辦綠循環生活展，集結60個永續品牌與回收活動，搶攻永續消費商機。",
+      "published": "2026-06-29T10:26:45+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "宇隆：人事底定營運正常 AI液冷和機器人雙軸並進",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290256.aspx",
+      "summary": "（中央社記者鍾榮峰台北29日電）精密零件機械加工廠宇隆董事長劉俊昌22日辭職，引發市場關注，宇隆今天傍晚發布新聞稿指出，公司各項營運、接單、生產、交貨及客戶服務正常，以人工智慧伺服器AI液冷、智慧機器人雙軸布局為核心策略，與信邦電子持續布局北美人形機器人應用。",
+      "published": "2026-06-29T10:23:42+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "「造山者」瑞士巴塞爾上映 台灣晶片奇蹟驚艷全球",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/ahel/202606290255.aspx",
+      "summary": "（中央社記者郭芳君蘇黎世29日專電）台灣駐瑞士代表處於28日在瑞士德語區巴塞爾，舉辦「造山者」紀錄片放映會，吸引瑞士及鄰國德法台僑及國際友人共同出席觀影，深入了解台灣創建晶片王國的艱辛過程與傳奇際遇，國民外交成功出擊。",
+      "published": "2026-06-29T10:23:40+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "外資賣超縮手 新台幣小升收31.845元、貶值警報暫解",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290250.aspx",
+      "summary": "（中央社記者潘姿羽台北29日電）外資上週狂砍台股，匯出浪潮持續帶來貶值壓力，新台幣匯率今天再次摜破31.9元價位，不過午後貶幅逐步收斂，尾盤更上演豬羊變色，收盤收在31.845元，升值1.5分，守住31字頭。外匯交易員認為，只要台股不要再度重挫，新台幣貶值警報暫時解除。",
+      "published": "2026-06-29T10:07:30+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "華新：考量客戶競爭力 7月不銹鋼盤元維持平盤",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/afe/202606290242.aspx",
+      "summary": "（中央社記者潘智義台北29日電）電纜及不銹鋼廠華新麗華今天宣布，7月不銹鋼盤元產品價格，包括200、300、400系列皆維持平盤。",
+      "published": "2026-06-29T09:42:12+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "韓國將投入逾37兆 打造新半導體聚落與AI資料中心",
+      "source": "中央社 財經",
+      "url": "https://www.cna.com.tw/news/aopl/202606290237.aspx",
+      "summary": "（中央社首爾29日綜合外電報導）韓國將在未來幾年投資近1.2兆美元（約新台幣逾37兆元），以打造新半導體生產基地與人工智慧（AI）資料中心。",
+      "published": "2026-06-29T09:38:02+00:00",
+      "origin": "中央社 財經"
+    },
+    {
+      "title": "AI退潮費半重挫，美銀預警美股夏季修正-財經焦點情報站",
+      "source": "CMoney投資網誌",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQTnNyeGEyNVQxT1I2SHR4ajVJSkN4dWwtTk0yZFpjSkh2Y2pja2czUUtVa2pzZDd0eUF1aFZ4TUt6WFdEZ1dJY2RqZV9SZ2FyWkowc014QTk1MXlqak5FZWE1QVdhWWlLVmROcEplZ1cwbHA1STNRekwwX0Z6cGIwOEZR?oc=5",
+      "summary": "AI退潮費半重挫，美銀預警美股夏季修正-財經焦點情報站 CMoney投資網誌",
+      "published": "2026-06-29T09:30:18+00:00",
       "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
-      "title": "美伊中東互襲重創和平協議 國際油價走揚",
+      "title": "永豐餘強化能源布局 永餘智能奪嘉南防災微電網案",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606290045.aspx",
-      "summary": "（中央社新加坡29日綜合外電報導）由於美國與伊朗在中東爆發數天的針鋒相對攻擊，不僅凸顯出雙方臨時和平協議的脆弱性，也導致荷莫茲海峽（Strait of Hormuz）的能源運輸再度放緩，國際油價今天上漲。",
-      "published": "2026-06-29T02:01:02+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606290233.aspx",
+      "summary": "（中央社記者何秀玲台北29日電）永豐餘旗下永餘智能表示，去年丹娜絲颱風來襲造成多地電力、通訊、交通等災情，為強化電力供應韌性及應變能力，經濟部編列預算推動「小型防災微電網建置計畫」，永餘智能取得台南市及嘉義縣防災微電網案場，為本次微電網專案重要的防災微電網建置執行案。",
+      "published": "2026-06-29T09:28:53+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "財部：去年研發支出抵減稅額近492.5億元創新高",
+      "title": "永悅健康獲永齡、佳格投資 7月底創新板掛牌上市",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290038.aspx",
-      "summary": "（中央社記者呂晏慈台北29日電）財政部統計，去年產業創新條例減免稅額核定件數777件，研究發展支出新台幣2540.7億元，年減25%，核定抵減稅額近492.5億元創歷史新高，年增66%。",
-      "published": "2026-06-29T01:43:47+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606290232.aspx",
+      "summary": "（中央社記者何秀玲台北29日電）數位健康科技平台H2U永悅健康以健康數據、AI與預防醫學為核心，預計今年7月底於創新板掛牌上市；董事長陳俊嘉說，最大營收占比為健康媒體廣告，但隨健康資訊平台改採SaaS訂閱制，未來有望超越媒體廣告，力拚明年第4季起單季獲利，後年轉虧為盈。",
+      "published": "2026-06-29T09:25:51+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "挪威驕傲遊行 台灣隊包容強助外國友人獲認同拋壓抑",
+      "title": "歐洲「正在融化」：熱浪襲來 超過千人因高溫相關原因死亡",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cgevz5p98plo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "前所未見的熱浪正席捲歐洲，從上週開始，各國都陸續觀察到超過攝氏40度的破紀錄高溫。",
+      "published": "2026-06-29T09:21:42+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "日媒：中國拉攏友邦批日本新軍國主義 擴大外交戰線",
       "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/ahel/202606290035.aspx",
-      "summary": "（中央社記者巫祈麟赫爾辛基28日專電）挪威首都奧斯陸日前舉辦年度驕傲大遊行，吸引約9萬人共襄盛舉，台灣隊帶著國旗，高舉「亞洲第一個同婚國家」的標語歡喜上街，超強大的平權和包容力甚至吸引平日無法參與這類活動的外國友人，主動參與台灣隊，獲得認同和拋除壓抑的心中暢快。",
-      "published": "2026-06-29T01:26:41+00:00",
+      "url": "https://www.cna.com.tw/news/aopl/202606290231.aspx",
+      "summary": "（中央社記者戴雅真東京29日專電）中國持續加大對日本高市早苗政府的外交施壓，積極在國際場合宣傳日本正走向「新型軍國主義」，並已獲得俄羅斯、北韓，以及巴基斯坦、孟加拉、緬甸、蒙古等與中國友好國家不同程度呼應，外界憂心這恐衝擊日本與相關國家的外交關係。",
+      "published": "2026-06-29T09:18:49+00:00",
       "origin": "中央社 國際"
     },
     {
-      "title": "個股槓桿ETF引韓股巨震？證交所：台灣不考慮開放",
+      "title": "巴基斯坦襲阿富汗稱針對武裝分子 塔利班通報平民傷亡",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290229.aspx",
+      "summary": "（中央社喀布爾29日綜合外電報導）巴基斯坦昨天對阿富汗東部發動空襲，造成數十人死亡。巴基斯坦政府今天表示，攻擊目標是武裝分子；但阿富汗塔利班政府則通報有36名平民死亡。",
+      "published": "2026-06-29T09:13:44+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "中國擴大出口管制 日本政府抗議並要求撤回",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290217.aspx",
+      "summary": "（中央社東京29日綜合外電報導）中國商務部今天宣布增列20家日本企業或團體到軍民兩用貨品出口管制名單。日本政府發言人木原稔就此表示，「感到極為遺憾，已經強烈抗議，並要求撤回相關措施」。",
+      "published": "2026-06-29T09:09:19+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "這些西方人為嚮往俄羅斯價值而移民 如今卻落得一個失落",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/clyemvy4x17o/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "部分西方人拋下西方「覺醒」文化透過俄羅斯「共享價值簽證」移居俄國。他們希望在當地尋求傳統家庭與基督教價值，有人因愛情、信仰或安全感前往但現實常不如預期。",
+      "published": "2026-06-29T08:58:23+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "青創貸款9.5成保證額度提高至150萬元 7月上路",
       "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290032.aspx",
-      "summary": "（中央社記者曾仁凱台北29日電）近期韓股劇烈波動，多次引發熔斷，市場將茅頭指向連結三星電子、SK海力士等權值個股的2倍槓桿ETF。台灣證券交易所表示，以台灣的市場情勢、投資人交易與保護、ETF市場特性等因素，目前不考慮開放個股ETF。",
-      "published": "2026-06-29T01:20:34+00:00",
+      "url": "https://www.cna.com.tw/news/afe/202606290215.aspx",
+      "summary": "（中央社記者曾筠庭台北29日電）為因應青年創業資金需求增加及營運成本攀升，經濟部今天宣布修正「青年創業貸款要點」，將適用信用保證基金9.5成保證成數的新增貸款歸戶金額上限，由新台幣100萬元提高至150萬元，自7月1日起生效，盼進一步強化對青年創業及中小微企業的金融支持。",
+      "published": "2026-06-29T08:58:13+00:00",
       "origin": "中央社 財經"
     },
     {
-      "title": "台股早盤漲逾500點 回到45100點之上",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290031.aspx",
-      "summary": "（中央社記者潘智義台北29日電）美股費城半導體指數上週五下跌5.29%，台積電ADR跌0.61%，台股今天早盤反彈漲逾500點，回到45100點之上。",
-      "published": "2026-06-29T01:20:32+00:00",
-      "origin": "中央社 財經"
+      "title": "韓國總統要求徹查世界盃「荒唐」敗仗 警察防主教練回國遇刺",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/c0myk4dj84xo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "韓國未能躋身成績最佳八支分組第三名隊伍之列，因而被淘汰出局。",
+      "published": "2026-06-29T08:24:29+00:00",
+      "origin": "BBC 中文"
     },
     {
-      "title": "新台幣開盤貶2分 為31.88元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290030.aspx",
-      "summary": "（中央社台北29日電）台北外匯市場新台幣兌美元匯率今天以31.88元開盤，貶2分。1150629",
-      "published": "2026-06-29T01:06:30+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "台股開盤漲23.05點",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290029.aspx",
-      "summary": "（中央社台北29日電）台北股市今天開盤漲23.05點，加權股價指數為44594.81點，成交金額新台幣105.27億元。1150629",
-      "published": "2026-06-29T01:02:28+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "美伊互轟協議搖搖欲墜 傳雙方同意停火繼續談判",
+      "title": "台灣影像藝術登波蘭 展現多重敘事跨文化對話",
       "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290028.aspx",
-      "summary": "（中央社華盛頓28日綜合外電報導）伊朗25日攻擊荷莫茲海峽商船後，美伊再度互轟，脆弱和平協議搖搖欲墜；數位媒體Axios今天報導，為避免協議破局，美伊已同意停止在波斯灣地區的敵對行為，並重啟荷莫茲海峽爭端談判。",
-      "published": "2026-06-29T00:56:25+00:00",
+      "url": "https://www.cna.com.tw/news/acul/202606290199.aspx",
+      "summary": "（中央社記者鄭淨伃華沙29日專電）台灣首度以主題展區參與第25屆波蘭羅茲國際攝影節，透過米豆藝術空間策劃的影像展與攝影書展，將台灣的歷史記憶、土地經驗與身分敘事帶入歐洲重要影像平台，與中東歐觀眾展開深度的跨文化對話。",
+      "published": "2026-06-29T08:04:36+00:00",
       "origin": "中央社 國際"
     },
     {
-      "title": "熱浪狂襲歐洲 羅馬長者靠智慧手環安心獨居",
+      "title": "世界盃加州球迷活動區傳槍響 釀1死1重傷",
       "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290022.aspx",
-      "summary": "（中央社羅馬28日綜合外電報導）熱浪近日侵襲歐洲，羅馬市政府為獨居長者提供可監測心率、睡眠與跌倒狀況的智慧手環，搭配社工遠端關懷服務，盼能及早發現健康異常，在高溫期間降低意外發生風險。",
-      "published": "2026-06-29T00:34:12+00:00",
+      "url": "https://www.cna.com.tw/news/aopl/202606290198.aspx",
+      "summary": "（中央社加州聖荷西28日綜合外電報導）加州聖荷西（San Jose）警方表示，當地一處熱門娛樂場所今天發生槍擊事件，造成1死1重傷。案發現場所在區域同時是當局開設、供民眾觀看世界盃賽事轉播的活動區。",
+      "published": "2026-06-29T08:04:34+00:00",
       "origin": "中央社 國際"
     },
     {
-      "title": "遭烏克蘭持續空襲 普丁坦言俄羅斯面臨燃料短缺",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290021.aspx",
-      "summary": "（中央社莫斯科28日綜合外電報導）俄羅斯總統普丁（Vladimir Putin）在克里姆林宮今天刊出的專訪中坦言，在4年多的俄烏戰爭期間，由於烏克蘭不斷發動空襲，俄羅斯確實面臨「一定程度」的燃料「短缺」。",
-      "published": "2026-06-29T00:28:10+00:00",
-      "origin": "中央社 國際"
+      "title": "中國合肥民眾抗議垃圾站，官員當場煞停工程",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/crm0lenk8n8o/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "網絡流傳中國安徽合肥爆發民眾大規模抗議，反對興建大型垃圾中轉站。BBC中文翻查資料，中國近年已發生多宗類似因「鄰避效應」而生、環繞「厭惡設施」選址鄰近民居的抗議事件。",
+      "published": "2026-06-29T08:00:26+00:00",
+      "origin": "BBC 中文"
     },
     {
-      "title": "芬蘭公部門2031年前全面導入AI 70萬員工受衝擊",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290019.aspx",
-      "summary": "（中央社記者巫祈麟赫爾辛基29日專電）芬蘭政府近日宣布，公部門將在2031年前轉型為以人工智慧（AI）為基礎的運作模式，目標將整體生產力提升20%，現有約70萬名員工將直接受到衝擊。",
-      "published": "2026-06-29T00:24:06+00:00",
-      "origin": "中央社 國際"
+      "title": "7月台股期指漲1098點",
+      "source": "經濟日報",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZnVrVUpJcmZlRmRpVDZ1WGpsRWJPaXlmUEs5RkljYmZ5R3V3UmY4UFdqc3hacmE0aVJGeFRKNHBHbEdoQ0M2ekloZFJ3UTV5WUljMHdwNktVYkF0X09nX3Nua2VkREF3dWMtTWFlYjFXWmxNcE8tLVIwd053QktrTTU3UdIBYEFVX3lxTFBzZm84UlBLaEFOYS0xT2k1VFhoSElMTUpSemVLcmRxSTZMbjRFVXk2Rml3ZnFjSzJsNEc5UUpEak4wWUJ2d21jMDJYTDBYeHFkWjV4X1ZwaW5iajRXYng0aA?oc=5",
+      "summary": "7月台股期指漲1098點 經濟日報",
+      "published": "2026-06-29T06:21:26+00:00",
+      "origin": "關鍵字「台指期 夜盤 台股期貨」"
     },
     {
-      "title": "伊朗稱獨攬海峽管轄權 美方強調航行自由",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290018.aspx",
-      "summary": "（中央社德黑蘭28日綜合外電報導）伊朗外交部長阿拉奇（Abbas Araghchi）今天表示，根據與美國總統川普簽署的初步和平協議，伊朗擁有管理荷莫茲海峽航運的專屬權利。",
-      "published": "2026-06-29T00:23:04+00:00",
-      "origin": "中央社 國際"
+      "title": "6月29日期交所日盤行情",
+      "source": "經濟日報",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE45bHVTakIwY0Z6S2xqM3o4VFhWTWh2anM0QU41RUt0MFRORmUtQmdnUzc3WlkyYW1UM1Z0NXFBdUZGOVFwWnNpRHJ5YjByQnI5S1dhMUh3YW52dzM3WlJlQW9NZUdPUUlIYWR1WERmeEhZM192OFJLQWtWS3rSAWBBVV95cUxPclo0OEZNV0ZuSG5BMVNMVjBJWjU1bS0xMHY4Qzd6bU8xS05CUmd3dG5EaEVicHdtTVJZOFpSMWloYWNUYjJUVE1fU1R2cXF0Q3Zwdm1lM1p6Ujl0S0g0WkE?oc=5",
+      "summary": "6月29日期交所日盤行情 經濟日報",
+      "published": "2026-06-29T05:55:20+00:00",
+      "origin": "關鍵字「台指期 夜盤 台股期貨」"
     },
     {
-      "title": "台股漲多面臨修正 觀察歐央行論壇及非農就業數據",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606290016.aspx",
-      "summary": "（中央社記者潘智義台北29日電）台股上週五大跌1683.50點，加上美股費城半導體指數下跌5.29%，台積電ADR跌0.61%，分析師認為，AI科技股帶動台股不斷創高，漲多回檔並非基本面變差，現階段先觀察歐洲央行舉辦論壇內容、美國公布非農就業數據。",
-      "published": "2026-06-29T00:20:59+00:00",
-      "origin": "中央社 財經"
+      "title": "歐洲熱浪：世衛稱逾1300人死亡 德國錄得攝氏41.7度高溫",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/c78yvn5zj8eo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "聯合國世衛組織總幹事譚德塞警告，歐洲國家並未準備好應付熱浪。",
+      "published": "2026-06-29T04:24:29+00:00",
+      "origin": "BBC 中文"
     },
     {
-      "title": "熱浪成新常態 柏林推「涼爽地圖」打造避暑城市",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290014.aspx",
-      "summary": "（中央社記者林尚縈柏林29日專電）熱浪成為歐洲夏季新常態，德國首都柏林去年底推出第一份「高溫行動計畫」，將抵禦極端高溫正式納入城市治理。今年夏天第一波熱浪襲歐，柏林啟動涼爽地圖、教堂避暑空間及高齡者關懷等措施，首度檢驗這套城市高溫調適策略。",
-      "published": "2026-06-29T00:17:55+00:00",
-      "origin": "中央社 國際"
+      "title": "全球AI股急跌拖累美股 亞洲主要指數週五同步重挫",
+      "source": "商傳媒",
+      "url": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxQNUNXM0p4dU0zRnNISWFMUEkyTDRaR1MzTkNnd0Z0R01xV3Z6ekE2WVZuS2VvZk94bzlzNEFITFg5UzhyalpXVkRKS0lhQndQZ1dFbVZrZ1VGNEV5MWRHODFSWTdGMmcyb1ZZR0MwaWI1TWJjYXU3VVFXLWJqaWplWXhqSXhuZUl4VTZpcEFQVDl6blhIY2s3dzNWbGItV2duYnNoU2VLNW9WS3FxamJmdC1GMTV6blRRd0RIeUhwTjlDRDhmbFkxOXc3VTZoc3p0djl3a2lOeV8yZTNGTFpMd1A2QkVYcWFWNWM4RGZzVFFaUF9tZV9qZzhPVmZnSXhsWExKc0pXWGZUbW9rMHFEempFWlRLQXhlaTMxSXh2Vk8zUWlpZS00R1VKMUhqS0NEeG1FWlo1bHJzclpSNFhENmotRGxyaXFTTWctUUF2V2ExNmJmamRxOWNNRQ?oc=5",
+      "summary": "全球AI股急跌拖累美股 亞洲主要指數週五同步重挫 商傳媒",
+      "published": "2026-06-29T03:47:00+00:00",
+      "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
-      "title": "紐約驕傲同志遊行 台灣隊連結兩地開放文化價值",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/ahel/202606290013.aspx",
-      "summary": "（中央社記者廖漢原紐約28日專電）一年一度的紐約同志驕傲遊行今天盛大登場，台灣「檳榔西施」主題花車與變裝皇后妮妃雅等，在熱情人潮中成為焦點。紐約是全球同志運動的濫觴，每年10月台北有亞洲最大的同遊，掌聲與尖叫聲連結兩地開放的文化價值。",
-      "published": "2026-06-28T23:59:53+00:00",
-      "origin": "中央社 國際"
+      "title": "南韓股市下跌1.75%，晶片股隨費半重挫",
+      "source": "news.cnyes.com",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA1MXFZZGYzdzNldEp4bVhmTFFpM2tEd05DM1NpSFpnakpYbkdMWnJwNzgydl9kXzhveVktb3MzbnBvelVIS0JLeF9zYThGWWM?oc=5",
+      "summary": "南韓股市下跌1.75%，晶片股隨費半重挫 news.cnyes.com",
+      "published": "2026-06-29T03:00:50+00:00",
+      "origin": "關鍵字「美股 大跌 重挫」"
+    },
+    {
+      "title": "【美股盤後】OpenAI傳延後IPO 四大指數齊跌、費半重挫逾5%",
+      "source": "非凡新聞台",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE93RG9XUWVzUVNRSmIzanlZOFpvbTl0WWhaSm1EaWJva3hNdTZLbTR6QzJ4ZzlUa2lCa0ViYlNBYmY4VkwtQTJlYmRkQVMxMzRUSEF5a0g1XzdwZGVQZHV0MQ?oc=5",
+      "summary": "【美股盤後】OpenAI傳延後IPO 四大指數齊跌、費半重挫逾5% 非凡新聞台",
+      "published": "2026-06-29T01:52:03+00:00",
+      "origin": "關鍵字「美股 大跌 重挫」"
     },
     {
       "title": "蘋果加價之際 科技與電玩企業紛紛怪罪AI",
@@ -362,116 +656,12 @@
       "origin": "BBC 中文"
     },
     {
-      "title": "德國熱浪41.7度連3天破高溫紀錄 森林野火四起、13人戲水溺斃",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290011.aspx",
-      "summary": "（中央社記者林尚縈柏林28日專電）熱浪侵襲歐洲，德國週日全國最高溫飆升至攝氏41.7度，連續3天刷新全國最高氣溫紀錄，週末在極端炎熱氣候下有13人戲水溺斃，多地森林野火蔓延，德國鐵路交通及救援系統也面臨考驗。",
-      "published": "2026-06-28T23:30:48+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "德州奧斯汀亞美電影節 周東彥短片創新話題",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/acul/202606290010.aspx",
-      "summary": "（中央社記者廖漢原紐約28日專電）台灣劇場暨新媒體導演周東彥與剪輯黃嘉文的VR短片，近期在美國德州奧斯汀舉行的亞美電影節放映，當地影人與策展者對台灣創作者的創意與細膩留下深刻印象。",
-      "published": "2026-06-28T23:28:46+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "不滿近日遭到攻擊 伊朗取消參加技術會談",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290009.aspx",
-      "summary": "（中央社杜拜28日綜合外電報導）伊朗最高領袖著作保存與出版辦公室一名成員今天告訴國營電視台，因近期對伊朗的攻擊，以及與美國簽署的諒解備忘錄條件未獲履行，伊朗未參加原定今天舉行的技術會談。",
-      "published": "2026-06-28T23:05:41+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "【美股盤後】OpenAI傳延後IPO 四大指數齊跌、費半重挫逾5%",
-      "source": "非凡新聞台",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE93RG9XUWVzUVNRSmIzanlZOFpvbTl0WWhaSm1EaWJva3hNdTZLbTR6QzJ4ZzlUa2lCa0ViYlNBYmY4VkwtQTJlYmRkQVMxMzRUSEF5a0g1XzdwZGVQZHV0MQ?oc=5",
-      "summary": "【美股盤後】OpenAI傳延後IPO 四大指數齊跌、費半重挫逾5% 非凡新聞台",
-      "published": "2026-06-28T22:58:54+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "尼坦雅胡：以軍黎南摧毀真主黨200公尺長地道",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290008.aspx",
-      "summary": "（中央社耶路撒冷28日綜合外電報導）以色列總理尼坦雅胡與國防部長卡茲今天表示，以色列軍方已經摧毀什葉派基本教義民兵組織真主黨在黎巴嫩南部建造的一條大型隧道。",
-      "published": "2026-06-28T22:55:39+00:00",
-      "origin": "中央社 國際"
-    },
-    {
       "title": "〈台股盤前要聞〉史上第三大跌點洗出融資200億元、台指期夜盤反彈戰4萬5關卡",
       "source": "news.cnyes.com",
       "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5MQllVYnpjbkJGQnNSTmJIYXFfdUxxcHJDSDBNWTJvcmVpMlAtZFpoZUs4aEFUVHVJX3JtMWZEQXZjWDcyUVFKOWxJbkVhcUk?oc=5",
       "summary": "〈台股盤前要聞〉史上第三大跌點洗出融資200億元、台指期夜盤反彈戰4萬5關卡 news.cnyes.com",
       "published": "2026-06-28T21:11:06+00:00",
       "origin": "關鍵字「台指期 夜盤 台股期貨」"
-    },
-    {
-      "title": "前所未見熱浪侵襲歐洲 捷克、波蘭高溫破紀錄",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290006.aspx",
-      "summary": "（中央社布拉格／華沙28日綜合外電報導）捷克氣象局表示，捷克今天再度刷新高溫紀錄，位在首都布拉格以北的多克薩尼測得攝氏41.9度，這是該國兩天內第2次打破高溫紀錄。波蘭今天高溫也創新高，來到40.5度。",
-      "published": "2026-06-28T21:08:33+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "委內瑞拉雙震增至1450人罹難 一對父子受困逾3天獲救",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290005.aspx",
-      "summary": "（中央社卡拉巴勒達／卡拉卡斯28日綜合外電報導）法新社記者在受災嚴重的海岸城鎮卡拉巴勒達（Caraballeda）目擊，一名男子與他十多歲的兒子在委內瑞拉雙震襲擊逾3天後，今天從瓦礫堆中獲救。",
-      "published": "2026-06-28T20:19:30+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "上萬輛偉士牌羅馬車聚 慶祝經典車款問世80年",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290003.aspx",
-      "summary": "（中央社羅馬28日綜合外電報導）超過1萬輛偉士牌摩托車昨天噗噗作響緩慢駛過羅馬競技場（Colosseum）和羅馬廣場（Roman Forum）周圍，盛大慶祝此一經典車款問世80週年。",
-      "published": "2026-06-28T18:51:05+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "新商品及新制度／高價股期縮小交易單位 | 期貨市場 | 期貨",
-      "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8wRDhGbmR0R1JDQWpFa0xMWW5CajBxaW51TDR5aWp2Qm90QlZCNWlwSkh2X29ieVdBcmM0dHllQm1fSTMtbGtfdnRzUHhIbnhFT19xMWVyVUk5OFctU2NoQlY1YkdBbGhFVmgybkxmbTFXVFduU3N6SUlvRWc5dw?oc=5",
-      "summary": "新商品及新制度／高價股期縮小交易單位 | 期貨市場 | 期貨 經濟日報",
-      "published": "2026-06-28T17:44:38+00:00",
-      "origin": "關鍵字「台指期 夜盤 台股期貨」"
-    },
-    {
-      "title": "伊斯坦堡驕傲遊行再遭禁 至少50人被捕",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606290002.aspx",
-      "summary": "（中央社伊斯坦堡28日綜合外電報導）儘管政府禁止舉辦，並且封鎖市中心主要集會場所，一場同志驕傲遊行今天仍在土耳其第一大城伊斯坦堡舉行。主辦單位表示，警方逮捕至少50人，其中包括一名記者。",
-      "published": "2026-06-28T16:47:01+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "結合歐洲傳統和亞洲意蘊 金雕工藝師李芷寧巴黎獲獎",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606280203.aspx",
-      "summary": "（中央社記者曾依璇巴黎28日專電）珠寶設計師暨金雕工藝師李芷寧在巴黎一場奢侈品與創意產業活動獲獎，主辦單位評論，她的作品結合歐洲雕刻工藝傳統和亞洲書法意蘊，體現瀕危工藝和當代創作之間的鮮活對話。",
-      "published": "2026-06-28T15:26:53+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "歐洲熱浪肆虐近兩億人承受35度酷暑 德國與捷克再創高溫紀錄",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202606280202.aspx",
-      "summary": "（中央社巴黎28日綜合外電報導）根據法新社估計，歐洲今天至少有1億9100萬人面臨至少攝氏35度高溫，尤以德國、捷克、匈牙利及波蘭最為炎熱，其中德國與捷克分別以攝氏41.7度及41.1度雙雙創下高溫紀錄。",
-      "published": "2026-06-28T15:09:51+00:00",
-      "origin": "中央社 國際"
-    },
-    {
-      "title": "美國務院：美官員與台各政黨立委互動 強化美台關係",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aipl/202606280198.aspx",
-      "summary": "（中央社台北28日電）立法院長韓國瑜日前率跨黨派立委訪問華府，會晤美國國務院官員。國務院今天表示，美台之間強健的非官方關係，透過美國官員與台灣各政黨立法委員之間的定期互動而強化。",
-      "published": "2026-06-28T14:34:40+00:00",
-      "origin": "中央社 國際"
     },
     {
       "title": "熱浪取消不了公園長跑，綠色的青蛙可以",
@@ -490,22 +680,6 @@
       "origin": "BBC 中文"
     },
     {
-      "title": "國銀富豪戶單月增1090人 5月底AUM衝2.6兆",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280161.aspx",
-      "summary": "（中央社記者蘇思云台北28日電）投資市場氛圍持續好轉，帶動富豪戶管理資產規模與戶數大增。金管會統計顯示，21家國銀截至2026年5月底高資產客戶數達2萬5290人，單月大增1090人，高資產客戶管理資產規模（AUM）也增至新台幣2兆6633億元，月增1110億元。",
-      "published": "2026-06-28T09:48:12+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "費半重挫拖累台股，大盤狂瀉逾千點失守月線-財經焦點情報站",
-      "source": "CMoney投資網誌",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMzAyM3otTTZrQ0VveVJublpBVHI1UVdCWDRoV1JrQ2hEWmtCWm4wQ0M3TUg3X1UxLTJRdFB2bnQtaTVEaDlUR1BsQk15OW9vdzRRcVRHbzhYZGhKcnpIcFhvQWh3UjF6eF8wZkVqOXQtS2ozclM5SHhDM2RKOVluWWJ3?oc=5",
-      "summary": "費半重挫拖累台股，大盤狂瀉逾千點失守月線-財經焦點情報站 CMoney投資網誌",
-      "published": "2026-06-28T08:00:22+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
       "title": "美股費半重挫，台股跌逾千點失守四萬五大關-財經焦點情報站",
       "source": "CMoney投資網誌",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNZmFTSWo2Mk1BdzYxX09TZi14Y0lIdzRKUVlzeFRGSU15OFdoN25fM3JjUXIxLTdXb1gydUN6S0txQUl0ZUdBMS11aWVXeXdaMmllRHZ2b2VhS3VLOFd0clg1ZGNHWTdlOTlMbGI0V2xvSjJ0VHN1RW42dGUzWk9jRDV3?oc=5",
@@ -520,38 +694,6 @@
       "summary": "前往美國觀看世界盃比賽的世界各地球迷，對於必須向服務生支付小費的文化感到沮喪，甚至向BBC說他們已出現「小費疲勞」。",
       "published": "2026-06-28T06:30:39+00:00",
       "origin": "BBC 中文"
-    },
-    {
-      "title": "台塑石化：29日凌晨1時起 汽柴油分別降1元、0.8元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606280096.aspx",
-      "summary": "（中央社記者曾仁凱台北28日電）台塑石化今天表示，考量國際油價走勢、新台幣兌美元匯率、國內市場競爭力及亞洲鄰國最低價等因素後，決定自6月29日凌晨1時起，汽、柴油每公升批售價格分別調降新台幣1元和0.8元，為連續第2週調降。市場零售價則由加油站自行決定。",
-      "published": "2026-06-28T05:45:49+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "全台水庫估進帳3.7億噸 曾文及烏山頭蓄水率逾6成",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280089.aspx",
-      "summary": "（中央社記者趙敏雅台北28日電）全台各地降下豪雨，水庫大進補。經濟部水利署指出，自24日上午至28日上午，預估全台水庫入流量逾3.7億噸，曾文及烏山頭水庫蓄水率已突破6成；寶山及寶二水庫、永和山水庫、南化水庫蓄水率達100%。",
-      "published": "2026-06-28T05:25:34+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "去年高資產族平均繼承3.7億元遺產 每案繳稅近3500萬元",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280082.aspx",
-      "summary": "（中央社記者呂晏慈台北28日電）財政部統計去年遺產稅核定情形，核定件數逾18.3萬件，當中93%為免稅案件。觀察高資產族群，適用最高遺產稅率20%實徵件數案件為733件，合計實徵遺產總額為新台幣2676億元，換算平均每件繼承遺產金額近3.7億元，若觀察實徵淨額為253億元，平均每件繳交3458萬元遺產稅。",
-      "published": "2026-06-28T04:57:17+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "中國汽車歐洲市占首破10% 德國車業有永久萎縮之虞",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606280075.aspx",
-      "summary": "（中央社柏林27日綜合外電報導）中國汽車上個月在歐洲新車銷售占比首次破10%，歐洲消費者對配置更高、價格更低車型趨之若鶩；與此同時，德國汽車製造商則紛裁員減成本，德國這項核心產業有永久萎縮之虞。",
-      "published": "2026-06-28T04:26:02+00:00",
-      "origin": "中央社 財經"
     },
     {
       "title": "英王查爾斯報稅表上的三處「與眾不同」",
@@ -570,620 +712,484 @@
       "origin": "BBC 中文"
     },
     {
-      "title": "台指期夜盤狂飆543點！真反彈還是假突破？「專家推演跌破月線3套劇本」這1檔神操作：開盤直接加價10元 - 上市櫃",
-      "source": "旺得富理財網",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE43YzNtVTVnUlJGcW1IcjNVY0EyWjA0c2ROTndiYnI2WFllTkgyOF9sRWhEdEc0dFhieS05U0xRWUVIY1lBMXNfYmpISjZFSzQwT2t5cEJrRG9jMWN4Xzd2elA4RmJnZTBNLWc?oc=5",
-      "summary": "台指期夜盤狂飆543點！真反彈還是假突破？「專家推演跌破月線3套劇本」這1檔神操作：開盤直接加價10元 - 上市櫃 旺得富理財網",
-      "published": "2026-06-28T02:44:36+00:00",
-      "origin": "關鍵字「台指期 夜盤 台股期貨」"
+      "title": "Iran War Live Updates: U.S. and Iran Set for New Talks in Qatar After Exchanging Strikes, Trump Says",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9kcWhEM1BEcXZCMUFITndwLW5MTUY5aWI1d1B1R25SeWJZT0pBTGVTWE91bEQzcUJBWGJrb2w3bWE2UjVpX3JPb1JmcVBTc0RXRjFQQl9FbmtTRWlxNDF4VUhFa3FlNy1xcmNHSy1JZDdhNjIyWUFV?oc=5",
+      "summary": "Iran War Live Updates: U.S. and Iran Set for New Talks in Qatar After Exchanging Strikes, Trump Says The New York TimesNew US-Iran clashes revealed fragility of truce — and why it may work CNNFormer Iran nuclear deal negotiator on what U.S.-Iran 'new normal' looks like NPRUS and Iran pause strikes but disagree over next steps on talks AP NewsTrump says U.S. and Iran to hold fresh talks in Qatar on Tuesday following weekend clashes CNBC",
+      "published": "2026-06-29T15:17:48+00:00",
+      "origin": "Google 世界頭條"
     },
     {
-      "title": "台股上週大跌1893點 法人：系統性回調非基本面反轉",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280032.aspx",
-      "summary": "（中央社記者曾仁凱台北28日電）AI概念股漲多後，遭遇修正壓力，台股上週震盪劇烈，週五集中市場指數收在44571.76點，大跌1893.44點或4.07%，跌破月線，上櫃指數週跌幅更達到7.11%。法人認為，從美光亮眼財報來看，AI成長趨勢並未改變，此波台股回檔屬系統性回調，非基本面反轉。",
-      "published": "2026-06-28T02:01:29+00:00",
-      "origin": "中央社 財經"
+      "title": "Strategy Says It May Sell Up to $1.25 Billion of Bitcoin",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUUM4UVFyX0RMMHE4NnljdDJKT0tiVVdZcFZqemNLeXRqNUxqLUd0TGFCLXpkZXpJS0ozcWwyV3BaTDJDT1JtR2dWU1ZTZG1vbW9iWFFzMWpKYndjLWUxbGs2MG1qNm5OMjY5NlkxdDFFNEs5d0xxUXVWR0FKRWd6QjM4V2xkWTU4VXE5cWE2SG9jR0d1X3dxSndtNW0tQXJfUnpUUXQtbks5eGM?oc=5",
+      "summary": "Strategy Says It May Sell Up to $1.25 Billion of Bitcoin Bloomberg.comSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T14:27:11+00:00",
+      "origin": "Google 財經頭條"
     },
     {
-      "title": "兩檔期貨保證金調高",
-      "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5QRVVJTmNtRG16SzhIMDRHa05FazNwUFdyVE41V3RsRlJtOWtJU3RqUDFLOTgxY3o3OXlndE1GY3hrSlNsY2dlSlhFOEpVQmlORklIZ0VuZFlIbHhZTlc4dE5lb04zUTQya1RweHlISnVqMmFvdHVEZGxvSjRFZ9IBYEFVX3lxTE93cVdzaGJuaE96dW5JSGRpWEpaRGRNR2VqNFpGOXI5SVVfQk14ek1KdHZsbUhWOUZ6LTA4UUI5WE5HeFNrSE4tTjhXQUVSM0VZN1RvUDcwZW9IVFo1OUhoZw?oc=5",
-      "summary": "兩檔期貨保證金調高 經濟日報",
-      "published": "2026-06-28T02:00:00+00:00",
-      "origin": "關鍵字「台指期 夜盤 台股期貨」"
-    },
-    {
-      "title": "《超級少女》：DC工作室高層稱漫畫巨頭須重建影迷信任",
-      "source": "BBC 中文",
-      "url": "https://www.bbc.com/zhongwen/articles/cgmdxmdkjvyo/trad?at_medium=RSS&at_campaign=rss",
-      "summary": "作為漫威競爭對手的最新作品，這部電影是其龐大電影宇宙全面重整計劃的一部分。",
-      "published": "2026-06-28T01:56:36+00:00",
-      "origin": "BBC 中文"
-    },
-    {
-      "title": "AI進入工地 根基營造「創新DNA」扭轉缺工困局【專訪】",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280025.aspx",
-      "summary": "（中央社記者趙敏雅台北28日電）位於台北市萬華區「冠德萬華直興段」新建工程，由根基營造承造，開工逾3年，建物外層搭建施工鷹架，上方吊臂緩緩移動，乍看與一般工地無異。踏入逾559坪的施工現場，少了傳統吆喝聲，取而代之的是規律「嘶、嘶」聲響，只見噴漆機器人正向牆面噴灑米色油漆，遠處一名人員並未拿噴具，而是低頭滑動平板電腦監看數據。",
-      "published": "2026-06-28T01:46:14+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "資安署示警來路不明廉價eSIM風險 建議5大防護措施",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606280020.aspx",
-      "summary": "（中央社記者趙敏雅台北28日電）eSIM具即買即用、不需更換實體卡等便利性，成為許多人出國上網首選，但也引發資安疑慮。數發部資安署表示，來路不明的低價eSIM方案，上網流量可能經過特殊地區，如中國電信商的路由，恐衍生個資外洩風險，並提醒民眾購買前確認網路來源；使用時留意手機資料是否遭竊取或異常運作等5大方式自保。",
-      "published": "2026-06-28T01:23:03+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "台化國喬把石化副產品變黃金 搶攻電子級氫氣市場",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606280018.aspx",
-      "summary": "（中央社記者曾仁凱台北28日電）石化廠台化、國喬全力拚轉型，把石化製程的副產品變黃金，最近紛紛宣布投入電子級氫氣新廠建置計畫，預計2027至2028年完工投產，瞄準半導體等應用。",
-      "published": "2026-06-28T01:03:58+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "費半重挫逾五趴！晶片股疲軟拖累台股暴跌千點-財經焦點情報站",
-      "source": "CMoney投資網誌",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNR3ZEMFdEUG92MEhjZFR3OGRBakpDVW1GWFpERzRnZl9Ya3RlTUdQNk5kc1UzWFExQnpZS3Q3cHNwWmRyX2JwdGppR0tXdnJ4cVlna3AwMWJYVXFFNzdqMXg3VW12clNqbjZ4VXFVU2xBYV9fbU13aWNMV3JNMzZmdXdB?oc=5",
-      "summary": "費半重挫逾五趴！晶片股疲軟拖累台股暴跌千點-財經焦點情報站 CMoney投資網誌",
-      "published": "2026-06-27T22:00:12+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "科技股重挫引發市場恐慌，華爾街主要指數全線下跌！-CMoney 研究員",
-      "source": "CMoney投資網誌",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPd0FlNXNzY3pZd19ISldrc3hoR1BQQzFjUTQ5SThTM1RJT2k2YnlETU1vTDRpd2xqZ0ZDUUtWTUpQdDE4TENzMHFyUEJhZ0VLMmFNcHJSZzZxRzA5U2gwa2hjY1lKSHMyeXptcV92YXctSzdMclVyX2hWWHVEMWJoOEpCZUdCMWlLSjhhYVl3?oc=5",
-      "summary": "科技股重挫引發市場恐慌，華爾街主要指數全線下跌！-CMoney 研究員 CMoney投資網誌",
-      "published": "2026-06-27T18:17:08+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "今彩539第115156期 頭獎1注中獎",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606270206.aspx",
-      "summary": "（中央社台北27日電）今彩539第115156期開獎，中獎號碼32、04、31、14、21；派彩結果，頭獎1注中獎，獎金新台幣800萬元。",
-      "published": "2026-06-27T14:08:40+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "AI股承壓！費半重挫，台股大跌失守四萬五-財經焦點情報站",
-      "source": "CMoney投資網誌",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQnVPazZiLVBLeE1tNERoOFdacUpRVGpYZWc5MXlWVHpHXzZ6ZG1zcV9kdTFQYmdmSFVYMnhHX0RZeUg4eGV1TGFuNDJ5NVQ4S0tKSGZNT1RYQUdMeHZQZExJemNTdXY3R1Z0dUNyY1lMWWVFU19uamhCWjVLdnAzdnBR?oc=5",
-      "summary": "AI股承壓！費半重挫，台股大跌失守四萬五-財經焦點情報站 CMoney投資網誌",
-      "published": "2026-06-27T13:00:11+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "小型飛機撞上北京最高樓「中國尊」 官方時隔近一天後證實",
-      "source": "BBC 中文",
-      "url": "https://www.bbc.com/zhongwen/articles/c8625lpy12yo/trad?at_medium=RSS&at_campaign=rss",
-      "summary": "一架小型飛機撞上了中國首都北京的最高建築——「中國尊」，官方在事發後將近一天證實一人死亡，未知事發原因。",
-      "published": "2026-06-27T12:48:17+00:00",
-      "origin": "BBC 中文"
-    },
-    {
-      "title": "今彩539第115156期開獎",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/ahel/202606270194.aspx",
-      "summary": "（中央社台北27日電）今彩539第115156期開獎，中獎號碼32、04、31、14、21。3星彩中獎號碼374，4星彩中獎號碼5097。",
-      "published": "2026-06-27T12:42:09+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "美費半重挫拖累台股大跌，半導體現兩樣情-財經焦點情報站",
-      "source": "CMoney投資網誌",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQRUFEN215bkZGQXZIT2psRm41QUZaLWp4X01VZVN3YmRKZ3ppcTRyVDc3VXp3b2c3TGdoNlBLU3UyYUFQN21MZWs2QmRwUEMzS0tUMXVzQ28xRFN5Y3FpYkNXQTJaN0pYN0IwMVdwVUpReGRXSjhJQUF2aERXOEVVUVRn?oc=5",
-      "summary": "美費半重挫拖累台股大跌，半導體現兩樣情-財經焦點情報站 CMoney投資網誌",
-      "published": "2026-06-27T11:00:12+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
-    },
-    {
-      "title": "先進封裝成AI競爭關鍵 紐時：美國依賴台積電更甚以往",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/aopl/202606270165.aspx",
-      "summary": "（中央社紐約26日綜合外電報導）先進晶片封裝技術大幅提升人工智慧（AI）運算效能，也讓美國對台灣依賴程度更甚以往。「紐約時報」報導，這是全球AI主導權之爭關鍵瓶頸，先進晶片封裝幾乎全部由台積電包辦。",
-      "published": "2026-06-27T09:40:03+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "台灣半導體攬才吸睛 馬來西亞掀赴台就業熱潮",
-      "source": "中央社 財經",
-      "url": "https://www.cna.com.tw/news/afe/202606270147.aspx",
-      "summary": "（中央社記者黃自強吉隆坡27日專電）AI浪潮席捲全球，科技人才需求升溫。2026年馬來西亞國家職涯博覽會登場，台灣也組團攬才，其中，半導體相關業者提供涵蓋晶片設計、封裝測試等領域職缺最受青睞。不少大馬青年更將赴台發展列優先選項。",
-      "published": "2026-06-27T09:15:23+00:00",
-      "origin": "中央社 財經"
-    },
-    {
-      "title": "台股重挫1683點失守月線！外資淨空單驟降4660口 夜盤反彈了",
-      "source": "Yahoo股市",
-      "url": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxOMUVUMDgyQ2FjTVhsN2RIVXhKVUhnU3Fmb080UnRuNTJjam0ydmdOT3hqcUcya3lZRkRLdERJeXhqNlB6MTU0bElCaGhDNVR6RUNUUS1seHNCVmNIYmMzbmJpUjJDZy16MFkxeUZwRUR1a05nTXF5cjZ1TVlKNkNKUXZTQUh6c21oczlBczJhVlNjVEhOYlI5NHU3bGJ3Yk1FU3gxT1J3ZWFWQTB6VUJycDUtR1FwQ0pjNnpfRWRtbWJzX2lyUkY2anFabktJNVVCTzRXa1hWVERtd2c0ZXN5cGlpc2hMOTFuSXNLSEVyMVBrLVo2UEZPVDB1WU1HY3U4OHpSMThXLUxHcEdxaTJKMWhKMlNkQWZlSmNHTFFTMTlYMTRNWG1EZE9qd0IyT2lNbGt3djNneTl5R3pwTTZSRlJzX1pfdklPaGVVa0VMNDAyS0piV2RxUm9BZEp1ZFFVaUF4bTUzYmNULUhZZXlZUw?oc=5",
-      "summary": "台股重挫1683點失守月線！外資淨空單驟降4660口 夜盤反彈了 Yahoo股市",
-      "published": "2026-06-27T07:14:34+00:00",
-      "origin": "關鍵字「台指期 夜盤 台股期貨」"
-    },
-    {
-      "title": "Gold slips as fresh US-Iran strikes boost oil, Fed rate-hike bets weigh",
+      "title": "Italy and Balkans endure heatwave, US also faces soaring temperatures",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSTVKRTRyZTc4cndMX2E0Mzd3UlROU1FJMWFsaWpkbDVuSUFiVldPeE1GRVFLbDVYeTZ5RTFXd08wUkYwU205amR5a1BIOTFTNGE1T01qMjNGSkJ2OXpjQVhWQ1JXSTdOeDBGb3I5czNDQ1VYck9ENEZJNVZMQk5Rc19tTWgzM3hGaC1uSlltSktpNWtyM3AtTTk3RkZJaFNpNjVFRXJUSWhuWEJGcnNUb1ZGVWstUQ?oc=5",
-      "summary": "Gold slips as fresh US-Iran strikes boost oil, Fed rate-hike bets weigh Reuters",
-      "published": "2026-06-29T02:56:00+00:00",
-      "origin": "關鍵字「Iran US military attack oil price surge」"
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdUdWNDdZSlk3My1oa1J2cXVWVUhTSktxbWFKdEppN05sV3VUSGRFSHZZYURua1FQeFNpZzVUb0RtRXd4OWdqdEZBcS1aQ2RHRmVSS1VSaW1vLXB6akZta2twUU85NFVvOG9PNHhYMDRnNjN3emIxdHJ4TGJLLXIwbDVuSFBsekJyVDJzV3RfMFMxcmoyd0FDUFd0RHVCZE9rVy1vR0l3dW9wck5CWGRDdC15bkhvSEo2WS1J?oc=5",
+      "summary": "Italy and Balkans endure heatwave, US also faces soaring temperatures ReutersDangerous temperatures forecast for central and eastern Europe The GuardianFrance reports 1,000 deaths from record heat The WeekHeat Wave Takes Toll on Europe’s Infrastructure, Too The New York TimesEurope’s record heat has overwhelmed Paris mortuaries and left families in distress The Press Democrat",
+      "published": "2026-06-29T14:11:46+00:00",
+      "origin": "Google 世界頭條"
     },
     {
-      "title": "Australian man charged with murder after dead girl found in suitcase in Thailand",
+      "title": "US stocks rise and recover some of their losses from a rare losing week",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNYTBrZkhPRzlzdzlwU0pDMk40NDNtYy1zZDdvVkFFSVk5UHFjSXdVRzdPcW14Ykx2NWVtelNDYzNySHJvU2tLOV84T1JUM2NONGlibWYtTlA4eFlXOGpDcjRIV0s4SzhCMDhGU3daZU94cEpmOEhidFozWVVnUjdsMlVrNHNjQXVUTHF3b05sVGFaRjd1MEtCSXcwRGE?oc=5",
+      "summary": "US stocks rise and recover some of their losses from a rare losing week AP NewsStock Market Today: Nasdaq Rises, Comcast Stock Jumps on Split Plans — Live Updates WSJStocks Climb as Buyers Snap Up Bargains; Oil Rises: Markets Wrap Bloomberg.comStock Market Today: Dow, S&P 500, Nasdaq Open Up; Micron, SpaceX, Nvidia, More Movers Barron's5 Things to Know Before the Stock Market Opens Investopedia",
+      "published": "2026-06-29T14:11:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Supreme Court lets landmark journalist protection stand",
+      "source": "USA Today",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPY1JzZHlwQ0tjNm9lUmdoRUZTOUF2dTJKWEhSZy1vUmRzYm54NjZNQ05GUVJOc0hzeHBzZzF2aFo5cW1lcDZVTkpadlV3ZTBMZDFYU0lGTnlHT2JKYTQ0cHVSV0twQkNtZEhPZ1g2VVA2Zlp3U2RCNWpha1FVd2ZnZ0p2X0h5Y19GV0gxX3JlbzlyYmRBbUlveWl5cmhwU1JCbkI4a0JRWDJzdWY1MnZTMw?oc=5",
+      "summary": "Supreme Court lets landmark journalist protection stand USA TodaySupreme Court won’t revive Alan Dershowitz’s $300 million suit against CNN AP NewsThomas, Gorsuch say Supreme Court should revisit landmark libel ruling The HillDershowitz Rejected by Supreme Court on CNN Defamation Suit Bloomberg.comSupreme Court turns away Alan Dershowitz's defamation case against CNN CBS News",
+      "published": "2026-06-29T14:11:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "JPY/USD Yen Hits Four-Decade Low in Historic Slide That’s Rattled Japan",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcWE4U0NoM1RuX21yeDd5RDFFaXFMamdMN3d3OTVGSWxGbjRYd211cXBieExLYktnYnVSZ2RMUHM5aW5vWEFKXzFicmwtU0Y2ZHdmc1RrX2hOZG1mSGJ2RVVHU3lyYzBQQ1dyQkdMQnVaNi1oVHJRbGZzanJQRFhod0pqRzNuVkc0d1hOZno3Ulk5cXJXZHhScmJjRjNZSXNLREFzRVcyTnRwT0xTbXg5dkh6Z2lLemxvcGxBdnBHWQ?oc=5",
+      "summary": "JPY/USD Yen Hits Four-Decade Low in Historic Slide That’s Rattled Japan Bloomberg.comYen’s decline makes perfect sense to some analysts The Japan TimesMarkets on Watch for Intervention as Yen Weakens to Near Two-Year Low Against Dollar WSJ[Tokyo Foreign Exchange] The dollar traded in the upper half of the 161 yen range, consolidating within a high-level trading band (as of 3:00 p.m. on the 29th). MoomooUSD/JPY Weekly Outlook: Payrolls hold the key as 161.95 beckons FOREX.com",
+      "published": "2026-06-29T14:09:50+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "SpaceX, Rocket Lab, Comcast, Alphabet, Palantir, and More Stocks That Explain Today’s Market",
+      "source": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9RMkQtSWN5T3NvM1hIdmNUTkNxQ3hld0tTcXQ2bjBWcUpsTW5vQTdpdWpaRmtyMkR0RjlCcEpma25ISlJ4Nnd6MF9PUmw2cUg0S0JHaW1NQ0VFUTNkbGFBMGh6MEU?oc=5",
+      "summary": "SpaceX, Rocket Lab, Comcast, Alphabet, Palantir, and More Stocks That Explain Today’s Market Barron'sTech stocks today: Tech stocks halt slide, Google rises after joining the Dow Yahoo FinanceStocks to Watch: Comcast, Rocket Lab, Palantir Technologies, Verizon WSJComcast, Alphabet, Palantir, SpaceX, Microsoft, and More Stocks That Explain Today's Market -- Barrons.com 富途牛牛",
+      "published": "2026-06-29T14:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Verizon and BT form joint venture | About Verizon",
+      "source": "Verizon",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNeFlQbmpKalM1MzdnakhiMkk1M1pkNGNoZlBEYVY4R3dvQ0RySm95elViVEhrR3F2aDRGYzdOYjA2Mnd5MFRSRGNBMjBzSXgxYW5JeEptSWhYZkVnTW5iRGFoZ0NsSmlZbE5wcE9MODA0LTJnRWZzVVloRG5aNGZKT1VwRXFaZw?oc=5",
+      "summary": "Verizon and BT form joint venture | About Verizon VerizonBT and Verizon to create joint global business in $4bn deal The GuardianVerizon reclassifies assets, expects estimated Q2 loss (VZ:NYSE) Seeking AlphaVerizon Flags Up To $800M BT Group JV Hit – Discloses More ‘Ongoing Transformation’ Charges Yahoo FinanceVerizon, BT Merge International Units in Pivot to Home Markets Bloomberg.com",
+      "published": "2026-06-29T13:55:33+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Rocket Lab Buys Satellite Operator Iridium in Bid to Challenge SpaceX",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUGdJUHhQY3lneGhQbWs2RFZ4RUlDa0ZrSU1SUWVKUDdVeGR4ODJyOGJQakI3dmRlZXd0aXBNNHZlV3pQSzFDSXZNbWRDbEJHdWFVUFYyTFNLSjdLRnlHQlV4aVFmSE1zbUFVMDFZZmhJb3JVckMwdFZtTmdHd2dTUHlBQzZSSGpTV2pYc3l0REhIbm1rdW5jbDdDeFpVTXVBd19vU1dhVjBxVDZicU9HcDZ1aF93QQ?oc=5",
+      "summary": "Rocket Lab Buys Satellite Operator Iridium in Bid to Challenge SpaceX WSJRocket Lab expands space biz with $8 billion deal AxiosIn a bold move, Rocket Lab acquires Iridium Communications Ars TechnicaWhy Rocket Lab Stock Went to the Moon Today Yahoo FinanceRocket Lab’s Purchase of Iridium Creates a Mini SpaceX. What It Means for the Stock. Barron's",
+      "published": "2026-06-29T13:55:28+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "How a Thai teen's night at a Pattaya beach ended in death",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNNmtRMTVEZzhrRWxleXJHcnlBYVN4bk5GNjV3OUtNdGVlQ2pDeER2OHRrZm41eDhLUHBsbWdsRDJTVTlkNVhEb1Bpa2NTMklXeWRGRGJhRVJ6WkRPNDI2R0RfRERGUjQ0dUNUWjZVLURUdnFCQnpEWEotZkY5N3J2NUU3X3g2bDhhZzBlN2g5a0xLRjNRQUF4bXBmYXJNRmYwSllv?oc=5",
+      "summary": "How a Thai teen's night at a Pattaya beach ended in death ReutersAustralian man charged with murder after dead girl found in suitcase in Thailand BBCThai teenager's father 'deeply saddened' as Australian charged with murder Australian Broadcasting CorporationAustralian murder suspect shopped and did laundry while girl’s body lay in suitcase The AgeThai police release timeline of alleged suitcase murder Nine.com.au",
+      "published": "2026-06-29T13:54:12+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Why Is Alphabet Stock (GOOGL) Up? Dow Entry and Google AI Limits on Meta.",
+      "source": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNQ0k1TXJOVVctSXA1ZWx3R1c5WDRydk84a21iSjd5M1hNQXBSajNOWlU5Snp2VWJBelpzcElZRVZoZUVzV0lHQUhsbG1RSjh1TEhnTW1zSWY3RFpYQ0JUWWlLSk5fQnRRZzhSdnBxbUM3VjBDZUFlZlFzQ0xLa1FMWkQteUZwVWVtOGgtdQ?oc=5",
+      "summary": "Why Is Alphabet Stock (GOOGL) Up? Dow Entry and Google AI Limits on Meta. Barron'sThe Dow Jones Industrial Average Changes Forever Today: Google Parent Alphabet Is In, Verizon Is Out, and a Longtime Component Is on Thin Ice Yahoo FinanceAlphabet added to Dow Jones Industrial Average, replacing Verizon CNBCAlphabet stock is finally joining the Dow. What took so long? Business InsiderAlphabet Joins The Dow Jones Industrial Average Real Investment Advice",
+      "published": "2026-06-29T13:50:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "'Magnificent 7' stocks are having a dreadful year",
+      "source": "Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPVGRFdzg3VlZHNGZHWVFqaXRVaFJRT3BCMnRIYktNbXVfSHhpVnpzM0pzenR1TURQaVExTXhiRmp3ZzlvdS1ta0psRUMxVGxtTnJfcWczZEZCcXEtcnQ1NTg1UHlTOGlRYnoxU3JkVFNObDRZdlFZeEZWQjVrWFNWdHFuZ1d1RUllZGZmajdSRlNGZGg5T3VpVkZxc01pdEE5aWV3ZEtPNA?oc=5",
+      "summary": "'Magnificent 7' stocks are having a dreadful year Yahoo FinanceWhich Dirt Cheap \"Magnificent Seven\" Stock is a Once-in-a-Decade Buying Opportunity Right Now? (Hint: It's the One You'd Least Expect.) The Motley FoolMag 7 loses free-cash-flow edge as market rotates to quality – Apollo Seeking AlphaUS MARKET CALL: AI Fatigue Weighs On The 'Lag-7' Yardeni QuickTakesA ‘Magnificent Seven’ slump sent momentum stocks to their fourth-worst performance in 22 years. Here’s what happened 70% of the time. MarketWatch",
+      "published": "2026-06-29T13:43:33+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump?",
+      "source": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaUhVZGl6UDlFTjVjYTRCWFlWZDhpTnFnTkJaT1AzOVdjNV8yM2Rrak5WWG90NzR4MkFlY2xRQUNlVDZwc2V6T2RfSTI2Zi1ndFA1bW9VY1ZMbHdOcHR5LUxyajdIRVhqRHVfOTVlbnJRcEZ6cmJ5bWN6X3lYai1lclpFdWNQUQ?oc=5",
+      "summary": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump? Barron'sSpaceX Is Joining Another Big Index: It's Headed to the Nasdaq 100 InvestopediaLove Musk Or Not On July 6, You Will Own SpaceX Stock TrefisSpaceX set to join Nasdaq 100, paving way for wave of passive buying ReutersSpaceX joins Nasdaq-100 index weeks after SPCX IPO qz.com",
+      "published": "2026-06-29T13:43:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Men’s fashion is having a bedazzled moment",
+      "source": "The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObE9teHF1S3dBLWtEazFCdHFJSjZwZjM4QmZXYTJoUktxQzRqSmZaYkpXTER0NmN0S0VtOHgwNEExeC0tQzY0SEFndTc5Y01JXzViQXpGWGdJSHZldVZZSWRfNFBqNUZuNERBSG11bzZaRUEwU2h5N2drZ2dBWDNpanljM0VvbWFpZTl1TU55WkdLZ3FKelpRYzZXWUlBMlhnQ0hHRzcyNV8?oc=5",
+      "summary": "Men’s fashion is having a bedazzled moment The Washington Post",
+      "published": "2026-06-29T13:41:20+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Microsoft’s $570 Billion Rout Sets Up Its Worst Month Since 2000",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTVg5YXFBOVNZajNGLXNlUkc4a1k1ZEg4ZWZxYjF4TjJqZVMza0VOel83OU83WnlFNTYwRDdIVm1EZXFuZVBKUktfcWtGaVJWdWU0Q0stRUk3c0ZZMUxHYnlzNjhpV0NPdHlTTlA2TkhfMGVPRU1ncmt2QjdBelBUanN6U2ljOExLNmZjbF9QVDVBVURkbnF0WDI1ZWZ0Tms1YjF2MGl3MGJiRGJXbngzRmVIbDA?oc=5",
+      "summary": "Microsoft’s $570 Billion Rout Sets Up Its Worst Month Since 2000 Bloomberg.comMicrosoft’s Worst Month Since 2000: Why Is This Happening? Yahoo FinanceMSFT Suffers Historic June Rout as AI Spending Surges: What's Ahead? Zacks Investment ResearchMicrosoft Lost $1.3T: Here Is How Much The Mispricing Is Worth (Upgrade) (NASDAQ:MSFT) Seeking AlphaWhy Is The Market Pricing So Much Chaos Into Microsoft Stock? Forbes",
+      "published": "2026-06-29T13:40:43+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "June Payrolls Face Early 'Major Test': Fed Rate Hike Probability This Year Soars, Global Assets Face Liquidity Shock",
+      "source": "TradingKey",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPa0prUXp4OVMwZXpvbzRYTnhIZGlKYjItMUNlTXRUOUNPTXVCcDhoNEVlWHA4TnhZM0JvdF9IdFFjVWRRczJJVGptZk1kYWN4LUp4cmd1QUk0bWdvdV9hSVczNng5d0NiMkhCSElFd3ljN2hoNFhjUWlxSG51NnZ3UVBqRXlSSTN5UlBLNzlhRjZ0ajZoX0pqWXBDMUFQcnRjUjRVbkxSamhMTW5oNjczTDc5TjZoWlFzWGlWc3lSejJrMk5tNEJ5MWMyWThpMkk3TEJtLW5UYUl0bldHUHJJSGNlZUU0MzBSdFdLZ1Y4MXc?oc=5",
+      "summary": "June Payrolls Face Early 'Major Test': Fed Rate Hike Probability This Year Soars, Global Assets Face Liquidity Shock TradingKey",
+      "published": "2026-06-29T13:37:10+00:00",
+      "origin": "關鍵字「Federal Reserve rate hike inflation shock market」"
+    },
+    {
+      "title": "Comcast Split Is \"Absolutely Not\" A Prelude To M&A Spree, Brian Roberts Insists",
+      "source": "Deadline",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNai1LQzNucjZtV1dUTTR3MjhSbHhzUVpBRnJDM0FRMkliQmg5UlJCQUdaTnRQRWhRWExONC10Ymp0bzBCVGo4NV9pNFIwNW00SXNSYVZqc0RwenFoRW9UMzh5RTlTYjNXSExDd0VjOGl4dE9ha0UzRnVlYTRtdVhqZGJSMmwtTm5xS0lOMVcyQUZvdw?oc=5",
+      "summary": "Comcast Split Is \"Absolutely Not\" A Prelude To M&A Spree, Brian Roberts Insists DeadlineComcast says it will spin off NBCUniversal CNNBig Cable and Big Media Are Heading for a Permanent Divorce. It Starts With Comcast and NBCUniversal inc.comComcast soars 20% after announcing it will spin off NBCUniversal and Sky from cable business CNBCComcast Announces Plans to Separate Media and Technology Businesses into Two Leading Public Companies Comcast Corporation",
+      "published": "2026-06-29T13:30:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "How the chip trade has come to resemble silver — a warning from Morgan Stanley’s Wilson",
+      "source": "MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQdFJOV0pXR3E3TVlKMGFPTVEtRmtuT0o0cDlzSEZGaFZkdy1sVkl5QmxvZndTNjd5bU10UWtpQzlpN1VONmZremI4UzhtdFJ3NEpFUVdXY21LYkxMczRuNFVTN2dZbUxKaERUMjhlcjdzRmh6azIxa1pnWmx5TEZHZ1VNcmdyUlpydlBYeUUxcGZvYmpKbDV2am1DSW9FSVVJTWs1bV9fWHRhSHA1X0RTa2xGcEQ0RTA?oc=5",
+      "summary": "How the chip trade has come to resemble silver — a warning from Morgan Stanley’s Wilson MarketWatchTraders are getting worried the chip stock bull market is cracking. How to protect yourself CNBCMorgan Stanley warns of potential climax in silver, semiconductor markets Crypto BriefingJPMorgan just got more bullish on stocks, but is wary of a flash crash brewing in crowded trades Business InsiderThe Semiconductor Mirage: Reflexivity, Cycles, And The Approaching Peak (NYSEARCA:PSI) Seeking Alpha",
+      "published": "2026-06-29T13:30:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Putin admits fuel shortages after Ukrainian attacks",
+      "source": "NBC News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNYWlFWC1XU1EzM0dwMG9GbEdTSEFSTzREWmlDVU1FcEd3LW5sc043dFdpR0RFanJTQlpiX1dudFVVUzRkQmhyNVJWV2twUTRtY1J2aFliaFhZWGtkVWRkOThxNlVyYVBpcWxxckxsX0VhTTM5TkhqWlJ0X3poOWNERnBFcF80ZUJueDNzc002RlJ1VTl5R0xtUWdQUzVlNFU?oc=5",
+      "summary": "Putin admits fuel shortages after Ukrainian attacks NBC NewsPutin’s fuel shortage admission signals growing strain on Russia’s energy infrastructure CNBCPutin says Ukrainian strikes on infrastructure causing \"problems\" for Russia CBS NewsPutin admits Ukrainian drone strikes are driving Russian fuel shortages The GuardianPutin admits oil deficit amid Ukrainian strikes on refineries Euronews",
+      "published": "2026-06-29T13:10:49+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Nvidia, Micron, and Broadcom hold the stock market's fate in the palm of their hands",
+      "source": "Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPNjRXbTh2RGxqaVNXLXEzbHVhWEthVkFJSGFSaTVaQ1Y4amE2V3ltOEJCa1RDNnVWdVVuSGt3SEFTbFkzbGltSE4zc2J1dklWSG1NZEJOMXVtVFU5N3pfWVlwd2tUN2FuRzdOMEtDdVhpU2dXRWxYZlc1cTM0N2pnTGtBMWV3WlBINmZDVmtXR0JjaUtGUVBfU3prdFVyMmg0b21jcTJnNFVLSHZkOGF2OTlua2lQUkE0MEIxZFc2SEhabDRtaHFyc0J4a215U2RBUG9Cdw?oc=5",
+      "summary": "Nvidia, Micron, and Broadcom hold the stock market's fate in the palm of their hands Yahoo FinanceAI Will Drive a Strong US Earnings Season, Goldman’s Snider Says Bloomberg.comTop 10 contributors to S&P 500 earnings growth (SPY:NYSEARCA) Seeking AlphaU.S. equities face a critical test as Q2 earnings season approaches! Goldman Sachs remains optimistic, forecasting another strong surge in corporate profits. MoomooWhat will Q2 earnings season show? FXStreet",
+      "published": "2026-06-29T13:07:53+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Stock futures jump as tech shares gain, U.S.-Iran agree to halt hostilities: Live updates",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5TU0NGQ09YelllZHBxYzEtRTQwU1o5LXM1WEZ2VFNtd01hZXF6N3lMdDd3WVJmT1BBM0tNN2FjdG5vbU9VY2ZrUkRNemlFeDVsVlB3dEx3Nl9sM3BYbzQxaDRiNDBTenYzY0J0QUd5VW1mOEx1UjdHQdIBfkFVX3lxTE1yRFlHdnhwX2QydWJWbHFhY3ZXUXR0LTRHV1NJNmFLdG1laUU0Y3lCbi1rM3VQU2k2SllNV1FuLVkzUGVqa3UwcVpzampLWHZ4ZlM3d0FZUVhpMkY0OExQTkJaSGdNOHZXemdJOW0wTFpzQjN5NEFHTlh1ZmlYQQ?oc=5",
+      "summary": "Stock futures jump as tech shares gain, U.S.-Iran agree to halt hostilities: Live updates CNBCWall St indexes climb as US, Iran halt attacks; Comcast surges on spin-off plan ReutersUS futures rally as halt to Middle East attacks keeps oil muted MSNStock Market Today: Dow set to finish above 52,000 for first time; S&P 500 and Nasdaq climb as 'Magnificent Seven' recover MarketWatchUS Futures Up as Dip Buyers Lift Tech, US-Iran Hostilities Fade Bloomberg.com",
+      "published": "2026-06-29T13:02:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Henry Zeffman: Andy Burnham offers a blueprint for his premiership",
       "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB6MXAzaHR1UERkZ1ZvT1B2cDBSLThOdWV2NjlkMmhVVWFNTE9lUkRQSXpBWm9TSFRlTGNTbDdwRFZ4TmxyNFAxZFhBZFBZTzl4LW5uLVFYUGhBZw?oc=5",
-      "summary": "Australian man charged with murder after dead girl found in suitcase in Thailand BBCAustralian man arrested after Thai teen girl found dead in suitcase CNNAustralian man arrested in Thailand after 17-year-old’s body found in suitcase The GuardianThai teenager's father 'deeply saddened' as Australian charged with murder Australian Broadcasting CorporationThai police release timeline of alleged suitcase murder Nine.com.au",
-      "published": "2026-06-29T01:58:29+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9zd2VvMWNtcV9teFc3TjFxczNpYzFUcW1yamNJVVVDVERxbWh0Q2VKZGJhSVNERE4xTnNac25PWDZTcjZxMkR1Y19HdkNNVDBQYVZtWEFneV9XUQ?oc=5",
+      "summary": "Henry Zeffman: Andy Burnham offers a blueprint for his premiership BBCAndy Burnham confirms he will set up ‘No 10 North’ in Manchester in major policy speech – UK politics live The GuardianAndy Burnham sets out plans to devolve power to regions with new 'No 10 North' in Manchester BBCBurnham Pledges Sweeping Devolution in Bid for UK Leadership Bloomberg.comWho is Andy Burnham, the man likely to replace British Prime Minister Keir Starmer after his resignation? CBS News",
+      "published": "2026-06-29T12:53:17+00:00",
       "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Is it still worth collecting Hilton points on stays?",
-      "source": "Frequent Miler",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdDZGaUF4eWp6SmRTclVnc0hhTFY2NU82UWE4ZjVJNTVrWmlmc2ItUktkYW1XZHdYeFlJY3RCVXR4WnJMTW1XMl9pUjZpd0RfQmhJYTNUY2dnZ3dkSWVsbUs1a00zZVkyWkZwVGsxalpUYURfemJ2aGU3RnIxUERQeUxSRWg?oc=5",
-      "summary": "Is it still worth collecting Hilton points on stays? Frequent Miler",
-      "published": "2026-06-29T01:45:15+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Meet 3 members of Albania's 'Flamingo Revolution' trying to torpedo a Kushner-linked development",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQUFxdl9FQnhKbW9wUUdDYmNtU3lLcVJ5U2Z1TVJPM003YU9CU05PbG01eHNnWmFQWUYxUno0QnJ6RDlPQXFveFpQa202VTZjY2FZT0F4aHJFZXVJMDBlb1N4Z0JDMDBLbVNMRUs4cnpHNEJCeWZSR0xEREhwUDRxSHRJcW1iRVBHSzZ4UXVaWmNPbWI5VndOSmZsWkpLaDJnR2hnNDZoR0ZEZlZqdzhxSDlTYlM?oc=5",
-      "summary": "Meet 3 members of Albania's 'Flamingo Revolution' trying to torpedo a Kushner-linked development AP NewsAlbania's \"Flamingo revolution\": Trump-linked luxury resort plan triggers mass protests France 24Luxury Kushner Project Collides With Albanian Discontent The New York TimesHow Jared Kushner and Ivanka Trump Sparked a Movement to Overthrow the Government of Albania Mother JonesKushner-Linked Protests Reveal Depth of Anger at Albanian Leaders Bloomberg.com",
-      "published": "2026-06-29T01:39:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Camp CGI Chai Closes on 36 Acre Campgrounds",
-      "source": "COLlive",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9WVWM2T3QyZUdFUHVPN3dPT2t1aVJSOEVXSHJzRURRMnVlOVl6S3g1bkNKUUFnQThFUUF5emFXMnpIX01VbkM2OVQ1cnJmRXREUlZZR2FveWphNi1KbXE1eFpMNllCRDZhYU5ZMHpxQVVodw?oc=5",
-      "summary": "Camp CGI Chai Closes on 36 Acre Campgrounds COLlive",
-      "published": "2026-06-29T01:36:37+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "France records around 1,000 additional deaths as extreme heat breaks European records",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNWp3QVd0ZG5MR05VMklHaHZYRVFsSmtibXdaV2pORDBIVXhfSFNwaGt4QUl4blQzeUNzMjV0S2NxbUtVbHh1a290NTB5ZGxXNnBiNjhab0g0dzRjTjVUM3N6Z091cTJZWHdwcEFxMDZZc0doSlZsVHQxS3d4T2VTZ1dzVmJYb19aYnpnUXpVajhLeWE4NW4xYW9kaTJDTGZqRVNEeTBxM0N6Znh1alhqeVVYdw?oc=5",
-      "summary": "France records around 1,000 additional deaths as extreme heat breaks European records AP NewsSee more headlines & perspectives on Google News",
-      "published": "2026-06-29T01:30:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Stock Futures and Oil Prices Rise After U.S. Attacks on Iran",
-      "source": "Discovery Alert",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSy1YVFdQcjNjeTlDRWpoOUVQUUFRcDhZeWwxY0pjRy0yR3JxcTkwd3RBU2hxQnlHMEl5bm5fX3lfbDViT09MeTNod0ZOMHFsR2tjUmg4dFZZTnd6M25sdG1BZV9YLWcwdE8xbnRlVEhYYVJZY0JiRmhOZUFESUFGcURSM20wV2UxcWJ0eVNR?oc=5",
-      "summary": "Stock Futures and Oil Prices Rise After U.S. Attacks on Iran Discovery Alert",
-      "published": "2026-06-29T01:10:43+00:00",
-      "origin": "關鍵字「Iran US military attack oil price surge」"
     },
     {
       "title": "Pakistan says its security forces killed 29 fighters along Afghan border",
       "source": "Al Jazeera",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR19Jc1poM0dWbnJLdjlyTmtYRk9HMUhaeDhILVdqQmNmWjF4RC1jMzNmZW51Sl85QVVmeTZlQl9qMnZUWVJzQlZHUkNqTWVXNFhLR2dMdU1jb0psN3g5dHppRHZCbjM2aE9ROWZQRGJBbkpHNDB4bGhKcWtsbG1ZVC1zc1dmVW1DZFVxMjNacDhlT29DdmRnemVEVnExMFFfUGtXeGxoOVZWOUthLS1aOE1hY9IBuAFBVV95cUxNUEhRTFg1SVJfeXk5bUxBTkhyUGxldTFoWk1TZU9QX21xWTBITHcxUENhaDQwZVpLM29KWE9LaC1VanBUdXhJanh6YnhJY2JfQ2NRdk5lTlBUVkVGRGR0dWFSR0ZFUXdjNWtmM09hdlpvaG9MODlpTWFyYVFvWlNlTWNyZ0kzN01WazMwTEdqTk80QS01MlVzaGk5N2Frdi1MNlI3V05oUUVseHVWSXkzTVozZlAtMXAt?oc=5",
-      "summary": "Pakistan says its security forces killed 29 fighters along Afghan border Al JazeeraPakistan carries out deadly airstrikes along Afghanistan border The GuardianPakistan forces kill 29 militants in border operation, AP reports ReutersPakistan Says Strikes Along Afghan Border Kill 29 Militants Bloomberg.comPakistan says its security forces killed 29 militants in ground operation, strikes along Afghan border CBS News",
-      "published": "2026-06-29T01:07:30+00:00",
+      "summary": "Pakistan says its security forces killed 29 fighters along Afghan border Al JazeeraPakistani Strikes Kill Scores in Afghanistan The New York TimesPakistani airstrikes kill 36 civilians in Afghanistan and wound 160, officials say Dallas NewsPakistani strikes kill dozens in Afghanistan BBCPakistan forces kill 29 militants in border operation, Kabul says dozens of civilians dead Reuters",
+      "published": "2026-06-29T12:51:17+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "Oil Rises as Renewed U.S.-Iran Strikes Reignite Middle East Supply Fears",
-      "source": "Discovery Alert",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPak0wZ3liQ296U0k0Qkd4ZFdBOWh3QkQ1ZnVvWUFPZXNua1lRQm1DeVgyVjl6MW9KMGtjZVdIRDhaS05pQ0FHVUFBZXBXaTAySXRVaEQxTm1kajhXWEQ5XzA3b25wVmJzOFJFVkFYUWk4LWVYaERnRVl6anptUU9IYWhQOUJBUWs?oc=5",
-      "summary": "Oil Rises as Renewed U.S.-Iran Strikes Reignite Middle East Supply Fears Discovery Alert",
-      "published": "2026-06-29T00:38:26+00:00",
-      "origin": "關鍵字「geopolitical risk war military strike market impact」"
-    },
-    {
-      "title": "Escalating US-Iran strikes threaten interim peace agreement",
-      "source": "The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUjMzVkxxSXh2OVNqNEhNQ0V3Njh5cGdkYnE4VUdwaE5xRU1hRzdvXzRmQXpNQ1NmdE9BbDAwXzBWa05KbnlDU2xLRVRiY2NpdWN1T1RFSk16cHBjSlR6Q3lER1FNblpLd1ZJRlU1QmdTejNpTU12NGxYenRWRlB3aVREX21RRVdwaXkxdVBvM2doTEdZdXpJRE9kZVNMS01WZ2xfU2U1cVk?oc=5",
-      "summary": "Escalating US-Iran strikes threaten interim peace agreement The GuardianU.S., Iran Carry Out New Strikes, Testing Fragile Ceasefire WSJLive updates: US and Iran to ‘stand down for now,’ US official says after exchange of fire CNNU.S. crude oil falls below $70, resuming losses after attack on cargo ship near Oman CNBCLive Updates: Iran Strikes U.S. Sites in Bahrain and Kuwait as Attacks Show Few Signs of De-escalation The New York Times",
-      "published": "2026-06-29T00:35:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Stock futures edge higher, Asia mixed as renewed U.S.-Iran attacks push oil prices up: Live updates",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5TU0NGQ09YelllZHBxYzEtRTQwU1o5LXM1WEZ2VFNtd01hZXF6N3lMdDd3WVJmT1BBM0tNN2FjdG5vbU9VY2ZrUkRNemlFeDVsVlB3dEx3Nl9sM3BYbzQxaDRiNDBTenYzY0J0QUd5VW1mOEx1UjdHQdIBfkFVX3lxTE1yRFlHdnhwX2QydWJWbHFhY3ZXUXR0LTRHV1NJNmFLdG1laUU0Y3lCbi1rM3VQU2k2SllNV1FuLVkzUGVqa3UwcVpzampLWHZ4ZlM3d0FZUVhpMkY0OExQTkJaSGdNOHZXemdJOW0wTFpzQjN5NEFHTlh1ZmlYQQ?oc=5",
-      "summary": "Stock futures edge higher, Asia mixed as renewed U.S.-Iran attacks push oil prices up: Live updates CNBCStock market today: S&P 500, Nasdaq, Dow futures climb as a halt to US-Iranian attacks is called Yahoo FinanceStocks adrift, oil up as US-Iran halt renewed attacks ReutersUS Futures Climb on Reports Peace Talks to Resume: Markets Wrap Bloomberg.comDow Jones Futures Rise On U.S.-Iran News; Market At Tipping Point; Tesla, Jobs Report Loom. Investor's Business Daily",
-      "published": "2026-06-29T00:23:00+00:00",
+      "title": "Amazon employee fatally shot in altercation at Matteson fulfillment center",
+      "source": "WGN-TV",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPOHdKRlZUUWEtcDdaMkUzTGFiUXI0M1lkSUgtM21hajcxZk5kaUktS19rNmRWQXhaUnYzRV9NRU1KOUFfQm5hVWxFQ3NxRDdaQ1hpNXczNUVLRndhbUN5WUhmdTlhVWNva2lqYTlYTkZ0bnBLMDAyOHVOaTFGUzRFRTExVVBCZUJOY2k3RXlVM2ZoODRuLWN0SmlPYzhjUFg20gGmAUFVX3lxTE5qcXVKSUdGdUU1VHhoX0gxLS03bGQ3cy1UV3QtcmtVR1huczJJczd3aDBLZDZtNXZyYmhRb1JiTE1QMWhjV0RQOXpESnU4LWk3MUhZUlJTOEJ1UXRjcFcyczFqSFBzYjA0aWFONE93clZ3S1FLZkNzenk1S3gxaVMzR216UjBuVS0zNFNFanM0aF8yckFkalVJamloQzFiZm1USmdaQUE?oc=5",
+      "summary": "Amazon employee fatally shot in altercation at Matteson fulfillment center WGN-TVAmazon employee shot, killed by food delivery driver outside facility on Vollmer Road in Matteson, police say ABC7 ChicagoEmployee shot, killed in parking lot of suburban Chicago Amazon facility; lockdown in effect NBC 5 ChicagoAmazon employee shot, killed outside Matteson fulfillment center, police say FOX 32 ChicagoFood delivery driver sought after Amazon worker gunned down in Matteson facility parking lot Chicago Sun-Times",
+      "published": "2026-06-29T12:35:36+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Oil jumps back above $70 as fresh U.S.-Iran clashes reignite Middle East supply fears",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTWJRcFBwNnR2cWRJVkJQb3VRQmJiNkI3cHR6X3pGWGU3NWp0YllOaDZUdWdvZ0Z5TldETFgta2U2WUR4Nnh0VEZxQXB0TmJpRWhlM1Y2M1hBSk5PSnFwWlktUGEtNEo4djBOdUlJVklqM1VaWEoxaXRPMnRZbllLNGJaTkh4WUtERUV6MUEzUHJET3lraXNVQjRhbEtFU2150gGmAUFVX3lxTFBZcmZVZ2kzRjRkT1IzYzRMWnBBX25SSklTTk43WXV2VnRQN1k0clNnOHp3YUhIN214clJOU1BONTlOVG1TRXlEMXR3UkpiVURPb24zVjJjblpJUkw4WTVpZ3U4ZnJ6MXNYbEpNcVJPNmVVVGw3MlBJU1pybWlqN3BjbTNzVFRUV3JxQXZxaVpEXzJiQ0NxeVlTTWJ0UVZVc1hTNkdNTUE?oc=5",
-      "summary": "Oil jumps back above $70 as fresh U.S.-Iran clashes reignite Middle East supply fears CNBC",
-      "published": "2026-06-29T00:00:00+00:00",
-      "origin": "關鍵字「Iran US military attack oil price surge」"
-    },
-    {
-      "title": "Putin says Russia will press on with front-line campaign regardless of Ukraine proposals",
-      "source": "Yahoo News UK",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5XcmpvUGpOUXFaRWQ4MWJJOWxYcjVFdS05MFlWYWdDblZ6YzJVMDFRclc2c1pSQ0RuSk9vV29aazNtcUpZelFBQlRLLUdtVlg2dzRoZVlsT185ZUtwLWs3LUxnaXBqVmZTaWtpMTZabkM4RTZ4ekdhcDN3?oc=5",
-      "summary": "Putin says Russia will press on with front-line campaign regardless of Ukraine proposals Yahoo News UKSee more headlines & perspectives on Google News",
-      "published": "2026-06-28T23:30:16+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Russians Feel the War’s Hardships as Ukraine Pummels Crimea",
-      "source": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNN2x3dzR2bzFGRHpKX2w1N1pGQWtqNS1sQ1RQV09ibExRbXBwSWpvU09RTmxEelNWY3pIME5PWmdIQUgtd2xQdnFHRGlxaGRRZmRNWWdIVWdfSVZ2cTBLd0liVFdvdy1RQUZ4eVJmV0NVMVhIQlFSQkp5WWd1Q0JkMEY1a2NNZk9USURDMDlEZEo0czVFRm1uS1JRMnNEaTRoTFE?oc=5",
-      "summary": "Russians Feel the War’s Hardships as Ukraine Pummels Crimea WSJUkrainian Attacks Spur State of Emergency Declaration in Crimea The New York TimesUkrainian attacks prompt Russian-held Crimea to halt civilian gasoline sales AP NewsRussian-installed authorities declare economic emergency in Crimea ReutersUkraine’s Attacks on Crimea Expose Limits of Putin’s Protection Bloomberg.com",
-      "published": "2026-06-28T23:19:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Samsung, SK Reportedly to Invest $1.3 Trillion Over 10 Years",
+      "title": "SpaceX Pushes US Share Sales to Record $251 Billion at Midyear",
       "source": "Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPZmV3U1pMQjJrTEpqR2ZTV2s5bGg1MDBpQ2RUQl9DeHZUckhybFNURzNlNkswdWRLRXJJcmxTcWFQcUk1WHZJcnNIS0JJelNEQ0FRbC1aNllveTVoUmJRMnpYT1RKZXphUUd2M0hyblh4WkpQdVAzamhHZFNWVWd1amdxYzNKUG9CeHQ0MVRUQ1ktUjN3dVNCNU9qbXI4c3hCeWxDUEJ5TWFKMXJ5ckE?oc=5",
-      "summary": "Samsung, SK Reportedly to Invest $1.3 Trillion Over 10 Years Bloomberg.comSee more headlines & perspectives on Google News",
-      "published": "2026-06-28T23:17:04+00:00",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPS0tYLXBqS3BGMmt3ZEdkdWxkdEhXRDdkNjNERHo4TTRRWVpCM0NpekU0dFlwNDZQQk4weE5xU3hScHZONmlmQWtIV1pBOFZqT2J2WEo3TDNHQ1NvUDd1QUxmVU1vM1M2cUxFVVA5a2F3UEo0WXlST1FkalExLXRNWUprVHVZbnZIc0tfbm9qNkhSeHo1Q3prNE1fMkpUNXdlZlVVT2NsRGgwc0lzQmVSaVdR?oc=5",
+      "summary": "SpaceX Pushes US Share Sales to Record $251 Billion at Midyear Bloomberg.comU.S. IPO market hits $251 billion first-half record in 2026 qz.comSurging U.S. IPO market still falls short of bubble territory: Goldman Sachs CoinDeskWith Over $250B Raised This Year, The IPO Market Is Entering A New Era — A Look At What JPMorgan, Morgan Stanley Bankers Expect Yahoo FinanceUS IPO Boom Sets Record: H1 Financing Reaches $251 Billion, AI-Driven New Wave of Listings May Continue odaily.news",
+      "published": "2026-06-29T12:35:07+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Oil prices rise as US, Iran set to halt attacks after flare-up",
-      "source": "The Straits Times",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQWWZCdnBfRXdyS0VhR3NaekxxTXM0cGduYm9pTEFKeVNXc3lvUVBWbWV5bDIwRzk1elNyN1RlbFZ3Y0xEcFhCVjF1TFUyR2FSdDVuOVFVa1B1UUZhSC1BOHJFQlN0d2RXMkFjaVYtYXdFRTVaU0hSUTYzb0Z3eThvTGpaVTlCbUxYQTdhZzhaT29SS1VncmZSemdlcV9EQXZnS2F3OXptVUFSaWlqVmQ5UmU3U0NvVlRsU0JNcUZwVlBGNzlGeVE?oc=5",
-      "summary": "Oil prices rise as US, Iran set to halt attacks after flare-up The Straits Times",
-      "published": "2026-06-28T23:14:46+00:00",
-      "origin": "關鍵字「Iran US military attack oil price surge」"
-    },
-    {
-      "title": "Sovereign investors with $29 trillion pivot to energy assets, flag dollar fears",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPcTU1TGpUQS1nWm1VemNlanY2aXd4Z014UklJSE5ubTl2Z1BMclhzMHlES1dfYktWd212anFRSWVZRV9rSVlGN0JzR1NZSF9iMmc3Mlp3NHYyNnRJNUdCSlFmdEg1R3VmeG41a3hsc0lIbnRHdWdndmkzTkdDQVMwcmRKVHJudFNQT3Vzdmg3b1Z6VjJGUzNZZ3dJaWhZQXZwZXkyYkJKTDNlNGhyc29OcGtNZmw5XzQtYkJiV0tpc3dyTG1BTlE?oc=5",
-      "summary": "Sovereign investors with $29 trillion pivot to energy assets, flag dollar fears ReutersSovereign funds move from public markets to private to ride AI wave Financial TimesInvesco Survey: 61% of Central Banks Say US Debt Hurts Dollar's Reserve Status - News and Statistics IndexBoxSovereign Funds Pivot Further to Private Assets in Risky Markets Bloomberg.comSovereign wealth funds are pouring hundreds of billions into private AI deals, and it's reshaping how capital flows Crypto Briefing",
-      "published": "2026-06-28T23:08:09+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Putin says Russia faces fuel shortages as Ukrainian drones strike refineries",
-      "source": "Financial Times",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNR2ZyQ05qZ1djM0plNGp5UHJYUkNQVnliVXlkNWFtQzdmZFYtRm5YMWJxLWpia21pQ3JhZEhSMl9WYWZ3OUU3dS1nSEpoWjhoOExqTVdpdWp6SXlfLVBxTlkwdTBrMDFOTWJmclFQVmFkWlhzQjRNc3JzelFmZktvSEFjVlo?oc=5",
-      "summary": "Putin says Russia faces fuel shortages as Ukrainian drones strike refineries Financial TimesPutin admits Ukrainian strikes driving Russian fuel shortages The GuardianRussia asks Kazakhstan for gasoline to ease shortages, sources say ReutersRussia’s oil empire running low on gas The Counteroffensive with Tim MakRussia's Putin acknowledges fuel shortages, task force set up to ensure supplies Reuters",
-      "published": "2026-06-28T22:28:40+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "U.S. Space Force Is Learning To Scramble Rocket Launches Like They're Fighter Jets",
-      "source": "Jalopnik",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQalBQZDVibE92UFg2M1JnaW4yYWQtR1hGREdnOEhfaHNrRjRMZVJYTmhTc3ozQ1BGRnk5TVZsQ092MmRRVENrNDdLYklDaWRuSHRtSmh3VDJFSU9JVnpGRWhNWmpFQklHcEktQVJjbVVtSHdHVk91SFZ0d0tQU2xpNWFpbEIyQmdNNmIzRU5B?oc=5",
-      "summary": "U.S. Space Force Is Learning To Scramble Rocket Launches Like They're Fighter Jets JalopnikRocket Lab launches US Space Force mission with less than 17 hours' notice — a new record SpaceUS Space Force demonstrates responsive launch for VICTUS HAZE mission, begins on-orbit operations ssc.spaceforce.milRocket Lab Shatters Responsive Space Record: Launches U.S. Space Force VICTUS HAZE Mission in 16 Hours 42 Minutes Rocket LabRocket Report: China may soon attempt booster landing; Rocket Lab does rapid response Ars Technica",
-      "published": "2026-06-28T22:25:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "UK's likely next leader Burnham to unveil plan to shift power from London",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOd1Z5RmJmREdKbjhHODVtWTk0Ykdmb3B2N0NSMWxkS3oxWjA2cDBTVjhSYkVLbHBWYnlIYVBJa0RqS0VaNFpLQzM3UnA5SThoU2JPblJEM0tMVEFIOG9SaEZBQlRRV00tdUlwUGZKRGhlSmxEZTh4OVNDSm5STnJ6R3FUVGtkVDdyeTdOQXJhb0ZWaENONFA5NEpNeWVsSE1BVjhhR1VOVTByZw?oc=5",
-      "summary": "UK's likely next leader Burnham to unveil plan to shift power from London ReutersBurnham to promise devolution in first major speech since launching No 10 bid BBCElla Baron on Andy Burnham’s big plans for Britain – cartoon The GuardianBurnham Pledges Sweeping Devolution in Bid for UK Premiership Bloomberg.comSun’s out, sums out politico.eu",
-      "published": "2026-06-28T21:56:04+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "China’s Z.ai claims it can match Mythos on cybersecurity",
-      "source": "The Verge",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdWpqalNvdnhQN21nTk1HaGRRaXliTFdPWlVhem85ZHAwX2JLMENOWXRmT0t0a2IxQ0dsakJSTXdwRFJTTVpDUEZQSGR1cFphMFFxT0p5OWRXZnBvMERWWFhWUE9oOEFoUWdWYkltTFhJV2doUE12WnN3QmRYV2o4VUpuRXZEeEpPYVdTNmd4Wm1GQUh2b3dxYmVoTGNQRzA?oc=5",
-      "summary": "China’s Z.ai claims it can match Mythos on cybersecurity The VergeChina Has Matched Anthropic in Cybersecurity, Resetting AI Race WSJChina’s 360 says it has developed tools to match Anthropic’s Mythos ReutersChinese AI Matches Mythos in Cybersecurity, Report Says The InformationBuckle Up: The Bad Guys Now Have A Model As Powerful As Mythos Forbes",
-      "published": "2026-06-28T21:42:51+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Ukraine says it attacked two Russian oil refineries",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOcXNCenptS2hfb3pyWUNObTdqUXVKMHNDTnMxem5XckU0cEJDVXFxNDlMMHkteVhsai1GMXZlc1YwOHljQkxZclVEcDlDNmc4M3VPR2Zod3BQcGM1Y1ZzTDBCNmtwV2RScnQwNU1uSk1MTW4wa1FpRlJWaHNkVnpWMDk4UFk1aURySEkzMEpfaVdBOVZPUlZF0gGcAUFVX3lxTE9PU25TVGNOTkZBZklUVHFBRjZDTGRjYkR2Y05vV2FMYUJ4dFVGUDZHS09nU0RuaGp5SEdVRVdMOHVBZzc4LU9qZzBKRlp5Y09LYWZ3U2MxTnRpMFhvMzhJUWlSWXpGQjNzTDhGMG13eTBYRjVFTVp0d0FUd1V1dmFVZHlFVEI3RjI3dTZpYlhGTmswMVhleU8wMXhhZw?oc=5",
-      "summary": "Ukraine says it attacked two Russian oil refineries Al JazeeraUkraine's drone assault ignites major Russian oil refinery, as Putin acknowledges 'difficult period' PBSUkraine hits two Russian oil refineries overnight ReutersUkraine Targets Russian Refineries in Fresh Drone Strikes Bloomberg.comUkraine Strikes Russian Oil Refinery And Missile Factory On Constitution Day i24NEWS",
-      "published": "2026-06-28T21:10:19+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "MAHA feels betrayed after Supreme Court ruling on Monsanto, glyphosate",
-      "source": "The Hill",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMFlJV0gyLUMwSU5Bb1NGcDVPZXQtMGlLYUdia1JWdUpQcVhoZWQwUWdLczNXVmU5RHZlQmhqLUcxblg0LWJNS0JlSzh2ZFhMUWtZX1Jjc2M4YmV0YWVWTzZQOF84SllLaUpnbWN4NmdXZjI1cngwZ3owdmlGQm9ad1ZiWHBCVjJRMWZMTNIBkgFBVV95cUxPMGhCMEhCTmQzX0dGTzZSX0tfWF9vaGx1WEt5WVM0eUtrTVJjb3o5a0xOZGl6YUhOLXU4LS1jRnVVOXR0MGQ5b0RtbjBCSUZyNkRqRksxS1JzTmQ0bUthM3h0dlEybWttWEYwdEhZMkdEWXZqZXhESXpQVTljS3FPUzU5RWkxQzl2WUJiVDVGMVN3dw?oc=5",
-      "summary": "MAHA feels betrayed after Supreme Court ruling on Monsanto, glyphosate The HillSupreme Court Rejects Lawsuit Alleging Roundup Weedkiller Caused Cancer The New York TimesMarjorie Taylor Greene Says It Is 'Awful' That 'No One Is Standing Up For Cancer Patients' After Bayer Scores Roundup Victory In Supreme Court YahooCourt rules for Roundup maker in dispute over cancer warnings on pesticide labels SCOTUSblogBayer’s Roundup Win Brings Company New Life—and Renews Breakup Speculation WSJ",
-      "published": "2026-06-28T21:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Church offers guidelines and information for prospective full-time missionaries",
-      "source": "Church News",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPcnRnZHRlOVBMTEN3VDRnNVpXWkhqWVdmMnA4MFVNemx5WnhMNjBfSkFNYWtxNUZUN2JZNHo5dmFQZ2Vrd09taDY2bzVVWDNvSHBDSWFLeVFOUTRpUGh1R0hxVFFMNnByU2ZHaEEzSVV4OGZMNVVISVdzTWEyTE5yMlJsd3dwOW5jbUlzR0ZUX2JNSHRDejBia3k5M2xVT205YUxKbE5QQV9zbVA4NmlQbF8zZ2VYOGpyVDJxUC1fdjRzY3NTZ3NTQUN0N3Y?oc=5",
-      "summary": "Church offers guidelines and information for prospective full-time missionaries Church News",
-      "published": "2026-06-28T20:00:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Rachel Cruze warns young men are ‘throwing’ money away on habit ‘taking down a generation’",
-      "source": "Fox Business",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNmFGcXZUREZONXJOdGVsRWpncEQ4VXUyaGs3cmEwbjRSN0Q3RmN6b0hsYnNnWTFxdUE1NnVVcnZoWkZVTlEzOVA5cHpQTzU0clZzUUN6clFkV1NfdEpRQTJaa1M4emF5dEtiUlp0bEdSV3c5N3FTSklFS3kyOGphRjlMNWs2N1dZU2NVdkkzNWxCdndxSTJOblpzN2FvamJ0TmFSaXM1aFpjMlpTOTE0X2h0US1KM3dvVzhyRHpZd9IBxAFBVV95cUxQSFpGdi1XdjBPRnZpejVFLV9XNUJMc2dCTXpUOVRDbE5xZ0ZEbXZ2MVpKSFZOZ1RLVlpKWmVUVUNZMlRneW1Cdi1TR2kyMEFmRThnRjNBN2hxSl9ER3hkOENIUG90ZGNwSEFjeXhuRzFPWHROVktjR1ZjNUhtRDRoSHIwQzlmTDVTdzhoZFVSLUxPeC0wNlp0ZW90SEVWQVVMb3ZWY3lReFVFdVkyMEh2TlBRUkNxNjlhdGx5MWpOUHNGeUJI?oc=5",
-      "summary": "Rachel Cruze warns young men are ‘throwing’ money away on habit ‘taking down a generation’ Fox Business",
-      "published": "2026-06-28T19:45:25+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Controversial Ferrari Luce EV is an instant sellout in China",
-      "source": "Electrek",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNNlM1WEVlN2pqNkRvQzViU2h6XzZZTmZQUUVURTJCb2ZNRGNxTjlqRVVHUnh1SDRtdUQ2bGRpQ2R6VVB3bmRxT3B4b2hrQTl4ZDY1ZF9pMm9Fbi10OElqZ1N2dU53UU1pLW45VjNfLUhndW94OWZvQzhQeFJFLVlGUGhxcTY1cmJLM09wMnJobkJOdmt1aDBn?oc=5",
-      "summary": "Controversial Ferrari Luce EV is an instant sellout in China ElectrekOpinion | It’s Ugly. It Costs $640,000. Everyone Is Mad About It but Me. The New York TimesFerrari's divisive new EV car needs to be 'digested', company exec says ReutersFerrari’s First EV Got Roasted Online, Then Sold Out In China AutoblogFerrari Luce launches in China at 586,600 USD, all 88 cars sell out immediately CarNewsChina.com",
-      "published": "2026-06-28T19:27:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Ford rehires ‘gray beard’ engineers after AI falls short",
-      "source": "TechCrunch",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMi1RZFAyTFU0NDV5NE5IV2xRV1pfV0NiaDN6X0piTlItcVVKa1FXTUdlYVo4SnJQYjVoMDVIX1YzZXMyQlZFRGFmSXM0SkEtNnZuQW5ndmN6dXA0TmNtOWEtQjFGUlF4MS1aZGJZUnY5b1Z1MTVUb0tGczNkNWhIZGN1R3JJbEpFb212MFZ3ejY4UDg?oc=5",
-      "summary": "Ford rehires ‘gray beard’ engineers after AI falls short TechCrunchSee more headlines & perspectives on Google News",
-      "published": "2026-06-28T19:05:39+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Bond Heavyweights Target a Market Sweet Spot for New Warsh Era",
-      "source": "Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMUNxSTRDcFIwTml5ZDN4WURHS29QcHZBUkQxSFFOeE84N3J3b2ZvaDJWcmdqcFZKZlM4WFFYY1ZxRkdBcDltM212Y2ZSc2JPOTQ5ZUlOMzJBcmI4Sl9zZUlEUkdQZmo5Vk9mUmFvOWI3c2lvcU1wRHZRS3JFNlRBMkJJQTA0MUp0TjJOUTVzbDhuYkNQV2tjem9RTDg0QzNvZkpYMUEzSzdua2VZUDZJMnB0cw?oc=5",
-      "summary": "Bond Heavyweights Target a Market Sweet Spot for New Warsh Era Bloomberg.com‘Hawkish Hold’ in Interest Rates, Iran Turmoil Prompt Advisors to Rethink Second Half of 2026 The Daily UpsidePortfolio construction in a shifting rate environment IFA MagazineBond managers target five-year Treasuries amid Kevin Warsh’s Fed era Crypto BriefingBond Investing, Beyond Yield: A deeper dive Fidelity",
-      "published": "2026-06-28T19:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Australia is doubling max fines for social media ban violations",
-      "source": "Mashable",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPSmljMkh5TXp0Vzlfb3Z0eF9nZnlfLWhJcDNLRkdUbkJ6c3FoamZVVlRXTXRZeXdVcFJfSXZfRzlvdGJnak45VHFybEdNdkhWaFRzRDdHSFBaNnVScFdkWTRwU0loZVRONnNmSnpIeE1GSDNQelBqRmRDR3k3NFdQUUlR?oc=5",
-      "summary": "Australia is doubling max fines for social media ban violations MashableAustralia to double maximum penalty for platforms in breach of social media ban BBCAustralia plans to strengthen laws banning children from social media NPRAustralia to double fines on Big Tech as children bypass social media ban Al JazeeraAustralia toughens kids' social media ban, doubles potential penalties for tech firms Reuters",
-      "published": "2026-06-28T18:40:58+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Eleven killed after plane carrying skydivers crashes in eastern France",
+      "title": "Venezuela latest: Man, 21, pulled alive from rubble after being trapped for 106 hours",
       "source": "BBC",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5LRkpWaHJZTVE0QlM3aXBZT19KVUNzdnF5bmhZY2ItZFV6ckNvX25uaml6TmI5MVJPRERCOHZxWnZZbGpFMnpCVEdUVC1Bc3hWcXlPVzFvN0ExZw?oc=5",
-      "summary": "Eleven killed after plane carrying skydivers crashes in eastern France BBCSkydiving plane crashes in France, killing 11 people CNNFrench investigators probe fatal skydiving plane crash that killed pilot and 10 parachutists Fox News5 nurses among 11 killed when skydiving plane crashes in France CBS NewsSkydiving Plane Crashes in France, Killing All 11 People Aboard The New York Times",
-      "published": "2026-06-28T18:34:07+00:00",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9ZRldIcktnV05VWENLQ1lXQVhsSnF3N3JLYWI5WmxWV2pTbVZPUGhORHM3WFkwblRDZjNSXzZidWkwbkh6MWwzV1FmdWZDdkxlaXQxVA?oc=5",
+      "summary": "Venezuela latest: Man, 21, pulled alive from rubble after being trapped for 106 hours BBCSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T12:15:04+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "Fired up parents defend enraged dad for reprimanding stranger who said ‘shut up’ to teen girls",
-      "source": "New York Post",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSWI0ZV9EckhFZVBRMUs1aDdPblMySkhlOUhITy03T3RHNkJKM3pHdHU3bEtMMWxlR1IteW9yc2x6ckdET0ktcE9SZ1dkcjh1cXA1dlZOM1REcjEwdFhkcm9kUFQzbTQyZzRjSzJVbWllUjgzeEhRU2ZYTjM3dHZLNXJDN0txTEFoaUtVWUd6djlrQmlEMTF6ejlkQkhOWnlDQWgyb3VyUjUyYjc0NXZENlhKUVU5NEhV?oc=5",
-      "summary": "Fired up parents defend enraged dad for reprimanding stranger who said ‘shut up’ to teen girls New York PostSee more headlines & perspectives on Google News",
-      "published": "2026-06-28T17:51:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "This $380 foldable kayak fits in my Prius and goes from backseat to lake in 10 minutes",
-      "source": "The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQVnYzSTIyT29DZXJQbnQwUXZ0bzQwZEpGVXVxZWpvcUMwRVJORmpwRXFpNXl0WTZsSlo4Y3plZWdacjBFVmhuU0lnaE1qVkVPbS1IWHo4VFhNWlYyTndSVzVpbXRmQkxvVXNEcGJ0N0pkSkFtNjIwZTBQbWNySldwWDA5VFNDeVV5ODR1RS1femFjQQ?oc=5",
-      "summary": "This $380 foldable kayak fits in my Prius and goes from backseat to lake in 10 minutes The Guardian",
-      "published": "2026-06-28T17:15:15+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Four Black women. Nine degrees. Not one steady paycheck.",
-      "source": "The Washington Post",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMktlVXZQSkMzLWRaT2MxZ0c0XzJVbzlOa2Y5cTlCQU00dFNRdGExQzNXbDYwVVM1SF9pbU1wejBYLVRWR2ppVEZBVlpMQnhFWTl1eFpGdkthaXZudjdYOVZvbVhyaFlpZ203MkdncTZydkl2dy1vRzdvc1hORlFyVDhtUmVTMU5lS2dEYThzYXRHMVFtXzJRYXRiY1RYZTUzckZ5V3BONkVuaGdWbVZWdFpFaldZZUNa?oc=5",
-      "summary": "Four Black women. Nine degrees. Not one steady paycheck. The Washington Post",
-      "published": "2026-06-28T17:00:01+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Michael Saylor signals another bitcoin buy as Strategy sits about $13 billion underwater",
-      "source": "The Block",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPbTRQM3M3RDU1NThNUnpYcWU4LXpTMDQzMEV5TWgwZHBwVU9mT0tNZi1yY2V3SUdvYWJ5T1pSdVY5eE5PWF9Xb1pHcXFCSUxqY2tpWHJhNHJuQVR6czQ5SkJLa3J6allWOGpEakZEODRZV3FSWUZxdmp6LV9OVEVfUUhEX2RIaVVrX01HT082cnQ5QzFLSWtnNFJ4VDhBT2dPNUp0Z045ZUJVRGVucEFTQkdTbGZNY2o1S1FiNUJHOTQ?oc=5",
-      "summary": "Michael Saylor signals another bitcoin buy as Strategy sits about $13 billion underwater The BlockWho Actually Pays When MicroStrategy’s $64 Billion Bitcoin Bet Goes Wrong? Yahoo FinanceMSTR's BTC premium has vanished as enterprise mNAV falls below 1 CoinDeskMichael Saylor Responds To Scrutiny As Strategy Shares And STRC Hit 52-Week Lows Bitcoin MagazineStrategy Just Fell Below $100 for the First Time Since Early 2024. Is MSTR a Buy, Sell, or Hold Right Now? The Motley Fool",
-      "published": "2026-06-28T16:13:13+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "TechCrunch Mobility: All eyes on Tesla FSD",
-      "source": "TechCrunch",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQLVBoUGJfM0FDNGhPdzdLeVlDVExWTXY0d3VKUFNDREJQczQ3LWdiUXNvdlAtRExzNEI2Y0IzbHQ5eHJhdTgyYURvX3RjRkdJbFRkWHhpMjYxaFJ0cV9Wa0JVN0JtMjBpNU5BTGR0cnc2TUhpMzBZb1JIbV9pSk9xQnZ3?oc=5",
-      "summary": "TechCrunch Mobility: All eyes on Tesla FSD TechCrunchA Fatal Tesla Crash in Texas Sets Up a Legal Showdown WIREDTesla Driver Using Autopilot Crashes Into Home in Texas and Kills a Woman, Officials Say The New York TimesFamily Sues Tesla After Grandmother Was Killed When Car on Autopilot Allegedly Crashed into Daughter's Home People.comSen. Blumenthal demands Tesla be held accountable for alleged self-driving crash NBC News",
-      "published": "2026-06-28T16:05:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Dollar hits 13-month high as foreign investors overlook worries about Trump",
-      "source": "The Washington Post",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOb0Q3dmM1c0RBcTdPTzR2M2JOMnNNcFVaTE5ORkU3U29TY2ZSN3VFTi1pX1FfRzNLdVR5R2VUTVlHX2x4b2NPaExYbEV6cmhvYVVXUE1lb1hUZFNORXJsZEFtMHRfQnoyUldqYjJWdUJrOURTTk11NkRHWmNlTExYYlhBbWJLRldDT0pJVl9PcEtqclR0bl9qVFByNjlsbzBNWllHWDJR?oc=5",
-      "summary": "Dollar hits 13-month high as foreign investors overlook worries about Trump The Washington PostDollar poised for best month in nearly a year; eyes on jobs data, Gulf tension ReutersFX Daily: USD rally getting tired? ING ThinkWall Street Embraces the Dollar as Warsh’s Fed Activates Bulls Bloomberg.comUS Dollar Index Breaks Out: What is Driving Greenback Strength in 2026? Barron's",
-      "published": "2026-06-28T16:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "China Resets the AI Race",
-      "source": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBnVHZyOFhVQ1laUm5HX2VmRHhpQjNnWmVBMlRzN2p0d1NEbFI0SHQyYWJ1UkxpaDlzV0hnVEwtVHpxeFBNSF9oTDFZcm1tTGlFdm1obXcxTVFiMkdtRW52YTdVX2x1QlQ3QUc5RVBn?oc=5",
-      "summary": "China Resets the AI Race WSJChinese A.I. Models Close the Gap With Anthropic and OpenAI The New York TimesChina's Zhipu is closing in on top U.S. AI models with Anthropic and OpenAI held back CNBCDrum Tower newsletter: Who is behind China’s latest AI breakthrough? The EconomistWhat is GLM-5.2? Another open-source Chinese AI model has Silicon Valley's attention. Business Insider",
-      "published": "2026-06-28T15:48:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Trade tensions shake up Brazil’s caipirinha spirit",
-      "source": "NPR",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOeHpyM21VLS11WENrZDRrd3I2dXVwQ0ZDdTh6bnlUQThYOU1tYjBocFF2cWpVRzBaMGJHRV9Za3NQOENRZFNlTHVQY25aNWxzeFdfeDN2cVpPQTc2YkJFZ3lxQ3dDbFM5TWxqZlN3TkhwTjhBSHZjTVA1Y1FCUXJwbw?oc=5",
-      "summary": "Trade tensions shake up Brazil’s caipirinha spirit NPRSee more headlines & perspectives on Google News",
-      "published": "2026-06-28T15:45:42+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Putin Vows to Ensure Russia’s Security Amid Ukraine Retaliatory Strikes",
-      "source": "The Moscow Times",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxObzVCM0o1YzQwRDdLbTNEWUIxbmFGV0tQY203S0dKMFNDR0Z1eGVUV25na1BobUdSdmNBUmlpdzd3VEtNTS1pY0V3Q29BajlJbk1hX3pMME5uWERDYlUxazI5YXE0cy1KVXBFa0o0VjVKd0QzZzRxTUw4Qk5YUU1FNjY0ZzE3QWJhdnR1RDhGc3JoYjNHaTIza28zS0VjQWdEd1JDUVBhY3hXYmM0VERyTzk2X2laMzQ5WHlN?oc=5",
-      "summary": "Putin Vows to Ensure Russia’s Security Amid Ukraine Retaliatory Strikes The Moscow TimesRussian Offensive Campaign Assessment, June 28, 2026 Institute for the Study of WarRussia's Putin promises security as Ukraine ramps up attacks DW.comPutin Acknowledges 'Certain Shortages' Of Energy Amid Ukrainian Attacks Radio Free Europe/Radio LibertyUnited Russia Party Congress Президент России",
-      "published": "2026-06-28T15:29:59+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Another heat record broken in Germany",
-      "source": "Euronews",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9Ga1JremVrNktGNS1pNjg3SGR2MXdTOVQtSW9RVjJZaC1jMmhDbTJnbERyX09vOUtaRUxoQ1VqdnhCQ0d5ejhCcnZoejJ5Y0hjU1pfNFBZWEM4aEZmMTVScTBhYzVYeXQ4ODJIa0o2MDlYS2ZKdnZV?oc=5",
-      "summary": "Another heat record broken in Germany EuronewsGermany news: Extreme heat heads east, Greens want air con DW.comBerlin is even worse equipped than Paris for Europe’s heatwave The EconomistGermany, Czechia, Poland and Hungary swelter through hottest days on record The GuardianGerman autobahn crumbling as heat damage spreads Yahoo",
-      "published": "2026-06-28T15:13:58+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Why Wall Street thinks US memory maker Micron is the next Nvidia",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSlFwUWV1LUxzN2hYT3BHaDByWGRlUFRUNXpZSmRjODJEUWY1R1RZXzZhWXRHRWRFZDUwbjkwQk5iSWx3NGYxQk5xRy1ia01wN3pYb1Jta25aXzJwTlJLbXVKOWFTczQ0bVVxUENqNjV1XzBoSE83SDVVVlMtSE5NRE9xTXRLY2FETlNma1NVdVZfb254?oc=5",
-      "summary": "Why Wall Street thinks US memory maker Micron is the next Nvidia Yahoo FinanceThe Long-Term Threat to the Memory Chip Boom Is Innovation WSJMarkets Got Its Final Warnings (NASDAQ:SMH) Seeking AlphaMeet Micron, the under-the-radar chipmaker that just reported a 346% sales surge and helped stop a global AI selloff FortuneMicron is about to be more profitable than any U.S. company except Nvidia and Google MarketWatch",
-      "published": "2026-06-28T15:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Bought beef? You have just days to file a claim in $87.5 million settlement",
-      "source": "NBC4 WCMH-TV",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMmJjUU1GV0xfOU03X3MzdXlIcDVPQkkyRTFURi1nZnNEX0RBaWliWlZQNHNhUmlEbDdqdEpZUlU2dk9NbjNmWDRhOVdMaWpNSWJSNE5qb0N5MXJhTUxyb3ZnX1NFTFZvRktTUUxTWmlMNzVNakNaTm55RDRPSy1Nem5TS3g5ampwMjhyQTdtcnZkM0w5ak9yM3RKbVFTYkVQbWV5R05BVjB1N2E5TG94UtIBtgFBVV95cUxPTVdTUEhwT2lTTHZZT3hwak9hQkJTMnMwWC1WRmtzcDBock1oTEdSNFRCMC01NDRnYlRaNS1hVlJTRFg0NEkzVVllMFhybERkTjQ1REVrclBpQ0RIbDVtbXRNcUlnSDVfemtOVElVMXBNQUtQc0QyaXpnRmRackd1bXNMVHpub3FyNVU0b0tMWkstLWVUcjYtZ1hqREVPQ3ljWF9RMVJ2UG1wSjlyNlI0cjVBei01QQ?oc=5",
-      "summary": "Bought beef? You have just days to file a claim in $87.5 million settlement NBC4 WCMH-TVSee more headlines & perspectives on Google News",
-      "published": "2026-06-28T15:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "English influencer, 23, claims self-defense as she faces death penalty in UAE for boyfriend's murder",
-      "source": "New York Post",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUmJiNFczWE5FcnRSVWhzNU94d2pOZlFvTjJZemk2dDBhbEFQVEN2cWpTZ19adUpnemgwUDBLMm9UajFNZUx3TnlsOXJ4YkdkMV9JTjU0WVZGRmRKejNnY2lEOXA1UkVoNTR6RjRxdGswZU1IUnJ6NnIwaDBid3pRMkRIOTJRZ2ZQTk1xSkFOUklFZnJNdWFqdkluMzVuU3lucnJzT1psdDRVV0FIVXhKMndyUHhEYXY4b1gtOFB1TkVzVDdWYlhoQUM4ZFAtMHUtc1YzNXR3?oc=5",
-      "summary": "English influencer, 23, claims self-defense as she faces death penalty in UAE for boyfriend's murder New York PostInfluencer faces possible execution in Dubai after allegedly fatally stabbing man YahooBREAKING: 23-Year-Old British TikTok Influencer Brooke George faces death penalty in Dubai ProwlyTikTok star from Kent faces death penalty for Dubai murder BBCThe inside story of the British TikToker who could face death by firing squad in Dubai The Independent",
-      "published": "2026-06-28T14:50:00+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Aramco Helicopter Crash in Ras Tanura Kills All 14 on Board",
-      "source": "Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaldhdlc4Vm1RZXdaX2FfbHQxek1KMVFvUjR0QVhtNEZILXJ3QUJFRzBKWFRuQy1uN3BqTTdPa3VkQkFFNDJPbUROQk5QTUhzSFVVTzF3TU5sdEItdTNrbTZLRk1pWlVKLXE3SEFCY3Y1RS1PNk5PYWZZTXJGYnRDOWdmUVV3Tkxaa19KdnNxMWVHM0Q4QWJFQUhFNktTTDR4d3lIY1J1M0E4b0x6VS1HaG9B?oc=5",
-      "summary": "Aramco Helicopter Crash in Ras Tanura Kills All 14 on Board Bloomberg.comSaudi Aramco helicopter crash kills 14 nationals, state news agency says CNBCAramco helicopter crashes at Saudi port as Gulf ceasefire frays Financial TimesFourteen killed in Saudi Aramco helicopter crash in Ras Tanura ساناHelicopter Crash Near Major Saudi Oil Refinery Kills 14 People The New York Times",
-      "published": "2026-06-28T14:08:14+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Apple’s Sweeping Price Increases Bring Home the Costs of the AI Era",
-      "source": "Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQck9VWUhHSldFamxVOWxLT0xMZTdrSVRDX0duWWxiRjAyN3lfU28zc1hHbWFyRzEtOXo4b2Rpc1dVM3J4YUJPTWhKU1BsZzZLSHh1dzhZRTVoN3cxRl9ObDRBYTNJVXdFczR0X2pWRnAwQllwZWhHLXhONEtmNngyeWFjbHRjcjd4WFFQeXhjWkFXTnZMS1haMmJiLXF6UXdmcWFWQUNNTmhqTzFoWk1mMnpXTG82VGFBRHNkdkRnWFk1ZS13MmNn?oc=5",
-      "summary": "Apple’s Sweeping Price Increases Bring Home the Costs of the AI Era Bloomberg.comAOC calls to ‘break up’ big tech companies amid price hikes The HillApple's Price Hikes Aren't Just an AI Problem CNETApple raises prices of MacBooks, iPads as memory costs skyrocket ReutersEditorial: Sticker shock comes suddenly to the Apple store Chicago Tribune",
-      "published": "2026-06-28T14:00:01+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Leverage That Fueled US Stock Rally Becomes a Growing Concern",
-      "source": "Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORFM0OVgxNGFod0NDOFpMcEpoNk5iY0htYWFiYWRIcjVjMHdOQjlsbk5JN3JZRzlpYlEzdENoTHRvUU1pUW1QOGtzMUpaMkwzSl9GdkVjYUpjV1FFUWZvTm1PZHVkeHJ4T2FTbVBuaUhrMDlfbFBQcW9WZHhkUmd6d2xYUk9zRE1YZXZvNk15MGdCdjY5dTdFbWxhMlR1MmJDRHoyUEdVaTlPTDE4SzBkUDln?oc=5",
-      "summary": "Leverage That Fueled US Stock Rally Becomes a Growing Concern Bloomberg.comLeverage in the financial system, revisited Financial TimesMargin Debt Jumps 8.5% in May to New Record High Advisor PerspectivesThe Trillion-Dollar Borrowing Binge Lifting the Stock Market to Risky Heights WSJLeverage driving US stock rally sparks growing unease among market watchers Crypto Briefing",
-      "published": "2026-06-28T14:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "1 injured in Saturday night shooting at McDonald's on Perkins Road",
-      "source": "WBRZ",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQk5CZUgwV0plNjVRaWFSRDhvX0FGWVhSZG4xTUdDZnFQUlNaVzJIS0sxaktBbE5iT2I5SG1yUzVqRHJzek1rNUNaWG9jRlRmU1d4Zm1FSkd4YU5UV3cyWDZncF9fTGduYTh1NUY2MWlxbEkwSEpNRG1HX1cwSjRibl9leGd3Y09Ta0x4VFdKY19ZQzRXdTN3cg?oc=5",
-      "summary": "1 injured in Saturday night shooting at McDonald's on Perkins Road WBRZMan hurt in overnight shooting at McDonald’s on Perkins Rd., authorities say WAFB1 person hurt in overnight shooting near intersection of Perkins Rd., Bluebonnet Blvd. WAFB",
-      "published": "2026-06-28T13:57:37+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "These Household Names Are Dividend Kings. They’re Rock-Solid For Income.",
+      "title": "Micron Stock Faces $500 Billion Memory Threat From SK Hynix, Samsung",
       "source": "Barron's",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQNDZBR2VzdEVVY2NycGdwYWJON1p6Q1ZfTXNJSmFBeWc5M3FFR09LNGhPY0Fud3RuYndJVEVnU1cwLVJEU3VCY08yNlFyTktlckhMS3M0XzJuVFNKaDhaWVRRUEZTYWNJZUZ0cFE5Nk9wb0RoU0RSczNCT1VSbTAyMA?oc=5",
-      "summary": "These Household Names Are Dividend Kings. They’re Rock-Solid For Income. Barron's2 Wide-Moat Dividend Stocks to Buy and Hold Forever Yahoo FinanceTariffs, Uncertainty, Chaos -- These 2 Stocks Don't Care The Motley Fool5 High-Yielding Dividend Kings Retirees and Boomers Can Buy Today and Safely Hold Forever 24/7 Wall St.The Best Dividend Kings to Buy in 2026 Morningstar",
-      "published": "2026-06-28T13:55:00+00:00",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZXJ6bHc3ck55Y3Mza3FDTm9xRnhfb053WVZUeGw2MUszRGlzeDFpeTdueGFKWHdqNGJTLTRJdDQ3NXRxYjF4Zm5ISTNxaXhqaW50SnJYRGZ5Tl9BTk13eVk2RTJtUnRUUm9RQXdlQWhRTlRyR3loN0lyWFhOZm5PMkl2LXU5Ml9rdk82Rg?oc=5",
+      "summary": "Micron Stock Faces $500 Billion Memory Threat From SK Hynix, Samsung Barron'sSamsung Electronics, SK Hynix to invest in two new fabrication sites in South Korea, government says ReutersSouth Korea Unveils $1.2 Trillion AI and Chip Investment Plan YahooSouth Korea says Samsung and SK Hynix investing in AI, semiconductor mega-projects CNBCSamsung and SK Hynix announce a joint $518 billion investment in artificial intelligence Fast Company",
+      "published": "2026-06-29T12:14:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Austria urges Europe to host Anthropic following US curbs on AI access",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOV2VmbzlqUks2ZDZGQ2xYcDk0ZEVFS0hCSXFxMUg2amtkOWJmSDkxSV9mb0xRelFJSUMteUJFaG5YS2pSZHJfdVEzeXRPY3dYd2lSejg0SnFvQjhXU0Noak1fSUxuVnUxdDBpWUNKc3BtVTFKTHNSbnFfRkQ0aUY4dENia0pmOGNVeUZDeVVuZWdpS1hqV0R6S3dGcjJEbkV4YVNMS19hMEg2WFFUbGx0UEUtcmRkX0hnWkZz?oc=5",
-      "summary": "Austria urges Europe to host Anthropic following US curbs on AI access ReutersAustria Lobbies EU to Host Anthropic After US Access Curbs Bloomberg.com‘This is the least crazy AI is ever going to be’: The lessons Europe’s execs must take from Anthropic’s shutdown FortuneTo Compete with the US on AI, the British Need to Cut Energy Bills American Enterprise Institute - AEICommission official points to US 'kill switch' on Anthropic AI models Euractiv",
-      "published": "2026-06-28T13:49:38+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Iconic luxury retailer exits bankruptcy after deep cuts",
-      "source": "thestreet.com",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQNGJ1OVFROTNxanZwSVVSZlBqcjZrV09iUkZ4VlZsNWJOaXV6cjg0Y01jc3VjdW9PV2h1VW5hZ1pmVUh3RnVPXzVrRlhlOFBzaFFnXzFURHB1dDEybTJfUEFnU2tZMjVWRFE1bmdIS0dCVWlJT3BtaG9KWHNyUE1XNXdCOVBhTVBEcXNZYjEyZGxzd1pLanZaa1dNOA?oc=5",
-      "summary": "Iconic luxury retailer exits bankruptcy after deep cuts thestreet.comSaks Emerges From Bankruptcy With Plan to Focus on Luxury Shopping and Service The New York TimesSaks officially emerges from Chapter 11 bankruptcy with less debt and a new name ABC News - Breaking News, Latest News and VideosNew Exemplar Luxury Group Plans Life After Saks Bankruptcy WWDSaks Global comes out of bankruptcy with new name, fewer stores FOX 4 News Dallas-Fort Worth",
-      "published": "2026-06-28T13:47:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "IRAs hold trillions more than 401(k) plans — yet people hardly save in them",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8tbGVOM1h5VzZSLTNxYzJPNGpqVGtCbEFTQ0hkSkw1NFpic18xUFREc0tBM29WOFF3M0VReFVHcS13Z1lxSDVOTjYtdjNsR0tDWHdIUnFENEZfb25wOG9UNldYMU1aWDZTX3NNSFdn0gFzQVVfeXFMUExYRS11aWhfT2FTSHhvSlBUUGk3czZ3b0pHSFJ6aGtoWkJFRXJ0WGFGM0tWM2Q3NVQ1RVN2U1VsMlVxdllud2VhTVdTSklhQmE3R1BFVXlnQlJfa1J4UFRLMnBidG1xSDA0NW4tc3N4VkkyVQ?oc=5",
-      "summary": "IRAs hold trillions more than 401(k) plans — yet people hardly save in them CNBCMorgan Stanley Stock And 2 Wealth Managers Tied To The IRA Rollover Boom simplywall.st",
-      "published": "2026-06-28T13:30:01+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "‘We should be at $2.25 at the pump’: Trump says Exxon, Chevron, Shell and BP are price gouging drivers. Do you agree?",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOQlhaTEZ1WE9zUWJrN1NxSm1xQ09nbDMyeW5zV3hSSk13M2xlcWRLQWVnUVVnaGtVOEdzZ0tKZEFLUGx3NzEwYUdZMkF3NzBmWXpWand5NEJhWFVZUUVYbUJfdEN3T0l1WlRWakJ5M2o2aE9DN2RTbVl2ZHNXRFk4dTJvSQ?oc=5",
-      "summary": "‘We should be at $2.25 at the pump’: Trump says Exxon, Chevron, Shell and BP are price gouging drivers. Do you agree? Yahoo FinancePresident Trump is frustrated gasoline prices don’t mirror oil’s decline. Experts say it’s not that simple. Chicago TribuneTrump's Oil Price-Gouging Probe Is 'Socialism' He Accused Kamala Harris Of, Peter Schiff Says YahooTrump accuses oil companies of gas price ‘gouging,’ calls for DOJ probe NBC NewsChevron says no quick fix for gas prices as Trump takes on Big Oil: ‘It’s going to take time’ CNBC",
-      "published": "2026-06-28T13:15:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Air Canada Plane \"Swerves\" As Captain Incapacitated Mid-Flight, Leading To Emergency Diversion",
-      "source": "One Mile at a Time",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPdWF3UTR5QnNmeVJ3SUU5ZVltdE82ZzJ3U3BkWThMOVh0eXVhS0tTNE5YUGJEaFktSlZfc2dhdTFLQVZrXzRzbE9XR2xucjFJSG14dlRDVFB0ZC1IMU9XQnA1MkgyejRfRTdGdVFnSV9fLUY3MUJoOVpkRTFpSXlCd2xJOFljZXBQdTFUdlo1Tzg0ek12dFc4MW11WXg1S2lLbktaSXdNcm1keEVLbG5J?oc=5",
-      "summary": "Air Canada Plane \"Swerves\" As Captain Incapacitated Mid-Flight, Leading To Emergency Diversion One Mile at a TimePassengers restrain pilot during apparent medical emergency on 'terrifying' flight ABC News - Breaking News, Latest News and VideosA pilot incapacitated, a crash landing and a close call. What we know about the latest aviation incidents CNNAir Canada flight diverted to Boston's Logan Airport due to \"incapacitated\" captain CBS NewsPassengers help restrain pilot after midflight medical emergency KATU",
-      "published": "2026-06-28T13:00:26+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Forget the ‘Sell America’ trade: Why U.S. markets keep proving the naysayers wrong",
-      "source": "MarketWatch",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONFljSzJTWnBPUDRDeW02dk1hc0poeUFNYW9Vdzh2N2ktaklpamd4WUhZRDd2WXFYLTJJQjYxVnZpU3ZCRUN0alQ2WEhaZ05COXo0UkVGR2xDVm5mcko2ZExtcFEyQjk5VzhTdXdXUC1vd2pYX2RhallCdm9OdHlxMFYtUUdmRlJiNWlyNlVVYVo5S0hKanBqenplYVRNb2ZHc2p3bzI3b09QMUJwTWtkUFJ1VTNuZkNXTi0zM1Bn?oc=5",
-      "summary": "Forget the ‘Sell America’ trade: Why U.S. markets keep proving the naysayers wrong MarketWatchIs the U.S. dollar debasement trade dead? Investing.comTime for a falling US dollar – 25 years later The Armchair TraderIs The Dollar Debasement Trade Kaput? Yardeni QuickTakes",
-      "published": "2026-06-28T13:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Your favorite tech will keep getting more expensive, and you can blame AI",
-      "source": "9to5Google",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBrSm81RnY0cWVlcFRrM2tZSUwxSFl6UjZZdmpKYURqbWh6MTFwRkQzUzVaczdXaU4yVHJZLU9RSXM3NzRxQlhoOHhEdUR4eDNVbFowekpHZlhwRUw3TE93Qw?oc=5",
-      "summary": "Your favorite tech will keep getting more expensive, and you can blame AI 9to5GoogleThe AI Data-Center Boom Is Sparking a Third Wave of Inflation WSJ\"Insane\" Shortage of Computer Hardware? CleanTechnicaAs oil fades as an inflation concern, will AI take its place? The Fed is watching closely. Yahoo FinanceBeyond Chips, IMF Sees AI Wealth Boom Adding to Inflation Risks Bloomberg.com",
-      "published": "2026-06-28T13:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Rats, Leaks and Broken Elevators: Repair Backlog Plagues Federal Buildings",
-      "source": "The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWndCTERrX2R3VWFOSGRmNXk5MDRIOXlkSkJoUlo2YkM0NnZxemhRdVFJV054b3FzYkwwYTBOU3FDbEZOUzNMelhzMWlFbHEyM3FxMGNJWHc0VDZERmtOSkQzTW9tRHJIb0tLb2pabFktNkpYMUhyRkdOMUZLcTJrYW5DcnMya21YR2lTeg?oc=5",
-      "summary": "Rats, Leaks and Broken Elevators: Repair Backlog Plagues Federal Buildings The New York TimesOpinion | The federal government's big fat real estate problem The Washington PostFederal government could sell ‘money pits’ in Atlanta, Savannah and Athens Atlanta Journal-Constitution4 more federal buildings in Georgia face financial chopping block WSB-TVDowntown Boston federal building among 26 properties flagged for potential sale The Business Journals",
-      "published": "2026-06-28T12:00:59+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Seniors in Medicare are about to get landmark obesity drug coverage — but many may not know it yet",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNb3VfR0hsOTdEVXdsVVNKbE4wSVJoLVkyV1Y4S3AybkJncmpVekt0dFl2OW5lV2xwc3cyTjhTUTB4Y01jbmJlMXBfWnpaUzhhNWlFSVNzOGdwMkdEQm5NRTNrMHEtbnR0VVZvQkJSQjhCSGpWM0tCZnRmQ3VMMzBNb3ctbzhFLVJxYmNPd21TVkhsbmpwdDE4bWNDWkV3MWFlcXRZLWcwZTbSAa4BQVVfeXFMT1FfTnpTQTljR1o3YkpQNm9IXy1GVDFpRzd3YWdfVy1BVGQ0UDlZWjNySnlYR2d1ajBLd19SQXhoaDJxQ2ZxU09CRzNmNkpibHBzeUNlVElQTUlOWnFxTnNSbXM1cDF6MWFtZEVNYWRmMloybkdNOFRXWmFaZ3NMcUFVQzE4TGpvSUQ3dFNJRmVOYUxHdjBNSF9hWTlZYVZCUHllU2ZJQ0xwd2lWYkRB?oc=5",
-      "summary": "Seniors in Medicare are about to get landmark obesity drug coverage — but many may not know it yet CNBCDr. Oz’s GLP-1 Bridge could work, but it isn’t a model for price controls The HillMedicare to Cover GLP-1 Weight-Loss Drugs For $50 a Month: See If You’re Eligible TODAY.comWalmart expands weight management services for Medicare patients Modern HealthcareMedicare will soon offer some older Oregonians weight loss drugs for $50 a month. Here’s how it works OregonLive.com",
-      "published": "2026-06-28T12:00:01+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Ugandan army chief orders closure of major news platform",
-      "source": "Politico",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSE9GODRQTjN1a252NlZhNTBISHZFUjVveGhGWWEzc3owem5sSXlMQmRwNmh0MDVLOUo2c2hTRDNBbkJIVVM0Njl5QVZ0eTkxVndJc2s3SmNEY2tIX0JiVjV2aEtfTi1vNTZiWVNma0ZBVzJQRFd3Y1ZWV3BuYW9tUlVfNWktWDA3Q2p4QkdGUlFhWldGa1Nka0dUcUJiSkZ3aGpFVHgycFNZUQ?oc=5",
-      "summary": "Ugandan army chief orders closure of major news platform PoliticoUganda's military chief orders shutdown of two major media outlets ReutersUganda's NTV and Daily Monitor say they are under 'military siege' BBCUganda military chief shuts leading media outlets DW.comUganda’s military chief orders shutdown of two media outlets Al Jazeera",
-      "published": "2026-06-28T12:00:00+00:00",
+      "title": "Mom of TikTokker accused of killing boyfriend in Dubai begs for her 'little girl' to be spared firing squad",
+      "source": "New York Post",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPTUZweFBwZWlGYmFXWjROQXlkZUNfX2RGaE5NeDZnXzNGcEtnQi1nNEJhb1pnQUxicWpHMjBrclpkM1lwSVhweXZZazRiNUdISTQ0TDlhbmdJa3pkX0NvbWdxSHZzS3l0bzVMa1pYbHBDX2pQZHNzbnkydWpBV25FOXlBNXdaZ0ZHeDh6Z08tM2JqbWpLa2NLRXhZNXI2WjNjVUpZTmFmOElzeUd4TWYwZDBWMFUyVEhyS0dLRWQ1N3M2ZUtqa2l4QVVMNlhVSEI4MU5CcXF5Y0N0TEd6MmFfVg?oc=5",
+      "summary": "Mom of TikTokker accused of killing boyfriend in Dubai begs for her 'little girl' to be spared firing squad New York PostInfluencer faces possible execution in Dubai after allegedly fatally stabbing man YahooTikTok star from Kent faces death penalty for Dubai murder BBCBREAKING: 23-Year-Old British TikTok Influencer Brooke George faces death penalty in Dubai ProwlyMum of Brit facing death penalty in Dubai begs authorities not to make her little girl face the firing squad MSN",
+      "published": "2026-06-29T12:09:00+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "Lenovo says DRAM prices “will never be like last year again”, shares “RAMageddon survival guide”",
-      "source": "VideoCardz.com",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOOWV5OEY4Zk50YVZjbklsTEhXNDlFNHNidlBlVDNSdk81MTBBT25MOGlRekZjeFJRaldOdUJWb1ZfSkNKYzRfV3hyNFprQlpfSkx2bzVrVXgwNlFmSE5laVZsSkxqNmRuVWpfaHgzdFlzcThJRks3RXZlZjRqSkVyM0xYUTBpcE9CN1ZlNVRRbWxPNWJJdEJMeDFxUTB2al8yVUVSMldmWGVhZXVJeVgyOW9KNDJKVGM5Ym9j?oc=5",
-      "summary": "Lenovo says DRAM prices “will never be like last year again”, shares “RAMageddon survival guide” VideoCardz.comThe memory shortage shaking Apple and Microsoft is 'existential crisis' for smaller players CNBCWhy tech firms are raising PC and console prices - and blaming AI for chip costs BBCSoaring iPad, Xbox Prices Reveal Pain of Memory Chip Mess Bloomberg.comLenovo says the 'RAMageddon' is the new normal, outlines survival guide — at ISC 2026 an exec said 'it will never be like it was last year' Tom's Hardware",
-      "published": "2026-06-28T11:52:51+00:00",
+      "title": "A Chinese dissident recounts his perilous dinghy escape to South Korea and how he got to Canada",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNckEtYWU3Rm5SeVRHNlVaSHdKVmo2LTdDTzlGbkVNZVBZWjBSRk9FYTdlYzQ1cWhtZ2VNNTJhQy1vLUloVnFNakNzbmxrMUJNTkVGNmxSTlNya1ZObVBYSjRsNVBiMUluWFZfZnA4Q3BwTkw4UGl4T3NEdl9aSnZobmt3X1dta2RzcFRZbENiNkJFbTJ0QTlzN0FOLTk3WWgtdmx1V240R0g3MlRnZUE?oc=5",
+      "summary": "A Chinese dissident recounts his perilous dinghy escape to South Korea and how he got to Canada AP NewsPolitical dissident who fled China by boat arrives in Canada, his friend says CBS NewsChinese dissident arrives in Canada after fleeing homeland by dinghy: ‘I knew I needed to keep going’ The Globe and MailInside the Tiananmen Square activist’s daring escape to Canada from China by sea The IndependentHow a Chinese Dissident Fled to South Korea in a Rubber Boat The New York Times",
+      "published": "2026-06-29T12:03:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Iran says $6B in assets in Qatar will be released",
+      "source": "The Hill",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQLTlCajJZcjhySThCbk0xRmdza3l2djJtSzFrejA0MDdMdmsxV3lFS0MzYjhDZTVOVjZucTk2ODNUenVRbnFnY2QtQkxybzllLTZBSnpocUg1N1pJd2R4b1Z4WHdxV29LT2hHNzVrWFAwVl9aU1FmNkdTUVVCUmJHdmJSSE80Z9IBiwFBVV95cUxOM2pOelVoRmJRSEQ4dG9UNWZsVUFTanl6X0E5dWxNeVJ5QktOd0VLZDlwS0R4OElwQTdCMW52bmdxak85dFMtX1BlOGU2MTlObXc3VTZMLXVsMTBKWWcwdjlpSWVOQWJGUzd6d1RkdGtlM29qWm1hb2hwTldQamhEOFJReVBCN2ZWVFBN?oc=5",
+      "summary": "Iran says $6B in assets in Qatar will be released The HillSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T11:55:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Banks get creative and look further afield as AI-fueled debt soars",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOdDBiVE50bXZsYUc3enlSS2I5WjlqVkJtRHF0S0Mtbms4cmR6bnRSNGpDRHczSDQ0VkpyY3JLSXpka2NBYU11amM2akJROFVaZzFOMmppaHJpd0ZjVjFqWnRrRmplV2hFaHZ3N0otLWtpUm1MTkVTMDJSNFBwMnRad1k3ekN5UmVNOGI0Y05fSGNCemhUaUhkbVhCcFhNaWdxbklhRVJ5RkE5eHV0b2FJVkxn?oc=5",
+      "summary": "Banks get creative and look further afield as AI-fueled debt soars ReutersSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T11:33:41+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "The best Prime Day deals you can still get: Last-chance sales from Apple, Adidas, Hanes, Shark and more",
-      "source": "Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOUDlpbHZfamJmTndrZVZqX2loQXNHMVNtQzlxUHNHSnFCZy1EZGM0ZURjMlhDbGhPbUJJWlJyRlJFd2NFNndGeXhSWGs3RGF4OW56UGw0LXpHQ2Zic0RqeHJaZmFXcGt0MWQ3Nlk5bUlkeGVCYk85WjViV013T3FFWXJ0ckZZc3lmYnZraWVTWjRrY3lCdWVsdXd6bUdRVjFOVE1PQVd3S3I3RTNJRk1yMHRVczhXd3BSRVZBOVU4QUNiWXhiRjRwZXh1V2FuQXJBYUxFblhORU02ZjVYS2Y5WXdvbzJaUExIX19SV2tPZ2Q0Y3drYmhyaWdR?oc=5",
-      "summary": "The best Prime Day deals you can still get: Last-chance sales from Apple, Adidas, Hanes, Shark and more YahooAmazon Prime Day may be over, but 64 of the best deals are still up for grabs CNNShop 200+ of the best Prime Day 2026 deals still available before the sale ends tonight About AmazonAll the Rare, Cheapest-Ever, Best-Selling Prime Day Deals to Buy Before Tonight New York MagazineWe’re Still Deal Hunting Even Though Prime Day Is Over — 60+ Deals to Shop ASAP TODAY.com",
-      "published": "2026-06-28T11:52:31+00:00",
+      "title": "AI jitters meet a jobs report and falling oil prices: What to watch this week",
+      "source": "Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOREZCYkx2MjgzcS1EYUk1dGtCVnhyR0VhUFRia3Riby16VkZ6MUlULUxtUlB1QjJod3hRbzdtZjZPX1k2RGlReVJpRngtNFVoa0s4NkZ6eHRsNmdSeGdKcFBTcnQ4RGdFOVUtX0Qzd09uZ0ZtVl8wTnF0eGNZVURBVTdPV1pVcG9zNC1LTWFJTGdSWU02TVkwcDBscERYV1A1dHM3aXFoYlRsVi1wOVRHQUMxQVdiMG9CXzAyR000STRMZFBUR0U1SHlIRkppdw?oc=5",
+      "summary": "AI jitters meet a jobs report and falling oil prices: What to watch this week Yahoo FinanceFive things to watch in markets in the week ahead Investing.comA Strong Jobs Report Could Change Everything For The Market Seeking AlphaJobs, Home Prices, Nike, Constellation, and More to Watch This Week Barron'sWhat To Expect in Markets This Week: June Jobs Numbers and an Update on American Consumers’ Mood Investopedia",
+      "published": "2026-06-29T11:01:18+00:00",
       "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Palantir and Surf Air Mobility Expand Partnership to Accelerate Commercialization of OperatorOS, OwnerOS, and Enterprise Products",
+      "source": "Business Wire",
+      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNWWJjQXN4MFZCXzRYYTFyYzZCMmNxeGx0T3RGd1p0WUJIYjJOVjJzV0NKYkZRQnIwQ1lNYjF5ay1GcTVmT0tPTGtfSHhxSmVDa0pGSkJyaWQ5clFNTGJnX2RSclpEbFhfeWJpWWIwMzVQN3lrd2E2aGt2Zk4wTWFNd25XWnRyOUpWLUlSWUN5ZG81alZNbVFrMW9IMHRueHpveV9wT3JuQW1UOTZOdGlTa0hTOUl0aWRKRU0wcFlVLWhQeFpoa1hBRmVDUUZWZUVKRVdUZUwxYXdCcEk3YzQyMC1GQ2VCX08xU3dLekhtREVldlNhUS1ZY0pLNEZ2dUY5WjQtclBWWVY1TVFCazFDTUxR?oc=5",
+      "summary": "Palantir and Surf Air Mobility Expand Partnership to Accelerate Commercialization of OperatorOS, OwnerOS, and Enterprise Products Business WireOpen Models, Closed Environments: Palantir Brings Secure AI to US Agencies With NVIDIA Nemotron NVIDIA BlogPalantir Stock (PLTR) Rises on Nvidia Government AI Partnership Barron'sPalantir looks to boost commercialization of new software; teams with Nvidia on Nemotron (PLTR:NASDAQ) Seeking AlphaSRFM Stock Heads Toward Best Day In A Year – What’s The Palantir Connection? Yahoo Finance",
+      "published": "2026-06-29T10:59:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Ipsen to Buy Kartos Therapeutics for Up to $1.75 Billion",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONFlHUlY3UHBjMlV6M2xtNEU0TzNkRGdjejE3ck1kZGRlaXRJRkQwVWh0MmNyRE9oTldpN3VER2p4ME9veWR3NG1VY1AxeDJaVS1pcjZuYlgtZFNfSmxsX1prUFBPZndPQXU4cW5NZzRZRXNiTWlONFhvUHFQUjdJdjRmeFptaXlnRE5qSmVPdWhkakpsQnFmS3dVSQ?oc=5",
+      "summary": "Ipsen to Buy Kartos Therapeutics for Up to $1.75 Billion WSJIpsen pens $1.7B deal to acquire Kartos for potential Jakafi add-on therapy for myelofibrosis Fierce BiotechIpsen to buy blood cancer company Kartos Therapeutics for $450M upfront Endpoints NewsFrench biotech company Ipsen to buy Kartos Therapeutics for $450 million ReutersIpsen to acquire Kartos Therapeutics, expanding hemato-oncology late-stage pipeline GlobeNewswire",
+      "published": "2026-06-29T10:44:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "SpaceX's $25 billion bond sale drives huge demand - and a potential headache for investors",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNcjZXUzdtSG0wUE5jUWJxM2lhYV9taVJkelktMlZvb1FsVEgyMHo5dHZaOFB4TjN0OWh2RmhhbmQ4VjhOcUk5U1Q5ejlGWlJLNFlvV1NBcUF2aGxIRWRmcWxPRHhYVEtfdmQ2TDNYa2pYS1F3Z281Vy1KNS1LVWdMR1RSSGRyekJRRDhBa0w3emoyRjYwY1FkRUFBVdIBoAFBVV95cUxPM3JvYmI4TjRUUU0tZGJJdnJhaGZtNUEzYVEzbzZkamJKQzhDUGYxRHA2cVVMbm1iVG5KNmJzZVhtUmIwamROU1IyU0xqdWdybWNNWWRha1p1YjR2b3ZtbW1XeHFqSFZNbjJPQVpNMHZVaUVjRTAzVmc3UFdINkRtY0YxU2N5WEVvTUFJYThUQ0NqMjk1aUQ0em9oU28zODNG?oc=5",
+      "summary": "SpaceX's $25 billion bond sale drives huge demand - and a potential headache for investors CNBCSpaceX stock and bonds pose diversification risk, analysts say qz.com",
+      "published": "2026-06-29T10:34:02+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "AI may spot deadly heart risk in a routine ECG",
+      "source": "Fox News",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE52MmtuTVlBcmlFTG5CZVdGREZLS2NkZzNHdHZXeXFKRk5HMmY3Z3F4dlRuc0N5OGtnVWZxN2ZTcmU0NC1USEdPV205OTBnRlR1REl2NHFEV0xGaUhyZnduM1VQSGpVZXVCejhQejByV1pENXFFUm9pU1dR0gF_QVVfeXFMTzBFeExtdUptYk90RTVQczN1RENsNFphZmdGTExEWVVYQ1NPeDg4b2hzTWQ4SWhfVEVoN0VCQk1XaW41MDhMZGk3cTdZU0xFWERhdkp5SlZUc0pNODFmUGZid2tMWlRnTkpTQlpvVFoydUFlUFZDSkhaRWt4OGs4Yw?oc=5",
+      "summary": "AI may spot deadly heart risk in a routine ECG Fox NewsAn ECG biomarker for sudden cardiac death discovered with deep learning NatureDoctors Thought It Was Asthma. A.I. Flagged a Serious Heart Problem. The New York TimesPathway Labs Announces World's First FDA Clearance for Multicondition AI in Cardiology and Partnership with OpenEvidence Business WireAn A.I. program found evidence of possible severe heart damage in the electrocardiogram of Louie Quiros, a 45-year-old caregiver and security guard who showed up at a Queens emergency room coughing up blood and finding it harder and harder to breath facebook.com",
+      "published": "2026-06-29T10:32:48+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "NASA’s X-59 “frankenjet” tests supersonic flight without the sonic boom",
+      "source": "Ars Technica",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOelRnVFZZMVpRS21hdm0wNEZSQ2RISlhTOVdqREtUQmJnSHplbzAtRGRqem93Yk5GdjllMDFyeHczaVkxb1VrTW1HY2FYd1ZYeVprNDdXbWtOZlkzbWY3SzRmWFVUOWFNbVVKc2tCYmJhel9EYkxCM2x4N2tyU1p3LVZaSHc1UGlENFFzTGJsVlgtUDBEMEVsMHBaVE94V0tYM3YyQWtsTWdGTTFZamc?oc=5",
+      "summary": "NASA’s X-59 “frankenjet” tests supersonic flight without the sonic boom Ars TechnicaCustomize Your Devices With NASA’s New X-59 Digital Backgrounds NASA (.gov)Nasa’s experimental son of Concorde goes supersonic without the boom The TimesNasa’s quiet ‘son of Concorde’ paves way for supersonic travel The TelegraphNASA’s X-59 flew supersonic for the first time, and the quiet-boom experiment could change flight over land OkDiario",
+      "published": "2026-06-29T10:30:36+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "America’s Richest Families: From Waltons To Rockefellers, These Are The 54 Richest",
+      "source": "Forbes",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQMHpPTnVDdzNiTXp5Tk92bVd2eldGaENzUEhIWHA3QUVtYW1iMFlvd3hkdV94cThlNC1KQTNPZkpjYVk4YWk2YTFWb2d1TXVwZDM1UlhvUDBiOEhPeTRQd3k4Wm9pYk0zTnU5N2dWNTRYNnF0QkRfTGFSVU9iU3YtY29ndUhNQXNXd2NCTU1teFhieng2dVEySzZMR3Fsck5Oc0FONmhzVTl0RV90QmNxV3d1aWxxZzBEajF3STJraVdrNXFaWjF1dEVnSQ?oc=5",
+      "summary": "America’s Richest Families: From Waltons To Rockefellers, These Are The 54 Richest Forbes",
+      "published": "2026-06-29T10:30:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Russia-Ukraine war: Why has Putin rejected limits on long-range strikes?",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVU5LNVJ6NVlUX09DVFZvcUJWaGhCdS12YUpNYVdSbGRCSFUtYUIxdFdkZnRLWHJBMldHMThBM3dKWEtMNnB0bUxUUUlDbTBkZlRlaVVkaDBsVzlJVTdIWTYzaWhNbFVFS1J4bXNlWG1RVDNaWE9Ec0h1WjVLaHRjaDdVRVp6SVlNLW5FRTlOb1VEdDFKbFNFZU1CMjI5TFR5bVVBcGpMZHF6ei1kbENMR9IBtgFBVV95cUxPWUYxUXpPcDctakpkT1J3V0VGZFBCZnFncUJzczRxY2Vwak15OENDNFRpSDlCbnVmWUNxaWx5ZlR0SHlldmp2bFJmaG1NckpZd1lDSUVjdTVXd1ZiUnE0Z0JheTRTSjRoUUhyd2UwSjVHbHVlRmZod09rQWIwM3JfYVQ2NGx2MHFMNVFJY09tTGNDVlhrdFdDUzZndnRGZl9YVDRLaC0xQmNJMTRLZGt1blp5VHA2dw?oc=5",
+      "summary": "Russia-Ukraine war: Why has Putin rejected limits on long-range strikes? Al JazeeraUkraine war briefing: Putin expects US negotiators in Moscow; fuel rationing in Siberia as crisis bites The GuardianPutin says Russia will press on despite fuel shortages Australian Broadcasting CorporationPutin says Ukraine peace talks could be held in Belarus’ Minsk Українська правдаPutin Ready for Ukraine Talks But Won’t Halt Long-Range Strikes Bloomberg.com",
+      "published": "2026-06-29T10:03:38+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Medicare will start covering weight-loss drugs on July 1 for the first time. Here’s what you need to know",
+      "source": "CNN",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9JTDRGTC1FZTIyUGM2MTg4czB3ZWdtOGV4LWdvZEF3cWIxVjJPRElqUElLdlJqenNaX21sZVZFMUJIR01WSHl1a3BJLVJHc0Z3TUpHcGlyUDFzTURIdWZnMUE4TjR1MGw4ZFZhdw?oc=5",
+      "summary": "Medicare will start covering weight-loss drugs on July 1 for the first time. Here’s what you need to know CNNMedicare is about to cover GLP-1 drugs for weight loss. Here’s what to know. The Washington PostSeniors in Medicare are about to get landmark obesity drug coverage — but many may not know it yet CNBCMedicare to Cover GLP-1 Weight-Loss Drugs For $50 a Month: See If You’re Eligible TODAY.comMedicare will help pay for weight-loss drugs Wegovy, Zepbound. What to know USA Today",
+      "published": "2026-06-29T10:00:26+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Trump bought as much as $5 million in Axon stock before ICE sought $220 million Taser deal",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWkRJMEt6OTJJaVZpQlllMVFRemtOX2t0cVp5bXJLYXhONVl4ZU5la0w0RVlIYjlNZjVlQml1SHNkZ2c1YWdubGRBRHdhWmJ6NjQ4TXM2T18ya1BEendvYUlDX1cyaEd4bVdkb2ZsRFJuTHZnOW9DUURjWnF4bzVEMGt2SmtrMVFFUUhqenRPeUvSAZYBQVVfeXFMTVlJUFBxZXhhRDBEUnctQTB0LW85Q2JQOW80cGRUUHg0OXVfWk9DcFFkY1hWM2R3eGpQbDQ5WFd2Q2VJeHdpOGV3WWJlMjRkV2ViNzlVRERtSnNQNF9PTFEyYTNaVGhHbVgtQm5lQ2J5UXFQUEtDeGxUZ09hVHNSbVMyNU5NSGxaT2dGQ1dGVDZrY0VFMk9B?oc=5",
+      "summary": "Trump bought as much as $5 million in Axon stock before ICE sought $220 million Taser deal CNBCTrump bought Axon stock before ICE sought $220M Taser contract qz.com3 Law Enforcement Technology Stocks With Federal Contract Exposure simplywall.stWhy Is Axon Stock Surging On Monday? Benzinga",
+      "published": "2026-06-29T10:00:02+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Thai airline employee arrested in Australia on suspicion of importing heroin",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPODFHT1pNX3V0M3EwYnNDUVJaT2lkeXQ1aXo2Z3pvVHk4UVN2SFpzbUYyRUFRb0VVRUlmN1VON2tCd2RyRG92RzlyVEQxZ1pVamZqMkZBN1NYaGVRZG9kV25hbVRXdmlfdTRxSkZTWWZ2bWFpdHBHMkhsZWRNUXBwQjFlUmV2OGlQekRKQjdmVUo1UTNSenc5QVJUOXRiZjZmVDBzQ0loeGswd29T?oc=5",
+      "summary": "Thai airline employee arrested in Australia on suspicion of importing heroin AP NewsSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T10:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Airbnb deploys anti-party technology ahead of July 4 weekend",
+      "source": "Fox Business",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPQmExVEFpOW5EUVJ3YkRiMktFOG80NjFXbHluc1pjME5vbFhBREU0cHowQ3ZQOHB6X3ZoT182LUk0NnRkVFA2Q0VuQ0hfUFhRelhteURqQjRtcllLMHFCZWRyMDhmOTJRZHhIclAzZ0h3cE41YTZMOHY4aGQzb2ZHSXdRa283WXdWV0N1dGV4TS11RUdCQjllQk5Wa9IBoAFBVV95cUxQRG5EcV84RGQxakFrZlZfcFhIWngwRWxUb0Vja2ppUHJTcWVuM05aTjVXczVlb3VmRFJ6M2xwUU5iRkp2Y25yNHZqc3JXR3Z3Y0V0TnRJSnE4TU5QVU5rYWxnanVqRElDUTU4d3Y1bW14UVhDQzdFN3lDcEJzb1oyaW9zanBvcVBnZUZ6eVhYbHNHZVIyZVdydVlDVVNZM0FR?oc=5",
+      "summary": "Airbnb deploys anti-party technology ahead of July 4 weekend Fox BusinessAirbnb activates anti-party technology in Savannah for July 4 Savannah Morning NewsAirbnb cracks down on guests renting homes for parties this Fourth of July KHOUAirbnb activates anti-party technology in Houston ahead of Fourth of July, World Cup crowds Click2HoustonNo party allowed: Airbnb deploys anti-party tech before July 4 weekend, World Cup match KCTV",
+      "published": "2026-06-29T10:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "British American Tobacco to cut 9,000 jobs",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5EakVsdzVHTmJpdlZxQUpGbWtRWFJMYjB0TnFSU1JJVXlZckZUUEFld2VRQi0xVnhjd3AyX19udHRGVFN5NnozMnNPQ3BqNVdDdnlnZ0FTdk9LUQ?oc=5",
+      "summary": "British American Tobacco to cut 9,000 jobs BBCBritish American Tobacco cost-cutting hits 9,000 roles ReutersBAT to Reduce Workforce by Nearly a Fifth WSJBritish American Tobacco to slash 9,000 jobs as it turns to AI The GuardianBAT Cuts 9,000 Jobs as Its Turnaround Program Intensifies Bloomberg.com",
+      "published": "2026-06-29T09:53:12+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "China imposes export controls on 40 Japanese entities as tensions with Tokyo rise",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNC1UQ0FNc0t3cE41MlROU0dWZXplUGY5dUozSjVPM1R0MVotUzZkWFg3elRMOGRxNFFfeDBQSUFVME02ZDkzLXY3NlU5T3YzNGRxTUMzdW9iSTVDMWhtSk8xZ24yeWdmUEUzUFhrYzc0OG84b0dfUGRZRmI4OVAzNVRsZ2ZZXzhVUlBxeUpFMGFZQ0N6LWRpVURCNTl6a00?oc=5",
+      "summary": "China imposes export controls on 40 Japanese entities as tensions with Tokyo rise AP NewsSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T09:39:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "How a Tight-Lipped Fed Could Lead to Higher Mortgage Rates",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPSnhQaGtGR0QtRkEtN2R3Mno3WnhlczZyZ1N4c3FyOGRXUzdvUHFIX3dVNGJOcUxKYzZEVWJEQ0pXa3lVZjRpQXo2Q25sZDROX1Q5SUxIUzhOaE9JUmJKa0RtNTlvY0xqM2E0Mm16WDFieTZZakNrLUViMFZjanZVZ2E1Z1RVSG1KanJDTVc2akx5NFpVU2FrSGZyblFtZ2R3UDJHQ3ZOOW8?oc=5",
+      "summary": "How a Tight-Lipped Fed Could Lead to Higher Mortgage Rates WSJHow Warsh Has Begun to Change the Fed The New York TimesCitadel Securities Warns of ‘Shifting Landscape’ Under Warsh Fed Bloomberg.comPresident Trump will not get what he wants from Kevin Warsh, a source tells us, as inflation will force the Fed upwards FortuneNew Fed chair’s vision: A leaner, faster, more modern central bank Baton Rouge Business Report",
+      "published": "2026-06-29T09:30:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "The pro-AI movement is splintering",
+      "source": "Axios",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNQ1lEWXIwNVpwQlpLb3YzM2dGNmZaZ2pqdTZZNWItMHA3eV8zWHJvTFZlelNpZmZzcFhvR1BDNy1sSGtwSUxUUFZIXzRZbkpaVEFyVDIyM2FJQXdiN29UZXYwYWRmLXg4aG5MVVpLUlR0RUlBbXY0My1Ec05LXzExd3lR?oc=5",
+      "summary": "The pro-AI movement is splintering AxiosTech industry grapples with Trump’s AI about-faces PoliticoU.S. Presses Meta to Agree to A.I. Reviews as Security Concerns Rise The New York TimesBig AI Had a Point When It Said It Needed to Be Told What Is Not Okay GizmodoAI Executive Order aims to balance security and innovation App Developer Magazine",
+      "published": "2026-06-29T09:13:03+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "The central bank of central banks warns AI frenzy could trigger stock-market slump and jeopardize economy",
+      "source": "MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPN1JjRk5kamVRbE8yX1pzdVFibllJYUxxRWgyckx1Z1JscjVoT3hKSFFDd2syY3J1Nk1pYU9sYUJoY3RpZzJiTm9QeUNfTnVER2RveTlmRmZxdUZGSW5OTm9LbTBrRXExRlBfSF9xZ2RoZ05CalVZYUZ5ZUs4QkRVcVp4em9YemVZQW1iYVZRODM2bnRkdzJXcTFSWUJHemNBY2ZLbkRZYmp5ay1kODcxTGZfLUtibEprdV9vaGl1QkM4V2hfVHZneDFpU0hjTHA4VTZ0aEU4ZkJJLUloQURPRlRn?oc=5",
+      "summary": "The central bank of central banks warns AI frenzy could trigger stock-market slump and jeopardize economy MarketWatchBIS Sees Peril for Economy, Financial System in AI Investment Boom WSJAI boom risks global financial crash, warn central bankers The TelegraphGlobal central bank warns of Liz Truss-style bonds crisis The TimesBIS warns 'pressure points' putting global economy at risk Yahoo Finance",
+      "published": "2026-06-29T09:13:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "A long-awaited Australia-Vanuatu pact blocks China from building a military base",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNQWxMNlFVM0REcFdqV3Q4bGJEWmJUX2laX1ROYjZxdmFvRHVqQm5Cc0dDRGE4c3JNNXR3QUFMMGpxaUZkazhRY05vUV93aUhMVWJUMHVOck93LS03LXJSRzhobUdOMXljU2Z6RnlldEsxYzRDT2dmLXc2UE5QVnNZaGpTMUNDZFJkQzQybGVkQ2JLeFpDd2pjYUNNUlQ4VUVEVzduaE40UQ?oc=5",
+      "summary": "A long-awaited Australia-Vanuatu pact blocks China from building a military base AP NewsAustralia and Vanuatu sign deal to block foreign military bases Al JazeeraAustralia and Vanuatu sign delayed security deal seen as curbing China ReutersVanuatu critical infrastructure to remain 'free from militarisation' under Nakamal pact Australian Broadcasting CorporationAustralia-Vanuatu deal bars foreign bases in island nation dw.com",
+      "published": "2026-06-29T09:10:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "How Israel and Iran Are Fracturing Both Parties in the Midterms",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQWF9mUDVuN1NxcXY4Qmo5QUY1MEs0bkxhU3BNbzhkWGpkcVc4LS1CVjZ3dUpCSVRTcjUxT09DbnN5MFRxZXF2a1RQNlluV3d1ODUxWjZHNm0ydk93NGhUSm9yNDdQM0RMSEhwcm0tT0FmbjllRkFYSlhPVlFjV0lSRzJkQnBfVmFZT1ByaUEwY2hvZUdZaHMwbHF3?oc=5",
+      "summary": "How Israel and Iran Are Fracturing Both Parties in the Midterms The New York Times‘Trump is looking for the exit’ amid ongoing Middle East stalemate The Chronicle | The ChronicleOpinion: Two elections are shaping war and peace in the Middle East The Irish TimesForeign Policy Dividing Our Parties Outside the Beltway",
+      "published": "2026-06-29T09:02:49+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Red, white and glowing blue: Trump's push for new reactors reaches the finish line",
+      "source": "NPR",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWUpJeWFJeXRwdTJJRVJWbjdVYngwQy1jX2dVNzRRaU93aWt1VFZMcjJudmROaU5Qem9SMlZtZTJkVGxxR3lWRG4tM0Z5MFU0Qk9vRWFMdWVPamFNWGh4ZmJwMHg2ZXJmak1ZOUlCclp2eEJtV2ZJdlJOUkRBN3JQNlpfdGp0RXVNdHhRVHZqeE1EdUdVYkNzUA?oc=5",
+      "summary": "Red, white and glowing blue: Trump's push for new reactors reaches the finish line NPRNuclear Stocks And Small Modular Reactors Ace Big Wins. A DOE Deadline Looms. Investor's Business DailyIn Idaho, the next generation of US nuclear reactors nears reality YahooAt Idaho National Lab, reactor success and Trump’s nuclear program celebrated Idaho StatesmanLaunching into tomorrow: NRIC guides new era of research and deployment American Nuclear Society -- ANS",
+      "published": "2026-06-29T09:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Meta Reportedly Got Too Addicted to Google AI Tokens and Had to Be Cut Off",
+      "source": "Gizmodo",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObW1NY1JLU3VJT21VSldlRDR5LXJ6SEhxdjFydlBESzF3dXZreGY5czJlT3dOMjJma0pJRWNTXzIyYnl5N0FGZHhfSzZTMnVpcWk0dVBZblp6TzdwNHVBYk84OVVtN3NMYjBJbng2WjhJN3c3UWpOZDN1Sjl3ZERNNnItaXI3WE9acTJadVQ1MUxiRXBPX1JhV3BRZ05OUlVTSFJGWkh2cjM?oc=5",
+      "summary": "Meta Reportedly Got Too Addicted to Google AI Tokens and Had to Be Cut Off GizmodoGoogle caps Meta’s Gemini use as AI demand strains capacity Financial TimesGoogle rations AI capacity to Meta as infrastructure crunch intensifies: FT (GOOG:NASDAQ) Seeking AlphaGoogle Put Limits on Meta’s Use of Gemini Due to Capacity Constraints The InformationGoogle limits Meta’s use of its Gemini AI models, FT reports CNBC",
+      "published": "2026-06-29T09:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Could neo-Nazi youth, or 'active clubs,' have played a role in Belfast riots?",
+      "source": "NPR",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQenJYblluaFZKZkNkZUd5aFBhOWprdDJtLUtuak1PNVh6U3VjVkEtWE5yS3puZUJMbDlBR01NbFk0S3Q1UVdvV05JYnNEM0Q4WUFreTJuUGlXekdiV1luT2w2eEY0Y3lWLTNVcndKaC1WRTZnTXFHZUc5b1pjdVNnUW9qVkRGbVdockh3cm1va2lhNEgyTXNnbkEtQ0hTWWFWVHY1RV9zcXVTQzFmeUZGcFV0Yw?oc=5",
+      "summary": "Could neo-Nazi youth, or 'active clubs,' have played a role in Belfast riots? NPR",
+      "published": "2026-06-29T09:00:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Instacart Driver Left Groceries in the Sun, Then Rang the Doorbell Asking for a Bigger Tip",
+      "source": "Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZ3A4WTlUbEREdVVRUEhGOE9ZbGdwQ21qWVZrWFA2bjRodHVxTXZZbFgtem5rZDZuYUZTYTBrNW4yR2xNYVlYdWVKTW56bmtHejZlVVE5VWRUTVVZdXRKRXUyejFQZTBIVDE2XzVvU1Z2dFdQM2h6dUpqT0JiZXQ0dzY2V2FWNUV4RHNicVNpdkhZay1yY1E?oc=5",
+      "summary": "Instacart Driver Left Groceries in the Sun, Then Rang the Doorbell Asking for a Bigger Tip Yahoo",
+      "published": "2026-06-29T08:54:07+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "American Airlines plane forced to abort takeoff after another jet veers onto same runway at Miami airport",
+      "source": "New York Post",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNRG9nMUFpZlR4Q3Z0c0dqZ2hvaTN4MGdEVEpqWWEyQ3F3WjFnU2ZyMXpjTnNsVjhoaEJDRk94LWZFeC1XRjBOZzBWdDJhQVoyMUh0TG5YREJkYkVRVG1yZDhDYXhPbHdIQTVVNjRMZ2NzMGxmbXRwSGd0RHpYbm9qQVFVVHBjTjZkaTBWU1VUN2hBbldwRm1EVjhoOVYxSVJrUjF5ZGMxZ25jeDhRLW85a0NuVnZRYkJNV1NFNlBFTlBSQXFndlg4VlFpaWFNYjhhMnhRTG90T0E4THht?oc=5",
+      "summary": "American Airlines plane forced to abort takeoff after another jet veers onto same runway at Miami airport New York PostSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T08:29:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Pope invites new Archbishops to be 'Good Shepherds' on Feast of Saints Peter and Paul",
+      "source": "Vatican News",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbEtZM254SjRoVzM2c2Rpd3oya09hMTVDQTU4eFo5TGtaVGl5b2hvck51cVhvSzN2SjFBdGVSRzVtSG1DWGZpa2xRRTZRdmNOVnZ4VlZOY0RKUnhpbER2Y2pkUXdBTFVoUzd4Mldvc3FqSGU2Tk4zTEtDcjlMZ1g5RFlpdHgtbUtvQjVOWVdqc1ZqUWZCU3RpZUF6UUpIN1gwR1k4dDRvWTZTb1NJaE1iYU9Lb2lmZEZZ?oc=5",
+      "summary": "Pope invites new Archbishops to be 'Good Shepherds' on Feast of Saints Peter and Paul Vatican NewsFrom differences, unity: Pope Leo’s plea aleteia.orgWho are the 4 US archbishops receiving the pallium from Pope Leo XIV? Detroit CatholicVatican Pope Springfield News-SunPeter And Paul Won’t Leave Us Alone – OpEd Eurasia Review",
+      "published": "2026-06-29T08:20:43+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "CVC Capital Partners agrees to acquire Irca from Advent",
+      "source": "cvc.com",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTjBDbnNUYkxselZFT0wxZTlFZVgzcThmNnpSbDQ0Ym1sZ1VNY0Z4TEdkd19BNjB0aWN4Q1VSbW9KNGtST0U4MENLYXJZVzFyS3hGdV9BczRjSkx1b1FvdXYyY1hmdjZfdEg3bF9YSFdKWDl5bHRaWGZiOV9MbGdETlJudU9Bdnh3bjNUYzJ2WDI1U1FMN2VZ?oc=5",
+      "summary": "CVC Capital Partners agrees to acquire Irca from Advent cvc.comCVC Capital Partners to Buy Ingredients Business Irca From Advent WSJCVC agrees to buy Italian dessert ingredients maker IRCA from Advent marketscreener.comCVC set to buy Italian food business IRCA 9finCVC Buys Italy's IRCA From Advent In Second Food Ingredients Deal This Year ESM Magazine",
+      "published": "2026-06-29T08:05:03+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Oil Prices Rise On Tit-for-Tat US, Iranian Strikes",
+      "source": "MarketForces Africa",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQbzlHZXI2WFFOcFEybjR1YW5FUVNZaENZNFBzNlFKckozTmhoWGd1ZUZlQU9ob0txOW40c1VTR1ZNdEFOUWtoYTFTMVk3T2pmY3hLajRVYVhIckxmdWI1Z0RGMVJkYWlpTzBDd2ZjRjhEVU1iQUN6X0NoSTNkUnZBSHh3?oc=5",
+      "summary": "Oil Prices Rise On Tit-for-Tat US, Iranian Strikes MarketForces Africa",
+      "published": "2026-06-29T08:02:47+00:00",
+      "origin": "關鍵字「Iran US military attack oil price surge」"
+    },
+    {
+      "title": "S&P 500, Nasdaq, Dow futures jump as Middle East tensions ease",
+      "source": "Latest news from Azerbaijan",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcEp0dnE3Ymh2LWNCNDFUR0packZxSkFjT3QtLXFQMGJhWmhPak1wcERaelE2dlRzSFdHVE1CRU4yY0N0MDBYMng3UVVoaGQwTTFuWjBnRVBPZFFueVVkSWlkUGEwZ29GeklsTENwV04ycTNqNVlHXy05NVFlSXdjaW1WT2wtYnBO?oc=5",
+      "summary": "S&P 500, Nasdaq, Dow futures jump as Middle East tensions ease Latest news from Azerbaijan",
+      "published": "2026-06-29T07:32:52+00:00",
+      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
+    },
+    {
+      "title": "SPX: S&P 500 Futures Jump as Fast-Moving Headlines Sway Sentiment",
+      "source": "TradingView",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNelNsVVJvSjRmN0NUb2ctSF85T05kQzN5aXJkRkowYXNxSEVZbi0wc09pemxPX19nZ1ZvVjk2eE1saC1qN2JEdzNyQjVlanpHY2hra1VxMXp3U1pYU0NvUThMTWxudWpiUjFXY3VhTWJOVEQxYlhrOGYzYV9UV29CQUNWUnFRaktZbDFmcjNPS3NPTGVsMVZOYUtRbko1dDhaU0RSUXowd1JrSElRYmRTd2ZSUXBNZHpaeDhqdENOYzJtYWox?oc=5",
+      "summary": "SPX: S&P 500 Futures Jump as Fast-Moving Headlines Sway Sentiment TradingView",
+      "published": "2026-06-29T06:17:00+00:00",
+      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
     }
   ]
 }

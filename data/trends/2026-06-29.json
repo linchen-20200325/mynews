@@ -3,19 +3,19 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "AI與半導體基礎設施",
-      "heat_score": 98,
+      "industry": "AI與半導體",
+      "heat_score": 95,
       "signals": {
-        "funding": "韓國政府宣布將豪擲2000兆韓元（約1.3兆美元）與私人企業（如三星、SK海力士）共同打造半導體與AI黃金三角，並推出「壓倒性優勢套件」及「三項大型計畫」。大摩看好台積電CoWoS，輝達、Google點火，顯示企業資本支出持續強勁，尤其在AI晶片與記憶體領域。",
-        "hiring": "AI晶片與其相關的半導體製造面臨「地基天坑」般的4成缺口，顯示對相關人才的需求極度旺盛，人才搶奪戰持續升溫。",
-        "policy": "南韓政府啟動國家級的「半導體與AI壓倒性優勢套件」戰略，承諾2000兆韓元的巨額投資，並將立法推動「大型特殊區法案」，旨在打造新的半導體重鎮，顯示國家層面強力的政策支持與戰略佈局。",
-        "technology": "AI晶片、記憶體（DRAM）需求爆棚，馬斯克也驚呼「沒見過漲這麼兇」，顯示AI技術的快速發展正驅動著對高性能硬體的需求，CoWoS等先進封裝技術成為關鍵突破。"
+        "funding": "韓國政府宣布未來10年將投資1.3兆美元（約1750兆韓元）打造新的半導體聚落與AI資料中心，三星與SK海力士將加碼投資AI記憶體。此舉顯示國家級資金與企業資本支出均大規模湧入AI半導體領域。高盛報告指出AI投資熱潮未結束，下半年資金將更側重於特定領域。",
+        "hiring": "AI半導體與先進封裝技術相關職缺需求持續旺盛，尤其在韓國國家隊計畫推動下，預期相關人才搶奪將更趨激烈。",
+        "policy": "韓國政府推出十年1.3兆美元半導體投資計畫，並由總統李在明宣布打造AI國家隊，投入6500億美元，展現國家層級的強大政策支持與戰略部署。",
+        "technology": "AI晶片與先進封裝（如CoWoS、FOPLP）技術持續突破，聯發科在ASIC領域獲得外資看好，凸顯技術領先地位。AI短劇製作佔比已突破95%，表明AI技術在內容創作領域的深度滲透與應用。",
+        "leading_indicators": [
+          "韓國半導體聚落建設進度與投資細項公布",
+          "主要AI晶片製造商(如NVIDIA)的季度財報與展望",
+          "AI模型訓練所需記憶體(HBM)的出貨量與價格趨勢"
+        ]
       },
-      "leading_indicators": [
-        "主要AI晶片製造商的資本支出預測",
-        "記憶體（DRAM、HBM）價格走勢與供應鏈庫存狀況",
-        "各國政府對半導體產業的補貼與投資政策落地進度"
-      ],
       "us_stocks": [
         {
           "name": "輝達(Nvidia)",
@@ -40,150 +40,170 @@
           "ticker": "2454"
         },
         {
-          "name": "南亞科",
-          "ticker": "2408"
+          "name": "日月光投控",
+          "ticker": "3711"
         }
       ],
       "evidence_news": [
         {
-          "title": "韓國狂砸2000兆韓元！三星SK聯手政府打造半導體AI黃金三角",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxPX0NtbXpSU2FVMWtzZXctMThkMFdSOW1USHBmTGEwbTBIVDVOeFdPM2hYa3AwRHBDcU8yYng2N0R1V2djc29EY3o2WGZReWF1SzA5VG5QbVN2Q2Z1OHlBSjNES0xCOEJRV2dmWFkxOFoyVWlCbmFVbk9TeVoyQWRLRUNOVjFadk1YY0dSQzZUTndPLWdBZk41UXVsSkFRdTlBbFFzSTNMVFZJMTNvVWJhTWRvbE5tRVl3Z2U3dUZDMjdaWG1DX25zdXpXUWdLVGpHQkhlOVhVelNDSHdaYjZ0U04wUF90R1M3MXZCWTJyNzd1WmFMejRaYzBqclRSVzE2RzRZR21XT19IcVhodTBkMm1felpmekM2aEQxMDFiTUhtWVJiaDgzaUdnS2pFeUtTZlZJN25EQUFsOGM2RWJUTGJPTG8yeXBOZktRd3JwbF9yZ3h3eGNBWUcyU19DSEh3OEIyU1JFVkMtRUR6ajVr?oc=5"
+          "title": "韩国祭出十年 1.3 万亿美金半导体投资，三星 SK 加码 AI 存储重塑全球芯片格局",
+          "source": "FX168财经",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5UMkE0cGxHaDdmaVhvY1Y3ckkxRUM2YzdkdlJ1dkFJODQ5dDJQVlFNYmJCa01CaGF6RHp6elZfUVItWUxlNnY1amNuVExfQXJfTHBhbG9IUGZSeUhKWHc?oc=5"
         },
         {
-          "title": "AI晶片的「地基天坑」缺口上看4成！ 3台廠利多疊加 外資也喊讚",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi-gJBVV95cUxPNnNHSVVfWDAtVU5VLWlRczVBQk94X09menR0U0U3NUxtMG1EbFREeS1FcEJzSlVLS0QyRFloTm5qNjFxeHZEbGQ3eFMwTFVWSEc0X3pHVmM2RW45N3I3ZEwzYVZiRlltZjNlbVIzaUUtVjZ0bFk2c25Gekc5ckVIZjc4RDJ5RnJ3R0FEbGlCenpEM1VVMU9SLURONUNlVldnU2FLZHJnc1VJQVV4T29xOXpoUTN6d2pWSGdaN0hOOXItY0h5dzZMRDE3OHI0X1FhRlEtYlJoSXhqWVgyajdPS21Vam1STlVkXzg2VEc1Y2x6ODFSdkZtaUlRejRWSkNJMzFZbHpKVWdlcHhXbG1RbFhmYkFBVGNCakdrWExNZC11MWtSNllKS001TzJBVzM4dmhheVhKVDBuclpPOEdRdzkxUV9XcTFneTFNcG1ONXVWYnk4bFBLZ2QteE5zb3hBSnNueUVEZFJCQ0VLVTRVdVJ3bG9KV25BMFE?oc=5"
+          "title": "李在明宣布打造AI國家隊 南韓未來10年投資6500億美元",
+          "source": "公視新聞網PNN",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB3UU9iQV9LN1dMSUp4cWNOdWM5QWtRVDFtdVJkWVU3bmU1Q0VQdGs5WkdKVlJCS2NpZEdVV0YxT1VQMWlqNnF4ckFRb0NoR0E?oc=5"
         },
         {
-          "title": "馬斯克也喊「沒見過漲這麼兇」！全球記憶體爆搶貨 南亞科、群聯、威剛成AI浪潮大贏家",
+          "title": "前5月營收暴增152%有底氣！「這檔」搶攻AI半導體、先進封裝八大公股卻反手調節3.7千張抱走1.4億",
           "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMijANBVV95cUxQNzFOdEd6MjJvd0hmNXpTUTZOckZsWkpuMzZZWkRrcmcyWW5jV2tGZHJ6S29ObGR5R0FFM1NyMFd4TFprWFBoTlZOZS15cXVjMXNublhIc1Vza2hyT1ZFZWQ2YVNBZnJ2ZXozM3F0MlJadHJfMFFSOGFJcGxFa2xHVnYxTkNLQTJJYnF5R1d5cG1Dc2l0cmN2ZjNjaUg2ZnA2UGVkajB4aXpENktuRmZ5bTZxb0hPZHVoSzRadlM0NVpjbGM2cDJoaG5JRkxJZzJOM1MwSXZTVnRmckRhUGlkVDJWMVVkZTdQcmhERFFROTZiemVjcFh6ZFZBMWZMOGF2TVN6QUd3a1V3OG5oWW9vS2daTC05eXdBVGRJMExfVU5yZDVDeUZvNnRYUXNYUWtnQXdkYThmaG95UU10ck92Qk4zSTNHSnFzWl9zMm52MmZOckdiZnUzVkgyLXN6WnVhMTh6UzVYaGF5Y0o1Q1NlYWM1M2hfM08wcUtYOE44MjJzdWxYa29JWWZ6cng?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxQUWpqVG5CLU5ib0J3ZTZjbUQtRGF1NVZIdTBybDlhMEpaQ1NnYzVCT19kemg3NHc4eUxXcGgyMTkyZUJraXVsUElEcmhWeUlhc0VPX3pQUzkxZkdUTGdqWUtWRFI4V3dObUs2cFRsT2s4T0dubWtJZllhZmo5akhLSXlPM0o2NVhsUTZ6b0ZBLUpaNnpBUU5OdXVIa0ttRjhTaG9oRUU5UHRyZjNvS21qYXltRnhvS1FvQ01UV0w1Ukw1ZENUcWlQbzJwNkRESS1hT09mYXU4OUg2eGdIRXhzTUFzVk4ydnpHMnU1bEVHLTREUjE0ako4a3N4dXFiWEZpTC1UbXRoWUc2S0VrdjJGZUhib1Vlb1VSd2N4S0I0X1BkMUZ3emh6alVHcHlMemdaaGpzdDlYellFZmZkSVBhcC1mRk5fbkh3VzhtWmFfNE4zU0tfVThZXw?oc=5"
         }
       ],
-      "summary": "AI技術爆發帶動對高性能晶片與記憶體的龐大需求，各國政府與科技巨頭正投入巨額資金和政策支持，共同推動AI半導體基礎設施的飛速發展。",
+      "summary": "AI與半導體產業在全球範圍內獲得國家級別的巨額資金投入與政策支持，技術創新不斷，儘管市場短期波動，長期動能依然強勁。",
       "news_count": 0
     },
     {
       "rank": 2,
-      "industry": "邊緣AI與智慧裝置",
-      "heat_score": 85,
+      "industry": "太空科技與衛星通訊",
+      "heat_score": 88,
       "signals": {
-        "funding": "雖然新聞未直接提及創投募資，但AI PC與智慧醫療題材點燃顯示器族群熱情，以及有「這檔」AI訂單一路增溫，新增CSP客戶報到，營收占比提升，暗示終端應用市場的資本投入和訂單成長。",
-        "hiring": "AI PC與智慧醫療等邊緣AI應用領域的興起，將帶動相關軟硬體工程師、演算法開發者及垂直應用專家的需求。",
-        "policy": "台灣政府推動智慧醫療等產業，雖未有明確新政策，但相關應用發展符合國家數位轉型方向；蔣萬安AI防洪預警雖被批，也顯示政府對AI應用於民生領域的嘗試。",
-        "technology": "AI PC概念的推出，以及智慧醫療等應用場景的擴展，代表AI技術正從雲端走向邊緣，與終端裝置深度結合，實現更即時、個人化的智慧功能。中國AI公司Z.ai聲稱在網路安全方面可與Mythos匹敵，也顯示AI技術在特定領域的突破和應用潛力。"
+        "funding": "Rocket Lab以80億美元收購Iridium，顯示產業內大型併購活動頻繁，資金流向整合與擴張。SpaceX透過IPO後納入Russell 1000指數，吸引更多被動資金流入。這些都反映出該領域的資本吸引力。",
+        "hiring": "隨著太空發射與衛星服務需求增長，相關企業對工程師、科學家及營運人才的需求持續增加。",
+        "policy": "多國政府將太空產業視為戰略重點，例如盧秀燕力挺藍版無人機條例，視為「下一座護國神山」，雖非直接太空，但反映國家對高科技、國防相關產業的政策扶持。",
+        "technology": "火箭發射技術、衛星製造與部署、衛星通訊網路的建置持續進步，特別是可重複使用火箭技術和低軌衛星群的發展，大幅降低成本並擴展應用範疇。",
+        "leading_indicators": [
+          "SpaceX與Rocket Lab的發射任務頻率與成功率",
+          "全球低軌衛星部署數量與服務覆蓋率",
+          "太空旅遊與商業太空站的發展進度"
+        ]
       },
-      "leading_indicators": [
-        "AI PC出貨量與市場滲透率",
-        "智慧醫療解決方案的導入案例與市場規模",
-        "邊緣AI晶片功耗與效能的技術突破"
-      ],
       "us_stocks": [
         {
-          "name": "微軟(Microsoft)",
-          "ticker": "MSFT"
+          "name": "羅克希德馬丁",
+          "ticker": "LMT"
         },
         {
-          "name": "高通(Qualcomm)",
-          "ticker": "QCOM"
+          "name": "波音",
+          "ticker": "BA"
         },
         {
-          "name": "蘋果(Apple)",
-          "ticker": "AAPL"
+          "name": "銥星通訊",
+          "ticker": "IRDM"
         }
       ],
-      "tw_stocks": [
-        {
-          "name": "佳世達",
-          "ticker": "2352"
-        },
-        {
-          "name": "廣達",
-          "ticker": "2382"
-        },
-        {
-          "name": "華碩",
-          "ticker": "2357"
-        }
-      ],
+      "tw_stocks": [],
       "evidence_news": [
         {
-          "title": "【06/29 產業即時新聞】電子下游-顯示器族群漲勢強勁，佳世達領軍上攻，AI PC與智慧醫療題材點燃類股熱情",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPLVFtRXB1b0s5clN2bFFXUHJIcVUwWmYxMjZqamFWR1BrVDdFbFM0cE5kUl84akF2MEtwc2tjaWFEbGdMYTI4ZGJUYm1CNFZBS2xVNWVKc3RxdW84b21RcDhHQlQzcWZZb3dMcWZGdDZsdDV5dXF2N25yNHF3TnBlTDkwQTdkNWFadmh3dHlB?oc=5"
+          "title": "Rocket Lab buys Iridium in $8 billion deal, to expand beyond launches",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQejk2T29RQV9nS05KV205R1FobVVPcFFySVdTaEhkYzV4djZNVDlPaEpOQTF5bGYxMUVxTG1LekJabG5PZ2w0TUsxRjRrQm1EVzdBdHZ2dkZSNEVCS0toS2ROV1dBWk1OSkI3Qk9hRjB2bnlNcXdjNV9PYlJyaDNzbmhFM3otb2hQc2FpWUt2YWdjRGN2dDZPZWZVSExvdDFPcWdHYUJRMEs5eVFQT1ZoYnkyUGhSMVUzQzJZZDRmeWxCZWlj?oc=5"
         },
         {
-          "title": "Q2營收、獲利雙雙上修！「這檔」AI訂單一路增溫 新增CSP客戶報到營收占比提升",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQdzhiT3R4ZDBWQW1QZ1IweTFOMUxXckJfRDUwU0RFUFV0a18yWW9kYWgwd2MyN0hZaVRtQUZLaVc4LWFLTDhQcVZFOEpNMktQQ3BhS1lOT2ZmbDJHNkcwLS1heTNUdVRkU3g5Z2ZiWVlOOXlsS19YRUxYNlQ1c1hnY1c0M184SnhXNWNheHhsY1BrT1kyeWpsQ3R6Umh4MGx6QUxvNmVDVzhrRGQwblpkTlJmWWxPLXp3Z3BmekVrYmQ2WEZhU2g4Wk9LVzJJSzI2OHEwY1BTMFhMNWJnMGxHZ290aFNTWVBHTnRvZkVDb04tVzdodHdUUFE4bEo3alJFOWk0bEN3d1VDX1VLZnc3ZG83a0RpX0E?oc=5"
+          "title": "SpaceX Stock (SPCX): Will Russell 1000 Inclusion Reverse Its Post-IPO Slump?",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaUhVZGl6UDlFTjVjYTRCWFlWZDhpTnFnTkJaT1AzOVdjNV8yM2Rrak5WWG90NzR4MkFlY2xRQUNlVDZwc2V6T2RfSTI2Zi1ndFA1bW9VY1ZMbHdOcHR5LUxyajdIRVhqRHVfOTVlbnJRcEZ6cmJ5bWN6X3lYai1lclpFdWNQUQ?oc=5"
         },
         {
-          "title": "蔣萬安AI防洪預警挨轟！陳宥丞認了：連議員都不知道水利處有APP",
+          "title": "盧秀燕力挺藍版無人機條例：下一座護國神山",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMiiANBVV95cUxPb2VTMkNvb216Q0tqVWdFRXRJTEczTWJqaFVPc05TaUxFZWlxYTZXd2NMODRPMEdYdkt6WUZDUS04dlJBQWxUTDRBeHo5LTN4VHkzdlhDSlNhWHF3OFdLWHlna0tyMHJCSHhaeEl5M2NWM212LTFCOXNsYjVlMHN4WWRLUEV1c3E3a1FwTG1nRnM4bXE2VkxvdnZhM1hUeTM5RC0taG5EUXhWek9nU0JZYWwtREFzeGFJY2s0NlJ4TWR5Zk16Um95RV9UNlpPempUcW5QQkxFSi1nWlpCTi13TDdEbFA1aE9IajNHNVF5ZU5fX3dQQm1wOUd0bEZ2ei13NlVJbW5kZEQ3QUZETEpTZ1pDbjlEQzJCYmcxeUJXVGdiZjBnbkQzYlRHQ2JwZlc1M1ZPNGtEcGltZ1RDLTdpVUg3UlRWOUlSQkxIWUwyYTQ2OHFVSkxneS1OVzRjWTBrV0QtejlZaHZiYWlpUnhrSnA3aDRwdmRodjZoQ3J1dkt0bnk1ZEtKbw?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNc1ZrY1NEZzUxX0xZS2VvUnRYcUdqRXRtQndieWhnUmZSV1NyMGlES3JCVWVXeFk2Q2RxdVRXY2tkcXQwZ3luelVGc21OZjhzdDRYWV8yM1FfSnVxUUplOC02MGV6YzR5eHVrYldodUtEcXBodzJILWYzc1JHdEhhcS1VTG5rM2JUZzFvX0NoZ1VsLVo5MzFZdk50LVVGZG9iNE1RMElSNl9KcmpNZnozWGR1OTJXMi1NbldfM0VkeDBsYXk2dmxiUUtvblRNcVpJVzQtOFhXRlVJT0Z1aUZsOWdySVJrNThwNzk0SzUtckliN3hIdm8xaGhkNE9kVHRuLWxBVWY3U2trWTN4S3p4dW0td2pGOWlCNjJLYnFDMTUwUjlYUkNxUWtiUEVPUQ?oc=5"
         }
       ],
-      "summary": "AI技術正加速向終端裝置滲透，AI PC、智慧醫療等邊緣AI應用成為新藍海，吸引資金與技術投入，但市場接受度與基礎設施仍需進一步完善。",
+      "summary": "太空科技與衛星通訊產業在商業化與軍事應用雙重驅動下，獲得巨額投資與政策支持，技術不斷創新，市場前景廣闊。",
       "news_count": 0
     },
     {
       "rank": 3,
-      "industry": "太空科技與無人系統",
-      "heat_score": 75,
+      "industry": "AI應用與軟體服務 (SaaS)",
+      "heat_score": 85,
       "signals": {
-        "funding": "美國太空部隊正在學習像戰鬥機一樣快速發射火箭，顯示國防與太空領域的巨大投資。華府智庫示警中國多項太空技術已超越美國，也暗示全球在此領域的競爭性投入。",
-        "hiring": "太空部隊對「快速發射火箭」技術的需求，意味著對航太工程師、軟體開發人員和相關操作人才的強勁需求。無人機管制洗牌，也代表該產業政策與技術迭代頻繁，需要專業人才應對。",
-        "policy": "美國太空部隊的動向直接反映國家戰略層面對於太空防禦與快速反應能力的重視。台灣民航局對無人機空域管制洗牌，顯示政府正在積極制定和調整相關法規，以應對新興技術帶來的挑戰與機遇。",
-        "technology": "美國太空部隊展現「快速發射火箭」的能力，以及中國在多項太空技術上超越美國，都顯示太空科技正持續取得重大突破。無人機技術的普及與應用，也代表無人系統的技術成熟度不斷提升。"
+        "funding": "儘管近期有AI股下跌的討論，高盛指出AI投資熱潮未結束，下半年將更注重AI的實際應用。SaaS股票正在反彈，表明市場對AI驅動的軟體服務信心回升。Apple收購Play App團隊，顯示科技巨頭持續透過併購強化AI相關應用。",
+        "hiring": "AI驅動的軟體開發、數據科學、機器學習工程師等職位需求持續增長。隨著AI應用深入各行各業，對具備AI技能的軟體人才需求將更加迫切。",
+        "policy": "AI在各國的發展已成為國家戰略，雖然新聞中未直接提及具體政策，但AI國家隊的建立（如韓國）將間接推動AI應用與軟體服務的發展。",
+        "technology": "AI短劇佔比突破95%，顯示AI在內容創作領域的成熟應用。Google AI限制Meta的報導，說明AI技術在市場競爭中的重要性。SaaS平台正積極整合AI功能，提升服務效率與用戶體驗。",
+        "leading_indicators": [
+          "主要SaaS公司的AI功能整合進度與用戶增長",
+          "AI內容生成工具的市場普及率與商業模式創新",
+          "大型科技公司在AI應用領域的併購活動"
+        ]
       },
-      "leading_indicators": [
-        "各國政府太空預算與發射任務數量",
-        "商業太空發射服務的訂單量與新技術應用",
-        "無人機產業的政策法規變化與市場應用擴展"
-      ],
       "us_stocks": [
         {
-          "name": "洛克希德馬丁(Lockheed Martin)",
-          "ticker": "LMT"
+          "name": "微軟",
+          "ticker": "MSFT"
         },
         {
-          "name": "波音(Boeing)",
-          "ticker": "BA"
+          "name": "Alphabet (Google)",
+          "ticker": "GOOGL"
         },
         {
-          "name": "維珍銀河(Virgin Galactic)",
-          "ticker": "SPCE"
+          "name": "Salesforce",
+          "ticker": "CRM"
         }
       ],
-      "tw_stocks": [
-        {
-          "name": "漢翔",
-          "ticker": "2634"
-        },
-        {
-          "name": "經緯航太",
-          "ticker": "8495"
-        }
-      ],
+      "tw_stocks": [],
       "evidence_news": [
         {
-          "title": "U.S. Space Force Is Learning To Scramble Rocket Launches Like They're Fighter Jets",
-          "source": "Jalopnik",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQalBQZDVibE92UFg2M1JnaW4yYWQtR1hGREdnOEhfaHNrRjRMZVJYTmhTc3ozQ1BGRnk5TVZsQ092MmRRVENrNDdLYklDaWRuSHRtSmh3VDJFSU9JVnpGRWhNWmpFQklHcEktQVJjbVVtSHdHVk91SFZ0d0tQU2xpNWFpbEIyQmdNNmIzRU5B?oc=5"
-        },
-        {
-          "title": "華府智庫示警：中國多項太空技術已超越美國",
+          "title": "AI短劇大爆發「佔比已突破95%」低成本、高流量戰時代來臨：獲利更難了",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxNWkJnS2R3RG1rNWVvRG9TS0VmYkk0UXZIUXY3RnNTckNYc29vVG00TmdUUmVHZ2lxRWZqel9PVFYzUzNQamZ2dDNnQ1lQVDV3dGdXd29ZZnY4dUlCdGZVQVNsMjFWcHhkZm8wY01fTzN5eDVCTy1TSVFHYzJnSzRORjZZdGF4TVBnTkZ6ajA5R2ZLT1FCbXgyb0l5Z3JlaW5BSjhzbWxLM3NuX19IUUVsejljVUh2elhUSjdELW9vQzNHeUw0Q1VfRWpLMUdPOURlZklYWjYwbGczbHYxRmpIMEczMmlWNmRCMzY4SU93eVBVWFh3SjV4LWsxVmkyb3NjRURRampYRnpkQjNLQ0FoRkVzbUFHdEpFZTlrcVNSQUF3dTl2TjBSVTlSWFR3SzZucTNmNVFzRDQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMilgNBVV95cUxOY3k4Z0F6WUNNR2dYeDEta3JqcDM2U1Z1OWRsRnFVeU1UMXhPaFpOYWRQMVh1TnhxTWpoQVhyTld4TGdtY1l4dXdoZGRSSDUxZGRGUWZjU3RvUm9SN2JvcHdUZ2I3VHg2eV85eGZYbGFaUWxURGc3Y01INWlOdi1meXFXQjU5SUIwY1BIbE5qNXdveHBmVWJpcFBLY0dLS0xSSnhOZWc2M083al9CeE5HWk5YNFlicERCT3VjR3d6Tm9UVEJNMnEzYklDSVptb2F4RHEydzdUZkM4RDlFWFkyRUZZY2h1Wk83bEZoMXJRanYzRGhXN3hxSGpSMHRkNm50TGVBYWZBamRVcU1GSzJNb1BrN1pBYUlFSTBXWVlvTzI2U2E5TmUtb1N3SElLNVdPdGdXSzdvZkprWXRkRGRxMWVJX1g3REJwQkNCQ01yQWJQQmpONDlhclRSNlJnLXp4UzVVV082ZXJRTU4wX21LYXNSV3RsUzY4RThXZFc4QlBhVUJKSEQ3czZuaTJOc1lvLXNQazRB?oc=5"
         },
         {
-          "title": "民航局突襲！恆春半島空域無人機管制洗牌 恐釀更多「鍾明軒違法」",
-          "source": "自由時報",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBEd3poNWdXallnU3JKZ25SbjhVaXdDNVB5X1kyRVc2YW9fNExjZkZpZ1IzSUdOSWRfQnFjT0FCVHlUaTZkTk9teTdMUmNWRGYzM0xVWGg0NEc2djhHbVUwX3NoYjbSAWpBVV95cUxQT2thbWVuZWhHUUREa3REaFlvYng0aDZlbE91NVZmdVoyeEJvRW9NOTZldXRhazd2SlZwOFdjV3Vvek8tWW43OVB0eU9RTTMzR2xnRDlHN0VaUjVadWpGT2ZKM1c5US1MSER3?oc=5"
+          "title": "AI Didn’t Kill SaaS After All: Why Beaten-Down Software Stocks Are Rebounding",
+          "source": "24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOeGU0TG52dTQ1ZkxxLVNtOUs3cm5fR2R4RE1DRkRCYk4yS01kSG5ucUtfVVRnWGU2TWdOMWVoelM3TmVYT2tab0FONTJMdVpVcXZTSVFqZXp2MHVsbGRjN2gxbEZ5dGhKTzNzMERQQzJvYVpkS1NPUmV1UWMyNUJudG0xTkZoRmE4cGNOSjFWV0luRm5wVWJTYlMyS0dtWjBsMmdMYmFTbUVBUUszQVM1Vk5zem9DVE9LeTVZ?oc=5"
+        },
+        {
+          "title": "Apple Acquires Award-Winning App 'Play'",
+          "source": "MacRumors",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOVWRrUU9NZENET2RSSzA1d3oxY29rbG1sMXJZVGRveVNxMFIXR2RWQzRGMHZsQ081Rmt3WFdJVTFfRkx6WWxPQjFIdUdyTkpRVElocWhNTnlzSklFVXAyQ3d2cldueXFNbTVfcTFCTEZrRWRIdFdlbTBhTGNyOEZUUQ?oc=5"
         }
       ],
-      "summary": "太空科技與無人系統在全球戰略競爭和商業應用中扮演日益重要的角色，各國政府與企業投入資源，推動技術創新與法規完善。",
+      "summary": "AI應用與軟體服務正從底層技術走向廣泛商業化，尤其在內容創作與SaaS領域展現強勁動能，大型科技公司持續投入與整合。",
+      "news_count": 1,
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "rank": 4,
+      "industry": "先進醫療與生物科技",
+      "heat_score": 78,
+      "signals": {
+        "funding": "新聞提及Medicare將開始覆蓋GLP-1減肥藥物，這將為相關藥廠帶來巨大的市場和資金流。這類政策性利好通常會吸引大量投資湧入相關的生物科技和製藥公司。",
+        "hiring": "GLP-1藥物的市場擴大將帶動藥物研發、生產、銷售及相關醫療服務領域的徵才需求。",
+        "policy": "美國Medicare將覆蓋GLP-1減肥藥物，這是一個重大的政策利好，將直接影響數百萬老年人的醫療支出，並刺激相關藥物市場的增長。此類政策變革對產業發展具有決定性影響。",
+        "technology": "GLP-1藥物代表了在肥胖和糖尿病治療領域的重大技術突破，其高療效和廣泛應用前景使其成為當前生物科技的熱點。",
+        "leading_indicators": [
+          "GLP-1藥物在Medicare中的實際覆蓋率與銷售數據",
+          "新的GLP-1類藥物研發進度與臨床試驗結果",
+          "其他國家對GLP-1藥物的醫保政策調整"
+        ]
+      },
+      "us_stocks": [
+        {
+          "name": "禮來",
+          "ticker": "LLY"
+        },
+        {
+          "name": "諾和諾德",
+          "ticker": "NVO"
+        },
+        {
+          "name": "輝瑞",
+          "ticker": "PFE"
+        }
+      ],
+      "tw_stocks": [],
+      "evidence_news": [
+        {
+          "title": "Medicare is about to cover GLP-1 drugs for weight loss. Here’s what to know.",
+          "source": "The Washington Post",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQMjQ3ZEtsbzdTUHFDYzlqQjluNlE5V0hUaS1lSldMRzQzM0Zaejk0b1JSZzZ3ZHVZWnk5TlFGX1RoMFExalRzb2VLRWdlMUhwZ2JBdUY4cnY5MFVYTE9jMmt5SEZELWNmX3BDSnVuZzFRZm1ja0I0RWU5TF9xcEt5SW9YS0xpS1BCMTNpTmpfY3VDOWlhdENKTWZ4d3NYR0VrNzhydE1adGdVWjBldHVQZlBJdw?oc=5"
+        }
+      ],
+      "summary": "GLP-1減肥藥物獲得美國醫保覆蓋，預示著該領域將迎來巨大的市場增長和資金投入，生物科技在精準醫療領域的應用持續擴大。",
       "news_count": 0
     }
   ]
