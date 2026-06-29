@@ -1,6 +1,6 @@
 {
   "report_date": "2026-06-29",
-  "as_of": "2026-06-28 22:05 UTC (Yahoo Finance)",
+  "as_of": "2026-06-29 01:14 UTC (Yahoo Finance)",
   "threshold": -1.5,
   "quotes": {
     "^GSPC": {
@@ -43,18 +43,18 @@
       "name": "標普 500 期貨",
       "group": "美股期貨",
       "lead_type": "盤前即時",
-      "last": 7401.75,
+      "last": 7433.25,
       "prev": 7437.5,
-      "change_pct": -0.48,
+      "change_pct": -0.06,
       "is_drop": false
     },
     "NQ=F": {
       "name": "那斯達克 100 期貨",
       "group": "美股期貨",
       "lead_type": "盤前即時",
-      "last": 29368.25,
+      "last": 29467.0,
       "prev": 29666.0,
-      "change_pct": -1.0,
+      "change_pct": -0.67,
       "is_drop": false
     },
     "^TNX": {
@@ -79,19 +79,19 @@
       "name": "新台幣匯率",
       "group": "債匯",
       "lead_type": "",
-      "last": 31.84,
-      "prev": 31.7,
-      "change_pct": 0.45,
+      "last": 31.86,
+      "prev": 31.69,
+      "change_pct": 0.56,
       "is_drop": false
     },
     "TXF-NIGHT": {
-      "name": "台指期夜盤收盤",
+      "name": "台指期(日盤即時)",
       "group": "台股期貨",
       "lead_type": "盤前即時",
-      "last": 44373.0,
-      "prev": 46527.0,
-      "change_pct": -4.63,
-      "is_drop": true
+      "last": 45216.0,
+      "prev": 44452.0,
+      "change_pct": 1.72,
+      "is_drop": false
     }
   },
   "drops": [
@@ -100,12 +100,6 @@
       "name": "費城半導體",
       "change_pct": -7.94,
       "lead_type": "隔夜領先"
-    },
-    {
-      "symbol": "TXF-NIGHT",
-      "name": "台指期夜盤收盤",
-      "change_pct": -4.63,
-      "lead_type": "盤前即時"
     },
     {
       "symbol": "^IXIC",
@@ -121,71 +115,88 @@
     }
   ],
   "alert_level": "警戒",
-  "summary": "今日美股科技及半導體類股遭遇嚴重賣壓，帶動台指期夜盤重挫，台股開盤恐面臨大幅修正壓力。",
+  "summary": "隔夜美股四大指數齊跌，費半重挫近8%，主因為OpenAI延後IPO及AI相關成本上升引發科技股恐慌，台股今日開盤應當心半導體及電子股的賣壓。",
   "interpretation": [
     {
-      "market": "美股科技股與半導體類股",
-      "cause": "根據新聞報導，美股科技股重挫引發市場恐慌，費城半導體指數大幅下跌，主因為AI股承壓、晶片股疲軟、記憶體領跌，以及OpenAI考慮延後上市等利空消息。此外，美軍對伊朗的報復性空襲也加劇了市場對油價風險的擔憂。",
+      "market": "美股大盤/科技股",
+      "cause": "OpenAI傳出延後IPO，引發市場對AI產業前景的擔憂，加上多家電玩與科技企業歸咎AI導致成本上升並漲價，促使資金從科技股撤離。此外，高槓桿操作也加劇市場恐慌。",
       "evidence_news": [
         {
-          "title": "科技股重挫引發市場恐慌，華爾街主要指數全線下跌！",
+          "title": "【美股盤後】OpenAI傳延後IPO 四大指數齊跌、費半重挫逾5%",
+          "source": "非凡新聞台",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE93RG9XUWVzUVNRSmIzanlZOFpvbTl0WWhaSm1EaWJva3hNdTZLbTR6QzJ4ZzlUa2lCa0ViYlNBYmY4VkwtQTJlYmRkQVMxMzRUSEF5a0g1XzdwZGVQZHV0MQ?oc=5"
+        },
+        {
+          "title": "蘋果加價之際 科技與電玩企業紛紛怪罪AI",
+          "source": "BBC 中文",
+          "url": "https://www.bbc.com/zhongwen/articles/cvg5jl7gd4ro/trad?at_medium=RSS&at_campaign=rss"
+        },
+        {
+          "title": "Leverage That Fueled US Stock Rally Becomes a Growing Concern",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORFM0OVgxNGFod0NDOFpMcEpoNk5iY0htYWFiYWRIcjVjMHdOQjlsbk5JN3JZRzlpYlEzdENoTHRvUU1pUW1QOGtzMUpaMkwzSl9GdkVjYUpjV1FFUWZvTm1PZHVkeHJ4T2FTbVBuaUhrMDlfbFBQcW9WZHhkUmd6d2xYUk9zRE1YZXZvNk15MGdCdjY5dTdFbWxhMlR1MmJDRHoyUEdVaTlPTDE4SzBkUDln?oc=5"
+        }
+      ]
+    },
+    {
+      "market": "費城半導體指數",
+      "cause": "受整體科技股下跌影響，以及對記憶體晶片成本上升和AI相關硬體需求的擔憂，費半指數遭受重創。有新聞指出聯想認為DRAM價格不會回到去年水準，進一步加劇市場對半導體成本的擔憂。",
+      "evidence_news": [
+        {
+          "title": "費半重挫逾五趴！晶片股疲軟拖累台股暴跌千點-財經焦點情報站",
           "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPd0FlNXNzY3pZd19ISFdncnhoR1BQQzFjUTQ5SThTM1RJT2k2YnlETU1vTDRpd2xqZ0ZDUUtWTUpQdDE4TENzMHFyUEJhZ0VLMmFNcHJSZzZxRzA5U2gwa2hjY1lKSHMyeXptcV92YXctSzdMclVyX2hWWHVEMWJoOEpCZUdCMWlLSjhhYVl3?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNR3ZEMFdEUG92MEhjZFR3OGRBakpDVW1GWFpERzRnZl9Ya3RlTUdQNk5kc1UzWFExQnpZS3Q3cHNwWmRyX2JwdGppR0tXdnJ4cVlna3AwMWJYVXFFNzdqMXg3VW12clNqbjZ4VXFVU2xBYV9fbU13aWNMV3JNMzZmdXdB?oc=5"
         },
         {
-          "title": "記憶體領跌美股全倒！費半重挫5% 台積電ADR小跌",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxNVFJFQzQ5Vkh1bzRoYTdIZjdKSWczMklaMWVoMkpBZG10amlwSXduSDg1cEdBT21pS0gzRmdSdkdiQVlJdkp4ZjNrN21uYnR5TDNCTTl3S0M4cFRtLWQ4WFZVakVvVUdVcTdCWTFEYW9nQ01jQ2lXbnVQbUpsWFRCZ05adVhJelBnai0yM0VfRW9XQmY2ZEI2Tnp3dkJNbG1pbTVQU29FbGZ0MEJFZ2FhX3A0WjVfM0s2a1FlVUhXb2xWOUJuMllMVEo5NktBSU8tS2p3TnkxM2hfQ1dzSF9NYklNclN6dHhWSmhpcnZFei1fZ2pjYUtERWZMNmx1bVRQSWxkekFnb0k0ZnR1S0lkTVhla0duVzN1UW5tQ3k3c3hYMUVsbjBmTmV3T0x3bTdKX3pJ?oc=5"
+          "title": "Lenovo says DRAM prices “will never be like last year again”, shares “RAMageddon survival guide”",
+          "source": "VideoCardz.com",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOOWV5OEY4Zk50YVZjbklsTEhXNDlFNHNidlBlVDNSdk81MTBBT25MOGlRekZjeFJRaldOdUJWb1ZfSkNKYzRfV3hyNFprQlpfSkx2bzVrVXgwNlFmSE5laVZsSkxqNmRuVWpfaHgzdFlzcThJRks3RXZlZjRqSkVyM0xYUTBpcE9CN1ZlNVRRbWxPNWJJdEJMeDFxUTB2al8yVUVSMldmWGVhZXVJeVgyOW9KNDJKVGM5Ym9j?oc=5"
+        }
+      ]
+    },
+    {
+      "market": "地緣政治",
+      "cause": "美國與伊朗之間重啟攻擊，導致中東供應擔憂再起，油價上漲。伊朗聲稱獨攬荷莫茲海峽管轄權，雖然美方強調航行自由，但地緣政治緊張情勢恐影響能源市場。",
+      "evidence_news": [
+        {
+          "title": "Oil rises as renewed U.S.-Iran strikes reignite Middle East supply fears",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTWJRcFBwNnR2cWRJVkJQb3VRQmJiNkI3cHR6X3pGWGU3NWp0YllOaDZUdWdvZ0Z5TldETFgta2U2WUR4Nnh0VEZxQXB0TmJpRWhlM1Y2M1hBSk5PSnFwWlktUGEtNEo4djBOdUlJVklqM1VaWEoxaXRPMnRZbllLNGJaTkh4WUtERUV6MUEzUHJET3lraXNVQjRhbEtFU2150gGmAUFVX3lxTFBZcmZVZ2kzRjRkT1IzYzRMWnBBX25SSklTTk43WXV2VnRQN1k0clNnOHp3YUhIN214clJOU1BONTlOVG1TRXlEMXR3UkpiVURPb24zVjJjblpJUkw4WTVpZ3U4ZnJ6MXNYbEpNcVJPNmVVVGw3MlBJU1pybWlqN3BjbTNzVFRUV3JxQXZxaVpEXzJiQ0NxeVlTTWJ0UVZVc1hTNkdNTUE?oc=5"
         },
         {
-          "title": "OpenAI考慮延後上市 美股費城重挫5.29%、台積電ADR收跌",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxOdnU5V2huQjlkWDFqLWE4TDZFV0FQb3FGY2tNQm1NWjFrZ2hXZmgzLUgxalVrYnU2QkU0M2VpZUdqWlE4Q08tYmFBNHF5MGdMNVVaWDc0QUhFODdCQU52aFRQVTl1YVlvVEM5My1yWTd3NGNtc3RnTTlHSjZ1VVNHMEZIWGphLWVicTRjMGcwYVFpdGhnc29fRkhiYVFuTGZnbEFlZlhkVnB2YVE2cDVoZTdBalJ5MnRobHI4NnMtZGtxMF9Vdm1RczQ3aWNXc2F6R1RNMk10TXhLQXhmSXBpa012OG5JVVgzYUYxeUUyZE01V1B6ZW1lTU5HTVhvbUtRZW5KSVR6NFdmYmF0UWJZVUZtUml1N3pqSzlpaW9ta0xRd0pyajNCNHRMZ0Q5MmpOT2Mw?oc=5"
-        },
-        {
-          "title": "〈美股盤後〉美軍報復性空襲伊朗 晶片股重摔 那指連五黑周線挫逾4%",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5GdEtHLUJmVGlyZHpFeU5GRzZEeXRfakhwZGpXaUtONTl3YkF3eWdhOGx0UGVGV01oREVRb2JZaUVWYThIS2xYcUNkQWJmUDA?oc=5"
+          "title": "伊朗稱獨攬海峽管轄權 美方強調航行自由",
+          "source": "中央社 國際",
+          "url": "https://www.cna.com.tw/news/aopl/202606290018.aspx"
         }
       ]
     },
     {
       "market": "台指期夜盤",
-      "cause": "受隔夜美股特別是費城半導體指數重挫影響，台指期夜盤大幅下跌4.63%，顯示市場對台股開盤的負面預期強烈。雖然有新聞提及夜盤曾反彈，但最終收盤仍顯著下挫。",
+      "cause": "儘管隔夜美股大跌，台指期夜盤卻逆勢上漲，可能反映市場對先前台股大跌後的技術性反彈或軋空行情，但需留意與美股基本面脫鉤的風險。",
       "evidence_news": [
         {
-          "title": "費半重挫拖累台股，大盤狂瀉逾千點失守月線-財經焦點情報站",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMzAyM3otTTZrQ0VveVJublpBVHI1UVdCWDRoV1JrQ2hEWmtCWm4wQ0M3TUg3X1UxLTJRdFB2bnQtaTVEaDlUR1BsQk15OW9vdzRRcVRHbzhYZGhKcnpIcFhvQWh3UjF6eF8wZkVqOXQtS2ozclM5SHhDM2RKOVluWWJ3?oc=5"
-        },
-        {
-          "title": "台股上週大跌1893點 法人：系統性回調非基本面反轉",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202606280032.aspx"
+          "title": "台指期夜盤狂飆543點！真反彈還是假突破？「專家推演跌破月線3套劇本」這1檔神操作：開盤直接加價10元 - 上市櫃",
+          "source": "旺得富理財網",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE43YzNtVTVnUlJGcW1IcjNVY0EyWjA0c2ROTndiYnI2WFllTkgyOF9sRWhEdEc0dFhieS05U0xRWUVIY1lBMXNfYmpISjZFSzQwT2t5cEJrRG9jMWN4Xzd2elA4RmJnZTBNLWc?oc=5"
         }
       ]
-    },
-    {
-      "market": "美國公債殖利率",
-      "cause": "美國10年期公債殖利率下跌3.04%，反映市場對經濟前景的擔憂，資金可能流向避險資產。",
-      "evidence_news": []
     }
   ],
   "us_view": {
     "direction": "偏空",
-    "reason": "美股主要指數中，標普500、那斯達克綜合與費城半導體指數均出現顯著下跌，特別是科技和半導體類股跌幅巨大，顯示市場對AI相關股票的熱情降溫，並對其估值產生疑慮。多則新聞指出晶片股疲軟、記憶體領跌，以及OpenAI延後上市等因素，加劇了市場恐慌情緒。儘管有SpaceX被納入那斯達克100指數的利好消息，但整體賣壓仍佔主導地位。此外，BIS警告AI熱潮可能帶來全球風險，以及槓桿操作引發的疑慮，都為後市增添不確定性。",
+    "reason": "標普500和那斯達克綜合指數隔夜大跌，費城半導體指數更是重挫近8%，顯示市場對科技股和AI產業前景的信心受損。OpenAI延後IPO、科技公司歸咎AI導致成本上升以及地緣政治風險推升油價，都為美股帶來賣壓。短期內美股恐將持續承壓。",
     "focus": [
-      "AI概念股及半導體產業的估值與前景",
-      "Fed利率政策走向及通膨數據",
-      "國際地緣政治風險對油價的影響"
+      "AI相關產業發展與IPO動態",
+      "通膨及升息預期對科技股影響",
+      "中東地緣政治緊張情勢"
     ]
   },
   "tw_impact": {
     "direction": "偏空",
-    "reason": "隔夜美股科技與半導體類股的大幅修正，以及台指期夜盤的重挫，預示今日台股開盤將面臨沉重賣壓。台灣作為全球半導體供應鏈的關鍵一環，費城半導體指數的暴跌將直接衝擊台積電等相關權值股，進而拖累大盤。雖然有法人指出台股回檔屬系統性回調而非基本面反轉，且先進封裝技術使美國對台積電依賴更甚以往，但短期內市場情緒將受美股影響而偏向保守。",
+    "reason": "美股四大指數重挫，尤其費城半導體指數大跌近8%，將對今日台股的半導體和電子類股造成顯著衝擊。儘管台指期夜盤逆勢上漲，但此反彈可能為技術性修正，難以抵消美股的重大利空影響。台股開盤應會面臨較大賣壓，指數可能進一步回調。",
     "sectors": [
       "半導體",
-      "電子零組件",
+      "電子",
       "AI概念股"
     ]
   },
@@ -196,8 +207,8 @@
       "type": "除權息旺季",
       "title": "7月台股除權息旺季",
       "date": "2026-07-01",
-      "days_until": 3,
-      "trading_days_until": 3,
+      "days_until": 2,
+      "trading_days_until": 2,
       "detail": "除權息集中期,部分外資為避股利稅於除息前調節,易見棄息賣壓。",
       "source": "慣例"
     },
@@ -206,13 +217,141 @@
       "type": "ETF除息潮",
       "title": "7月 ETF 除息密集(46 檔)",
       "date": "2026-07-01",
-      "days_until": 3,
-      "trading_days_until": 3,
+      "days_until": 2,
+      "trading_days_until": 2,
       "detail": "本月有 46 檔 ETF 除息(取自真實除息月份);留意除息前後的棄息賣壓與填息表現。",
       "source": "真實(etf_profiles 除息月份)"
     }
   ],
   "raw_news": [
+    {
+      "title": "熱浪狂襲歐洲 羅馬長者靠智慧手環安心獨居",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290022.aspx",
+      "summary": "（中央社羅馬28日綜合外電報導）熱浪近日侵襲歐洲，羅馬市政府為獨居長者提供可監測心率、睡眠與跌倒狀況的智慧手環，搭配社工遠端關懷服務，盼能及早發現健康異常，在高溫期間降低意外發生風險。",
+      "published": "2026-06-29T00:34:12+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "遭烏克蘭持續空襲 普丁坦言俄羅斯面臨燃料短缺",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290021.aspx",
+      "summary": "（中央社莫斯科28日綜合外電報導）俄羅斯總統普丁（Vladimir Putin）在克里姆林宮今天刊出的專訪中坦言，在4年多的俄烏戰爭期間，由於烏克蘭不斷發動空襲，俄羅斯確實面臨「一定程度」的燃料「短缺」。",
+      "published": "2026-06-29T00:28:10+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "芬蘭公部門2031年前全面導入AI 70萬員工受衝擊",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290019.aspx",
+      "summary": "（中央社記者巫祈麟赫爾辛基29日專電）芬蘭政府近日宣布，公部門將在2031年前轉型為以人工智慧（AI）為基礎的運作模式，目標將整體生產力提升20%，現有約70萬名員工將直接受到衝擊。",
+      "published": "2026-06-29T00:24:06+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "伊朗稱獨攬海峽管轄權 美方強調航行自由",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290018.aspx",
+      "summary": "（中央社德黑蘭28日綜合外電報導）伊朗外交部長阿拉奇（Abbas Araghchi）今天表示，根據與美國總統川普簽署的初步和平協議，伊朗擁有管理荷莫茲海峽航運的專屬權利。",
+      "published": "2026-06-29T00:23:04+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "熱浪成新常態 柏林推「涼爽地圖」打造避暑城市",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290014.aspx",
+      "summary": "（中央社記者林尚縈柏林29日專電）熱浪成為歐洲夏季新常態，德國首都柏林去年底推出第一份「高溫行動計畫」，將抵禦極端高溫正式納入城市治理。今年夏天第一波熱浪襲歐，柏林啟動涼爽地圖、教堂避暑空間及高齡者關懷等措施，首度檢驗這套城市高溫調適策略。",
+      "published": "2026-06-29T00:17:55+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "紐約驕傲同志遊行 台灣隊連結兩地開放文化價值",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/ahel/202606290013.aspx",
+      "summary": "（中央社記者廖漢原紐約28日專電）一年一度的紐約同志驕傲遊行今天盛大登場，台灣「檳榔西施」主題花車與變裝皇后妮妃雅等，在熱情人潮中成為焦點。紐約是全球同志運動的濫觴，每年10月台北有亞洲最大的同遊，掌聲與尖叫聲連結兩地開放的文化價值。",
+      "published": "2026-06-28T23:59:53+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "蘋果加價之際 科技與電玩企業紛紛怪罪AI",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cvg5jl7gd4ro/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "從微軟 Xbox，任天堂 Switch 2 到 Valve Steam Deck，多家國際科技與電玩企業近期紛紛漲價。",
+      "published": "2026-06-28T23:45:09+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "德國熱浪41.7度連3天破高溫紀錄 森林野火四起、13人戲水溺斃",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290011.aspx",
+      "summary": "（中央社記者林尚縈柏林28日專電）熱浪侵襲歐洲，德國週日全國最高溫飆升至攝氏41.7度，連續3天刷新全國最高氣溫紀錄，週末在極端炎熱氣候下有13人戲水溺斃，多地森林野火蔓延，德國鐵路交通及救援系統也面臨考驗。",
+      "published": "2026-06-28T23:30:48+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "德州奧斯汀亞美電影節 周東彥短片創新話題",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/acul/202606290010.aspx",
+      "summary": "（中央社記者廖漢原紐約28日專電）台灣劇場暨新媒體導演周東彥與剪輯黃嘉文的VR短片，近期在美國德州奧斯汀舉行的亞美電影節放映，當地影人與策展者對台灣創作者的創意與細膩留下深刻印象。",
+      "published": "2026-06-28T23:28:46+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "不滿近日遭到攻擊 伊朗取消參加技術會談",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290009.aspx",
+      "summary": "（中央社杜拜28日綜合外電報導）伊朗最高領袖著作保存與出版辦公室一名成員今天告訴國營電視台，因近期對伊朗的攻擊，以及與美國簽署的諒解備忘錄條件未獲履行，伊朗未參加原定今天舉行的技術會談。",
+      "published": "2026-06-28T23:05:41+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "【美股盤後】OpenAI傳延後IPO 四大指數齊跌、費半重挫逾5%",
+      "source": "非凡新聞台",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE93RG9XUWVzUVNRSmIzanlZOFpvbTl0WWhaSm1EaWJva3hNdTZLbTR6QzJ4ZzlUa2lCa0ViYlNBYmY4VkwtQTJlYmRkQVMxMzRUSEF5a0g1XzdwZGVQZHV0MQ?oc=5",
+      "summary": "【美股盤後】OpenAI傳延後IPO 四大指數齊跌、費半重挫逾5% 非凡新聞台",
+      "published": "2026-06-28T22:58:54+00:00",
+      "origin": "關鍵字「美股 大跌 重挫」"
+    },
+    {
+      "title": "尼坦雅胡：以軍黎南摧毀真主黨200公尺長地道",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290008.aspx",
+      "summary": "（中央社耶路撒冷28日綜合外電報導）以色列總理尼坦雅胡與國防部長卡茲今天表示，以色列軍方已經摧毀什葉派基本教義民兵組織真主黨在黎巴嫩南部建造的一條大型隧道。",
+      "published": "2026-06-28T22:55:39+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "〈台股盤前要聞〉史上第三大跌點洗出融資200億元、台指期夜盤反彈戰4萬5關卡",
+      "source": "news.cnyes.com",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5MQllVYnpjbkJGQnNSTmJIYXFfdUxxcHJDSDBNWTJvcmVpMlAtZFpoZUs4aEFUVHVJX3JtMWZEQXZjWDcyUVFKOWxJbkVhcUk?oc=5",
+      "summary": "〈台股盤前要聞〉史上第三大跌點洗出融資200億元、台指期夜盤反彈戰4萬5關卡 news.cnyes.com",
+      "published": "2026-06-28T21:11:06+00:00",
+      "origin": "關鍵字「台指期 夜盤 台股期貨」"
+    },
+    {
+      "title": "前所未見熱浪侵襲歐洲 捷克、波蘭高溫破紀錄",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290006.aspx",
+      "summary": "（中央社布拉格／華沙28日綜合外電報導）捷克氣象局表示，捷克今天再度刷新高溫紀錄，位在首都布拉格以北的多克薩尼測得攝氏41.9度，這是該國兩天內第2次打破高溫紀錄。波蘭今天高溫也創新高，來到40.5度。",
+      "published": "2026-06-28T21:08:33+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "委內瑞拉雙震增至1450人罹難 一對父子受困逾3天獲救",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290005.aspx",
+      "summary": "（中央社卡拉巴勒達／卡拉卡斯28日綜合外電報導）法新社記者在受災嚴重的海岸城鎮卡拉巴勒達（Caraballeda）目擊，一名男子與他十多歲的兒子在委內瑞拉雙震襲擊逾3天後，今天從瓦礫堆中獲救。",
+      "published": "2026-06-28T20:19:30+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "上萬輛偉士牌羅馬車聚 慶祝經典車款問世80年",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290003.aspx",
+      "summary": "（中央社羅馬28日綜合外電報導）超過1萬輛偉士牌摩托車昨天噗噗作響緩慢駛過羅馬競技場（Colosseum）和羅馬廣場（Roman Forum）周圍，盛大慶祝此一經典車款問世80週年。",
+      "published": "2026-06-28T18:51:05+00:00",
+      "origin": "中央社 國際"
+    },
     {
       "title": "新商品及新制度／高價股期縮小交易單位 | 期貨市場 | 期貨",
       "source": "經濟日報",
@@ -220,6 +359,78 @@
       "summary": "新商品及新制度／高價股期縮小交易單位 | 期貨市場 | 期貨 經濟日報",
       "published": "2026-06-28T17:44:38+00:00",
       "origin": "關鍵字「台指期 夜盤 台股期貨」"
+    },
+    {
+      "title": "伊斯坦堡驕傲遊行再遭禁 至少50人被捕",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606290002.aspx",
+      "summary": "（中央社伊斯坦堡28日綜合外電報導）儘管政府禁止舉辦，並且封鎖市中心主要集會場所，一場同志驕傲遊行今天仍在土耳其第一大城伊斯坦堡舉行。主辦單位表示，警方逮捕至少50人，其中包括一名記者。",
+      "published": "2026-06-28T16:47:01+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "結合歐洲傳統和亞洲意蘊 金雕工藝師李芷寧巴黎獲獎",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280203.aspx",
+      "summary": "（中央社記者曾依璇巴黎28日專電）珠寶設計師暨金雕工藝師李芷寧在巴黎一場奢侈品與創意產業活動獲獎，主辦單位評論，她的作品結合歐洲雕刻工藝傳統和亞洲書法意蘊，體現瀕危工藝和當代創作之間的鮮活對話。",
+      "published": "2026-06-28T15:26:53+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "歐洲熱浪肆虐近兩億人承受35度酷暑 德國與捷克再創高溫紀錄",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280202.aspx",
+      "summary": "（中央社巴黎28日綜合外電報導）根據法新社估計，歐洲今天至少有1億9100萬人面臨至少攝氏35度高溫，尤以德國、捷克、匈牙利及波蘭最為炎熱，其中德國與捷克分別以攝氏41.7度及41.1度雙雙創下高溫紀錄。",
+      "published": "2026-06-28T15:09:51+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "美國務院：美官員與台各政黨立委互動 強化美台關係",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aipl/202606280198.aspx",
+      "summary": "（中央社台北28日電）立法院長韓國瑜日前率跨黨派立委訪問華府，會晤美國國務院官員。國務院今天表示，美台之間強健的非官方關係，透過美國官員與台灣各政黨立法委員之間的定期互動而強化。",
+      "published": "2026-06-28T14:34:40+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "宏亮嗓門堪比噴射機起飛 澳洲男寫金氏世界紀錄",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280197.aspx",
+      "summary": "（中央社墨爾本28日綜合外電報導）澳洲專業冷氣清潔員麥格瑞爾–貝特普（Joseph McGrail-Bateup）近來獲金氏世界紀錄認證成為全球聲音最宏亮的人，他喊出的分貝音量堪比噴射機起飛。",
+      "published": "2026-06-28T14:15:37+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "川普發自己與歐巴馬年輕對比照 引網友熱議",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280196.aspx",
+      "summary": "（中央社華盛頓28日綜合外電報導）美國總統川普近日在社群媒體發文，分享他與前總統歐巴馬年輕時的對比照，引發網友熱議。",
+      "published": "2026-06-28T14:04:35+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "熱浪取消不了公園長跑，綠色的青蛙可以",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/c3wyz6zegqpo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "The parkrun co-director says the event is a \"bit stuck\" as the migration is taking long than usual.",
+      "published": "2026-06-28T13:44:56+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "韓國禁食狗肉法將生效 數十萬食用犬去向不明引關注",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202606280190.aspx",
+      "summary": "（中央社平澤28日綜合外電報導）韓國禁食狗肉法律將於明年2月生效，隨著禁令逼近，其產業規模迅速縮水，然而數以十萬計原為食用目的飼養的犬隻去向成謎，前食用犬養殖業者及動保團體推測大部分可能已被宰殺。",
+      "published": "2026-06-28T12:52:17+00:00",
+      "origin": "中央社 國際"
+    },
+    {
+      "title": "「中國尊」撞機事件背後的三大疑點：禁區、動機、飛行員",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cn4d1ev0vlpo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "為什麼一架飛機能夠不顧管制，暢行無阻，進入北京的中心？飛行員究竟是誰？這次事件到底是一場挾私報復，還是純粹的意外？BBC中文梳理「中國尊空難」的未解之謎。",
+      "published": "2026-06-28T10:09:30+00:00",
+      "origin": "BBC 中文"
     },
     {
       "title": "國銀富豪戶單月增1090人 5月底AUM衝2.6兆",
@@ -244,6 +455,14 @@
       "summary": "美股費半重挫，台股跌逾千點失守四萬五大關-財經焦點情報站 CMoney投資網誌",
       "published": "2026-06-28T07:30:04+00:00",
       "origin": "關鍵字「美股 大跌 重挫」"
+    },
+    {
+      "title": "美國小費文化「混亂且昂貴」 世界盃球迷高呼受不了",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cy73v41yk6mo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "前往美國觀看世界盃比賽的世界各地球迷，對於必須向服務生支付小費的文化感到沮喪，甚至向BBC說他們已出現「小費疲勞」。",
+      "published": "2026-06-28T06:30:39+00:00",
+      "origin": "BBC 中文"
     },
     {
       "title": "台塑石化：29日凌晨1時起 汽柴油分別降1元、0.8元",
@@ -278,6 +497,22 @@
       "origin": "中央社 財經"
     },
     {
+      "title": "英王查爾斯報稅表上的三處「與眾不同」",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/crkv75e4dp2o/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "英王查爾斯於2024至2025年度繳納1290萬英鎊（1700萬美元；1.16億元人民幣；5.4億元新台幣）稅款——關於其特殊稅務狀況，我們所知的情況如下。",
+      "published": "2026-06-28T04:08:28+00:00",
+      "origin": "BBC 中文"
+    },
+    {
+      "title": "GTA 6為甚麼只剩下載版？光碟大限已至嗎？",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cy8w4w19zpno/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "音樂與電影如今大多已轉向純數碼形式，GTA 6缺乏實體光碟，是否意味著遊戲產業也正走向同樣的道路？",
+      "published": "2026-06-28T03:11:48+00:00",
+      "origin": "BBC 中文"
+    },
+    {
       "title": "台指期夜盤狂飆543點！真反彈還是假突破？「專家推演跌破月線3套劇本」這1檔神操作：開盤直接加價10元 - 上市櫃",
       "source": "旺得富理財網",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE43YzNtVTVnUlJGcW1IcjNVY0EyWjA0c2ROTndiYnI2WFllTkgyOF9sRWhEdEc0dFhieS05U0xRWUVIY1lBMXNfYmpISjZFSzQwT2t5cEJrRG9jMWN4Xzd2elA4RmJnZTBNLWc?oc=5",
@@ -300,6 +535,14 @@
       "summary": "兩檔期貨保證金調高 經濟日報",
       "published": "2026-06-28T02:00:00+00:00",
       "origin": "關鍵字「台指期 夜盤 台股期貨」"
+    },
+    {
+      "title": "《超級少女》：DC工作室高層稱漫畫巨頭須重建影迷信任",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/cgmdxmdkjvyo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "作為漫威競爭對手的最新作品，這部電影是其龐大電影宇宙全面重整計劃的一部分。",
+      "published": "2026-06-28T01:56:36+00:00",
+      "origin": "BBC 中文"
     },
     {
       "title": "AI進入工地 根基營造「創新DNA」扭轉缺工困局【專訪】",
@@ -356,6 +599,14 @@
       "summary": "AI股承壓！費半重挫，台股大跌失守四萬五-財經焦點情報站 CMoney投資網誌",
       "published": "2026-06-27T13:00:11+00:00",
       "origin": "關鍵字「美股 大跌 重挫」"
+    },
+    {
+      "title": "小型飛機撞上北京最高樓「中國尊」 官方時隔近一天後證實",
+      "source": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/articles/c8625lpy12yo/trad?at_medium=RSS&at_campaign=rss",
+      "summary": "一架小型飛機撞上了中國首都北京的最高建築——「中國尊」，官方在事發後將近一天證實一人死亡，未知事發原因。",
+      "published": "2026-06-27T12:48:17+00:00",
+      "origin": "BBC 中文"
     },
     {
       "title": "今彩539第115156期開獎",
@@ -454,92 +705,124 @@
       "origin": "中央社 財經"
     },
     {
-      "title": "記憶體領跌美股全倒！費半重挫5% 台積電ADR小跌",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxNVFJFQzQ5Vkh1bzRoYTdIZjdKSWczMklaMWVoMkpBZG10amlwSXduSDg1cEdBT21pS0gzRmdSdkdiQVlJdkp4ZjNrN21uYnR5TDNCTTl3S0M4cFRtLWQ4WFZVakVvVUdVcTdCWTFEYW9nQ01jQ2lXbnVQbUpsWFRCZ05adVhJelBnai0yM0VfRW9XQmY2ZEI2Tnp3dkJNbG1pbTVQU29FbGZ0MEJFZ2FhX3A0WjVfM0s2a1FlVUhXb2xWOUJuMllMVEo5NktBSU8tS2p3TnkxM2hfQ1dzSF9NYklNclN6dHhWSmhpcnZFei1fZ2pjYUtERWZMNmx1bVRQSWxkekFnb0k0ZnR1S0lkTVhla0duVzN1UW5tQ3k3c3hYMUVsbjBmTmV3T0x3bTdKX3pJ?oc=5",
-      "summary": "記憶體領跌美股全倒！費半重挫5% 台積電ADR小跌 Yahoo新聞",
-      "published": "2026-06-27T04:20:57+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
+      "title": "Putin says Russia will press on with front-line campaign regardless of Ukraine proposals",
+      "source": "Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRUx4NlJkXzVNU2Q0SXcxR2w5T1JVN0VQd3hkUm5pazFtWHBrclVPdVBiVnVWWEdmOXZ1NWM5cHhIQ0x0WUtuSEpPeDBhVC1QbjNJN2xjQi00Smg2N1VkbXpZNXYxcWpTTUoyWDduY28xenZJRnFJTHVjQk1sRlRMd3J0UDFHTlRuU3RlbDhIQQ?oc=5",
+      "summary": "Putin says Russia will press on with front-line campaign regardless of Ukraine proposals YahooSee more headlines & perspectives on Google News",
+      "published": "2026-06-29T00:46:00+00:00",
+      "origin": "Google 世界頭條"
     },
     {
-      "title": "利空初步反應完畢 台指期夜盤率先反彈 有助台股下周一回穩",
-      "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBub2NoZlFuMGhYWkNGVVFuQ0J0c3pIdEdHS0hzM21WQXlsbEM4T3lDOEJHNWJaRElNa01DRXNkQl9IbEZ6MG1qRnZlM0ZJTm9CS0pnLUFMdU9OSUHSAWBBVV95cUxNLUE4VkNlRVhBMGdOODJrdWRwa2pRQ1hwNUZ1MzFuVHo0Tk5lT0E3ZjNkTnQ3Nk44Wm5EZVJJWnhRMEpmTWtPdTdGekVVNnM5THRZdG9odUlRWm0wVmNYc3Q?oc=5",
-      "summary": "利空初步反應完畢 台指期夜盤率先反彈 有助台股下周一回穩 經濟日報",
-      "published": "2026-06-27T02:45:13+00:00",
-      "origin": "關鍵字「台指期 夜盤 台股期貨」"
+      "title": "Stock futures edge higher, Asia mixed as renewed U.S.-Iran attacks push oil prices up: Live updates",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5TU0NGQ09YelllZHBxYzEtRTQwU1o5LXM1WEZ2VFNtd01hZXF6N3lMdDd3WVJmT1BBM0tNN2FjdG5vbU9VY2ZrUkRNemlFeDVsVlB3dEx3Nl9sM3BYbzQxaDRiNDBTenYzY0J0QUd5VW1mOEx1UjdHQdIBfkFVX3lxTE1yRFlHdnhwX2QydWJWbHFhY3ZXUXR0LTRHV1NJNmFLdG1laUU0Y3lCbi1rM3VQU2k2SllNV1FuLVkzUGVqa3UwcVpzampLWHZ4ZlM3d0FZUVhpMkY0OExQTkJaSGdNOHZXemdJOW0wTFpzQjN5NEFHTlh1ZmlYQQ?oc=5",
+      "summary": "Stock futures edge higher, Asia mixed as renewed U.S.-Iran attacks push oil prices up: Live updates CNBCOil rises as renewed U.S.-Iran strikes reignite Middle East supply fears CNBCOil Markets Edge Higher After Days of Attacks in Persian Gulf The New York TimesStock Futures, Oil Rising After Renewed Iran Tensions Barron'sOil Prices Rise Above $70 on Iran Strike WSJ",
+      "published": "2026-06-29T00:23:00+00:00",
+      "origin": "Google 財經頭條"
     },
     {
-      "title": "OpenAI考慮延後上市 美股費城重挫5.29%、台積電ADR收跌",
-      "source": "Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxOdnU5V2huQjlkWDFqLWE4TDZFV0FQb3FGY2tNQm1NWjFrZ2hXZmgzLUgxalVrYnU2QkU0M2VpZUdqWlE4Q08tYmFBNHF5MGdMNVVaWDc0QUhFODdCQU52aFRQVTl1YVlvVEM5My1yWTd3NGNtc3RnTTlHSjZ1VVNHMEZIWGphLWVicTRjMGcwYVFpdGhnc29fRkhiYVFuTGZnbEFlZlhkVnB2YVE2cDVoZTdBalJ5MnRubHI4NnMtZGtxMF9Vdm1RczQ3aWNXc2F6R1RNMk10TXhLQXhmSXBpa012OG5JVVgzYUYxeUUyZE01V1B6ZW1lTU5HTVhvbUtRZW5KSVR6NFdmYmF0UWJZVUZtUml1N3pqSzlpaW9ta0xRd0pyajNCNHRMZ0Q5MmpOT2Mw?oc=5",
-      "summary": "OpenAI考慮延後上市 美股費城重挫5.29%、台積電ADR收跌 Yahoo新聞",
-      "published": "2026-06-27T01:06:53+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
+      "title": "Oil rises as renewed U.S.-Iran strikes reignite Middle East supply fears",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTWJRcFBwNnR2cWRJVkJQb3VRQmJiNkI3cHR6X3pGWGU3NWp0YllOaDZUdWdvZ0Z5TldETFgta2U2WUR4Nnh0VEZxQXB0TmJpRWhlM1Y2M1hBSk5PSnFwWlktUGEtNEo4djBOdUlJVklqM1VaWEoxaXRPMnRZbllLNGJaTkh4WUtERUV6MUEzUHJET3lraXNVQjRhbEtFU2150gGmAUFVX3lxTFBZcmZVZ2kzRjRkT1IzYzRMWnBBX25SSklTTk43WXV2VnRQN1k0clNnOHp3YUhIN214clJOU1BONTlOVG1TRXlEMXR3UkpiVURPb24zVjJjblpJUkw4WTVpZ3U4ZnJ6MXNYbEpNcVJPNmVVVGw3MlBJU1pybWlqN3BjbTNzVFRUV3JxQXZxaVpEXzJiQ0NxeVlTTWJ0UVZVc1hTNkdNTUE?oc=5",
+      "summary": "Oil rises as renewed U.S.-Iran strikes reignite Middle East supply fears CNBC",
+      "published": "2026-06-29T00:00:00+00:00",
+      "origin": "關鍵字「Iran US military attack oil price surge」"
     },
     {
-      "title": "科技股賣壓拖累亞股重挫，台股大跌爆違約交割-財經焦點情報站",
-      "source": "CMoney投資網誌",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSXZ6U2UwYnRvUDZBSnA5RFlrUkdad2ZIcFlSeFBWMGtEX3kwNlFtZ19WeHZkbmhzVURLbko4RlhGMUR6THNSVXZMeUVsLVN4Y3QxS2I2ZjZ0cTFpUmlJbkZ1VTlCeWJzb3ZKY1dRSXlkdHdMTlNjb3ZHXzBvaVItdkFR?oc=5",
-      "summary": "科技股賣壓拖累亞股重挫，台股大跌爆違約交割-財經焦點情報站 CMoney投資網誌",
-      "published": "2026-06-26T23:00:20+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
+      "title": "Russians Feel the War’s Hardships as Ukraine Pummels Crimea",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNN2x3dzR2bzFGRHpKX2w1N1pGQWtqNS1sQ1RQV09ibExRbXBwSWpvU09RTmxEelNWY3pIME5PWmdIQUgtd2xQdnFHRGlxaGRRZmRNWWdIVWdfSVZ2cTBLd0liVFdvdy1RQUZ4eVJmV0NVMVhIQlFSQkp5WWd1Q0JkMEY1a2NNZk9USURDMDlEZEo0czVFRm1uS1JRMnNEaTRoTFE?oc=5",
+      "summary": "Russians Feel the War’s Hardships as Ukraine Pummels Crimea WSJUkrainian Attacks Spur State of Emergency Declaration in Crimea The New York TimesUkrainian attacks prompt Russian-held Crimea to halt civilian gasoline sales AP NewsRussian-installed authorities declare economic emergency in Crimea ReutersUkraine’s Attacks on Crimea Expose Limits of Putin’s Protection Bloomberg.com",
+      "published": "2026-06-28T23:19:00+00:00",
+      "origin": "Google 世界頭條"
     },
     {
-      "title": "不怕費半暴跌！台指期夜盤逆勢狂拉543點 台積電期貨不降反升",
-      "source": "民視新聞網",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8xMTFxLTYwaXJndkUwVk56dVFMbTZFQ0ZFOVdfM19INUhUNmJseGYyVWIyRmhwc0JrTHY4WTZjeTRud09zUlRybzljejU0WTl1VzJYaEdkVERzcXRqdGVNTA?oc=5",
-      "summary": "不怕費半暴跌！台指期夜盤逆勢狂拉543點 台積電期貨不降反升 民視新聞網",
-      "published": "2026-06-26T22:53:57+00:00",
-      "origin": "關鍵字「台指期 夜盤 台股期貨」"
+      "title": "Oil prices rise as US, Iran set to halt attacks after flare-up",
+      "source": "The Straits Times",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQWWZCdnBfRXdyS0VhR3NaekxxTXM0cGduYm9pTEFKeVNXc3lvUVBWbWV5bDIwRzk1elNyN1RlbFZ3Y0xEcFhCVjF1TFUyR2FSdDVuOVFVa1B1UUZhSC1BOHJFQlN0d2RXMkFjaVYtYXdFRTVaU0hSUTYzb0Z3eThvTGpaVTlCbUxYQTdhZzhaT29SS1VncmZSemdlcV9EQXZnS2F3OXptVUFSaWlqVmQ5UmU3U0NvVlRsU0JNcUZwVlBGNzlGeVE?oc=5",
+      "summary": "Oil prices rise as US, Iran set to halt attacks after flare-up The Straits Times",
+      "published": "2026-06-28T23:14:46+00:00",
+      "origin": "關鍵字「Iran US military attack oil price surge」"
     },
     {
-      "title": "〈美股盤後〉美軍報復性空襲伊朗 晶片股重摔 那指連五黑周線挫逾4%",
-      "source": "news.cnyes.com",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5GdEtHLUJmVGlyZHpFeU5GRzZEeXRfakhwZGpXaUtONTl3YkF3eWdhOGx0UGVGV01oREVRb2JZaUVWYThIS2xYcUNkQWJmUDA?oc=5",
-      "summary": "〈美股盤後〉美軍報復性空襲伊朗 晶片股重摔 那指連五黑周線挫逾4% news.cnyes.com",
-      "published": "2026-06-26T22:15:15+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
+      "title": "Escalating US-Iran strikes threaten interim peace agreement",
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUjMzVkxxSXh2OVNqNEhNQ0V3Njh5cGdkYnE4VUdwaE5xRU1hRzdvXzRmQXpNQ1NmdE9BbDAwXzBWa05KbnlDU2xLRVRiY2NpdWN1T1RFSk16cHBjSlR6Q3lER1FNblpLd1ZJRlU1QmdTejNpTU12NGxYenRWRlB3aVREX21RRVdwaXkxdVBvM2doTEdZdXpJRE9kZVNMS01WZ2xfU2U1cVk?oc=5",
+      "summary": "Escalating US-Iran strikes threaten interim peace agreement The GuardianU.S., Iran Carry Out New Strikes, Testing Fragile Ceasefire WSJIran attacks Bahrain and Kuwait following US strikes and threatens to halt talks The Boston GlobeLive updates: US and Iran ramp up threats as strikes escalate, straining fragile truce CNNU.S. crude oil falls below $70, resuming losses after attack on cargo ship near Oman CNBC",
+      "published": "2026-06-28T23:12:00+00:00",
+      "origin": "Google 世界頭條"
     },
     {
-      "title": "美股收盤》費半重挫逾5％、那指連5黑！台積電ADR走跌",
-      "source": "自由財經",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1XNUdmOFVhRUQ0QjV5TmpLdUhUVjdSQzQ5NlFTUmlEVDhmT1dEeVRtamdzU0xodW5VYXFrUW5vaHhTN2NVNWlsdlFiNjZqdDhrOEQ4M0dpbzRoWVRRS3lF0gFkQVVfeXFMT1g2Z05veG9sanBSOHl5cjBYanQ2WjFtaGFaVTdLTjZwUXdBLS1lVV95Q01iZVZsc2F4d2Fhbk5UaHdka1J0ZWZhVlhITjBLbTZIYUk1MWZfLVd4ZFhXajdFN2JVZQ?oc=5",
-      "summary": "美股收盤》費半重挫逾5％、那指連5黑！台積電ADR走跌 自由財經",
-      "published": "2026-06-26T21:53:08+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
+      "title": "French investigators probe fatal skydiving plane crash that killed pilot and 10 parachutists",
+      "source": "Fox News",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUk0zZXJkSG4tMWE2UkpZNXJyamZoRlhHdTlJRVFZU3pjQzZzckxOSHh5ZGNLdGEwdXgxU201WDBhZFdxdVI0LUhsZ2xac2lJcm13dGItb3prVWkwYk9qbEU1RzZCVWd6bWw4YjE0N042RUJhamVvb1I2cHRaYzgxRGFIQWJUUmVySkU5S0FOZ2hwOGN3bkxOblFiZ0lJNGFwbDkwZDA3TFFqenpYR0tlOWFIVQ?oc=5",
+      "summary": "French investigators probe fatal skydiving plane crash that killed pilot and 10 parachutists Fox NewsEleven killed after plane carrying skydivers crashes in eastern France BBC5 nurses among 11 killed when skydiving plane crashes in France CBS NewsFrance plane crash: Eleven people killed in skydiving aircraft crash Sky NewsSkydiving Plane Crashes in France, Killing All 11 People Aboard The New York Times",
+      "published": "2026-06-28T21:45:44+00:00",
+      "origin": "Google 世界頭條"
     },
     {
-      "title": "6月26日 期交所夜盤行情",
-      "source": "經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1PdjZuM3ktTGxoUVNvcFcwMng1eElUQWEzTHVid01DemZocElZRnFOaWRZR01RckIta3NxVS1TaEpTZm9mN2x6Q3BMQlJrd2RLZmkwazdhSWlydWfSAWBBVV95cUxPUUdRc0dUNWFlYjJCbWhQZGtKbUZ0c2lGYlFxbmloemVhMC1GVnAxaURjR2xSd0gxWUplQ0RjbVR0WHJKZU1oUFZlWGQ4WENhaFVfVnUzSWNrWDFJUGx6ZXk?oc=5",
-      "summary": "6月26日 期交所夜盤行情 經濟日報",
-      "published": "2026-06-26T21:13:41+00:00",
-      "origin": "關鍵字「台指期 夜盤 台股期貨」"
+      "title": "China’s Z.ai claims it can match Mythos on cybersecurity",
+      "source": "The Verge",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdWpqalNvdnhQN21nTk1HaGRRaXliTFdPWlVhem85ZHAwX2JLMENOWXRmT0t0a2IxQ0dsakJSTXdwRFJTTVpDUEZQSGR1cFphMFFxT0p5OWRXZnBvMERWWFhWUE9oOEFoUWdWYkltTFhJV2doUE12WnN3QmRYV2o4VUpuRXZEeEpPYVdTNmd4Wm1GQUh2b3dxYmVoTGNQRzA?oc=5",
+      "summary": "China’s Z.ai claims it can match Mythos on cybersecurity The VergeChina Has Matched Anthropic in Cybersecurity, Resetting AI Race WSJChina’s 360 says it has developed tools to match Anthropic’s Mythos ReutersChina claims to have developed AI ‘cyber nuclear weapon’ YahooAlternatives to OpenAI, Anthropic: With US prime AI off the table, India opts for fine China The Economic Times",
+      "published": "2026-06-28T21:42:51+00:00",
+      "origin": "Google 財經頭條"
     },
     {
-      "title": "美股收盤漲跌互現！AI晶片股重挫、莫德納逆勢大漲 | 民視新聞網",
-      "source": "LINE TODAY",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE95M1RIUWpWbXRVNDdjWWxrM3V1TkdjNGp4QS1hNXVEZk54LXRmRDMtUk9PcWRhUEFNMGNOMmw5WUo5V2d0WVFoMEMyMmtvNnE3a01YenNn?oc=5",
-      "summary": "美股收盤漲跌互現！AI晶片股重挫、莫德納逆勢大漲 | 民視新聞網 LINE TODAY",
-      "published": "2026-06-26T21:12:51+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
+      "title": "Pakistan says it carried out ground operation, strikes along Afghan border, killing 29 militants",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQc250eHJQZFk2c1RkdkdnQ3RvRHd1QmV6OU8yQ3B3a3NEMlFiYXd1SXpOLVBqTmM4dnZMa2U4QnRKZFhQSlV1OG1lM0hkY1oybi0wd0QtV0UydlcwOEN1TkN6MzFoVnhrUFZVaXpwOU80T0dYMkoxRmtQQndQamZ6MXRCbk5sZy10WlMxOURpOXZLTkV0cW5HUGtHOE9ET3V4WnZwd3FQMA?oc=5",
+      "summary": "Pakistan says it carried out ground operation, strikes along Afghan border, killing 29 militants AP NewsPakistan forces kill 29 militants in border operation, AP reports ReutersPakistan says its security forces killed 29 militants in ground operation, strikes along Afghan border CBS NewsPakistan says it struck militant targets in Afghanistan YahooPakistan says it carried out a ground operation and strikes along the border with Afghanistan, killing 29 militants 10TV",
+      "published": "2026-06-28T21:42:00+00:00",
+      "origin": "Google 世界頭條"
     },
     {
-      "title": "【美股盤後】美光飆漲15%、蘋果重挫！費半勁揚3%、那指四連黑| 國際",
-      "source": "非凡新聞台",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE02RHZhWG5sRG9kYzhzUkRrMjJVTmtWUUZTTFQ1RVYyYnE5UWM1cmw4ZFgzdFZhTjVmaGxkaUJULVVPVkQzR0RISmVPb2JlZkdzUEFzRTYyTUlLN0FqX0lF?oc=5",
-      "summary": "【美股盤後】美光飆漲15%、蘋果重挫！費半勁揚3%、那指四連黑| 國際 非凡新聞台",
-      "published": "2026-06-26T20:26:58+00:00",
-      "origin": "關鍵字「美股 大跌 重挫」"
+      "title": "Vanguard’s 25 years of data upend major retirement myth",
+      "source": "thestreet.com",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOOEM5a0M5cEo0Tk5TemxIaGF1ekxzWnFYU2FUVlhENHBWT2pUMTNWZHhUUFhGcDVIV3pJQnVSN3R6ajZBVk1kYjl4RkVoR1pPYzdsTGZWMGtlc1ZFeUg1cXpGdEFnN3Z6NlFlcGxXRHQ4YjkyeFdWb2loX0QxWVRCR3dCYlBsVDd2a293bjRUZzhqcWxqanVv?oc=5",
+      "summary": "Vanguard’s 25 years of data upend major retirement myth thestreet.comSee more headlines & perspectives on Google News",
+      "published": "2026-06-28T21:37:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Ukraine says it attacked two Russian oil refineries",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOcXNCenptS2hfb3pyWUNObTdqUXVKMHNDTnMxem5XckU0cEJDVXFxNDlMMHkteVhsai1GMXZlc1YwOHljQkxZclVEcDlDNmc4M3VPR2Zod3BQcGM1Y1ZzTDBCNmtwV2RScnQwNU1uSk1MTW4wa1FpRlJWaHNkVnpWMDk4UFk1aURySEkzMEpfaVdBOVZPUlZF0gGcAUFVX3lxTE9PU25TVGNOTkZBZklUVHFBRjZDTGRjYkR2Y05vV2FMYUJ4dFVGUDZHS09nU0RuaGp5SEdVRVdMOHVBZzc4LU9qZzBKRlp5Y09LYWZ3U2MxTnRpMFhvMzhJUWlSWXpGQjNzTDhGMG13eTBYRjVFTVp0d0FUd1V1dmFVZHlFVEI3RjI3dTZpYlhGTmswMVhleU8wMXhhZw?oc=5",
+      "summary": "Ukraine says it attacked two Russian oil refineries Al JazeeraUkraine's drone set another Russian oil refinery ablaze, as Putin admits fuel shortages PBSUkraine hits two Russian oil refineries overnight ReutersUkraine Targets Russian Refineries in Fresh Drone Strikes Bloomberg.comZelensky Confirms Strikes on Russian Oil Refineries in Krasnodar and Yaroslavl Regions Kyiv Post",
+      "published": "2026-06-28T21:10:19+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "MAHA feels betrayed after Supreme Court ruling on Monsanto, glyphosate",
+      "source": "The Hill",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMFlJV0gyLUMwSU5Bb1NGcDVPZXQtMGlLYUdia1JWdUpQcVhoZWQwUWdLczNXVmU5RHZlQmhqLUcxblg0LWJNS0JlSzh2ZFhMUWtZX1Jjc2M4YmV0YWVWTzZQOF84SllLaUpnbWN4NmdXZjI1cngwZ3owdmlGQm9ad1ZiWHBCVjJRMWZMTNIBkgFBVV95cUxPMGhCMEhCTmQzX0dGTzZSX0tfWF9vaGx1WEt5WVM0eUtrTVJjb3o5a0xOZGl6YUhOLXU4LS1jRnVVOXR0MGQ5b0RtbjBCSUZyNkRqRksxS1JzTmQ0bUthM3h0dlEybWttWEYwdEhZMkdEWXZqZXhESXpQVTljS3FPUzU5RWkxQzl2WUJiVDVGMVN3dw?oc=5",
+      "summary": "MAHA feels betrayed after Supreme Court ruling on Monsanto, glyphosate The HillMarjorie Taylor Greene Says It Is 'Awful' That 'No One Is Standing Up For Cancer Patients' After Bayer Scores Roundup Victory In Supreme Court YahooSupreme Court Rejects Lawsuit Alleging Roundup Weedkiller Caused Cancer The New York TimesCourt rules for Roundup maker in dispute over cancer warnings on pesticide labels SCOTUSblogSupreme Court ruling on Roundup points to a confusing difference between the law and science statnews.com",
+      "published": "2026-06-28T21:00:00+00:00",
+      "origin": "Google 財經頭條"
     },
     {
       "title": "97-year-old supermarket chain closes historic location",
       "source": "thestreet.com",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOblZhV1JCR3lsQWJXX1VPYjNJS01tcU1ySGhlM0lEaGtsNy1SWDBJM3F4M0R4NFNGVU5MRk1jSVo4MUF2ckRuMXNwTGpnZjBTdUVTUlp3VEJZT1lCeWRjVUxONWpuVkNxZE0zeEJOc3ZsLVN0NkJLbGlpZkpDeXJpX1J5Yi1JMm92QTZ3YTR4SHNJcGFpOXc?oc=5",
-      "summary": "97-year-old supermarket chain closes historic location thestreet.comHeinen’s closing downtown Cleveland location Cleveland 19 News‘Difficult decision’: Heinen’s Grocery Store in downtown Cleveland is closing FOX 8 NewsHeinen’s closure leaves Downtown Cleveland leaders scrambling to fill the void Crain's ClevelandHeinen’s closure in downtown Cleveland raises questions about sustaining development Cleveland.com",
+      "summary": "97-year-old supermarket chain closes historic location thestreet.comHeinen’s closing downtown Cleveland location Cleveland 19 News‘Difficult decision’: Heinen’s Grocery Store in downtown Cleveland is closing FOX 8 NewsHeinen’s closure in downtown Cleveland raises questions about sustaining development Cleveland.comHeinen's announces closure of Downtown Cleveland store Ideastream",
       "published": "2026-06-28T20:04:32+00:00",
       "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Here’s why your health insurer is sounding more like RFK Jr.",
+      "source": "Politico",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOaFJBb1dZaGd2dzh5SlJUbTgySEViTWRNeTBaamd4ZWc4QlRESDdVcU9TYS1LWHhWcExOUXl0WFBYWkptbEs2dkd0eFJTZXNrMmNUVFhHX0RrV1dYTlo4b1NNQnVsaFRDU1NsQ09mck1zTFd2c2YxTi1FdHFJVlc5V1dYWXlDb1lIWXc?oc=5",
+      "summary": "Here’s why your health insurer is sounding more like RFK Jr. Politico",
+      "published": "2026-06-28T20:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Church offers guidelines and information for prospective full-time missionaries",
+      "source": "Church News",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPcnRnZHRlOVBMTEN3VDRnNVpXWkhqWVdmMnA4MFVNemx5WnhMNjBfSkFNYWtxNUZUN2JZNHo5dmFQZ2Vrd09taDY2bzVVWDNvSHBDSWFLeVFOUTRpUGh1R0hxVFFMNnByU2ZHaEEzSVV4OGZMNVVISVdzTWEyTE5yMlJsd3dwOW5jbUlzR0ZUX2JNSHRDejBia3k5M2xVT205YUxKbE5QQV9zbVA4NmlQbF8zZ2VYOGpyVDJxUC1fdjRzY3NTZ3NTQUN0N3Y?oc=5",
+      "summary": "Church offers guidelines and information for prospective full-time missionaries Church News",
+      "published": "2026-06-28T20:00:00+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "Rachel Cruze warns young men are ‘throwing’ money away on habit ‘taking down a generation’",
@@ -550,11 +833,51 @@
       "origin": "Google 財經頭條"
     },
     {
+      "title": "Europe's heatwave linked to 1,300 deaths, WHO says, as Germany hits record 41.7C",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE94QW5POUt5TFVPMzg4b0J3QnlycU40X2poZjVJN0wxblI2Rm4teTlINzJlVjY1cFZqZnlXQko2TFZPM2JxUm5qTndvVlZyQVBXMmpvX1B0bENIZw?oc=5",
+      "summary": "Europe's heatwave linked to 1,300 deaths, WHO says, as Germany hits record 41.7C BBCFrance records around 1,000 additional deaths as extreme heat breaks European records AP NewsHeat starts to break in Western Europe, as Central Europe begins to broil The Seattle TimesScenes from the Paris Heat Wave newyorker.comEuropean heatwave causes 1,000 excess deaths in France Al Jazeera",
+      "published": "2026-06-28T19:37:07+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Controversial Ferrari Luce EV is an instant sellout in China",
+      "source": "Electrek",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNNlM1WEVlN2pqNkRvQzViU2h6XzZZTmZQUUVURTJCb2ZNRGNxTjlqRVVHUnh1SDRtdUQ2bGRpQ2R6VVB3bmRxT3B4b2hrQTl4ZDY1ZF9pMm9Fbi10OElqZ1N2dU53UU1pLW45VjNfLUhndW94OWZvQzhQeFJFLVlGUGhxcTY1cmJLM09wMnJobkJOdmt1aDBn?oc=5",
+      "summary": "Controversial Ferrari Luce EV is an instant sellout in China ElectrekOpinion | It’s Ugly. It Costs $640,000. Everyone Is Mad About It but Me. The New York TimesFerrari's divisive new EV car needs to be 'digested', company exec says ReutersFerrari’s First EV Got Roasted Online, Then Sold Out In China AutoblogFerrari Luce launches in China at 586,600 USD, all 88 cars sell out immediately CarNewsChina.com",
+      "published": "2026-06-28T19:27:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
       "title": "Ford rehires ‘gray beard’ engineers after AI falls short",
       "source": "TechCrunch",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMi1RZFAyTFU0NDV5NE5IV2xRV1pfV0NiaDN6X0piTlItcVVKa1FXTUdlYVo4SnJQYjVoMDVIX1YzZXMyQlZFRGFmSXM0SkEtNnZuQW5ndmN6dXA0TmNtOWEtQjFGUlF4MS1aZGJZUnY5b1Z1MTVUb0tGczNkNWhIZGN1R3JJbEpFb212MFZ3ejY4UDg?oc=5",
-      "summary": "Ford rehires ‘gray beard’ engineers after AI falls short TechCrunchFord Has Been Rehiring Quality Inspectors After AI Fell Short Bloomberg.comPorsche ranks number one in J.D. Power 2026 U.S. Initial Quality Study Porsche Newsroom2026 U.S. Initial Quality Study (IQS) JD PowerFord hired AI and sacked humans. It backfired badly The Independent",
+      "summary": "Ford rehires ‘gray beard’ engineers after AI falls short TechCrunchFord Has Been Rehiring Quality Inspectors After AI Fell Short Bloomberg.comPorsche ranks number one in J.D. Power 2026 U.S. Initial Quality Study Porsche Newsroom2026 U.S. Initial Quality Study (IQS) JD PowerFord had to hire back former engineers to fix mistakes made by its automated systems The Verge",
       "published": "2026-06-28T19:05:39+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Australia is doubling max fines for social media ban violations",
+      "source": "Mashable",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPSmljMkh5TXp0Vzlfb3Z0eF9nZnlfLWhJcDNLRkdUbkJ6c3FoamZVVlRXTXRZeXdVcFJfSXZfRzlvdGJnak45VHFybEdNdkhWaFRzRDdHSFBaNnVScFdkWTRwU0loZVRONnNmSnpIeE1GSDNQelBqRmRDR3k3NFdQUUlR?oc=5",
+      "summary": "Australia is doubling max fines for social media ban violations MashableAustralia to double maximum penalty for platforms in breach of social media ban BBCAustralia plans to strengthen laws banning children from social media NPRAustralia toughens kids' social media ban, doubles potential penalties for tech firms Reuters‘Enforcement mode’: Australia must take fight to tech giants to make social media ban stick, experts warn The Guardian",
+      "published": "2026-06-28T18:40:58+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Russia's Putin acknowledges fuel shortages, task force set up to ensure supplies",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPWEtoU2U4NVRZUERGeUU1Ui1ieHh4dlR2R3ZBcEwxT1dtNWUzT0h2N3h2RHBZdmh0elFfbnBONDdmRTR4bE5pN1l3d1NvdFZpQVhlaW9WQkRHS3VCa1NULWxZZG84M3kzTl84a0U0SlF3T2l6bnpZb3B6NHJNTGw3b0hkanVONEpXeTlOSXlDd05HMjltVDZKMnVsX19nZ085cnFZRHdlTVdYaGNRQ0E2SmNnXzNfamNKUGFsbHZneE82czdjc1E?oc=5",
+      "summary": "Russia's Putin acknowledges fuel shortages, task force set up to ensure supplies ReutersPutin admits Ukrainian strikes driving Russian fuel shortages The GuardianRussia asks Kazakhstan for gasoline to ease shortages, sources say ReutersRussia’s oil empire running low on gas The Counteroffensive with Tim MakRegions Calling: As Fuel Crisis Widens, Russia's Regions Brace for the Worst The Moscow Times",
+      "published": "2026-06-28T18:04:37+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Fired up parents defend enraged dad for reprimanding stranger who said ‘shut up’ to teen girls",
+      "source": "New York Post",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSWI0ZV9EckhFZVBRMUs1aDdPblMySkhlOUhITy03T3RHNkJKM3pHdHU3bEtMMWxlR1IteW9yc2x6ckdET0ktcE9SZ1dkcjh1cXA1dlZOM1REcjEwdFhkcm9kUFQzbTQyZzRjSzJVbWllUjgzeEhRU2ZYTjM3dHZLNXJDN0txTEFoaUtVWUd6djlrQmlEMTF6ejlkQkhOWnlDQWgyb3VyUjUyYjc0NXZENlhKUVU5NEhV?oc=5",
+      "summary": "Fired up parents defend enraged dad for reprimanding stranger who said ‘shut up’ to teen girls New York PostMan Defends Teen Girls After Passenger Tells Them to Be Quiet: “Talk to Me the Way You Talked to Them” YahooI asked kids to stop kicking my seat on a flight – you won’t believe how other passengers reacted Sky News Australia",
+      "published": "2026-06-28T17:51:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -566,11 +889,27 @@
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Survey Sunday: with nearly a trillion dollars, will Elon try to make things right?",
-      "source": "Electrek",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUGZibXlKMXFuTmQwamxTMFZ2aWxONXduU25UenJoaWYzeWJKTWNENXRBLUNvZVVaVWRWcDRQb0VlSDJGU3NSdlpzQ1F1eXo0VWpuNXhXSjR4eWtpMEd4czZWYVhvVWtwR2dLS2kzWndma1l3cjNhU1UzYkZ0M1pEa1ZLSWc0RFJyQldMbG84WWVQZ2U5UDN2cUc5YXpxVlVzZzFQOXM2Q0t2aTA4MTlHdw?oc=5",
-      "summary": "Survey Sunday: with nearly a trillion dollars, will Elon try to make things right? ElectrekMusk’s Trillion-Dollar Fortune Is a Flashing Warning Light for Democracy otherwords.orgElon Musk’s trillion dollars aren’t real — and that’s the point FortuneMusk's SpaceX stake is worth over $1 trillion. Here are the other billionaire shareholders CNBCTrillionaire Elon Musk Has Broken the Rich List Business Insider",
-      "published": "2026-06-28T16:13:00+00:00",
+      "title": "Qatari citizen killed as Hormuz dispute freezes planned US-Iran talks",
+      "source": "Ynetnews",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5taTgwRld3Zjl1U3JCQllmZnJlM3k4S2pYX1ZmdDRSeV9xQUFxZ2RCS0cwdnMzV0hkTmppazlnMVhlVzZoN3JaRkZ1RGo2MWYzWVlzOElB?oc=5",
+      "summary": "Qatari citizen killed as Hormuz dispute freezes planned US-Iran talks YnetnewsQatar says citizen killed from shrapnel due to 'military operations' ReutersAfter Iran drone attack, Qatar says citizen killed from shrapnel due to ‘military operations’ The Times of IsraelQatar: 1 Dead, 1 Injured After Naval Vessel Hit by Shrapnel Yemen OnlineQatari killed, another injured by military shrapnel off coast Yeni Safak English",
+      "published": "2026-06-28T17:10:40+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Meet 3 members of Albania's 'Flamingo Revolution' trying to torpedo a Kushner-linked development",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQUFxdl9FQnhKbW9wUUdDYmNtU3lLcVJ5U2Z1TVJPM003YU9CU05PbG01eHNnWmFQWUYxUno0QnJ6RDlPQXFveFpQa202VTZjY2FZT0F4aHJFZXVJMDBlb1N4Z0JDMDBLbVNMRUs4cnpHNEJCeWZSR0xEREhwUDRxSHRJcW1iRVBHSzZ4UXVaWmNPbWI5VndOSmZsWkpLaDJnR2hnNDZoR0ZEZlZqdzhxSDlTYlM?oc=5",
+      "summary": "Meet 3 members of Albania's 'Flamingo Revolution' trying to torpedo a Kushner-linked development AP NewsAlbania's \"Flamingo revolution\": Trump-linked luxury resort plan triggers mass protests France 24Luxury Kushner Project Collides With Albanian Discontent The New York TimesHow Jared Kushner and Ivanka Trump Sparked a Movement to Overthrow the Government of Albania Mother JonesKushner-Linked Protests Reveal Depth of Anger at Albanian Leaders Bloomberg.com",
+      "published": "2026-06-28T16:49:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Michael Saylor signals another bitcoin buy as Strategy sits about $13 billion underwater",
+      "source": "The Block",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPbTRQM3M3RDU1NThNUnpYcWU4LXpTMDQzMEV5TWgwZHBwVU9mT0tNZi1yY2V3SUdvYWJ5T1pSdVY5eE5PWF9Xb1pHcXFCSUxqY2tpWHJhNHJuQVR6czQ5SkJLa3J6allWOGpEakZEODRZV3FSWUZxdmp6LV9OVEVfUUhEX2RIaVVrX01HT082cnQ5QzFLSWtnNFJ4VDhBT2dPNUp0Z045ZUJVRGVucEFTQkdTbGZNY2o1S1FiNUJHOTQ?oc=5",
+      "summary": "Michael Saylor signals another bitcoin buy as Strategy sits about $13 billion underwater The BlockMichael Saylor's Strategy faces no easy way out as bitcoin prices continue to drop Yahoo FinanceMichael Saylor teases more bitcoin buying even as Strategy stock continues to fall CoinDeskStrategy (MSTR) Drops Down 25% In Five Days As BTC Crashes Bitcoin MagazineStrategy Just Fell Below $100 for the First Time Since Early 2024. Is MSTR a Buy, Sell, or Hold Right Now? The Motley Fool",
+      "published": "2026-06-28T16:13:13+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -585,7 +924,7 @@
       "title": "Dollar hits 13-month high as foreign investors overlook worries about Trump",
       "source": "The Washington Post",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOb0Q3dmM1c0RBcTdPTzR2M2JOMnNNcFVaTE5ORkU3U29TY2ZSN3VFTi1pX1FfRzNLdVR5R2VUTVlHX2x4b2NPaExYbEV6cmhvYVVXUE1lb1hUZFNORXJsZEFtMHRfQnoyUldqYjJWdUJrOURTTk11NkRHWmNlTExYYlhBbWJLRldDT0pJVl9PcEtqclR0bl9qVFByNjlsbzBNWllHWDJR?oc=5",
-      "summary": "Dollar hits 13-month high as foreign investors overlook worries about Trump The Washington PostDollar eases from 13-month high after burst of economic numbers CNBCDollar retreats as US inflation data eases rate hike expectations ReutersWall Street Embraces the Dollar as Warsh’s Fed Activates Bulls Bloomberg.comUS Dollar Index Breaks Out: What is Driving Greenback Strength in 2026? Barron's",
+      "summary": "Dollar hits 13-month high as foreign investors overlook worries about Trump The Washington PostFX Daily: USD rally getting tired? ING ThinkDollar retreats as US inflation data eases rate hike expectations ReutersWall Street Embraces the Dollar as Warsh’s Fed Activates Bulls Bloomberg.comDollar falls for second straight day but poised for weekly gain CNBC",
       "published": "2026-06-28T16:00:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -593,17 +932,57 @@
       "title": "China Resets the AI Race",
       "source": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBnVHZyOFhVQ1laUm5HX2VmRHhpQjNnWmVBMlRzN2p0d1NEbFI0SHQyYWJ1UkxpaDlzV0hnVEwtVHpxeFBNSF9oTDFZcm1tTGlFdm1obXcxTVFiMkdtRW52YTdVX2x1QlQ3QUc5RVBn?oc=5",
-      "summary": "China Resets the AI Race WSJChinese A.I. Models Close the Gap With Anthropic and OpenAI The New York TimesChina's Zhipu is closing in on top U.S. AI models with Anthropic and OpenAI held back CNBCDrum Tower newsletter: Who is behind China’s latest AI breakthrough? The EconomistChinese AI closes in on U.S. cybersecurity models, raising stakes in tech rivalry Seeking Alpha",
+      "summary": "China Resets the AI Race WSJChinese A.I. Models Close the Gap With Anthropic and OpenAI The New York TimesChina's Zhipu is closing in on top U.S. AI models with Anthropic and OpenAI held back CNBCDrum Tower newsletter: Who is behind China’s latest AI breakthrough? The EconomistWhat is GLM-5.2? Another open-source Chinese AI model has Silicon Valley's attention. Business Insider",
       "published": "2026-06-28T15:48:00+00:00",
       "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Trade tensions shake up Brazil’s caipirinha spirit",
+      "source": "NPR",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOeHpyM21VLS11WENrZDRrd3I2dXVwQ0ZDdTh6bnlUQThYOU1tYjBocFF2cWpVRzBaMGJHRV9Za3NQOENRZFNlTHVQY25aNWxzeFdfeDN2cVpPQTc2YkJFZ3lxQ3dDbFM5TWxqZlN3TkhwTjhBSHZjTVA1Y1FCUXJwbw?oc=5",
+      "summary": "Trade tensions shake up Brazil’s caipirinha spirit NPRSee more headlines & perspectives on Google News",
+      "published": "2026-06-28T15:45:42+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Putin Vows to Ensure Russia’s Security Amid Ukraine Retaliatory Strikes",
+      "source": "The Moscow Times",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxObzVCM0o1YzQwRDdLbTNEWUIxbmFGV0tQY203S0dKMFNDR0Z1eGVUV25na1BobUdSdmNBUmlpdzd3VEtNTS1pY0V3Q29BajlJbk1hX3pMME5uWERDYlUxazI5YXE0cy1KVXBFa0o0VjVKd0QzZzRxTUw4Qk5YUU1FNjY0ZzE3QWJhdnR1RDhGc3JoYjNHaTIza28zS0VjQWdEd1JDUVBhY3hXYmM0VERyTzk2X2laMzQ5WHlN?oc=5",
+      "summary": "Putin Vows to Ensure Russia’s Security Amid Ukraine Retaliatory Strikes The Moscow TimesRussia's Putin promises security as Ukraine ramps up attacks DW.comUnited Russia Party Congress Президент РоссииUkraine war briefing: Crimea locks down as Putin acknowledges ‘huge stream’ of Ukrainian drones The GuardianAs State Duma elections near, Putin claims West seeks to politically destabilize Russia The Kyiv Independent",
+      "published": "2026-06-28T15:29:59+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Uganda's NTV and Daily Monitor say they are under 'military siege'",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE02SzFOTmRsWEpOQl9nVWV6VGhzSVJ3MXN0aHBMTTFyeF9OR01FTklneE9ReWpZeV9FZUUxRGV4S1RaeURValBpTGxsOFZ4Q3Nxclc3ckF6OGp6QQ?oc=5",
+      "summary": "Uganda's NTV and Daily Monitor say they are under 'military siege' BBCUganda's military chief orders shutdown of two major media outlets ReutersUgandan army chief orders closure of major news platform PoliticoUganda military chief shuts leading media outlets DW.comUganda’s military chief orders shutdown of two media outlets Al Jazeera",
+      "published": "2026-06-28T15:19:53+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Another heat record broken in Germany",
+      "source": "Euronews",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9Ga1JremVrNktGNS1pNjg3SGR2MXdTOVQtSW9RVjJZaC1jMmhDbTJnbERyX09vOUtaRUxoQ1VqdnhCQ0d5ejhCcnZoejJ5Y0hjU1pfNFBZWEM4aEZmMTVScTBhYzVYeXQ4ODJIa0o2MDlYS2ZKdnZV?oc=5",
+      "summary": "Another heat record broken in Germany EuronewsGermany, Czechia, Poland and Hungary swelter through hottest days on record The GuardianGermany news: Extreme heat heads east, Greens want air con DW.comBerlin is even worse equipped than Paris for Europe’s heatwave The EconomistGerman autobahn crumbling as heat damage spreads Yahoo",
+      "published": "2026-06-28T15:13:58+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "Why Wall Street thinks US memory maker Micron is the next Nvidia",
       "source": "Yahoo Finance",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSlFwUWV1LUxzN2hYT3BHaDByWGRlUFRUNXpZSmRjODJEUWY1R1RZXzZhWXRHRWRFZDUwbjkwQk5iSWx3NGYxQk5xRy1ia01wN3pYb1Jta25aXzJwTlJLbXVKOWFTczQ0bVVxUENqNjV1XzBoSE83SDVVVlMtSE5NRE9xTXRLY2FETlNma1NVdVZfb254?oc=5",
-      "summary": "Why Wall Street thinks US memory maker Micron is the next Nvidia Yahoo FinanceThe Long-Term Threat to the Memory Chip Boom Is Innovation WSJMarkets Got Its Final Warnings (NASDAQ:SMH) Seeking AlphaMicron is about to be more profitable than any U.S. company except Nvidia and Google MarketWatchMeet Micron, the under-the-radar chipmaker that just reported a 346% sales surge and helped stop a global AI selloff Fortune",
+      "summary": "Why Wall Street thinks US memory maker Micron is the next Nvidia Yahoo FinanceThe Long-Term Threat to the Memory Chip Boom Is Innovation WSJMarkets Got Its Final Warnings (NASDAQ:SMH) Seeking AlphaMeet Micron, the under-the-radar chipmaker that just reported a 346% sales surge and helped stop a global AI selloff FortuneMicron is about to be more profitable than any U.S. company except Nvidia and Google MarketWatch",
       "published": "2026-06-28T15:00:00+00:00",
       "origin": "Google 財經頭條"
+    },
+    {
+      "title": "English influencer, 23, claims self-defense as she faces death penalty in UAE for boyfriend's murder",
+      "source": "New York Post",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUmJiNFczWE5FcnRSVWhzNU94d2pOZlFvTjJZemk2dDBhbEFQVEN2cWpTZ19adUpnemgwUDBLMm9UajFNZUx3TnlsOXJ4YkdkMV9JTjU0WVZGRmRKejNnY2lEOXA1UkVoNTR6RjRxdGswZU1IUnJ6NnIwaDBid3pRMkRIOTJRZ2ZQTk1xSkFOUklFZnJNdWFqdkluMzVuU3lucnJzT1psdDRVV0FIVXhKMndyUHhEYXY4b1gtOFB1TkVzVDdWYlhoQUM4ZFAtMHUtc1YzNXR3?oc=5",
+      "summary": "English influencer, 23, claims self-defense as she faces death penalty in UAE for boyfriend's murder New York PostInfluencer faces possible execution in Dubai after allegedly fatally stabbing man YahooBREAKING: 23-Year-Old British TikTok Influencer Brooke George faces death penalty in Dubai ProwlyTikTok star from Kent faces death penalty for Dubai murder BBCThe inside story of the British TikToker who could face death by firing squad in Dubai The Independent",
+      "published": "2026-06-28T14:50:00+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "Northern Lights Forecast: Here’s Where The Aurora Could Be Visible Next Week",
@@ -614,11 +993,59 @@
       "origin": "Google 財經頭條"
     },
     {
+      "title": "Poland records highest ever temperature as European heatwave moves east",
+      "source": "Notes From Poland",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSEx4bC0tMXR6dll4N3pybC1kTXRLMGMyd09BWW1UQ3lucUxCQ1poSnBUeU5PdWVWWGF6c3c0MkxacDJwY1M3bDJSVTFHMGVUQ19LeWVKWmd2TlZhVWtrTTkzYm1GR0hKNTVXUExnNWdaX1V3Ym1yeEdYLUlwQ1hQbVk1M25keEY4azhEcEFheEVUTXdwaXhGVUV0bkpKUDZNeG1sYjdsSFNaaTZ2b1QzbA?oc=5",
+      "summary": "Poland records highest ever temperature as European heatwave moves east Notes From PolandRaging heatwave breaks Poland’s 100-year-old temperature record TVP WorldPoland braces for 40C temperatures as heat wave triggers emergency alert Yeni Safak EnglishPoland and Germany Follows Denmark, Czechia, Slovakia, Austria, Italy and others as Europe Faces a Climatic New Breakdown Event With Intensifying 40°C Heatwave Waves, Atmospheric Omega Block Trapping, Infrastructure Fatigue, and Rapid Expansion Travel And Tour WorldWarsaw: Heatwave grips Poland #Gallery Social News XYZ",
+      "published": "2026-06-28T14:41:44+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Australian man charged with murder after dead girl found in suitcase in Thailand",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB6MXAzaHR1UERkZ1ZvT1B2cDBSLThOdWV2NjlkMmhVVWFNTE9lUkRQSXpBWm9TSFRlTGNTbDdwRFZ4TmxyNFAxZFhBZFBZTzl4LW5uLVFYUGhBZw?oc=5",
+      "summary": "Australian man charged with murder after dead girl found in suitcase in Thailand BBCAustralian man arrested after Thai teen girl found dead in suitcase CNNAustralian man arrested in Thailand after 17-year-old’s body found in suitcase The GuardianThai police arrest Australian over killing of teenager found in suitcase Al JazeeraThai teenager's father 'deeply saddened' as Australian charged with murder Australian Broadcasting Corporation",
+      "published": "2026-06-28T14:30:05+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Aramco Helicopter Crash in Ras Tanura Kills All 14 on Board",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaldhdlc4Vm1RZXdaX2FfbHQxek1KMVFvUjR0QVhtNEZILXJ3QUJFRzBKWFRuQy1uN3BqTTdPa3VkQkFFNDJPbUROQk5QTUhzSFVVTzF3TU5sdEItdTNrbTZLRk1pWlVKLXE3SEFCY3Y1RS1PNk5PYWZZTXJGYnRDOWdmUVV3Tkxaa19KdnNxMWVHM0Q4QWJFQUhFNktTTDR4d3lIY1J1M0E4b0x6VS1HaG9B?oc=5",
+      "summary": "Aramco Helicopter Crash in Ras Tanura Kills All 14 on Board Bloomberg.comSaudi Aramco helicopter crash kills 14 nationals, state news agency says CNBCAramco helicopter crashes at Saudi port as Gulf ceasefire frays Financial TimesFourteen killed in Saudi Aramco helicopter crash in Ras Tanura ساناHelicopter Crash Near Major Saudi Oil Refinery Kills 14 People The New York Times",
+      "published": "2026-06-28T14:08:14+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Oregon’s minimum wage rises Wednesday, but the pay hike reaches a smaller share of the workforce",
+      "source": "OregonLive.com",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQWVZFbHd6djBSd2d5MDJHV05sNW45ZXl4dklWb3k2bjB3WWVaU3dNM0M2Ry13ejJUNmxiaG5NVWdiSHNVWjFKOHowcmxDMFZreFZmRkUzRXZUamJ3cUc4dDRiSTVQdjNVaWxWY29QaWM0cXVGSVRfQWNGMTRsbnRxVkR2ckMtX0pxVk1QYkItREdUQWNJWWR1ZVBWUkhDVDJjNl83c2txMUZYRk5uZmRGU3kyc1BvZFJ6T2gtNjZmS2VFbkdfMS1sRnRnM0xRaDBuVDAzR0FYODV1aHfSAe8BQVVfeXFMT3l0TTZna2JDRWRlQnZwRjdWWERnLUFpRVlaRF9WV0Y2Znk5S2N6UHI1VzIzamVRSm9NT0RxWkRFeEs1ejJfaC0zUWdRRmZkSjZzaFdXcS1qMHY2VWpsQVhBbTNzQ3lITXRRNkF0MHNOSFVjVEtLUEx6YXExdDZma2pOX2t2RnZKSXd6RFFWQk13bWVSVWJ5N3B1NDh1aVVmcUJnRGEwaVJxWGdpdEN0ZE5nNGNYNURmdjZSTmx1bk5lbmcxaThTWjUzZGU4Yk1OT0o3VU84UUt0UzhhemtlWHlKVEUyYzFjdGtUbzhsbms?oc=5",
+      "summary": "Oregon’s minimum wage rises Wednesday, but the pay hike reaches a smaller share of the workforce OregonLive.com",
+      "published": "2026-06-28T14:02:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Apple’s Sweeping Price Increases Bring Home the Costs of the AI Era",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQck9VWUhHSldFamxVOWxLT0xMZTdrSVRDX0duWWxiRjAyN3lfU28zc1hHbWFyRzEtOXo4b2Rpc1dVM3J4YUJPTWhKU1BsZzZLSHh1dzhZRTVoN3cxRl9ObDRBYTNJVXdFczR0X2pWRnAwQllwZWhHLXhONEtmNngyeWFjbHRjcjd4WFFQeXhjWkFXTnZMS1haMmJiLXF6UXdmcWFWQUNNTmhqTzFoWk1mMnpXTG82VGFBRHNkdkRnWFk1ZS13MmNn?oc=5",
+      "summary": "Apple’s Sweeping Price Increases Bring Home the Costs of the AI Era Bloomberg.comApple raises prices of MacBooks, iPads as memory costs skyrocket ReutersEditorial: Sticker shock comes suddenly to the Apple store Chicago TribuneAOC puts major tech company on notice amid looming price increases: 'Far too big' Fox NewsApple's Price Hikes Aren't Just an AI Problem CNET",
+      "published": "2026-06-28T14:00:01+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
       "title": "Leverage That Fueled US Stock Rally Becomes a Growing Concern",
       "source": "Bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORFM0OVgxNGFod0NDOFpMcEpoNk5iY0htYWFiYWRIcjVjMHdOQjlsbk5JN3JZRzlpYlEzdENoTHRvUU1pUW1QOGtzMUpaMkwzSl9GdkVjYUpjV1FFUWZvTm1PZHVkeHJ4T2FTbVBuaUhrMDlfbFBQcW9WZHhkUmd6d2xYUk9zRE1YZXZvNk15MGdCdjY5dTdFbWxhMlR1MmJDRHoyUEdVaTlPTDE4SzBkUDln?oc=5",
-      "summary": "Leverage That Fueled US Stock Rally Becomes a Growing Concern Bloomberg.comLeverage driving US stock rally sparks growing unease among market watchers Crypto BriefingLeverage in the financial system, revisited Financial TimesMargin Debt Surges to Record $1.4 Trillion. That’s a Lot of Leverage. Barron'sLeverage increases market fragility, Tracy Shuchart warns Traders Union",
+      "summary": "Leverage That Fueled US Stock Rally Becomes a Growing Concern Bloomberg.comThe Trillion-Dollar Borrowing Binge Lifting the Stock Market to Risky Heights WSJLeverage driving US stock rally sparks growing unease among market watchers Crypto BriefingLeverage in the financial system, revisited Financial TimesLeverage increases market fragility, Tracy Shuchart warns Traders Union",
       "published": "2026-06-28T14:00:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "1 injured in Saturday night shooting at McDonald's on Perkins Road",
+      "source": "WBRZ",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQk5CZUgwV0plNjVRaWFSRDhvX0FGWVhSZG4xTUdDZnFQUlNaVzJIS0sxaktBbE5iT2I5SG1yUzVqRHJzek1rNUNaWG9jRlRmU1d4Zm1FSkd4YU5UV3cyWDZncF9fTGduYTh1NUY2MWlxbEkwSEpNRG1HX1cwSjRibl9leGd3Y09Ta0x4VFdKY19ZQzRXdTN3cg?oc=5",
+      "summary": "1 injured in Saturday night shooting at McDonald's on Perkins Road WBRZMan hurt in overnight shooting at McDonald’s on Perkins Rd., authorities say WAFB1 person hurt in overnight shooting near intersection of Perkins Rd., Bluebonnet Blvd. WAFB",
+      "published": "2026-06-28T13:55:29+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -630,19 +1057,27 @@
       "origin": "Google 財經頭條"
     },
     {
+      "title": "Austria urges Europe to host Anthropic following US curbs on AI access",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOV2VmbzlqUks2ZDZGQ2xYcDk0ZEVFS0hCSXFxMUg2amtkOWJmSDkxSV9mb0xRelFJSUMteUJFaG5YS2pSZHJfdVEzeXRPY3dYd2lSejg0SnFvQjhXU0Noak1fSUxuVnUxdDBpWUNKc3BtVTFKTHNSbnFfRkQ0aUY4dENia0pmOGNVeUZDeVVuZWdpS1hqV0R6S3dGcjJEbkV4YVNMS19hMEg2WFFUbGx0UEUtcmRkX0hnWkZz?oc=5",
+      "summary": "Austria urges Europe to host Anthropic following US curbs on AI access ReutersAustria Lobbies EU to Host Anthropic After US Access Curbs Bloomberg.com‘This is the least crazy AI is ever going to be’: The lessons Europe’s execs must take from Anthropic’s shutdown FortuneEurope’s doomsday AI scenario comes alive The Parliament MagazineTo Compete with the US on AI, the British Need to Cut Energy Bills American Enterprise Institute - AEI",
+      "published": "2026-06-28T13:49:38+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
       "title": "Iconic luxury retailer exits bankruptcy after deep cuts",
       "source": "thestreet.com",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQNGJ1OVFROTNxanZwSVVSZlBqcjZrV09iUkZ4VlZsNWJOaXV6cjg0Y01jc3VjdW9PV2h1VW5hZ1pmVUh3RnVPXzVrRlhlOFBzaFFnXzFURHB1dDEybTJfUEFnU2tZMjVWRFE1bmdIS0dCVWlJT3BtaG9KWHNyUE1XNXdCOVBhTVBEcXNZYjEyZGxzd1pLanZaa1dNOA?oc=5",
-      "summary": "Iconic luxury retailer exits bankruptcy after deep cuts thestreet.comSaks Emerges From Bankruptcy With Plan to Focus on Luxury Shopping and Service The New York TimesSaks Global emerges from bankruptcy with new name, less debt ReutersSaks Global Renames Itself Exemplar Luxury Group After Exit From Bankruptcy WWDSaks emerges from bankruptcy with new name and focus on luxe retail New York Post",
+      "summary": "Iconic luxury retailer exits bankruptcy after deep cuts thestreet.comSaks Emerges From Bankruptcy With Plan to Focus on Luxury Shopping and Service The New York TimesSaks Global emerges from bankruptcy with new name, less debt ReutersNew Exemplar Luxury Group Plans Life After Saks Bankruptcy WWDSaks Global comes out of bankruptcy with new name, fewer stores FOX 4 News Dallas-Fort Worth",
       "published": "2026-06-28T13:47:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "If you think China needs to dethrone U.S. dollar, you don't understand how it is waging global currency war",
+      "title": "IRAs hold trillions more than 401(k) plans — yet people hardly save in them",
       "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOOVNOSkxVOThTdTVBNmxfOWZMTnJ2a2dCWEtoTUVDSHlBMXFDR19iX3NvMXhRbnhESmhsTmhVQWVNQzc4RnV4YVBSZ2s0TEg2TjU2QTdQV3h2MXppRm45RzM1a0JjZnVGZnFhdFEwREJwVlZrak4tNjgtempqWm9kMGpZRk05dEM5Q0NBbkRFTVFqM29pRVdFeGF4alZxUUQyaUY00gGoAUFVX3lxTFBJeEZsWnVzWFJKMTZpME5NUzBBeThCcWs4dmlIeGhzUUVRRUdpTm1CUE1oZmR4bFZ1UGxaR3NYajloR2RNZjRqWnRva2l4eHFJcjBCNG05Y0Q1cUpXSlRoQl9MRVNSTVZLYWprUXVTR3NiSlZvZWdHd0s2TW5uUVZjLTd2LWFMVFJVXzVxOWR0RTlFcjNxU0pJV1g2aVozdnZabEgtLW1ZeQ?oc=5",
-      "summary": "If you think China needs to dethrone U.S. dollar, you don't understand how it is waging global currency war CNBCWhat to Know About How Iran Uses China’s Currency to Weaken U.S. Power WSJChina’s De-Dollarization Drive Has Hit a Wall Foreign PolicyWhy sinodollars outweigh the petroyuan Financial TimesXi's Push to Take Yuan Global: A Threat to Dollar? | Vantage on Firstpost Firstpost",
-      "published": "2026-06-28T13:25:43+00:00",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8tbGVOM1h5VzZSLTNxYzJPNGpqVGtCbEFTQ0hkSkw1NFpic18xUFREc0tBM29WOFF3M0VReFVHcS13Z1lxSDVOTjYtdjNsR0tDWHdIUnFENEZfb25wOG9UNldYMU1aWDZTX3NNSFdn0gFzQVVfeXFMUExYRS11aWhfT2FTSHhvSlBUUGk3czZ3b0pHSFJ6aGtoWkJFRXJ0WGFGM0tWM2Q3NVQ1RVN2U1VsMlVxdllud2VhTVdTSklhQmE3R1BFVXlnQlJfa1J4UFRLMnBidG1xSDA0NW4tc3N4VkkyVQ?oc=5",
+      "summary": "IRAs hold trillions more than 401(k) plans — yet people hardly save in them CNBCMorgan Stanley Stock And 2 Wealth Managers Tied To The IRA Rollover Boom simplywall.st",
+      "published": "2026-06-28T13:30:01+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -651,6 +1086,14 @@
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOQlhaTEZ1WE9zUWJrN1NxSm1xQ09nbDMyeW5zV3hSSk13M2xlcWRLQWVnUVVnaGtVOEdzZ0tKZEFLUGx3NzEwYUdZMkF3NzBmWXpWand5NEJhWFVZUUVYbUJfdEN3T0l1WlRWakJ5M2o2aE9DN2RTbVl2ZHNXRFk4dTJvSQ?oc=5",
       "summary": "‘We should be at $2.25 at the pump’: Trump says Exxon, Chevron, Shell and BP are price gouging drivers. Do you agree? Yahoo FinancePresident Trump is frustrated gasoline prices don’t mirror oil’s decline. Experts say it’s not that simple. Chicago TribuneTrump's Oil Price-Gouging Probe Is 'Socialism' He Accused Kamala Harris Of, Peter Schiff Says YahooTrump accuses oil companies of gas price ‘gouging,’ calls for DOJ probe NBC NewsChevron says no quick fix for gas prices as Trump takes on Big Oil: ‘It’s going to take time’ CNBC",
       "published": "2026-06-28T13:15:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Bought beef? You have just days to file a claim in $87.5 million settlement",
+      "source": "WGN-TV",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOS29aT1RRRWdKR0NyengxZU51RWViMGlyLTlTNFFUM3daTGZSZzAtOUx3Q1lUaWFneHg4MUQxYi1la3V6b01Mc3p1WTdjc0JaNEtKUlhOQXA4Qk5tQmswRGZrSVJUcE81WmZfMkEtUmtDT0ZTYldFQkFhQ0NicjJnUmRxcFo1ZTRzNGR2QnlPZ0pfOUU2VTFsQVgxSG5jRVpVRWxrc2FJSjZxd9IBrwFBVV95cUxON3dXMEdHQ2xkcHNvNEVlZlR3ZGFBOU9EUnNPMHZuWkt1a2pZcDBEYjktVGNzZ2tjTzBIdElhQUxlY1dHY3FSX2lxcmhTUGZicm93NTNKajdQQlhQX1Y1bS1teWNLcklfMkNCUTFoamtrZlkxNzdkUVhUSG9DWkJVRnhDUDJfRFhlVjdtU3dhSHN3RHd0d1paeU5kOEd5ZHVaVGZYMjNpTzRLMW54Mkw4?oc=5",
+      "summary": "Bought beef? You have just days to file a claim in $87.5 million settlement WGN-TVSee more headlines & perspectives on Google News",
+      "published": "2026-06-28T13:05:09+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -665,40 +1108,48 @@
       "title": "Air Canada Plane \"Swerves\" As Captain Incapacitated Mid-Flight, Leading To Emergency Diversion",
       "source": "One Mile at a Time",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPdWF3UTR5QnNmeVJ3SUU5ZVltdE82ZzJ3U3BkWThMOVh0eXVhS0tTNE5YUGJEaFktSlZfc2dhdTFLQVZrXzRzbE9XR2xucjFJSG14dlRDVFB0ZC1IMU9XQnA1MkgyejRfRTdGdVFnSV9fLUY3MUJoOVpkRTFpSXlCd2xJOFljZXBQdTFUdlo1Tzg0ek12dFc4MW11WXg1S2lLbktaSXdNcm1keEVLbG5J?oc=5",
-      "summary": "Air Canada Plane \"Swerves\" As Captain Incapacitated Mid-Flight, Leading To Emergency Diversion One Mile at a TimePassengers restrain pilot during apparent medical emergency on 'terrifying' flight ABC News - Breaking News, Latest News and VideosA pilot incapacitated, a crash landing and a close call. What we know about the latest aviation incidents CNNAir Canada flight diverted to Boston's Logan Airport due to \"incapacitated\" captain CBS NewsPlane lands safely at Logan after pilot becomes incapacitated, Massport says WCVB",
-      "published": "2026-06-28T12:45:46+00:00",
+      "summary": "Air Canada Plane \"Swerves\" As Captain Incapacitated Mid-Flight, Leading To Emergency Diversion One Mile at a TimePassengers restrain pilot during apparent medical emergency on 'terrifying' flight ABC News - Breaking News, Latest News and VideosA pilot incapacitated, a crash landing and a close call. What we know about the latest aviation incidents CNNAir Canada flight diverted to Boston's Logan Airport due to \"incapacitated\" captain CBS NewsAir Canada flight diversion to Boston was due to pilot ‘medical issue’ Global News",
+      "published": "2026-06-28T12:31:20+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Austria Lobbies EU to Host Anthropic After US Access Curbs",
-      "source": "Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOSnlRTk55LThKOG9OY0NWMTNmTWJjYVdSRi1wLXRpU1FBX1F4MEpXYkt5c3JfUUVkdEx5WWd5a2tmQW5oZDBCTmdEU25HZzBRVHo0aXN1SUVZYVhOQmlORTBkcUFZTFc1OTdQbmxRcVBJaXM1Wk40ZTM0NGpOaGJFRTFYQXlaRmIteHFpRXIwS08zQUhPaG1fLVhWaXEzSURTd0U2LXlzb1NlTGVxdEE?oc=5",
-      "summary": "Austria Lobbies EU to Host Anthropic After US Access Curbs Bloomberg.comAustria urges Europe to host Anthropic following US curbs on AI access Reuters‘This is the least crazy AI is ever going to be’: The lessons Europe’s execs must take from Anthropic’s shutdown FortuneEurope’s doomsday AI scenario comes alive The Parliament MagazineTo Compete with the US on AI, the British Need to Cut Energy Bills American Enterprise Institute - AEI",
-      "published": "2026-06-28T12:29:42+00:00",
+      "title": "Rats, Leaks and Broken Elevators: Repair Backlog Plagues Federal Buildings",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWndCTERrX2R3VWFOSGRmNXk5MDRIOXlkSkJoUlo2YkM0NnZxemhRdVFJV054b3FzYkwwYTBOU3FDbEZOUzNMelhzMWlFbHEyM3FxMGNJWHc0VDZERmtOSkQzTW9tRHJIb0tLb2pabFktNkpYMUhyRkdOMUZLcTJrYW5DcnMya21YR2lTeg?oc=5",
+      "summary": "Rats, Leaks and Broken Elevators: Repair Backlog Plagues Federal Buildings The New York TimesOpinion | The federal government's big fat real estate problem The Washington PostFederal government could sell ‘money pits’ in Atlanta, Savannah and Athens Atlanta Journal-Constitution4 more federal buildings in Georgia face financial chopping block WSB-TVDowntown Boston federal building among 26 properties flagged for potential sale The Business Journals",
+      "published": "2026-06-28T12:00:59+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "Seniors in Medicare are about to get landmark obesity drug coverage — but many may not know it yet",
       "source": "CNBC",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNb3VfR0hsOTdEVXdsVVNKbE4wSVJoLVkyV1Y4S3AybkJncmpVekt0dFl2OW5lV2xwc3cyTjhTUTB4Y01jbmJlMXBfWnpaUzhhNWlFSVNzOGdwMkdEQm5NRTNrMHEtbnR0VVZvQkJSQjhCSGpWM0tCZnRmQ3VMMzBNb3ctbzhFLVJxYmNPd21TVkhsbmpwdDE4bWNDWkV3MWFlcXRZLWcwZTbSAa4BQVVfeXFMT1FfTnpTQTljR1o3YkpQNm9IXy1GVDFpRzd3YWdfVy1BVGQ0UDlZWjNySnlYR2d1ajBLd19SQXhoaDJxQ2ZxU09CRzNmNkpibHBzeUNlVElQTUlOWnFxTnNSbXM1cDF6MWFtZEVNYWRmMloybkdNOFRXWmFaZ3NMcUFVQzE4TGpvSUQ3dFNJRmVOYUxHdjBNSF9hWTlZYVZCUHllU2ZJQ0xwd2lWYkRB?oc=5",
-      "summary": "Seniors in Medicare are about to get landmark obesity drug coverage — but many may not know it yet CNBCMedicare will soon offer some older Oregonians weight loss drugs for $50 a month. Here’s how it works OregonLive.comOpinion - Dr. Oz’s GLP-1 Bridge could work, but it isn’t a model for price controls YahooA new Medicare option for weight loss drugs: What older Americans should know AOL.comMedicare to Cover GLP-1 Weight-Loss Drugs For $50 a Month: See If You’re Eligible TODAY.com",
+      "summary": "Seniors in Medicare are about to get landmark obesity drug coverage — but many may not know it yet CNBCDr. Oz’s GLP-1 Bridge could work, but it isn’t a model for price controls The HillMedicare will soon offer some older Oregonians weight loss drugs for $50 a month. Here’s how it works OregonLive.comA new Medicare option for weight loss drugs: What older Americans should know AOL.comMedicare to Cover GLP-1 Weight-Loss Drugs For $50 a Month: See If You’re Eligible TODAY.com",
       "published": "2026-06-28T12:00:01+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "Lenovo says DRAM prices “will never be like last year again”, shares “RAMageddon survival guide”",
+      "source": "VideoCardz.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOOWV5OEY4Zk50YVZjbklsTEhXNDlFNHNidlBlVDNSdk81MTBBT25MOGlRekZjeFJRaldOdUJWb1ZfSkNKYzRfV3hyNFprQlpfSkx2bzVrVXgwNlFmSE5laVZsSkxqNmRuVWpfaHgzdFlzcThJRks3RXZlZjRqSkVyM0xYUTBpcE9CN1ZlNVRRbWxPNWJJdEJMeDFxUTB2al8yVUVSMldmWGVhZXVJeVgyOW9KNDJKVGM5Ym9j?oc=5",
+      "summary": "Lenovo says DRAM prices “will never be like last year again”, shares “RAMageddon survival guide” VideoCardz.comThe memory shortage shaking Apple and Microsoft is 'existential crisis' for smaller players CNBCWhy tech firms are raising PC and console prices - and blaming AI for chip costs BBCSoaring iPad, Xbox Prices Reveal Pain of Memory Chip Mess Bloomberg.comLenovo says the 'RAMageddon' is the new normal, outlines survival guide — at ISC 2026 an exec said 'it will never be like it was last year' Tom's Hardware",
+      "published": "2026-06-28T11:52:51+00:00",
       "origin": "Google 財經頭條"
     },
     {
       "title": "The best Prime Day deals you can still get: Last-chance sales from Apple, Adidas, Hanes, Shark and more",
       "source": "Yahoo",
       "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOUDlpbHZfamJmTndrZVZqX2loQXNHMVNtQzlxUHNHSnFCZy1EZGM0ZURjMlhDbGhPbUJJWlJyRlJFd2NFNndGeXhSWGs3RGF4OW56UGw0LXpHQ2Zic0RqeHJaZmFXcGt0MWQ3Nlk5bUlkeGVCYk85WjViV013T3FFWXJ0ckZZc3lmYnZraWVTWjRrY3lCdWVsdXd6bUdRVjFOVE1PQVd3S3I3RTNJRk1yMHRVczhXd3BSRVZBOVU4QUNiWXhiRjRwZXh1V2FuQXJBYUxFblhORU02ZjVYS2Y5WXdvbzJaUExIX19SV2tPZ2Q0Y3drYmhyaWdR?oc=5",
-      "summary": "The best Prime Day deals you can still get: Last-chance sales from Apple, Adidas, Hanes, Shark and more YahooAmazon Prime Day may be over, but 64 of the best deals are still up for grabs CNNThe Best Prime Day Deals Are Still Live: Shop These Deep Discounts Before They’re Gone TODAY.comEverything Vogue Editors Are Buying on Prime Day VogueThe Very Best Prime Day Deals We’ve Found (And Counting) The New York Times",
+      "summary": "The best Prime Day deals you can still get: Last-chance sales from Apple, Adidas, Hanes, Shark and more YahooAmazon Prime Day may be over, but 64 of the best deals are still up for grabs CNNAll the Rare, Cheapest-Ever, Best-Selling Prime Day Deals to Buy Before Tonight New York MagazineEverything Vogue Editors Are Buying on Prime Day VogueWe’re Still Deal Hunting Even Though Prime Day Is Over — 60+ Deals to Shop ASAP TODAY.com",
       "published": "2026-06-28T11:52:31+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Is sourdough bread good for you? Here’s what to know.",
-      "source": "USA Today",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaDJBVnJoTFpnZFFSTEdzLVBYOHlKSGlfSlRvb3BiZE5KbmhRVXBEdThhbVNMQ1ZPRV9uTDMzZzFYRXlKckNBV0s2YjE1WnBSTnNiaGx5VnA0SDExc05SaDdfMXUwUDNDa0l5Rk1YcW1vZ3Yxa1RoRW0zM0pfU0E2TWJoUDE2RHRXeVRMM0NVUUFjcmpfS3dJWldPVXk?oc=5",
-      "summary": "Is sourdough bread good for you? Here’s what to know. USA TodaySee more headlines & perspectives on Google News",
-      "published": "2026-06-28T11:11:35+00:00",
+      "title": "New Fed Chair Kevin Warsh Says There's a Huge Problem With Financial Markets Right Now. His Solution Could Be Bad News For Stock Investors",
+      "source": "The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOS25xSnNPeml6VVBBeDM3ZFVyNkxCdDhrYVpfWi1sQ1hSXzMxNUNaWXhoT19oM0E1MDNEZDdYd3VpN1pEeHV3dmNTbGNjWjZUT3pEbzZTTkhESUhzWGpseVJpcF9qdjByMG9zSU9ONVVUZGxvdlZOQlQwZGNFZE13VVVUbEgyaG1CNVBBN1I2ZWFxbHJWMFE?oc=5",
+      "summary": "New Fed Chair Kevin Warsh Says There's a Huge Problem With Financial Markets Right Now. His Solution Could Be Bad News For Stock Investors The Motley FoolFed rate cuts: Payrolls will weaken, inflation will plunge, and Warsh was 'largely performative' FortuneKevin Warsh’s tough talk on inflation reassures investors Financial TimesAGNC Investment's More Than 13.5% Yield Just Got a New Headwind From the Fed Yahoo FinanceWho Is the Real Kevin Warsh? newyorker.com",
+      "published": "2026-06-28T11:43:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -713,7 +1164,7 @@
       "title": "A 'perfect storm' points to a much smaller U.S. auto market by 2040",
       "source": "CNBC",
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9BZkxkOUZ0eEY5V3FZVzMwRmRPZ3ZnVW9zS01ScUt2Z1NtS3BxSjZ6WF9OQ2hDYzdCNGJHT0V6WjgxY0pRdzdlX3duNGl2ZTJsSUoxb05aUWFYeTVOdjZ1a9IBZkFVX3lxTE1qXzJueFhpelFMVTBnSTJSZkN0UW43cUNWbEtrQ0lIMEhweG5LQ1ZIVGVuM2dXT1Q4YTc3VEJCTXl1SE9fTlJhaW1WOGJoa1NqYU50a1RVZnE5RkV3cjV4M0NYcXRxdw?oc=5",
-      "summary": "A 'perfect storm' points to a much smaller U.S. auto market by 2040 CNBCNew Report Says Car Market Will Have to Shrink Significantly by 2040 GizmodoAmerica's Auto Industry Is Stuck In Neutral, And There's One Key Reason Why vocal.mediaExplained: Why America’s car market is shrinking CNBC TV18US auto dealers' confidence rises but future outlook dims MSN",
+      "summary": "A 'perfect storm' points to a much smaller U.S. auto market by 2040 CNBCNew Report Says Car Market Will Have to Shrink Significantly by 2040 GizmodoAmerica's Auto Industry Is Stuck In Neutral, And There's One Key Reason Why vocal.mediaUS auto dealers' confidence rises but future outlook dims MSNUS New Car Sales Projected to Drop by Over 2 Million Units by 2040 아시아경제",
       "published": "2026-06-28T11:00:01+00:00",
       "origin": "Google 財經頭條"
     },
@@ -721,137 +1172,17 @@
       "title": "Google limits Meta’s use of its Gemini AI models, FT reports",
       "source": "CNBC",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOallHQVB2WkxmbVZtVUIwRmg1NnBkclB4bkx4bmF0cGp6eThCUTNkMS0tQUdadHRrWnhuTUZzaHlCZUVSRGM3TEkxa1d1YU1jVTM4azlsTnZ0MEJocGdUV0dRZWhJajNBQ2NrT1BOUGFkRjhwYzc2TWxVOTJmOWxGMXBleFdIaE5Nai1KOFd2dTUtTGI5RWl6cWRlNNIBoAFBVV95cUxQcWRyNHVZQ3VZbGllcnlSRkF6YmtZNVh1NGo4QlI0T0pYcDA1Q3k5X292cElkMVo4Zm4zVkpaZm1Nb3ZJMFlDQ0k0WXAxMldiOWlEdG5ZYWZfdlZpd1RacFBLbGlQaEkwRTRuaUcyNzk1ZmlkOEVVNmcxQ1c0Qk9QZnBvTUZzTnJNN21PV0VsSUprUzBpd2JPYTZ2bUgtbEx5?oc=5",
-      "summary": "Google limits Meta’s use of its Gemini AI models, FT reports CNBCGoogle rations AI capacity to Meta as infrastructure crunch intensifies: FT (GOOG:NASDAQ) Seeking AlphaGoogle limits Meta’s Gemini AI access as compute demand outpaces supply Investing.comGoogle caps Meta’s Gemini use as AI demand strains capacity Financial TimesGoogle Caps Meta’s Use of Gemini AI, Financial Times Reports Bloomberg.com",
+      "summary": "Google limits Meta’s use of its Gemini AI models, FT reports CNBCGoogle rations AI capacity to Meta as infrastructure crunch intensifies: FT (GOOG:NASDAQ) Seeking AlphaGoogle caps Meta’s Gemini use as AI demand strains capacity Financial TimesGoogle Caps Meta’s Use of Gemini AI, Financial Times Reports Bloomberg.comKey facts: Google Caps Meta's Gemini Use; GOOG Tops Verizon Returns TradingView",
       "published": "2026-06-28T10:30:27+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "What To Expect in Markets This Week: June Jobs Numbers and an Update on American Consumers’ Mood",
-      "source": "Investopedia",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSmNCRzU0amJmNHp0WWlCa3dNQzBLcnYwYl93dWI5NzQ0WW9TUEM1ai1kMGxqT2hXQVlEeWUteFpNQUNEbWN0RUl2VDZ4LUZWbGMzRFJnLWJOS29XTENEMW14RDZkOHJPRHdqcjF3YW1tRWk5c2xIVEwzTmRvQXFiY0RIRzdzNEozSXo5UFJ4X1kzWFJ6b2c3eTJCTmhhWC1tY1dCaExEMWU0LVdhNW0xeC04TTZzQmtXb19TRXFhZmFhNXVoaTVjSlVNN0c?oc=5",
-      "summary": "What To Expect in Markets This Week: June Jobs Numbers and an Update on American Consumers’ Mood InvestopediaAI jitters meet a jobs report and falling oil prices: What to watch this week Yahoo FinanceA Strong Jobs Report Could Change Everything For The Market Seeking AlphaECONOMIC WEEK AHEAD: June 29 - July 3 Yardeni QuickTakesWall St Week Ahead Jobs data, rate bets in focus as US stocks close solid first half Reuters",
-      "published": "2026-06-28T10:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Nearly 1 million bottles of heart and kidney medication recalled over foreign substance found on tablets",
-      "source": "Fox Business",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQSUttd3p3SHpiZ21abmlMTm9lMGtwZWhiZHRoSl9IMUc1eWxMQ0pVYzZJeV9MY1dsU2F1clFTX2tqYjJlX3dlcDctamJCaVRMTHQ5NE1BOGFFQ2s4VFZVYnZwak9BSzR0b3lBYTg5YVQ3RGo4bnhfYTlKdy1PR0hVU2M4MU1JbEpLbGVtVG5qT1ZOUjBKeHo3bTB0cW9GaEhRN3JaUEJCU2RrMlV0ODMtNVVyVG5fZHRTUWVTYWQ1Mi1yYzN3MHFucXpLTi3SAdIBQVVfeXFMTkRuMjdEakFlUFphUzhBUjM1MEpDRkVMSjJVdGZOWFdMOXZTUWNDcXFMVzctSDZ3SGZ3ZW5wRE4tdGhjWGpZZkNNbndLal90My1uT3RFZGtHaWQ3NHl0ejFQNUlsTE9qM1l5SHpESDZrb3Mwak9XRjNBRENyeEZHcjFKcXJ5Q2pHWGxMTElmbWd2MGwwZ095aElyQnRhbThRZ3ItSE5vbERfOG1hak9MenRkV2oteGJGbGxfTjFlaWI2VEFLb0VfQzNEd2NfTnA5SHB3?oc=5",
-      "summary": "Nearly 1 million bottles of heart and kidney medication recalled over foreign substance found on tablets Fox Business900,000 Bottles of Heart and Kidney Medications Recalled For 'Unexpected Foreign Matter' in Bottles People.comHeart and Kidney Medications Recalled Nationwide—Over 900,000 Bottles Affected EatingWellNearly 1 million bottles of medication used to treat heart failure recalled nationwide PIX11A Heart Medication Has Been Recalled Nationwide, Reports FDA The Healthy @Reader's Digest",
-      "published": "2026-06-28T10:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Here's The Average Retirement Savings of 74-Year-Old Americans (How Do You Compare?)",
-      "source": "FinanceBuzz",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5id1pIQjRGNy1NZjJERHJabk5ZcC1MQ0gxUDFqS0J3WkVETGlMNjJMUHpxMGVwU21mY2VEREtlT0RsNGRFd2dIX1JWdWhSMVJrOTlCTG1jQWQ3dndHdUpkdjdqVFdualVnNnpMaVFRMjA?oc=5",
-      "summary": "Here's The Average Retirement Savings of 74-Year-Old Americans (How Do You Compare?) FinanceBuzzSee more headlines & perspectives on Google News",
-      "published": "2026-06-28T10:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Airlines Are Installing New Luxury Seats, but No One Is Allowed to Sit in Them",
-      "source": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPUmpYNGhlb0RKeUJ6RlZNcVU3M1VrMUdWeXl1cFFERXBrb0JDdXBlUHJNcXp5UllXeDVfUU16YzJVUjRBUkVfLXJ0S0VUUU1ySks5aHhTWHotT2t2UlA3LVpiZmVlT2JPZlJJRXJyQm0tcXNXMmhPS3NwNHk0TDFtZ3ByX0VhNDg5OGxLVnpWOV9KWDlPcTIyY2RmSndPWG1paVFyekVNOXV6UDVoMXEwYUlUdmZiSk5fb2l4dTRReWlOZw?oc=5",
-      "summary": "Airlines Are Installing New Luxury Seats, but No One Is Allowed to Sit in Them WSJ",
-      "published": "2026-06-28T09:30:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "BIS says debt, AI boom and fragilities raise global risks",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNNVR4T0hxcEdBMnhpb3UwQThfajRZbl9DVkdCNVRmaUFoaHhNX1hzWm9MM3pXTk5aazFzMGpySTRCY3BPWUJfX0cyZE41ZjlmOVVOdWZBVk81QkllWjdxcEFSYmJnU19tZjN2MEpabDFrSS1FZk9LMXNfR3FTX0pLYg?oc=5",
-      "summary": "BIS says debt, AI boom and fragilities raise global risks ReutersAI ‘exuberance’ risks ending in lengthy investment bust, BIS warns Financial TimesAI boom risks global financial crash, warn central bankers The TelegraphAI Bust Risks Ripple Effects From Growth to Credit, BIS Says Bloomberg.comGlobal recession and the end of the middle class: What ‘AI exuberance’ could do to the world SMH.com.au",
-      "published": "2026-06-28T09:03:46+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Rats, Leaks and Broken Elevators: Repair Backlog Plagues Federal Buildings",
-      "source": "The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWndCTERrX2R3VWFOSGRmNXk5MDRIOXlkSkJoUlo2YkM0NnZxemhRdVFJV054b3FzYkwwYTBOU3FDbEZOUzNMelhzMWlFbHEyM3FxMGNJWHc0VDZERmtOSkQzTW9tRHJIb0tLb2pabFktNkpYMUhyRkdOMUZLcTJrYW5DcnMya21YR2lTeg?oc=5",
-      "summary": "Rats, Leaks and Broken Elevators: Repair Backlog Plagues Federal Buildings The New York TimesOpinion | The federal government's big fat real estate problem The Washington PostThe “Sistine Chapel of the New Deal” May Be Saved! The New RepublicFederal government could sell ‘money pits’ in Atlanta, Savannah and Athens Atlanta Journal-Constitution4 more federal buildings in Georgia face financial chopping block Yahoo",
-      "published": "2026-06-28T09:00:24+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "OpenAI Introduces ChatGPT 5.6 Soul, Terra and Luna Models",
-      "source": "Geeky Gadgets",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBtTlFqNTl3TjgxRWRoQ1JrWVpybWFSUUlwdTVPOGF0RzZtMnJEUzZELUxHTkdleEZfbHdGZWp1TGQ3VG5fejVKUlUwUWNvSGNEUjh0U0lxdFM2enRfMUdVNW56cFpuVmtkY2c?oc=5",
-      "summary": "OpenAI Introduces ChatGPT 5.6 Soul, Terra and Luna Models Geeky GadgetsOpenAI Limits Access to New Models, Citing Government Security Concerns WSJOnly Users Approved By U.S. Can Access OpenAI’s New ChatGPT Model ForbesTrump administration asks OpenAI to limit next model release over security concerns AxiosThe U.S. government will decide who gets to use the latest American AI technology The Washington Post",
-      "published": "2026-06-28T08:01:38+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "AOC puts major tech company on notice amid looming price increases: 'Far too big'",
-      "source": "Fox News",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZkV4eEdUcXI4WWV5ekJhS3BsVV94ZzVENGJJd2J0X09BODVDdnliaEpjTFozWW9HUHI3X2ZvRmhLZF9VSi15OGxtbjllUGpjaEZlZEtJMWF4SVFHQlZBV2lCQlRqVTRBanQ0eVRNall0RFRFeDZVLXNPcEhnRDR5Wlhoa3VRN0pRUXl3ZDJBX1RVazl0TlF0NVZJLTdkcmFPRmVtMnRNM1lLZ9IBrwFBVV95cUxPLUlMdjJtbUo1ZmpOb19odEE4OXhNLXZMd3NraUpUc25talFhcy1zdWd1eVV6eWpSX2JwbncyaFJMX0tVdTJveDI0QlZHbXdfLXU3OVRoaF80VWRXWmhJUHE4RjFzUGRHWkJkVlJrMlJ6Rkwxcm8yX2xTWkt1SVBUc2QzbTRSblc3LTdSYjgwMURrQVRlYi1uWlE0cTM5OGFrc2NJcmhaSWtHOWkweGpV?oc=5",
-      "summary": "AOC puts major tech company on notice amid looming price increases: 'Far too big' Fox NewsApple Hikes Mac, iPad Prices on Memory Shortage; Shares Fall Bloomberg.comApple is raising prices. Will iPhones be next? The Washington PostApple's Price Hikes Aren't Just an AI Problem CNETEditorial: Sticker shock comes suddenly to the Apple store Chicago Tribune",
-      "published": "2026-06-28T08:00:44+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Aussie sounds alarm over scary trend with smart glasses: 'People have no idea'",
-      "source": "Yahoo Lifestyle Australia",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNRVdkSkVCQmw3RFJqd2ZPREVjWjVFc3B5ZDBqWDZTTmRqQktGTEFsSFVVVkpUeUZRazdLalBFR3BPSkszU3J1Q0RXV2tPMXI4Q0ZxbGZDdVZuS3JQbkZacU5sNFJ6LTBieWlMY2NFYUVwcElRQmhWaU5xZTV6bTAyLWYtOW5wdkVOeFNTZUFGaHhwNEpjaEx4dzR5UF9idGNfbFVSVlpPVTNSbXpYeE05QW4zRVZ4TUhUSHpVU2x3?oc=5",
-      "summary": "Aussie sounds alarm over scary trend with smart glasses: 'People have no idea' Yahoo Lifestyle AustraliaBig Tech is obsessed with smart glasses. Now it has to convince people to wear them. MarketWatchThey’re Making Clip-On Frames for Smart Glasses Now WIREDLeading manufacturers vie for dominance, reshuffling the industry rankings—could the World Cup serve as a sales‑boosting catalyst for smart glasses? MoomooIntelligence eyewear market surging despite headwinds Telecoms",
-      "published": "2026-06-28T07:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Passengers stranded on stalled MARTA train after World Cup match in Atlanta",
-      "source": "Atlanta News First",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcEd1cmhoLUdrX1lSLXFKUVJEcHdselVyMDFzYTRmZzNLNVpwV04yd2xJclh6R2NXVURyeVQ2M2xPTjdBNFJSYzZSdUx0U293bDBTb0Jyem1SaGRzczByQWlRYnBxTG05YkFSd3lFamF6aW9MRUNYMERGanpvNW9ucHJZRzEwZXFSb2hOSGxzdzFkOUw2b0lFbURGYnhDOS02dTRtMQ?oc=5",
-      "summary": "Passengers stranded on stalled MARTA train after World Cup match in Atlanta Atlanta News FirstMARTA apologizes after disabled train leaves passengers stranded near Lenox Station, transit officials say CBS NewsMARTA train experiences mid-track stoppage, passengers stranded for an hour 11Alive.com",
-      "published": "2026-06-28T04:13:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "American Airlines flight aborts takeoff in Miami after business jet enters the same runway",
-      "source": "WPTZ",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPWkFTWWtyRXZmako5c1d3VGFvUzdyOVM2MkZ3TGEzck13eVFyQ1NHQ2hoZEsxX2RablItc0tvZXFxb2F4VUpNdUR2REdrbk9Lcy1pSV95X2dGMVFRbWduQy01ZnY0S1VtaUpZT0x4OXp2UDJEQnZVZ1pybXlvV3ByMWJGMA?oc=5",
-      "summary": "American Airlines flight aborts takeoff in Miami after business jet enters the same runway WPTZSee more headlines & perspectives on Google News",
-      "published": "2026-06-28T03:20:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Nio opens pre-orders for five-seat ES8, sets July 9 launch",
-      "source": "CnEVPost",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE14NjhNbi1zV3R6aVFZM3pZaFVZdnF3UDhIdmUwZVR0Nkxzc0xLSGdCWV9rSmdPTnBEUHVERm1aNVZqNGRYajZ3LWlYZGF2NUtLQU5YR0hXSzBDM285dEpFS1NYY0ZEWkFyd29MQkpxMFpfODlfamRMTEk5Yw?oc=5",
-      "summary": "Nio opens pre-orders for five-seat ES8, sets July 9 launch CnEVPostThis Chinese SUV Sold 100,000 Units In Seven Months For A Good Reason InsideEVsNio Says 70% of First 10,000 ES9 Buyers Are New Customers eletric-vehicles.comThirty days after the start of deliveries, Nio completed delivery of its 10,000th ES9. 富途牛牛Is NIO’s (NIO) Five-Seat ES8 the Missing Link in Its Profitability Push? Yahoo Finance",
-      "published": "2026-06-28T03:17:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Nasdaq, S&P 500 Futures Fall, Oil Risk Back In Focus After Trump’s Iran Escalation: Why PBM, FRMI, ASTS, BATL Are Keeping Traders Engaged Today",
-      "source": "Stocktwits",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOQ0JNN2NnRURZSTYydHpaTXQ4aHNKaWxVWEhhZThKamxydllUdE4td3h3LVNzMEM5akh2TTlyYzBiVmZ6S1YyS3lMbUtOa2FrVmRwaU5mSUw1SVN4bFg0eWhRV0JVMmNOYWZ5ckJpcWcwaGRUUmctWk1KQWFvWE1jal8yNi1VZHJ3NTdmU3VrX2dtRHh2RUtRZ3V0WEs5YUxIOTBybl9OakZIcnYzWDB4TXNQbWt5VjVWczVmSWc4VWpUUmJHUVZHRG5FU1l6dw?oc=5",
-      "summary": "Nasdaq, S&P 500 Futures Fall, Oil Risk Back In Focus After Trump’s Iran Escalation: Why PBM, FRMI, ASTS, BATL Are Keeping Traders Engaged Today Stocktwits",
-      "published": "2026-06-28T03:15:27+00:00",
-      "origin": "關鍵字「Nasdaq S&P 500 drop futures」"
-    },
-    {
-      "title": "Google just took crown Verizon held for 22 years",
-      "source": "thestreet.com",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZXgxZzNncGtaOWJQVmk1V09HT0dPSFUtZEVyd3gxaWZ3cVhVeXcwNVFsQ244aFpaNFdIdk5YWGhpZk1CVXl0aWlGZlJMSEtqb3FUeXRHYjE4cHk5dmhvd3lOcUxodk1QRUt1SGs5YkhIR1Q4WkJyTXhQc3BPN1YtUWZSYTQ0MXRTU2dWMnJUaE8?oc=5",
-      "summary": "Google just took crown Verizon held for 22 years thestreet.comAlphabet Joined the Dow—and It Didn’t Help. What to Do With the Stock Now. Barron'sGoogle-Parent Alphabet to Replace Verizon in Dow Jones Industrial Average WSJAlphabet’s stock is set to join the Dow, pivoting index’s industrial roots toward tech MarketWatchDow set to add Alphabet and drop Verizon Axios",
-      "published": "2026-06-28T01:32:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "China Has Matched Anthropic in Cybersecurity, Resetting AI Race",
-      "source": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPMVFScDFiaWE0dmRBMlFJZzZacVZhT0ZLQXBkcHA1UExXT1FjRHk3LXN4YnREVHdleDR0cHl0eUxiTGdka1gxUERmYnQyd1ZiOUZEaUM5bkozSXp6RVlEWjJ6OXBZbnA5TEpPaDExd0dQUWxmbFFDSDJ3ekJTNWpCOUdlZ2U?oc=5",
-      "summary": "China Has Matched Anthropic in Cybersecurity, Resetting AI Race WSJChina’s Z.ai claims it can match Mythos on cybersecurity The VergeChina claims to have developed AI ‘cyber nuclear weapon’ YahooChina’s 360 says it has developed tools to match Anthropic’s Mythos ReutersAsian AI labs fill Mythos void as Anthropic ban lingers The Tech Buzz",
-      "published": "2026-06-28T01:00:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Fed rate cuts: Payrolls will weaken, inflation will plunge, and Warsh was 'largely performative'",
-      "source": "Fortune",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONU5lQ0lka0gyVUgyT0FHZUZVUkowWVQ3Q3hsNHJ5elZGZWQ3b003cEp2R0dWOGlxUllvZDBzdmVuNk1mcmkwaTRqUzM2RURCS2pENUxIZF83U21OU2pwa3BEWGtGYmR2dEV4eERqNXhoLV9rQmZoUXlaaFZWd1Rzc2x3NnRmdmlpa3hmNWFobnNzQzJwenBUN0QxeWk3b01tWExPMDczMA?oc=5",
-      "summary": "Fed rate cuts: Payrolls will weaken, inflation will plunge, and Warsh was 'largely performative' FortuneNew Fed Chair Kevin Warsh Says There's a Huge Problem With Financial Markets Right Now. His Solution Could Be Bad News For Stock Investors The Motley FoolAGNC Investment's More Than 13.5% Yield Just Got a New Headwind From the Fed Yahoo FinanceKevin Warsh’s tough talk on inflation reassures investors Financial TimesWho Is the Real Kevin Warsh? newyorker.com",
-      "published": "2026-06-27T22:28:00+00:00",
-      "origin": "Google 財經頭條"
+      "title": "Trump presses Syria to take on Hezbollah, raising alarm in Lebanon and Israel",
+      "source": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPLXI2YU1jOVd0UTFIQnh2MVVzeUZUZnphdUFkakU1UlFXY3ZST1RBWVU4dVJOS19NQzdQa3l0WmFUbFUxSjZjakVjY3VkRlM2LTlyTjFzZnRQekxrM0tuakgzdnc5MzdkZ2JxZVdaNDQ4RndMSXU5Q1RNQk4wcml4cGZadTduNHlzaVJ1alZMMFY2ajgyblZRWmxKbzAtSGJqRkE?oc=5",
+      "summary": "Trump presses Syria to take on Hezbollah, raising alarm in Lebanon and Israel AP NewsDamascus races to reassure Beirut as Trump pushes Syria to take on Hezbollah Middle East EyeSharaa rules out Syria intervening in Lebanon after Trump again suggests it fight Hezbollah The Times of IsraelThe Syrian solution to Hezbollah Al MajallaLebanon Syria Trump Bluefield Daily Telegraph",
+      "published": "2026-06-28T10:04:00+00:00",
+      "origin": "Google 世界頭條"
     }
   ]
 }

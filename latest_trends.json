@@ -6,16 +6,15 @@
       "industry": "人工智慧 (AI) 基礎設施與應用",
       "heat_score": 98,
       "signals": {
-        "funding": "AI巨頭持續爭霸，資金流向晶片、伺服器、HBM及測試介面等基礎設施。高通揮軍AI資料中心記憶體，三星、SK、現代汽車支持萬億韓元投資計劃。儘管有BIS警告AI泡沫風險，但各國政府和企業仍加大投資。Google限制Meta使用Gemini模型，顯示資源稀缺和競爭激烈。",
-        "hiring": "Google兩位高層出走導致市值蒸發2250億美元，顯示AI競賽已進入「人才定價」時代。Ford因AI表現不足重新聘用資深工程師，凸顯AI人才的關鍵性。",
-        "policy": "中國低價AI模型撼動美科技股市場，並在技術上僅輸美國幾秒，促使美國警惕晶片封鎖失靈。OpenAI GPT-5.6發布背後有「審查風暴」，AI競賽正演變為政治競賽，各國政府對AI發展的戰略與監管將持續加強。",
-        "technology": "OpenAI持續發布新模型，中國AI技術快速追趕。HBM、IC載板、高階晶片測試等技術環節持續突破，成為AI概念股新主角。高通進軍AI資料中心用記憶體，有望翻轉記憶體產業。AI算力需求持續爆量。"
+        "funding": "韓國政府將公布高達 6490 億美元的晶片與 AI 投資計畫 (31)。美國大型科技公司 AI 資本支出持續增長 (28)。聯發科 ASIC 單價翻倍，外資目標價上看萬元 (5)。網通廠訂單看到年底，AI 資料中心需求爆發 (9)。",
+        "hiring": "Anthropic 調查顯示約半數 Claude 用戶稱 AI 已可承擔過半工作，顯示 AI 應用深入各產業，對人才結構產生影響 (10)。然而，Ford 重新聘用資深工程師，暗示 AI 在某些領域仍有不足，需要人類專業知識 (48)。",
+        "policy": "韓國政府公布巨額晶片與 AI 投資計畫，顯示國家層級對 AI 產業的強力支持與戰略佈局 (31)。華府智庫示警中國太空技術已超越美國，可能促使美國加強相關 AI 領域的政策扶持 (2)。",
+        "technology": "中國的 AI 模型 GLM 和 Kimi 受到矽谷科技巨頭青睞，納入核心基礎設施 (17)。中國 Z.ai 聲稱其網路安全 AI 技術可與 Mythos 媲美，顯示中國在 AI 領域的技術突破與競爭力 (35)。高通揮軍 AI 資料中心用記憶體，可能翻轉記憶體產業 (6)。"
       },
       "leading_indicators": [
-        "主要AI晶片製造商（如NVIDIA、台積電）的財報與訂單能見度",
-        "HBM、IC載板等關鍵零組件的供應狀況與價格走勢",
-        "AI大模型新技術突破及應用落地進展",
-        "各國政府對AI產業的政策扶持與監管法規"
+        "主要科技公司 AI 相關資本支出報告",
+        "各國政府 AI 政策與補貼措施",
+        "AI 晶片與資料中心建置進度"
       ],
       "us_stocks": [
         {
@@ -23,12 +22,12 @@
           "ticker": "NVDA"
         },
         {
-          "name": "美光科技",
-          "ticker": "MU"
+          "name": "美超微電腦",
+          "ticker": "SMCI"
         },
         {
-          "name": "超微半導體",
-          "ticker": "AOSL"
+          "name": "高通",
+          "ticker": "QCOM"
         }
       ],
       "tw_stocks": [
@@ -37,50 +36,100 @@
           "ticker": "2330"
         },
         {
-          "name": "聯茂",
-          "ticker": "6213"
+          "name": "聯發科",
+          "ticker": "2454"
         },
         {
-          "name": "旺矽",
-          "ticker": "6223"
+          "name": "中華電",
+          "ticker": "2412"
         }
       ],
       "evidence_news": [
         {
-          "title": "AI股拋售潮輝達、台積電ADR續挫！台指期雖止穩、台股月線關前整理震盪",
+          "title": "力挺聯發科登萬金股 外資：ASIC單價翻倍營益率給力、目標價上看萬元",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMiogNBVV95cUxPeXY5WmtpMXRDWlpHVnJvSllxSmlfZlNncXN5S2pkMGFXckllRjZ4TnlXOHNzUlBXQzlpWnBrZlZHdFRhNnhfbnFubmRrajlHcGFseU8taUpDRUpra2hBMEk1QWlMdkpKLTNBY1lQSW8xX253aUN4SmxzT1I0VFNHMU9LS2JOdmtXQmUwZVBSdEtMRFlGNkItVERwVHhZbFlMMndFTDRZeThpdUlvTGoySjZ6Nll1b3RyV2trcDFnTkF1d3JUdkVIYzE4UnNqSkxfX0FXdjBldXVZTnQ5MlFhVzlyZ2ZPWlpEWDNVNWp3UkdJWGx2VWhDcWNYdk5GMkpZWW5QUzRHaWQ2Tm1FRVpfR05zV052Y3JySUR4Vlk0YXY5c1VyYlpUaXhSM2lCTnNwYXd0Q2V2d2N4bnlGYk1OMS1UbzJwOU1pcWNiM2xybFU4RWt0ZWNQSEhvcm5qeFRMRllZTW9qUDJfeHNtNHkxRGJmWlZaRldxaE9NRENMNWQyN0g0YXBCQU1EUU1kTnIwNnJRV3FRbVVyTm5fXzBOeHh3?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMioANBVV95cUxPNm8wU21tZUtXV3RVVzJYal9NYzlSTjdJQzRnOHliSnVldEdJaVpBamNFVm1YOEtBZk9sYkxxNHljbE9aZTdTcVY2ZEF4MzczWC1VWF9fOVlMRzRHRjhTSnF1VDNxTFd3Y2pCNFJCZS1WOS1XbVVfR1FtM0s4WUNPVVlXZW9kVUFlTlZSTGdVU0xSQmtzTEJaWGthcGxVc1NSd0djX1J2WmwtV3ZtVXhLbEdwV0FLSnlydE1IMUw1U3VNejY1N1h1clUtYkNUN3Vtb25nelBrQ3BsZDl3SFo3aG9hZzllVk9kUGlscDMxOWNPWHNESlJEWnZ5SVdRMG9PVEd0VXo3R2FwS1NPdURPV0VoSEF6MVhxUnljazlrQ2RUSjllYUc1QjRobEJYTDJkNFBPRGNhd3VMZkhsYnlXb3RBeko5cDNWQV9nVzFoZFNqcHVYX3BSenh1V3VHODRnSGdyVC1LaEtDMWtvcnl3V1plX2VUZ1hMdEo0OGVEcDV1dkJ2a2dOa1F6czY5ZnBIWmdsSHhNVHV5ckdZelJZSg?oc=5"
         },
         {
-          "title": "AI需求爆量 Google傳已限制Meta使用Gemini模型",
-          "source": "UDN",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1fVWJudVVvSlJZdUtGeHpNR3lvZVo1a285ckcwdmRIbENuZXBDUW4zOC1oTWpsVUtSdlZ5VWFvM081SzQ2UllWQ2I1TFFpSUJM?oc=5"
+          "title": "明年EPS挑戰100元！網通廠「訂單看到年底」下半年優於上半年 AI資料中心需求爆發",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMi0wNBVV_5cUxNaG1mN0xsSzY5R2NURFpCT1Mxa1J4Tm5TVEQzUm14Z0VWQ21TOVFpTFFSQV9jb01SUjR5TVlQT3ZsVXMwUDAxRjhfcmhxVzRoSmtxTFdreGFHLXZTczJ2b3ZxZG02T3pUeDByYTAxczJWNlpDcU50ZWd5MzBGUWFwTmZtTFdQZnBldHQ3Ym1BazU4NVd2aWtKN2ttRnRJN1hmcHFfd2RxNVB0TG1XSm5mNWR4ZWYtU3FxMGYxOHcyQmZXX2NQc1ZOMlhrTVBYX2VubFVWVzRHb0VGWEhmQjYwdHd5aklUOXpESWdwWlh2SGZONFJCbTRqRzhub2VDMXNNZDE2WmFqZHFEcGRGWU9fS05JOWY5aVdaWEJLVE9zeUtpU2RIU1N4WDJ2MXVIc2FxNzduY3pMc3QyTGVSdWlzdmotTVprc1NHdFFLNmp3a1JENzQ2eS04Zi1rOHRBQlZOX29VV2ItRWwxNWo5MUdDdkEtb1ZiMGcta2x0ZUdpVGlIVFNqQV9yWHhCcV83dl9oTjhrcmFnX3hMWFVjRUtzd3R3bm0tLW4yWm1Ybzh6Z0VQa1NIVmRwTmpEYWJVd1lxTDVGc1laNFhmblZCMWdqbGRjUQ?oc=5"
         },
         {
-          "title": "AI競賽變政治競賽！OpenAI超強GPT-5.6發布背後的「審查風暴」",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1ibjdaZ1RmTlhEa1Y3VnVPZlhvY1djZlc2UkFBWEJMNmVpcl84dlRNRF9Pc2xTX2VOc0stT2tka0JrR0hLc3o5T294OXRa0U?oc=5"
+          "title": "Samsung Asset Management Highlights 'AI Bottleneck' as Key ETF Investment Keyword for Second Half of the Year",
+          "source": "아시아경제",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBMaFB1dDNFZVpjTTVNUk1EVGdxWHk5OF94UWsySnhTM2ZxbGJiTE55Yk81UFotcktYM3hpYXJOZ1ZJam9MYVNfRU1jNjFZem1EaV92eWM3RVp6bDZqSWZFYjdJU0hBT25oYnpYQWVLVjlFUQ?oc=5"
         }
       ],
-      "summary": "AI持續引領全球科技浪潮，從晶片、伺服器到記憶體，整個供應鏈動能強勁，儘管市場存在泡沫疑慮，但技術突破和國家級戰略投入仍推動其高速發展。",
-      "news_count": 27,
+      "summary": "AI 作為核心技術動能，持續推動各產業轉型與升級，尤其在基礎設施、晶片和資料中心領域的投資與需求爆發。",
+      "news_count": 30,
       "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28"
+      "last_seen": "2026-06-29"
     },
     {
       "rank": 2,
-      "industry": "高效能運算 (HPC) 與先進記憶體",
-      "heat_score": 90,
+      "industry": "潔淨能源與電力基礎設施",
+      "heat_score": 85,
       "signals": {
-        "funding": "記憶體大廠美光被華爾街視為下一個Nvidia，顯示資金對先進記憶體的高度追捧。聯想示警記憶體高價將持續至2030年，預示長期投資價值。韓國政府與三星、SK等大廠共同推動半導體投資計畫。",
-        "hiring": "記憶體產業的持續高景氣將帶動相關人才需求，尤其是在HBM、DDR5等先進技術領域。",
-        "policy": "韓國政府推動「三大兆元計畫」涵蓋半導體，顯示國家層面對HPC與記憶體產業的戰略支持。美國對中國的晶片封鎖反而刺激中國在AI技術上追趕，也間接刺激記憶體技術的發展。",
-        "technology": "HBM、IC載板等成為AI概念股新主角，顯示技術創新在推動產業發展。高通進軍AI資料中心用記憶體，陸行之評論其戰略如奏效將翻轉記憶體產業，突顯技術突破的潛力。馬斯克和庫克均示警記憶體短缺「前所未見」，反映市場對高階記憶體的需求爆量。"
+        "funding": "電源三雄迎 AI 電力基建商機 (24)，顯示資金正流向解決 AI 龐大用電需求的相關產業。美國新一代小型核反應爐啟動 (14)，預示核能領域的投資增加。",
+        "hiring": "隨著 AI 用電需求激增，電力基礎設施的建置將帶動相關工程與技術人才需求。",
+        "policy": "美國新一代小型核反應爐啟動，並計畫十年內量產以抗衡中國，顯示政府對潔淨能源和能源自主的強力政策支持 (14)。AI 用電需求爆發，各國政府可能加速潔淨能源政策與獎勵措施 (24)。",
+        "technology": "小型核反應爐 (SMR) 技術的啟動，代表核能技術在安全性與部署彈性上的新突破 (14)。地熱能源的翻紅，也顯示多元潔淨能源技術的發展 (24)。"
       },
       "leading_indicators": [
-        "HBM、DDR5等先進記憶體產品的出貨量與價格走勢",
-        "記憶體大廠（如美光、三星、SK海力士）的資本支出與擴廠計畫",
-        "AI伺服器與資料中心建置進度"
+        "各國核能政策進展及 SMR 部署",
+        "再生能源建置容量與電網投資",
+        "AI 資料中心能源效率技術突破"
+      ],
+      "us_stocks": [
+        {
+          "name": "新紀元能源",
+          "ticker": "NEE"
+        },
+        {
+          "name": "愛依斯電力",
+          "ticker": "AES"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "台電相關供應商",
+          "ticker": "N/A"
+        },
+        {
+          "name": "中興電",
+          "ticker": "1513"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "美國新一代小型核反應爐啟動！ 拚10年內量產抗衡中國",
+          "source": "自由時報",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5FdFJiLVd0ZV9oT3pZamJhaFpXWlM0Mi1Sd0U0MmNvV29oLW5vcEhLMzk4ekxFekNDbFlGSmxpQjhhVHNaTndHSGQ4UVI5N3hEa3RjRnI4UDhVbWRBNzFUejFaSEZDQdIBa0FVX3lxTE9Wdm94M2lLX205NHUweXhpNGdaeXVCUVdfT3JqbjJDT0JvODZ6Zk9aTF9JLXZpNWlXWml6NDhjY29EcHBNR0JkWUhrcm4wTk1NTEQ2QW9rek5HcG5yazlTU0R2OEtNdDdjblZB?oc=5"
+        },
+        {
+          "title": "電源三雄迎AI電力基建商機- 日報",
+          "source": "工商時報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9jVVFmemh4cEQzM1ZqMFhTNEVkMVFJYk9NdTlYWV9SN2R0VHF2UEtsdXY0cWhYR3VjR3NRXzJBTmdHek5lWFR4UnZGbVVkbnVJYjRmNkp6SEpsVFBHWG9r?oc=5"
+        }
+      ],
+      "summary": "AI 發展對電力需求的巨大壓力，正催生潔淨能源和電力基礎設施的加速投資與技術創新，成為國家戰略重點。",
+      "news_count": 0
+    },
+    {
+      "rank": 3,
+      "industry": "記憶體與半導體",
+      "heat_score": 75,
+      "signals": {
+        "funding": "高通揮軍 AI 資料中心用記憶體，若戰略奏效將翻轉記憶體業 (6)，預示該領域的潛在資金投入。台積電加速打造本土 DRAM 鏈，華邦助陣供貨記憶體晶圓 (22)，顯示產業鏈整合與投資。",
+        "hiring": "記憶體與半導體產業的持續發展，將帶動相關研發、製造與工程人才的需求。",
+        "policy": "韓國政府將公布高達 6490 億美元的晶片與 AI 投資計畫，其中晶片產業是關鍵環節 (31)。李在明為湖南半導體投資辯護 (32)，顯示政府對半導體產業的扶持。",
+        "technology": "高通進軍 AI 資料中心用記憶體，挑戰既有市場格局 (6)。台積電在 DRAM 領域的佈局，強化本土供應鏈技術實力 (22)。"
+      },
+      "leading_indicators": [
+        "記憶體價格走勢與供需狀況",
+        "半導體廠擴產計畫與資本支出",
+        "AI 記憶體新技術發展"
       ],
       "us_stocks": [
         {
@@ -88,8 +137,8 @@
           "ticker": "MU"
         },
         {
-          "name": "輝達(Nvidia)",
-          "ticker": "NVDA"
+          "name": "應用材料",
+          "ticker": "AMAT"
         }
       ],
       "tw_stocks": [
@@ -98,77 +147,74 @@
           "ticker": "2408"
         },
         {
-          "name": "威剛",
-          "ticker": "3260"
+          "name": "華邦電",
+          "ticker": "2344"
         },
         {
-          "name": "聯茂",
-          "ticker": "6213"
+          "name": "力積電",
+          "ticker": "6770"
         }
       ],
       "evidence_news": [
         {
-          "title": "高通揮軍AI資料中心用記憶體下險棋 陸行之：戰略如奏效將翻轉記憶體產業",
+          "title": "高通揮軍AI資料中心用記憶體下險棋! 陸行之：戰略如奏效將翻轉記憶體業",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMizANBVV95cUxOWUJ0YmJjbUpxQmhEN0JpSVN2MjVYWVhoaWh4SFhpN0Q1YmtTRHZqbVQ1b2gxaElwdnVZUlk2ZVlIXy1nanBWeWtJdkV3cGJOTlBtRmVuVkJzVVlHM21UczRkemU5MTVRY3dxc05iY2tDWURJV1IxWV80T0JxYnlmNTdnNjlBdGR2NkF6eXlkVGVBd0pPRTdKZF9VRkIzVEs0dWVYTUxYT2VRS2tlei0wOWRZWWV3WlVPX2s0Q2JGWENmRlpVdm9NTmxlMEFVSXNsUGN5a1g4bk5CNlNCcU1zdm9rcG43azJ1dEFMa2NuZDVpR09Dem1RSUZ2UWcyTjU0bzNrWV9iLUhJSkVCdmoycnVlT0NqQWxzWUt5OUNUQnZZUnFtbmQ0azNVY19aVnVoU3RTb1FnWmdkV3hCX2NWVHdlR2h0M204c2VreEQwOWNzb01wX3ZxQUlfelRPVzdZTDFfQUtWLThWQ2l0UnZTTmRvY0FvOERuWUtmOUhhVHdUc1B6N3cwTlpDNXd0R1RZaEJoNkpmUXJJQzV3Y0tmZTRjTUNlZ1VNajBMajh2SkJCaS1NX0JNdDAzMEZaY3BCMlBKcUtfalRxSXJB?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMizANBVV_5cUxOWUJ0YmJjbUpxQmhEN0JpSVN2MjVYWVhoaWh4SFhpN0Q1YmtTRHZqbVQ1b2gxaElwdnVZUlk2ZVlIXy1nanBWeWtJdkV3cGJOTlBtRmVuVkJzVVlHM21UczRkemU5MTVRY3dxc05iY2tDWURJV1IxWV80T0JxYnlmNTdnNjlBdGR2NkF6eXlkVGVBd0pPRTdKZF9VRkIzVEs0dWVYTUxYT2VRS2tsei0wOWRZWWV3WlVPX2s0Q2JGWENmRlpVdm9NTmxlMEFVSXNsUGN5a1g4bk5CNlNCcU1zdm9rcG43azJ1dEFMa2NuZDVpR09Dem1RSUZ2UWcyTjU0bzNrWV9iLUhJSkVCdmoycnVlT0NqQWxzWUt5OUNUQnZZUnFtbmQ0azNVY19aVnVoU3RTb1FnWmdkV3hCX2NWVHdlR2h0M204c2VreEQwOWNzb01wX3ZxQUlfelRPVzdZTDFfQUtWLThWQ2l0UnZTTmRvY0FvOERuWUtmOUhhVHdUc1B6N3cwTlpDNXd0R1RZaEJoNkpmUXJJQzV3Y0tmZTRjTUNlZ1VNajBMajh2SkJCaS1NX0JNdDAzMEZaY3BCMlBKcUtfalRxSXJB?oc=5"
         },
         {
-          "title": "網紅「仿」美光CEO諷刺蘋果漲價引熱議！聯想示警記憶體高價持續至2030年",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9JRGFoUVZPZ21iQW1Ielh4eVNmdk9GVk5Sb0FsOElrZHdzcmNqWm1IV0ctSC1XVTA5UmxpWHRBMW1LdllvMHlxTmp0d3JjYlk?oc=5"
+          "title": "台積電加速打造本土DRAM鏈 華邦助陣供貨記憶體晶圓",
+          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9jdW03ZUNlUTZtMnp1U0loWXB4S3VmaGFSNzB5MkRlNzNWZ1JQbS0xdXZlc09QYnRad2czNFJHcDlXVjBWYlh5alZYcDV0d3h60gFWQVVfeXFMTm9RSVBCRjA1VGp0U2U4Qi1CY2dmUmVoY09yUklRS2d4cnZaeTVqREZUeU41OWRXUVRUX3JuVlF2M2pEblVZS0xiZElpc1VoN2s3d0lsNUE?oc=5"
         },
         {
-          "title": "馬斯克出聲認同蘋果庫克警告：記憶體短缺「前所未見」",
-          "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE80SGJheEQ3UklIc3lQRVZ5UEN2TWtLbnd0WEtscUZ4SHlyZi1UbDFaRlFQa1JPREJFaVNKc2d6WDlSWWQ0RGpPM2VEemZ3S29qQlBadzEzWXJsUi1IWkUw?oc=5"
+          "title": "South Korea to unveil reported $649 billion chip, AI investment plan",
+          "source": "upi.com",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV_5cUxQWl9RZU04V2RvaHBLYi0wYzEtQVJfNHN4SHJlRU4xMG1XM2J0R0lhMU1leWxPal_yR2JqNy1XTUxmV2kyMzBfSHFHUWVueTVGZFdkRXdackN4U1FxUFNVQXBNZFFwd1VjUkFXQm9aai00VEt5TFh4UFVSVFRPOUtrdE5vYjUzcmhZdmRRVHowdXFLVVhhbDdlUUZXdXY1ank1UjZsSE91TjFBWXk4alQwTzJVT3VxVzRyeEstcFFERDVFud9IBxwFBVV_5cUxQakFuQjNFTkFUeDhFSzYxemhlbHh3cHBVbUt5c0NhQXdJaU5YbTA5NGlhd080Q1FkQWF2WjFMMDNGTnVYODJrRDRqeW5rVnVBQmxzc08yTnVUYVBFbFdpLWdZUlgxNUxZTHJzY3dBeGx5WnJIaUNaRURtdXY3SEdfVEpqWFRRQi05YnlzamdZVldKR1BSaFZPVGl6eklQM2dkLURMTXBjYm8yRnI2M2tHN3dGT0s3TlhnNUdZbzBCRWFQdTUtYTdV?oc=5"
         }
       ],
-      "summary": "AI浪潮帶動HPC與先進記憶體需求爆發，尤其HBM和IC載板成為市場新寵，大廠積極投入，預期高景氣將持續，並有潛力改變產業格局。",
+      "summary": "記憶體與半導體產業在 AI 浪潮下，持續獲得大量投資與技術創新，尤其在 AI 資料中心應用方面具備翻轉潛力。",
       "news_count": 0
     },
     {
-      "rank": 3,
-      "industry": "電動車與自動駕駛 (FSD)",
-      "heat_score": 75,
+      "rank": 4,
+      "industry": "太空探索與衛星科技",
+      "heat_score": 70,
       "signals": {
-        "funding": "Elon Musk的SpaceX估值超過1兆美元，反映市場對其創新科技企業的巨大信心，儘管這不直接是電動車，但與其技術生態系相關。現代汽車也參與韓國的兆元投資計畫。",
-        "hiring": "Ford重新聘用資深工程師來彌補AI在品質檢測上的不足，凸顯自動駕駛技術在實際應用中仍需經驗豐富的人力協同。",
-        "policy": "美國參議員要求Tesla對自動駕駛事故負責，顯示政府對自動駕駛安全問題的關注和可能的監管壓力。",
-        "technology": "Tesla FSD (全自動輔助駕駛) 持續受到市場關注，儘管有事故和訴訟，但其技術發展仍是業界焦點。汽車製造商在AI和自動駕駛技術上的投入持續增加，如Porsche在品質研究中表現突出。"
+        "funding": "雖然新聞未直接提及太空探索的具體資金流向，但華府智庫的示警 (2) 可能促使美國政府與私人企業增加對太空技術的研發投入。",
+        "hiring": "太空技術的競爭將刺激相關科研人員、工程師及操作人員的需求。",
+        "policy": "華府智庫示警中國多項太空技術已超越美國，這將直接推動美國政府在太空領域的國家戰略與政策支持，以維持競爭優勢 (2)。",
+        "technology": "中國在多項太空技術上已超越美國，顯示該領域的技術快速發展與突破 (2)。這將激勵各國加速技術創新與應用。"
       },
       "leading_indicators": [
-        "Tesla FSD技術的進展與安全報告",
-        "電動車銷售數據與市場滲透率",
-        "各國對自動駕駛技術的法規與政策更新"
+        "各國政府太空預算與計畫公布",
+        "私人太空公司募資情況",
+        "新型火箭發射與衛星部署數量"
       ],
       "us_stocks": [
         {
-          "name": "特斯拉",
-          "ticker": "TSLA"
+          "name": "洛克希德馬丁",
+          "ticker": "LMT"
+        },
+        {
+          "name": "波音",
+          "ticker": "BA"
         }
       ],
-      "tw_stocks": [],
+      "tw_stocks": [
+        {
+          "name": "漢翔",
+          "ticker": "2634"
+        }
+      ],
       "evidence_news": [
         {
-          "title": "TechCrunch Mobility: All eyes on Tesla FSD",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQLVBoUGJfM0FDNGhPdzdLeVlDVExWTXY0d3VKUFNDREJQczQ3LWdiUXNvdlAtRExzNEI2Y0IzbHQ5eHJhdTgyYURvX3RjRkdJbFRkWHhpMjYxaFJ0cV9Wa0JVN0JtMjBpNU5BTGR0cnc2TUhpMzBZb1JIbV9pSk9xQnZ3?oc=5"
-        },
-        {
-          "title": "Ford rehires ‘gray beard’ engineers after AI falls short",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMi1RZFAyTFU0NDV5NE5IV2xRV1pfV0NiaDN6X0piTlItcVVKa1FXTUdlYVo4SnJQYjVoMDVIX1YzZXMyQlZFRGFmSXM0SkEtNnZuQW5ndmN6dXA0TmNtOWEtQjFGUlF4MS1aZGJZUnY5b1Z1MTVUb0tGczNkNWhIZGN1R3JJbEpFb212MFZ3ejY4UDg?oc=5"
-        },
-        {
-          "title": "Survey Sunday: with nearly a trillion dollars, will Elon try to make things right?",
-          "source": "Electrek",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUGZibXlKMXFuTmQwamxTMFZ2aWxONXduU25UenJoaWYzeWJKTWNENXRBLUNvZVVaVWRWcDRQb0VlSDJGU3NSdlpzQ1F1eXo0VWpuNXhXSjR4eWtpMEd4czZWYVhvVWtwR2dLS2kzWndma1l3cjNhU1UzYkZ0M1pEa1ZLSWc0RFJyQldMbG84WWVQZ2U5UDN2cUc5YXpxVlVzZzFQOXM2Q0t2aTA4MTlHdw?oc=5"
+          "title": "華府智庫示警：中國多項太空技術已超越美國",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiuAJBVV_5cUxNWkJnS2R3RG1rNWVvRG9TS0VmYkk0UXZIUXY3RnNTckNYc29vVG00TmdUUmVHZ2lxRWZqel_PVFYzUzNQamZ2dDNnQ1lQVDV3dGdXd29ZZnY4dUlCdGZVQVNsMjFWcHhkZm8wY01_TzN5eDVCTy1TSVFHYzJnSzRORjZZdGF4TVBnTkZ6ajA5R2ZLT1FCbXgyb0l5Z3JlaW5BSjhzbWxLM3NuX19IUUVsejljVUh2elhUSjdELW9vQzNHeUw0Q1VfRWpLMUdPOURlZklYWjYwbGczbHYxRmpIMEczMmlWNmRCMzY4SU93eVBVWFh3SjV4LWsxVmkyb3NjRURRampYRnpkQjNLQ0FoRkVzbUFHdEpFZTlrcVNSQUF3dTl2TjBSVTlSWFR3SzZucTNmNVFzRDQ?oc=5"
         }
       ],
-      "summary": "電動車和自動駕駛技術持續發展，Tesla FSD是市場焦點，但安全與監管挑戰並存。產業對AI技術的整合需求高，同時也需要經驗豐富的人才來確保品質。",
-      "news_count": 1,
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28"
+      "summary": "中國在太空技術的超車，正促使美國等國家加速太空探索與衛星科技的發展，成為地緣政治和科技競爭的新戰場。",
+      "news_count": 0
     }
   ]
 }

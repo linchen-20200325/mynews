@@ -1,6 +1,6 @@
 {
   "report_date": "2026-06-29",
-  "summary": "AI相關股票面臨估值修正壓力，那斯達克指數與費半指數連日下跌，但SpaceX因納入那斯達克100指數而受資金追捧。國際油價下跌，而中國汽車在歐洲市佔率提高，對德國車業構成威脅。",
+  "summary": "美股近期受AI估值修正、費半重挫影響，三大指數皆小幅收跌，但SpaceX納入那斯達克100指數帶來利多。國際油價因西亞衝突升溫而上漲，比特幣與貴金屬逆勢上揚。",
   "stocks": [
     {
       "name": "SpaceX",
@@ -8,86 +8,40 @@
       "sector": "航太/人工智慧",
       "mention_count": 8,
       "sentiment": "利多",
-      "reason": "SpaceX被納入那斯達克100指數，預計將引導大量被動資金流入，帶來數十億美元的買盤。",
+      "reason": "SpaceX被納入那斯達克100指數，預計將引導大量被動資金流入，對其股價構成利多。",
       "evidence_news": [
         {
-          "title": "【即時新聞】最新！SpaceX光速納入那斯達克100指數，引爆景順QQQ信託基金(QQQ)買盤",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWXdLZG45SXBJZktjTTdvaDMyb0I4bkNsRk91VV9qd2xPaW1LSzYyeUU1LXdOYktoR2JuOGlvYkZVbHBCUkVEemFjOVYzUHEyWDlOMndjVnhxUktCeGFFZjNQSTR5bGhmY29uNklNMjdyZHk4UWppOXN2V0lWa1RNLWE3M0ZORGpYdnFMN3JUSjE?oc=5"
+          "title": "SpaceX將納入那斯達克100指數 帶動被動資金流入",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202606270110.aspx"
         },
         {
-          "title": "SpaceX納那指100，估迎千億資金-財經焦點情報站",
-          "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUUszNGlTMXJ2MGlkTU1NQlNBc0xuVHBHTndaSWp0UmxSQ19DSU5ZYUlaQUpacVQwcjdISU5lTjZ5cVp4S2tMdUY2aHpXR2ZvV09qLS1aQU1tazNlY0VEUnlqVFhDbFJ6WU13aVE2cVdNODY5a0w5RnNnX2RQZ3lmNElB?oc=5"
+          "title": "被動買盤估1350億！SpaceX上市2週火速進那斯達克100",
+          "source": "FTNN 新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5DYU05TVVZSmNNZTlSMUwxcmgyUVFYTjBvREQ4WGpkbXBxcE40R0lRcWlabXJRdEFHSjJwbW9uYVhhcVlQcG9fa29zbw?oc=5"
         }
       ],
-      "news_count": 8,
+      "news_count": 7,
       "first_seen": "2026-06-27",
       "last_seen": "2026-06-28"
     },
     {
-      "name": "人工智慧(AI)概念股",
+      "name": "費城半導體指數",
       "ticker": "",
-      "sector": "科技",
-      "mention_count": 8,
+      "sector": "半導體",
+      "mention_count": 6,
       "sentiment": "利空",
-      "reason": "AI概念股經歷漲多修正，市場對其估值產生疑慮，導致費半指數大跌，那斯達克指數連續下跌。",
+      "reason": "費城半導體指數上週大跌近8%，主要受AI估值修正潮、晶片股遭拋售以及OpenAI延後上市等因素影響。",
       "evidence_news": [
+        {
+          "title": "《美股》一周回顧：費城半導體指數周跌7.94% 最弱",
+          "source": "富聯網",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOakw1c1l1VUduYUEzNnJSeXRfTml3enhzQkktVjBUU0o5S25DbHpqbWVfZ0NGeGJPdFBnOU5hcXdLMUhkTHk5TnJGdUFHWGhNUVV0dkJDTllkZ3VRU2k5RDRsT3JzV1NfU3lESnV4b2pWZF9XYk5ndGZVaXpmSUFMUy13WElmR21q?oc=5"
+        },
         {
           "title": "費半周線慘崩近8％！科技股爆AI估值修正潮 後市盯3關鍵",
           "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB3MUk1c1NyOHpQUWJNOGFVOFExdTdONzN2dllZbTExMk1SbU51OGYtMW0wa0hCdkpxOFE0azQ5YzdJUFQ5YWhGc2VpaGhaalZYa2VyWU5USVowOVVtNV9N?oc=5"
-        },
-        {
-          "title": "美股連跌「背後真相」曝！最大權重「科技七巨頭」的隕落",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB4T1B5ejd1emVmX3NDYVNVcUsyQ0ViUU53UWU5cXU3ZTNDdkxQd3c3Rm1xQVkxQzNkeTVwU3UtRnN2VzJBUHRzVGxLbHVyNHc?oc=5"
-        }
-      ],
-      "news_count": 37,
-      "first_seen": "2026-06-26",
-      "last_seen": "2026-06-28"
-    },
-    {
-      "name": "那斯達克100指數 (Nasdaq 100)",
-      "ticker": "",
-      "sector": "科技",
-      "mention_count": 6,
-      "sentiment": "利空",
-      "reason": "受科技股和晶片股拋售影響，那斯達克指數連續五個交易日下跌，周線跌幅超過4%。",
-      "evidence_news": [
-        {
-          "title": "OpenAI傳延後上市！科技股遭拋售 納指連跌5天 | 財經 | CTWANT",
-          "source": "CTWANT",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5TVl80c0ttUzhuVlNaeVc1N2FKV3ZfbVUyNzZ0aHF2SUd6bktwWTF6LW9xNm5CTjZvN29raVRtVEJZeFo5Wl9PTzMybEFlbTDSAVRBVV95cUxORUszMTFUOERRWDYzcy1zZUZBMnZRWjlJaTdfOElZQ0VvLW9IdUhUQ0lIWU9lVjg5UjNYOU92MmIxWl9xTnBFMUhzdGdzR2JfcXU1dno?oc=5"
-        },
-        {
-          "title": "美股收盤》費半重挫逾5％、那指連5黑！台積電ADR走跌",
-          "source": "自由財經",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1XNUdmOFVhRUQ0QjV5TmpLdUhUVjdSQzQ5NlFTUmlEVDhmT1dEeVRtamdzU0xodW5VYXFrUW5vaHhTN2NVNWlsdlFiNjZqdDhrOEQ4M0dpbzRoWVRRS3lF0gFkQVVfeXFMT1g2Z05veG9sanBSOHl5cjBYanQ2WjFtaGFaVTdLTjZwUXdBLS1lVV95Q01iZVZsc2F4d2Fhbk5UaHdka1J0ZWZhVlhITjBLbTZIYUk1MWZfLVd4ZFhXajdFN2JVZQ?oc=5"
-        }
-      ],
-      "news_count": 3,
-      "first_seen": "2026-06-27",
-      "last_seen": "2026-06-28"
-    },
-    {
-      "name": "半導體產業 (Chip Stocks)",
-      "ticker": "",
-      "sector": "科技",
-      "mention_count": 6,
-      "sentiment": "利空",
-      "reason": "受AI估值修正和OpenAI延後上市消息影響，晶片股遭到拋售，費半指數重挫。",
-      "evidence_news": [
-        {
-          "title": "〈美股盤後〉美軍報復性空襲伊朗 晶片股重摔 那指連五黑周線挫逾4%",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5GdEtHLUJmVGlyZHpFeU5GRzZEeXRfakhwZGpXaUtONTl3YkF3eWdhOGx0UGVGV01oREVRb2JZaUVWYThIS2xYcUNkQWJmUDA?oc=5"
-        },
-        {
-          "title": "美股收盤：那指連跌五日，費半指數跌超5%；OpenAI推遲上市日期導致晶片股、記憶體股遭拋售",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV_5cUxOamRLS2czZ3UzRVJMNHZNcmlibWhxeVJLTmJEVTRGS3lrSE5pblcxeWRHcENVY2ZvemEyeXlnaER5aTVHc0JsV01zdHBjbXJrNEhRTklnMC1sQ29JcVEyVXMwTU9iVzZhQ0tDNFhZbWgtLURrZHVNZUlxWVFJY3hnNnBlSUpTZ2dBeV8zellkNjQ5blBralhTRnVDUW5BYlBBdVFaMFMxUHJ3UVFVSWF4WE5mdFBUdDhDNHJBeW5yZXE2U09YblFfWFFjRWk1ZkxLaWhz?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB3MUk1c1NyOHpQUWJNOGFVOFExdTdONzN2dllZbTExMk1SbU51OGYtMW0wa0hCdkpxOFE0azQ5YzdJUFQ5YWhGc2VpaGhaalZYa2VycU5USVowOVVtNV9N?oc=5"
         }
       ],
       "news_count": 1,
@@ -95,58 +49,127 @@
       "last_seen": "2026-06-28"
     },
     {
-      "name": "美光 (Micron)",
-      "ticker": "",
-      "sector": "半導體",
-      "mention_count": 4,
+      "name": "特斯拉(Tesla)",
+      "ticker": "TSLA",
+      "sector": "汽車/電動車",
+      "mention_count": 2,
       "sentiment": "觀望",
-      "reason": "儘管第三季度營收暴增346%，顯示AI成長趨勢未變，但股價卻下跌，市場對其未來走勢存在分歧。",
+      "reason": "新聞聚焦於特斯拉全自動輔助駕駛(FSD)系統的相關法律問題和潛在事故，對其未來發展帶來不確定性。",
+      "evidence_news": [
+        {
+          "title": "TechCrunch Mobility: All eyes on Tesla FSD",
+          "source": "TechCrunch",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQLVBoUGJfM0FDNGhPdzdLeVlDVExWTXY0d3VKUFNDREJQczQ3LWdiUXNvdlAtRExzNEI2Y0IzbHQ5eHJhdTgyYURvX3RjRkdJbFRkWHhpMjYxaFJ0cV9Wa0JVN0JtMjBpNU5BTGR0cnc2TUhpMzBZb1JIbV9pSk9xQnZ3?oc=5"
+        },
+        {
+          "title": "Dow Jones Futures Rise On U.S.-Iran News; Market At Tipping Point; Tesla, Jobs Report Loom.",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVzVZSDFSRFR6alhhM0Y5bmJ6TjBxODRPcmJPVHI5R2owd3hVUEhvUkt6UHNfc3ZXdjg2T3JVZjd4QTF6UEtOekQxdkV3a29HNUU1aXRBbFdNS256TFBiZjFtUTF3OEZKdUVudUJrMFBvbEl5NXJJcWN6SUxkRDRXVzc2YUowTnh3aElNZWVpcGd6Tk80Qi1HRzVzUHJRTnJVdTh3R2c5YnRhTkQtU3pLeG95VFpxWUprTmRJ?oc=5"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-28",
+      "last_seen": "2026-06-28"
+    },
+    {
+      "name": "美光(Micron)",
+      "ticker": "MU",
+      "sector": "半導體/記憶體",
+      "mention_count": 2,
+      "sentiment": "利空",
+      "reason": "儘管美光Q3營收暴增346%，但股價卻下跌，顯示市場可能存在對AI估值修正的擔憂，且記憶體晶片長期威脅是創新。",
       "evidence_news": [
         {
           "title": "【美股巨頭】美光Q3營收暴增346%，股價卻在跌什麼？",
           "source": "CMoney投資網誌",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV_5cUxQU3ljb3JjaTZ4N2VfcDV3ZUlMc09uZWkycmtoV0pzNW1iTFRGaXcydl9uWGU2LVN1QXkzUmpuYlRMd2l6Y1lBTHliR0dOVUFEUldNbVpPVGQ1ODNqaV82dlV2dkJBQUtGVVB5QWV4aE9YNDM0bUJQMi1KM2hKSTVwUGdLM2VJTUJGWXVzZ05n?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQU3ljb3JjaTZ4N2VfcDV3ZUlMc09uZWkycmtoV0pzNW1iTFRGaXcydl9uWGU2LVN1QXkzUmpuYlRMd2l6Y1lBTHliR0dOVUFEUldNbVpPVGQ1ODNqaV82dlV2dkJBQUtGVVB5QWV4aE9YNDM0bUJQMi1KM2hKSTVwUGdLM2VJTUJGWXVzZ05n?oc=5"
         },
         {
           "title": "Why Wall Street thinks US memory maker Micron is the next Nvidia",
           "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV_5cUxQSlFwUWV1LUxzN2hYT3BHaDByWGRlUFRUNXpZSmRjODJEUWY1R1RZXzZhWXRHRWRFZDUwbjkwQk5iSWx3NGYxQk5xRy1ia01wN3pYb1Jta25aXzJwTlJLbXVKOWFTczQ0bVVxUENqNjV1XzBoSE83SDVVVlMtSE5NRE9xTXRLY2FETlNma1NVdVZfb254?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSlFwUWV1LUxzN2hYT3BHaDByWGRlUFRUNXpZSmRjODJEUWY1R1RZXzZhWXRHRWRFZDUwbjkwQk5iSWx3NGYxQk5xRy1ia01wN3pYb1Jta25aXzJwTlJLbXVKOWFTczQ0bVVxUENqNjV1XzBoSE83SDVVVlMtSE5NRE9xTXRLY2FETlNma1NVdVZfb254?oc=5"
         }
       ],
-      "news_count": 4,
-      "first_seen": "2026-06-26",
+      "news_count": 7,
+      "first_seen": "2026-06-27",
       "last_seen": "2026-06-28"
     },
     {
       "name": "OpenAI",
       "ticker": "",
       "sector": "人工智慧",
-      "mention_count": 4,
+      "mention_count": 2,
       "sentiment": "利空",
-      "reason": "OpenAI傳出延後上市，導致科技股和晶片股遭到拋售，引發市場對AI估值修正的擔憂。",
+      "reason": "OpenAI傳出延後上市，導致科技股遭拋售，顯示市場對AI產業估值可能過高。",
       "evidence_news": [
         {
           "title": "OpenAI傳延後上市！科技股遭拋售 納指連跌5天 | 財經 | CTWANT",
           "source": "CTWANT",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5TVl80c0ttUzhuVlNaeVc1N2FKV3ZfbVUyNzZ0aHF2SUd6bktwWTF6LW9xNm5CTjZvN29raVRtVEJZeFo5Wl9PTzMybEFlbTDSAVRBVV_5cUxORUszMTFUOERRWDYzcy1zZUZBMnZRWjlJaTdfOElZQ0VvLW9IdUhUQ0lIWU9lVjg5UjNYOU92MmIxWl9xTnBFMUhzdGdzR2JfcXU1dno?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5TVl80c0ttUzhuVlNaeVc1N2FKV3ZfbVUyNzZ0aHF2SUd6dktwWTF6LW9xNm5CTjZvN29raVRtVEJZeFo5Wl9PTzMybEFlbTDSAVRBVV95cUxORUszMTFUOERRWDYzcy1zZUZBMnZRWjlJaTdfOElZQ0VvLW9IdUhUQ0lIWU9lVjg5UjNYOU92MmIxWl9xTnBFMUhzdGdzR2JfcXU1dno?oc=5"
         },
         {
           "title": "美股收盤：那指連跌五日，費半指數跌超5%；OpenAI推遲上市日期導致晶片股、記憶體股遭拋售",
           "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV_5cUxOamRLS2czZ3UzRVJMNHZNcmlibWhxeVJLTmJEVTRGS3lrSE5pblcxeWRHcENVY2ZvemEyeXlnaER5aTVHc0JsV01zdHBjbXJrNEhRTklnMC1sQ29JcVEyVXMwTU9iVzZhQ0tDNFhZbWgtLURrZHVNZUlxWVFJY3hnNnBlSUpTZ2dBeV_zellkNjQ5blBralhTRnVDUW5BYlBBdVFaMFMxUHJ3UVFVSWF4WE5mdFBUdDhDNHJBeW5yZXE2U09YblFfWFFjRWk1ZkxLaWhz?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOamRLS2czZ3UzRVJMNHZNcmlibWhxeVJLTmJEVTRGS3lrSE5pblcxeWRHcENVY2ZvemEyeXlnaER5aTVHc0JsV01zdHBjbXJrNEhRTklnMC1sQ29JcVEyVXMwTU9iVzZhQ0tDNFhZbWgtLURrZHVNZUlxWVFJY3hnNnBlSUpTZ2dBeV8zellkNjQ5blBralhTRnVDUW5BYlBBdVFaMFMxUHJ3UVFVSWF4WE5mdFBUdDhDNHJBeW5yZXE2U09YblFfWFFjRWk1ZkxLaWhz?oc=5"
         }
       ],
-      "news_count": 5,
+      "news_count": 3,
       "first_seen": "2026-06-26",
       "last_seen": "2026-06-28"
     },
     {
-      "name": "輝達 (Nvidia)",
-      "ticker": "NVDA",
-      "sector": "半導體",
-      "mention_count": 3,
+      "name": "比特幣(Bitcoin)",
+      "ticker": "BTC",
+      "sector": "加密貨幣",
+      "mention_count": 2,
+      "sentiment": "利多",
+      "reason": "在美股三大指數下跌之際，比特幣逆勢上揚，顯示其作為避險資產的潛力，且有投資者考慮增持。",
+      "evidence_news": [
+        {
+          "title": "美股開盤前瞻：三大指數上週小幅收跌，比特幣、貴金屬逆勢上揚",
+          "source": "獨家報導",
+          "url": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxOVzluS0RIVl90X05SZ0RLWFZ2RHZlbGlBSGNLcVZ0MEJGd0JvZ2MtelFKVjd4YjFRX0ZNZWY0eXhuZ0FGcGZTOFlfV2V2M19hOGFSMGJuQ3VRLWl0ZjhoSXc3YzBXSDVFUHJla1Fwa2txLUhlc3NrZEJsOV9Ham5YSHhrVXpLWmV2VDF6V28zcEN0R0tDQ08xcE5rZFdXeGU0Vk5Ua0ZfZTFJc2ppcXI3U3lPUmd1RVBxYWtVbVJtRVVqTUg2THJHZVFVNkR2WW8wUi11cVAwOGJKMmprU2d6d0RlNVNpOTRpUGR6LTZwNkJURUxXbUowV29mOTltWHpyRHFSTjNPY1BISXY3YkZMNEVNZFduZTZJZWNnWWVXNzQydHU0TXdPUGU2UjNnaEp0SjJaRm44WVU3bGNmRzZRRjM1WGs5Vkhaa241bHNBNFBNazV6a3d6TkZUNA?oc=5"
+        },
+        {
+          "title": "Michael Saylor signals another bitcoin buy as Strategy sits about $13 billion underwater",
+          "source": "The Block",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPbTRQM3M3RDU1NThNUnpYcWU4LXpTMDQzMEV5TWgwZHBwVU9mT0tNZi1yY2V3SUdvYWJ5T1pSdVY5eE5PWF9Xb1pHcXFCSUxqY2tpWHJhNHJuQVR6czQ5SkJLa3J6allWOGpEakZEODRZV3FSWUZxdmp6LV9OVEVfUUhEX2RIaVVrX01HT082cnQ5QzFLSWtnNFJ4VDhBT2dPNUp0Z045ZUJVRGVucEFTQkdTbGZNY2o1S1FiNUJHOTQ?oc=5"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-28",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "蘋果(Apple)",
+      "ticker": "AAPL",
+      "sector": "科技",
+      "mention_count": 2,
       "sentiment": "利空",
-      "reason": "美股費半指數崩跌，輝達股價下殺，顯示AI泡沫破裂的擔憂，市場對其估值進行修正。",
+      "reason": "蘋果因AI時代的成本上升，大幅調漲MacBook和iPad價格，引發市場對消費者接受度和未來銷售的擔憂。",
+      "evidence_news": [
+        {
+          "title": "費半族群疲軟「指數重摔737點」！美股道瓊小跌0.09%、台積電ADR收黑 Meta、蘋果逆勢上攻",
+          "source": "FTNN 新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE95R0s1VmNNRzhzOTFCaXMwWlhXRVd3RVJWdlMycjJ4Q19IaGw2dWJydEpVakQ4TFY3SkZtWm9uNm9CZ0pNa0YxakJiRQ?oc=5"
+        },
+        {
+          "title": "Apple’s Sweeping Price Increases Bring Home the Costs of the AI Era",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQck9VWUhHSldFamxVOWxLT0xMZTdrSVRDX0duWWxiRjAyN3lfU28zc1hHbWFyRzEtOXo4b2Rpc1dVM3J4YUJPTWhKU1BsZzZLSHh1dzhZRTVoN3cxRl9ObDRBYTNJVXdFczR0X2pWRnAwQllwZWhHLXhONEtmNngyeWFjbHRjcjd4WFFQeXhjWkFXTnZMS1haMmJiLXF6UXdmcWFWQUNNTmhqTzFoWk1mMnpXTG82VGFBRHNkdkRnWFk1ZS13MmNn?oc=5"
+        }
+      ],
+      "news_count": 2,
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-28"
+    },
+    {
+      "name": "輝達(Nvidia)",
+      "ticker": "NVDA",
+      "sector": "半導體/人工智慧",
+      "mention_count": 2,
+      "sentiment": "利空",
+      "reason": "輝達股價受AI泡沫破裂擔憂影響而下殺，儘管被提及為美光之後的潛力股，但短期內仍面臨修正壓力。",
       "evidence_news": [
         {
           "title": "快新聞／AI泡沫破裂？美股費半崩跌5.29% 輝達、台積電ADR下殺",
@@ -156,7 +179,7 @@
         {
           "title": "Why Wall Street thinks US memory maker Micron is the next Nvidia",
           "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV_5cUxQSlFwUWV1LUxzN2hYT3BHaDByWGRlUFRUNXpZSmRjODJEUWY1R1RZXzZhWXRHRWRFZDUwbjkwQk5iSWx3NGYxQk5xRy1ia01wN3pYb1Jta25aXzJwTlJLbXVKOWFTczQ0bVVxUENqNjV1XzBoSE83SDVVVlMtSE5NRE9xTXRLY2FETlNma1NVdVZfb254?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSlFwUWV1LUxzN2hYT3BHaDByWGRlUFRUNXpZSmRjODJEUWY1R1RZXzZhWXRHRWRFZDUwbjkwQk5iSWx3NGYxQk5xRy1ia01wN3pYb1Jta25aXzJwTlJLbXVKOWFTczQ0bVVxUENqNjV1XzBoSE83SDVVVlMtSE5NRE9xTXRLY2FETlNma1NVdVZfb254?oc=5"
         }
       ],
       "news_count": 2,
@@ -164,12 +187,12 @@
       "last_seen": "2026-06-28"
     },
     {
-      "name": "台積電ADR (TSM)",
+      "name": "台積電(TSM)",
       "ticker": "TSM",
       "sector": "半導體",
-      "mention_count": 3,
+      "mention_count": 2,
       "sentiment": "利空",
-      "reason": "費半族群疲軟，美股晶片股重摔，台積電ADR也隨之下跌，反映市場對半導體產業的悲觀情緒。",
+      "reason": "台積電ADR受費半重挫及AI泡沫破裂擔憂影響而走跌，儘管美國對其先進封裝技術依賴更甚以往，但短期市場情緒偏空。",
       "evidence_news": [
         {
           "title": "費半族群疲軟「指數重摔737點」！美股道瓊小跌0.09%、台積電ADR收黑 Meta、蘋果逆勢上攻",
@@ -182,160 +205,114 @@
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1vVlFMOXFncWI5ZXhoamJqNnpIZFRJX0VQTklxVnRNbS10eEw5cmVxVWgwYTZFdVhnaW5FUEtyM00xdW5hZUN2YnFscWtybFFGd3ZmellMbUxFQS1YTkxxZmZVUUNKUQ?oc=5"
         }
       ],
-      "news_count": 3,
-      "first_seen": "2026-06-26",
-      "last_seen": "2026-06-26"
-    },
-    {
-      "name": "美元 (U.S. dollar)",
-      "ticker": "",
-      "sector": "貨幣",
-      "mention_count": 3,
-      "sentiment": "利多",
-      "reason": "美元匯率觸及13個月新高，顯示外國投資者儘管擔憂川普，仍看好美元。",
-      "evidence_news": [
-        {
-          "title": "Dollar hits 13-month high as foreign investors overlook worries about Trump",
-          "source": "The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV_5cUxOb0Q3dmM1c0RBcTdPTzR2M2JOMnNNcFVaTE5ORkU3U29TY2ZSN3VFTi1pX1FfRzNLdVR5R2VUTVlHX2x4b2NPaExYbEV6cmhvYVVXUE1lb1hUZFNORXJsZEFtMHRfQnoyUldqYjJWdUJrOURTTk11NkRHWmNlTExYYlhBbWJLRldDT0pJVl9PcEtqclR0bl9qVFByNjlsbzBNWllHWDJR?oc=5"
-        },
-        {
-          "title": "If you think China needs to dethrone U.S. dollar, you don't understand how it is waging global currency war",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV_5cUxOOVNOSkxVOThTdTVBNmxfOWZMTnJ2a2dCWEtoTUVDSHlBMXFDR19iX3NvMXhRbnhESmhsTmhVQWVNQzc4RnV4YVBSZ2s0TEg2TjU2QTdQV3h2MXppRm45RzM1a0JjZnVGZnFhdFEwREJwVlZrak4tNjgtempqWm9kMGpZRk05dEM5Q0NBbkRFTVFqM29pRVdFeGF4alZxUUQyaUY00gGoAUFV_5cUxQSWVZpWnVzWFJKMTZpME5NUzBBeThCcWs4dmlIeGhzUUVRRUdpTm1CUE1oZmR4bFZ1UGxaR3NYajloR2RNZjRqWnRva2l4eHFJcjBCNG05Y0Q1cUpXSlRoQl_MRVNSTVZLYWprUXVTR3NiSlZvZWdHd0s2TW5uUVZjLTd2LWFMVFJVXzVxOWR0RTlFcjNxU0pJV1g2aVozdnZabEgtLW1ZeQ?oc=5"
-        }
-      ],
-      "news_count": 3,
-      "first_seen": "2026-06-27",
-      "last_seen": "2026-06-28"
-    },
-    {
-      "name": "谷歌 (Google)",
-      "ticker": "",
-      "sector": "科技",
-      "mention_count": 3,
-      "sentiment": "利空",
-      "reason": "谷歌限制Meta使用其Gemini AI模型，顯示AI基礎設施供應緊張，可能影響合作夥伴的發展。",
-      "evidence_news": [
-        {
-          "title": "Ex-Google engineer says Larry Page, Sergey Brin and Sundar Pichai share the same 'crazy' trait",
-          "source": "Fortune",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV_5cUxOTEZPQ3dxcHZtc2JWMXZEeFlUYVhNTy0xN1RPc3BmTTJCc3BlR0dxZVBTSGJfQ0RER1g3bnllV29xT2ZXUEhDQ1ZUNHJMNVhqclk1S05QbkNjWXFuaFQ3aGdZQkl1X1B1NElNNVFiZm81S1VGMUJnSlJ1c3U1X255YnhIaXBrTk44TDVxQld1dUxzWndqS3NQOVhiYVhFUXFFMEc0bGhReDMzOElrYl9zVFQ4dExaOHBUTHpPR0k5aw?oc=5"
-        },
-        {
-          "title": "Google limits Meta’s use of its Gemini AI models, FT reports",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV_5cUxOallHQVB2WkxmbVZtVUIwRmg1NnBkclB4bkx4bmF0cGp6eThBUTNkMS0tQUdadHRrWnhuTUZzaHlCZUVSRGM3TEkxa1d1YU1jVTM4azlsTnZ0MEJocGdUV0dRZWhJajNBQ2NrT1BOUGFkRjhwYzc2TWxVOTJmOWxGMXBleFdIaE5Nai1KOFd2dTUtTGI5RWl6cWRlNNIBoAFBVV_5cUxQcWRyNHVZQ3VZbGllcnlSRkF6YmtZNVh1NGo4QlI0T0pYcDA1Q3k5X292cElkMVo4Zm4zVkpaZm1Nb3ZJMFlDQ0k0WXAxMldiOWlEdG5ZYWZfdlZpd1RacFBLbGlQaEkwRTRuaUcyNzk1ZmlkOEVVNmcxQ1c0Qk9QZnBvTUZzTnJNN21PV0VsSUprUzBpd2JPYTZ2bUgtbEx5?oc=5"
-        }
-      ],
-      "news_count": 7,
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28"
-    },
-    {
-      "name": "特斯拉 (Tesla)",
-      "ticker": "TSLA",
-      "sector": "電動車",
-      "mention_count": 2,
-      "sentiment": "觀望",
-      "reason": "新聞主要關注其FSD自動駕駛技術，以及馬斯克的財富，但未直接提及股價趨勢或業績表現。",
-      "evidence_news": [
-        {
-          "title": "Dow Jones Futures: Market At Tipping Point As U.S.-Iran Attacks Escalate. Tesla, Jobs On Tap.",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV_5cUxQVzVZSDFSRFR6alhhM0Y5bmJ6TjBxODRPcmJPVHI5R2owd3hVUEhvUkt6UHNfc3ZXdjg2T3JVZjd4QTF6UEtOekQxdkV3a29HNUU1aXRBbFdNS256TFBiZjFtUTF3OEZKdUVudUJrMFBvbEl5NXJJcWN6SUxkRDRXVzc2YUowTnh3aElNZWVpcGd6Tk80Qi1HRzVzUHJRTnJVUTh3R2c5YnRhTkQtU3pLeG95VFpxWUprTmRJ?oc=5"
-        },
-        {
-          "title": "TechCrunch Mobility: All eyes on Tesla FSD",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV_5cUxQLVBoUGJfM0FDNGhPdzdLeVlDVExWTXY0d3VKUFNDREJQczQ3LWdiUXNvdlAtRExzNEI2Y0IzbHQ5eHJhdTgyYURvX3RjRkdJbFRkWHhpMjYxaFJ0cV9Wa0JVN0JtMjBpNU5BTGR0cnc2TUhpMzBZb1JIbV9pSk9xQnZ3?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28"
-    },
-    {
-      "name": "蘋果 (Apple)",
-      "ticker": "AAPL",
-      "sector": "科技",
-      "mention_count": 2,
-      "sentiment": "利空",
-      "reason": "有報導指出蘋果因記憶體短缺而調漲Mac和iPad價格，且AI導致科技產品成本上升，可能影響其市場競爭力。",
-      "evidence_news": [
-        {
-          "title": "AOC puts major tech company on notice amid looming price increases: 'Far too big'",
-          "source": "Fox News",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV_5cUxPZkV4eEdUcXI4WWV5ekJhS3BsVV_4g5NGJJd2J0X09BODVDdnliaEpjTFozWW9HUHI3X2ZvRmhLZF9VSi15OGxtbjllUGpjaEZlZEtJMWF4SVFHQlZBV2lCQlRqVTRBanQ0eVRNall0RFRFeDZVLXNPcEhnRDR5Wlhoa3VRN0pRUXl3ZDJBX1RVazl0TlF0NVZJLTdkcmFPRmVtMnRNM1lLZ9IBrwFBVV_5cUxPLUlMdjJtbUo1ZmpOb19odEE4OXhNLXZMd3NraUpUc25jalFhcy1zdWd1eVV6eWpSX2JwbncyaFJMX0tVdTJveDI0QlZHbXdfLXU3OVRoaF80VWRXWmhJUHE4RjFzUGRHWkJkVlJrMlJ6Rkwxcm8yX2xTWkt1SVBUc2QzbTRSblc3LTdSYjgwMURrQVRlYi1uWlE0cTM5OGFrc2NJcmhaSWtHOWiweGpV?oc=5"
-        },
-        {
-          "title": "S&P 500, Nasdaq End Week Lower As Investors Rotate Out Of Tech, AI Plays — ON, AAPL, SLS, INFQ, NKE in Focus",
-          "source": "Stocktwits",
-          "url": "https://news.google.com/rss/articles/CBMi_AFBVV_5cUxPUEYzY3RiMUhCQkZIQ045Z2xOaU5WcHBGbUltTmFGREZZNFNpbVNXaTEzRlRqZnhPVjVFeTEzZGNQeHJzbVkyNXBLUTZNRE5Hc3dVWjJIcW5HaGI0bUN5SlYxYTFSMng4UUplLW5_aVVPRVJvc1ZEQkZiSVJKZkpidXB2TGs2QXl1SEE2QkZZcndTY21jdnhYTXh1M2dQb29nWHlDV29tVTUtVEVGWmhmM3E3ZFJWZnQ4QjZTUU9DV3dpdUtva3Izc0UzNXJrcjZEaU5oSDBWU0duNU1seFVSTkNQZ3VBMUR3ZzNzMW1xSGVqYXloNlpBMkpoZ3c?oc=5"
-        }
-      ],
       "news_count": 4,
       "first_seen": "2026-06-26",
-      "last_seen": "2026-06-28"
-    },
-    {
-      "name": "Meta (臉書母公司)",
-      "ticker": "",
-      "sector": "科技",
-      "mention_count": 2,
-      "sentiment": "利空",
-      "reason": "谷歌限制Meta使用其Gemini AI模型，可能影響Meta在AI領域的發展與競爭力。",
-      "evidence_news": [
-        {
-          "title": "Google limits Meta’s use of its Gemini AI models, FT reports",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV_5cUxOallHQVB2WkxmbVZtVUIwRmg1NnBkclB4bkx4bmF0cGp6eThBUTNkMS0tQUdadHRrWnhuTUZzaHlCZUVSRGM3TEkxa1d1YU1jVTM4azlsTnZ0MEJocGdUV0dRZWhJajNBQ2NrT1BOUGFkRjhwYzc2TWxVOTJmOWxGMXBleFdIaE5Nai1KOFd2dTUtTGI5RWl6cWRlNNIBoAFBVV_5cUxQcWRyNHVZQ3VZbGllcnlSRkF6YmtZNVh1NGo4QlI0T0pYcDA1Q3k5X292cElkMVo4Zm4zVkpaZm1Nb3ZJMFlDQ0k0WXAxMldiOWlEdG5ZYWZfdlZpd1RacFBLbGlQaEkwRTRuaUcyNzk1ZmlkOEVVNmcxQ1c0Qk9QZnBvTUZzTnJNN21PV0VsSUprUzBpd2JPYTZ2bUgtbEx5?oc=5"
-        },
-        {
-          "title": "費半族群疲軟「指數重摔737點」！美股道瓊小跌0.09%、台積電ADR收黑 Meta、蘋果逆勢上攻",
-          "source": "FTNN 新聞網",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE95R0s1VmNNRzhzOTFCaXMwWlhXRVd3RVJWdlMycjJ4Q19IaGw2dWJydEpVakQ4TFY3SkZtWm9uNm9CZ0pNa0YxakJiRQ?oc=5"
-        }
-      ],
-      "news_count": 2,
-      "first_seen": "2026-06-26",
-      "last_seen": "2026-06-28"
+      "last_seen": "2026-06-27"
     },
     {
       "name": "Anthropic",
       "ticker": "",
       "sector": "人工智慧",
       "mention_count": 2,
-      "sentiment": "利空",
-      "reason": "在美國限制其AI存取後，奧地利遊說歐盟接納Anthropic，顯示其在美國面臨管制挑戰。",
+      "sentiment": "觀望",
+      "reason": "Anthropic因美國對AI的限制，導致奧地利呼籲歐洲收留，凸顯其面臨的國際政策與市場競爭挑戰。",
       "evidence_news": [
         {
-          "title": "中國汽車歐洲市占首破10% 德國車業有永久萎縮之虞",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202606280075.aspx"
+          "title": "Austria urges Europe to host Anthropic following US curbs on AI access",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOV2VmbzlqUks2ZDZGQ2xYcDk0ZEVFS0hCSXFxMUg2amtkOWJmSDkxSV9mb0xRelFJSUMteUJFaG5YS2pSZHJfdVEzeXRPY3dYd2lSejg0SnFvQjhXU0Noak1fSUxuVnUxdDBpYUNKc3BtVTFKTHNSbnFfRkQ0aUY4dENia0pmOGNVeUZDeVVuZWdpS1hqV0R6S3dGcjJEbkV4YVNMS19hMEg2WFFUbGx0UEUtcmRkX0hnWkZz?oc=5"
         },
         {
-          "title": "Austria Lobbies EU to Host Anthropic After US Access Curbs",
+          "title": "China Resets the AI Race",
+          "source": "WSJ",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBnVHZyOFhVQ1laUm5HX2VmRHhpQjNnWmVBMlRzN2p0d1NEbFI0SHQyYWJ1UkxpaDlzV0hnVEwtVHpxeFBNSF9oTDFZcm1tTGlFdm1obXcxTVFiMkdtRW52YTdVX2x1QlQ3QUc5RVBn?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-28",
+      "last_seen": "2026-06-28"
+    },
+    {
+      "name": "標準普爾500指數(S&P 500)",
+      "ticker": "SPX",
+      "sector": "大盤指數",
+      "mention_count": 2,
+      "sentiment": "利空",
+      "reason": "S&P 500指數跌破50日移動平均線，且市場對伊朗-美國衝突升級和高槓桿的擔憂加劇，顯示短期內可能面臨回調。",
+      "evidence_news": [
+        {
+          "title": "S&P 500 and Nasdaq Forecast: S&P Slides Below 50-Day MA as Nasdaq Drops 5th Straight",
+          "source": "FXEmpire",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNVE9JcUU5R1lKUmpPN2JScFBzOVNZWkpyQ3dDZWg1RG1PeldBQjJjcTBsWHBWdlJzTWF3RUl3VXRoTUpzNTB5Ym9mWFlLZkZKeXNldGtWV2RNb3UxbUQ0dUp0Ql9PNVJQQWpGeXhfRmdzR1NYeE1FOTRoRmUwSFRnV1plM1ZwMERjdzZDNlhnX1RYWUhhMHpHb1NFZVptaEcyOWtvbnR6bnlLWmNMZW9JeWNBSVNHWE5hY0FVb2tNdlBKMDI3OFItazkyUXg?oc=5"
+        },
+        {
+          "title": "Leverage That Fueled US Stock Rally Becomes a Growing Concern",
           "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV_5cUxOSnlRTk55LThKOG9OY0NWMTNmTWJjYVdSRi1wLXRpU1FBX1F4MEpXYkt5c3JfUUVkdEx5WWd5a2tmQW5oZDBCTmdEU25HZzBRVHo0aXN1SUVZYVhOQmlORTBkcUFZTFc1OTdQbmxRcVBJaXM1Wk40ZTM0NGpOaGJFRTFYQXlaRmIteHFpRXIwS08zQUhPaG1fLVhWaXEzSURTd0U2LXlzb1NlTGVxdEE?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORFM0OVgxNGFod0NDOFpMcGpoNk5iY0htYWFiYWRIcjVjMHdOQjlsbk5JN3JZRzlpYlEzdENoTHRvUU1pUW1QOGtzMUpaMkwzSl9GdkVjYUpjV1FFUWZvTm1PZHVkeHJ4T2FTaVBuaUhrMDlfbFBQcW9WZHhkUmd6d2xYUk9zRE1YZXZvNk15MGdCdjY5dTdFbWxhMlR1MmJDRHoyUEdVaTlPTDE4SzBkUDln?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-06-28",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "那斯達克指數(Nasdaq)",
+      "ticker": "IXIC",
+      "sector": "大盤指數",
+      "mention_count": 2,
+      "sentiment": "利空",
+      "reason": "那斯達克指數連跌五日，科技股因AI估值修正和OpenAI延遲上市遭到拋售，顯示市場對科技板塊的信心動搖。",
+      "evidence_news": [
+        {
+          "title": "S&P 500 and Nasdaq Forecast: S&P Slides Below 50-Day MA as Nasdaq Drops 5th Straight",
+          "source": "FXEmpire",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNVE9JcUU5R1lKUmpPN2JScFBzOVNZWkpyQ3dDZWg1RG1PeldBQjJjcTBsWHBWdlJzTWF3RUl3VXRoTUpzNTB5Ym9mWFlLZkZKeXNldGtWV2RNb3UxbUQ0dUp0Ql9PNVJQQWpGeXhfRmdzR1NYeE1FOTRoRmUwSFRnV1plM1ZwMERjdzZDNlhnX1RYWUhhMHpHb1NFZVptaEcyOWtvbnR6bnlLWmNMZW9JeWNBSVNHWE5hY0FVb2tNdlBKMDI3OFItazkyUXg?oc=5"
+        },
+        {
+          "title": "美股收盤：那指連跌五日，費半指數跌超5%；OpenAI推遲上市日期導致晶片股、記憶體股遭拋售",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOamRLS2czZ3UzRVJMNHZNcmlibWhxeVJLTmJEVTRGS3lrSE5pblcxeWRHcENVY2ZvemEyeXlnaER5aTVHc0JsV01zdHBjbXJrNEhRTklnMC1sQ29JcVEyVXMwTU9iVzZhQ0tDNFhZbWgtLURrZHVNZUlxWVFJY3hnNnBlSUpTZ2dBeV8zellkNjQ5blBralhTRnVDUW5BYlBBdVFaMFMxUHJ3UVFVSWF4WE5mdFBUdDhDNHJBeW5yZXE2U09YblFfWFFjRWk1ZkxLaWhz?oc=5"
+        }
+      ],
+      "news_count": 5,
+      "first_seen": "2026-06-27",
+      "last_seen": "2026-06-29"
+    },
+    {
+      "name": "道瓊工業指數(Dow Jones)",
+      "ticker": "DJI",
+      "sector": "大盤指數",
+      "mention_count": 2,
+      "sentiment": "觀望",
+      "reason": "道瓊指數期貨小幅走高，受美國與伊朗衝突暫停談判消息影響，但市場仍關注非農就業報告和美聯儲主席的言論，多空不明。",
+      "evidence_news": [
+        {
+          "title": "西亞衝突再升溫！美股期貨仍小幅走高 | 財經 | CTWANT",
+          "source": "CTWANT",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE40TmdwbER1QldBOGVUQk45TUdoVWJLM2NvMUFfYzhpSmVPbl9LbGROSXNJdkFJNmg4ZkZmUTgtRTBkaEZXY2Q5aUVRS1BuZUnSAVRBVV95cUxOR3UxOGtwcDNsM242emdPWnZuOEZVUXhwYlV4WlZnY0Y4T3p4S29kM2lRNTRjdWVLZlZuUzBxV3VscHBIN1lzSnljWnZSMWZjZmk0Z2Y?oc=5"
+        },
+        {
+          "title": "Dow Jones Futures Rise On U.S.-Iran News; Market At Tipping Point; Tesla, Jobs Report Loom.",
+          "source": "Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVzVZSDFSRFR6alhhM0Y5bmJ6TjBxODRPcmJPVHI5R2owd3hVUEhvUkt6UHNfc3ZXdjg2T3JVZjd4QTF6UEtOekQxdkV3a29HNUU1aXRBbFdNS256TFBiZjFtUTF3OEZKdUVudUJrMFBvbEl5NXJJcWN6SUxkRDRXVzc2YUowTnh3aElNZWVpcGd6Tk80Qi1HRzVzUHJRTnJVdTh3R2c5YnRhTkQtU3pLeG95VFpxWUprTmRJ?oc=5"
         }
       ],
       "news_count": 2,
       "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28"
+      "last_seen": "2026-06-29"
     },
     {
-      "name": "福特 (Ford)",
-      "ticker": "",
+      "name": "福特(Ford)",
+      "ticker": "F",
       "sector": "汽車",
       "mention_count": 1,
       "sentiment": "觀望",
-      "reason": "福特在AI技術應用未達預期後重新聘用資深工程師，顯示AI在汽車製造業的應用仍處於探索階段。",
+      "reason": "福特因AI技術未達預期而重新聘用資深工程師，顯示其在AI應用上面臨挑戰，對其自動化策略產生疑慮。",
       "evidence_news": [
         {
           "title": "Ford rehires ‘gray beard’ engineers after AI falls short",
           "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV_5cUxQMi1RZFAyTFU0NDV5NE5IV2xRV1pfV0NiaDN6X0piTlItcVVKa1FXTUdlYVo4SnJQYjVoMDVIX1YzZXMyQlZFRGFmSXM0SkEtNnZuQW5ndmN6dXA0TmNtOWEtQjFGUlF4MS1aZGJZUnY5b1Z1MTVUb0tGczNkNWhIZGN1R3JJbEpFb212MFZ3ejY4UDg?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMi1RZFAyTFU0NDV5NE5IV2xRV1pfV0NiaDN6X0piTlItcVVKa1FXTUdlYVo4SnJQYjVoMDVIX1YzZXMyQlZFRGFmSXM0SkEtNnZuQW5ndmN6dXA0TmNtOWEtQjFGUlF4MS1aZGJZUnY5b1Z1MTVUb0tGczNkNWhIZGN1R3JJbEpFb212MFZ3ejY4UDg?oc=5"
         }
       ],
       "news_count": 1,
@@ -343,17 +320,17 @@
       "last_seen": "2026-06-28"
     },
     {
-      "name": "埃克森美孚 (Exxon)",
-      "ticker": "",
-      "sector": "能源",
+      "name": "拜耳(Bayer)",
+      "ticker": "BAYRY",
+      "sector": "製藥/農業化學",
       "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "美國前總統川普指控埃克森美孚等石油公司哄抬油價，面臨政治壓力。",
+      "sentiment": "利多",
+      "reason": "美國最高法院駁回了對孟山都(Monsanto)農達(Roundup)除草劑致癌的訴訟，對拜耳有利，減輕了其法律風險。",
       "evidence_news": [
         {
-          "title": "‘We should be at $2.25 at the pump’: Trump says Exxon, Chevron, Shell and BP are price gouging drivers. Do you agree?",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV_5cUxOQlhaTEZ1WE9zUWJrN1NxSm1xQ09nbDMyeW5zV3hSSk13M2xlcWRLQWVnUVVnaGtVOEdzZ0tKZEFLUGx3NzEwYUdZMkF3NzBmWXpWand5NEJhWFVZUUVYbUJfdEN3T0l1WlRWakJ5M2o2aE9DN2RTbVl2ZHNXRFk4dTJvSQ?oc=5"
+          "title": "MAHA feels betrayed after Supreme Court ruling on Monsanto, glyphosate",
+          "source": "The Hill",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMFlJV0gyLUMwSU5Bb1NGcDVPZXQtMGlLYUdia1JWdUpQcVhoZWQwUWdLczNXVmU5RHZlQmhqLUcxblg0LWJNS0JlSzh2ZFhMUWtZX1Jjc2M4YmV0YWVWTzZQOF84SllLaUpnbWN4NmdXZjI1cngwZ3owdmVGQm9ad1ZiWHBCVjJRMWZMTNIBkgFBVV95cUxPMGhCMEhCTmQzX0dGTzZSX0tfWF9vaGx1WEt5WVM0eUtrTVJjb3o5a0xOZGl6YUhOLXU4LS1jRnVVOXR0MGQ5b0RtbjBCSUZyNkRqRksxS1JzTmQ0bUthM3h0dlEybWttWEYwdEhZMkdEWXZqZXhESXpQVTljS3FPUzU5RWkxQzl2WUJiVDVGMVN3dw?oc=5"
         }
       ],
       "news_count": 1,
@@ -361,51 +338,34 @@
       "last_seen": "2026-06-28"
     },
     {
-      "name": "雪佛龍 (Chevron)",
-      "ticker": "",
-      "sector": "能源",
+      "name": "法拉利(Ferrari)",
+      "ticker": "RACE",
+      "sector": "汽車/豪華品牌",
       "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "美國前總統川普指控雪佛龍等石油公司哄抬油價，面臨政治壓力。",
+      "sentiment": "利多",
+      "reason": "儘管法拉利Luce電動車外觀具爭議，但在中國市場迅速售罄，顯示其品牌號召力及電動車市場潛力。",
       "evidence_news": [
         {
-          "title": "‘We should be at $2.25 at the pump’: Trump says Exxon, Chevron, Shell and BP are price gouging drivers. Do you agree?",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV_5cUxOQlhaTEZ1WE9zUWJrN1NxSm1xQ09nbDMyeW5zV3hSSk13M2xlcWRLQWVnUVVnaGtVOEdzZ0tKZEFLUGx3NzEwYUdZMkFwNzBmWXpWand5NEJhWFVZUUVYbUJfdEN3T0l1WlRWakJ5M2o2aE9DN2RTbVl2ZHNXRFk4dTJvSQ?oc=5"
+          "title": "Controversial Ferrari Luce EV is an instant sellout in China",
+          "source": "Electrek",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNNlM1WEVlN2pqNkRvQzViU2h6XzZZTmZQUUVURTJCb2ZNRGNxTjlqRVVHUnh1SDRtdUQ2bGRpQ2R6VVB3bmRxT3B4b2hrQTl4ZDY1ZF9pMm9Fbi10OElqZ1N2dU53UU1pLW45VjNfLUhndW94OWZvQzhQeFJFLVlGUGhxcTY1cmJLM09wMnJobkJOdmt1aDBn?oc=5"
         }
       ],
-      "news_count": 1,
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28"
-    },
-    {
-      "name": "殼牌 (Shell)",
-      "ticker": "",
-      "sector": "能源",
-      "mention_count": 1,
-      "sentiment": "利空",
-      "reason": "美國前總統川普指控殼牌等石油公司哄抬油價，面臨政治壓力。",
-      "evidence_news": [
-        {
-          "title": "‘We should be at $2.25 at the pump’: Trump says Exxon, Chevron, Shell and BP are price gouging drivers. Do you agree?",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV_5cUxOQlhaTEZ1WE9zUWJrN1NxSm1xQ09nbDMyeW5zV3hSSk13M2xlcWRLQWVnUVVnaGtVOEdzZ0tKZEFLUGx3NzEwYUdZMkFwNzBmWXpWand5NEJhWFVZUUVYbUJfdEN3T0l1WlRWakJ5M2o2aE9DN2RTbVl2ZHNXRFk4dTJvSQ?oc=5"
-        }
-      ],
-      "news_count": 1,
+      "news_count": 4,
       "first_seen": "2026-06-28",
       "last_seen": "2026-06-28"
     }
   ],
   "future_trends": [
     "AI鏈關鍵零組件",
-    "半導體產業 (特別是先進封裝技術)",
-    "電子級氫氣市場 (應用於半導體)",
-    "資產管理與財富管理 (因應高資產客戶增長)",
-    "醫療保健 (肥胖症藥物覆蓋擴大)"
+    "先進封裝技術",
+    "電動車市場（特別是在中國）",
+    "資產管理與財富管理（特別是高資產客戶）",
+    "電子級氫氣市場（半導體應用）",
+    "貴金屬與加密貨幣（避險資產）"
   ],
   "sunset_industries": [
-    "德國汽車製造業 (受中國汽車競爭影響可能永久萎縮)",
-    "傳統零售業 (超市連鎖店關閉)"
+    "德國汽車產業（受中國電動車競爭影響可能永久萎縮）",
+    "傳統零售業（超市關閉）"
   ]
 }
