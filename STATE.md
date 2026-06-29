@@ -83,6 +83,11 @@
 - ✅ `update_data.py`：`MASTER_DECISION_SYSTEM_PROMPT` + `get_master_decision()` + `_run_master_decision()`
 - 待辦：Phase 3 Streamlit 中央決策儀表板（四象限視覺化 + action_signal 燈號）
 
+## Phase 3 中央決策儀表板（2026-06-29，PR #84 已併入 main）
+- ✅ `update_data.main()` 接入 `_run_master_decision(today)`：每日 06:00 自動產生 `latest_decision.json`（含 features 嵌入）
+- ✅ `app.py` 新增 `page_ai_brain()`：操作訊號燈號/信心分數/四路權重長條圖/核心驅動/風險提示/四象限特徵明細
+- ✅ 側邊欄新增「🧠 AI 決策大腦」第六個頁面入口
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
