@@ -195,25 +195,18 @@ def build_intl_alert_line_message(intl: dict) -> str:
     lead = lead_market_drops(intl)
     alarm = bool(lead) or intl.get("alert_level") == "警戒"
     title = "🚨 國際盤大跌預警" if alarm else "🌅 國際盤快報"
-    lines = [
-        f"{title} {intl.get('report_date', '')}",
-        f"警示級別:{intl.get('alert_level', '—')}",
-    ]
+    lines = [f"{title} {intl.get('report_date', '')}"]
+
+    root_cause = (intl.get("root_cause") or "").strip()
+    if root_cause:
+        lines.append(f"🔥 主因:{root_cause}")
+
+    lines.append(f"警示級別:{intl.get('alert_level', '—')}")
     if intl.get("summary"):
         lines.append(intl["summary"])
 
-    us = intl.get("us_view", {})
-    if us:
-        lines += ["", f"🇺🇸 美股看法:{us.get('direction', '—')}"]
-        ureason = (us.get("reason", "") or "").strip()
-        if ureason:
-            lines.append(ureason[:200] + ("..." if len(ureason) > 200 else ""))
-        focus = us.get("focus", [])
-        if focus:
-            lines.append("觀察焦點:" + "、".join(str(s) for s in focus))
-
     if lead:
-        lines += ["", "📉 大跌(時間差領先台股):"]
+        lines += ["", "📉 大跌(領先台股):"]
         for d in lead:
             lines.append(
                 f"・{d.get('name', '')} {d.get('change_pct', 0):+.2f}%({d.get('lead_type', '')})"
@@ -227,21 +220,29 @@ def build_intl_alert_line_message(intl: dict) -> str:
 
     interp = intl.get("interpretation", [])
     if interp:
-        lines += ["", "🧭 利空原因(依新聞):"]
-        for it in interp[:3]:
+        lines += ["", "🧭 利空原因:"]
+        for it in interp[:2]:
             mk = it.get("market", "")
             cause = (it.get("cause", "") or "").strip()
-            lines.append(f"・{mk}:{cause}" if mk else f"・{cause}")
+            cause_s = cause[:80] + ("…" if len(cause) > 80 else "")
+            lines.append(f"・{mk}:{cause_s}" if mk else f"・{cause_s}")
+
+    us = intl.get("us_view", {})
+    if us:
+        lines += ["", f"🇺🇸 美股:{us.get('direction', '—')}"]
+        focus = us.get("focus", [])
+        if focus:
+            lines.append("盯:" + "、".join(str(s) for s in focus[:2]))
 
     imp = intl.get("tw_impact", {})
     if imp:
-        lines += ["", f"🇹🇼 對台股:{imp.get('direction', '—')}"]
+        lines += ["", f"🇹🇼 台股:{imp.get('direction', '—')}"]
         reason = (imp.get("reason", "") or "").strip()
         if reason:
-            lines.append(reason[:200] + ("..." if len(reason) > 200 else ""))
+            lines.append(reason[:100] + ("…" if len(reason) > 100 else ""))
         sectors = imp.get("sectors", [])
         if sectors:
-            lines.append("重點族群:" + "、".join(str(s) for s in sectors))
+            lines.append("族群:" + "、".join(str(s) for s in sectors[:3]))
 
     lines += ["", "⚠️ 真實報價 + AI 研判,僅供參考,非投資建議"]
     msg = "\n".join(lines)

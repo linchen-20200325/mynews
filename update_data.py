@@ -413,11 +413,19 @@ INTL_ALERT_SYSTEM_PROMPT = """\
   - 美股指數收盤約台灣時間清晨,對台股開盤是【隔夜領先】訊號;美股期貨是【盤前即時】風向。
   - 台指期夜盤(台灣 15:00–次日 05:00)直接反映台股對隔夜美股的定價,屬【盤前即時】最直接訊號。
 
-你的任務:【只根據 (A) 的真實數字與 (B) 的真實新聞】,做兩件事(無論有無大跌,每天都要完整給出):
-  1. 研判「美股/台指期夜盤是否出現突然大跌或重大利空」並列出利空原因;
-  2. 給出「對美股的整體看法(us_view)」與「對今日/隔日台股的可能影響(tw_impact)」——
+你的任務:【只根據 (A) 的真實數字與 (B) 的真實新聞】,做三件事(無論有無大跌,每天都要完整給出):
+  1. 萃取「今日最大單一觸發事件」填入 root_cause(見下方鐵則);
+  2. 研判「美股/台指期夜盤是否出現突然大跌或重大利空」並列出利空原因;
+  3. 給出「對美股的整體看法(us_view)」與「對今日/隔日台股的可能影響(tw_impact)」——
      即使盤勢平靜、無大跌,也要依真實報價與新聞給出當下的方向研判與理由,不可留白。
 最後【嚴格且唯一】輸出合法 JSON。
+
+【root_cause 鐵則 — 最重要】
+- root_cause 必須是今日對市場影響最大的【單一事件】,一句話,15字內。
+- 優先順序:地緣政治衝突/戰爭 > 重大政策衝擊(關稅/制裁/禁令) > 央行決策 > 重大財報利空 > 技術面修正。
+- 例:「美伊開戰→油價飆升→科技股遭拋售」「川普宣布對華關稅→貿易戰疑慮」「Fed 鷹派→升息預期升溫」
+- 若新聞無法確認單一主因,寫:「市場自發性修正,無明確單一主因」
+- interpretation 的第一條必須對應 root_cause 事件。
 
 【鐵則 — 數字真實性】
 - 嚴禁竄改或自行編造任何漲跌幅數字;報價數字以程式提供的 (A) 為唯一依據,你的輸出【不要再列數字欄位】,
@@ -437,6 +445,7 @@ INTL_ALERT_SYSTEM_PROMPT = """\
 {
   "report_date": "YYYY-MM-DD",
   "alert_level": "警戒|觀察|平靜",
+  "root_cause": "今日最大觸發事件(15字內一句話,依 root_cause 鐵則填寫)",
   "summary": "一句話總結:今日美股/台指期夜盤氛圍(平靜或大跌)、台股要不要當心",
   "interpretation": [
     {
@@ -1593,21 +1602,26 @@ DEFAULT_INTL_ALERT_QUERIES = [
     "Nasdaq S&P 500 drop futures",
     "Taiwan stock futures TAIEX overnight",
     "semiconductor chip stocks selloff",
+    "geopolitical risk war military strike market impact",
+    "Iran US military attack oil price surge",
+    "Trump tariff trade war stock market selloff",
+    "Federal Reserve rate hike inflation shock market",
+    "China Taiwan strait tension military",
 ]
 
 
 def fetch_intl_alert_news() -> list[dict]:
-    """抓國際盤預警用新聞:美股財經頭條 + 美/韓大跌相關英文關鍵字,輔以台媒中文角度。"""
+    """抓國際盤預警用新聞:美股財經頭條 + 地緣政治 + 重大政策衝擊英文關鍵字,輔以台媒/BBC 中文角度。"""
     en_queries = parse_queries("INTL_ALERT_QUERIES", DEFAULT_INTL_ALERT_QUERIES)
-    en_feeds = section_feeds(["BUSINESS"], "en", "US")
-    zh_feeds = {"中央社 財經": news_fetcher.CREDIBLE_FEEDS.get("中央社 財經", "")}
-    zh_feeds = {k: v for k, v in zh_feeds.items() if v}
+    en_feeds = section_feeds(["BUSINESS", "WORLD"], "en", "US")
+    zh_feed_keys = ["中央社 財經", "中央社 國際", "BBC 中文"]
+    zh_feeds = {k: news_fetcher.CREDIBLE_FEEDS[k] for k in zh_feed_keys if k in news_fetcher.CREDIBLE_FEEDS}
     return fetch_bilingual_news(
-        zh_queries=parse_queries("INTL_ALERT_QUERIES_ZH", ["美股 大跌 重挫", "台指期 夜盤 台股期貨"]),
+        zh_queries=parse_queries("INTL_ALERT_QUERIES_ZH", ["美股 大跌 重挫", "台指期 夜盤 台股期貨", "地緣政治 戰爭 制裁 關稅 衝突"]),
         en_queries=en_queries,
         zh_feeds=zh_feeds,
         en_feeds=en_feeds,
-        limit=int(os.environ.get("INTL_ALERT_MAX", "40")),
+        limit=int(os.environ.get("INTL_ALERT_MAX", "60")),
         since_hours=int(os.environ.get("INTL_ALERT_SINCE_HOURS", "72")),
     )
 
