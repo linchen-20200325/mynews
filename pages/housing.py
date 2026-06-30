@@ -9,7 +9,6 @@ import streamlit as st
 import housing_fetcher
 import update_data
 import tz_utils
-import paths
 from app_core import (
     HOUSING_PATH,
     HOUSING_ARCHIVE_DIR,

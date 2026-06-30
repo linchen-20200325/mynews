@@ -3,14 +3,15 @@ from __future__ import annotations
 
 import streamlit as st
 
+import freshness
 import update_data
 import tz_utils
-import paths
 from app_core import (
     NEWS_SOURCE_CAPTION,
     SIGNAL_LABELS,
     ANALYSIS_SECTIONS,
     SIX_MONTH_SOURCE_CAPTION,
+    STALE_REPORT_DAYS,
     REPORT_PATH,
     REPORTS_MULTI_PATH,
     ARCHIVE_DIR,

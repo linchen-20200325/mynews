@@ -9,7 +9,6 @@ import tz_utils
 import etf_data
 import numutil
 import season_chart
-import paths
 from app_core import (
     INTL_ALERT_PATH,
     INTL_ALERT_ARCHIVE_DIR,
@@ -162,6 +161,9 @@ def render_index_quotes(qmap: dict) -> None:
                     cap += " · ⚠️大跌"
             if cap:
                 col.caption(cap)
+
+
+ALERT_BADGE = {"警戒": ("🔴", "error"), "觀察": ("🟠", "warning"), "平靜": ("🟢", "success")}
 
 
 def render_intl_alert(data: dict) -> None:

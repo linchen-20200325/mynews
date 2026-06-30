@@ -11,7 +11,6 @@ import etf_holdings
 import etf_profile_fetcher
 import freshness
 import numutil
-import paths
 import price_fetcher
 import proxy_helper
 from app_core import (
