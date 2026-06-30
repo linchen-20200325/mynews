@@ -55,3 +55,7 @@ GEOJSON = Path("taiwan_counties.geo.json")  # 全台縣市界(房市地圖)
 # ── 中央決策大腦輸出（feature_aligner → Gemini master decision）──
 LATEST_DECISION = Path("latest_decision.json")   # 最新綜合決策 JSON
 ARCHIVE_DECISION = Path("data/decision")          # 決策歸檔目錄
+
+# ── 中線翻轉偵測（reversal_signals 排程產物）──
+LATEST_REVERSAL = Path("latest_reversal.json")   # 最新翻轉偵測 JSON
+ARCHIVE_REVERSAL = Path("data/reversal")          # 翻轉偵測歸檔目錄

@@ -18,6 +18,7 @@ from app_core import (
     FUT_CHIP_PATH,
     STOCKS_PATH,
     STOCKS_ARCHIVE_DIR,
+    REVERSAL_PATH,
     SIX_MONTH_SOURCE_CAPTION,
     ensure_gemini_key,
     render_key_hint,
@@ -786,6 +787,65 @@ def _tool_cycle_chart() -> None:
         st.dataframe(pd.DataFrame(cols), use_container_width=True, hide_index=True)
 
 
+_SIGNAL_FN  = {"絕對買進": st.success, "絕對賣出": st.error}
+_SIGNAL_ICO = {"絕對買進": "🟢", "絕對賣出": "🔴", "觀望續抱": "⚪"}
+_DIR_BADGE  = {"bad": "🔴 轉壞", "good": "🟢 好轉", None: "⚪ 觀望"}
+_IND_LABELS = {
+    "ma60":    "📐 季線(60MA)慣性翻轉",
+    "chip":    "💰 籌碼板塊挪移",
+    "semicon": "🔬 半導體龍頭週K",
+}
+
+
+def _render_reversal_result(result: dict) -> None:
+    """單一標的翻轉偵測結果渲染（排程存檔 & 即時偵測共用）。"""
+    signal     = result.get("signal", "觀望續抱")
+    confidence = result.get("confidence", 0)
+    sym        = result.get("symbol", "—")
+    sig_fn = _SIGNAL_FN.get(signal, st.info)
+    sig_fn(
+        f"{_SIGNAL_ICO.get(signal, '⚪')} **{signal}**"
+        f"　·　{confidence}/3 指標共振　·　{sym}"
+    )
+    if result.get("error"):
+        st.warning(f"偵測異常：{result['error']}")
+        return
+    for key, label in _IND_LABELS.items():
+        sig = result.get("indicators", {}).get(key, {})
+        triggered = sig.get("triggered", False)
+        direction = sig.get("direction")
+        detail    = sig.get("detail", "—")
+        badge_fn  = st.error if direction == "bad" else (
+                    st.success if direction == "good" else st.info)
+        with st.expander(
+            f"{label}　{'✅ 觸發' if triggered else '❌ 未觸發'}"
+            f"　{_DIR_BADGE.get(direction, '—')}",
+            expanded=triggered,
+        ):
+            badge_fn(detail) if triggered else st.info(detail)
+            if key == "semicon" and sig.get("sub"):
+                for sym_k, sub in sig["sub"].items():
+                    sub_ico = {"bad": "🔴", "good": "🟢"}.get(sub.get("direction"), "⚪")
+                    st.caption(f"{sub_ico} **{sym_k}**：{sub.get('detail', '—')}")
+
+
+def sec_reversal() -> None:
+    """唯讀面板：顯示每日排程產出的翻轉偵測存檔（latest_reversal.json）。"""
+    st.subheader("🔭 中線翻轉偵測 — 排程大盤共振訊號（每日 06:00 自動更新）")
+    doc = load_json(REVERSAL_PATH)
+    if doc is None:
+        st.info("尚無排程翻轉偵測存檔（每日 06:00 自動產生）。可用下方互動工具即時偵測。")
+        return
+    st.caption(
+        f"資料日期：{doc.get('report_date', '—')}　·　"
+        f"更新時間：{doc.get('as_of', '—')}　·　"
+        "60MA + 半導體週K 為真實資料；籌碼面仍為模擬值（待接通期交所真實 API）"
+    )
+    for result in doc.get("signals", []):
+        with st.container(border=True):
+            _render_reversal_result(result)
+
+
 @st.cache_data(ttl=3600, show_spinner=False)
 def _detect_reversal_cached(symbol: str, is_market: bool) -> dict:
     """以 (symbol, is_market) 為 key 快取翻轉偵測結果，每小時更新一次。"""
@@ -829,53 +889,12 @@ def tool_reversal_detector() -> None:
     with st.spinner(f"偵測 {sym_done} 中（抓日K+週K+籌碼）…"):
         result = _detect_reversal_cached(sym_done, mkt_done)
 
-    if result.get("error"):
-        st.error(f"偵測失敗：{result['error']}")
-        return
-
-    # ── 主燈號 ────────────────────────────────────────────────────────────
-    signal     = result["signal"]
-    confidence = result["confidence"]
-    sig_fn = {"絕對買進": st.success, "絕對賣出": st.error}.get(signal, st.info)
-    sig_ico = {"絕對買進": "🟢", "絕對賣出": "🔴", "觀望續抱": "⚪"}.get(signal, "")
-    sig_fn(
-        f"{sig_ico} **{signal}**　·　{confidence}/3 指標共振"
-        f"（{sym_done}，{'大盤' if mkt_done else '個股'}模式）"
-    )
-
-    # ── 三指標明細 ────────────────────────────────────────────────────────
-    INDICATOR_LABELS = {
-        "ma60":    "📐 季線(60MA)慣性翻轉",
-        "chip":    "💰 籌碼板塊挪移",
-        "semicon": "🔬 半導體龍頭週K",
-    }
-    DIR_BADGE = {"bad": "🔴 轉壞", "good": "🟢 好轉", None: "⚪ 觀望"}
-
-    for key, label in INDICATOR_LABELS.items():
-        sig = result["indicators"].get(key, {})
-        triggered = sig.get("triggered", False)
-        direction = sig.get("direction")
-        detail    = sig.get("detail", "—")
-        badge_fn  = st.error if direction == "bad" else (st.success if direction == "good" else st.info)
-
-        with st.expander(
-            f"{label}　{'✅ 觸發' if triggered else '❌ 未觸發'}　{DIR_BADGE.get(direction, '—')}",
-            expanded=triggered,
-        ):
-            badge_fn(detail) if triggered else st.info(detail)
-
-            # 半導體週K 有子標的明細
-            if key == "semicon" and sig.get("sub"):
-                st.markdown("**個別週K狀態：**")
-                for sym_k, sub in sig["sub"].items():
-                    sub_dir = sub.get("direction")
-                    sub_ico = {"bad": "🔴", "good": "🟢"}.get(sub_dir, "⚪")
-                    st.caption(f"{sub_ico} **{sym_k}**：{sub.get('detail','—')}")
-
-    st.caption(
-        "⚠️ 籌碼面目前使用 mock 資料（接通期交所/集保所真實 API 後自動替換）。"
-        "三大指標均為程式自動運算，非 AI 估算；僅供中線參考，非投資建議。"
-    )
+    _render_reversal_result(result)
+    if not result.get("error"):
+        st.caption(
+            "⚠️ 籌碼面目前使用 mock 資料（接通期交所/集保所真實 API 後自動替換）。"
+            "三大指標均為程式自動運算，非 AI 估算；僅供中線參考，非投資建議。"
+        )
 
 
 # ── 4 大頁 ─────────────────────────────────────────────────────────────────
@@ -890,6 +909,7 @@ def page_tw() -> None:
     st.divider(); sec_intl()
     st.divider(); sec_chip()
     st.divider(); sec_tw_stocks()
+    st.divider(); sec_reversal()
     st.divider()
     st.markdown("### 🛠 互動工具")
     with st.expander("🩺 個股健診 — 輸入個股,看它跟新聞的相關性與上漲性質"):

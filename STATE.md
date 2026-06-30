@@ -171,6 +171,13 @@
 - ✅ pyflakes 全庫掃描零警告（10 個模組確認）
 - ⚠️ verify_chip_data.py：診斷腳本用 date.today()（非生產路徑，刻意保留，僅供一次性驗證用）
 
+### PR #102 — reversal_signals 排程整合 + UI 唯讀面板（已併入 main）
+- ✅ `paths.py`：新增 `LATEST_REVERSAL` / `ARCHIVE_REVERSAL` SSOT 路徑
+- ✅ `reversal_signals.py`：新增 `_load_real_market_chip()`，讀 `latest_futures_chip.json` 外資期貨淨部位混入 9 筆 mock 歷史列；`detect_trend_reversal()` 大盤模式優先用真實籌碼
+- ✅ `update_data.py`：新增 `_REVERSAL_SYMBOLS` + `_run_reversal_detection()`；`main()` 每日自動存 `latest_reversal.json` + `data/reversal/{date}.json`
+- ✅ `app_core.py`：對外暴露 `REVERSAL_PATH`
+- ✅ `pages/tw.py`：新增 `sec_reversal()` 唯讀面板（排程存檔顯示）；`tool_reversal_detector()` 改呼叫共用 `_render_reversal_result()`，消除重複渲染邏輯；`page_tw()` 接入 `sec_reversal()`
+
 ### 重構藍圖待辦（依優先順序）
 - [x] P1：System Prompts 外移 `prompts/*.yaml`（PR #87 結案）
 - [x] P1：`app.py` 拆分 `pages/`（PR #88 + #89 結案）
