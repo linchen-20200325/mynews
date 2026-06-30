@@ -1,0 +1,73 @@
+{
+  "_comment": "新聞抓取關鍵字設定。可直接在 GitHub UI 修改，不需重新部署。env var 覆寫格式：多個詞以半形分號 ; 分隔，優先級高於此檔。",
+  "news_queries": [
+    "聯準會 利率 通膨",
+    "美股 台股 盤勢",
+    "地緣政治 軍事 衝突",
+    "央行 貨幣政策 債市"
+  ],
+  "news_queries_en": [
+    "Federal Reserve interest rate inflation",
+    "geopolitics military conflict war",
+    "central bank monetary policy bond market",
+    "global stock market outlook"
+  ],
+  "trend_queries": [
+    "類股 題材 資金流向",
+    "AI 半導體 投資",
+    "產業 趨勢 基金"
+  ],
+  "us_trend_queries": [
+    "US stock market sector trends",
+    "AI semiconductor investment",
+    "venture capital funding hot sectors"
+  ],
+  "stock_queries": [
+    "台股 個股 焦點",
+    "台積電 聯發科 鴻海 台股",
+    "台股 外資 法人 買超",
+    "台股 類股 漲跌",
+    "上市 上櫃 營收 財報"
+  ],
+  "stock_queries_en": [
+    "Taiwan stock market TWSE",
+    "TSMC MediaTek Hon Hai Taiwan stocks",
+    "Taiwan shares foreign investors"
+  ],
+  "us_stock_queries": [
+    "US stock market today",
+    "Nvidia Apple Microsoft Tesla stock",
+    "Nasdaq S&P 500 Dow Jones",
+    "US earnings revenue guidance",
+    "Federal Reserve rate cut tech stocks"
+  ],
+  "us_stock_queries_zh": [
+    "美股 個股 焦點",
+    "輝達 蘋果 微軟 特斯拉 美股",
+    "那斯達克 標普 道瓊",
+    "美股 財報 營收",
+    "聯準會 美股 科技股"
+  ],
+  "focus_topics": [
+    "川普",
+    "黃仁勳"
+  ],
+  "intl_alert_queries": [
+    "US stock market selloff plunge today",
+    "Nasdaq S&P 500 drop futures",
+    "Taiwan stock futures TAIEX overnight",
+    "semiconductor chip stocks selloff",
+    "geopolitical risk war military strike market impact",
+    "Iran US military attack oil price surge",
+    "Trump tariff trade war stock market selloff",
+    "Federal Reserve rate hike inflation shock market",
+    "China Taiwan strait tension military"
+  ],
+  "intl_alert_queries_zh": [
+    "美股 大跌 重挫",
+    "台指期 夜盤 台股期貨",
+    "地緣政治 戰爭 制裁 關稅 衝突"
+  ],
+  "news_topics": ["WORLD", "BUSINESS"],
+  "trend_topics": ["BUSINESS", "TECHNOLOGY"]
+}
