@@ -18,6 +18,11 @@ from pages.etf import page_etf
 
 def main() -> None:
     st.set_page_config(page_title="全球政經戰略看板", page_icon="🌐", layout="wide")
+    # 隱藏 Streamlit 自動偵測 pages/ 產生的多頁導覽列（已有自訂 radio 導覽）
+    st.markdown(
+        "<style>[data-testid='stSidebarNav']{display:none}</style>",
+        unsafe_allow_html=True,
+    )
     st.title("🌐 全球政經戰略每日看板")
 
     st.sidebar.header("📂 領域")
