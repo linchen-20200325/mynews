@@ -97,69 +97,26 @@ DEFAULT_TOPIC = (
     "原油與股匯債走勢,及其對股市與基金的影響"
 )
 
-# 抓新聞用的預設關鍵字(可用 NEWS_QUERIES / TREND_QUERIES 覆寫)。
-# 聚焦:國際政治、軍事、財經(尤其聯準會),以及會牽動股市/基金的訊息。
-DEFAULT_NEWS_QUERIES = [
-    "聯準會 利率 通膨",
-    "美股 台股 盤勢",
-    "地緣政治 軍事 衝突",
-    "央行 貨幣政策 債市",
-]
-# 戰略報告的英文側(全球外電,避免只看到中文報導而漏掉國際原文)
-DEFAULT_NEWS_QUERIES_EN = [
-    "Federal Reserve interest rate inflation",
-    "geopolitics military conflict war",
-    "central bank monetary policy bond market",
-    "global stock market outlook",
-]
-DEFAULT_TREND_QUERIES = [
-    "類股 題材 資金流向",
-    "AI 半導體 投資",
-    "產業 趨勢 基金",
-]
-# 趨勢雷達的美股/全球面向(英文,讓熱門產業排名也反映美國市場)
-DEFAULT_US_TREND_QUERIES = [
-    "US stock market sector trends",
-    "AI semiconductor investment",
-    "venture capital funding hot sectors",
-]
+# 抓新聞用的預設關鍵字 — 單一真相源在 query_config.json(SSOT)。
+# 可直接在 GitHub UI 修改 JSON;env var（同名大寫、; 分隔）優先級更高。
+_QUERY_CONFIG: dict = json.loads(
+    (Path(__file__).parent / "query_config.json").read_text(encoding="utf-8")
+)
+
+DEFAULT_NEWS_QUERIES       = _QUERY_CONFIG["news_queries"]
+DEFAULT_NEWS_QUERIES_EN    = _QUERY_CONFIG["news_queries_en"]
+DEFAULT_TREND_QUERIES      = _QUERY_CONFIG["trend_queries"]
+DEFAULT_US_TREND_QUERIES   = _QUERY_CONFIG["us_trend_queries"]
+DEFAULT_STOCK_QUERIES      = _QUERY_CONFIG["stock_queries"]
+DEFAULT_STOCK_QUERIES_EN   = _QUERY_CONFIG["stock_queries_en"]
+DEFAULT_US_STOCK_QUERIES   = _QUERY_CONFIG["us_stock_queries"]
+DEFAULT_US_STOCK_QUERIES_ZH = _QUERY_CONFIG["us_stock_queries_zh"]
+DEFAULT_FOCUS_TOPICS       = _QUERY_CONFIG["focus_topics"]
+DEFAULT_NEWS_TOPICS        = _QUERY_CONFIG["news_topics"]
+DEFAULT_TREND_TOPICS       = _QUERY_CONFIG["trend_topics"]
+
 # 前五個章節(報告/趨勢/台股/美股/人物)新聞回溯視窗 ~6 個月。
-# 註:Google News RSS 實際只回傳近期新聞,拉長視窗只代表「不過濾較舊的」,
-# 真正能回溯多久仍受 RSS 來源限制。
 SIX_MONTHS_HOURS = 24 * 183
-DEFAULT_STOCK_QUERIES = [
-    "台股 個股 焦點",
-    "台積電 聯發科 鴻海 台股",
-    "台股 外資 法人 買超",
-    "台股 類股 漲跌",
-    "上市 上櫃 營收 財報",
-]
-# 台股觀察的英文側(國際媒體對台股/台積電等的報導)
-DEFAULT_STOCK_QUERIES_EN = [
-    "Taiwan stock market TWSE",
-    "TSMC MediaTek Hon Hai Taiwan stocks",
-    "Taiwan shares foreign investors",
-]
-DEFAULT_US_STOCK_QUERIES = [
-    "US stock market today",
-    "Nvidia Apple Microsoft Tesla stock",
-    "Nasdaq S&P 500 Dow Jones",
-    "US earnings revenue guidance",
-    "Federal Reserve rate cut tech stocks",
-]
-# 美股觀察的中文側(台灣媒體對美股的報導,避免漏掉中文角度)
-DEFAULT_US_STOCK_QUERIES_ZH = [
-    "美股 個股 焦點",
-    "輝達 蘋果 微軟 特斯拉 美股",
-    "那斯達克 標普 道瓊",
-    "美股 財報 營收",
-    "聯準會 美股 科技股",
-]
-# 全球人物追蹤每日排程預設追蹤對象(中文;可用 FOCUS_TOPICS 以 ; 覆寫)
-DEFAULT_FOCUS_TOPICS = [
-    "川普",
-    "黃仁勳",
-]
 # 台媒自家 RSS(直接來源,補 Google News 排名外的台灣報導);人物追蹤會「先過濾出有提到
 # 該對象者」才納入,避免灌入無關新聞。抓不到的 feed 會自動略過(fetch_news 容錯)。
 TW_MEDIA_FEEDS = {
@@ -167,11 +124,6 @@ TW_MEDIA_FEEDS = {
     "自由時報 財經": "https://ec.ltn.com.tw/rss/all.xml",
     "經濟日報": "https://money.udn.com/rssfeed/news/1001/5590?ch=money",
 }
-
-# Google News 分類頭條(不帶關鍵字的『動態』來源,確保不漏突發大事;
-# 只取與主題相關的分類,避免娛樂/體育等離題內容)。可用 NEWS_TOPICS / TREND_TOPICS 覆寫。
-DEFAULT_NEWS_TOPICS = ["WORLD", "BUSINESS"]
-DEFAULT_TREND_TOPICS = ["BUSINESS", "TECHNOLOGY"]
 
 _SECTION_LABELS = {
     "WORLD": "Google 世界頭條",
@@ -853,17 +805,7 @@ def fetch_us_stock_news() -> list[dict]:
     )
 
 
-DEFAULT_INTL_ALERT_QUERIES = [
-    "US stock market selloff plunge today",
-    "Nasdaq S&P 500 drop futures",
-    "Taiwan stock futures TAIEX overnight",
-    "semiconductor chip stocks selloff",
-    "geopolitical risk war military strike market impact",
-    "Iran US military attack oil price surge",
-    "Trump tariff trade war stock market selloff",
-    "Federal Reserve rate hike inflation shock market",
-    "China Taiwan strait tension military",
-]
+DEFAULT_INTL_ALERT_QUERIES = _QUERY_CONFIG["intl_alert_queries"]
 
 
 def fetch_intl_alert_news() -> list[dict]:
@@ -873,7 +815,7 @@ def fetch_intl_alert_news() -> list[dict]:
     zh_feed_keys = ["中央社 財經", "中央社 國際", "BBC 中文"]
     zh_feeds = {k: news_fetcher.CREDIBLE_FEEDS[k] for k in zh_feed_keys if k in news_fetcher.CREDIBLE_FEEDS}
     return fetch_bilingual_news(
-        zh_queries=parse_queries("INTL_ALERT_QUERIES_ZH", ["美股 大跌 重挫", "台指期 夜盤 台股期貨", "地緣政治 戰爭 制裁 關稅 衝突"]),
+        zh_queries=parse_queries("INTL_ALERT_QUERIES_ZH", _QUERY_CONFIG["intl_alert_queries_zh"]),
         en_queries=en_queries,
         zh_feeds=zh_feeds,
         en_feeds=en_feeds,
