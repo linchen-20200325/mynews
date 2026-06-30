@@ -19,8 +19,9 @@
 
 from __future__ import annotations
 
-import os
 import time
+
+import config  # 環境變數讀取 SSOT
 
 import tz_utils
 
@@ -172,7 +173,7 @@ def signal_text(series: list[dict]) -> str | None:
 
 def signals_for(stocks: list[dict], days: int | None = None, log=print) -> dict[str, str]:
     """逐檔算籌碼面文字;回 {ticker: 文字}。抓不到/近期無資料的代號不收錄(該檔靜默略過)。"""
-    days = days or int(os.environ.get("WATCH_CHIP_DAYS", str(_DEFAULT_DAYS)))
+    days = days or config.env_int("WATCH_CHIP_DAYS", _DEFAULT_DAYS)
     tickers = [str(s.get("ticker", "")).strip() for s in stocks if s.get("ticker")]
     if not tickers:
         return {}

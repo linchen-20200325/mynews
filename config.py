@@ -40,6 +40,11 @@ def env_float(name: str, default: float) -> float:
         return default
 
 
+def env_str(name: str, default: str = "") -> str:
+    """讀字串環境變數;未設或空值回 default。"""
+    return os.environ.get(name) or default
+
+
 # ---------------------------------------------------------------------------
 # 功能開關(ENABLE_* 旗標)
 # ---------------------------------------------------------------------------

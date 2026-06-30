@@ -17,19 +17,14 @@ import github_store  # 一鍵把資料檔 commit 回 GitHub repo
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
+import config         # 環境變數讀取 SSOT
 import gemini_client  # Gemini API 金鑰管理 SSOT
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
 # 報告新鮮度門檻(天):歸屬日落後超過此值,看板顯示過期警告。可用 STALE_REPORT_DAYS 覆寫。
-try:
-    STALE_REPORT_DAYS = int(os.environ.get("STALE_REPORT_DAYS", "2"))
-except ValueError:
-    STALE_REPORT_DAYS = 2
+STALE_REPORT_DAYS = config.env_int("STALE_REPORT_DAYS", 2)
 # 股價新鮮度門檻(天):stock_prices.json 抓取日落後超過此值,價位篩選顯示過期警告。可用 PRICE_STALE_DAYS 覆寫。
-try:
-    PRICE_STALE_DAYS = int(os.environ.get("PRICE_STALE_DAYS", "5"))
-except ValueError:
-    PRICE_STALE_DAYS = 5
+PRICE_STALE_DAYS = config.env_int("PRICE_STALE_DAYS", 5)
 
 # 路徑一律取自 paths.py(SSOT);此處只保留本檔慣用的別名,引用處不動。
 REPORT_PATH = paths.LATEST_REPORT
@@ -166,7 +161,7 @@ NEWS_SOURCE_CAPTION = (
 
 
 def get_topic() -> str:
-    return os.environ.get("REPORT_TOPIC") or update_data.DEFAULT_TOPIC
+    return config.env_str("REPORT_TOPIC") or update_data.DEFAULT_TOPIC
 
 
 def available_secret_names() -> list[str]:

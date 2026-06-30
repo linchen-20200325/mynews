@@ -27,6 +27,7 @@ import json
 import sys
 from datetime import datetime, timezone
 
+import config   # 環境變數讀取 SSOT
 import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
 
 YF_CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5d&interval=1d"
@@ -54,11 +55,7 @@ DEFAULT_DROP_THRESHOLD = -1.5
 
 
 def _drop_threshold() -> float:
-    import os
-    try:
-        return float(os.environ.get("INTL_DROP_THRESHOLD", DEFAULT_DROP_THRESHOLD))
-    except (TypeError, ValueError):
-        return DEFAULT_DROP_THRESHOLD
+    return config.env_float("INTL_DROP_THRESHOLD", DEFAULT_DROP_THRESHOLD)
 
 
 def _http_get_json(url: str) -> dict | None:

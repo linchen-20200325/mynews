@@ -28,6 +28,8 @@ import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 
+import config  # 環境變數讀取 SSOT
+
 import news_fetcher
 import paths  # 路徑 SSOT
 
@@ -247,8 +249,7 @@ def _resolve_proxies(proxy: str | None):
         import proxy_helper
         return proxy_helper.get_proxy_config(proxy)
     except Exception:  # noqa: BLE001
-        import os
-        url = (proxy or os.environ.get("PROXY_URL") or "").strip()
+        url = (proxy or config.env_str("PROXY_URL") or "").strip()
         return {"http": url, "https": url} if url else None
 
 

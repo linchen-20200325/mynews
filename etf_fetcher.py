@@ -18,7 +18,6 @@ PROXY_URL 只透過環境變數 / Streamlit Secrets 提供,切勿寫進程式或
 from __future__ import annotations
 
 import json
-import os
 import re
 import sys
 import time
@@ -26,7 +25,8 @@ from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 
-import paths  # 路徑 SSOT
+import config  # 環境變數讀取 SSOT
+import paths   # 路徑 SSOT
 
 SOURCES_PATH = paths.ETF_SOURCES
 HOLDINGS_PATH = paths.ETF_HOLDINGS
@@ -57,8 +57,8 @@ def get_proxies(explicit: str | None = None) -> dict | None:
         import proxy_helper
         return proxy_helper.get_proxy_config(explicit)
     except Exception:  # noqa: BLE001 — 無 proxy_helper 時退回環境變數
-        url = (explicit or os.environ.get("PROXY_URL")
-               or os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy"))
+        url = (explicit or config.env_str("PROXY_URL")
+               or config.env_str("HTTPS_PROXY") or config.env_str("https_proxy"))
         url = (url or "").strip()
         return {"http": url, "https": url} if url else None
 

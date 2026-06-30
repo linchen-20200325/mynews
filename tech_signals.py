@@ -13,8 +13,9 @@
 
 from __future__ import annotations
 
-import os
 import time
+
+import config  # 環境變數讀取 SSOT
 
 import tz_utils  # 台灣時區 SSOT(決定要抓哪幾個月)
 
@@ -169,7 +170,7 @@ def signal_text(sig: dict) -> str:
 
 def signals_for(stocks: list[dict], months: int | None = None, log=print) -> dict[str, str]:
     """逐檔算技術面文字;回 {ticker: 文字}。抓不到/資料不足的代號不收錄(該檔靜默略過)。"""
-    months = months or int(os.environ.get("WATCH_TECH_MONTHS", str(_DEFAULT_MONTHS)))
+    months = months or config.env_int("WATCH_TECH_MONTHS", _DEFAULT_MONTHS)
     out: dict[str, str] = {}
     for s in stocks:
         ticker = str(s.get("ticker", "")).strip()
