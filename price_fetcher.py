@@ -17,8 +17,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import config   # 環境變數讀取 SSOT
 import numutil  # 數值工具 SSOT
-import paths  # 路徑 SSOT
+import paths    # 路徑 SSOT
 
 PRICES_PATH = paths.STOCK_PRICES
 
@@ -107,8 +108,7 @@ def fetch_prices(proxy: str | None = None, log=print) -> dict:
         import proxy_helper
         proxies = proxy_helper.get_proxy_config(proxy)
     except Exception:  # noqa: BLE001
-        import os
-        url = (proxy or os.environ.get("PROXY_URL") or "").strip()
+        url = (proxy or config.env_str("PROXY_URL") or "").strip()
         proxies = {"http": url, "https": url} if url else None
 
     prices: dict[str, float] = {}

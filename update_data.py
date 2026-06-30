@@ -706,13 +706,13 @@ def get_housing_analysis(news: list[dict], prices: dict | None, today: str,
 # ---------------------------------------------------------------------------
 
 def parse_queries(env_name: str, default: list[str]) -> list[str]:
-    raw = os.environ.get(env_name, "")
+    raw = config.env_str(env_name, "")
     queries = [q.strip() for q in raw.split(";") if q.strip()]
     return queries or default
 
 
 def parse_topics(env_name: str, default: list[str]) -> list[str]:
-    raw = os.environ.get(env_name, "").replace(",", ";")
+    raw = config.env_str(env_name, "").replace(",", ";")
     topics = [t.strip().upper() for t in raw.split(";") if t.strip()]
     return topics or default
 
@@ -771,20 +771,20 @@ def fetch_macro_news(topic: str, extra_query: str | None = None) -> list[dict]:
         en_queries=en_queries,
         zh_feeds=zh_feeds,
         en_feeds=en_feeds,
-        limit=int(os.environ.get("NEWS_MAX", str(DEFAULT_NEWS_MAX))),
-        since_hours=int(os.environ.get("NEWS_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
+        limit=config.env_int("NEWS_MAX", DEFAULT_NEWS_MAX),
+        since_hours=config.env_int("NEWS_SINCE_HOURS", SIX_MONTHS_HOURS),
     )
 
 
 def fetch_trend_news() -> list[dict]:
     """抓產業趨勢新聞:台灣(中文)+ 美國(英文)兩邊都抓,讓趨勢雷達含到美股。"""
-    lang = os.environ.get("NEWS_LANG", "zh")
-    region = os.environ.get("NEWS_REGION", "TW")
+    lang = config.env_str("NEWS_LANG", "zh")
+    region = config.env_str("NEWS_REGION", "TW")
     queries = parse_queries("TREND_QUERIES", DEFAULT_TREND_QUERIES)
     topics = parse_topics("TREND_TOPICS", DEFAULT_TREND_TOPICS)
     feeds = section_feeds(topics, lang, region)
-    limit = int(os.environ.get("NEWS_MAX", str(DEFAULT_NEWS_MAX)))
-    since = int(os.environ.get("NEWS_SINCE_HOURS", str(SIX_MONTHS_HOURS)))
+    limit = config.env_int("NEWS_MAX", DEFAULT_NEWS_MAX)
+    since = config.env_int("NEWS_SINCE_HOURS", SIX_MONTHS_HOURS)
     tw_news = news_fetcher.fetch_news(
         queries, lang=lang, region=region, feeds=feeds, limit=limit, since_hours=since,
     )
@@ -812,8 +812,8 @@ def fetch_stock_news() -> list[dict]:
         en_queries=en_queries,
         zh_feeds=zh_feeds,
         en_feeds=en_feeds,
-        limit=int(os.environ.get("STOCK_MAX", "60")),
-        since_hours=int(os.environ.get("STOCK_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
+        limit=config.env_int("STOCK_MAX", 60),
+        since_hours=config.env_int("STOCK_SINCE_HOURS", SIX_MONTHS_HOURS),
     )
 
 
@@ -832,8 +832,8 @@ def fetch_us_stock_news() -> list[dict]:
         en_queries=en_queries,
         zh_feeds=zh_feeds,
         en_feeds=en_feeds,
-        limit=int(os.environ.get("US_STOCK_MAX", "40")),
-        since_hours=int(os.environ.get("US_STOCK_SINCE_HOURS", str(SIX_MONTHS_HOURS))),
+        limit=config.env_int("US_STOCK_MAX", 40),
+        since_hours=config.env_int("US_STOCK_SINCE_HOURS", SIX_MONTHS_HOURS),
     )
 
 
@@ -851,8 +851,8 @@ def fetch_intl_alert_news() -> list[dict]:
         en_queries=en_queries,
         zh_feeds=zh_feeds,
         en_feeds=en_feeds,
-        limit=int(os.environ.get("INTL_ALERT_MAX", "60")),
-        since_hours=int(os.environ.get("INTL_ALERT_SINCE_HOURS", "72")),
+        limit=config.env_int("INTL_ALERT_MAX", 60),
+        since_hours=config.env_int("INTL_ALERT_SINCE_HOURS", 72),
     )
 
 
@@ -886,20 +886,20 @@ def fetch_focus_news(
     if not en_queries and not zh_terms:
         return []
 
-    since_hours = int(os.environ.get("FOCUS_SINCE_HOURS", str(SIX_MONTHS_HOURS)))
+    since_hours = config.env_int("FOCUS_SINCE_HOURS", SIX_MONTHS_HOURS)
     # 1) + 2) 關鍵字雙語檢索
     keyword_news = fetch_bilingual_news(
         zh_queries=zh_terms,
         en_queries=en_queries,
         zh_feeds=None,
         en_feeds=None,
-        limit=int(os.environ.get("FOCUS_MAX", "50")),
+        limit=config.env_int("FOCUS_MAX", 50),
         since_hours=since_hours,
     )
     # 3) 台媒整站 RSS → 過濾出有提到該對象者(用中文名稱/別名比對)
     site_news = news_fetcher.fetch_news(
         [], lang="zh", region="TW", feeds=TW_MEDIA_FEEDS,
-        limit=int(os.environ.get("FOCUS_SITE_MAX", "200")), since_hours=since_hours,
+        limit=config.env_int("FOCUS_SITE_MAX", 200), since_hours=since_hours,
     )
     site_hits = [n for n in site_news if zh_terms and news_analyzer.matches_news_keywords(zh_terms, n)]
     return _dedupe_news(keyword_news + site_hits)
@@ -921,8 +921,8 @@ def fetch_stock_query_news(
 def fetch_housing_news() -> list[dict]:
     """抓房市新聞(預售/成屋冷熱、打房政策);委派 housing_fetcher。"""
     return housing_fetcher.fetch_housing_news(
-        limit=int(os.environ.get("HOUSING_MAX", "18")),
-        since_hours=int(os.environ.get("HOUSING_SINCE_HOURS", "72")),
+        limit=config.env_int("HOUSING_MAX", 18),
+        since_hours=config.env_int("HOUSING_SINCE_HOURS", 72),
     )
 
 
@@ -1056,11 +1056,11 @@ def parse_report_topics() -> list[str]:
     優先讀 REPORT_TOPICS(以 ; 分隔多主題);否則退回單一 REPORT_TOPIC / 預設。
     回傳至少一個主題;第一個為主報告(寫入 latest_report.json,維持向後相容)。
     """
-    raw = os.environ.get("REPORT_TOPICS", "")
+    raw = config.env_str("REPORT_TOPICS", "")
     topics = [t.strip() for t in raw.split(";") if t.strip()]
     if topics:
         return topics
-    return [os.environ.get("REPORT_TOPIC") or DEFAULT_TOPIC]
+    return [config.env_str("REPORT_TOPIC") or DEFAULT_TOPIC]
 
 
 def build_macro_report(topic: str, today: str, *, extra_query: str | None = None) -> dict:
@@ -1111,8 +1111,8 @@ def fetch_watch_news(stocks: list[dict]) -> dict[str, list[dict]]:
             out[ticker] = news_fetcher.fetch_news(
                 [label, f"{name or ticker} 股價 法人"],
                 lang="zh", region="TW",
-                limit=int(os.environ.get("WATCH_NEWS_MAX", "8")),
-                since_hours=int(os.environ.get("WATCH_SINCE_HOURS", "96")),
+                limit=config.env_int("WATCH_NEWS_MAX", 8),
+                since_hours=config.env_int("WATCH_SINCE_HOURS", 96),
             )
         except Exception as exc:  # noqa: BLE001 — 單檔抓新聞失敗不影響其他檔
             print(f"  警告: {label} 新聞抓取失敗:{exc}", file=sys.stderr)
@@ -1272,7 +1272,7 @@ def run_watch_section(today: str) -> None:
 
 def _schedule_guard(now_tw, today: str) -> bool:
     """排程前哨守門。若應略過本次跑動回 True。"""
-    floor = os.environ.get("EARLIEST_TW_HHMM", "0530").strip()
+    floor = config.env_str("EARLIEST_TW_HHMM", "0530").strip()
     try:
         fh, fm = int(floor[:2]), int(floor[2:])
     except (ValueError, IndexError):
@@ -1406,7 +1406,7 @@ def _run_chip_data(today: str) -> tuple[dict | None, dict | None, dict | None]: 
     chip = margin = fut_chip = None
     try:
         fetched = chip_fetcher.fetch_chip_flow(
-            days=int(os.environ.get("CHIP_DAYS") or "10"), log=print)
+            days=config.env_int("CHIP_DAYS", 10), log=print)
         # §2.4 過期守門:歸屬日落後過久→raise→留 chip=None→共振自動略過此力量
         latest_date = fetched["days"][0]["date"] if fetched.get("days") else None
         freshness.ensure_fresh(latest_date, CHIP_STALE_DAYS, "三大法人籌碼")
@@ -1490,7 +1490,7 @@ def _run_line_push(
     today: str,
 ) -> None:
     """LINE 推播(依序:① 國際盤快報 → ② 共振預警 → ③ 法人事件預告 → ④ 戰略報告)。"""
-    if not (os.environ.get("LINE_CHANNEL_ACCESS_TOKEN") and os.environ.get("LINE_TO")):
+    if not (config.env_str("LINE_CHANNEL_ACCESS_TOKEN") and config.env_str("LINE_TO")):
         return
     print("推送 LINE 通知(依序:國際盤大跌→共振→事件預告→戰略報告)...")
     lead = line_notify.lead_market_drops(intl) if intl else []
@@ -1536,7 +1536,7 @@ def main() -> int:
     now_tw = tz_utils.taiwan_now()
     today = now_tw.strftime("%Y-%m-%d")
 
-    if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and _schedule_guard(now_tw, today):
+    if config.env_str("GITHUB_EVENT_NAME") == "schedule" and _schedule_guard(now_tw, today):
         return 0
 
     try:

@@ -193,6 +193,19 @@
 - ✅ `update_data.py`：`build_intl_alert()` drop list 後立即偵測背離，注入 Gemini prompt「【期現背離偵測（程式算，非 AI）】」區塊；結果以 `futures_divergence` 欄位存入 intl alert dict
 - ✅ `line_notify.py`：`build_intl_alert_line_message()` 在免責聲明前插入期現背離訊號行（⚡/⚠️ + 中文說明）
 
+### SSOT 稽核修正（2026-06-30，config.py 集中化）
+- ✅ `config.py`：新增 `env_str()` 字串輔助函式
+- ✅ `feature_aligner.py`：`datetime.now().date()` → `tz_utils.taiwan_now().date()`（台灣時區 SSOT）
+- ✅ `update_data.py`：26 處裸 `os.environ.get` → `config.env_int/float/str`
+- ✅ `app_core.py`：3 處 `os.environ.get` → `config.*`；移除多餘 try/except
+- ✅ `chip_signals/vcp_signals/tech_signals/futures_chip_fetcher`：移除 `import os` → `import config`，env var 讀取走 SSOT
+- ✅ `index_fetcher`：移除函數內 local `import os` → `config.env_float`
+- ✅ `price_fetcher/housing_fetcher/etf_fetcher/etf_profile_fetcher`：移除 local `import os` → `config.env_str` 讀 PROXY_URL
+- 稽核結果：全庫 `os.environ.get` 使用點 SSOT 合規（`config.py`/`proxy_helper.py`/`gemini_client.py`/`github_store.py` 為自身 SSOT，合理例外）
+
+### PR #103 — 隱藏 Streamlit 自動多頁導覽列（已併入 main）
+- ✅ `app.py`：`main()` 開頭注入 CSS `[data-testid='stSidebarNav']{display:none}`，隱藏 Streamlit 1.28+ 自動偵測 `pages/` 產生的多頁導覽列，消除與 `st.sidebar.radio()` 自訂導覽的衝突
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

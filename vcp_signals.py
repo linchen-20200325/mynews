@@ -16,8 +16,7 @@ VCP = Volatility Contraction Pattern(Mark Minervini):股價在高檔打底時出
 
 from __future__ import annotations
 
-import os
-
+import config  # 環境變數讀取 SSOT
 import tech_signals  # 沿用其 fetch_daily_k(日K+volume)當唯一資料來源(SSOT)
 
 _DEFAULT_MONTHS = 8        # 回看月數(≈160 個交易日,夠看出收縮序列+前波漲勢)
@@ -149,7 +148,7 @@ def signal_text(feat: dict | None) -> str | None:
 
 def signals_for(stocks: list[dict], months: int | None = None, log=print) -> dict[str, str]:
     """逐檔偵測 VCP;回 {ticker: 文字}。未成形/抓不到的代號不收錄(該檔靜默略過)。"""
-    months = months or int(os.environ.get("WATCH_VCP_MONTHS", str(_DEFAULT_MONTHS)))
+    months = months or config.env_int("WATCH_VCP_MONTHS", _DEFAULT_MONTHS)
     out: dict[str, str] = {}
     for s in stocks:
         ticker = str(s.get("ticker", "")).strip()

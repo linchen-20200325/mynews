@@ -27,8 +27,9 @@
 from __future__ import annotations
 
 import json
-import os
 import sys
+
+import config  # 環境變數讀取 SSOT
 from datetime import datetime, timezone
 
 import numutil
@@ -114,7 +115,7 @@ def fetch_futures_chip(log=print) -> dict | None:
     trust = found.get("trust_net_oi", 0)
     dealer = found.get("dealer_net_oi", 0)
     try:
-        thr = int(os.environ.get("FUT_STANCE_LOTS") or DEFAULT_STANCE_LOTS)
+        thr = config.env_int("FUT_STANCE_LOTS", DEFAULT_STANCE_LOTS)
     except (TypeError, ValueError):
         thr = DEFAULT_STANCE_LOTS
     stance = "偏多" if foreign >= thr else ("偏空" if foreign <= -thr else "中性")

@@ -49,7 +49,7 @@ def _is_fresh(data: dict) -> bool:
         val = str(data.get(key, ""))[:10]
         if len(val) == 10:
             try:
-                age = (datetime.now().date() -
+                age = (tz_utils.taiwan_now().date() -
                        datetime.strptime(val, "%Y-%m-%d").date()).days
                 return age <= _FRESHNESS_DAYS
             except ValueError:

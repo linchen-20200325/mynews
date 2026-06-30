@@ -24,7 +24,8 @@ from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 
-import paths  # 路徑 SSOT
+import config  # 環境變數讀取 SSOT
+import paths   # 路徑 SSOT
 
 SOURCES_PATH = paths.ETF_SOURCES
 PROFILES_PATH = paths.ETF_PROFILES
@@ -393,8 +394,7 @@ def get_proxies(proxy: str | None = None) -> dict | None:
         import proxy_helper
         return proxy_helper.get_proxy_config(proxy)
     except Exception:  # noqa: BLE001
-        import os
-        url = (proxy or os.environ.get("PROXY_URL") or "").strip()
+        url = (proxy or config.env_str("PROXY_URL") or "").strip()
         return {"http": url, "https": url} if url else None
 
 
