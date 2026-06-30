@@ -155,7 +155,23 @@
 - ✅ `requirements.txt` 新增 `yfinance>=0.2`
 - ✅ `pages/tw.py`：新增 `tool_reversal_detector()` + `_detect_reversal_cached(ttl=3600)` + 互動工具 expander
 
-### PR #102 — reversal_signals 排程整合 + UI 唯讀面板（待 Merge）
+### PR #99 — reversal_signals Streamlit UI（已併入 main）
+- ✅ `pages/tw.py`：新增 `_detect_reversal_cached(ttl=3600)` + `tool_reversal_detector()` 互動面板
+- ✅ `page_tw()` 新增「🔭 中線翻轉偵測」expander（台股/美股大盤與個股共振訊號）
+- ✅ `STATE.md` 補記 PR #96/#97/#98 結案、重構藍圖 P4-A/P4-B 標記完成
+
+### PR #100 — chip_calendar SSOT 修正（已併入 main）
+- ✅ SSOT 稽核發現：`chip_calendar.upcoming_chip_events()` fallback 使用 `date.today()`（UTC）
+- ✅ 修正：新增 `import tz_utils`；`today = today or tz_utils.taiwan_now().date()`
+- 影響：UTC 00:00–07:59（台灣 08:00–15:59）期間季底/MSCI/除息事件判斷差一天的 Bug 修復
+
+### SSOT 全庫稽核結果（2026-06-30，reversal_signals 上線後）
+- ✅ reversal_signals.py：yfinance lazy import SSOT；TSM/NVDA 常數集中；門檻常數集中；純計算層零 st 依賴
+- ✅ pages/tw.py：_detect_reversal_cached @st.cache_data(ttl=3600) 正確；無循環 import
+- ✅ pyflakes 全庫掃描零警告（10 個模組確認）
+- ⚠️ verify_chip_data.py：診斷腳本用 date.today()（非生產路徑，刻意保留，僅供一次性驗證用）
+
+### PR #102 — reversal_signals 排程整合 + UI 唯讀面板（已併入 main）
 - ✅ `paths.py`：新增 `LATEST_REVERSAL` / `ARCHIVE_REVERSAL` SSOT 路徑
 - ✅ `reversal_signals.py`：新增 `_load_real_market_chip()`，讀 `latest_futures_chip.json` 外資期貨淨部位混入 9 筆 mock 歷史列；`detect_trend_reversal()` 大盤模式優先用真實籌碼
 - ✅ `update_data.py`：新增 `_REVERSAL_SYMBOLS` + `_run_reversal_detection()`；`main()` 每日自動存 `latest_reversal.json` + `data/reversal/{date}.json`
