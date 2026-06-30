@@ -88,6 +88,27 @@
 - ✅ `app.py` 新增 `page_ai_brain()`：操作訊號燈號/信心分數/四路權重長條圖/核心驅動/風險提示/四象限特徵明細
 - ✅ 側邊欄新增「🧠 AI 決策大腦」第六個頁面入口
 
+## 重構排毒計畫（2026-06-30 進行中）
+
+### PR #85 — news_analyzer SSOT + Gemini 穩定性（已併入 main）
+- ✅ 新建 `news_analyzer.py`（CalcEngine SSOT）：集中 5 個重複新聞分析函數 + `BULL_WORDS`/`BEAR_WORDS` 情感常數
+  - `extract_news_date` / `expand_match_keys` / `matches_news_keywords` / `count_keyword_mentions` / `summarize_news_span` / `score_headline_sentiment`
+- ✅ `update_data.py`：移除 5 函數，9 個呼叫點改用 `news_analyzer.*`
+- ✅ `feature_aligner.py`：移除私有情感常數與 `_sentiment_score`，改用 `news_analyzer.score_headline_sentiment()`
+- ✅ `gemini_client.py`：`max_attempts` 4→8，退避上限 60s→120s，基礎倍率 5s→15s（防 06:00 尖峰 503 造成雙推）
+- 待辦：GitHub Variables 手動新增 `GEMINI_RETRIES=8`（保險用）
+
+### 重構藍圖待辦（依優先順序）
+- [ ] P1：System Prompts 外移 `prompts/*.yaml`（減少 update_data.py ~800 行）
+- [ ] P1：`app.py` 拆分 `pages/`（3075 行 → <200 行主入口）
+- [ ] P2：`prompt_builder.py`（6 個 `build_*_user_prompt` 模板化）
+- [ ] P2：`message_formatter.py`（LINE 5 個 builder 共用截斷邏輯）
+- [ ] P3：Fetcher 快取強化（`@st.cache_data ttl=300` 覆蓋率）
+- [ ] P3：`query_config.json`（11 組查詢關鍵字移出程式碼）
+
+### 期現背離偵測（已規劃，待實作）
+- 藍圖：`index_fetcher.detect_spot_futures_divergence()` → `build_intl_alert()` 注入 → LINE 顯示翻轉訊號
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
