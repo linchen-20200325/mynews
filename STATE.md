@@ -123,14 +123,21 @@
 - ✅ `update_data.py`：移除 14 個函數定義，改 `from prompt_builder import` 取用；1813→1608 行（−205 行）
 - ✅ 架構：`update_data.py → prompt_builder.py → index_fetcher`（零循環匯入）
 
+### PR #93 — P2-B line_notify.py DRY 截斷邏輯（已併入 main）
+- ✅ `line_notify.py`：新增 `_clip(text, limit)` + `_finalize(msg)` 兩個私有 helper
+- ✅ 消除 5 個 builder 內 9 處 inline 截斷重複；`build_confluence_line_message` 同步修正遺漏截斷提示 bug
+
+### PR #94 — P3-B query_config.json 關鍵字外移（已併入 main）
+- ✅ 新建 `query_config.json`：14 組查詢清單集中管理，可直接在 GitHub UI 修改無需重新部署
+- ✅ `update_data.py`：移除 14 個硬編碼清單，改由 `_QUERY_CONFIG` 讀取；env var 覆寫機制不變
+
 ### 重構藍圖待辦（依優先順序）
 - [x] P1：System Prompts 外移 `prompts/*.yaml`（PR #87 結案）
 - [x] P1：`app.py` 拆分 `pages/`（PR #88 + #89 結案）
-- [x] P2：`prompt_builder.py`（PR #91 結案）
-- [ ] P2：`prompt_builder.py`（6 個 `build_*_user_prompt` 模板化）
-- [ ] P2：`message_formatter.py`（LINE 5 個 builder 共用截斷邏輯）
-- [ ] P3：Fetcher 快取強化（`@st.cache_data ttl=300` 覆蓋率）
-- [ ] P3：`query_config.json`（11 組查詢關鍵字移出程式碼）
+- [x] P2-A：`prompt_builder.py`（PR #91 結案）
+- [x] P2-B：`line_notify.py` DRY 截斷邏輯（PR #93 結案）
+- [x] P3-A：Fetcher 快取強化（已審查，架構正確—button-triggered fetchers 刻意用 session_state，無需改動）
+- [x] P3-B：`query_config.json` 關鍵字外移（PR #94 結案）
 
 ### PR #86 — 期現背離偵測（已併入 main）
 - ✅ `index_fetcher.py`：新增 `detect_spot_futures_divergence()` — ^SOX 現貨 vs NQ=F（優先）/ES=F（fallback）期貨，訊號類型：`reversal`（⚡）/ `follow_through`（⚠️）/ `caution`（⚠️）/ `normal`（靜默）；背離門檻 ≥ 2%
