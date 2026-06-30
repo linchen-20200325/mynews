@@ -16,7 +16,8 @@ import json
 from datetime import date, timedelta
 from pathlib import Path
 
-import paths  # 路徑 SSOT
+import paths     # 路徑 SSOT
+import tz_utils  # 台灣時區 SSOT（台股行事曆應以 UTC+8 為準）
 
 ETF_PROFILES_PATH = paths.ETF_PROFILES
 
@@ -90,7 +91,7 @@ def upcoming_chip_events(
     profiles_path: Path | None = None,
 ) -> list[dict]:
     """回傳未來 horizon_days 內、帶日期的可預測籌碼事件(由近到遠)。"""
-    today = today or date.today()
+    today = today or tz_utils.taiwan_now().date()
     profiles_path = profiles_path or ETF_PROFILES_PATH
     horizon = today + timedelta(days=horizon_days)
     events: list[dict] = []
