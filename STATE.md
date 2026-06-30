@@ -193,6 +193,9 @@
 - ✅ `update_data.py`：`build_intl_alert()` drop list 後立即偵測背離，注入 Gemini prompt「【期現背離偵測（程式算，非 AI）】」區塊；結果以 `futures_divergence` 欄位存入 intl alert dict
 - ✅ `line_notify.py`：`build_intl_alert_line_message()` 在免責聲明前插入期現背離訊號行（⚡/⚠️ + 中文說明）
 
+### PR #104 — SSOT 集中化（已併入 main）
+- ✅ 同 SSOT 稽核修正條目內容，正式合併 main
+
 ### SSOT 稽核修正（2026-06-30，config.py 集中化）
 - ✅ `config.py`：新增 `env_str()` 字串輔助函式
 - ✅ `feature_aligner.py`：`datetime.now().date()` → `tz_utils.taiwan_now().date()`（台灣時區 SSOT）
