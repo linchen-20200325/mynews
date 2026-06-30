@@ -6,3 +6,4 @@ urllib3>=2.0  # NAS 中繼站(proxy_helper.py)retry session 用
 plotly>=5.18  # 房市觀察:台灣縣市互動 choropleth 地圖
 matplotlib>=3.7  # 總統任期週期季節性圖表(season_chart.py)
 lxml>=4.9    # pandas.read_html 解析 MOPS 上櫃月營收 HTML 表格
+pyyaml>=6.0  # prompt_loader.py 讀取 prompts/*.yaml 系統提示詞

@@ -106,8 +106,10 @@
 - [ ] P3：Fetcher 快取強化（`@st.cache_data ttl=300` 覆蓋率）
 - [ ] P3：`query_config.json`（11 組查詢關鍵字移出程式碼）
 
-### 期現背離偵測（已規劃，待實作）
-- 藍圖：`index_fetcher.detect_spot_futures_divergence()` → `build_intl_alert()` 注入 → LINE 顯示翻轉訊號
+### PR #86 — 期現背離偵測（已併入 main）
+- ✅ `index_fetcher.py`：新增 `detect_spot_futures_divergence()` — ^SOX 現貨 vs NQ=F（優先）/ES=F（fallback）期貨，訊號類型：`reversal`（⚡）/ `follow_through`（⚠️）/ `caution`（⚠️）/ `normal`（靜默）；背離門檻 ≥ 2%
+- ✅ `update_data.py`：`build_intl_alert()` drop list 後立即偵測背離，注入 Gemini prompt「【期現背離偵測（程式算，非 AI）】」區塊；結果以 `futures_divergence` 欄位存入 intl alert dict
+- ✅ `line_notify.py`：`build_intl_alert_line_message()` 在免責聲明前插入期現背離訊號行（⚡/⚠️ + 中文說明）
 
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
