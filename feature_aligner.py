@@ -22,13 +22,12 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-import numutil   # OKU 億元係數 SSOT
-import paths     # 路徑 SSOT
-import tz_utils  # 台灣時區 SSOT
+import numutil       # OKU 億元係數 SSOT
+import news_analyzer  # 新聞分析工具（情感評分/關鍵字比對）SSOT
+import paths          # 路徑 SSOT
+import tz_utils       # 台灣時區 SSOT
 
-# ── 新聞情感關鍵字（簡易計分） ──────────────────────────────────────────
-_BULL_WORDS = ["上漲", "大漲", "突破", "創高", "反彈", "買超", "利多", "降息", "強彈", "拉升", "轉強"]
-_BEAR_WORDS = ["下跌", "大跌", "破底", "崩跌", "賣超", "利空", "升息", "衰退", "拋售", "恐慌", "下殺", "暴跌"]
+# 情感關鍵字已移至 news_analyzer.BULL_WORDS / BEAR_WORDS（SSOT）
 
 _FRESHNESS_DAYS = 2  # 快取最長可接受天數
 
@@ -56,18 +55,6 @@ def _is_fresh(data: dict) -> bool:
             except ValueError:
                 continue
     return True  # 無日期欄位時樂觀通過
-
-
-def _sentiment_score(headlines: list[str]) -> float:
-    """關鍵字情感分數：-1.0（極空）～ +1.0（極多）。"""
-    if not headlines:
-        return 0.0
-    total = sum(
-        sum(1 for w in _BULL_WORDS if w in h) -
-        sum(1 for w in _BEAR_WORDS if w in h)
-        for h in headlines
-    )
-    return round(max(-1.0, min(1.0, total / len(headlines))), 3)
 
 
 # ── 四路特徵抓取 ─────────────────────────────────────────────────────────
@@ -153,7 +140,7 @@ def _get_news(since_hours: int = 24) -> dict:
         )
         headlines = [a.get("title", "") for a in articles if a.get("title")]
         return {
-            "sentiment_score": _sentiment_score(headlines),
+            "sentiment_score": news_analyzer.score_headline_sentiment(headlines),
             "headline_count":  len(headlines),
             "top_headlines":   headlines[:5],
         }

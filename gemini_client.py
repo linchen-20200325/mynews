@@ -145,9 +145,9 @@ def _gemini_generate_text(types, genai, model, keys, system_instruction, user_co
     config = _build_gemini_config(types, system_instruction, max_tokens)
     models = _gemini_models(model)
     try:
-        max_attempts = max(1, int(os.environ.get("GEMINI_RETRIES") or 4))
+        max_attempts = max(1, int(os.environ.get("GEMINI_RETRIES") or 8))
     except (TypeError, ValueError):
-        max_attempts = 4
+        max_attempts = 8
 
     last_exc: Exception | None = None
     for attempt in range(max_attempts):
@@ -169,8 +169,8 @@ def _gemini_generate_text(types, genai, model, keys, system_instruction, user_co
                     continue
                 return text
         if attempt + 1 < max_attempts and transient:
-            wait = min(5 * 2 ** attempt, 60)
-            print(f"  Gemini 暫時性過載(503),{wait}s 後重試"
+            wait = min(15 * 2 ** attempt, 120)  # 15→30→60→120s 上限(原 5→10→20→60)
+            print(f"  Gemini 暫時性過載,{wait}s 後重試"
                   f"(第 {attempt + 2}/{max_attempts} 輪)...", file=sys.stderr)
             time.sleep(wait)
             continue
