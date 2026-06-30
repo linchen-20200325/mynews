@@ -118,9 +118,15 @@
 - ✅ `pages/etf.py` / `pages/housing.py`：移除 dead `import paths`
 - 稽核結果：零循環匯入 / 零 raw path 字面值 / 零裸 datetime / 零 google.generativeai 直接 import
 
+### PR #91 — P2-A prompt_builder.py SSOT（已併入 main）
+- ✅ 新建 `prompt_builder.py`（235 行）：4 個 `format_*` helper + 10 個 `build_*_user_prompt` builder
+- ✅ `update_data.py`：移除 14 個函數定義，改 `from prompt_builder import` 取用；1813→1608 行（−205 行）
+- ✅ 架構：`update_data.py → prompt_builder.py → index_fetcher`（零循環匯入）
+
 ### 重構藍圖待辦（依優先順序）
 - [x] P1：System Prompts 外移 `prompts/*.yaml`（PR #87 結案）
 - [x] P1：`app.py` 拆分 `pages/`（PR #88 + #89 結案）
+- [x] P2：`prompt_builder.py`（PR #91 結案）
 - [ ] P2：`prompt_builder.py`（6 個 `build_*_user_prompt` 模板化）
 - [ ] P2：`message_formatter.py`（LINE 5 個 builder 共用截斷邏輯）
 - [ ] P3：Fetcher 快取強化（`@st.cache_data ttl=300` 覆蓋率）
