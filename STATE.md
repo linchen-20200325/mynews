@@ -206,6 +206,15 @@
 - ✅ `price_fetcher/housing_fetcher/etf_fetcher/etf_profile_fetcher`：移除 local `import os` → `config.env_str` 讀 PROXY_URL
 - 稽核結果：全庫 `os.environ.get` 使用點 SSOT 合規（`config.py`/`proxy_helper.py`/`gemini_client.py`/`github_store.py` 為自身 SSOT，合理例外）
 
+### SSOT 全庫稽核結果（2026-06-30，PR #104 後）
+- ✅ Rule 1 datetime：全通過；`datetime.now()` 僅剩 `scripts/`（standalone）與 `verify_chip_data.py`（一次性診斷）
+- ✅ Rule 2 google.generativeai：全通過；僅 `gemini_client.py` 走官方 SDK
+- ✅ Rule 3 os.environ.get：全通過；僅 `config/proxy_helper/gemini_client/github_store/scripts/verify_chip_data` 六個合法位置
+- ✅ Rule 4 numutil 函數：全通過；`pct_change/parse_number` 唯一定義在 `numutil.py`
+- ✅ Rule 5 LINE API 呼叫：`scripts/nas_line_bot.py:52` 的 `LINE_REPLY_ENDPOINT` 屬刻意例外（NAS 單檔零相依，無法 import `line_notify`），已就地加注說明
+- ✅ Rule 6 路徑字面值：全通過；所有路徑集中 `paths.py`
+- ✅ Rule 7 循環 import：全通過；`pages/*.py → app_core.py`，零循環
+
 ### PR #103 — 隱藏 Streamlit 自動多頁導覽列（已併入 main）
 - ✅ `app.py`：`main()` 開頭注入 CSS `[data-testid='stSidebarNav']{display:none}`，隱藏 Streamlit 1.28+ 自動偵測 `pages/` 產生的多頁導覽列，消除與 `st.sidebar.radio()` 自訂導覽的衝突
 
