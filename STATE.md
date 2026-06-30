@@ -98,9 +98,22 @@
 - ✅ `gemini_client.py`：`max_attempts` 4→8，退避上限 60s→120s，基礎倍率 5s→15s（防 06:00 尖峰 503 造成雙推）
 - 待辦：GitHub Variables 手動新增 `GEMINI_RETRIES=8`（保險用）
 
+### PR #87 — P1-A System Prompts 外移 prompts/*.yaml（已併入 main）
+- ✅ 新建 `prompt_loader.py`（SSOT）：`functools.lru_cache` 讀取 `prompts/*.yaml`，唯一 `load(name)` 入口
+- ✅ 新建 `prompts/` 目錄含 14 個 YAML 檔（analysis/trend/stock/us_stock/intl_alert/focus_translate/stock_query_translate/focus/stock_query/news_etf_strategy/housing/master_decision/market_digest/watch）
+- ✅ `update_data.py`：14 個 `*_SYSTEM_PROMPT` 常數改為 `prompt_loader.load("name")`，縮減 648 行（2461→1813）
+- ✅ `requirements.txt` 新增 `pyyaml>=6.0`
+
+### PR #88 — P1-B app.py 拆分 pages/（已建立，待 Merge）
+- ✅ `app.py` 縮減至 50 行純路由（原 3076 行）
+- ✅ 新建 `app_core.py`（495 行）：共用常數、路徑別名、`render_*` 函式的 SSOT
+- ✅ 新建 `pages/` 目錄含 6 個領域模組：tw(810)/us(116)/global_(450)/housing(593)/ai_brain(153)/etf(509)
+- ✅ 架構：`app.py → pages/*.py → app_core.py`（零循環匯入）
+- Merge 指令：`gh pr merge 88 --merge --delete-branch`
+
 ### 重構藍圖待辦（依優先順序）
-- [ ] P1：System Prompts 外移 `prompts/*.yaml`（減少 update_data.py ~800 行）
-- [ ] P1：`app.py` 拆分 `pages/`（3075 行 → <200 行主入口）
+- [x] P1：System Prompts 外移 `prompts/*.yaml`（PR #87 結案）
+- [x] P1：`app.py` 拆分 `pages/`（PR #88，待 Merge）
 - [ ] P2：`prompt_builder.py`（6 個 `build_*_user_prompt` 模板化）
 - [ ] P2：`message_formatter.py`（LINE 5 個 builder 共用截斷邏輯）
 - [ ] P3：Fetcher 快取強化（`@st.cache_data ttl=300` 覆蓋率）
