@@ -7,7 +7,6 @@ import pandas as pd
 import update_data
 import tz_utils
 import etf_data
-import numutil
 import season_chart
 from app_core import (
     INTL_ALERT_PATH,
@@ -18,21 +17,17 @@ from app_core import (
     FUT_CHIP_PATH,
     STOCKS_PATH,
     STOCKS_ARCHIVE_DIR,
-    SENTIMENT_STYLE,
     SIX_MONTH_SOURCE_CAPTION,
     ensure_gemini_key,
     render_key_hint,
     render_news_cards,
     pick_report,
     load_json,
-    save_to_github,
-    render_github_save,
     render_market_digest,
     _render_evidence_news,
     _render_stock_card_group,
     _render_trends_sunset,
     mention_caption,
-    get_topic,
 )
 
 def render_stock_live_panel() -> None:

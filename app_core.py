@@ -13,20 +13,11 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-import etf_data  # ETF 資料單一真相源(快取共用層)
-import etf_fetcher  # 透過代理抓 MoneyDJ 成分股建庫
-import etf_holdings  # ETF 持股反查(純設定檔,不呼叫 AI)
-import etf_profile_fetcher  # ETF 圖鑑:抓基本資料(型態/配息/費用/策略)
-import freshness  # 資料新鮮度(staleness)判定 SSOT(§2.4)
 import github_store  # 一鍵把資料檔 commit 回 GitHub repo
-import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
-import housing_fetcher  # 房市觀察:抓房市新聞 + 實價登錄各縣市每坪房價
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
-import price_fetcher  # 透過代理抓台股收盤價(供價位篩選)
 import proxy_helper  # NAS 中繼站:設定讀取 + 連線健檢
 import tz_utils  # 台灣時區時間的單一真相源(SSOT)
 import gemini_client  # Gemini API 金鑰管理 SSOT
-import season_chart  # 總統任期週期季節性分析 SSOT
 import update_data  # 重用爬蟲 + Gemini 管線,讓網頁可即時抓新聞/產報告
 
 # 報告新鮮度門檻(天):歸屬日落後超過此值,看板顯示過期警告。可用 STALE_REPORT_DAYS 覆寫。

@@ -8,17 +8,14 @@ import tz_utils
 from app_core import (
     US_STOCKS_PATH,
     US_STOCKS_ARCHIVE_DIR,
-    SENTIMENT_STYLE,
     SIX_MONTH_SOURCE_CAPTION,
     ensure_gemini_key,
     load_json,
     render_news_cards,
     pick_report,
     render_market_digest,
-    _render_evidence_news,
     _render_stock_card_group,
     _render_trends_sunset,
-    mention_caption,
 )
 from pages.tw import tool_stock_query
 

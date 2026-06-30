@@ -12,7 +12,6 @@ season_chart.py — 總統任期週期季節性分析 SSOT
 from __future__ import annotations
 
 import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 

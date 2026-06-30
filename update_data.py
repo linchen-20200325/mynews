@@ -39,7 +39,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import sys
 from pathlib import Path
 
@@ -64,7 +63,7 @@ import tz_utils  # 台灣時區時間的單一真相源(SSOT)
 import vcp_signals  # 個股盯盤:VCP 波動收縮型態買點偵測的單一真相源(SSOT)
 import watchlist  # 個股盯盤清單(watchlist)的單一真相源(SSOT)
 import news_analyzer  # 新聞分析工具（日期萃取/關鍵字比對/時間窗口/情感評分）SSOT
-import prompt_builder  # Gemini user prompt builder 函數集中地（SSOT）
+import prompt_loader  # System prompt YAML 讀取 SSOT(prompts/*.yaml)
 from prompt_builder import (
     build_analysis_user_prompt,
     build_trend_user_prompt,

@@ -10,16 +10,13 @@ import etf_fetcher
 import etf_holdings
 import etf_profile_fetcher
 import freshness
-import numutil
 import price_fetcher
 import proxy_helper
 from app_core import (
-    SENTIMENT_STYLE,
     ensure_proxy,
     save_to_github,
     render_github_save,
     render_crawl_summary,
-    STALE_REPORT_DAYS,
     PRICE_STALE_DAYS,
 )
 
