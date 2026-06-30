@@ -1031,14 +1031,34 @@ def format_quotes_block(quotes_doc: dict) -> str:
     return f"【真實指數/期貨報價,大跌門檻 {thr}%】\n" + "\n".join(lines)
 
 
-def build_intl_alert_user_prompt(quotes_doc: dict, news: list[dict], today: str) -> str:
+def build_intl_alert_user_prompt(
+    quotes_doc: dict,
+    news: list[dict],
+    today: str,
+    divergence: dict | None = None,
+) -> str:
+    div_block = ""
+    if divergence and divergence.get("signal") != "normal" and divergence.get("description"):
+        sig_label = {
+            "reversal": "翻轉訊號",
+            "follow_through": "跌勢延伸",
+            "caution": "盤前預警",
+        }.get(divergence["signal"], divergence["signal"])
+        div_block = (
+            f"\n\n【期現背離偵測（程式算，非 AI）】\n"
+            f"費半現貨(已定案):{divergence.get('sox_pct', 0):+.1f}%  "
+            f"{divergence.get('futures_name', '期貨')}(即時):{divergence.get('futures_pct', 0):+.1f}%  "
+            f"背離:{divergence.get('divergence', 0):+.1f}%  訊號:{sig_label}\n"
+            f"請在 tw_impact.reason 中明確說明此期現背離對台股開盤的潛在影響。"
+        )
     return (
         f"今天的日期是 {today}。\n"
         f"請依下列『真實報價』與『真實新聞』:(1) 研判美股/台指期夜盤是否突然大跌或有重大利空;"
         f"(2) 無論有無大跌,都要給出『對美股的整體看法(us_view)』與『對台股(尤其半導體/電子)"
         f"的可能影響(tw_impact)』,平靜日也要有方向與理由、不可留白。嚴格輸出 JSON。"
         f"數字一律以報價為準、不可竄改;利空原因只能引用新聞。report_date 請填 {today}。\n\n"
-        f"{format_quotes_block(quotes_doc)}\n\n"
+        f"{format_quotes_block(quotes_doc)}"
+        f"{div_block}\n\n"
         f"{format_news_block(news)}"
     )
 
@@ -1291,12 +1311,20 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         key=lambda d: d["change_pct"],
     )
 
+    # 期現背離偵測（純程式計算，非 AI；^SOX 定案 vs NQ=F/ES=F 即時）
+    divergence = index_fetcher.detect_spot_futures_divergence(
+        qmap, threshold=quotes_doc.get("threshold", index_fetcher.DEFAULT_DROP_THRESHOLD)
+    )
+    if divergence.get("signal") != "normal":
+        print(f"  期現背離:{divergence['signal']} — {divergence.get('description', '')}")
+
     news = fetch_intl_alert_news()
     # Gemini 只做文字研判(利空原因/對台股影響);失敗(如配額 429)不得拖垮
     # 真實報價與大跌偵測 → 包成容錯:AI 掛了仍保留報價/大跌/LINE 預警,只把原因留白。
     try:
         gemini = gemini_client.call_gemini_for_json(
-            INTL_ALERT_SYSTEM_PROMPT, build_intl_alert_user_prompt(quotes_doc, news, today)
+            INTL_ALERT_SYSTEM_PROMPT,
+            build_intl_alert_user_prompt(quotes_doc, news, today, divergence=divergence),
         )
     except Exception as exc:  # noqa: BLE001 — AI 失敗 → 降級為純報價偵測
         print(f"  警告: 國際盤 Gemini 解讀失敗,改用純報價偵測(原因留白):{exc}",
@@ -1331,6 +1359,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         "interpretation": gemini.get("interpretation", []),
         "us_view": us_view,                   # 對美股整體看法(平靜日也有)
         "tw_impact": tw_impact,
+        "futures_divergence": divergence,     # 期現背離偵測(程式算；signal/description/sox_pct/futures_pct)
         "ai_ok": ai_ok,                       # AI 解讀是否成功(供前端/LINE 標註「原因待補」)
         "upcoming_events": upcoming_events,    # 可預測法人賣壓事件(行事曆)
         "raw_news": news,

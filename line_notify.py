@@ -248,6 +248,14 @@ def build_intl_alert_line_message(intl: dict) -> str:
         if sectors:
             lines.append("族群:" + "、".join(str(s) for s in sectors[:3]))
 
+    # 期現背離訊號（程式算，非 AI；reversal/follow_through/caution 才顯示）
+    div = intl.get("futures_divergence") or {}
+    div_signal = div.get("signal", "normal")
+    div_desc = (div.get("description") or "").strip()
+    if div_signal in ("reversal", "follow_through", "caution") and div_desc:
+        icon = "⚡" if div_signal == "reversal" else "⚠️"
+        lines += ["", f"{icon} 期現背離：{div_desc}"]
+
     lines += ["", "⚠️ 真實報價 + AI 研判,僅供參考,非投資建議"]
     msg = "\n".join(lines)
     if len(msg) > LINE_TEXT_LIMIT:
