@@ -11,6 +11,7 @@ from app_core import (
     SENTIMENT_STYLE,
     SIX_MONTH_SOURCE_CAPTION,
     ensure_gemini_key,
+    load_json,
     render_news_cards,
     pick_report,
     render_market_digest,
@@ -19,6 +20,7 @@ from app_core import (
     _render_trends_sunset,
     mention_caption,
 )
+from pages.tw import tool_stock_query
 
 def render_us_stock_live_panel() -> None:
     """美股觀察第一步:只抓美股財經新聞(整理另由 Gemini 按鈕觸發)。"""

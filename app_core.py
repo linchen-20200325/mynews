@@ -3,11 +3,6 @@
 app.py 拆分 pages/ 後,原先散落在 app.py 頂部的共用工具統一搬移到此處。
 pages/*.py 統一由此 import,不從 app.py import(避免循環相依)。
 """
-"""Streamlit 前端 — 全球政經戰略報告 + 趨勢雷達。
-
-側邊欄可切換報告類型(戰略報告 / 趨勢雷達),並瀏覽歷史存檔。
-本地執行: streamlit run app.py
-"""
 
 from __future__ import annotations
 
