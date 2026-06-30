@@ -7,6 +7,7 @@ import pandas as pd
 import streamlit as st
 
 import housing_fetcher
+import numutil
 import update_data
 import tz_utils
 from app_core import (
@@ -15,7 +16,6 @@ from app_core import (
     GEOJSON_PATH,
     HOUSING_SENTIMENT_STYLE,
     ensure_gemini_key,
-    render_key_hint,
     render_news_cards,
     pick_report,
     load_json,
@@ -23,6 +23,7 @@ from app_core import (
     render_github_save,
     render_market_digest,
     ensure_proxy,
+    _render_evidence_news,
 )
 
 @st.cache_data(show_spinner=False)
