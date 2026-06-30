@@ -137,6 +137,85 @@ def fetch_index_quotes(proxy: str | None = None, log=print) -> dict:
     }
 
 
+# ── 期現背離偵測常數 ──────────────────────────────────────────────────────
+_REVERSAL_DIVERGENCE_MIN = 2.0  # 期貨與現貨差距 ≥ 此值（%）才算顯著回彈
+
+
+def detect_spot_futures_divergence(
+    qmap: dict,
+    threshold: float = DEFAULT_DROP_THRESHOLD,
+) -> dict:
+    """偵測費半現貨（已定案）與那指/標普期貨（即時）的期現背離訊號。
+
+    訊號類型
+    --------
+    reversal      現貨大跌 + 期貨顯著回彈（divergence ≥ 2%）→ 留意翻轉
+    follow_through 現貨 + 期貨皆大跌 → 跌勢延伸，開盤賣壓未解除
+    caution       現貨未跌但期貨已轉弱 → 預警
+    normal        無顯著背離（不顯示）
+
+    優先使用那指 100 期貨（NQ=F，科技/半導體相關性高），fallback 標普期貨（ES=F）。
+
+    Returns
+    -------
+    dict
+        keys: sox_pct, futures_symbol, futures_name, futures_pct,
+              divergence, signal, description
+    """
+    sox_pct: float | None = (qmap.get("^SOX") or {}).get("change_pct")
+
+    # 選期貨：優先 NQ=F（那指期貨，科技相關性強），fallback ES=F
+    futures_sym: str | None = None
+    fut: dict = {}
+    for sym in ("NQ=F", "ES=F"):
+        if sym in qmap:
+            futures_sym = sym
+            fut = qmap[sym]
+            break
+
+    futures_pct: float | None = fut.get("change_pct")
+    futures_name: str = fut.get("name", "期貨")
+
+    if sox_pct is None or futures_pct is None:
+        return {"signal": "normal", "description": ""}
+
+    divergence = round(futures_pct - sox_pct, 2)
+    spot_is_drop = sox_pct <= threshold
+    futures_is_drop = futures_pct <= threshold
+
+    if spot_is_drop and divergence >= _REVERSAL_DIVERGENCE_MIN:
+        signal = "reversal"
+        desc = (
+            f"費半 {sox_pct:+.1f}% 但{futures_name}回彈至 {futures_pct:+.1f}%"
+            f"（背離 {divergence:+.1f}%），留意翻轉機會"
+        )
+    elif spot_is_drop and futures_is_drop:
+        signal = "follow_through"
+        desc = (
+            f"費半 {sox_pct:+.1f}%，{futures_name}同步 {futures_pct:+.1f}%"
+            f"，跌勢延伸，留意開盤賣壓"
+        )
+    elif not spot_is_drop and futures_is_drop:
+        signal = "caution"
+        desc = (
+            f"現貨尚未大跌，但{futures_name} {futures_pct:+.1f}%"
+            f"，留意隔日開盤方向"
+        )
+    else:
+        signal = "normal"
+        desc = ""
+
+    return {
+        "sox_pct": sox_pct,
+        "futures_symbol": futures_sym,
+        "futures_name": futures_name,
+        "futures_pct": futures_pct,
+        "divergence": divergence,
+        "signal": signal,
+        "description": desc,
+    }
+
+
 if __name__ == "__main__":
     try:
         data = fetch_index_quotes()
