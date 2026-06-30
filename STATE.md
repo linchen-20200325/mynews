@@ -104,16 +104,23 @@
 - ✅ `update_data.py`：14 個 `*_SYSTEM_PROMPT` 常數改為 `prompt_loader.load("name")`，縮減 648 行（2461→1813）
 - ✅ `requirements.txt` 新增 `pyyaml>=6.0`
 
-### PR #88 — P1-B app.py 拆分 pages/（已建立，待 Merge）
+### PR #88 — P1-B app.py 拆分 pages/（已併入 main）
 - ✅ `app.py` 縮減至 50 行純路由（原 3076 行）
 - ✅ 新建 `app_core.py`（495 行）：共用常數、路徑別名、`render_*` 函式的 SSOT
 - ✅ 新建 `pages/` 目錄含 6 個領域模組：tw(810)/us(116)/global_(450)/housing(593)/ai_brain(153)/etf(509)
 - ✅ 架構：`app.py → pages/*.py → app_core.py`（零循環匯入）
-- Merge 指令：`gh pr merge 88 --merge --delete-branch`
+
+### PR #89 — P1-B SSOT 稽核修補（已併入 main）
+- ✅ `app_core.py`：移除殘留雙重 docstring（Python SyntaxError）
+- ✅ `pages/tw.py`：補回 `ALERT_BADGE` 常數（原 `app.py:962`）；移除 dead `import paths`
+- ✅ `pages/us.py`：補 `load_json` 匯入；補 `from pages.tw import tool_stock_query`
+- ✅ `pages/global_.py`：補 `import freshness` + `STALE_REPORT_DAYS`；移除 dead `import paths`
+- ✅ `pages/etf.py` / `pages/housing.py`：移除 dead `import paths`
+- 稽核結果：零循環匯入 / 零 raw path 字面值 / 零裸 datetime / 零 google.generativeai 直接 import
 
 ### 重構藍圖待辦（依優先順序）
 - [x] P1：System Prompts 外移 `prompts/*.yaml`（PR #87 結案）
-- [x] P1：`app.py` 拆分 `pages/`（PR #88，待 Merge）
+- [x] P1：`app.py` 拆分 `pages/`（PR #88 + #89 結案）
 - [ ] P2：`prompt_builder.py`（6 個 `build_*_user_prompt` 模板化）
 - [ ] P2：`message_formatter.py`（LINE 5 個 builder 共用截斷邏輯）
 - [ ] P3：Fetcher 快取強化（`@st.cache_data ttl=300` 覆蓋率）
