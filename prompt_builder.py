@@ -93,6 +93,16 @@ def format_house_history_block(history: dict | None, top_n: int = 8) -> str:
 
 # ── Builder functions ────────────────────────────────────────────────────────
 
+def _compose(today: str, instruction: str, news: list[dict]) -> str:
+    """5 個標準 builder 共用模板：日期 header + 指令 body + report_date + news footer。"""
+    return (
+        f"今天的日期是 {today}。\n"
+        f"{instruction}"
+        f"report_date 請填 {today}。\n\n"
+        f"{format_news_block(news)}"
+    )
+
+
 def build_analysis_user_prompt(news: list[dict], topic: str, today: str) -> str:
     return (
         f"今天的日期是 {today}。分析主題:『{topic}』。\n"
@@ -102,34 +112,25 @@ def build_analysis_user_prompt(news: list[dict], topic: str, today: str) -> str:
 
 
 def build_trend_user_prompt(news: list[dict], today: str) -> str:
-    return (
-        f"今天的日期是 {today}。\n"
-        f"請參考以下真實新聞(同時含台灣與美國市場),找出當前全球最熱門、動能最強的 "
-        f"3~5 個新興產業或主題,依資金、徵才、政策、技術四種訊號綜合評估與排名打分,"
-        f"並【每個產業都列出代表性的美股(us_stocks)與台股(tw_stocks)個股】,嚴格輸出 JSON。"
-        f"report_date 請填 {today}。\n\n"
-        f"{format_news_block(news)}"
-    )
+    return _compose(today,
+        "請參考以下真實新聞(同時含台灣與美國市場),找出當前全球最熱門、動能最強的 "
+        "3~5 個新興產業或主題,依資金、徵才、政策、技術四種訊號綜合評估與排名打分,"
+        "並【每個產業都列出代表性的美股(us_stocks)與台股(tw_stocks)個股】,嚴格輸出 JSON。\n",
+        news)
 
 
 def build_stock_user_prompt(news: list[dict], today: str) -> str:
-    return (
-        f"今天的日期是 {today}。\n"
-        f"請根據以下真實台灣財經新聞,整理出被提到的台股標的,統計提及次數並由高到低排序,"
-        f"判斷各自偏利多/利空/觀望並說明原因,另歸納未來趨勢產業與夕陽產業,嚴格輸出 JSON。"
-        f"report_date 請填 {today}。\n\n"
-        f"{format_news_block(news)}"
-    )
+    return _compose(today,
+        "請根據以下真實台灣財經新聞,整理出被提到的台股標的,統計提及次數並由高到低排序,"
+        "判斷各自偏利多/利空/觀望並說明原因,另歸納未來趨勢產業與夕陽產業,嚴格輸出 JSON。\n",
+        news)
 
 
 def build_us_stock_user_prompt(news: list[dict], today: str) -> str:
-    return (
-        f"今天的日期是 {today}。\n"
-        f"請根據以下真實美股相關財經新聞,整理出被提到的美股標的,統計提及次數並由高到低排序,"
-        f"判斷各自偏利多/利空/觀望並說明原因,另歸納未來趨勢產業與夕陽產業,嚴格輸出 JSON。"
-        f"report_date 請填 {today}。\n\n"
-        f"{format_news_block(news)}"
-    )
+    return _compose(today,
+        "請根據以下真實美股相關財經新聞,整理出被提到的美股標的,統計提及次數並由高到低排序,"
+        "判斷各自偏利多/利空/觀望並說明原因,另歸納未來趨勢產業與夕陽產業,嚴格輸出 JSON。\n",
+        news)
 
 
 def build_intl_alert_user_prompt(
@@ -165,14 +166,12 @@ def build_intl_alert_user_prompt(
 
 
 def build_focus_user_prompt(term_zh: str, query_en: str, news: list[dict], today: str) -> str:
-    return (
-        f"今天的日期是 {today}。\n"
+    return _compose(today,
         f"關注對象(中文):{term_zh};英文檢索主名:{query_en}。\n"
-        f"請根據以下真實英文新聞,整理這個對象近期說了什麼/做了什麼、衍伸哪些產業,"
-        f"以及可能牽動哪些【台股與美股】個股(務必兩個市場都找),全部用繁體中文輸出,"
-        f"嚴格輸出 JSON。report_date 請填 {today}。\n\n"
-        f"{format_news_block(news)}"
-    )
+        "請根據以下真實英文新聞,整理這個對象近期說了什麼/做了什麼、衍伸哪些產業,"
+        "以及可能牽動哪些【台股與美股】個股(務必兩個市場都找),全部用繁體中文輸出,"
+        "嚴格輸出 JSON。\n",
+        news)
 
 
 def build_stock_query_user_prompt(
@@ -180,19 +179,16 @@ def build_stock_query_user_prompt(
     news: list[dict], today: str,
 ) -> str:
     tag = f"{term_zh}" + (f"({ticker})" if ticker else "") + (f"／{market}" if market else "")
-    return (
-        f"今天的日期是 {today}。\n"
+    return _compose(today,
         f"目標個股:{tag};英文名:{query_en}。\n"
-        f"請產出券商深度報告風格的『個股健診』,全部用繁體中文輸出,嚴格輸出 JSON,涵蓋:\n"
-        f"① 新聞相關性(高/中/低 + 條列依據,只依新聞);\n"
-        f"② 股價與籌碼動向(盤面/量能、外資投信自營/融資方向、技術面位置);\n"
-        f"③ 基本面與推升動能(營運績效、題材 catalysts、上漲屬短期消息面或基本面可持續);\n"
-        f"④ 護城河與競爭(是否龍頭、競爭對手、技術門檻、本檔所屬產業鏈上中下游代表個股,美股→對應台股);\n"
-        f"⑤ 估值與風險(本益比/EPS 推算與同業區間、主要風險點)、後續觀察指標、長期持有研判。\n"
-        f"可動用產業/財務常識補數字,但每個數字須標〔新聞〕或〔AI估算〕,代號不確定一律留空,不喊買賣不給目標價。\n"
-        f"report_date 請填 {today}。\n\n"
-        f"{format_news_block(news)}"
-    )
+        "請產出券商深度報告風格的『個股健診』,全部用繁體中文輸出,嚴格輸出 JSON,涵蓋:\n"
+        "① 新聞相關性(高/中/低 + 條列依據,只依新聞);\n"
+        "② 股價與籌碼動向(盤面/量能、外資投信自營/融資方向、技術面位置);\n"
+        "③ 基本面與推升動能(營運績效、題材 catalysts、上漲屬短期消息面或基本面可持續);\n"
+        "④ 護城河與競爭(是否龍頭、競爭對手、技術門檻、本檔所屬產業鏈上中下游代表個股,美股→對應台股);\n"
+        "⑤ 估值與風險(本益比/EPS 推算與同業區間、主要風險點)、後續觀察指標、長期持有研判。\n"
+        "可動用產業/財務常識補數字,但每個數字須標〔新聞〕或〔AI估算〕,代號不確定一律留空,不喊買賣不給目標價。\n",
+        news)
 
 
 def build_housing_user_prompt(news: list[dict], prices: dict | None, today: str,
