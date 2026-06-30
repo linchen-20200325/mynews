@@ -43,6 +43,18 @@ OKU = numutil.OKU  # 億元換算係數 SSOT 在 numutil
 # 內部工具
 # ---------------------------------------------------------------------------
 
+def _clip(text: str, limit: int) -> str:
+    """截斷文字並補省略號(所有 builder 共用,消除重複 inline pattern)。"""
+    return text[:limit] + ("…" if len(text) > limit else "")
+
+
+def _finalize(msg: str) -> str:
+    """LINE 訊息最終截斷：超過 LINE_TEXT_LIMIT 時裁切並加注提示(所有 builder 共用)。"""
+    if len(msg) > LINE_TEXT_LIMIT:
+        return msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
+    return msg
+
+
 def _save_json(path: Path, data: dict) -> None:
     """原子化寫入 JSON(目錄不存在時自動建立)。"""
     payload = json.dumps(data, ensure_ascii=False, indent=2)
@@ -165,12 +177,9 @@ def build_line_message(report: dict, chip_hint: str = "") -> str:
         lines += ["", chip_hint]
     kpi = report.get("strategic_analysis", {}).get("blind_spots_and_kpi", "").strip()
     if kpi:
-        lines += ["", "🎯 盯盤關鍵:", kpi[:120] + ("…" if len(kpi) > 120 else "")]
+        lines += ["", "🎯 盯盤關鍵:", _clip(kpi, 120)]
     lines += ["", f"(白話文來源:{report.get('dictionary_source', '—')})"]
-    msg = "\n".join(lines)
-    if len(msg) > LINE_TEXT_LIMIT:
-        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
-    return msg
+    return _finalize("\n".join(lines))
 
 
 def notify_line(report: dict, chip_hint: str = "") -> None:
@@ -201,7 +210,7 @@ def build_intl_alert_line_message(intl: dict) -> str:
     if not root_cause:
         interp0 = (intl.get("interpretation") or [{}])[0]
         rc_text = (interp0.get("cause") or "").strip()
-        root_cause = rc_text[:30] + ("…" if len(rc_text) > 30 else "")
+        root_cause = _clip(rc_text, 30)
     if root_cause:
         lines.append(f"🔥 主因:{root_cause}")
 
@@ -228,7 +237,7 @@ def build_intl_alert_line_message(intl: dict) -> str:
         for it in interp[:2]:
             mk = it.get("market", "")
             cause = (it.get("cause", "") or "").strip()
-            cause_s = cause[:80] + ("…" if len(cause) > 80 else "")
+            cause_s = _clip(cause, 80)
             lines.append(f"・{mk}:{cause_s}" if mk else f"・{cause_s}")
 
     us = intl.get("us_view", {})
@@ -243,7 +252,7 @@ def build_intl_alert_line_message(intl: dict) -> str:
         lines += ["", f"🇹🇼 台股:{imp.get('direction', '—')}"]
         reason = (imp.get("reason", "") or "").strip()
         if reason:
-            lines.append(reason[:100] + ("…" if len(reason) > 100 else ""))
+            lines.append(_clip(reason, 100))
         sectors = imp.get("sectors", [])
         if sectors:
             lines.append("族群:" + "、".join(str(s) for s in sectors[:3]))
@@ -257,10 +266,7 @@ def build_intl_alert_line_message(intl: dict) -> str:
         lines += ["", f"{icon} 期現背離：{div_desc}"]
 
     lines += ["", "⚠️ 真實報價 + AI 研判,僅供參考,非投資建議"]
-    msg = "\n".join(lines)
-    if len(msg) > LINE_TEXT_LIMIT:
-        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
-    return msg
+    return _finalize("\n".join(lines))
 
 
 def notify_line_intl_alert(intl: dict) -> None:
@@ -282,10 +288,7 @@ def build_chip_events_line_message(events: list[dict], today: str) -> str:
         if e.get("detail"):
             lines.append(f"　{e['detail']}")
     lines += ["", "⚠️ 日期為慣例/曆法推算,實際以官方公告為準;僅供參考,非投資建議"]
-    msg = "\n".join(lines)
-    if len(msg) > LINE_TEXT_LIMIT:
-        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
-    return msg
+    return _finalize("\n".join(lines))
 
 
 def notify_line_chip_events(events: list[dict], today: str) -> None:
@@ -323,8 +326,7 @@ def build_confluence_line_message(conf: dict, today: str) -> str:
         lines.append(f"・{f.get('detail', '')}")
     lines += ["", "→ 非單一利空,多股賣壓疊加,留意修正延續。",
               "⚠️ 真實數據判定,僅供參考,非投資建議"]
-    msg = "\n".join(lines)
-    return msg[:LINE_TEXT_LIMIT] if len(msg) > LINE_TEXT_LIMIT else msg
+    return _finalize("\n".join(lines))
 
 
 def notify_line_confluence(conf: dict, today: str) -> None:
@@ -393,7 +395,4 @@ def build_watch_line_message(today: str, summaries: list[dict],
             lines.append(f"・{ticker}｜{period} {eps_s}{chg_s}")
         lines.append("")
     lines.append("(僅供參考,非投資建議。指令:加/刪/清單)")
-    msg = "\n".join(lines).rstrip()
-    if len(msg) > LINE_TEXT_LIMIT:
-        msg = msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
-    return msg
+    return _finalize("\n".join(lines).rstrip())
