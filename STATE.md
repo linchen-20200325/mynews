@@ -131,6 +131,30 @@
 - ✅ 新建 `query_config.json`：14 組查詢清單集中管理，可直接在 GitHub UI 修改無需重新部署
 - ✅ `update_data.py`：移除 14 個硬編碼清單，改由 `_QUERY_CONFIG` 讀取；env var 覆寫機制不變
 
+### PR #96 — P4-A prompt_builder.py 模板化（已併入 main）
+- ✅ 新增 `_compose(today, instruction, news)` 私有 helper：擷取 5 個 builder 共用的「日期 header + 指令 + report_date + news footer」結構
+- ✅ `build_trend/stock/us_stock/focus/stock_query_user_prompt` 改用 `_compose`：+37/−41 行
+- ✅ 另外 5 個 builder（結構差異大）保持原狀，刻意不勉強套模板
+
+### PR #97 — P4-B dead code 清除（已併入 main）
+- ✅ `update_data.py`：補 `import prompt_loader`（修復 NameError）、移除 `import re` + bare `import prompt_builder`
+- ✅ `app_core.py`：移除 9 個未使用模組 import（etf_data/etf_fetcher/etf_holdings/etf_profile_fetcher/freshness/numutil/housing_fetcher/price_fetcher/season_chart）
+- ✅ `pages/housing.py`：補 `import numutil` + `_render_evidence_news`（修復 NameError）、移除 dead `render_key_hint`
+- ✅ `pages/tw.py`：移除 numutil/SENTIMENT_STYLE/get_topic/render_github_save/save_to_github
+- ✅ `pages/us.py`：移除 SENTIMENT_STYLE/_render_evidence_news/mention_caption
+- ✅ `pages/etf.py`：移除 numutil/SENTIMENT_STYLE/STALE_REPORT_DAYS
+- ✅ `season_chart.py`：移除 bare `import matplotlib`
+- pyflakes 全庫掃描零警告；修復 2 個潛在 runtime NameError
+
+### PR #98 — reversal_signals.py 中線翻轉偵測（已併入 main）
+- ✅ 新建 `reversal_signals.py`（SSOT）：三大硬指標共振，≥2 同向 → 絕對買進/賣出
+  - 指標一：60MA 慣性翻轉（連3天實體 + 扣抵值方向預測季線彎向）
+  - 指標二：大盤（融資維持率+外資期貨淨部位）/ 個股（集保大戶vs散戶持股分級）
+  - 指標三：TSM+NVDA 週K結構（雙標的破位確認轉壞；任一吞噬/長下影確認好轉）
+  - chip_df=None 時用確定性 mock；接通真實 API 只需替換 `_mock_*` 兩函數
+- ✅ `requirements.txt` 新增 `yfinance>=0.2`
+- ✅ `pages/tw.py`：新增 `tool_reversal_detector()` + `_detect_reversal_cached(ttl=3600)` + 互動工具 expander
+
 ### 重構藍圖待辦（依優先順序）
 - [x] P1：System Prompts 外移 `prompts/*.yaml`（PR #87 結案）
 - [x] P1：`app.py` 拆分 `pages/`（PR #88 + #89 結案）
@@ -138,6 +162,8 @@
 - [x] P2-B：`line_notify.py` DRY 截斷邏輯（PR #93 結案）
 - [x] P3-A：Fetcher 快取強化（已審查，架構正確—button-triggered fetchers 刻意用 session_state，無需改動）
 - [x] P3-B：`query_config.json` 關鍵字外移（PR #94 結案）
+- [x] P4-A：`prompt_builder.py` 模板化（PR #96 結案）
+- [x] P4-B：dead code 清除（PR #97 結案）
 
 ### PR #86 — 期現背離偵測（已併入 main）
 - ✅ `index_fetcher.py`：新增 `detect_spot_futures_divergence()` — ^SOX 現貨 vs NQ=F（優先）/ES=F（fallback）期貨，訊號類型：`reversal`（⚡）/ `follow_through`（⚠️）/ `caution`（⚠️）/ `normal`（靜默）；背離門檻 ≥ 2%

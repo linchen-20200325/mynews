@@ -8,6 +8,7 @@ import update_data
 import tz_utils
 import etf_data
 import season_chart
+import reversal_signals
 from app_core import (
     INTL_ALERT_PATH,
     INTL_ALERT_ARCHIVE_DIR,
@@ -785,6 +786,98 @@ def _tool_cycle_chart() -> None:
         st.dataframe(pd.DataFrame(cols), use_container_width=True, hide_index=True)
 
 
+@st.cache_data(ttl=3600, show_spinner=False)
+def _detect_reversal_cached(symbol: str, is_market: bool) -> dict:
+    """以 (symbol, is_market) 為 key 快取翻轉偵測結果，每小時更新一次。"""
+    return reversal_signals.detect_trend_reversal(symbol, is_market=is_market)
+
+
+def tool_reversal_detector() -> None:
+    """互動工具：中線行情翻轉偵測（三大指標共振）。"""
+    with st.container(border=True):
+        st.markdown("#### 🔭 輸入標的")
+        st.caption(
+            "輸入 Yahoo Finance 代號。台股大盤:`^TWII`；美股費半:`^SOX`；"
+            "台股個股:`2330.TW`；美股個股:`NVDA`。"
+            "偵測約需 3~8 秒（抓 yfinance 週K）。"
+        )
+        col_sym, col_mode = st.columns([3, 2])
+        symbol = col_sym.text_input(
+            "代號", key="reversal_symbol",
+            placeholder="^TWII / ^SOX / 2330.TW / NVDA …",
+        )
+        is_market = col_mode.radio(
+            "模式", ["大盤指數", "個股"],
+            key="reversal_mode", horizontal=True,
+        ) == "大盤指數"
+
+        if st.button("🔭 執行中線翻轉偵測", use_container_width=True,
+                     disabled=not symbol.strip()):
+            if not symbol.strip():
+                st.warning("請先輸入代號。")
+            else:
+                st.session_state["reversal_sym_done"] = symbol.strip()
+                st.session_state["reversal_mkt_done"] = is_market
+                # 清舊快取讓新代號重跑
+                _detect_reversal_cached.clear()
+
+    sym_done = st.session_state.get("reversal_sym_done", "")
+    mkt_done = st.session_state.get("reversal_mkt_done", True)
+    if not sym_done:
+        return
+
+    with st.spinner(f"偵測 {sym_done} 中（抓日K+週K+籌碼）…"):
+        result = _detect_reversal_cached(sym_done, mkt_done)
+
+    if result.get("error"):
+        st.error(f"偵測失敗：{result['error']}")
+        return
+
+    # ── 主燈號 ────────────────────────────────────────────────────────────
+    signal     = result["signal"]
+    confidence = result["confidence"]
+    sig_fn = {"絕對買進": st.success, "絕對賣出": st.error}.get(signal, st.info)
+    sig_ico = {"絕對買進": "🟢", "絕對賣出": "🔴", "觀望續抱": "⚪"}.get(signal, "")
+    sig_fn(
+        f"{sig_ico} **{signal}**　·　{confidence}/3 指標共振"
+        f"（{sym_done}，{'大盤' if mkt_done else '個股'}模式）"
+    )
+
+    # ── 三指標明細 ────────────────────────────────────────────────────────
+    INDICATOR_LABELS = {
+        "ma60":    "📐 季線(60MA)慣性翻轉",
+        "chip":    "💰 籌碼板塊挪移",
+        "semicon": "🔬 半導體龍頭週K",
+    }
+    DIR_BADGE = {"bad": "🔴 轉壞", "good": "🟢 好轉", None: "⚪ 觀望"}
+
+    for key, label in INDICATOR_LABELS.items():
+        sig = result["indicators"].get(key, {})
+        triggered = sig.get("triggered", False)
+        direction = sig.get("direction")
+        detail    = sig.get("detail", "—")
+        badge_fn  = st.error if direction == "bad" else (st.success if direction == "good" else st.info)
+
+        with st.expander(
+            f"{label}　{'✅ 觸發' if triggered else '❌ 未觸發'}　{DIR_BADGE.get(direction, '—')}",
+            expanded=triggered,
+        ):
+            badge_fn(detail) if triggered else st.info(detail)
+
+            # 半導體週K 有子標的明細
+            if key == "semicon" and sig.get("sub"):
+                st.markdown("**個別週K狀態：**")
+                for sym_k, sub in sig["sub"].items():
+                    sub_dir = sub.get("direction")
+                    sub_ico = {"bad": "🔴", "good": "🟢"}.get(sub_dir, "⚪")
+                    st.caption(f"{sub_ico} **{sym_k}**：{sub.get('detail','—')}")
+
+    st.caption(
+        "⚠️ 籌碼面目前使用 mock 資料（接通期交所/集保所真實 API 後自動替換）。"
+        "三大指標均為程式自動運算，非 AI 估算；僅供中線參考，非投資建議。"
+    )
+
+
 # ── 4 大頁 ─────────────────────────────────────────────────────────────────
 def page_tw() -> None:
     st.header("📊 台股")
@@ -805,3 +898,5 @@ def page_tw() -> None:
         tool_news_strategy()
     with st.expander("📅 總統任期週期 — 2026 走勢預測參考"):
         _tool_cycle_chart()
+    with st.expander("🔭 中線翻轉偵測 — 台股/美股大盤與個股共振訊號"):
+        tool_reversal_detector()
