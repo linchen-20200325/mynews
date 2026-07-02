@@ -34,18 +34,21 @@ def _iter_etfs(data: dict):
             yield code, code, info
 
 
-_ETF_CODE_RE = re.compile(r"^\d{5}[A-Za-z]?$")
+# 台灣 ETF 代號以 0 開頭：4-6 位數字加選用大寫字母（含 0050/0056/00878/00981A/006205）
+_ETF_CODE_RE = re.compile(r"^0\d{3,5}[A-Za-z]?$")
 
 
 def reverse_index(data: dict) -> list[dict]:
     """反查:回傳 [{ticker, name, etf_count, etfs:[{code,name}]}],依檔數由高到低。"""
     names = data.get("stock_names", {}) or {}
+    etf_codes = set((data.get("etfs") or {}).keys())
     holders: dict[str, list[dict]] = {}
     for code, etf_name, holdings in _iter_etfs(data):
         for ticker in holdings:
-            if _ETF_CODE_RE.match(str(ticker)):  # skip ETF codes appearing as components
+            ticker_str = str(ticker)
+            if ticker_str in etf_codes or _ETF_CODE_RE.match(ticker_str):
                 continue
-            holders.setdefault(str(ticker), []).append({"code": code, "name": etf_name})
+            holders.setdefault(ticker_str, []).append({"code": code, "name": etf_name})
 
     rows = [
         {

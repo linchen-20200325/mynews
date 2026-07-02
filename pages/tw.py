@@ -85,7 +85,7 @@ def render_stocks(data: dict) -> None:
                 "首見": s.get("first_seen", ""),
                 "最近": s.get("last_seen", ""),
                 "ETF持有": etf_counts.get(str(s.get("ticker", "")), 0),
-                "傾向": s.get("sentiment", ""),
+                "傾向": s.get("sentiment", "") if s.get("news_count", s.get("mention_count", 0)) > 0 else "",
                 "原因": s.get("reason", ""),
             }
             for s in stocks
