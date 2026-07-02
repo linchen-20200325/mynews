@@ -12,6 +12,7 @@ import etf_profile_fetcher
 import freshness
 import price_fetcher
 import proxy_helper
+import ui_helpers
 from app_core import (
     ensure_proxy,
     save_to_github,
@@ -495,6 +496,23 @@ def render_etf_lookup(data: dict | None = None) -> None:
 
 def sec_etf() -> None:
     st.subheader("🧩 ETF 工作台 — 持股反查 / 圖鑑(共用同一份快取資料)")
+    ui_helpers.render_intro_banner(
+        page_key="etf",
+        title="ETF 工作台",
+        steps=[
+            "🔎 **持股反查**：輸入台股代號（如 2330）查它被哪些 ETF 持有，被越多檔代表被動買盤越廣。",
+            "📚 **ETF 圖鑑**：看各 ETF 的追蹤指數、成分股配置與費用率，選 ETF 前先了解它在買什麼。",
+            "搭配 📊 **台股觀察**（台股頁）交叉驗證：新聞看好的標的，若同時被多檔 ETF 納入，信心分數更高。",
+        ],
+    )
+    ui_helpers.render_spec_card(
+        name="ETF 持股反查庫",
+        source="MoneyDJ 台灣 ETF 成分股（需透過 NAS 代理抓取，非即時）",
+        freq="手動觸發更新（點「🔄 立即抓取 ETF 成分股」；ETF 季度調整後建議更新一次）",
+        bull="個股被 3 檔以上主流 ETF 持有 → 有持續被動買盤支撐",
+        bear="個股僅被冷門 ETF 持有，或成分股比重 < 0.5% → 被動買盤影響有限",
+        note="成分股資料以各發行商最新公告為準，本工作台為輔助篩選工具，非投資建議。",
+    )
     tab1, tab2 = st.tabs(["🔎 持股反查 / 個股", "📚 ETF 圖鑑(組合配置)"])
     with tab1:
         render_etf_crawl_panel()
@@ -505,3 +523,4 @@ def sec_etf() -> None:
 
 def page_etf() -> None:
     sec_etf()
+

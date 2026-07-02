@@ -5,6 +5,7 @@ import streamlit as st
 
 import update_data
 import tz_utils
+import ui_helpers
 from app_core import (
     US_STOCKS_PATH,
     US_STOCKS_ARCHIVE_DIR,
@@ -106,6 +107,15 @@ def sec_us_stocks() -> None:
 
 def page_us() -> None:
     st.header("🇺🇸 美股")
+    ui_helpers.render_intro_banner(
+        page_key="us",
+        title="美股頁",
+        steps=[
+            "看 📈 **美股觀察**：AI 依新聞統計的熱門美股，欄位「傾向」= 利多/利空/觀望代表新聞情緒方向。",
+            "注意「則數」欄：被提及次數越多代表近期市場關注度越高，但不等於未來一定上漲。",
+            "善用 🩺 **個股健診工具**（下方互動區）：輸入任何美股代號可看完整分析，包含護城河與估值。",
+        ],
+    )
     payload = {"美股觀察": load_json(US_STOCKS_PATH)}
     render_market_digest("美股", {k: v for k, v in payload.items() if v})
     st.divider(); sec_us_stocks()

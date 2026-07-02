@@ -6,6 +6,7 @@ import streamlit as st
 import freshness
 import update_data
 import tz_utils
+import ui_helpers
 from app_core import (
     NEWS_SOURCE_CAPTION,
     SIGNAL_LABELS,
@@ -439,6 +440,15 @@ def tool_focus() -> None:
 
 def page_global() -> None:
     st.header("🌍 全球")
+    ui_helpers.render_intro_banner(
+        page_key="global",
+        title="全球頁",
+        steps=[
+            "看 🛰️ **戰略報告**：AI 分析地緣、供應鏈、總經四個維度，每個維度末尾有「盲點/領先指標」值得特別注意。",
+            "看 📡 **趨勢雷達**：評分最高的 3–5 個產業主題，對應的台股 ETF 欄是重點。",
+            "用 🌍 **全球人物追蹤**：輸入中文名（如「川普」「葛林斯班」），系統自動抓英文新聞並分析對台美股的影響。",
+        ],
+    )
     payload = {
         "戰略報告": load_json(REPORT_PATH),
         "趨勢雷達": load_json(TRENDS_PATH),

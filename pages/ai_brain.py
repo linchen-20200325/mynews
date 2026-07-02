@@ -5,6 +5,7 @@ import streamlit as st
 
 import paths
 import update_data
+import ui_helpers
 from app_core import (
     load_json,
     ensure_gemini_key,
@@ -16,6 +17,15 @@ def page_ai_brain() -> None:
 
     st.header("🧠 AI 中央決策大腦")
     st.caption("每日台灣時間 06:00 自動更新；四路特徵（籌碼/總經/新聞/技術）合流後由 Gemini 一次決策。")
+    ui_helpers.render_intro_banner(
+        page_key="ai_brain",
+        title="AI 決策大腦",
+        steps=[
+            "這頁不需要手動操作——系統每日 06:00 自動把四路特徵餵給 Gemini，產出整合決策。",
+            "「信心分數」越高（≥ 70）代表四路特徵方向一致；越低代表矛盾訊號，建議觀望。",
+            "此決策是 AI 綜合研判，僅供參考；最終交易決策請自行判斷，非投資建議。",
+        ],
+    )
 
     decision = load_json(paths.LATEST_DECISION)
 
