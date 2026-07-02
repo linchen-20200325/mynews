@@ -1,0 +1,275 @@
+{
+  "report_date": "2026-07-03",
+  "trend": "趨嚴",
+  "summary": "本月房產法規趨勢仍以抑制炒作、健全市場為主，央行維持信用管制不變，而新青安房貸雖有續辦討論，但也可能加入排富等限制。買方應持續關注政策走向，尤其在貸款條件與稅負方面可能會有新的變化。",
+  "regulations": [
+    {
+      "name": "中央銀行選擇性信用管制",
+      "status": "已施行",
+      "effective_date": "穩定施行中",
+      "description": "央行透過限制特定區域或高價住宅的貸款成數，並對第二戶以上貸款設限。",
+      "buyer_impact": "偏壞",
+      "impact_note": "對於想購買多戶房產的買方，貸款成數會較低；對於首購族，若非在管制區或購買高價住宅，影響相對較小，但整體市場流動性受影響。目前央行表示將維持現狀，不會再加碼管制措施。",
+      "evidence_news": [
+        {
+          "title": "央行是否再祭信用管制?楊金龍： 目前到這裡",
+          "source": "MSN",
+          "url": "https://news.google.com/rss/articles/CBMi1gNBVV95cUxNS1VHS2NoY0J3ejFhaFlsdm9NR3UtYTVZVU5WeWFRamZka3A2TWtKT1IyVkU5cDNUd3lGdlE3anBVYVloVGZtN0NnRHRUSkFrMXo4MTBJdThvVkFPSXdSbVJVQVV2N0NXbnoycXpJUFl2akc0N0tCUjNpNG5UdDl6SGlVa0RtR2E0MzBzcS1DbDN4VGxSdWVfNVl0Vkd0WFR1bVotczlNekVZSHg1anA1MEhaUnZrWHpaWVY0ZkV0eDVFVUtWZnZzU00xUDVSbFZYQkFZWEwzT1J5LXdXeTRiZWNXVmxZeWMxU3MyYWxyV0Rfc2hvMjdLbDcxZHQ0c1pBVnc0VUVIUG1yMEhrQmVYWWNjbWVCdVZjdlVVMmFCU0RfNkd4U0hoOTg5OW1BQVR6RlFtcFdFYWQxYlRrTFZlcUt2SEtibmFodlNYb0lfRmQ3aWpTY2dJQ0VPcFBMRmRXVElYSXJ1THVGS0h6WWhNem1taFBaMGZvc1dFUnZSa3BqTkRDcU04Si1QSHBUZzdjLWtxZ1VreGN2QVR0Q194TXFuVUZLMGJhaGd1WVJrU0R1bnRtcjNEWkhMSUt4dEs2LUxfb3RFQjZ6c0k5RjBFekY5TF9Qdw?oc=5"
+        },
+        {
+          "title": "央行按兵不動 房仲：下半年房市脫離最冷期但難見大行情 | 中央廣播電臺",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5tR1E0QnlDa0dPV01RZV9vdXFwbl9HbjZDUmljZ0RaRkxOaklaUEQwUi0zU0o3S0dFQ29pcjdFanpuaEJTRHUtVmlCcEpWalJfUHZJbUln?oc=5"
+        }
+      ]
+    },
+    {
+      "name": "新青安房貸（青年安心成家購屋優惠貸款）",
+      "status": "討論中",
+      "effective_date": "待定",
+      "description": "政府提供優惠利率、較高額度及較長年期的購屋貸款，幫助首購族減輕負擔。",
+      "buyer_impact": "偏好",
+      "impact_note": "對於符合資格的首購族，可獲得較低的貸款利率、較高的貸款額度及較長的還款年限，大幅降低購屋門檻與月付壓力。目前討論中的新青安2.0可能新增排富條款及年齡限制，對高收入或年長的首購族影響偏壞。",
+      "evidence_news": [
+        {
+          "title": "新青安該續辦？學者點劫貧濟富本質 眾人大呼「說到心坎兒了」 | 房市話題 | 房市",
+          "source": "經濟日報",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9iSWxWaU9VZjNrbFAwNVk5RmlORWJvWktLcnNaaFA5UGVmdUxtY1dKWUl4TkVQb3Z4RmRrMWhQUm8zUU84VUNHanJOVjJNdnAyWnJDN2ZuUVRoZw?oc=5"
+        },
+        {
+          "title": "新青安2.0懶人包｜新增年收200萬排富、50歲限制、婚育貸1500萬，最新草案一次看",
+          "source": "經理人",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBVMXQ1X1JROW5jakp5bkY2cm9hWVJUNVZYWjJEZm1KR05URktVdkZvaUd3ZUdfbTdqZEZHWnZlNDhLX0Etak52VGJ5R0cwT0thRFBhTzR3cDVGOEFSeHMwWQ?oc=5"
+        },
+        {
+          "title": "批新青安2.0劫貧濟富 章定煊：這群人才是「政策孤兒」",
+          "source": "ETtoday房產雲",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9lNEI0SDVvR1ZlUU1jblZlZ0JCWmZ0VjYwMGprOWluVjlEUzlLRVR5LWJ1ZmhsaV9HLWFFdFF5TmRWNnNQbzJoT1otaTJtU0HSAWtBVV95cUxNN3hyb24yVEtzSkQ5U1ZCY1pMWktnbGNUQmk5cHhzQVhySGZCM3NtT3JwTy0yOVY5V3U0OUttUGR4X3R2LUx0a1g3ZWE2a2lHT0I4UFVnQ3RqZzlVRU5VQWNOXzZCODFHOHRTYw?oc=5"
+        }
+      ]
+    },
+    {
+      "name": "囤房稅2.0（房屋稅條例修正）",
+      "status": "已施行",
+      "effective_date": "2026-07",
+      "description": "將房屋稅從縣市歸戶改為全國歸戶，並調高多屋持有者的稅率，以抑制囤房。",
+      "buyer_impact": "中性",
+      "impact_note": "對於僅持有一戶自用住宅的買方幾乎沒有影響；對於想購買第二戶以上非自用住宅的買方，未來持有成本將增加，可能促使部分屋主釋出房屋，增加市場供給。",
+      "evidence_news": [
+        {
+          "title": "7月新制！長照補助智慧科技輔具6萬元、敬老卡福利升級、囤房稅2.0、日本國際旅客稅，8大重點一次看",
+          "source": "康健雜誌",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9aTzJLODRaN3dBYmZJSU5EOFVJNHpDYzZoQVhpM1p5bU1TLW9sRUp6cFllV2JYZ0gyeUtERGZpcjNlUURtb0prTGtHaWlwaVpGT0c5N3VDMVA?oc=5"
+        }
+      ]
+    },
+    {
+      "name": "平均地權條例修正案",
+      "status": "已施行",
+      "effective_date": "2023-07",
+      "description": "限制預售屋、新建成屋換約轉售，並加重炒作行為罰則。",
+      "buyer_impact": "偏好",
+      "impact_note": "對於想購買預售屋自住的買方，減少了投資客炒作空間，有助於房價穩定，也更能避免被哄抬價格；但若有換約需求則將受限。",
+      "evidence_news": []
+    },
+    {
+      "name": "預售屋買賣定型化契約應記載及不得記載事項",
+      "status": "已施行",
+      "effective_date": "穩定施行中",
+      "description": "規範預售屋買賣契約內容，保障消費者權益，例如禁止不合理交屋保留款。",
+      "buyer_impact": "偏好",
+      "impact_note": "購買預售屋時，契約內容更趨於公平透明，買方權益更有保障，減少潛在糾紛。",
+      "evidence_news": [
+        {
+          "title": "大型預售屋建案進入對保期 安南地政主動輔導業者並宣導交易安全",
+          "source": "蕃新聞",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTEBrOE5vZDF3VmY2WXBFeVZGMkdCREJndzkzSml0eG1kYUZBUzlvVFlQVXdGUU5faWtoUEVvQWo3ZGdQYVNSTFM4R2tPbURqYUgza3c?oc=5"
+        },
+        {
+          "title": "安南大型預售屋陸續進入對保期 地政局攜手安南地政主動輔導業者保障購屋權益",
+          "source": "樂上新聞網",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1hZDVGd2JSU0xrdmRLWXg1c0hCQzE0S3ByblF2bkdxbDc1UzFWV0stVXQ4Y0lSYWtXNk1vVjF6WjFILW9IT2I1Smk3UlM?oc=5"
+        }
+      ]
+    },
+    {
+      "name": "實價登錄2.0",
+      "status": "已施行",
+      "effective_date": "2021-07",
+      "description": "擴大揭露門牌地號，預售屋全面納管，並加重罰則，使不動產交易資訊更透明。",
+      "buyer_impact": "偏好",
+      "impact_note": "買方可以查詢到更精確的交易價格資訊，有助於判斷合理房價，避免資訊不對稱。",
+      "evidence_news": [
+        {
+          "title": "財經青紅燈》實價從地板變天花板",
+          "source": "自由時報",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5HalpqenB5OWdidFJBRXMzZlprUFBNOVFWRnljQmg0UnhvbVotNDF4TzBaaXFWWUJPaE9EVGwyRGNsY0w2aWEzRVliZkY4V2pKZEJNdnduLWw?oc=5"
+        },
+        {
+          "title": "淡水地政推「買賣生活圈地圖」 區域行情一圖掌握",
+          "source": "好房網News",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBGbUN1N21tWHg4ZDlnTmVyRllwaTNnclRaNXQwZmpRNnpOcEo4a3ROTUNYMmpnVHMtR25tR19ZQVYxai1UM091SzZ3MTJjQlNya01faEZNVTFMeXdmNlhmdWlWaThLRmVlZFZF0gFwQVVfeXFMUGRHQXBiQ2c0VGI4ZVlwOGgzRk5TU09xM2lZQ2tEWXVSZHdZd0xkb1g2VXF1WVJsRnBGYTZEVHA5T2lrbDgweDRpRkhJQ1BvT3d6eDdzQlpleFJFdzZFXzJrZlNrZmN3THhUX1d2V3V4Tg?oc=5"
+        }
+      ]
+    },
+    {
+      "name": "房地合一稅2.0",
+      "status": "已施行",
+      "effective_date": "2021-07",
+      "description": "延長短期交易的重稅閉鎖期，並將預售屋納入課稅範圍，抑制短期炒作。",
+      "buyer_impact": "中性",
+      "impact_note": "對於自住買方影響不大；對於想短期買賣賺取價差的買方，稅負成本大幅增加，降低短期投機意願，有助於市場穩定。",
+      "evidence_news": [
+        {
+          "title": "繼承房產急售，可能不是賺到，而是被稅金重擊！",
+          "source": "大成報",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1qUTBBR0M0MDFnaDFSbENVbVF0VTNFUHk4d2hnZTJhcUQxQU9OR0ZWdWYtZTFNWXAzSVg5Vkk3YkV5cHRWNENiQl80VFZUWWdZRWpHeFhXUVdxYTI5V2lLWkdxb0wya3NTbW1WOGlpSkw?oc=5"
+        },
+        {
+          "title": "帝寶傳奇戶慘賠收場！從名媛手中買下 富商持有9年損失2.52億",
+          "source": "富房網",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5yVVBkVndjdldRQ2lkLUktb3FsTU9vNTRCYmwxejI1bnBpUjhIVWdOb1F3OW1ONVBfdmhnWWYyMXNpM2ZxcnBieFZwa1VvUdIBX0FVX3lxTE0xUGNackt2NWdoZVNEcWRjSVRXakdyVXRQZE9odWtlZGlJaGlDYml2MVN4RkNPZGJUeklGS0pacG5QVHR5cHprX0g0T0cyR2pTbnA4V1RTUXBVMTRBMlFj?oc=5"
+        },
+        {
+          "title": "「帝寶傳奇戶」賣9年終於賣掉了！原屋主賠售2.52億元",
+          "source": "好房網News",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1mWVNGei1xdjE2elZIOEktd3RJYnVHYkVndG5HeEpRV3ZYRGFMTzlPMG1qbHpDbWlmMUlxcFJzVWYyVjkwa2F6UmJVdUtnT3BidWZnM2t0dTlIVWRVSGNEbVNfR0kwNUJnN3Bv0gFwQVVfeXFMTHUR0MUlic1BCQzJvYlRGMTc4WlhrYjVlaklPdjQ1ZVZITVhaS1R0a3VYRGVmaS1VYXlJaGE5S1lNbG91QU83LUhXdTdNZWg1UkM2MzVNMEJQX25oTjNzeHpmcXMzR1hiUzBteU5UeW9iNw?oc=5"
+        },
+        {
+          "title": "帝寶「傳奇戶」終於賣了！9年才成交 屋主慘賠2.52億元 | 太報",
+          "source": "LINE TODAY",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8xMXU3azJvUzVHbXM1ZnpwWHhWUmdabnRiVVBwRlo2d2ZRclJuMGQzelZRUjRWUG5KVnVlUVREMjdpQ3B0NUhXdE1rMzdoc0x1V0o1S3Jn?oc=5"
+        }
+      ]
+    },
+    {
+      "name": "不動產經紀業管理條例",
+      "status": "已施行",
+      "effective_date": "穩定施行中",
+      "description": "規範不動產經紀業的業務行為，確保交易安全與消費者權益。",
+      "buyer_impact": "偏好",
+      "impact_note": "透過合法經紀業者購屋能獲得較完善的服務與保障，減少交易風險。",
+      "evidence_news": []
+    },
+    {
+      "name": "建築法",
+      "status": "已施行",
+      "effective_date": "穩定施行中",
+      "description": "規範建築物的興建、使用與管理，確保建築品質與公共安全。",
+      "buyer_impact": "偏好",
+      "impact_note": "保障所購房屋符合基本安全與品質規範，避免買到危樓或違建。",
+      "evidence_news": []
+    },
+    {
+      "name": "土地稅法",
+      "status": "已施行",
+      "effective_date": "穩定施行中",
+      "description": "規範土地增值稅、地價稅等稅目，影響土地持有與移轉成本。",
+      "buyer_impact": "中性",
+      "impact_note": "購屋後需負擔地價稅，若未來出售則需考量土地增值稅，影響持有及轉手成本。",
+      "evidence_news": []
+    }
+  ],
+  "evidence_news": [
+    {
+      "title": "中市地政局簡政創新榮獲3項獎項 智慧地政成果備受肯定",
+      "source": "蕃新聞",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9rNTV2NXlhNm0za0g5OUF1Y1huQlJPdGowWk9lVTMwdGZ0VnpKVzVqUHNFNEtBMF96THJ6Mm9KWVV0dXVueEZnTGJPT2wwdVRLS2c?oc=5"
+    },
+    {
+      "title": "買不起房只能租？三重家庭租屋3年暴增61% 最熱門生活圈曝光",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5IbnoxUFFSSE42d3h1dTk1V0ktS0R5cmJ3LTc3UnBIb2I5bGtFNGxLZkVwemtPb0ZCTThLLTQ1a1hLa2tIM2k2MFNlNGZXRlI4?oc=5"
+    },
+    {
+      "title": "央行是否再祭信用管制?楊金龍： 目前到這裡",
+      "source": "MSN",
+      "url": "https://news.google.com/rss/articles/CBMi1gNBVV95cUxNS1VHS2NoY0J3ejFhaFlsdm9NR3UtYTVZVU5WeWFRamZka3A2TWtKT1IyVkU5cDNUd3lGdlE3anBVYVloVGZtN0NnRHRUSkFrMXo4MTBJdThvVkFPSXdSbVJVQVV2N0NXbnoycXpJUFl2akc0N0tCUjNpNG5UdDl6SGlVa0RtR2E0MzBzcS1DbDN4VGxSdWVfNVl0Vkd0WFR1bVotczlNekVZSHg1anA1MEhaUnZrWHpaWVY0ZkV0eDVFVUtWZnZzU00xUDVSbFZYQkFZWEwzT1J5LXdXeTRiZWNXVmxZeWMxU3MyYWxyV0Rfc2hvMjdLbDcxZHQ0c1pBVnc0VUVIUG1yMEhrQmVYWWNjbWVCdVZjdlVVMmFCU0RfNkd4U0hoOTg5OW1BQVR6RlFtcFdFYWQxYlRrTFZlcUt2SEtibmFodlNYb0lfRmQ3aWpTY2dJQ0VPcFBMRmRXVElYSXJ1THVGS0h6WWhNem1taFBaMGZvc1dFUnZSa3BqTkRDcU04Si1QSHBUZzdjLWtxZ1VreGN2QVR0Q194TXFuVUZLMGJhaGd1WVJrU0R1bnRtcjNEWkhMSUt4dEs2LUxfb3RFQjZ6c0k5RjBFekY5TF9Qdw?oc=5"
+    },
+    {
+      "title": "淡水地政推「買賣生活圈地圖」 區域行情一圖掌握",
+      "source": "好房網News",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBGbUN1N21tWHg4ZDlnTmVyRllwaTNnclRaNXQwZmpRNnpOcEo4a3ROTUNYMmpnVHMtR25tR19ZQVYxai1UM091S_Z3MTJjQlNya01faEZNVTFMeXdmNlhmdWlWaThLRmVlZFZF0gFwQVVfeXFMUGRHQXBiQ2c0VGI4ZVlwOGgzRk5TU09xM2lZQ2tEWXVSZHdZd0xkb1g2VXF1WVJsRnBGYTZEVHA5T2lrbDgweDRpRkhJQ1BvT3d6eDdzQlpleFJFdzZFXzJrZlNrZmN3THhUX1d2V3V4Tg?oc=5"
+    },
+    {
+      "title": "永慶觀察七都房價「跌不下去」回穩！葉凌棋：逾四成民眾考慮賣股轉房",
+      "source": "TechNews 科技新報",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUWhGUFREVjcxZGdWeDE3TS1ZSlpfbFpuY2NsQjd6WWRoS0cxaDc0bW00SDZmUVRidkpscHdoYkNoOWFuT1BWeTJocGxLYUx5bU5aTjlmZ2Vhb28zWVV3WFB1UTVoRmpLdjhrU0xaX3NuYTlaRjB4QXBtMUt3YkZEYjNvRkN4d2V6QlRkOUNn?oc=5"
+    },
+    {
+      "title": "帝寶傳奇戶慘賠收場！從名媛手中買下 富商持有9年損失2.52億",
+      "source": "富房網",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5yVVBkVndjdldRQ2lkLUktb3FsTU9vNTRCYmwxejI1bnBpUjhIVWdOb1F3OW1ONVBfdmhnWWYyMXNpM2ZxcnBieFZwa1VvUdIBX0FVX3lxTE0xUGNackt2NWdoZVNEcWRjSVRXakdyVXRQZE9odWtlZGlJaGlDYml2MVN4RkNPZGJUeklGS0pacG5QVHR5cHprX0g0T0cyR2pTbnA4V1RTUXBVMTRBMlFj?oc=5"
+    },
+    {
+      "title": "高雄買房還有1字頭！首購族最愛千萬以下宅 交易熱區「這裡」可撿最低價",
+      "source": "FTNN 新聞網",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE94cEVzdVZqYVdsbFhQSXBjaFVwR0xtNVdvUWQ2QkdkS2hHcEgwajJzVUlSYkFocS1SV3VncEpvQV9ja256d0ZzeXRQdw?oc=5"
+    },
+    {
+      "title": "「帝寶傳奇戶」賣9年終於賣掉了！原屋主賠售2.52億元",
+      "source": "好房網News",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1mWVNGei1xdjE2elZIOEktd3RJYnVHYkVndG5HeEpRV3ZYRGFMTzlPMG1qbHpDbWlmMUlxcFJzVWYyVjkwa2F6UmJVdUtnT3BidWZnM2t0dTlIVWRVSGNEbVNfR0kwNUJnN3Bv0gFwQVVfeXFMTHUR0MUlic1BCQzJvYlRGMTc4WlhrYjVlaklPdjQ1ZVZITVhaS1R0a3VYRGVmaS1VYXlJaGE5S1lNbG91QU83LUhXdTdNZWg1UkM2MzVNMEJQX25oTjNzeHpmcXMzR1hiUzBteU5UeW9iNw?oc=5"
+    },
+    {
+      "title": "三高夾擊購屋族 首季竟出現畸形房市現象",
+      "source": "好房網News",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBfWGN6dlRWbFE2WDEwSEliV0JITno4VGNuYjNHR0FCV1JWSl9GUnk4ZjQzRVBQNjNHX1daTVZzWFo0WEc4TkR5WGNud3hRdTB2MmhGNVFHTGprVzI4UjVCbzNUMXNwZ01HLXdZ0gFwQVVfeXFMUGxwSWp1LXpWbGJwWW56M1RoNGhvZ01LZklCbTJyU0ViMGF6ZDctcGUtNFlvWjFic0g5ang4ejNRT3pDLS03aHAzV0tYWTZGN2dpclZuRjdUdEhfWGw5al9yRkxudHhGblZIZlpyOERibQ?oc=5"
+    },
+    {
+      "title": "帝寶「傳奇戶」終於賣了！9年才成交 屋主慘賠2.52億元 | 太報",
+      "source": "LINE TODAY",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8xMXU3azJvUzVHbXM1ZnpwWHhWUmdabnRiVVBwRlo2d2ZRclJuMGQzelZRUjRWUG5KVnVlUVREMjdpQ3B0NUhXdE1rMzdoc0x1V0o1S3Jn?oc=5"
+    },
+    {
+      "title": "大型預售屋建案進入對保期 安南地政主動輔導業者並宣導交易安全",
+      "source": "蕃新聞",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBrOE5vZDF3VmY2WXBFeVZGMkdCREJndzkzSml0eG1kYUZBUzlvVFlQVXdGUU5faWtoUEVvQWo3ZGdQYVNSTFM4R2tPbURqYUgza3c?oc=5"
+    },
+    {
+      "title": "新青安該續辦？學者點劫貧濟富本質 眾人大呼「說到心坎兒了」 | 房市話題 | 房市",
+      "source": "經濟日報",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9iSWxWaU9VZjNrbFAwNVk5RmlORWJvWktLcnNaaFA5UGVmdUxtY1dKWUl4TkVQb3Z4RmRrMWhQUm8zUU84VUNHanJOVjJNdnAyWnJDN2ZuUVRoZw?oc=5"
+    },
+    {
+      "title": "新北三重家庭租客暴增61％！最夯租屋生活圈曝光 「這裡」平均月租1.7萬元最親民",
+      "source": "好房網News",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1iZlpSSkx2dDFiS2hoOTRqVEZwOFVSWndQdGNYY1JhMldKM1FYeFJuSHV0U3dkOUYwY2FyS3hSbklRNE9FdDlfYXdLQmgyNlZmaGVSWWZTN0dFV2pSREhUb0hEOXkzdzBYWkRv0gFwQVVfeXFMT3pUY0I4UG12aHVKZURzbGFyN1NsTUdRbjcwUHZFTkRvSnBfdjhodm1oYzd1ZWlfb1liOGJ3bk1BdVY2Yld5WkZrS2IwNXM5Mi1MVXhXZzRjT0VCcTVaNzRHSmFJdVg5MHR2bEhZT3l0Nw?oc=5"
+    },
+    {
+      "title": "財經青紅燈》實價從地板變天花板",
+      "source": "自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5HalpqenB5OWdidFJBRXMzZlprUFBNOVFWRnljQmg0UnhvbVotNDF4TzBaaXFWWUJPaE9EVGwyRGNsY0w2aWEzRVliZkY4V2pKZEJNdnduLWw?oc=5"
+    },
+    {
+      "title": "繼承房產急售，可能不是賺到，而是被稅金重擊！",
+      "source": "大成報",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1qUTBBR0M0MDFnaDFSbENVbVF0VTNFUHk4d2hnZTJhcUQxQU9OR0ZWdWYtZTFNWXAzSVg5Vkk3YkV5cHRWNENiQl_4VFZUWWdZRWpHeFhXUVdxYTI5V2lLWkdxb0wya3NTbW1WOGlpSkw?oc=5"
+    },
+    {
+      "title": "安南大型預售屋陸續進入對保期 地政局攜手安南地政主動輔導業者保障購屋權益",
+      "source": "樂上新聞網",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1hZDVGd2JSU0xrdmRLWXg1c0hCQzE0S3ByblF2bkdxbDc1UzFWV0stVXQ4Y0lSYWtXNk1vVjF6WjFILW9IT2I1Smk3UlM?oc=5"
+    },
+    {
+      "title": "7月新制！長照補助智慧科技輔具6萬元、敬老卡福利升級、囤房稅2.0、日本國際旅客稅，8大重點一次看",
+      "source": "康健雜誌",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9aTzJLODRaN3dBYmZJSU5EOFVJNHpDYzZoQVhpM1p5bU1TLW9sRUp6cFllV2JYZ0gyeUtERGZpcjNlUURtb0prTGtHaWlwaVpGT0c5N3VDMVA?oc=5"
+    },
+    {
+      "title": "央行按兵不動 房仲：下半年房市脫離最冷期但難見大行情 | 中央廣播電臺",
+      "source": "LINE TODAY",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5tR1E0QnlDa0dPV01RZV9vdXFwbl9HbjZDUmljZ0RaRkxOaklaUEQwUi0zU0o3S0dFQ29pcjdFanpuaEJTRHUtVmlCcEpWalJfUHZJbUln?oc=5"
+    },
+    {
+      "title": "新青安2.0懶人包｜新增年收200萬排富、50歲限制、婚育貸1500萬，最新草案一次看",
+      "source": "經理人",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBVMXQ1X1JROW5jakp5bkY2cm9hWVJUNVZYWjJEZm1KR05URktVdkZvaUd3ZUdfbTdqZEZHWnZlNDhLX0Etak52VGJ5R0cwT0thRFBhTzR3cDVGOEFSeHMwWQ?oc=5"
+    },
+    {
+      "title": "批新青安2.0劫貧濟富 章定煊：這群人才是「政策孤兒」",
+      "source": "ETtoday房產雲",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9lNEI0SDVvR1ZlUU1jblZlZ0JCWmZ0VjYwMGprOWluVjlEUzlLRVR5LWJ1ZmhsaV9HLWFFdFF5TmRWNnNQbzJoT1otaTJtU0HSAWtBVV95cUxNN3hyb24yVEtzSkQ5U1ZCY1pMWktnbGNUQmk5cHhzQVhySGZCM3NtT3JwTy0yOVY5V3U0OUttUGR4X3R2LUx0a1g3ZWE2a2lHT0I4UFVnQ3RqZzlVRU5VQWNOXzZCODFHOHRTYw?oc=5"
+    }
+  ]
+}
