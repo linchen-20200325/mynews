@@ -74,6 +74,7 @@ from prompt_builder import (
     build_focus_user_prompt,
     build_stock_query_user_prompt,
     build_housing_user_prompt,
+    build_housing_reg_user_prompt,
     build_news_etf_user_prompt,
     build_market_digest_prompt,
 )
@@ -207,6 +208,7 @@ NEWS_ETF_STRATEGY_SYSTEM_PROMPT = prompt_loader.load("news_etf_strategy")
 
 
 HOUSING_SYSTEM_PROMPT = prompt_loader.load("housing")
+HOUSING_REG_SYSTEM_PROMPT = prompt_loader.load("housing_regulation")
 
 
 MASTER_DECISION_SYSTEM_PROMPT = prompt_loader.load("master_decision")
@@ -698,6 +700,34 @@ def get_housing_analysis(news: list[dict], prices: dict | None, today: str,
         r for r in data["regions"]
         if isinstance(r, dict) and r.get("county") in TAIWAN_COUNTIES
     ]
+    return data
+
+
+def fetch_housing_reg_news() -> list[dict]:
+    """抓台灣房產法規相關新聞（每月觸發一次）。"""
+    queries = [
+        "平均地權條例", "囤房稅", "房地合一稅", "不動產法規",
+        "新青安房貸", "央行信用管制", "預售屋換約", "實價登錄",
+        "房屋稅 修法", "土地稅 改革",
+    ]
+    return news_fetcher.fetch_news(
+        queries=queries,
+        lang="zh", region="TW",
+        max_results=20,
+        since_hours=24 * 35,  # 回溯 35 天確保月更不漏
+    )
+
+
+def get_housing_regulation_analysis(news: list[dict], today: str) -> dict:
+    """Gemini 讀房產法規新聞 → 整理各法規狀態與對買方影響（月報格式）。"""
+    data = gemini_client.call_gemini_for_json(
+        HOUSING_REG_SYSTEM_PROMPT, build_housing_reg_user_prompt(news, today)
+    )
+    data.setdefault("report_date", today)
+    data.setdefault("trend", "持平")
+    data.setdefault("summary", "")
+    data.setdefault("regulations", [])
+    data.setdefault("evidence_news", [])
     return data
 
 

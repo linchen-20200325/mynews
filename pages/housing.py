@@ -13,6 +13,8 @@ import tz_utils
 from app_core import (
     HOUSING_PATH,
     HOUSING_ARCHIVE_DIR,
+    HOUSING_REG_PATH,
+    HOUSING_REG_ARCHIVE_DIR,
     GEOJSON_PATH,
     HOUSING_SENTIMENT_STYLE,
     ensure_gemini_key,
@@ -586,8 +588,140 @@ def sec_housing() -> None:
     live = st.session_state.get("live_housing")
     render_housing(live or pick_report(HOUSING_PATH, HOUSING_ARCHIVE_DIR))
 
+_REG_BUYER_IMPACT_STYLE = {
+    "偏好": ("🟢", "success"),
+    "中性": ("🟡", "info"),
+    "偏壞": ("🔴", "error"),
+}
+
+_REG_TREND_STYLE = {
+    "趨嚴": ("🔒 趨嚴（打炒房）", "error"),
+    "趨鬆": ("🔓 趨鬆（刺激買氣）", "success"),
+    "持平": ("⚖️ 持平", "info"),
+}
+
+_REG_STATUS_EMOJI = {
+    "已施行": "✅",
+    "修法中": "🔄",
+    "討論中": "💬",
+    "已廢止": "❌",
+    "穩定施行中": "✅",
+}
+
+
+def _housing_reg_days_old(data: dict) -> int | None:
+    """回傳法規月報距今幾天；無法解析回 None。"""
+    date_str = data.get("report_date", "")
+    if not date_str:
+        return None
+    try:
+        from datetime import date
+        rep = date.fromisoformat(date_str)
+        today = date.fromisoformat(tz_utils.taiwan_today())
+        return (today - rep).days
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def render_housing_regulation_live_panel() -> None:
+    """法規月報：手動觸發立即抓取並請 Gemini 整理。"""
+    with st.container(border=True):
+        st.markdown("#### ⚡ 即時更新房產法規月報")
+        st.caption("抓取近 35 天台灣房產法規相關新聞，請 Gemini 整理各法規現況與對買方影響。"
+                   "建議每月觸發一次即可（法規異動頻率低）。")
+        if st.button("🔄 立即抓取房產法規新聞並整理", use_container_width=True,
+                     disabled=not ensure_gemini_key()):
+            with st.spinner("抓取法規新聞 → Gemini 整理中…（約 20–40 秒）"):
+                try:
+                    from update_data import fetch_housing_reg_news, get_housing_regulation_analysis
+                    news = fetch_housing_reg_news()
+                    today = tz_utils.taiwan_today()
+                    data = get_housing_regulation_analysis(news, today)
+                    st.session_state["live_housing_reg"] = data
+                    # 存檔
+                    import json as _json
+                    _str = _json.dumps(data, ensure_ascii=False, indent=2)
+                    save_to_github(str(HOUSING_REG_PATH), data, f"（法規月報 {today}）")
+                    ym = today[:7]  # YYYY-MM
+                    save_to_github(f"data/housing_reg/{ym}.json", data, f"（法規月報封存 {ym}）")
+                    st.success(f"完成！整理了 {len(data.get('regulations', []))} 項法規。")
+                    st.rerun()
+                except Exception as exc:  # noqa: BLE001
+                    st.error(f"更新失敗：{exc}")
+
+
+def render_housing_regulation(data: dict | None) -> None:
+    """渲染房產法規月報主畫面。"""
+    if not data:
+        st.info("尚無房產法規月報。請按上方「⚡ 即時更新」產生（或等下次月排程）。")
+        return
+
+    days = _housing_reg_days_old(data)
+    trend_key = data.get("trend", "持平")
+    trend_label, trend_type = _REG_TREND_STYLE.get(trend_key, ("⚖️ 持平", "info"))
+
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.metric("整體法規趨勢", trend_label)
+    with col2:
+        if days is not None:
+            freshness = "🟢 本月" if days <= 31 else f"⚠️ {days} 天前"
+            st.metric("資料更新", freshness,
+                      help=f"報告日期：{data.get('report_date', '—')}")
+
+    if data.get("summary"):
+        getattr(st, trend_type)(data["summary"])
+
+    # 法規卡片
+    regs = data.get("regulations") or []
+    if not regs:
+        st.info("本月無法規更新資料。")
+        return
+
+    st.markdown(f"**📜 現行主要法規（共 {len(regs)} 項）**")
+    for reg in regs:
+        impact_key = reg.get("buyer_impact", "中性")
+        emoji, container_type = _REG_BUYER_IMPACT_STYLE.get(impact_key, ("🟡", "info"))
+        status = reg.get("status", "")
+        status_icon = _REG_STATUS_EMOJI.get(status, "📋")
+        with st.container(border=True):
+            col_a, col_b = st.columns([3, 1])
+            with col_a:
+                st.markdown(f"**{status_icon} {reg.get('name', '—')}**　"
+                            f"`{status}`　{reg.get('effective_date', '')}")
+            with col_b:
+                st.markdown(f"{emoji} **{impact_key}**")
+            if reg.get("description"):
+                st.caption(reg["description"])
+            if reg.get("impact_note"):
+                getattr(st, container_type)(reg["impact_note"])
+
+    _render_evidence_news(data.get("evidence_news") or [])
+    st.caption("⚠️ 法規整理由 AI 自動彙整真實新聞而成；法規細節以立法院/官方公告為準，非法律建議。")
+
+
+def sec_regulation() -> None:
+    """房產法規月報區塊：顯示月更頻率提示 + 最新月報內容。"""
+    st.subheader("📜 房產法規月報")
+    st.caption("每月整理一次台灣主要房產法規（平均地權、囤房稅、信用管制、新青安等）現況與買方影響。")
+
+    live = st.session_state.get("live_housing_reg")
+    stored = load_json(HOUSING_REG_PATH)
+    current = live or stored
+    days = _housing_reg_days_old(current) if current else None
+
+    with st.expander(
+        "⚡ 立即更新法規月報" + (f"　（上次更新：{days} 天前）" if days is not None else ""),
+        expanded=(days is None or days > 31),
+    ):
+        render_housing_regulation_live_panel()
+
+    render_housing_regulation(current)
+
+
 def page_housing() -> None:
     st.header("🏠 台灣房市")
     payload = {"房市觀察": load_json(HOUSING_PATH)}
     render_market_digest("台灣房市", {k: v for k, v in payload.items() if v})
     st.divider(); sec_housing()
+    st.divider(); sec_regulation()

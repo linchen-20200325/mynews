@@ -212,6 +212,17 @@ def build_news_etf_user_prompt(news_text: str, today: str) -> str:
     )
 
 
+def build_housing_reg_user_prompt(news: list[dict], today: str) -> str:
+    """房產法規月報：把法規新聞包成 user content，請 Gemini 整理法規現況。"""
+    return (
+        f"今天的日期是 {today}。\n"
+        f"請根據以下台灣房產法規相關新聞，整理目前主要法規的現況與對買方的影響，"
+        f"並補充新聞未提到但已穩定施行的重要法規（標注「穩定施行中」）。"
+        f"嚴格輸出 JSON。report_date 請填 {today}。\n\n"
+        f"【房產法規相關新聞】\n{format_news_block(news)}"
+    )
+
+
 def build_market_digest_prompt(view: str, payload: dict, today: str) -> str:
     """把該領域當日各面板數據瘦身成精簡 JSON brief(去掉 raw_news 等重欄位、截斷長字串)。"""
     def _slim(d):

@@ -59,3 +59,7 @@ ARCHIVE_DECISION = Path("data/decision")          # 決策歸檔目錄
 # ── 中線翻轉偵測（reversal_signals 排程產物）──
 LATEST_REVERSAL = Path("latest_reversal.json")   # 最新翻轉偵測 JSON
 ARCHIVE_REVERSAL = Path("data/reversal")          # 翻轉偵測歸檔目錄
+
+# ── 房產法規月報（每月更新一次）──
+LATEST_HOUSING_REG = Path("latest_housing_reg.json")  # 最新房產法規摘要
+ARCHIVE_HOUSING_REG = Path("data/housing_reg")         # 法規月報歸檔目錄（YYYY-MM.json）
