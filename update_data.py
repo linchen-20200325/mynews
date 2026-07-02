@@ -713,7 +713,7 @@ def fetch_housing_reg_news() -> list[dict]:
     return news_fetcher.fetch_news(
         queries=queries,
         lang="zh", region="TW",
-        max_results=20,
+        limit=20,
         since_hours=24 * 35,  # 回溯 35 天確保月更不漏
     )
 
