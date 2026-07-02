@@ -45,10 +45,10 @@ def reverse_index(data: dict) -> list[dict]:
     holders: dict[str, list[dict]] = {}
     for code, etf_name, holdings in _iter_etfs(data):
         for ticker in holdings:
-            ticker_str = str(ticker)
-            if ticker_str in etf_codes or _ETF_CODE_RE.match(ticker_str):
+            ticker_norm = str(ticker).zfill(4) if str(ticker).isdigit() else str(ticker)
+            if _ETF_CODE_RE.match(ticker_norm) or ticker_norm in etf_codes:
                 continue
-            holders.setdefault(ticker_str, []).append({"code": code, "name": etf_name})
+            holders.setdefault(ticker_norm, []).append({"code": code, "name": etf_name})
 
     rows = [
         {
