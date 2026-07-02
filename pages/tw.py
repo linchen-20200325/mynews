@@ -707,7 +707,6 @@ def sec_intl() -> None:
         st.info("尚無國際盤預警存檔。可用上方『即時產生』取得。")
         return
     render_intl_alert(data)
-    render_confluence(data)
 
 
 def sec_chip() -> None:

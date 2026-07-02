@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import paths  # 路徑 SSOT
@@ -33,12 +34,17 @@ def _iter_etfs(data: dict):
             yield code, code, info
 
 
+_ETF_CODE_RE = re.compile(r"^\d{5}[A-Za-z]?$")
+
+
 def reverse_index(data: dict) -> list[dict]:
     """反查:回傳 [{ticker, name, etf_count, etfs:[{code,name}]}],依檔數由高到低。"""
     names = data.get("stock_names", {}) or {}
     holders: dict[str, list[dict]] = {}
     for code, etf_name, holdings in _iter_etfs(data):
         for ticker in holdings:
+            if _ETF_CODE_RE.match(str(ticker)):  # skip ETF codes appearing as components
+                continue
             holders.setdefault(str(ticker), []).append({"code": code, "name": etf_name})
 
     rows = [

@@ -396,7 +396,11 @@ def _render_evidence_news(evidence: list, label: str = "📰 佐證新聞") -> N
 def _render_stock_card_group(stocks: list, etf_counts: dict | None = None) -> None:
     """依傾向(利多/利空/觀望)分組顯示個股卡片。etf_counts 僅台股版傳入。"""
     for label in ("利多", "利空", "觀望"):
-        group = [s for s in stocks if s.get("sentiment") == label]
+        group = [
+            s for s in stocks
+            if s.get("sentiment") == label
+            and s.get("news_count", s.get("mention_count", 0)) > 0
+        ]
         if not group:
             continue
         emoji, _ = SENTIMENT_STYLE.get(label, ("", "info"))
