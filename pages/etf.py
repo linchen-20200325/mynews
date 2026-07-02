@@ -374,6 +374,8 @@ def render_etf_lookup(data: dict | None = None) -> None:
     etfs = data.get("etfs", {})
     # 檔案來源走快取的反查;即時抓取(live)的資料則即時反查,確保剛抓的馬上反映
     rows = etf_data.get_reverse_index() if from_cache else etf_holdings.reverse_index(data)
+    # 渲染層二次過濾：清除快取內殘留的 ETF 代號列（stale cache 安全網）
+    rows = [r for r in rows if not etf_holdings._ETF_CODE_RE.match(r["ticker"]) and r["ticker"] not in etfs]
 
     # 股價(供「價位範圍」篩選):本次即時抓到的優先,否則讀 repo 內 stock_prices.json
     price_data = st.session_state.get("price_data_live") or price_fetcher.load_prices()

@@ -58,6 +58,7 @@ def reverse_index(data: dict) -> list[dict]:
             "etfs": sorted(lst, key=lambda e: e["code"]),
         }
         for ticker, lst in holders.items()
+        if not (_ETF_CODE_RE.match(ticker) or ticker in etf_codes)
     ]
     rows.sort(key=lambda r: (r["etf_count"], r["ticker"]), reverse=True)
     return rows
