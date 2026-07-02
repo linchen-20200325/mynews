@@ -9,6 +9,7 @@ import tz_utils
 import etf_data
 import season_chart
 import reversal_signals
+import ui_helpers
 from app_core import (
     INTL_ALERT_PATH,
     INTL_ALERT_ARCHIVE_DIR,
@@ -299,14 +300,19 @@ def render_chip(data: dict) -> None:
 
     latest = rows[0]
     c1, c2, c3, c4 = st.columns(4)
-    c1.metric("外資(最新)", f"{latest['外資']:+.0f} 億")
-    c2.metric("投信(最新)", f"{latest['投信']:+.0f} 億")
-    c3.metric("自營商(最新)", f"{latest['自營商']:+.0f} 億")
-    c4.metric("三大法人合計", f"{latest['三大法人合計']:+.0f} 億")
+    ui_helpers.metric_tip(c1, "外資(最新)", f"{latest['外資']:+.0f} 億", tip_key="外資")
+    ui_helpers.metric_tip(c2, "投信(最新)", f"{latest['投信']:+.0f} 億", tip_key="投信")
+    ui_helpers.metric_tip(c3, "自營商(最新)", f"{latest['自營商']:+.0f} 億", tip_key="自營商")
+    ui_helpers.metric_tip(c4, "三大法人合計", f"{latest['三大法人合計']:+.0f} 億", tip_key="三大法人")
 
     st.subheader("📈 近期買賣超趨勢(億元)")
     chart_df = df.set_index("日期")[["外資", "投信", "自營商"]].iloc[::-1]  # 還原成由舊到新
     st.line_chart(chart_df)
+    ui_helpers.render_how_to_read(
+        "Y軸 = 當日淨買進（億元）。正值（往上）= 買超，負值（往下）= 賣超。"
+        "三色合計看三大法人合力方向：持續買超代表法人偏多，連續賣超需留意籌碼轉弱。"
+        "（滑鼠移到指標名稱上可查看白話說明）"
+    )
 
     st.subheader("📋 每日明細(億元)")
     st.dataframe(df, use_container_width=True, hide_index=True)
@@ -319,9 +325,16 @@ def render_chip(data: dict) -> None:
     if margin:
         st.subheader("💳 融資餘額(散戶槓桿/斷頭訊號)")
         m1, m2 = st.columns(2)
-        m1.metric("融資餘額", f"{margin.get('margin_today', 0)/update_data.OKU:.0f} 億",
-                  delta=f"{margin.get('margin_chg_pct', 0):+.2f}%")
-        m2.metric("單日增減", f"{margin.get('margin_chg', 0)/update_data.OKU:+.0f} 億")
+        ui_helpers.metric_tip(
+            m1, "融資餘額",
+            f"{margin.get('margin_today', 0)/update_data.OKU:.0f} 億",
+            delta=f"{margin.get('margin_chg_pct', 0):+.2f}%",
+        )
+        ui_helpers.metric_tip(
+            m2, "單日增減(融資)",
+            f"{margin.get('margin_chg', 0)/update_data.OKU:+.0f} 億",
+            tip_key="融資增減",
+        )
         st.caption(f"資料:{margin.get('date', '—')}(證交所 MI_MARGN,真實)。"
                    "融資大減=去槓桿/斷頭賣壓,為共振偵測四力之一。")
 
@@ -331,9 +344,15 @@ def render_chip(data: dict) -> None:
         stance = fut.get("stance", "中性")
         badge = {"偏多": "🟢 偏多", "偏空": "🔴 偏空", "中性": "⚪ 中性"}.get(stance, stance)
         f1, f2, f3 = st.columns(3)
-        f1.metric("外資 期貨方向", badge, delta=f"{fut.get('foreign_net_oi', 0):+,} 口")
-        f2.metric("投信 留倉淨額", f"{fut.get('trust_net_oi', 0):+,} 口")
-        f3.metric("自營 留倉淨額", f"{fut.get('dealer_net_oi', 0):+,} 口")
+        ui_helpers.metric_tip(f1, "外資 期貨方向", badge,
+                              delta=f"{fut.get('foreign_net_oi', 0):+,} 口",
+                              tip_key="台指期")
+        ui_helpers.metric_tip(f2, "投信 留倉淨額",
+                              f"{fut.get('trust_net_oi', 0):+,} 口",
+                              tip_key="留倉")
+        ui_helpers.metric_tip(f3, "自營 留倉淨額",
+                              f"{fut.get('dealer_net_oi', 0):+,} 口",
+                              tip_key="留倉")
         st.caption(
             f"資料:{fut.get('date', '—')}(期交所「三大法人台指期」未平倉口數淨額,真實)。"
             "⚠️ 這是**前一交易日盤後**的『留倉(現在仍持有的部位)』,正=淨多偏多、負=淨空偏空;"
@@ -711,6 +730,14 @@ def sec_intl() -> None:
 
 def sec_chip() -> None:
     st.subheader("📊 法人籌碼 — 三大法人買賣超(事後驗證真實賣壓)")
+    ui_helpers.render_spec_card(
+        name="三大法人買賣超 + 融資餘額",
+        source="證交所 BFI82U（三大法人）＋ MI_MARGN（融資），真實數據非 AI 估算",
+        freq="每個交易日盤後 17:30 更新（台灣時間）",
+        bull="外資持續買超 ＋ 融資餘額低 → 法人主導上漲、散戶槓桿乾淨",
+        bear="外資轉賣超 ＋ 融資餘額高 → 機構撤離 ＋ 散戶槓桿過重，斷頭風險上升",
+        note="外資現貨可能賣超但期貨仍留多單（對沖策略），兩者互補看、不宜孤立判斷。",
+    )
     data = pick_report(CHIP_PATH, CHIP_ARCHIVE_DIR)
     if data is None:
         st.info("尚無三大法人籌碼存檔。每日排程會自動更新。")
@@ -899,6 +926,15 @@ def tool_reversal_detector() -> None:
 # ── 4 大頁 ─────────────────────────────────────────────────────────────────
 def page_tw() -> None:
     st.header("📊 台股")
+    ui_helpers.render_intro_banner(
+        page_key="tw",
+        title="台股頁",
+        steps=[
+            "先看 🌏 **國際盤預警**：美股夜盤大跌時，台股隔日通常跟跌；平靜日可放心布局。",
+            "再看 📊 **法人籌碼**：外資持續買超 = 主力看多；搭配融資餘額確認散戶槓桿是否過熱。",
+            "最後看 📈 **台股觀察**：AI 整理當日新聞熱門標的，配合籌碼方向交叉確認。",
+        ],
+    )
     payload = {
         "國際盤預警": load_json(INTL_ALERT_PATH),
         "法人籌碼": load_json(CHIP_PATH),

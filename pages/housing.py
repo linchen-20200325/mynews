@@ -10,6 +10,7 @@ import housing_fetcher
 import numutil
 import update_data
 import tz_utils
+import ui_helpers
 from app_core import (
     HOUSING_PATH,
     HOUSING_ARCHIVE_DIR,
@@ -662,7 +663,14 @@ def render_housing_regulation(data: dict | None) -> None:
 
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.metric("整體法規趨勢", trend_label)
+        st.metric(
+            "整體法規趨勢", trend_label,
+            help=(
+                "🔒 趨嚴（打炒房）：政府積極限制炒作、貸款條件收緊，對投資客偏壞但有助抑制泡沫。\n"
+                "🔓 趨鬆（刺激買氣）：放寬管制、降低貸款門檻，對首購族偏有利。\n"
+                "⚖️ 持平：法規無重大異動，市場靠供需自行調節。"
+            ),
+        )
     with col2:
         if days is not None:
             freshness = "🟢 本月" if days <= 31 else f"⚠️ {days} 天前"
@@ -704,6 +712,14 @@ def sec_regulation() -> None:
     """房產法規月報區塊：顯示月更頻率提示 + 最新月報內容。"""
     st.subheader("📜 房產法規月報")
     st.caption("每月整理一次台灣主要房產法規（平均地權、囤房稅、信用管制、新青安等）現況與買方影響。")
+    ui_helpers.render_spec_card(
+        name="房產法規月報",
+        source="Google News 房產法規相關新聞（近 35 天）＋ Gemini AI 整理，非官方法律文件",
+        freq="每月更新一次（法規異動頻率低，可手動觸發更新）",
+        bull="趨鬆（政府降低買房門檻、放寬信用管制）→ 對首購族偏有利",
+        bear="趨嚴（打炒房持續、央行升息）→ 貸款成本上升、預售屋限制多",
+        note="法規細節以行政院、立法院官方公告為準，本頁為 AI 摘要僅供參考，非法律建議。",
+    )
 
     live = st.session_state.get("live_housing_reg")
     stored = load_json(HOUSING_REG_PATH)
@@ -721,6 +737,15 @@ def sec_regulation() -> None:
 
 def page_housing() -> None:
     st.header("🏠 台灣房市")
+    ui_helpers.render_intro_banner(
+        page_key="housing",
+        title="台灣房市頁",
+        steps=[
+            "先看 🗺️ **各縣市房價地圖**：成屋 vs 預售屋每坪均價（實價登錄真實數據）。",
+            "再看 🌡️ **房市冷熱判讀**：AI 依新聞研判各縣市熱度與打房政策方向。",
+            "最後看 📜 **房產法規月報**：平均地權、囤房稅、新青安等法規現況與對你的影響。",
+        ],
+    )
     payload = {"房市觀察": load_json(HOUSING_PATH)}
     render_market_digest("台灣房市", {k: v for k, v in payload.items() if v})
     st.divider(); sec_housing()
