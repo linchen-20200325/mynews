@@ -59,3 +59,6 @@ ARCHIVE_DECISION = Path("data/decision")          # 決策歸檔目錄
 # ── 中線翻轉偵測（reversal_signals 排程產物）──
 LATEST_REVERSAL = Path("latest_reversal.json")   # 最新翻轉偵測 JSON
 ARCHIVE_REVERSAL = Path("data/reversal")          # 翻轉偵測歸檔目錄
+
+# ── 就業人口 × 空屋率地圖（taiwan_map_data.py）──
+EMPLOYMENT_VACANCY_DATA = Path("data/employment_vacancy.json")  # 未來接真實資料時的存放路徑

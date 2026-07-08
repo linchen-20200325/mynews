@@ -218,6 +218,12 @@
 ### PR #103 — 隱藏 Streamlit 自動多頁導覽列（已併入 main）
 - ✅ `app.py`：`main()` 開頭注入 CSS `[data-testid='stSidebarNav']{display:none}`，隱藏 Streamlit 1.28+ 自動偵測 `pages/` 產生的多頁導覽列，消除與 `st.sidebar.radio()` 自訂導覽的衝突
 
+### 就業人口熱區 × 空屋率地圖（2026-07-08，開發中）
+- ✅ `taiwan_map_data.py`（新建 SSOT）：22 縣市 Mock 就業人口（勞保投保人數）+ 空屋率（低度使用住宅比率）；`load_df()` 唯一入口；內附真實資料接入說明（勞動部 / 內政部不動產資訊平台）
+- ✅ `pages/housing.py`：新增 `sec_population_map()`（3 tabs：就業熱區 choropleth / 空屋率地圖 / 雙變數氣泡圖 + 轉向分析列表）；複用 `render_taiwan_choropleth()`；`@st.cache_data(ttl=3600)`
+- ✅ `paths.py`：新增 `EMPLOYMENT_VACANCY_DATA`（未來真實資料存放路徑）
+- 待辦：接入真實勞動部 / 內政部 CSV，替換 `taiwan_map_data._mock_df()` 即可上線
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
