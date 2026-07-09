@@ -1,4 +1,4 @@
-"""pages/housing.py — 台灣房市頁:實價登錄 + 房市觀察 + 縣市熱力圖。"""
+"""pages/housing.py — 台灣房市頁:實價登錄 + 房市觀察 + 縣市熱力圖 + 就業×空屋率地圖。"""
 from __future__ import annotations
 
 import json
@@ -8,6 +8,7 @@ import streamlit as st
 
 import housing_fetcher
 import numutil
+import taiwan_map_data
 import update_data
 import tz_utils
 import ui_helpers
@@ -735,6 +736,117 @@ def sec_regulation() -> None:
     render_housing_regulation(current)
 
 
+@st.cache_data(show_spinner=False, ttl=3600)
+def _load_employment_vacancy_cached() -> pd.DataFrame:
+    return taiwan_map_data.load_df()
+
+
+def sec_population_map() -> None:
+    """就業人口熱區 × 未來就業轉向區域 — 台灣地圖分析面板。"""
+    st.subheader("🗺️ 就業人口熱區 × 未來就業轉向區域")
+    st.caption(
+        "資料來源說明：就業人口使用**勞保投保人數縣市別統計**（勞動部），"
+        "空屋率使用**低度使用（用電）住宅比率**（內政部不動產資訊平台）。"
+        "目前顯示 Mock 示範資料，接入真實資料只需替換 `taiwan_map_data._mock_df()`。"
+    )
+
+    df = _load_employment_vacancy_cached()
+    emp_map = df.set_index("county")["employment"].to_dict()
+    vacancy_map = df.set_index("county")["vacancy_rate"].to_dict()
+
+    tab1, tab2, tab3 = st.tabs(["👷 就業人口熱區", "🏚️ 空屋率地圖", "🔀 雙變數：轉向分析"])
+
+    with tab1:
+        st.markdown("##### 各縣市就業人口分佈（勞保投保人數）")
+        st.caption("顏色越深代表就業人口越多；六都與新竹科學園區所在縣市為主要就業核心。")
+        emp_wan = {c: v / 10_000 for c, v in emp_map.items()}
+        render_taiwan_choropleth(emp_wan, "就業人口（萬人）", "Blues")
+        top5 = df.nlargest(5, "employment")[["county", "employment_wan", "vacancy_rate"]]
+        top5.columns = ["縣市", "就業人口（萬人）", "空屋率（%）"]
+        st.markdown("**就業人口前 5 大縣市**")
+        st.dataframe(top5, use_container_width=True, hide_index=True)
+
+    with tab2:
+        st.markdown("##### 各縣市低度使用（空屋）住宅比率")
+        st.caption(
+            "顏色越紅代表空屋率越高；離島與東部縣市通常空屋率偏高，"
+            "反映人口外流與投資型空置共同推升。"
+        )
+        render_taiwan_choropleth(
+            vacancy_map, "空屋率（%）", "YlOrRd",
+        )
+        high_vac = df.nlargest(5, "vacancy_rate")[["county", "vacancy_rate", "employment_wan"]]
+        high_vac.columns = ["縣市", "空屋率（%）", "就業人口（萬人）"]
+        st.markdown("**空屋率前 5 高縣市**")
+        st.dataframe(high_vac, use_container_width=True, hide_index=True)
+
+    with tab3:
+        st.markdown("##### 就業人口 vs 空屋率 — 雙變數對比（氣泡圖）")
+        st.caption(
+            "X 軸：空屋率（越右越高）；Y 軸：就業人口（萬人，越上越多）；"
+            "氣泡大小：就業人口規模；🔴 紅色氣泡 = **未來就業轉向潛力區**"
+            "（空屋率高 + 就業人口少，人口外流風險 / 政策重點轉型區域）。"
+        )
+        try:
+            import plotly.express as px
+        except Exception:  # noqa: BLE001
+            st.info("未安裝 plotly，無法顯示散佈圖。")
+            return
+
+        df_plot = df.copy()
+        df_plot["類別"] = df_plot["is_transition"].map(
+            {True: "🔴 就業轉向潛力區", False: "🔵 就業穩定區"}
+        )
+        fig = px.scatter(
+            df_plot,
+            x="vacancy_rate",
+            y="employment_wan",
+            size="employment_wan",
+            color="類別",
+            color_discrete_map={"🔴 就業轉向潛力區": "#e63946", "🔵 就業穩定區": "#457b9d"},
+            text="county",
+            hover_data={"vacancy_rate": ":.1f", "employment_wan": ":.1f",
+                        "transition_score": ":.2f", "類別": True},
+            labels={"vacancy_rate": "空屋率（%）", "employment_wan": "就業人口（萬人）"},
+            size_max=55,
+        )
+        fig.update_traces(textposition="top center", textfont_size=10)
+        fig.update_layout(
+            height=520,
+            margin={"t": 20, "b": 20},
+            legend_title_text="區域分類",
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+        transition_df = df[df["is_transition"]].sort_values("transition_score", ascending=False)
+        st.markdown("**就業轉向潛力區列表**（空屋率高、就業人口相對偏少）")
+        st.caption(
+            "這些縣市同時出現「高空屋率」與「低就業人口」，"
+            "代表人口外流壓力較大，亦可能是政府產業轉型政策的重點投入區域。"
+        )
+        disp = transition_df[["county", "employment_wan", "vacancy_rate", "transition_score"]].copy()
+        disp.columns = ["縣市", "就業人口（萬人）", "空屋率（%）", "轉向分數"]
+        disp["轉向分數"] = disp["轉向分數"].round(2)
+        st.dataframe(disp, use_container_width=True, hide_index=True)
+
+        with st.expander("📖 資料接入指南（如何替換真實政府資料）"):
+            st.markdown(
+                """
+**① 就業人口（勞保投保人數）**
+- 下載：[勞動部勞保局統計查詢](https://www.bli.gov.tw/0015094.html) → 選「縣市別」→ 下載 Excel/CSV
+- 欄位對齊：`縣市別` → `county`，`被保險人數` → `employment`（去千分位逗號轉 `int`）
+- 文字清洗：`台` → `臺`（`str.replace("台", "臺")`），移除「合計」列
+
+**② 空屋率（低度使用住宅比率）**
+- 下載：[內政部不動產資訊平台](https://pip.moi.gov.tw/) → 住宅統計 → 低度使用住宅
+- 欄位對齊：`縣市別` → `county`，`低度使用住宅比率(%)` → `vacancy_rate`（轉 `float`）
+- 清洗：同上 臺/台 正規化，移除全國合計列
+
+**接入步驟**：替換 `taiwan_map_data._mock_df()` 的回傳值，`load_df()` 呼叫端無需改動。
+                """
+            )
+
+
 def page_housing() -> None:
     st.header("🏠 台灣房市")
     ui_helpers.render_intro_banner(
@@ -750,3 +862,4 @@ def page_housing() -> None:
     render_market_digest("台灣房市", {k: v for k, v in payload.items() if v})
     st.divider(); sec_housing()
     st.divider(); sec_regulation()
+    st.divider(); sec_population_map()
