@@ -754,8 +754,8 @@ def sec_population_map() -> None:
     emp_map = df.set_index("county")["employment"].to_dict()
     vacancy_map = df.set_index("county")["vacancy_rate"].to_dict()
 
-    tab1, tab2, tab3, tab4 = st.tabs(
-        ["👷 就業人口熱區", "🏚️ 空屋率地圖", "🔀 雙變數：轉向分析", "📋 全縣市明細"])
+    tab1, tab2, tab3 = st.tabs(
+        ["👷 就業人口熱區", "🏚️ 空屋率地圖", "🔀 雙變數 + 全縣市明細"])
 
     with tab1:
         st.markdown("##### 各縣市就業人口分佈（勞保投保人數）")
@@ -819,36 +819,8 @@ def sec_population_map() -> None:
         )
         st.plotly_chart(fig, use_container_width=True)
 
-        transition_df = df[df["is_transition"]].sort_values("transition_score", ascending=False)
-        st.markdown("**就業轉向潛力區列表**（空屋率高、就業人口相對偏少）")
-        st.caption(
-            "這些縣市同時出現「高空屋率」與「低就業人口」，"
-            "代表人口外流壓力較大，亦可能是政府產業轉型政策的重點投入區域。"
-        )
-        disp = transition_df[["county", "employment_wan", "vacancy_rate", "transition_score"]].copy()
-        disp.columns = ["縣市", "就業人口（萬人）", "空屋率（%）", "轉向分數"]
-        disp["轉向分數"] = disp["轉向分數"].round(2)
-        st.dataframe(disp, use_container_width=True, hide_index=True)
-
-        with st.expander("📖 資料接入指南（如何替換真實政府資料）"):
-            st.markdown(
-                """
-**① 就業人口（勞保投保人數）**
-- 下載：[勞動部勞保局統計查詢](https://www.bli.gov.tw/0015094.html) → 選「縣市別」→ 下載 Excel/CSV
-- 欄位對齊：`縣市別` → `county`，`被保險人數` → `employment`（去千分位逗號轉 `int`）
-- 文字清洗：`台` → `臺`（`str.replace("台", "臺")`），移除「合計」列
-
-**② 空屋率（低度使用住宅比率）**
-- 下載：[內政部不動產資訊平台](https://pip.moi.gov.tw/) → 住宅統計 → 低度使用住宅
-- 欄位對齊：`縣市別` → `county`，`低度使用住宅比率(%)` → `vacancy_rate`（轉 `float`）
-- 清洗：同上 臺/台 正規化，移除全國合計列
-
-**接入步驟**：替換 `taiwan_map_data._mock_df()` 的回傳值，`load_df()` 呼叫端無需改動。
-                """
-            )
-
-    with tab4:
-        st.markdown("##### 全台 22 縣市完整明細（依轉向分數排序）")
+        st.divider()
+        st.markdown("##### 📋 全台 22 縣市完整明細（依轉向分數排序）")
         st.caption(
             "此表動態讀取 `taiwan_map_data.load_df()`（SSOT），會隨資料來源自動更新。"
             "**轉向分數** = 空屋率 ÷（就業人口正規化 + 0.15），分數越高代表"
@@ -864,6 +836,7 @@ def sec_population_map() -> None:
             show,
             use_container_width=True,
             hide_index=True,
+            height=810,  # 22 列全展開,免捲動
             column_config={
                 "就業人口（萬人）": st.column_config.ProgressColumn(
                     "就業人口（萬人）", format="%.1f",
@@ -887,6 +860,23 @@ def sec_population_map() -> None:
             mime="text/csv",
             use_container_width=True,
         )
+
+        with st.expander("📖 資料接入指南（如何替換真實政府資料）"):
+            st.markdown(
+                """
+**① 就業人口（勞保投保人數）**
+- 下載：[勞動部勞保局統計查詢](https://www.bli.gov.tw/0015094.html) → 選「縣市別」→ 下載 Excel/CSV
+- 欄位對齊：`縣市別` → `county`，`被保險人數` → `employment`（去千分位逗號轉 `int`）
+- 文字清洗：`台` → `臺`（`str.replace("台", "臺")`），移除「合計」列
+
+**② 空屋率（低度使用住宅比率）**
+- 下載：[內政部不動產資訊平台](https://pip.moi.gov.tw/) → 住宅統計 → 低度使用住宅
+- 欄位對齊：`縣市別` → `county`，`低度使用住宅比率(%)` → `vacancy_rate`（轉 `float`）
+- 清洗：同上 臺/台 正規化，移除全國合計列
+
+**接入步驟**：替換 `taiwan_map_data._mock_df()` 的回傳值，`load_df()` 呼叫端無需改動。
+                """
+            )
 
 
 def page_housing() -> None:
