@@ -218,6 +218,16 @@
 ### PR #103 — 隱藏 Streamlit 自動多頁導覽列（已併入 main）
 - ✅ `app.py`：`main()` 開頭注入 CSS `[data-testid='stSidebarNav']{display:none}`，隱藏 Streamlit 1.28+ 自動偵測 `pages/` 產生的多頁導覽列，消除與 `st.sidebar.radio()` 自訂導覽的衝突
 
+### ETF 淨值/折溢價 LINE 推播（2026-07-09，開發中）
+- ✅ `nav_fetcher.py`（新建 SSOT）：ETF 淨值 NAV + 折溢價，**fail-loud 不造假**
+  - NAV 官方源 = 投信投顧公會 SITCA / 發行投信；實作重用已接 proxy 的 MoneyDJ Basic0004（含官方每日淨值**+日期**），yfinance navPrice 因無獨立日期不採用
+  - 折溢價 = (市價−淨值)/淨值×100%；**強制比對 NAV 日期 vs 市價日期**，不同日→標「NAV 延遲」不計算（避免舊 NAV 配今日市價的假溢價）
+  - 狀態機：ok / stale_nav / no_nav_date / no_nav / no_price；配息走 yfinance dividends
+  - 內建離線確定性 demo（`python nav_fetcher.py`，沙箱無網路也能跑四分支）；只對 `00` 開頭 ETF 生效，個股略過
+- ✅ `update_data._push_watch_for`：新增 `nav_lines = nav_fetcher.nav_lines_for(stocks)`（2.7 段），傳入 builder
+- ✅ `line_notify.build_watch_line_message`：新增 `nav_lines` 參數，逐檔在 VCP 後附淨值/折溢價行
+- 待辦：帶真實 `PROXY_URL` 排程實跑驗收（沙箱 yfinance/MoneyDJ 均被擋，僅離線 demo 驗證邏輯）
+
 ### 就業人口熱區 × 空屋率地圖（2026-07-08，開發中）
 - ✅ `taiwan_map_data.py`（新建 SSOT）：22 縣市 Mock 就業人口（勞保投保人數）+ 空屋率（低度使用住宅比率）；`load_df()` 唯一入口；內附真實資料接入說明（勞動部 / 內政部不動產資訊平台）
 - ✅ `pages/housing.py`：新增 `sec_population_map()`（3 tabs：就業熱區 choropleth / 空屋率地圖 / 雙變數氣泡圖 + 轉向分析列表）；複用 `render_taiwan_choropleth()`；`@st.cache_data(ttl=3600)`

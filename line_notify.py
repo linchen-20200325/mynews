@@ -343,11 +343,13 @@ def build_watch_line_message(today: str, summaries: list[dict],
                              tech_lines: dict[str, str] | None = None,
                              chip_lines: dict[str, str] | None = None,
                              vcp_lines: dict[str, str] | None = None,
-                             new_eps: list[dict] | None = None) -> str:
-    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面、籌碼面、VCP)+ 新月營收 + 新季報 EPS(若有)。"""
+                             new_eps: list[dict] | None = None,
+                             nav_lines: dict[str, str] | None = None) -> str:
+    """組個股盯盤的 LINE 文字:消息面逐檔(+技術面、籌碼面、VCP、ETF淨值/折溢價)+ 新月營收 + 新季報 EPS(若有)。"""
     tech_lines = tech_lines or {}
     chip_lines = chip_lines or {}
     vcp_lines = vcp_lines or {}
+    nav_lines = nav_lines or {}
     lines = [f"📈 個股盯盤 {today}", ""]
     for s in summaries:
         ticker = str(s.get("ticker", "")).strip()
@@ -366,6 +368,9 @@ def build_watch_line_message(today: str, summaries: list[dict],
         vline = vcp_lines.get(ticker)
         if vline:
             lines.append(vline)
+        nline = nav_lines.get(ticker)
+        if nline:
+            lines.append(nline)
         lines.append("")
     if new_revenue:
         lines.append("🧾 新財報(月營收):")
