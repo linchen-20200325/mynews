@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09 10:41",
+  "updated_at": "2026-07-09 12:27",
   "allow": [
     {
       "id": "U605a6fff99ea7f095041617202b9a019",
@@ -8,6 +8,10 @@
     {
       "id": "Ud7f5cc4f92eeef4f378cd61c53baa784",
       "name": "老公"
+    },
+    {
+      "id": "Ufbac728fd4eb5efeb3f90a6da3f5f03e",
+      "name": "omar"
     }
   ],
   "users": {
