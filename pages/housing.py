@@ -754,7 +754,8 @@ def sec_population_map() -> None:
     emp_map = df.set_index("county")["employment"].to_dict()
     vacancy_map = df.set_index("county")["vacancy_rate"].to_dict()
 
-    tab1, tab2, tab3 = st.tabs(["👷 就業人口熱區", "🏚️ 空屋率地圖", "🔀 雙變數：轉向分析"])
+    tab1, tab2, tab3, tab4 = st.tabs(
+        ["👷 就業人口熱區", "🏚️ 空屋率地圖", "🔀 雙變數：轉向分析", "📋 全縣市明細"])
 
     with tab1:
         st.markdown("##### 各縣市就業人口分佈（勞保投保人數）")
@@ -845,6 +846,47 @@ def sec_population_map() -> None:
 **接入步驟**：替換 `taiwan_map_data._mock_df()` 的回傳值，`load_df()` 呼叫端無需改動。
                 """
             )
+
+    with tab4:
+        st.markdown("##### 全台 22 縣市完整明細（依轉向分數排序）")
+        st.caption(
+            "此表動態讀取 `taiwan_map_data.load_df()`（SSOT），會隨資料來源自動更新。"
+            "**轉向分數** = 空屋率 ÷（就業人口正規化 + 0.15），分數越高代表"
+            "「高空屋率 + 低就業人口」越明顯；🔴 為就業轉向潛力區（≥第 60 百分位）。"
+        )
+        full = df.sort_values("transition_score", ascending=False).reset_index(drop=True)
+        full.insert(0, "排名", full.index + 1)
+        full["轉向潛力區"] = full["is_transition"].map({True: "🔴 是", False: "🔵 否"})
+        show = full[["排名", "county", "employment_wan", "vacancy_rate",
+                     "transition_score", "轉向潛力區"]].copy()
+        show.columns = ["排名", "縣市", "就業人口（萬人）", "空屋率（%）", "轉向分數", "轉向潛力區"]
+        st.dataframe(
+            show,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "就業人口（萬人）": st.column_config.ProgressColumn(
+                    "就業人口（萬人）", format="%.1f",
+                    min_value=0.0, max_value=float(full["employment_wan"].max()),
+                ),
+                "空屋率（%）": st.column_config.ProgressColumn(
+                    "空屋率（%）", format="%.1f%%",
+                    min_value=0.0, max_value=float(full["vacancy_rate"].max()),
+                ),
+                "轉向分數": st.column_config.NumberColumn("轉向分數", format="%.2f"),
+            },
+        )
+        c1, c2, c3 = st.columns(3)
+        c1.metric("縣市總數", f"{len(full)} 個")
+        c2.metric("🔴 轉向潛力區", f"{int(full['is_transition'].sum())} 個")
+        c3.metric("平均空屋率", f"{full['vacancy_rate'].mean():.1f}%")
+        st.download_button(
+            "⬇️ 下載全縣市明細 CSV",
+            data=show.to_csv(index=False).encode("utf-8-sig"),
+            file_name="taiwan_employment_vacancy.csv",
+            mime="text/csv",
+            use_container_width=True,
+        )
 
 
 def page_housing() -> None:
