@@ -63,3 +63,6 @@ ARCHIVE_REVERSAL = Path("data/reversal")          # 翻轉偵測歸檔目錄
 # ── 房產法規月報（每月更新一次）──
 LATEST_HOUSING_REG = Path("latest_housing_reg.json")  # 最新房產法規摘要
 ARCHIVE_HOUSING_REG = Path("data/housing_reg")         # 法規月報歸檔目錄（YYYY-MM.json）
+
+# ── 就業人口 × 空屋率地圖（taiwan_map_data.py）──
+EMPLOYMENT_VACANCY_DATA = Path("data/employment_vacancy.json")  # 未來接真實資料時的存放路徑

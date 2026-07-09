@@ -193,6 +193,9 @@
 - ✅ `update_data.py`：`build_intl_alert()` drop list 後立即偵測背離，注入 Gemini prompt「【期現背離偵測（程式算，非 AI）】」區塊；結果以 `futures_divergence` 欄位存入 intl alert dict
 - ✅ `line_notify.py`：`build_intl_alert_line_message()` 在免責聲明前插入期現背離訊號行（⚡/⚠️ + 中文說明）
 
+### PR #104 — SSOT 集中化（已併入 main）
+- ✅ 同 SSOT 稽核修正條目內容，正式合併 main
+
 ### SSOT 稽核修正（2026-06-30，config.py 集中化）
 - ✅ `config.py`：新增 `env_str()` 字串輔助函式
 - ✅ `feature_aligner.py`：`datetime.now().date()` → `tz_utils.taiwan_now().date()`（台灣時區 SSOT）
@@ -203,8 +206,23 @@
 - ✅ `price_fetcher/housing_fetcher/etf_fetcher/etf_profile_fetcher`：移除 local `import os` → `config.env_str` 讀 PROXY_URL
 - 稽核結果：全庫 `os.environ.get` 使用點 SSOT 合規（`config.py`/`proxy_helper.py`/`gemini_client.py`/`github_store.py` 為自身 SSOT，合理例外）
 
+### SSOT 全庫稽核結果（2026-06-30，PR #104 後）
+- ✅ Rule 1 datetime：全通過；`datetime.now()` 僅剩 `scripts/`（standalone）與 `verify_chip_data.py`（一次性診斷）
+- ✅ Rule 2 google.generativeai：全通過；僅 `gemini_client.py` 走官方 SDK
+- ✅ Rule 3 os.environ.get：全通過；僅 `config/proxy_helper/gemini_client/github_store/scripts/verify_chip_data` 六個合法位置
+- ✅ Rule 4 numutil 函數：全通過；`pct_change/parse_number` 唯一定義在 `numutil.py`
+- ✅ Rule 5 LINE API 呼叫：`scripts/nas_line_bot.py:52` 的 `LINE_REPLY_ENDPOINT` 屬刻意例外（NAS 單檔零相依，無法 import `line_notify`），已就地加注說明
+- ✅ Rule 6 路徑字面值：全通過；所有路徑集中 `paths.py`
+- ✅ Rule 7 循環 import：全通過；`pages/*.py → app_core.py`，零循環
+
 ### PR #103 — 隱藏 Streamlit 自動多頁導覽列（已併入 main）
 - ✅ `app.py`：`main()` 開頭注入 CSS `[data-testid='stSidebarNav']{display:none}`，隱藏 Streamlit 1.28+ 自動偵測 `pages/` 產生的多頁導覽列，消除與 `st.sidebar.radio()` 自訂導覽的衝突
+
+### 就業人口熱區 × 空屋率地圖（2026-07-08，開發中）
+- ✅ `taiwan_map_data.py`（新建 SSOT）：22 縣市 Mock 就業人口（勞保投保人數）+ 空屋率（低度使用住宅比率）；`load_df()` 唯一入口；內附真實資料接入說明（勞動部 / 內政部不動產資訊平台）
+- ✅ `pages/housing.py`：新增 `sec_population_map()`（3 tabs：就業熱區 choropleth / 空屋率地圖 / 雙變數氣泡圖 + 轉向分析列表）；複用 `render_taiwan_choropleth()`；`@st.cache_data(ttl=3600)`
+- ✅ `paths.py`：新增 `EMPLOYMENT_VACANCY_DATA`（未來真實資料存放路徑）
+- 待辦：接入真實勞動部 / 內政部 CSV，替換 `taiwan_map_data._mock_df()` 即可上線
 
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
