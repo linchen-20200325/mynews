@@ -263,10 +263,11 @@
   - 同日稍早 #110 部署(無字型)在同一 Python 3.14.6 雲端環境運作正常 → 平台/Python 版本非唯一兇手
   - 沙箱 Python 3.13 + 與雲端 uv 解析完全同版套件(numpy 2.5.1/matplotlib 3.11.0/pandas 3.0.3/pyarrow 25.0.0)+ 靜態 Noto CJK ttc:單獨渲染季節圖與 AppTest 整頁重跑全過 → 程式碼與套件版本組合無罪
   - 唯一無法本機重現的變因:雲端 cp314 二進位 × 裝字型後的 CJK 繪製路徑(app 預設頁「📊 台股」即繪季節圖,與「渲染數秒後死亡、必復發」時序吻合)
-- 處置:刪除 `packages.txt`(一次只動一個變因)→ 圖表暫回英文
-  - 若復活 → 證實字型路徑是兇手,改用「repo 內建靜態子集字型 + `fm.addfont` + 執行緒安全 Figure」復中文(不依賴雲端 apt)
-  - 若未復活 → 兇手是 Python 3.14 環境:依官方文件刪除 app 重建,Advanced settings 改選 Python 3.12(已部署 app 無法直接改版本)
-- 教訓:`packages.txt`(apt 層)改動會觸發雲端整個環境重建、且沙箱無法重現其基底映像,屬高風險變更;字型類需求優先用 repo 內建資產
+- 處置一(PR #112):刪除 `packages.txt` → 重建後**仍當機** → 字型無罪(等於做了對照組實驗)
+- 真因確立:雲端 venv 平日被快取沿用(僅改 code 的部署不重解析依賴);#111 的 packages.txt 觸發**環境整個重建**,首次抓進事故當日剛發布的 cp314 wheel(pyarrow 25.0.0 08:25 UTC/websockets 16.1 06:30 UTC,numpy 2.4→2.5.1 同批帶入),此後每次重建都中毒 → 與「#110 部署(18:37,僅改 code,沿用舊環境)正常、#111(19:29)起必掛」完全吻合。頭號嫌犯 pyarrow:st.dataframe 每次渲染必經其 C++ 核心,且 17.0.0 曾有特定平台 wheel 載入即段錯誤前科(apache/arrow#44342,退版即解)
+- 處置二(PR #113):requirements.txt 回釘 `pyarrow<25`+`websockets<16.1`+`numpy<2.5`(退回版皆確認有 cp314 linux wheel,不會觸發源碼編譯)→ 服務恢復後逐一解除回釘鎖定真兇並回報上游
+- 教訓:雲端 venv 只在環境層變更時重建,unpinned 依賴的「實際版本」≠「最新版」;任何觸發重建的變更都可能一次引入多個未知新版 — 關鍵原生套件(pyarrow/numpy)建議常態鎖上限
+- 字型後續:字型本身無罪,服務穩定後可直接恢復 `packages.txt`(fonts-noto-cjk)復中文,無需 repo 內建字型方案
 
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
