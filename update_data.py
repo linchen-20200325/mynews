@@ -55,6 +55,7 @@ import futures_chip_fetcher  # 法人籌碼:抓期交所三大法人台指期留
 import housing_fetcher
 import index_fetcher  # 國際盤預警:抓美股指數/美股期貨真實漲跌幅
 import margin_fetcher  # 融資餘額:散戶槓桿/斷頭訊號(共振偵測用)
+import nav_fetcher  # 個股盯盤:ETF 淨值/折溢價(fail-loud,NAV 過期不硬算)的 SSOT
 import news_fetcher
 import numutil  # 數值計算的單一真相源(SSOT):pct_change / parse_number / OKU
 import paths  # 檔案/目錄路徑的單一真相源(SSOT)
@@ -1225,6 +1226,13 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     except Exception as exc:  # noqa: BLE001 — VCP 整批失敗不影響消息面/技術面/籌碼面/財報推播
         print(f"  警告: VCP 整批偵測失敗:{exc}", file=sys.stderr)
 
+    # 2.7) ETF 淨值/折溢價(只對 00 開頭 ETF);fail-loud:NAV 過期/抓不到只標記不硬算
+    nav_lines: dict[str, str] = {}
+    try:
+        nav_lines = nav_fetcher.nav_lines_for(stocks, log=print)
+    except Exception as exc:  # noqa: BLE001 — NAV 整批失敗不影響消息面/技術面/籌碼面/財報推播
+        print(f"  警告: ETF 淨值/折溢價整批計算失敗:{exc}", file=sys.stderr)
+
     # 3) 月營收(真實財報更新訊號);dedup 只推「新出現」的期別
     new_revenue: list[dict] = []
     fresh_ids: list[str] = []
@@ -1257,12 +1265,13 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
         return []
 
     msg = line_notify.build_watch_line_message(
-        today, summaries, new_revenue, tech_lines, chip_lines, vcp_lines, new_eps)
+        today, summaries, new_revenue, tech_lines, chip_lines, vcp_lines, new_eps,
+        nav_lines)
     line_notify._push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=to)
     print(
         f"  · 推給 {to[:6]}…:消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
         f"籌碼面 {len(chip_lines)} 檔、VCP {len(vcp_lines)} 檔、"
-        f"月營收 {len(new_revenue)} 筆、季報 EPS {len(new_eps)} 筆"
+        f"ETF 淨值 {len(nav_lines)} 檔、月營收 {len(new_revenue)} 筆、季報 EPS {len(new_eps)} 筆"
     )
     return fresh_ids + fresh_eps_ids
 
