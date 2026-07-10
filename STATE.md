@@ -252,6 +252,11 @@
 - 驗證:pyflakes 全庫零警告(順手清 `pages/housing.py` 既有 dead import/變數)、離線 smoke test 30 項全過(平行保序/blob sha 對 git hash-object/降級路徑/mock 排除/確定性 seed)、`test_numeric_audit.py` 11/11
 - 未落地(review 建議、留待後續):房市 3 tab lazy render(中風險 UX 改動)、5 頁兩步驟面板抽工廠、`etf_fetcher.crawl` 保守平行化
 
+## Streamlit Cloud 中文字型(2026-07-10,PR #111 已併入 main)
+- ✅ 新建 `packages.txt`(Streamlit Cloud apt 清單,單行 `fonts-noto-cjk`,**格式限制:一行一套件、不可加註解**):部署時安裝 Noto CJK 字型
+- 原理:`season_chart.py` import 時偵測 `_CJK_FONTS` 候選(第一順位 `Noto Sans CJK TC`),之前雲端無中文字型 → `_ZH=False` 整張圖退回英文;裝字型後自動切回中文,**零程式碼改動**
+- 驗證:沙箱 apt 實裝後 matplotlib 看到全部 15 個 Noto CJK 家族、`season_chart._ZH=True` 選中 `Noto Sans CJK TC`;實際 build_cycle_figure 渲染零缺字警告
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
