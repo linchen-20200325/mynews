@@ -234,8 +234,8 @@
 - ✅ `paths.py`：新增 `EMPLOYMENT_VACANCY_DATA`（未來真實資料存放路徑）
 - 待辦：接入真實勞動部 / 內政部 CSV，替換 `taiwan_map_data._mock_df()` 即可上線
 
-## 深度 Code Review 落地(2026-07-10,連線效能 + 正確性 + 診斷頁)
-依外部 code review 說明書實作兩衝刺(branch `claude/strategy-revision-spec-0cpnk3`):
+## 深度 Code Review 落地(2026-07-10,PR #110 已併入 main)
+依外部 code review 說明書實作兩衝刺(連線效能 + 正確性 + 診斷頁):
 - **效能(第一衝刺)**
   - `news_fetcher`:多來源 RSS 改 `ThreadPoolExecutor(max_workers=8)` 平行抓取(彙整保序,去重優先序不變);單 feed timeout 30→10s。新聞頁預估 24s→3~4s
   - `github_store`:commit 前以 git blob sha 比對,內容未變更即跳過 PUT;GET/PUT 共用模組層 Session。`app.py` 的「抓取後自動存 GitHub」預設 True→False(抓取與存檔解耦);各頁 session fallback 同步改 False
