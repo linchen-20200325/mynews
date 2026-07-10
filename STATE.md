@@ -257,7 +257,7 @@
 - 原理:`season_chart.py` import 時偵測 `_CJK_FONTS` 候選(第一順位 `Noto Sans CJK TC`),之前雲端無中文字型 → `_ZH=False` 整張圖退回英文;裝字型後自動切回中文,**零程式碼改動**
 - 驗證:沙箱 apt 實裝後 matplotlib 看到全部 15 個 Noto CJK 家族、`season_chart._ZH=True` 選中 `Noto Sans CJK TC`;實際 build_cycle_figure 渲染零缺字警告
 
-## 緊急回退:雲端 Segfault 事故(2026-07-10,救火 PR)
+## 緊急回退:雲端 Segfault 事故(2026-07-10,PR #112 已併入 main)
 - 症狀:PR #111 部署後 Streamlit Cloud 反覆整站當機(`Segmentation fault`,原生層、無 Python 堆疊):開站後頁面渲染數秒即死,每次重啟必復發
 - 診斷(排除法):
   - 同日稍早 #110 部署(無字型)在同一 Python 3.14.6 雲端環境運作正常 → 平台/Python 版本非唯一兇手
