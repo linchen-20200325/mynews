@@ -15,12 +15,33 @@
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import os
 
 API = "https://api.github.com"
 DEFAULT_REPO = "linchen-20200325/mynews"
 DEFAULT_BRANCH = "main"
+
+# 模組層共用 Session(keep-alive 連線池):GET sha 與 PUT commit 重用同一條 TLS 連線,
+# 省一次跨國交握;lazy 建立,避免 import 本模組就得先裝好 requests。
+_SESSION = None
+
+
+def _session():
+    global _SESSION
+    if _SESSION is None:
+        import requests
+        _SESSION = requests.Session()
+    return _SESSION
+
+
+def _git_blob_sha(data: bytes) -> str:
+    """算 git blob SHA-1(GitHub contents API 回傳的 sha 同制式):sha1(b"blob <len>\\0" + data)。
+
+    用途:commit 前與現有檔 sha 比對,內容未變更即跳過 PUT(省 2~8 秒與一筆垃圾 commit)。
+    """
+    return hashlib.sha1(b"blob %d\x00" % len(data) + data).hexdigest()
 
 
 def _cfg(get_secret=None) -> dict:
@@ -64,9 +85,10 @@ def _headers(token: str) -> dict:
 def commit_file(
     path: str, content: str, message: str, get_secret=None
 ) -> tuple[bool, str]:
-    """建立/更新 repo 內 ``path`` 檔案(同名即覆蓋)。回傳 (成功, 訊息/commit 連結)。"""
-    import requests
+    """建立/更新 repo 內 ``path`` 檔案(同名即覆蓋)。回傳 (成功, 訊息/commit 連結)。
 
+    內容與現有檔完全相同(git blob sha 一致)時跳過 commit,直接回成功。
+    """
     cfg = _cfg(get_secret)
     if not cfg["token"]:
         return False, "未設定 GITHUB_TOKEN(請在 Streamlit Secrets 加上)。"
@@ -74,26 +96,30 @@ def commit_file(
     repo, branch = cfg["repo"], cfg["branch"]
     url = f"{API}/repos/{repo}/contents/{path}"
     headers = _headers(cfg["token"])
+    raw = content.encode("utf-8")
 
     # 取得既有檔案的 sha(更新時必填;不存在則略過)
     sha = None
     try:
-        r = requests.get(url, headers=headers, params={"ref": branch}, timeout=30)
+        r = _session().get(url, headers=headers, params={"ref": branch}, timeout=30)
         if r.status_code == 200:
             sha = r.json().get("sha")
     except Exception as exc:  # noqa: BLE001
         return False, f"讀取現有檔案失敗:{exc}"
 
+    if sha and sha == _git_blob_sha(raw):
+        return True, f"內容未變更,已略過 commit({path})。"
+
     payload = {
         "message": message,
-        "content": base64.b64encode(content.encode("utf-8")).decode("ascii"),
+        "content": base64.b64encode(raw).decode("ascii"),
         "branch": branch,
     }
     if sha:
         payload["sha"] = sha
 
     try:
-        r = requests.put(url, headers=headers, data=json.dumps(payload), timeout=30)
+        r = _session().put(url, headers=headers, data=json.dumps(payload), timeout=30)
     except Exception as exc:  # noqa: BLE001
         return False, f"寫入失敗:{exc}"
 

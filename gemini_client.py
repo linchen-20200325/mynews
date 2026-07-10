@@ -182,6 +182,8 @@ def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
     """以 Gemini 讀取內容並回傳解析後的 JSON dict;多把金鑰會逐一嘗試。
 
     若輸出疑似被 token 上限截斷(JSON 解析失敗),會自動加大輸出上限再重試一次。
+    保證回傳 dict:模型回頂層陣列/字串等非物件時視同解析失敗(raise),
+    讓呼叫端的 data.setdefault(...) 一律安全,免得 AttributeError 被上層 except 吞成靜默降級。
     """
     from google import genai
     from google.genai import types
@@ -211,7 +213,7 @@ def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
 
         json_text = clean_json_text(text)
         try:
-            return json.loads(json_text, strict=False)
+            parsed = json.loads(json_text, strict=False)
         except json.JSONDecodeError as exc:
             last_exc = exc
             if i + 1 < len(budgets):
@@ -220,6 +222,15 @@ def call_gemini_for_json(system_instruction: str, user_content: str) -> dict:
                 f"JSON 解析失敗(輸出可能被截斷,可調高 GEMINI_MAX_TOKENS):{exc}\n"
                 f"--- 原始內容前 500 字 ---\n{json_text[:500]}"
             ) from exc
+        if not isinstance(parsed, dict):
+            last_exc = ValueError(
+                f"Gemini 回傳頂層非 JSON 物件(型別 {type(parsed).__name__}),"
+                "不符合結構化輸出約定"
+            )
+            if i + 1 < len(budgets):
+                continue
+            raise last_exc
+        return parsed
 
     raise RuntimeError(f"所有 Gemini 金鑰皆呼叫失敗,最後錯誤:{last_exc}")
 

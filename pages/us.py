@@ -11,6 +11,7 @@ from app_core import (
     US_STOCKS_ARCHIVE_DIR,
     SIX_MONTH_SOURCE_CAPTION,
     ensure_gemini_key,
+    fetch_live_news_cached,
     load_json,
     render_news_cards,
     pick_report,
@@ -31,7 +32,7 @@ def render_us_stock_live_panel() -> None:
         if st.button("🔄 ① 立即抓取美股財經新聞", use_container_width=True):
             with st.spinner("抓取美股財經新聞中…"):
                 try:
-                    st.session_state["live_us_stock_news"] = update_data.fetch_us_stock_news()
+                    st.session_state["live_us_stock_news"] = fetch_live_news_cached("us_stock")
                     st.session_state.pop("live_us_stocks", None)
                 except Exception as exc:  # noqa: BLE001
                     st.session_state["live_us_stock_news"] = []

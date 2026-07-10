@@ -98,13 +98,26 @@ SIGNAL_LABELS = [
 ]
 
 
-def load_json(path: Path) -> dict | None:
-    if not path.exists():
-        return None
+@st.cache_data(ttl=3600, max_entries=64, show_spinner=False)
+def _load_json_cached(path_str: str, mtime_ns: int) -> dict | None:
+    """依 (路徑, mtime) 快取 JSON 解析結果。
+
+    mtime_ns 參與快取鍵:檔案一更新即自動失效,不需手動清快取;
+    max_entries 防止大 JSON(數 MB)多版本累積吃記憶體。
+    """
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
+        return json.loads(Path(path_str).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
         return None
+
+
+def load_json(path: Path) -> dict | None:
+    """讀 JSON 檔(含解析快取):同一份檔案單次 render / 切頁重複讀取不重複解析。"""
+    try:
+        mtime_ns = path.stat().st_mtime_ns
+    except OSError:  # 檔案不存在
+        return None
+    return _load_json_cached(str(path), mtime_ns)
 
 
 def list_archive(directory: Path) -> list[str]:
@@ -154,6 +167,31 @@ def pick_report(latest_path: Path, archive_dir: Path):
 # ---------------------------------------------------------------------------
 # 新聞來源說明 + 即時抓取(免等每日排程)
 # ---------------------------------------------------------------------------
+
+# UI「立即抓取」的共用快取層:同一 kind 在 TTL 內重複點擊/rerun 直接回快取,
+# 不重打整批 RSS(單次 15~25 個 feed)。排程端(update_data CLI)不經此層,不受影響。
+# 只收無參數或參數可雜湊(str)的 fetcher;個股健診/人物追蹤等逐次不同的查詢不快取。
+
+
+@st.cache_data(ttl=900, show_spinner=False)
+def fetch_live_news_cached(kind: str, *args: str) -> list[dict]:
+    """依 kind 分派到 update_data 的對應 fetch_*_news(結果快取 15 分鐘)。"""
+    fetchers = {
+        "macro": update_data.fetch_macro_news,
+        "trend": update_data.fetch_trend_news,
+        "stock": update_data.fetch_stock_news,
+        "us_stock": update_data.fetch_us_stock_news,
+        "housing": update_data.fetch_housing_news,
+    }
+    return fetchers[kind](*args)
+
+
+@st.cache_data(ttl=600, show_spinner=False)
+def fetch_index_quotes_cached() -> dict:
+    """國際盤報價快取 10 分鐘;全數失敗會 raise(st.cache_data 不快取例外,下次重抓)。"""
+    import index_fetcher
+    return index_fetcher.fetch_index_quotes()
+
 
 NEWS_SOURCE_CAPTION = (
     "新聞來源(繁中、聚焦國際政治/軍事/財經):**Google News 世界＋財經分類頭條**"

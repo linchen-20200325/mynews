@@ -33,7 +33,7 @@ def render_etf_crawl_panel() -> None:
             with st.spinner("正在測試中繼站連線…"):
                 res = proxy_helper.check_proxy()
             (st.success if res["ok"] else st.error)(res["detail"])
-        auto = st.session_state.get("auto_save_github", True)
+        auto = st.session_state.get("auto_save_github", False)
         if st.button(
             "🔄 立即抓取 / 更新 ETF 成分股資料庫",
             use_container_width=True,
@@ -94,7 +94,7 @@ def render_etf_add_panel() -> None:
                     st.session_state["etf_sources_live"] = sources
                     etfs = sources["moneydj"]["etfs"]
                     st.success(f"全市場共 {total} 檔,新增 {added} 檔,清單現有 {len(etfs)} 檔。")
-                    if st.session_state.get("auto_save_github", True):
+                    if st.session_state.get("auto_save_github", False):
                         save_to_github("etf_sources.json", sources, f"({len(etfs)} 檔, 全市場匯入)")
                 except Exception as exc:  # noqa: BLE001
                     st.error(f"匯入失敗:{exc}")
@@ -126,7 +126,7 @@ def render_etf_add_panel() -> None:
                 st.success("處理完成 " + saved)
                 st.write("\n".join(f"- {m}" for m in msgs))
                 etfs = sources["moneydj"]["etfs"]
-                if st.session_state.get("auto_save_github", True):
+                if st.session_state.get("auto_save_github", False):
                     save_to_github("etf_sources.json", sources,
                                    f"({len(etfs)} 檔)")
 
@@ -153,7 +153,7 @@ def render_etf_add_panel() -> None:
                 st.success("處理完成 " + rsaved)
                 st.write("\n".join(f"- {m}" for m in rmsgs))
                 etfs = sources["moneydj"]["etfs"]
-                if st.session_state.get("auto_save_github", True):
+                if st.session_state.get("auto_save_github", False):
                     save_to_github("etf_sources.json", sources,
                                    f"({len(etfs)} 檔)")
         else:
@@ -180,7 +180,7 @@ def render_etf_profiles() -> None:
         proxy = ensure_proxy()
         if not proxy:
             st.warning("未偵測到 PROXY_URL,無法抓取。請先在 Streamlit Secrets 設定。")
-        auto_p = st.session_state.get("auto_save_github", True)
+        auto_p = st.session_state.get("auto_save_github", False)
         if st.button("🔄 抓取 / 更新 ETF 圖鑑資料", use_container_width=True, disabled=not proxy):
             with st.spinner("透過代理抓 ETF 基本資料中…(視檔數約 1 分鐘)"):
                 logs: list[str] = []
@@ -329,7 +329,7 @@ def render_price_update_panel(current_prices: dict) -> None:
     with st.expander(f"💰 股價資料（目前 {len(current_prices)} 檔)— 點此更新", expanded=not current_prices):
         st.caption("透過代理抓臺灣證交所(上市)＋櫃買中心(上櫃)當日收盤價,供『股價範圍』篩選使用。")
         proxy = ensure_proxy()
-        auto_pr = st.session_state.get("auto_save_github", True)
+        auto_pr = st.session_state.get("auto_save_github", False)
         if st.button("🔄 更新台股收盤價", use_container_width=True, disabled=not proxy):
             with st.spinner("透過代理抓台股收盤價中…"):
                 logs: list[str] = []
