@@ -16,10 +16,10 @@ from app_core import (
     HOUSING_PATH,
     HOUSING_ARCHIVE_DIR,
     HOUSING_REG_PATH,
-    HOUSING_REG_ARCHIVE_DIR,
     GEOJSON_PATH,
     HOUSING_SENTIMENT_STYLE,
     ensure_gemini_key,
+    fetch_live_news_cached,
     render_news_cards,
     pick_report,
     load_json,
@@ -169,7 +169,7 @@ def render_house_price_panel() -> None:
         proxy = ensure_proxy()
         if not proxy:
             st.warning("未偵測到 PROXY_URL。實價登錄站會擋境外 IP,請先在 Streamlit Secrets 設定代理。")
-        auto = st.session_state.get("auto_save_github", True)
+        auto = st.session_state.get("auto_save_github", False)
         if st.button("🔄 立即抓取 / 更新各縣市房價", use_container_width=True, disabled=not proxy):
             with st.spinner("透過代理抓實價登錄季度資料中…(下載+解析約數十秒)"):
                 logs: list[str] = []
@@ -213,7 +213,7 @@ def render_housing_live_panel() -> None:
         if st.button("🔄 ① 立即抓取房市新聞", use_container_width=True):
             with st.spinner("抓取房市新聞中…"):
                 try:
-                    st.session_state["live_housing_news"] = update_data.fetch_housing_news()
+                    st.session_state["live_housing_news"] = fetch_live_news_cached("housing")
                     st.session_state.pop("live_housing", None)
                 except Exception as exc:  # noqa: BLE001
                     st.session_state["live_housing_news"] = []
@@ -292,7 +292,7 @@ def render_house_price_history_panel() -> None:
                         proxy=proxy, log=logs.append, years_back=years)
                     st.session_state["house_history_live"] = data
                     st.success(f"完成!涵蓋年份 {data.get('years', [])},{len(data.get('counties', {}))} 縣市。")
-                    if st.session_state.get("auto_save_github", True):
+                    if st.session_state.get("auto_save_github", False):
                         save_to_github("house_price_history.json", data,
                                        f"(近 {years} 年)")
                 except Exception as exc:  # noqa: BLE001
@@ -641,8 +641,6 @@ def render_housing_regulation_live_panel() -> None:
                     data = get_housing_regulation_analysis(news, today)
                     st.session_state["live_housing_reg"] = data
                     # 存檔
-                    import json as _json
-                    _str = _json.dumps(data, ensure_ascii=False, indent=2)
                     save_to_github(str(HOUSING_REG_PATH), data, f"（法規月報 {today}）")
                     ym = today[:7]  # YYYY-MM
                     save_to_github(f"data/housing_reg/{ym}.json", data, f"（法規月報封存 {ym}）")

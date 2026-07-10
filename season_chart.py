@@ -11,6 +11,8 @@ season_chart.py — 總統任期週期季節性分析 SSOT
 
 from __future__ import annotations
 
+import sys
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
@@ -165,41 +167,54 @@ _YF_URL = (
 
 
 def fetch_sp500_2026() -> dict[int, float] | None:
-    """透過 NAS proxy 抓 S&P 500，計算 2026 年各月底累積報酬（以 2025 年底收盤=0%）。
-    失敗回 None（不阻斷主流程）。
+    """抓 S&P 500，計算 2026 年各月底累積報酬（以 2025 年底收盤=0%）。
+    Yahoo 全球可達 → 直連優先、NAS 中繼備援（prefer_direct）。
+    失敗回 None（不阻斷主流程），並把原因寫到 stderr（不再裸 except 靜默吞錯）。
     """
+    import proxy_helper
+    data = proxy_helper.fetch_json(_YF_URL, timeout=10, retries=2, prefer_direct=True)
+    if not data:
+        return None
+
     try:
-        import proxy_helper
-        data = proxy_helper.fetch_json(_YF_URL, timeout=20)
-        if not data:
-            return None
         result0 = data["chart"]["result"][0]
         timestamps: list[int]   = result0["timestamp"]
         closes:     list[float] = result0["indicators"]["quote"][0]["close"]
+    except (KeyError, IndexError, TypeError) as exc:
+        print(f"[season_chart] Yahoo v8 回傳結構非預期,無法解析 2026 走勢:{exc}",
+              file=sys.stderr)
+        return None
 
-        from datetime import datetime, timezone
-        monthly: dict[tuple[int, int], float] = {}
+    from datetime import datetime, timezone
+    monthly: dict[tuple[int, int], float] = {}
+    try:
         for ts, close in zip(timestamps, closes):
             if close is None:
                 continue
             dt = datetime.fromtimestamp(ts, tz=timezone.utc)
             monthly[(dt.year, dt.month)] = float(close)
-
-        # 基準：2025 年最後一個月的收盤
-        base_candidates = sorted(
-            [(y, m) for (y, m) in monthly if y == 2025], reverse=True
-        )
-        if not base_candidates:
-            return None
-        base_price = monthly[base_candidates[0]]
-
-        out: dict[int, float] = {}
-        for (yr, mo), price in monthly.items():
-            if yr == 2026:
-                out[mo] = (price / base_price - 1) * 100
-        return out if out else None
-    except Exception:
+    except (TypeError, ValueError, OSError, OverflowError) as exc:
+        print(f"[season_chart] Yahoo 時間戳/收盤價型別非預期:{exc}", file=sys.stderr)
         return None
+
+    # 基準：2025 年最後一個月的收盤
+    base_candidates = sorted(
+        [(y, m) for (y, m) in monthly if y == 2025], reverse=True
+    )
+    if not base_candidates:
+        print("[season_chart] Yahoo 回傳缺 2025 年基準月收盤,無法計算 2026 累積報酬",
+              file=sys.stderr)
+        return None
+    base_price = monthly[base_candidates[0]]
+    if not base_price:  # 防 0 除(來源異常回 0 時)
+        print("[season_chart] 2025 基準收盤為 0,無法計算報酬率", file=sys.stderr)
+        return None
+
+    out: dict[int, float] = {}
+    for (yr, mo), price in monthly.items():
+        if yr == 2026:
+            out[mo] = (price / base_price - 1) * 100
+    return out if out else None
 
 
 # ── 圖生成 ────────────────────────────────────────────────────────────

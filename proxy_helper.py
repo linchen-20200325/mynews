@@ -12,8 +12,11 @@
 
 對外 API:
   get_proxy_config(explicit=None) -> {"http": url, "https": url} | None
-  fetch_url(url, ...) -> requests.Response | None   (含中繼 + 自動降級直連)
+  fetch_url(url, ..., prefer_direct=False) -> requests.Response | None
+      (預設:NAS 中繼優先、失敗降級直連;prefer_direct=True:直連優先、失敗走 NAS 備援,
+       適用 Yahoo 等全球可達來源 — 免去「境外→台灣 NAS→境外」三角繞路)
   make_retry_session() -> requests.Session
+  get_shared_session() -> requests.Session          (模組層共用連線池,省重複 TLS 交握)
   reset_proxy_cache()
   mask_endpoint(url) -> "host:port"                 (隱藏帳密供顯示)
   check_proxy(probe_url=..., timeout=10) -> dict     (檢驗中繼站是否可以使用)
@@ -26,6 +29,7 @@ from __future__ import annotations
 
 import os
 import sys
+import threading
 import time
 
 import requests
@@ -107,6 +111,8 @@ def make_retry_session() -> requests.Session:
 
     read=0:read-timeout 不在 urllib3 層重試(交給外層降級直連處理),避免逾時被放大;
     status=2:保留伺服器暫時 5xx(500/502/503/504)的重試韌性。
+    pool_maxsize:同 host 保留的 keep-alive 連線數 — Session 的價值就在連線重用,
+    連抓多個 symbol/多頁時省掉每次 TCP+TLS 交握(海外連台灣單次 300~800ms)。
     """
     _retry = Retry(
         total=2, connect=1, read=0, status=2,
@@ -115,9 +121,86 @@ def make_retry_session() -> requests.Session:
         raise_on_status=False,
     )
     s = requests.Session()
-    s.mount("https://", HTTPAdapter(max_retries=_retry))
-    s.mount("http://", HTTPAdapter(max_retries=_retry))
+    adapter = HTTPAdapter(max_retries=_retry, pool_connections=10, pool_maxsize=20)
+    s.mount("https://", adapter)
+    s.mount("http://", adapter)
     return s
+
+
+# ── 模組層共用 Session:每次 fetch 新建 Session 會讓連線池形同虛設 ──
+_SHARED_SESSION: "requests.Session | None" = None
+_SESSION_LOCK = threading.Lock()
+
+
+def get_shared_session() -> requests.Session:
+    """取得模組層共用 Session(lazy singleton,執行緒安全)。
+
+    requests.Session 的連線池本身即為執行緒安全,可供平行 fetch 共用。
+    """
+    global _SHARED_SESSION
+    if _SHARED_SESSION is None:
+        with _SESSION_LOCK:
+            if _SHARED_SESSION is None:
+                _SHARED_SESSION = make_retry_session()
+    return _SHARED_SESSION
+
+
+def _get_with_retries(
+    sess: requests.Session,
+    url: str,
+    headers: dict,
+    params: "dict | None",
+    timeout: int,
+    retries: int,
+    proxies: dict,
+    verify: bool,
+) -> "tuple[requests.Response | None, bool]":
+    """單一路徑(經 proxy 或直連)的帶重試 GET。回傳 (Response | None, 值得換路徑重試)。
+
+    行為矩陣:
+      200          → 成功回傳
+      407 帳密錯誤 → 立即結束,不重試也不換路徑(換路徑無助於帳密問題)
+      403 封鎖 ×2  → 提前跳出,值得換路徑(可能只是這個出口 IP 被擋)
+      ProxyError / 逾時 → 重試;用盡後值得換路徑
+      其他例外     → 立即結束,不換路徑
+    重試間隔只安插在「還有下一次」時,不在最後一次失敗後傻等(避免尾端延遲放大)。
+    """
+    import random as _rnd
+
+    _perr = 0   # ProxyError 計數
+    _block = 0  # 403 計數
+    _tmo = 0    # 逾時計數
+
+    for attempt in range(retries):
+        try:
+            r = sess.get(url, headers=headers, params=params,
+                         timeout=timeout, proxies=proxies, verify=verify)
+            if r.status_code == 407:
+                print("[proxy] 407 Auth Failed — 確認 secrets 帳密")
+                return None, False
+            if r.status_code == 403:
+                _block += 1
+                if _block >= 2:
+                    break
+                time.sleep(_rnd.uniform(2.5, 6.0))
+                continue
+            if r.status_code == 200:
+                return r, False
+        except requests.exceptions.ProxyError as e:
+            _perr += 1
+            print(f"[proxy] ProxyError attempt {attempt + 1}: {e}")
+            if attempt + 1 < retries:
+                time.sleep(2)
+        except requests.exceptions.Timeout:
+            _tmo += 1
+            print(f"[proxy] Timeout attempt {attempt + 1}: {url[:60]}")
+            if attempt + 1 < retries:
+                time.sleep(2)
+        except Exception as e:  # noqa: BLE001
+            print(f"[proxy] Error: {e}")
+            break
+
+    return None, (_perr > 0 or _block >= 2 or _tmo > 0)
 
 
 def fetch_url(
@@ -126,21 +209,19 @@ def fetch_url(
     params: "dict | None" = None,
     timeout: int = 20,
     retries: int = 3,
+    prefer_direct: bool = False,
 ) -> "requests.Response | None":
     """通用 HTTP GET(含 NAS Proxy 中繼 + 自動降級直連)。
 
-    行為矩陣:
+    prefer_direct=False(預設,台灣鎖區來源如 MoneyDJ/實價登錄):
       Proxy 正常    → 走 NAS,SSL verify=False(Squid CONNECT 相容)
-      407 帳密錯誤  → 立即回傳 None,不重試
-      403 封鎖 ×2   → 提前跳出,降級直連
-      ProxyError    → 降級直連
-      逾時          → 降級直連
+      連不上/被擋/逾時 → 降級直連(單次)
       無 Proxy 設定 → 直連,SSL verify=True
+    prefer_direct=True(全球可達來源如 Yahoo Finance):
+      先直連(避免「境外→台灣 NAS→境外」三角繞路,每次省一趟跨太平洋來回,
+      也不佔用 NAS 家用上行頻寬);失敗且有設 Proxy 時,走 NAS 中繼備援(單次)。
     """
-    import random as _rnd
-
     _proxy = get_proxy_config() or {}
-    _verify = not bool(_proxy)
     _hdr = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         "Accept-Language": "zh-TW,zh;q=0.9",
@@ -148,50 +229,30 @@ def fetch_url(
     if headers:
         _hdr.update(headers)
 
-    sess = make_retry_session()
-    _perr = 0   # ProxyError 計數
-    _block = 0  # 403 計數
-    _tmo = 0    # 逾時計數
+    sess = get_shared_session()
 
-    for attempt in range(retries):
-        try:
-            r = sess.get(url, headers=_hdr, params=params,
-                         timeout=timeout, proxies=_proxy, verify=_verify)
-            if r.status_code == 407:
-                print("[proxy] 407 Auth Failed — 確認 secrets 帳密")
-                return None
-            if r.status_code == 403:
-                _block += 1
-                time.sleep(_rnd.uniform(2.5, 6.0))
-                if _block >= 2:
-                    break
-                continue
-            if r.status_code == 200:
-                return r
-        except requests.exceptions.ProxyError as e:
-            _perr += 1
-            print(f"[proxy] ProxyError attempt {attempt + 1}: {e}")
-            time.sleep(2)
-        except requests.exceptions.Timeout:
-            _tmo += 1
-            print(f"[proxy] Timeout attempt {attempt + 1}: {url[:60]}")
-            time.sleep(2)
-        except Exception as e:  # noqa: BLE001
-            print(f"[proxy] Error: {e}")
-            break
+    if prefer_direct or not _proxy:
+        r, _ = _get_with_retries(sess, url, _hdr, params, timeout, retries, {}, True)
+        if r is not None or not _proxy:
+            return r
+        # 直連失敗且有 NAS 設定 → 中繼備援(單次;例如來源臨時封鎖雲端出口 IP)
+        print(f"[proxy] 直連失敗,改走 NAS 中繼備援:{url[:80]}")
+        r, _ = _get_with_retries(sess, url, _hdr, params, timeout, 1, _proxy, False)
+        if r is not None:
+            print("[proxy] 中繼備援成功")
+        return r
 
-    # 降級直連(proxy 連不上 / 被擋 / 逾時時,改不經 proxy 直接連)
-    if _proxy and (_perr > 0 or _block >= 2 or _tmo > 0):
+    r, worth_fallback = _get_with_retries(
+        sess, url, _hdr, params, timeout, retries, _proxy, False)
+    if r is not None:
+        return r
+    if worth_fallback:
+        # 降級直連(proxy 連不上 / 被擋 / 逾時時,改不經 proxy 直接連)
         print(f"[proxy] 降級直連:{url[:80]}")
-        try:
-            r_dc = sess.get(url, headers=_hdr, params=params,
-                            timeout=timeout, proxies={}, verify=True)
-            if r_dc.status_code == 200:
-                print("[proxy] 直連成功")
-                return r_dc
-        except Exception as e_dc:  # noqa: BLE001
-            print(f"[proxy] 直連失敗:{e_dc}")
-
+        r, _ = _get_with_retries(sess, url, _hdr, params, timeout, 1, {}, True)
+        if r is not None:
+            print("[proxy] 直連成功")
+        return r
     return None
 
 
@@ -200,16 +261,20 @@ def fetch_json(
     *,
     headers: "dict | None" = None,
     timeout: int = 20,
+    retries: int = 3,
+    prefer_direct: bool = False,
 ) -> "dict | list | None":
-    """GET JSON 兩段降級 SSOT：fetch_url(proxy→direct) 後解 JSON。
+    """GET JSON 兩段降級 SSOT：fetch_url 後解 JSON(降級順序見 fetch_url)。
 
     非 200、非 JSON、或 fetch_url 回 None，一律回 None。
     業務規則(如「必須是 list」)由呼叫端自行判斷。
+    prefer_direct=True 供全球可達來源(如 Yahoo)直連優先,免繞 NAS 三角路。
     """
     _hdr = {"Accept": "application/json"}
     if headers:
         _hdr.update(headers)
-    resp = fetch_url(url, headers=_hdr, timeout=timeout)
+    resp = fetch_url(url, headers=_hdr, timeout=timeout, retries=retries,
+                     prefer_direct=prefer_direct)
     if resp is None:
         return None
     try:

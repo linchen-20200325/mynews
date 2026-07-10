@@ -234,6 +234,24 @@
 - ✅ `paths.py`：新增 `EMPLOYMENT_VACANCY_DATA`（未來真實資料存放路徑）
 - 待辦：接入真實勞動部 / 內政部 CSV，替換 `taiwan_map_data._mock_df()` 即可上線
 
+## 深度 Code Review 落地(2026-07-10,PR #110 已併入 main)
+依外部 code review 說明書實作兩衝刺(連線效能 + 正確性 + 診斷頁):
+- **效能(第一衝刺)**
+  - `news_fetcher`:多來源 RSS 改 `ThreadPoolExecutor(max_workers=8)` 平行抓取(彙整保序,去重優先序不變);單 feed timeout 30→10s。新聞頁預估 24s→3~4s
+  - `github_store`:commit 前以 git blob sha 比對,內容未變更即跳過 PUT;GET/PUT 共用模組層 Session。`app.py` 的「抓取後自動存 GitHub」預設 True→False(抓取與存檔解耦);各頁 session fallback 同步改 False
+  - `proxy_helper`:模組層共用 Session(`get_shared_session`,pool_maxsize=20,執行緒安全)取代每次 fetch 新建;新增 `prefer_direct` 參數 — Yahoo 等全球可達來源直連優先、NAS 中繼降級為備援(`index_fetcher`/`season_chart` 已接);重試 sleep 只安插在「還有下一次」時
+  - `index_fetcher`:HTTP_TIMEOUT 20→10、retries 3→2;`_drop_threshold` 公開為 `drop_threshold()`(供降級路徑 SSOT 取用)
+  - `app_core.load_json` 加 `@st.cache_data`(以 path+mtime_ns 為鍵,檔案更新自動失效);新增 `fetch_live_news_cached(kind)`(ttl=900)與 `fetch_index_quotes_cached()`(ttl=600),tw/us/global_/housing 四頁「立即抓取」接入
+- **正確性(第二衝刺,修 review Bug ①②③④)**
+  - ①裸下標:`update_data._run_chip_data` 印出與 `pages/tw.render_chip` 融資/台指期欄位全改 `.get()`+`isinstance`(缺單欄只顯示「—」,故障半徑整段→單欄);`build_intl_alert` 台指期夜盤欄位同步防呆(`change_pct` 非數值即略過)
+  - ②指數全失敗:`build_intl_alert` 報價抓取包降級 → 空 quotes + `quotes_ok=False` 續跑(僅新聞面研判);`validate_intl_alert` 允許「明示降級」的空 quotes;前端顯示警示
+  - ③`season_chart.fetch_sp500_2026`:裸 `except:` 收斂為具型別 except + stderr 日誌;`base_price=0` 防除零;`pages/tw` 空結果不再佔 1 小時快取(失敗清快取 + session 冷卻 5 分鐘)
+  - ④mock 訊號污染:`reversal_signals` mock 列標 `is_mock=True`,`_check_chip_market/_check_chip_stock` 偵測到 mock 一律 `triggered=False`(**不納入共振**,訊號僅由 60MA+半導體週K 兩真實指標決定);頂層回 `chip_is_mock` 供 UI/LINE 標示;`hash()` 改 `hashlib.md5`(跨進程確定性);UI expander 加「🧪 模擬值(不計入共振)」徽章
+  - `gemini_client.call_gemini_for_json` 強制頂層為 dict(非物件視同解析失敗 raise),15 個呼叫端的 `setdefault` 一律安全(SSOT 單點修)
+- **可觀測性**:新增 `pages/diagnostics.py`「🩺 資料診斷」第 7 頁(SSOT):17 個資料檔新鮮度總覽(歸屬日/mtime/過期判定,門檻沿用 freshness+領域常數)、4 資料源平行輕量健檢(NAS/Yahoo/TWSE/Google News,按鈕觸發)+ 金鑰/Token 設定狀態、mock 清單透明化
+- 驗證:pyflakes 全庫零警告(順手清 `pages/housing.py` 既有 dead import/變數)、離線 smoke test 30 項全過(平行保序/blob sha 對 git hash-object/降級路徑/mock 排除/確定性 seed)、`test_numeric_audit.py` 11/11
+- 未落地(review 建議、留待後續):房市 3 tab lazy render(中風險 UX 改動)、5 頁兩步驟面板抽工廠、`etf_fetcher.crawl` 保守平行化
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

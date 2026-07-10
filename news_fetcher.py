@@ -22,6 +22,7 @@ import re
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from html import unescape
@@ -37,7 +38,12 @@ CREDIBLE_FEEDS: dict[str, str] = {
     "德國之聲 DW 中文": "https://rss.dw.com/rdf/rss-chi-all",
 }
 
-HTTP_TIMEOUT = 30
+# 單一 feed 逾時(秒)。多來源已平行抓取,個別慢站最多拖住一個 worker 10 秒,
+# 不再像串行時代一站 30 秒拖垮全局。
+HTTP_TIMEOUT = 10
+# RSS 平行抓取的執行緒數:I/O-bound,總時間由 Σ(每feed) 降為 ≈最慢一批;
+# 8 對 Google News/大媒體屬禮貌範圍,勿再調高以免對來源不友善。
+MAX_FEED_WORKERS = 8
 USER_AGENT = "Mozilla/5.0 (compatible; mynews-rss/1.0; +https://github.com/linchen-20200325/mynews)"
 
 _TAG_RE = re.compile(r"<[^>]+>")
@@ -229,6 +235,8 @@ def fetch_news(
 ) -> list[dict]:
     """從 Google News RSS(依 queries)+ 指定官方 feed 聚合真實新聞。
 
+    多 feed 以 ThreadPoolExecutor 平行抓取(單一 feed 失敗只回空清單,不拖垮全局);
+    彙整順序維持「關鍵字在前、官方 feed 在後」的提交順序,去重優先序與串行版一致。
     會依標題/連結去重、依發佈時間由新到舊排序,最後取前 ``limit`` 則。
     """
     since = (
@@ -237,19 +245,31 @@ def fetch_news(
         else None
     )
 
-    collected: list[dict] = []
+    # 先組出所有 feed 任務,再平行抓取(RSS 為 I/O-bound,平行後總時間≈最慢一批)。
+    tasks: list[tuple[str, str, str]] = []  # (url, source_hint, origin)
     for query in queries:
         if not query.strip():
             continue
-        collected += fetch_feed(
+        tasks.append((
             google_news_rss_url(query, lang, region),
             "Google News",
-            since,
-            origin=f"關鍵字「{query.strip()}」",
-        )
-
+            f"關鍵字「{query.strip()}」",
+        ))
     for name, url in (feeds or {}).items():
-        collected += fetch_feed(url, name, since, origin=name)
+        tasks.append((url, name, name))
+
+    collected: list[dict] = []
+    if len(tasks) == 1:
+        url, hint, origin = tasks[0]
+        collected += fetch_feed(url, hint, since, origin)
+    elif tasks:
+        with ThreadPoolExecutor(max_workers=min(MAX_FEED_WORKERS, len(tasks))) as pool:
+            futures = [
+                pool.submit(fetch_feed, url, hint, since, origin)
+                for url, hint, origin in tasks
+            ]
+            for fut in futures:  # 依提交順序彙整(fetch_feed 內部已容錯,不會 raise)
+                collected += fut.result()
 
     # 去重:同連結或同(正規化)標題只留一則。
     seen_urls: set[str] = set()

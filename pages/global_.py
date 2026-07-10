@@ -21,6 +21,7 @@ from app_core import (
     FOCUS_PATH,
     FOCUS_ARCHIVE_DIR,
     ensure_gemini_key,
+    fetch_live_news_cached,
     render_key_hint,
     render_news_cards,
     pick_report,
@@ -43,7 +44,7 @@ def render_live_panel() -> None:
         if st.button("🔄 ① 立即抓取最新新聞", use_container_width=True):
             with st.spinner("抓取真實外電中…"):
                 try:
-                    st.session_state["live_news"] = update_data.fetch_macro_news(get_topic())
+                    st.session_state["live_news"] = fetch_live_news_cached("macro", get_topic())
                     st.session_state.pop("live_report", None)
                 except Exception as exc:  # noqa: BLE001
                     st.session_state["live_news"] = []
@@ -77,7 +78,7 @@ def render_trend_live_panel() -> None:
         if st.button("🔄 ① 立即抓取產業新聞", use_container_width=True):
             with st.spinner("抓取產業新聞中…"):
                 try:
-                    st.session_state["live_trend_news"] = update_data.fetch_trend_news()
+                    st.session_state["live_trend_news"] = fetch_live_news_cached("trend")
                     st.session_state.pop("live_trends", None)
                 except Exception as exc:  # noqa: BLE001
                     st.session_state["live_trend_news"] = []

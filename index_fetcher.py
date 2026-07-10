@@ -7,7 +7,9 @@
 
 來源:Yahoo Finance chart API(JSON、免金鑰、全球可達):
   https://query1.finance.yahoo.com/v8/finance/chart/<symbol>?range=5d&interval=1d
-連線優先走 proxy_helper(PROXY_URL)中繼,連不上自動降級直連;沙箱無網路時抓不到屬正常。
+連線走 proxy_helper 的 prefer_direct 模式:Yahoo 全球可達,直連優先(免「境外→台灣
+NAS→境外」三角繞路,9 個 symbol 可省數秒);直連失敗才走 NAS 中繼備援。
+沙箱無網路時抓不到屬正常。
 
 【真實性】本模組只回傳「真實市場報價算出的漲跌幅」,數字一律來自 Yahoo,
         不經 AI 估算;Gemini 僅在 update_data 端負責「解讀利空原因」,不得竄改數字。
@@ -32,7 +34,9 @@ import numutil  # 漲跌幅公式 + 方向對帳的單一真相源(SSOT)
 
 YF_CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5d&interval=1d"
 
-HTTP_TIMEOUT = 20
+# 互動場景逾時/重試收斂:單 symbol 最壞情況必須有界,9 個 symbol 串抓才不會卡住整頁。
+HTTP_TIMEOUT = 10
+HTTP_RETRIES = 2
 
 # 追蹤標的:symbol(Yahoo)→ 中文名 / 分組 / 時間差性質。
 # lead_type:對台股的時間差定位(隔夜領先 / 同步連動 / 盤前即時)。
@@ -54,14 +58,19 @@ SYMBOLS: list[dict] = [
 DEFAULT_DROP_THRESHOLD = -1.5
 
 
-def _drop_threshold() -> float:
+def drop_threshold() -> float:
+    """目前生效的「大跌」門檻(%):環境變數 INTL_DROP_THRESHOLD 可覆寫預設值。
+
+    公開供 update_data 在報價全失敗的降級路徑組空 quotes 文件時取用(SSOT)。
+    """
     return config.env_float("INTL_DROP_THRESHOLD", DEFAULT_DROP_THRESHOLD)
 
 
 def _http_get_json(url: str) -> dict | None:
-    """GET JSON:走 proxy_helper.fetch_json(proxy→直連兩段降級);失敗回 None。"""
+    """GET JSON:Yahoo 全球可達 → 直連優先、NAS 中繼備援(prefer_direct);失敗回 None。"""
     import proxy_helper
-    return proxy_helper.fetch_json(url, timeout=HTTP_TIMEOUT)
+    return proxy_helper.fetch_json(
+        url, timeout=HTTP_TIMEOUT, retries=HTTP_RETRIES, prefer_direct=True)
 
 
 def _parse_chart(payload: dict) -> tuple[float, float] | None:
@@ -100,7 +109,7 @@ def _parse_chart(payload: dict) -> tuple[float, float] | None:
 
 def fetch_index_quotes(proxy: str | None = None, log=print) -> dict:
     """抓所有追蹤指數/期貨的最新漲跌幅;單一標的失敗只略過,不影響其他。"""
-    threshold = _drop_threshold()
+    threshold = drop_threshold()
     quotes: dict[str, dict] = {}
     for item in SYMBOLS:
         sym = item["symbol"]

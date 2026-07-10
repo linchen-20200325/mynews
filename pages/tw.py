@@ -1,6 +1,8 @@
 """pages/tw.py — 台股頁:國際盤預警 + 法人籌碼 + 台股觀察 + 互動工具。"""
 from __future__ import annotations
 
+import time
+
 import streamlit as st
 import pandas as pd
 
@@ -22,6 +24,8 @@ from app_core import (
     REVERSAL_PATH,
     SIX_MONTH_SOURCE_CAPTION,
     ensure_gemini_key,
+    fetch_live_news_cached,
+    fetch_index_quotes_cached,
     render_key_hint,
     render_news_cards,
     pick_report,
@@ -44,7 +48,7 @@ def render_stock_live_panel() -> None:
         if st.button("🔄 ① 立即抓取台灣財經新聞", use_container_width=True):
             with st.spinner("抓取台灣財經新聞中…"):
                 try:
-                    st.session_state["live_stock_news"] = update_data.fetch_stock_news()
+                    st.session_state["live_stock_news"] = fetch_live_news_cached("stock")
                     st.session_state.pop("live_stocks", None)
                 except Exception as exc:  # noqa: BLE001
                     st.session_state["live_stock_news"] = []
@@ -111,9 +115,7 @@ def render_intl_alert_live_panel() -> None:
         if st.button("🔄 ① 立即抓國際盤報價(免金鑰)", use_container_width=True):
             with st.spinner("抓國際盤報價中…"):
                 try:
-                    st.session_state["live_intl_quotes"] = (
-                        update_data.index_fetcher.fetch_index_quotes()
-                    )
+                    st.session_state["live_intl_quotes"] = fetch_index_quotes_cached()
                     st.session_state.pop("live_intl_alert", None)
                 except Exception as exc:  # noqa: BLE001
                     st.session_state.pop("live_intl_quotes", None)
@@ -177,6 +179,8 @@ def render_intl_alert(data: dict) -> None:
 
     st.subheader("📊 國際盤即時報價(時間差定位)")
     st.caption("漲跌幅=最新 vs 前收;美股指數→隔夜領先台股,美股期貨/台指期夜盤→盤前即時。")
+    if data.get("quotes_ok") is False:
+        st.warning("⚠️ 本次未取得任何即時報價(來源/代理暫時不可用),大跌偵測不可用,以下僅新聞面研判。")
     render_index_quotes(data.get("quotes", {}))
 
     drops = data.get("drops", [])
@@ -321,37 +325,47 @@ def render_chip(data: dict) -> None:
         "單日大幅賣超即你問的『機構賣壓』可在此事後驗證。非投資建議。"
     )
 
+    # 欄位一律 .get + 型別檢查:缺鍵或值為 None(來源改版/單欄缺漏)只顯示「—」,
+    # 不讓單欄壞資料把整個籌碼面板炸掉(故障半徑:整段 → 單欄)。
+    def _fmt_num(value, fmt: str) -> str:
+        return format(value, fmt) if isinstance(value, (int, float)) else "—"
+
     margin = load_json(MARGIN_PATH)
     if margin:
         st.subheader("💳 融資餘額(散戶槓桿/斷頭訊號)")
+        m_today = margin.get("margin_today")
+        m_chg = margin.get("margin_chg")
+        m_pct = margin.get("margin_chg_pct")
         m1, m2 = st.columns(2)
         ui_helpers.metric_tip(
             m1, "融資餘額",
-            f"{margin.get('margin_today', 0)/update_data.OKU:.0f} 億",
-            delta=f"{margin.get('margin_chg_pct', 0):+.2f}%",
+            (f"{m_today/update_data.OKU:.0f} 億"
+             if isinstance(m_today, (int, float)) else "—"),
+            delta=f"{m_pct:+.2f}%" if isinstance(m_pct, (int, float)) else None,
         )
         ui_helpers.metric_tip(
             m2, "單日增減(融資)",
-            f"{margin.get('margin_chg', 0)/update_data.OKU:+.0f} 億",
+            (f"{m_chg/update_data.OKU:+.0f} 億"
+             if isinstance(m_chg, (int, float)) else "—"),
             tip_key="融資增減",
         )
         st.caption(f"資料:{margin.get('date', '—')}(證交所 MI_MARGN,真實)。"
                    "融資大減=去槓桿/斷頭賣壓,為共振偵測四力之一。")
 
     fut = load_json(FUT_CHIP_PATH)
-    if fut and fut.get("foreign_net_oi") is not None:
+    if fut and isinstance(fut.get("foreign_net_oi"), (int, float)):
         st.subheader("📐 外資台指期留倉(期貨部位偏多/偏空)")
         stance = fut.get("stance", "中性")
         badge = {"偏多": "🟢 偏多", "偏空": "🔴 偏空", "中性": "⚪ 中性"}.get(stance, stance)
         f1, f2, f3 = st.columns(3)
         ui_helpers.metric_tip(f1, "外資 期貨方向", badge,
-                              delta=f"{fut.get('foreign_net_oi', 0):+,} 口",
+                              delta=f"{fut['foreign_net_oi']:+,} 口",
                               tip_key="台指期")
         ui_helpers.metric_tip(f2, "投信 留倉淨額",
-                              f"{fut.get('trust_net_oi', 0):+,} 口",
+                              f"{_fmt_num(fut.get('trust_net_oi'), '+,')} 口",
                               tip_key="留倉")
         ui_helpers.metric_tip(f3, "自營 留倉淨額",
-                              f"{fut.get('dealer_net_oi', 0):+,} 口",
+                              f"{_fmt_num(fut.get('dealer_net_oi'), '+,')} 口",
                               tip_key="留倉")
         st.caption(
             f"資料:{fut.get('date', '—')}(期交所「三大法人台指期」未平倉口數淨額,真實)。"
@@ -780,9 +794,27 @@ def _fetch_2026_cached() -> dict:
     return season_chart.fetch_sp500_2026() or {}
 
 
+# Yahoo 短暫故障時的重試冷卻(秒):失敗不佔 1 小時快取,但也不在每次 rerun 重打
+_CYCLE_FAIL_COOLDOWN = 300
+
+
+def _fetch_2026() -> dict:
+    """成功結果快取 1 小時;失敗清出快取(不讓空結果佔 1 小時),改記 session 冷卻 5 分鐘。"""
+    failed_at = st.session_state.get("cycle_fetch_failed_at", 0.0)
+    if time.time() - failed_at < _CYCLE_FAIL_COOLDOWN:
+        return {}
+    data = _fetch_2026_cached()
+    if data:
+        st.session_state.pop("cycle_fetch_failed_at", None)
+    else:
+        _fetch_2026_cached.clear()
+        st.session_state["cycle_fetch_failed_at"] = time.time()
+    return data
+
+
 def _tool_cycle_chart() -> None:
     import matplotlib.pyplot as plt
-    actual = _fetch_2026_cached() or None
+    actual = _fetch_2026() or None
     tab_chart, tab_data = st.tabs(["📊 圖表", "📋 診斷資料"])
 
     with tab_chart:
@@ -841,11 +873,12 @@ def _render_reversal_result(result: dict) -> None:
         triggered = sig.get("triggered", False)
         direction = sig.get("direction")
         detail    = sig.get("detail", "—")
+        mock_tag  = "　🧪 模擬值(不計入共振)" if sig.get("is_mock") else ""
         badge_fn  = st.error if direction == "bad" else (
                     st.success if direction == "good" else st.info)
         with st.expander(
             f"{label}　{'✅ 觸發' if triggered else '❌ 未觸發'}"
-            f"　{_DIR_BADGE.get(direction, '—')}",
+            f"　{_DIR_BADGE.get(direction, '—')}{mock_tag}",
             expanded=triggered,
         ):
             badge_fn(detail) if triggered else st.info(detail)
@@ -865,7 +898,8 @@ def sec_reversal() -> None:
     st.caption(
         f"資料日期：{doc.get('report_date', '—')}　·　"
         f"更新時間：{doc.get('as_of', '—')}　·　"
-        "60MA + 半導體週K 為真實資料；籌碼面仍為模擬值（待接通期交所真實 API）"
+        "60MA + 半導體週K 為真實資料；籌碼歷史序列仍為模擬值 — **已排除於共振計算**"
+        "（訊號僅由兩個真實指標決定；待接通期交所真實 API 後自動納入）"
     )
     for result in doc.get("signals", []):
         with st.container(border=True):
@@ -917,9 +951,11 @@ def tool_reversal_detector() -> None:
 
     _render_reversal_result(result)
     if not result.get("error"):
+        mock_note = ("⚠️ 籌碼面目前為 mock 資料，**已排除於共振計算**"
+                     "（接通期交所/集保所真實 API 後自動納入）。"
+                     if result.get("chip_is_mock") else "")
         st.caption(
-            "⚠️ 籌碼面目前使用 mock 資料（接通期交所/集保所真實 API 後自動替換）。"
-            "三大指標均為程式自動運算，非 AI 估算；僅供中線參考，非投資建議。"
+            f"{mock_note}三大指標均為程式自動運算，非 AI 估算；僅供中線參考，非投資建議。"
         )
 
 

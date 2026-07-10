@@ -391,7 +391,15 @@ def validate_us_stocks(data: dict) -> None:
 
 
 def validate_intl_alert(data: dict) -> None:
-    """國際盤預警的最低限度結構驗證(報價必須是非空字典:無真實數字就不該成立)。"""
+    """國際盤預警的最低限度結構驗證。
+
+    正常情況報價必須是非空字典(無真實數字就不該成立);唯一例外是報價全數
+    抓取失敗的「明示降級」(quotes_ok=False):允許空 quotes,僅保留新聞面研判,
+    不讓 Yahoo 限流/代理故障連鎖炸掉排程 digest 與共振偵測。
+    """
+    if data.get("quotes_ok") is False:
+        _validate_structure(data, required_dicts=("quotes", "tw_impact", "us_view"))
+        return
     _validate_structure(data, nonempty_dicts=("quotes",), required_dicts=("tw_impact", "us_view"))
 
 
@@ -486,21 +494,35 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
 
     數字一律取自 index_fetcher 的真實報價(quotes/drops),Gemini 只負責文字研判(利空原因、
     對台股影響),不得竄改數字。可傳入既抓好的 quotes(供前端兩步流程重用,免重抓)。
+    報價全數抓取失敗時降級為空報價續跑(quotes_ok=False),不讓 Yahoo 限流/代理故障
+    炸掉整個國際盤預警(排程 digest / 共振偵測連鎖失效的單點)。
     """
-    quotes_doc = quotes or index_fetcher.fetch_index_quotes(log=print)
+    quotes_doc = quotes
+    if not quotes_doc:
+        try:
+            quotes_doc = index_fetcher.fetch_index_quotes(log=print)
+        except Exception as exc:  # noqa: BLE001 — 全失敗 → 降級空報價,只留新聞面研判
+            print(f"  警告: 指數報價全數抓取失敗,以空報價降級續跑:{exc}", file=sys.stderr)
+            quotes_doc = {"as_of": "—", "threshold": index_fetcher.drop_threshold(),
+                          "quotes": {}}
     qmap = quotes_doc.get("quotes", {})
 
     # 台指期夜盤(期交所即時):台股自身對隔夜的定價,屬最直接的【盤前即時】訊號。
     # 走 NAS 代理抓;失敗(沙箱無網路/期交所擋境外/代理不通)只略過,不影響其他報價與 LINE。
+    # 欄位一律 .get + 型別檢查:來源改版缺欄/回 None 時只略過夜盤,不拖垮整段。
     try:
         import taifex_night_fetcher
         night = taifex_night_fetcher.fetch_night_quote(log=print)
-        if night:
-            qmap[night["symbol"]] = {
-                "name": night["name"], "group": night["group"],
-                "lead_type": night["lead_type"], "last": night["last"],
-                "prev": night["prev"], "change_pct": night["change_pct"],
-                "is_drop": night["change_pct"]
+        night_pct = night.get("change_pct") if isinstance(night, dict) else None
+        if isinstance(night_pct, (int, float)):
+            qmap[night.get("symbol", "TXF-NIGHT")] = {
+                "name": night.get("name", "台指期夜盤"),
+                "group": night.get("group", "台股期貨"),
+                "lead_type": night.get("lead_type", "盤前即時"),
+                "last": night.get("last"),
+                "prev": night.get("prev"),
+                "change_pct": night_pct,
+                "is_drop": night_pct
                 <= quotes_doc.get("threshold", index_fetcher.DEFAULT_DROP_THRESHOLD),
             }
     except Exception as exc:  # noqa: BLE001 — 夜盤抓取失敗不得拖垮國際盤預警
@@ -554,11 +576,14 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
     if not ai_ok:
         summary = (f"⚠️ AI 解讀暫時無法取得(配額/網路),以下為真實報價偵測到的大跌 {len(drops)} 項。"
                    if drops else "⚠️ AI 解讀暫時無法取得;目前真實報價未觸及大跌門檻。")
+    if not qmap:
+        summary = "⚠️ 本次未取得任何即時報價(來源/代理暫時不可用),大跌偵測不可用;" + (summary or "以下僅新聞面研判。")
     result = {
         "report_date": today,
         "as_of": quotes_doc.get("as_of", ""),
         "threshold": quotes_doc.get("threshold", index_fetcher.DEFAULT_DROP_THRESHOLD),
         "quotes": qmap,                       # 真實報價(唯一數字來源)
+        "quotes_ok": bool(qmap),              # 報價是否取得(False=降級,僅新聞面)
         "drops": drops,                       # 真實大跌清單(程式算)
         "alert_level": gemini.get("alert_level") or ("警戒" if drops else "平靜"),
         "summary": summary,
@@ -1436,7 +1461,7 @@ def _run_intl_alert(today: str) -> dict | None:
         return None
 
 
-def _run_chip_data(today: str) -> tuple[dict | None, dict | None, dict | None]:  # noqa: ARG001
+def _run_chip_data(today: str) -> tuple[dict | None, dict | None, dict | None]:
     """D3. 法人籌碼(三大法人 + 融資餘額 + 台指期留倉)。回傳 (chip, margin, fut_chip)。"""
     if not config.chip_enabled():
         print("[6/8] ENABLE_CHIP=0,略過法人籌碼。")
@@ -1452,10 +1477,14 @@ def _run_chip_data(today: str) -> tuple[dict | None, dict | None, dict | None]: 
         chip = fetched
         save_json(OUTPUT_CHIP, chip)
         if chip.get("days"):
-            save_json(CHIP_ARCHIVE_DIR / f"{chip['days'][0]['date']}.json", chip)
             latest = chip["days"][0]
-            print(f"  法人籌碼完成,最新 {latest['date']}:"
-                  f"外資 {latest['foreign']/OKU:+.0f}億、投信 {latest['trust']/OKU:+.0f}億。")
+            save_json(CHIP_ARCHIVE_DIR / f"{latest.get('date', today)}.json", chip)
+            # 欄位 .get + 型別檢查:來源改版缺單欄時只少顯示一欄,不讓整段存檔/歸檔被 except 放棄
+            foreign, trust = latest.get("foreign"), latest.get("trust")
+            f_txt = f"{foreign/OKU:+.0f}億" if isinstance(foreign, (int, float)) else "—"
+            t_txt = f"{trust/OKU:+.0f}億" if isinstance(trust, (int, float)) else "—"
+            print(f"  法人籌碼完成,最新 {latest.get('date', '—')}:"
+                  f"外資 {f_txt}、投信 {t_txt}。")
     except Exception as exc:  # noqa: BLE001
         print(f"  警告: 法人籌碼抓取失敗:{exc}", file=sys.stderr)
     try:
@@ -1472,8 +1501,9 @@ def _run_chip_data(today: str) -> tuple[dict | None, dict | None, dict | None]: 
             freshness.ensure_fresh(fetched.get("date"), CHIP_STALE_DAYS, "台指期留倉")
             fut_chip = fetched
             save_json(OUTPUT_FUT_CHIP, fut_chip)
-            print(f"  台指期留倉完成,外資{fut_chip['stance']}"
-                  f"(淨{fut_chip['foreign_net_oi']:+,}口)。")
+            net_oi = fut_chip.get("foreign_net_oi")
+            oi_txt = f"{net_oi:+,}口" if isinstance(net_oi, (int, float)) else "—"
+            print(f"  台指期留倉完成,外資{fut_chip.get('stance', '中性')}(淨{oi_txt})。")
     except Exception as exc:  # noqa: BLE001
         print(f"  警告: 台指期留倉抓取失敗:{exc}", file=sys.stderr)
     return chip, margin, fut_chip
