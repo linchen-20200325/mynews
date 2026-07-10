@@ -252,10 +252,21 @@
 - 驗證:pyflakes 全庫零警告(順手清 `pages/housing.py` 既有 dead import/變數)、離線 smoke test 30 項全過(平行保序/blob sha 對 git hash-object/降級路徑/mock 排除/確定性 seed)、`test_numeric_audit.py` 11/11
 - 未落地(review 建議、留待後續):房市 3 tab lazy render(中風險 UX 改動)、5 頁兩步驟面板抽工廠、`etf_fetcher.crawl` 保守平行化
 
-## Streamlit Cloud 中文字型(2026-07-10,PR #111 已併入 main)
+## Streamlit Cloud 中文字型(2026-07-10,PR #111 已併入 main;同日因雲端 Segfault 緊急回退,見下節)
 - ✅ 新建 `packages.txt`(Streamlit Cloud apt 清單,單行 `fonts-noto-cjk`,**格式限制:一行一套件、不可加註解**):部署時安裝 Noto CJK 字型
 - 原理:`season_chart.py` import 時偵測 `_CJK_FONTS` 候選(第一順位 `Noto Sans CJK TC`),之前雲端無中文字型 → `_ZH=False` 整張圖退回英文;裝字型後自動切回中文,**零程式碼改動**
 - 驗證:沙箱 apt 實裝後 matplotlib 看到全部 15 個 Noto CJK 家族、`season_chart._ZH=True` 選中 `Noto Sans CJK TC`;實際 build_cycle_figure 渲染零缺字警告
+
+## 緊急回退:雲端 Segfault 事故(2026-07-10,救火 PR)
+- 症狀:PR #111 部署後 Streamlit Cloud 反覆整站當機(`Segmentation fault`,原生層、無 Python 堆疊):開站後頁面渲染數秒即死,每次重啟必復發
+- 診斷(排除法):
+  - 同日稍早 #110 部署(無字型)在同一 Python 3.14.6 雲端環境運作正常 → 平台/Python 版本非唯一兇手
+  - 沙箱 Python 3.13 + 與雲端 uv 解析完全同版套件(numpy 2.5.1/matplotlib 3.11.0/pandas 3.0.3/pyarrow 25.0.0)+ 靜態 Noto CJK ttc:單獨渲染季節圖與 AppTest 整頁重跑全過 → 程式碼與套件版本組合無罪
+  - 唯一無法本機重現的變因:雲端 cp314 二進位 × 裝字型後的 CJK 繪製路徑(app 預設頁「📊 台股」即繪季節圖,與「渲染數秒後死亡、必復發」時序吻合)
+- 處置:刪除 `packages.txt`(一次只動一個變因)→ 圖表暫回英文
+  - 若復活 → 證實字型路徑是兇手,改用「repo 內建靜態子集字型 + `fm.addfont` + 執行緒安全 Figure」復中文(不依賴雲端 apt)
+  - 若未復活 → 兇手是 Python 3.14 環境:依官方文件刪除 app 重建,Advanced settings 改選 Python 3.12(已部署 app 無法直接改版本)
+- 教訓:`packages.txt`(apt 層)改動會觸發雲端整個環境重建、且沙箱無法重現其基底映像,屬高風險變更;字型類需求優先用 repo 內建資產
 
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
