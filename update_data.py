@@ -18,6 +18,7 @@
   - GEMINI_MODEL                   (選填) Gemini 模型,預設 gemini-2.5-flash
   - GEMINI_MAX_TOKENS              (選填) 單次輸出 token 上限,預設 16384
   - EARLIEST_TW_HHMM               (選填) schedule 早於此台灣時刻(HHMM)就略過,預設 0530
+  - PUSH_ALL_DAYS                  (選填) 設 1 =非台股交易日也全量推播;預設僅推國際盤快報
   - REPORT_TOPIC                   (選填) 戰略報告的分析主題(單一)
   - REPORT_TOPICS                  (選填) 多主題戰略報告,以 ; 分隔(第一個為主報告)
   - NEWS_QUERIES                   (選填) 戰略報告抓新聞的關鍵字,以 ; 分隔
@@ -1557,8 +1558,13 @@ def _run_line_push(
     fut_chip: dict | None,
     conf: dict | None,
     today: str,
+    trading_day: bool = True,
 ) -> None:
-    """LINE 推播(依序:① 國際盤快報 → ② 共振預警 → ③ 法人事件預告 → ④ 戰略報告)。"""
+    """LINE 推播(依序:① 國際盤快報 → ② 共振預警 → ③ 法人事件預告 → ④ 戰略報告)。
+
+    trading_day=False(台股非交易日):僅推 ①、②③④ 靜音——台股類預警在休市日
+    無行動意義;國際盤快報保留(如週六早上=美股週五收盤,仍具閱讀價值)。
+    """
     if not (config.env_str("LINE_CHANNEL_ACCESS_TOKEN") and config.env_str("LINE_TO")):
         return
     print("推送 LINE 通知(依序:國際盤大跌→共振→事件預告→戰略報告)...")
@@ -1570,6 +1576,9 @@ def _run_line_push(
             print(f"  ① 國際盤快報已推({tag})。")
         except Exception as exc:  # noqa: BLE001
             print(f"  警告: 國際盤 LINE 推播失敗:{exc}", file=sys.stderr)
+    if not trading_day:
+        print("  今日非台股交易日:②共振/③事件預告/④戰略報告靜音(設 PUSH_ALL_DAYS=1 可全推)。")
+        return
     if conf and conf.get("triggered") and config.confluence_line_enabled():
         try:
             line_notify.notify_line_confluence(conf, today)
@@ -1608,6 +1617,13 @@ def main() -> int:
     if config.env_str("GITHUB_EVENT_NAME") == "schedule" and _schedule_guard(now_tw, today):
         return 0
 
+    # 台股交易日守門:非交易日(週六日/TW_HOLIDAYS)報告照產,但 LINE 僅推國際盤快報。
+    trading_day = (tz_utils.is_tw_trading_day(now_tw.date())
+                   or config.env_bool("PUSH_ALL_DAYS", False))
+    if not trading_day:
+        print(f"今日({today})非台股交易日:LINE 僅推國際盤快報,個股盯盤暫停"
+              "(設 PUSH_ALL_DAYS=1 可恢復全量)。")
+
     try:
         report = _run_strategic_report(today)
         _run_trend_radar(today)
@@ -1634,13 +1650,16 @@ def main() -> int:
             )
         else:
             print("資料更新部分完成(主報告降級,國際盤/籌碼/共振仍已產出)。")
-        _run_line_push(report, intl, chip, fut_chip, conf, today)
+        _run_line_push(report, intl, chip, fut_chip, conf, today, trading_day=trading_day)
         if config.watch_enabled():
-            print("個股盯盤(第二個 bot):自選台股消息面 + 月營收...")
-            try:
-                run_watch_section(today)
-            except Exception as exc:  # noqa: BLE001
-                print(f"  警告: 個股盯盤推播失敗:{exc}", file=sys.stderr)
+            if not trading_day:
+                print("個股盯盤:非台股交易日,暫停推播(下個交易日恢復)。")
+            else:
+                print("個股盯盤(第二個 bot):自選台股消息面 + 月營收...")
+                try:
+                    run_watch_section(today)
+                except Exception as exc:  # noqa: BLE001
+                    print(f"  警告: 個股盯盤推播失敗:{exc}", file=sys.stderr)
         return 0
 
     except Exception as exc:  # noqa: BLE001 — CI 需要明確失敗碼

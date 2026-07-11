@@ -101,3 +101,14 @@ US_HOLIDAYS: frozenset[date] = frozenset(map(_d, [
     "2026-11-26",  # Thanksgiving
     "2026-12-25",  # Christmas
 ]))
+
+
+def is_tw_trading_day(d: date | None = None) -> bool:
+    """台股是否交易日:非週六/日且不在 TW_HOLIDAYS(推播守門與資料判斷共用的 SSOT)。
+
+    d 為 None 時以「台灣今日」(taiwan_now)為準——刻意不用本機 date.today(),
+    避免 UTC 清晨班次(台灣早晨)把日期誤判成前一天。
+    """
+    if d is None:
+        d = taiwan_now().date()
+    return d.weekday() < 5 and d not in TW_HOLIDAYS

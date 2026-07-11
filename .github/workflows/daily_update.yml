@@ -65,6 +65,8 @@ jobs:
           GEMINI_MAX_TOKENS: ${{ vars.GEMINI_MAX_TOKENS }}
           # 資料齊備守門:schedule 早於此台灣時刻(HHMM,預設 0530)就略過,擋 GitHub 半夜亂觸發
           EARLIEST_TW_HHMM: ${{ vars.EARLIEST_TW_HHMM }}
+          # 非台股交易日(週六日/休市日)預設只推國際盤快報;設 1 可照常全量推播
+          PUSH_ALL_DAYS: ${{ vars.PUSH_ALL_DAYS }}
           REPORT_TOPIC: ${{ vars.REPORT_TOPIC }}
           REPORT_TOPICS: ${{ vars.REPORT_TOPICS }}
           NEWS_QUERIES: ${{ vars.NEWS_QUERIES }}

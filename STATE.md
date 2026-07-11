@@ -269,6 +269,13 @@
 - 教訓:雲端 venv 只在環境層變更時重建,unpinned 依賴的「實際版本」≠「最新版」;任何觸發重建的變更都可能一次引入多個未知新版 — 關鍵原生套件(pyarrow/numpy)建議常態鎖上限
 - 字型後續:字型本身無罪,服務穩定後可直接恢復 `packages.txt`(fonts-noto-cjk)復中文,無需 repo 內建字型方案
 
+## 推播交易日守門(2026-07-11,PR #114 已併入 main)
+- 問題:排程天天跑(NAS 06:00 主力 + GitHub 06:40/07:30 兜底,見 daily_update.yml 註解),推播鏈完全沒有開盤日判斷 → 週末/國定假日照推全套 LINE
+- 處置:新增 `tz_utils.is_tw_trading_day()`(週六日 + TW_HOLIDAYS,單一定義);非台股交易日 LINE **僅推 ① 國際盤快報**(週六早上=美股週五收盤仍有閱讀價值),② 共振/③ 法人事件預告/④ 戰略報告與 ⑤ 個股盯盤靜音;**報告與看板資料照常產出**(Gemini 照跑、存檔不受影響)
+- 彈性:repo vars 設 `PUSH_ALL_DAYS=1` 可恢復天天全量推播(測試用)
+- 注意:③ 法人事件預告靠 pushed-id 去重,假日靜音只是延後到下個交易日推,不會漏
+- NAS 端 `scripts/nas_trigger.py` 刻意不改(零相依原則):守門統一放程式端,NAS/GitHub 兩種觸發都蓋得到
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
