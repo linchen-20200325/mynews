@@ -276,6 +276,13 @@
 - 注意:③ 法人事件預告靠 pushed-id 去重,假日靜音只是延後到下個交易日推,不會漏
 - NAS 端 `scripts/nas_trigger.py` 刻意不改(零相依原則):守門統一放程式端,NAS/GitHub 兩種觸發都蓋得到
 
+### 守門旁通修復(2026-07-12,PR #115)
+- 症狀:週日 06:00 守門首戰即失效,④戰略報告+⑤個股盯盤照推(使用者截圖 + run 29169755761 日誌證實,全程無守門訊息)
+- 根因:GitHub Actions 對未定義的 `vars.X` 注入**空字串**(而非不設定);`config.env_bool()` 只把 None 當未設定,空字串落入 `not in ("0","false","no")` → True → `PUSH_ALL_DAYS`(預設 False)被誤開 → `trading_day` 恆 True
+- 為何潛伏至今:既有 ENABLE_* 旗標預設全 True,空字串誤判 True 結果恰好相同;PUSH_ALL_DAYS 是全 repo 第一個預設 False 的 env_bool 旗標
+- 修法:env_bool 空/純空白字串一律回 default(SSOT 單點修復、與 docstring 一致,ENABLE_* 行為不變);smoke 補 5 個空字串案例——教訓:測環境變數要測「未設/真值/假值/**空字串**」四態,Actions 的 vars 未定義=空字串
+- 驗收:下一個非台股交易日 = 2026-07-18(週六) 06:00,應只收一則國際盤快報
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

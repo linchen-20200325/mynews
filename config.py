@@ -17,11 +17,16 @@ import os
 # ---------------------------------------------------------------------------
 
 def env_bool(name: str, default: bool = True) -> bool:
-    """讀布林旗標:值為 0/false/no(不分大小寫)→ False,其餘(含空字串回退)→ default。"""
+    """讀布林旗標:0/false/no(去空白、不分大小寫)→ False;未設或空字串 → default。
+
+    空字串必須視同未設定:GitHub Actions 會把未定義的 ``vars.X`` 注入成空字串
+    (而非不設定該變數),若把空字串當 True,預設 False 的旗標(如 PUSH_ALL_DAYS)
+    會被誤開啟——2026-07-12 假日推播守門被旁通即此根因。
+    """
     raw = os.environ.get(name)
-    if raw is None:
+    if raw is None or not raw.strip():
         return default
-    return raw.lower() not in ("0", "false", "no")
+    return raw.strip().lower() not in ("0", "false", "no")
 
 
 def env_int(name: str, default: int) -> int:
