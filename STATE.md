@@ -283,6 +283,12 @@
 - 修法:env_bool 空/純空白字串一律回 default(SSOT 單點修復、與 docstring 一致,ENABLE_* 行為不變);smoke 補 5 個空字串案例——教訓:測環境變數要測「未設/真值/假值/**空字串**」四態,Actions 的 vars 未定義=空字串
 - 驗收:下一個非台股交易日 = 2026-07-18(週六) 06:00,應只收一則國際盤快報
 
+## 棄用分支稽核(2026-07-12,PR #116)
+- `claude/context-restoration-migration-UX6l1`(PR #105 原稿,2026-07-09 因衝突關閉未合併,落後 main 58 commit)逐檔盤點:功能本體已全數由 PR #106 進 main(taiwan_map_data.py 一字不差;housing.py 差異行多為分支「舊版」程式,如 auto_save_github 預設 True,合回即倒退)
+- 其「轉向潛力區列表」子集表格已被 main 更完整的「全台 22 縣市明細表」取代(排名/進度條/指標卡/CSV 下載),刻意不補
+- 唯一遺漏:nas_line_bot.py LINE_REPLY_ENDPOINT 的 SSOT 例外就地註解(上方稽核 Rule 5 宣稱已加注,程式實缺)→ PR #116 補上,文件與程式一致
+- 結論:該分支**零損失可刪**。教訓:棄用分支刪前先 `git diff main...branch` 逐檔盤點,「行數差」≠「功能遺失」(可能已被更好版本取代)
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
