@@ -49,7 +49,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 GITHUB_API = "https://api.github.com"
-LINE_REPLY_ENDPOINT = "https://api.line.me/v2/bot/message/reply"
+LINE_REPLY_ENDPOINT = "https://api.line.me/v2/bot/message/reply"  # 刻意重複:NAS 單檔零相依,無法 import line_notify
 WATCHLIST_PATH = "watchlist.json"  # 對應 repo 內 paths.WATCHLIST
 
 # ── 內嵌的 watchlist 純邏輯(與 repo/watchlist.py 同步;見檔頭 SSOT 例外說明)──
