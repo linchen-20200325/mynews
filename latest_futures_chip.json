@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-07-14 22:03 UTC (TAIFEX OpenAPI)",
-  "date": "2026-07-13",
+  "as_of": "2026-07-15 22:09 UTC (TAIFEX OpenAPI)",
+  "date": "2026-07-14",
   "product": "臺股期貨",
   "unit": "口",
-  "foreign_net_oi": -81066,
-  "trust_net_oi": 71794,
-  "dealer_net_oi": 1270,
-  "total_net_oi": -8002,
+  "foreign_net_oi": -83390,
+  "trust_net_oi": 73873,
+  "dealer_net_oi": 2352,
+  "total_net_oi": -7165,
   "stance": "偏空"
 }
