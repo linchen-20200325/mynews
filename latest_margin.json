@@ -1,8 +1,8 @@
 {
-  "date": "2026-07-16",
-  "margin_today": 615575992000,
-  "margin_prev": 615388784000,
-  "margin_chg": 187208000,
-  "margin_chg_pct": 0.03,
-  "as_of": "2026-07-16 22:09 UTC (TWSE MI_MARGN)"
+  "date": "2026-07-17",
+  "margin_today": 587962513000,
+  "margin_prev": 615575992000,
+  "margin_chg": -27613479000,
+  "margin_chg_pct": -4.49,
+  "as_of": "2026-07-17 22:06 UTC (TWSE MI_MARGN)"
 }
