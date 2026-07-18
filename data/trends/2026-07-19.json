@@ -3,19 +3,18 @@
   "trends": [
     {
       "rank": 1,
-      "industry": "生成式AI與AI晶片",
-      "heat_score": 95,
+      "industry": "人工智慧 (AI) 基礎設施與應用",
+      "heat_score": 98,
       "signals": {
-        "funding": "儘管近期市場出現波動，AI領域的資金投入仍然強勁，特別是對於先進AI模型和晶片技術的投資。然而，市場對AI熱潮過度槓桿的擔憂正在浮現，資金流向可能變得更為謹慎，轉向更具實質產出的項目。",
-        "hiring": "AI相關職缺需求持續高漲，尤其是在模型開發、AI晶片設計和HPC領域。人才爭奪激烈，但產業開始出現裁員（如Google DeepMind科學家辭職），顯示市場對AI的長期投入更加看重效率與實際成果。",
-        "policy": "各國政府將AI視為國家戰略重點，持續推動相關政策和補貼，以確保在全球AI競賽中保持領先。例如日本企業聯手NVIDIA對抗中國競爭對手，顯示國家層面對於AI技術發展的重視。",
-        "technology": "技術動能強勁，中國最新AI模型（Kimi K3）的崛起顯示美中在AI技術上的差距正在縮小。同時，NVIDIA等公司持續在AI晶片和平台方面取得突破，推動AI應用落地，台積電2奈米技術也預計應用於新一代iPhone，顯示先進製程對AI硬體的重要性。"
+        "funding": "儘管近期市場對AI股有過度槓桿的質疑，但巨頭企業如輝達、華為等持續投入巨資研發AI晶片集群，顯示資金持續流向AI核心技術。半導體材料廠因AI、HPC及先進封裝需求，全年營收預計增長30%，供需吃緊可能延續至2027年。",
+        "hiring": "AI領域人才需求依舊旺盛，尤其在晶片設計、大型語言模型開發、AI應用整合等關鍵職位上，全球科技公司仍在積極招募頂尖人才。",
+        "policy": "中國在AI領域的國家戰略明確，華為AI晶片集群的推出即是政策支持下的具體成果。美國也持續推動相關法規，以確保AI發展的領先地位。",
+        "technology": "AI技術持續突破，如華為的AI晶片集群以「量」取勝，與輝達競爭；Google開源3D emoji顯示AI在內容生成和互動上的進展；AI解鎖QLED效率提升40倍，證明AI在材料科學上的應用潛力。微軟Windows 11更新也整合AI驅動的改進。"
       },
       "leading_indicators": [
-        "主要AI公司（如NVIDIA、Google、微軟）的季度財報與未來展望",
-        "新一代AI模型發布及其性能評測",
-        "AI晶片訂單與出貨量變化",
-        "各國政府對AI研發與應用的新政策或法規"
+        "AI晶片龍頭輝達及AMD的季度財報與未來展望",
+        "主要科技巨頭（Google、微軟、Meta）在AI研發上的資本支出與新產品發布",
+        "中國AI企業在大型語言模型和硬體上的創新進展"
       ],
       "us_stocks": [
         {
@@ -23,12 +22,12 @@
           "ticker": "NVDA"
         },
         {
-          "name": "美超微(Super Micro Computer)",
-          "ticker": "SMCI"
+          "name": "Google (Alphabet)",
+          "ticker": "GOOGL"
         },
         {
-          "name": "谷歌(Alphabet)",
-          "ticker": "GOOGL"
+          "name": "微軟(Microsoft)",
+          "ticker": "MSFT"
         }
       ],
       "tw_stocks": [
@@ -39,47 +38,90 @@
         {
           "name": "世芯-KY",
           "ticker": "3661"
-        },
-        {
-          "name": "聯發科",
-          "ticker": "2454"
         }
       ],
       "evidence_news": [
         {
-          "title": "DeepSeek時刻再現！中國最新AI模型重創費半 專家：美中差距縮到6~9個月",
-          "source": "自由財經",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8taWxsdFpVWF9HaXpQc2V5YWdEM3hhU2N4cFl1bjl2eVowMmVFMnNFUUJTZW1aWlVCQndxVm1ScGxxOTdrU0NXcGpubkxjMEU3MkVoNGJsZDhNejRKNkVF0gFkQVVfeXFMUDJCeElNc1d5T0dTdDNPbE9xeGNoTXNHdHlYNnpCZHJnOUJ1MGpoOVB6Q3QwT2Jxd05qR1pOZU9kZzFrdUZHQ1FCVHp3aGFwRWR1NktISDAydTM2YUZjZktUcmYwVg?oc=5"
-        },
-        {
-          "title": "晶片股慘跌從矽谷到首爾... 掀AI熱潮過度槓桿質疑- 國際",
-          "source": "工商時報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBkZHNscmZzNTl1S1NjLXEzS1haWThuOHdQMW5ZVEFDaEZUNTNpTUU4eHZycEdwb2NpNXBOVnlMNUs4MFYyanJ2TmlGdF9KZW00Wkpfem5VdmNPcFpDYnkw?oc=5"
+          "title": "華為出招 AI 晶片集群亮相 以量取勝和輝達別苗頭",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMiygJBVV95cUxOY2dvNkhCLV9qbk5IazNMYjFTYi1YU1JzS29PNlJVLWVDdkFZYmFNLWJORXJ4cVhiMFVMcXNSUkZiUmpZMzRHWENPclFMSkpqZW5DZ1lGT1c2REpzbW9KSkVjNWluVkZZR1A4eFdsby1oTGhWRjZnZnJzV09DQ0lOV0VJRkpGVWJRUEQxSWxpa1hnV2VraHdhRzZDV0hySktsb3c2ZU9uNl9zcENwMm5JMjRJSWxoTTYwb1lyLXBIUUlBZHZLWGhMVThTX25RSzVrUkhwa2pseWVGTVZfTVBKLUFhUnRMODJjbHJYTEdUQ01qSkRrck1fVWRTeHdtb18ybEY1WmhIMWh5dDVCRnNoUWpuR1JiU3l6LWhFT3Njb0xmcHA2VWkwcVJRNVAyWUtQTnBkY0tzYWRHdllodlB5R1RtOHRyOEUyLXc?oc=1"
         },
         {
           "title": "法人看全年營收拚增30%！「半導體材料廠」AI、HPC、先進封裝需求助攻供需吃緊有望延續至2027年",
           "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi_gJBVV95cUxQSlVxcHAyOEVVYmlRTWY1bGt6Q180OGp1eUg3a20zZldvREJPMzFSQzJtSEVlallkblJKZE56MjFfZ05zT0ZNTC1SR3FDNy15MWNub0d5NlU1WGlpdVJMc3M4NEVZelQwYjFDWlgwV1F2TXFWOF9EazRQZlEyWDBSNGl1M0p1WmNTMVVuWURtN1dreVJ2OU91T2FrbmFnc00wR09FMUI0VS1Hb2xpUWJqdzNxb1htWjRmTXNoejl6UXJrbjd2bVAzWWc3cXhMV2JuNHN2MEgwN05FbUdPN2JsNGpfVTJid3BpLWNCb3NvSGt6V1NSdzlHcGJuQU9WQWdxMXRVS1lkVVZQYWFqcHhFQzJhMmZQVUd2WWJ5Qkd1eGhoRW1xcjV6UXkybUpMZEN2NV9FX1FUQTd4R256ZmdJXzhRQ1pjMVk2QjEyT1dMekxnYjFnajJMNkthVGxBWGlfS21TMUxwaWFzM0oxdHY3clJzMzhnUjNhWVBmeFln?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMi_gJBVV95cUxQSlVxcHAyOEVVYmlRTWY1bGt6Q180OGp1eUg3a20zZldvREJPMzFSQzJtSEVlallkblJKZE52MjFfZ05zT0ZNTC1SR3FDNy15MWNub0d5NlU1WGlpdVJMc3M4NEVZelQwYjFDWlgwV1F2TXFWOF9EazRQZlEyWDBSNGl1M0p1WmNTMVVuWURtN1dreVJ2OU91T2FrbmFnc00wR09FMUI0VS1Hb2xpUWJqdzNxb1htWjRmTXNoejl6UXJrbjd2bVAzWWc3cXhMV2JuNHN2MEgwN05FbUdPN2JsNGpfVTJid3BpLWNCb3NvSGt6V1NSdzlHcGJuQU9WQWdxMXVVS1lkVVZQYWFqcHhFQzJhMmZQVUd2WWJ5Qkd1eGpoRW1xcjV6UXkybUpMZEN2NV9FX1FUQTd4R256ZmdJXzhRQ1pjMVk2QjEyT1dMekxnYjFnajJMNkthVGxBWGlfS21TMUxwaWFzM0oxdHY3clJzMzhnUjNhWVBmeFln?oc=1"
+        },
+        {
+          "title": "AI unlocks QLED recipe that doubles efficiency and boosts lifetime 40-fold",
+          "source": "Phys.org",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBUbzFNVU1Yd0NvTjFrdHJUWXhXWE52YnkwOWhMRkhBdGVzcVUxbE9ObGZXWDVVQUZwa05LNjJpSHJHb21uNkU0d3hRTGNjSHY0MHFuMXVMbkg2cy1uZ01NcFhrN25IUTk0SzdYUmVTR0cyRlVCRXc?oc=1"
         }
       ],
-      "summary": "AI技術持續突破，各國政府積極支持，儘管市場對估值有疑慮，但長期資金和人才仍聚焦於此，尤其在晶片和模型端。",
-      "news_count": 0
+      "summary": "AI仍在全球產業鏈中佔據主導地位，儘管市場出現短期修正，但技術創新、資金投入及政策支持仍是其強勁動能。",
+      "news_count": 24,
+      "first_seen": "2026-07-18",
+      "last_seen": "2026-07-18"
     },
     {
       "rank": 2,
-      "industry": "電動車與自動駕駛",
-      "heat_score": 80,
+      "industry": "太空探索與商業航太",
+      "heat_score": 85,
       "signals": {
-        "funding": "電動車產業仍有大量資金投入，但市場競爭加劇，部分車型面臨停產，顯示資金流向更趨向於有明確商業模式和技術優勢的企業。自動駕駛領域的投資持續，特別是無人巴士等商業化應用。",
-        "hiring": "電動車製造商和自動駕駛技術公司仍有大量工程師和研發人員需求，但部分公司因市場壓力或產品線調整而進行裁員。整體而言，對軟體和AI人才的需求尤其旺盛。",
-        "policy": "多國政府持續推動電動車補貼政策和基礎設施建設，鼓勵消費者轉向電動車。自動駕駛技術的法規框架也在逐步完善，為商業化落地鋪路，例如無人巴士的重啟。",
-        "technology": "電動車電池技術和充電效率持續改進，自動駕駛技術在感知、決策和控制方面不斷取得進展。無人巴士的重啟顯示技術已具備一定商轉能力，但大規模普及仍需克服挑戰。"
+        "funding": "SpaceX近期首次跌破發行價，但仍吸引「木頭姐」Cathie Wood逆勢加碼逾1600萬美元，顯示市場對其長期潛力仍抱持信心。整體航太產業營收增長強勁，如長亨精密今年營收增逾4成。",
+        "hiring": "航太產業對於工程師、技術人員的需求持續增長，尤其是在火箭製造、衛星通訊、太空旅遊等新興領域。",
+        "policy": "各國政府持續投入太空計畫，並鼓勵商業航太發展，例如美國NASA與SpaceX的合作案，以及各國對衛星網路佈局的政策支持。",
+        "technology": "SpaceX在火箭回收、星鏈網路等技術上持續領先。商業航太公司不斷推出新的運載火箭、衛星服務及太空旅遊方案，推動技術的迭代與創新。"
       },
       "leading_indicators": [
-        "主要電動車廠的銷售數據和新車型發布",
-        "自動駕駛技術的L3/L4級別商業化進展",
-        "充電基礎設施的擴張速度",
-        "各國對電動車和自動駕駛的政策調整"
+        "SpaceX的估值變化及融資進度",
+        "全球各國政府太空預算投入與重大計畫進展",
+        "商業航太公司新技術測試與發射成功率"
+      ],
+      "us_stocks": [
+        {
+          "name": "SpaceX (非上市公司，但受市場關注)",
+          "ticker": "PRIVATE"
+        },
+        {
+          "name": "波音(Boeing)",
+          "ticker": "BA"
+        }
+      ],
+      "tw_stocks": [
+        {
+          "name": "長亨精密 (已終止興櫃，但具代表性)",
+          "ticker": "無"
+        }
+      ],
+      "evidence_news": [
+        {
+          "title": "名人理財術／趁破發抄底！木頭姐砸11億加碼「這檔科技巨頭」",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi7gJBVV95cUxPOWhDX3NvZThRelJZenBPWmZwSEVadVdQZmUzQlMwdGI2ZHdyR0ZHWUFDY0VDT1RIWmNqcFFXTlJkdlhpZndaTmM4TVFUMWI3d1hUY05vYkVxc2FfRmVoNHZjenQ2QzhQZERzU0UyNXczTi1zdE9teXY2dmtCYjFsRFZoTm1SWnFucURRazVUUndRbXdnLVp4djNSaklVUXlwT3JROEhDSFJDMkFLeWlYb2p3ZGVQOGJqV1VWX0Q0TUIxbElrZHV4d1M2LXBDYWt2Y0piUXJyVGxCVU1HSWw5cXVLS1JWM2E4eE5NM2VJbms4czBqbUVUOXlHU0FyWGhUcGV3cC1NU3BXSFV1M3d4enlrSEo4WWdYLW9pUEZwNVJuZDVJYXZUUWQ2THNKdWVYUkZTR0U5QXRvZXg3M3BvSEliUms1ZVplZFVQUk5oSTRuX2xMWVRPeGl3X0JWWFhoYW8weVRWOFZ2WlhQaUE?oc=1"
+        },
+        {
+          "title": "今年營收增逾4成 航太廠長亨精密突宣布終止興櫃",
+          "source": "Yahoo新聞",
+          "url": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNeV9NWE8xazJnZGI2LXBKYndzVllkeTVpOGRGdTAtREFackV5UHB3bTV4M1JXZXF6eU5vWUNRNnA4NzlnVW9fUE9YZDVtM2xUM01IRnFHWjd6eHBsY296dF9uLWJDNmxfTFpMeVN4dHdiQ3FHa1BvMWowOWd4TEdlUG1MUkdRVXJIT0t5eGFpNDRVNVI5VDU5cnNzczBVTk9XckZtaEVTV196R0tHUWV6OTVnQ213bERsaWNjUGQzMVl2VWtrem5tX0hNbFB1MDNmVE9vS2Yydk8tRm8yaUczWWdDbFVpcXFsS1RHUEdqU0w3UDBlQTR2VVJ2SEFPSERlNVI3UkN1UTFsWjZ2NW50RUxoRVphcnpNNS1HYnU0dlJzdmpZVW9KbDVjU3RkTzJoREdkQjI1RWxQRlFDektPclo4RDd6WjltUzBSbU5FRzN2Zw?oc=1"
+        }
+      ],
+      "summary": "太空經濟在商業化和技術創新雙重驅動下，持續吸引資本關注，儘管市場波動，長期成長潛力依舊看好。",
+      "news_count": 0
+    },
+    {
+      "rank": 3,
+      "industry": "自動駕駛與智慧移動",
+      "heat_score": 80,
+      "signals": {
+        "funding": "特斯拉作為自動駕駛領域的領頭羊，其財報表現仍是市場焦點。雖然電動車市場面臨挑戰，但無人巴士等智慧移動解決方案的重啟，顯示資金對特定應用場景的投入。",
+        "hiring": "自動駕駛技術公司對於AI工程師、感測器專家、軟體開發人員的需求持續高漲。傳統車廠也積極轉型，擴大智慧移動相關職位。",
+        "policy": "台灣「無人巴士重啟」的討論，以及全球各地對自駕車測試和商轉的法規制定，顯示政策環境正逐步成熟，為產業發展提供支持。",
+        "technology": "感測器融合、高精地圖、車載AI晶片、5G通訊等技術持續進步，是實現L4/L5級自動駕駛的關鍵。特斯拉在FSD (Full Self-Driving) 上的持續迭代，以及其他業者在特定場景（如無人巴士）的技術應用，推動了產業發展。"
+      },
+      "leading_indicators": [
+        "特斯拉等主要自駕車公司的FSD軟體更新與普及率",
+        "各國政府對自動駕駛商業化營運的政策開放進度",
+        "智慧城市基礎設施建設中對智慧交通的投入"
       ],
       "us_stocks": [
         {
@@ -87,50 +129,40 @@
           "ticker": "TSLA"
         },
         {
-          "name": "輝達(Nvidia)",
-          "ticker": "NVDA"
+          "name": "Google (Alphabet, Waymo)",
+          "ticker": "GOOGL"
         }
       ],
       "tw_stocks": [
         {
-          "name": "台達電",
-          "ticker": "2308"
-        },
-        {
-          "name": "和碩",
-          "ticker": "4938"
+          "name": "聯發科",
+          "ticker": "2454"
         }
       ],
       "evidence_news": [
         {
           "title": "新聞深一度／「無人巴士重啟」來真的？揭商轉上路挑戰",
           "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxQYjlaX0ptcGRxMXdfbndUV0MycU9GaGJ5NjdsUGdqUzgybTVfRDk2UXdWTDA5M2RZWmlZaW1OYW44Y1BuV3hlRUdHNmpTSjhtYW9NZVBfdVhwVW40MDBFV2MyQmpzeVl4LVZkY21QMTF3NGQ0LUo4SmVnbDhhSUFIR3hiWEhHcEVLd2pyVENQUG1HVk1nbzVpQkVGeHdqbmVzTy1sQUJKMTdEZXhGandRdGVCai1acnRraWlFcWg1eGN4Z3pmRDlTazBMSWhWRXYySXJ6UHhPczF6bUNESVVQZnB2Y2duWTN3U3Z4UFpBcm5hWUhLR0U5QWxWNjJQTFIxWmlia3E3NF9LMmxqdW5PeHExdDlqb29jTnBBb2p1QzBHUGs4RzZiMG43SHJ0U1VsdVBhSlJtZXNwYmJjcG9GQ2V0WjM3UXhq?oc=5"
-        },
-        {
-          "title": "All the EVs that were discontinued or killed off in the U.S. this year",
-          "source": "TechCrunch",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPVHkyR1ZkUGlSZHluTWs5TkRsSE9CblVhby0ySFFRcmhHbGtVdEd0LTBVaEtscmwwSlkzN1d4cy1hTDg2czc1bTh1eEk2X05nZmpYQ0ZjckkxeDMyOUc5YU9MQ0JqWjVveXdJai1ZSlljcWRYcjluMEpOek5IdUZqQXlfSUIzLUt3SWQxUVFrOGQwSmdzbjUzU1ZuVE1teGJGc25UbTdwUQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxQYjlaX0ptcGRxMXdfbndUV0MycU9GaGJ5NjdsUGdqUzgybTVfRDk2UXdWTDA5M2RZWmlZaW1OYW44Y1BuV3hlRUdHNmpTSjhtYW9NZVBfdVhwVW40MDBFV2MyQmpzeVl4LVZkY21QMTF3NGQ0LUo4SmVnbDhhSUFIR3hiWEhHcEVLd2pyVENQUG1HVk1nbzVpQkVGeHdqbmVzTy1sQUJKMTdEZXhGandRdGVCai1acnRraWlFcWg1eGN4Z3pmRDlTazBMSWhWRXYySXJ6UHhPczF6cUNESVVQZnB2Y2duWTN3U3Z4UFpBcm5hWUhLR0U5QWxWNjJQTFIxWmlia3E3NF9LMmxqdW5PeHExdDlqb29jTnBBb2p1QzBHUGs4RzZiMG43SHJ0U1VsdVBhSlJtZXNwYmJjcG9GQ2V0WjM3UXhq?oc=1"
         }
       ],
-      "summary": "電動車市場競爭激烈，自動駕駛商業化加速，政策支持與技術進步是主要驅動力，但部分車型停產顯示市場正在淘汰效率低下的參與者。",
+      "summary": "儘管電動車市場面臨逆風，自動駕駛技術在特定應用場景如無人巴士的商業化進程加速，政策支持與技術創新為其注入新動能。",
       "news_count": 0
     },
     {
-      "rank": 3,
-      "industry": "先進半導體製程與材料",
+      "rank": 4,
+      "industry": "先進半導體製造與材料",
       "heat_score": 75,
       "signals": {
-        "funding": "半導體材料廠因AI、HPC和先進封裝需求，營收有望大幅成長，顯示資金持續湧入上游材料與設備供應商。儘管晶片股整體面臨調整，但先進製程的投資仍是重中之重。",
-        "hiring": "半導體產業對高階研發人才的需求持續旺盛，特別是2奈米製程和先進封裝技術領域。人才搶奪依然激烈，但市場波動可能導致部分企業在擴張時更為謹慎。",
-        "policy": "各國政府將半導體供應鏈安全視為國家戰略，積極推動本地化生產和技術研發，提供巨額補貼。例如，美國的晶片法案和台灣的「護國神山」戰略。",
-        "technology": "2奈米製程技術即將商業化，並將應用於如iPhone 18 Pro等旗艦產品，顯示技術持續推進。先進封裝技術的需求也日益增長，推動半導體材料和設備的創新。"
+        "funding": "半導體材料廠因AI、HPC、先進封裝需求，預計全年營收增長30%，並有望持續至2027年，顯示資金對上游材料與設備的強勁投入。儘管晶片股近期有回調，但長期資本支出仍集中於先進製程。",
+        "hiring": "半導體產業對研發工程師、製程工程師、設備工程師的需求居高不下，尤其在2奈米及更先進製程的技術人才爭奪激烈。",
+        "policy": "全球各國爭相建立本土半導體供應鏈，提供巨額補貼和稅收優惠，如美國的晶片法案，台灣政府也持續支持半導體產業發展。",
+        "technology": "台積電2奈米製程技術的進展，以及先進封裝技術的快速演進，是推動AI晶片效能提升的關鍵。新一代控制晶片的研發也預示著半導體技術的持續創新。"
       },
       "leading_indicators": [
-        "台積電等晶圓代工廠的資本支出計畫",
-        "2奈米及更先進製程的量產進度",
-        "半導體設備和材料供應商的營收和訂單狀況",
-        "國際貿易政策對半導體供應鏈的影響"
+        "台積電等晶圓代工龍頭的資本支出計畫與新廠進度",
+        "全球半導體設備銷售額與新材料研發成果",
+        "主要科技公司新一代旗艦晶片的規格與量產時程"
       ],
       "us_stocks": [
         {
@@ -150,72 +182,81 @@
         {
           "name": "聯電",
           "ticker": "2303"
-        },
-        {
-          "name": "漢唐",
-          "ticker": "2404"
         }
       ],
       "evidence_news": [
         {
           "title": "法人看全年營收拚增30%！「半導體材料廠」AI、HPC、先進封裝需求助攻供需吃緊有望延續至2027年",
           "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi_gJBVV95cUxQSlVxcHAyOEVVYmlRTWY1bGt6Q180OGp1eUg3a20zZldvREJPMzFSQzJtSEVlallkblJKZE56MjFfZ05zT0ZNTC1SR3FDNy15MWNub0d5NlU1WGlpdVJMc3M4NEVZelQwYjFDWlgwV1F2TXFWOF9EazRQZlEyWDBSNGl1M0p1WmNTMVVuWURtN1dreVJ2OU91T2FrbmFnc00wR09FMUI0VS1Hb2xpUWJqdzNxb1htWjRmTXNoejl6UXJrbjd2bVAzWWc3cXhMV2JuNHN2MEgwN05FbUdPN2JsNGpfVTJid3BpLWNCb3NvSGt6V1NSdzlHcGJuQU9WQWdxMXRVS1lkVVZQYWFqcHhFQzJhMmZQVUd2WWJ5Qkd1eGhoRW1xcjV6UXkybUpMZEN2NV9FX1FUQTd4R256ZmdJXzhRQ1pjMVk2QjEyT1dMekxnYjFnajJMNkthVGxBWGlfS21TMUxwaWFzM0oxdHY3clJzMzhnUjNhWVBmeFln?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMi_gJBVV95cUxQSlVxcHAyOEVVYmlRTWY1bGt6Q180OGp1eUg3a20zZldvREJPMzFSQzJtSEVlallkblJKZE52MjFfZ05zT0ZNTC1SR3FDNy15MWNub0d5NlU1WGlpdVJMc3M4NEVZelQwYjFDWlgwV1F2TXFWOF9EazRQZlEyWDBSNGl1M0p1WmNTMVVuWURtN1dreVJ2OU91T2FrbmFnc00wR09FMUI0VS1Hb2xpUWJqdzNxb1htWjRmTXNoejl6UXJrbjd2bVAzWWc3cXhMV2JuNHN2MEgwN05FbUdPN2JsNGpfVTJid3BpLWNCb3NvSGt6V1NSdzlHcGJuQU9WQWdxMXVVS1lkVVZQYWFqcHhFQzJhMmZQVUd2WWJ5Qkd1eGpoRW1xcjV6UXkybUpMZEN2NV9FX1FUQTd4R256ZmdJXzhRQ1pjMVk2QjEyT1dMekxnYjFnajJMNkthVGxBWGlfS21TMUxwaWFzM0oxdHY3clJzMzhnUjNhWVBmeFln?oc=1"
         },
         {
           "title": "iPhone 18 Pro爆12大升級！傳搭載台積電2奈米A20 Pro、砍「兩」顏色新增「這一色」",
           "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBDSWlremMtVkpEQktSRmpOeEstRTcwek5UdTVzMFZGczdaZ3FzMTFCUFk1ZmQyYzVDOEdxWEVPVEg5anJ2Wl9QZzQtcEt5Tzg?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBDSWlremMtVkpEQktSRmpOeEstRTcwek5UdTVzMFZGczdaZ3FzMTFCUFk1ZmQyYzVDOEdxWEVPVEg5anJ2Wl9QZzQtcEt5Tzg?oc=1"
+        },
+        {
+          "title": "擺脫連13年虧損轉盈！「這檔」拚高毛利產品布局 投入新一代控制晶片研發",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMiswNBVV95cUxPaDI4WkZVLWR2d3lZQ19PMVZhMmc3Y0x6OVR3VzFGc3hlalhJYXJLY3Z1dExVbnVDMnpzM1pRMkNFNEJuS1MyNWdzbGI2TWc5c1VlZFdBUGNXQ3ltblF4aUJ4YmZIaWxiNVlXcDY5Z3Y4WmFiVVBNcm1qcWg1dHVJLXBpV003MW1BRVJtcU9tdXRaaThqVGtKMHk3UXl2OGkyZkotaEo0a3ZpNEdTWGJrcF80eGdGWFdOQ1g5UXJwQlZTbXNaX3hhNnZHVHVZdlliZlpVLVBlSFc4SFg2RzdlMFlTc1MwUG0xZ1V5NWZVZjZmdWRwel9fVHR6QjJ0MThnWVlqS0NsdzRMbmZLcFZiMm5ReXIxemROajQ1bmh2M0JvNW1Ec1RqcndaQ1VVOU5CeUE3WHBkLW5UaVlZUUF2Nmg1RUtyNEZiQUcyQ2FLZTVMck9IdGR5dWVRWTYwLTExVlNVRjFnOER5bHdZNVFRR2RGVnFaQzJLdnJ1cDd0V3pjcWZqc1RtN19TbXF5SHFSWUUyX1Nhb2NHZlpmVFRrMjNrMmJET0IxV0pHNm55Q0NjSUk?oc=1"
         }
       ],
-      "summary": "AI和HPC需求推動先進半導體製程與材料的強勁增長，全球政策支持確保供應鏈安全，技術突破持續引領產業發展。",
+      "summary": "先進半導體製程與材料是AI、HPC等高科技發展的基石，各國政策支持和巨額投資確保其持續高熱度，儘管短期市場波動，長期需求仍強勁。",
       "news_count": 0
     },
     {
-      "rank": 4,
-      "industry": "航太與國防科技",
-      "heat_score": 68,
+      "rank": 5,
+      "industry": "消費電子與智慧穿戴",
+      "heat_score": 70,
       "signals": {
-        "funding": "全球地緣政治緊張局勢升級，各國政府增加國防預算，帶動航太與國防科技產業的資金投入。例如伊朗襲擊導致油價上漲，反映出地緣政治對相關產業的影響。儘管有公司終止興櫃，但整體產業仍受惠於國家戰略性投資。",
-        "hiring": "航太與國防產業對專業技術人才的需求穩定增長，特別是在新材料、精密製造和自主系統方面。儘管個別公司可能有人事變動，但由於其戰略重要性，整體人才流動性較低，需求相對穩定。",
-        "policy": "各國政府將航太與國防視為國家安全核心，政策支持力度強勁，包括研發補貼、採購訂單以及出口管制等。美國與伊朗的衝突升級也將進一步刺激國防開支。",
-        "technology": "新一代航空器、無人機、衛星通訊和導彈防禦系統等技術持續發展。例如，新聞中提到伊朗攻擊導致的國際緊張局勢，凸顯了先進國防技術的重要性。精密製造和材料科學的進步也為產業帶來新的動能。"
+        "funding": "Google、三星等科技巨頭持續投入研發新一代智慧型手機和穿戴裝置，如Pixel 11a、Galaxy Watch 9。儘管整體消費市場可能面臨壓力，但對創新產品的投資未減。",
+        "hiring": "消費電子產業仍需大量軟硬體工程師、產品設計師、AI演算法開發者，以提升產品智慧化和用戶體驗。",
+        "policy": "各國政府對5G通訊、物聯網(IoT)等基礎設施的推動，間接支持了智慧消費電子產品的發展。同時，對數據隱私和資安的規範也日益嚴格。",
+        "technology": "iPhone 18 Pro傳聞搭載台積電2奈米A20 Pro晶片，顯示旗艦手機在處理器技術上的追求。三星Galaxy Watch 9的洩露資訊也表明智慧穿戴裝置在晶片和健康監測技術上的進步。AI功能正被廣泛整合到手機和手錶中。"
       },
       "leading_indicators": [
-        "主要國家國防預算變化",
-        "大型軍工企業的訂單量和營收增長",
-        "新一代航空器或國防系統的研發進度",
-        "國際地緣政治衝突的發展"
+        "蘋果、三星、Google等主要品牌新旗艦產品的發布與市場反應",
+        "智慧穿戴裝置的出貨量與功能創新",
+        "新興市場對中高階智慧型手機的需求變化"
       ],
       "us_stocks": [
         {
-          "name": "洛克希德馬丁(Lockheed Martin)",
-          "ticker": "LMT"
+          "name": "蘋果(Apple)",
+          "ticker": "AAPL"
         },
         {
-          "name": "波音(Boeing)",
-          "ticker": "BA"
+          "name": "Google (Alphabet)",
+          "ticker": "GOOGL"
         }
       ],
       "tw_stocks": [
         {
-          "name": "漢翔",
-          "ticker": "2634"
+          "name": "鴻海",
+          "ticker": "2317"
+        },
+        {
+          "name": "大立光",
+          "ticker": "3008"
         }
       ],
       "evidence_news": [
         {
-          "title": "今年營收增逾4成 航太廠長亨精密突宣布終止興櫃",
-          "source": "Yahoo新聞",
-          "url": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNeV9NWE8xazJnZGI2LXBKYndzVllkeTVpOGRGdTAtREFackV5UHB3bTV4M1JXZXF6eU5vWUNRNnA4NzlnVW9fUE9YZDVtM2xUM01IRnFHWjd6eHBsY296dF9uLWJDNmxfTFpMeVN4dHdiQ3FHa1BvMWowOWd4TEdlUG1MUkdRVXJIT0t5eGFpNDRVNVI5VDU5cnNzczBVTk9XckZtaEVTV196R0tHUWV6OTVnQ213bERsaWNjUGQzMVl2VWtrem5tX0hNbFB1MDNmVE9vS2Yydk8tRm8yaUczWWdDbFVpcXFsS1RHUEdqU0w3UDBlQTR2VVJ2SEFPSERlNVI3UkN1UTFsWjZ2NnRlRUxoRVphcnpNNS1HYnU0dlJzdmpZVW9KbDVjU3RkTzJoREdkQjI1RWxQRlFDektPclo4RDd6WjltUzBSbU5FRzN2Zw?oc=5"
+          "title": "iPhone 18 Pro爆12大升級！傳搭載台積電2奈米A20 Pro、砍「兩」顏色新增「這一色」",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBDSWlremMtVkpEQktSRmpOeEstRTcwek5UdTVzMFZGczdaZ3FzMTFCUFk1ZmQyYzVDOEdxWEVPVEg5anJ2Wl9QZzQtcEt5Tzg?oc=1"
         },
         {
-          "title": "Dow Jones Futures: Iran Attack Kills Two U.S. Troops; Google, Tesla, AMD Ahead",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOay15SVFtNmJpekHoY2gxVk5ZaFh5YkMzYmY4NWtkM3ZtVVN6b2lrQ3NBUW5fQUhuUVYzY00xNjJIblREbVpNUmVwV3V0SVpMaElYdHJKUnp1bGFjWDkwMTB3WDlRd1hueVJ3OTdQWDZrU1lMT2h4LW1nNDlOZHhUQWdvbnRRRWhiNGo4WGtEbmxXb09MZ2tsYkpjT05pMmJCWExvSndRb1I4VGdWNmVjRHdNR0lBaDFLWXlRZ2JR?oc=5"
+          "title": "Samsung's Galaxy Watch 9 just leaked in full, and it's not the chip that stands out",
+          "source": "PhoneArena",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQdnBRaUtxQWdyWmMyWVRHTDFKeksxdGtsb1UzbTIxbTJua3REMDNoa0hnaFhSNWkxS3QzaVpEazY0Ni0wb0QyalBzX3dNMmVmdXZWSk0wUkpxVFFTLUh5TGRDNEFHZTJXQ0lQQkdhZzZheWRLTElBYkpheDBMeTZGdHBjcWpvV25IaDY0WGd4MnBhN1ZXR3ZPbF9GNzh1dXhzTkRhWmhtVVlJUTBtenliaE5HbVJNNmowdVhrdENB?oc=1"
+        },
+        {
+          "title": "Google might not kneecap the Pixel 11a with an old processor",
+          "source": "The Verge",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0yQUIzeXc0NEhfbUJQYUtBV281alpBc0Rpb1BqQXN5T29SV1FYUC02Ny1IajRfVDBBV2p4YUlfTVhwM0UwTGdObDFSSlZHQldCdzV5U01HeGFSZ1hoZHphbnAzMG5NWnpUTm9zNVZwdWZqS01ubzZF?oc=1"
         }
       ],
-      "summary": "全球地緣政治緊張推動航太與國防科技的資金投入和政策支持，技術創新持續，產業雖有波動但長期需求穩固。",
+      "summary": "消費電子領域持續透過晶片技術和AI整合推動產品創新，特別是旗艦手機和智慧穿戴裝置，儘管市場競爭激烈，但技術升級仍是主要動能。",
       "news_count": 0
     }
   ]

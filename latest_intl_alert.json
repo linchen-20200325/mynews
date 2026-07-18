@@ -1,6 +1,6 @@
 {
   "report_date": "2026-07-19",
-  "as_of": "2026-07-18 22:06 UTC (Yahoo Finance)",
+  "as_of": "2026-07-18 23:36 UTC (Yahoo Finance)",
   "threshold": -1.5,
   "quotes": {
     "^GSPC": {
@@ -128,16 +128,16 @@
     }
   ],
   "alert_level": "警戒",
-  "summary": "美股隔夜因中東地緣政治衝突升級和AI晶片股賣壓而大跌，台指期夜盤亦重挫，台股今日開盤需嚴防跳空下跌。",
+  "summary": "隔夜美股因中國AI新模型及美伊衝突重挫，費半大跌近一成，台指期夜盤亦大幅下挫，台股今日開盤恐面臨巨大壓力。",
   "interpretation": [
     {
-      "market": "美股整體",
-      "cause": "中東地緣政治衝突升級，伊朗襲擊約旦與科威特，導致油價飆漲，加劇市場對全球經濟和通膨的擔憂。同時，中國AI新模型推出引發AI晶片股過度槓桿的疑慮，導致半導體類股出現嚴重賣壓。",
+      "market": "美股大盤/科技股",
+      "cause": "中國AI新創公司月之暗面發布Kimi K3模型，因其開源和低成本特性，引發市場對AI晶片與設備前景的擔憂，導致科技股和半導體類股出現大規模賣壓。同時，美國與伊朗之間的衝突升溫，造成油價勁揚，亦對股市造成壓力。",
       "evidence_news": [
         {
-          "title": "伊朗襲擊約旦 五角大廈：2美軍陣亡1人失聯",
-          "source": "中央社 國際",
-          "url": "https://www.cna.com.tw/news/aopl/202607190004.aspx"
+          "title": "「DeepSeek時刻」再現！中國月之暗面Kimi K3重挫美股、費半跌入熊市",
+          "source": "news.cnyes.com",
+          "url": "https://news.cnyes.com/rss/articles/CBMiT0FVX3lxTE1hVE9aYmV3TFpOMlVNSXl6c2IyZTFTT3FTYmJPaUZDWVdDZ0RUeHRCSUVhdzZXVDlBd2RYSXVjNjl4bXFBS0dpa1drYWlBa2s?oc=5"
         },
         {
           "title": "AI類股持續走弱和油價勁揚 美股收黑",
@@ -148,54 +148,7 @@
     },
     {
       "market": "費城半導體指數",
-      "cause": "中國AI新創公司月之暗面發布Kimi K3模型，其開源且低成本的特性，引發市場對AI晶片與設備前景的憂慮，導致投資人獲利了結，晶片股賣壓沉重，費半指數大跌近10%並陷入熊市。",
-      "evidence_news": [
-        {
-          "title": "「DeepSeek時刻」再現！中國月之暗面Kimi K3重挫美股、費半跌入熊市",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1hVE9aYmV3TFpOMlVNSXl6c2IyZTFTT3FTYmJPaUZDWVdDZ0RUeHRCSUVhdzZXVDlBd2RYSXVjNjl4bXFBS0dpa1drYWlBa2s?oc=5"
-        },
-        {
-          "title": "半導體賣壓湧現！ 美股慘跌、台積電ADR挫2.77%",
-          "source": "CTWANT",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBlaG9HSFg3VjlDWHA4bHoxdFVDd0RQTGgzdmozelRoVldia2htWG8wNUloTWlpZnlaSTdneHFZMUxrMmkxc0hRUFJqOGRmUzDSAVRBVV95cUxOLVdxSGw5OXc0cnRhNW1HUE5KNEZkU1VIRElDUmZkdS01Y0dmRjFlMWdRVDJOS2JqR3NmYU9keGNJVlFGdUNZYXVYOVZMcHJ5aVUzcWE?oc=5"
-        }
-      ]
-    },
-    {
-      "market": "原油市場",
-      "cause": "美國與伊朗在中東的衝突升級，伊朗襲擊約旦與科威特發電廠，加劇市場對荷莫茲海峽石油供應受阻的擔憂，推動油價勁揚。",
-      "evidence_news": [
-        {
-          "title": "市場憂美伊衝突加劇 油價勁揚",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202607180006.aspx"
-        },
-        {
-          "title": "伊朗報復美空襲 攻擊科威特第2座發電及海水淡化廠",
-          "source": "中央社 國際",
-          "url": "https://www.cna.com.tw/news/aopl/202607180144.aspx"
-        }
-      ]
-    },
-    {
-      "market": "台指期夜盤",
-      "cause": "儘管美股四大指數全面重挫，尤其是費半大跌近10%，但台指期夜盤卻出現逆勢反彈，一度漲逾800點，最終收盤跌幅達-6.49%。這顯示市場對隔日台股開盤有強烈多空拉扯，但最終仍受美股利空影響。",
-      "evidence_news": [
-        {
-          "title": "台指期夜盤收盤(TXF-NIGHT/盤前即時):-6.49%",
-          "source": "真實報價"
-        },
-        {
-          "title": "台股超級強！不懼美股全面崩跌 台指期夜盤逆勢飆漲877點",
-          "source": "Yahoo股市",
-          "url": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxNX3RVaTZoVFFWUnBQa2FYRTNKZEpWeWpSV0t1aUp3dmRjNUUxZlNSUkhNQ3VUZEZubFlsRURtV1ktLWVwTDBTTXR0UU96aGt0S2ZOOEVzd1NuNnFrZUZweWprcUlrUkh5eldOTDhQaFNZdTF0aG9MMVFyYXM5UDRGa3FTYnQxMGMwYVVXQ1Jvakh5enVicVNZLW1oTGNuUnVvNlk2Z08tQmZSX29ueHo2bDdQVVhyT3Jib1NRdjBvb2pGNU94LVRYbldZMTZFdEpUMTV4aUJxNXJwc1EyRXpZbl9HUFJ6QlU3WFVGM0Y1VjBrX1BZYlZsVWF2WUFtQWs3S3FLTXNENVhROUpmYnRlSzE3NHlYeFUzcy1HMTlFeU1pNy1fS3l6ZVVDZkRNTVhYTGQxNUM3Z3k5SU5PWGtoMmdNR2xodTdmZDIyZjU2VHNsbGJnYmtzdzFMNGJ3SllDSmgtQ0w1UkM1V0ZvTDlkQnZySjhXQQ?oc=5"
-        }
-      ]
-    },
-    {
-      "market": "AI概念股",
-      "cause": "投資人對AI熱潮是否過度槓桿產生質疑，導致資金從晶片類股輪動至其他科技巨頭如蘋果，輝達市值被蘋果超越，顯示AI產業面臨修正。",
+      "cause": "受到中國AI新模型帶來的競爭壓力，以及投資人對AI熱潮過度槓桿和漲過頭的質疑，半導體類股出現恐慌性拋售，費城半導體指數單日重挫近一成，跌入熊市。",
       "evidence_news": [
         {
           "title": "從首爾到矽谷 晶片股慘跌再掀AI熱潮過度槓桿質疑",
@@ -203,31 +156,56 @@
           "url": "https://www.cna.com.tw/news/afe/202607180133.aspx"
         },
         {
-          "title": "AI投資風向轉變 蘋果超越輝達重登全球市值寶座",
+          "title": "半導體賣壓湧現！ 美股慘跌、台積電ADR挫2.77% | 財經 | CTWANT",
+          "source": "CTWANT",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBlaG9HSFg3VjlDWHA4bHoxdFVDd0RQTGgzdmozelJoVldia2htWG8wNUloTWlpZnlaSTdneHFZMUxrMmkxc0hRUFJqOGRmUzDSAVRBVV95cUxOLVdxSGw5OXc0cnRhNW1HUE5KNEZkU1VIRElDUmZkdS01Y0dmRjFlMWdRVDJOS2JqR3NmYU9keGNJVlFGdUNZYXVYOVZMcHJ5aVUzcWE?oc=5"
+        }
+      ]
+    },
+    {
+      "market": "油價",
+      "cause": "美國與伊朗之間的軍事衝突加劇，伊朗襲擊約旦造成美軍傷亡，並威脅封鎖荷莫茲海峽，導致市場對原油供應的擔憂升溫，油價因此勁揚。",
+      "evidence_news": [
+        {
+          "title": "伊朗襲擊約旦 五角大廈：2美軍陣亡1人失聯",
+          "source": "中央社 國際",
+          "url": "https://www.cna.com.tw/news/aopl/202607190004.aspx"
+        },
+        {
+          "title": "市場憂美伊衝突加劇 油價勁揚",
           "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202607180066.aspx"
+          "url": "https://www.cna.com.tw/news/afe/202607180006.aspx"
+        }
+      ]
+    },
+    {
+      "market": "台指期夜盤",
+      "cause": "受隔夜美股大跌，特別是費半指數重挫的影響，台指期夜盤收盤大幅下跌6.49%，反映市場對科技股前景的悲觀情緒。",
+      "evidence_news": [
+        {
+          "title": "台股超級強！不懼美股全面崩跌 台指期夜盤逆勢飆漲877點",
+          "source": "Yahoo股市",
+          "url": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxNX3RVaTZoVFFWUnBQa2FYRTNKZEpWeWpSV0t1aUp3dmRjNUUxZlNSUkhNQ3VUZEZubFlsRURtV1ktLWUtTDBTTXR0UU96aGt0S2ZOOEVzd1NuNnFrZUZweWprcUlrUkh5eldOTDhQaFNZdTF0aG9MMVFyYXM5UDRGa3FTYnQxMGMwYVVXQ1Jvakh5enVicVNZLW1oTGNuUnVvNlk2Z08tQmZSX29ueHo2bDdQVVhyT3Jib1NRdjBvb2pGNU94LVRYbldZMTZFdEpUMTV4aUJxNXJwc1EyRXpZbl9HUFJ6QlU3WFVGM0Y1VjBrX1BZYlZsVWF2WUFtQWs3S3FLTXNENVhROUpmYnRlSzE3NHlYeFUzcy1HMTlFeU1pNy1fS3l6ZVVDZkRNTVhYTGQxNUM3Z3k5SU5PWGhoMmdNR2xodTdmZDIyZjU2VHNsbGJnYmtzdzFMNGJ3SllDSmgtQ0w1UkM1V0ZvTDlkQnZySjhXQQ?oc=5"
         }
       ]
     }
   ],
   "us_view": {
     "direction": "偏空",
-    "reason": "美股受中東地緣政治衝突升級導致油價上漲，以及中國AI新模型衝擊下AI晶片股出現大規模賣壓雙重利空夾擊。標普500、那斯達克綜合與費城半導體指數均出現大跌，費半更跌入熊市。儘管有資金從晶片股流向蘋果，但整體市場情緒仍偏向謹慎與悲觀。",
+    "reason": "美股市場受中國AI新模型對晶片產業的衝擊，以及投資人對AI熱潮泡沫化的擔憂影響，科技股和半導體類股出現大幅回檔。此外，中東地緣政治緊張情勢升級，導致油價飆升，加劇了市場的不確定性與通膨壓力，整體市場氛圍偏向悲觀。",
     "focus": [
-      "中東地緣政治局勢發展與油價走勢",
-      "AI晶片產業鏈的庫存與需求變化",
-      "通膨數據與聯準會政策預期",
-      "大型科技股財報表現"
+      "AI晶片產業競爭與獲利前景",
+      "中東地緣政治發展與油價波動",
+      "科技巨頭財報表現"
     ]
   },
   "tw_impact": {
     "direction": "偏空",
-    "reason": "受隔夜美股，特別是費城半導體指數重挫近10%的影響，台股今日開盤將面臨沉重賣壓。雖然台指期夜盤曾出現逆勢反彈，但最終收盤仍大跌6.49%，且費半現貨與那斯達克100期貨出現高達+7.6%的背離，暗示美股現貨跌幅遠大於期貨，這種期現背離通常預示著現貨市場的恐慌情緒更為嚴重，台股開盤預計將跳空下跌，尤其半導體與電子股將首當其衝。若台指期夜盤的逆勢反彈未能持續，恐對開盤造成更大的下行壓力。",
+    "reason": "隔夜美股，尤其是費城半導體指數重挫近10%，以及台積電ADR大跌2.77%，將直接衝擊今日台股開盤，尤其半導體及電子類股將面臨巨大賣壓。儘管台指期夜盤收盤前的報價顯示反彈，但其最終結算仍為大幅下跌6.49%。值得注意的是，費半現貨大跌10.0%與那斯達克100期貨下跌2.4%之間存在顯著的+7.6%背離，這可能意味著台股在開盤時的恐慌性賣壓可能比期貨盤反映的更嚴重，或在盤中出現較大的震盪，但隨後可能因部分買盤介入而收斂跌幅。",
     "sectors": [
-      "半導體類股 (台積電、聯發科等)",
-      "電子零組件",
+      "半導體類股",
       "AI相關概念股",
-      "航運 (受油價上漲影響)"
+      "電子權值股"
     ]
   },
   "futures_divergence": {
@@ -263,6 +241,14 @@
     }
   ],
   "raw_news": [
+    {
+      "title": "匈牙利總統簽修憲案結束任期 前總理奧班勢力遭削弱",
+      "source": "中央社 國際",
+      "url": "https://www.cna.com.tw/news/aopl/202607190006.aspx",
+      "summary": "（中央社布達佩斯18日綜合外電報導）匈牙利總統蘇尤克今天表示，他已簽署新通過的憲法修正案，該案將結束他擔任國家元首的任期。蘇尤克是匈牙利民族主義前總理奧班的盟友。",
+      "published": "2026-07-18T22:24:38+00:00",
+      "origin": "中央社 國際"
+    },
     {
       "title": "伊朗襲擊約旦 五角大廈：2美軍陣亡1人失聯",
       "source": "中央社 國際",
@@ -438,14 +424,6 @@
       "summary": "（中央社記者蘇思云台北18日電）產險公會指出，旅遊不便險中的旅程更改保險理賠從寬認定。富邦產險、新光產物保險今天公告，若因颱風導致臨時在海外多住一晚，可用原旅程最後一晚住宿單據為基礎，理賠上限為1.2倍，不再一律一天限額新台幣2000元，且新制溯及既往，今年4月1日後投保保單皆適用。",
       "published": "2026-07-18T09:14:44+00:00",
       "origin": "中央社 財經"
-    },
-    {
-      "title": "伊朗報復美空襲 攻擊科威特第2座發電及海水淡化廠",
-      "source": "中央社 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202607180144.aspx",
-      "summary": "（中央社科威特市18日綜合外電報導）科威特今天表示，伊朗襲擊境內另一座發電及海水淡化廠，導致數個發電機組停擺。這是連續第2天發生類似攻擊。",
-      "published": "2026-07-18T08:52:29+00:00",
-      "origin": "中央社 國際"
     },
     {
       "title": "從首爾到矽谷 晶片股慘跌再掀AI熱潮過度槓桿質疑",
@@ -744,20 +722,36 @@
       "origin": "BBC 中文"
     },
     {
+      "title": "Iran War Updates: U.S. launches 8th night of strikes on Iran after Iranian attack kills 2 U.S. soldiers in Jordan",
+      "source": "CBS News",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNTms5S29XQzlnbjNtVi1RXzJ6WUtBLTVIVlJZVnhMbFVfemxMdmpxNlhqV2k4dkRHemU2QnpLcFNjTWRjN2NzLW4zTk9vbmFSOUQ2ejYzRVBGbC1hN2RaQWhVaE9EalhzUl9mbFY4WVFPeDRwVkNETGtEQnl3VHNpc0steHVaT3lLdFdESi1kWlIyUHla?oc=5",
+      "summary": "Iran War Updates: U.S. launches 8th night of strikes on Iran after Iranian attack kills 2 U.S. soldiers in Jordan CBS NewsUS Strikes Iran to ‘Punish’ It for Attack That Killed 2 Troops Bloomberg.comU.S. launches new airstrikes against Iran following Jordan strike KATUU.S. Strikes Leave Iranians Isolated and Scared The New York TimesTwo US service members killed, another missing after Iranian attack in Jordan: CENTCOM Fox News",
+      "published": "2026-07-18T22:28:00+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Cyclospora: iceberg lettuce recalled in 27 states and more products may follow",
+      "source": "The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMllmSjZuUGxUczV3Z09MbVpqbWxLVDhheFN6NG9odVY4NEJveFVGampMMjNIWFJVa1FoRFgyczlCVE9lRzZnRXJYRTcyWkpKZXZOX01rMjl3SlFmNnk2YjBaLWJpUnhLeFNYeENQOVNVY09fbzF5Z3hhQ181T2J5WllDSkxsOHU0?oc=5",
+      "summary": "Cyclospora: iceberg lettuce recalled in 27 states and more products may follow The GuardianLettuce Supplier Linked to Cyclospora Outbreak Is a Global Salad Giant WSJIceberg lettuce recalled in 27 states due to potential cyclospora contamination ABC7 Los AngelesWhat to know about Taylor Farms amid cyclosporiasis outbreak ABC News - Breaking News, Latest News and VideosHow Taco Bell And Taylor Farms Are Managing A Shared Crisis Forbes",
+      "published": "2026-07-18T21:25:00+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
       "title": "Ukrainian drones hit warehouses and other sites across Russia, killing 9 and wounding over 80",
       "source": "AP News",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQldSVzRUSldGOFFxMWdpb2FFdm9oZURyN1VNakRvcVpBVlA1QmJJT0E0RUJPOVYxRTc5NEkwZEk1b1Q1dGlIWGRFd1RxMEcyUWlXMngzYTJmQTVVd0tESmJJN2doOHFwYVlzcnpYaF93MUtseFR1dmpzQVRHdld0bnY5WHljRkdWWTdUUEVFbTBZeVZZUmlZ?oc=5",
-      "summary": "Ukrainian drones hit warehouses and other sites across Russia, killing 9 and wounding over 80 AP NewsRussian online retail warehouses hit by deadly Ukrainian strikes BBCWarehouse workers among 8 dead in deadliest Ukrainian attacks inside Russia for two years CNNUkrainian drone attacks kill seven warehouse workers in Russia, spark fire at Moscow region oil depot ReutersUkraine drones target Russian warehouses and oil sites DW.com",
+      "summary": "Ukrainian drones hit warehouses and other sites across Russia, killing 9 and wounding over 80 AP NewsWarehouse workers among 8 dead in deadliest Ukrainian attacks inside Russia for two years CNNRussian online retail warehouses hit by deadly Ukrainian strikes BBCUkrainian drone attacks kill seven warehouse workers in Russia, spark fire at Moscow region oil depot Reuters8 killed and more than 60 wounded in Ukrainian drone attack on Russian regions NPR",
       "published": "2026-07-18T20:52:00+00:00",
       "origin": "Google 世界頭條"
     },
     {
-      "title": "Taylor Farms launches recall in 27 states after iceberg lettuce tied to outbreak",
-      "source": "The Washington Post",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWU1fVTJtSDA3Z1BhVEdSaE96MmstME5pd2ZfNDZzeHVkYWJSSjhreE84aE41cTQwZWd5WDlDbndPME8yTnc2U0V1N2kwWWFNa1JVYVAtVlhJMVRkRW0wdkxLQVpFeFZyYlI3ampIRzQzclEzUGVSTV9NbThFdGtwbXdGV0FaamVRcmQxUlZDV0NMOGdyU0tuaGk1U05ZMWJzYkZZTzdPY0tUcXdrMjhVM01hWUF5cVpzdnZDcURn?oc=5",
-      "summary": "Taylor Farms launches recall in 27 states after iceberg lettuce tied to outbreak The Washington PostLettuce Supplier Linked to Cyclospora Outbreak Is a Global Salad Giant WSJCyclospora: iceberg lettuce recalled in 27 states and more products may follow The GuardianHow Taco Bell And Taylor Farms Are Managing A Shared Crisis ForbesTaylor Farms recalls iceberg lettuce in 27 states due to cyclosporiasis outbreak CNBC",
-      "published": "2026-07-18T20:44:10+00:00",
-      "origin": "Google 財經頭條"
+      "title": "Iran: US attacks show Trump's word is 'utterly worthless'",
+      "source": "DW.com",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNcVVmTEZvVy1XTHlRSVJrLTRyUzBHWEczVlZ5Nko0U0ppMlllbU83YnRrdi1XcU5SaFpWYnA4eGZ3aWJXSWs4SE9TMnQ0UzRVbEFGenphRXAtZ1RvQVIwaWlYWXRTS3c5RF9OZjNsV0pHUDNOOWFUd1E2VFZCN3dmSVQ5SkpHWEszdXdrTnJLaXJZczQ?oc=5",
+      "summary": "Iran: US attacks show Trump's word is 'utterly worthless' DW.comIran supreme leader vows 'unforgettable lessons in store' for U.S. after calling off interim peace agreement CNBCIran's supreme leader in a new statement warns of 'unforgettable lessons' if U.S. continues attacks PBSIran's Supreme Leader says US breaches show Trump's signature is 'worthless' ReutersIranian leader calls Trump’s signature ‘worthless and invalid’ as war rages The Hill",
+      "published": "2026-07-18T20:37:30+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "Dow Jones Futures: Iran Attack Kills Two U.S. Troops; Google, Tesla, AMD Ahead",
@@ -771,33 +765,9 @@
       "title": "Andy Burnham to scrap digital ID to focus on cost of living in first major policy pledge",
       "source": "BBC",
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5JOGZCOXhtTlVfcGVZQVc4YUVOV1hBcDRiQ1RsdGZaTHAtbXc1cVpnNUwzR0xId1dpRHJPekdXR05WVHZsSzg1RmJhZ0lLUm5MalAwd3FDbUxqdw?oc=5",
-      "summary": "Andy Burnham to scrap digital ID to focus on cost of living in first major policy pledge BBCBurnham to scrap Starmer’s digital ID scheme in ‘reset of priorities’ The GuardianNext UK Prime Minister Andy Burnham Drops Digital ID Scheme U.S. News & World ReportThe money will instead by spent 'on people's everyday priorities' facebook.comBurnham to ditch Starmer’s £2bn digital ID scheme to signal change of direction The Independent",
+      "summary": "Andy Burnham to scrap digital ID to focus on cost of living in first major policy pledge BBCBurnham to scrap Starmer’s digital ID scheme in ‘reset of priorities’ The GuardianBurnham scraps new digital ID scheme Financial TimesNext UK prime minister Andy Burnham drops digital ID scheme ReutersBurnham to scrap digital ID cards The Telegraph",
       "published": "2026-07-18T20:15:26+00:00",
       "origin": "Google 世界頭條"
-    },
-    {
-      "title": "US military targets Iran with latest wave of strikes",
-      "source": "Fox News",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPRW1HM0tnNnRlejk2WUp0LURrTzA2RERyQUZvZ3g3SGRCeVJWQUtYUl8zbWZQSzlkSDc0WmdLWlY1VTFmTG1DejlFbnV0ejNGbFNkQ2tfdU96dTlsRHI4Z1RsbG9NM2R6TXlENU55RmVnZVR2Umk2Y3o0MWw3bUJnVXI0UmE1Zw?oc=5",
-      "summary": "US military targets Iran with latest wave of strikes Fox NewsU.S. Strikes Leave Iranians Isolated and Scared The New York TimesThat sinking feeling: Iranians feel the strain as Trump ramps up war again over Hormuz NBC NewsJuly 17, 2026 — Iran and US widen attacks as renewed conflict shows no sign of de-escalating CNNCENTCOM Finishes Latest Wave of Strikes Against Iran centcom.mil",
-      "published": "2026-07-18T19:11:17+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "Iran supreme leader warns of ‘unforgettable lessons’ if US attacks continue",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNd0ZOdFAyZklEbUthaUZXa1dHWHVFRlhPcmRrMGxCdHpPT015b3dERXp3aEstOS1jNEhiQnR2bkstQ2pob3Y4czJEREpfcHRXUnpsMVZYTGg0SExmS0xmVDgxS0pZWHZBOXhvQUQ4NXhSM19zcXpqZjc2bXdGYkdzemRGZFNYR1BsTDlSYmhURHNoM3B2aHRld2ZUWnh6cUpKcU5KVU9WNWZvak5QUWtDdXA5WlnSAboBQVVfeXFMTTQzY0dCUl9hUmxMaEk3M0xWdEZjTHVLM245LXc3TmZCbEpzQTJTaXVfRWFBMTc1dUxsU2hVV1Ryelp3VUNDdnRmNVNacEpxbHFqZTBrOVpQSS03SEdQUW43cGVTY2VuT08yZlhMbjBNY0lIZEZ4S3EtLTJfWFhVOWJRM3Z5UE9tUHVUdGFxelNRa2R0ajJNbHA1ZTJleVZjNWx3RGQ2SndvV21PSUdXemxscXBDNFpVSV9n?oc=5",
-      "summary": "Iran supreme leader warns of ‘unforgettable lessons’ if US attacks continue Al JazeeraIran supreme leader vows 'unforgettable lessons in store' for U.S. after calling off interim peace agreement CNBCIran's supreme leader in a new statement warns of 'unforgettable lessons' if U.S. continues attacks PBSIran's Supreme Leader says US breaches show Trump's signature is 'worthless' ReutersIranian leader calls Trump’s signature ‘worthless and invalid’ as war rages The Hill",
-      "published": "2026-07-18T19:05:31+00:00",
-      "origin": "Google 世界頭條"
-    },
-    {
-      "title": "The sell-off for AI stars worsens, while oil prices keep jumping",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPRjhsV0pGUU1wc3ZYY09ocnNhWDFWMGtwSXhoN3ZaRDEyNG5Eb3JpeWlmeWR4RHUyNmFfNzhSTmEyclZLaW91UFdsN2hUWHF3STczc0xMQnBTeG5QUEs1LTlLTDBMN3UtMHM5ZDdEVGRNR3cxcVdJM3luUEQ2Ry00V2hCdnVyQm1XR1lHdENWVTFEMWF6eFNQUHBR?oc=5",
-      "summary": "The sell-off for AI stars worsens, while oil prices keep jumping AP NewsNasdaq, S&P 500 drop 1% after China’s latest AI breakthrough rattles tech stocks CNNWhy the ugly semiconductor rout could get uglier Yahoo FinanceS&P 500 closes lower, Nasdaq falls more than 1% as chip stocks suffer: Live updates CNBCWhat to know about the AI chip stock selloff ABC News - Breaking News, Latest News and Videos",
-      "published": "2026-07-18T18:39:00+00:00",
-      "origin": "Google 財經頭條"
     },
     {
       "title": "US Strikes Iran Despite Tehran Threatening Full-Scale War, Oil Prices Surge",
@@ -819,7 +789,7 @@
       "title": "Ontario Wildfires Rage On, Forcing Rescues and Evacuations",
       "source": "The New York Times",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRFZvbkpkRXNLN1ppbkNhRWlCWFNRRVVHMjZqcXZ6ZktWcU5FZzBxQ0xzb0w4TW5DR29JYjFidkpGVm4xdWYzM0RBeU11TnhGNkdqUG1VOFBiTlVtTVVyc0V2dmpORkVrYkVDbUQ2RE9NWDlTWUFMeURTUEdOcTd4WE5NdldmMjNETVhKQWg0NUFxLTE5d293YmhSNA?oc=5",
-      "summary": "Ontario Wildfires Rage On, Forcing Rescues and Evacuations The New York TimesOntario Wildfires Burn On, and New Ones Spring Up The New York TimesWildfire tally grows to 191 in northern Ontario CBCFleeing Canada’s wildfires: They thought there was no immediate danger. Then a wall of smoke arrived CNNThousands flee as First Nations bear the brunt of Canada’s wildfires grist.org",
+      "summary": "Ontario Wildfires Rage On, Forcing Rescues and Evacuations The New York TimesWildfire tally grows to 191 in northern Ontario CBCThousands flee as First Nations bear the brunt of Canada’s wildfires grist.orgFleeing Canada’s wildfires: They thought there was no immediate danger. Then a wall of smoke arrived CNNThey fled their home as ash rained down. Inside the harrowing evacuations from Ontario wildfires Toronto Star",
       "published": "2026-07-18T18:03:18+00:00",
       "origin": "Google 世界頭條"
     },
@@ -832,14 +802,6 @@
       "origin": "Google 世界頭條"
     },
     {
-      "title": "All the EVs that were discontinued or killed off in the U.S. this year",
-      "source": "TechCrunch",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPVHkyR1ZkUGlSZHluTWs5TkRsSE9CblVhby0ySFFRcmhHbGtVdEd0LTBVaEtscmwwSlkzN1d4cy1hTDg2czc1bTh1eEk2X05nZmpYQ0ZjckkxeDMyOUc5YU9MQ0JqWjVveXdJai1ZSlljcWRYcjluMEpOek5IdUZqQXlfSUIzLUt3SWQxUVFrOGQwSmdzbjUzU1ZuVE1teGJGc25UbTdwUQ?oc=5",
-      "summary": "All the EVs that were discontinued or killed off in the U.S. this year TechCrunchThe American E.V. Has Been Crushed. Will It Take the U.S. Auto Industry With It? The New York TimesGoodbye: Honda Is Killing the Prologue SUV After 2026 MotorTrendHonda ending U.S. sales of Prologue electric vehicle Yahoo FinanceHonda Will Stop Selling Its Lone Electric Vehicle in the U.S. WSJ",
-      "published": "2026-07-18T16:30:00+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
       "title": "Foreclosures hit highest level since 2019, sparking interest from bargain hunters",
       "source": "Yahoo Finance",
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNQWlVZlBLUGNxbDd5aXRiOE0xVXM1Vmxmbjh4S0lhOTEwRTV3WlNMaXltMjRIV0pMSXNsZkZCVVhzVlR3emRoQzU1Q1pPQ2QyNC1TQ0FrSkVQVmZTd045LTYtaURMLXUwblp0eElnbzBjSzNvd0lXRlVBWnVlM2JwcmVoOEFTaGt6dVBVZGwwWlVZLVV1dDVScElyVTBDY0VZdDFqb1hVdUNyYTQ0R1JfeUFvRV9DNzlvaEcxYURiQTVmRlBVc0Q3MmFMN2ZfdXpRTUV1eFZLc08?oc=5",
@@ -848,12 +810,12 @@
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Sanford Health announces T. Denny has died",
-      "source": "KELOLAND.com",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQV0Y5dTNrdktkTGZzcHhJOUxEV3o5Y244VE5nOVRlYzNYV1JGQmRLRjJCTFp3c0ZyRExlRnFNMmZpR0lVVWV4SElTNVppbU50dkp4NzhWQW5IaEctb2dYaUNWbGtUMUYxNU9LMGd2b1R2UGpYY0dYcVZiYTJlRldxNkUtOHZnRk5ycWNZ0gGQAUFVX3lxTE11MUdNenAxNDZZZm1HcHRQVDFZQVRNVkxCS1Bpa0FMYUwyWXNoV2RjX2pBanRnV2F5RldvVDhiWktMeWVpRWpXdUlQMXNVeHNKTUZkX1FJNFBlR1lRUHVQY0xIejluQklEQXJuLWYwS1RkOG04NEZhV0tIckpxR3ZoNnVVNGo2UmsteU16U2dGMQ?oc=5",
-      "summary": "Sanford Health announces T. Denny has died KELOLAND.comDenny Sanford leaves legacy in healthcare and beyond Sanford Health NewsDenny Sanford, Minnesotan-turned South Dakota billionaire and philanthropist, dies at 90 Star TribuneREAD: T. Denny Sanford obituary KELOLAND.comBusiness founder, philanthropist T. Denny Sanford dies SiouxFalls.Business",
-      "published": "2026-07-18T16:21:55+00:00",
-      "origin": "Google 財經頭條"
+      "title": "E.U. tells Caribbean nations: Stop selling citizenship or we’ll require visas",
+      "source": "The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNSHBIY2ZKcnNYMnBtdWxiemgxemRMbGREbjM2OTlkQldGeE1Lbm02NVp4NTY0dFhmZEdlVm8zNTM0LThnNjZXaTRwV2lrMHItR3VmNUpGVTl5a0I5OWcxS04xa0VqLUpqbVY2TkJzeW1DX1FhT083OFFRWHQyUmR5MUhuNzRmTEdSRFVYd0w4V0xDU2RCRmlZZUJJbS03aGZvdHVYUmZDcWFOMHZ6MHJlTW5PQzFOSnFZeXVVb3dOMA?oc=5",
+      "summary": "E.U. tells Caribbean nations: Stop selling citizenship or we’ll require visas The Washington PostOP-ED: We’ve called the meeting, now here’s what we bring Dominica News OnlineOECS to Mount High-Level Mission to Brussels Amid EU’s Strong Stance on CBI Programmes Caribbean TodaySt. Lucia government says EU had long expressed concerns over CBI programme The St Kitts Nevis ObserverAntigua and Barbuda to introduce resolution on CIP to safeguard EU access: PM Browne WIC News",
+      "published": "2026-07-18T16:00:00+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "Venezuela quake death toll tops 5,000 as IMF releases emergency aid",
@@ -867,7 +829,7 @@
       "title": "Two unexpected revelations in Warren Buffett's CNBC interview",
       "source": "CNBC",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNbEJrNlRLVUptRHpuamU1bGl0R18xVVVTWlQ3NXRXUXhENElFNnN2MkJlcXVfVTdKUTNpenVKVUwwWjhjYXNMcDQwam1CMnRkWGpfZmhaVk8xcHlJTnRQMWtTNEx2RU5PYktpZ2t0akJSRG5HbTNpR0JnU2lUdXh6VnVsQTczUFkxZ1pmY0oxUldqTEhIQjMwLTNJY1o5Z9IBowFBVV95cUxQSGpvQWZJYzM2UkMwbzVMZGVKa20yTjBpVVRVbTVyN0ZSaUtHM014V0NEVHNiSXJCWUdueTdZNHdaemotM0NreDdQZm1hTmZxLXl1Z3o4UHBSZ0dlN21MVmtpUDduT1NPcXJ3ZjFVcWZDU3FrOVBQNHpaV0JWQS1aMzhMa3ZwdjFuRlRjNmdMY1BFR2FkWmZlWlJaS1RjLTVBem9n?oc=5",
-      "summary": "Two unexpected revelations in Warren Buffett's CNBC interview CNBCBillionaire Warren Buffett stops donations to Bill Gates charity BBCWarren Buffett excludes Gates Foundation from his annual donations of Berkshire stock Fox BusinessEven before he was wealthy, Warren Buffett planned to give away all his money—now he doesn't check on his children's charities to see how they use it FortuneBuffett Plans to Give Away More in Next 8 Years — Are Trump Accounts Next on His List? Yahoo Finance",
+      "summary": "Two unexpected revelations in Warren Buffett's CNBC interview CNBCBillionaire Warren Buffett stops donations to Bill Gates charity BBCWarren Buffett explains why his kids, not the Gates Foundation, will now give away all his fortune Los Angeles TimesEven before he was wealthy, Warren Buffett planned to give away all his money—now he doesn't check on his children's charities to see how they use it FortuneBuffett Plans to Give Away More in Next 8 Years — Are Trump Accounts Next on His List? Yahoo Finance",
       "published": "2026-07-18T14:53:36+00:00",
       "origin": "Google 財經頭條"
     },
@@ -875,16 +837,8 @@
       "title": "Why a blown-out plane window nearly sucked a passenger outside at 16K feet",
       "source": "Fox News",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQR244ZnR6Zk9qVmJwSTdOVUstcXNLV3Z5Q0dzVnZsenlkdS10ZDl4WUZ4YlNlbko3OFFBR2JDY3FibDBWNW5od2VjTm1BbDNEbUZWazk3Z2ZfT2hza1Y1X1RRaGJwUVhMUVVaLW5HblA5X0pLdFFPM3BqSjBTeUZublA0ZVdQbDVCQzBLMllfT08wOHZncXZBa0pR0gGfAUFVX3lxTE5adnk5dEJvQVZTUXdyeFN4TFpzLWJpUVBHTkxOaWN1OGx5eTZ4cHFhLTJ4TWk2QlRZaTFxRGlLcWNQdEpHWVhJc3V4V2d0N2FGX1ZYOUdESWJGRWxaVzRCTE5xRGxESWNzRktEQWZNeEw2WkpCZ2I1Y25IVWJDMk9UWmVCSW11dkprR1FnNktockV5dG1XMWpCWXVaY29yTQ?oc=5",
-      "summary": "Why a blown-out plane window nearly sucked a passenger outside at 16K feet Fox NewsUS investigators lead probe into Ryanair flight where man was partly sucked out of broken window ABC News - Breaking News, Latest News and VideosRyanair passenger sucked out of airplane ‘to his shoulders’ after window breaks CNNRyanair window incident: Expert reveals who might be at fault New York Post‘If we die, we die together’: wife of Ryanair passenger almost sucked through window speaks The Guardian",
+      "summary": "Why a blown-out plane window nearly sucked a passenger outside at 16K feet Fox NewsUS investigators lead probe into Ryanair flight where man was partly sucked out of broken window ABC News - Breaking News, Latest News and VideosRyanair window incident: Expert reveals who might be at fault New York Post‘If we die, we die together’: wife of Ryanair passenger almost sucked through window speaks The GuardianUS to take lead in probe into Ryanair Boeing 737 engine failure over Greece Reuters",
       "published": "2026-07-18T14:00:48+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
-      "title": "Mortgage rates hit highest level since the start of the war with Iran",
-      "source": "WXOW",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOWkNnMW1vcUJxYWxSSlVYOWYycDNOVlN1NTQ4M2xxWjVPMjBfcmU0SENNZE5TQlNEaUNQNVFnNXZBNDB1c0twM3llOGh6U3hBUElaRTRjQ2lmdHFienFWTDNBdXlMWTZRSFdkM1ZKY1M3c2ZQMUl4ZkdnX0MyUWVHamVWU0IzQXQzNTRsOTlCSWhpUlo5NFZBX0twN2hHRlEzNkF2bkZPbjJBS0pPVDZpcWZIS0xlczBKUzVUQ1NYNkJmY2ZDUS1qQ05iXzlNVjZBY3pjUHhwbWpqNUFwNU5EYVk0eFlPaElrUUE?oc=5",
-      "summary": "Mortgage rates hit highest level since the start of the war with Iran WXOWMortgage rates rose again amid renewed tensions with Iran Yahoo FinanceMortgage Rates Today, July 18: 30-Year Refinance Rate Rises Sharply by 36 Basis Points Norada Real Estate InvestmentsCan the housing market weather Iran conflict 2.0 and higher rates? HousingWireMortgage Rates End Week at Lows Mortgage News Daily",
-      "published": "2026-07-18T13:55:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
@@ -893,6 +847,14 @@
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQMmwwd2FfakJfek5XbjVFa0lyMzY2S0xMNEVPZHM4dy1maWE4WXg2c1hvdHVFaVBtMWdnekRlZnN6UENWdVdBcXdhVDVLZ0xRTF81RzB3MXdSaVBtUkVmbi1yakdXRERDRWxqV2lXeGV6aUhzelRuaHJtdlFzOEMxSHNQMUxvaG9uc0FPVWU1SkV5b0VTTGhIUA?oc=5",
       "summary": "Iran and Kuwait report attacks on water and power infrastructure as strikes escalate NBC NewsIranian strike damages a Kuwait desalination plant, exposing water vulnerability in dry Mideast AP NewsOil prices rise after Kuwait says Iran attacked water desalination and power plant CNBCKuwait Faces Intense Night of Iranian Attacks as Power Plant Hit Bloomberg.comWater infrastructure hit in Iran, Kuwait amid latest Gulf war flare-up politico.eu",
       "published": "2026-07-18T13:50:36+00:00",
+      "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Sanctioned Russian Shadow Fleet Tanker Spills Oil Near Oman Coast",
+      "source": "Kyiv Post",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE50ZWNiZ21Wd3VIMTdGR0ZibFZzOWgzeWZ4cnNQZnFuWjZDcHE2ZEU5TndUcW5tSWNoN3NaNFMzeXZjWVNhNGIwRFAtZw?oc=5",
+      "summary": "Sanctioned Russian Shadow Fleet Tanker Spills Oil Near Oman Coast Kyiv PostSanctioned tanker is leaking oil near Oman, according to satellite images and experts ReutersRussian shadow fleet tanker spills oil off Oman coast Українська правдаAn oil spill from a tanker belonging to Russia's shadow fleet occurred near Oman UA.NEWSA sanctioned tanker with Russian oil may have caused a spill off the coast of Oman Українські Національні Новини (УНН)",
+      "published": "2026-07-18T13:34:13+00:00",
       "origin": "Google 世界頭條"
     },
     {
@@ -912,18 +874,10 @@
       "origin": "Google 世界頭條"
     },
     {
-      "title": "UPDATE: United Airlines Backtracks On Free Changes For Disgruntled Trump Airport Passengers",
-      "source": "Live and Let's Fly",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5iQUNVZ0xrWTRHQzVTUmV0MDhFXzZOOXlXbVRvQ09EQm1LZERlaUd6QzBLN2hLdW9nX2pWa0Z5Y1NNaENvWUJ4aENDS1ZJbzJVOTRoQlBkRWo5Y08tLTNXaE5GdEEzSEpHSE9B?oc=5",
-      "summary": "UPDATE: United Airlines Backtracks On Free Changes For Disgruntled Trump Airport Passengers Live and Let's FlyUnited responds to report about free airport changes over Trump name USA TodayUnited denies offering free flight changes over Trump airport name The HillUnited Airlines responds to Trump airport backlash with free airport swaps WPECUnited offers free flight changes to avoid newly renamed Trump International Airport Audacy",
-      "published": "2026-07-18T12:39:16+00:00",
-      "origin": "Google 財經頭條"
-    },
-    {
       "title": "Zelenskyy May Fire Commander Syrskyi After Protests, FT Reports",
       "source": "Bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWFlHLUtCc3JuclJSMXBXT0hMMTM1MVA0cVJHeS1QRjZ3Vi1uZ3ZKdG5FN0N0WnpraU8weF9rN2FvTlZ5bGlUYjZZVEdBck5SSmVKNzROcEQxOUl0Y2RWeUlfNlpqTkdac05nLUwtdjRaUWpQaDVrN2FhQWtmaG9ZYVd5U0N6TWppSW9aTElnODExdDZKNE55VVdQLV9zN20zbG9YWlpCU2tKNjVhVkdYRmI0OA?oc=5",
-      "summary": "Zelenskyy May Fire Commander Syrskyi After Protests, FT Reports Bloomberg.comUkrainian soldiers criticise removal of popular defence minister BBCUkraine’s Top General Becomes a Target of Protesters’ Anger The New York TimesUkrainians protest for second day, call to replace army chief ReutersZelenskyy speaks with former Defence Minister Fedorov and Commander-in-Chief Syrskyi: Decisions regarding arm Українська правда",
+      "summary": "Zelenskyy May Fire Commander Syrskyi After Protests, FT Reports Bloomberg.comUkraine’s Top General Becomes a Target of Protesters’ Anger The New York TimesUkrainian soldiers criticise removal of popular defence minister BBCUkrainians protest for second day, call to replace army chief ReutersZelenskyy considers sacking commander-in-chief as protests swell Financial Times",
       "published": "2026-07-18T12:19:25+00:00",
       "origin": "Google 世界頭條"
     },
@@ -963,17 +917,25 @@
       "title": "Celebrate National Ice Cream Day with these sweet freebies, deals",
       "source": "USA Today",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNaUNuMjgxbVdPZF9DenRxY1U2RGdSdngxcFNKOVJOclQ0Q0Ztb3ViUjBQRFBwNWNZbDd4MjMyZUpQNzhIWGtFN3UtZU5YVy1DYVo4aVEzbzdfbkhXUFRHMzJuMk4wYmVTRjRFeHJYQmJTSE4tUy1mR1FvU20zaDhfQV90SlE0WGEtTldoN0JwNjVSNnIxaFZzWjdHM0R3dVpkSzgzeVpEVU1Nd25x?oc=5",
-      "summary": "Celebrate National Ice Cream Day with these sweet freebies, deals USA TodayBraum’s offering National Ice Cream Day deals for one day only News 9Girard store celebrates National Ice Cream Day with frosty treats, fundraiser YahooHere’s the Scoop on National Ice Cream Day Deals Around DC WashingtonianIce cream for breakfast: How a blizzard inspired a beloved holiday LiveNOW from FOX",
+      "summary": "Celebrate National Ice Cream Day with these sweet freebies, deals USA TodayBraum’s offering National Ice Cream Day deals for one day only News 9Girard store celebrates National Ice Cream Day with frosty treats, fundraiser WKBN.comIce cream for breakfast: How a blizzard inspired a beloved holiday LiveNOW from FOXHere’s the Scoop on National Ice Cream Day Deals Around DC Washingtonian",
       "published": "2026-07-18T11:02:00+00:00",
       "origin": "Google 財經頭條"
     },
     {
-      "title": "Indian police forcibly hospitalize a prominent Cockroach Party activist on hunger strike",
-      "source": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPQTBCbG1NUHJfOEZtSWI3WGx3M2RuWDJHMjNsZDdwZ0YybW1yeWQ5QmFHTWtFcXhzWktqS2ZURGg1eDIzOXZXMWFGRTB5WVljWk1zc0ZQLTBsSHZnME81ZjhQelVzVV9ZLWllX1Y3RzVJWUNXR0dVNVVvNHpmcUYxM1ZmblR4Y1BPUnpSOG83OEd4OFEyZW1Qal9rdF9SSkt3Y0s1a0QyMlVWRWxueVNmV0d4SkFkWHM?oc=5",
-      "summary": "Indian police forcibly hospitalize a prominent Cockroach Party activist on hunger strike AP NewsSonam Wangchuk: Indian activist on hunger strike for 20 days forcibly taken to hospital BBCPolice shift fasting Indian activist to hospital against his will Reuters‘I’m sorry but I’m unable to speak’: hero of India’s Cockroach party weakens on 19th day of hunger strike The GuardianIndian Activist on Hunger Strike Is Forcibly Removed by Police The New York Times",
-      "published": "2026-07-18T10:43:00+00:00",
+      "title": "Indian police forcibly hospitalise activist after 20-day hunger strike",
+      "source": "Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQc3RmT1RsRXBmcHVJdlZQdUxnSEJPT05lVXRtcGdRc3BqeXdYSWt2VloyaXZNM2JTdkJJcXZqT3d6dzhwd01DV0w3YWI0S0lKVVJvRElBdUVRTm1zZzYzRjI1ZU4tbFltMF9wMGVIOF9idklhM0ZER3BNSHBnRlNQa1Zra1g4S2Vhb29CSWtRVlA3d1VzbGpfTzlma0V3V2ZYbW51N01rWHN6RDF1b1pzX9IBtgFBVV95cUxNWTFVUVhaWnI2bnRxOUJ4WDMtR2FiM2Vfam1CXzgxOEVxdE9JeUhwRHV2b0VQSDZsRTVxWUlxZFlTYnBqb25lSHNEOFM1MlRvaTRaa3c1SFBVT0J2YXoxb1dHZEpKSnRIT2ZYdTNPbkJIVnRLZ3NPc25jRnJMNXVzY1lXalhUZUtXbXZTRllOYlhFSHlkMHFMRzgzSGxyNkNMby1heE04WFR0bHNnTVRfTHRIUUZ4QQ?oc=5",
+      "summary": "Indian police forcibly hospitalise activist after 20-day hunger strike Al JazeeraSonam Wangchuk: Indian activist on hunger strike for 20 days forcibly taken to hospital BBCPolice shift fasting Indian activist to hospital against his will Reuters‘I’m sorry but I’m unable to speak’: hero of India’s Cockroach party weakens on 19th day of hunger strike The GuardianIndian Activist on Hunger Strike Is Forcibly Removed by Police The New York Times",
+      "published": "2026-07-18T10:54:31+00:00",
       "origin": "Google 世界頭條"
+    },
+    {
+      "title": "Judges, lawyers grapple with the bench's AI balancing act",
+      "source": "Axios",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1DLTR5b3lPSHFnZGllRVU0U1hTQUlqa3J5ZVJfUExrOWlZU2NpNm1nbE9FZEYteEZBZzhzVWFObG1jTk03dTYybTIwYXZtVFIyVWloTjU4a0FtWkdGbHpxc2EyalhuVE1sb0xkS3l6dEdsUQ?oc=5",
+      "summary": "Judges, lawyers grapple with the bench's AI balancing act AxiosAI-Native Firms Are Luring Frustrated Lawyers Away From Big Law Bloomberg Law NewsReinventing the legal apprenticeship Financial TimesAI Benefits, Cooley’s Meatballs, Opus 2 + Artificial LawyerThe Working Guide to AI for Attorneys Harvey",
+      "published": "2026-07-18T10:38:48+00:00",
+      "origin": "Google 財經頭條"
     },
     {
       "title": "Oil Prices Surge After Fresh U.S. Strikes on Iran Spark Supply Fears",
@@ -984,12 +946,12 @@
       "origin": "關鍵字「Iran US military attack oil price surge」"
     },
     {
-      "title": "Judges, lawyers grapple with the bench's AI balancing act",
-      "source": "Axios",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1DLTR5b3lPSHFnZGllRVU0U1hTQUlqa3J5ZVJfUExrOWlZU2NpNm1nbE9FZEYteEZBZzhzVWFObG1jTk03dTYybTIwYXZtVFIyVWloTjU4a0FtWkdGbHpxc2EyalhuVE1sb0xkS3l6dEdsUQ?oc=5",
-      "summary": "Judges, lawyers grapple with the bench's AI balancing act AxiosLaw Firms Don’t Have an AI Problem, They Have a Data Problem Artificial LawyerReinventing the legal apprenticeship Financial TimesBig Tech Opens a New Front in the Legal AI Race: Texas Brief Bloomberg Law NewsAI-Fueled Pro Se Suits Pose Rising Risk For Lenders Law360",
-      "published": "2026-07-18T10:01:51+00:00",
-      "origin": "Google 財經頭條"
+      "title": "Nuclear deal that would permit uranium enrichment by Saudi Arabia in limbo awaiting Trump admin sign-off",
+      "source": "CNN",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSEUyUDBEWlZYZEFTSERsQ1NkSjF4LUpIbjRRSk9xbFlHTlMwSGwzZUhTTlBUanRhUEV5TThaSnNEbGRZVjhlOVlPWVU4d0VIbGoyN1V4dlhyQlJfMUxUWlJsdEctMjRkUXdqYkdETnh4dFFtXzh6MWlWaEkyQmdLMjFSaw?oc=5",
+      "summary": "Nuclear deal that would permit uranium enrichment by Saudi Arabia in limbo awaiting Trump admin sign-off CNNSee more headlines & perspectives on Google News",
+      "published": "2026-07-18T10:30:26+00:00",
+      "origin": "Google 世界頭條"
     },
     {
       "title": "Marvel Comics to move publishing operations to California, source says",
@@ -1019,7 +981,7 @@
       "title": "Here's the latest retirement 'magic number.' Can you reach it?",
       "source": "USA Today",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaC1rb2Exd2U2cjRJYW9NTUlnRkZYYzVsUEdlVmdnQ1BUb0VoTWFEQmx4RDdQMDctQVZEeUNJdWlMcEdSVVp3VVdvd0dyb2doZDlUWWhETmpjbktMNHNpQTRHRUpOVF9oOFNDaVA1MndfcDFvSERsbEJIVGprQzBkNlJBSFQ3eGZhSDJURE84dUVjYVVsZW0yMDJpdlBPcmlsTC1BYmgxWHk3eGcwMC11SmZ2dw?oc=5",
-      "summary": "Here's the latest retirement 'magic number.' Can you reach it? USA TodayAmericans Say They Need $1.2 Million to Retire. Most Don’t Expect to Have It. Barron'sWill You Be A Rich Retiree? Here's the Number That Splits America's Top 10% of Savers From Everyone Else Yahoo FinanceAmericans Pull Back on Retirement Savings as Everyday Expenses Climb Bloomberg.comAmericans get blunt message on early retirement thestreet.com",
+      "summary": "Here's the latest retirement 'magic number.' Can you reach it? USA TodayAmericans Pull Back on Retirement Savings as Everyday Expenses Climb Bloomberg.comAmericans Say They Need $1.2 Million to Retire. Most Don’t Expect to Have It. Barron'sWill You Be A Rich Retiree? Here's the Number That Splits America's Top 10% of Savers From Everyone Else Yahoo FinanceAmericans get blunt message on early retirement thestreet.com",
       "published": "2026-07-18T09:02:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -1035,7 +997,7 @@
       "title": "Chinese AI model takes US tech industry by surprise with abilities rivaling Claude and ChatGPT",
       "source": "Tech Xplore",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPS285bENyek5TdXFLSkNoSmpjdkRrRnFaUHRhTUltNnotZzZHVGlOVkxzbC1UMDB1VnB0YlZXZThlRXpMSk45MHNsMzRFT1ZTYkNRVmd5R0NJMldhSnNNSVB1Tl81MDV1V3NnNDhObERIamZfbVAtcUlldnBJR2VQSQ?oc=5",
-      "summary": "Chinese AI model takes US tech industry by surprise with abilities rivaling Claude and ChatGPT Tech XploreChina’s Moonshot AI Unveils Kimi Model, Threatening America’s Lead The New York TimesKimi: Threat or menace? TechCrunchChina just erased America's AI lead AxiosAI Upheaval Crushes Retail Traders Crowding Into Leveraged Funds Bloomberg.com",
+      "summary": "Chinese AI model takes US tech industry by surprise with abilities rivaling Claude and ChatGPT Tech XploreChina’s Moonshot AI Unveils Kimi Model, Threatening America’s Lead The New York TimesAI Upheaval Crushes Retail Traders Crowding Into Leveraged Funds Bloomberg.comThere’s One Way To Win The AI Race, And The Big Labs Are Lobbying Against It ForbesChina's Moonshot AI claims Kimi K3 can rival OpenAI and Anthropic BBC",
       "published": "2026-07-18T08:06:24+00:00",
       "origin": "Google 財經頭條"
     },
@@ -1053,6 +1015,14 @@
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNNTVXNGJTUVBTMXhhMjVUNVRQTTJHcHM0VXNiZFN4aTRsUDhqN2ZlbFFTalRYQnY1MUpHSzZBT2Ftajd1UmxMMHZxMnRhUmZlUmlISjhGUmwtY05haWpDSWhHUW93WFBHLWY4Z09GdUFQWnh0MnNINEMzd1FGYTRwMVZPaC03MTRSMFE?oc=5",
       "summary": "Oil Prices Surge Amid US-Iran Hostilities and Red Sea Closure Threat Discovery Alert",
       "published": "2026-07-18T07:49:30+00:00",
+      "origin": "關鍵字「Iran US military attack oil price surge」"
+    },
+    {
+      "title": "Oil prices post 16% weekly jump as US and Iran intensify attacks",
+      "source": "thenationalnews.com",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNV3RaV3JRVzhXeC1oM3pybHgtbjNlbXp1TVZKNlFYajVueU41eW5oSGNfN2c2d3V5dlhsSjFzMl9ieHJVNW13b2MwbWJhZzNrNzl0MG5UWlZvbl9XdlprWXZtcExkMFRySkNBa0FseHRidHkxLUdNYjBMRFVhWkI4MkNjWEpvVHJKR0Qwa1h0T1V3SmtvYlE5YVJUOUgzR0p0STQ5aXRJS0tGNHNpRUpGb2xzdTlXOXJNNVE5eG85UQ?oc=5",
+      "summary": "Oil prices post 16% weekly jump as US and Iran intensify attacks thenationalnews.com",
+      "published": "2026-07-18T07:27:22+00:00",
       "origin": "關鍵字「Iran US military attack oil price surge」"
     },
     {
@@ -1115,7 +1085,7 @@
       "title": "Why Britain is getting a new prime minister without a general election",
       "source": "AP News",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQLWJLcmJqTEZma0M3ekZiSFFqNWx0Y3RCYjZrb0tRblQ1N3NYT2txdW1kaFMxanZVV09yRG1OYktWZG56azFJZER6WW9weDhBaG12UTFmeEdlX3hacEVBZ2hvTUotM0tNRUdBbVlJdk5Wa18xY1pGeUZpSDAxenBJaE1OZExMX2xFY1VuUVNHY1phU3NJYWMxZldIb1JsSkFUVHkwSw?oc=5",
-      "summary": "Why Britain is getting a new prime minister without a general election AP NewsOpinion | The King of the North, Andy Burnham, Won’t Save Britain The New York TimesBritain hopes this man will save its economy. We went to Manchester to find out why CNNAndy Burnham promises to end Labour infighting as he becomes party’s leader The GuardianRuthless plotter or dad dancer? Insiders reveal the real Andy Burnham BBC",
+      "summary": "Why Britain is getting a new prime minister without a general election AP NewsBurnham Becomes Labour Leader and Britain’s Incoming Prime Minister The New York TimesBritain hopes this man will save its economy. We went to Manchester to find out why CNNIncoming UK PM Andy Burnham rejects Thatcher-era policies, signals leftward shift Fox NewsCan Prime Minister Burnham Succeed? The American Prospect",
       "published": "2026-07-18T04:00:00+00:00",
       "origin": "Google 世界頭條"
     },
@@ -1139,7 +1109,7 @@
       "title": "No fuel, no patience: Russians endure fuel shortages",
       "source": "France 24",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNWN0TDQ0M2xfbDhMQUVZTGRCRjBiSVBWdENjYzk2M0xlc3plaGRQQWRhb1hrbnFHXzU4SkYwMDViaFJ0S1diRTM4Wk44R21LX2hqMDRrNnFQd0plV0FMbzlaRGFTMjhkRjh4TktzWXNqZmZ0bTNhcEtXN2VWZHNsajZsdGs0TVpRRWVtZXFfYVpKOWxXR0lFdmVn?oc=5",
-      "summary": "No fuel, no patience: Russians endure fuel shortages France 24Russia roils global market for diesel after Ukraine attacks AxiosFuel crisis, attacks in Azov Sea tighten squeeze on Russian farmers ReutersRussia's petrol crisis and what it means for Ukraine RTE.ieEstonian intelligence: Russia is tightening control over society amid problems, fearing discontent Українська правда",
+      "summary": "No fuel, no patience: Russians endure fuel shortages France 24Russia roils global market for diesel after Ukraine attacks AxiosFuel crisis, attacks in Azov Sea tighten squeeze on Russian farmers ReutersRussia's Fuel Crisis Raises Stagflation Fears as Growth Stalls and Inflation Accelerates The Moscow TimesRussia's petrol crisis and what it means for Ukraine RTE.ie",
       "published": "2026-07-18T02:09:24+00:00",
       "origin": "Google 世界頭條"
     },
@@ -1195,7 +1165,7 @@
       "title": "Costco adds hot fan favorite to food court menu as shoppers debate taste and value",
       "source": "Fox Business",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTkduWVlqYVlsUDlwclh6TTlYRlFPUnVVMkM4Q3BOTEFwNTJvMHhaS0dBTTBfS0tfRi1rdm5XZE82ckF6eVhqVEd2WmxLeklmYk5CaDJqZXV6eGtVNXg4Rlc4YW9SeGo0dG1tZ0xuMS1rRXVNZ3hMZk12VnNESndvZnlTMVlDSVJBSnlBY09WaVNsa0VJcXVOUHJrQ2d6bFpsOFRRSmlxcHNQbFJWdHYw0gG0AUFVX3lxTE5ZQXFFbi1odmFyWUhOS0d2NVM3bUVjVkt5bzJzWUJrdUlSbmlfUkc5UzZBbWFVSG8tWTdtRXdEajlpWUwweEU4aTFWOWM4ZlBJZW5rY1BWcUZjSlU5UnNQejJkNEc1RkVRQm1TbEZqeHZXcFl4S3hHTVAtSHdBUWpNZGJoQ2E0Y1IxMS1TVXJwMWRmOGxKUl8ycjhGcjhqczdCWWwtYU1zd05vU055Z0h4aGlfMw?oc=5",
-      "summary": "Costco adds hot fan favorite to food court menu as shoppers debate taste and value Fox BusinessCostco's new food court meal is drawing Chick-fil-A comparisons YahooCalifornia Costcos roll out first new food court item in years SFGATECostco chicken tenders land at Central Coast locations KSBWCostco Just Introduced a New Food Court Item Shoppers Have Been Waiting For marthastewart.com",
+      "summary": "Costco adds hot fan favorite to food court menu as shoppers debate taste and value Fox BusinessCostco's new food court meal draws Chick-fil-A comparisons online USA TodayCostco's chicken tenders are going viral. But not everyone can get them YahooCalifornia Costcos roll out first new food court item in years SFGATECostco launches $6.99 chicken strips nationwide after test run MSN",
       "published": "2026-07-17T22:28:00+00:00",
       "origin": "Google 財經頭條"
     },
@@ -1221,6 +1191,14 @@
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdlR3eEFtZmxKNTlUZ29tRTNLUmlNZWFuc0ZlV2Nrck0zUWZ4dl9CNnJfNlVqcHFwRXpCczZoWE9XNlBoQk04ejByQmpzYWJoSTlxeVRacjNudXNydzFOejNYY2JSUkhNak5QdG1LZGI3WjFIZWpDUjFXQmNfdlhNb19xNmJXTllzY3Z1d1o0cExtS1VlTnZzS3ZCU0g1LWZZUlo3aXVSYXZsVDdQUVJLTEZYQVRha0locmVF?oc=5",
       "summary": "DoD plans CMMC listening sessions as questions swirl around review Federal News NetworkPentagon suspends CMMC phase two requirements, launches review of program Federal News NetworkDOD halts cybersecurity requirements for CMMC Phase 2: ‘The math just simply doesn't math’ DefenseScoopForging the Arsenal of Freedom: Department of War Suspends CMMC Phase II Requirements U.S. Department of War (.gov)Pentagon announces ‘immediate suspension’ of CMMC Phase II mandates Breaking Defense",
       "published": "2026-07-17T21:52:18+00:00",
+      "origin": "Google 財經頭條"
+    },
+    {
+      "title": "SpaceX and Pentagon Discuss Data-Center Deal",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWTZudU41MERhcWNoYVRDdDNsOUVWUEIzeEhPcFhkSEVnMFczSEI2d2ZnbWFZbHdWbXp1LUY3ZWxDSEYzMTdwM0FqNGJZbVpGOWlGYWtiZ0NjTDZpbjVEN3UzekhEWDMxb1ZUdGhZd2dKVHJxdnc2RE82UUI5NHhHVHprYnFrUkl4WnpyUWlKMGh1QQ?oc=5",
+      "summary": "SpaceX and Pentagon Discuss Data-Center Deal WSJExclusive | SpaceX in Talks to Provide Computing Power for Pentagon’s AI Push WSJMusk's SpaceX in talks to supply the Pentagon with computing power, WSJ reports ReutersAs SpaceX grapples with its stock trading below its IPO price, it is pitching billions of dollars’ worth of AI computing capacity to the Pentagon. MoomooSpaceX Is in Talks on a Multibillion Dollar Defense Contract. Here Is What It Means for Investors The Motley Fool",
+      "published": "2026-07-17T21:46:00+00:00",
       "origin": "Google 財經頭條"
     }
   ]

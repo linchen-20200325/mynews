@@ -1,14 +1,37 @@
 {
   "report_date": "2026-07-19",
-  "summary": "今日美股焦點為晶片股持續重挫，輝達一度失去市值龍頭地位，蘋果重回寶座；AI熱潮引發過度槓桿質疑，油價因美伊衝突而勁揚，但銀行財報與通膨降溫抵銷部分擔憂。",
+  "summary": "今日美股焦點為晶片股持續面臨賣壓，導致那斯達克指數和費城半導體指數下跌，輝達市值一度被蘋果超越；台積電ADR也受衝擊。市場對AI投資過度槓桿及中國AI新模型競爭力產生疑慮，同時原油價格因美伊衝突擔憂而上漲。",
   "stocks": [
+    {
+      "name": "台積電(TSMC)",
+      "ticker": "",
+      "sector": "半導體",
+      "mention_count": 9,
+      "sentiment": "利空",
+      "reason": "新聞指出台積電ADR下跌2.77%至近3%，儘管Q2營收年增33.7%，但股價仍受半導體賣壓、AI支出疑慮及美伊衝突重挫台股影響。",
+      "evidence_news": [
+        {
+          "title": "【美股巨頭】台積電Q2營收年增33.7%，股價卻跌2.77%？市場在算什麼",
+          "source": "CMoney投資網誌",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPQWxfbjRpdlNiR0gxbklWZUFTdjBxWFBUR2N1ZnJCZjQyVU5VZWRydDFjU3FKeVRoMm1YYzNNYkY1bUJIVGlOd3lvQ2xWMERVVmhIdUF2RXZZYjNBUEJzOUZ5TGs3UmotRm1FMGN5R08zaEt6bFdNQVhfOFlNWmEtVmkxcDlCbGExRlV3Mm9n?oc=5"
+        },
+        {
+          "title": "美股續跌AI股重災 台積電ADR跌2.77% 輝達股王寶座盤中曾易手",
+          "source": "蕃新聞",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9nTnlkblpCbzN2U3JHSGI1QnNmaEhkREt3cjY2Vnhja25Fa3VjOEoyd2htdFBOeWJsUjBxOVVHSW50LVVIUUJWSzdhakR1SDB3dXc?oc=5"
+        }
+      ],
+      "news_count": 9,
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-18"
+    },
     {
       "name": "輝達(Nvidia)",
       "ticker": "NVDA",
       "sector": "半導體",
-      "mention_count": 9,
+      "mention_count": 7,
       "sentiment": "利空",
-      "reason": "晶片類股本週慘跌，AI熱潮引發過度槓桿質疑，輝達股價下跌，一度跌落全球市值最高企業寶座。",
+      "reason": "輝達股價下跌2.4%，一度跌落全球市值最高企業寶座，主要受晶片類股慘跌、AI熱潮過度槓桿質疑及中國AI新模型競爭影響。",
       "evidence_news": [
         {
           "title": "AI投資風向轉變 蘋果超越輝達重登全球市值寶座",
@@ -16,9 +39,9 @@
           "url": "https://www.cna.com.tw/news/afe/202607180066.aspx"
         },
         {
-          "title": "輝達黃仁勳招牌黑皮衣拍賣 3100萬元落槌遠超預估",
+          "title": "晶片股拋售潮 輝達跌落全球市值龍頭寶座、蘋果重新登頂",
           "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/aopl/202607180020.aspx"
+          "url": "https://www.cna.com.tw/news/aopl/202607170333.aspx"
         }
       ],
       "news_count": 6,
@@ -31,7 +54,7 @@
       "sector": "科技",
       "mention_count": 5,
       "sentiment": "利多",
-      "reason": "蘋果股價超越輝達，重回全球市值最高企業寶座，反映投資人對其持續獲利的信心，儘管日本iPhone價格調漲。",
+      "reason": "蘋果股價上漲1.76%，並超越輝達重登全球市值寶座，顯示投資人對其持續獲利能力有信心，儘管iPhone在日本市場漲價。",
       "evidence_news": [
         {
           "title": "AI投資風向轉變 蘋果超越輝達重登全球市值寶座",
@@ -49,125 +72,12 @@
       "last_seen": "2026-07-18"
     },
     {
-      "name": "台積電(TSM)",
-      "ticker": "TSM",
-      "sector": "半導體",
-      "mention_count": 5,
-      "sentiment": "利空",
-      "reason": "受晶片股賣壓和AI支出疑慮影響，台積電ADR大幅下跌，費半指數陷入熊市。",
-      "evidence_news": [
-        {
-          "title": "美伊衝突為何重挫台股？台積電跌 180 元，油價、通膨與聯準會利率影響一次看",
-          "source": "果仁家",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1MdFlBbWJaUWp3QzJNMFJ1dnJPNU5kMGhIUmdLYXVBMWFJN0syUk5NcGFLbHJ1UVpXa2hnbzNscF92VHVQQk5UZjdWTTVvUE5oeDg0?oc=5"
-        },
-        {
-          "title": "美股續跌AI股重災 台積電ADR跌2.77% 輝達股王寶座盤中曾易手",
-          "source": "蕃新聞",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9nTnlkblpCbzN2U3JHSGI1QnNmaEhkREt3cjY2Vnhja25Fa3VjOEoyd2htdFBOeWJsUjBxOVVHSW50LVVIUUJWSzdhakR1SDB3dXc?oc=5"
-        }
-      ],
-      "news_count": 9,
-      "first_seen": "2026-07-17",
-      "last_seen": "2026-07-18"
-    },
-    {
-      "name": "美股大盤(道瓊工業指數)",
-      "ticker": "",
-      "sector": "指數",
-      "mention_count": 5,
-      "sentiment": "觀望",
-      "reason": "美股大盤道瓊指數漲跌互見，銀行財報和通膨降溫抵銷了油價上漲的擔憂，但AI股疲軟使其整體收黑。",
-      "evidence_news": [
-        {
-          "title": "美股標普道瓊小幅收漲 銀行財報、通膨降溫抵銷油價憂慮",
-          "source": "ENN台灣電報",
-          "url": "https://news.google.com/rss/articles/CBMiOkFVX3lxTE5Na3gtcE03a3hmT2tzYWduZmpvLUFRX0Fzd3R1aFpQZmUwSmpQTVRjdURnLUlPOTdOdUE?oc=5"
-        },
-        {
-          "title": "AI支出掀疑慮 美股道瓊跌406點、費半陷熊市、台積電ADR跌2.77%",
-          "source": "Newtalk新聞",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE01N2N1dmlUYTYzdVpuT3VBZzJNS2NEYXlPMlY2d0ZwaXhNeTkwVFYxS2F6Rk4tNlFQakhCV1JrYTJ3QVlrVkFIMHRIQ1Z0TlZwSmM0TXdKRmZnMjQ?oc=5"
-        }
-      ],
-      "news_count": 0
-    },
-    {
-      "name": "美股大盤(那斯達克指數)",
-      "ticker": "",
-      "sector": "指數",
-      "mention_count": 5,
-      "sentiment": "利空",
-      "reason": "那斯達克指數因晶片股賣壓和AI股疲軟而下跌，整體市場對AI熱潮過度槓桿的質疑增加。",
-      "evidence_news": [
-        {
-          "title": "〈美股盤後〉晶片股賣壓不止 那指跌1.4% 費半陷入熊市",
-          "source": "news.cnyes.com",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EYk5UWnJELXRMZ2NOTkxZdjg2T180LWZNNUxmV2xWZDV0ajFVQXA0bHdqM3FSU25KNmdZX3QxRkMxcjVDQ1FibnlUa0dFTEk?oc=5"
-        },
-        {
-          "title": "美股收盤：三大指數全線下跌，那指跌1.4%；記憶體股止跌回穩，科技股遭拋售；市場關注下週即將公布的財報",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNeVBRME9kSl9ZUjB2SElyOTdJVlRKeVczcGlsU3QyRmR2VnVFN3NBSS1BR1J3M3JJLXRZVGhTRk5NRVJhdUNFMHNiMllQTVNRX3lOQUN5ZmF2VmFUbXBDOGt6VXIxdGlWbk1uOFlza3lmbFhNQTljeTUzNDM1cTVPN09tYlBmX0ozM3BiS3Rkd1dsLS1wejFJS0o3NmhNZlJ1VGFoUmVXYzhHY20wQ2N6TnZ4eXVUWnlTaVBTZFdieTZlQUdMMFlSb2ZodHo0T2NYTWI0?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17"
-    },
-    {
-      "name": "美股大盤(標準普爾500指數)",
-      "ticker": "",
-      "sector": "指數",
-      "mention_count": 5,
-      "sentiment": "觀望",
-      "reason": "標普500指數因銀行財報和通膨降溫而小幅收漲，但受AI股疲軟和油價上漲影響，整體市場承壓。",
-      "evidence_news": [
-        {
-          "title": "美股標普道瓊小幅收漲 銀行財報、通膨降溫抵銷油價憂慮",
-          "source": "ENN台灣電報",
-          "url": "https://news.google.com/rss/articles/CBMiOkFVX3lxTE5Na3gtcE03a3hmT2tzYWduZmpvLUFRX0Fzd3R1aFpQZmUwSmpQTVRjdURnLUlPOTdOdUE?oc=5"
-        },
-        {
-          "title": "道瓊指數收跌0.2%，那斯達克指數下跌1.47%，標準普爾500指數跌0.51%。成交額位居前列的個股中，Micron Technology下跌5.65%，Nvidia下跌2.4%，SanDisk下跌12.63%，Apple上漲1.76%。",
-          "source": "Bitget",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE14U0xndUxzUi1rc2lHX1c1ajZGeDJmTmxMWjFQNXJ2WmZnbXROM29aVVJ5UVRPdlpWR2VCZE9jVmhKemc3MC1CcnA3VXVnc3dXOHpDMTk3b2dEMjRteE9kNXRqUGZqeFlsdmc?oc=5"
-        }
-      ],
-      "news_count": 1,
-      "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17"
-    },
-    {
-      "name": "晶片股",
-      "ticker": "",
-      "sector": "半導體",
-      "mention_count": 5,
-      "sentiment": "利空",
-      "reason": "晶片類股本週慘跌，從首爾到矽谷的投資人開始質疑AI熱潮是否過度槓桿，導致市場賣壓湧現。",
-      "evidence_news": [
-        {
-          "title": "從首爾到矽谷 晶片股慘跌再掀AI熱潮過度槓桿質疑",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202607180133.aspx"
-        },
-        {
-          "title": "中國AI新模型Kimi K3衝擊晶片股? 分析：資金輪動、市場未陷恐慌",
-          "source": "Taiwan News",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE51WkhQaXhTc2RGNm9FQXhZaTNwT1NnMER4Z0VvZzkzRG1YZDRfM2VDOHpoNTJWTUx2Y3JsZUx0UlNvM19EbTVTYjdEVkFQNmdBd2ZMUlFka3U?oc=5"
-        }
-      ],
-      "news_count": 8,
-      "first_seen": "2026-07-17",
-      "last_seen": "2026-07-18"
-    },
-    {
       "name": "SpaceX",
-      "ticker": "",
-      "sector": "航太、衛星通訊",
-      "mention_count": 4,
+      "ticker": "SPCX",
+      "sector": "航太/科技",
+      "mention_count": 5,
       "sentiment": "利空",
-      "reason": "SpaceX股票在華爾街分析師發布高估值後下跌，且因星艦發射中止，股價持續走低，儘管與五角大廈洽談數據中心交易帶來短暫提振。",
+      "reason": "SpaceX股價跌回IPO價格，甚至跌破，且與五角大廈關於資料中心的合作討論未能提振市場信心，投資者擔憂其估值。",
       "evidence_news": [
         {
           "title": "SpaceX stock falls back to earth shortly after Wall Street analysts release florid targets: 'Paving the superhighway to the stars'",
@@ -180,38 +90,40 @@
           "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWTZudU41MERhcWNoYVRDdDNsOUVWUEIzeEhPcFhkSEVnMFczSEI2d2ZnbWFZbHdWbXp1LUY3ZWxDSEYzMTdwM0FqNGJZbVpGOWlGYWtiZ0NjTDZpbjVEN3UzekhEWDMxb1ZUdGhZd2dKVHJxdnc2RE82UUI5NHhHVHprYnFrUkl4WnpyUWlKMGh1QQ?oc=5"
         }
       ],
-      "news_count": 4,
+      "news_count": 5,
       "first_seen": "2026-07-17",
       "last_seen": "2026-07-18"
     },
     {
-      "name": "石油產業",
+      "name": "那斯達克指數(Nasdaq)",
       "ticker": "",
-      "sector": "能源",
-      "mention_count": 3,
-      "sentiment": "利多",
-      "reason": "市場對美國和伊朗可能重返全面戰爭的憂慮加深，威脅荷莫茲海峽通行，導致油價勁揚。",
+      "sector": "大盤指數",
+      "mention_count": 5,
+      "sentiment": "利空",
+      "reason": "那斯達克指數下跌1.4%至1.47%，主要受晶片股賣壓不止、AI類股走弱以及Netflix財報指引不如預期拖累。",
       "evidence_news": [
         {
-          "title": "市場憂美伊衝突加劇 油價勁揚",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202607180006.aspx"
+          "title": "美股標普道瓊小幅收漲 銀行財報、通膨降溫抵銷油價憂慮",
+          "source": "ENN台灣電報",
+          "url": "https://news.google.com/rss/articles/CBMiOkFVX3lxTE5Na3gtcE03a3hmT2tzYWduZmpvLUFRX0Fzd3R1aFpQZmUwSmpQTVRjdURnLUlPOTdOdUE?oc=5"
         },
         {
-          "title": "AI類股持續走弱和油價勁揚 美股收黑",
-          "source": "中央社 財經",
-          "url": "https://www.cna.com.tw/news/afe/202607180005.aspx"
+          "title": "〈美股盤後〉晶片股賣壓不止 那指跌1.4% 費半陷入熊市",
+          "source": "news.cnyes.com",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EYk5UWnJELXRMZ2NOTkxZdjg2T180LWZNNUxmV2xWZDV0ajFVQXA0bHdqM3FSU25KNmdZX3QxRkMxcjVDQ1FibnlUa0dFTEk?oc=5"
         }
       ],
-      "news_count": 0
+      "news_count": 11,
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-18"
     },
     {
-      "name": "AI相關股票",
+      "name": "費城半導體指數(SOX)",
       "ticker": "",
-      "sector": "人工智慧",
-      "mention_count": 3,
+      "sector": "半導體",
+      "mention_count": 4,
       "sentiment": "利空",
-      "reason": "AI相關股票持續走弱，市場對AI熱潮過度槓桿的質疑增加，且有中國AI新模型Kimi K3衝擊市場的擔憂。",
+      "reason": "費城半導體指數下跌並陷入熊市，因晶片股賣壓沉重，市場對AI熱潮過度槓桿及中國AI新模型競爭力產生疑慮。",
       "evidence_news": [
         {
           "title": "從首爾到矽谷 晶片股慘跌再掀AI熱潮過度槓桿質疑",
@@ -221,23 +133,115 @@
         {
           "title": "AI支出掀疑慮 美股道瓊跌406點、費半陷熊市、台積電ADR跌2.77%",
           "source": "Newtalk新聞",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE01N2N1dmlUYTYzdVpuT3VBZzJNS2NEYXlPMlY2d0ZwaXhNeTkwVFYxS2F6Rk4tNlFQakhCV1JrYTJ3QVlrVkFIMHRIQ1Z0TlZwSmM0TXdKRmZnMjQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiW1BVX3lxTE01N2N1dmlUYTYzdVpuT3VBZzJNS2NEYXlPMlY2d0ZwaXhNeTkwVFYxS2F6Rk4tNlFQakhCV1JrYTJ3QVlrVkFIMHRIQ1Z0TlZwSmM0TXdKRmZnMjQ?oc=5"
         }
       ],
       "news_count": 0
     },
     {
-      "name": "Netflix",
-      "ticker": "NFLX",
-      "sector": "串流媒體",
-      "mention_count": 2,
+      "name": "道瓊指數(Dow Jones)",
+      "ticker": "",
+      "sector": "大盤指數",
+      "mention_count": 4,
       "sentiment": "利空",
-      "reason": "Netflix盤後財報不佳，導致其股價盤前下跌逾11%，並拖累三大指數期貨集體下跌。",
+      "reason": "道瓊指數下跌406點或0.2%，主要受AI類股疲軟和油價勁揚影響，儘管銀行財報和通膨降溫抵銷部分憂慮。",
       "evidence_news": [
+        {
+          "title": "美股標普道瓊小幅收漲 銀行財報、通膨降溫抵銷油價憂慮",
+          "source": "ENN台灣電報",
+          "url": "https://news.google.com/rss/articles/CBMiOkFVX3lxTE5Na3gtcE03a3hmT2tzYWduZmpvLUFRX0Fzd3R1aFpQZmUwSmpQTVRjdURnLUlPOTdOdUE?oc=5"
+        },
+        {
+          "title": "AI支出掀疑慮 美股道瓊跌406點、費半陷熊市、台積電ADR跌2.77%",
+          "source": "Newtalk新聞",
+          "url": "https://news.google.com/rss/articles/CBMiW1BVX3lxTE01N2N1dmlUYTYzdVpuT3VBZzJNS2NEYXlPMlY2d0ZwaXhNeTkwVFYxS2F6Rk4tNlFQakhCV1JrYTJ3QVlrVkFIMHRIQ1Z0TlZwSmM0TXdKRmZnMjQ?oc=5"
+        }
+      ],
+      "news_count": 3,
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-18"
+    },
+    {
+      "name": "標準普爾500指數(S&P 500)",
+      "ticker": "",
+      "sector": "大盤指數",
+      "mention_count": 3,
+      "sentiment": "利空",
+      "reason": "標準普爾500指數下跌0.51%至1%，受AI相關股票走弱、油價上漲及晶片股賣壓拖累，Netflix財報指引也令人失望。",
+      "evidence_news": [
+        {
+          "title": "美股標普道瓊小幅收漲 銀行財報、通膨降溫抵銷油價憂慮",
+          "source": "ENN台灣電報",
+          "url": "https://news.google.com/rss/articles/CBMiOkFVX3lxTE5Na3gtcE03a3hmT2tzYWduZmpvLUFRX0Fzd3R1aFpQZmUwSmpQTVRjdURnLUlPOTdOdUE?oc=5"
+        },
+        {
+          "title": "S&P 500, Nasdaq Slide Sharply As Netflix Guidance Disappoints And Chip Stocks Extend Losses — NFLX, GE, META, AAPL, SPCX In Focus",
+          "source": "Stocktwits",
+          "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxOV2VoV1B4dS00RTJROG9NcjBkTVE2ZG4xQjQzci1IeTkyRzdrSm9mb21VZDJRQm5LRERNdDlGSlVLalhtbjl6M1JxRnlxbVBFZDUtQmlTNlpYX2lfOGtuYW9KSUR1S205RFI3QklLY2Q2TXpqR3JaZDhFWmFJYlh4NmJLb2tWd0xGX3hybGR5QzZrREhUNTFsNzVDUXdfLTFqZ1VTZWtQUFZncU5EQzJOZjMweDN2YUJsam1iLXJpcW9VN0ktVGhIRUlITzFGOERYMTdaa0JUZzBCUG0xYW1Id2hyRjlhQ3F4VFR2QVFuZ3JHelVYNDFhaDlhWTdUWC1VOEIybUtLZzFWUzNOMVJtWC1SMG1mM2tNRGc?oc=5"
+        }
+      ],
+      "news_count": 7,
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-18"
+    },
+    {
+      "name": "記憶體晶片股(Micron Technology)",
+      "ticker": "MU",
+      "sector": "半導體",
+      "mention_count": 3,
+      "sentiment": "利空",
+      "reason": "記憶體晶片股延續恐慌性拋售，Micron Technology下跌5.65%，反映市場對晶片產業的擔憂。",
+      "evidence_news": [
+        {
+          "title": "美股收盤：三大指數全線下跌，那指跌1.4%；記憶體股止跌回穩，科技股遭拋售；市場關注下週即將公布的財報",
+          "source": "TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNeVBRME9kSl9ZUjB2SElyOTdJVlRKeVczcGlsU3QyRmR2VnVFN3NBSS1BR1J3M3JJLXRZVGhTRk5NRVJhdUNFMHNiMllQTVNRX3lOQUN5ZmF2VmFUbXBDOGt6VXIxdGlWbk1uOFlza3lmbFhNQTljeTUzNDM1cTVPN09tYlBmX0ozM3BiS3Rkd1dsLS1wejFJS0o3NmhNZlJ1VGFoUmVXYzhHY20wQ2N6TnZ4eXVUWnlTaVBTZFdieTZlQUdMMFlSb2ZodHo0T2NYTWI0?oc=5"
+        },
         {
           "title": "【美股盤前】三大指數期貨集體下跌，記憶體晶片延續恐慌性拋售，網飛盤前跌逾11%",
           "source": "TradingKey",
           "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQTGlFZWlQUHBKV044a0tUcWlRMkliWG1LMGMyWF9yMXlpU3hheGxTUEphMDZHUnM4NGhDUl9EWDViRk5GZTQ5OXNZM1I2XzhVOU5PeTBLdzZJR29MNXJ4ZlNjc2t6NkhReVhOQ3hLUU1xR0k5WHo2YU9KOG5GdFNkZi1UYUhUYTZmbGQyTmZ6WGV3LWdyZVVjWXkxWGZKS3VGSnJMWTJRRTNlbDBvUVBEZk1sYl9VbUZWZVBJOVVmNA?oc=5"
+        }
+      ],
+      "news_count": 4,
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-18"
+    },
+    {
+      "name": "油價",
+      "ticker": "",
+      "sector": "能源",
+      "mention_count": 3,
+      "sentiment": "利多",
+      "reason": "市場對美伊衝突加劇的擔憂推動油價勁揚，儘管中油宣布汽柴油價格不調整，但國際油價走勢仍受地緣政治影響。",
+      "evidence_news": [
+        {
+          "title": "美伊衝突為何重挫台股？台積電跌 180 元，油價、通膨與聯準會利率影響一次看",
+          "source": "果仁家",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1MdFlBbWJaUWp3QzJNMFJ1dnJPNU5kMGhIUmdLYXVBMWFJN0syUk5NcGFLbHJ1UVpXa2hnbzNscF92VHVQQk5UZjdWTTVvUE5oeDg0?oc=5"
+        },
+        {
+          "title": "市場憂美伊衝突加劇 油價勁揚",
+          "source": "中央社 財經",
+          "url": "https://www.cna.com.tw/news/afe/202607180006.aspx"
+        }
+      ],
+      "news_count": 6,
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-18"
+    },
+    {
+      "name": "Netflix",
+      "ticker": "NFLX",
+      "sector": "影音串流",
+      "mention_count": 2,
+      "sentiment": "利空",
+      "reason": "Netflix盤前跌逾11%，因財報指引不如預期，導致科技股受拋售，拖累大盤。",
+      "evidence_news": [
+        {
+          "title": "S&P 500, Nasdaq Slide Sharply As Netflix Guidance Disappoints And Chip Stocks Extend Losses — NFLX, GE, META, AAPL, SPCX In Focus",
+          "source": "Stocktwits",
+          "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxOV2VoV1B4dS00RTJROG9NcjBkTVE2ZG4xQjQzci1IeTkyRzdrSm9mb21VZDJRQm5LRERNdDlGSlVLalhtbjl6M1JxRnlxbVBFZDUtQmlTNlpYX2lfOGtuYW9KSUR1S205RFI3QklLY2Q2TXpqR3JaZDhFWmFJYlh4NmJLb2tWd0xGX3hybGR5QzZrREhUNTFsNzVDUXdfLTFqZ1VTZWtQUFZncU5EQzJOZjMweDN2YUJsam1iLXJpcW9VN0ktVGhIRUlITzFGOERYMTdaa0JUZzBCUG0xYW1Id2hyRjlhQ3F4VFR2QVFuZ3JHelVYNDFhaDlhWTdUWC1VOEIybUtLZzFWUzNOMVJtWC1SMG1mM2tNRGc?oc=5"
         },
         {
           "title": "【美股盤前】Netflix盤後財報登場，科技股先跌為敬？（2026.07.17）",
@@ -245,35 +249,35 @@
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUWVCSHd2TXNZUDBqYzNyQ3pEMzVpNkdFVUx0OTl2TmdwOFRFblNqdG90ZDc2dWF6dXJHY3VBcy1oS1psdFF1QzBpSUpVS1h4dndMR2FqZnRlSVpUdTY3M2lRa0Q2eWFvTXFnV1FocmZ1TWN6STl0OFJoT1cyVzlSOTl6MGZnZnBSNWZManRR?oc=5"
         }
       ],
-      "news_count": 2,
+      "news_count": 3,
       "first_seen": "2026-07-17",
       "last_seen": "2026-07-18"
     },
     {
       "name": "波音(Boeing)",
       "ticker": "",
-      "sector": "航空航太",
+      "sector": "航太",
       "mention_count": 1,
       "sentiment": "利多",
-      "reason": "美國聯邦航空管理局（FAA）恢復波音認證737 MAX和787飛機的權力，顯示監管機構對其生產流程的信心恢復。",
+      "reason": "美國聯邦航空總署(FAA)恢復波音737 MAX和787飛機的認證權，顯示其生產品質和安全性獲得肯定，有利於未來交機與營運。",
       "evidence_news": [
         {
           "title": "FAA restores Boeing authority to certify 737 MAX, 787 planes",
           "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNYTlDV0tMX2FuX2tob2ZJOGdscjgyV2JxSnI1WDdncjdKMV9nMjF6c01ublFWNndKencxcHdRcDQwSGRJUTJhODVhOVltRXhWaVVqZV9kRnBKRkVNQWhZc2R1QkQ4SFhRZjViSmVkeTNmVnVTVlpQYy1qNDNvVzlxUWE1WjN3eGstSnVuQnFnUHpFZV9TSGdIQmo1R3NUZGhCLXI1YWRLdHFLSXAwUlBjWi1GYjhSZFhVM3VqdllTSQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNYTlDV0tMX2FuX2tob2ZJOGdscjgyV2JxSnI1WDdncjdKMV9nMjF6c01ublFWNnZKZ3cxcHdRcDQwSGRJUTJhODVhOVltRXhWaVVqZV9kRnBKRkVNQWhZc2R1QkQ4SFhRZjViSmVkeTNmVnVTVlpQYy1qNDNvVzlxUWE1WjN3eGstSnVuQnFnUHpFZV9TSGdIQmo1R3NUZGhCLXI1YWRLdHFLSXAwUlBjWi1GYjhSZFhVM3VqdllTSQ?oc=5"
         }
       ],
-      "news_count": 1,
+      "news_count": 2,
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17"
+      "last_seen": "2026-07-18"
     },
     {
       "name": "IBM",
-      "ticker": "",
+      "ticker": "IBM",
       "sector": "科技",
       "mention_count": 1,
       "sentiment": "利空",
-      "reason": "IBM在經歷大幅下跌後，正努力恢復其市場相關性，面臨漫長的復甦之路。",
+      "reason": "IBM面臨長期重回市場相關性的挑戰，過去曾有驚人的利潤預警，顯示其轉型之路漫長。",
       "evidence_news": [
         {
           "title": "After an Epic Fall, IBM Faces a Long Road Back to Relevance",
@@ -288,12 +292,12 @@
   ],
   "future_trends": [
     "低軌衛星通訊",
-    "毫米波通訊元件",
     "Micro LED光通訊應用",
-    "企業穩定幣結算服務"
+    "企業穩定幣結算服務",
+    "銀行防詐技術應用"
   ],
   "sunset_industries": [
-    "電動車製造（部分品牌）",
-    "傳統半導體製造（受AI晶片影響）"
+    "傳統半導體製造(受中國AI模型衝擊)",
+    "私人監獄產業"
   ]
 }
