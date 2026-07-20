@@ -40,6 +40,11 @@ STOCK_PRICES = Path("stock_prices.json")  # 台股每日收盤價(TWSE/TPEx)
 HOUSE_PRICES = Path("house_prices.json")  # 各縣市最新一季每坪均價
 HOUSE_PRICE_HISTORY = Path("house_price_history.json")  # 各縣市歷年每坪均價
 
+# ── 跨專案匯出:多智能體系統(2026_strategy_0719)讀取的新聞 DB ──
+# export_news_db.py 產;schema: date/title/content/sentiment_score。
+# 部署時常以環境變數 NEWS_DB 覆蓋為 NAS 共享絕對路徑(與下游 2026 一致)。
+NEWS_DB = Path("news.db")
+
 # ── ETF 相關設定檔(成分股 / 圖鑑基本資料 / 來源網址) ──
 ETF_HOLDINGS = Path("etf_holdings.json")
 ETF_PROFILES = Path("etf_profiles.json")

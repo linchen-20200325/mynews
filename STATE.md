@@ -42,6 +42,7 @@
 - `index_fetcher.py`:國際盤預警 — 美股指數/KOSPI/美股期貨真實漲跌幅(Yahoo Finance,代理優先直連降級)。
 - `proxy_helper.py` / `github_store.py`:NAS 代理設定 + 看板一鍵存 GitHub。
 - JSON 產物:`latest_{report,reports,trends,stocks,us_stocks,intl_alert,focus,housing}.json` + `data/<類>/<date>.json`;`house_prices*.json`、`etf_*.json`、`stock_prices.json`、`taiwan_counties.geo.json`。
+- 跨專案匯出:`export_news_db.py` → `news.db`(schema `date/title/content/sentiment_score`),重用 `news_fetcher` + `news_analyzer`(情緒 SSOT),供 `2026_strategy_0719` 多智能體系統讀取。路徑走 `paths.NEWS_DB`(可 env `NEWS_DB` 覆蓋為 NAS 共享路徑),排在下游 07:30 pull 前跑(NAS)。
 - 排程:`.github/workflows/`(daily_update / update_etf / ci / proxy_check)。
 
 ## 環境變數(Secrets / Variables)
