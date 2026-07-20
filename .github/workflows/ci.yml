@@ -18,7 +18,7 @@ jobs:
           python-version: '3.11'
 
       - name: Byte-compile Python sources
-        run: python -m py_compile update_data.py app.py housing_fetcher.py
+        run: python -m py_compile update_data.py app.py housing_fetcher.py export_news_db.py
 
       - name: Validate JSON reports (if present)
         run: |
