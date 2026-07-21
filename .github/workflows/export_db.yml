@@ -1,0 +1,50 @@
+name: "匯出 news.db（美股+台股新聞）→ data 分支，供 2026 讀取"
+
+# 把 mynews 即時抓的新聞（美股 + 台股）用既有 export_news_db.py 落地成 news.db，
+# force-push 到本 repo 的 `data` 分支。下游 2026 的國際盤 workflow 會 checkout 取用，
+# 並以自己的 INTL_NEWS_KEYWORDS / TW_MARKET_KEYWORDS 過濾出國際盤 / 台股新聞。
+#
+# 新聞為即時 RSS 抓取（news_fetcher，mynews production 同源）—— 不需預存資料，Actions 有網路即可。
+
+on:
+  schedule:
+    # 每日 UTC 21:00（台灣 05:00）—— 排在下游 2026 國際盤推播（早上）之前。
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Export news.db（即時抓 RSS 新聞）
+        env:
+          PROXY_URL: ${{ secrets.PROXY_URL }}   # 若有設則經中繼;無則直連 RSS
+        run: python export_news_db.py --output news.db
+
+      - name: Publish news.db → data 分支
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # 暫存 orphan 分支 → force-push 到 data：永遠 1 個 commit，不撐大 repo。
+          git checkout --orphan _pub
+          git reset -q .
+          git add -f news.db
+          git commit -q -m "data: news.db $(date -u '+%Y-%m-%dT%H:%M:%SZ') [skip ci]"
+          git push -f origin _pub:data
