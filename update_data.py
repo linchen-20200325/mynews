@@ -1082,8 +1082,7 @@ def detect_pressure_confluence(intl: dict | None, chip: dict | None,
 
 def save_json(path: Path, data: dict) -> str:
     payload = json.dumps(data, ensure_ascii=False, indent=2)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(payload, encoding="utf-8")
+    paths.atomic_write_text(path, payload)  # F7:原子寫入(temp + os.replace),防半寫/併發損毀狀態競態
     return payload
 
 
