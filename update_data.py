@@ -1567,6 +1567,9 @@ def _run_line_push(
     """
     if not (config.env_str("LINE_CHANNEL_ACCESS_TOKEN") and config.env_str("LINE_TO")):
         return
+    muted = set(watchlist.muted_types(watchlist.load()))  # F5:全域靜音類別(②③④;①心跳載體不受理)
+    if muted:
+        print(f"  🔕 靜音中,本次跳過:{'、'.join(sorted(muted))}")
     print("推送 LINE 通知(依序:國際盤大跌→共振→事件預告→戰略報告)...")
     lead = line_notify.lead_market_drops(intl) if intl else []
     if intl and config.intl_alert_line_enabled():
@@ -1585,13 +1588,13 @@ def _run_line_push(
     if not trading_day:
         print("  今日非台股交易日:②共振/③事件預告/④戰略報告靜音(設 PUSH_ALL_DAYS=1 可全推)。")
         return
-    if conf and conf.get("triggered") and config.confluence_line_enabled():
+    if conf and conf.get("triggered") and config.confluence_line_enabled() and "confluence" not in muted:
         try:
             line_notify.notify_line_confluence(conf, today)
             print("  ② 多重賣壓共振預警已推。")
         except Exception as exc:  # noqa: BLE001
             print(f"  警告: 共振 LINE 推播失敗:{exc}", file=sys.stderr)
-    if intl and config.chip_line_enabled():
+    if intl and config.chip_line_enabled() and "chip_event" not in muted:
         try:
             pushed = line_notify.load_pushed_events()
             due = chip_calendar.pick_new_pushable(intl.get("upcoming_events", []), pushed)
@@ -1601,7 +1604,9 @@ def _run_line_push(
                 print(f"  ③ 法人事件預告已推({len(due)} 項)。")
         except Exception as exc:  # noqa: BLE001
             print(f"  警告: 法人事件 LINE 預告推播失敗:{exc}", file=sys.stderr)
-    if report:
+    if "report" in muted:
+        print("  ④ 戰略報告已靜音,跳過。")
+    elif report:
         try:
             line_notify.notify_line(report, line_notify.chip_flow_hint(chip, fut_chip))
             print("  ④ 戰略報告已推。")

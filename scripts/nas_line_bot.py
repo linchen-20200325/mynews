@@ -194,6 +194,73 @@ def feedback_help() -> str:
             "①②③④ = 國際盤 / 共振 / 法人事件 / 戰略報告。")
 
 
+# ── 推播靜音(F5;與 repo/watchlist.py 鏡像同步)──
+_MUTE_ON = ("靜音", "關閉", "mute")
+_MUTE_OFF = ("恢復", "解除靜音", "取消靜音", "開啟", "unmute")
+_MUTE_LIST = ("靜音清單", "靜音狀態", "mutes")
+
+
+def parse_mute(text):
+    """解析靜音指令 →(kind, val)。kind:'list'、'on'/'off'(val=類別鍵)、'prompt';非靜音回 None。"""
+    t = (text or "").strip()
+    low = t.lower()
+    if low in _MUTE_LIST:
+        return ("list", "")
+    for kw in _MUTE_OFF:
+        if low.startswith(kw.lower()):
+            key = _match_feedback_type(t[len(kw):])
+            return ("off", key) if key else ("prompt", "")
+    for kw in _MUTE_ON:
+        if low.startswith(kw.lower()):
+            key = _match_feedback_type(t[len(kw):])
+            return ("on", key) if key else ("prompt", "")
+    return None
+
+
+def muted_types(doc: dict) -> list[str]:
+    """取目前靜音的類別鍵(過濾未知鍵與①);非 list 回空。① 永不列入(心跳載體)。"""
+    m = doc.get("muted")
+    if not isinstance(m, list):
+        return []
+    return [k for k in m if k in _FEEDBACK_TYPES and k != "intl"]
+
+
+def set_mute(doc: dict, type_key: str, on: bool) -> tuple[bool, str]:
+    """設/解靜音某類(就地改 doc['muted']);回 (是否有變動, 回覆訊息)。① 拒絕靜音。"""
+    label = _FEEDBACK_TYPES[type_key]["label"]
+    if type_key == "intl" and on:
+        return False, ("① 國際盤是每日心跳載體(F1/A3 靠它偵測系統存活),且平靜日已自動壓縮,"
+                       "故不開放靜音;想少看細節,平靜日本來就只推精簡版了。")
+    m = doc.get("muted")
+    if not isinstance(m, list):
+        m = doc["muted"] = []
+    if on:
+        if type_key in m:
+            return False, f"{label} 已在靜音中。"
+        m.append(type_key)
+        return True, f"🔕 已靜音 {label};排程下次起不再推這類。"
+    if type_key not in m:
+        return False, f"{label} 本來就沒靜音。"
+    doc["muted"] = [k for k in m if k != type_key]
+    return True, f"🔔 已恢復 {label} 推播。"
+
+
+def format_mutes(doc: dict) -> str:
+    """把靜音清單排成 LINE 回覆。"""
+    m = muted_types(doc)
+    if not m:
+        return ("目前沒有靜音任何推播。\n"
+                "指令:靜音 ② / 恢復 ②(②③④=共振/法人/戰略;①不開放靜音)。")
+    labels = "、".join(_FEEDBACK_TYPES[k]["label"] for k in m)
+    return f"🔕 靜音中:{labels}\n指令:恢復 <類> 解除、靜音 <類> 新增。"
+
+
+def mute_help() -> str:
+    """靜音指令沒指出類別時的引導。"""
+    return ("要靜音/恢復哪一類?例:「靜音 ②」「恢復 法人」。\n"
+            "②③④ = 共振 / 法人事件 / 戰略報告(①國際盤不開放靜音)。")
+
+
 def dumps(doc: dict) -> str:
     """序列化(蓋台灣 UTC+8 更新時間);與 repo/watchlist.py 的 dumps 同格式。"""
     doc["updated_at"] = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime(
@@ -467,6 +534,18 @@ def handle_text(text: str, user_id: str) -> str:
         changed, msg = record_feedback(doc, user_id, kind, val)
         if changed and not gh_save(doc, f"feedback: {kind} {val} by {user_id[:8]}", sha):
             return "回饋寫回 repo 失敗,請稍後再試。"
+        return msg
+    # F5 推播靜音:靜音/恢復 <類> 全域開關、靜音清單 列出(②③④;①不開放)。
+    mt = parse_mute(text)
+    if mt:
+        kind, val = mt
+        if kind == "list":
+            return format_mutes(doc)
+        if kind == "prompt":
+            return mute_help()
+        changed, msg = set_mute(doc, val, kind == "on")
+        if changed and not gh_save(doc, f"mute: {kind} {val} by {user_id[:8]}", sha):
+            return "靜音設定寫回 repo 失敗,請稍後再試。"
         return msg
     if action == "list":
         # per-user:列自己的清單;舊扁平格式(尚無人遷移)仍列共用清單。

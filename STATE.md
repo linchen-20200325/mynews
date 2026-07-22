@@ -321,6 +321,12 @@
 - 補「設定散佈的維運負擔」:`config.summary_lines()` 開機在 log 印一張功能開關(on/off)+ 金鑰在否(有/缺)總表,`update_data.main()` 於 Gemini 檢查後呼叫。讓像 `env_bool` 空字串誤關功能那種**靜默失效開機即現形**。**只印狀態、絕不印任何金鑰值**(硬規則:金鑰不進版控/log)。總表放 `config.py`(env/開關 SSOT),與 `*_enabled()` 同檔、日後加旗標順手更新。
 - 驗證:py_compile+pyflakes 零 + 離線(結構正確 + 存在/缺失偵測 + 塞假金鑰驗證零洩漏)全過。
 
+## F5 通知疲勞:平靜日壓縮 + 推播靜音(2026-07-22,a+b)
+- **(a) 平靜日壓縮**:`build_intl_alert_line_message` 在 `not alarm`(平靜、無領先大跌)時早退精簡版(標題+summary 一句+同步小跌/ai_ok 若有+非投資建議+tagline+看板連結),不展開利空/美股/台股/背離;大跌/警戒維持完整版。gap_note、ai_ok、看板連結、心跳全保留——只省平靜日長篇研判,降低習慣性略過。
+- **(b) 推播靜音**:`watchlist.py`(正本)+`nas_line_bot.py`(鏡像)加 `parse_mute/set_mute/muted_types/format_mutes/mute_help`(重用 F2 `_FEEDBACK_TYPES`),存 `watchlist.json["muted"]`(全域,因主 bot broadcast)。指令「靜音 ②/恢復 ②/靜音清單」,走盯盤 bot webhook + `gh_save`。`update_data._run_line_push` 讀 `watchlist.muted_types()` 跳過 ②③④。
+- ⚠️ **安全決定:①不開放靜音**——它是每日心跳載體(F1/A3 靠它偵測系統存活),靜音①會讓心跳誤報;①疲勞已由(a)壓縮解決。`set_mute` 對①友善拒絕、`muted_types` 雙保險永濾掉①。
+- 驗證:py_compile+pyflakes 零 + 離線((a)壓縮/展開/gap/ai_ok +(b)靜音全案+①拒絕+正本/鏡像逐項一致)全過。NAS webhook 與 Streamlit 無法沙箱實跑,以鏡像一致性替代。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
