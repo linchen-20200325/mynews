@@ -9,7 +9,6 @@ lxml>=4.9    # pandas.read_html 解析 MOPS 上櫃月營收 HTML 表格
 pyyaml>=6.0  # prompt_loader.py 讀取 prompts/*.yaml 系統提示詞
 yfinance>=0.2  # reversal_signals.py 抓取美股/週K（TSM/NVDA）及國際指數日K
 
-# ── 2026-07-10 雲端 Segfault 事故回釘(詳 STATE.md;三者皆為 Streamlit 相依,退回版皆有 cp314 wheel)──
-pyarrow<25       # 25.0.0 於事故當日發布,cp314 wheel 疑似載入/序列化段錯誤;上游修復後解除
-websockets<16.1  # 16.1 同日發布,一併回釘;服務恢復後逐一解除驗證
+# ── 2026-07-10 雲端 Segfault 事故回釘(詳 STATE.md)── b2 階梯解鎖中:websockets 已解鎖(2026-07-22 rung-1),餘兩者續釘 ──
+pyarrow<25       # 頭號嫌犯(st.dataframe C++ 核心、arm64 載入段錯前科 #44342);上游無 cp314 修正 → 階梯最後才解
 numpy<2.5        # 退回環境重建前世代(2.4.x),排除 cp314 新 wheel 變數
