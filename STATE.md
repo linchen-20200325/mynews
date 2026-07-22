@@ -290,6 +290,14 @@
 - 唯一遺漏:nas_line_bot.py LINE_REPLY_ENDPOINT 的 SSOT 例外就地註解(上方稽核 Rule 5 宣稱已加注,程式實缺)→ PR #116 補上,文件與程式一致
 - 結論:該分支**零損失可刪**。教訓:棄用分支刪前先 `git diff main...branch` 逐檔盤點,「行數差」≠「功能遺失」(可能已被更好版本取代)
 
+## 互動/推播體驗改善 A 層(2026-07-22,PR #119)
+- 策略盤點結論:零件紮實但整體偏「全推全顯示」、缺個人化;先上高槓桿低成本三項(A 層),機器負擔近乎零,主風險是維護面積(人)→ 分批做、之間看 A3 心跳數據。
+- **A1** 主 bot 四則推播(①②③④)結尾附「📊 完整分析看板」連結(Pull 入口),走 `config.DASHBOARD_URL`、未設不顯示。釐清:主 bot 無 webhook 收不到回話,能互動的是盯盤 bot(⑤,已有加/刪/清單);故 A1 對主 bot 只放看板連結、盯盤 bot 不動。
+- **A2** `line_notify.MORNING_TAGLINE` 單一常數,掛①④推播與看板 caption,明示「每日晨間更新、非盤中即時」管理預期。
+- **A3** 推播心跳自檢:`paths.PUSH_HEARTBEAT` + `line_notify.load/save_push_heartbeat`+`heartbeat_gap_note`;①推成功寫日期,次日間隔≥2天在①置頂警語;workflow commit-back 補 `push_heartbeat.json` 跨 run 持久化。邊界:抓「偶爾漏班」,抓不到「全服務死」(需外部 uptime 監控)。
+- 啟用:repo var 設 `DASHBOARD_URL` 即開 A1;A2/A3 合併即生效。驗證:py_compile+pyflakes 零警告+離線 smoke 全過。
+- 待評估(未動工):B2 per-user 推播偏好/靜音(先省額度)→ B3「查 2330」即時查詢(吃額度、兩段式繞 reply token 1 分鐘)→ B1 訂閱指令;C1 看板「我的一頁」碰 Streamlit 脆弱點,最後做。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

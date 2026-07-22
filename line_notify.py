@@ -19,8 +19,10 @@ import os
 import re
 import urllib.error
 import urllib.request
+from datetime import date
 from pathlib import Path
 
+import config
 import numutil
 import paths
 
@@ -38,6 +40,9 @@ LEAD_DROP_TYPES = ("隔夜領先", "盤前即時")
 
 OKU = numutil.OKU  # 億元換算係數 SSOT 在 numutil
 
+# 系統定位:每日晨間批次更新,非盤中即時(掛在主 bot 每日推播,管理使用者預期)
+MORNING_TAGLINE = "🕗 每日晨間更新,非盤中即時"
+
 
 # ---------------------------------------------------------------------------
 # 內部工具
@@ -53,6 +58,12 @@ def _finalize(msg: str) -> str:
     if len(msg) > LINE_TEXT_LIMIT:
         return msg[:LINE_TEXT_LIMIT] + "\n...(訊息過長已截斷)"
     return msg
+
+
+def _dashboard_footer() -> list[str]:
+    """主 bot 推播共用的看板連結 footer(Pull 入口);未設 DASHBOARD_URL 回空清單。"""
+    url = config.env_str("DASHBOARD_URL").strip()
+    return ["", f"📊 完整分析看板:{url}"] if url else []
 
 
 def _save_json(path: Path, data: dict) -> None:
@@ -179,6 +190,8 @@ def build_line_message(report: dict, chip_hint: str = "") -> str:
     if kpi:
         lines += ["", "🎯 盯盤關鍵:", _clip(kpi, 120)]
     lines += ["", f"(白話文來源:{report.get('dictionary_source', '—')})"]
+    lines += ["", MORNING_TAGLINE]
+    lines += _dashboard_footer()
     return _finalize("\n".join(lines))
 
 
@@ -196,15 +209,16 @@ def lead_market_drops(intl: dict) -> list[dict]:
     return [d for d in intl.get("drops", []) if d.get("lead_type") in LEAD_DROP_TYPES]
 
 
-def build_intl_alert_line_message(intl: dict) -> str:
+def build_intl_alert_line_message(intl: dict, gap_note: str = "") -> str:
     """把國際盤快報整理成一則精簡 LINE 文字(真實報價數字 + Gemini 美股/台股研判)。
 
     每天都推:有領先市場大跌(或 AI 判警戒)→『🚨 國際盤大跌預警』;平靜 →『🌅 國際盤快報』。
+    gap_note:推播心跳自檢警語(非空 → 置頂提示可能有遺漏);由 heartbeat_gap_note 產生。
     """
     lead = lead_market_drops(intl)
     alarm = bool(lead) or intl.get("alert_level") == "警戒"
     title = "🚨 國際盤大跌預警" if alarm else "🌅 國際盤快報"
-    lines = [f"{title} {intl.get('report_date', '')}"]
+    lines = ([gap_note, ""] if gap_note else []) + [f"{title} {intl.get('report_date', '')}"]
 
     root_cause = (intl.get("root_cause") or "").strip()
     if not root_cause:
@@ -265,13 +279,14 @@ def build_intl_alert_line_message(intl: dict) -> str:
         icon = "⚡" if div_signal == "reversal" else "⚠️"
         lines += ["", f"{icon} 期現背離：{div_desc}"]
 
-    lines += ["", "⚠️ 真實報價 + AI 研判,僅供參考,非投資建議"]
+    lines += ["", "⚠️ 真實報價 + AI 研判,僅供參考,非投資建議", MORNING_TAGLINE]
+    lines += _dashboard_footer()
     return _finalize("\n".join(lines))
 
 
-def notify_line_intl_alert(intl: dict) -> None:
+def notify_line_intl_alert(intl: dict, gap_note: str = "") -> None:
     """國際盤快報 → 每天推一則 LINE(含美股/台股看法;大跌時標題自動升級)。"""
-    _push_line_text(build_intl_alert_line_message(intl))
+    _push_line_text(build_intl_alert_line_message(intl, gap_note))
 
 
 # ---------------------------------------------------------------------------
@@ -288,6 +303,7 @@ def build_chip_events_line_message(events: list[dict], today: str) -> str:
         if e.get("detail"):
             lines.append(f"　{e['detail']}")
     lines += ["", "⚠️ 日期為慣例/曆法推算,實際以官方公告為準;僅供參考,非投資建議"]
+    lines += _dashboard_footer()
     return _finalize("\n".join(lines))
 
 
@@ -311,6 +327,42 @@ def save_pushed_events(ids: list[str]) -> None:
 
 
 # ---------------------------------------------------------------------------
+# 推播心跳自檢(偵測排程漏推)
+# ---------------------------------------------------------------------------
+
+def load_push_heartbeat() -> dict:
+    """讀上次成功推播的心跳({'last_date': 'YYYY-MM-DD'});無檔/壞檔回空 dict。"""
+    try:
+        data = json.loads(paths.PUSH_HEARTBEAT.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except Exception:  # noqa: BLE001 — 無檔/壞檔 → 視為尚無心跳
+        return {}
+
+
+def save_push_heartbeat(today: str) -> None:
+    """記錄今日已成功推播(以①國際盤快報為每日載體);供次日自檢比對。"""
+    _save_json(paths.PUSH_HEARTBEAT, {"last_date": today})
+
+
+def heartbeat_gap_note(today: str, threshold_days: int = 2) -> str:
+    """比對上次心跳與今日,間隔 ≥ threshold_days 回一行自檢警語;正常/首次回空字串。
+
+    只抓「偶爾漏一班」(次日成功推播時回頭發現空隙);服務整段全死(連載體①都沒推)
+    無法自我察覺,需另設外部 uptime 監控。today 為台灣日期字串(呼叫端已走 tz_utils)。
+    """
+    last = (load_push_heartbeat().get("last_date") or "").strip()
+    if not last:
+        return ""
+    try:
+        gap = (date.fromisoformat(today) - date.fromisoformat(last)).days
+    except ValueError:
+        return ""
+    if gap >= threshold_days:
+        return f"⚠️ 系統自檢:距上次推播已 {gap} 天(上次 {last}),期間可能有遺漏。"
+    return ""
+
+
+# ---------------------------------------------------------------------------
 # 多重賣壓共振
 # ---------------------------------------------------------------------------
 
@@ -326,6 +378,7 @@ def build_confluence_line_message(conf: dict, today: str) -> str:
         lines.append(f"・{f.get('detail', '')}")
     lines += ["", "→ 非單一利空,多股賣壓疊加,留意修正延續。",
               "⚠️ 真實數據判定,僅供參考,非投資建議"]
+    lines += _dashboard_footer()
     return _finalize("\n".join(lines))
 
 

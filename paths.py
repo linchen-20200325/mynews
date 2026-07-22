@@ -28,6 +28,7 @@ ARCHIVE_INTL_ALERT = Path("data/intl_alert")
 LATEST_CHIP = Path("latest_chip.json")
 ARCHIVE_CHIP = Path("data/chip")
 CHIP_PUSHED_STATE = Path("data/chip_pushed.json")  # 法人事件 LINE 已推清單(防洗版)
+PUSH_HEARTBEAT = Path("data/push_heartbeat.json")  # 推播心跳:上次成功推播日期(次日自檢遺漏)
 LATEST_MARGIN = Path("latest_margin.json")  # 融資餘額(散戶斷頭訊號)
 LATEST_FUT_CHIP = Path("latest_futures_chip.json")  # 三大法人台指期留倉
 LATEST_FOCUS = Path("latest_focus.json")

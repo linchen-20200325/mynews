@@ -67,6 +67,8 @@ jobs:
           EARLIEST_TW_HHMM: ${{ vars.EARLIEST_TW_HHMM }}
           # 非台股交易日(週六日/休市日)預設只推國際盤快報;設 1 可照常全量推播
           PUSH_ALL_DAYS: ${{ vars.PUSH_ALL_DAYS }}
+          # 看板網址:設了才在主 bot 推播結尾附「📊 完整分析看板」連結(Pull 入口);未設不顯示
+          DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}
           REPORT_TOPIC: ${{ vars.REPORT_TOPIC }}
           REPORT_TOPICS: ${{ vars.REPORT_TOPICS }}
           NEWS_QUERIES: ${{ vars.NEWS_QUERIES }}
@@ -104,7 +106,8 @@ jobs:
           for p in latest_report.json data/reports/ latest_reports.json data/reports_multi/ \
                    latest_trends.json data/trends/ latest_stocks.json data/stocks/ \
                    latest_us_stocks.json data/us_stocks/ latest_intl_alert.json data/intl_alert/ \
-                   latest_chip.json data/chip/ data/chip_pushed.json latest_margin.json \
+                   latest_chip.json data/chip/ data/chip_pushed.json data/push_heartbeat.json \
+                   latest_margin.json \
                    latest_futures_chip.json \
                    latest_focus.json data/focus/ latest_housing.json data/housing/ \
                    data/watch_revenue_pushed.json; do
