@@ -362,6 +362,29 @@ def heartbeat_gap_note(today: str, threshold_days: int = 2) -> str:
     return ""
 
 
+def ping_heartbeat_monitor() -> bool:
+    """對外部 dead-man's-switch(如 healthchecks.io)發一次「今日存活」ping;回是否成功。
+
+    A3(save_push_heartbeat/heartbeat_gap_note)只能抓「偶爾漏一班」——服務整段全死時
+    系統自己不會推播、也就無從自檢(見上方 heartbeat_gap_note 註記的盲區)。本函式是互補件:
+    每日成功推播後主動 ping 一個「系統外」的監控;該監控收不到每日 ping 時,反過來通知
+    使用者,補上「連載體①都沒推」也能被外部察覺的最後一道防線。
+
+    best-effort:未設 HEARTBEAT_PING_URL → 靜默回 False;任何網路/HTTP 錯誤全部吞掉,
+    絕不讓監控本身故障拖垮資料管線。不印 URL(可能含機密),只回布林供呼叫端決定是否記錄。
+    """
+    url = config.env_str("HEARTBEAT_PING_URL").strip()
+    if not url:
+        return False
+    try:
+        req = urllib.request.Request(
+            url, method="GET", headers={"User-Agent": "mynews-heartbeat/1"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return 200 <= resp.status < 300
+    except Exception:  # noqa: BLE001 — 監控 ping 失敗絕不可影響主推播流程
+        return False
+
+
 # ---------------------------------------------------------------------------
 # 多重賣壓共振
 # ---------------------------------------------------------------------------

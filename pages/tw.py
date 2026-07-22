@@ -6,6 +6,7 @@ import time
 import streamlit as st
 import pandas as pd
 
+import freshness
 import update_data
 import tz_utils
 import etf_data
@@ -13,6 +14,7 @@ import season_chart
 import reversal_signals
 import ui_helpers
 from app_core import (
+    STALE_REPORT_DAYS,
     INTL_ALERT_PATH,
     INTL_ALERT_ARCHIVE_DIR,
     CHIP_PATH,
@@ -64,6 +66,9 @@ def generate_live_stocks() -> None:
 
 def render_stocks(data: dict) -> None:
     st.metric("資料日期", data.get("report_date", "—"))
+    note = freshness.stale_note(data.get("report_date"), STALE_REPORT_DAYS, "台股觀察")
+    if note:
+        st.warning(note)
     if data.get("summary"):
         st.info(data["summary"])
     st.caption("依新聞『被提及次數』排序;標的分利多/利空/觀望。⚠️ 僅為新聞整理,非投資建議。")
@@ -291,6 +296,9 @@ def render_chip(data: dict) -> None:
         f"資料時間:{data.get('as_of', '—')} · 數字為證交所 BFI82U 真實買賣超(非 AI 估算),"
         "以下換算為億元(原始單位:元)。"
     )
+    note = freshness.stale_note(data.get("as_of"), update_data.CHIP_STALE_DAYS, "法人籌碼")
+    if note:
+        st.warning(note)
     rows = []
     for d in days:  # days 由新到舊
         rows.append({
