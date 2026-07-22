@@ -357,7 +357,8 @@
 ## b2 回釘逐一解鎖(2026-07-22 起,階梯式)
 - 目標:鎖定 cp314 真兇 + 清技術債。上游查證:pyarrow 仍 25.0.0、**無修正版、無公開 cp314 issue**;沙箱 cp311 無法重現(雲端 cp314 專屬)→ 只能雲端實測。
 - 階梯(低→高風險,一次一個、每步合併後觀察雲端):**rung-1 websockets**(傳輸層、最低險,→16.1.1)→ rung-2 numpy(2.4→2.5)→ **碰 rung-3 pyarrow(頭號嫌犯、無上游修正)前停下重評估**(尊重「原生套件常態鎖上限」教訓)。
-- **rung-1**(本次,PR 待開):刪 `requirements.txt` 的 `websockets<16.1`。合併→雲端重建→穩則 websockets 洗清、進 rung-2;崩則回釘 websockets、真兇縮小。A3/F1 心跳與交易日守門不受影響(websockets 非推播路徑)。
+- **rung-1** ✅(#127 已併入 main,2026-07-22):刪 `websockets<16.1`(→16.1.1)。雲端 websockets 實驗進行中(待看板確認穩定)。
+- **rung-2**(本次,PR 待開):刪 `numpy<2.5`(2.4→2.5),僅剩 `pyarrow<25` 續釘。⚠️ **須待 rung-1 雲端確認穩定後才合**,否則 websockets/numpy 兩變數同一次重建無法歸因。A3/F1 心跳不受影響。
 
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
