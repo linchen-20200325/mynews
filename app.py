@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import streamlit as st
 
+import line_notify
 from app_core import render_proxy_status
 from pages.tw import page_tw
 from pages.us import page_us
@@ -25,6 +26,7 @@ def main() -> None:
         unsafe_allow_html=True,
     )
     st.title("🌐 全球政經戰略每日看板")
+    st.caption(f"{line_notify.MORNING_TAGLINE} — 資料為 AI/工具自動生成,僅供參考,非投資建議")
 
     st.sidebar.header("📂 領域")
     view = st.sidebar.radio(

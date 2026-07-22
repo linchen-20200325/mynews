@@ -1571,8 +1571,12 @@ def _run_line_push(
     lead = line_notify.lead_market_drops(intl) if intl else []
     if intl and config.intl_alert_line_enabled():
         try:
-            line_notify.notify_line_intl_alert(intl)
+            gap_note = line_notify.heartbeat_gap_note(today)
+            line_notify.notify_line_intl_alert(intl, gap_note)
+            line_notify.save_push_heartbeat(today)
             tag = f"大跌 {len(lead)} 項" if lead else "平靜快報"
+            if gap_note:
+                print(f"  ⚠️ 推播心跳自檢:{gap_note}")
             print(f"  ① 國際盤快報已推({tag})。")
         except Exception as exc:  # noqa: BLE001
             print(f"  警告: 國際盤 LINE 推播失敗:{exc}", file=sys.stderr)
