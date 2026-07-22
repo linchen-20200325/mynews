@@ -97,3 +97,33 @@ def housing_enabled() -> bool:
 def watch_enabled() -> bool:
     """第二個 bot 的 token 與推播對象都設了才啟用個股盯盤;否則整段略過。"""
     return bool(os.environ.get("LINE_WATCH_TOKEN") and os.environ.get("LINE_WATCH_TO"))
+
+
+# ---------------------------------------------------------------------------
+# 啟動自檢:功能開關 / 金鑰在否總表(F8)
+# ---------------------------------------------------------------------------
+
+def summary_lines() -> list[str]:
+    """啟動時的『功能開關 / 金鑰在否』總表(給排程 log)。
+
+    只印 on/off 與 有/缺,**絕不印任何金鑰值**(§硬規則:金鑰不得進版控/log)。
+    讓設定錯誤(如空字串誤關功能、漏設某 Secret)開機即現形,不再靜默失效。
+    """
+    def onoff(b: bool) -> str:
+        return "on " if b else "off"
+
+    def has(*names: str) -> str:
+        return "有" if any((os.environ.get(n) or "").strip() for n in names) else "缺"
+
+    main_bot = bool(env_str("LINE_CHANNEL_ACCESS_TOKEN") and env_str("LINE_TO"))
+    return [
+        "── 設定總表(啟動自檢;只印 on/off·有/缺,絕不印金鑰值)──",
+        f"  金鑰:Gemini={has('GEMINI_API_KEY', 'GEMINI_API_KEYS')}  PROXY={has('PROXY_URL')}",
+        f"  推播:主 bot={onoff(main_bot)} 盯盤 bot={onoff(watch_enabled())}"
+        f"  DASHBOARD_URL={has('DASHBOARD_URL')}  HEARTBEAT_PING_URL={has('HEARTBEAT_PING_URL')}",
+        f"  分析:趨勢={onoff(trend_radar_enabled())} 台股精選={onoff(stock_picker_enabled())}"
+        f" 美股精選={onoff(us_stock_picker_enabled())} 焦點={onoff(focus_enabled())} 房市={onoff(housing_enabled())}",
+        f"  國際盤={onoff(intl_alert_enabled())}(LINE {onoff(intl_alert_line_enabled())})"
+        f" 籌碼={onoff(chip_enabled())}(LINE {onoff(chip_line_enabled())}) 共振LINE={onoff(confluence_line_enabled())}",
+        f"  假日全推 PUSH_ALL_DAYS={onoff(env_bool('PUSH_ALL_DAYS', False))}",
+    ]
