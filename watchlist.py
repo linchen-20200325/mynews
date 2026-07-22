@@ -183,6 +183,76 @@ def feedback_help() -> str:
             "①②③④ = 國際盤 / 共振 / 法人事件 / 戰略報告。")
 
 
+# ── 推播靜音(F5:全域關閉某類主 bot 推播;與 scripts/nas_line_bot.py 鏡像同步)──
+# muted 存 watchlist.json["muted"]=[type_key,...]。主 bot 走 broadcast/單推,故靜音是
+# 「全域關掉這類」(對單一使用者=per-user)。排程 _run_line_push 讀 muted_types() 跳過。
+# ① 國際盤不開放靜音:它是每日心跳載體(F1/A3 靠它偵測系統存活),且平靜日已由 (a) 壓縮。
+_MUTE_ON = ("靜音", "關閉", "mute")
+_MUTE_OFF = ("恢復", "解除靜音", "取消靜音", "開啟", "unmute")
+_MUTE_LIST = ("靜音清單", "靜音狀態", "mutes")
+
+
+def parse_mute(text):
+    """解析靜音指令 →(kind, val)。kind:'list'、'on'/'off'(val=類別鍵)、'prompt';非靜音回 None。"""
+    t = (text or "").strip()
+    low = t.lower()
+    if low in _MUTE_LIST:
+        return ("list", "")
+    for kw in _MUTE_OFF:
+        if low.startswith(kw.lower()):
+            key = _match_feedback_type(t[len(kw):])
+            return ("off", key) if key else ("prompt", "")
+    for kw in _MUTE_ON:
+        if low.startswith(kw.lower()):
+            key = _match_feedback_type(t[len(kw):])
+            return ("on", key) if key else ("prompt", "")
+    return None
+
+
+def muted_types(doc: dict) -> list[str]:
+    """取目前靜音的類別鍵(過濾未知鍵與①);非 list 回空。① 永不列入(心跳載體)。"""
+    m = doc.get("muted")
+    if not isinstance(m, list):
+        return []
+    return [k for k in m if k in _FEEDBACK_TYPES and k != "intl"]
+
+
+def set_mute(doc: dict, type_key: str, on: bool) -> tuple[bool, str]:
+    """設/解靜音某類(就地改 doc['muted']);回 (是否有變動, 回覆訊息)。① 拒絕靜音。"""
+    label = _FEEDBACK_TYPES[type_key]["label"]
+    if type_key == "intl" and on:
+        return False, ("① 國際盤是每日心跳載體(F1/A3 靠它偵測系統存活),且平靜日已自動壓縮,"
+                       "故不開放靜音;想少看細節,平靜日本來就只推精簡版了。")
+    m = doc.get("muted")
+    if not isinstance(m, list):
+        m = doc["muted"] = []
+    if on:
+        if type_key in m:
+            return False, f"{label} 已在靜音中。"
+        m.append(type_key)
+        return True, f"🔕 已靜音 {label};排程下次起不再推這類。"
+    if type_key not in m:
+        return False, f"{label} 本來就沒靜音。"
+    doc["muted"] = [k for k in m if k != type_key]
+    return True, f"🔔 已恢復 {label} 推播。"
+
+
+def format_mutes(doc: dict) -> str:
+    """把靜音清單排成 LINE 回覆。"""
+    m = muted_types(doc)
+    if not m:
+        return ("目前沒有靜音任何推播。\n"
+                "指令:靜音 ② / 恢復 ②(②③④=共振/法人/戰略;①不開放靜音)。")
+    labels = "、".join(_FEEDBACK_TYPES[k]["label"] for k in m)
+    return f"🔕 靜音中:{labels}\n指令:恢復 <類> 解除、靜音 <類> 新增。"
+
+
+def mute_help() -> str:
+    """靜音指令沒指出類別時的引導。"""
+    return ("要靜音/恢復哪一類?例:「靜音 ②」「恢復 法人」。\n"
+            "②③④ = 共振 / 法人事件 / 戰略報告(①國際盤不開放靜音)。")
+
+
 # ── per-user 多使用者結構(每個 userId 一份獨立清單)────────────────────────────
 # 結構演進:舊扁平 ``{"stocks":[...]}`` → 新 ``{"users":{"U…":{"stocks":[...]}}}``。
 # 兩格式並存相容:排程端對舊格式維持單一推播;首位下指令者觸發「無損遷移」把既有

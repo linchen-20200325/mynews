@@ -220,6 +220,22 @@ def build_intl_alert_line_message(intl: dict, gap_note: str = "") -> str:
     title = "🚨 國際盤大跌預警" if alarm else "🌅 國際盤快報"
     lines = ([gap_note, ""] if gap_note else []) + [f"{title} {intl.get('report_date', '')}"]
 
+    # (a) F5 平靜日壓縮:非大跌/警戒 → 精簡一則(完整研判見看板),降低每日通知疲勞。
+    # 仍保留 gap_note(A3)、ai_ok(F3)、同步小跌與看板連結(A1);只省下平靜日的長篇研判。
+    if not alarm:
+        lines.append(intl.get("summary") or "平靜,無領先大跌;完整研判見看板。")
+        if intl.get("ai_ok") is False:
+            lines.append("⚠️ AI 研判暫離線,以下僅真實報價。")
+        others = [d for d in intl.get("drops", []) if d.get("lead_type") not in LEAD_DROP_TYPES]
+        if others:
+            lines.append(
+                "・(同步小跌)"
+                + "、".join(f"{d.get('name', '')} {d.get('change_pct', 0):+.2f}%" for d in others)
+            )
+        lines += ["", "⚠️ 僅供參考,非投資建議", MORNING_TAGLINE]
+        lines += _dashboard_footer()
+        return _finalize("\n".join(lines))
+
     root_cause = (intl.get("root_cause") or "").strip()
     if not root_cause:
         interp0 = (intl.get("interpretation") or [{}])[0]
