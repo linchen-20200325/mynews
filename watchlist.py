@@ -105,8 +105,82 @@ def help_text() -> str:
         "・加 2330(把台積電加入清單)\n"
         "・刪 2330(從清單移除)\n"
         "・清單(列出目前盯盤清單)\n\n"
+        "回饋主 bot 推播:讚 ③ / 少推 ①(①②③④=國際盤/共振/法人/戰略)、回饋 看累計。\n\n"
         "每天早上會推你清單內個股的消息面 AI 總結,有新月營收也會通知。"
     )
+
+
+# ── 推播回饋(F2:對主 bot 四類推播記「有用/少推」訊號,累積供日後決定砍哪類)──
+# 與 scripts/nas_line_bot.py 內嵌鏡像同步(見該檔頭 SSOT 例外);純計數,不改推播行為。
+_FEEDBACK_TYPES = {
+    "intl":       {"names": ("①", "1", "國際盤", "國際", "快報"), "label": "① 國際盤快報"},
+    "confluence": {"names": ("②", "2", "共振"),                 "label": "② 共振預警"},
+    "chip_event": {"names": ("③", "3", "法人", "事件", "籌碼"),   "label": "③ 法人事件預告"},
+    "report":     {"names": ("④", "4", "戰略", "報告"),          "label": "④ 戰略報告"},
+}
+_FB_UP = ("讚", "有用", "👍", "good")
+_FB_DOWN = ("少推", "噪音", "沒用", "別推", "🔕")
+_FB_LIST = ("回饋", "回饋清單", "feedback")
+
+
+def _match_feedback_type(rest: str) -> str:
+    """從情緒關鍵字後的殘餘文字比對出類別鍵;比不到回空字串。"""
+    r = (rest or "").strip().lower()
+    for key, meta in _FEEDBACK_TYPES.items():
+        if any(nm.lower() in r for nm in meta["names"]):
+            return key
+    return ""
+
+
+def parse_feedback(text):
+    """解析回饋指令 →(kind, val)。kind:'list'列累計、'up'/'down'(val=類別鍵)、
+    'prompt'(有情緒但沒指出類別);非回饋指令回 None。關鍵字與加/刪/清單不重疊。"""
+    t = (text or "").strip()
+    low = t.lower()
+    if low in _FB_LIST:
+        return ("list", "")
+    for kw in _FB_DOWN:
+        if low.startswith(kw.lower()):
+            key = _match_feedback_type(t[len(kw):])
+            return ("down", key) if key else ("prompt", "")
+    for kw in _FB_UP:
+        if low.startswith(kw.lower()):
+            key = _match_feedback_type(t[len(kw):])
+            return ("up", key) if key else ("prompt", "")
+    return None
+
+
+def record_feedback(doc: dict, user_id: str, kind: str, type_key: str):
+    """把一次回饋計入 doc['feedback'][userId][type];回 (是否有變動, 回覆訊息)。"""
+    fb = doc.get("feedback")
+    if not isinstance(fb, dict):
+        fb = doc["feedback"] = {}
+    bucket = fb.setdefault(user_id, {})
+    slot = bucket.setdefault(type_key, {"up": 0, "down": 0})
+    slot[kind] = int(slot.get(kind, 0)) + 1
+    label = _FEEDBACK_TYPES[type_key]["label"]
+    verb = "👍 有用" if kind == "up" else "🔕 少推"
+    return True, f"收到 → {label} 記為「{verb}」(你累計 👍{slot['up']} / 🔕{slot['down']})。"
+
+
+def format_feedback(doc: dict, user_id: str) -> str:
+    """把某 userId 的回饋累計排成 LINE 回覆;無紀錄回引導語。"""
+    bucket = (doc.get("feedback") or {}).get(user_id) or {}
+    rows = []
+    for key, meta in _FEEDBACK_TYPES.items():
+        slot = bucket.get(key)
+        if slot:
+            rows.append(f"・{meta['label']}:👍{slot.get('up', 0)} / 🔕{slot.get('down', 0)}")
+    if not rows:
+        return ("還沒有回饋紀錄。用「讚 ③」或「少推 ①」告訴我哪類推播有用/想少看"
+                "(①②③④ = 國際盤 / 共振 / 法人 / 戰略)。")
+    return "📊 你的推播回饋累計:\n" + "\n".join(rows) + "\n\n指令:讚 <類> / 少推 <類> / 回饋"
+
+
+def feedback_help() -> str:
+    """有情緒但沒指出類別時的引導。"""
+    return ("要回饋哪一類推播?例:「讚 ③」「少推 國際盤」。\n"
+            "①②③④ = 國際盤 / 共振 / 法人事件 / 戰略報告。")
 
 
 # ── per-user 多使用者結構(每個 userId 一份獨立清單)────────────────────────────

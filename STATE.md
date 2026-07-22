@@ -308,6 +308,11 @@
 - 刻意跳過 `render_intl_alert`:其 as_of 追市場報價時間、週末必落後(Fri→Mon=3天)→門檻2每週一誤報;且「整段沒推」已由 F1/A3 覆蓋。選用門檻皆週末安全(chip 5/house 40 吸收假日;report_date 追每日產出日)。
 - 順手:`render_housing_regulation` 內 local 變數 `freshness` 更名 `fresh_label`,避免與新 import 的模組同名遮蔽。驗證:py_compile+pyflakes 零 + 離線門檻邏輯全過;UI 未能在沙箱實跑(Streamlit),idiom 逐字沿用 global_/etf 既有可運作寫法。
 
+## F2 推播回饋訊號(2026-07-22,A案:白嫖盯盤 bot)
+- 補「Push 單向廣播、零回饋」——主 bot 無 webhook,改走**既有盯盤 bot**(`nas_line_bot.py` 已有 webhook)收「打字回饋」。`watchlist.py`(SSOT 正本)新增純邏輯 `parse_feedback`/`record_feedback`/`format_feedback`/`feedback_help` + `_FEEDBACK_TYPES`(①②③④=國際盤/共振/法人/戰略);記進 `watchlist.json` 新 `feedback` 區的 per-user up/down 計數。`nas_line_bot.py` 逐字鏡像(遵守檔頭 SSOT 例外紀律),`handle_text` 授權後、加/刪/清單前派發,走既有 `gh_save` 寫回 repo。
+- 指令:「讚 ③」「少推 ①」「回饋」(看累計);`help_text` 加一行讓人發現。v1 **只被動記訊號、不改推播行為**(broadcast 對全體一視同仁、無法 per-user 靜音,那是 multicast 化後的 B2)。
+- 邊界:NAS webhook 無法在沙箱實跑;以「正本 vs 鏡像逐項一致」+ 正本邏輯離線測試 + py_compile/pyflakes 零替代,全過。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
