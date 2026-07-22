@@ -18,6 +18,25 @@ from pages.etf import page_etf
 from pages.diagnostics import page_diagnostics
 
 
+def _safe_render(page_fn, name: str) -> None:
+    """頁面級斷路器:單一頁 render 中途拋例外時就地顯示友善降級橫幅,不讓整站噴紅色 traceback。
+
+    每則 LINE 推播末尾都掛看板連結,一個壞頁不該反過來拖垮整站信任(F4)。此處攔截頁面
+    渲染的一般例外→友善提示+除錯細節收進 expander;側邊欄與其他頁不受影響,換頁重跑即恢復。
+    只攔 Exception:Streamlit 的 st.rerun()/st.stop() 走 ScriptControlException(BaseException
+    子類),不會被吞,控制流照常運作。
+    """
+    try:
+        page_fn()
+    except Exception as exc:  # noqa: BLE001 — 頁面級兜底:任何 render 例外都不該炸掉整站
+        st.error(
+            f"⚠️「{name}」頁暫時無法載入。側邊欄與其他頁不受影響——"
+            "可切換其他領域,或到 🩺 資料診斷 查各資料源狀態。"
+        )
+        with st.expander("🔧 錯誤細節（供除錯）"):
+            st.exception(exc)
+
+
 def main() -> None:
     st.set_page_config(page_title="全球政經戰略看板", page_icon="🌐", layout="wide")
     # 隱藏 Streamlit 自動偵測 pages/ 產生的多頁導覽列（已有自訂 radio 導覽）
@@ -44,19 +63,19 @@ def main() -> None:
         )
 
     if view == "📊 台股":
-        page_tw()
+        _safe_render(page_tw, "台股")
     elif view == "🇺🇸 美股":
-        page_us()
+        _safe_render(page_us, "美股")
     elif view == "🌍 全球":
-        page_global()
+        _safe_render(page_global, "全球")
     elif view == "🏠 台灣房市":
-        page_housing()
+        _safe_render(page_housing, "台灣房市")
     elif view == "🧠 AI 決策大腦":
-        page_ai_brain()
+        _safe_render(page_ai_brain, "AI 決策大腦")
     elif view == "🩺 資料診斷":
-        page_diagnostics()
+        _safe_render(page_diagnostics, "資料診斷")
     else:
-        page_etf()
+        _safe_render(page_etf, "ETF 工作台")
 
 
 if __name__ == "__main__":
