@@ -1574,6 +1574,8 @@ def _run_line_push(
             gap_note = line_notify.heartbeat_gap_note(today)
             line_notify.notify_line_intl_alert(intl, gap_note)
             line_notify.save_push_heartbeat(today)
+            if line_notify.ping_heartbeat_monitor():
+                print("  ✓ 外部心跳已通知(dead-man's-switch 存活 ping)。")
             tag = f"大跌 {len(lead)} 項" if lead else "平靜快報"
             if gap_note:
                 print(f"  ⚠️ 推播心跳自檢:{gap_note}")

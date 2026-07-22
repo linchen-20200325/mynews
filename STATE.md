@@ -298,6 +298,11 @@
 - 啟用:repo var 設 `DASHBOARD_URL` 即開 A1;A2/A3 合併即生效。驗證:py_compile+pyflakes 零警告+離線 smoke 全過。
 - 待評估(未動工):B2 per-user 推播偏好/靜音(先省額度)→ B3「查 2330」即時查詢(吃額度、兩段式繞 reply token 1 分鐘)→ B1 訂閱指令;C1 看板「我的一頁」碰 Streamlit 脆弱點,最後做。
 
+## F1 外部心跳 dead-man's-switch(2026-07-22)
+- 補 A3 邊界(抓不到「全服務死」):`line_notify.ping_heartbeat_monitor()` — best-effort urllib GET(timeout 10s),未設 `HEARTBEAT_PING_URL`→靜默回 False、任何網路/HTTP 錯誤全吞(絕不拖垮推播管線),不印 URL(可能含機密);①國際盤推成功後於 `update_data._run_line_push` 呼叫(沿用 A3 同一每日載體①,交易日/非交易日皆涵蓋)。
+- yml env 加 `HEARTBEAT_PING_URL`(放 Secrets 顧告警完整性:避免他人 ping 假冒存活壓掉真警報;未設→空字串→零影響)。啟用:healthchecks.io 建「expect daily ping」check → URL 貼進 repo Secret,收不到每日 ping 由該監控「從系統外」反向通知。
+- 誠實邊界:補足「連載體①都沒推」也能被外部察覺;但仍依賴該第三方監控本身可用。驗證:py_compile+pyflakes 零警告 + 離線 smoke(未設略過/連不上不炸/mock 2xx→True、500→False)全過。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

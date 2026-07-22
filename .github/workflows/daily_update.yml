@@ -59,6 +59,11 @@ jobs:
           # 兩者皆設才啟用;未設則 update_data.py 靜默略過此段(見 watch_enabled())。
           LINE_WATCH_TOKEN: ${{ secrets.LINE_WATCH_TOKEN }}
           LINE_WATCH_TO: ${{ secrets.LINE_WATCH_TO }}
+          # 外部 dead-man's-switch:每日成功推播①後對此 URL 發一次存活 ping(如 healthchecks.io)。
+          # 設了才啟用;未設→空字串→自動略過,對現行零影響。收不到每日 ping 時由該監控「從系統外」
+          # 反向通知,補足 A3 自檢無法察覺「服務整段全死」的盲區。放 Secrets 顧告警完整性
+          # (避免他人拿到 URL 後 ping 假冒存活、把真正的斷線警報壓掉)。
+          HEARTBEAT_PING_URL: ${{ secrets.HEARTBEAT_PING_URL }}
           # 可選:覆寫 Gemini 模型 / 分析主題 / 抓新聞關鍵字 / 關閉趨勢雷達(設 0)
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           # 單次輸出 token 上限(未設用程式預設 16384);台股精選等長 JSON 被截斷時調高它
