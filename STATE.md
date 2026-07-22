@@ -298,17 +298,17 @@
 - 啟用:repo var 設 `DASHBOARD_URL` 即開 A1;A2/A3 合併即生效。驗證:py_compile+pyflakes 零警告+離線 smoke 全過。
 - 待評估(未動工):B2 per-user 推播偏好/靜音(先省額度)→ B3「查 2330」即時查詢(吃額度、兩段式繞 reply token 1 分鐘)→ B1 訂閱指令;C1 看板「我的一頁」碰 Streamlit 脆弱點,最後做。
 
-## F1 外部心跳 dead-man's-switch(2026-07-22)
+## F1 外部心跳 dead-man's-switch(2026-07-22,PR #120)
 - 補 A3 邊界(抓不到「全服務死」):`line_notify.ping_heartbeat_monitor()` — best-effort urllib GET(timeout 10s),未設 `HEARTBEAT_PING_URL`→靜默回 False、任何網路/HTTP 錯誤全吞(絕不拖垮推播管線),不印 URL(可能含機密);①國際盤推成功後於 `update_data._run_line_push` 呼叫(沿用 A3 同一每日載體①,交易日/非交易日皆涵蓋)。
 - yml env 加 `HEARTBEAT_PING_URL`(放 Secrets 顧告警完整性:避免他人 ping 假冒存活壓掉真警報;未設→空字串→零影響)。啟用:healthchecks.io 建「expect daily ping」check → URL 貼進 repo Secret,收不到每日 ping 由該監控「從系統外」反向通知。
 - 誠實邊界:補足「連載體①都沒推」也能被外部察覺;但仍依賴該第三方監控本身可用。驗證:py_compile+pyflakes 零警告 + 離線 smoke(未設略過/連不上不炸/mock 2xx→True、500→False)全過。
 
-## F6 主頁資料新鮮度警示(2026-07-22)
+## F6 主頁資料新鮮度警示(2026-07-22,PR #120)
 - 補「靜默失效:舊資料無警示」——`freshness.stale_note()` SSOT 早在(已用於 global_/etf/diagnostics),只差接主要每日面板。接進四處,過期才 `st.warning`、新鮮/無日期不顯示:`pages/tw.py::render_stocks`(report_date/`STALE_REPORT_DAYS`=2)、`render_chip`(as_of/`update_data.CHIP_STALE_DAYS`=5)、`pages/us.py::render_us_stocks`(report_date/2)、`pages/housing.py::render_housing_price_map`(as_of/`update_data.HOUSE_STALE_DAYS`=40)。全用既有具名門檻常數,零新字面值。
 - 刻意跳過 `render_intl_alert`:其 as_of 追市場報價時間、週末必落後(Fri→Mon=3天)→門檻2每週一誤報;且「整段沒推」已由 F1/A3 覆蓋。選用門檻皆週末安全(chip 5/house 40 吸收假日;report_date 追每日產出日)。
 - 順手:`render_housing_regulation` 內 local 變數 `freshness` 更名 `fresh_label`,避免與新 import 的模組同名遮蔽。驗證:py_compile+pyflakes 零 + 離線門檻邏輯全過;UI 未能在沙箱實跑(Streamlit),idiom 逐字沿用 global_/etf 既有可運作寫法。
 
-## F2 推播回饋訊號(2026-07-22,A案:白嫖盯盤 bot)
+## F2 推播回饋訊號(2026-07-22,PR #120,A案:白嫖盯盤 bot)
 - 補「Push 單向廣播、零回饋」——主 bot 無 webhook,改走**既有盯盤 bot**(`nas_line_bot.py` 已有 webhook)收「打字回饋」。`watchlist.py`(SSOT 正本)新增純邏輯 `parse_feedback`/`record_feedback`/`format_feedback`/`feedback_help` + `_FEEDBACK_TYPES`(①②③④=國際盤/共振/法人/戰略);記進 `watchlist.json` 新 `feedback` 區的 per-user up/down 計數。`nas_line_bot.py` 逐字鏡像(遵守檔頭 SSOT 例外紀律),`handle_text` 授權後、加/刪/清單前派發,走既有 `gh_save` 寫回 repo。
 - 指令:「讚 ③」「少推 ①」「回饋」(看累計);`help_text` 加一行讓人發現。v1 **只被動記訊號、不改推播行為**(broadcast 對全體一視同仁、無法 per-user 靜音,那是 multicast 化後的 B2)。
 - 邊界:NAS webhook 無法在沙箱實跑;以「正本 vs 鏡像逐項一致」+ 正本邏輯離線測試 + py_compile/pyflakes 零替代,全過。
