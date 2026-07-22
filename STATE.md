@@ -327,6 +327,13 @@
 - ⚠️ **安全決定:①不開放靜音**——它是每日心跳載體(F1/A3 靠它偵測系統存活),靜音①會讓心跳誤報;①疲勞已由(a)壓縮解決。`set_mute` 對①友善拒絕、`muted_types` 雙保險永濾掉①。
 - 驗證:py_compile+pyflakes 零 + 離線((a)壓縮/展開/gap/ai_ok +(b)靜音全案+①拒絕+正本/鏡像逐項一致)全過。NAS webhook 與 Streamlit 無法沙箱實跑,以鏡像一致性替代。
 
+## F10 佐證來源對帳(2026-07-22,PR #123)
+- 補「AI 附來源沒被驗證」的破口:9 種報告**早就輸出** `evidence_news{title,source,url}`,但 `app_core._render_evidence_news` 只把 AI 自由重打的 title/url 照印,程式從沒核對它是否真的出自本次餵入的 RSS → 硬規則1「只能依提供的新聞」無法被查核(AI 若編一個像真的來源,看板照樣顯示成佐證)。
+- **`news_analyzer.verify_evidence_news(parsed, real_news)`**(新 SSOT,遞迴):走訪報告任意巢狀,對每份 `evidence_news` 逐則以「url 正規化(去 scheme/www/尾斜線)為主、title 正規化(小寫後只留字母數字漢字)為輔」比對真實新聞,就地標 `verified:True/False`,回 `{matched,total}`。**保守偏誤**:只採正規化後精確相等,寧標『無法核對』也不亂標『已核對』——一個 ✓ 保證該來源確在本次新聞中。
+- 落點:7 個 `get_*`(trend/stock/us_stock/focus/housing/housing_reg/stock_query)validate 後各加一行,與既有 `count_keyword_mentions` 同 pattern、無 evidence_news 者自動 no-op;顯示端唯一升級 `_render_evidence_news`——抬頭「✓ N/M 來源已核對(⚠ K 則無法自動核對)」、逐則標 ✓/⚠,舊報告無 verified 旗標 → 顯示與改版前完全一致(向後相容)。
+- ⚠️ **刻意跳過 `build_intl_alert`**:①心跳載體(F1/A3/F3/F5 全在此、最敏感),且 `render_intl_alert` 未渲染其 `interpretation[].evidence_news`(核對了也看不到),且它已是全報告信任故事最強者(真實 Yahoo 報價+程式算大跌+F3 ai_ok)——邊際價值最低,不為一致性去碰最危險函數。
+- 零 prompt 改動、零資料膨脹(每則多一個 bool)、LINE 不動(尊重 F5 壓縮)。驗證:py_compile+pyflakes 零 + 離線 19 案(精確/正規化/巢狀/杜撰/翻譯標題/空輸入/向後相容/tally)全過 + **真實 intl_alert 資料 smoke(120 則餵入、AI 6 則佐證全數對帳成功 6/6)**;Streamlit 顯示無法沙箱實跑,以抬頭字串鏡像測 + idiom 沿用替代。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

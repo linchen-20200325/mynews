@@ -455,6 +455,7 @@ def get_trend_radar(news: list[dict], today: str) -> dict:
         t.setdefault("us_stocks", [])
         t.setdefault("tw_stocks", [])
         t.update(news_analyzer.count_keyword_mentions([t.get("industry", "")], news))
+    news_analyzer.verify_evidence_news(data, news)  # F10:對帳佐證來源是否真的出自本次新聞
     return data
 
 
@@ -471,6 +472,7 @@ def get_stock_picks(news: list[dict], today: str) -> dict:
     data["stocks"].sort(key=lambda s: s.get("mention_count", 0), reverse=True)
     for s in data["stocks"]:
         s.update(news_analyzer.count_keyword_mentions([s.get("name", ""), s.get("ticker", "")], news))
+    news_analyzer.verify_evidence_news(data, news)  # F10:對帳佐證來源是否真的出自本次新聞
     return data
 
 
@@ -487,6 +489,7 @@ def get_us_stock_picks(news: list[dict], today: str) -> dict:
     data["stocks"].sort(key=lambda s: s.get("mention_count", 0), reverse=True)
     for s in data["stocks"]:
         s.update(news_analyzer.count_keyword_mentions([s.get("name", ""), s.get("ticker", "")], news))
+    news_analyzer.verify_evidence_news(data, news)  # F10:對帳佐證來源是否真的出自本次新聞
     return data
 
 
@@ -658,6 +661,7 @@ def get_stock_query_analysis(
     # 整體新聞跨度 + 本檔在這批新聞的真實命中統計(首見/最近/則數)
     data.update(news_analyzer.summarize_news_span(news))
     data.update(news_analyzer.count_keyword_mentions(_uniq_queries([term_zh, query_en, ticker]), news))
+    news_analyzer.verify_evidence_news(data, news)  # F10:對帳佐證來源是否真的出自本次新聞
     return data
 
 
@@ -706,6 +710,7 @@ def get_focus_analysis(term_zh: str, query_en: str, news: list[dict], today: str
     data.update(news_analyzer.summarize_news_span(news))
     for s in data["stocks"]:
         s.update(news_analyzer.count_keyword_mentions([s.get("name", ""), s.get("ticker", "")], news))
+    news_analyzer.verify_evidence_news(data, news)  # F10:對帳佐證來源是否真的出自本次新聞
     return data
 
 
@@ -727,6 +732,7 @@ def get_housing_analysis(news: list[dict], prices: dict | None, today: str,
         r for r in data["regions"]
         if isinstance(r, dict) and r.get("county") in TAIWAN_COUNTIES
     ]
+    news_analyzer.verify_evidence_news(data, news)  # F10:對帳佐證來源是否真的出自本次新聞
     return data
 
 
@@ -755,6 +761,7 @@ def get_housing_regulation_analysis(news: list[dict], today: str) -> dict:
     data.setdefault("summary", "")
     data.setdefault("regulations", [])
     data.setdefault("evidence_news", [])
+    news_analyzer.verify_evidence_news(data, news)  # F10:對帳佐證來源是否真的出自本次新聞
     return data
 
 
