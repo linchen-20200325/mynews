@@ -334,6 +334,13 @@
 - ⚠️ **刻意跳過 `build_intl_alert`**:①心跳載體(F1/A3/F3/F5 全在此、最敏感),且 `render_intl_alert` 未渲染其 `interpretation[].evidence_news`(核對了也看不到),且它已是全報告信任故事最強者(真實 Yahoo 報價+程式算大跌+F3 ai_ok)——邊際價值最低,不為一致性去碰最危險函數。
 - 零 prompt 改動、零資料膨脹(每則多一個 bool)、LINE 不動(尊重 F5 壓縮)。驗證:py_compile+pyflakes 零 + 離線 19 案(精確/正規化/巢狀/杜撰/翻譯標題/空輸入/向後相容/tally)全過 + **真實 intl_alert 資料 smoke(120 則餵入、AI 6 則佐證全數對帳成功 6/6)**;Streamlit 顯示無法沙箱實跑,以抬頭字串鏡像測 + idiom 沿用替代。
 
+## F7 狀態競態:JSON 狀態檔原子寫入(2026-07-22,PR #124)
+- 補「狀態競態」:`line_notify._save_json` docstring 宣稱「原子化寫入」卻是直接 `write_text`(**名實不符**)、`update_data.save_json` 亦同且重複 → 併發讀者讀到半寫檔會讓 `load` 落 except 回空 → dedup/心跳被當「沒推過」→ **重複推播 / 誤報**;寫入途中崩潰留壞檔。
+- **`paths.atomic_write_text(path, text)`**(新 SSOT 原語,放零相依的 `paths.py`):寫「同目錄」唯一 temp(`tempfile.mkstemp`)→ fsync 落盤 → `os.replace` 原子 rename;讀者只會見到舊的完整檔或新的完整檔,崩潰只遺 temp 不污染目標,失敗清 temp 後原樣拋出。
+- 三個狀態寫入點改用它:`update_data.save_json`(報告 + 月營收 dedup)、`line_notify._save_json`(法人事件 dedup + A3 心跳)、`watchlist.save`(盯盤清單/回饋/靜音本機檔);消除既有兩份重複非原子寫、兌現 docstring。
+- ⚠️ **邊界**:①只解單機「崩潰/半寫/併發覆蓋損毀」;NAS 06:00 與 GitHub 兜底「各推一次」的**跨觸發邏輯重複推**屬架構級(40 分錯開 + 兜底僅失敗才跑已使罕見),不在此範圍。②NAS 端 `nas_line_bot.gh_save` 走 GitHub API sha-based 樂觀鎖(併發 PUT → 409 → 回「寫回失敗請重試」),本就 fail-loud、無需改。③市場數據快取(etf/housing/price 共 6 處 `write_text`)同樣可受惠,列相鄰後續、本次不擴散。
+- 驗證:py_compile+pyflakes 零 + 離線 11 案(roundtrip/覆蓋/自動建目錄/無 tmp 殘留/**崩潰時舊檔完整+temp 清除**/三委派點 roundtrip)全過;NAS 鏡像邊界確認(`nas_line_bot` 無本機 save、走 gh_save,不需同步)。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

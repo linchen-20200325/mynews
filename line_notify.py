@@ -67,10 +67,8 @@ def _dashboard_footer() -> list[str]:
 
 
 def _save_json(path: Path, data: dict) -> None:
-    """原子化寫入 JSON(目錄不存在時自動建立)。"""
-    payload = json.dumps(data, ensure_ascii=False, indent=2)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(payload, encoding="utf-8")
+    """原子化寫入 JSON(走 paths.atomic_write_text:temp + os.replace,防半寫/併發損毀)。"""
+    paths.atomic_write_text(path, json.dumps(data, ensure_ascii=False, indent=2))
 
 
 # ---------------------------------------------------------------------------

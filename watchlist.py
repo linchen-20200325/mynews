@@ -392,7 +392,7 @@ def dumps(doc: dict) -> str:
 
 
 def save(doc: dict) -> str:
-    """寫回本機 watchlist.json;回傳寫入的 JSON 字串。"""
+    """寫回本機 watchlist.json(原子寫入,防半寫/併發損毀);回傳寫入的 JSON 字串。"""
     payload = dumps(doc)
-    paths.WATCHLIST.write_text(payload, encoding="utf-8")
+    paths.atomic_write_text(paths.WATCHLIST, payload)
     return payload
