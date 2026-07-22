@@ -1616,6 +1616,9 @@ def main() -> int:
         print("錯誤: 未設定 GEMINI_API_KEY 環境變數", file=sys.stderr)
         return 1
 
+    for _line in config.summary_lines():  # F8:設定總表開機自檢(只印狀態,不印金鑰值)
+        print(_line)
+
     # 以台灣時區(UTC+8,無日光節約)定義「今天」
     now_tw = tz_utils.taiwan_now()
     today = now_tw.strftime("%Y-%m-%d")

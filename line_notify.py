@@ -229,6 +229,8 @@ def build_intl_alert_line_message(intl: dict, gap_note: str = "") -> str:
         lines.append(f"🔥 主因:{root_cause}")
 
     lines.append(f"警示級別:{intl.get('alert_level', '—')}")
+    if intl.get("ai_ok") is False:
+        lines.append("⚠️ AI 研判暫離線,以下僅真實報價(數字可信),原因待補。")
     if intl.get("summary"):
         lines.append(intl["summary"])
 

@@ -177,6 +177,8 @@ def render_intl_alert(data: dict) -> None:
     banner = getattr(st, kind, st.info)
     summary = data.get("summary", "")
     banner(f"{emoji} 警示級別:{level}" + (f" — {summary}" if summary else ""))
+    if data.get("ai_ok") is False:
+        st.warning("⚠️ AI 研判暫離線,以下為真實報價(數字可信),原因/研判待補。")
     st.caption(
         f"報價時間:{data.get('as_of', '—')} · 大跌門檻 {data.get('threshold', '')}% · "
         "數字為真實市場報價(Yahoo Finance),非 AI 估算"
