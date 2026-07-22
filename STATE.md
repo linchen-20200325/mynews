@@ -303,6 +303,11 @@
 - yml env 加 `HEARTBEAT_PING_URL`(放 Secrets 顧告警完整性:避免他人 ping 假冒存活壓掉真警報;未設→空字串→零影響)。啟用:healthchecks.io 建「expect daily ping」check → URL 貼進 repo Secret,收不到每日 ping 由該監控「從系統外」反向通知。
 - 誠實邊界:補足「連載體①都沒推」也能被外部察覺;但仍依賴該第三方監控本身可用。驗證:py_compile+pyflakes 零警告 + 離線 smoke(未設略過/連不上不炸/mock 2xx→True、500→False)全過。
 
+## F6 主頁資料新鮮度警示(2026-07-22)
+- 補「靜默失效:舊資料無警示」——`freshness.stale_note()` SSOT 早在(已用於 global_/etf/diagnostics),只差接主要每日面板。接進四處,過期才 `st.warning`、新鮮/無日期不顯示:`pages/tw.py::render_stocks`(report_date/`STALE_REPORT_DAYS`=2)、`render_chip`(as_of/`update_data.CHIP_STALE_DAYS`=5)、`pages/us.py::render_us_stocks`(report_date/2)、`pages/housing.py::render_housing_price_map`(as_of/`update_data.HOUSE_STALE_DAYS`=40)。全用既有具名門檻常數,零新字面值。
+- 刻意跳過 `render_intl_alert`:其 as_of 追市場報價時間、週末必落後(Fri→Mon=3天)→門檻2每週一誤報;且「整段沒推」已由 F1/A3 覆蓋。選用門檻皆週末安全(chip 5/house 40 吸收假日;report_date 追每日產出日)。
+- 順手:`render_housing_regulation` 內 local 變數 `freshness` 更名 `fresh_label`,避免與新 import 的模組同名遮蔽。驗證:py_compile+pyflakes 零 + 離線門檻邏輯全過;UI 未能在沙箱實跑(Streamlit),idiom 逐字沿用 global_/etf 既有可運作寫法。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

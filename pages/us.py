@@ -3,10 +3,12 @@ from __future__ import annotations
 
 import streamlit as st
 
+import freshness
 import update_data
 import tz_utils
 import ui_helpers
 from app_core import (
+    STALE_REPORT_DAYS,
     US_STOCKS_PATH,
     US_STOCKS_ARCHIVE_DIR,
     SIX_MONTH_SOURCE_CAPTION,
@@ -49,6 +51,9 @@ def generate_live_us_stocks() -> None:
 
 def render_us_stocks(data: dict) -> None:
     st.metric("資料日期", data.get("report_date", "—"))
+    note = freshness.stale_note(data.get("report_date"), STALE_REPORT_DAYS, "美股觀察")
+    if note:
+        st.warning(note)
     if data.get("summary"):
         st.info(data["summary"])
     st.caption("依新聞『被提及次數』排序;標的分利多/利空/觀望。⚠️ 僅為新聞整理,非投資建議。")

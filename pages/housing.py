@@ -9,6 +9,7 @@ import streamlit as st
 import housing_fetcher
 import numutil
 import taiwan_map_data
+import freshness
 import update_data
 import tz_utils
 import ui_helpers
@@ -394,6 +395,9 @@ def render_housing_price_map() -> None:
     st.subheader("🗺️ 各縣市每坪房價地圖")
     st.caption(f"資料來源:內政部實價登錄　季別:{prices.get('season', '—')}　"
                f"單位:{prices.get('unit', '萬元/坪')}　|　{prices.get('as_of', '')}")
+    note = freshness.stale_note(prices.get("as_of"), update_data.HOUSE_STALE_DAYS, "實價登錄房價")
+    if note:
+        st.warning(note)
     kind_label = st.radio("選擇市場", ["成屋(中古/新成屋)", "預售屋"], horizontal=True, key="house_map_kind")
     kind = "resale" if kind_label.startswith("成屋") else "presale"
     values = _price_values(prices, kind)
@@ -672,8 +676,8 @@ def render_housing_regulation(data: dict | None) -> None:
         )
     with col2:
         if days is not None:
-            freshness = "🟢 本月" if days <= 31 else f"⚠️ {days} 天前"
-            st.metric("資料更新", freshness,
+            fresh_label = "🟢 本月" if days <= 31 else f"⚠️ {days} 天前"
+            st.metric("資料更新", fresh_label,
                       help=f"報告日期：{data.get('report_date', '—')}")
 
     if data.get("summary"):
