@@ -347,11 +347,17 @@
 - **正確性關卡**:只攔 `Exception`——Streamlit `st.rerun()`/`st.stop()` 走 `ScriptControlException`(BaseException 子類、**非** Exception),不會被吞、控制流照常穿透(頁面用了 11 處 `st.rerun()`,誤攔即壞)。已於 streamlit 1.59.1 實測基底類別 MRO 確認。
 - ⚠️ **邊界**:F4 另半(`packages.txt`/pyarrow segfault、冷啟動、Cloud 休眠)屬部署/基礎設施,歸既有 Task #11/#12 依賴治本,無法沙箱驗、本次不併入。驗證:py_compile+pyflakes 零 + 離線 17 案(一般例外兜住+橫幅含頁名+st.exception/expander;Stop/RerunException 穿透且不觸發橫幅;happy path 不碰 st.error;前頁崩潰不阻斷後頁)全過;Streamlit 真實渲染無法沙箱實跑,以斷路器邏輯測替代。
 
-## 中文字型恢復 b1(2026-07-22,draft PR)
+## 中文字型恢復 b1(2026-07-22,PR #126 已併入 main;雲端驗收綠燈 ✅)
 - 承「緊急回退:雲端 Segfault 事故」收尾:三個兇手(`pyarrow<25`/`websockets<16.1`/`numpy<2.5`)仍回釘在 `requirements.txt`,故恢復 `packages.txt`(單行 `fonts-noto-cjk`、**格式硬限制:一行一套件、不可加註解**)所觸發的雲端重建會解析到安全版 → 當初 segfault 不會重演。
 - 零碼改:`season_chart.py` import 時偵測 `_CJK_FONTS`,裝字型後 `_ZH` 自動 False→True 選中 `Noto Sans CJK TC`,季節圖復中文(機制自 PR #111 未變)。沙箱實證(本環境已裝 fonts-noto-cjk):`season_chart._ZH=True`、`_FONT=Noto Sans CJK TC`。
 - ⚠️ 邊界:合併觸發**整個雲端 venv 重建**;三兇手已釘死 → 已知 segfault 不會重演,但任何重建都會重解析整棵樹,殘留「其他新 wheel」風險(事故已 12 天、上游點版多半沉澱)。回滾:壞了就 revert 本 PR(移除 packages.txt);因回釘仍在,revert 即回到最後穩定的釘版環境。
 - b2(逐一解鎖三回釘找真兇 + 回報上游)屬**高風險**(移除安全網),留作後續「一次一個、每步觀察雲端」;本次只做 b1、不動回釘。
+- ✅ **雲端驗收(2026-07-22,cp314 Python 3.14.6 重建)**:Uvicorn 乾淨啟動、**無 Segmentation fault**、季節圖完整渲染且**全中文**(`_ZH=True`)→ 回釘守住、字型裝成、2026-07-10 事故未復發。b1 結案。
+
+## b2 回釘逐一解鎖(2026-07-22 起,階梯式)
+- 目標:鎖定 cp314 真兇 + 清技術債。上游查證:pyarrow 仍 25.0.0、**無修正版、無公開 cp314 issue**;沙箱 cp311 無法重現(雲端 cp314 專屬)→ 只能雲端實測。
+- 階梯(低→高風險,一次一個、每步合併後觀察雲端):**rung-1 websockets**(傳輸層、最低險,→16.1.1)→ rung-2 numpy(2.4→2.5)→ **碰 rung-3 pyarrow(頭號嫌犯、無上游修正)前停下重評估**(尊重「原生套件常態鎖上限」教訓)。
+- **rung-1**(本次,PR 待開):刪 `requirements.txt` 的 `websockets<16.1`。合併→雲端重建→穩則 websockets 洗清、進 rung-2;崩則回釘 websockets、真兇縮小。A3/F1 心跳與交易日守門不受影響(websockets 非推播路徑)。
 
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
