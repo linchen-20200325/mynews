@@ -341,6 +341,12 @@
 - ⚠️ **邊界**:①只解單機「崩潰/半寫/併發覆蓋損毀」;NAS 06:00 與 GitHub 兜底「各推一次」的**跨觸發邏輯重複推**屬架構級(40 分錯開 + 兜底僅失敗才跑已使罕見),不在此範圍。②NAS 端 `nas_line_bot.gh_save` 走 GitHub API sha-based 樂觀鎖(併發 PUT → 409 → 回「寫回失敗請重試」),本就 fail-loud、無需改。③市場數據快取(etf/housing/price 共 6 處 `write_text`)同樣可受惠,列相鄰後續、本次不擴散。
 - 驗證:py_compile+pyflakes 零 + 離線 11 案(roundtrip/覆蓋/自動建目錄/無 tmp 殘留/**崩潰時舊檔完整+temp 清除**/三委派點 roundtrip)全過;NAS 鏡像邊界確認(`nas_line_bot` 無本機 save、走 gh_save,不需同步)。
 
+## F4 儀表板脆弱:頁面級斷路器(2026-07-22,PR #125)
+- 補「看板一掛反過來拖垮 Push 信任」:`app.py main()` 的 7 個 `page_*()` 派發**無 top-level try/except** → 任一頁在觸及自己內層兜底前拋例外,Streamlit 整頁噴紅色 traceback;而每則推播末尾都掛看板連結 → 使用者點進去見壞頁 → 砸掉整站信任。這正是 F4 的字面破口。
+- **`app.py::_safe_render(page_fn, name)`**(頁面級斷路器,SSOT 單一兜底點):`try` 呼叫頁面、`except Exception` 顯示友善降級橫幅(「『X』頁暫時無法載入,側邊欄與其他頁不受影響,可到 🩺 資料診斷 查資料源」)+ traceback 收進 expander;7 個派發點全改走它,一個壞頁不再拖垮整站。
+- **正確性關卡**:只攔 `Exception`——Streamlit `st.rerun()`/`st.stop()` 走 `ScriptControlException`(BaseException 子類、**非** Exception),不會被吞、控制流照常穿透(頁面用了 11 處 `st.rerun()`,誤攔即壞)。已於 streamlit 1.59.1 實測基底類別 MRO 確認。
+- ⚠️ **邊界**:F4 另半(`packages.txt`/pyarrow segfault、冷啟動、Cloud 休眠)屬部署/基礎設施,歸既有 Task #11/#12 依賴治本,無法沙箱驗、本次不併入。驗證:py_compile+pyflakes 零 + 離線 17 案(一般例外兜住+橫幅含頁名+st.exception/expander;Stop/RerunException 穿透且不觸發橫幅;happy path 不碰 st.error;前頁崩潰不阻斷後頁)全過;Streamlit 真實渲染無法沙箱實跑,以斷路器邏輯測替代。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。
