@@ -422,12 +422,26 @@ def render_news_cards(news: list[dict]) -> None:
 def _render_evidence_news(evidence: list, label: str = "📰 佐證新聞") -> None:
     if not evidence:
         return
-    with st.expander(label):
-        for n in evidence:
+    # F10:報告若已做來源對帳(每則帶 verified 旗標),抬頭顯示已核對比例、逐則標 ✓/⚠;
+    # 舊報告無此旗標 → checked=False,顯示與改版前完全一致(向後相容)。
+    items = [n for n in evidence if isinstance(n, dict)]
+    checked = any("verified" in n for n in items)
+    n_ok = sum(1 for n in items if n.get("verified") is True)
+    n_all = len(items)
+    if checked and n_all:
+        head = (f"{label}（✓ {n_ok}/{n_all} 來源已核對）" if n_ok == n_all
+                else f"{label}（✓ {n_ok}/{n_all} 已核對，⚠️ {n_all - n_ok} 則無法自動核對）")
+    else:
+        head = label
+    with st.expander(head):
+        if checked and n_ok < n_all:
+            st.caption("⚠️ = 程式未能在本次新聞中自動核對到該來源(可能為翻譯後標題或 AI 綜合表述,非等同造假),請自行斟酌。")
+        for n in items:
             title = n.get("title", "")
             src = n.get("source", "")
             url = n.get("url", "")
-            line = f"- {title}" + (f" — _{src}_" if src else "")
+            mark = ("✓ " if n.get("verified") is True else "⚠️ ") if checked else ""
+            line = f"- {mark}{title}" + (f" — _{src}_" if src else "")
             if url:
                 line += f" [連結]({url})"
             st.markdown(line)

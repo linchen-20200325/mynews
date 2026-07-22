@@ -147,3 +147,78 @@ def score_headline_sentiment(headlines: list[str]) -> float:
         for h in headlines
     )
     return round(max(-1.0, min(1.0, total / len(headlines))), 3)
+
+
+# ── 佐證來源核對（F10：把 AI 回傳的 evidence_news 與真實餵入新聞對帳）─────────────
+
+_TITLE_KEEP = re.compile(r"[^0-9a-z一-鿿]+")  # 只留數字/小寫拉丁/CJK，其餘皆去
+
+
+def _norm_url(url) -> str:
+    """URL 正規化成可比對鍵：去 scheme/www、前後空白、尾斜線、小寫。"""
+    u = str(url or "").strip().lower()
+    for pre in ("https://", "http://"):
+        if u.startswith(pre):
+            u = u[len(pre):]
+            break
+    if u.startswith("www."):
+        u = u[4:]
+    return u.rstrip("/")
+
+
+def _norm_title(title) -> str:
+    """標題正規化成可比對鍵：小寫後去空白/標點/全形符號，只留字母數字與漢字。"""
+    return _TITLE_KEEP.sub("", str(title or "").lower())
+
+
+def verify_evidence_news(parsed, real_news: list[dict]) -> dict:
+    """核對 AI 回傳的每一則 evidence_news 是否真的出自本次餵入的新聞（硬規則1 可查核化）。
+
+    走訪 parsed（dict/list 任意巢狀），對每一份 evidence_news 內的每則以
+    「url 正規化為主、title 正規化為輔」比對真實新聞；命中標 ``verified=True``、
+    否則 ``False``（就地寫回該則 dict）。**保守偏誤**：只採正規化後「精確相等」比對，
+    寧可標『無法核對』也不亂標『已核對』——一個 ✓ 保證該來源確實在本次新聞中。
+
+    翻譯後標題（如人物/美股報告英轉中）title 對不上時，僅靠 url；AI 若漏帶 url，
+    該則會被誠實標為『無法核對』（非等同造假）。
+
+    Returns
+    -------
+    dict
+        ``{"matched": int, "total": int}``（供記錄／測試；呼叫端可忽略回傳值）。
+    """
+    real_urls = {
+        _norm_url(n.get("url")) for n in (real_news or [])
+        if isinstance(n, dict) and n.get("url")
+    }
+    real_urls.discard("")
+    real_titles = {
+        _norm_title(n.get("title")) for n in (real_news or [])
+        if isinstance(n, dict) and n.get("title")
+    }
+    real_titles.discard("")
+    tally = {"matched": 0, "total": 0}
+
+    def _mark(item: dict) -> None:
+        url_ok = bool(item.get("url")) and _norm_url(item.get("url")) in real_urls
+        title_ok = bool(item.get("title")) and _norm_title(item.get("title")) in real_titles
+        ok = bool(url_ok or title_ok)
+        item["verified"] = ok
+        tally["total"] += 1
+        tally["matched"] += int(ok)
+
+    def _walk(obj) -> None:
+        if isinstance(obj, dict):
+            for key, val in obj.items():
+                if key == "evidence_news" and isinstance(val, list):
+                    for it in val:
+                        if isinstance(it, dict):
+                            _mark(it)
+                else:
+                    _walk(val)
+        elif isinstance(obj, list):
+            for x in obj:
+                _walk(x)
+
+    _walk(parsed)
+    return tally
