@@ -273,12 +273,6 @@ def user_stocks(doc: dict, user_id: str) -> list[dict]:
     return ((doc.get("users") or {}).get(user_id) or {}).get("stocks", []) or []
 
 
-def tickers_for(doc: dict, user_id: str) -> list[str]:
-    """取某 userId 清單內所有代號(已去空白)。"""
-    return [str(s.get("ticker", "")).strip()
-            for s in user_stocks(doc, user_id) if s.get("ticker")]
-
-
 def ensure_user_bucket(doc: dict, user_id: str) -> dict:
     """確保 doc 為 per-user 結構,就地建立並回傳該 userId 的 bucket ``{"stocks":[...]}``。
 

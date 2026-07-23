@@ -746,10 +746,14 @@ def _load_employment_vacancy_cached() -> pd.DataFrame:
 def sec_population_map() -> None:
     """就業人口熱區 × 未來就業轉向區域 — 台灣地圖分析面板。"""
     st.subheader("🗺️ 就業人口熱區 × 未來就業轉向區域")
+    st.warning(
+        "⚠️ **示範（Mock）資料，非真實統計** — 本面板 22 縣市數字僅供版面展示，"
+        "**不可用於判讀或決策**。接入真實勞動部/內政部資料後自動切換。"
+    )
     st.caption(
-        "資料來源說明：就業人口使用**勞保投保人數縣市別統計**（勞動部），"
-        "空屋率使用**低度使用（用電）住宅比率**（內政部不動產資訊平台）。"
-        "目前顯示 Mock 示範資料，接入真實資料只需替換 `taiwan_map_data._mock_df()`。"
+        "資料來源（待接入）：就業人口＝**勞保投保人數縣市別統計**（勞動部）；"
+        "空屋率＝**低度使用（用電）住宅比率**（內政部不動產資訊平台）。"
+        "接真實資料只需替換 `taiwan_map_data._mock_df()`。"
     )
 
     df = _load_employment_vacancy_cached()
