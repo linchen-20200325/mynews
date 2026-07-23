@@ -10,9 +10,9 @@
 ## 個股盯盤(第二個 LINE bot)
 自選台股/ETF 每早推「消息面 AI 總結 + 新月營收」給指定對象。清單 `watchlist.json` 由 `scripts/nas_line_bot.py`(NAS 常駐 webhook,接「加/刪/清單」指令經 GitHub API 寫回 repo)維護;排程端 `update_data.py` 的 `run_watch_section()` 讀清單→逐檔抓真實新聞(`news_fetcher`)+ Gemini 一次總結 + `earnings_fetcher` 抓 TWSE OpenAPI 月營收(真實財報訊號,`watch_revenue_pushed.json` dedup 只推新公告)→ 第二個 bot(`LINE_WATCH_TOKEN`/`LINE_WATCH_TO`)push。未設第二 bot → `watch_enabled()` 為偽,整段靜默略過。
 
-## 看板導覽(`app.py`)— 4 大整合頁(2026-06 改版)
-側邊欄收斂為 **📊 台股 / 🇺🇸 美股 / 🌍 全球 / 🏠 台灣房市**;點一個領域,該領域所有面板「一次展開」在同一頁,最上方有 **AI 今日總結**(`render_market_digest` → `update_data.get_market_digest`:把該領域當日各面板數據融成統一研判,按鈕觸發、依日期 session 快取)。
-- **台股**:國際盤預警(含共振)+ 法人籌碼 + 台股觀察 + 互動工具 expander(個股健診 / 新聞策略 / ETF工作台)。
+## 看板導覽(`app.py`)— 側邊欄 7 頁(2026-06 改版起陸續擴充)
+側邊欄 7 項:4 大整合頁 **📊 台股 / 🇺🇸 美股 / 🌍 全球 / 🏠 台灣房市** + 3 專頁 **ETF 工作台 / AI 決策大腦 / 🩺 資料診斷**;點整合頁,該領域所有面板「一次展開」在同一頁,最上方有 **AI 今日總結**(`render_market_digest` → `update_data.get_market_digest`:把該領域當日各面板數據融成統一研判,按鈕觸發、依日期 session 快取)。
+- **台股**:國際盤預警(含共振)+ 法人籌碼 + 台股觀察 + 中線翻轉偵測(唯讀)+ 互動工具 expander(個股健診 / 新聞策略 / 總統任期週期 / 中線翻轉偵測)。
 - **美股**:美股觀察 + 個股健診(美股也能查)。
 - **全球**:戰略報告 + 趨勢雷達 + 全球人物追蹤。
 - **台灣房市**:各縣市房價面板 + 房市觀察。
@@ -215,6 +215,7 @@
 - ✅ Rule 5 LINE API 呼叫：`scripts/nas_line_bot.py:52` 的 `LINE_REPLY_ENDPOINT` 屬刻意例外（NAS 單檔零相依，無法 import `line_notify`），已就地加注說明
 - ✅ Rule 6 路徑字面值：全通過；所有路徑集中 `paths.py`
 - ✅ Rule 7 循環 import：全通過；`pages/*.py → app_core.py`，零循環
+- ⚠️ **2026-07-23 交叉稽核更正**：上列「全通過」有方法盲點——Rule 1 漏了 `housing_fetcher` 以 UTC 當「台灣今日」算季別(已修 `tz_utils.taiwan_now`)；Rule 3 漏了 `update_data`/`line_notify` 共 4 處 `os.environ["X"]` **下標**讀取(歷來只 grep `.get` 故整批逃過,已改走 `config.env_required`)。另 11 個 fetcher 的 `as_of` 用 UTC 戳記屬刻意可辯護,列 sanctioned 例外。詳見文末「團隊交叉稽核與修復」。
 
 ### PR #103 — 隱藏 Streamlit 自動多頁導覽列（已併入 main）
 - ✅ `app.py`：`main()` 開頭注入 CSS `[data-testid='stSidebarNav']{display:none}`，隱藏 Streamlit 1.28+ 自動偵測 `pages/` 產生的多頁導覽列，消除與 `st.sidebar.radio()` 自訂導覽的衝突
@@ -332,6 +333,7 @@
 - **`news_analyzer.verify_evidence_news(parsed, real_news)`**(新 SSOT,遞迴):走訪報告任意巢狀,對每份 `evidence_news` 逐則以「url 正規化(去 scheme/www/尾斜線)為主、title 正規化(小寫後只留字母數字漢字)為輔」比對真實新聞,就地標 `verified:True/False`,回 `{matched,total}`。**保守偏誤**:只採正規化後精確相等,寧標『無法核對』也不亂標『已核對』——一個 ✓ 保證該來源確在本次新聞中。
 - 落點:7 個 `get_*`(trend/stock/us_stock/focus/housing/housing_reg/stock_query)validate 後各加一行,與既有 `count_keyword_mentions` 同 pattern、無 evidence_news 者自動 no-op;顯示端唯一升級 `_render_evidence_news`——抬頭「✓ N/M 來源已核對(⚠ K 則無法自動核對)」、逐則標 ✓/⚠,舊報告無 verified 旗標 → 顯示與改版前完全一致(向後相容)。
 - ⚠️ **刻意跳過 `build_intl_alert`**:①心跳載體(F1/A3/F3/F5 全在此、最敏感),且 `render_intl_alert` 未渲染其 `interpretation[].evidence_news`(核對了也看不到),且它已是全報告信任故事最強者(真實 Yahoo 報價+程式算大跌+F3 ai_ok)——邊際價值最低,不為一致性去碰最危險函數。
+- 🔧 **2026-07-23 更正**:上句「`render_intl_alert` 未渲染 evidence_news」**與實況不符**(`pages/tw.py:213` 確有渲染成可點「📰 佐證新聞」)→ 跳過前提錯誤,AI 杜撰來源會被當佐證顯示。已補 `build_intl_alert` 於 validate 前呼叫 `verify_evidence_news`,①與其餘 7 報告一致(QA 稽核發現)。
 - 零 prompt 改動、零資料膨脹(每則多一個 bool)、LINE 不動(尊重 F5 壓縮)。驗證:py_compile+pyflakes 零 + 離線 19 案(精確/正規化/巢狀/杜撰/翻譯標題/空輸入/向後相容/tally)全過 + **真實 intl_alert 資料 smoke(120 則餵入、AI 6 則佐證全數對帳成功 6/6)**;Streamlit 顯示無法沙箱實跑,以抬頭字串鏡像測 + idiom 沿用替代。
 
 ## F7 狀態競態:JSON 狀態檔原子寫入(2026-07-22,PR #124)
@@ -361,6 +363,20 @@
 - **rung-2** ✅(#128,2026-07-22):刪 `numpy<2.5`(2.4→2.5)。**雲端驗收綠燈**(同上)→ numpy 洗清。
 - **rung-3 pyarrow**:⏸️ **刻意保留 `pyarrow<25`**(唯一有段錯前科 #44342、`st.dataframe` 必經其 C++ 核心、上游仍 25.0.0 無 cp314 修正)。依「原生套件常態鎖上限」教訓永久保留,待上游出 cp314 修正版或正式回報 25 在 cp314 安全再解;不為清債賭上整站。
 - **b2 結論(2026-07-22)**:websockets ✓ numpy ✓ 已解鎖並雲端驗收綠燈,pyarrow 刻意保留。技術債清 2/3、真兇範圍鎖定 pyarrow、全程未賭整站。`requirements.txt` 現僅 `pyarrow<25` 一釘。
+
+## 團隊交叉稽核與修復(2026-07-23,4 子代理唯讀稽核 → 批次修復)
+4 個子代理平行唯讀稽核(PM 目標對齊 / 架構師 SSOT / 工程師死碼+假資料 / QA bug+效能+幻覺數據)。總評:骨架紮實、**無高危缺陷**;貫穿洞察=「自我稽核文件多處『全通過』與程式碼實況不符」(已就地更正 L217/L334)。
+- **已修(批次1 correctness)**:
+  - **B** `build_intl_alert` 補 `verify_evidence_news`——①是唯一「產生+渲染 evidence_news 卻不對帳」的報告(`pages/tw.py:213` 確有渲染);AI 杜撰來源現會被標 ✓/⚠。
+  - **D** `housing_fetcher` 三處「台灣今日」UTC→`tz_utils.taiwan_now()`(季界差一天,同 PR #100 chip_calendar 類型)。
+  - **A** 新增 `config.env_required()`(fail-loud SSOT),收 `line_notify`×2 + `update_data`×2 的 `os.environ["X"]` **下標**讀取;兩檔已不碰 os、順手清死 import。
+  - **EARLIEST_TW_HHMM** 防呆:畸形值(如 `"530"`→fh=53 恆略過整條管線)改為驗證 HHMM 後回退預設+告警。
+- **已修(批次2 SSOT)**:**F** 新增 `paths.read_json()`(對稱 `atomic_write_text`),收斂 8 處 `json.loads(read_text)`+try/except 讀檔輪子(etf_fetcher/etf_profile/price/housing×2/feature_aligner/etf_holdings/chip_calendar,行為逐案對帳一致)。
+- **待決策(未動,需 owner 拍板)**:
+  - **C** `taiwan_map_data` 就業/空屋地圖 100% mock 掛正式頁、揭露僅一行 caption、`load_df()` 無 live 路徑 → 牴觸真實優先。選項:警語升級 / 接 `EMPLOYMENT_VACANCY_DATA` 真檔 / 暫隱。
+  - **E** 房產法規月報無排程 `_run_`、只能手動 → `latest_housing_reg.json` 停 7/10、同儕 7/22(靜默過期)。選項:接月排程 / 確認刻意手動並在 STATE 明載。
+- **維護待辦(低)**:2 幽靈函式(`nav_fetcher.fetch_dividends`/`watchlist.tickers_for`)、`TW_HOLIDAYS` 只到 2026-12-25(2027 守門失效,需**真實**假日表勿虛構)、效能三項(index quote 抓兩次 / per-user 重下載月營收 / 每日 POST EPS)。
+- 驗證:批次1+2 全 py_compile + 全庫 pyflakes 零 + 離線邏輯/行為對帳全過;無 `.py` 以外行為改動。**Streamlit/NAS/雲端無法沙箱驗**(誠實限制)。
 
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
