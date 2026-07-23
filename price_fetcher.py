@@ -138,12 +138,7 @@ def fetch_prices(proxy: str | None = None, log=print) -> dict:
 
 
 def load_prices(path: Path = PRICES_PATH) -> dict:
-    if not path.exists():
-        return {}
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        return {}
+    return paths.read_json(path, {})
 
 
 def update_prices() -> int:

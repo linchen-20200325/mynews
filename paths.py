@@ -12,6 +12,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import tempfile
 from pathlib import Path
@@ -101,3 +102,20 @@ def atomic_write_text(path: Path, text: str, encoding: str = "utf-8") -> None:
         except OSError:
             pass
         raise
+
+
+def read_json(path: Path, default=None, encoding: str = "utf-8"):
+    """讀 JSON 檔的 SSOT(與 atomic_write_text 讀寫對稱):檔不存在/空白/損毀/非法 JSON
+    → 回 default(不 raise)。消除各模組重複的 `json.loads(path.read_text())` + try/except
+    讀檔輪子;讀者只會拿到完整解析結果或 default。
+    """
+    try:
+        text = path.read_text(encoding=encoding)
+    except (FileNotFoundError, OSError):
+        return default
+    if not text.strip():
+        return default
+    try:
+        return json.loads(text)
+    except (json.JSONDecodeError, ValueError):
+        return default

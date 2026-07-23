@@ -18,7 +18,6 @@ feature_aligner.py — 四路數據時間對齊合流 SSOT
 
 from __future__ import annotations
 
-import json
 from datetime import datetime
 from pathlib import Path
 
@@ -35,13 +34,8 @@ _FRESHNESS_DAYS = 2  # 快取最長可接受天數
 # ── 私有工具 ─────────────────────────────────────────────────────────────
 
 def _load_json(path: Path) -> dict | None:
-    try:
-        if path.exists():
-            data = json.loads(path.read_text(encoding="utf-8"))
-            return data if isinstance(data, dict) else None
-    except Exception:
-        pass
-    return None
+    data = paths.read_json(path)
+    return data if isinstance(data, dict) else None
 
 
 def _is_fresh(data: dict) -> bool:

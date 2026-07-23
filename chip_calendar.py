@@ -12,7 +12,6 @@ ETF 除息檔數取自真實爬取的 dividend_months,屬真實資料。
 
 from __future__ import annotations
 
-import json
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -61,10 +60,7 @@ def _trading_days_until(today: date, target: date) -> int:
 
 def _load_etf_dividend_counts(profiles_path: Path) -> dict[int, int]:
     """從 etf_profiles.json 統計各月『真實』除息檔數(排除推測月份)。"""
-    try:
-        doc = json.loads(profiles_path.read_text(encoding="utf-8"))
-    except Exception:  # noqa: BLE001 — 無檔/壞檔 → 不阻斷,回空
-        return {}
+    doc = paths.read_json(profiles_path, {})
     counts: dict[int, int] = {}
     for prof in (doc.get("profiles") or {}).values():
         if prof.get("months_estimated"):

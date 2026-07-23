@@ -6,7 +6,6 @@
 
 from __future__ import annotations
 
-import json
 import re
 from pathlib import Path
 
@@ -17,12 +16,7 @@ DEFAULT_PATH = paths.ETF_HOLDINGS
 
 def load_holdings(path: Path = DEFAULT_PATH) -> dict | None:
     """讀取設定檔;不存在或格式錯誤回 None。"""
-    if not path.exists():
-        return None
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        return None
+    return paths.read_json(path)
 
 
 def _iter_etfs(data: dict):
