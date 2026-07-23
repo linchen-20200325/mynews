@@ -29,9 +29,10 @@ Date,Close
 ```
 
 - 日期欄接受 `Date` / `Datetime` / `日期`。
-- 收盤欄接受 `Close` / `Adj Close` / `adj_close` / `收盤` / `收盤價`。
-- 其餘欄（Open/High/Low/Volume）會被忽略，可留可刪。
-- 建議用**還原（adjusted）收盤**，與 app 線上路徑的 `auto_adjust=True` 一致。
+- 收盤欄接受 `Close` / `Adj Close` / `adj_close` / `收盤` / `收盤價`（優先 `Close`）。
+- **選用 `Low` 欄**（`Low` / `最低`）：側欄「峰頂基準 = 盤中最低 low」時會用到；缺此欄時該選項自動降級為收盤。
+- 其餘欄（Open/High/Volume）會被忽略，可留可刪。
+- 收盤建議與分析目的一致；app 線上路徑用 `auto_adjust=False`（優先原始 `Close`、其次 `Adj Close`）。
 
 ## 從哪裡取得真實資料
 

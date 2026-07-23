@@ -9,7 +9,8 @@ pandas>=2.2,<4
 numpy>=1.26,<3
 plotly>=5.22,<8
 yfinance>=0.2.40,<2
-# st.dataframe（事件表）必經 pyarrow C++ 核心；25.x 在 cp314 重繪會 segfault → 釘 <25。
+# 統計 p 值（Pearson/Spearman/OLS 斜率）用 scipy.stats；釘上限避免 cp314 未鎖 wheel 風險。
+# drawdown_core 於 scipy 缺席時會退回純 numpy（Fisher-z CI、p 值從缺），不會硬崩。
+scipy>=1.11,<1.16
+# st.dataframe（清單）必經 pyarrow C++ 核心；25.x 在 cp314 重繪會 segfault → 釘 <25。
 pyarrow>=17,<25
-# 註：Pearson/Fisher-z/Spearman/OLS 皆以 numpy 實作，刻意不引入 scipy
-#     （少一顆原生 wheel＝少一份 cp314 部署風險）。需要 scipy 版本再加回。

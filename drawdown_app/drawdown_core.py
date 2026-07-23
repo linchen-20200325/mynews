@@ -26,8 +26,8 @@
   • 熱路徑全向量化：cummax（ATH）、布林 run-length 分段（.ne(shift).cumsum()）、
     groupby idxmin（谷底）。逐事件迴圈只跑「事件數」次（數十年也僅數十筆），
     非逐列（per-row），不是熱路徑。
-  • 零 scipy：Pearson/Fisher-z 信賴區間/Spearman/OLS 皆純 numpy/pandas，
-    降低雲端原生 wheel 風險（見主專案 GOTCHAS「cp314 × 未鎖依賴」）。
+  • 統計：scipy.stats 為主（Pearson/Spearman/OLS 含 p 值與精確 CI）；scipy 缺席時
+    自動退回純 numpy（Fisher-z CI、p 值從缺），不硬崩（相依風險見 GOTCHAS「cp314 × 未鎖依賴」）。
 """
 
 from __future__ import annotations
@@ -247,23 +247,62 @@ def episodes_to_frame(episodes: list[DrawdownEpisode]) -> pd.DataFrame:
     return pd.DataFrame([e.to_dict() for e in episodes])[cols]
 
 
-# ── 純 numpy 統計：Pearson + Fisher-z CI + Spearman + OLS ───────────────────
-
-def correlation_report(x, y, ci: float = 0.95) -> dict:
-    """兩序列的相關/回歸摘要：Pearson r + Fisher-z 信賴區間、Spearman ρ、OLS。
+def episode_path(series: pd.DataFrame, ep: "DrawdownEpisode") -> pd.DataFrame:
+    """單一事件從峰頂到復原（或資料末）的正規化路徑，供 V 型疊圖。
 
     Parameters
     ----------
-    x, y : array-like
-        等長數列；成對非有限值（NaN/inf）會被剔除後才計算。
-    ci : float
-        Pearson 信賴區間水準（0<ci<1，預設 0.95）。
+    series : pd.DataFrame
+        compute_drawdown_series 的輸出（需含 'close' 欄、DatetimeIndex）。
+        **須與產生 ep 的 price_col 一致**（如 Low 基準：series 與 ep 都要來自 Low），
+        否則正規化基準錯位、峰頂不落在 100。
+    ep : DrawdownEpisode
+        目標事件。
 
     Returns
     -------
-    dict
-        n, pearson_r, pearson_ci(low, high), spearman_rho,
-        ols_slope, ols_intercept, ols_r2。樣本不足（n<3）時相關/CI 為 None。
+    pd.DataFrame
+        欄：close、norm（峰頂=100 的正規化值 close/peak*100）、
+        cal_days（距峰頂日曆天）、tdays（距峰頂交易天，0..k）。
+    """
+    end = ep.recovery_date if (ep.recovered and ep.recovery_date is not None) else series.index[-1]
+    seg = series.loc[ep.peak_date:end, ["close"]].copy()
+    seg["norm"] = seg["close"] / ep.peak_price * 100.0
+    seg["cal_days"] = (seg.index - ep.peak_date).days
+    seg["tdays"] = np.arange(len(seg))
+    return seg
+
+
+# ── 統計：Pearson/Spearman/OLS（scipy 優先，含 p 值；numpy 為退路）─────────────
+
+def _fisher_ci(r: float, n: int, ci: float) -> "tuple[float | None, float | None]":
+    """Pearson r 的 Fisher-z 信賴區間（無 scipy 時退路）。|r|==1→(r,r)；n≤3→從缺（避免 1/√0）。"""
+    if abs(r) >= 1.0:
+        return (r, r)
+    if n <= 3:
+        return (None, None)
+    z = math.atanh(r)
+    se = 1.0 / math.sqrt(n - 3)
+    zc = inv_norm_cdf(0.5 + ci / 2.0)
+    return (math.tanh(z - zc * se), math.tanh(z + zc * se))
+
+
+def correlation_report(x, y, ci: float = 0.95) -> dict:
+    """相關/回歸摘要：Pearson（r, p, CI）、Spearman（ρ, p）、OLS（斜率/截距/R²/斜率 p）。
+
+    scipy 可用 → 走 scipy.stats（含 p 值與精確 CI）；否則退回純 numpy（Fisher-z CI、
+    p 值從缺）。成對非有限值（NaN/inf）先剔除；n<3 或某軸無變異 → 相關/CI/p 皆從缺
+    （不會拋例外）。
+
+    Parameters
+    ----------
+    x, y : array-like  等長數列。
+    ci : float  Pearson 信賴區間水準（0<ci<1，預設 0.95）。
+
+    Returns
+    -------
+    dict  n, pearson_r, pearson_p, pearson_ci(low,high), spearman_rho, spearman_p,
+          ols_slope, ols_intercept, ols_r2, ols_slope_p。
     """
     xa = np.asarray(x, dtype=float)
     ya = np.asarray(y, dtype=float)
@@ -273,30 +312,47 @@ def correlation_report(x, y, ci: float = 0.95) -> dict:
     xa, ya = xa[mask], ya[mask]
     n = int(xa.size)
     result: dict = {
-        "n": n, "pearson_r": None, "pearson_ci": (None, None),
-        "spearman_rho": None, "ols_slope": None, "ols_intercept": None, "ols_r2": None,
+        "n": n, "pearson_r": None, "pearson_p": None, "pearson_ci": (None, None),
+        "spearman_rho": None, "spearman_p": None,
+        "ols_slope": None, "ols_intercept": None, "ols_r2": None, "ols_slope_p": None,
     }
     if n < 3 or np.ptp(xa) == 0 or np.ptp(ya) == 0:
         return result   # 樣本不足或某軸無變異 → 相關無定義
 
+    try:
+        from scipy import stats  # 優先：提供 p 值與精確信賴區間
+    except ImportError:
+        stats = None
+
+    if stats is not None:
+        pr = stats.pearsonr(xa, ya)
+        result["pearson_r"] = float(pr.statistic)
+        result["pearson_p"] = float(pr.pvalue)
+        if n <= 3:
+            result["pearson_ci"] = (None, None)   # 與 numpy 退路一致：n≤3 的 CI 無資訊 → 從缺
+        else:
+            try:
+                civ = pr.confidence_interval(confidence_level=ci)
+                result["pearson_ci"] = (float(civ.low), float(civ.high))
+            except Exception:  # noqa: BLE001 — 舊版 scipy 無 confidence_interval → 退 Fisher-z
+                result["pearson_ci"] = _fisher_ci(result["pearson_r"], n, ci)
+        sr = stats.spearmanr(xa, ya)
+        result["spearman_rho"] = float(sr.statistic)
+        result["spearman_p"] = float(sr.pvalue)
+        lin = stats.linregress(xa, ya)
+        result["ols_slope"] = float(lin.slope)
+        result["ols_intercept"] = float(lin.intercept)
+        result["ols_r2"] = float(lin.rvalue ** 2)
+        result["ols_slope_p"] = float(lin.pvalue)
+        return result
+
+    # ── numpy 退路（無 scipy）：r / Fisher-z CI / Spearman / OLS；p 值從缺 ──
     r = float(np.corrcoef(xa, ya)[0, 1])
     result["pearson_r"] = r
-    # Fisher-z 信賴區間：SE=1/√(n−3) 需 n≥4；n==3 僅回報 r、CI 從缺（保持預設 None，
-    # 不可硬算否則 1/√0 → ZeroDivisionError）。|r|==1 時 z 發散，CI 退化為 (r, r)。
-    if abs(r) >= 1.0:
-        result["pearson_ci"] = (r, r)
-    elif n > 3:
-        z = math.atanh(r)
-        se = 1.0 / math.sqrt(n - 3)
-        zc = inv_norm_cdf(0.5 + ci / 2.0)
-        result["pearson_ci"] = (math.tanh(z - zc * se), math.tanh(z + zc * se))
-
-    # Spearman ρ ＝ 排名後的 Pearson
+    result["pearson_ci"] = _fisher_ci(r, n, ci)
     rx = pd.Series(xa).rank().to_numpy()
     ry = pd.Series(ya).rank().to_numpy()
     result["spearman_rho"] = float(np.corrcoef(rx, ry)[0, 1])
-
-    # OLS y = a + b·x（最小二乘）
     slope, intercept = np.polyfit(xa, ya, 1)
     yhat = intercept + slope * xa
     ss_res = float(np.sum((ya - yhat) ** 2))
