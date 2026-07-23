@@ -354,7 +354,11 @@ def main() -> None:
         else:
             max_span = max((dc.episode_path(series, e)[
                 "tdays" if unit.startswith("交易") else "cal_days"].max() for e in episodes), default=100)
-            max_days = st.slider("x 軸範圍（距峰頂天數）/ X range", 20, int(max_span), int(max_span), step=10)
+            x_hi = int(max_span)
+            if x_hi > 20:
+                max_days = st.slider("x 軸範圍（距峰頂天數）/ X range", 20, x_hi, x_hi, step=10)
+            else:
+                max_days = x_hi   # 跨度過短：min≥max 會讓 slider 拋例外炸整頁 → 直接用完整範圍
             st.plotly_chart(fig_vshape(series, episodes, unit, max_days), width="stretch")
             st.caption("每條線＝一次熊市（峰頂正規化為 100）；圈點＝谷底。虛線 100＝收復前高。")
 
@@ -369,9 +373,10 @@ def main() -> None:
             rep = dc.correlation_report(x, rec[y_col].to_numpy(float), ci=ci)
             m1, m2, m3, m4 = st.columns(4)
             lo, hi = rep["pearson_ci"]
-            m1.metric("Pearson r", f"{rep['pearson_r']:.3f}",
+            m1.metric("Pearson r", "—" if rep["pearson_r"] is None else f"{rep['pearson_r']:.3f}",
                       help=None if lo is None else f"{int(ci*100)}% CI [{lo:.3f}, {hi:.3f}] · p={_fmt_p(rep['pearson_p'])}")
-            m2.metric("Spearman ρ", f"{rep['spearman_rho']:.3f}", help=f"p={_fmt_p(rep['spearman_p'])}")
+            m2.metric("Spearman ρ", "—" if rep["spearman_rho"] is None else f"{rep['spearman_rho']:.3f}",
+                      help=f"p={_fmt_p(rep['spearman_p'])}")
             m3.metric("OLS R²", "—" if rep["ols_r2"] is None else f"{rep['ols_r2']:.3f}")
             m4.metric("n", f"{rep['n']}")
             st.plotly_chart(fig_scatter(rec, y_col, LABELS[y_col], rep), width="stretch")
@@ -387,7 +392,7 @@ def main() -> None:
             st.subheader("全樣本 / Full sample")
             st.dataframe(stats_table(rec, unit, ci), width="stretch", hide_index=True)
             st.subheader("敏感度：Leave-one-out（排除任意熊市後重算）")
-            opts = {f"{int(r.year)} ({r.drawdown*100:.0f}%)": i for i, (_, r) in enumerate(rec.iterrows())}
+            opts = {f"#{i+1} {int(r.year)}（{r.drawdown*100:.0f}%）": i for i, (_, r) in enumerate(rec.iterrows())}
             drop = st.multiselect("排除 / Exclude", list(opts.keys()))
             if drop:
                 keep = rec.drop(rec.index[[opts[d] for d in drop]])
