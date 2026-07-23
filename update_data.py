@@ -39,7 +39,6 @@
 from __future__ import annotations
 
 import json
-import os
 import sys
 from pathlib import Path
 
@@ -284,11 +283,15 @@ def _run_reversal_detection(today: str, log=print) -> dict | None:
         return None
 
 
-def _run_master_decision(today: str, log=print) -> dict | None:
-    """排程 helper：執行中央決策並歸檔，失敗靜默回 None（不拖垮主流程）。"""
+def _run_master_decision(today: str, log=print, *, macro_quotes=None) -> dict | None:
+    """排程 helper：執行中央決策並歸檔，失敗靜默回 None（不拖垮主流程）。
+
+    macro_quotes：同一次 run 已抓好的報價文件（intl 的 quotes/as_of），注入後 macro
+    路不重打 Yahoo（收錄 1 Option B，根治總經路第二輪被限流落空）；None 時自行抓。
+    """
     log("🧠 [master] 四路合流 → Gemini 中央決策...")
     try:
-        features = feature_aligner.build_feature_json(today)
+        features = feature_aligner.build_feature_json(today, macro_quotes=macro_quotes)
         decision = get_master_decision(today, _features=features)
         decision["features"] = features  # 嵌入特徵供 Streamlit 儀表板展示
         save_json(paths.LATEST_DECISION, decision)
@@ -599,6 +602,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         "upcoming_events": upcoming_events,    # 可預測法人賣壓事件(行事曆)
         "raw_news": news,
     }
+    news_analyzer.verify_evidence_news(result, news)  # F10:①佐證來源對帳(補齊唯一漏對帳的報告;render_intl_alert 確有渲染 evidence_news)
     validate_intl_alert(result)
     return result
 
@@ -1221,11 +1225,14 @@ def save_pushed_revenue(ids: list[str]) -> None:
 
 
 def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
-                    dedup_prefix: str = "") -> list[str]:
+                    dedup_prefix: str = "", *,
+                    revenue: dict | None = None, eps_data: dict | None = None) -> list[str]:
     """為一份清單抓消息面+技術面+月營收並推給單一對象 to;回本次新推的營收 dedup id。
 
     不負責存檔(由 run_watch_section 統一 load/save 一次 pushed 清單);dedup_prefix 讓
     per-user 各自獨立判斷財報新舊(同一檔不同人都能各自收到一次月營收通知)。
+    revenue / eps_data：收錄 2A —— per-user 迴圈前已一次抓好的全體月營收/EPS,注入後本
+    函式不再逐人重抓(N 人 N 次全市場 → 單次);None 時(flat 路徑)自行抓,行為不變。
     """
     if not stocks:
         return []
@@ -1268,10 +1275,13 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     # 3) 月營收(真實財報更新訊號);dedup 只推「新出現」的期別
     new_revenue: list[dict] = []
     fresh_ids: list[str] = []
+    my = set(watchlist.tickers({"stocks": stocks}))  # 本清單代號(per-user 過濾,不串號)
     try:
-        revenue = earnings_fetcher.fetch_monthly_revenue(
-            watchlist.tickers({"stocks": stocks}), log=print)
-        for ticker, rev in revenue.items():
+        rev_src = (revenue if revenue is not None
+                   else earnings_fetcher.fetch_monthly_revenue(list(my), log=print))
+        for ticker, rev in rev_src.items():
+            if ticker not in my:  # 注入的是全體聯集 → 只推自己的
+                continue
             rid = f"{dedup_prefix}{ticker}-{rev.get('period')}"
             if rid not in pushed:
                 new_revenue.append(rev)
@@ -1283,9 +1293,11 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     new_eps: list[dict] = []
     fresh_eps_ids: list[str] = []
     try:
-        eps_data = earnings_fetcher.fetch_quarterly_eps(
-            watchlist.tickers({"stocks": stocks}), log=print)
-        for ticker, eps in eps_data.items():
+        eps_src = (eps_data if eps_data is not None
+                   else earnings_fetcher.fetch_quarterly_eps(list(my), log=print))
+        for ticker, eps in eps_src.items():
+            if ticker not in my:  # 注入的是全體聯集 → 只推自己的
+                continue
             rid = f"{dedup_prefix}eps-{ticker}-{eps.get('period')}"
             if rid not in pushed:
                 new_eps.append(eps)
@@ -1299,7 +1311,7 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     msg = line_notify.build_watch_line_message(
         today, summaries, new_revenue, tech_lines, chip_lines, vcp_lines, new_eps,
         nav_lines)
-    line_notify._push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=to)
+    line_notify._push_line_text(msg, token=config.env_required("LINE_WATCH_TOKEN"), to=to)
     print(
         f"  · 推給 {to[:6]}…:消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
         f"籌碼面 {len(chip_lines)} 檔、VCP {len(vcp_lines)} 檔、"
@@ -1319,11 +1331,25 @@ def run_watch_section(today: str) -> None:
             print("  個股盯盤:尚無任何使用者清單,略過。")
             return
         print(f"  個股盯盤(per-user):{len(uids)} 位使用者,各推自己清單...")
+        # 收錄 2A:全體代號取聯集,月營收/EPS 各抓一次(免 N 人各自抓全市場整包)。
+        all_t = sorted({t for uid in uids
+                        for t in watchlist.tickers({"stocks": watchlist.user_stocks(doc, uid)})})
+        revenue_all = earnings_fetcher.fetch_monthly_revenue(all_t, log=print) if all_t else {}
+        # 收錄 2C:EPS 已推閘門 —— 每人每檔本季 EPS 若全數已推,整批跳過抓取(全會被 dedup、零新推)。
+        eps_period = earnings_fetcher.current_eps_period()
+        eps_pending = any(
+            f"{uid}-eps-{t}-{eps_period}" not in pushed
+            for uid in uids
+            for t in watchlist.tickers({"stocks": watchlist.user_stocks(doc, uid)})
+        )
+        eps_all = (earnings_fetcher.fetch_quarterly_eps(all_t, log=print)
+                   if all_t and eps_pending else {})
         fresh_all: list[str] = []
         for uid in uids:
             fresh_all += _push_watch_for(
                 today, watchlist.user_stocks(doc, uid), to=uid,
-                pushed=pushed, dedup_prefix=f"{uid}-")
+                pushed=pushed, dedup_prefix=f"{uid}-",
+                revenue=revenue_all, eps_data=eps_all)
         if fresh_all:
             save_pushed_revenue(pushed + fresh_all)
         print("  ⑤ 個股盯盤(per-user)處理完畢。")
@@ -1335,7 +1361,7 @@ def run_watch_section(today: str) -> None:
         print("  個股盯盤:watchlist 為空(傳「加 2330」給盯盤 bot 即可建立),略過。")
         return
     print(f"  個股盯盤:清單 {len(stocks)} 檔,抓新聞 + 技術面 + 月營收...")
-    fresh = _push_watch_for(today, stocks, to=os.environ["LINE_WATCH_TO"], pushed=pushed)
+    fresh = _push_watch_for(today, stocks, to=config.env_required("LINE_WATCH_TO"), pushed=pushed)
     if fresh:
         save_pushed_revenue(pushed + fresh)
     print("  ⑤ 個股盯盤已推。")
@@ -1346,7 +1372,10 @@ def _schedule_guard(now_tw, today: str) -> bool:
     floor = config.env_str("EARLIEST_TW_HHMM", "0530").strip()
     try:
         fh, fm = int(floor[:2]), int(floor[2:])
-    except (ValueError, IndexError):
+        if not (len(floor) == 4 and floor.isdigit() and 0 <= fh < 24 and 0 <= fm < 60):
+            raise ValueError(f"格式應為 HHMM(0000–2359),得到 {floor!r}")
+    except (ValueError, IndexError) as exc:
+        print(f"  警告: EARLIEST_TW_HHMM 無效({exc}),回退預設 05:30。", file=sys.stderr)
         fh, fm = 5, 30
     if (now_tw.hour, now_tw.minute) < (fh, fm):
         print(f"排程於台灣 {now_tw:%H:%M} 觸發,早於資料齊備時間 "
@@ -1661,7 +1690,7 @@ def main() -> int:
             print(f"  警告: 共振偵測失敗:{exc}", file=sys.stderr)
         _run_focus(today)
         _run_housing(today)
-        _run_master_decision(today)
+        _run_master_decision(today, macro_quotes=(intl if (intl and intl.get("quotes")) else None))
         _run_reversal_detection(today)
         if report:
             print(

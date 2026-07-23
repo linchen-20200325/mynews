@@ -259,6 +259,16 @@ def _latest_quarter() -> tuple[int, int]:
     return y - 1912, 4  # 前一年 Q4
 
 
+def current_eps_period() -> str:
+    """最新季報 EPS 期別字串(如 '2026-Q1')—— period 字串組法 SSOT。
+
+    _fetch_eps_for 的 period_str 與 dedup 閘門(update_data.run_watch_section)共用此組法,
+    避免 f"{年}-Q{季}" 在多處重複定義。
+    """
+    ry, s = _latest_quarter()
+    return f"{ry + 1911}-Q{s}"
+
+
 def _parse_eps_from_html(html: str) -> "tuple[float | None, float | None]":
     """從 MOPS 損益表 HTML 萃取 (本期EPS, 前期EPS)。"""
     import io
@@ -305,7 +315,7 @@ def _fetch_eps_for(ticker: str, roc_year: int, season: int,
         "Content-Type": "application/x-www-form-urlencoded",
         "Referer": "https://mops.twse.com.tw/mops/web/t163sb04",
     }
-    period_str = f"{roc_year + 1911}-Q{season}"
+    period_str = current_eps_period()  # SSOT 組法;與 dedup 閘門一致
 
     for typek in ("sii", "otc"):
         form_data = {

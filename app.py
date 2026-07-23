@@ -37,6 +37,26 @@ def _safe_render(page_fn, name: str) -> None:
             st.exception(exc)
 
 
+def _pyarrow_guard() -> None:
+    """啟動守門:偵測到 pyarrow≥25 就開站即大聲告警,而非等 st.dataframe 重繪時整站靜默 segfault。
+
+    requirements.txt 已釘 `pyarrow<25`(見 GOTCHAS「cp314 × 未鎖依賴」的雲端 segfault 事故);
+    此為「部署環境 pin 萬一漂版」的最後一道可見警報——把神祕當機變成開站即現形的診斷訊息。
+    偵測本身失敗絕不反過來拖垮 app。
+    """
+    try:
+        import pyarrow
+        major = int(pyarrow.__version__.split(".")[0])
+    except Exception:  # noqa: BLE001 — 守門偵測失敗不得炸掉 app
+        return
+    if major >= 25:
+        st.error(
+            f"⚠️ 偵測到 pyarrow {pyarrow.__version__}(≥25)—— `requirements.txt` 已釘 <25,"
+            "但目前部署環境漂到此版。此版本在 `st.dataframe` 重繪時會 segfault 整站,"
+            "請確認部署環境的 `pyarrow<25` 有生效(詳 GOTCHAS.md)。"
+        )
+
+
 def main() -> None:
     st.set_page_config(page_title="全球政經戰略看板", page_icon="🌐", layout="wide")
     # 隱藏 Streamlit 自動偵測 pages/ 產生的多頁導覽列（已有自訂 radio 導覽）
@@ -44,6 +64,7 @@ def main() -> None:
         "<style>[data-testid='stSidebarNav']{display:none}</style>",
         unsafe_allow_html=True,
     )
+    _pyarrow_guard()  # pin 漂版守門:pyarrow≥25 開站即告警(見 GOTCHAS 雲端 segfault)
     st.title("🌐 全球政經戰略每日看板")
     st.caption(f"{line_notify.MORNING_TAGLINE} — 資料為 AI/工具自動生成,僅供參考,非投資建議")
 

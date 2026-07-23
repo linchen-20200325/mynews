@@ -15,7 +15,6 @@
 from __future__ import annotations
 
 import json
-import os
 import re
 import urllib.error
 import urllib.request
@@ -86,8 +85,8 @@ def _push_line_text(text: str, token: str | None = None, to: str | None = None) 
     token/to 預設讀主 bot 的 LINE_CHANNEL_ACCESS_TOKEN / LINE_TO;傳入則用第二個 bot
     (個股盯盤)的 LINE_WATCH_TOKEN / LINE_WATCH_TO,讓兩個 bot 共用同一套推播邏輯。
     """
-    token = token or os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
-    to_raw = (to if to is not None else os.environ["LINE_TO"]).strip()
+    token = token or config.env_required("LINE_CHANNEL_ACCESS_TOKEN")
+    to_raw = (to if to is not None else config.env_required("LINE_TO")).strip()
     messages = [{"type": "text", "text": text}]
 
     if to_raw.lower() == "broadcast":

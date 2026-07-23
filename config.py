@@ -50,6 +50,19 @@ def env_str(name: str, default: str = "") -> str:
     return os.environ.get(name) or default
 
 
+def env_required(name: str) -> str:
+    """必填環境變數:未設或空白即 fail-loud raise(SSOT,取代散落各檔的 os.environ["X"] 下標讀取)。
+
+    對比 env_str(未設回 default、永不 raise、用於選填/可降級);env_required 缺就炸,
+    用於「缺了就該立刻停」的必填值(如 LINE token / 收件者)。此前這類值以裸 os.environ["X"]
+    下標讀取,逃過歷來只 grep os.environ.get 的 SSOT 稽核 —— 集中到此以正名。
+    """
+    val = (os.environ.get(name) or "").strip()
+    if not val:
+        raise RuntimeError(f"缺少必填環境變數:{name}")
+    return val
+
+
 # ---------------------------------------------------------------------------
 # 功能開關(ENABLE_* 旗標)
 # ---------------------------------------------------------------------------

@@ -276,12 +276,7 @@ def import_all_etfs(proxy: str | None = None, sources: dict | None = None,
 # ---------------------------------------------------------------------------
 
 def load_json(path: Path) -> dict:
-    if not path.exists():
-        return {}
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        return {}
+    return paths.read_json(path, {})
 
 
 def crawl(proxy: str | None = None, log=print, sources: dict | None = None) -> dict:

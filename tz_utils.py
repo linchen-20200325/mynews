@@ -102,6 +102,9 @@ US_HOLIDAYS: frozenset[date] = frozenset(map(_d, [
     "2026-12-25",  # Christmas
 ]))
 
+# 假日表涵蓋的最後年度;查詢超出此年即告警(國定假日需真實政府行事曆、不可虛構延伸)。
+TW_HOLIDAYS_MAX_YEAR = max((h.year for h in TW_HOLIDAYS), default=0)
+
 
 def is_tw_trading_day(d: date | None = None) -> bool:
     """台股是否交易日:非週六/日且不在 TW_HOLIDAYS(推播守門與資料判斷共用的 SSOT)。
@@ -111,4 +114,8 @@ def is_tw_trading_day(d: date | None = None) -> bool:
     """
     if d is None:
         d = taiwan_now().date()
+    if d.year > TW_HOLIDAYS_MAX_YEAR:
+        print(f"  警告: tz_utils.TW_HOLIDAYS 只收錄到 {TW_HOLIDAYS_MAX_YEAR} 年,"
+              f"{d.year} 年國定假日尚未更新 → 假日恐被誤判為交易日、照推 LINE;"
+              f"請更新(需真實政府行事曆,勿虛構)。")
     return d.weekday() < 5 and d not in TW_HOLIDAYS
