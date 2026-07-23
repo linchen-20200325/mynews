@@ -1,0 +1,18 @@
+# 空頭回撤 vs 復原 分析看板 — 相依鎖版
+# 部署目標：Streamlit Cloud（cp314）。原生套件一律釘「上限」，避免未鎖 wheel 在
+# cp314 載入即 segfault（見主專案 GOTCHAS.md「cp314 × 未鎖依賴 → 整站 Segfault」，
+# pyarrow 25 已 A/B 實證為兇手）。此為刻意自足的獨立部署，故自帶 requirements。
+# floor 抬到 1.50：app 用 width="stretch" 字串 API（取代已棄用 use_container_width），
+# 過舊版（1.4x 前段）無此 kwarg，鎖版/最小安裝會 TypeError。雲端裝最新故主路徑無虞。
+streamlit>=1.50,<2
+pandas>=2.2,<4
+numpy>=1.26,<3
+plotly>=5.22,<8
+yfinance>=0.2.40,<2
+# 統計 p 值（Pearson/Spearman/OLS 斜率）用 scipy.stats。cp314（雲端目標）的 scipy wheel
+# 自 1.16.1 起才有 → floor 釘 1.16.1；否則 pip 在 cp314 找不到 wheel、退 sdist 原始碼編譯
+# （缺 BLAS/gfortran/Meson）→ 安裝失敗、整站起不來。1.16.x 亦有 3.11–3.13 wheel，本地可裝。
+# drawdown_core 於 scipy 缺席時退回純 numpy（Fisher-z CI、p 值從缺）不硬崩。
+scipy>=1.16.1,<1.19
+# st.dataframe（清單）必經 pyarrow C++ 核心；25.x 在 cp314 重繪會 segfault → 釘 <25。
+pyarrow>=17,<25

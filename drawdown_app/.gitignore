@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+
+# Streamlit 本機祕密（金鑰一律走環境變數/Secrets，嚴禁進版控）
+.streamlit/secrets.toml
+
+# 本機下載的價格資料屬個人快取，預設不進版控；
+# 若要隨 repo 附上可重現驗收用的真實 CSV，改用 `git add -f data/<ticker>.csv`。
+data/*.csv
