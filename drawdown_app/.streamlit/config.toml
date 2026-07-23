@@ -1,0 +1,15 @@
+# Streamlit 主題與伺服器設定（獨立部署）
+[theme]
+base = "light"
+primaryColor = "#c0392b"            # 空頭紅：主色調、slider/按鈕強調
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f4f6f8"
+textColor = "#1a2733"
+font = "sans serif"
+
+[server]
+headless = true                     # 雲端/容器免互動啟動
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
