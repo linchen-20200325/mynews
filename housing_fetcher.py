@@ -32,6 +32,7 @@ import config  # 環境變數讀取 SSOT
 
 import news_fetcher
 import paths  # 路徑 SSOT
+import tz_utils  # 台灣時區 SSOT(taiwan_now)
 
 HOUSE_PRICES_PATH = paths.HOUSE_PRICES
 HOUSE_PRICE_HISTORY_PATH = paths.HOUSE_PRICE_HISTORY
@@ -125,7 +126,7 @@ def recent_seasons(today: datetime | None = None, n: int = 6) -> list[str]:
 
     格式為『民國年 + S + 季』。實價登錄發布有時間落差,逐季往前試到抓得到為止。
     """
-    today = today or datetime.now(timezone.utc)
+    today = today or tz_utils.taiwan_now()
     roc_year = today.year - 1911
     quarter = (today.month - 1) // 3 + 1
     seasons: list[str] = []
@@ -330,7 +331,7 @@ def load_house_prices(path: Path = HOUSE_PRICES_PATH) -> dict:
 
 def _seasons_for_years(years_back: int, today: datetime | None = None) -> list[str]:
     """產生涵蓋近 years_back 個西元年的所有季別(由新到舊)。"""
-    today = today or datetime.now(timezone.utc)
+    today = today or tz_utils.taiwan_now()
     roc_year = today.year - 1911
     quarter = (today.month - 1) // 3 + 1
     min_roc = roc_year - (years_back - 1)
@@ -372,7 +373,7 @@ def _accumulate(acc, parsed: dict, year: int) -> None:
 
 def _prune_acc(acc, keep_years: int, today: datetime | None = None) -> None:
     """只保留近 keep_years 個西元年,避免歷年累計無限成長。"""
-    today = today or datetime.now(timezone.utc)
+    today = today or tz_utils.taiwan_now()
     min_year = today.year - (keep_years - 1)
     for kinds in acc.values():
         for year_map in kinds.values():

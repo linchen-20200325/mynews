@@ -39,7 +39,6 @@
 from __future__ import annotations
 
 import json
-import os
 import sys
 from pathlib import Path
 
@@ -599,6 +598,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         "upcoming_events": upcoming_events,    # 可預測法人賣壓事件(行事曆)
         "raw_news": news,
     }
+    news_analyzer.verify_evidence_news(result, news)  # F10:①佐證來源對帳(補齊唯一漏對帳的報告;render_intl_alert 確有渲染 evidence_news)
     validate_intl_alert(result)
     return result
 
@@ -1299,7 +1299,7 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     msg = line_notify.build_watch_line_message(
         today, summaries, new_revenue, tech_lines, chip_lines, vcp_lines, new_eps,
         nav_lines)
-    line_notify._push_line_text(msg, token=os.environ["LINE_WATCH_TOKEN"], to=to)
+    line_notify._push_line_text(msg, token=config.env_required("LINE_WATCH_TOKEN"), to=to)
     print(
         f"  · 推給 {to[:6]}…:消息面 {len(summaries)} 檔、技術面 {len(tech_lines)} 檔、"
         f"籌碼面 {len(chip_lines)} 檔、VCP {len(vcp_lines)} 檔、"
@@ -1335,7 +1335,7 @@ def run_watch_section(today: str) -> None:
         print("  個股盯盤:watchlist 為空(傳「加 2330」給盯盤 bot 即可建立),略過。")
         return
     print(f"  個股盯盤:清單 {len(stocks)} 檔,抓新聞 + 技術面 + 月營收...")
-    fresh = _push_watch_for(today, stocks, to=os.environ["LINE_WATCH_TO"], pushed=pushed)
+    fresh = _push_watch_for(today, stocks, to=config.env_required("LINE_WATCH_TO"), pushed=pushed)
     if fresh:
         save_pushed_revenue(pushed + fresh)
     print("  ⑤ 個股盯盤已推。")
@@ -1346,7 +1346,10 @@ def _schedule_guard(now_tw, today: str) -> bool:
     floor = config.env_str("EARLIEST_TW_HHMM", "0530").strip()
     try:
         fh, fm = int(floor[:2]), int(floor[2:])
-    except (ValueError, IndexError):
+        if not (len(floor) == 4 and floor.isdigit() and 0 <= fh < 24 and 0 <= fm < 60):
+            raise ValueError(f"格式應為 HHMM(0000–2359),得到 {floor!r}")
+    except (ValueError, IndexError) as exc:
+        print(f"  警告: EARLIEST_TW_HHMM 無效({exc}),回退預設 05:30。", file=sys.stderr)
         fh, fm = 5, 30
     if (now_tw.hour, now_tw.minute) < (fh, fm):
         print(f"排程於台灣 {now_tw:%H:%M} 觸發,早於資料齊備時間 "
