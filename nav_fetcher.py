@@ -157,6 +157,7 @@ def _premium_verdict(premium_pct: float) -> str:
 
 # ── 配息(除息紀錄)────────────────────────────────────────────────────
 
+# TODO(nav 驗收): 配息待 nav 帶真實 proxy 驗收後接入 nav_line；在此之前刻意保留、非 dead code
 def fetch_dividends(ticker: str, lookback_days: int = _DIVIDEND_LOOKBACK_DAYS,
                     log=print) -> list[dict]:
     """近 lookback_days 的除息紀錄。回 [{ex_date, amount}](新→舊);抓不到回 []。"""

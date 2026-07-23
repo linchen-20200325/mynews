@@ -53,12 +53,17 @@ def _is_fresh(data: dict) -> bool:
 
 # ── 四路特徵抓取 ─────────────────────────────────────────────────────────
 
-def _get_macro() -> dict:
-    """總經/全球金流：從 index_fetcher 取美股指數 + DXY + TNX + TWD。"""
+def _get_macro(quotes_doc: dict | None = None) -> dict:
+    """總經/全球金流：從 index_fetcher 取美股指數 + DXY + TNX + TWD。
+
+    quotes_doc：同一次 run 已抓好的報價文件（intl 的 quotes/as_of，Option B 共用），
+    傳入則不重打 Yahoo；None 時自行抓取（fallback 行為不變）。
+    """
     try:
-        import index_fetcher
-        data = index_fetcher.fetch_index_quotes()
-        quotes = data.get("quotes", {})
+        if quotes_doc is None:
+            import index_fetcher
+            quotes_doc = index_fetcher.fetch_index_quotes()
+        quotes = quotes_doc.get("quotes", {})
 
         def chg(sym: str) -> float | None:
             q = quotes.get(sym)
@@ -76,7 +81,7 @@ def _get_macro() -> dict:
             "us_10y_yield":     last("^TNX"),
             "dxy":              last("DX-Y.NYB"),
             "usd_twd":          last("TWD=X"),
-            "as_of":            data.get("as_of", ""),
+            "as_of":            quotes_doc.get("as_of", ""),
         }
     except Exception:
         return {}
@@ -169,7 +174,7 @@ def _get_tech() -> dict:
 
 # ── 公開 API ─────────────────────────────────────────────────────────────
 
-def build_feature_json(date: str | None = None) -> dict:
+def build_feature_json(date: str | None = None, *, macro_quotes: dict | None = None) -> dict:
     """
     合流四路特徵，回傳以台股交易日對齊的 flat JSON。
 
@@ -177,6 +182,9 @@ def build_feature_json(date: str | None = None) -> dict:
     ----------
     date : str or None
         台股交易日（YYYY-MM-DD），預設今日。
+    macro_quotes : dict or None
+        同一次 run 已抓好的指數報價文件（intl 的 quotes/as_of）；傳入則 macro 路
+        直接沿用、不重打 Yahoo（Option B 共用），None 時 _get_macro 自行抓取。
 
     Returns
     -------
@@ -186,7 +194,7 @@ def build_feature_json(date: str | None = None) -> dict:
     """
     return {
         "date":  date or tz_utils.taiwan_today(),
-        "macro": _get_macro(),
+        "macro": _get_macro(macro_quotes),
         "chip":  _get_chip(),
         "news":  _get_news(),
         "tech":  _get_tech(),
