@@ -245,6 +245,18 @@ def fig_cagr_bar(rec: pd.DataFrame) -> go.Figure:
     return fig
 
 
+def fig_underwater(series: pd.DataFrame) -> go.Figure:
+    """逐日水下曲線：收盤距歷史新高的跌幅%（面積圖）——引擎已算好但原本未畫。"""
+    dd = series["drawdown"] * 100.0
+    fig = go.Figure(go.Scatter(
+        x=series.index, y=dd, mode="lines", fill="tozeroy", name="回撤 % / Drawdown",
+        line=dict(color="#c0392b", width=1), fillcolor="rgba(192,57,43,0.22)",
+        hovertemplate="%{x|%Y-%m-%d}<br>距前高 %{y:.1f}%<extra></extra>"))
+    fig.update_layout(height=460, margin=dict(l=10, r=10, t=30, b=10), hovermode="x",
+                      xaxis_title="日期 / Date", yaxis_title="距前高跌幅 % / Drawdown from ATH")
+    return fig
+
+
 # ── 主程式 ────────────────────────────────────────────────────────────────
 
 def _pyarrow_guard() -> None:
@@ -297,9 +309,11 @@ def main() -> None:
 
     df, src_label, msgs = load_prices(source, ticker, start.isoformat(), end.isoformat(),
                                       raw_url, uploaded, data_dir)
-    for m in msgs:
-        (st.error if m[0] == "❌" else st.warning if m[0] == "⚠"
-         else st.info if m[0] == "ℹ" else st.success)(m)
+    for m in msgs:  # 頂部只提示問題(❌/⚠)；成功/資訊詳情收到「參考資料」頁，保持頂部清爽
+        if m[0] == "❌":
+            st.error(m)
+        elif m[0] == "⚠":
+            st.warning(m)
     if df is None or df.empty:
         st.stop()
 
@@ -320,37 +334,42 @@ def main() -> None:
     rec = frame[frame["recovered"]].copy() if not frame.empty else frame  # 已修復（相關分析用）
     d_col, r_col, rt_col = _unit_cols(unit)
 
+    # 招牌洞見：|跌幅| vs 修復天數（選定單位）的相關 r（樣本足夠才算）
+    head_rep = None
+    if len(rec) >= 3:
+        head_rep = dc.correlation_report((rec["drawdown"].abs() * 100.0).to_numpy(float),
+                                         rec[r_col].to_numpy(float), ci=ci)
+
+    unit_zh = "交易天" if unit.startswith("交易") else "日曆天"
     k1, k2, k3, k4 = st.columns(4)
-    k1.metric("資料列 / Rows", f"{len(series):,}")
-    k2.metric("熊市數 / Bears", f"{len(episodes)}")
-    k3.metric("最深回撤 / Max DD", _fmt_pct(series["drawdown"].min()))
-    k4.metric("已修復 / Recovered", f"{len(rec)}/{len(episodes)}")
+    k1.metric("熊市數 / Bears", f"{len(episodes)}")
+    k2.metric("最深回撤 / Max DD", _fmt_pct(series["drawdown"].min()))
+    k3.metric("已修復 / Recovered", f"{len(rec)}/{len(episodes)}")
+    if head_rep and head_rep["pearson_r"] is not None:
+        slope = head_rep["ols_slope"]
+        hint = (f"每多跌 10% ≈ {slope * 10:+.0f} {unit_zh} · p={_fmt_p(head_rep['pearson_p'])}"
+                if slope is not None else None)
+        k4.metric("跌幅×修復 相關 r", f"{head_rep['pearson_r']:.2f}", help=hint)
+    else:
+        k4.metric("跌幅×修復 相關 r", "—", help="需 ≥3 次已修復熊市才計")
 
     t1, t2, t3, t4, t5 = st.tabs([
-        "① 熊市清單 / List", "② V 型疊圖 / V-shape", "③ 深度 vs 時間 / Depth vs Time",
-        "④ 統計面板 / Stats", "⑤ 修復速度 / Recovery speed"])
+        "📉 水下曲線 / Underwater", "🐻 修復軌跡 / Recovery paths",
+        "🔗 深度 × 修復 / Depth vs Recovery", "⚡ 修復速度 / Recovery speed",
+        "📋 參考資料 / Reference"])
 
-    # ── Tab1 熊市清單 ──
+    # ── 📉 水下曲線（逐日回撤，全局概覽）──
     with t1:
-        if frame.empty:
-            st.info(f"門檻 |跌幅| ≥ {thr}% 下無熊市；可調低門檻。")
-        else:
-            show = frame.copy()
-            for c in ("drawdown", "required_gain", "implied_recovery_cagr"):
-                show[c] = show[c].map(_fmt_pct)
-            for c in ("peak_date", "trough_date", "recovery_date"):
-                show[c] = pd.to_datetime(show[c]).dt.strftime("%Y-%m-%d").fillna("—")
-            for c in ("peak_price", "trough_price", "recovery_price"):
-                show[c] = show[c].map(lambda v: "—" if pd.isna(v) else f"{v:,.1f}")
-            show = show.rename(columns={k: LABELS.get(k, k) for k in show.columns})
-            st.dataframe(show, width="stretch", hide_index=True)
-            st.download_button("⬇️ 下載熊市 CSV / Download", frame.to_csv(index=False),
-                               file_name=f"{ticker}_bears.csv", mime="text/csv")
+        st.markdown("**怎麼看**：紅線是每天「收盤距歷史新高跌了多少 %」。碰到 0＝創新高；往下探＝套牢中——"
+                    "越深代表那次熊市越慘、面積越大代表在水下待越久。")
+        st.plotly_chart(fig_underwater(series), width="stretch")
 
-    # ── Tab2 V 型疊圖 ──
+    # ── 🐻 修復軌跡 V 型 ──
     with t2:
+        st.markdown("**怎麼看**：每條線是一次熊市，把峰頂拉齊為 100，看它跌到谷底（圈點）再爬回 100 的軌跡——"
+                    "探越低＝跌越深，越往右延伸＝越久才收復前高。")
         if not episodes:
-            st.info("無事件可繪。")
+            st.info(f"門檻 |跌幅| ≥ {thr}% 下無熊市；可到側欄調低門檻。")
         else:
             max_span = max((dc.episode_path(series, e)[
                 "tdays" if unit.startswith("交易") else "cal_days"].max() for e in episodes), default=100)
@@ -360,52 +379,31 @@ def main() -> None:
             else:
                 max_days = x_hi   # 跨度過短：min≥max 會讓 slider 拋例外炸整頁 → 直接用完整範圍
             st.plotly_chart(fig_vshape(series, episodes, unit, max_days), width="stretch")
-            st.caption("每條線＝一次熊市（峰頂正規化為 100）；圈點＝谷底。虛線 100＝收復前高。")
 
-    # ── Tab3 深度 vs 時間散布 ──
+    # ── 🔗 深度 × 修復 散布（招牌洞見圖）──
     with t3:
+        st.markdown("**怎麼看**：每個點是一次熊市，橫軸＝跌幅、縱軸＝修復天數（下方可切換為全程/往返）。"
+                    "點大致由左下往右上排＝「跌越深、修越久」，虛線＝OLS 迴歸，相關強度＝下方 Pearson r。")
         if len(rec) < 3:
             st.info("已修復事件 < 3 筆，無法穩健估計相關；請調低門檻或拉長期間。")
         else:
             y_choice = st.radio("Y 軸 / Y", ["修復天數 / Recovery", "全程天數 / Round-trip"], horizontal=True)
             y_col = r_col if y_choice.startswith("修復") else rt_col
-            x = (rec["drawdown"].abs() * 100.0).to_numpy(float)
-            rep = dc.correlation_report(x, rec[y_col].to_numpy(float), ci=ci)
-            m1, m2, m3, m4 = st.columns(4)
-            lo, hi = rep["pearson_ci"]
-            m1.metric("Pearson r", "—" if rep["pearson_r"] is None else f"{rep['pearson_r']:.3f}",
-                      help=None if lo is None else f"{int(ci*100)}% CI [{lo:.3f}, {hi:.3f}] · p={_fmt_p(rep['pearson_p'])}")
-            m2.metric("Spearman ρ", "—" if rep["spearman_rho"] is None else f"{rep['spearman_rho']:.3f}",
-                      help=f"p={_fmt_p(rep['spearman_p'])}")
-            m3.metric("OLS R²", "—" if rep["ols_r2"] is None else f"{rep['ols_r2']:.3f}")
-            m4.metric("n", f"{rep['n']}")
+            rep = dc.correlation_report((rec["drawdown"].abs() * 100.0).to_numpy(float),
+                                        rec[y_col].to_numpy(float), ci=ci)
             st.plotly_chart(fig_scatter(rec, y_col, LABELS[y_col], rep), width="stretch")
+            lo, hi = rep["pearson_ci"]
+            bits = ["**Pearson r = " + (f"{rep['pearson_r']:.3f}**" if rep["pearson_r"] is not None else "—**")]
             if lo is not None:
-                st.caption(f"Pearson r {int(ci*100)}% CI [{lo:.3f}, {hi:.3f}]（Fisher z）· "
-                           f"p={_fmt_p(rep['pearson_p'])} · 每點標峰頂年份。")
+                bits.append(f"{int(ci * 100)}% CI [{lo:.2f}, {hi:.2f}]")
+            bits.append(f"p = {_fmt_p(rep['pearson_p'])}")
+            bits.append(f"n = {rep['n']}")
+            st.caption(" · ".join(bits) + "　（Spearman、OLS、三種天數的完整統計在「📋 參考資料」頁）")
 
-    # ── Tab4 統計面板 + leave-one-out ──
+    # ── ⚡ 修復速度 CAGR ──
     with t4:
-        if len(rec) < 3:
-            st.info("已修復事件 < 3 筆，統計不穩健。")
-        else:
-            st.subheader("全樣本 / Full sample")
-            st.dataframe(stats_table(rec, unit, ci), width="stretch", hide_index=True)
-            st.subheader("敏感度：Leave-one-out（排除任意熊市後重算）")
-            opts = {f"#{i+1} {int(r.year)}（{r.drawdown*100:.0f}%）": i for i, (_, r) in enumerate(rec.iterrows())}
-            drop = st.multiselect("排除 / Exclude", list(opts.keys()))
-            if drop:
-                keep = rec.drop(rec.index[[opts[d] for d in drop]])
-                if len(keep) < 3:
-                    st.warning("排除後樣本 < 3，無法重算。")
-                else:
-                    st.dataframe(stats_table(keep, unit, ci), width="stretch", hide_index=True)
-                    st.caption(f"已排除 {len(drop)} 次熊市，剩 n={len(keep)}。")
-            else:
-                st.caption("未排除任何熊市；於上方選取以觀察單一事件對相關的影響。")
-
-    # ── Tab5 修復速度長條 ──
-    with t5:
+        st.markdown("**怎麼看**：谷底爬回前高的「年化速度」(隱含 CAGR)。長條越高＝那次反彈越猛"
+                    "（通常也因為跌越深、基期越低）。紅虛線＝中位數。")
         speed = rec.dropna(subset=["implied_recovery_cagr"]) if not rec.empty else rec
         if speed.empty:
             st.info("尚無已修復事件可計 CAGR。")
@@ -417,7 +415,53 @@ def main() -> None:
             q2.metric("中位 / Median", f"{np.median(vals):.0f}%")
             q3.metric("最慢 / Slowest", f"{np.min(vals):.0f}%")
 
-    with st.expander("🧪 資料來源狀態與方法 / Data status & method"):
+    # ── 📋 參考資料（唯一收攏處：明細表 + 完整統計 + LOO + 方法）──
+    with t5:
+        st.subheader("熊市明細表 / Bear list")
+        if frame.empty:
+            st.info(f"門檻 |跌幅| ≥ {thr}% 下無熊市。")
+        else:
+            show_all = st.checkbox("顯示完整欄位（雙單位＋價格＋CAGR＋來源）/ Show all columns", value=False)
+            base_cols = ["peak_date", "trough_date", "recovery_date", "drawdown", "required_gain",
+                         d_col, r_col, rt_col, "recovered"]
+            cols = list(frame.columns) if show_all else base_cols
+            show = frame[cols].copy()
+            for c in ("drawdown", "required_gain", "implied_recovery_cagr"):
+                if c in show.columns:
+                    show[c] = show[c].map(_fmt_pct)
+            for c in ("peak_date", "trough_date", "recovery_date"):
+                if c in show.columns:
+                    show[c] = pd.to_datetime(show[c]).dt.strftime("%Y-%m-%d").fillna("—")
+            for c in ("peak_price", "trough_price", "recovery_price"):
+                if c in show.columns:
+                    show[c] = show[c].map(lambda v: "—" if pd.isna(v) else f"{v:,.1f}")
+            show = show.rename(columns={k: LABELS.get(k, k) for k in show.columns})
+            st.dataframe(show, width="stretch", hide_index=True)
+            st.download_button("⬇️ 下載完整熊市 CSV（全欄）/ Download (all columns)", frame.to_csv(index=False),
+                               file_name=f"{ticker}_bears.csv", mime="text/csv")
+
+        st.divider()
+        st.subheader("完整相關統計 / Full statistics")
+        if len(rec) < 3:
+            st.info("已修復事件 < 3 筆，統計不穩健。")
+        else:
+            st.dataframe(stats_table(rec, unit, ci), width="stretch", hide_index=True)
+            st.caption("三種天數（修復/往返/下跌）對 |跌幅| 的 Pearson(r+CI+p) / Spearman(ρ+p) / OLS(斜率/R²/斜率p)。")
+            with st.expander("敏感度：Leave-one-out（排除任意熊市後重算）"):
+                opts = {f"#{i + 1} {int(r.year)}（{r.drawdown * 100:.0f}%）": i
+                        for i, (_, r) in enumerate(rec.iterrows())}
+                drop = st.multiselect("排除 / Exclude", list(opts.keys()))
+                if drop:
+                    keep = rec.drop(rec.index[[opts[d] for d in drop]])
+                    if len(keep) < 3:
+                        st.warning("排除後樣本 < 3，無法重算。")
+                    else:
+                        st.dataframe(stats_table(keep, unit, ci), width="stretch", hide_index=True)
+                        st.caption(f"已排除 {len(drop)} 次熊市，剩 n={len(keep)}。")
+
+        st.divider()
+        st.subheader("資料來源與方法 / Data & method")
+        st.write(f"資料列 Rows：{len(series):,}")
         for m in msgs:
             st.write(m)
         st.markdown(
