@@ -134,10 +134,28 @@ def page_ai_brain() -> None:
         n = feats.get("news") or {}
         if n:
             s = n.get("sentiment_score", 0)
-            bar_len = int((s + 1) / 2 * 10)
-            bar_str = "█" * bar_len + "░" * (10 - bar_len)
-            st.caption(f"情感分數：**{s:+.2f}**")
-            st.code(f"空 [{bar_str}] 多", language=None)
+            # 情感分數 −1(空)～+1(多):用儀表圖取代原本的 ASCII 長條(能用圖就用圖)。
+            _sc = "#44ff88" if s > 0.05 else "#ff6666" if s < -0.05 else "#888888"
+            fig_s = go.Figure(go.Indicator(
+                mode="gauge+number",
+                value=s,
+                number={"font": {"size": 20, "color": "#cccccc"}, "valueformat": "+.2f"},
+                gauge={
+                    "axis": {"range": [-1, 1], "tickvals": [-1, 0, 1],
+                             "ticktext": ["空", "0", "多"], "tickfont": {"color": "#cccccc"}},
+                    "bar": {"color": _sc},
+                    "steps": [
+                        {"range": [-1, -0.05], "color": "rgba(255,102,102,0.18)"},
+                        {"range": [-0.05, 0.05], "color": "rgba(136,136,136,0.18)"},
+                        {"range": [0.05, 1], "color": "rgba(68,255,136,0.18)"},
+                    ],
+                },
+            ))
+            fig_s.update_layout(
+                plot_bgcolor="#0d1117", paper_bgcolor="#0d1117", font_color="#cccccc",
+                height=150, margin=dict(t=20, b=10, l=25, r=25),
+            )
+            st.plotly_chart(fig_s, use_container_width=True)
             st.caption(f"新聞數：{n.get('headline_count', 0)} 則")
             for hl in (n.get("top_headlines") or [])[:3]:
                 st.caption(f"• {hl[:35]}…" if len(hl) > 35 else f"• {hl}")
