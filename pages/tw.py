@@ -34,6 +34,7 @@ from app_core import (
     load_json,
     render_market_digest,
     render_stock_bubble,
+    render_index_quotes,
     _render_evidence_news,
     _render_stock_card_group,
     _render_trends_sunset,
@@ -117,39 +118,6 @@ def generate_live_intl_alert() -> None:
     today = tz_utils.taiwan_today()
     st.session_state["live_intl_alert"] = update_data.build_intl_alert(today, quotes=quotes)
     st.session_state.pop("live_intl_quotes", None)
-
-
-def render_index_quotes(qmap: dict) -> None:
-    """以 st.metric(自動紅綠)分組呈現指數/期貨漲跌幅。"""
-    if not qmap:
-        st.info("本次未取得任何指數報價。")
-        return
-    groups: dict[str, list] = {}
-    for sym, q in qmap.items():
-        groups.setdefault(q.get("group", "其他"), []).append((sym, q))
-    for group, items in groups.items():
-        st.markdown(f"**{group}**")
-        cols = st.columns(len(items))
-        for col, (sym, q) in zip(cols, items):
-            col.metric(
-                label=q.get("name", sym),
-                value=q.get("last", "—"),
-                delta=f"{q.get('change_pct', 0):+.2f}%",
-            )
-            if group == "債匯":
-                up = q.get("change_pct", 0) > 0
-                if sym == "TWD=X":
-                    # 新台幣:USD/TWD 走升=台幣貶值=外資賣股匯出提款的真實訊號
-                    cap = "📈 台幣貶=外資匯出" if up else "台幣升=外資匯入"
-                else:
-                    # 殖利率/美元:上升=資金收緊(利空),非「大跌」
-                    cap = "📈 走升=資金收緊" if up else "走弱=資金寬鬆"
-            else:
-                cap = q.get("lead_type", "")
-                if q.get("is_drop"):
-                    cap += " · ⚠️大跌"
-            if cap:
-                col.caption(cap)
 
 
 ALERT_BADGE = {"警戒": ("🔴", "error"), "觀察": ("🟠", "warning"), "平靜": ("🟢", "success")}

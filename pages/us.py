@@ -11,6 +11,7 @@ from app_core import (
     STALE_REPORT_DAYS,
     US_STOCKS_PATH,
     US_STOCKS_ARCHIVE_DIR,
+    INTL_ALERT_PATH,
     SIX_MONTH_SOURCE_CAPTION,
     ensure_gemini_key,
     fetch_live_news_cached,
@@ -19,6 +20,7 @@ from app_core import (
     pick_report,
     render_market_digest,
     render_stock_bubble,
+    render_index_quotes,
     _render_stock_card_group,
     _render_trends_sunset,
 )
@@ -95,6 +97,23 @@ def sec_us_stocks() -> None:
         return
     render_us_stocks(data)
 
+def sec_us_indices() -> None:
+    """美股大盤指數:讀既有 latest_intl_alert.json 的真實 Yahoo 報價(標普/那斯達克/道瓊/費半+美股期貨+美元/利率)。"""
+    st.subheader("📊 美股大盤與美元/利率(真實報價)")
+    data = load_json(INTL_ALERT_PATH)
+    quotes = (data or {}).get("quotes") or {}
+    # 只留美股相關組別(美股指數/美股期貨/債匯);台股期貨=台指期夜盤,屬台股頁國際盤,不放美股頁避免誤導。
+    us_quotes = {k: v for k, v in quotes.items() if v.get("group") != "台股期貨"}
+    if not us_quotes:
+        st.info("尚無指數報價存檔。可到 📊 台股頁「🌏 國際盤預警」即時抓取,或等每日排程產生。")
+        return
+    st.caption(f"資料時間:{(data or {}).get('as_of', '—')}　|　來源:Yahoo Finance　|　"
+               "漲跌幅=最新 vs 前收(免金鑰、非 AI 估算)。")
+    render_index_quotes(us_quotes)
+    st.caption("⚠️ 真實市場報價,非投資建議。這些美股指數對台股開盤屬『隔夜領先』訊號——"
+               "台股盤前的完整解讀(含台指期夜盤)見 📊 台股頁「🌏 國際盤預警」。")
+
+
 def page_us() -> None:
     st.header("🇺🇸 美股")
     ui_helpers.render_intro_banner(
@@ -108,6 +127,7 @@ def page_us() -> None:
     )
     payload = {"美股觀察": load_json(US_STOCKS_PATH)}
     render_market_digest("美股", {k: v for k, v in payload.items() if v})
+    st.divider(); sec_us_indices()
     st.divider(); sec_us_stocks()
     st.divider()
     st.markdown("### 🛠 互動工具")
