@@ -28,6 +28,7 @@ from app_core import (
     load_json,
     load_trend_history,
     render_market_digest,
+    render_stock_bubble,
     _render_evidence_news,
     mention_caption,
     SENTIMENT_STYLE,
@@ -168,49 +169,33 @@ def render_focus(data: dict) -> None:
 
     stocks = data.get("stocks", [])
     if stocks:
-        st.subheader("📈 可能牽動的個股(台股 / 美股)")
-        st.dataframe(
-            [
-                {
-                    "市場": s.get("market", ""),
-                    "標的": s.get("name", ""),
-                    "代號": s.get("ticker", ""),
-                    "產業": s.get("sector", ""),
-                    "則數": s.get("news_count", 0),
-                    "首見": s.get("first_seen", ""),
-                    "最近": s.get("last_seen", ""),
-                    "傾向": s.get("sentiment", ""),
-                    "原因": s.get("reason", ""),
-                }
-                for s in stocks
-            ],
-            use_container_width=True,
-            hide_index=True,
-        )
-        for market in ("台股", "美股"):
-            group = [s for s in stocks if s.get("market") == market]
-            if not group:
-                continue
-            st.markdown(f"##### 🏷️ {market}（{len(group)} 檔）")
-            for s in group:
-                name = s.get("name", "")
-                ticker = s.get("ticker", "")
-                head = f"**{name}**" + (f"（{ticker}）" if ticker else "")
-                sector = s.get("sector", "")
-                senti = s.get("sentiment", "")
-                emoji, _ = SENTIMENT_STYLE.get(senti, ("", "info"))
-                with st.container(border=True):
-                    st.markdown(
-                        head
-                        + (f"　·　{sector}" if sector else "")
-                        + (f"　·　{emoji} {senti}" if senti else "")
-                    )
-                    cap = mention_caption(s)
-                    if cap:
-                        st.caption(cap)
-                    if s.get("reason"):
-                        st.write(s["reason"])
-                    _render_evidence_news(s.get("evidence_news", []))
+        st.subheader("📊 可能牽動的個股總覽(台股 / 美股)")
+        render_stock_bubble(stocks)
+        with st.expander("📇 個股詳情(依台股 / 美股分組 + 佐證新聞)"):
+            for market in ("台股", "美股"):
+                group = [s for s in stocks if s.get("market") == market]
+                if not group:
+                    continue
+                st.markdown(f"##### 🏷️ {market}（{len(group)} 檔）")
+                for s in group:
+                    name = s.get("name", "")
+                    ticker = s.get("ticker", "")
+                    head = f"**{name}**" + (f"（{ticker}）" if ticker else "")
+                    sector = s.get("sector", "")
+                    senti = s.get("sentiment", "")
+                    emoji, _ = SENTIMENT_STYLE.get(senti, ("", "info"))
+                    with st.container(border=True):
+                        st.markdown(
+                            head
+                            + (f"　·　{sector}" if sector else "")
+                            + (f"　·　{emoji} {senti}" if senti else "")
+                        )
+                        cap = mention_caption(s)
+                        if cap:
+                            st.caption(cap)
+                        if s.get("reason"):
+                            st.write(s["reason"])
+                        _render_evidence_news(s.get("evidence_news", []))
     else:
         st.info("本次新聞未對應到明確的台股/美股個股。")
 

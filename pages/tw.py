@@ -33,6 +33,7 @@ from app_core import (
     pick_report,
     load_json,
     render_market_digest,
+    render_stock_bubble,
     _render_evidence_news,
     _render_stock_card_group,
     _render_trends_sunset,
@@ -82,29 +83,12 @@ def render_stocks(data: dict) -> None:
     # 交叉參照:每檔個股被幾檔 ETF 持有(共用 etf_data 快取,與反查頁同一來源)
     etf_counts = etf_data.get_etf_count_map()
 
-    # 總表(新聞提及次數 + ETF 持有檔數 + 首見/最近見報,多個訊號一起看)
-    st.subheader("📋 台股標的總表(新聞提及 × ETF 持有 × 見報區間)")
-    st.caption("被很多 ETF 持有 ＋ 新聞偏利多 = 相對更受關注。ETF 檔數來自 etf_holdings.json;首見/最近/則數由真實新聞統計。")
-    st.dataframe(
-        [
-            {
-                "標的": s.get("name", ""),
-                "代號": s.get("ticker", ""),
-                "產業": s.get("sector", ""),
-                "則數": s.get("news_count", s.get("mention_count", 0)),
-                "首見": s.get("first_seen", ""),
-                "最近": s.get("last_seen", ""),
-                "ETF持有": etf_counts.get(str(s.get("ticker", "")), 0),
-                "傾向": s.get("sentiment", "") if s.get("news_count", s.get("mention_count", 0)) > 0 else "",
-                "原因": s.get("reason", ""),
-            }
-            for s in stocks
-        ],
-        use_container_width=True,
-        hide_index=True,
-    )
-
-    _render_stock_card_group(stocks, etf_counts)
+    # 總覽用泡泡圖(取代寬表 → 去掉表+卡重印同一批標的);泡泡大小=被 ETF 持有數,
+    # 逐檔理由/佐證卡片收進「個股詳情」expander。
+    st.subheader("📊 台股標的總覽(新聞提及 × 傾向 × ETF 持有)")
+    render_stock_bubble(stocks, etf_counts)
+    with st.expander("📇 個股詳情(利多 / 利空 / 觀望卡片 + 佐證新聞)"):
+        _render_stock_card_group(stocks, etf_counts)
     _render_trends_sunset(data)
     st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
 

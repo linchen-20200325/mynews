@@ -478,6 +478,55 @@ def _render_stock_card_group(stocks: list, etf_counts: dict | None = None) -> No
                 _render_evidence_news(s.get("evidence_news", []))
 
 
+def render_stock_bubble(stocks: list, etf_counts: dict | None = None) -> None:
+    """個股總覽泡泡圖(取代寬表):x=新聞則數、y=傾向(利多/觀望/利空)、泡泡大小=被 ETF 持有數
+    (有則,否則用則數)、顏色=傾向。取代『寬表＋卡片』裡的寬表當總覽,卡片詳情另收 expander,
+    同一批標的不再表+卡重印。無 plotly 時靜默略過(卡片仍在,不致資訊流失)。"""
+    pts = []
+    for s in stocks:
+        cnt = s.get("news_count", s.get("mention_count", 0)) or 0
+        etf = None
+        if etf_counts:  # etf_count_map 以 str(ticker) 為鍵(與台股總表一致)
+            etf = etf_counts.get(str(s.get("ticker", ""))) or etf_counts.get(s.get("name", ""))
+        pts.append({"cnt": cnt, "senti": s.get("sentiment") or "觀望",
+                    "name": s.get("name", ""), "ticker": s.get("ticker", ""), "etf": etf})
+    if not pts:
+        return
+    try:
+        import plotly.graph_objects as go
+    except Exception:  # noqa: BLE001 — 無 plotly 就不畫,卡片仍完整
+        return
+    order = ["利多", "觀望", "利空"]
+    color = {"利多": "#27ae60", "觀望": "#f39c12", "利空": "#c0392b"}
+    has_etf = any(p["etf"] for p in pts)
+    fig = go.Figure()
+    for senti in order:
+        grp = [p for p in pts if p["senti"] == senti]
+        if not grp:
+            continue
+        sizes = [(p["etf"] or 0) if has_etf else p["cnt"] for p in grp]
+        smax = max(sizes) or 1
+        fig.add_trace(go.Scatter(
+            x=[p["cnt"] for p in grp], y=[senti] * len(grp), mode="markers+text",
+            name=senti, text=[p["name"] for p in grp], textposition="top center",
+            textfont={"size": 9},
+            marker={"size": [max(s, 1) for s in sizes], "sizemode": "area",
+                    "sizeref": 2.0 * smax / (36 ** 2), "sizemin": 6,
+                    "color": color[senti], "opacity": 0.75,
+                    "line": {"width": 1, "color": "#555"}},
+            customdata=[[p["ticker"], (p["etf"] if p["etf"] is not None else "—")] for p in grp],
+            hovertemplate="%{text}（%{customdata[0]}）<br>新聞則數 %{x}"
+                          + ("<br>被 ETF 持有 %{customdata[1]} 檔" if has_etf else "")
+                          + "<extra>" + senti + "</extra>"))
+    fig.update_layout(height=420, margin={"l": 10, "r": 10, "t": 30, "b": 10}, showlegend=False,
+                      xaxis_title="新聞則數 / News mentions",
+                      yaxis={"categoryorder": "array", "categoryarray": order[::-1]})
+    st.plotly_chart(fig, use_container_width=True)
+    st.caption("泡泡＝個股；橫軸為新聞提及則數、縱軸為新聞傾向"
+               + ("、泡泡大小＝被幾檔 ETF 持有" if has_etf else "、泡泡大小＝新聞則數")
+               + "。展開下方「個股詳情」看每檔理由與佐證新聞。")
+
+
 def _render_trends_sunset(data: dict) -> None:
     """未來趨勢產業 / 夕陽轉弱產業 兩欄(台股觀察 + 美股觀察共用)。"""
     col1, col2 = st.columns(2)
