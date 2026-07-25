@@ -486,8 +486,8 @@ def render_stock_bubble(stocks: list, etf_counts: dict | None = None) -> None:
     for s in stocks:
         cnt = s.get("news_count", s.get("mention_count", 0)) or 0
         etf = None
-        if etf_counts:
-            etf = etf_counts.get(s.get("ticker", "")) or etf_counts.get(s.get("name", ""))
+        if etf_counts:  # etf_count_map 以 str(ticker) 為鍵(與台股總表一致)
+            etf = etf_counts.get(str(s.get("ticker", ""))) or etf_counts.get(s.get("name", ""))
         pts.append({"cnt": cnt, "senti": s.get("sentiment") or "觀望",
                     "name": s.get("name", ""), "ticker": s.get("ticker", ""), "etf": etf})
     if not pts:
