@@ -295,6 +295,8 @@ def render_etf_profiles() -> None:
     filtered = [p for p in profiles if keep(p)]
     st.caption(f"符合條件:**{len(filtered)}** 檔(共 {len(profiles)} 檔)")
 
+    # 主表精選 8 欄(選 ETF 最常看的);完整欄位仍在下方「⬇️ 下載篩選結果 JSON」→
+    # 去掉 16 欄橫向捲動,仍是可篩選的參考目錄(參考資料例外,只是不再繁雜)。
     st.dataframe(
         [
             {
@@ -303,17 +305,8 @@ def render_etf_profiles() -> None:
                 "型態": p.get("category", ""),
                 "區域": p.get("region", ""),
                 "配息": p.get("dividend_freq", ""),
-                "配息月": ("、".join(str(m) for m in (p.get("dividend_months") or []))
-                          + (" *" if p.get("months_estimated") else "")),
-                "市價": p.get("price"),
                 "殖利率%": p.get("yield_pct"),
-                "經理費%": p.get("mgmt_fee"),
                 "總費用%": p.get("total_fee"),
-                "規模(百萬)": p.get("scale_million"),
-                "策略": p.get("strategy", ""),
-                "主題": "、".join(p.get("themes") or []),
-                "經理人": p.get("manager", ""),
-                "發行商": p.get("issuer", ""),
                 "追蹤指數": p.get("index_tracked", ""),
             }
             for p in filtered
@@ -321,6 +314,8 @@ def render_etf_profiles() -> None:
         use_container_width=True,
         hide_index=True,
     )
+    st.caption("主表為精選 8 欄;完整欄位(配息月／市價／經理費／規模／策略／主題／經理人／發行商)"
+               "請用下方「⬇️ 下載篩選結果 JSON」。")
     st.download_button(
         "⬇️ 下載篩選結果 JSON",
         data=json.dumps(filtered, ensure_ascii=False, indent=2),
@@ -406,34 +401,14 @@ def render_etf_lookup(data: dict | None = None) -> None:
 
     render_price_update_panel(prices)
 
-    # 🔎 輸入代號/名稱直接查「這檔股票被哪些 ETF 持有」
-    st.subheader("🔎 個股查詢 — 它被哪些 ETF 持有?")
-    query = st.text_input(
-        "輸入台股代號或名稱(例:2330 或 台積電)", value="", key="etf_query"
-    ).strip()
-    if query:
-        matches = [
-            r for r in rows if query in r["ticker"] or (r["name"] and query in r["name"])
-        ]
-        if matches:
-            for r in matches:
-                with st.container(border=True):
-                    st.markdown(
-                        f"### {r['name']}（{r['ticker']}）　🧩 被 **{r['etf_count']}** 檔 ETF 持有"
-                    )
-                    if r["etfs"]:
-                        st.markdown(
-                            "、".join(f"`{e['code']}` {e['name']}" for e in r["etfs"])
-                        )
-        else:
-            st.warning(
-                f"在目前收錄的 {len(etfs)} 檔 ETF 成分股裡找不到「{query}」。"
-                "可能是該股尚未被收錄的 ETF 納入,或 `etf_holdings.json` 還沒收錄足夠 ETF。"
-            )
-    st.divider()
+    st.subheader("📋 個股被 ETF 持有反查表(可搜尋 / 篩選)")
+    st.caption("輸入代號或名稱直接查某檔個股被哪些 ETF 持有,或用下方條件篩選。"
+               "『被幾檔 ETF 持有』越多,代表越多 ETF 同時納入該股——被動買盤越廣。")
 
-    st.subheader("📋 個股被 ETF 持有反查表")
-    st.caption("『被幾檔 ETF 持有』越多,代表越多 ETF 同時納入該股——被動買盤越廣。可用下方條件篩選。")
+    # 原「個股查詢」併入此處:搜尋與反查表共用同一份 rows(單一真相),不再各印一套 UI。
+    query = st.text_input(
+        "🔎 搜尋個股(代號或名稱,例:2330 或 台積電)", value="", key="etf_query"
+    ).strip()
 
     # 篩選條件
     f1, f2 = st.columns(2)
@@ -454,8 +429,10 @@ def render_etf_lookup(data: dict | None = None) -> None:
         f2.caption("② 股價範圍:尚無股價資料,請先按上方「🔄 更新台股收盤價」。")
         price_lo, price_hi, only_priced = None, None, False
 
-    # 套用篩選
+    # 套用篩選(搜尋 + 檔數 + 股價,全走同一份 rows)
     filtered = [r for r in rows if r["etf_count"] >= min_etf]
+    if query:
+        filtered = [r for r in filtered if query in r["ticker"] or (r["name"] and query in r["name"])]
     if use_price:
         def _keep(r):
             p = r.get("price")
@@ -464,6 +441,11 @@ def render_etf_lookup(data: dict | None = None) -> None:
             return price_lo <= p <= price_hi
         filtered = [r for r in filtered if _keep(r)]
 
+    if query and not filtered:
+        st.warning(
+            f"在目前收錄的 {len(etfs)} 檔 ETF 成分股裡找不到「{query}」。"
+            "可能是該股尚未被收錄的 ETF 納入,或 `etf_holdings.json` 還沒收錄足夠 ETF。"
+        )
     st.caption(f"符合條件:**{len(filtered)}** 檔(共 {len(rows)} 檔)")
     st.dataframe(
         [
