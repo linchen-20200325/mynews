@@ -498,8 +498,40 @@ def _render_trends_sunset(data: dict) -> None:
         else:
             st.caption("(本次新聞未明顯提及)")
 
+# 中央決策大腦(台股四路量化)與各領域「AI 今日總結」是兩種不同分析:
+#   前者＝籌碼/總經/新聞/技術四路特徵合流的量化 BUY/SELL/HOLD;後者＝單一領域的新聞融合研判。
+# 依鐵律「不要合起來」不合併,只加一條互相參照指標把兩者連起來(且只在與台股量化決策相關的頁顯示)。
+_CENTRAL_SIGNAL_VIEWS = {"台股", "美股", "全球"}  # 房市與台股四路量化決策不相關,不顯示此參照
+
+
+def render_central_signal_ref(view: str) -> None:
+    """領域頁『AI 今日總結』上方的一條 cross-link:顯示中央決策大腦今日訊號,指向 AI 決策大腦頁。"""
+    if view not in _CENTRAL_SIGNAL_VIEWS:
+        return
+    decision = load_json(paths.LATEST_DECISION)
+    if not decision:  # 決策檔未產生(等每日 06:00 排程或大腦頁手動觸發)→ 靜默,不佔版面
+        return
+    signal = decision.get("action_signal", "HOLD")
+    icon = {"BUY": "🟢", "SELL": "🔴", "HOLD": "🟡"}.get(signal, "⚪")
+    tilt = {"BUY": "看多", "SELL": "看空", "HOLD": "觀望"}.get(signal, "")
+    score = int(decision.get("confidence_score") or 0)
+    regime = decision.get("market_regime", "—")
+    dec_date = decision.get("date", "—")
+    with st.container(border=True):
+        st.markdown(
+            f"🧭 **中央決策大腦(台股四路量化)今日訊號:{icon} {signal}"
+            + (f"／{tilt}" if tilt else "")
+            + f"** ・ 信心 {score}/100 ・ 市場狀態 {regime} ・ {dec_date}"
+        )
+        st.caption(
+            "此為四路特徵(籌碼/總經/新聞/技術)合流的量化決策,與本頁『AI 今日總結』"
+            "(單一領域新聞融合)是兩種不同分析。完整權重與驅動因子見左側選單「🧠 AI 決策大腦」。"
+        )
+
+
 def render_market_digest(view: str, payload: dict) -> None:
     """各頁最上方:Gemini 把該領域當日各面板數據融成一段統一研判。"""
+    render_central_signal_ref(view)  # 互相參照(不合併):先秀中央大腦今日訊號,再看本領域研判
     key = f"digest_{view}_{tz_utils.taiwan_today()}"
     cached = st.session_state.get(key)
     with st.container(border=True):
