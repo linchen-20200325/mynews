@@ -171,9 +171,8 @@ def render_etf_add_panel() -> None:
         )
 
 
-def render_etf_profiles() -> None:
-    """ETF 圖鑑:抓基本資料建庫 + 篩選器(型態/區域/配息/費用/主題/策略)。"""
-    # 建庫面板
+def _render_etf_profiles_crawl() -> None:
+    """ETF 圖鑑建庫(抓 MoneyDJ 基本資料)+ 存檔 + 單檔欄位診斷。收進「⚙️ 資料管理」開關內。"""
     with st.container(border=True):
         st.markdown("#### 🛰️ 透過 NAS 代理建立 ETF 圖鑑(MoneyDJ 基本資料)")
         st.caption("抓清單內每檔 ETF 的型態、投資區域、配息、經理費/保管費、追蹤指數與主題標籤。")
@@ -233,10 +232,16 @@ def render_etf_profiles() -> None:
                     except Exception as exc:  # noqa: BLE001
                         st.error(f"診斷失敗:{exc}")
 
+
+def render_etf_profiles() -> None:
+    """ETF 圖鑑篩選器(型態/區域/配息/費用/主題/策略);建庫抓取收進「⚙️ 資料管理」開關(預設收合)。"""
+    if st.checkbox("⚙️ 資料管理：抓取 / 更新 ETF 圖鑑資料庫", value=False, key="etf_prof_mgmt"):
+        _render_etf_profiles_crawl()
+
     data = st.session_state.get("etf_profiles_live") or etf_data.get_profiles()
     profiles = list((data.get("profiles") or {}).values()) if isinstance(data, dict) else []
     if not profiles:
-        st.info("尚無 ETF 圖鑑資料。請先按上方「🔄 抓取 / 更新」建立(需設定 PROXY_URL)。")
+        st.info("尚無 ETF 圖鑑資料。勾選上方「⚙️ 資料管理」抓取建立(需設定 PROXY_URL)。")
         return
 
     st.caption(f"資料版本:{data.get('as_of', '—')}　|　共 {len(profiles)} 檔")
@@ -465,7 +470,8 @@ def render_etf_lookup(data: dict | None = None) -> None:
             {
                 "個股": r["name"],
                 "代號": r["ticker"],
-                "股價": r.get("price") if r.get("price") is not None else "—",
+                # 全欄統一字串:避免 float 與 "—" 混型 → st.dataframe(pyarrow) ArrowTypeError 整頁掛掉
+                "股價": (f"{r['price']:.2f}" if r.get("price") is not None else "—"),
                 "被幾檔ETF持有": r["etf_count"],
                 "ETF清單": "、".join(f"{e['code']} {e['name']}" for e in r["etfs"]),
             }
@@ -515,9 +521,12 @@ def sec_etf() -> None:
     )
     tab1, tab2 = st.tabs(["🔎 持股反查 / 個股", "📚 ETF 圖鑑(組合配置)"])
     with tab1:
-        render_etf_crawl_panel()
-        render_etf_add_panel()
+        # 內容優先:先給反查表(讀既有快取即可),抓取/新增等操作收進「⚙️ 資料管理」開關,預設收合去雜訊。
         render_etf_lookup(st.session_state.get("etf_data_live"))
+        st.divider()
+        if st.checkbox("⚙️ 資料管理：抓取 / 新增 / 更新成分股資料庫", value=False, key="etf_mgmt_tab1"):
+            render_etf_crawl_panel()
+            render_etf_add_panel()
     with tab2:
         render_etf_profiles()
 
