@@ -18,6 +18,7 @@ from app_core import (
     render_news_cards,
     pick_report,
     render_market_digest,
+    render_stock_bubble,
     _render_stock_card_group,
     _render_trends_sunset,
 )
@@ -64,28 +65,11 @@ def render_us_stocks(data: dict) -> None:
         st.info("本次未整理出美股標的。")
         return
 
-    # 總表(依新聞提及次數 + 首見/最近見報)
-    st.subheader("📋 美股標的總表(新聞提及 × 見報區間)")
-    st.caption("被很多新聞提及 ＋ 偏利多 = 相對更受關注;首見/最近/則數由真實新聞統計。")
-    st.dataframe(
-        [
-            {
-                "標的": s.get("name", ""),
-                "代號": s.get("ticker", ""),
-                "產業": s.get("sector", ""),
-                "則數": s.get("news_count", s.get("mention_count", 0)),
-                "首見": s.get("first_seen", ""),
-                "最近": s.get("last_seen", ""),
-                "傾向": s.get("sentiment", ""),
-                "原因": s.get("reason", ""),
-            }
-            for s in stocks
-        ],
-        use_container_width=True,
-        hide_index=True,
-    )
-
-    _render_stock_card_group(stocks)
+    # 總覽用泡泡圖(取代寬表 → 去掉表+卡重印同一批標的);逐檔理由/佐證收進「個股詳情」expander。
+    st.subheader("📊 美股標的總覽(新聞提及 × 傾向)")
+    render_stock_bubble(stocks)
+    with st.expander("📇 個股詳情(利多 / 利空 / 觀望卡片 + 佐證新聞)"):
+        _render_stock_card_group(stocks)
     _render_trends_sunset(data)
     st.caption("⚠️ 本頁由 AI 自動整理新聞而成,可能有誤,僅供參考,非投資建議。")
 
