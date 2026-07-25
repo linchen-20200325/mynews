@@ -578,7 +578,6 @@ def render_housing_ai_summary(ai_summary) -> None:
         st.info(ai_summary["overview"])
 
 def sec_housing() -> None:
-    render_house_price_panel()
     st.subheader("🏠 房市觀察 — 預售/成屋冷熱、打房政策與各縣市房價")
     with st.expander("⚡ 即時重新抓取房市判讀"):
         render_housing_live_panel()
@@ -596,6 +595,10 @@ def sec_housing() -> None:
                 render_news_cards(news)
     live = st.session_state.get("live_housing")
     render_housing(live or pick_report(HOUSING_PATH, HOUSING_ARCHIVE_DIR))
+    # 房價抓取(NAS 代理)屬操作型面板,收進「⚙️ 資料管理」開關(預設收合),讓房市內容優先。
+    st.divider()
+    if st.checkbox("⚙️ 資料管理：透過 NAS 代理更新房價資料庫", value=False, key="housing_price_mgmt"):
+        render_house_price_panel()
 
 _REG_BUYER_IMPACT_STYLE = {
     "偏好": ("🟢", "success"),
@@ -903,4 +906,8 @@ def page_housing() -> None:
     render_market_digest("台灣房市", {k: v for k, v in payload.items() if v})
     st.divider(); sec_housing()
     st.divider(); sec_regulation()
-    st.divider(); sec_population_map()
+    # 就業×空屋率為 Mock 假資料(自標「不可決策」),預設收起去雜訊;要看示範才展開。
+    st.divider()
+    if st.checkbox("🧪 展示：就業×空屋率地圖（Mock 假資料，非真實，僅示範接線）",
+                   value=False, key="show_mock_popmap"):
+        sec_population_map()
