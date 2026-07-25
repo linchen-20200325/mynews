@@ -432,10 +432,13 @@ def render_housing_price_map() -> None:
         use_container_width=True, hide_index=True,
     )
 
-    # 圖表 1:各縣市每坪均價長條圖(依交通標籤上色)
-    render_county_price_bar(values, kind_label)
-    # 交通便利 vs 無軌道 均價對比
-    render_transport_compare(values)
+    # 房價「四印」去重:同一份當期每坪房價已用「地圖＋排行表」呈現(主畫面);
+    # 長條圖與交通比較是同一份資料的另兩種切面 → 收進 expander(需要再點開,資料不流失)。
+    with st.expander("📊 更多房價視圖(各縣市長條圖 + 交通便利對比)"):
+        # 圖表 1:各縣市每坪均價長條圖(依交通標籤上色)
+        render_county_price_bar(values, kind_label)
+        # 交通便利 vs 無軌道 均價對比
+        render_transport_compare(values)
 
     # 當期逐筆佐證(實價登錄原始成交)— 與當期房價同區,放在進入歷年趨勢之前
     with st.expander("🔍 逐筆成交佐證(實價登錄原始資料)"):
