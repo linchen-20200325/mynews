@@ -35,7 +35,7 @@ LINE_BROADCAST_ENDPOINT = "https://api.line.me/v2/bot/message/broadcast"
 LINE_TEXT_LIMIT = 4500  # 單則 text 上限 5000,留安全餘裕
 
 # 對台股有「時間差領先」意義的市場(美股指數=隔夜、美股期貨/台指期夜盤=盤前)
-LEAD_DROP_TYPES = ("隔夜領先", "盤前即時")
+LEAD_MARKET_TYPES = ("隔夜領先", "盤前即時")
 
 OKU = numutil.OKU  # 億元換算係數 SSOT 在 numutil
 
@@ -203,12 +203,12 @@ def notify_line(report: dict, chip_hint: str = "") -> None:
 
 def lead_market_drops(intl: dict) -> list[dict]:
     """取『時間差領先』市場(美股指數/美股期貨/台指期夜盤)的大跌清單。"""
-    return [d for d in intl.get("drops", []) if d.get("lead_type") in LEAD_DROP_TYPES]
+    return [d for d in intl.get("drops", []) if d.get("lead_type") in LEAD_MARKET_TYPES]
 
 
 def lead_market_rises(intl: dict) -> list[dict]:
-    """取『時間差領先』市場的大漲清單(鏡像 lead_market_drops;LEAD_DROP_TYPES 為領先市場定義,漲跌共用)。"""
-    return [d for d in intl.get("rises", []) if d.get("lead_type") in LEAD_DROP_TYPES]
+    """取『時間差領先』市場的大漲清單(鏡像 lead_market_drops;LEAD_MARKET_TYPES 為領先市場定義,漲跌共用)。"""
+    return [d for d in intl.get("rises", []) if d.get("lead_type") in LEAD_MARKET_TYPES]
 
 
 def build_intl_alert_line_message(intl: dict, gap_note: str = "") -> str:
@@ -236,7 +236,7 @@ def build_intl_alert_line_message(intl: dict, gap_note: str = "") -> str:
         lines.append(intl.get("summary") or "平靜,無領先大跌;完整研判見看板。")
         if intl.get("ai_ok") is False:
             lines.append("⚠️ AI 研判暫離線,以下僅真實報價。")
-        others = [d for d in intl.get("drops", []) if d.get("lead_type") not in LEAD_DROP_TYPES]
+        others = [d for d in intl.get("drops", []) if d.get("lead_type") not in LEAD_MARKET_TYPES]
         if others:
             lines.append(
                 "・(同步小跌)"
@@ -275,7 +275,7 @@ def build_intl_alert_line_message(intl: dict, gap_note: str = "") -> str:
             lines.append(
                 f"・{d.get('name', '')} {d.get('change_pct', 0):+.2f}%({d.get('lead_type', '')})"
             )
-    others = [d for d in intl.get("drops", []) if d.get("lead_type") not in LEAD_DROP_TYPES]
+    others = [d for d in intl.get("drops", []) if d.get("lead_type") not in LEAD_MARKET_TYPES]
     if others:
         lines.append(
             "・(同步盤)"

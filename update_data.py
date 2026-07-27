@@ -558,7 +558,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         key=lambda d: d["change_pct"], reverse=True,
     )
     # 有領先市場(隔夜領先/盤前即時)大漲 → 轉強(沿用 line_notify 既有領先市場定義,SSOT)
-    is_surge = any(d["lead_type"] in line_notify.LEAD_DROP_TYPES for d in rises)
+    is_surge = any(d["lead_type"] in line_notify.LEAD_MARKET_TYPES for d in rises)
 
     # 期現背離偵測（純程式計算，非 AI；^SOX 定案 vs NQ=F/ES=F 即時）
     divergence = index_fetcher.detect_spot_futures_divergence(
