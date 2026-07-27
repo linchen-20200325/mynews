@@ -511,7 +511,7 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         except Exception as exc:  # noqa: BLE001 — 全失敗 → 降級空報價,只留新聞面研判
             print(f"  警告: 指數報價全數抓取失敗,以空報價降級續跑:{exc}", file=sys.stderr)
             quotes_doc = {"as_of": "—", "threshold": index_fetcher.drop_threshold(),
-                          "quotes": {}}
+                          "rise_threshold": index_fetcher.rise_threshold(), "quotes": {}}
     qmap = quotes_doc.get("quotes", {})
 
     # 台指期夜盤(期交所即時):台股自身對隔夜的定價,屬最直接的【盤前即時】訊號。
@@ -531,6 +531,8 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
                 "change_pct": night_pct,
                 "is_drop": night_pct
                 <= quotes_doc.get("threshold", index_fetcher.DEFAULT_DROP_THRESHOLD),
+                "is_rise": night_pct
+                >= quotes_doc.get("rise_threshold", index_fetcher.DEFAULT_RISE_THRESHOLD),
             }
     except Exception as exc:  # noqa: BLE001 — 夜盤抓取失敗不得拖垮國際盤預警
         print(f"  警告: 台指期夜盤抓取失敗,略過:{exc}", file=sys.stderr)
@@ -545,6 +547,18 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         ),
         key=lambda d: d["change_pct"],
     )
+    # 真實大漲清單(鏡像 drops,非 AI):漲幅由大到小。債匯不算大漲。
+    rises = sorted(
+        (
+            {"symbol": sym, "name": q.get("name", sym),
+             "change_pct": q.get("change_pct", 0), "lead_type": q.get("lead_type", "")}
+            for sym, q in qmap.items()
+            if q.get("is_rise") and q.get("group") != "債匯"
+        ),
+        key=lambda d: d["change_pct"], reverse=True,
+    )
+    # 有領先市場(隔夜領先/盤前即時)大漲 → 轉強(沿用 line_notify 既有領先市場定義,SSOT)
+    is_surge = any(d["lead_type"] in line_notify.LEAD_MARKET_TYPES for d in rises)
 
     # 期現背離偵測（純程式計算，非 AI；^SOX 定案 vs NQ=F/ES=F 即時）
     divergence = index_fetcher.detect_spot_futures_divergence(
@@ -581,8 +595,12 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         upcoming_events = []
     summary = gemini.get("summary", "")
     if not ai_ok:
-        summary = (f"⚠️ AI 解讀暫時無法取得(配額/網路),以下為真實報價偵測到的大跌 {len(drops)} 項。"
-                   if drops else "⚠️ AI 解讀暫時無法取得;目前真實報價未觸及大跌門檻。")
+        if drops:
+            summary = f"⚠️ AI 解讀暫時無法取得(配額/網路),以下為真實報價偵測到的大跌 {len(drops)} 項。"
+        elif rises:
+            summary = f"⚠️ AI 解讀暫時無法取得(配額/網路),以下為真實報價偵測到的大漲 {len(rises)} 項。"
+        else:
+            summary = "⚠️ AI 解讀暫時無法取得;目前真實報價未觸及大跌／大漲門檻。"
     if not qmap:
         summary = "⚠️ 本次未取得任何即時報價(來源/代理暫時不可用),大跌偵測不可用;" + (summary or "以下僅新聞面研判。")
     result = {
@@ -592,6 +610,9 @@ def build_intl_alert(today: str, *, quotes: dict | None = None) -> dict:
         "quotes": qmap,                       # 真實報價(唯一數字來源)
         "quotes_ok": bool(qmap),              # 報價是否取得(False=降級,僅新聞面)
         "drops": drops,                       # 真實大跌清單(程式算)
+        "rises": rises,                       # 真實大漲清單(程式算,鏡像 drops)
+        "rise_threshold": quotes_doc.get("rise_threshold", index_fetcher.DEFAULT_RISE_THRESHOLD),
+        "is_surge": is_surge,                 # 有領先市場大漲(程式算)→ LINE/看板轉強升級
         "alert_level": gemini.get("alert_level") or ("警戒" if drops else "平靜"),
         "summary": summary,
         "interpretation": gemini.get("interpretation", []),

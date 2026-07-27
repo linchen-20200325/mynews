@@ -378,6 +378,16 @@
 - **維護待辦(低)**:2 幽靈函式(`nav_fetcher.fetch_dividends`/`watchlist.tickers_for`)、`TW_HOLIDAYS` 只到 2026-12-25(2027 守門失效,需**真實**假日表勿虛構)、效能三項(index quote 抓兩次 / per-user 重下載月營收 / 每日 POST EPS)。
 - 驗證:批次1+2 全 py_compile + 全庫 pyflakes 零 + 離線邏輯/行為對帳全過;無 `.py` 以外行為改動。**Streamlit/NAS/雲端無法沙箱驗**(誠實限制)。
 
+## 國際盤「轉好」通知:大漲門檻鏡像大跌(2026-07-27,PR #140)
+- 補「只有轉差才通知」的破口:國際盤預警原本單向——只有領先市場下跌達 -1.5% 才升級 🚨,大漲日與平靜日一樣被 F5 壓成 🌅 精簡快報。本次補對稱上漲升級層(HITL 拍板:大漲門檻鏡像大跌、**+1.5% 對稱**)。
+- `index_fetcher`:新增 `rise_threshold()`(預設 +1.5%,`INTL_RISE_THRESHOLD` 可覆寫,鏡像 `drop_threshold` SSOT)+ 每筆報價 `is_rise`;回傳 doc 帶 `rise_threshold`。
+- `update_data.build_intl_alert`:產 `rises`(鏡像 `drops`、債匯排除)+ `is_surge`;夜盤同步標 `is_rise`;AI 降級 summary 雙向。**刻意不碰 `alert_level` 列舉**(看板 `ALERT_BADGE` 相依,避免波及)。
+- `prompts/intl_alert.yaml`:研判/`root_cause`/`cause`/`summary` 方向感知(漲→利多原因、跌→利空原因)。
+- `line_notify`:`lead_market_rises()` + 三層標題(🚨大跌 > 🚀轉強 > 🌅平靜)+ 📈 大漲段 + 方向感知原因標籤;**下跌優先**(混合日以 🚨 為主、仍列 📈 供參)。
+- `pages/tw.py`:看板 `render_intl_alert` 鏡像(🚀 轉強區塊 + 大漲門檻 caption + 方向標籤);全用 `.get` → **向後相容**舊 JSON。
+- **SSOT 收斂**:`LEAD_DROP_TYPES` → `LEAD_MARKET_TYPES`(該常數現漲跌共用、正名為方向中性);門檻/領先市場定義全單一來源、零重複貼值。
+- 驗證:py_compile+pyflakes 零 + 離線單元 22/22(轉強🚀/📈/利多、大跌🚨/📉/利空回歸、混合日下跌優先、平靜壓縮、資料層 rises/is_surge/降級)+ 7 領域 AppTest 煙霧零例外 + 數值 11/11 + CI lint 綠。**限制**:LINE 實推需雲端 token、真實 Gemini 利多研判文字待排程實跑驗收。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

@@ -56,6 +56,8 @@ SYMBOLS: list[dict] = [
 
 # 預設「大跌」門檻(%):當日跌幅 <= 此值才標警示。可用 INTL_DROP_THRESHOLD 覆寫。
 DEFAULT_DROP_THRESHOLD = -1.5
+# 預設「大漲」門檻(%):當日漲幅 >= 此值才標轉強。鏡像大跌門檻,可用 INTL_RISE_THRESHOLD 覆寫。
+DEFAULT_RISE_THRESHOLD = 1.5
 
 
 def drop_threshold() -> float:
@@ -64,6 +66,14 @@ def drop_threshold() -> float:
     公開供 update_data 在報價全失敗的降級路徑組空 quotes 文件時取用(SSOT)。
     """
     return config.env_float("INTL_DROP_THRESHOLD", DEFAULT_DROP_THRESHOLD)
+
+
+def rise_threshold() -> float:
+    """目前生效的「大漲」門檻(%):環境變數 INTL_RISE_THRESHOLD 可覆寫預設值。
+
+    鏡像 drop_threshold(SSOT);供 update_data 降級路徑與 is_rise 判定取用。
+    """
+    return config.env_float("INTL_RISE_THRESHOLD", DEFAULT_RISE_THRESHOLD)
 
 
 def _http_get_json(url: str) -> dict | None:
@@ -110,6 +120,7 @@ def _parse_chart(payload: dict) -> tuple[float, float] | None:
 def fetch_index_quotes(proxy: str | None = None, log=print) -> dict:
     """抓所有追蹤指數/期貨的最新漲跌幅;單一標的失敗只略過,不影響其他。"""
     threshold = drop_threshold()
+    rthreshold = rise_threshold()
     quotes: dict[str, dict] = {}
     for item in SYMBOLS:
         sym = item["symbol"]
@@ -128,6 +139,7 @@ def fetch_index_quotes(proxy: str | None = None, log=print) -> dict:
                 "prev": round(prev, 2),
                 "change_pct": change_pct,
                 "is_drop": change_pct <= threshold,
+                "is_rise": change_pct >= rthreshold,
             }
             log(f"  [{sym}] {item['name']} {change_pct:+.2f}%")
         except Exception as exc:  # noqa: BLE001 — 單一標的失敗不影響其他
@@ -139,6 +151,7 @@ def fetch_index_quotes(proxy: str | None = None, log=print) -> dict:
     return {
         "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC (Yahoo Finance)"),
         "threshold": threshold,
+        "rise_threshold": rthreshold,
         "quotes": quotes,
     }
 
