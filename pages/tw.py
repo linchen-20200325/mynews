@@ -133,6 +133,7 @@ def render_intl_alert(data: dict) -> None:
         st.warning("⚠️ AI 研判暫離線,以下為真實報價(數字可信),原因/研判待補。")
     st.caption(
         f"報價時間:{data.get('as_of', '—')} · 大跌門檻 {data.get('threshold', '')}% · "
+        f"大漲門檻 {data.get('rise_threshold', '')}% · "
         "數字為真實市場報價(Yahoo Finance),非 AI 估算"
     )
 
@@ -153,9 +154,18 @@ def render_intl_alert(data: dict) -> None:
     else:
         st.success("✅ 目前追蹤標的均未觸及大跌門檻。")
 
+    rises = data.get("rises", [])
+    if rises:
+        st.subheader(f"🚀 轉強快報({len(rises)} 項達大漲門檻)")
+        for d in rises:
+            st.success(
+                f"**{d.get('name', '')}** {d.get('change_pct', 0):+.2f}%"
+                f"　·　{d.get('lead_type', '')}"
+            )
+
     interp = data.get("interpretation", [])
     if interp:
-        st.subheader("🧭 利空原因解讀(依新聞)")
+        st.subheader("🧭 利多原因解讀(依新聞)" if data.get("is_surge") else "🧭 利空原因解讀(依新聞)")
         for it in interp:
             with st.container(border=True):
                 if it.get("market"):
