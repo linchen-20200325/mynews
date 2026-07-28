@@ -449,8 +449,10 @@ def gh_load():
     return {"stocks": [], "updated_at": ""}, None
 
 
-def gh_save(doc: dict, message: str, sha) -> bool:
-    """把清單寫回 repo 內 watchlist.json(經 dumps 統一格式)。回成功與否。"""
+def gh_save(doc: dict, message: str, sha) -> tuple:
+    """把清單寫回 repo 內 watchlist.json(經 dumps 統一格式)。
+    回 (是否成功, HTTP 狀態碼|None)——狀態碼讓上層區分 409(sha 過期、可重試)與
+    401/403(權杖失效/額度用盡、不可重試)。"""
     token, repo, branch = _gh_cfg()
     url = f"{GITHUB_API}/repos/{repo}/contents/{WATCHLIST_PATH}"
     content = dumps(doc)
@@ -465,10 +467,52 @@ def gh_save(doc: dict, message: str, sha) -> bool:
         url, data=json.dumps(body).encode(), headers=_gh_headers(token), method="PUT")
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.status in (200, 201)
+            return resp.status in (200, 201), resp.status
+    except urllib.error.HTTPError as exc:
+        _log(f"ERROR 寫 watchlist 失敗:HTTP {exc.code}")
+        return False, exc.code
     except Exception as exc:  # noqa: BLE001
         _log(f"ERROR 寫 watchlist 失敗:{exc}")
-        return False
+        return False, None
+
+
+def gh_commit(mutate, commit_msg: str, attempts: int = 3) -> tuple:
+    """樂觀鎖寫回:gh_load → mutate → gh_save 為一組;遇 409(sha 過期,代表他人已
+    並發改動)就重載『最新內容』、對最新內容重做 mutate 再寫,絕不用舊快照覆蓋他人
+    變更(杜絕 lost-update)。此舉同時吸收 LINE outage 復原時的事件重送 / 連點造成的
+    併發寫入(ThreadingHTTPServer 多執行緒)。
+
+    mutate(doc) -> (changed: bool, reply: str)
+    回 (outcome, reply, doc, status):
+      "ok"       已寫入
+      "nochange" mutate 判定無需變更(如刪不存在、加已存在)——非錯誤
+      "conflict" 連續 409 重試耗盡(極罕見)
+      "error"    非 409 的寫入失敗(status 帶 HTTP 碼,如 401 / 403)
+    """
+    reply, doc, status = "", None, None
+    for attempt in range(max(1, attempts)):
+        doc, sha = gh_load()
+        changed, reply = mutate(doc)
+        if not changed:
+            return "nochange", reply, doc, None
+        ok, status = gh_save(doc, commit_msg, sha)
+        if ok:
+            return "ok", reply, doc, status
+        if status != 409:
+            return "error", reply, doc, status
+        _log(f"WARN 寫 watchlist 409 sha 過期,重載重試 {attempt + 1}/{attempts}")
+    return "conflict", reply, doc, status
+
+
+def _write_fail_msg(scope: str, status) -> str:
+    """把寫回失敗轉成對使用者有用的中文提示(scope 例:『清單更新』『授權名單』)。"""
+    if status == 403:
+        return (f"{scope}暫時失敗(GitHub API 忙線或額度,HTTP 403),"
+                "通常約 1 小時內自動恢復,請稍後再試。")
+    if status == 401:
+        return f"{scope}失敗(GitHub 權杖失效,HTTP 401),請管理員更新 NAS 上的 GITHUB_TOKEN。"
+    code = f"HTTP {status}" if status else "連線異常"
+    return f"{scope}寫回 repo 失敗({code}),請稍後再試。"
 
 
 def line_reply(reply_token: str, text: str) -> None:
@@ -504,21 +548,23 @@ def handle_text(text: str, user_id: str) -> str:
         if admin_action == "allowlist":
             doc, _ = gh_load()
             return format_allow(doc)
-        doc, sha = gh_load()
         if admin_action == "grant":
             uid, name = _split_id_name(admin_arg)
-            changed, msg = grant(doc, uid, name)
-            commit = f"allow: grant {uid[:8]}"
+            outcome, msg, doc, status = gh_commit(
+                lambda d: grant(d, uid, name), f"allow: grant {uid[:8]}")
         else:
-            changed, msg = revoke(doc, admin_arg.strip())
-            commit = f"allow: revoke {admin_arg.strip()[:8]}"
-        if changed and not gh_save(doc, commit, sha):
-            return "授權名單寫回 repo 失敗,請稍後再試。"
+            target = admin_arg.strip()
+            outcome, msg, doc, status = gh_commit(
+                lambda d: revoke(d, target), f"allow: revoke {target[:8]}")
+        if outcome == "conflict":
+            return "授權名單忙碌中(寫入衝突),請稍等幾秒再試。"
+        if outcome == "error":
+            return _write_fail_msg("授權名單", status)
         return msg + "\n\n" + format_allow(doc)
 
     # 一般使用者指令(加/刪/清單):需被授權
     action, arg = parse_command(text)
-    doc, sha = gh_load()
+    doc, _ = gh_load()
     if not is_user_allowed(doc, user_id):
         return ("你還沒被授權使用 🙅\n"
                 "把下面這串你的 userId 貼給管理員,請他用「授權 這串」開通:\n"
@@ -531,9 +577,13 @@ def handle_text(text: str, user_id: str) -> str:
             return format_feedback(doc, user_id)
         if kind == "prompt":
             return feedback_help()
-        changed, msg = record_feedback(doc, user_id, kind, val)
-        if changed and not gh_save(doc, f"feedback: {kind} {val} by {user_id[:8]}", sha):
-            return "回饋寫回 repo 失敗,請稍後再試。"
+        outcome, msg, _, status = gh_commit(
+            lambda d: record_feedback(d, user_id, kind, val),
+            f"feedback: {kind} {val} by {user_id[:8]}")
+        if outcome == "conflict":
+            return "回饋忙碌中(寫入衝突),請稍等幾秒再試。"
+        if outcome == "error":
+            return _write_fail_msg("回饋", status)
         return msg
     # F5 推播靜音:靜音/恢復 <類> 全域開關、靜音清單 列出(②③④;①不開放)。
     mt = parse_mute(text)
@@ -543,9 +593,13 @@ def handle_text(text: str, user_id: str) -> str:
             return format_mutes(doc)
         if kind == "prompt":
             return mute_help()
-        changed, msg = set_mute(doc, val, kind == "on")
-        if changed and not gh_save(doc, f"mute: {kind} {val} by {user_id[:8]}", sha):
-            return "靜音設定寫回 repo 失敗,請稍後再試。"
+        outcome, msg, _, status = gh_commit(
+            lambda d: set_mute(d, val, kind == "on"),
+            f"mute: {kind} {val} by {user_id[:8]}")
+        if outcome == "conflict":
+            return "靜音設定忙碌中(寫入衝突),請稍等幾秒再試。"
+        if outcome == "error":
+            return _write_fail_msg("靜音設定", status)
         return msg
     if action == "list":
         # per-user:列自己的清單;舊扁平格式(尚無人遷移)仍列共用清單。
@@ -555,11 +609,17 @@ def handle_text(text: str, user_id: str) -> str:
         if action == "add":
             ticker = normalize_ticker(arg)
             name = arg.replace(ticker, "").strip() if ticker else ""
-            changed, msg = add_stock_for(doc, user_id, arg, name)
+            outcome, msg, doc, status = gh_commit(
+                lambda d: add_stock_for(d, user_id, arg, name),
+                f"watchlist: add {arg.strip()}")
         else:
-            changed, msg = remove_stock_for(doc, user_id, arg)
-        if changed and not gh_save(doc, f"watchlist: {action} {arg.strip()}", sha):
-            return "清單更新失敗(寫回 repo 出錯),請稍後再試。"
+            outcome, msg, doc, status = gh_commit(
+                lambda d: remove_stock_for(d, user_id, arg),
+                f"watchlist: remove {arg.strip()}")
+        if outcome == "conflict":
+            return "清單更新忙碌中(多次寫入衝突),請稍等幾秒再試。"
+        if outcome == "error":
+            return _write_fail_msg("清單更新", status)
         return msg + "\n\n" + format_list_for(doc, user_id)
     return help_text()
 
