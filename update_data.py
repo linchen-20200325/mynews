@@ -50,6 +50,7 @@ import config  # 環境變數讀取 + 功能開關的 SSOT
 import chip_fetcher  # 法人籌碼:抓證交所三大法人買賣超(事後驗證,真實數字)
 import chip_signals  # 個股盯盤:個股三大法人買賣超(T86)籌碼面訊號的 SSOT
 import earnings_fetcher  # 個股盯盤:抓證交所 OpenAPI 月營收(真實財報更新訊號)
+import etf_holdings  # ETF/個股 代號→正式名稱 反查 SSOT(盯盤推播查名,杜絕 AI 猜錯)
 import freshness  # 資料新鮮度(staleness)守門的單一真相源(SSOT,§2.4)
 import futures_chip_fetcher  # 法人籌碼:抓期交所三大法人台指期留倉(外資期貨偏多/偏空)
 import housing_fetcher
@@ -1186,6 +1187,24 @@ WATCH_SYSTEM_PROMPT = prompt_loader.load("watch")
 
 
 
+def _with_resolved_names(stocks: list[dict]) -> list[dict]:
+    """回傳「補齊名稱」的新清單:名稱空缺時以本地 SSOT(etf_holdings)補正名。
+
+    杜絕下游讓 Gemini 猜 ETF/個股名(硬規則#3):00980A 這類主動式 ETF 一律取
+    etf_holdings.json 的維護名(如「主動野村臺灣優選」),查無才留空(顯示代號)。
+    使用者自填的名(如「加 2330 我的台積電」)予以尊重,不覆蓋。
+    """
+    holdings = etf_holdings.load_holdings()
+    out: list[dict] = []
+    for s in stocks:
+        ticker = str(s.get("ticker", "")).strip()
+        name = (s.get("name") or "").strip()
+        if not name and ticker:
+            name = etf_holdings.name_for(ticker, holdings)
+        out.append({**s, "name": name})
+    return out
+
+
 def fetch_watch_news(stocks: list[dict]) -> dict[str, list[dict]]:
     """逐檔抓個股近期真實新聞(RSS,無 API 額度顧慮);回 {ticker: [news...]}。"""
     out: dict[str, list[dict]] = {}
@@ -1227,7 +1246,17 @@ def summarize_watch_stocks(stocks: list[dict], news_by_ticker: dict[str, list[di
     )
     data = gemini_client.call_gemini_for_json(WATCH_SYSTEM_PROMPT, user_content)
     result = data.get("stocks")
-    return result if isinstance(result, list) else []
+    if not isinstance(result, list):
+        return []
+    # 名稱只認本地權威(硬規則#3):用輸入清單已補正的名覆蓋 Gemini 可能猜錯的 ETF/個股名;
+    # 查無正名則留空(LINE 標題退為純代號),絕不採信 AI 自填的名字。
+    name_by_ticker = {
+        str(s.get("ticker", "")).strip(): (s.get("name") or "").strip() for s in stocks
+    }
+    for s in result:
+        if isinstance(s, dict):
+            s["name"] = name_by_ticker.get(str(s.get("ticker", "")).strip(), "")
+    return result
 
 
 def load_pushed_revenue() -> list[str]:
@@ -1257,6 +1286,7 @@ def _push_watch_for(today: str, stocks: list[dict], to: str, pushed: list[str],
     """
     if not stocks:
         return []
+    stocks = _with_resolved_names(stocks)  # 名稱走本地 SSOT,杜絕下游 AI 猜錯 ETF/個股名(硬規則#3)
     # 1) 逐檔抓真實新聞 → Gemini 一次總結(省額度)
     try:
         news_by_ticker = fetch_watch_news(stocks)

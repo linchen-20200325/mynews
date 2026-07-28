@@ -56,3 +56,29 @@ def reverse_index(data: dict) -> list[dict]:
     ]
     rows.sort(key=lambda r: (r["etf_count"], r["ticker"]), reverse=True)
     return rows
+
+
+# 交易所後綴（顯示雜訊）：yfinance 風格代號可能帶 .TW/.TWO，顯示前去除。
+_EXCHANGE_SUFFIX_RE = re.compile(r"\.(TW|TWO)$", re.IGNORECASE)
+
+
+def name_for(ticker: str, data: dict | None = None) -> str:
+    """查代號的正式名稱（SSOT）：ETF 代號查 ``etfs[].name``、個股查 ``stock_names``；查無回空字串。
+
+    杜絕下游（如盯盤推播）讓 AI 猜 ETF/個股名（硬規則#3）：名稱只認本地維護資料，
+    例如主動式 ETF ``00980A`` → 「主動野村臺灣優選」，不再讓 Gemini 幻覺成別檔的名字。
+    ``data`` 可傳入已載入的 holdings 省重讀；未傳則自行 ``load_holdings()``。
+    """
+    t = (ticker or "").strip().upper()
+    if not t:
+        return ""
+    if data is None:
+        data = load_holdings()
+    if not isinstance(data, dict):
+        return ""
+    etf = (data.get("etfs") or {}).get(t)
+    if isinstance(etf, dict) and etf.get("name"):
+        name = str(etf["name"]).strip()
+    else:
+        name = str((data.get("stock_names") or {}).get(t, "")).strip()
+    return _EXCHANGE_SUFFIX_RE.sub("", name).strip()
