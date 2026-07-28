@@ -388,6 +388,14 @@
 - **SSOT 收斂**:`LEAD_DROP_TYPES` → `LEAD_MARKET_TYPES`(該常數現漲跌共用、正名為方向中性);門檻/領先市場定義全單一來源、零重複貼值。
 - 驗證:py_compile+pyflakes 零 + 離線單元 22/22(轉強🚀/📈/利多、大跌🚨/📉/利空回歸、混合日下跌優先、平靜壓縮、資料層 rises/is_surge/降級)+ 7 領域 AppTest 煙霧零例外 + 數值 11/11 + CI lint 綠。**限制**:LINE 實推需雲端 token、真實 Gemini 利多研判文字待排程實跑驗收。
 
+## 個股盯盤查名:杜絕 Gemini 猜錯 ETF 名(2026-07-28)
+- 症狀(使用者回報):LINE 盯盤把主動式 ETF `00980A` 標成「中信上游半導體」(那是 `00941` 的名字);清單該檔 `name` 空。
+- 根因:清單空名 → `summarize_watch_stocks` 餵 Gemini `【 00980A】`(空名)→ Gemini 幻覺借鄰檔名 → `build_watch_line_message` 直採 AI 回傳名(等於讓 AI 決定 ETF 叫什麼、踩硬規則#3)。
+- 修法:`etf_holdings.name_for(ticker)`(新 SSOT 純查名:ETF 查 `etfs[].name`、個股查 `stock_names`、去 `.TW` 雜訊、查無回空);`update_data._with_resolved_names` 推播前補正空名(尊重使用者自填);`summarize_watch_stocks` 用本地權威名**覆蓋** Gemini 回傳名,查無顯示純代號。
+- 順帶:依使用者指示以 `watchlist.remove_stock_for` 移除 `00980A`(bot webhook 掛掉的替代手段)。
+- ⚠️ 另案「盯盤 bot 無法接受訊息」= NAS webhook 層(進程死/網路斷/token 失效),**非解析 code**(逐行追 `handle_text` 正常、git log 證同段 code 曾成功寫過);沙箱無法修驗,交使用者打健檢 URL 復活。詳見 GOTCHAS「個股盯盤 / ETF 命名」。
+- 驗證:離線單元 14/14(name_for 全代號 + 補正/尊重自填/未知留空 + 覆蓋 Gemini 亂填)+ py_compile + pyflakes 零。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

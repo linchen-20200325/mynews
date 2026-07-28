@@ -52,3 +52,22 @@
 
 ### squash 慣例 + 分支重用
 - **對策**：本 repo PR 一律 **squash**。同分支跨 PR 重用時，squash 後 origin 分支落後成孤兒 commit → 下次推用 `--force-with-lease`（**僅在分支只含已併入歷史時**安全）。follow-up 先 `git checkout -B <branch> origin/main` 重建到最新 main。
+
+## 個股盯盤 / ETF 命名
+
+### Gemini 幻覺 ETF 名（00980A 被標成「中信上游半導體」）
+- **症狀**：LINE 盯盤把主動式 ETF `00980A` 標成「中信上游半導體」（那其實是 `00941` 的名字）。
+- **根因**：`watchlist.json` 該檔 `name` 空 → `summarize_watch_stocks` 餵給 Gemini 的區塊是 `【 00980A】`（空名）→ Gemini **自行幻覺**借了鄰檔名 → `build_watch_line_message` 直接採用 Gemini 回傳的 `name`。等於讓 AI 決定 ETF 叫什麼（踩硬規則#3）。
+- **對策**：名稱只認本地 SSOT `etf_holdings.name_for(ticker)`（ETF 查 `etfs[].name`、個股查 `stock_names`）。推播前 `_with_resolved_names` 補正空名、`summarize_watch_stocks` 用本地名**覆蓋** Gemini 回傳名；查無正名顯示純代號，**絕不讓 AI 猜名**。新增主動式 ETF 要更新 `etf_holdings.json`／`etf_sources.json`（A 結尾代號集中在清單末段 `00980A~`）。
+
+### 盯盤 bot 突然「無法接受訊息」＝ webhook 層，不是解析邏輯
+- **症狀**：LINE 傳「刪 XXXX」給盯盤 bot 完全沒回覆（連「看不懂」引導都沒有）。
+- **根因排查順序**：
+  - **第 0 步 — 先排除 LINE 平台 outage**：查 LINE 官方 status（`status.line.biz` / LINE API Status，涵蓋 Messaging API）。**2026-07-28 實例**：LINE Messaging API + Developers Console 全球 outage（16:57 JST 起、19:09 JST 未復原），使用者 16:54（台灣，≈17:54 JST）刪指令石沉大海——**與你的 NAS/程式全然無關**，LINE 收不到也發不出 reply。等復原即自癒，什麼都不用改。
+  - **第 1 步 — webhook 層**：`加/刪/清單` 純邏輯在 `watchlist.py`（有離線測試護體），**幾乎不會是它**。完全沒回覆＝訊息沒進程式＝ NAS 上 `nas_line_bot.py` 進程死掉／NAS 離線／路由器·DDNS·反向代理斷／LINE console「Use webhook」被關／`LINE_WATCH_TOKEN` 失效。
+- **對策**：LINE status 綠燈後仍不回，才用瀏覽器 GET webhook 網址，應回 `mynews watch bot ok`（程式內建 `do_GET` 健檢）——不回就是進程/網路層，重啟進程即可。**別急著改解析 code**（§5：不對無辜處重試）。
+
+### 盯盤 bot 回「清單更新失敗（寫回 repo 出錯）」＝併發寫入 lost-update（token 其實正常）
+- **症狀**：bot **有回應**（讀得到清單、也顯示「已移除 X」），卻緊接著吐「清單更新失敗（寫回 repo 出錯），請稍後再試。」；常在 **LINE outage 復原後**或**連點／重送同一指令**時出現。
+- **根因**：`nas_line_bot.py` 用 `ThreadingHTTPServer`（多執行緒）；LINE outage 復原會把積壓 webhook **重送（redeliver）**，加上使用者連送兩次 → 同一指令被**並發處理**。兩條 thread 各自 `gh_load` 拿到**同一個 sha**、都改清單：先寫者成功（sha 前進），後寫者 sha 已過期 → GitHub Contents API 回 **409** → 舊 `gh_save` 對 409 零重試、直接回 False → 使用者見「寫回 repo 出錯」。**能讀就代表 token 活著，不是權限／額度問題**。
+- **對策**：改走 `gh_commit(mutate, msg)` 樂觀鎖 —— 遇 409 就「重載最新 sha → 對**最新內容**重做 mutate → 再寫」，絕不用舊快照覆蓋他人變更（no lost-update）；重複刪／加自然收斂為「無變化」友善訊息。非 409 才是真失敗：回帶 HTTP 碼的對症提示。**先看 NAS log `ERROR 寫 watchlist 失敗:HTTP <碼>`** 判型 —— 409＝併發（已自動重試）、403＝API 額度（約 1h 自癒）、401＝權杖失效要換。
