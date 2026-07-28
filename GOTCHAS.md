@@ -62,5 +62,7 @@
 
 ### 盯盤 bot 突然「無法接受訊息」＝ webhook 層，不是解析邏輯
 - **症狀**：LINE 傳「刪 XXXX」給盯盤 bot 完全沒回覆（連「看不懂」引導都沒有）。
-- **根因**：`加/刪/清單` 純邏輯在 `watchlist.py`（有離線測試護體），**幾乎不會是它**。完全沒回覆＝訊息根本沒進程式＝ NAS 上 `nas_line_bot.py` 進程死掉／NAS 離線／路由器·DDNS·反向代理斷／LINE console「Use webhook」被關／`LINE_WATCH_TOKEN` 失效。
-- **對策**：先用瀏覽器 GET webhook 網址，應回 `mynews watch bot ok`（程式內建 `do_GET` 健檢）——不回就是進程/網路層，重啟進程即可。**別急著改解析 code**（§5：不對無辜處重試）。
+- **根因排查順序**：
+  - **第 0 步 — 先排除 LINE 平台 outage**：查 LINE 官方 status（`status.line.biz` / LINE API Status，涵蓋 Messaging API）。**2026-07-28 實例**：LINE Messaging API + Developers Console 全球 outage（16:57 JST 起、19:09 JST 未復原），使用者 16:54（台灣，≈17:54 JST）刪指令石沉大海——**與你的 NAS/程式全然無關**，LINE 收不到也發不出 reply。等復原即自癒，什麼都不用改。
+  - **第 1 步 — webhook 層**：`加/刪/清單` 純邏輯在 `watchlist.py`（有離線測試護體），**幾乎不會是它**。完全沒回覆＝訊息沒進程式＝ NAS 上 `nas_line_bot.py` 進程死掉／NAS 離線／路由器·DDNS·反向代理斷／LINE console「Use webhook」被關／`LINE_WATCH_TOKEN` 失效。
+- **對策**：LINE status 綠燈後仍不回，才用瀏覽器 GET webhook 網址，應回 `mynews watch bot ok`（程式內建 `do_GET` 健檢）——不回就是進程/網路層，重啟進程即可。**別急著改解析 code**（§5：不對無辜處重試）。
