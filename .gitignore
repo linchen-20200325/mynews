@@ -4,3 +4,6 @@ __pycache__/
 venv/
 .env
 .streamlit/secrets.toml
+# NAS 盯盤 bot:祕密環境變數檔與執行 log(切勿進 git)
+watch_bot.env
+watch_bot.log

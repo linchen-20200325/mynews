@@ -170,6 +170,34 @@ DSM → **控制台 → 任務排程 → 新增 → 觸發的任務 → 使用�
 > 開機就跑、長駐不退。改完設定後可在任務排程「執行」一次套用,或重開機。
 > Cloudflare Tunnel(方案 A)也照樣設一個開機任務跑 `cloudflared tunnel run`。
 
+### 7-1. 日後 bot 程式更新了,怎麼重新部署(一鍵)
+
+每次 `nas_line_bot.py` 有更新(修 bug/加功能),都要「拉新碼 → **殺舊進程釋放 8080 埠** →
+重跑 → 健檢」。漏掉「先殺舊的」就會撞 `Address already in use`。已封裝成
+[`scripts/redeploy_watch_bot.sh`](scripts/redeploy_watch_bot.sh),一次做完且 fail-safe。
+
+**一次性準備**:把祕密環境變數放一個檔(**勿進 git**,已在 `.gitignore`):
+```bash
+cat > /volume1/.../watch_bot.env <<'ENV'
+LINE_WATCH_TOKEN='xxx'
+LINE_WATCH_SECRET='yyy'
+GITHUB_TOKEN_FILE='/volume1/homes/<you>/.mynews_gh_token'
+WATCH_ALLOW_USER='<你的userId>'
+WATCH_BOT_PORT='8080'
+ENV
+chmod 600 /volume1/.../watch_bot.env
+```
+
+**之後每次更新只要一行**(在 repo 目錄):
+```bash
+ENV_FILE=/volume1/.../watch_bot.env sh scripts/redeploy_watch_bot.sh
+```
+> - **fail-safe**:`git pull` 或語法檢查失敗就中止、**舊 bot 續跑不中斷**;成功才殺舊進程、
+>   重啟、並自動健檢(`http://127.0.0.1:8080/callback` 應回 `mynews watch bot ok`)。
+> - 抓舊進程用 `pgrep -f nas_line_bot.py` 並排除自身,不會誤殺這支腳本。
+> - **想要 GUI 一鍵**:DSM 任務排程新增一個「使用者定義指令碼」任務跑上面那行,以後點「執行」即可。
+> - 更新完到 LINE 連點兩次「刪 XXXX」驗收:一則「已移除」、另一則「不在清單內」,不再有「寫回 repo 出錯」。
+
 ---
 
 ## 八、驗收 & 疑難排解
