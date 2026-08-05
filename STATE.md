@@ -396,6 +396,12 @@
 - ⚠️ 另案「盯盤 bot 無法接受訊息」= NAS webhook 層(進程死/網路斷/token 失效),**非解析 code**(逐行追 `handle_text` 正常、git log 證同段 code 曾成功寫過);沙箱無法修驗,交使用者打健檢 URL 復活。詳見 GOTCHAS「個股盯盤 / ETF 命名」。
 - 驗證:離線單元 14/14(name_for 全代號 + 補正/尊重自填/未知留空 + 覆蓋 Gemini 亂填)+ py_compile + pyflakes 零。
 
+## 雲端整站 500(健檢)事故:starlette 1.4.0 破壞 streamlit 內建 gzip(2026-08-05,回釘 `starlette<1.4`）
+- 症狀:雲端開站即「Oh no. Error running app」;Manage app 日誌 uvicorn 起來後,**每個請求(含 health check)**ASGI 拋 `TypeError: GZipResponder.__init__() missing 1 required keyword-only argument: 'thread_minimum_size'`,伺服器恆 500、health check 不過、整站起不來。
+- 根因:同「2026-07-10 未鎖依賴 × venv 重建抓最新 wheel」母題,但爆點在**框架 API**(非原生 wheel)。`streamlit 1.61.0` 只宣告 `starlette<2,>=0.46.0`(未鎖上限)→ 雲端今日(08-05)重建抓到當日新發的 `starlette 1.4.0`;該版 `GZipResponder.__init__` 新增必填 kw-only `thread_minimum_size`(gzip 壓縮卸載 worker thread 的新特性),而 streamlit 內建 `_MediaAwareGZipResponder(GZipResponder)` 子類(`web/server/starlette/starlette_gzip_middleware.py:125`)沿**舊簽名** `super().__init__(app, minimum_size, compresslevel=...)` 未帶新參數 → 每請求即炸。streamlit 直接繼承 starlette 內部類別(非公開 API),上游一改 minor 版就破。
+- 對策:`requirements.txt` + `drawdown_app/requirements.txt` 釘 `starlette<1.4`(回最後相容 1.3.x、仍在 streamlit `>=0.46` 內)。把「關鍵依賴常態鎖上限」教訓從原生套件(pyarrow)延伸到**框架層**(starlette);待上游 streamlit 修正內建 gzip 中介層簽名再解。GOTCHAS 已追加一條。
+- 驗證:**沙箱 cp311 實證**(純 Python 簽名不相容、非 cp314 專屬,故本機可重現)——`starlette==1.4.0` 之 `GZipResponder.__init__(self, app, minimum_size, compresslevel=9, *, thread_minimum_size)` 含**必填** kw-only;`starlette==1.3.1`(`<1.4` 解析目標)為 `(self, app, minimum_size, compresslevel=9)`、**無**該參數 → 正好相容 streamlit 呼叫。⚠️ 雲端實際起站綠燈仍需**使用者看板回報**(§沙箱驗不到雲端:代理擋 *.streamlit.app、cp314 無法本機起站)。
+
 ## 待辦 ⏳
 - [x] 全市場化 ETF **程式已完成**:看板「🌐 一鍵匯入全市場 ETF」(`etf_fetcher.import_all_etfs`)→ 重抓成分股/圖鑑(`etf_fetcher.crawl` / `etf_profile_fetcher.crawl`)→ 自動存 GitHub 全接妥(`app.py` 443-455 / 404 / 546)。**待帶真實 `PROXY_URL` 在看板按一次**即生效(沙箱無代理,無法代跑)。
 - [x] repo Secrets `PROXY_URL` 早已設妥，排程(ETF/股價/房價)持續正常運作。

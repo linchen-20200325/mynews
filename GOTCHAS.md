@@ -11,6 +11,11 @@
 - **對策**：關鍵原生套件（pyarrow/numpy）**常態鎖上限**。要解鎖或動任何觸發重建的變更 → **一次只解一個、每步合併後看雲端**（相依序列，見 §3 DAG）。字型（`packages.txt` 的 `fonts-noto-cjk`）本身無罪，鎖版在時可安全恢復。
 - **實證（2026-07-23，A/B 對照）**：cp311 沙箱下 pyarrow **25.0.0 → 段錯誤（exit 139）**、**24.0.0 → 乾淨**（同一組擬真變體）→ **pyarrow 25 為確定兇手（非消去法）**。觸發需「擬真 DataFrame（datetime/object/NaN 欄）＋ 多次 Streamlit rerun」；trivial 3 列 df ＋ 2 rerun **不觸發**（故最小重現要夠真）。`app.py::_pyarrow_guard()` 偵測 pyarrow≥25 開站即 `st.error` 告警，把靜默 segfault 變可見診斷。
 
+### starlette 1.4.0 破壞 streamlit 內建 gzip → 整站 500(未鎖依賴的第二種爆法）
+- **症狀**：雲端開站即「Oh no. Error running app」；Manage app 日誌 uvicorn 起來後，**每個請求（含 health check）**ASGI 拋 `TypeError: GZipResponder.__init__() missing 1 required keyword-only argument: 'thread_minimum_size'` → 伺服器恆 500、health check 不過、整站起不來。與 segfault 不同：這是**純 Python 簽名不相容**，有清楚堆疊、非原生層。
+- **根因**：同「未鎖依賴 × venv 重建抓最新 wheel」母題（見上「cp314 × 未鎖依賴」），但爆點在**框架 API** 而非原生 wheel。`streamlit`（1.61.0）只宣告 `starlette<2,>=0.46.0`（未鎖上限）；2026-08-05 雲端重建抓到當日新發的 `starlette 1.4.0`，該版 `GZipResponder.__init__` 新增**必填** kw-only 參數 `thread_minimum_size`（gzip 壓縮卸載 worker thread 的新特性），而 streamlit 內建 `_MediaAwareGZipResponder(GZipResponder)` 子類（`web/server/starlette/starlette_gzip_middleware.py`）沿**舊簽名**呼叫 `super().__init__(app, minimum_size, compresslevel=...)`、未帶新參數 → 每請求即炸。**streamlit 直接繼承 starlette 內部類別（非公開 API），故上游一改 minor 版就破。**
+- **對策**：關鍵**框架**依賴（不只原生套件）也要**鎖上限**。`requirements.txt` + `drawdown_app/requirements.txt` 釘 `starlette<1.4`（回最後相容的 1.3.x、仍在 streamlit 宣告的 `>=0.46` 內）；待上游 streamlit 出「相容 starlette 1.4 gzip 新簽名」的版本再解。教訓延伸：pyarrow/numpy 之外，**streamlit 深綁的 starlette/uvicorn 也屬高風險未鎖面**；下次任何觸發 venv 重建的變更前，先確認框架層依賴有上限。此坑純 Python 簽名不相容、非 cp314 專屬，故**沙箱可重現**（比對兩版 `GZipResponder.__init__` 簽名即證）。
+
 ### packages.txt 格式
 - **症狀/對策**：`packages.txt` **一行一套件、不可加註解**，否則雲端 apt 解析失敗、字型裝不上。
 
