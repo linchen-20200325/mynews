@@ -5,6 +5,10 @@
 # floor 抬到 1.50：app 用 width="stretch" 字串 API（取代已棄用 use_container_width），
 # 過舊版（1.4x 前段）無此 kwarg，鎖版/最小安裝會 TypeError。雲端裝最新故主路徑無虞。
 streamlit>=1.50,<2
+# streamlit 未鎖 starlette 上限(僅 <2,>=0.46);starlette 1.4.0 對 GZipResponder.__init__ 加必填
+# thread_minimum_size,破壞 streamlit 內建 gzip 中介層 → 雲端 venv 重建後每請求(含健檢)500 整站掛
+# (同主專案 2026-08-05 事故,詳 GOTCHAS.md)。釘回最後相容 1.3.x。
+starlette<1.4
 pandas>=2.2,<4
 numpy>=1.26,<3
 plotly>=5.22,<8
